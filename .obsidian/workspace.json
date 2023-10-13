@@ -1,0 +1,190 @@
+{
+  "main": {
+    "id": "477c94690cdbea3d",
+    "type": "split",
+    "children": [
+      {
+        "id": "6fbde33beca93b62",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "44c322dd6450b116",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "9e77ca0fc49a7ff6",
+    "type": "split",
+    "children": [
+      {
+        "id": "5149951657a8fd60",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c49f5d93733e0b2b",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "aeae6d67dd8fb57a",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "c4d31bbb16294843",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "e31e05154fc801c8",
+    "type": "split",
+    "children": [
+      {
+        "id": "0f8e405e9bebfc7d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "437a4704768d2678",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "19a8da97bcbf9077",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "dd46f00086895547",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "4916574001415d76",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "44c322dd6450b116",
+  "lastOpenFiles": [
+    "Analysis --- self-study/Open and closed sets.md",
+    "Analysis --- self-study/Metric spaces.md",
+    "Concrete Mathematics --- self-study/Recurrence problems.md",
+    "Concrete Mathematics --- self-study/attachments/Recurrence_problems_S2_no_lines.jpeg",
+    "Linear algebra (done right) --- self-study/Vector spaces.md",
+    "Style guide.md",
+    "Calculus --- math-19/Divergence and curl.md",
+    "Calculus --- math-19/Euclidean space.md",
+    "Concrete Mathematics --- self-study/attachments/Recurrence_problems_S2_rotate_nth_line.jpeg",
+    "Concrete Mathematics --- self-study/attachments/Recurrence_problems_S2_one_line.jpeg",
+    "PEP math/Fractions.md",
+    "Principles and Practice --- csci-42/Asymptotic analysis.md",
+    "Principles and Practice --- csci-42/Higher order functions.md",
+    "Principles and Practice --- csci-42/Sorting algorithms (and analysing them).md",
+    "preamble.sty",
+    "preamble 10.52.32 PM.sty",
+    "Untitled",
+    "PEP math",
+    "Abstract algebra --- self-study/Modules.md",
+    "Concrete Mathematics --- self-study/attachments/Recurrence_problems_S2_two_lines.jpeg",
+    "IMG_75190E596917-1.jpeg.md",
+    "Concrete Mathematics --- self-study/attachments/Recurrence_problems_S2_translate_nth_line.jpeg",
+    "Concrete Mathematics --- self-study/attachments/IMG_75190E596917-1.jpeg",
+    "Concrete Mathematics --- self-study/attachments/Recurrence_problems_S2_three_lines.jpeg",
+    "Concrete Mathematics --- self-study/attachments/IMG_759F4DB7BB02-1.jpeg",
+    "Concrete Mathematics --- self-study/attachments/IMG_4AC1587826A0-1.jpeg",
+    "Concrete Mathematics --- self-study/attachments/IMG_786CDB30F16F-1.jpeg",
+    "Concrete Mathematics --- self-study/attachments",
+    "IMG_66980CEA788D-1.jpeg.md",
+    "Normed spaces.md",
+    "Planning/Math courses for spring 2024.md",
+    "Real numbers.md",
+    "Principles and Practice --- csci-42",
+    "Untitled.canvas",
+    "$/bb{R}^n$ and $/bb{C}^n$.md",
+    "$/bb{R}^n$ and $",
+    "$",
+    "Fields.md",
+    "Analysis --- self-study",
+    "generatingfunctionology --- self-study",
+    "Peano axioms.md",
+    "Peano Axioms.md",
+    "Application to PUNDiT.md",
+    "Metric space.md",
+    "Euclidean space.md",
+    "2023-09-27.md"
+  ]
+}
