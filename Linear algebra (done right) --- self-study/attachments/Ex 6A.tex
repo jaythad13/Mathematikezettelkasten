@@ -1,0 +1,137 @@
+\documentclass[12pt,letterpaper]{hmcpset}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\DeclareMathOperator{\vspan}{span}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\bvec}[1]{\mathbf{#1}}
+\newcommand{\pardx}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\ddx}[2]{\frac{d #1}{d #2}}
+\newcommand{\norm}[1]{\Vert #1 \Vert}
+\newcommand{\abs}[1]{\vert #1 \vert}
+\newcommand{\set}[1]{\{ #1 \}}
+\setlist[enumerate, 1]{label = (\alph*)}
+
+% info for header block in upper right hand corner
+\name{Jayden Thadani}
+\class{Linear Algebra Done Right self-study}
+\assignment{Exercises 6.A---Inner Products and Norms}
+
+\begin{document}
+
+\problemlist{}
+
+\begin{problem}[29]
+    For \( u , v \in V \), define \( d(u, v) = \Vert u - v \Vert \)
+    \begin{enumerate}
+        \item Show that $d$ is a metric on $V$.
+        \item Show that if $V$ is finite-dimensional, then $d$ is a complete metric on $V$ (meaning that every Cauchy sequence converges).
+        \item Show that every finite-dimensional subspace of $V$ is a closed subset of $V$.
+    \end{enumerate}
+\end{problem}
+
+\begin{solution}
+    \begin{enumerate}
+        \item In order to show that $d$ is a metric, we need to show that it is positive definite, symmetric, and satisfies the triangle inequality.\\\\
+        First we show that $d$ is positive definite. Let \( u, v, w \) be any vectors in $V$. Since \( \Vert w \Vert = 0 \) if and only if \( w = 0 \), we have that \( d (u, v) = 0 \) if and only if \( u - v = 0 \). Thus, we have \( d (u, v) = 0 \) if and only if \( u = v \). Note also that \( \Vert w \Vert \ge 0 \), giving us \( d(u, v) \ge 0 \) always. Combining these two statements about $d$ gives us that it is positive definite.\\\\
+        Now we show that $d$ is symmetric. This follows obviously from the properties of the norm of a scaled vector. For any \( u, v \in V \)
+        \[
+        d(u, v) = \Vert u - v \Vert = \Vert (-1) (v - u) \Vert = \vert -1 \vert \Vert v - u \Vert = \Vert v - u \Vert = d(v, u).
+        \]\\
+        Finally, we only need to point out an obvious conversion between what the triangle means for norms and what it means for metric spaces. For any \( u, v, w \in V \) 
+        \[
+        d(u, v) + d(v, w) = \Vert v - u \Vert + \Vert w - v \Vert.
+        \]
+        By the triangle inequality (for norms) we have
+        \[
+        \norm{v - u} + \norm{w - v} \le \norm{(v - u) + (w - v)} = \norm{w - u}.
+        \]
+        Thus, we have the triangle inequality for metrics:
+        \[
+        d(u, v) + d(v, w) \le d(u, w)
+        \]
+        \item If $V$ is finite-dimensional, then we have an orthonormal basis \(u_1, \ldots, u_m\). (This is proven later in the book). Let $\set{v_n}$ be any Cauchy sequence in $V$.\\\\
+        Then we can write each element of the sequence
+        \[
+        v_n = a_{n, 1} u_1 + \ldots + a_{n, m} u_m.
+        \]\\
+        Since $\set{v_n}$ is Cauchy, we have that for any \( \varepsilon > 0 \), there exists some \( N \in \bb{N} \) such that for all \( j, k > N \) we have \( d(v_j, v_k) < \varepsilon \). We can rewrite the expression as
+        \[
+        d(a_{j, 1} u_1 + \ldots + a_{j, m} u_m, a_{k, 1} u_1 + \ldots + a_{k, m} u_m) = \norm{ (a_{j, 1} - a_{k, 1}) u_1 + \ldots + (a_{j, m} - a_{k, m}) u_m}.
+        \]
+        Thus,
+        \[
+        \norm{ (a_{j, 1} - a_{k, 1}) u_1 + \ldots + (a_{j, m} - a_{k, m}) u_m} < \varepsilon
+        \]
+        (with all the same qualifiers for \( j, k, \varepsilon \) ).
+        Since the basis vectors are orthogonal, and the right and left hand sides of the inequality are obviously nonnegative, we get
+        \[
+         \abs{a_{j, 1} - a_{k, 1}}^2 \norm{u_1}^2 + \ldots + \abs{a_{j, m} - a_{k, m}}^2 \norm{u_m}^2 < \varepsilon^2
+        \]
+        and since the basis vectors are also unit vectors, we can simplify this to
+        \[
+        \abs{a_{j, 1} - a_{k, 1}}^2 + \ldots + \abs{a_{j, m} - a_{k, m}}^2 < \varepsilon^2
+        \]
+        Since all the terms on the left hand side are nonnegative, we can write
+        \[
+        \abs{a_{j, p} - a{k, p}}^2 < \varepsilon^2
+        \]
+        for any \( p \in \set{1, \ldots, m} \).
+        Again, since both sides of the inequality are positive, we get
+        \[
+        \abs{a_{j, p} - a_{k, p}} < \varepsilon.
+        \]\\
+        Specifically, for any \( p \in \set{1, \ldots, m} \), for any \( \varepsilon > 0 \), there exists some \( N \in \bb{N} \) such that for all \( j, k > N \)
+        \[
+        \abs{a_{j, p} - a_{k, p}} < \varepsilon.
+        \]
+        That is, for any \( p \in \set{1, \ldots m} \) the sequence \( \set{a_{n, p}} \) is Cauchy.\\\\
+        Since $V$ is a field over $\bb{R}$ or $\bb{C}$, both of which are complete, for all $p$, $\set{a_{n, p}}$ converges to some $A_p$. That is, for any \( \varepsilon' > 0 \), there is some \( N \in \bb{N} \) such that for all \( n > N \), \( \abs{A_p - a_{n, p}} < \varepsilon' \). This motivates us to think about the sequence of vectors converging to \( A_1 u_1 + \ldots + A_m u_m \).\\\\
+        For any \( \varepsilon' > 0 \) we can have some $N$ such that for all $n > N$, for all $p$, \( \abs{A_p - a_{n, p}} < \frac{\varepsilon}{m}' \) (if for each sequence of coefficients we get $N_p$, then take some $n$ greater than \( \max{N_p} \)). We consider
+        \[
+        d(A_1 u_1 + \ldots + A_m u_m, a_{n, 1} u_1 + \ldots a_{n, m} u_m) = \norm{(A_1 u_1 + \ldots + A_m u_m) - (a_{n, 1} u_1 + \ldots a_{n, m} u_m)}
+        \]
+        and perform the same expansion as previously to get
+        \[
+        d(A_1 u_1 + \ldots + A_m u_m, a_{n, 1} u_1 + \ldots a_{n, m} u_m) \le \abs{A_1 - a_{n, 1}} + \ldots + \abs{A_m - a_{n, m}} < m \frac{\varepsilon'}{m} = \varepsilon'
+        \]\\
+        Specifically, for any \( \varepsilon' > 0 \) there is some \( N \in \bb{N} \) such that for all \( n > N \)
+        \[
+        d(A_1 u_1 + \ldots + A_m u_m, a_{n, 1} u_1 + \ldots a_{n, m} u_m) < \varepsilon'.
+        \]
+        That is, \( \set{v_n} \) converges to \( A_1 u_1 + \ldots A_m u_m \).
+        \item By the construction in part (b), any Cauchy sequence in a subspace $U$ of $V$ converges to a point in $U$. Thus, $U$ contains all of its limits points, and thus, is closed.
+    \end{enumerate}
+\end{solution}
+
+\begin{problem}[30]
+	Fix a positive integer $n$. The \textbf{\textit{Laplacian}} $\Delta p$ of a twice differentiable function $p$ on $\bb{R}^n$ is the function on $\bb{R}^n$ defined by
+	\[
+		\Delta p = \frac{\partial^2 p}{\partial x_1} + \ldots + \frac{\partial^2 p}{\partial x_n}
+	\]
+A function $p$ is called \textbf{\textit{harmonic}} if \( \Delta p = 0 \).\\\\
+	A \textbf{\textit{polynomial}} on $\bb{R}^n$ is a linear combination of functions of the form \( x_1^{m_1} \cdots x_n^{m_n} \), where \( m_1 \ldots m_n \) are nonnegative integers.\\\\
+	Suppose $q$ is a polynomial on $\bb{R}^n$. Prove that there exists a harmonic polynomial $p$ on $\bb{R}^n$ such that \( p(x) = q(x) \) for every \( x \in \bb{R}^n \) with \( \Vert x \Vert = 1 \).
+
+\end{problem}
+
+\begin{problem}[31]
+	Use inner products to prove Apollonius's identity: in a triangel with sides of length $a$, $b$, and $c$, let $x$ be the length of the line segment from the midpoint of the side of length $c$ to the opposite vertex. Then 
+	\[
+		a^2 + b^2 = \frac{1}{2} c^2 + d^2
+	\]
+\end{problem}
+	
+
+
+
+
+% Add pairs of problems and solutions as needed
+
+\end{document}
