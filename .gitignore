@@ -1,2 +1,7 @@
 .obsidian
 .DS_Store
+*.aux
+*.log
+*.out*.synctex.gz
+*.fdb_latexmk
+*.fls
