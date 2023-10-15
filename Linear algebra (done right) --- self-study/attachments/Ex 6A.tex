@@ -121,8 +121,43 @@ A function $p$ is called \textbf{\textit{harmonic}} if \( \Delta p = 0 \).\\\\
 
 \end{problem}
 
+\begin{solution}
+	Let $\mathcal{P}(\bb{R}^n)$ denote the space of polynomials on $\bb{R}^n$ and let $\mathcal{P}_m(\bb{R}^n)$ be the space of polynomials on $\bb{R}^n$ of degree at most $m$.
+	If $q \in \mathcal{P}(\bb{R}^n)$, and we want some harmonic polynomial $p$ such that \( p = q \) for every \( x \in \bb{R}^n \) with \( \norm{x} = 1 \), we can reasonably think that
+	\[
+		p = q + (1 - \norm{x}^2)r
+	\]
+	where $r$ is some polynomial. Such a $p$ would necessarily give us \( p = q \) at all the desired points, but there might not be such a harmonic polynomial. Thus, we need to show that there is some harmonic polynomial of the same form. That is, we need to show that there exists some $r$ such that
+	\[
+		\Delta p = \Delta q + \Delta ((1 - \norm{x}^2)r) = 0.
+	\]
+	This amounts to showing that there exists some $r$ such that
+	\[
+		\Delta ((1 - \norm{x}^2)r) = -\Delta q.
+	\]
+	This, can be done by considering the linear map giving \( r \mapsto \Delta ((1 - \norm{x}^2)r) \) and showing that it is surjective. However, since the space of all polynomials is infinite-dimensional, this would require a direct proof and would not amount to any simplification. Instead, we can choose the right finite-dimensional space so that the map is an operator and we only have to prove that it is injective.\\\\
+	Note that if \( \operatorname{deg} q  = m + 2 \), then \( \operatorname{deg} \Delta q = m \). Similarly, if \( \operatorname{deg} r = m \), then \( \deg (1 - \norm{x}^2) r  = m + 2 \) and thus \( \deg \Delta (1 - \norm{x}^2) r  = m \). Thus, we can just consider the space of polynomials of degree at most $m$.\\\\
+	Specifically, we can consider \( T \in \mathcal{L}(\mathcal{P}_m(\bb{R}^n))\) defined by
+	\[
+		Tr = \Delta (1 - \nomr{x}^2) r.
+	\]
+	To be done, we only have to show that $T$ is injective.\\\\
+	Suppose \( Ts = 0 \). Then, using the product rule for the Laplacian we have
+	\[
+		s \Delta (1 - \norm{x}^2) + (1 - \norm{x}^2) \Delta s + \nabla s \cdot \nabla (1 - \norm{x}^2) = 0.
+	\]
+	Calculating all the derivatives where we can, we get
+	\[
+		s (-2n) + (1 - \norm{x}^2) \Delta s + \sum_{j = 1}^n s_{x_j} (-2 x_j) = 0
+	\]
+	which can be rewritten as
+	\[
+		s = \frac{1}{2n} (1 - \norm{x}^2) \Delta s - \frac{1}{n} \sum_{j = 1}^n \pardx{s}{x_j} x_j
+	\]
+\end{solution}
+
 \begin{problem}[31]
-	Use inner products to prove Apollonius's identity: in a triangel with sides of length $a$, $b$, and $c$, let $x$ be the length of the line segment from the midpoint of the side of length $c$ to the opposite vertex. Then 
+	Use inner products to prove Apollonius's identity: in a triangle with sides of length $a$, $b$, and $c$, let $x$ be the length of the line segment from the midpoint of the side of length $c$ to the opposite vertex. Then 
 	\[
 		a^2 + b^2 = \frac{1}{2} c^2 + d^2
 	\]
