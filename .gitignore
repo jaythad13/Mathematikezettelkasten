@@ -2,6 +2,9 @@
 .DS_Store
 *.aux
 *.log
-*.out*.synctex.gz
+*.out
+*.synctex.gz
 *.fdb_latexmk
 *.fls
+*.swp
+*.jpeg
