@@ -1,0 +1,77 @@
+\documentclass[12pt,letterpaper]{hmcpset}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\DeclareMathOperator{\vspan}{span}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\bvec}[1]{\mathbf{#1}}
+\newcommand{\pardx}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\ddx}[2]{\frac{d #1}{d #2}}
+\newcommand{\norm}[1]{\Vert #1 \Vert}
+\newcommand{\abs}[1]{\vert #1 \vert}
+\newcommand{\set}[1]{\{ #1 \}}
+\setlist[enumerate, 1]{label = (\alph*)}
+
+\name{Jayden Thadani}
+\class{Principles of Mathematical Analysis self-study}
+\assignment{Chapter 2 exericses---Basic Topology}
+
+\begin{document}
+
+\begin{problem}[16.]
+	Regard $\bb{Q}$, the set of all rational numbers, as a metric space, with \( d(p, q) = \abs{p - q} \). Let $E$ be the set of all \( p \in \bb{Q} \) such that \( 2 < p^2 < 3 \). Show that $E$ is closed and bounded in $\bb{Q}$ but that $E$ is not compact. Is $E$ open in $\bb{Q}$?
+\end{problem}
+
+\begin{solution}
+	First we will show that $E$ is bounded.\\\\
+	Consider the point $q  = 1.5$ and the neighbourhood around it of radius $0.5$. We can show that $E$ is contained in that neighbourhood, and is thus bounded. We prove this by proving that any point not contained in the neighbourhood is not contained in the set as below.\\\\
+	If \( d(p, q) > 0.5 \) then we have
+	\[
+		\abs{p - 1,5} > 0.5
+	\]
+	which gives us
+	\( p - 1.5 > 0.5 \) or \( p - 1.5 < -0.5 \).\\\\
+	Then we must have \( p > 2 \) or \( p < 1\) and thus \( p^2 < 1 \) or \( p^2 > 4 \). This gives us \( p \notin E \). Thus, we've shown that  $E$ is bounded.
+	Now we will show that $E$ is closed by proving that any point that is not in $E$ cannot be a limit point of $E$.\\\\
+	If \( p \notin E\) then we must have \( p^2 < 2 \) or \( p^2 > 3 \). In each of these cases e can construct a neighbourhood around $p$ that does not include any points of $E$.\\\\
+	By the construction in chapter 1 to prove that the rationals do not have the least upper bound property, we know that there exists a positive rational $r$ such that for any $p$ with \( p^2 < 2 \) we have \( (p + r)^2 < 2 \). Specifically,
+	\[
+		r = \min{(\frac{2 - p^2}{2p + 1}, 1)}
+	\]
+	gives us this property. Moreover, since $r$ is positive and the square is an increasing function for positive reals, this gives us \( q^2 < 2 \) for any \( q \in (p - r, p + r) \). Thus $N_r(p)$ contains no points of $E$ making $p$ not a limit point of $E$ for any $p$ with \( p^2 < 2 \).\\\\
+	We have a similar proof to show that $p$ with \( p^2 > 3 \) also cannot be a limit point of $E$. Particularly, we use a similar construction for $r$ such that the $N_r(p)$ contains no points of $E$ whenever \( p^2 > 3 \).\\\\
+	Consider 
+	\[
+		r = \min{(\frac{p^2 - 3}{2p + 1}, 1)}
+	\]
+	for some $p$ with \( p^2 > 3 \).
+	Then
+	\[
+		(p - r)^2 = p^2 - r(2p - r) > p^2 - r(2p + 1)
+	\]
+	since \( -r < 1 \). Substituting $r$ gives us
+	\[
+		(p - r)^2 > p^2 - (\frac{p^2 - 3}{2p + 1})(2p + 1) = p^2 - (p^2 - 3) = 3.
+	\]
+	That is
+	\[
+		(p - r)^2 > 3.
+	\] \\
+	Again, since $r$ is positive, and the square function is increasing, this gives us this gives us \( q^2 > 3 \) for any \( q \in (p - r, p + r) \). Thus $N_r(p)$ contains no points of $E$ making $p$ not a limit point of $E$ for any $p$ with \( p^2 > 3 \).\\\\
+	Since we've exhausted all the cases for rationals not in $E$ (there is no rational $p$ with \( p^2 = 2 \) or \( p^2 = 3 \)) and shown all of them not to be limit points, we've shown that all the limit points of $E$ must be in $E$, and thus, $E$ must be closed.\\\\
+	Finally, now we will show that $E$ is compact. Consider the cover of $E$ given by $\set{G_p}$ where \( G_p = (p - r_p, p + r_p) \) such that \( [p - r_p, p + r_p] \subseteq E \) for all \( p \in E \). Note that such an $r_p$ exists for each \( p \in E \) by a similar construction to that which we used earlier.\\\\
+For any finite subset of $\set{G_p}$, say $S$, there must be some maximum $p + r_p$ chosen among all the $G_p$ in $S$. Then that maximum \( p + r \notin \bigcup_{G_p \in S} G_p \) but \( p + r \in E \) making $S$ not a finite subcover, and making $E$ not compact.
+\end{solution}
+
+\begin{problem}[17.]
+	Let $E$ be the set of all \( x \in [0, 1] \) whose decimal expansion contains only the digits $4$and $7$. Is $E$ countable? Is $E$ dense in $[0, 1]$? Is $E$ compact? Is $E$ perfect?
+\end{problem}
+
+\end{document}
+

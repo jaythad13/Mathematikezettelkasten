@@ -139,7 +139,7 @@ A function $p$ is called \textbf{\textit{harmonic}} if \( \Delta p = 0 \).\\\\
 	Note that if \( \operatorname{deg} q  = m + 2 \), then \( \operatorname{deg} \Delta q = m \). Similarly, if \( \operatorname{deg} r = m \), then \( \deg (1 - \norm{x}^2) r  = m + 2 \) and thus \( \deg \Delta (1 - \norm{x}^2) r  = m \). Thus, we can just consider the space of polynomials of degree at most $m$.\\\\
 	Specifically, we can consider \( T \in \mathcal{L}(\mathcal{P}_m(\bb{R}^n))\) defined by
 	\[
-		Tr = \Delta (1 - \nomr{x}^2) r.
+		Tr = \Delta (1 - \norm{x}^2) r.
 	\]
 	To be done, we only have to show that $T$ is injective.\\\\
 	Suppose \( Ts = 0 \). Then, using the product rule for the Laplacian we have
@@ -162,10 +162,49 @@ A function $p$ is called \textbf{\textit{harmonic}} if \( \Delta p = 0 \).\\\\
 		a^2 + b^2 = \frac{1}{2} c^2 + d^2
 	\]
 \end{problem}
-	
 
-
-
+\begin{solution}
+	Consider the obvious choice of $v_a$, $v_b$, $v_c$, and $v_d$ such that \( \norm{v_\alpha} = \alpha \). Note that this then gives us
+	\[
+		\frac{v_c}{2} + v_d = v_a = v_c + v_b
+	\]
+	and
+	\[
+		\frac{v_c}{2} + v_b = v_d.
+	\]
+	Thus, we have 
+	\[
+		\norm{\frac{v_c}{2} + v_d}^2 = \norm{v_a}^2
+	\]
+	which we can expand using the dot product to get
+	\[
+		\frac{c^2}{4} + d^2 + \frac{v_c}{2} \cdot v_d = a^2.
+	\]
+	We also have 
+	\[
+		\norm{\frac{v_c}{2} + v_b}^2 = \norm{v_d}^2
+	\]
+	which gives us
+	\[
+		\frac{c^2}{4} + b^2 + \frac{v_c}{2} \cdot v_b = d^2.
+	\]
+	Swapping sides and adding the equations gives us
+	\[
+		2d^2 + \frac{v_c}{2} \cdot v_d = a^2 + b^2 + \frac{v_c}{2} \cdot v_b
+	\]
+	which we can rewrite as 
+	\[
+		2d^2 + \frac{v_c}{2} \cdot (v_d - v_b) = a^2 + b^2
+	\]
+	\[
+		2d^2 + \frac{v_c}{2} \cdot v_c = a^2 + b^2
+	\]
+	which finally gives us
+	\[
+		a^2 + b^2 = 2d^2 + \frac{c^2}{2}
+	\]
+	as desired.
+\end{solution}
 
 % Add pairs of problems and solutions as needed
 
