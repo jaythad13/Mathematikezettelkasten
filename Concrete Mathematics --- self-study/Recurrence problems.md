@@ -21,13 +21,23 @@ We generalise this problem to $n$ annuli and forget pedantry, just calling the a
 The other strategy we use is formalism: by explicitly naming the things we care about we can manipulate them more easily. In particular using functions (in this case, [[Sequences|sequences]], which are just functions from $\bb{N}$) allows us to very directly manipulate the things we care about. Thus, we let $T_n$ denote the least number of moves for $n$ disks.
 
 We can get some easy small answers. Some trivial cases are
+
+##### _examples:_ $T_0$ and $T_1$
+
 $$
 T_0 = 0 \text{ and } T_1 = 1.
 $$
 These are easy to prove. Vacuously, moving $0$ disks takes $0$ moves. Moving $1$ disk requires at least $1$ move, and we can achieve it in one move.
 
-Thinking about the problem some more can also give us the more difficult case
-$$T_2 = 3.$$For $n = 3$  we can then moving the two smallest disks on to the second post, then move the third disk to the third post, and finally, move the two disks to the third post on top of the third disk. This gives us a rough idea of an algorithm and the value of $T_3$.
+Thinking about the problem some more can also give us the slightly more difficult cases
+
+##### _examples:_ $T_2$
+
+
+$$
+T_2 = 3.
+$$
+For $n = 3$  we can then moving the two smallest disks on to the second post, then move the third disk to the third post, and finally, move the two disks to the third post on top of the third disk. This gives us a rough idea of an algorithm and the value of $T_3$.
 
 Again, here generalisation is useful because it allows us to think about the algorithm, for any $n$.
 
@@ -116,6 +126,8 @@ since considering a circle of arbitrary size is the same as considering the whol
 
 Again, looking at small cases can be fruitful. We can see clearly that zero lines leave the plane as one region, one line divides the plane in two, and two lines divide the plane in four regions.
 
+##### _examples:_ $L_0$, $L_1$, and $L_2$
+
 ![[Recurrence_problems_S2_no_lines.jpeg]]
 $$
 L_0 = 1
@@ -132,6 +144,8 @@ L_2 = 4
 $$
 
 This seems to suggest that $L_n = 2^n$. That would imply that each new line we draw splits every previous region into two new regions. However, when we check $L_3$ we find that it seems impossible to do better than $L_3 = 7$. 
+
+##### _counterexample:_ $L_3$
 
 ![[Recurrence_problems_S2_three_lines.jpeg]]
 $$L_3 = \text{?}$$
@@ -173,3 +187,56 @@ Thus we've proven
 ##### _theorem:_ the plane division problem
 
 $n$ lines can divide the plane into a maximum of $1 + \frac{n(n + 1)}{2}$ regions.
+
+### The Josephus Problem
+
+Another historically inspired problem is that named for Flavius Josephus, a first century historian. According to legend, Josephus wouldn't have lived if it weren't for his mathematical talent. During the Jewish-Roman war, he was among a band of $41$ Jewish rebels trapped in a cave by the Romans. Preferring suicide to capture, the rebels decided to form a circle, and proceeding around, it starting from some first person, kill every third person, until no one was left. Josephus, along with a co-conspirator, preferred not to die, and thus, calculated where he and his friend should stand in the circle so as to never be one of the every third people.
+
+This historical tale has many versions, and in the one we will try to solve, the rebels kill every second member and Josephus has no co-conspirator. We will of course try to solve for the position where Josephus has to sit among arbitrarily many rebels. Specifically, for $n$ rebels sitting in a circle, we will try to solve for $J(n)$, the position at which Josephus should stand in the original circle in order to survive.
+
+Once again, we start by looking at small cases: say $n = 10$.
+
+##### _example:_ $J(10)$
+
+If we have $10$ rebels in a circle numbered $1, \dots, 10$, and they kill every other one of themselves, starting from $1$, then the order of killing is
+1) $1$ kills $2$
+2) $3$ kills $4$
+3) $5$ kills $6$
+4) $7$ kills $8$
+5) $9$ kills $10$
+6) $1$ kills $3$
+7) $5$ kills $7$
+8) $9$ kills $1$
+9) $5$ kills $9$
+and so, $5$ survives.
+
+Obviously, we could conjecture, with very little evidence that $J(n) = n/2$ for even $n$, but we promptly see that that is wrong by computing another example.
+
+##### _example:_ $J(6)$
+
+If we have $6$ rebels in a circle numbered $1, \dots, 6$, and they kill every other one of themselves, starting from $1$, then the order of killing is
+1) $1$ kills $2$
+2) $3$ kills $4$
+3) $5$ kills $6$
+4) $1$ kills $3$
+5) $5$ kills $1$
+and so, $5$ survives.
+
+Of course we could conjecture, that $J$ is always $5$ for $n \ge 5$ but that doesn't seem likely, and indeed $J(5) = 3$ so it isn't true.
+
+A more useful thing to notice is that the first round of killing will always eliminate all of the even positions so $J$ is always odd. Moreover, for even $n$, eliminating the even positions gets rid of exactly half the rebels, and leaves us a very similar problem, except with the rebels indexed in numbers up to $n$. We can revisit the example of $J(6)$ to see this.
+
+##### _example:_ recurrence in $J(6)$
+
+If we have $6$ rebels in a circle numbered $1, \dots, 6$, and they kill every other one of themselves, starting from $1$, in the first round of killing
+1) $1$ kills $2$
+2) $3$ kills $4$
+3) $5$ kills $6$.
+
+This leaves us $3$ rebels in a circle numbered $1, 3, 5$. That is, $1$ is in the position $1$ would be in a circle of $3$, $3$ is in the position that $2$ would be, and $5$ is in the position that $3$ would be. Since $J(3)$ is obviously $3$ ($1$ kills $2$, $3$ kills $1$), $5$, being in the position of $3$ survives, giving us $J(6) = 5$.
+
+That is, the first round of killing, for even $n$ is equivalent to the map that sends natural number positions to odd numbered rebels by $k \mapsto 2k -1$. Thus, $J(n)$ is just the original position of the rebel seated at position $J(n/2)$ after the first round of killing. Since we know what the position to original position map is, this gives us the recurrence relation
+$$
+J(2n) = 2J(n) + 1 \text{ for any } n \in \bb{N}.
+$$
+
