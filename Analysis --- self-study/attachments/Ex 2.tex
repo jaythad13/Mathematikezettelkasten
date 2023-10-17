@@ -20,7 +20,7 @@
 
 \name{Jayden Thadani}
 \class{Principles of Mathematical Analysis self-study}
-\assignment{Chapter 2 exericses---Basic Topology}
+\assignment{Chapter 2 exercises---Basic Topology}
 
 \begin{document}
 
@@ -59,7 +59,7 @@
 	Let $A_1, A_2, A_3, \ldots$ be subsets of a metric space.
 	\begin{enumerate}
 		\item If $B_n = \bigcup_{i = 1}^n A_i$ prove that $\bar{B_n} = \bigcup_{i = 1}^n \bar{A_i}$.
-	\item If $B_n = \bigcup_{i = 1}^\infty$ prove that $\bar{B_n} \supset \bigcup_{i = 1}^\infty \bar{A_i}}$
+	\item If $B_n = \bigcup_{i = 1}^\infty$ prove that $\bar{B_n} \supset \bigcup_{i = 1}^\infty \bar{A_i}$
 	\end{enumerate}
 \end{problem}
 
@@ -165,7 +165,78 @@ For any finite subset of $\set{G_p}$, say $S$, there must be some maximum $p + r
 \end{solution}
 
 \begin{problem}[17.]
-	Let $E$ be the set of all \( x \in [0, 1] \) whose decimal expansion contains only the digits $4$and $7$. Is $E$ countable? Is $E$ dense in $[0, 1]$? Is $E$ compact? Is $E$ perfect?
+	Let $E$ be the set of all \( x \in [0, 1] \) whose decimal expansion contains only the digits $4$ and $7$. Is $E$ countable? Is $E$ dense in $[0, 1]$? Is $E$ compact? Is $E$ perfect?
+\end{problem}
+
+\begin{problem}[18.]
+	Is there a nonempty perfect set in $\bb{R}$ which contains no rational number?
+\end{problem}
+
+\begin{problem}[19.]
+	\begin{enumerate}
+		\item If $A$ and $B$ are disjoint closed sets in some metric space $X$ prove that they are separated.
+		\item Prove the same for disjoint open sets.
+		\item Fix $p \in X$, $\delta > 0$, define $A$ to be the set of all $q \in X$ for which $d(p, q) < \delta$, define $B$ similarly, with $>$ in place of $<$. Prove that $A$ and $B$ are separated.
+		\item Prove that every connected metric space with at least two points is uncountable.
+	\end{enumerate}
+\end{problem}
+
+\begin{problem}[20.]
+	Are closures and interiors of connected sets always connected?
+\end{problem}
+
+\begin{problem}[21.]
+	Let $A$ and $B$ be separated subsets of some $\bb{R}^k$, suppose $\bvec{a} \in A$, $\bvec{b} \in B$, and define
+	\[
+		\bvec{p}(t) = (1 - t) \bvec{a} + t \bvec{b}
+	\]
+	for $t \in \bb{R}$. Put $A_0 = \bvec{p}^{\text{pre}}(A)$, $B_0 = \bvec{p}^{\text{pre}}(B)$. (Thus, $t \in A_0$ if and only if $\bvec{p}(t) \in A$).
+	\begin{enumerate}
+		\item Prove that $A_0$ and $B_0$ are separated subsets of $\bb{R}$.
+		\item Prove that there exists $t_0 \in (0, 1)$ such that $\bvec{p}(t_0) \notin A \cup B$.
+		\item Prove that every convex subset of $\bb{R}^k$ is connected.
+	\end{enumerate}
+\end{problem}
+
+\begin{problem}[22.]
+	A metric space is called \textit{separable} if it contains a countable dense subset. Show that $\bb{R}^k$ is separable.
+\end{problem}
+
+\begin{problem}[23.]
+	A collection $\set{V_\alpha}$ of open subsets of $X$ is said to be a \textit{base} for $X$ if the following is true: for every $x \in X$ and every open set $G \subset X$ such that $x \in G$, we have $x \in V_\alpha \subset G$ for some $\alpha$. In other words, every open set in $X$ is the union of a subcollection of $\set{V_\alpha}$. \\\\
+	Prove that every separable metric space has a countable base.
+\end{problem}
+
+\begin{problem}[24.]
+	Let $X$ be a metric space in which every infinite subset has a limit point. Prove that $X$ is separable.
+\end{problem}
+
+\begin{problem}[25.]
+	Prove that every compact metric space $K$ has a countable base, and that $K$ is therefore separable.
+\end{problem}
+
+\begin{problem}[26.]
+	Let $X$ be a metric space in which every infinite subset has a limit point. Prove that $X$ is compact.
+\end{problem}
+
+\begin{problem}[27.]
+	Define a point $p$ in a metric space $X$ to be a \textit{condensation point} of a set $E \subset X$ if every neighbourhood of $p$ contains uncountable many points of $E$. \\\\
+	Suppose $E \subset \bb{R}^k$, $E$ is uncountable, and let $P$ be the set of all condensation points of $E$. Prove that $P$ is perfect and that at most countably many points of $E$ are not in $P$. In other words, show that $P^c \cap E$ is at most countable.
+\end{problem}
+
+\begin{problem}[28.]
+	Prove that every closed set in a separable metric space is the union of a (possibly empty) perfect set and a set which is at most countable. (\textit{Corollary:} every countable closed set in $\bb{R}^k$ has isolated points.)
+\end{problem}
+
+\begin{problem}[29.]
+	Prove that every open set in $\bb{R}$ is the union of an at most countable collection of disjoint segments.
+\end{problem}
+
+\begin{problem}[30.]
+	Imitate the proof of theorem 2.43 to obtain the following result:\\\\
+	If $\bb{R}^k = \bigcup_{n \in \bb{N}} F_n$, where each $F_n$ is a closed subset of $\bb{R}^k$, then at least one $F_n$ jas a nonempty interior.\\\\
+	\textit{Equivalently} if $G_n$ is a dense open subset of $\bb{R}^k$ for $n \in \bb{N}$, then $\bigcap_{n \in \bb{N}} G_n$ is not empty. (In fact, it is dense in $\bb{R}^k$)
+	
 \end{problem}
 
 \end{document}

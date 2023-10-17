@@ -49,7 +49,7 @@
 \end{problem}
 
 \begin{problem}[5]
-	Suppose $T \in \mathcal{L}(V)$ is such that $\norm{Tv} \le \norm{v}$ for every $v \in V$. Prove that $T - \sqrt{2} I$ is invertible.
+	Suppose $T \in \mathcal{L}(V)$ (for finite-dimensional $V$) is such that $\norm{Tv} \le \norm{v}$ for every $v \in V$. Prove that $T - \sqrt{2} I$ is invertible.
 \end{problem}
 
 \begin{problem}[6]
@@ -92,6 +92,7 @@
 	\[
 		(x_1 + \cdots + x_n)^2 \le n (x_1^2 + \cdots + x_n^2)
 	\]
+	for all positive integers $n$ and all real numbers $x_1, \ldots, x_n$.
 \end{problem}
 
 \begin{problem}[13]
@@ -115,6 +116,7 @@
 	\[
 		\Big(\sum_{j = 1}^n a_j b_j \Big) \le \Big(\sum_{j = 1}^n j a_j^2 \Big) + \Big(\sum_{j = 1}^n \frac{b_j^2}{j} \Big) 
 	\]
+	for all real numbers $a_1, \ldots, a_n$ and $b_1, \ldots, b_n$.
 \end{problem}
 
 \begin{problem}[16]
@@ -127,6 +129,93 @@
 		\end{gathered}
 	\]
 	What number does $\norm{v}$ equal?
+\end{problem}
+
+\begin{problem}[17]
+	Prove or disprove: there is an inner product on $\bb{R}^2$ such that the associated norm is given by
+	\[
+		\norm{(x, y)} = \max \set{\abs{x}, \abs{y}}
+	\]
+	for all $(x, y) \in  \bb{R}^2$
+\end{problem}
+
+\begin{problem}[18]
+	Suppose $p > 0$. Prove that there is an inner product on $\bb{R}^2$ such that the associated norm is given by
+	\[
+		\norm{(x, y)} = (\abs{x}^p + \abs{y}^p)^{1/p}
+	\]
+	for all $(x, y) \in \bb{R}^2$ if and only if $p = 2$.
+\end{problem}
+
+\begin{problem}[19]
+	Suppose $V$ is a real inner product space. Prove that
+	\[
+		\langle u, v \rangle = \frac{\norm{u + v}^2 - \norm{u - v}^2}{4}	
+	\]
+	for all $u, v \in V$.
+\end{problem}
+
+\begin{problem}[20]
+	Suppose $V$ is a complex inner product space. Prove that
+	\[
+		\langle u, v \rangle = \frac{\norm{u + v}^2 - \norm{u - v}^2 + \norm{u + i v}^2 i - \norm{u - i v}^2 i}{4}	
+	\]
+	for all $u, v \in V$.
+\end{problem}
+
+\begin{problem}[21]
+	A norm on a vector space $U$ is a function $\norm{\,}: U \to [0, \infty)$ such that $\norm{u} = 0$ if and only if $u = 0$, $\norm{\alpha u} = \abs{\alpha} \norm{u}$ for all $\alpha \in \bb{F}$ and all $u \in U$, and $\norm{u + v} \le \norm{u} + \norm{v}$ for all $u, v \in U$. \\\\
+	Prove that a norm satisfying the parallelogram equality comes from an inner product (in other words, show that if $\norm{\,}$ is a norm on $U$ satisfying the parallelogram equality, then there is an inner product $\langle \,\, , \, \rangle$ on $U$ such that $\norm{u} = \langle u, u \rangle^{1/2}$ for all $u \in U$).
+\end{problem}
+
+\begin{problem}[22]
+	Show that the square of an average is less than or equal to the average of the squares. More precisely, show that if $a_1, \ldots, a_n \in \bb{R}$, then the square of the average of $a_1, \ldots, a_n$ is less than or equal to the average of $a_1^2, \ldots, a_n^2$.
+\end{problem}
+
+\begin{problem}[23]
+	Suppose $V_1, \ldots, V_m$ are inner product spaces. Show that the equation
+	\[
+		\langle (u_1, \ldots, u_m), (v_1, \ldots, v_m) \rangle = \langle u_1, v_1 \rangle + \cdots + \langle u_m, v_m \rangle
+	\]
+	defines an inner product on $V_1 \times \cdots \times V_m$
+\end{problem}
+
+\begin{problem}[24]
+	Suppose $S \in \mathcal{L}(V)$ is an injective operator on $V$. Define $\langle \cdot, \cdot \rangle_1$ by
+	\[
+		\langle u, v \rangle_1 = \langle Su, Sv \rangle
+	\]
+	for $u, v \in V$. Show that $\langle \cdot, \cdot \rangle_1$ is an inner product on $V$.
+\end{problem}
+
+\begin{problem}[25]
+	Suppose $S \in \mathcal{L}(V)$ is not injective. Define $\langle \cdot, \cdot \rangle_1$ as in the exercise above. Explain why $\langle \cdot, \cdot \rangle_1$ is not an inner product on $V$.
+\end{problem}
+
+\begin{problem}[26]
+	Suppose $f, g$ are differentiable functions from $\bb{R}$ to $\bb{R}^n$.
+	\begin{enumerate}
+		\item Show that
+			\[
+				\langle f(t), g(t) \rangle' = \langle f'(t) g(t) \rangle + \langle f(t), g'(t) \rangle.
+			\]
+		\item Suppose $c > 0$ and $\norm{f(t)} = c$ for every $t \in \bb{R}$. Show that $\langle f'(t), f(t) \rangle = 0$ for every $t \in \bb{R}$.
+		\item Interpret the result in part (b) geometryically in terms of the tangent vector to a curve lying on a sphere in $\bb{R}^n$ centred at the origin.
+	\end{enumerate}
+\end{problem}
+
+\begin{problem}[27]
+	Suppose $u, v, w \in V$. Prove that
+	\[
+		\norm{w - \frac{1}{2}(u + v)}^2 = \frac{\norm{w - u}^2 + \norm{w - v}^2}{2} - \frac{\norm{u - v}^2}{4}.
+	\]
+\end{problem}
+
+\begin{problem}[28]
+Supppose $C$ is a subset of $V$ with the property that $u, v \in C$ implies $\frac{1}{2} (u + v) \in C$. Let $w \in V$. Show that there is at most one point in $C$ that is closest to $w$. In other words, show that there is at most one $u \in C$ such that
+	\[
+		\norm{w - u} \le \norm{w - v} \text{ for all } v \in C.
+	\]
 \end{problem}
 
 \begin{problem}[29]
