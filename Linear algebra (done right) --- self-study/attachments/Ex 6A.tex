@@ -27,6 +27,108 @@
 
 \problemlist{}
 
+\begin{problem}[1]
+	Show that the function that takes $((x_1, x_2), (y_1, y_2)) \in \bb{R}^2 \times \bb{R}^2$ to $\abs{x_1 y_1} + \abs{x_2 y_2}$ is not an inner product on $\bb{R}^2$.
+\end{problem}
+
+\begin{problem}[2]
+	Show that the function that takes $((x_1, x_2, x_3), (y_1, y_2, y_3)) \in \bb{R}^3 \times \bb{R}^3$ to $x_1 y_1 + x_3 y_3$ is not an inner product on $\bb{R}^3$. 
+\end{problem}
+
+\begin{problem}[3]
+	Suppose $\bb{F} = \bb{R}$ and $V \neq \set{0}$. Replace the positivity condition (which states that $\langle v, v \rangle \ge 0$ for all $v \in V$) in the definition of an inner product with the condition that $\langle v, v \rangle > 0$ for some $v \in V$. Show that this change in the definition does not change the set of functions from $V \times V$ to $\bb{R}$ that are inner products on $V$.
+\end{problem}
+
+\begin{problem}[4]
+	Suppose $V$ is a real inner product space.
+	\begin{enumerate}
+		\item Show that $\langle u + v, u - v \rangle = \norm{u}^2 - \norm{v}^2$ for every $u, v \in V$.
+		\item Show that if $u, v \in V$ have the same norm, then $u + v$ is orthogonal to $u - v$.
+		\item Use part (b) to show that the diagonals of a rhombus are perpendicular to each other.
+	\end{enumerate}
+\end{problem}
+
+\begin{problem}[5]
+	Suppose $T \in \mathcal{L}(V)$ is such that $\norm{Tv} \le \norm{v}$ for every $v \in V$. Prove that $T - \sqrt{2} I$ is invertible.
+\end{problem}
+
+\begin{problem}[6]
+	Suppose $u, v \in V$. Prove that $\langle u, v \rangle = 0$ if and only if
+	\[
+		\norm{u} \le \norm{u + av}
+	\]
+	for all $a \in \bb{F}$.
+\end{problem}
+
+\begin{problem}[7]
+	Suppose $u, v \in V$. Prove that $\norm{au + bv} = \norm{bu + av}$ for all $a, b \in \bb{R}$ if and only if $\norm{u} = \norm{v}$.
+\end{problem}
+
+\begin{problem}[8]
+	Suppose $u, v \in V$ and $\norm{u} = \norm{v} = 1$ and $\langle u, v \rangle = 1$. Prove that $u = v$.
+\end{problem}
+
+\begin{problem}[9]
+	Suppose $u, v \in V$ and $\norm{u} \le 1$ and $\norm{v} \le 1$. Prove that
+	\[
+		\sqrt{1 - \norm{u}^2} \sqrt{1 - \norm{v}^2} \le 1 - \abs{\langle u, v \rangle}
+	\]
+\end{problem}
+
+\begin{problem}[10]
+	Find vectors $u, v \in \bb{R}^2$ such that $u$ is a scalar multiple of $(1, 3)$, $v$ is orthogonal to $(1, 3)$, and $(1, 2) = u + v.$
+\end{problem}
+
+\begin{problem}[11]
+	Prove that
+	\[
+		16 \le (a + b + c + d)(\frac{1}{a} + \frac{1}{b} + \frac{1}{c} + \frac{1}{d})
+	\]
+	for all positive numbers $a, b, c, d$.
+\end{problem}
+
+\begin{problem}[12]
+	Prove that
+	\[
+		(x_1 + \cdots + x_n)^2 \le n (x_1^2 + \cdots + x_n^2)
+	\]
+\end{problem}
+
+\begin{problem}[13]
+	Suppose $u, v$ are nonzero vectors in $\bb{R}^2$. Prove that
+	\[
+		\langle u, v \rangle = \norm{u} \norm{v} \cos{\theta}
+	\]
+	where $\theta$ is the angle between $u$ and $v$ (thinking of $u$ and $v$ as arrows with initial point at the origin).
+\end{problem}
+
+\begin{problem}[14]
+	The angle between two vectors (thought of as arrows with initial point at the origin) in $\bb{R}^2$ or $\bb{R}^3$ can be defined geometrically. However, geometry is not as clear for $\bb{R}^n$ for $n < 3$. Thus, the angle between two nonzero vectors $x, y \in \bb{R^n}$ is defined to be
+	\[
+		\arccos{\frac{\langle x, y \rangle}{\norm{x} \norm{y}}}
+	\]
+	where the motivation for this definition comes from the previous exercise. Explain why the Cauchy-Schwartz inequality is needed to show that this definition makes sense.
+\end{problem}
+
+\begin{problem}[15]
+	Prove that
+	\[
+		\Big(\sum_{j = 1}^n a_j b_j \Big) \le \Big(\sum_{j = 1}^n j a_j^2 \Big) + \Big(\sum_{j = 1}^n \frac{b_j^2}{j} \Big) 
+	\]
+\end{problem}
+
+\begin{problem}[16]
+	Suppose $u, v \in V$ are such that
+	\[
+		\begin{gathered}
+			\norm{u} = 3 \\
+			\norm{u + v} = 4 \\
+			\norm{u - v} = 6.
+		\end{gathered}
+	\]
+	What number does $\norm{v}$ equal?
+\end{problem}
+
 \begin{problem}[29]
     For \( u , v \in V \), define \( d(u, v) = \Vert u - v \Vert \)
     \begin{enumerate}
