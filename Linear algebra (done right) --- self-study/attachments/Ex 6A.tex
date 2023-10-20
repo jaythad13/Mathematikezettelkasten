@@ -1,22 +1,5 @@
 \documentclass[12pt,letterpaper]{hmcpset}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{amsfonts}
-\usepackage{graphicx} % Required for inserting images
-\usepackage{hyperref}
-\usepackage{enumitem}
-\usepackage[margin=1in]{geometry}
-\usepackage{graphicx}
-\usepackage{float}
-\DeclareMathOperator{\vspan}{span}
-\newcommand{\bb}[1]{\mathbb{#1}}
-\newcommand{\bvec}[1]{\mathbf{#1}}
-\newcommand{\pardx}[2]{\frac{\partial #1}{\partial #2}}
-\newcommand{\ddx}[2]{\frac{d #1}{d #2}}
-\newcommand{\norm}[1]{\Vert #1 \Vert}
-\newcommand{\abs}[1]{\vert #1 \vert}
-\newcommand{\set}[1]{\{ #1 \}}
-\setlist[enumerate, 1]{label = (\alph*)}
+\usepackage{math-19-preamble}
 
 % info for header block in upper right hand corner
 \name{Jayden Thadani}
@@ -333,18 +316,16 @@ A function $p$ is called \textbf{\textit{harmonic}} if \( \Delta p = 0 \).\\\\
 		Tr = \Delta (1 - \norm{x}^2) r.
 	\]
 	To be done, we only have to show that $T$ is injective.\\\\
-	Suppose \( Ts = 0 \). Then, using the product rule for the Laplacian we have
+	Suppose \( Ts = 0 \). Then
 	\[
-		s \Delta (1 - \norm{x}^2) + (1 - \norm{x}^2) \Delta s + \nabla s \cdot \nabla (1 - \norm{x}^2) = 0.
+		\Delta ((1 - \norm{x}^2) s) = 0
 	\]
-	Calculating all the derivatives where we can, we get
+	Thus, \( (1 - \norm{x}^2) s \) is harmonic. Since $(1 - \norm{x}^2) s$ is harmonic and $0$ everywhere on the unit sphere, $(1 - \norm{x}^2)s$ must be $0$ everywhere. Thus $s$ must be zero everywhere. That is, if $Ts = 0$, $s = 0$.\\\\
+	This gives us that $T$ is injective and thus, surjective. Then $Tr = - \Delta q$ for some $r$, giving us the $p$ we want as
 	\[
-		s (-2n) + (1 - \norm{x}^2) \Delta s + \sum_{j = 1}^n s_{x_j} (-2 x_j) = 0
+		p = (1 - \norm{x}^2)r + q
 	\]
-	which can be rewritten as
-	\[
-		s = \frac{1}{2n} (1 - \norm{x}^2) \Delta s - \frac{1}{n} \sum_{j = 1}^n \pardx{s}{x_j} x_j
-	\]
+	for that $r$.
 \end{solution}
 
 \begin{problem}[31]
