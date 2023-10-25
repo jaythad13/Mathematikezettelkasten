@@ -14,7 +14,7 @@ $$
 If $f(a)$ is a maximum, then there is some region around $a$ where $f(x) - f(a)$ is always non-positive. In the same region, to the left of $a$, $x - a$ is always negative, while to the right of $a$, $x - a$ is always positive. Then, if the derivative does exist, it is the limit of something that has non-negative left hand limit and non-positive right hand limit, and thus, must be zero.
 
 The image below illustrates this.
-![[Optimisation_S0_1dimMaximaMinima.jpeg]]
+![[S0_1dimMaximaMinima.jpeg]]
 
 ##### _theorem:_ Fermat's theorem
 

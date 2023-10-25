@@ -47,7 +47,7 @@ The curl of a vector field at a point is a vector that tells us about how a fiel
 
 This makes more sense with some examples:
 
-##### _examples:_ divergence and curl of vector fields
+##### _examples:_ pictures of divergence and curl
 
 Consider the vector fields $\bvec{E}$, $\bvec{F}$, $\bvec{G}$, and $\bvec{H}$ such that
 $$
@@ -59,7 +59,7 @@ $$
 \end{gathered}
 $$
 
-![[Divergence_and_curl_S1_vfieldE.jpeg]]
+![[S1_vfieldE.jpeg]]
 
 With $\bvec{E}$, we can have $\bvec{p_1}$ and $\bvec{p_2}$, points that are each other reflected in the $z$ axis. At both points, as we go further from origin in the $y$ direction, the magnitude of the vector field (which is only in the $z$ direction) increases. 
 
@@ -71,7 +71,7 @@ $$
 $$
 which is, as we expected, directed along the $x$-axis always - curling counterclockwise for positive $y$ and clockwise for negative $y$.
 
-![[Divergence_and_curl_S1_vfieldF.jpeg]]
+![[S1_vfieldF.jpeg]]
 
 We can see that for $\bvec{F}$, at every point, the vectors converging on the point from the origin are of lesser magnitude than the vectors diverging from the point to infinity. Thus, we should expect that $\div{\bvec{F}} > 0$ everywhere.
 
@@ -88,7 +88,7 @@ $$
 $$
 again, like we expected.
 
-![[Divergence_and_curl_S1_vfieldG.jpeg]]
+![[S1_vfieldG.jpeg]]
 
 For $\bvec{G}$ at points with $y < 0$ (like $\bvec{p_2}$) we see the vectors of the field converge together and should expect to see negative divergence. For points with $y > 0$ (like $\bvec{p_1}$) the vectors race away from each other and we should expect positive divergence.
 
@@ -98,7 +98,7 @@ $$
 $$
 which is positive for $y > 0$ and negative for $y < 0$ as expected.
 
-![[Divergence_and_curl_S1_vfieldH.jpeg]]
+![[S1_vfieldH.jpeg]]
 
 For $\bvec{H}$ at each point, we can clearly see the vector field rotating counterclockwise around the $z$-axis. Thus, we should expect to see non-zero curl along the $z$-axis, with positive $z$ componenet
 
