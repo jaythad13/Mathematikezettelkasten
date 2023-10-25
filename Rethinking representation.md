@@ -24,7 +24,7 @@ What does it mean to a language philosopher? They look at questions of accountab
 
 What does it mean to a civil rights scholar? They look at questions of effectiveness - how effective is representation at achieving its goals.
 
-### How do people vote? and mathematical thinking about this question
+### How do people vote? What mathematicians think over the years
 
 We need some way to take the preferences of everyone and turn them into a "representative" opinion.
 
@@ -38,7 +38,7 @@ In the 19th century, people were thinking about simpler problems like this:
 
 If each voter makes a correct decision with probability $p > 1/2$, then a decision by a large group is very likely correct. 
 
-In the mid-20th centuries, Ken Arrow proves a bunch of theorems about how if you want enough nice properties, there is no voting system that satisfies all of them.
+In the mid-20th century, Ken Arrow proves a bunch of theorems about how if you want enough nice properties, there is no voting system that satisfies all of them.
 
 In the 90s, people started noticing similarities between computational problems and problems in voting.
 
