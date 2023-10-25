@@ -42,28 +42,7 @@ We organise all notes in folders corresponding to the "project" that they are pa
 
 We tag all files with the following:
 1) The course name, for example, `math-19` or `self-study`
-2) Any fields of math that the page relates to. A list of tags and the corresponding field is kept and updated below
-
-Tag | Field
---|--
-`lin-alg` | linear algebra
-`calc` | calculus
-`anal` | analysis (real and complex)
-`diff-geo` | differential geometry
-`alg` | algebra
-`top` | topology
-`alg-top` | algebraic topology
-`cat-th` | category theory
-`alg-geo` | algebraic geometry
-`nt` | number theory
-`alg-nt` | algebraic number theory
-`set` | set theory
-`comb` | combinatorics
-`gen-func` | generating functions
-`comp-sci` | computer science
-`func-prog` | functional programming
-`complexity` | computational complexity
-`sort`| sorting algorithms
+2) Any fields of math that the page relates to. A list of tags is [[Tags|here]].
 3) For courses we also add a lecture property to YAML indicating the lecture number. For example, `lecture : 1`
 
 ### Mathematical conventions
