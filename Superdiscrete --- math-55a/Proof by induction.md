@@ -56,11 +56,15 @@ $$
 
 ##### _proof:_
 
-By induction. %% do later %%
-$$
+Note that $\sum_{k = 0}^1 F_k = F_0 + F_1 = 1 = 2 - 1 = F_3 - 1$. That is, we have the base case.
 
-$$
+If for some $n \in \bb{N}$, $\sum_{k = 0}^n F_k = F_{n + 2} - 1$, then $\sum_{k = 0}^{n + 1} F_k = F_{n + 1} + F_{n + 2} - 1 = F_{(n + 1) + 2} - 1$.
 
+Thus, by induction
+$$
+\sum_{k = 0}^n F_k = F_{n + 2} - 1.
+$$
+for all $n \in \bb{N}$.
 ##### _theorem:_ Binet's formula
 
 For $n \ge 0$
@@ -134,5 +138,7 @@ $$
 n + 1 = F_j + (n + 1 - F_j)
 $$
 is the sum of distinct Fibonacci numbers.
+
+A seemingly unrelated 
 
 %% complete the $f_n$ stuff
