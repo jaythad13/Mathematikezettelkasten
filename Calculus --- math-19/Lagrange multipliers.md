@@ -103,7 +103,7 @@ $$
 $$
 or
 $$
-g(\bvec{p}) = 0.
+\nabla g(\bvec{p}) = 0.
 $$
 
 ##### _example:_
