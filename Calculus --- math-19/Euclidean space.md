@@ -2,7 +2,6 @@
 tag:
 - math-19
 - calc
-- anal
 - lin-alg
 lecture: math-19-1
 ---

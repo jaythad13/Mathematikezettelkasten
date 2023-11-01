@@ -1,7 +1,7 @@
 ---
 tags:
 - calc
-- anal
+- math-19
 lecture: math-19-14
 ---
 
