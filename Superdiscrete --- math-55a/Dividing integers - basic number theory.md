@@ -1,0 +1,92 @@
+---
+tags:
+- nt
+- math-55a
+lecture: math-55a-2
+---
+
+
+Learn how to draw $\bb{Z}$! Draw a $7$ and then vertically invert it and draw it again.
+
+##### _theorem:_ the division algorithm
+
+For any integers $a$ and $b$, when we divide $a$ by $b$ we get a unique quotient and remainder. That is, there exist unique integers $q, r$ such that
+$$
+a = bq + r
+$$
+where
+$$
+0 \le r < b.
+$$
+
+##### _proof sketch:_
+
+$a$ has to live between some $qb$ and $(q + 1)b$.
+
+##### _definition:_ divides, $|$
+
+We say $b$ divides $a$, notated $b | a$, for integers $a, b$ if there is an integer $q$ such that $a = bq$.
+
+##### _proposition:_ division is transitive-ish
+
+If $c|b$ and $b|a$, then $c|a$.
+
+##### _proof:_
+
+Since $c|b$, $b = c q_1$ and $b|a$ gives us $a = b q_2$ which gives us $a = c q_1 q_2$, and thus $c|a$.
+
+##### _theorem:_ integer combination theorem
+
+If $d|a$ and $d|b$, then $d|ax + by$ for any $x, y \in \bb{Z}$.
+
+##### _proof:_
+
+exercise
+
+### Greatest common divisors
+
+
+##### _definition:_ greatest common divisor, $\gcd$ 
+
+%% do later %%
+
+##### _definition:_ relatively prime
+
+
+##### _notation:_ $(a, b)$
+
+Sometimes we're lazy and so we write $(a, b)$ for $\gcd(a, b)$.
+
+##### _lemma:_ small numbers divide big numbers
+
+For positive integers $d$ and $a$, if $d|a$, then $d \le a$.
+
+##### _proof:_
+
+Suppose $d|a$ for $d, a \in \bb{N}$. Then $d = qa$ for some $q \ge 1$. Thus, $d \ge 1 \times a = a$.
+
+##### _theorem:_ Bezout's theorem
+
+For integers $a, b$, $\gcd{(a, b)}$ is an integer combination of $a$ and $b$. That is, there exist $x, y \in \bb{Z}$ such that $ax + by = \gcd{(a, b)}$. Specifically, $\gcd{(a, b)}$ is the least such positive integer combination.
+
+##### _proof:_
+
+Let $g = \gcd{(a, b)}$. Let $l = a x_0 + b y_0$, the smallest positive integer combination of $a$ and $b$.
+
+Note that $g|l$ since $g|a$ and $g|b$. Thus, $g \le l$.
+
+Note that we must have $l|a$ and $l|b$ since if we didn't we would have the following contradiction. If $l$ doesn't divide $a$ (without loss of generality). Then by the division algorithm we get
+$$
+a = lq + r
+$$
+with $0 < r < l$.
+
+But then $r = a - lq = a - q(a x_0 - b y_0) = a(1 - q x_0) + b (q y_0)$ which is just an integer combination of $a$ and $b$. Then we have a positive integer combination of $a$ and $b$ less than $l$ which is a contradiction!
+
+Thus, $l$ must divide both $a$ and $b$, and then, by the definition of $\gcd$, $l \le g$.
+
+Thus, $l = g$.
+
+##### _corollary:_ relative prime numbers have unit linear combinations
+
+Integers $a$ and $b$ are relatively prime if and only if there exist $x, y \in \bb{Z}$ such that $ax + by = 1$.
