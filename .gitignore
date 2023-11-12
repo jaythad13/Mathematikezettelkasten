@@ -6,6 +6,6 @@
 *.synctex.gz
 *.fdb_latexmk
 *.fls
-*.swp
+*.sap
 *.jpeg
 *.pdf
