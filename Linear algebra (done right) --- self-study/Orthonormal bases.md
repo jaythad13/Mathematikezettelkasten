@@ -80,6 +80,8 @@ for each $j$. Since $\langle e_j, e_j \rangle = 1$ and is thus non-zero, $a_j$ m
 
 Thus, $a_1 e_1 + \cdots + a_m e_m = 0$ forces $a_1 = \cdots = a_m = 0$. that is, $e_1, \ldots, e_m$ is linearly independent.
 
+### Orthonormal bases
+
 ##### _definition:_ orthonormal basis
 
 An orthonormal basis of $V$ is a an orthonormal list of vectors in $V$ that is also a basis of $V$.
@@ -164,5 +166,3 @@ $$
 \norm{v}^2 = \abs{\langle v, e_1 \rangle}^2 + \cdots + \abs{\langle v, e_m \rangle}^2.
 $$
 for any $v \in V$.
-
-### Producing orthonormal bases
