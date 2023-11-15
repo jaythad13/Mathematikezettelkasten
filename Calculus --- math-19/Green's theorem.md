@@ -2,7 +2,9 @@
 tags:
 - calc
 - math-19
-lecture: math-19-20
+lecture: 
+- math-19-20
+- math-19-21
 ---
 
 Remember that we can [[Line integrals#_example _ estimating line integrals|estimate the value of scalar line integrals]] without really performing any computations. It's only natural to try to do the same thing with vector line integrals
@@ -64,10 +66,33 @@ In fact, $\bvec{F}$ has positive curl, corresponding exactly to this!
 
 ##### _theorem:_ Green's theorem
 
-Suppose $c$ is closed path $c: \bb{R} \to \bb{R}^2$ that bounds the region $D$ in $\bb{R}^2$ on its left. Suppose $\bvec{F}$ is a vector field $\bvec{F} : \bb{R}^2 \to \bb{R}^2$ such that $\bvec{F}(x, y) = (M(x, y), N(x, y))$ defined on all of $D$, then
+Suppose $c$ is a piecewise smooth closed path $c: \bb{R} \to \bb{R}^2$ that bounds the region $D$ in $\bb{R}^2$ on its left. Suppose $\bvec{F}$ is a $\mathcal{C}^1$ vector field $\bvec{F} : \bb{R}^2 \to \bb{R}^2$ defined on all of $D$, then
 $$
 \oint_c \bvec{F} \cdot d\bvec{s} = \iint_D \curl \bvec{F} \, dA.
 $$
+
+##### _moral proof:_
+
+If we divide $R$ into a small grid, then we can decompose the line integral into sums of line integrals around the small grids. Specifically, for any finite division of the region into $N$ subregions $R_i$ with boundary $\partial Ri$ 
+$$
+\oint_c \bvec{F} \cdot d\bvec{s} = \sum_{i = 1}^N \oint_{\partial R_i} \bvec{F} \cdot d\bvec{s}
+$$
+![[S2_Green'sTheoremMoralProof.jpeg]]
+For $\bvec{F}(x, y) = (M(x, y), N(x, y))$, we can split the line integral into parts. We can assume that for small $R_i$, $\bvec{F}$ is constant on each of the parts of $\partial R_i$.
+$$
+\oint_{\partial R_i} \bvec{F} \cdot d\bvec{s} = \bvec{F}(\bvec{p_i}) \cdot (\Delta x, 0) + \bvec{F}(\bvec{p_{\Delta y}}) \cdot (-\Delta x, 0) + \bvec{F}(\bvec{p}_i) (- \Delta y, 0) + \bvec{F}(\bvec{p_{\Delta x}}) (\Delta y, 0)
+$$
+We can rewrite this as
+$$
+M(\bvec{p_i}) \Delta x - M(\bvec{p_{\Delta y})} \Delta x + N(\bvec{p_{\Delta x}}) \Delta y - N(\bvec{p_i}) \Delta y = \Delta x \Delta y \Big ( \frac{N(\bvec{p_{\Delta x}}) - N(\bvec{p_i}) }{\Delta x} - \frac{M(\bvec{p_{\Delta y}}) - M(\bvec{p_i})}{\Delta y} \Big )
+$$
+This seems to suggest that as $n$ gets big and each $R_i$ gets small
+$$
+\oint_{\partial R_i} \bvec{F} \cdot d\bvec{s} \approx dA \Big( \pardx{N}{x} -  \pardx{M}{y} \Big) = \curl \bvec{F} \, dA.
+$$
+This works out exactly in the limit. Then, summing up all of the line integrals is just integrating the curl over the region.
+
+Note that we have to be careful about fields that aren't defined at a point inside like $(\frac{-y}{x^2 + y^2}, \frac{x}{x^2 + y^2})$ because those can have weird blowups at the undefined point.
 
 ##### _example:_ Green's theorem makes detecting circulation easier
 
