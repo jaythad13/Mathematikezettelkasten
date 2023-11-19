@@ -3,18 +3,51 @@
 
 \name{Jayden Thadani}
 \class{Linear Algebra Done Right self-study}
-\assignment{Exercises 6.B---Orthonormal Bases}
+\assignment{Exercises 6.B --- Orthonormal Bases}
 
 \begin{document}
 
 \begin{problem}[1]
 	\begin{enumerate}
 		\item
-			Suppose $\theta \in \bb{R}$. Show that $(\cos{\theta}, \sin{\theta}),$ $(-\sin{\theta}, \cos{\theta})$ and $(\cos{\theta}, \sin{\theta}),$ $(\sin{\theta}, \cos{\theta})$ are orthonormal bases of $\bb{R}^2$.
+			Suppose $\theta \in \bb{R}$. Show that $(\cos{\theta}, \sin{\theta}),$ $(-\sin{\theta}, \cos{\theta})$ and $(\cos{\theta}, \sin{\theta}),$ $(\sin{\theta}, - \cos{\theta})$ are orthonormal bases of $\bb{R}^2$.
 		\item
 			Show that each orthonormal basis of $\bb{R}^2$ is of the form given by one of the two possibilities of part (a).
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item
+			We can show that both of the lists are orthonormal lists of the length $\dim \bb{R}^2 = 2$, and thus, bases.\\\\
+			First, note that for $v = (\pm \cos{\theta}, \pm \sin{\theta})$
+			\[
+				v \cdot v = \cos^2{\theta} + \sin^2{\theta} = 1.
+			\]
+			Thus, for either of the lists $e_1, e_2$, we have that $e_j \cdot e_j = 1$ ($j \in \set{1, 2}$).\\\\
+			Further, we can see that 
+			\[
+				(\cos{\theta}, \sin{\theta}) \cdot (- \sin{\theta}, \cos{\theta}) = \cos{\theta} \sin{\theta} - \cos{\theta} \sin{\theta} = 0
+			\]
+			and
+			\[
+				(\cos{\theta}, \sin{\theta}) \cdot (\sin{\theta}, -\cos{\theta}) = -(\cos{\theta}, \sin{\theta}) \cdot (- \sin{\theta}, \cos{\theta}) = 0.
+			\]
+			That is, for either of the lists, we have $e_1 \cdot e_2 = 0$.\\\\
+			Thus, both of the lists are orthonormal. Since both of the lists are of length $2 = \dim \bb{R}^2$, they are also orthonormal bases.
+		\item
+			Suppose we have an orthonormal basis of $\bb{R}^2$, say, $e_1, e_2$.\\\\
+			Then $e_1$ must be a unit vector in $\bb{R}^2$. For angle $\theta$ from the positive $x$-axis, we can write $e_1$ as $(\cos{\theta}, \sin{\theta})$. Since we are working with the Euclidean inner product, $e_2$ must then be $e_1$ rotated $\frac{\pi}{2}$ clockwise or counterclockwise:
+			\[
+				e_2 = (\cos{\theta + \frac{\pi}{2}}, \sin{\theta + \frac{\pi}{2}}) = (-\sin{\theta}, \cos{\theta})
+			\]
+			or
+			\[
+				e_2 = (\cos{\theta - \frac{\pi}{2}}, \sin{\theta - \frac{\pi}{2}}) = (\sin{\theta}, -\cos{\theta}).
+			\]
+			This gives us any arbitrary orthonomal basis of $\bb{R}^2$ in the desired form.
+	\end{enumerate}
+\end{solution}
 
 \begin{problem}[2]
 	Suppose $e_1, \ldots, e_m$ is an orthonormal list of vectors in $V$. Let $v \in V$. Prove that
@@ -26,6 +59,57 @@
 
 \begin{problem}[3]
 	Suppose $T \in \curly{L}(\bb{R}^3)$ has an upper-triangular matrix with respect to the basis $(1, 0, 0), (1, 1, 1), (1, 1, 2)$. Find an orthonormal basis of $\bb{R}^3$ (use the usual inner product on $\bb{R}^3$) with respect to which $T$ has an upper-triangular matrix.
+\end{problem}
+
+\begin{problem}[4]
+	Suppose $n$ is a positive integer. Prove that
+	\[
+		\frac{1}{\sqrt{2 \pi}}, \frac{\cos{x}}{\sqrt{\pi}}, \frac{\cos{2x}}{\sqrt{\pi}}, \cdots, \frac{\cos{nx}}{\sqrt{\pi}}, \frac{\sin{x}}{\sqrt{\pi}}, \frac{\sin{2x}}{\sqrt{\pi}}, \cdots, \frac{\sin{nx}}{\sqrt{\pi}}
+	\]
+	is an orthonormal list of vectors in $\curly{C}[-\pi, \pi]$, the vector space of continuous functions on $[-\pi, \pi]$ with inner product
+	\[
+		\linn f, g \rinn =  \int_{-\pi}^{\pi} f(x) g(x) \, dx.
+	\]
+\end{problem}
+
+\begin{problem}[5]
+	On $\curly{P}_2(\bb{R})$, consider the inner product given by
+	\[
+		\linn p, q \rinn \int_0^1 p(x) q(x) \, dx.
+	\]
+	Apply the Gram-Schmidt procedure to the basis $1, x, x^2$ to produce an orthonormal basis of $\curly{P}_2(\bb{R})$
+\end{problem}
+
+\begin{problem}[6]
+	Find an othonormal bass of $\curly{P}_2(\bb{R})$ (with inner product as in exercise 5) such that the differentiation operator (the operator that takes $p$ to $p'$) has an upper-triangular matrix with respect to this basis.
+\end{problem}
+
+\begin{problem}[7]
+	Find a polynomial $q \in \curly{P}_2(\bb{R})$ such that
+	\[
+		p(\frac{1}{2}) = \int_0^1 p(x) q(x) \, dx
+	\]
+	for every $p \in \curly{P}_2(\bb{R})$.
+\end{problem}
+
+\begin{problem}[8]
+	Find a polynomial $q$ such that
+	\[
+		\int_0^1 p(x) \cos{\pi x} \, dx = \int_0^1 p(x) q(x) \, dx
+	\]
+	for every $p \in \curly{P}_2(\bb{R})$.
+\end{problem}
+
+\begin{problem}[9]
+	What happens if the Gram-Schmidt procedure is applied to a list of vectors that is not linearly independent?
+\end{problem}
+
+\begin{problem}[10]
+	Suppose $V$ is a real inner product space and $v_1 \ldots v_m$ is a linearly independent list of vectors in $V$. Prove that there exist exactly $2^m$ orthonormal lists $e_1, \ldots, e_m$ of vectors in $V$ such that
+	\[
+		\vspan (v_1, \ldots, v_j) = \vspan (e_1, \ldots, e_j)
+	\]
+	for all $j \in \bb{N}_m$
 \end{problem}
 
 \end{document}
