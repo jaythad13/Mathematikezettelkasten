@@ -57,9 +57,74 @@
 	if and only if $v \in \vspan{(e_1, \ldots, e_m)}$.
 \end{problem}
 
+\begin{solution}
+	Suppose $v \in \vspan(e_1, \ldots, e_m)$. Then since $e_1, \ldots, e_m$ is an orthonormal basis of the vector space $\vspan{(e_1, \ldots, e_m)}$, we can write $v$ as
+	\[
+		v = \linn v, e_1 \rinn e_1 + \cdots + \linn v, e_m \rinn.
+	\]
+	This then naturally gives us
+	\[
+		\norm{v}^2 = \abs{\linn v, e_1 \rinn}^2 + \cdots + \abs{\linn v, e_m \rinn}^2.
+	\]\\
+	Suppose $v \notin \vspan{(e_1, \ldots, e_m)}$.\\\\
+	Consider $u_{m + 1} = v - (\linn v, e_1 \rinn e_1 + \cdots + \linn v, e_m \rinn e_m) \neq 0$ and $e_{m + 1} = \frac{u_{m + 1}}{\norm{u_{m + 1}}}$. That is, expand the basis to include $v_m$ in its span. By the Gram-Schmidt procedure, $e_1, \ldots, e_{m + 1}$ is now an orthonormal basis such that $v \in \vspan (e_1, \ldots, e_{m + 1})$.\\\\
+	This allows us to write 
+	\[
+		v = \linn v, e_1 \rinn e_1 + \cdots + \linn v, e_m \rinn e_m + \linn v, e_{m + 1} \rinn e_{m + 1}
+	\]
+	where $\linn v, e_{m + 1} \rinn \neq 0$ by our supposition. This gives us 
+	\[
+		\norm{v}^2 = \abs{\linn v, e_1 \rinn}^2 + \cdots + \abs{\linn v, e_m \rinn} + \abs{\linn v, e_{m + 1} \rinn}^2
+	\]
+	and from $\linn v, e_{m + 1} \rinn \neq 0$ it follows that
+	\[
+		\norm{v}^2 > \abs{\linn v, e_1 \rinn}^2 + \cdots + \abs{\linn v, e_m \rinn}^2
+	\]
+	and thus,
+	\[
+		\norm{v}^2 \neq \abs{\linn v, e_1 \rinn}^2 + \cdots + \abs{\linn v, e_m \rinn}^2.
+	\]
+\end{solution}
+
 \begin{problem}[3]
 	Suppose $T \in \curly{L}(\bb{R}^3)$ has an upper-triangular matrix with respect to the basis $(1, 0, 0), (1, 1, 1), (1, 1, 2)$. Find an orthonormal basis of $\bb{R}^3$ (use the usual inner product on $\bb{R}^3$) with respect to which $T$ has an upper-triangular matrix.
 \end{problem}
+
+\begin{solution}
+	Since the Gram-Schmidt process preserves upper-triangular matrices, we can just apply it to the given basis to get an orthonormal basis with respect to which $T$ has an upper-triangular matrix. Let the original basis be $v_1, v_2, v_3$ and the orthonormal basis be $e_1, e_2, e_3$. Let the non-normalised versions of the orthonormal basis be $u_1, u_2, u_3$.\\\\
+	The Gram-Schmidt process gives us the following.
+	\[
+		e_1 = \frac{v_1}{\norm{v_1}} = \frac{(1, 0, 0)}{1} = (1, 0, 0).
+	\]
+	This allows us to compute $e_2$.
+	\[
+		\begin{split}
+			u_2 & = v_2 - (v_2 \cdot e_1) e_1 \\
+			    & = (1, 1, 1) - ((1, 1, 1) \cdot (1, 0, 0)) (1, 0, 0) \\
+			    & = (1, 1, 1) - 1(1, 0, 0) \\ 
+			    & = (0, 1, 1).
+		\end{split}
+	\]
+	\[
+		e_2 = \frac{u_2}{\norm{u_2}} = \frac{(0, 1, 1)}{\sqrt{2}} = (0, \frac{1}{\sqrt 2}, \frac{1}{\sqrt 2}).
+	\]
+	And then $e_3$.
+	\[
+		\begin{split}
+			u_3 & = v_3 - (v_3 \cdot e_1)e_1 - (v_3 \cdot e_2)e_2 \\ 
+			    & = (1, 1, 2) - ((1, 1, 2) \cdot (1, 0, 0))(1, 0, 0) - \frac{((1, 1, 2) \cdot (0, 1, 1))(0, 1, 1)}{\sqrt{2} \sqrt{2}} \\
+			    & = (1, 1, 2) - 1(1, 0, 0) - \frac{3(0, 1, 1)}{2} \\
+			    & = (0, -\frac{1}{2}, \frac{1}{2}).
+		\end{split}
+	\]
+	\[
+		e_3 = \frac{u_3}{\norm{u_3}} = \frac{(0, -\frac{1}{2}, \frac{1}{2})}{1 / \sqrt{2}} = (0, -\frac{1}{\sqrt 2}, \frac{1}{\sqrt 2}).
+	\]\\
+	Thus, $T$ has an upper-triangular matrix with respect to the orthonormal basis
+	\[
+		(1, 0, 0), (0, \frac{1}{\sqrt 2}, \frac{1}{\sqrt 2}), (0, -\frac{1}{\sqrt 2}, \frac{1}{\sqrt 2}).
+	\]
+\end{solution}
 
 \begin{problem}[4]
 	Suppose $n$ is a positive integer. Prove that
@@ -71,6 +136,123 @@
 		\linn f, g \rinn =  \int_{-\pi}^{\pi} f(x) g(x) \, dx.
 	\]
 \end{problem}
+
+\begin{solution}
+	We will show that with the inner product in the question
+	\[
+		\linn \frac{\cos{nx}}{\sqrt \pi}, \frac{\cos{nx}}{\sqrt \pi} \rinn = \linn \frac{\sin{nx}}{\sqrt \pi}, \frac{\sin{nx}}{\sqrt{\pi}} \rinn = \linn \frac{1}{\sqrt{2 \pi}}, \frac{1}{\sqrt{2 \pi}} \rinn = 1
+	\]
+	and
+	\[
+		\linn \frac{\cos{mx}}{\sqrt{\pi}} \frac{\cos{nx}}{\sqrt \pi} \rinn = \linn \frac{\sin{mx}}{\sqrt \pi}, \frac{\sin{nx}}{\sqrt \pi} \rinn = \linn \frac{1}{\sqrt{2 \pi}}, \sin{nx} \rinn = \linn \frac{1}{\sqrt{2 \pi}}, \cos{nx} \rinn = 0
+	\]
+	for $m \neq n$. This will give us that it is an orthonormal list.
+	Finally,
+	\[
+		\linn \frac{\cos{mx}}{\sqrt{\pi}}, \frac{\sin{nx}}{\sqrt \pi} \rinn = 0
+	\]
+	regardless of whether $m = n$.\\\\
+	For the first, we have the following calculations.
+	\[
+		\begin{split}
+			\linn \frac{1}{\sqrt{2 \pi}}, \frac{1}{\sqrt{2 \pi}} \rinn & =\int_{-\pi}^\pi \Big ( \frac{1}{\sqrt{2 \pi}} \Big )^2 \, dx \\
+										   & = \frac{\pi - (- \pi)}{2 \pi} \\ 
+										   & = 1.
+		\end{split}
+	\]\\
+	\[
+		\begin{split}
+			\linn \frac{\cos{nx}}{\sqrt \pi}, \frac{\cos{nx}}{\sqrt \pi} \rinn & = \frac{1}{\pi}\int_{-\pi}^\pi \cos^2{nx} \, dx \\
+						       & = \frac{1}{2 \pi} \int_{-\pi}^\pi 1 + \cos{2nx} \, dx \\ 
+						       & = \frac{1}{2 \pi} \Big ( x + \frac{\sin{2nx}}{2n} \Big ) \Big |_{-\pi}^{\pi} \\ 
+						       & = \frac{1}{2 \pi} ((\pi + 0) - (-\pi + 0) ) \\
+						       & = 1.
+		\end{split}
+	\]\\
+	\[
+		\begin{split}
+			\linn \frac{\sin{nx}}{\sqrt \pi}, \frac{\sin{nx}}{\sqrt \pi} \rinn & = \frac{1}{\pi} \int_{-\pi}^{\pi} \sin^2{nx} \, dx \\
+											   & = \frac{1}{2 \pi} \int_{- \pi}^\pi 1 - \cos{2nx} \, dx \\
+											   & = \frac{1}{2 \pi} \Big ( x - \frac{\sin{2nx}}{2n} \Big ) \Big |_{-\pi}^\pi \\
+											   & = \frac{1}{2 \pi} ((\pi - 0) - (-\pi - 0)) \\
+											   & = 1.
+		\end{split}
+	\]\\
+	For the second we have the following.
+	\[
+		\begin{split}
+			\linn \frac{1}{\sqrt{2 \pi}}, \frac{\cos{nx}}{\sqrt{\pi}} \rinn  & = \frac{1}{\pi \sqrt 2}\int_{-\pi}^\pi \cos{nx} \, dx \\
+											 & = \frac{1}{\pi \sqrt 2} \Big ( \frac{\sin{nx}}{n} \Big ) \Big |_{-\pi}^\pi \\
+											 & = \frac{1}{\pi \sqrt 2} (0 - 0) \\
+											 & = 0.
+		\end{split}
+	\]\\
+	\[
+		\begin{split}
+			\linn \frac{1}{\sqrt{2 \pi}}, \frac{\sin{nx}}{\sqrt \pi} \rinn & = \frac{1}{\pi \sqrt 2} \int_{-\pi}^\pi \sin{nx} \, dx \\
+										       & = \frac{1}{\pi \sqrt 2} \Big ( \frac{\cos{nx}}{n} \Big ) \Big |_{- \pi}^\pi \\
+										       & = \begin{cases}
+											       \frac{1}{\pi \sqrt 2} (\frac{1}{n} - \frac{1}{n}) & \text{for even } n \\
+											       \frac{1}{\pi \sqrt 2} (\frac{-1}{n} - \frac{(-1)}{n}) & \text{for odd } n
+										       \end{cases} \\
+										       & = 0.
+		\end{split}
+	\]\\
+	\[
+		\linn \frac{\cos{mx}}{\sqrt \pi}, \frac{\cos{nx}}{\sqrt \pi} \rinn = \frac{1}{\pi} \int_{-\pi}^\pi \cos{mx} \cos{nx} \, dx.
+	\]
+	To compute the integral, we obtain an antiderivative by integrating by parts.
+	\[
+		\begin{split}
+			\int \cos{mx} \cos{nx} \, dx & = \cos{mx} \int \cos{nx} \, dx - \int \Big ( \ddx{(\cos{mx})}{x} \int \cos{nx} \, dx \Big ) \, dx \\
+						     & = \frac{\cos{mx} \sin{nx}}{n} - \int \frac{- m \sin{mx} \sin{nx}}{n} \, dx \\
+						     & = \frac{\cos{mx \sin{nx}}}{n} + \frac{m}{n} \Big ( \sin{mx} \int \sin{nx} \, dx - \int \Big ( \ddx{(\sin{mx})}{x} \int \sin{nx} \, dx \Big ) \, dx \Big ) \\
+						     & = \frac{\cos{mx} \sin{nx}}{n} + \frac{m}{n} \Big ( \frac{- \cos{nx} \sin{mx}}{n} - \int \frac{-m \cos{mx} \cos{nx}}{n} \, dx \Big ) \\
+						     & = \frac{\cos{mx}\sin{nx}}{n} - \frac{m \cos{nx} \sin{mx}}{n^2} + \frac{m^2}{n^2} \int \cos{mx} \cos{nx} \, dx.
+		\end{split}
+	\]
+	If we let $\curly I = \int \cos{mx} \cos{nx} \, dx$, then this gives us
+	\[
+		(1 - \frac{m^2}{n^2}) \curly I = \frac{n \cos{mx} \sin{nx} - m \cos{nx} \sin{mx}}{n^2}
+	\]
+	and since $m \neq n$, (and $m$ and $n$ are positive) $1 - \frac{m^2}{n^2} \neq 0$ and thus,
+	\[
+		\curly I = \frac{n \cos{mx} \sin{nx} - m \cos{nx} \sin{mx}}{n^2 - m^2}.
+	\]
+	Thus,
+	\[
+		\begin{split}
+			\linn \frac{\cos{mx}}{\sqrt \pi}, \frac{\cos{nx}}{\sqrt \pi} \rinn & = \frac{1}{\pi} \Big ( \frac{n \cos{mx} \sin{nx} - m \cos{nx} \sin{mx}}{n^2 - m^2} \Big ) \Big |_{-\pi}^\pi \\
+											   & = \frac{0 - 0}{\pi (n^2 - m^2)} \\
+											   & = 0.
+		\end{split}
+	\]\\
+	We could also have done the previous integral more simply by using a trigonometric identity, which we will now do for the case with $\sin$. Specifically, we will use the fact that $\sin{A} \sin{B} = \frac{\cos{(A - B)} - \cos{(A + B)}}{2}$
+	\[
+		\begin{split}
+			\linn \frac{\sin{mx}}{\sqrt \pi}, \frac{\sin{nx}}{\sqrt \pi} \rinn & = \frac{1}{\pi} \int_{-\pi}^\pi \sin{mx} \sin{nx} \, dx \\
+											   & = \frac{1}{2 \pi} \int_{-\pi}^\pi \cos{((m - n)x)} - \cos{((m + n)x)} \, dx \\
+											   & = \frac{1}{2 \pi} \Big ( \frac{\sin{((m - n)x)}}{m - n} - \frac{\sin{((m + n)x)}}{m + n} \Big ) \Big |_{-\pi}^\pi \\
+											   & = \frac{1}{2 \pi} (0 - 0) \\
+											   & = 0.
+		\end{split}
+	\]\\
+	Finally, for the third we have
+	\[
+		\begin{split}
+			\linn \frac{\cos{mx}}{\sqrt \pi}, \frac{\sin{mx}}{\sqrt \pi} \rinn & = \frac{1}{\pi} \int_{-\pi}^\pi \cos{mx} \sin{nx} \, dx \\
+											   & = \frac{1}{2 \pi} \int_{-\pi}^\pi \sin{((m + n)x)} - \sin{((m - n)x)} \, dx \\
+											   & = \frac{1}{2 \pi} ( \cos{((m - n)x)} - \cos{((m + n)x)} ) \Big |_{-\pi}^\pi.
+		\end{split}
+	\]
+	Since $m + n \equiv m - n \mod 2$, we have $\cos{((m + n)\pi)} = \cos{((m - n)\pi)}$. Then
+	\[
+		\begin{split}
+			\frac{1}{2 \pi} ( \cos{((m - n)x)} - \cos{((m + n)x)} ) \Big |_{-\pi}^\pi & = \frac{1}{2 \pi}(\cos{((m + n) \pi)}) - \cos{((m + n) \pi)}) \\
+												  & = 0.
+		\end{split}
+	\]
+\end{solution}
 
 \begin{problem}[5]
 	On $\curly{P}_2(\bb{R})$, consider the inner product given by
@@ -113,5 +295,3 @@
 \end{problem}
 
 \end{document}
-
-
