@@ -257,10 +257,35 @@
 \begin{problem}[5]
 	On $\curly{P}_2(\bb{R})$, consider the inner product given by
 	\[
-		\linn p, q \rinn \int_0^1 p(x) q(x) \, dx.
+		\linn p, q \rinn = \int_0^1 p(x) q(x) \, dx.
 	\]
 	Apply the Gram-Schmidt procedure to the basis $1, x, x^2$ to produce an orthonormal basis of $\curly{P}_2(\bb{R})$
 \end{problem}
+
+\begin{solution}
+	Let $v_1, v_2, v_3$ denote the basis $1, x, x^2$, let $e_1, e_2, e_3$ denote the orthonormal basis obtained by applying the Gram-Schmidt procedure to it, and let $u_1, u_2, u_3$ denote the non-normalised version of $e_1, e_2, e_3$. Then
+	\[
+		e_1 = \frac{v_1}{\norm{v_1}} = \frac{1}{\int_0^1 \, dx} = 1
+	\]
+	This allows us to get $e_2$ as follows.
+	\[
+		\begin{split}
+			u_2 & = v_2 - \linn v_2, e_1 \rinn e_1 \\
+			    & = x - \int_0^1 x \, dx \\
+			    & = x - \Big ( \frac{x^2}{2} \Big ) \Big |_0^1 \\
+			    & = x - \frac{1}{2}.
+		\end{split}
+	\]
+	\[
+		\begin{split}
+			e_2 & = \frac{u_2}{\norm{u_2}} \\
+			    & = \frac{x - \frac{1}{2}}{\sqrt{\int_0^1 x^2 - x + \frac{1}{4} \, dx}} \\
+			    & = \frac{x - \frac{1}{2}}{\sqrt{ \Big ( \frac{x^3}{3} - \frac{x^2}{2} + \frac{x}{4} \Big ) \Big |_0^1}} \\
+			    & = \frac{x - \frac{1}{2}}{\sqrt{\frac{1}{12}}} \\
+			    & = \sqrt{12} x - \sqrt 3
+		\end{split}
+	\]
+\end{solution}
 
 \begin{problem}[6]
 	Find an othonormal bass of $\curly{P}_2(\bb{R})$ (with inner product as in exercise 5) such that the differentiation operator (the operator that takes $p$ to $p'$) has an upper-triangular matrix with respect to this basis.
