@@ -278,11 +278,21 @@
 	\]
 	\[
 		\begin{split}
-			e_2 & = \frac{u_2}{\norm{u_2}} \\
-			    & = \frac{x - \frac{1}{2}}{\sqrt{\int_0^1 x^2 - x + \frac{1}{4} \, dx}} \\
-			    & = \frac{x - \frac{1}{2}}{\sqrt{ \Big ( \frac{x^3}{3} - \frac{x^2}{2} + \frac{x}{4} \Big ) \Big |_0^1}} \\
-			    & = \frac{x - \frac{1}{2}}{\sqrt{\frac{1}{12}}} \\
-			    & = \sqrt{12} x - \sqrt 3
+			\norm{u_2} & = \sqrt{\int_0^1 x^2 - x + \frac{1}{4} \, dx} \\
+				   & = \sqrt{\Big ( \frac{x^3}{3} - \frac{x^2}{2} + \frac{x}{4} \Big ) \Big |_0^1} \\
+				   & = \sqrt{\frac{1}{12}}
+		\end{split}
+	\]
+	\[
+		e_2 = \frac{u_2}{\norm{u_2}} \\ = \frac{x - \frac{1}{2}}{\sqrt{\frac{1}{12}}} = \sqrt{12} x - \sqrt 3.
+	\]
+	Finally, we can get $e_3$ as well.
+	\[
+		\begin{split}
+			u_3 & = v_3 - \linn v_3, e_1 \rinn e_1 - \linn v_3, e_2 \rinn e_2 \\
+			    & = x^2 - \int_0^1 x^2 \, dx - (x - \frac{1}{2}) \int_0^1 x^2 (x - \frac{1}{2}) \, dx \\
+			    & = x^2 - \Big ( \frac{x^3}{3} \Big ) \Big |_0^1 - (x - \frac{1}{2}) \Big ( \frac{x^4}{4} - \frac{x^3}{6} \Big ) \Big |_0^1 \\
+			    & = x^2 - \frac{x}{12} - \frac{7}{24}.
 		\end{split}
 	\]
 \end{solution}
