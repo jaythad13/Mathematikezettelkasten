@@ -32,7 +32,7 @@ A metric space is a set $X$ (whose elements we call points) with a function, cal
 4) Given any metric space $X$ with metric $d$, any subset $E \subset X$ with the same metric $d$ is a metric space.
 5) The unit circle $S^1$ with the distance between any two points given by the minimum arc length between them is a metric space.
 6) The discrete space is, for any set $X$ the metric space obtained by applying the metric $$ d(p, q) = \begin{cases} 1 & \text{if } p \neq q \\  0 & \text{if } p = q.\end{cases}$$
-7) The set vertices, $S$ of any [[Simple connected graphs|simple connected graph]] $G$ can be a metric space with the metric as the graph theoretic distance between two vertices. We get the discrete space on $S$ if $G$ is the complete graph on $S$.
+7) The set vertices, $S$ of any [[Basic graph theory#_definition _ connected|simple connected graph]] $G$ can be a metric space with the metric as the graph theoretic distance between two vertices. We get the discrete space on $S$ if $G$ is the complete graph on $S$.
 8) Any [[Normed spaces|normed vector space]] is a metric space with the metric $d$ given by $d(u, v) = \Vert u - v \Vert$.
 
 ### Special subsets of metric spaces
@@ -49,7 +49,7 @@ The $r$-neighbourhood of some point $p$ is the set of all points within distance
 $$
 N_r(p) = \{ q \in X : d(p, q) < r\}.
 $$
-We say that the $r$-neighbourhood $N_r(p)$ has radius $r$. When we don't need to make explicit the difference between metric topology and topology, we just abbreviate $r$-nieghbourhood to neighbourhood
+We say that the $r$-neighbourhood $N_r(p)$ has radius $r$. When we don't need to make explicit the difference between metric topology and topology, we just abbreviate $r$-neighbourhood to neighbourhood
 
 Recall the idea of open and closed intervals of $\bb{R}$:
 
@@ -199,4 +199,3 @@ $\bb{R}^2$ itself | Yes. Every limit point of $\bb{R}^2$ in $\bb{R}^2$ is by def
 The segment $(a, b)$, or more specifically, $\set{(x, 0) : x \in (a, b)}$ | No, $a$ and $b$ are excluded limit points. | No, in $\bb{R}^2$, any neighbourhood of a point in $(a, b)$ extends outside of the segment in the second dimension. | No, we already showed it is not closed. | Yes, by a distance $\vert a - b \vert$ from $a$ or $b$.
 
 Note that if we consider $(a, b)$ in $\bb{R}$ instead of $\bb{R}^2$, neighbourhoods don't stretch out into any second dimension and for every point, there is a neighourhood contained inside the segment, making it an open set.
-
