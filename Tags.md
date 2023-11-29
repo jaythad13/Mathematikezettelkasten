@@ -22,4 +22,6 @@ Tag | Field
 `oop`| object oriented programming
 `dsa` | data structures and algorithms
 `alg-comb` | algebraic combinatorics
-
+`crypt` | cryptography
+`graph`| graph theory
+`diff-eq` | differential equations
