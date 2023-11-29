@@ -45,3 +45,5 @@ $$
 3) We get $d\bvec{S} = T_u \times T_v$ and thus, $dS = \norm{T_u \times T_v}$.
 
 For special surfaces (with spherical, cylindrical symmetry), these are already computed for us.
+
+%% add the geometric intuition from Prof Su's lecture 23 notes for our class. Remember to think about how x, y, z are dependent on the radius of the sphere/cylinder as well.%%
