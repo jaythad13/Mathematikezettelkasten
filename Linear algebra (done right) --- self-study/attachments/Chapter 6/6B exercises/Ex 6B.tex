@@ -284,22 +284,54 @@
 		\end{split}
 	\]
 	\[
-		e_2 = \frac{u_2}{\norm{u_2}} \\ = \frac{x - \frac{1}{2}}{\sqrt{\frac{1}{12}}} = \sqrt{12} x - \sqrt 3.
+		e_2 = \frac{u_2}{\norm{u_2}} \\ = \frac{x - \frac{1}{2}}{\sqrt{\frac{1}{12}}} = 2 \sqrt{3} \Big ( x - \frac{1}{2} \Big ).
 	\]
 	Finally, we can get $e_3$ as well.
 	\[
 		\begin{split}
 			u_3 & = v_3 - \linn v_3, e_1 \rinn e_1 - \linn v_3, e_2 \rinn e_2 \\
-			    & = x^2 - \int_0^1 x^2 \, dx - (x - \frac{1}{2}) \int_0^1 x^2 (x - \frac{1}{2}) \, dx \\
-			    & = x^2 - \Big ( \frac{x^3}{3} \Big ) \Big |_0^1 - (x - \frac{1}{2}) \Big ( \frac{x^4}{4} - \frac{x^3}{6} \Big ) \Big |_0^1 \\
-			    & = x^2 - \frac{x}{12} - \frac{7}{24}.
+			    & = x^2 - \int_0^1 x^2 \, dx - \sqrt{12} \, (x - \frac{1}{2}) \int_0^1 x^2 \sqrt{12} (x - \frac{1}{2}) \, dx \\
+			    & = x^2 - \Big ( \frac{x^3}{3} \Big ) \Big |_0^1 - 12 \, (x - \frac{1}{2}) \Big ( \frac{x^4}{4} - \frac{x^3}{6} \Big ) \Big |_0^1 \\
+			    & = x^2 - \frac{1}{3} - \Big ( x - \frac{1}{2} \Big ) \\
+			    & = x^2 - x + \frac{1}{6}.
 		\end{split}
+	\]
+	\[
+		\begin{split}
+			\norm{u_3} & = \sqrt{\int_0^1 x^4 - 2x^3 - \frac{4}{3} x^2 - \frac{1}{3} x + \frac{1}{36} \, dx} \\
+				   & = \sqrt{\Big ( \frac{x^5}{5} - \frac{x^4}{2} - \frac{4 x^3}{9} - \frac{x^2}{6} + \frac{x}{36} \Big ) \Big |_0^1} \\
+				   & = \sqrt{\frac{1}{180}}
+		\end{split}
+	\]
+	\[
+		e_3 = \frac{u_3}{\norm{u_3}} = 6 \sqrt{5} \Big (x^2 - x + \frac{1}{6} \Big )
 	\]
 \end{solution}
 
 \begin{problem}[6]
-	Find an othonormal bass of $\curly{P}_2(\bb{R})$ (with inner product as in exercise 5) such that the differentiation operator (the operator that takes $p$ to $p'$) has an upper-triangular matrix with respect to this basis.
+	Find an othonormal basis of $\curly{P}_2(\bb{R})$ (with inner product as in exercise 5) such that the differentiation operator (the operator that takes $p$ to $p'$) has an upper-triangular matrix with respect to this basis.
 \end{problem}
+
+\begin{solution}
+	The differentiation operator $D$ with $D p = p'$ has the upper-triangular matrix
+	\[
+		\begin{bmatrix}
+			0 & 1 & 0 \\
+			0 & 0 & 2 \\
+			0 & 0 & 0
+		\end{bmatrix}
+	\]
+	with respect to the basis $1, x, x^2$. \\\\
+	Since the Gram-Schmidt preserves the spans of sub-lists of bases, it also preserves upper-triangular matrices. Thus, the basis obtained in problem 5, by applying the Gram-Schmidt process, gives us an upper triangular matrix with respect to it. Specifically, $D$ has the upper-triangular matrix
+	\[
+		\begin{bmatrix}
+			0 & 2 \sqrt 3 & 0 \\
+			0 & 0 & 2 \sqrt 3 \sqrt 5 \\
+			0 & 0 & 0
+		\end{bmatrix}
+	\]
+	with respect to the orthonormal basis $1, 2 \sqrt 3 \Big ( x - \frac{1}{2} \Big ), 6 \sqrt 5 \Big ( x^2 - x + \frac{1}{6} \Big )$.
+\end{solution}
 
 \begin{problem}[7]
 	Find a polynomial $q \in \curly{P}_2(\bb{R})$ such that
@@ -308,6 +340,23 @@
 	\]
 	for every $p \in \curly{P}_2(\bb{R})$.
 \end{problem}
+
+\begin{solution}
+	Consider the inner-product on $\mathcal{P}(\bb{R}^2)$ from problems 5 and 6 and the linear functional $\varphi \in \mathcal{P}(\bb{R}^2)^\vee$ given by $\varphi(p) = p(\frac{1}{2})$. Then we can rephrase this problem as finding some $q$ such that
+	\[
+		\linn p, q \rinn = \varphi(p).
+	\]\\
+	Then we know from the Riesz representation theorem that, given an orthonormal basis $e_1, e_2, e_3$, (which we computed in problem 5) we have
+	\[
+		\begin{split}
+			q & = \varphi(e_1) e_1 + \overline{\varphi(e_1)} e_1 + \overline{\varphi(e_2)} e_2 + \overline{\varphi(e_3)} e_3 \\
+			  & = e_1 + 2 \sqrt 3 \, \Big ( \frac{1}{2} - \frac{1}{2} \Big ) e_2 + 6 \sqrt 5 \, \Big ( \frac{1}{4} - \frac{1}{2} + \frac{1} {6}  \Big ) e_3 \\
+			  & = 1 - \frac{6 \sqrt 5}{12} \, 6 \sqrt 5 \, \Big ( x^2 - x + \frac{1}{6} \Big ) \\
+			  & = -15 (x^2 - x) - \frac{3}{2}.
+		\end{split}
+	\]
+	
+\end{solution}
 
 \begin{problem}[8]
 	Find a polynomial $q$ such that

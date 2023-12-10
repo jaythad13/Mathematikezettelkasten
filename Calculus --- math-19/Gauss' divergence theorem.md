@@ -18,13 +18,13 @@ Specifically, Gauss' divergence theorem formalises this by saying
 
 ##### _theorem:_ Gauss' divergence theorem
 
-For a $\mathcal{C}^1$ vector field $\bvec{F}$ on $\bb{R}^2$, and a region $R$ with boundary, a closed curve, $\partial R$ we have
+For a $\mathcal{C}^1$ vector field $\bvec{F}$ on $\bb{R}^2$, and a region $R$ with boundary, a closed curve, $\partial R$, we have
 $$
 \oint_{\partial R} \bvec{F} \cdot \bvec{n} \, ds = \iint_R \div \bvec{F} \, dA
 $$
-where $\bvec{n} \, ds$ is just the normal to $d\bvec{s}$.
+where $\bvec{n} \, ds$ is just the normal to the tangent to $\partial R$, oriented outwards.
 
-For a $\mathcal{C}^1$ vector field $\bvec{F}$ on $\bb{R}^3$, and a region $W$ with boundary, a closed surface, $\partial W$ we have
+For a $\mathcal{C}^1$ vector field $\bvec{F}$ on $\bb{R}^3$, and a region $W$ with boundary, a closed surface, $\partial W$, oriented outwards, we have
 $$
 \iint_{\partial W} \bvec{F} \cdot d\bvec{S} = \iiint_W \bvec{F} \, dV.
 $$
@@ -45,7 +45,21 @@ $$
 \end{split}
 $$
 
-The proof in three dimensions is more complicated.
+The proof in three dimensions is more complicated, but follows from a similar idea to Stokes' theorem—divide the inside of $W$ into a bunch of cubes and note that the sum of the flux through any adjacent cubes is just the flux through their union. As these cubes get smaller and smaller, measuring the flux through a cube looks a lot like measuring the divergence at a point on the cube.
+
+Specifically, for $\bvec{F} = (F_1, F_2, F_3)$, the flux through one of the faces can be written as
+$$
+(F_1(x + \Delta x, y, z) - F_1(x, y, z)) \cdot (\Delta y \Delta z, 0, 0) = \frac{F_1(x + \Delta x, y, z) - F_1(x, y, z)}{\Delta x} \Delta x \Delta y \Delta z
+$$
+which looks a lot like
+$$
+\pardx{F_1}{x} \, dV.
+$$
+Adding up the flux out of all of the surfaces of the box gives us something that looks like
+$$
+\Big ( \pardx{F_1}{x} + \pardx{F_2}{y} + \pardx{F_3}{z} \Big ) \, dV = \div \bvec{F} \, dV
+$$
+and in fact, turns out to be this in the limit.
 
 ##### _example:_ Gauss' theorem in action
 
