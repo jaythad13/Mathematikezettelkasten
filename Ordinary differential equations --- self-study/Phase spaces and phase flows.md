@@ -4,20 +4,16 @@ tags:
 - diff-eq
 ---
 
-Ordinary differential equations are a mathematical tool to study particular types of processes. Specifically, ordinary differential equations allow to study some sort of _evolution_ of a system as long as that evolution is deterministic, finite-dimensional, and differentiable, using mathematical objects like phase spaces and phase flows.
+Instead of first defining phase spaces and phase flows mathematically, there is a good example of how they are very useful that doesn't require any knowledge of differential equations.
 
-### Some unrigorous definitions
+##### _problem:_ the space between roads
 
-Because we're studying exactly those processes, we need to have at least an intuitive idea of what it means for a process to be deterministic, finite-dimensional, and differentiable. These definitions have to be sort of hand-wavy because really, we _hard-code_ in determinism, finite-dimensionality, et c. into the mathematical objects we study, and these are instead properties of less well-defined things like processes.
+Two non-intersecting roads lead connect city A to city B. If two cars connected by a rope of length $2l$ can travel along the different roads from $A$ to $B$ without the rope ever snapping, can do circular wagons of radius $l$ (whose centres travel along the roads) travel in opposite directions without ever colliding?
 
-##### _definition:_ deterministic
+##### _solution:_
 
-A process is deterministic if its entire future course and its entire past are uniquely determined by its state at any "present" point in time.
+Consider the phase space that assigns to each vehicle the fraction of its distance from city A (relative to the total length of the road). This is just $M = [0, 1] \times [0, 1]$.
 
-##### _definition:_ phase space
+Specifically, if car $c_1$ moves along road $1$, car $c_2$ moves along road $2$, then we can represent the way that $c_1$ and $c_2$ move (specifically to avoid breaking the rope) by a continuous curve in $M$ from $(0, 0)$ to $(1, 1)$ (since they travel smoothly, start in city A, and end in city B). Note that at any point on their path, the distance between the cars (or any two particles on the road) will be less than $2l$.
 
-The set of all possible states of a process is called its phase space.
-
-##### _example:_ deterministic processes and their phase spaces
-
-Classical mechanical models are a good example of deterministic processes. In any classical mechanical system (with no external force acting on it), we can predict the future motion of all its particles just using conservation of momentum and conservation of energy, and we can "wind the clock back" and do the same thing for the past, as long as we have the position and velocity (or more typically, momentum) of each particle. Thus, its phase space is just the set of all possible positions and momentums for each particle — perhaps $(\bb{R}^n \times \bb{R}^n)^m$ for $m$ particles in $n$-dimensional space.
+Similarly, for the wagons, we can describe the way they move by a smooth curve from $(1, 0)$ to $(0, 1)$ (or the other way round, without loss of generality). But this curve must intersect the curve for $c_1$ and $c_2$. Thus, at some point the distance between the centres of the wagons must be less than $2l$, and at that point, they collide.
