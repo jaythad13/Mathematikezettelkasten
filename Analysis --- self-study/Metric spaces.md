@@ -11,10 +11,10 @@ It's fairly normal for us to think of a notion of distance on a space:
 
 1) The real numbers $\bb{R}$ with the distance $d$ between $x, y \in \bb{R}$ given by $d(x, y) = \vert x - y \vert.$
 2) The complex plane $\bb{C}$ with distance $d$ between $w, z \in \bb{C}$ given by $d(w, z) = \vert w  - z \vert.$
-3) The real plane $\bb{R}^2$ with the Pythagorean notion of distance: the distance $d$ between $x = (x_1, x_2), y = (y_1, y_2) \in \bb{R}^2$ is given by $d(x, y) = \Vert x - y \Vert = \sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2}.$ This is the notion of distance used in [[Euclidean space|Euclidean geometry]].
+3) The real plane $\bb{R}^2$ with the Pythagorean notion of distance: the distance $d$ between $x = (x_1, x_2), y = (y_1, y_2) \in \bb{R}^2$ is given by $d(x, y) = \Vert x - y \Vert = \sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2}.$ This is the notion of distance used in [[Calculus --- math-19/Euclidean space|Euclidean geometry]].
 4) The real plane $\bb{R}^2$ with the "taxicab" distance $d$ between $x = (x_1, x_2), y = (y_1, y_2) \in \bb{R}^2$ given by $d(x, y) = \vert x_1 - y_1 \vert + \vert x_2 - y_2 \vert$. This often thought of as the distance you cover when taking a cab in the grid of Manhattan.
  
-The big ideas of calculus come from looking at functions on a space very closely. For "looking closely" at a function on a space to make sense, the notion of distance on that space is obviously very useful. While our idea for what that notion should be arises naturally from [[Euclidean space]], in order to use distance on weirder spaces, first, we need to generally define it.
+The big ideas of calculus come from looking at functions on a space very closely. For "looking closely" at a function on a space to make sense, the notion of distance on that space is obviously very useful. While our idea for what that notion should be arises naturally from [[Calculus --- math-19/Euclidean space|Euclidean space]], in order to use distance on weirder spaces, first, we need to generally define it.
 
 ### What is a metric space?
 
@@ -33,7 +33,7 @@ A metric space is a set $X$ (whose elements we call points) with a function, cal
 5) The unit circle $S^1$ with the distance between any two points given by the minimum arc length between them is a metric space.
 6) The discrete space is, for any set $X$ the metric space obtained by applying the metric $$ d(p, q) = \begin{cases} 1 & \text{if } p \neq q \\  0 & \text{if } p = q.\end{cases}$$
 7) The set vertices, $S$ of any [[Basic graph theory#_definition _ connected|simple connected graph]] $G$ can be a metric space with the metric as the graph theoretic distance between two vertices. We get the discrete space on $S$ if $G$ is the complete graph on $S$.
-8) Any [[Normed spaces|normed vector space]] is a metric space with the metric $d$ given by $d(u, v) = \Vert u - v \Vert$.
+8) Any [[Norms|normed vector space]] is a metric space with the metric $d$ given by $d(u, v) = \Vert u - v \Vert$.
 
 ### Special subsets of metric spaces
 
@@ -186,7 +186,7 @@ Thus, we have a neighbourhood of $p$ containing no distinct points of $E$, givin
 
 ##### _examples:_ closed, open, perfect, and bounded sets
 
-The following are subsets of the [[Euclidean space|Euclidean space]] $\bb{R}^2$. Note that since they have effectively the same metric, we can also think of these sets as subsets of the [[Complex plane|complex plane]] $\bb{C}$. They are variously closed, open, perfect, and bounded as below.
+The following are subsets of the [[Calculus --- math-19/Euclidean space|Euclidean space]] $\bb{R}^2$. Note that since they have effectively the same metric, we can also think of these sets as subsets of the [[Complex plane|complex plane]] $\bb{C}$. They are variously closed, open, perfect, and bounded as below.
 
 Set | Closed? | Open? | Perfect? | Bounded?
 --|---|--|--|--
