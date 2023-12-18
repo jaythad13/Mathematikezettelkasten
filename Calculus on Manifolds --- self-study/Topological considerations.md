@@ -1,0 +1,116 @@
+---
+tags:
+- calc
+- self-study
+---
+
+In order to do calculus, having a characterisation of "topologically special" sets in our space is useful — we want a characterisation of [[Metric spaces#_definition _ open set|open]], [[Metric spaces#_definition _ closed set|closed]], and [[Compactness|compact]] sets in $\bb{R}^n$. 
+
+### Open and closed sets
+
+Obviously, the prototypical example of a closed set in $\bb R$ is the closed interval $[a, b]$ and for open sets, the open interval $(a, b)$. These have natural generalisations to closed and open sets in $\bb{R}^n$ — the closed rectangle $[a_1, b_1] \times \cdots \times [a_n, b_n]$, and the open rectangle $(a_1, b_1) \times \cdots \times (a_n, b_n)$. It turns out that we can formulate something equivalent to all the metric space notions of open sets with $r$-neighbourhoods. The basic idea is that since every $r$-neighbourhood contains an open rectangle (the inscribed cube inside a sphere) and every open rectangle contains an $r$-neighbourhood (look at just a cube inside the cuboid, and then look at the inscribed phere inside it), we can make the definitions below.
+
+##### _definition:_ closed rectangle
+
+The set $[a_1, b_1] \times \cdots \times [a_n, b_n] \subset \bb R^n$, for real numbers $a_i \le b_i$, is called a closed rectangle in $\bb R^n$.
+
+##### _definition:_ open rectangle
+
+The set $(a_1, b_1) \times \cdots \times (a_n, b_n) \subset \bb R^n$, for real numbers $a_i < b_i$, is called a closed rectangle in $\bb R^n$.
+
+##### _definition:_ open set
+
+A set $U \subset \bb R^n$ is an open set if for each $\bvec x \in U$ we have some open rectangle $A$ such that $\bvec x \in A \subset U$.
+
+##### _definition:_ closed
+
+A set $C \subset \bb R^n$ is a closed set if it is the complement of an open set — that is, if $\bb R^n \setminus C$ is open
+
+A silly verification, but still one we should perform to sanity check our definitions is that a closed rectangle is a closed set.
+
+##### _proposition:_ closed rectangles are closed
+
+Any closed rectangle $[a_1, b_1] \times \cdots \times [a_n, b_n]$ is a closed set.
+
+##### _proof:_
+
+Let $A$ be the closed rectangle. For any point $\bvec x = (x_1, \ldots, x_n) \in \bb R^n \setminus A$, we have at least one $i$ such that $x_i < a_i$ or $x_i > b_i$. Consider the following intervals.
+
+If $x_i \in [a_i, b_i]$ let $I_i = (a_i - 1, b_i + 1)$. If $x_i \notin [a_i, b_i]$, then we must either have $x_i < a_i$ or $x_i > b_i$. If we have the former, then let $I_i = (x_i - 1, a_i)$ and $I_i = (b_i, x_i + 1)$. Then $\prod_{i = 1}^n I_i$ is an open rectangle containing $\bvec x$. Since there is at least one $I_i$ that is not contained in the corresponding $[a_i, b_i]$ (for which we have $x_i \notin [a_i, b_i]$), this open rectangle also must only contain points not in $A$ — that is, the open rectangle is a subset of $\bb R^n \setminus A$.
+
+We quote that [[Open and closed sets#_proposition _ (Potentially infinite) unions and finite intersections of open sets are open|arbitrary unions and finite intersections of open sets are open]], and [[Open and closed sets#_corollary _ Finite unions and (potentially infinite) intersections of closed sets are closed|finite unions and arbitrary intersections of closed sets are closed]] without proof, but the result is elementary.
+
+If $A \subset \bb R^n$ and $\bvec x \in \bb R^n$, then exactly one of the following must hold
+1) There is an open rectangle $B$ such that $\bvec x \in B \subset A$
+2) There is an open rectangle $B$ such that $\bvec x \in B \subset \bb R^n \setminus A$
+3) Every open rectangle $B$ containing $\bvec x$ contains points of both $A$ and $\bb R^n \setminus A$
+
+This must be true just by exhausting the first two cases, and it allows us to make the following definitions.
+
+##### _definition:_ interior point, interior
+
+For $A \subset \bb R^n$ and $\bvec x \in \bb R^n$, if there is an open rectangle $B$ such that $\bvec x \in B \subset A$, then $\bvec x$ is an interior point of $A$.
+
+The set of all such points $\bvec x$ is the interior of $A$.
+
+##### _definition:_ exterior point, exterior
+
+For $A \subset \bb R^n$ and $\bvec x \in \bb R^n$, if there is an open rectangle $B$ such that $\bvec x \in B \subset \bb R^n \setminus A$, then $\bvec x$ is an exterior point of $A$.
+
+The set of all such points $\bvec x$ is the exterior of $A$.
+
+##### _definition:_ boundary point, boundary
+
+For $A \subset \bb R^n$ and $\bvec x \in \bb R^n$, if every open rectangle $B$ containing $\bvec x$ contains points of both $A$ and $\bb R^n \setminus A$, then $\bvec x$ is a boundary point of $A$
+
+The set of all such points $\bvec x$ is the boundary of $A$.
+
+These definitions make sense intuitively — they match up with our idea of the boundary being "between two sides". Note that a set may or may not contain its boundary, but its interior and exterior of course do not.
+
+Note also that the interior and exterior are obviously open (their definition includes looking at an open rectangle surrounding each point within them). Since the boundary is the complement of their (open) union, the boundary is closed.
+
+### Compactness
+
+One interesting thing that we can do with open sets is to try to "cover" a set with them — to find a collection of open sets whose union covers a particular set we are interested in. This allows us to study the points of $A$ by looking at the "local story" around them in the open set of the cover that contains them.
+
+##### _definition:_ open cover
+
+A collection of open sets, $\mathcal O$ is an open cover of the set $A$ if $A \subset \bigcup_{U \in \mathcal O} U$.
+
+##### _example:_ open cover
+
+The collection $\mathcal O = \set{(\frac{1}{n}, 1 - \frac{1}{n}) : n \in \bb N}$ is a cover of the open interval $(0, 1)$. It would be nice if we could throw away some of these open sets in the cover — particularly, if we only had to look at finitely many sets, that would be nice. However, with finitely many sets, there would be some largest $n$, $N$, leaving out real numbers less than $\frac{1}{N}$.
+
+In fact, the situation where we can always reduce a cover of a set to a "finite sub-cover" is very nice, and non-trivial. It allows us to always reduce an infinite number of "neighbourhoods" to finitely many, and it turns out that it isn't just finite sets for which this is true.
+
+##### _definition:_ compact
+
+A set $A$ is compact if every open cover $\mathcal O$ of $A$ contains a finite subset that also covers $A$.
+
+##### _example:_ the harmonic numbers (with zero) are compact
+
+The set $\set{\frac{1}{n} : n \in \bb N} \cup \set{0}$ is compact. This is because any open interval containing $0$ must contain infinitely many of the harmonic numbers, leaving only finitely many to be covered with at most that many open sets. So with any open cover, we pick the open set that covers $0$ and the finitely many open sets that contain each of the rest of the points giving us a finite sub-cover.
+
+While the fact that compactness is useful will have to wait, we can show that there are non-trivial compact sets right now.
+
+##### _theorem:_ the Heine-Borel theorem
+
+The closed interval $[a, b]$ is compact.
+
+##### _proof:_
+
+We will show that $[a, b]$ is compact by looking at all the sets $[a, x]$ with $x \in [a, b]$ that are almost compact. Specifically, for any open cover of $[a, b]$, $\mathcal O$, consider
+$$
+A = \set{x \in [a, b] : [a, x] \text{ is covered by a finite subset of } \mathcal O}.
+$$
+Note that this set is non-empty (since $[a, a]$ is covered by the open set containing $a$) and is bounded above (by $b$). Thus, it has a least upper bound, $\alpha$. We will show that $A$ contains its least upper bound, and that least upper bound is $b$.
+
+First, note that $\alpha \in U$ for some $U \in \mathcal O$ since $\mathcal O$ covers $[a, b]$. Let the interval in $U$ containing $\alpha$ be $I$. Then note that there must be some $x \in I$ with $x < \alpha$ and $x \in A$ (if there wasn't then the the lower bound of $I$ would be a lesser upper bound on $A$). Thus, $[a, x]$ is covered by finitely many sets of $\mathcal O$, and $[a, \alpha]$ can be covered by adding at most one set ($U$, if needed).
+
+If $\alpha < b$, then any $y > \alpha$ with $y \in U$ gives us $[a, y]$ covered by a finite subset of $\mathcal O$ (the finite sub-cover of $[a, \alpha]$, since $\alpha \in A$, plus $U$, if needed). This would make $\alpha$ not an upper bound, and thus, lead to a contradiction. Thus, $\alpha \ge b$, but also since $b$ is an upper bound, $\alpha \le b$, giving us $\alpha = b$.
+
+It is easy to see that for a compact subset $B \subset \bb R^m$ and $\bvec x \in \bb R^n$, $\set{\bvec x} \times B \subset \bb R^{m + n}$ is compact.
+
+##### _proposition:_ moving a subset around in space doesn't change compactness
+
+For a compact subset $B \subset \bb R^m$ and $\bvec x \in \bb R^n$, $\set{\bvec x} \times B \subset \bb R^{m + n}$ is compact.
