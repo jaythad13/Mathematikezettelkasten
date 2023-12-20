@@ -87,6 +87,10 @@ In fact, the situation where we can always reduce a cover of a set to a "finite 
 
 A set $A$ is compact if every open cover $\mathcal O$ of $A$ contains a finite subset that also covers $A$.
 
+##### _example:_ finite sets are trivially compact
+
+Any finite set is compact — for $n$ points in the set pick the at-most-$n$ open sets of the open cover that contain the $n$ points.
+
 ##### _example:_ the harmonic numbers (with zero) are compact
 
 The set $\set{\frac{1}{n} : n \in \bb N} \cup \set{0}$ is compact. This is because any open interval containing $0$ must contain infinitely many of the harmonic numbers, leaving only finitely many to be covered with at most that many open sets. So with any open cover, we pick the open set that covers $0$ and the finitely many open sets that contain each of the rest of the points giving us a finite sub-cover.
@@ -109,8 +113,66 @@ First, note that $\alpha \in U$ for some $U \in \mathcal O$ since $\mathcal O$ c
 
 If $\alpha < b$, then any $y > \alpha$ with $y \in U$ gives us $[a, y]$ covered by a finite subset of $\mathcal O$ (the finite sub-cover of $[a, \alpha]$, since $\alpha \in A$, plus $U$, if needed). This would make $\alpha$ not an upper bound, and thus, lead to a contradiction. Thus, $\alpha \ge b$, but also since $b$ is an upper bound, $\alpha \le b$, giving us $\alpha = b$.
 
-It is easy to see that for a compact subset $B \subset \bb R^m$ and $\bvec x \in \bb R^n$, $\set{\bvec x} \times B \subset \bb R^{m + n}$ is compact.
+It is easy to see that for a compact subset $B \subset \bb R^m$ and $\bvec x \in \bb R^n$, $\set{\bvec x} \times B \subset \bb R^{m + n}$ is compact — this just involves moving the open sets around.
 
 ##### _proposition:_ moving a subset around in space doesn't change compactness
 
 For a compact subset $B \subset \bb R^m$ and $\bvec x \in \bb R^n$, $\set{\bvec x} \times B \subset \bb R^{m + n}$ is compact.
+
+##### _proof:_
+
+Suppose $\mathcal O$ is an open cover of $\set{\bvec x} \times B$. Then for every $\bvec y \in B$ we have $(\bvec x, \bvec y) \in U \in \mathcal O$. 
+
+Since each $U$ is open, there is an open rectangle, $I \subset U$ such that $(\bvec x, \bvec y) \in I$. If we write $I$ as $(a_1, b_1) \times \cdots \times (a_m, b_m) \times (a_{m + 1}, b_{m + 1}) \times \cdots \times (a_{m + n}, b_{m + n})$, then by definition this means that $\bvec y \in (a_{m + 1}, b_{m + 1}) \times \cdots \times (a_{m + n}, b_{m + n})$. Call this set $\bar I$, and then the set of all such $\bar I$, $\bar{\mathcal O}$, is an open cover of $B$.
+
+Since $\bar{\mathcal O}$ is an open cover, we can reduce it to a finite sub-cover $\set{\bar I_1, \ldots, \bar I_n}$. Thus, the corresponding $\set{I_1, \ldots, I_n}$ is a finite open cover of $\set{\bvec x} \times B$ and finally, the $\set{U_1, \ldots, U_n}$ corresponding to that is the desired finite sub-cover.
+
+This allows us to make an even stronger assertion.
+
+##### _proposition:_ moving a subset around in space allows us to cover an open neighbourhood around it
+
+If $B \subset \bb R^m$ is compact and $\set{\bvec x} \times B$ (with $\bvec x \in \bb R^n$) has an open cover $\mathcal O$, then there is some open set $\bar U \subset \bb R^n$ such that $\bar U \times B$ is covered by a finite subset of $\mathcal O$.
+
+##### _proof:_
+
+Since $B$ is compact, $\set{\bvec x} \times B$ is compact, and thus, instead of looking at $\mathcal O$ we can look at the finite sub-cover $\bar{\mathcal O}$. 
+
+Specifically, for each point $(\bvec x, \bvec y) \in W \in \mathcal O$, look at the open rectangle $U \times V \subset W$ containing it with $U \subset \$. Since the sets $V$ form an open cover of $B$, they can be reduced to a finite sub-cover $\set{V_1, \ldots, V_n}$. Also note, that $\bvec x \in U$ for any $U$, and thus, we can also look at only finitely many of the open rectangles $U$ — the corresponding $\set{U_1, \ldots, U_n}$.
+
+Since the finite intersection $\bar U = \bigcap_{i = 1}^n U_i$ is open, and is clearly covered by $\set{U_1, \ldots, U_n}$, we have that $\bar U \times B$ is covered by the finitely many (at most $n$) open sets $W_i \in \mathcal O$ that contain the open rectangles $U_i \times V_i$.
+
+This gives us as a corollary the result that we're obviously working towards: that the product of any two compact sets is compact.
+
+##### _corollary:_ the product of compact sets is compact
+
+If $A \subset \bb R^n$ and $B \subset \bb R^m$ are compact, then $A \times B \subset \bb R^{m + n}$ is compact.
+
+##### _proof:_
+
+Suppose $\mathcal O$ is an open cover of $A \times B$. Then for each $\bvec x \in A$ it is an open cover of $\set{\bvec x} \times B$, and we have an open set $U_{\bvec x}$ such that $\bvec x \in U_{\bvec x}$ and $U_{\bvec x} \times B$ is covered by a finite subset of $\mathcal O$.
+
+However, since the set of all of these open sets $\set{U_{\bvec x}}$ is an open cover of the compact set $A$, a finite subset $\set{U_1, \ldots, U_n}$ covers $A$. Then, since $U_i \times B$ is covered by a finite subset of $\mathcal O$ for each $i \in \bb N_n$, we can take the finite union of those finite subsets, to get an open sub-cover that covers all of $A \times B$.
+
+This then allows us to characterise some compact sets on $\bb R^n$.
+
+##### _corollary:_ closed rectangles are compact
+
+Any closed rectangle $[a_1, b_1] \times \cdots \times [a_n, b_n] \subset \bb R^n$ is compact
+
+##### _proof sketch:_
+
+Do induction on the product of compact sets being compact, starting from the base case that $[a, b]$ is compact by the [[#_theorem _ the Heine-Borel theorem|Heine-Borel theorem]].
+
+The corollary of this and its converse are also sometimes called the Heine-Borel theorem
+
+##### _corollary:_ closed bounded sets are exactly the compact sets
+
+A subset of $\bb R^n$ is compact if and only if it is closed and bounded
+
+##### _proof:_
+
+First we will show that if a set $K \subset \bb R^n$ is closed and bounded, it is compact.
+
+If $K$ is closed and bounded, then we can bound it within some closed rectangle $C$. If $\mathcal O$ is an open cover of $K$, then together with $\bb R^n \setminus K$ (which is open), we have an open cover of $C$. Since $C$ is compact, we can reduce the open cover to a finite sub-cover $\bar{\mathcal O}$. 
+
+Since $K \subset C$, $K$ too is covered by $\bar{\mathcal O}$, and further, we can get rid of $\bb R^n \setminus K$ and still have it cover $K$. Thus, $\bar{\mathcal O} \setminus \set{\bb R^n \setminus K}$ is an finite subset of $\mathcal O$ that covers $K$.
