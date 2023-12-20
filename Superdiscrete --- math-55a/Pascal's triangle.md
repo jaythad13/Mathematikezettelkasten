@@ -12,6 +12,8 @@ We can use the [[Basic combinatorics#_definition _ $ binom{n}{k}$|binomial coeff
 ##### _definition:_ Pascal's triangle
 
 Pascal's triangle is the two dimensional sequence of $\binom{n}{k}$ arranged in a triangle as
+![[S0_Pascal'sTriangle.jpeg]]
+and so on.
 
 Looking at the triangle suggests several interesting identities.
 
@@ -45,9 +47,23 @@ For the sets that do contain the $n$th element, we have to pick $k - 1$ other el
 
 We can see some more interesting patterns if we look at Pascal's triangle as a right triangle with rows $\binom{n}{k}$ for all $0 \le k \le n$.
 
+![[S0_Pascal'sRightTriangle.jpeg]]
+
 ##### _example:_ the hockey stick identity
 
-%% compute an explicit example %%
+For example, looking at Pascal's triangle as a right triangle suggests that adding finitely many elements down a column is the same as just looking at the element in the column to the right in the row just below - it looks like a hockey stick.
+
+For example
+$$
+\binom{2}{2} + \binom{3}{2} + \binom{4}{2} + \binom{5}{2} = 1 + 3 + 6 = 10 = 20
+$$
+and
+$$
+\binom{6}{3} = 20.
+$$
+![[S0_hockeyStick.jpeg]]
+
+We can prove that this holds in general.
 
 ##### _proposition:_ the hockey stick identity
 
@@ -56,9 +72,13 @@ $$
 $$
 ##### _proof:_
 
-We can have a combinatorial proof. There are $\binom{N + 1}{k + 1}$ ways to choose a team of $k + 1$ players from among $N + 1$ players.
+We can have a combinatorial proof. There are $\binom{N + 1}{k + 1}$ ways to choose a team of $k + 1$ hockey players from among a pool of $N + 1$ hockey players.
 
 But we can think of lining up all the potential players and assigning them numbers $1, \ldots, N + 1$. Then the number of squads with the largest jersey number $n + 1$ is $\binom{n}{k}$. Sum up all of these $\binom{n}{k}$ and you get all of the possible teams.
+
+We can also look at summing along (non-principal) diagonals. Again, computing a few examples reveals a pattern. This time it's the Fibonacci numbers, and we can show that this pattern always holds.
+
+![[S0_diagonalSumsToFibonacci.jpeg]]
 
 ##### _proposition:_ the Fibonacci series in Pascal's triangle
 
@@ -70,16 +90,24 @@ $$
 
 We have a combinatorial proof of this as well!
 
-We know that $f_n$ is the number of tilings of an $n$-strip with dominoes and squares.
+We know that $f_n$ is the [[Proof by induction#_definition _ Fibonacci tiling numbers|number of tilings]] of an $n$-strip with dominoes and squares.
 
-It's natural to want to think of $k$ as the number of dominoes since it is at least $0$ and at most $\le n/2$. If we tile an $n$-strip with $k$ dominoes, then there are $n - 2k$ remaining slots for squares, and thus, $n - 2k$ squares. This gives us $n - 2k + k = n - k$ tiles in total. Then the number of tilings with $k$ dominoes is just given by $\binom{n - k}{k}$.
+It's natural to want to think of $k$ as the number of dominoes since it is at least $0$ and at most $\le n/2$. If we tile an $n$-strip with $k$ dominoes, then there are $n - 2k$ remaining slots for squares, and thus, $n - 2k$ squares. This gives us $n - 2k + k = n - k$ tiles (dominoes or squares) in total. Then the number of tilings with $k$ dominoes is just given by $\binom{n - k}{k}$.
 
 The sum of the number of tilings with $k$ dominoes for all possible $k$ is obviously the total number of tilings.
 
-##### _proposition:_ half sums of rows of Pascal's triangle
+##### _proposition:_ sums of binomial coefficients with even $k$ are half the sum for all $k$
 
-
+For $n \in \bb{N}$, the sum of all $\binom{n}{k}$ for even $k$ is half the sum of all $\binom{n}{k}$. That is,
+$$
+\sum_{k \text{ is even}}^{k \le n} \binom{n}{k} = 2^{n - 1}
+$$
 ##### _proof:_
 
+We have a combinatorial proof!
+
+Consider the number of even-numbered committees that can be formed from a group of $n$ people. That is just the sum of all even $k$ binomial coefficients.
+
+However, we can get the same thing another way - freely choose whether to include the first $n-1$ members of the group in the committee, and then choose whether to include the $n$th member based on parity. There are $2^{n - 1}$ ways to do this, and this gives us exactly the even-membered committees.
 
 

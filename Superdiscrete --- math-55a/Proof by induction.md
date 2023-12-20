@@ -2,9 +2,10 @@
 tags:
 - math-55a
 - comb
+lecture: math-55a-1
 ---
 
-### Basic combinatorial theorems by induction
+### Basic combinatorics by induction
 
 We can use the [[Peano axioms|axiom of induction]] to prove various combinatorial theorems.
 
@@ -30,9 +31,14 @@ Thus, $\sum_{k = 1}^n k = \frac{n(n + 1)}{2}$ for all $n \in \bb{N}$.
 
 An even cleverer proof doesn't rely on words!
 
-The sum of the first $n$ natural numbers is also the $n$th triangular number. Draw the $n$th triangular number in a triangle. Draw an additional row of $n + 1$ numbers below the triangle. 
+![[S1_triangleBijection.jpeg]]
 
-Then each of the numbers in the original triangle determines a unique pair of the row below (by drawing lines to the bottom row). Thus, the $n$th triangular number is just $\binom{n + 1}{2}$
+We can see that there is a bijection between the triangular lattice of $n$ rows and pairs of points in the $n + 1$th row, given by picture above. That is, for any pair, draw a line parallel to the left side of the triangle from the left point of the pair and draw a line parallel to the right side of the triangle from the right point of the pair. They define a unique point in the triangular lattice above them.
+
+Thus, there is a bijection between a set of cardinality $T_n$ and a set of cardinality $\binom{n + 1}{2}$. Thus,
+$$
+T_n = \binom{n + 1}{2}.
+$$
 
 ##### _definition:_ Fibonacci numbers
 
@@ -73,7 +79,7 @@ F_n = \frac{1}{\sqrt{5}} \Big(\Big(\frac{1 + \sqrt{5}}{2}\Big)^n - \Big(\frac{1 
 $$
 ##### _proof:_
 
-See linear algebra or generatingfunctionology for other approaches.
+See [[Linear Algebra Done Right.pdf#page=192|Linear Algebra Done Right]] or [[generatingfunctionology.pdf#page=13|generatingfunctionology]] for other approaches.
 
 Note that
 $$
@@ -113,11 +119,24 @@ It's possible for $n = 1$ obviously.
 
 If it's true for $n$, break the chessboard into four quadrants. One of them has a removed piece. Cover that quadrant in trominoes.
 
-For the rest, place a tromino such that it has one part in each of the remaining quadrants. Then cover them.
+Then, place a tromino such that it has one part in each of the three remaining quadrants. Now each of them has a "removed piece". Cover them.
+
+For example,
+![[S1_trominoCoveredChessboard.jpeg]]
+is a covering of a chessboard. Different colours indicate levels of recursion. Pink is at no level of recursion, green is at one level of recursion, and orange is the base case at two levels of recursion.
+
+##### _corollary:_ $2^{2n} - 1$ is a multiple of $3$
+
+For any $n \in \bb{N}$, there is some $k \in \bb{Z}$  such that $2^{2n} - 1 = 3k$.
+
+##### _proof:_
+
+For any $n \in \bb{N}$ we have a tromino covering of the $2^n \times 2^n$ chessboard with one piece removed. Since there are $2^{2n}$ pieces in the chessboard, with one removed, there are $2^{2n} - 1$ pieces, which are covered by some number of trominoes, say $k$. Then, $3k = 2^{2n} - 1$.
+
 
 ### Strong induction
 
-Strong induction extends induction by allowing you to assume all previous cases.
+Strong induction extends induction by allowing you to assume all previous cases. It works for the same reasons as induction.
 
 ##### _theorem:_ Zeckendorf's theorem
 
@@ -139,6 +158,84 @@ n + 1 = F_j + (n + 1 - F_j)
 $$
 is the sum of distinct Fibonacci numbers.
 
-A seemingly unrelated 
+A new question that we can ask that at first seems unrelated to Fibonacci numbers is "How many sequences of $1$ and $2$ sum to $n$?" Note that these are just the same as the number of ways to tile a strip of length $n$ with dominoes and single square tiles (counting permutations).
 
-%% complete the $f_n$ stuff
+##### _example:_ tiling an $n$-strip with dominoes and squares
+
+There is only one way to tile a $1$-strip: with one square.
+There are $2$ ways to tile a $2$-strip: two squares, or one domino.
+There are three ways to tile a $3$-strip: three squares, one domino and one square, or one square and one domino.
+In fact, we can show that there are always $F_{n+1}$ ways to tile an $n$-strip.
+
+We suggestively name the number of ways to reflect this
+
+##### _definition:_ Fibonacci tiling numbers
+
+For $n \in \bb{N}$ the $n$th Fibonacci tiling number, $f_n$ is the number of different ways to tile an strip of length $n$ with dominoes and squares. 
+
+By convention we have $f_0 = 1$ so we can extend the following result to $0$ if we so desire.
+
+##### _proposition:_ Fibonacci tiling numbers are Fibonacci numbers
+
+For $n \in \bb{N}$ $f_n = F_{n + 1}$.
+
+##### _proof:_
+
+We can show this by induction. 
+
+First, just by our calculations, we know $f_1 = F_2$ and $f_2 = F_3$.
+
+Suppose $f_n = F_{n + 1}$ and $f_{n - 1} = F_{n}$. For any tiling of an $(n + 1)$-strip, there are only two options for the first tile we place - a domino or a square. If first tile is a domino, then there are $f_{n + 1 - 2} = f_{n - 1}$ ways to tile the remaining $n + 1 - 2 = n - 1$ squares. If the first tile is a square, then there aer $f_{n + 1 - 1} = f_n$ ways to tile the remaining $n + 1 - 1 = n$ squares.
+
+This means that we have a total of
+$$
+f_{n + 1} = f_n + f_{n - 1} = F_{n + 1} + F_{n} = F_{n + 2} = F_{n + 1 + 1}
+$$
+ways to tile the $(n + 1)$-strip as desired.
+
+Then by induction, for any $n \in \bb{N}$, there are $F_{n + 1}$ ways to tile the $n$-strip. That is, $f_n = F_{n + 1}$.
+
+Looking at more examples shows us that thinking of the Fibonacci numbers as tilings isn't just a useful geometric intuition, but can also make proving results easier.
+
+##### _proposition:_ tilings of sums
+
+For any $m, n \in \bb{N}$, $f_m f_n + f_{m - 1} f_{n - 1} = f_{m + n}$.
+
+##### _proof:_
+
+By definition there are $f_{m + n}$ ways to tile a $(m + n)$-strip.
+
+We can divide these tilings into two groups - tilings that are breakable at the $m$th tiling - that don't have a domino across break and tilings that are not - that do have a domino across the break.
+
+There are $f_m f_n$ breakable tilings - there are $f_m$ ways to tile one side and $f_n$ ways to tile the other. There are $f_{m - 1} f_{n - 1}$ unbreakable tilings - place a domino over the break and then there are $f_{m - 1}$ ways to tile one side of the domino and $f_{n - 1}$ ways to tile the other.
+
+While this result is easy to prove by induction, its corollary (which can also be proved by the same thinking about breakable tilings) is not.
+
+##### _corollary:_ tiling double the length
+
+For any $n \in \bb{N}$, $f_{n - 1}^2 + f_n^2 = f_{2n}$.
+
+We can also provide a much more informative proof of the fact that [[#_proposition _ the sum of Fibonacci numbers is almost a Fibonacci number|the sum of Fibonacci numbers is almost a Fibonacci number]], which we proved by induction earlier.
+
+##### _proposition:_ the sum of Fibonacci numbers is almost a Fibonacci number
+
+For $n \ge 0$,
+$$
+\sum_{k = 0}^n F_k = F_{n + 2} - 1.
+$$
+
+##### _proof:_
+
+Obviously, it is sufficient to just show the analogous result for $f_n$.
+
+When we want to throw one tiling out, it's only natural to throw out the all-squares tiling. Thus, we say that there are $f_{n + 2} - 1$ tilings of an $(n + 2)$-strip that include at least one domino.
+
+We can also count the domino-containing tilings by looking at all the tilings such that the $k$th square is the square at which a domino starts (all the succeeding places are covered by single squares). Then that leaves us $n - k$ squares to tile as we please. We exhaust these domino-containing tilings by looking at all the $k \in \bb{N}_n$. That is, the total number of domino-containing tilings is
+$$
+\sum_{k = 0}^n f_k.
+$$
+
+This gives us exactly what we want:
+$$
+f_{n + 2} - 1 = \sum_{k = 0}^n f_k.
+$$

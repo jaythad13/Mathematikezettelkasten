@@ -30,11 +30,11 @@ We are familiar with the fact that $n!$ tells us the number of permutations of $
 $$
 \lim_{n \to \infty} \frac{n!}{(n/e)^n \sqrt{2 \pi n}} = 1
 $$
-making $(n/e)^n \sqrt{2 \pi n}$ a good approximation for $n$.
+making $(n/e)^n \sqrt{2 \pi n}$ a good approximation for $n!$.
 
 ##### _proof sketch:_
 
-Look at the logarithm of $n!$. Since this is the logarithm of a product, it is the sum of logarithms. Approximate the area covered by calculus, and this ends up being Stirling's approximation.
+Look at the logarithm of $n!$. Since this is the logarithm of a product, it is the sum of logarithms. Approximate the area covered using calculus, and then go back to the original factorial by differentiating and then exponentiating. This ends up being Stirling's approximation.
 
 ##### _definition:_ $\binom{n}{k}$
 

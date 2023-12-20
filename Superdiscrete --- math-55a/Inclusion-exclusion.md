@@ -58,8 +58,10 @@ There are $\binom{39}{5}$ hands that don't contain any hearts, and similarly for
 
 This gives us
 $$
-\text{\# inclusive hands} = \binom{52}{5} - 
+\binom{52}{5} - \Big [ \binom{4}{1} \binom{39}{5} - \binom{4}{2} \binom{26}{5} + \binom{4}{3} \binom{13}{5} \Big ]
 $$
+inclusive hands.
+
 Note that we can do this without inclusion-exclusion - choose the suit that there are two of, then choose the two cards from that suit and the one card from each of the other three suits.
 
 ##### _example:_ 
@@ -72,10 +74,11 @@ where $0 \le x_i \le 8$ for all $i \in \bb{N}_6$.
 
 This is similar to multichoose, but we have a restriction - we have to throw out all the splits where any ninja $k$ gets more than $8$ kandies for all $k$. We can do this with inclusion exclusion!
 
-Then
+Thus, we have
 $$
-\text{\# solutions} = \Big( \binom{6}{21} \Big) - 6 \Big ( \binom{6}{21 - 9} \Big ) + \binom{6}{2} \Big ( \binom{6}{21 - 18} \Big)
+\Big( \binom{6}{21} \Big) - 6 \Big ( \binom{6}{21 - 9} \Big ) + \binom{6}{2} \Big ( \binom{6}{21 - 18} \Big)
 $$
+solutions.
 
 > It's not one ninja, it's ninja 1. It's not two ninjas, it's ninjas 1 and 2.
 
