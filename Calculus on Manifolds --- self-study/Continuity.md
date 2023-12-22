@@ -60,4 +60,63 @@ If $f : K \to \bb R^m$ is continuous ($K \subset \bb R^n$), and $K$ is compact, 
 
 ##### _proof:_
 
-Let $K' = f^{\text{img}}(K)$. Suppose $\mathcal O$ is an open cover of $K'$. Then each point $f(\bvec x) \in K'$ is contained in some $U \in \mathcal O$ that has an open pre-image in $K$, $U'$ (because of continuity). All of these $U'$ together contain every $\bvec x \in K$, and thus, form an open cover of $K$, $\mathcal O'$. Because $K$ is compact, we can reduce this to a finite sub-cover $\bar{\mathcal O'}$. Since all of the (finitely many) sets in $\bar{\mathcal O'}$ are pre-images of open sets and together contain every point in $K$, their (finitely many) images are open and contain every point in $K'$, and are thus, a finite sub-cover of $\mathcal O$,
+Let $K' = f^{\text{img}}(K)$. Suppose $\mathcal O$ is an open cover of $K'$. Then each point $f(\bvec x) \in K'$ is contained in some $U \in \mathcal O$ that has an open pre-image in $K$, $U'$ (because of continuity). All of these $U'$ together contain every $\bvec x \in K$, and thus, form an open cover of $K$, $\mathcal O'$. Because $K$ is compact, we can reduce this to a finite sub-cover $\bar{\mathcal O'}$. Since all of the (finitely many) sets in $\bar{\mathcal O'}$ are pre-images of open sets and together contain every point in $K$, their (finitely many) images are open and contain every point in $K'$, and are thus, a finite sub-cover of $\mathcal O$.
+
+### Oscillation
+
+If we have a discontinuous but bounded function $f : A \to \bb R$, we can measure the extent to which it fails to be continuous by looking at its "maximum" and its "minimum" in increasingly small neighbourhoods around a discontinuity. We call their difference the oscillation of the function at the point.
+
+##### _definition:_ oscillation, $o(f, \bvec a)$, $M(f, \bvec a, \delta)$, $m(f, \bvec a, \delta)$
+
+For a bounded function $f : A \to \bb R$ (with $A \subset \bb R^n$), $\bvec a \in A$ and $\delta > 0$ let
+$$
+\begin{gathered}
+M(f, \bvec a, \delta) = \sup \set{f(\bvec x) : \norm{\bvec x - \bvec a} < \delta} \\
+m(f, \bvec a, \delta) = \inf \set{f(\bvec x) : \norm{\bvec x - \bvec a} < \delta}
+\end{gathered}.
+$$
+Then the oscillation of $f$ at $\bvec a$ is
+$$
+o(f, \bvec a) = \lim_{\delta \to 0} M(f, \bvec a, \delta) - m(f, \bvec a, \delta).
+$$
+
+Note that $M$ and $m$ exist because $f$ is bounded. Also note that $o$ is positive because the $\sup$ of a set is always greater than the $\inf$ of the set.
+
+A sanity-check that this definition really does measure a "degree of discontinuity" for bounded functions is given by looking at its value at continuous points of the function. Intuitively it should be zero — as we look at smaller and smaller neighbourhoods around a point at which a function is continuous, the function values should get closer and closer to the value at the point, and thus, their "maximum" and "minimum" should also get closer to the same value. The converse should also hold — if the "maximum" and "minimum" values get closer and closer in small neighbourhoods around the point, then we should be able to constrain all the values of the function between them.
+
+##### _proposition:_ continuous functions do not oscillate
+
+A bounded function $f : A \to \bb R$ (with $A \subset \bb R$) is continuous at $\bvec a$ if and only if $o(f, \bvec a) = 0$.
+
+##### _proof:_
+
+Suppose $f$ is continuous at $\bvec a$. Then for any $\varepsilon > 0$ we have $\delta > 0$ such that $\abs{\bvec x - \bvec a} < \delta$ gives us $\abs{f(\bvec x) - f(\bvec a)} < \varepsilon$. Thus, we can get
+$$
+\begin{split}
+	M(f, \bvec a, \delta) - m(f, \bvec a, \delta) & = M(f, \bvec a, \delta) - f(\bvec a) + f(\bvec a) - m(f, \bvec a, \delta)\\
+	& = \abs{M(f, \bvec a, \delta) - f(\bvec a)} + \abs{m(f, \bvec a, \delta) - f(\bvec a)} \\
+	& < 2 \varepsilon
+\end{split}
+$$
+for any $\varepsilon$, as long as $\delta$ is small enough. Since if it's true for $\delta_1$, it's true for any $\delta_2 < \delta_1$, we have that
+$$
+o(f, a) = \lim_{\delta \to 0} M(f, \bvec a, \delta) - m(f, \bvec a, \delta) = 0.
+$$
+
+Suppose $f$ has zero oscillation at $\bvec a$. Then for any $\varepsilon > 0$ we have $\delta > 0$ such that $r < \delta$ gives us $M(f, \bvec a, r) - m(f, \bvec a, r) < \varepsilon$ (with $r > 0$). But then since $M(f, \bvec a, r) \ge f(\bvec x)$ and $m(f, \bvec a, r) \le f(\bvec x)$ for all $\bvec x$ with $\norm{\bvec x - \bvec a} < r$, we must have $\abs{f(\bvec x) - f(\bvec a)} < \varepsilon$ for all $\bvec x$ with $\norm{\bvec x - \bvec a} < r$. Thus, $f$ is continuous.
+
+This notion of oscillation allows us to prove useful results — for example, the following results formalises our intuition that you can't just have an isolated point at which the function is continuous by showing that any set of "sufficiently discontinuous" points must be closed.
+
+##### _proposition:_ sufficiently discontinuous sets are closed
+
+If $f : A \to \bb R$ is a bounded function (and $A$ is a closed subset of $\bb R^n$), then for any $\varepsilon > 0$ $V = \set{\bvec x \in A : o(f, \bvec x) \ge \varepsilon}$ is closed.
+
+##### _proof:_
+
+Let $U = \bb R^n \setminus V$. At each point $\bvec x \in U$ we have $o(f, \bvec x) < \varepsilon$ (or $\bvec x \notin A$, and then there is an open rectangle around it since $\bb R^n \setminus A$ is open).
+
+Since $o(f, \bvec x) < \varepsilon$, there exists some $\delta$ such that $M(f, \bvec x, \delta) - m(f, \bvec x, \delta) < \varepsilon$. This defines an open $\delta$-neighbourhood around $\bvec x$. Inside this neighbourhood, any point $\bvec y$ has $M(f, \bvec y, \delta') - m(f, \bvec y, \delta') < \varepsilon$ as long as the $\delta'$-neighbourhood of $\bvec y$ is contained inside the $\delta$-neighbourhood of $\bvec x$. Thus, all these $\bvec y$ give us $o(f, \bvec y) < \varepsilon$.
+
+Thus, this $\delta$-neighbourhood (and the open rectangle inside it) are a subset of $U$ containing $\bvec x$ — $U$ is open, and thus, $V$ is closed.
+
+
