@@ -41,7 +41,7 @@ By manipulating the recurrence we get
 $$
 r^2 - 5r - 6 = 0
 $$
-and thus, $r_1 = 2$ and $r_2 = 3$ give values for $r$. Then for each value, find $c_1$ and $c_2$ such that they satisfy the initial conditions.
+and thus, $r_1 = 2$ and $r_2 = 3$ give values for $r$. Then for each value, find $c_1$ and $c_2$ such that they satisfy the initial conditions. This would give us $a_n = c_1 r_1^n + c_2 r_2^n$.
 
 ##### _strategy:_ for solving $t$th order linear recurrences
 
@@ -55,5 +55,5 @@ and some initial conditions for $a_j$ for $j \in \set{0, \ldots, t - 1}$.
 $$
 x^t - (k_1 x^{t - 1} + \cdots + k_t)
 $$
-2) For $t$ distinct complex roots, find $c_j$ for each $j \in \set{0, \ldots, t}$ solve the linear system given by requiring that the initial conditions are satisfied. If there aren't distinct roots with say $r_1 = \cdots = r_m$, then take $a_n = c_1 r_1 + c_2 n r_2 + \cdots c_m n^{m - 1} r_m + c_{m + 1} r_{m + 1} + \cdots + c_t r_t$.
-1) 
+2) For $t$ distinct complex roots, $r_1, \ldots, r_t$, we get $a_n = c_1 r_1^n + \cdots + c_t r_t^n$. If there aren't distinct roots with say $r_1 = \cdots = r_m$, then we get $a_n = c_1 r_1^n + n c_2 r_2^n + \cdots n^{m - 1} c_m r_m^n + c_{m + 1} r_{m + 1}^n + \cdots + c_t r_t^n$.
+3) Solve for $c_1, \ldots, c_t$ using the linear system given by the initial conditions for $n \in \set{0, 1, \ldots, t}$. 
