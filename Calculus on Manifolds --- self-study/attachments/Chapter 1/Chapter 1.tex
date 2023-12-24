@@ -1,0 +1,80 @@
+\documentclass[12pt, letterpaper]{hmcpset}
+\usepackage{math-19-preamble}
+
+\name{Jayden Thadani}
+\class{Calculus on Manifolds}
+\assignment{Chapter 1 problems --- Functions on Euclidean Space}
+
+\begin{document}
+
+\begin{problem}[23]
+	If $f : A \to \bb R^m$ and $\bvec a \in A$ show that $\lim_{\bvec x \to \bvec a} f(\bvec x) = \bvec b$ if and only if $\lim_{\bvec x \to \bvec a} f_i(\bvec x) = b_i$ for $i \in \bb N_m$. Here, $f = (f_1, \ldots, f_m)$ and $\bvec b = (b_1, \ldots, b_m)$.
+\end{problem}
+
+\begin{solution}
+	Suppose we have $\lim_{\bvec x \to \bvec a} f_j(\bvec x) \neq b_j$ for some $j$. Then for some $\varepsilon > 0$ no matter what $\delta > 0$ we choose, there will be some point $\bvec x$ with $\norm{\bvec x - \bvec a} < \delta$ and ${\abs{f_j(\bvec x) - f_j(\bvec a)} \ge \varepsilon}$. Thus, for that same $\varepsilon$, no matter, what $\delta > 0$ we choose, we will have, at the same point $\bvec x$, the following.
+	\[
+		\begin{split}
+			\norm{f(\bvec x) - f(\bvec a)}^2 & = (f_1(\bvec x) - f_1(\bvec a))^2 + \cdots + (f_m(\bvec x) - f_m(\bvec a))^2 \\
+							 & \ge (f_j(\bvec x) - f_j(\bvec a))^2 \\
+							 & \ge \varepsilon^2
+		\end{split}
+	\]
+	which means
+	\[
+		\norm{f(\bvec x) - f(\bvec a)} \ge \varepsilon.
+	\]\\
+	That is, for some $\varepsilon > 0$, no matter what $\delta > 0$ we choose there will be some point $\bvec x$ with $\norm{\bvec x - \bvec a} < \delta$ and $\norm{f(\bvec x) - f(\bvec a)} \ge \varepsilon$. Thus, $\lim_{\bvec x \to \bvec a} f(\bvec x) \neq \bvec b$.\\\\
+	Suppose we have $\lim_{\bvec x \to \bvec a} f_i(\bvec x) = b_i$ for all $i \in \bb N_m$ and $\varepsilon > 0$. Then let $\varepsilon' = \frac{\varepsilon}{\sqrt m}$.\\\\
+	For each $i \in \bb N_m$ we have some $\delta_i$ such that $\abs{f_i(\bvec x) - f_i(\bvec a)} < \varepsilon'$ for all $\bvec x$ with $\norm{\bvec x - \bvec a} < \delta_i$. Let $ \delta' = \min \set{\delta_i}$. Then for all $\bvec x$ with $\norm{\bvec x - \bvec a} < \delta'$ we have
+	\[
+		\begin{split}
+			\norm{f(\bvec x) - f(\bvec a)}^2 & = (f_1(\bvec x) - f_1(\bvec a))^2 + \cdots + (f_m(\bvec x) - f_m(\bvec a))^2 \\
+						       & < \varepsilon'^2 + \cdots + \varepsilon'^2 \quad \text{($m$ times)} \\
+						       & = m \frac{\varepsilon^2}{m} \\
+						       & = \varepsilon^2.
+		\end{split}
+	\]
+	and thus,
+	\[
+		\norm{f(\bvec x) - f(\bvec a)} < \varepsilon.
+	\]
+	That is,
+	\[
+		\lim_{\bvec x \to \bvec a} f(\bvec x) = \bvec b.
+	\]
+\end{solution}
+
+\begin{problem}[24]
+	Prove that $f : A \to \bb R^m$ is continuous at $\bvec a \in A$ if and only if each $f_i$ is. Again, $f = (f_1, \ldots, f_m)$.
+\end{problem}
+
+\begin{solution}
+	Let $\bvec b = (b_1, \ldots, b_m) = f(\bvec a)$. Then $f_i(\bvec a) = b_i$ for all $i \in \bb N_m$.\\\\
+	We know that $\lim_{\bvec x \to \bvec a} f(\bvec x) = \bvec b$ if and only if $\lim_{\bvec x \to \bvec a} f_i(\bvec x) = b_i$ for all $i \in \bb N_m$. Thus, $f$ is continuous if and only if each $f_i$ is.
+\end{solution}
+
+\begin{problem}[25]
+	Prove that a linear transformation $T : \bb R^n \to \bb R^m$ is continuous.
+\end{problem}
+
+\begin{problem}[26]
+	Let $A = \set{(x, y) \in \bb R^2 : x > 0 \text{ and } 0 < y < x^2 }$.
+	\begin{enumerate}
+		\item Show that every straight line through $\bvec 0$ contains an interval around $\bvec 0$ which is in $\bb R^2 \setminus A$.
+		\item Define $f : \bb R^2 \to \bb R$ by
+			\[
+				f(\bvec x) = \begin{cases}
+					0 & \bvec x \notin A \\
+					1 & \bvec x \in A.
+				\end{cases}
+			\]
+			For $\bvec v \in \bb R^2$ define $g_{\bvec v} : \bb R \to \bb R$ by $g_{\bvec v}(\alpha) = f(\alpha \bvec v)$. Show that each $g_{\bvec v}$ is continuous at $0$, but $f$ is not continuous at $\bvec 0$.
+	\end{enumerate}
+\end{problem}
+
+\begin{solution}
+
+\end{solution}
+
+\end{document}
