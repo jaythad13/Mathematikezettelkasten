@@ -7,6 +7,104 @@
 
 \begin{document}
 
+\begin{problem}[1]
+	Prove that
+	\[
+		\norm{\bvec x} \le \sum_{i = 1}^n \abs{x_i}
+	\]
+	for $\bvec x = (x_1, \ldots, x_n) \in \bb R^n$.
+\end{problem}
+
+\begin{solution}
+	We can prove this by induction notating $\bvec x \in \bb R^k$ by $\bvec x^k$. \\\\
+	For $n = 1$, we have
+	\[
+		\norm{\bvec x^1} = \abs{x_1} \le \abs{x_1}.
+	\]\\
+	Suppose for $\bvec x^k \in \bb R^k$ we have
+	\[
+		\norm{\bvec x^k} \le \sum_{i = 1}^k \abs{x_i}.
+	\]
+	Then, for $\bvec x^{k + 1} \in \bb R^{k + 1}$ we can say that
+	\[
+		\begin{split}
+			\norm{\bvec x^{k + 1}}^2 & = \norm{\bvec x^k}^2 + x_{k + 1}^2 \\
+						 & \le \Big ( \sum_{i = 1}^k \abs{x_i} \Big )^2 + x_{k + 1}^2 \\
+						 & \le \Big ( \sum_{i = 1}^k \abs{x_i} \Big )^2 + \abs{x_{k + 1}}^2 + 2 \abs{x_{k + 1}} \sum_{i = 1}^k \abs{x_i} \\
+						 & = \Big ( \abs{x_{k + 1}} + \sum_{i = 1}^k \abs{x_i} \Big )^2.
+		\end{split}
+	\]\\
+	That is,
+	\[
+		\norm{\bvec x^{k + 1}}^2 \le \Big ( \sum_{i = 1}^{k + 1} \abs{x_i} \Big )^2
+	\]
+	and it follows for all $\bvec x \in \bb R^n$ for any $n \in \bb N$ that
+	\[
+		\norm{\bvec x} \le \sum_{i = 1}^n \abs{x_i}.
+	\]
+\end{solution}
+
+\begin{problem}[10]
+	If $T : \bb R^n \to \bb R^m$ is a linear transformation, show that there is a number $M$ such that $\norm{T \bvec v} \le M \norm{\bvec v}$ for all $\bvec v \in \bb R^n$.
+\end{problem}
+
+\begin{solution}
+	For the standard basis (or any orthonormal basis) $\bvec e_1, \ldots, \bvec e_n$ let us have $M_1, \ldots, M_n \in \bb R$ such that
+	\[
+		\norm{T \bvec e_i} = M_i \norm{\bvec e_i} = M_i.
+	\]
+	Then for any $\bvec v \in \bb R^n$ we have $\bvec v = \alpha_1 \bvec e_1 + \cdots + \alpha_n \bvec e_n$. This gives us
+	\[
+		\norm{\bvec v}^2 = \alpha_1^2 + \cdots + \alpha_n^2
+	\]
+	and
+	\[
+		\begin{split}
+			\norm{T \bvec v} & = \norm{\alpha_1 T \bvec e_1 + \cdots + \alpha_n T \bvec e_n} \\
+					   & \le \abs{\alpha_1} \norm{T \bvec e_1} + \cdots + \abs{\alpha_n} \norm{T \bvec e_n} \\
+					   & = \abs{\alpha_1} M_1 + \cdots \abs{\alpha_n} M_n.
+		\end{split}
+	\]
+	Let $m = \max \set{M_1, \ldots, M_n}$. Then we can say
+	\[
+		\begin{split}
+			\norm{T \bvec v} & \le (m, \ldots, m) \cdot (\abs{\alpha_1}, \ldots, \abs{\alpha_n}) \\
+					 & \le \norm{(m, \ldots, m)} \norm{\abs{\alpha_1}, \ldots, \abs{\alpha_n}} \\
+					 & = \abs{m} \sqrt{n} \norm{\bvec v}.
+		\end{split}
+	\]
+	Thus, $M = \abs m \sqrt n$ is the desired number that bounds $\norm{T \bvec v}$.
+\end{solution}
+
+\begin{problem}[12]
+	Let $\bb (R^n)^\vee$ denote the dual space of $\bb R^n$. If $\bvec x \in \bb R^n$, define $\varphi_{\bvec x} \in (\bb R^n)^\vee$ by $\varphi_{\bvec x}(\bvec y) = \bvec x \cdot \bvec y$. Define $T : \bb R^n \to (\bb R^n)^\vee$ by $T \bvec x = \varphi_{\bvec x}$. \\\\
+	Show that $T$ is an invertible linear transformation and conclude that every $\varphi \in (\bb R^n)^\vee$ is $\varphi_{\bvec x}$ for a unique $\bvec x \in \bb R^n$.
+\end{problem}
+
+\begin{solution}
+	If $T \bvec x = \bvec 0$ we must have $\varphi_{\bvec x} (\bvec y) = 0$ for all $\bvec y \in \bb R^n$. Thus, $\varphi_{\bvec x}(\bvec x) = 0$, giving us $\bvec x \cdot \bvec x = 0$ and thus, $\bvec x = \bvec 0$. Thus, $T$ is injective. Since $\bb R^n$ and $(\bb R^n)^\vee$ are both $n$-dimensional, $T$ is also invertible. Thus, for each $\varphi \in (\bb R^n)^\vee$ we have a unique $\bvec x \in \bb R^n$ such that $T \bvec x = \varphi$, and $\varphi = \varphi_{\bvec x}$.
+\end{solution}
+
+\begin{problem}[14]
+	Prove that the union of any (even infinite) number of open sets is open. Prove that the intersection of two (and hence, finitely many) open sets is open. Give a counter example for infinitely many open sets.
+\end{problem}
+
+\begin{problem}[15]
+	Prove that $\set{\bvec x \in \bb R^n : \norm{\bvec x - \bvec a} < r}$ is open (for any $\bvec a \in \bb R^n$ and any $r > 0$).
+\end{problem}
+
+\begin{problem}[21]
+	\begin{enumerate}
+		\item If $A \subset \bb R^n$ is closed and $\bvec x \notin A$ prove that there is a number $d > 0$ such that $\norm{\bvec y - \bvec x} \ge d$ for all $\bvec y \in A$.
+		\item If, for $A, B \subset \bb R^n$, $A$ is closed, $B$ is compact, and $A \cap B = \emptyset$, prove that there is $d > 0$ such that $\norm{\bvec y - \bvec x} \ge d$ for all $\bvec y \in A$ and $\bvec x \in B$.
+		\item Give a counterexample to part (b) in $\bb R^2$ for if $A$ and $B$ are both closed but neither is compact.
+	\end{enumerate}
+\end{problem}
+
+\begin{problem}[22]
+	If (all subsets of $\bb R^n$), $U$ is open, and $C \subset U$ is compact, then show that there is a compact set $D$ such that $C \subset D^\circ$ and $D \subset U$ ($D^\circ$ denotes the interior of $D$).
+\end{problem}
+
 \begin{problem}[23]
 	If $f : A \to \bb R^m$ and $\bvec a \in A$ show that $\lim_{\bvec x \to \bvec a} f(\bvec x) = \bvec b$ if and only if $\lim_{\bvec x \to \bvec a} f_i(\bvec x) = b_i$ for $i \in \bb N_m$. Here, $f = (f_1, \ldots, f_m)$ and $\bvec b = (b_1, \ldots, b_m)$.
 \end{problem}
@@ -73,8 +171,12 @@
 	\end{enumerate}
 \end{problem}
 
-\begin{solution}
+\begin{problem}[27]
+	Prove that $\set{\bvec x \in \bb R^n : \norm{\bvec x - \bvec a} < r}$ is open by considering the function $f : \bb R^n \to \bb R$ defined by $f(\bvec x) = \norm{\bvec x - \bvec a}$ (for $\bvec a \in R^n$, $r > 0$).
+\end{problem}
 
-\end{solution}
+\begin{problem}[29]
+	If $A \subset \bb R^n$ is compact, prove that every continuous function $f : A \to \bb R$ takes on a maximum and minimum value.
+\end{problem}
 
 \end{document}
