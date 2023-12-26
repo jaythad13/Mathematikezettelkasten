@@ -72,7 +72,7 @@
 					 & \le \norm{(m, \ldots, m)} \norm{\abs{\alpha_1}, \ldots, \abs{\alpha_n}} \\
 					 & = \abs{m} \sqrt{n} \norm{\bvec v}.
 		\end{split}
-	\]
+	\] \\
 	Thus, $M = \abs m \sqrt n$ is the desired number that bounds $\norm{T \bvec v}$.
 \end{solution}
 
@@ -82,16 +82,46 @@
 \end{problem}
 
 \begin{solution}
-	If $T \bvec x = \bvec 0$ we must have $\varphi_{\bvec x} (\bvec y) = 0$ for all $\bvec y \in \bb R^n$. Thus, $\varphi_{\bvec x}(\bvec x) = 0$, giving us $\bvec x \cdot \bvec x = 0$ and thus, $\bvec x = \bvec 0$. Thus, $T$ is injective. Since $\bb R^n$ and $(\bb R^n)^\vee$ are both $n$-dimensional, $T$ is also invertible. Thus, for each $\varphi \in (\bb R^n)^\vee$ we have a unique $\bvec x \in \bb R^n$ such that $T \bvec x = \varphi$, and $\varphi = \varphi_{\bvec x}$.
+	If $T \bvec x = \bvec 0$ we must have $\varphi_{\bvec x} (\bvec y) = 0$ for all $\bvec y \in \bb R^n$. Thus, $\varphi_{\bvec x}(\bvec x) = 0$, giving us $\bvec x \cdot \bvec x = 0$ and thus, $\bvec x = \bvec 0$. Thus, $T$ is injective. \\\\
+	Since $\bb R^n$ and $(\bb R^n)^\vee$ are both $n$-dimensional, $T$ is also invertible. Thus, for each $\varphi \in (\bb R^n)^\vee$ we have a unique $\bvec x \in \bb R^n$ such that $T \bvec x = \varphi$, and $\varphi = \varphi_{\bvec x}$.
 \end{solution}
 
 \begin{problem}[14]
 	Prove that the union of any (even infinite) number of open sets is open. Prove that the intersection of two (and hence, finitely many) open sets is open. Give a counter example for infinitely many open sets.
 \end{problem}
 
+\begin{solution}
+	Suppose we have a collection of open sets, $\set{U_{\alpha}}$, indexed by $\alpha \in A$. For each $\bvec x \in \bigcup_{\alpha \in A} U_\alpha$ we have $\bvec x \in U_{\beta}$ for some $\beta \in A$. Since $U_\beta$ is open, we have $\bvec x \in I \subset U_\beta$ where $I$ is an open rectangle, and since we are looking at the union, we have $\bvec x \in I \subset \bigcup_{\alpha \in A} U_\alpha$. \\\\
+	Suppose we have the open sets $U_1$ and $U_2$. For any $\bvec x \in U_1 \cap U_2$ we must have $\bvec x \in I_1 \subset U_1$ and $\bvec x \in I_2 \subset U_2$ where $I_1$ and $I_2$ are open rectangles. This gives us $\bvec x \in I_1 \cap I_2 \subset U_1 \cap U_2$. \\\\
+	Note that the intersection of any two non-disjoint rectangles is also an open rectangle --- if we have rectangles $I_1 = \prod_{i = 1}^n (a_i, b_i)$ and $I_2 = \prod_{i = 1}^n (c_i, d_i)$ that have $\bvec x \in I_1 \cap I_2$, then we have $a_i, c_i < x_i < b_i, d_i$ for all $i \in \bb N_n$. Thus, we have
+	\[
+		I_1 \cap I_2 = \prod_{i = 1}^n (\max \set{a_i, c_i}, \min \set{b_i, d_i})
+	\]
+	as an open rectangle. \\\\
+	Since this is an open rectangle, we have the desired open rectangle subset containing any point in the intersection of $U_1$ and $U_2$. By induction we can extend this to any finite intersection of open sets. \\\\
+	This result doesn't hold for infinitely many open sets --- the intersection of all open intervals of the form $(-1/n, 1/n)$ is $\set{0}$, which is not open.
+\end{solution}
+
 \begin{problem}[15]
 	Prove that $\set{\bvec x \in \bb R^n : \norm{\bvec x - \bvec a} < r}$ is open (for any $\bvec a \in \bb R^n$ and any $r > 0$).
 \end{problem}
+
+\begin{solution}
+	Let us call the set $N_r(\bvec a)$. For any $\bvec x \in N_r(\bvec a)$, consider $\rho = r - \norm{\bvec x - \bvec a}$. Then by the triangle inequality we have $N_\rho(\bvec x) \subset N_r(\bvec a)$. By geometry (the Pythagorean theorem), we have
+	\[
+		\prod_{i = 1}^n \Big ( x_i - \frac{\rho}{\sqrt 2}, x_i + \frac{\rho}{\sqrt 2} \Big ) \subset N_\rho(\bvec x) \subset N_r(\bvec a).
+	\]
+	This is the open rectangle subset (obviously containing $\bvec x$) required for $N_r(\bvec a)$ to be open.
+\end{solution}
+
+\begin{problem}[19]
+	If $A$ is a closed set that contains every rational number $r \in [0, 1]$, then show that $[0, 1] \subset A$.
+\end{problem}
+
+\begin{solution}
+	Note that for $A$ to be closed, we must have $\bb R \setminus A$ open. Suppose, by way of contradiction, that we didn't have $[0, 1] \subset A$, and instead, $x \in [0, 1]$ but $x \notin A$. \\\\
+	Since there is a rational number beween any two real numbers, any open interval $(a, b)$ with $x \in (a, b)$ would contain a rational number in $[0, 1]$. Thus, there would be no open interval $(a, b)$ with $x \in (a, b) \subset \bb R \setminus A$, making it not open, and giving rise to a contradiction. Thus, our supposition that there is such an $x$ must be false.
+\end{solution}
 
 \begin{problem}[21]
 	\begin{enumerate}
@@ -100,6 +130,21 @@
 		\item Give a counterexample to part (b) in $\bb R^2$ for if $A$ and $B$ are both closed but neither is compact.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item Since $\bvec x \in \bb R^n \setminus A$, an open set, we have an open rectangle $I$ such that $\bvec x \in I \subset \bb R^n \setminus A$. For $I = \prod_{i = 1}^n (a_i, b_i)$, define
+			\[
+				d = \min \set{\abs{x - a_i}, \abs{x - b_i} : i \in \bb N_n}.
+			\]
+			This allows to contain the open ball $N_d(\bvec x) = \set{\bvec y \in \bb R^n : \norm{\bvec y - \bvec x} < d}$ inside $I$. That is, the coordinates of any point in $N_d(\bvec y)$ are displaced by less than the minimum required to leave $I$, and thus, $N_d(\bvec x) \subset I$.\\\\
+			Since $N_d(\bvec x) \subset I \subset \bb R^n \setminus A$, we have $\bvec y \notin A$ for any point $\bvec y$ with $\norm{\bvec y - \bvec x} < d$, and the contrapositive is the desired property for $d$.
+		\item 
+		\item Consider $A = \set{(x, y) \in \bb R^2 : y \ge 1/x, x > 0}$ and $B = \set{(x, y) \in \bb R^2 : y \le - 1/x, x > 0}$. Since $1/0$ is undefined, we do not consider any points for which $x = 0$ to be part of either set. \\\\
+			Note that both sets are closed. For any $(x, y) \in \bb R^2 \setminus A$ there is a known technique to find the point on the curve $y = 1/x$ nearest to $(x, y)$. The neighbourhood $N_{(x, y)}(s)$ where $s$ is the distance of this nearest point is then contained in $\bb R^2 \setminus A$. Since neighbourhoods are open, this makes $\bb R^2 \setminus A$ open, and thus, $A$ closed. Similarly, we can show that $B$ is closed. Neither of them is compact since neither of them is bounded. \\\\
+			Note finally, that for any $d > 0$, there is some $2/n < d$ where $n \in \bb N$. Thus, for any $d > 0$ we have the points $(n, 1/n)$ and $(n, -1/n)$ at distance $2/n < d$.
+	\end{enumerate}
+\end{solution}
 
 \begin{problem}[22]
 	If (all subsets of $\bb R^n$), $U$ is open, and $C \subset U$ is compact, then show that there is a compact set $D$ such that $C \subset D^\circ$ and $D \subset U$ ($D^\circ$ denotes the interior of $D$).
