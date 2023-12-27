@@ -139,9 +139,14 @@
 			\]
 			This allows to contain the open ball $N_d(\bvec x) = \set{\bvec y \in \bb R^n : \norm{\bvec y - \bvec x} < d}$ inside $I$. That is, the coordinates of any point in $N_d(\bvec y)$ are displaced by less than the minimum required to leave $I$, and thus, $N_d(\bvec x) \subset I$.\\\\
 			Since $N_d(\bvec x) \subset I \subset \bb R^n \setminus A$, we have $\bvec y \notin A$ for any point $\bvec y$ with $\norm{\bvec y - \bvec x} < d$, and the contrapositive is the desired property for $d$.
-		\item 
+		\item Since $A$ is closed, for any $\bvec x \in B$, there exists some $d'$ that gives us that $N_{d'} \cap A$ is empty. Consider $\mathcal O$, the open cover of $B$ given by considering a $d'/2$-neighbourhood of each point. By the compactness of $B$, we can reduce this to a finite sub-cover $\bar{\mathcal O} = \set{U_1, \ldots, U_n}$ where each $U_i$ is a $d'_i/2$-neighbourhood of some point in $B$.\\\\
+			For any point $\bvec x \in B$, we have $\bvec x \in U_i \in \bar{\mathcal O}$, and thus, $\bvec x$ is at distance greater than $d_i'/2$ from any $\bvec y \in A$. Since there are only finitely many $U_i$, there are only finitely many corresponding $d_i'$ and thus, we can bound $d$.
+			\[
+				d > \min \set{d_i' : i \in \bb N_n} > 0.
+			\]
+			That is, we do not have arbitrarily close points of $A$ and $B$.
 		\item Consider $A = \set{(x, y) \in \bb R^2 : y \ge 1/x, x > 0}$ and $B = \set{(x, y) \in \bb R^2 : y \le - 1/x, x > 0}$. Since $1/0$ is undefined, we do not consider any points for which $x = 0$ to be part of either set. \\\\
-			Note that both sets are closed. For any $(x, y) \in \bb R^2 \setminus A$ there is a known technique to find the point on the curve $y = 1/x$ nearest to $(x, y)$. The neighbourhood $N_{(x, y)}(s)$ where $s$ is the distance of this nearest point is then contained in $\bb R^2 \setminus A$. Since neighbourhoods are open, this makes $\bb R^2 \setminus A$ open, and thus, $A$ closed. Similarly, we can show that $B$ is closed. Neither of them is compact since neither of them is bounded. \\\\
+			Note that both sets are closed. For any $(x, y) \in \bb R^2 \setminus A$ there is a known technique to find the point on the curve $y = 1/x$ nearest to $(x, y)$. The neighbourhood $N_s(x, y)$ where $s$ is the distance of this nearest point is then contained in $\bb R^2 \setminus A$. Since neighbourhoods are open, this makes $\bb R^2 \setminus A$ open, and thus, $A$ closed. Similarly, we can show that $B$ is closed. Neither of them is compact since neither of them is bounded. \\\\
 			Note finally, that for any $d > 0$, there is some $2/n < d$ where $n \in \bb N$. Thus, for any $d > 0$ we have the points $(n, 1/n)$ and $(n, -1/n)$ at distance $2/n < d$.
 	\end{enumerate}
 \end{solution}
@@ -201,6 +206,20 @@
 	Prove that a linear transformation $T : \bb R^n \to \bb R^m$ is continuous.
 \end{problem}
 
+\begin{solution}
+	Consider any point $T \bvec a \in \bb R^m$ and any $\varepsilon > 0$. We can find points $\bvec x \in \bb R^n$ such that $\norm{T \bvec x - T \bvec a} < \varepsilon$ since we have bounded $T \bvec v$ by $\norm{\bvec v}$. \\\\
+	Specifically, if we have $\norm{T \bvec v} \le M \norm{\bvec v}$, then we can choose $\delta = \varepsilon/M$. If we look at $\bvec x$ such that $\bvec v = \bvec x - \bvec a$ has $\norm{\bvec v} < \delta$, then we have
+	\[
+		\begin{split}
+			\norm{T \bvec x - T \bvec a} & = \norm{T \bvec v} \\
+						     & \le M \norm{\bvec v} \\
+						     & < M \frac{\varepsilon}{M} \\
+						     & = \varepsilon
+		\end{split}
+	\]\\
+	That is, for all $\bvec x \in \bb R^n$ with $\norm{\bvec x - \bvec a} < \delta$ we have $\norm{T \bvec x - T \bvec a} < \varepsilon$. $T$ is continuous everywhere.
+\end{solution}
+
 \begin{problem}[26]
 	Let $A = \set{(x, y) \in \bb R^2 : x > 0 \text{ and } 0 < y < x^2 }$.
 	\begin{enumerate}
@@ -217,11 +236,24 @@
 \end{problem}
 
 \begin{problem}[27]
-	Prove that $\set{\bvec x \in \bb R^n : \norm{\bvec x - \bvec a} < r}$ is open by considering the function $f : \bb R^n \to \bb R$ defined by $f(\bvec x) = \norm{\bvec x - \bvec a}$ (for $\bvec a \in R^n$, $r > 0$).
+	Prove that $\set{\bvec x \in \bb R^n : \norm{\bvec x - \bvec a} < r}$ is open by considering the function $f : \bb R^n \to \bb R$ defined by $f(\bvec x) = \norm{\bvec x - \bvec a}$ (for $\bvec a \in \bb R^n$, $r > 0$).
 \end{problem}
+
+\begin{solution}
+	First we will show that $f$ is continuous at all $\bvec b \in \bb R^n$.\\\\
+	For any $\varepsilon > 0$, if we want $\abs{f(\bvec b) - f(\bvec x)} < \varepsilon$, then we are looking for points with $\abs{\norm{\bvec b - \bvec a} - \norm{\bvec x - \bvec a}} < \varepsilon$. The triangle inequality tells us that if we have $\norm{\bvec x - \bvec b} < \varepsilon$ then we will always have $\norm{\bvec x - \bvec a} \le \norm{\bvec x - \bvec b} + \norm{\bvec b - \bvec a}$ and thus, $\norm{\bvec x - \bvec a} - \norm{\bvec b - \bvec a} \le \norm{\bvec x - \bvec b} < \varepsilon$. The triangle inequality also gives us $\norm{\bvec b - \bvec a} \le \norm{\bvec x - \bvec a} + \norm{\bvec x - \bvec b}$ and thus, $\norm{\bvec b - \bvec a} - \norm{\bvec x - \bvec a} \le \norm{\bvec x - \bvec b} < \varepsilon$. \\\\
+	Thus, choosing $\delta = \varepsilon$ gives us that for every $\bvec x$ with $\norm{\bvec x - \bvec b} < \delta$ we have $\abs{f(\bvec x) - f(\bvec b)} < \varepsilon$. That is, $f$ is continuous.\\\\
+	Consider the pre-image of the open interval $(-r, r)$ under $f$. That is, consider $\set{\bvec x \in \bb R^n : \norm{\bvec x - \bvec a} <r}$. Since $f$ is continuous and $(-r, r)$ is open, $f^\text{pre}((-r, r))$ is open, as desired.
+\end{solution}
 
 \begin{problem}[29]
 	If $A \subset \bb R^n$ is compact, prove that every continuous function $f : A \to \bb R$ takes on a maximum and minimum value.
 \end{problem}
+
+\begin{solution}
+	Note that we have $f^{\text{img}}(A)$ as compact. Thus it is closed and bounded, and we can talk about $\sup f^{\text{img}}(A)$ and $\inf f^{\text{img}}(A)$. We claim that these are contained in $f^{\text{img}}(A)$ and are thus its respective maximum and minimum values.\\\\
+	Since $f^{\text{img}}(A)$ is closed, it's complement must be open. If $\sup f^\text{img}(A)$ were not in $A$, then it would be in the complement and thus, the complement would contain a point around which it does not contain any open interval making it not open --- any open interval containing $\sup f^\text{img}(A)$ would contain points less than $\sup f^\text{img}(A)$, and thus, would contain points of $A$. Thus, $\sup f^\text{img}(A)$ must be in $A$. Similarly, $\inf f^\text{img}(A)$ must be in $A$. \\\\
+	Then, by their definition they are the maximum and minimum values that $f$ takes on $A$.
+\end{solution}
 
 \end{document}
