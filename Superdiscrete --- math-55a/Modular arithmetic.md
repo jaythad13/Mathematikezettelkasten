@@ -212,8 +212,51 @@ $n$ is a Carmichael number if and only if
 
 It turns out Carmichael numbers are not a huge problem for probabilistic reasons.
 
+### Computing $a^n \mod m$ for large $n$, or, how to achieve enormous powers!
+
 But, we still have to calculate $a^n \mod n$ which seems computationally intractable for large numbers. Luckily there are some ways to make this better.
 
+##### _method:_ use Euler's theorem
 
+If $\gcd(a, m) = 1$ and $\phi(m)$ is known, you can exploit Euler's theorem to compute $a^n \mod m$, since $a^n \equiv a^r \mod m$ where $r$ is the remainder given by dividing $n$ by $\phi(m)$.
 
+Unfortunately, if $\phi(m)$ is large, then it can still be difficult to calculate $a^r \mod m$. Fortunately, it's usually still doable by calculator even if it is not doable by hand.
 
+##### _method:_ seed planting
+
+Using the binary representation of $n$ successively square $a$, with some small adjustment.
+
+##### _example:_ $6^{83} \mod 79$ two ways
+
+Note that $83 = 64 + 16 + 2 + 1$.
+
+Thus, $6^{83} = 6^{64}6^{16}6^{2}6^1$. We can write this as $((((((6^1)^2)^2 \times 6)^2)^2)^2 \times 6)^2 \times 6$. While this isn't really helpful if we're doing it generally, breaking it down like this allows us to take the remainder at each step and break our work down.
+
+$$
+\begin{split}
+	((((((6^1)^2)^2 \times 6)^2)^2)^2 \times 6)^2 \times 6 & = (((((6^2)^2 \times 6)^2)^2)^2 \times 6)^2 \times 6 \\
+	& = ((((36^2 \times 6)^2)^2)^2 \times 6)^2 \times 6 \\
+	& = (((7776^2)^2)^2 \times 6)^2 \times 6 \\
+	& \equiv_{79} (((34^2)^2)^2 \times 6)^2 \times 6 \\
+	& = (((1156^2)^2 \times 6)^2 \times 6 \\
+	& \equiv_{79} (((50^2)^2 \times 6)^2 \times 6 \\
+	& = (((2500)^2 \times 6)^2 \times 6 \\
+	& \equiv_{79} (51^2 \times 6)^2 \times 6 \\
+	& = 15606^2 \times 6 \\
+	& \equiv_{79} 43^2 \times 6 \\
+	& = 11094 \\
+	& \equiv_{79} 34.
+\end{split}
+$$
+This takes far fewer than $83$ multiplications, but divides it up into enough steps that it is computationally feasible to mod out.
+
+Of course, since $79$ is known prime and relatively small, we can just use Euler's theorem:
+$$
+\begin{split}
+6^{83} & = 6^{78} \times 6^5 \\
+& \equiv_{79} 1 \times 108 \times 72 \\
+& \equiv_{79} 29 \times 72 \\
+& = 2088 \\
+& \equiv_{79} 34. 
+\end{split}
+$$
