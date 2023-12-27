@@ -137,7 +137,7 @@ If $B \subset \bb R^m$ is compact and $\set{\bvec x} \times B$ (with $\bvec x \i
 
 Since $B$ is compact, $\set{\bvec x} \times B$ is compact, and thus, instead of looking at $\mathcal O$ we can look at the finite sub-cover $\bar{\mathcal O}$. 
 
-Specifically, for each point $(\bvec x, \bvec y) \in W \in \mathcal O$, look at the open rectangle $U \times V \subset W$ containing it with $U \subset \$. Since the sets $V$ form an open cover of $B$, they can be reduced to a finite sub-cover $\set{V_1, \ldots, V_n}$. Also note, that $\bvec x \in U$ for any $U$, and thus, we can also look at only finitely many of the open rectangles $U$ — the corresponding $\set{U_1, \ldots, U_n}$.
+Specifically, for each point $(\bvec x, \bvec y) \in W \in \mathcal O$, look at the open rectangle $U \times V \subset W$ containing it with $U \subset \bb R^n$. Since the sets $V$ form an open cover of $B$, they can be reduced to a finite sub-cover $\set{V_1, \ldots, V_n}$. Also note, that $\bvec x \in U$ for any $U$, and thus, we can also look at only finitely many of the open rectangles $U$ — the corresponding $\set{U_1, \ldots, U_n}$.
 
 Since the finite intersection $\bar U = \bigcap_{i = 1}^n U_i$ is open, and is clearly covered by $\set{U_1, \ldots, U_n}$, we have that $\bar U \times B$ is covered by the finitely many (at most $n$) open sets $W_i \in \mathcal O$ that contain the open rectangles $U_i \times V_i$.
 
