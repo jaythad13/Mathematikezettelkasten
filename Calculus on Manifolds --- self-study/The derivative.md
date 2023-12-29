@@ -4,8 +4,6 @@ tags:
 - self-study
 ---
 
-
-
 In single-variable calculus, we defined the derivative of a function $f : \bb R \to \bb R$ at $a$ to be the number
 $$
 f'(a) = \lim_{x \to a} \frac{f(x) - f(a)}{x - a}.
@@ -34,7 +32,7 @@ $$
 
 $Df \Big |_{\bvec a} = T$ is the derivative of $f$ at $\bvec a$.
 
-Note that for this limit to exist, $\bvec a$ must be contained in some open set inside $A$.
+Note that for this limit to exist, $\bvec a$ must be contained in some open subset of $A$.
 
 Note that we call $Df \Big |_{\bvec a}$ _the_ derivative of $f$ at $\bvec a$. We can show that this title is deserved.
 
