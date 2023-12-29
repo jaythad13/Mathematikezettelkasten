@@ -155,6 +155,14 @@
 	If (all subsets of $\bb R^n$), $U$ is open, and $C \subset U$ is compact, then show that there is a compact set $D$ such that $C \subset D^\circ$ and $D \subset U$ ($D^\circ$ denotes the interior of $D$).
 \end{problem}
 
+\begin{solution}
+	Consider $\mathcal O$, the open cover of $C$ produced by looking at the open rectangles $I \subset U$ containing each point in $C$. Let $\bar{\mathcal O}$ be the finite subcover that $\mathcal O$ reduces to. Note that the union of the finite subcover is an open subset of $U$ containing $C$. To be exact,
+	\[
+		C \subset \bigcup_{V \in \bar{\mathcal O}} V \subset U.
+	\]
+	More over, since it is the union of finitely many open sets, it is a bounded set. Thus, its closure is a closed and bounded, and therefore compact subset $D \subset U$ and it is $D^\circ$, the open interior that contains $C$.
+\end{solution}
+
 \begin{problem}[23]
 	If $f : A \to \bb R^m$ and $\bvec a \in A$ show that $\lim_{\bvec x \to \bvec a} f(\bvec x) = \bvec b$ if and only if $\lim_{\bvec x \to \bvec a} f_i(\bvec x) = b_i$ for $i \in \bb N_m$. Here, $f = (f_1, \ldots, f_m)$ and $\bvec b = (b_1, \ldots, b_m)$.
 \end{problem}
@@ -226,14 +234,25 @@
 		\item Show that every straight line through $\bvec 0$ contains an interval around $\bvec 0$ which is in $\bb R^2 \setminus A$.
 		\item Define $f : \bb R^2 \to \bb R$ by
 			\[
-				f(\bvec x) = \begin{cases}
-					0 & \bvec x \notin A \\
-					1 & \bvec x \in A.
+				f(\bvec v) = \begin{cases}
+					0 & \bvec v \notin A \\
+					1 & \bvec v \in A.
 				\end{cases}
 			\]
-			For $\bvec v \in \bb R^2$ define $g_{\bvec v} : \bb R \to \bb R$ by $g_{\bvec v}(\alpha) = f(\alpha \bvec v)$. Show that each $g_{\bvec v}$ is continuous at $0$, but $f$ is not continuous at $\bvec 0$.
+			For $\bvec v \in \bb R^2$ define $g_{\bvec v} : \bb R \to \bb R$ by $g_{\bvec v}(\lambda) = f(\lambda \bvec v)$. Show that each $g_{\bvec v}$ is continuous at $0$, but $f$ is not continuous at $\bvec 0$.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item Every straight line through $\bvec 0$ is of the form $y = \alpha x$ for some $\alpha \in \bb R$, or $x = 0$.\\\\
+			For $x = 0$, the whole line is not in $A$, obviously. \\\\
+			For all other lines consider points in the graph of the line with $x \in (-\abs \alpha, \abs \alpha)$. These points give us $x^2 < \alpha x$ and thus, $x^2 < y$ for positive $x$ and positive $\alpha$. For positive $x$ and negative $\alpha$ we have $y < 0$ and nonpositive $x$ are already excluded from $A$. Thus, for $x$ in this interval, we have points in an interval about $\bvec 0$ that are in $\bb R^2 \setminus A$.
+		\item Choose $\delta = \frac{v_2}{v_1}$. Then, for any $\varepsilon > 0$, for all $\lambda$ with $\abs{\lambda - 0} < \delta$ we have $\abs{g_{\bvec v}(\lambda) - g_{\bvec v}(0)} = 0 < \varepsilon$. Thus, $g_{\bvec v}$ is continuous at $0$.\\\\
+			However, for any $0 < \delta$, there are always points $(x, y) = (\frac{\delta}{\sqrt 2}, \frac{\delta}{2 \sqrt 2})$ with $\norm{(x, y) - \bvec 0} = \delta \sqrt{\frac{5}{8}} < \delta$ and $x^2 = \frac{\delta}{2} > \frac{\delta}{2 \sqrt 2} = y$. These points $(x, y)$ are in $A$ and give $f(x,y) = 1$.\\\\
+			Thus, for any $0 < \varepsilon < 1$ there is no $\delta > 0$ such that for all $\bvec v$ with $\norm{\bvec v - \bvec 0} < \delta$ we have $\abs{f(\bvec v) - f(\bvec 0)} < \varepsilon$. That is, $f$ is not continuous at $\bvec 0$.
+	\end{enumerate}
+\end{solution}
 
 \begin{problem}[27]
 	Prove that $\set{\bvec x \in \bb R^n : \norm{\bvec x - \bvec a} < r}$ is open by considering the function $f : \bb R^n \to \bb R$ defined by $f(\bvec x) = \norm{\bvec x - \bvec a}$ (for $\bvec a \in \bb R^n$, $r > 0$).
