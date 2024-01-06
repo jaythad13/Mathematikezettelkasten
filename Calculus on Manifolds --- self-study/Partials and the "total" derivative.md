@@ -145,7 +145,7 @@ However, the linear map $\bvec 0 = 0 \bvec e_1^\vee + 0 \bvec e_2^\vee$ does not
 
 For a function $f : A \to \bb R^m$ ($A \subset \bb R^n$) and some $\bvec a \in A$, if $f$ is $\mathcal C^1$ on some open $U \subset A$ with $\bvec a \in U$, $f$ is differentiable at $\bvec a$.
 
-##### _proposition:_
+##### _proof:_
 
 Again, note that by [[Differentiability theorems#_theorem _ the projection principle holds for differentiability|the projection principle]], we only need to show that this holds for $m = 1$. Other cases follow by the differentiability of component functions.
 
