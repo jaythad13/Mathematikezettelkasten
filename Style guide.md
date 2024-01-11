@@ -69,7 +69,7 @@ We use $S \setminus T$ over $S - T$ to denote set minus.
 
 We use the same notation as Napkin for functions because it is unambiguous. For a function $f : X \to Y$, $T \subseteq Y$, and $S \subseteq Y$:
 
-- We denote the pre-image of $T$ by $f^{pre}(T)$. Sometimes we may abuse notation to abbreviate $f^{pre}(\{y\})$ to $f^{pre}(y)$ for some $y \in Y$.
-- We denote the image of $S$ by $f^{img}(S)$
+- We denote the pre-image of $T$ by $f^\text{pre}(T)$. Sometimes, we will write $f^\text{pre}(\{ y \})$ as $f^\text{fib}(y)$ for some $y \in Y$.
+- We denote the image of $S$ by $f^\text{img}(S)$
 
 
