@@ -54,7 +54,7 @@ $$
 \psi(1) = \mathcal{1} \\
 \end{gathered}
 $$
-This then forces $\varphi = \psi$.
+as well as the preservation of addition and multiplication. Thinking of $n$ as $\underbrace{ 1 + \dots + 1 }_{ n \text{ times} }$, and noting that $\psi(1) + \psi(-1) = 0$ and thus, $\psi(-1) = -\mathcal 1$, along with addition and multiplication preservation gives us $\psi = \varphi$.
 
 We can see how this universal property is sort of the "opposite" property on the category of rings to what the previous one is on sets — all of the functions go out from $\mathbb{Z}$ instead of into $\mathbf{1}$. It was easy to believe that any singleton was the same since basically all sets have alone is their cardinality, and thus, it's easy to see that there is "essentially" only one $\mathbf{1}$ satisfying the universal property where "essentially" means upto bijections of sets. It turns out this is true for rings, only "essentially" means upto isomorphisms of rings.
 
@@ -68,6 +68,8 @@ If $A$ has a unique homomorphism to every ring $R$, then it has a unique homomor
 
 Since compositions of homomorphisms are homomorphisms, we have homomorphisms $\varphi \circ \varphi' : \mathbb{Z} \to \mathbb{Z}$ and $\varphi' \circ \varphi : A \to A$. However, we already have the unique homomorphisms $\operatorname{id}_{\mathbb{Z}}$ and $\operatorname{id}_A$ on $\mathbb{Z}$ and $A$ respectively. Thus, $\varphi \circ \varphi' = \operatorname{id}_{\mathbb{Z}}$ and $\varphi' \circ \varphi = \operatorname{id}_{A}$ making them inverses of each and the isomorphisms we wanted.
 
+Note that this proof has basically nothing to do with ring theory — it basically only uses the fact that homomorphisms that are inverses of each other are isomorphisms which is just generally true for any "notion of isomorphism" one might define. We will see basically the exact same trick pop up again in proving that a universal property is uniquely satisfied for other universal properties.
+
 ##### _example:_ the basis determines a linear map
 
 Suppose we have a vector space $V$, and a choice of basis $(v_{s})_{s \in S}$. Choose a target vector space $W$. For every function $f : S \to W$, there is a unique linear map $T_{f} \in \mathcal{L}(V, W)$ such that $T_{f} \circ i = f$. Here $i(s) = v_{s}$ for all $s \in S$.
@@ -76,13 +78,35 @@ This basically amounts to the fact that a linear map from a vector space is uniq
 
 Here $T_{f}$ is satisfying the universal property.
 
+We can often draw a commutative diagram to represent statements in category theory. In a commutative diagram, any paths from one object to another along arrows are the same. In the diagram below this means that $T_{f} \circ i = f$.
 
+```tikz
+\usepackage{tikz-cd}
+\begin{document}
+	\begin{tikzcd}
+		S \arrow[r, "i"] \arrow[dr, "\forall f"] & V \arrow[d, dashrightarrow, "\exists! \, T_f \in \mathcal L({V, W})"] \\
+		& W
+	\end{tikzcd}
+\end{document}
+```
 
+##### _example:_ bilinear maps uniquely factor through the tensor product
 
+Given vector spaces $U, V, W$ a bilinear map $f : U \times V \to W$ is a function that is linear in each variable — each function (for each $v \in V$) given by $u \mapsto f(u, v)$ is linear, and so is each function given by $v \mapsto f(u, v)$.
 
+It is a fact that there exists a vector space (called the tensor product) $U \otimes V$ and a bilinear map $b : U \times V \to U \otimes V$ with the following universal property (refer to [[Linear Algebra Done Right.pdf#page=393|tensor products]]):
 
+```tikz
+\usepackage{tikz-cd}
+\begin{document}
+	\begin{tikzcd}
+	U \times V \ar[r, "b"] \ar[dr, "\forall f \in \mathcal B({U \times V, W})"'] & U \otimes V \ar[d, dashrightarrow, "\exists ! \, T_f \in \mathcal L({U \otimes V, W})"] \\
+	& W
+	\end{tikzcd}
+\end{document}
+```
 
+We can pull the same trick that we did with the rings to show that there is in fact only one vector space $U \otimes V$ through which every bilinear map $U \times V \to W$.
 
-
-
+##### _proposition:_ bilinear maps uniquely factor only through the tensor product
 
