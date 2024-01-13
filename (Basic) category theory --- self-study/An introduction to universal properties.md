@@ -26,9 +26,9 @@ One example of a less trivial universal property is the following.
 
 ##### _example:_ $\mathbb{Z}$ is uniquely embedded in every ring
 
-Note that from now on, by ring, we always mean ring with a multiplicative identity $\mathcal{1}$. With this assumption, we can prove the following universal property.
+Note that from now on, by [[Rings|ring]], we always mean ring with a multiplicative identity $\mathcal{1}$. With this assumption, we can prove the following universal property.
 
-For all rings $R$, there exists a unique homomorphism $\varphi : \mathbb{Z} \to R$.
+For all rings $R$, there exists a unique [[Ring homomorphisms|homomorphism]] $\varphi : \mathbb{Z} \to R$.
 
 To show existence, just consider
 $$
@@ -72,9 +72,9 @@ Note that this proof has basically nothing to do with ring theory — it basical
 
 ##### _example:_ the basis determines a linear map
 
-Suppose we have a vector space $V$, and a choice of basis $(v_{s})_{s \in S}$. Choose a target vector space $W$. For every function $f : S \to W$, there is a unique linear map $T_{f} \in \mathcal{L}(V, W)$ such that $T_{f} \circ i = f$. Here $i(s) = v_{s}$ for all $s \in S$.
+Suppose we have a [[Vector spaces|vector space]] $V$, and a choice of [[Bases|basis]] $(v_{s})_{s \in S}$. Choose a target vector space $W$. For every function $f : S \to W$, there is a unique linear map $T_{f} \in \mathcal{L}(V, W)$ such that $T_{f} \circ i = f$. Here $i(s) = v_{s}$ for all $s \in S$.
 
-This basically amounts to the fact that a linear map from a vector space is uniquely determined by its values on the basis. We can rephrase this as $\Phi : \mathcal{L}(V, W) \to \{ f : S \to W \}$ given by $\Phi(T_{f}) = T_{f} \circ i$ is a bijection.
+This basically amounts to the fact that a [[Linear maps|linear map from a vector space is uniquely determined by its values on the basis]]. We can rephrase this as $\Phi : \mathcal{L}(V, W) \to \{ f : S \to W \}$ given by $\Phi(T_{f}) = T_{f} \circ i$ is a bijection.
 
 Here $T_{f}$ is satisfying the universal property.
 
@@ -92,7 +92,7 @@ We can often draw a commutative diagram to represent statements in category theo
 
 ##### _example:_ bilinear maps uniquely factor through the tensor product
 
-Given vector spaces $U, V, W$ a bilinear map $f : U \times V \to W$ is a function that is linear in each variable — each function (for each $v \in V$) given by $u \mapsto f(u, v)$ is linear, and so is each function given by $v \mapsto f(u, v)$.
+Given vector spaces $U, V, W$ a bilinear map $f : U \times V \to W$ is a function that is linear in each variable — each function (for each $v \in V$) given by $u \mapsto f(u, v)$ is linear, and so is each function given by $v \mapsto f(u, v)$. The space of all such bilinear maps is $\mathcal{B}(U \times V, W)$.
 
 It is a fact that there exists a vector space (called the tensor product) $U \otimes V$ and a bilinear map $b : U \times V \to U \otimes V$ with the following universal property (refer to [[Linear Algebra Done Right.pdf#page=393|tensor products]]):
 
@@ -110,3 +110,75 @@ We can pull the same trick that we did with the rings to show that there is in f
 
 ##### _proposition:_ bilinear maps uniquely factor only through the tensor product
 
+Suppose we have another vector space $P$, satisfying the same commutative diagram. That is, we have both of the following diagrams commute.
+```tikz
+\usepackage{tikz-cd}
+\begin{document}
+	\begin{tikzcd}
+	U \times V \ar[r, "b"] \ar[dr, "\forall f \in \mathcal B({U \times V, W})"'] & U \otimes V \ar[d, dashrightarrow, "\exists ! \, T_f \in \mathcal L({U \otimes V, W})"] \\
+	& W
+	\end{tikzcd}
+	\begin{tikzcd}
+	U \times V \ar[r, "b'"] \ar[dr, "\forall f \in \mathcal B({U \times V, W})"'] & P \ar[d, dashrightarrow, "\exists ! \, T_f' \in \mathcal L({P, W})"] \\
+	& W
+	\end{tikzcd}
+\end{document}
+```
+
+Then, $U \otimes V \cong P$ by an isomorphism $i$, such that $i \circ b = b'$.
+
+##### _proof:_
+
+We will try to prove this just using diagrams. 
+
+The following diagrams must commute, since the diagrams in the hypothesis commute.
+```tikz
+\usepackage{tikz-cd}
+\begin{document}
+	\begin{tikzcd}
+	U \times V \ar[r, "b"] \ar[dr, "b'"'] & U \otimes V \ar[d, dashrightarrow, "\exists ! \, T_{b'} \in \mathcal L({U \otimes V, P})"] \\
+	& P
+	\end{tikzcd}
+	\begin{tikzcd}
+	U \times V \ar[r, "b'"] \ar[dr, "b"'] & P \ar[d, dashrightarrow, "\exists ! \, T_b' \in \mathcal L({P, U \otimes V})"] \\
+	& U \otimes V
+	\end{tikzcd}
+\end{document}
+```
+
+Since $b' = T_{b'} \circ b$ and $b = T_{b}' \circ b'$ we have $b = T_{b}' \circ T_{b'} \circ b$ and $b' = T_{b'} \circ T_{b}' \circ b'$. That is, $T = T_{b}' \circ T_{b'} \in \mathcal{L}(U \otimes V)$ is the unique linear map that satisfies $T \circ b = b$ for the bilinear map $b : U \times V \to U \otimes V$ and $T' = T_{b'} \circ T_{b}' \in \mathcal{L}(U \otimes V)$ is the unique linear map that satisfies $T' \circ b' = b'$ for the bilinear map $b : U \times V \to P$.
+
+However, we already have $\operatorname{id}_{U \otimes V}$ and $\operatorname{id}_{P}$ as those respective unique maps. Thus, we must have $T = \operatorname{id}_{U \otimes V}$ and $T' = \operatorname{id}_{P}$, giving us that $T_{b'}$ and $T_{b}'$ are inverses of each other, and thus isomorphisms. Specifically, $T_{b'}$ is the desired isomorphism $i$. The diagrams hint at this isomorphism since you pretty much can't tell $U \otimes V$ and $P$ apart.
+
+Although, we've stayed mainly algebraic, we can also have topological universal properties — they are just as common
+
+##### _example:_ every map from the discrete space is continuous
+
+Let $S$ be a set, and let $\mathcal{D}(S)$ be $S$ endowed with the [[Metric spaces#_examples _ metric spaces|discrete topology]]. Since every subset is open, any function $F$, from $S$ to a topological space $X$ is defines a unique continuous function $f$ from $\mathcal{D}(S)$ to $X$ that agrees with $F$ everywhere — just set $f(s) = F(s)$. That is, for $i : S \to \mathcal{D}(S)$ by $s \mapsto s$, the following diagram commutes.
+
+```tikz
+\usepackage{tikz-cd}
+\begin{document}
+	\begin{tikzcd}
+		S \ar[r, "i"] \ar[rd, "\forall F"'] & \mathcal D(S) \ar[d, dashrightarrow, "\exists ! \, f \in \mathcal C({\mathcal D(S), X})"] \\
+		& X
+	\end{tikzcd}
+\end{document}
+```
+
+This works because the pre-image of any subset of $X$ under $f$, is just a subset of $S$, which is open in $\mathcal{D}(S)$.
+
+##### _example:_ the gluing lemma is a universal property
+
+The gluing lemma tells us that if a space $X$ is covered by its open subsets $U$ and $V$, then any functions from $U$ and $V$ to a space $Y$ that agree on $U \cap V$ define a unique continuous function from all of $X$ to $Y$. That is, the following diagram commutes (where all arrows are continuous functions).
+
+```tikz
+\usepackage{tikz-cd}
+\begin{document}
+	\begin{tikzcd}
+			U \cap V \arrow[r, hook, "i"] \arrow[d, hook, "j"] & U \arrow[d, hook, "j'"] \arrow[ddr, bend left, "\forall f"] \\
+			V \arrow[r, hook, "i'"] \arrow[drr, bend right, "\forall g"] & X \arrow[dr, dashrightarrow, "\exists ! \, h"] \\
+						&&\forall Y
+	\end{tikzcd}
+\end{document}
+```
