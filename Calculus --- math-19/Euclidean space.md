@@ -20,7 +20,6 @@ Note that in all of these examples we specified a notion of distance. Also, in a
 
 ##### _definition:_ Euclidean spaces
 
-
 Euclidean spaces are the [[Prototypical vector spaces|real and complex vector spaces]] $\bb{R}^n$ and $\bb{C}^n$ with [[Inner product spaces|inner product]] given by 
 $$
 \langle (u_1 \ldots u_n), (v_1, \ldots v_n) \rangle = u_1 \overline{v_1} + \ldots + u_1 \overline{v_n},
