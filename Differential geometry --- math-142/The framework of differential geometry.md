@@ -51,7 +51,7 @@ We've said its a vector space without proving it but it isn't too hard — it's
 
 We call $\mathbf{p}$ the point of application, and $\mathbf{v}$ the vector part.
 
-Note that we can identify $[\mathbf{v}, \mathbf{p}]$ with a line (thought of as a function) with an initial point $\mathbf{p}$ and slope $\mathbf{v}$.
+Note that we can identify $[\mathbf{v}, \mathbf{p}]$ with a line (thought of as a function $\ell : [0, 1] \to \mathbb{R}^3$ by $t \mapsto \mathbf{p} + t \mathbf{v}$) with an initial point $\mathbf{p}$ and slope $\mathbf{v}$.
 
 Also see that right now we haven't really said what the tangent vector is tangent to!
 
