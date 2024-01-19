@@ -47,6 +47,26 @@ Given a string $A_{0} \xrightarrow{f_{1}} A_{1} \xrightarrow{f_{2}} \dots \xrigh
 
 ##### _definition:_ domain, codomain
 
-Carrying on with the analogy comparing arrows to functions, for $A \xrightarrow{f} B$ we say $A$ is the domain of $f$ and $B$ is the codomain of $f$.
+Carrying on with the analogy that arrows are like functions, for $A \xrightarrow{f} B$ we say $A$ is the domain of $f$ and $B$ is the codomain of $f$. 
 
-##### _example:_ posets are categories
+##### _examples:_ categories
+
+1) The simplest (non-trivial) example of a category is $\mathsf{Set}$, the with sets as objects and where an arrow $A \xrightarrow{f} B$ is a function $f : A \to B$. The choice for identity function is obvious ($\operatorname{id}_{A} : a \mapsto a$), and so is the composition — just regular function composition.
+
+Note that while we did specify them for sets, usually the identity and compositions for a category are obvious and are thus, not specified.
+
+2) $\mathsf{Grp}$ is a category with groups as objects and group homomorphisms as arrows, and similarly, $\mathsf{Ring}$ is a category with rings as objects and ring homomorphisms as arrows, and $\mathsf{Vect}_{k}$ is a category with vector spaces as objects and linear maps as arrows. We can define similarly, $\mathsf{CRing}$ for commutative rings, $\mathsf{Field}$ for fields, and $\mathsf{Mod}_{R}$ for modules over commutative $R$ (or specify with some similar symbol the category of left/right modules over non-commutative $R$)
+3) $\mathsf{Top}$ is the category with topological spaces as objects and continuous maps as arrows.
+
+Finally, something that clearly all of these have in common, and in fact we can define more generally, is the idea of an isomorphism.
+
+##### _definition:_ isomorphism
+
+Given a category, $\mathscr{A}$, $A, B \in \mathscr{A}$, and $A \xrightarrow{f} B$, we say $f$ is an isomorphism if there exists some $B \xrightarrow{g} A$ such that $g \circ f = \operatorname{id}_{A}$ and $f \circ g = \operatorname{id}_{B}$.
+
+##### _examples:_ isomorphisms in different categories
+
+1) The isomorphisms in $\mathsf{Set}$ are just the bijections.
+2) The isomorphisms in categories of algebraic structures (like $\mathsf{Grp}$, $\mathsf{CRing}$, $\mathsf{R}_{R}$ et c.) are just the arrows that are also bijections (the regular isomorphisms of these algebraic structures).
+3) The isomorphisms in $\mathsf{Top}$ are the homeomorphisms. Note that this isn't just the arrows that are bijections because not every invertible continuous map has a continuous inverse. For example, $f : [0, 1) \to S^1$ by $t \mapsto e^{2 \pi i t}$ (where we think of $S^1$ as embedded in $\mathbb{C}$) is bijective and continuous, but $f^{-1}$ is not continuous at $1 \in \mathbb{C}$.
+
