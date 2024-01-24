@@ -89,7 +89,7 @@ $\mathbf{V}[ - ]$ is the map that sends smooth $f : \mathbb{R}^3 \to \mathbb{R}$
 
 It is called the derivation of $f$ by $\mathbf{V}$.
 
-Note that the smooth function s just taking the directional derivative of the function at a point in the direction of the vector field at that point.
+Note that the smooth function is just taking the directional derivative of the function at a point in the direction of the vector field at that point.
 
 ##### _example:_ a trivial directional derivative
 
