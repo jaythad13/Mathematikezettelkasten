@@ -1,0 +1,99 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+
+\usepackage{math-19-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 142 --- Differential Geometry}
+\assignment{Homework assignment \#1}
+\duedate{26th January 2024}
+
+\begin{document}
+
+\begin{problem}[Problem 1.]
+	Let $\mathbf V_1 = y^2 \mathbf U_1 - x^2 \mathbf U_3$, $\mathbf V_2 = \mathbf U_2$, and $\mathbf V_3 = x \mathbf U_1 + \mathbf U_3$ in terms of the \textit{natural frame field} on $\mathbb R^3$.
+	\begin{enumerate}
+		\item Prove that the vectors $\mathbf V_1 (\mathbf p)$, $\mathbf V_2 (\mathbf p)$, and $\mathbf V_3 (\mathbf p)$ are linearly independent at each point $\mathbf p = (x, y, z)$ of $\mathbb R^3$.
+		\item Express the vector field $\mathbf V  = x \mathbf U_1 + y \mathbf U_2 + z \mathbf U_3$ as a linear combination of $\mathbf V_1$, $\mathbf V_2$, and $\mathbf V_3$.
+	\end{enumerate}
+\end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item 
+			At any point $\mathbb p = (x, y, z)$, we can evaluate $\mathbf V_1$, $\mathbf V_2$, and $\mathbf V_3$ as follows:
+			\[
+				\begin{gathered}
+					\begin{split}
+						\mathbf V_1(\mathbf p) & = y^2 \mathbf U_1(\mathbf p) - x^2 \mathbf U_3(\mathbf p) \\
+								       & = [y^2 (1, 0, 0), \mathbf p] - [x^2 (0, 0, 1), \mathbf p] \\
+								       & = [(y^2, 0, - x^2), \mathbf p].
+					\end{split}\\\\
+					\begin{split}
+						\mathbf V_2(\mathbf p) & = \mathbf U_2(\mathbf p) \\
+								       & = [(0, 1, 0), \mathbf p].
+					\end{split}\\\\
+					\begin{split}
+						\mathbf V_3(\mathbf p) & = x \mathbf U_1(\mathbf p) + \mathbf U_3(\mathbf p) \\
+								       & = [x (1, 0, 0), \mathbf p] + [(0, 0, 1), \mathbf p] \\
+								       & = [(x, 0, 1), \mathbf p].
+					\end{split}
+				\end{gathered}
+			\]\\
+			Suppose scalars $a_1, a_2, a_3 \in \mathbb R$ give us $a_1 \mathbf V_1(\mathbf p) + a_2 \mathbf V_2(\mathbf p) + a_3 \mathbf V_3(\mathbf p) = [\mathbf 0, \mathbf p]$ identically, for all $\mathbf p$ (note that the right hand side is the additive identity in $\mathrm T_{\mathbf p} \mathbb R^3$). Then we must have
+			\[
+				[(a_1 y^2 + a_3 x, a_2, - a_1 x^2 + a_3), \mathbf p] = [(0, 0, 0), \mathbf p]
+			\]
+			or
+			\[
+				\begin{gathered}
+					a_1 y^2 + a_3 x = 0 \\
+					a_2 = 0 \\
+					-a_1 x^2 + a_3 = 0
+				\end{gathered}
+			\]
+			identically, for all $(x, y, z) \in \mathbb R^3$. \\\\
+			Since all of these ``component functions" are polynomials in three (or rather, two) variables, for them to be identically zero, all of their coefficients must also be zero. That is, we must have $a_1 = a_2 = a_3 = 0$. Thus, by definition, we have that $\mathbf V_1, \mathbf V_2, \mathbf V_3$ form a linearly independent list of functions.
+		\item
+			\[
+				\boxed{
+					\mathbf V = 
+				}
+			\]
+	\end{enumerate}
+\end{solution}
+
+\begin{problem}[Problem 2.]
+	Let $\mathbf V = y \mathbf U_1 - x \mathbf U_3$, and let $f(x, y, z) = xy$ and $g(x, y, z) = z^3$. Compute the following functions.
+	\begin{enumerate}
+		\item $\mathbf V[f]$
+		\item $\mathbf V[g]$
+		\item $\mathbf V[fg]$
+		\item $f \mathbf V[g] - g \mathbf[V]$
+		\item $\mathbf V[f^2 + g^2]$
+		\item $\mathbf V[\mathbf V[f]]$
+	\end{enumerate}
+\end{problem}
+
+\begin{problem}[Problem 3.]
+	Let $\mathbf V : \mathbb R^3 \to \mathrm T \mathbb R^3$ denote a vector field. Show that we have the identity
+	\[
+		\mathbf V = \mathbf V[x_1] \mathbf U_1 + \mathbf V[x_2] \mathbf U_2 + \mathbf V[x_3] \mathbf U_3
+	\]
+\end{problem}
+
+\begin{problem}[Problem 4.]
+	Let $\mathbf V : \mathbb R^3 \to \mathrm T \mathbb R^3$ denote a vector field. Show that, for any smooth function $f : \mathbb R^3 \to \mathbb R$ we have the following identities:
+	\[
+		\mathbf V[f] = \sum_{i = 1}^3 v_i \frac{\partial f}{\partial x_i}
+	\]
+	and
+	\[
+		\mathbf V[\mathbf V[f]] = \sum_{i = 1}^3 \sum_{j = 1}^3 v_i v_j \frac{\partial^2 f}{\partial x_i \partial x_j}.
+	\]
+\end{problem}
+
+\begin{problem}[Problem 5.]
+	Say $\mathbf V, \mathbf W : \mathbb R^3 \to \mathrm T \mathbb R^3$ are two vector fields. Show that $\mathbf V = \mathbf W$ if and only if $\mathbf V[f] = \mathbf W[f]$ for every differentiable function $f : \mathbb R^3 \to \mathbb R$
+\end{problem}
+
+\end{document}
