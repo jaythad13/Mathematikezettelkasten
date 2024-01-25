@@ -212,7 +212,7 @@
 	\[
 		\mathbf V(\mathbf p) = [(y^2, 0, -x), \mathbf p].
 	\]
-	We also evaluate the gradients of $f$ and $g$ ---
+	Let $\mathbf v(\mathbf p) = (y^2, 0, -x)$. We also evaluate the gradients of $f$ and $g$ ---
 	\[
 		\nabla f(\mathbf p) = (y, x, 0)	
 	\]
@@ -227,11 +227,11 @@
 				\boxed{
 					\mathbf V[f](\mathbf p) = y^3.
 				}
-			\]
+			\] \\
 			We can just compute explicitly ---
 			\[
 				\begin{split}
-					\mathbf V[f](\mathbf p) & = \nabla f(\mathbf p) \cdot \mathbf V(\mathbf p) \\
+					\mathbf V[f](\mathbf p) & = \nabla f(\mathbf p) \cdot \mathbf v(\mathbf p) \\
 								& = (y, x, 0) \cdot (y^2, 0, -x) \\
 								& = y^3.
 				\end{split}
@@ -241,11 +241,11 @@
 				\boxed{
 					\mathbf V[g](\mathbf p) = - 3 x z^2
 				}
-			\]
+			\] \\
 			Again, we just compute explicitly
 			\[
 				\begin{split}
-					\mathbf V[g](\mathbf p) & = \nabla g(\mathbf p) \cdot \mathbf V(\mathbf p) \\
+					\mathbf V[g](\mathbf p) & = \nabla g(\mathbf p) \cdot \mathbf v(\mathbf p) \\
 								& = (0, 0, 3z^2) \cdot (y^2, 0, -x) \\
 								& = - 3x z^2.
 				\end{split}
@@ -255,13 +255,13 @@
 				\boxed{
 					\mathbf V[fg](\mathbf p) = y^3 z^3 - 3 x^2 y z^2
 				}
-			\]
+			\] \\
 			Note that here, we use the product rule for gradients --- $\nabla(fg) = (\nabla f) g + f (\nabla g)$
 			\[
 				\begin{split}
-					\mathbf V[fg](\mathbf p) & = \nabla(fg) \cdot \mathbf V(\mathbf p) \\
-								 & = ((\nabla f)(\mathbf p) g(\mathbf p) + f(\mathbf p) (\nabla g)(\mathbf p)) \cdot \mathbf V(\mathbf p) \\
-								 & = g(\mathbf p) (\nabla f)(\mathbf p) \cdot \mathbf V(\mathbf p) + f(\mathbf p) (\nabla g(\mathbf p)) \cdot \mathbf V(\mathbf p) \\
+					\mathbf V[fg](\mathbf p) & = \nabla(fg) \cdot \mathbf v(\mathbf p) \\
+								 & = ((\nabla f)(\mathbf p) g(\mathbf p) + f(\mathbf p) (\nabla g)(\mathbf p)) \cdot \mathbf v(\mathbf p) \\
+								 & = g(\mathbf p) (\nabla f)(\mathbf p) \cdot \mathbf v(\mathbf p) + f(\mathbf p) (\nabla g(\mathbf p)) \cdot \mathbf v(\mathbf p) \\
 								 & = z^3 y^3 - (xy)3xz^2 \\
 								 & = y^3 z^3 - 3 x^2 y z^2.
 				\end{split}
@@ -271,7 +271,7 @@
 				\boxed{
 					(f \mathbf V[g] + g \mathbf V[f])(\mathbf p) = y^3 z^3 - 3 x^2 y z^2
 				}
-			\]
+			\] \\
 			Here we can use our previous computations of $\mathbf V[f](\mathbf p)$ and $\mathbf V[g](\mathbf p)$ to get
 			\[
 				\begin{split}
@@ -283,10 +283,41 @@
 		\item
 			\[
 				\boxed{
-					\mathbf V[f^2 + g^2]
+					\mathbf V[f^2 + g^2](\mathbf p) = 2 x y^4 - 6 x z^5.
 				}
+			\] \\
+			First, we compute $\nabla (f^2 + g^2)$. Here, again we can use the sum and product rules for the gradient.
+			\[
+				\begin{split}
+					\nabla(f^2 + g^2)(\mathbf p) & = \nabla(f^2)(\mathbf p) + \nabla(g^2)(\mathbf p) \\
+								     & = 2 f(\mathbf p) \nabla f(\mathbf p) + 2 g(\mathbf p) \nabla f(\mathbf p) \\
+								     & = 2 ((xy)(y, x, 0) + (z^3)(0, 0, 3z^2)) \\
+								     & = 2 (x y^2, x^2 y, 3z^5).
+				\end{split}
+			\] \\
+			Then we get
+			\[
+				\begin{split}
+					\mathbf V[f^2 + g^2](\mathbf p) & = \nabla(f^2 + g^2)(\mathbf p) \cdot \mathbf v(\mathbf p) \\
+									& = 2 (x y^2, x^2 y, 3z^5) \cdot (y^2, 0, -x) \\
+									& = 2 x y^4 - 6 x z^5.
+				\end{split}
 			\]
-
+		\item
+			\[
+				\boxed{
+					\mathbf V[\mathbf V[f]] (\mathbf p) = 0.
+				}
+			\] \\
+			Let $h : \mathbb R^3 \to \mathbb R$ be given by $\mathbf p \mapsto \mathbf V[f](\mathbf p) = y^3$. Note that $\nabla h(\mathbf p) = (0, 3y^2, 0)$. Then we can calculate
+			\[
+				\begin{split}
+					\mathbf V[\mathbf V[f]](\mathbf p) & = \mathbf V[h](\mathbf p) \\
+									   & = \nabla h(\mathbf p) \cdot \mathbf v(\mathbf p) \\
+									   & = (0, 3y^2, 0) \cdot (y^2, 0, -x) \\
+									   & = 0.
+				\end{split}
+			\]
 	\end{enumerate}
 \end{solution}
 
@@ -298,6 +329,10 @@
 		\mathbf V = \mathbf V[x_1] \mathbf U_1 + \mathbf V[x_2] \mathbf U_2 + \mathbf V[x_3] \mathbf U_3
 	\]
 \end{problem}
+
+\begin{solution}
+
+\end{solution}
 
 \pagebreak
 
@@ -312,10 +347,53 @@
 	\]
 \end{problem}
 
+\begin{solution}
+	
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[Problem 5.]
-	Say $\mathbf V, \mathbf W : \mathbb R^3 \to \mathrm T \mathbb R^3$ are two vector fields. Show that $\mathbf V = \mathbf W$ if and only if $\mathbf V[f] = \mathbf W[f]$ for every differentiable function $f : \mathbb R^3 \to \mathbb R$
+	Say $\mathbf V, \mathbf W : \mathbb R^3 \to \mathrm T \mathbb R^3$ are two vector fields. Show that $\mathbf V = \mathbf W$ if and only if $\mathbf V[f] = \mathbf W[f]$ for every differentiable function $f : \mathbb R^3 \to \mathbb R$.
 \end{problem}
+
+\begin{solution}
+	Let $\mathbf v(\mathbf p)$ and $\mathbf w(\mathbf p)$ denote the vector parts of $\mathbf V(\mathbf p)$ and $\mathbf W(\mathbf p)$ respectively. \\\\
+	Suppose that $\mathbf V = \mathbf W$. Then, obviously, for at each point $\mathbf p \in \mathbb R^3$, we have $\mathbf v(\mathbf p) = \mathbf w(\mathbf p)$, and thus, 
+	\[
+		\begin{split}
+			\mathbf V[f](\mathbf p) & = \nabla f(\mathbf p) \cdot \mathbf v(\mathbf p) \\
+						& = \nabla f(\mathbf p) \cdot \mathbf w(\mathbf p) \\
+						& = \mathbf W[f](\mathbf p).
+		\end{split}
+	\] \\
+	Since we have $\mathbf V[f](\mathbf p) = \mathbf W[f](\mathbf p)$ for all $\mathbf p \in \mathbb R^3$, we can say $\mathbf V[f] = \mathbf W[f]$. \\\\
+	To prove the converse, suppose that we have $\mathbf V[f] = \mathbf W[f]$ for all differentiable functions $f : \mathbb R^3 \to \mathbb R$. Then pointwise, we have
+	\[
+		\mathbf V[f](\mathbf p) = \mathbf W[f](\mathbf p)
+	\]
+	or,
+	\[
+		\nabla f(\mathbf p) \cdot \mathbf v (\mathbf p) = \nabla f(\mathbf p) \cdot \mathbf w (\mathbf p)
+	\]
+	at every point $\mathbf p \in \mathbb R^3$. We rewrite this as
+	\[
+		\nabla f(\mathbf p) \cdot (\mathbf v(\mathbf p) - \mathbf w(\mathbf p)) = 0.
+	\] \\
+	Note that we can construct $f : \mathbf p \to a x + b y + c z$ with constant gradient $(a, b, c)$ for any desired $(a, b, c) \in \mathbb R^3$. That means, that at each point $\mathbf p \in \mathbb R^3$, we must have
+	\[
+		(a, b, c) \cdot (\mathbf v(\mathbf p) - \mathbf w(\mathbf p)) = 0
+	\]
+	for every $(a, b, c) \in \mathbb R^3$, including $(a, b, c) = (\mathbf v(\mathbf p) - \mathbf w(\mathbf p))$. Thus, at each point $\mathbf p \in \mathbb R^3$ we must have
+	\[
+		\lVert \mathbf v(\mathbf p) - \mathbf w(\mathbf p) \rVert^2 = 0
+	\]
+	and thus, $\mathbf v(\mathbf p) = \mathbf w(\mathbf p)$.\\\\
+	Finally, this gives us
+	\[
+		\mathbf V(\mathbf p) = [\mathbf v(\mathbf p), \mathbf p] = [\mathbf w(\mathbf p), \mathbf p] = \mathbf W(\mathbf p)
+	\]
+	for all $\mathbf p \in \mathbf R^3$, or just $\mathbf V = \mathbf W$, as desired.
+\end{solution}
 
 \end{document}
