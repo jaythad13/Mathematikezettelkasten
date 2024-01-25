@@ -10,9 +10,9 @@
 \begin{document}
 
 \begin{problem}[Problem 1.]
-	Let $\mathbf V_1 = y^2 \mathbf U_1 - x^2 \mathbf U_3$, $\mathbf V_2 = \mathbf U_2$, and $\mathbf V_3 = x \mathbf U_1 + \mathbf U_3$ in terms of the \textit{natural frame field} on $\mathbb R^3$.
+	Let $\mathbf V_1 = \mathbf U_1 - x \mathbf U_3$, $\mathbf V_2 = \mathbf U_2$, and $\mathbf V_3 = x \mathbf U_1 + \mathbf U_3$ in terms of the \textit{natural frame field} on $\mathbb R^3$.
 	\begin{enumerate}
-		\item Prove that the vectors $\mathbf V_1 (\mathbf p)$, $\mathbf V_2 (\mathbf p)$, and $\mathbf V_3 (\mathbf p)$ are linearly independent at each point $\mathbf p = (x, y, z)$ of $\mathbb R^3$.
+		\item Prove that the vectors $\mathbf V_1 (\mathbf p), \mathbf V_2(\mathbf p), \mathbf V_3(\mathbf p)$ are linearly independent at each point $\mathbf p \in \mathbb R^3$.
 		\item Express the vector field $\mathbf V  = x \mathbf U_1 + y \mathbf U_2 + z \mathbf U_3$ as a linear combination of $\mathbf V_1$, $\mathbf V_2$, and $\mathbf V_3$.
 	\end{enumerate}
 \end{problem}
@@ -20,7 +20,90 @@
 \begin{solution}
 	\begin{enumerate}
 		\item 
-			At any point $\mathbb p = (x, y, z)$, we can evaluate $\mathbf V_1$, $\mathbf V_2$, and $\mathbf V_3$ as follows:
+			We can calculate the vectors explicitly as follows.
+			\[
+				\begin{gathered}
+					\begin{split}
+						\mathbf V_1(\mathbf p) & = \mathbf U_1(\mathbf p) - x \mathbf U_3(\mathbf p) \\
+								       & = [(1, 0, 0), \mathbf p] - [x (0, 0, 1), \mathbf p] \\
+								       & = [(1, 0, - x), \mathbf p].
+					\end{split}\\\\
+					\begin{split}
+						\mathbf V_2(\mathbf p) & = \mathbf U_2(\mathbf p) \\
+								       & = [(0, 1, 0), \mathbf p].
+					\end{split}\\\\
+					\begin{split}
+						\mathbf V_3(\mathbf p) & = x \mathbf U_1(\mathbf p) + \mathbf U_3(\mathbf p) \\
+								       & = [x (1, 0, 0), \mathbf p] + [(0, 0, 1), \mathbf p] \\
+								       & = [(x, 0, 1), \mathbf p].
+					\end{split}
+				\end{gathered}
+			\]\\
+			Suppose scalars $a_1, a_2, a_3 \in \mathbb R$ give us $a_1 \mathbf V_1(\mathbf p) + a_2 \mathbf V_2(\mathbf p) + a_3 \mathbf V_3(\mathbf p) = [\mathbf 0, \mathbf p]$ (note that the right hand side is the additive identity in $\mathrm T_{\mathbf p} \mathbb R^3$). Then we must have
+			\[
+				[(a_1 + a_3 \, x, a_2, - a_1 \, x + a_3)] = [(0, 0, 0), \mathbf p]
+			\]
+			giving us the system of equations
+			\[
+				\begin{gathered}
+					a_1 + a_3 \, x = 0 \\
+					a_2 = 0 \\
+					-a_1 \, x + a_3 = 0
+				\end{gathered}
+			\]
+			which we can write as a matrix equation
+			\[
+				\begin{bmatrix}
+					1 & 0 & x \\
+					0 & 1 & 0 \\
+					-x & 0 & 1
+					\end{bmatrix} \begin{bmatrix}
+					a_1 \\
+					a_2 \\
+					a_3
+				\end{bmatrix} = \mathbf 0
+			\]
+			Since the matrix has determinant $x^2 + 1$, its determinant is non-zero for all $x \in \mathbb R$. Then the matrix is always invertible, the only solution to the equation is $a_1 = a_2 = a_3 = 0$, regardless of $x$. Thus, $\mathbf V_1(\mathbf p), \mathbf V_2(\mathbf p), \mathbf V_3(\mathbf p)$ is a linearly independent list of vectors in $\mathrm T_{\mathbf p} \mathbb R^3$ for all $\mathbf p \in \mathbb R^3$.
+		\item
+			\[
+				\boxed{
+					\mathbf V = \frac{x - zx}{x^2 + 1} \mathbf V_1 + y \mathbf V_2 + \frac{x^2 + z}{x^2 + 1} \mathbf V_1.
+				}
+			\] \\\\
+			Note that we're thinking of the vector fields as elements of a module over the ring $\mathcal C^\infty(\mathbb R^3)$ with the obvious definitions of addition and scalar multiplication. \\\\
+			We notice that $-x \mathbf V_1 + \mathbf V_3 = (x^2 + 1) \mathbf U_3$, and thus, we can get
+			\[
+				\mathbf U_3 = \frac{-x}{x^2 + 1} \mathbf V_1 + \frac{1}{x^2 + 1} \mathbf V_3
+			\]
+			as a well defined linear combination for all inputs $\mathbf p \in \mathbb R^3$. Similarly, $\mathbf V_1 + x \mathbf V_3 = (x^2 + 1) \mathbf U_1$ allows us to write the linear combination
+			\[
+				\mathbf U_1 = \frac{1}{x^2 + 1} \mathbf V_1 + \frac{x}{x^2 + 1} \mathbf V_3
+			\]
+			Now that we have $\mathbf U_1$ and $\mathbf U_3$ (and $\mathbf U_2 = \mathbf V_2$) as linear combinations of $\mathbf V_1, \mathbf V_2, \mathbf V_3$, we can just write
+			\[
+				\begin{split}
+					\mathbf V & = x \mathbf U_1 + y \mathbf U_2 + z \mathbf U_3 \\
+						  & = x \left ( \frac{1}{x^2 + 1} \mathbf V_1 + \frac{x}{x^2 + 1} \mathbf V_3 \right ) + y \mathbf V_2 + z \left ( \frac{-x}{x^2 + 1} \mathbf V_1 + \frac{1}{x^2 + 1} \mathbf V_3 \right ) \\
+						  & = \frac{x - zx}{x^2 + 1} \mathbf V_1 + y \mathbf V_2 + \frac{x^2 + z}{x^2 + 1} \mathbf V_1
+				\end{split}
+			\]
+	\end{enumerate}
+\end{solution}
+
+\pagebreak
+
+\begin{problem}[Problem 1. (as a module over $\mathcal C^\infty(\mathbb R^3)$)]
+	Let $\mathbf V_1 = y^2 \mathbf U_1 - x^2 \mathbf U_3$, $\mathbf V_2 = \mathbf U_2$, and $\mathbf V_3 = x \mathbf U_1 + \mathbf U_3$ in terms of the \textit{natural frame field} on $\mathbb R^3$.
+	\begin{enumerate}
+		\item Prove that $\{ \mathbf V_1, \mathbf V_2, \mathbf V_3 \}$ is a linearly independent set.
+		\item Express the vector field $\mathbf V  = x \mathbf U_1 + y \mathbf U_2 + z \mathbf U_3$ as a linear combination of $\mathbf V_1$, $\mathbf V_2$, and $\mathbf V_3$.
+	\end{enumerate}
+\end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item 
+			$\mathbf V_1$, $\mathbf V_2$, and $\mathbf V_3$ are given by:
 			\[
 				\begin{gathered}
 					\begin{split}
@@ -39,20 +122,21 @@
 					\end{split}
 				\end{gathered}
 			\]\\
-			Suppose scalars $a_1, a_2, a_3 \in \mathbb R$ give us $a_1 \mathbf V_1(\mathbf p) + a_2 \mathbf V_2(\mathbf p) + a_3 \mathbf V_3(\mathbf p) = [\mathbf 0, \mathbf p]$ identically, for all $\mathbf p$ (note that the right hand side is the additive identity in $\mathrm T_{\mathbf p} \mathbb R^3$). Then we must have
+			at every $\mathbf p = (x, y, z) \in \mathbb R^3$. \\\\
+			Suppose functions $f_1, f_2, f_3 \in \mathcal C^\infty (\mathbb R^3)$ give us $f_1(\mathbf p) \mathbf V_1(\mathbf p) + f_2(\mathbf p) \mathbf V_2(\mathbf p) + f_3(\mathbf p) \mathbf V_3(\mathbf p) = [\mathbf 0, \mathbf p]$ identically, for all $\mathbf p$ (note that the right hand side is the additive identity in $\mathrm T_{\mathbf p} \mathbb R^3$). Then we must have
 			\[
-				[(a_1 y^2 + a_3 x, a_2, - a_1 x^2 + a_3), \mathbf p] = [(0, 0, 0), \mathbf p]
+				[(f_1 (\mathbf p) y^2 + f_3 (\mathbf p) x, f_2(\mathbf p), - f_1(\mathbf p) x^2 + f_3(\mathbf p)), \mathbf p] = [(0, 0, 0), \mathbf p]
 			\]
 			or
 			\[
 				\begin{gathered}
-					a_1 y^2 + a_3 x = 0 \\
-					a_2 = 0 \\
-					-a_1 x^2 + a_3 = 0
+					f_1(\mathbf p) \, y^2 + f_3(\mathbf p) \, x = 0 \\
+					f_2(\mathbf p) = 0 \\
+					-f_1(\mathbf p) \, x^2 + f_3(\mathbf p) = 0
 				\end{gathered}
 			\]
-			identically, for all $(x, y, z) \in \mathbb R^3$. \\\\
-			Since all of these ``component functions" are polynomials in three (or rather, two) variables, for them to be identically zero, all of their coefficients must also be zero. That is, we must have $a_1 = a_2 = a_3 = 0$. Thus, by definition, we have that $\mathbf V_1, \mathbf V_2, \mathbf V_3$ form a linearly independent list of functions.
+			identically, for all $\mathbf p = (x, y, z) \in \mathbb R^3$. \\\\
+			
 		\item
 			\[
 				\boxed{
@@ -62,17 +146,151 @@
 	\end{enumerate}
 \end{solution}
 
+
+\begin{solution}
+	\begin{enumerate}
+		\item 
+			$\mathbf V_1$, $\mathbf V_2$, and $\mathbf V_3$ are given by:
+			\[
+				\begin{gathered}
+					\begin{split}
+						\mathbf V_1(\mathbf p) & = y^2 \mathbf U_1(\mathbf p) - x^2 \mathbf U_3(\mathbf p) \\
+								       & = [y^2 (1, 0, 0), \mathbf p] - [x^2 (0, 0, 1), \mathbf p] \\
+								       & = [(y^2, 0, - x^2), \mathbf p].
+					\end{split}\\\\
+					\begin{split}
+						\mathbf V_2(\mathbf p) & = \mathbf U_2(\mathbf p) \\
+								       & = [(0, 1, 0), \mathbf p].
+					\end{split}\\\\
+					\begin{split}
+						\mathbf V_3(\mathbf p) & = x \mathbf U_1(\mathbf p) + \mathbf U_3(\mathbf p) \\
+								       & = [x (1, 0, 0), \mathbf p] + [(0, 0, 1), \mathbf p] \\
+								       & = [(x, 0, 1), \mathbf p].
+					\end{split}
+				\end{gathered}
+			\]\\
+			at every $\mathbf p = (x, y, z) \in \mathbb R^3$. \\\\
+			Suppose functions $f_1, f_2, f_3 \in \mathcal C^\infty (\mathbb R^3)$ give us $f_1(\mathbf p) \mathbf V_1(\mathbf p) + f_2(\mathbf p) \mathbf V_2(\mathbf p) + f_3(\mathbf p) \mathbf V_3(\mathbf p) = [\mathbf 0, \mathbf p]$ identically, for all $\mathbf p$ (note that the right hand side is the additive identity in $\mathrm T_{\mathbf p} \mathbb R^3$). Then we must have
+			\[
+				[(f_1 (\mathbf p) y^2 + f_3 (\mathbf p) x, f_2(\mathbf p), - f_1(\mathbf p) x^2 + f_3(\mathbf p)), \mathbf p] = [(0, 0, 0), \mathbf p]
+			\]
+			or
+			\[
+				\begin{gathered}
+					f_1(\mathbf p) \, y^2 + f_3(\mathbf p) \, x = 0 \\
+					f_2(\mathbf p) = 0 \\
+					-f_1(\mathbf p) \, x^2 + f_3(\mathbf p) = 0
+				\end{gathered}
+			\]
+			identically, for all $\mathbf p = (x, y, z) \in \mathbb R^3$. \\\\
+			
+		\item
+			\[
+				\boxed{
+					\mathbf V = 
+				}
+			\]
+	\end{enumerate}
+\end{solution}
+
+\pagebreak
+
 \begin{problem}[Problem 2.]
-	Let $\mathbf V = y \mathbf U_1 - x \mathbf U_3$, and let $f(x, y, z) = xy$ and $g(x, y, z) = z^3$. Compute the following functions.
+	Let $\mathbf V = y^2 \mathbf U_1 - x \mathbf U_3$, and let $f(x, y, z) = xy$ and $g(x, y, z) = z^3$. Compute the following functions.
 	\begin{enumerate}
 		\item $\mathbf V[f]$
 		\item $\mathbf V[g]$
 		\item $\mathbf V[fg]$
-		\item $f \mathbf V[g] - g \mathbf[V]$
+		\item $f \mathbf V[g] - g \mathbf V[f]$
 		\item $\mathbf V[f^2 + g^2]$
 		\item $\mathbf V[\mathbf V[f]]$
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	Let $\mathbf p$ be an arbitrary point $(x, y, z) \in \mathbb R^3$. First, we can evaluate $\mathbf V$ generally ---
+	\[
+		\mathbf V(\mathbf p) = [(y^2, 0, -x), \mathbf p].
+	\]
+	We also evaluate the gradients of $f$ and $g$ ---
+	\[
+		\nabla f(\mathbf p) = (y, x, 0)	
+	\]
+	and
+	\[
+		\nabla g(\mathbf p) = (0, 0, 3z^2)
+	\]
+	Now we can compute the functions. We recall that $\mathbf V [f]$ is a function given by $\mathbf p \mapsto \nabla f(\mathbf p) \cdot \mathbf V(\mathbf p)$.
+	\begin{enumerate}
+		\item 
+			\[
+				\boxed{
+					\mathbf V[f](\mathbf p) = y^3.
+				}
+			\]
+			We can just compute explicitly ---
+			\[
+				\begin{split}
+					\mathbf V[f](\mathbf p) & = \nabla f(\mathbf p) \cdot \mathbf V(\mathbf p) \\
+								& = (y, x, 0) \cdot (y^2, 0, -x) \\
+								& = y^3.
+				\end{split}
+			\]
+		\item
+			\[
+				\boxed{
+					\mathbf V[g](\mathbf p) = - 3 x z^2
+				}
+			\]
+			Again, we just compute explicitly
+			\[
+				\begin{split}
+					\mathbf V[g](\mathbf p) & = \nabla g(\mathbf p) \cdot \mathbf V(\mathbf p) \\
+								& = (0, 0, 3z^2) \cdot (y^2, 0, -x) \\
+								& = - 3x z^2.
+				\end{split}
+			\]
+		\item
+			\[
+				\boxed{
+					\mathbf V[fg](\mathbf p) = y^3 z^3 - 3 x^2 y z^2
+				}
+			\]
+			Note that here, we use the product rule for gradients --- $\nabla(fg) = (\nabla f) g + f (\nabla g)$
+			\[
+				\begin{split}
+					\mathbf V[fg](\mathbf p) & = \nabla(fg) \cdot \mathbf V(\mathbf p) \\
+								 & = ((\nabla f)(\mathbf p) g(\mathbf p) + f(\mathbf p) (\nabla g)(\mathbf p)) \cdot \mathbf V(\mathbf p) \\
+								 & = g(\mathbf p) (\nabla f)(\mathbf p) \cdot \mathbf V(\mathbf p) + f(\mathbf p) (\nabla g(\mathbf p)) \cdot \mathbf V(\mathbf p) \\
+								 & = z^3 y^3 - (xy)3xz^2 \\
+								 & = y^3 z^3 - 3 x^2 y z^2.
+				\end{split}
+			\]
+		\item
+			\[
+				\boxed{
+					(f \mathbf V[g] + g \mathbf V[f])(\mathbf p) = y^3 z^3 - 3 x^2 y z^2
+				}
+			\]
+			Here we can use our previous computations of $\mathbf V[f](\mathbf p)$ and $\mathbf V[g](\mathbf p)$ to get
+			\[
+				\begin{split}
+					(f \mathbf V[g] + g \mathbf V[f])(\mathbf p) & = f(\mathbf p) \mathbf V[g](\mathbf p) + g(\mathbf p) \mathbf V[f](\mathbf p) \\
+										     & = (xy)(-3xz^2) + (z^3)(y^3) \\
+										     & = y^3 z^3 - 3 x^2 y z^2
+				\end{split}
+			\]
+		\item
+			\[
+				\boxed{
+					\mathbf V[f^2 + g^2]
+				}
+			\]
+
+	\end{enumerate}
+\end{solution}
+
+\pagebreak
 
 \begin{problem}[Problem 3.]
 	Let $\mathbf V : \mathbb R^3 \to \mathrm T \mathbb R^3$ denote a vector field. Show that we have the identity
@@ -81,8 +299,10 @@
 	\]
 \end{problem}
 
+\pagebreak
+
 \begin{problem}[Problem 4.]
-	Let $\mathbf V : \mathbb R^3 \to \mathrm T \mathbb R^3$ denote a vector field. Show that, for any smooth function $f : \mathbb R^3 \to \mathbb R$ we have the following identities:
+	Let $\mathbf V : \mathbb R^3 \to \mathrm T \mathbb R^3$ denote a vector field. Show that, for any smooth function $f : \mathbb R^3 \to \mathbb R$, we have the following identities:
 	\[
 		\mathbf V[f] = \sum_{i = 1}^3 v_i \frac{\partial f}{\partial x_i}
 	\]
@@ -91,6 +311,8 @@
 		\mathbf V[\mathbf V[f]] = \sum_{i = 1}^3 \sum_{j = 1}^3 v_i v_j \frac{\partial^2 f}{\partial x_i \partial x_j}.
 	\]
 \end{problem}
+
+\pagebreak
 
 \begin{problem}[Problem 5.]
 	Say $\mathbf V, \mathbf W : \mathbb R^3 \to \mathrm T \mathbb R^3$ are two vector fields. Show that $\mathbf V = \mathbf W$ if and only if $\mathbf V[f] = \mathbf W[f]$ for every differentiable function $f : \mathbb R^3 \to \mathbb R$
