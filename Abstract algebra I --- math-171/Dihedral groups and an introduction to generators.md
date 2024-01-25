@@ -37,7 +37,9 @@ In the light of this structure, it's easier to see why we would care about group
 
 A symmetry of a regular $n$-gon with vertices $v_{1} \dots v_{n}$ is a rigid motion of the $n$-gon in $3$-space, such that at its conclusion, the $n$-gon can still cover itself (even if the vertices are no longer in the same place).
 
-Note that each symmetry is sort of an "equivalence class" on the set of all ways to achieve that symmetry.
+Note that each symmetry is sort of an "equivalence class" on the set of all ways to achieve that symmetry. For example, we don't think of the two different paths below as different.
+
+![[S2_symmetryExample.jpeg]]
 
 Note that each symmetry of a regular polygon can be thought of as a permutation of its vertices. Obviously, not all of the permutations are symmetries (for $n > 4$ we can't have $v_{1}$ and $v_{3}$ adjacent). Since there are finitely many permutations of $n$ vertices, there are fewer, and also finitely many symmetries of a square.
 
@@ -47,7 +49,7 @@ Since each of these is a permutation and we can think of the binary operation as
 
 Finally, there are inverses! Just do the same thing in reverse!
 
-##### _definition:_ the symmetries of a polygon are a group
+##### _proposition:_ the symmetries of a polygon are a group
 
 ##### _proof:_
 
