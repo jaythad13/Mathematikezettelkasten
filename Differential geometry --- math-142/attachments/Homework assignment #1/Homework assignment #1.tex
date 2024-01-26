@@ -9,6 +9,8 @@
 
 \begin{document}
 
+I collaborated with Zo\"{e} Batterman.
+
 \begin{problem}[Problem 1.]
 	Let $\mathbf V_1 = \mathbf U_1 - x \mathbf U_3$, $\mathbf V_2 = \mathbf U_2$, and $\mathbf V_3 = x \mathbf U_1 + \mathbf U_3$ in terms of the \textit{natural frame field} on $\mathbb R^3$.
 	\begin{enumerate}
@@ -41,7 +43,7 @@
 			\]\\
 			Suppose scalars $a_1, a_2, a_3 \in \mathbb R$ give us $a_1 \mathbf V_1(\mathbf p) + a_2 \mathbf V_2(\mathbf p) + a_3 \mathbf V_3(\mathbf p) = [\mathbf 0, \mathbf p]$ (note that the right hand side is the additive identity in $\mathrm T_{\mathbf p} \mathbb R^3$). Then we must have
 			\[
-				[(a_1 + a_3 \, x, a_2, - a_1 \, x + a_3)] = [(0, 0, 0), \mathbf p]
+				[(a_1 + a_3 \, x, a_2, - a_1 \, x + a_3), \mathbf p] = [(0, 0, 0), \mathbf p]
 			\]
 			giving us the system of equations
 			\[
@@ -63,7 +65,8 @@
 					a_3
 				\end{bmatrix} = \mathbf 0
 			\]
-			Since the matrix has determinant $x^2 + 1$, its determinant is non-zero for all $x \in \mathbb R$. Then the matrix is always invertible, the only solution to the equation is $a_1 = a_2 = a_3 = 0$, regardless of $x$. Thus, $\mathbf V_1(\mathbf p), \mathbf V_2(\mathbf p), \mathbf V_3(\mathbf p)$ is a linearly independent list of vectors in $\mathrm T_{\mathbf p} \mathbb R^3$ for all $\mathbf p \in \mathbb R^3$.
+			Since the matrix has determinant $x^2 + 1$, its determinant is non-zero for all $x \in \mathbb R$. Then the matrix is always invertible, and the only solution to the equation is $a_1 = a_2 = a_3 = 0$, regardless of $x$.\\\\
+			Thus, $\mathbf V_1(\mathbf p), \mathbf V_2(\mathbf p), \mathbf V_3(\mathbf p)$ is a linearly independent list of vectors in $\mathrm T_{\mathbf p} \mathbb R^3$ for all $\mathbf p \in \mathbb R^3$.
 		\item
 			\[
 				\boxed{
@@ -346,7 +349,7 @@
 	\[
 		\mathbf V(\mathbf p) = [\mathbf v(\mathbf p), \mathbf p] = [\mathbf w(\mathbf p), \mathbf p] = \mathbf W(\mathbf p)
 	\]
-	for all $\mathbf p \in \mathbf R^3$, or just $\mathbf V = \mathbf W$, as desired.
+	for all $\mathbf p \in \mathbb R^3$, or just $\mathbf V = \mathbf W$, as desired.
 \end{solution}
 
 \end{document}
