@@ -2,7 +2,9 @@
 tags:
 - alg
 - math-171
-lecture: math-171-2
+lecture:
+ - math-171-2
+ - math-171-3
 ---
 
 ### Emergent structure on groups
@@ -127,7 +129,6 @@ Then since they commute, we can write every string of $a$s and $bs$ as $a^m b^n$
 $$
 G = \{ 1, a, b, ab \}.
 $$
-
 
 
 
