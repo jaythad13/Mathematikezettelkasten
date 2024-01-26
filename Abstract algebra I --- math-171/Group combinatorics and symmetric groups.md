@@ -1,0 +1,102 @@
+---
+tags:
+- alg
+- math-171
+lecture: math-171-3
+---
+
+Finite groups are really combinatorial objects! Last time we used combinatorial arguments about generators to learn a little about 
+
+##### _example:_ how to use order arguments about group presentations
+
+Say we have $X_{2n} = \left< x, y \vert x^n = y^2 = 1, xy = yx^2 \right>$. What can we say about this group just from this presentation? Can we estimate its order? Find its elements?
+
+Consider the second relation. Since we have $xy = yx^2$, if there's an $x$ that is followed by $y$s, we can always shift the $x$ to the end, increasing powers along the way (note that by induction $x^n y = y x^{2n}$). Thus, we can always write an element as $y^i x^j$. Formally we can do this by induction on $i + j$.
+
+Since $y^2 = 1$ and $x^n = 1$, we can have at most $2n$ distinct $y^i x^j$. Thus, $\lvert X_{2n} \rvert \le 2n$.
+
+Finally, note that we can get $x = x^4$.
+$$
+\begin{split}
+xy = yx^2 & \implies xy^2 = y x^2 y \\
+& \implies xy^2 = y^2 x^4 \\
+& \implies x = x^4
+\end{split}
+$$
+Then naturally $\lvert x \rvert \le 3$, and $\lvert X_{2n} \rvert \le 6$ (because all of the elements are $y^i x^j$).
+
+### Group tables
+
+Another sort of combinatorial way to think about groups is a group table. The easiest way to understand is to see an example.
+
+##### _example:_ a nice group table
+
+Recall $G = \left< a, b, c \vert abc = a^2 = b^2 = c^2 = 1  \right>$ from last time. Remembering that this really is just $\{ 1, a, b, ab \}$, we can write
+
+%% put table %%
+
+### Symmetric groups
+
+Recall that we can think of each symmetry in $D_{2n}$ as just a permutation of $n$ vertices, but not all permutations were a symmetry. If we think about all of the symmetries, without any restrictions to "rigid motions" do they form a group? Yes!
+
+%% prove this  %%
+
+##### _proposition:_ the set of bijections on a set is a group
+
+Given a set $\Omega$, the set of bijections on it $S_{\Omega}$ is a group under function composition.
+##### _proof:_
+
+The identity function by 
+
+##### _definition:_ the symmetric group on $\Omega$
+
+Let $\Omega$ be a non-empty set, and let $S_{\Omega}$ be the set of bijections on $\Omega$. $S_{\Omega}$ is the symmetric group on $\Omega$.
+
+##### _abuse of notation:_ $S_{n}$
+
+We write $S_{n}$ for $S_{\mathbb{N}_{n}}$.
+##### _example:_ cycle notation
+
+We use cycle notation to denote permutations. For example, the permutation $\sigma$ on $\mathbb{N}_{5}$ notated $(1 \, 3)(2 \, 5 \, 4)$ is given by
+$$
+\begin{gathered}
+1 \mapsto 3 \\
+2 \mapsto 5 \\
+3 \mapsto 1 \\
+4 \mapsto 2 \\
+5 \mapsto 4.
+\end{gathered}
+$$
+
+But why care? Cayley's theorem
+
+##### _theorem:_ Cayley's theorem
+
+Every group $G$ is isomorphic to a subgroup of a symmetric group $S_{G}$ (think of $S_{G}$ as the symmetric group on the underlying set of $G$).
+
+##### _example:_ some permutations in $S_{3}$
+
+$\sigma = (1 \, 2)$, $\tau = (1 \, 3 \, 2)$ have inverses $\sigma^{-1} = (1 \, 2)$ and $\tau^{-1} = (3 \, 1 \, 2)$.
+
+Note that we can write $\tau = (1 \, 3) (2 \, 3) = (1 \, 2) (1 \, 3)$.
+
+Can we write other permutations as a composition of transpositions ($2$-cycles) like this? We can!
+
+##### _proposition:_ every permutation is the composition of transpositions
+
+In general $(a_{1} \, a_{2} \, \dots a_{k}) = (a_{1} \, a_{k}) \dots (a_{1} \, a_{2})$. 
+
+##### _proof:_
+
+%% prove this %%
+
+##### _example:_ some more permutation compositions
+
+and also a proof that $S_{3}$ is not abelian.
+
+$\sigma \circ \tau = (1 \, 3)$ and $\tau \circ \sigma = (2 \, 3)$.
+
+##### _example:_ the order of a composition of disjoint cycles
+
+It's generally true that the order of a composition of disjoint cycles is just the least common multiple of the lengths of its cycles.
+
