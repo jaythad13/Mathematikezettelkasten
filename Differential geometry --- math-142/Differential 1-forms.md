@@ -31,7 +31,7 @@ $\Omega^1(\mathbb{R}^3)$ is the collection of all $1$-forms on $\mathbb{R}^3$.
 
 Given $\phi, \psi \in \Omega^1(\mathbb{R}^3)$, we define $\phi + \psi \in \Omega^1(\mathbb{R}^3)$ by $[\mathbf{v}, \mathbf{p}] \mapsto \phi([\mathbf{v}, \mathbf{p}]) + \psi([\mathbf{v}, \mathbf{p}])$
 
-Given $f \in \mathcal{C}^\infty(\mathbb{R}^3)$, we define $f \phi \in \Omega^1(\mathbb{R}^3)$ by $[\mathbf{v}, \mathbf{p}] \mapsto f(\mathbf{p}) \phi(\mathbf{p})$.
+Given $f \in \mathcal{C}^\infty(\mathbb{R}^3)$, we define $f \phi \in \Omega^1(\mathbb{R}^3)$ by $[\mathbf{v}, \mathbf{p}] \mapsto f(\mathbf{p}) \, \phi([\mathbf{v},\mathbf{p}])$.
 
 ##### _proposition:_ the differential $1$-forms are a vector space
 
@@ -91,17 +91,26 @@ $$
 
 For any smooth function $f : \mathbb{R}^3 \to \mathbb{R}$, $df \in \Omega^1(\mathbb{R}^3)$
 
+##### _proof sketch:_
+
+Trivially follows from the fact that $Df \Big |_{\mathbf{p}}$ is a linear map. 
+
 ##### _proposition:_ $d$ is a linear map
 
 The map $d : \mathcal{C}^\infty(\mathbb{R}^3) \to \Omega^1(\mathbb{R}^3)$ by $f \mapsto df$ is well defined and linear.
 
-The big question that this raises is
+##### _proof sketch:_
 
-Are there $1$-forms that aren't $df$ for some $f$?
+Follows from the linearity of the derivative.
 
+The big question that this raises is:
+
+> Are there $1$-forms that aren't $df$ for some $f$?
+
+The following theorem helps us get somewhere
 ##### _theorem:_ decomposing $1$-forms
 
-Let $\phi \in \Omega(\mathbb{R}^3)$. We can find smooth functions, $f_{1}, f_{2}, f_{3} : \mathbb{R}^3 \to \mathbb{R}$ so that
+Let $\phi \in \Omega(\mathbb{R}^3)$. For $x_{i} : \mathbb{R}^3 \to \mathbb{R}$ defined by $\mathbf{e}_{i}^\vee$, we can find smooth functions, $f_{1}, f_{2}, f_{3} : \mathbb{R}^3 \to \mathbb{R}$ so that
 $$
 \phi : f_{1} \, dx_{1} + f_{2} \, dx_{2} + f_{3} \, dx_{3}.
 $$
@@ -112,4 +121,34 @@ $$
 
 ##### _proof sketch:_
 
-For the first part, pick any vector field and decompose it, and then choose $f_{i} = \mathbf{U}_{i}$. The second part follows.
+For any $[\mathbf{v}, \mathbf{p}] \in \mathrm{T}_{\mathbf{p}}\mathbb{R}^3$, let the $\mathbf{v} = (v_{1}, v_{2}, v_{3})$. Note that $dx_{i}([\mathbf{v}, \mathbf{p}]) = v_{i}$. Then
+$$
+\begin{split}
+\phi[\mathbf{v}, \mathbf{p}] & = v_{1} \, \phi([\mathbf{e}_{1}, \mathbf{p}]) + v_{2} \, \phi([\mathbf{e}_{2}, \mathbf{p}]) + v_{3} \, \phi([\mathbf{e}_{3}, \mathbf{p}]) \\
+& = \phi([\mathbf{e}_{1}, \mathbf{p}]) \, dx_{1} + \phi([\mathbf{e}_{2}, \mathbf{p}]) \, dx_{2} + \phi([\mathbf{e}_{3}, \mathbf{p}]) \, dx_{3}
+\end{split}
+$$
+
+Now, by noticing that $\phi([\mathbf{e}_{i}, \mathbf{p}])$ is just a function of $\mathbf{p}$, we can label it $f_{i}$
+$$
+\phi : f_{1}(\mathbf{p}) \, dx_{1}([\mathbf{v}, \mathbf{p}]) + f_{2}(\mathbf{p}) \, dx_{2}([\mathbf{v}, \mathbf{p}]) + f_{3}(\mathbf{p}) \, dx_{3}([\mathbf{v}, \mathbf{p}]).
+$$
+or just
+$$
+\phi : f_{1} \, dx_{1} + f_{2} \, dx_{2} + f_{3} \, dx_{3}
+$$
+as desired.
+
+The second part is just a matter of noticing that
+$$
+\begin{split}
+df[\mathbf{v}, \mathbf{p}] & = Df \Big |_{\mathbf{p}}(\mathbf{v}) \\
+& = \frac{ \partial f }{ \partial x_{1} } \Big |_{\mathbf{p}} \, \mathbf{e}_{1}^\vee(\mathbf{v})  + \frac{ \partial f }{ \partial x_{2} } \Big |_{\mathbf{p}} \, \mathbf{e}_{2}^\vee(\mathbf{v}) + \frac{ \partial f }{ \partial x_{3} } \Big |_{{\mathbf{p}}} \, \mathbf{e}_{3}^\vee(\mathbf{v}) \\
+& = \frac{ \partial f }{ \partial x_{1} } \Big |_{\mathbf{p}} \, dx_{1}([\mathbf{v}, \mathbf{p}])  + \frac{ \partial f }{ \partial x_{2} } \Big |_{\mathbf{p}} \, dx_{2}([\mathbf{v}, \mathbf{p}]) + \frac{ \partial f }{ \partial x_{3} } \Big |_{{\mathbf{p}}} \, dx_{3}([\mathbf{v}, \mathbf{p}]).
+\end{split}
+$$
+This is just
+$$
+df = \frac{ \partial f }{ \partial x_{1} } \, dx_{1} + \frac{ \partial f }{ \partial x_{2} } \, dx_{2} + \frac{ \partial f }{ \partial x_{3} } \, dx_{3} 
+$$
+as desired.
