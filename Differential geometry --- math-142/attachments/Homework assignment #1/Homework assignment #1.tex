@@ -67,7 +67,7 @@
 		\item
 			\[
 				\boxed{
-					\mathbf V = \frac{x - zx}{x^2 + 1} \mathbf V_1 + y \mathbf V_2 + \frac{x^2 + z}{x^2 + 1} \mathbf V_1.
+					\mathbf V = \frac{x - zx}{x^2 + 1} \mathbf V_1 + y \mathbf V_2 + \frac{x^2 + z}{x^2 + 1} \mathbf V_3.
 				}
 			\] \\\\
 			Note that we're thinking of the vector fields as elements of a module over the ring $\mathcal C^\infty(\mathbb R^3)$ with the obvious definitions of addition and scalar multiplication. \\\\
@@ -86,109 +86,6 @@
 						  & = x \left ( \frac{1}{x^2 + 1} \mathbf V_1 + \frac{x}{x^2 + 1} \mathbf V_3 \right ) + y \mathbf V_2 + z \left ( \frac{-x}{x^2 + 1} \mathbf V_1 + \frac{1}{x^2 + 1} \mathbf V_3 \right ) \\
 						  & = \frac{x - zx}{x^2 + 1} \mathbf V_1 + y \mathbf V_2 + \frac{x^2 + z}{x^2 + 1} \mathbf V_1
 				\end{split}
-			\]
-	\end{enumerate}
-\end{solution}
-
-\pagebreak
-
-\begin{problem}[Problem 1. (as a module over $\mathcal C^\infty(\mathbb R^3)$)]
-	Let $\mathbf V_1 = y^2 \mathbf U_1 - x^2 \mathbf U_3$, $\mathbf V_2 = \mathbf U_2$, and $\mathbf V_3 = x \mathbf U_1 + \mathbf U_3$ in terms of the \textit{natural frame field} on $\mathbb R^3$.
-	\begin{enumerate}
-		\item Prove that $\{ \mathbf V_1, \mathbf V_2, \mathbf V_3 \}$ is a linearly independent set.
-		\item Express the vector field $\mathbf V  = x \mathbf U_1 + y \mathbf U_2 + z \mathbf U_3$ as a linear combination of $\mathbf V_1$, $\mathbf V_2$, and $\mathbf V_3$.
-	\end{enumerate}
-\end{problem}
-
-\begin{solution}
-	\begin{enumerate}
-		\item 
-			$\mathbf V_1$, $\mathbf V_2$, and $\mathbf V_3$ are given by:
-			\[
-				\begin{gathered}
-					\begin{split}
-						\mathbf V_1(\mathbf p) & = y^2 \mathbf U_1(\mathbf p) - x^2 \mathbf U_3(\mathbf p) \\
-								       & = [y^2 (1, 0, 0), \mathbf p] - [x^2 (0, 0, 1), \mathbf p] \\
-								       & = [(y^2, 0, - x^2), \mathbf p].
-					\end{split}\\\\
-					\begin{split}
-						\mathbf V_2(\mathbf p) & = \mathbf U_2(\mathbf p) \\
-								       & = [(0, 1, 0), \mathbf p].
-					\end{split}\\\\
-					\begin{split}
-						\mathbf V_3(\mathbf p) & = x \mathbf U_1(\mathbf p) + \mathbf U_3(\mathbf p) \\
-								       & = [x (1, 0, 0), \mathbf p] + [(0, 0, 1), \mathbf p] \\
-								       & = [(x, 0, 1), \mathbf p].
-					\end{split}
-				\end{gathered}
-			\]\\
-			at every $\mathbf p = (x, y, z) \in \mathbb R^3$. \\\\
-			Suppose functions $f_1, f_2, f_3 \in \mathcal C^\infty (\mathbb R^3)$ give us $f_1(\mathbf p) \mathbf V_1(\mathbf p) + f_2(\mathbf p) \mathbf V_2(\mathbf p) + f_3(\mathbf p) \mathbf V_3(\mathbf p) = [\mathbf 0, \mathbf p]$ identically, for all $\mathbf p$ (note that the right hand side is the additive identity in $\mathrm T_{\mathbf p} \mathbb R^3$). Then we must have
-			\[
-				[(f_1 (\mathbf p) y^2 + f_3 (\mathbf p) x, f_2(\mathbf p), - f_1(\mathbf p) x^2 + f_3(\mathbf p)), \mathbf p] = [(0, 0, 0), \mathbf p]
-			\]
-			or
-			\[
-				\begin{gathered}
-					f_1(\mathbf p) \, y^2 + f_3(\mathbf p) \, x = 0 \\
-					f_2(\mathbf p) = 0 \\
-					-f_1(\mathbf p) \, x^2 + f_3(\mathbf p) = 0
-				\end{gathered}
-			\]
-			identically, for all $\mathbf p = (x, y, z) \in \mathbb R^3$. \\\\
-			
-		\item
-			\[
-				\boxed{
-					\mathbf V = 
-				}
-			\]
-	\end{enumerate}
-\end{solution}
-
-
-\begin{solution}
-	\begin{enumerate}
-		\item 
-			$\mathbf V_1$, $\mathbf V_2$, and $\mathbf V_3$ are given by:
-			\[
-				\begin{gathered}
-					\begin{split}
-						\mathbf V_1(\mathbf p) & = y^2 \mathbf U_1(\mathbf p) - x^2 \mathbf U_3(\mathbf p) \\
-								       & = [y^2 (1, 0, 0), \mathbf p] - [x^2 (0, 0, 1), \mathbf p] \\
-								       & = [(y^2, 0, - x^2), \mathbf p].
-					\end{split}\\\\
-					\begin{split}
-						\mathbf V_2(\mathbf p) & = \mathbf U_2(\mathbf p) \\
-								       & = [(0, 1, 0), \mathbf p].
-					\end{split}\\\\
-					\begin{split}
-						\mathbf V_3(\mathbf p) & = x \mathbf U_1(\mathbf p) + \mathbf U_3(\mathbf p) \\
-								       & = [x (1, 0, 0), \mathbf p] + [(0, 0, 1), \mathbf p] \\
-								       & = [(x, 0, 1), \mathbf p].
-					\end{split}
-				\end{gathered}
-			\]\\
-			at every $\mathbf p = (x, y, z) \in \mathbb R^3$. \\\\
-			Suppose functions $f_1, f_2, f_3 \in \mathcal C^\infty (\mathbb R^3)$ give us $f_1(\mathbf p) \mathbf V_1(\mathbf p) + f_2(\mathbf p) \mathbf V_2(\mathbf p) + f_3(\mathbf p) \mathbf V_3(\mathbf p) = [\mathbf 0, \mathbf p]$ identically, for all $\mathbf p$ (note that the right hand side is the additive identity in $\mathrm T_{\mathbf p} \mathbb R^3$). Then we must have
-			\[
-				[(f_1 (\mathbf p) y^2 + f_3 (\mathbf p) x, f_2(\mathbf p), - f_1(\mathbf p) x^2 + f_3(\mathbf p)), \mathbf p] = [(0, 0, 0), \mathbf p]
-			\]
-			or
-			\[
-				\begin{gathered}
-					f_1(\mathbf p) \, y^2 + f_3(\mathbf p) \, x = 0 \\
-					f_2(\mathbf p) = 0 \\
-					-f_1(\mathbf p) \, x^2 + f_3(\mathbf p) = 0
-				\end{gathered}
-			\]
-			identically, for all $\mathbf p = (x, y, z) \in \mathbb R^3$. \\\\
-			
-		\item
-			\[
-				\boxed{
-					\mathbf V = 
-				}
 			\]
 	\end{enumerate}
 \end{solution}
@@ -331,13 +228,36 @@
 \end{problem}
 
 \begin{solution}
-
+	For $\mathbf p = (x, y, z) \in \mathbb R^3$, we have $x_1(\mathbf p) = x$, $x_2(\mathbf p) = y$, and $x_3(\mathbf p) = z$. Note that $\nabla x_i = \mathbf e_i$, where $\mathbf e_1, \mathbf e_2, \mathbf e_3$ is the standard orthonormal basis on $\mathbb R^3$. \\\\
+	Let $\mathbf V(\mathbf p) = [\mathbf v(\mathbf p), \mathbf p]$. Then, since $\mathbf v$ is a function $\mathbb R^3 \to \mathbb R^3$, we can decompose it into component functions $v_1, v_2, v_3 : \mathbb R^3 \to \mathbb R$ such that $\mathbf v(\mathbf p) = (v_1(\mathbf p), v_2(\mathbf p), v_3(\mathbf p))$. Thus, we can evaluate $\mathbf V[x_i]$ as
+	\[
+		\begin{split}
+			\mathbf V[x_i](\mathbf p) & = \nabla x_i(\mathbf p) \cdot \mathbf V(\mathbf p) \\
+						  & = \mathbf e_i \cdot (v_1(\mathbf p), v_2(\mathbf p), v_3(\mathbf p)) \\
+						  & = v_i(\mathbf p)
+		\end{split}
+	\]
+	at any point $\mathbf p \in \mathbb R^3$. \\\\
+	Thus, we get
+	\[
+		\begin{split}
+			& \mathbf V[x_1] (\mathbf p) \mathbf U_1 (\mathbf p) + \mathbf V[x_2] (\mathbf p) \mathbf U_2 (\mathbf p) + \mathbf V[x_3] (\mathbf p) \mathbf U_3 (\mathbf p) \\
+			& = v_1 (\mathbf p) \mathbf U_1 (\mathbf p) + v_2 (\mathbf p) \mathbf U_2 (\mathbf p) + v_3 (\mathbf p) \mathbf U_3 (\mathbf p) \\
+			& = [v_1(\mathbf p)(1, 0, 0), \mathbf p] + [v_2 (\mathbf p) (0, 1, 0), \mathbf p] + [v_3(\mathbf p)(0, 0, 1), \mathbf p] \\
+			& = [(v_1(\mathbf p), v_2(\mathbf p), v_3(\mathbf p)), \mathbf p] \\
+			& = \mathbf V(\mathbf p)
+		\end{split}
+	\]
+	for all $\mathbf p \in \mathbb R^3$. That is, we have
+	\[
+		\mathbf V = \mathbf V[x_1] \mathbf U_1 + \mathbf V[x_2] \mathbf U_2 + \mathbf V[x_3] \mathbf U_3.
+	\]
 \end{solution}
 
 \pagebreak
 
 \begin{problem}[Problem 4.]
-	Let $\mathbf V : \mathbb R^3 \to \mathrm T \mathbb R^3$ denote a vector field. Show that, for any smooth function $f : \mathbb R^3 \to \mathbb R$, we have the following identities:
+	Let $\mathbf V : \mathbb R^3 \to \mathrm T \mathbb R^3$ denote a vector field such that $\mathbf v = (v_1, v_2, v_3)$ corresponding to $\mathbf V(\mathbf p) = [\mathbf v, \mathbf p]$ is independent of $\mathbf p$. Show that, for any smooth function $f : \mathbb R^3 \to \mathbb R$, we have the following identities:
 	\[
 		\mathbf V[f] = \sum_{i = 1}^3 v_i \frac{\partial f}{\partial x_i}
 	\]
@@ -348,7 +268,40 @@
 \end{problem}
 
 \begin{solution}
-	
+	We know that 
+	\[
+		\nabla f (\mathbf p) = \left ( \frac{\partial f}{\partial x_1}(\mathbf p), \frac{\partial f}{\partial x_2}(\mathbf p), \frac{\partial f}{\partial x_3}(\mathbf p) \right ).
+	\] \\
+	Thus,
+	\[
+		\begin{split}
+			\mathbf V[f](\mathbf p) & = \nabla f(\mathbf p) \cdot \mathbf v \\
+						& = \sum_{j = 1}^3 v_j \frac{\partial f}{\partial x_j}(\mathbf p).
+		\end{split}
+	\] \\
+	Thus, we can write
+	\[
+		\begin{split}
+			& \nabla (\mathbf V[f])(\mathbf p) \\
+			& = \left ( \frac{\partial (\mathbf V[f])}{\partial x_1} \Big |_{\mathbf p}, \frac{\partial (\mathbf V[f])}{\partial x_2} \Big |_{\mathbf p}, \frac{\partial (\mathbf V[f])}{\partial x_3} \Big |_{\mathbf p} \right ) \\
+			& = \left ( \frac{\partial}{\partial x_1} \left ( \sum_{j = 1}^3 v_j \frac{\partial f}{\partial x_j} \Big |_{\mathbf p} \right ) \Big |_{\mathbf p}, \frac{\partial}{\partial x_2} \left ( \sum_{j = 1}^3 v_j \frac{\partial f}{\partial x_j} \Big |_{\mathbf p} \right ) \Big |_{\mathbf p}, \frac{\partial}{\partial x_3} \left ( \sum_{j = 1}^3 v_j \frac{\partial f}{\partial x_j} \Big |_{\mathbf p} \right ) \Big |_{\mathbf p} \right ).
+		\end{split}
+	\] \\
+	Finally, we have
+	\[
+		\begin{split}
+			\mathbf V[\mathbf V[f]](\mathbf p) & = \nabla(\mathbf V[f])(\mathbf p) \cdot \mathbf v \\
+			& = \left ( \frac{\partial}{\partial x_1} \left ( \sum_{j = 1}^3 v_j \frac{\partial f}{\partial x_j} \right ) \Big |_{\mathbf p}, \frac{\partial}{\partial x_2} \left ( \sum_{j = 1}^3 v_j \frac{\partial f}{\partial x_j} \right ) \Big |_{\mathbf p}, \frac{\partial}{\partial x_3} \left ( \sum_{j = 1}^3 v_j \frac{\partial f}{\partial x_j} \right ) \Big |_{\mathbf p} \right ) \cdot \mathbf v \\
+			& = \sum_{i = 1}^3 v_i \frac{\partial f}{\partial x_i} \left ( \sum_{j = 1}^3 v_j \frac{\partial f}{\partial x_j} \right ) \Big |_{\mathbf p} \\
+			& = \sum_{i = 1}^3 \sum_{j = 1}^3 v_i v_j \frac{\partial^2 f}{\partial x_i \partial x_j} \Big |_{\mathbf p}.
+		\end{split}
+	\]
+	for every $\mathbf p \in \mathbb R^3$. \\\\
+	That is, we have 
+	\[
+		\mathbf V[\mathbf V[f]] = \sum_{i = 1}^3 \sum_{j = 1}^3 v_i v_j \frac{\partial^2 f}{\partial x_i \partial x_j}
+	\]
+	as desired.
 \end{solution}
 
 \pagebreak
