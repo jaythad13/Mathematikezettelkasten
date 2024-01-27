@@ -72,6 +72,10 @@ If it looks like there are $\binom{n}{k}$ basis vectors for the space of $k$-for
 
 $dx_{1} \wedge dx_{2}, dx_{2} \wedge dx_{3}, dx_{3} \wedge dx_{1}$ is a basis of $\wedge^2(\Omega^1(\mathbb{R}^3))$.
 
+##### _proof:_
+
+We will leave the proof for later when we properly understand what this wedge space is.
+
 ##### _definition:_ differential $2$-form
 
 A $2$-form is an element of $\wedge^2(\Omega^1(\mathbb{R}^3))$.
