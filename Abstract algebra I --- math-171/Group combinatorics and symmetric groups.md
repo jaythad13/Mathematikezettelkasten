@@ -31,22 +31,30 @@ Another sort of combinatorial way to think about groups is a group table. The ea
 
 ##### _example:_ a nice group table
 
-Recall $G = \left< a, b, c \vert abc = a^2 = b^2 = c^2 = 1  \right>$ from last time. Remembering that this really is just $\{ 1, a, b, ab \}$, we can write
+Recall $G = \left< a, b, c \vert abc = a^2 = b^2 = c^2 = 1  \right>$ from last time. Remembering that this really is just $\{ 1, a, b, ab \}$ and abelian we can write
 
-%% put table %%
+| - | $1$ | $a$ | $b$ | $ab$ |
+| ---- | ---- | ---- | ---- | ---- |
+| $1$ | $1$ | $a$ | $b$ | $ab$ |
+| $a$ | $a$ | $1$ | $ab$ | $b$ |
+| $b$ | $b$ | $ab$ | $1$ | $a$ |
+| $ab$ | $ab$ | $b$ | $a$ | $1$ |
+Note that we only write $ab$, not $ba$, since $ab = ba$ and we chose to write $ab$ in our set representation of the group.
 
 ### Symmetric groups
 
 Recall that we can think of each symmetry in $D_{2n}$ as just a permutation of $n$ vertices, but not all permutations were a symmetry. If we think about all of the symmetries, without any restrictions to "rigid motions" do they form a group? Yes!
-
-%% prove this  %%
 
 ##### _proposition:_ the set of bijections on a set is a group
 
 Given a set $\Omega$, the set of bijections on it $S_{\Omega}$ is a group under function composition.
 ##### _proof:_
 
-The identity function by 
+The identity function $\operatorname{id}_{\Omega} : x \mapsto x$ for all $x \in \Omega$ gives us $\operatorname{id}_{\Omega} \circ f = f$ and $f \circ \operatorname{id}_{\Omega} = f$ for any other function $f \in S_{\Omega}$.
+
+Function composition is associative
+
+Since all of the functions are bijections, they all have two sided inverses — $f \circ f^{-1} = f^{-1} \circ f = \operatorname{id}_{\Omega}$.
 
 ##### _definition:_ the symmetric group on $\Omega$
 
@@ -86,9 +94,20 @@ Can we write other permutations as a composition of transpositions ($2$-cycles) 
 
 In general $(a_{1} \, a_{2} \, \dots a_{k}) = (a_{1} \, a_{k}) \dots (a_{1} \, a_{2})$. 
 
-##### _proof:_
+##### _proof sketch:_
 
-%% prove this %%
+Note that on the left side $a_{j} \mapsto a_{j + 1}$ except for $a_{k}$ which maps to $a_{1}$.
+
+On the right side we can show this by induction on $k$. If $k$ is $2$, then $(a_{1}, a_{2})$ is the desired transposition. 
+
+Suppose it's true for $k$. Notice that
+$$
+(a_{1}  \, a_{2} \, a_{3} \, \dots a_{k + 1}) = (a_{1} \, a_{3} \, \dots a_{k + 1})(a_{1} \, a_{2})
+$$
+and then it follows from the induction hypothesis that
+$$
+(a_{1} \, a_{3} \, \dots a_{k + 1})(a_{1} \, a_{2}) = (a_{1} \, a_{k + 1})(a_{1} \, a_{k}) \dots (a_{1} \, a_{3})(a_{1} \, a_{2}).
+$$
 
 ##### _example:_ some more permutation compositions
 
@@ -99,4 +118,3 @@ $\sigma \circ \tau = (1 \, 3)$ and $\tau \circ \sigma = (2 \, 3)$.
 ##### _example:_ the order of a composition of disjoint cycles
 
 It's generally true that the order of a composition of disjoint cycles is just the least common multiple of the lengths of its cycles.
-
