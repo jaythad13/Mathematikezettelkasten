@@ -1,0 +1,158 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{math-19-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 142 --- Differential Geometry}
+\assignment{Homework assignment \#2}
+\duedate{2nd February 2024}
+
+\begin{document}
+
+\begin{problem}[Problem 1.]
+	We say a function $\alpha : I \to \mathbb R^3$ is a \textit{regular curve} if, upon writing $\alpha(t) = (\alpha_1(t), \alpha_2(t), \alpha_3(t))$, there is no $t \in I$ such that
+	\[
+		\frac{d \alpha_1}{dt} \Big |_{t_0} = \frac{d \alpha_2}{dt} \Big |_{t_0} = \frac{d \alpha_3}{dt} \Big |_{t_0} = 0
+	\]
+	For a fixed $t_0 \in I$, the \textit{tangent line} to a regular curve is the straight line $\ell : \mathbb R \to \mathbb R^3$ given by
+	\[
+		\ell(u) = \left ( \alpha_1(t_0) + u \frac{d \alpha_1}{dt} \Big |_{t_0}, \alpha_2(t_0) + u \frac{d \alpha_2}{dt} \Big |_{t_0}, \alpha_3(t_0) + u \frac{d \alpha_3}{dt} \Big |_{t_0} \right ).
+	\]
+	Find the tangent line to the helix given by $\alpha(t) = (2 \cos t, 2 \sin t, t)$ for
+	\begin{enumerate}
+		\item $t_0 = 0$
+		\item $t_0 = \pi/4$.
+	\end{enumerate}
+\end{problem}
+
+\begin{solution}
+
+\end{solution}
+
+\pagebreak
+
+\begin{problem}[Problem 2]
+	Let $\mathbf v = (1, 2, -3)$ and $\mathbf p = (0, -2, 1)$. Evaluate the following $1$-forms on the tangent vector $[\mathbf v, \mathbf p]$.
+	\begin{enumerate}
+		\item $y^2 \, dx$
+		\item $z \, dy - y \, dz$
+		\item $(z^2 - 1) \, dx - dy + x^2 \, dz$
+	\end{enumerate}
+\end{problem}
+
+\begin{solution}
+
+\end{solution}
+
+\pagebreak
+
+\begin{problem}[Problem 3]
+	A $1$-form $\varphi : \mathrm T \mathbb R^3 \to \mathbb R$ is \textit{zero} at $\mathbf p$ if $\varphi([\mathbf v, \mathbf p]) = 0$ for all tangent vectors $[\mathbf v, \mathbf p] \in \mathrm T_{\mathbf p} \mathbb R^3$. Assume that $\varphi = df$ for a smooth function $f : \mathbb R^3 \to \mathbb R$. A point $\mathbf p \in \mathbb R^3$ at which the differential $\varphi = df$ is zero is called a \textit{critical point} for the function $f$.
+	\begin{enumerate}
+		\item Prove that $\mathbf p$ is a critical point of $f$ if and only if 
+			\[
+				\frac{\partial f}{\partial x} \Big |_{\mathbf p} = \frac{\partial f}{\partial y} \Big |_{\mathbf p} = \frac{\partial f}{\partial z} \Big |_{\mathbf p} = 0.
+			\]
+		\item Find all critical points of $f(x, y, z) = (1 - x^3) y + (1 - y^2) z$
+	\end{enumerate}
+\end{problem}
+
+\begin{solution}
+
+\end{solution}
+
+\pagebreak
+
+\begin{problem}[Problem 4]
+	For any three $1$-forms $\phi_i = \sum_j f_{ij} \, dx_j$, for $1 \le i \le 3$, prove
+	\[
+		\phi_1 \wedge \phi_2 \wedge \phi_3 = \begin{vmatrix}
+			f_{11} & f_{12} & f_{13} \\
+			f_{21} & f_{22} & f_{23} \\
+			f_{31} & f_{32} & f_{33}
+		\end{vmatrix} \, dx_1 \wedge dx_2 \wedge dx_3
+	\]
+\end{problem}
+
+\begin{solution}
+	We know already that
+	\[
+		\begin{split}
+		\phi_2 \wedge \phi_3 & = (f_{21} \, f_{32} - f_{31} \, f_{22}) \, dx_1 \wedge dx_2 + (f_{22} \, f_{33} - f_{32} \, f_{23}) \, dx_2 \wedge dx_3 \\
+				     & + (f_{23} \, f_{31} - f_{33} \, f_{21}) \, dx_3 \wedge dx_1 \\
+		& = \sum_{j = 1}^3 (f_{2j} \, f_{3k} - f_{3j} f_{2k}) \, dx_j \wedge dx_k
+		\end{split}
+	\]
+	where $k$ is $\sigma(j)$ where $\sigma$ is the cycle $(1 \, 2 \, 3)$. Now we only need to wedge an additional $\phi_3$ to this. \\\\
+	Again, first we use linearity to get
+	\[
+		\begin{split}
+			\phi_1 \wedge \phi_2 \wedge \phi_3 & = \left ( \sum_{i = 1}^3 f_{1 i} \, dx_i \right ) \wedge \left ( \sum_{j = 1}^3 (f_{2j} \, f_{3k} - f_{3j} f_{2k}) \, dx_j \wedge dx_k \right ) \\
+							   & = \sum_{i = 1}^3 \sum_{j = 1}^3 f_{1 i} (f_{2j} \, f_{3k} - f_{3j} f_{2k}) \, dx_i \wedge dx_j \wedge dx_k.
+		\end{split}
+	\]
+	By applying the alternating property, we know that any wedges with any two indices equal are $0$ and can cancel them out. This means we have to cancel out any terms where $i = j$ or $i = k$ ($j \neq k$). If $i = 1$, then $j$ can only be $2$, and so on --- for any choice of $i$, $j$ must be $\sigma(i)$. \\\\
+	Writing out the three terms corresponding to $i = 1$, $i = 2$, and $i = 3$, we get
+	\[
+		\begin{split}
+			\phi_1 \wedge \phi_2 \wedge \phi_3 & = f_{1 1} (f_{2 2} \, f_{3 3} - f_{3 2} f_{2 3}) \, dx_1 \wedge dx_2 \wedge dx_3 \\ 
+							   & + f_{1 2} (f_{2 3} \, f_{3 1} - f_{3 2} f_{2 1}) \, dx_2 \wedge dx_3 \wedge dx_1 \\
+							   & + f_{1 3} (f_{2 1} \, f_{3 2} - f_{3 1} f_{2 2}) \, dx_3 \wedge dx_1 \wedge dx_2.
+		\end{split}
+	\]
+	Since all of these wedges are an even number of transpositions away from $dx_1 \wedge dx_2 \wedge dx_3$ they are all just $dx_1 \wedge dx_2 \wedge dx_3$ (the first one is equal, shift $dx_1$ to the left twice for the second, shift $dx_3$ to the right twice for the third). This allows us to write $\phi_1 \wedge \phi_2 \wedge \phi_3$ as
+	\[
+		(f_{1 1} (f_{2 2} \, f_{3 3} - f_{3 2} f_{2 3}) + f_{1 2} (f_{2 3} \, f_{3 1} - f_{3 2} f_{2 1}) + f_{1 3} (f_{2 1} \, f_{3 2} - f_{3 1} f_{2 2})) \, dx_1 \wedge dx_2 \wedge dx_3.
+	\]
+	which is just expanding along the first row of the determinant
+	\[
+		\begin{vmatrix}
+			f_{11} & f_{12} & f_{13} \\
+			f_{21} & f_{22} & f_{23} \\
+			f_{31} & f_{32} & f_{33}
+		\end{vmatrix} \, dx_1 \wedge dx_2 \wedge dx_3.
+	\]
+
+\end{solution}
+
+\pagebreak
+
+\begin{problem}[Problem 5]
+	Let $f$ and $g$ be real-valued functions on $\mathbb R^2$. Prove that
+	\[
+		df \wedge dg = \begin{vmatrix}
+			\dfrac{\partial f}{\partial x} & \dfrac{\partial f}{\partial y} \\
+			\dfrac{\partial g}{\partial x} & \dfrac{\partial g}{\partial y}
+		\end{vmatrix} \, dx \wedge dy.
+	\]
+\end{problem}
+
+\begin{solution}
+	Note that we can explicitly compute $df$ and $dg$ in terms of the partials of $f$ and $g$. That is, 
+	\[
+		df = \dfrac{\partial f}{\partial x} \, dx + \dfrac{\partial f}{\partial y} \, dy
+	\]
+	and
+	\[
+		dg = \dfrac{\partial g}{\partial x} \, dx + \dfrac{\partial g}{\partial y} \, dy.
+	\]\\
+	Now, to calculate their wedge product, we first use linearity to get
+	\[
+		\begin{split}
+			df \wedge dg & = \left ( \dfrac{\partial f}{\partial x} \, dx + \dfrac{\partial f}{\partial y} \, dy \right ) \wedge \left ( \dfrac{\partial g}{\partial x} \, dx + \dfrac{\partial g}{\partial y} \, dy \right ) \\
+				     & = \dfrac{\partial f}{\partial x} \, \dfrac{\partial g}{\partial x} \, dx \wedge dx + \dfrac{\partial f}{\partial y} \, \dfrac{\partial g}{\partial y} \, dy \wedge dy + \dfrac{\partial f}{\partial x} \, \dfrac{\partial g}{\partial y} \, dx \wedge dy + \dfrac{\partial f}{\partial y} \, \dfrac{\partial g}{\partial x} \, dy \wedge dx.
+		\end{split}
+	\]
+	From here, we can apply the alternating property that $dx \wedge dx = dy \wedge dy = 0$ and $dx \wedge dy = - dy \wedge dx$ to get
+	\[
+		\begin{split}
+			df \wedge dg & = \left ( \dfrac{\partial f}{\partial x} \, \dfrac{\partial g}{\partial y} - \dfrac{\partial f}{\partial y} \, \dfrac{\partial g}{\partial x} \right ) \, dx \wedge dy \\
+				     & = \begin{vmatrix}
+			\dfrac{\partial f}{\partial x} & \dfrac{\partial f}{\partial y} \\
+			\dfrac{\partial g}{\partial x} & \dfrac{\partial g}{\partial y}
+		\end{vmatrix} \, dx \wedge dy
+		\end{split}
+	\]
+	as desired.
+\end{solution}
+
+\end{document}
