@@ -25,7 +25,53 @@
 \end{problem}
 
 \begin{solution}
-
+	We can write out component functions $\alpha_1, \alpha_2, \alpha_3$ as
+	\[
+		\begin{gathered}
+			\alpha_1(t) = 2 \cos t \\
+			\alpha_2(t) = 2 \sin t \\
+			\alpha_3(t) = t.
+		\end{gathered}
+	\]
+	We can also write out their derivatives
+	\[
+		\begin{gathered}
+			\frac{d \alpha_1}{dt} \Big |_{t_0} = - 2 \sin t_0 \\
+			\frac{d \alpha_2}{dt} \Big |_{t_0} = 2 \cos t_0 \\
+			\frac{d \alpha_3}{dt} \Big |_{t_0} = 1.
+		\end{gathered}
+	\] \\
+	From these we can get the tangent lines for each $t_0$ just by calculating
+	\begin{enumerate}
+		\item
+			\[
+				\boxed{
+					\ell(u) = (2, 2 u, u)
+				}
+			\] \\
+			We get this by calculating
+			\[
+				\begin{split}
+					\ell(u) & = \left ( \alpha_1(0) + u \frac{d \alpha_1}{dt} \Big |_0, \alpha_2(0) + u \frac{d \alpha_2}{dt} \Big |_0, \alpha_3(0) + u \frac{d \alpha_3}{dt} \Big |_0 \right ) \\
+						& = ( 2 \cos 0 + u (-2 \sin 0), 2 \sin 0 + u (2 \cos 0), 0 + u) \\
+						& = (2, 2u, u).
+				\end{split}
+			\]
+		\item
+			\[
+				\boxed{
+					\ell(u) = (- 2 u, 2, \pi/4 + u)
+				}
+			\] \\
+			We get this by calculating
+			\[
+				\begin{split}
+					\ell(u) & = \left ( \alpha_1(0) + u \frac{d \alpha_1}{dt} \Big |_0, \alpha_2(0) + u \frac{d \alpha_2}{dt} \Big |_0, \alpha_3(0) + u \frac{d \alpha_3}{dt} \Big |_0 \right ) \\
+						& = ( 2 \cos (\pi/4) + u (-2 \sin (\pi/4)), 2 \sin (\pi/4) + u (2 \cos (\pi/4)), \pi/4 + u) \\
+						& = (-2u, 2, \pi/4 + u).
+				\end{split}
+			\]
+	\end{enumerate}
 \end{solution}
 
 \pagebreak
@@ -40,7 +86,51 @@
 \end{problem}
 
 \begin{solution}
-
+	For all of these, we can just calculate explicitly
+	\begin{enumerate}
+		\item 
+			\[
+				\boxed{
+					y^2 \, dx ([\mathbf v, \mathbf p]) = 4.
+				}
+			\]\\
+			We get this by
+			\[
+				\begin{split}
+					y^2 \, dx([\mathbf v, \mathbf p]) & = (-2)^2 \, v_1 \\
+									  & = 4 \cdot 1 \\
+									  & = 4.
+				\end{split}
+			\]
+		\item
+			\[
+				\boxed{
+					(z \, dy - y \, dz)([\mathbf v, \mathbf p]) = -4.
+				}
+			\]\\
+			We get this by
+			\[
+				\begin{split}
+					(z \, dy - y \, dz)([\mathbf v, \mathbf p]) & = (1 \cdot v_2 - (-2) \, v_3) \\
+										    & = (1 \cdot 2 - (-2)(-3)) \\
+										    & = -4.
+				\end{split}
+			\]
+		\item
+			\[
+				\boxed{
+					((z^2 - 1) \, dx - dy + x^2 \, dz)([\mathbf v, \mathbf p]) = 2.
+				}
+			\]\\
+			We get this by
+			\[
+				\begin{split}
+					((z^2 - 1) \, dx - dy + x^2 \, dz)([\mathbf v, \mathbf p]) & = (1^2 - 1) \, v_1 - v_2 + 0^2 v_3 \\
+												   & = 0 - (-2) + 0 \\
+												   & = 2.
+				\end{split}
+			\]
+	\end{enumerate}
 \end{solution}
 
 \pagebreak
@@ -57,7 +147,60 @@
 \end{problem}
 
 \begin{solution}
-
+	\begin{enumerate}
+		\item 
+			First we will show that if $\mathbf p$ is a critical point, we have the desired equation. \\\\
+			Note that $df([\mathbf v, \mathbf p])$ is just $\nabla f(\mathbf p) \cdot \mathbf v$. Thus, if $df([\mathbf v, \mathbf p])$ is zero for all tangent vectors in $\mathrm T_{\mathbf p} \mathbb R^3$, we must have $\nabla f(\mathbf p) \cdot \mathbf v = 0$ for all vectors $\mathbf v \in \mathbb R^3$. \\\\
+			The only such vector is $\mathbf 0$, and thus, we must have $\nabla f(\mathbf p) = \mathbf 0$, or component-wise,
+			\[
+				\frac{\partial f}{\partial x} \Big |_{\mathbf p} = \frac{\partial f}{\partial y} \Big |_{\mathbf p} = \frac{\partial f}{\partial z} \Big |_{\mathbf p} = 0.
+			\] \\
+			Now we will show that if the equation holds, $\mathbf p$ is a critical point. Note that if the equation holds, we have
+			\[
+				\begin{split}
+					\nabla f(\mathbf p) & = \left ( \frac{\partial f}{\partial x} \Big |_{\mathbf p}, \frac{\partial f}{\partial y} \Big |_{\mathbf p}, \frac{\partial f}{\partial z} \Big |_{\mathbf p} \right ) \\
+							    & = (0, 0, 0) \\
+							    & = \mathbf 0.
+				\end{split}
+			\] \\
+			This gives us
+			\[
+				\begin{split}
+					df([\mathbf v, \mathbf p]) & = \nabla f(\mathbf p) \cdot \mathbf v \\
+								   & = \mathbf 0 \cdot \mathbf v \\
+								   & = 0.
+				\end{split}
+			\]
+		\item
+			\[
+				\boxed{
+					\begin{gathered}
+						\mathbf p_1 = \left ( 0, 1, \frac{1}{2} \right ) \\
+						\mathbf p_2 = \left ( 0, -1, -\frac{1}{2} \right ).
+					\end{gathered}
+				}
+			\] \\
+			First, we compute $\nabla f$ to see what its zeroes are. For $\mathbf p = (x, y, z)$
+			\[
+				\begin{split}
+					\nabla f(\mathbf p) & = \left ( \frac{\partial f}{\partial x} \Big |_{\mathbf p}, \frac{\partial f}{\partial y} \Big |_{\mathbf p}, \frac{\partial f}{\partial z} \Big |_{\mathbf p} \right ) \\
+							    & = (3 x^2 y, 1 - x^3 - 2y z, 1 - y^2)
+				\end{split}
+			\] \\
+			Since the critical points of $f$ are exactly the points where its gradient is zero, we can just solve for $\nabla f(\mathbf p) = \mathbf 0$.
+			\[
+				\begin{gathered}
+					3 x^2 y = 0 \\
+					1 - x^3 - 2y z = 0 \\
+					1 - y^2 = 0.
+				\end{gathered}
+			\]
+			Note that in order to solve this system $y = \pm 1$. Since $y \neq 0$, to solve the first equation we must have $x = 0$. This leaves us with two ways to solve the second equation:
+			\[
+				1 - 2z = 0 \text{ for } y = 1 \quad \text{ or } \quad 1 + 2z = 0 \text{ for } y = - 1.
+			\] \\
+			Thus, we have critical points $\mathbf p_1 = (0, 1, 1/2)$ and $\mathbf p_2 = (0, -1, -1/2)$.
+	\end{enumerate}
 \end{solution}
 
 \pagebreak
