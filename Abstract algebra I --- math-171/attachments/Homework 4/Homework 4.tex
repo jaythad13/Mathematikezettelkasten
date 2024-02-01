@@ -1,0 +1,466 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{lin-alg-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 171 --- Abstract Algebra I}
+\assignment{Homework 4}
+\duedate{2nd February 2024}
+
+\begin{document}
+
+\begin{problem}[Dummit \& Foote \S 1.4 \#2]
+	Write out all of the elements of $\mathrm{GL}_2(\mathbb F_2)$ and compute the order of each element.
+\end{problem}
+
+\begin{solution}
+	\[
+		\boxed{
+			\begin{gathered}
+				\mathrm{GL}_2(\mathbb F_2) = \left \{ \begin{bmatrix}
+					1 & 0 \\
+					0 & 1
+				\end{bmatrix},
+				\begin{bmatrix}
+					0 & 1 \\
+					1 & 0
+				\end{bmatrix},
+				\begin{bmatrix}
+					0 & 1 \\
+					1 & 1
+				\end{bmatrix},
+				\begin{bmatrix}
+					1 & 0 \\
+					1 & 1
+				\end{bmatrix},
+				\begin{bmatrix}
+					1 & 1 \\
+					0 & 1
+				\end{bmatrix},
+					\begin{bmatrix}
+					1 & 1 \\
+					1 & 0
+			\end{bmatrix} \right \} \\
+			\text{With orders } 1, 2, 3, 2, 2, 3 \text{ respectively.}
+			\end{gathered}
+		}
+	\] \\
+	We can get the elements of $\mathrm{GL}_2(\mathbb F_2)$ by noticing that out of the $2^4$ matrices in $\mathcal M_2(\mathbb F_2)$, the all zero and all one matrices have determinant $0$, all four of the matrices with three zeroes must have determinant $0$. and any matrix with two zeroes in the same row or column (there are four of them) must have determinant $0$. The remaining six --- the two matrices with ones on either diagonal and the four matrices with exactly one zero, all have determinant $1$ and thus, must be the only members of $\mathrm{GL}_2(\mathbb F_2)$. \\\\
+	We know trivially, that $\begin{bmatrix}
+		1 & 0 \\
+		0 & 1
+	\end{bmatrix}$ has order $1$ since it is the identity itself.\\\\
+	Since
+	\[
+		\begin{bmatrix}
+			0 & 1 \\
+			1 & 0
+		\end{bmatrix} 
+		\begin{bmatrix}
+			0 & 1 \\				
+			1 & 0
+		\end{bmatrix} = 
+		\begin{bmatrix}
+			1 & 0 \\
+			0 & 1
+		\end{bmatrix}
+	\]
+	we also have that $\begin{bmatrix}
+			0 & 1 \\
+			1 & 0
+		\end{bmatrix}$ has order $2$. \\\\
+	For any matrix with just one zero on the primary diagonal, multiplying it by itself flips the zero across the diagonal, since in the opposite slot the value is $1 \cdot 1 + 1 \cdot 1 = 0$ and all of the other multiplications we have to do are of the form $0 \cdot 0 + 1 \cdot 1$ or $0 \cdot 1 + 1 \cdot 1$ which are both just one. That is,
+	\[
+		\begin{bmatrix}
+			0 & 1 \\
+			1 & 1
+		\end{bmatrix}
+		\begin{bmatrix}
+			0 & 1 \\
+			1 & 1
+		\end{bmatrix} = 
+		\begin{bmatrix}
+			1 & 1 \\
+			1 & 0
+		\end{bmatrix}.
+	\]
+	and
+	\[
+		\begin{bmatrix}
+			1 & 1 \\
+			1 & 0
+		\end{bmatrix}
+		\begin{bmatrix}
+			1 & 1 \\
+			1 & 0
+		\end{bmatrix} = 
+		\begin{bmatrix}
+			0 & 1 \\
+			1 & 1
+		\end{bmatrix}.
+	\] \\
+	Note that for $2 \times 2$ matrices, we have
+	\[
+		\begin{bmatrix}
+			a & b \\
+			c & d
+		\end{bmatrix}^{-1} = 
+		\begin{bmatrix}
+			d & -b \\
+			-c & a
+		\end{bmatrix}
+	\]
+	and in $\mathbb F_2$, we have $-x = x$, so really
+	\[
+		\begin{bmatrix}
+			a & b \\
+			c & d
+		\end{bmatrix}^{-1} = 
+		\begin{bmatrix}
+			d & b \\
+			c & a
+		\end{bmatrix}.
+	\]
+	That is, just by swapping the entries across the diagonal, we get the inverse. Thus, for any of these matrices, say $A$, with just one zero we have $A^2 = A^{-1}$, and thus $A^3 = I$. Since $A^2 \neq I$, we have $\lvert A \rvert = 3$ for all such $A$. \\\\
+	Finally, for matrices with just one zero on the non-primary diagonal, multiplying with itself gives us an additional zero on the opposite end, just like before, but also retains the zero in the same place on the non-primary diagonal since we have $0 \cdot 1 + 1 \cdot 0 = 0$. This just gives us the identity matrix and thus, that for any of these matrices, say $B$, we have $\lvert B \rvert = 2$. That is,
+	\[
+		\begin{bmatrix}
+			1 & 0 \\
+			1 & 1
+		\end{bmatrix}
+		\begin{bmatrix}
+			1 & 0 \\
+			1 & 1
+		\end{bmatrix} =
+		\begin{bmatrix}
+			1 & 0 \\
+			0 & 1
+		\end{bmatrix}
+	\]
+	and
+	\[
+		\begin{bmatrix}
+			1 & 1 \\
+			0 & 1
+		\end{bmatrix}
+		\begin{bmatrix}
+			1 & 1 \\
+			0 & 1
+		\end{bmatrix} =
+		\begin{bmatrix}
+			1 & 0 \\
+			0 & 1
+		\end{bmatrix}.
+	\]
+\end{solution}
+
+\pagebreak
+
+\begin{problem}[Dummit \& Foote \S 1.4 \# 10]
+	Let
+	\[
+		G = \left \{ \begin{bmatrix}
+				a & b \\
+				0 & c
+		\end{bmatrix} | a, b, c \in \mathbb R, a \neq 0, c \neq 0 \right \}.
+	\]
+	\begin{enumerate}
+		\item 
+			Compute the product of $\begin{bmatrix}
+				a_1 & b_1 \\
+				0 & c_1
+		\end{bmatrix}$ and $\begin{bmatrix}
+				a_2 & b_2 \\
+				0 & c_2
+		\end{bmatrix}$ to show that $G$ is closed under multiplication.
+		\item 
+			Find the matrix inverse of $\begin{bmatrix}
+				a & b \\
+				0 & c
+		\end{bmatrix}$ and deduce that $G$ is closed under inverses.
+		\item 
+			Deduce that $G$ is a subgroup of $\mathrm{GL}_2(\mathbb R)$.
+		\item
+			Prove that the set of elements of $G$ whose two diagonal entries are equal (that is, $a = c$) is also a subgroup of $\mathrm{GL}_2(\mathbb R)$
+	\end{enumerate}
+\end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item 
+			We just multiply matrices as usual to see that
+			\[
+				\begin{bmatrix}
+					a_1 & b_1 \\
+					0 & c_1
+				\end{bmatrix}
+				\begin{bmatrix}
+					a_2 & b_2 \\
+					0 & c_2
+				\end{bmatrix} = 
+				\begin{bmatrix}
+					a_1 a_2 & a_1 b_2 + b_1 c_2 \\
+					0 & c_1 c_2
+				\end{bmatrix}.
+			\]
+			Since $a_1, a_2, c_1, c_2$ are real and nonzero, so are $a_1 a_2$ and $c_1 c_2$. Thus, the product is in $G$.
+		\item
+			Again, we use the fact that for $2 \times 2$ matrices, we have
+			\[
+				\begin{bmatrix}
+					a & b \\
+					c & d
+				\end{bmatrix}^{-1} = 
+				\begin{bmatrix}
+					d & -b \\
+					-c & a
+				\end{bmatrix}.
+			\]
+			Thus,
+			\[
+				\begin{bmatrix}
+					a & b \\
+					0 & c
+				\end{bmatrix}^{-1} = 
+				\begin{bmatrix}
+					c & -b \\
+					0 & a
+				\end{bmatrix}
+			\]
+			which, since $c, a$ are nonzero, is also in $G$. Thus, $G$ is closed under inverses.
+		\item
+			Then, this satisfies the definition of a subgroup given in \S 1.1 \#26 --- for any $h, k \in G \subset \mathrm{GL}_2(\mathbb R)$, we have $h k, h^{-1} \in G$.
+		\item
+			Let
+			\[
+				H = \left \{ \begin{bmatrix}
+				a & b \\
+				0 & a
+		\end{bmatrix} | a, b \in \mathbb R, a \neq 0 \right \}.
+			\] \\
+			For any
+			\[
+				h = \begin{bmatrix}
+					a_1 & b_1 \\
+					0 & c_1
+				\end{bmatrix}, k = 
+				\begin{bmatrix}
+					a_2 & b_2 \\
+					0 & c_2
+				\end{bmatrix}
+			\]
+			we have
+			\[
+				\begin{split}
+					hk & = \begin{bmatrix}
+						a_1 & b_1 \\
+						0 & a_1
+					\end{bmatrix}
+					\begin{bmatrix}
+						a_2 & b_2 \\
+						0 & a_2
+					\end{bmatrix} \\
+					   & = \begin{bmatrix}
+						   a_1 a_2 & a_1 b_2 + b_1 a_2 \\
+						   0 & a_1 a_2
+					   \end{bmatrix} \in H
+				\end{split}
+			\]
+			and
+			\[
+				h^{-1} = \begin{bmatrix}
+					a & -b \\
+					0 & a
+				\end{bmatrix} \in H.
+			\] \\
+			Thus, $H$ satisfies the definition of a subgroup of $H$.
+	\end{enumerate}
+\end{solution}
+
+\pagebreak
+
+\begin{problem}[Dummit \& Foote \S 1.4 \#11 (a), (b)]
+	Let $\mathbb F$ be any field. Then let
+	\[
+		H(\mathbb F) = \left \{ \begin{bmatrix}
+				1 & a & b \\
+				0 & 1 & c \\
+				0 & 0 & 1
+		\end{bmatrix} | a, b, c \in \mathbb F \right \}
+	\]
+	be called the \textit{Heisenberg group} over $\mathbb F$. Let
+	\[
+		X = \begin{bmatrix}
+				1 & a & b \\
+				0 & 1 & c \\
+				0 & 0 & 1
+			\end{bmatrix} \quad \text{ and } \quad Y = \begin{bmatrix}
+				1 & d & e \\
+				0 & 1 & f \\
+				0 & 0 & 1
+		\end{bmatrix}
+	\]
+	be elements of $H(\mathbb F)$. \\\\
+	\begin{enumerate}
+		\item
+			Compute the matrix product $XY$ and deduce that $H(\mathbb F)$ is closed under matrix multiplication. Exhibit explicit matrices such that $AB \neq BA$ (so that $H(\mathbb F)$ is always non-abelian).
+		\item
+			Find an explicit formula for the matrix inverse $X^{-1}$ and deduce that $H(\mathbb F)$ is closed under inverses.
+	\end{enumerate}
+\end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item
+			\[
+				\boxed{
+					\begin{gathered}
+						XY = \begin{bmatrix}
+							1 & d + a & e + af + b \\
+							0 & 1 & f + c \\
+							0 & 0 & 1
+						\end{bmatrix} \\
+						A = \begin{bmatrix}
+							1 & 1 & 0 \\
+							0 & 1 & 0 \\
+							0 & 0 & 1
+						\end{bmatrix} \text{ and }
+						B = \begin{bmatrix}
+							1 & 0 & 0 \\
+							0 & 1 & 1 \\
+							0 & 0 & 1
+						\end{bmatrix} \text{ do not commute.}
+					\end{gathered}
+				}
+			\] \\
+			We get the first result just by performing the standard matrix multiplication algorithm. \\\\
+			To obtain the second result we note that the only two elements that are present in any field are $0$ and $1$. We also note that the general expression for the product of the matrices only allows one of the slots to be different depending on the order of multiplication. By choosing carefully, we can get $e = b = 0$ always and $af = 0 \cdot 0 = 0$ for one order of multiplication and $af = 1 \cdot 1 = 1$ for another. Thus,
+			\[
+				AB = \begin{bmatrix}
+					1 & 1 & 1 \\
+					0 & 1 & 1 \\
+					0 & 0 & 1
+				\end{bmatrix}
+			\]
+			and
+			\[
+				BA = \begin{bmatrix}
+					1 & 1 & 0 \\
+					0 & 1 & 1 \\
+					0 & 0 & 1
+				\end{bmatrix}.
+			\] \\
+			That is, we have two matrices $A$ and $B$ that do not commute over any field.
+		\item
+			\[
+				\boxed{
+					X^{-1} = \begin{bmatrix}
+						1 & - a & ac - b \\
+						0 & 1 & - c \\
+						0 & 0 & 1
+					\end{bmatrix}
+				}
+			\] \\
+			We can find the inverse of $X$ by trying to send each of the standard basis vectors of $\mathbb R^3$ ($\mathbf e_1, \mathbf e_2, \mathbf e_3$) back to themselves after mapping under $X$. \\\\
+			Note that $X \mathbf e_1 = \mathbf e_1$, so $X^{-1} \mathbf e_1$ must be just $\mathbf e_1$. Thus, the first column of $X$ is just the column matrix of $\mathbf e_1$. \\\\
+			Then we want $X^{-1}(a \mathbf e_1 + \mathbf e_2) = \mathbf e_2$, since $X \mathbf e_2 = a \mathbf e_1 + \mathbf e_2$. This equates to $a \mathbf e_1 + X \mathbf e_2 = \mathbf e_2$, and thus, $X^{-1} \mathbf e_2 = - a \mathbf e_1 + \mathbf e_2$. The second column of the matrix is then given by this. \\\\
+			Finally, we want $X^{-1}(b \mathbf e_1 + c \mathbf e_2 + \mathbf e_3) = \mathbf e_3$. Using the values we already have for $X^{-1}$, we get
+			\[
+				\begin{split}
+					X^{-1} \mathbf e_3 & = - X(b \mathbf e_1) - X(c \mathbf e_2) + \mathbf e_3 \\
+							   & = - b \mathbf e_1 - c (- a \mathbf e_1 + \mathbf e_2) + \mathbf e_3 \\
+							   & = (ac - b) \mathbf e_1 - c \mathbf e_2 + \mathbf e_3
+				\end{split}
+			\]
+			which gives us the last column of the matrix.
+	\end{enumerate}
+\end{solution}
+
+\pagebreak
+
+For the following problems, let $R$ be a ring with $1$.
+
+\begin{problem}[Dummit \& Foote \S 7.1 \# 1]
+	Show that $(-1)^2 = 1$ in $R$.
+\end{problem}
+
+\begin{solution}
+	Consider $(-1)^2 + (-1)$.
+	\[
+		\begin{split}
+			(-1)^2 + (-1) & = (-1) \times (-1) + (-1) \times 1 \\
+				      & = (-1) \times (-1 + 1) \\
+				      & = (-1) \times 0 \\
+				      & = 0.
+		\end{split}
+	\]
+	Thus, $(-1)^2 = -(-1)$ which by the uniqueness of inverses in the group gives us $(-1)^2 = 1$.
+\end{solution}
+
+\pagebreak
+
+\begin{problem}[Dummit \& Foote \S 7.1 \# 7]
+	The \textit{centre} of a ring $R$ is $\{ z \in R | zr = rz \text{ for all } r \in R \}$ (that is, the set of all elements which commute with every element of $R$). Prove that the center of a ring is a subring that contains the identity. Prove that the center of a division ring is a field.
+\end{problem}
+
+\begin{solution}
+	Let $Q$ be the centre of $R$. Note that $1, 0 \in Q$ since both of them commute with every element of $R$. Note that we just need to check that $Q$ is closed under subtraction and multiplication. \\\\
+	Suppose $a, b \in Q$ and $r \in R$. Then we can check that $Q$ is closed under multiplication since $ab$ commutes with the arbitrary element of the ring, $r$.
+	\[
+		\begin{split}
+			a b r & = a r b \\
+			      & = r a b
+		\end{split}
+	\]
+	Similarly we check that $Q$ is closed under subtraction by checking that $a - b$ commutes with the arbitrary element of the ring, which it does:
+	\[
+		\begin{split}
+			(a - b) r & = a r - b r \\
+				  & = r a - r b \\
+				  & = r (a - b).
+		\end{split}
+	\] \\
+	Thus, the centre of a ring is a subring.\\\\
+	Now we suppose $R$ is a division ring. Thus, $(R \setminus \{ 0 \}, \times)$ is a group. To show that $Q \setminus \{ 0 \}$ is a subgroup with the same operation, we just need to show that it is closed under inverses (we already showed that it is closed under multiplication for any ring). \\\\
+	Suppose $q \in Q \setminus \{ 0 \}$ and $r \in R$. Note that we can write $r = q q^{-1} r$. But,
+	\[
+		q q^{-1} r = q^{-1} r q
+	\]
+	and thus,
+	\[
+		\begin{split}
+			r q^{-1} & = (q^{-1} r q) q^{-1} \\
+				 & = q^{-1}(r q q^{-1}) \\
+				 & = q^{-1} r.
+		\end{split}
+	\]
+	That is, $q^{-1} \in Q$. \\\\
+	Since multiplication is commutative in $Q$, we have $(Q, +)$ and $(Q \setminus \{ 0 \}, \times)$ both as abelian groups, and thus, $Q$ is a field.
+\end{solution}
+
+\pagebreak
+
+\begin{problem}[Dummit \& Foote \S 7.1 \# 15]
+	A ring $R$ is called a \textit{Boolean ring} if $a^2 = a$ for all $a \in R$. Prove that every Boolean ring is commutative.
+\end{problem}
+
+\begin{solution}
+	Suppose $R$ is Boolean. Then, for any $x, y \in R$ we have $x + y = (x + y)^2$ and $x + y = x^2 + y^2$. Putting these together, we get
+	\[
+		x^2 + y^2 + xy + yx = x^2 + y^2
+	\]
+	and thus,
+	\[
+		xy = - yx.
+	\]
+	Notice that if $x = y = a$ for some $a \in R$, then we get that
+	\[
+		a^2 = - a^2
+	\]
+	and thus,
+	\[
+		a = - a
+	\]
+	for any $a \in R$. That is, the unique additive inverse of any $a \in R$ is $a$ itself. Then since we have that $xy$ is the additive inverse of $yx$, it must be $yx$ itself. That is, for any $x, y \in R$ we have $xy = yx$. Thus, $R$ is commutative.
+\end{solution}
+
+\end{document}
