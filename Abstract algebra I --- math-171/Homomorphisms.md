@@ -14,14 +14,14 @@ A homomorphism is a structure preserving operation. This is vague and intentiona
 
 ##### _definition:_ group homomorphisms
 
-Let $G$ and $H$ be groups. A group homomorphism $\varphi : G \to H$ is a function such that for all $x, y \in G$ we have
+Let $G$ and $H$ be [[Motivating groups#_definition _ group|groups]]. A group homomorphism $\varphi : G \to H$ is a function such that for all $x, y \in G$ we have
 $$
 \varphi(xy) = \varphi(x) \varphi(y).
 $$
 
 Note that the operation on the left hand side is on elements of $G$ and inside the input, and the operation on the right hand side is on elements of $H$ and on the output.
 
-A natural definition we have is that of the kernel of $\varphi$ — it's just like the kernel/null space of a linear maps.
+A natural definition we have is that of the kernel of $\varphi$ — it's just like the [[Null space|kernel/null space of a linear maps]].
 
 ##### _definition:_ kernel, $\ker \varphi$
 

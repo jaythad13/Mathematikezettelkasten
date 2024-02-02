@@ -55,7 +55,7 @@ We are usually careful to make use parentheses for abstract rings (so that we do
 
 ##### _definition:_ commutative ring
 
-A ring $R$ is commutative if its multiplication $\times$ is commutative.
+A ring $R$ is commutative if its multiplication $\times$ is [[Motivating groups#_definition _ commutativity|commutative]].
 
 ##### _definition:_ ring with identity
 

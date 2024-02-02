@@ -15,6 +15,8 @@ The theory of linear algebra holds over any field. In particular we have
 
 ### Matrix groups
 
+Just as how [[Dihedral groups and generators#The dihedral group|the dihedral group as a subset of all the permutations on vertices of a polygon]], we can think of lots of groups as encoded by the multiplication of matrices — in general function composition being associative makes such a thing natural.
+
 ##### _notation:_ $\mathcal{M}_{n}(\mathbb{F})$
 
 Given a field $\mathbb{F}$, we consider $\mathcal{M}_{n}(\mathbb{F})$ to be the $n \times n$ matrices with entries from $\mathbb{F}$.

@@ -33,7 +33,7 @@ Another sort of combinatorial way to think about groups is a group table. The ea
 
 ##### _example:_ a nice group table
 
-Recall $G = \left< a, b, c \vert abc = a^2 = b^2 = c^2 = 1  \right>$ from last time. Remembering that this really is just $\{ 1, a, b, ab \}$ and abelian we can write
+Recall $G = \left< a, b, c \vert abc = a^2 = b^2 = c^2 = 1  \right>$ from [[Dihedral groups and generators#_example _ a group given completely by its presentation|last time]]. Remembering that this really is just $\{ 1, a, b, ab \}$ and abelian we can write
 
 | - | $1$ | $a$ | $b$ | $ab$ |
 | ---- | ---- | ---- | ---- | ---- |
@@ -45,7 +45,7 @@ Note that we only write $ab$, not $ba$, since $ab = ba$ and we chose to write $a
 
 ### Symmetric groups
 
-Recall that we can think of each symmetry in $D_{2n}$ as just a permutation of $n$ vertices, but not all permutations were a symmetry. If we think about all of the symmetries, without any restrictions to "rigid motions" do they form a group? Yes!
+Recall that we can think of each symmetry in $D_{2n}$ [[Dihedral groups and generators#The dihedral group|as just a permutation]] of $n$ vertices, but not all permutations were a symmetry. If we think about all of the symmetries, without any restrictions to "rigid motions" do they form a group? Yes!
 
 ##### _proposition:_ the set of bijections on a set is a group
 
