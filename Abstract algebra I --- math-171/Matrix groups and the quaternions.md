@@ -2,7 +2,9 @@
 tags:
 - alg
 - math-171
-lecture: math-171-4
+lecture: 
+- math-171-4
+- math-171-5
 ---
 
 ### Linear algebra recap
@@ -97,3 +99,41 @@ The special linear group of degree $n$ over $\mathbb{F}$ is
 $$
 \mathrm{SL}_{n}(\mathbb{F}) = \{ A \in \mathcal{M}_{n}(\mathbb{F}) | \det A = 1 \}.
 $$
+
+##### _definition:_ the orthogonal group
+
+The orthogonal group of degree $n$ over $\mathbb{F}$ is
+$$
+\mathrm{O}_{n}(\mathbb{F}) = \{ T \in \mathcal{L}(\mathbb{F}^n) | T T^* = T^*T = I  \}.
+$$
+
+That is, the group of isometries on $\mathbb{F}^n$. Note that $\det T = \pm 1$ for $T \in \mathrm{O}_{n}(\mathbb{F})$
+
+##### _definition:_ the special orthogonal group
+
+The orthogonal group of degree $n$ over $\mathbb{F}$ is
+$$
+\mathrm{SO}_{n}(\mathbb{F}) = \{ T \in \mathrm{O}_{n}(\mathbb{F}) | \det T = 1 \}.
+$$
+
+### The quaternions and the Hamiltonian ring
+
+The quaternions and Hamiltonians are a sort of "higher dimensional complex numbers". The quaternions define multiplication on the "complex parts":
+
+##### _definition:_ the quaternions
+
+The quaternion group is
+$$
+Q_{8} = \{ 1, -1, i, -i, j, -j, k, -k \}
+$$
+where everything works as you'd expect — that is, $1$ and $-1$ behave like you'd expect, and $i, j, k$ act like $\mathbf{i}, \mathbf{j}, \mathbf{k}$ with cross multiplication in $\mathbb{R}^3$ under quaternion multiplication
+
+##### _definition:_ the Hamiltonian ring
+
+The Hamiltonian ring is
+$$
+\mathbb{H} = \{ a + b i + c j + d k | a, b, c, d \in \mathbb{R} \}
+$$
+with addition component wise and multiplication defined by $\mathbb{R}$ commuting with elements of $Q_{8}$, the regular multiplication on $Q_{8}$ for its elements and the regular multiplication on $\mathbb{R}$ for elements of $\mathbb{R}$.
+
+We will see that the orthogonal groups and the Hamiltonians and quaternions are related.

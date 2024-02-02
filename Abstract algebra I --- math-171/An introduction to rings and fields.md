@@ -87,3 +87,92 @@ A ring with multiplicative identity $1 \neq 0$ where every nonzero element has a
 1) $\mathbb{Z}/n\mathbb{Z}$ is a field if and only if $n$ is prime
 2) $\mathbb{Q}$, the rational numbers
 3) $\mathbb{F}_{2}$ is the unique finite field of order $2$. It is just $\{ 0, 1 \}$.
+
+##### _facts:_ about fields!
+
+We may not prove these in this class
+
+1) There is exactly one field (upto isomorphism) of order $p^n$ where $p$ is any prime and $n$ is any natural number.
+
+### Things about rings
+
+Here are some basic facts about any ring $R$, and any elements $a, b \in R$. $0$ is the additive identity, and if $R$ has an identity, we denote it by $1$.
+
+##### _proposition:_ multiplying by zero gives zero
+
+$$
+0a = a0 = 0
+$$
+
+##### _proof sketch:_
+
+$$
+\begin{split}
+& 0a = (0 + 0)a \\
+\implies & 0a - 0a = 0a + 0a - 0a \\
+\implies & 0 = 0a
+\end{split}
+$$
+and similarly for right multiplication.
+
+##### _proposition:_ multiplying by additive inverses gives additive inverses
+
+$$
+(-a)b = a(-b) = - ab
+$$
+
+##### _proof sketch:_
+
+$$
+\begin{split}
+& (a - a)b = 0 \\
+\implies & ab + (-a)b = 0 \\
+\implies & (a)b = -ab
+\end{split}
+$$
+and similarly for right multiplication.
+
+##### _corollary:_ multiplying two additive inverses is the same as multiplying two numbers
+
+$$
+(-a)(-b) = ab
+$$
+
+##### _proof sketch:_
+
+$$
+\begin{split}
+(-a)(-b) & = - a(-b) \\
+& = - (-ab) \\
+& = ab
+\end{split}
+$$
+
+##### _proposition:_ the identity is unique
+
+If $R$ has identity $1$, it is unique.
+
+##### _proof sketch:_
+
+Suppose $1'$ is another multiplicative identity. Then
+$$
+\begin{split}
+1 & = 1 \times 1' \\
+& = 1'
+\end{split}
+$$
+
+##### _corollary:_ the identity gives inverses
+
+ $(-1)a = -a$ for $a \in R$.
+ 
+##### _proof:_
+
+Note that
+$$
+\begin{split}
+(-1) a & = -(1a) \\
+& = - a
+\end{split}
+$$
+giving us that $(-1)a$ is the unique additive inverse of $a$ — $-a$.
