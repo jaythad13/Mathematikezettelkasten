@@ -378,4 +378,30 @@
 	for all $j \in \bb{N}_m$
 \end{problem}
 
+\begin{solution}
+	Apply the Gram-Schmidt procedure to $v_1, \dots, v_m$ to get an orthonormal basis $e_1, \dots, e_m$. Choose to multiply any subset of them by $-1$. This preserves the span of each sublist $e_1, \dots, e_j$. There are $2^m$ ways to do this. \\\\
+	We also have that $e_{j + 1}$ and $-e_{j + 1}$ are the only way to add $v_{j + 1}$ to the span of $e_1, \dots, e_j$ while preserving the orthonormal property. We can prove this as follows. \\\\
+	Suppose we have $\operatorname{span}(e_1, \dots e_j) = \operatorname{span}(v_1, \dots, v_j)$ and we want $e_{j + 1}$ such that $e_1, \dots, e_{j + 1}$ is orthonormal, and $\operatorname{span}(e_1, \dots, e_{j + 1}) = \operatorname{span}(v_1, \dots, v_{j + 1}) = \operatorname{span}(e_1, \dots, e_j, v_{j + 1})$. Then notice that we can write $e_{j + 1} \in \operatorname{span}(e_1, \dots, e_j, v_{j + 1})$ as
+	\[
+		e_{j + 1} = c_1 e_1 + \dots + c_j e_j + d v_{j + 1}.
+	\]
+	Taking the inner product of everything with $e_{k}$ (for some $k < j$) gives us
+	\[
+		0 = 0 + \dots + c_k + \dots + 0 + d \left < v_{j + 1}, e_k \right >.
+	\]
+	Thus, all $c_k = - d \left < v_{j + 1}, e_k \right >$. This allows us to write $e_{j + 1}$ as
+	\[
+		e_{j + 1} = d ( v_{j + 1} - ( \left < v_{j + 1}, e_1 \right > e_1 + \dots + \left < v_{j + 1}, e_j \right > e_j ) )
+	\]
+	Finally, using our fact that $\Vert e_{j + 1} \Vert^2 = 1$, we take the norm on both sides and get
+	\[
+		1 = d^2 \left ( \Vert v_{j + 1} \Vert^2 - \sum_{i = 1}^j \left < v_{j + 1}, e_i \right >^2 \right ).
+	\]
+	This gives us two options for $d$:
+	\[
+		d = \pm \frac{1}{\sqrt{\left ( \Vert v_{j + 1} \Vert^2 - \sum_{i = 1}^j \left < v_{j + 1}, e_i \right >^2 \right )}}.
+	\]
+	Since $d$ uniquely determines all of the coefficients, and the $e_{j + 1}$ and $- e_{j + 1}$ we get from the Gram-Schmidt process are valid choices, they must be the only two.
+\end{solution}
+
 \end{document}
