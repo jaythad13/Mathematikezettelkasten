@@ -44,7 +44,7 @@ $$
 
 ### Facts about homomorphisms
 
-The following are easy to prove! Let 
+The following are easy to prove! Let $G, H$ be groups with identities $1_{G}, 1_{H}$ and let $\varphi$ be a homomorphism $G \to H$.
 
 ##### _proposition:_ the identity is mapped to the identity
 
