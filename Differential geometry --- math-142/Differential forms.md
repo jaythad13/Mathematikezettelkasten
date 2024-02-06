@@ -151,3 +151,5 @@ Note that
 $$
 \dim \Omega^k(\mathbb{R}^n) = \binom{n}{k}.
 $$
+
+Also note that while we usually think of just the $k$-forms on $\mathbb{R}^n$ for some specific $k$, we can think of all the differential forms on $\mathbb{R}^n$ by thinking about the direct sum of all $\Omega^k(\mathbb{R}^n)$ for all $k \le n$ and the wedge product of things from two different spaces as just the wedge product of their basis representations (a multiple wedge product of $dx_{i}$ type $1$-forms). 
