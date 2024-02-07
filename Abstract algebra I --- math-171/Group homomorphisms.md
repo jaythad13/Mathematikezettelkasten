@@ -4,6 +4,7 @@ tags:
 - math-171
 lecture:
 - math-171-5
+- math-171-6
 ---
 
 Remember linear maps? Homomorphisms are to things what linear maps are to vector spaces.
@@ -34,7 +35,7 @@ $$
 
 The image of a group homomorphism $\varphi : G \to H$ is
 $$
-\operatorname{Im} \varphi = \{ \varphi(x) \in H | x \in G\}
+\operatorname{im} \varphi = \{ \varphi(x) \in H | x \in G\}
 $$
 
 ##### _examples:_ group homomorphisms
@@ -44,7 +45,7 @@ $$
 
 ### Facts about homomorphisms
 
-The following are easy to prove! Let $G, H$ be groups with identities $1_{G}, 1_{H}$ and let $\varphi$ be a homomorphism $G \to H$.
+The following are easy to prove! Basically homomorphisms preserve anything that a group can care about. Let $G, H$ be groups with identities $1_{G}, 1_{H}$ and let $\varphi$ be a homomorphism $G \to H$.
 
 ##### _proposition:_ the identity is mapped to the identity
 
@@ -67,3 +68,39 @@ and thus,
 $$
 \varphi(1_{G}) = 1_{H}.
 $$
+
+##### _proposition:_ homomorphisms send inverses to inverses
+
+$$
+\varphi(x^{-1}) = \varphi(x)^{-1}
+$$
+
+##### _proof:_
+
+We know that
+$$
+\varphi(x x^{-1}) = \varphi(x)\varphi(x^{-1})
+$$
+and
+$$
+\begin{split}
+\varphi(x x^{-1}) & = \varphi(1_{G}) \\
+& = 1_{H}.
+\end{split}
+$$
+Thus,
+$$
+\varphi(x) \varphi(x^{-1}) = 1_{H}
+$$
+and $\varphi(x^{-1})$ is the unique inverse of $\varphi(x)$.
+
+##### _proposition:_ homomorphisms preserve arbitrary multiplication
+
+$$
+\varphi(x^n) = \varphi(x)^n
+$$
+for any integer $n$.
+
+##### _proof sketch:_
+
+Do it by induction — the base case is obviously true, so is the case for $n = 2$. Look at $\varphi(x^n)$ as $\varphi(x^{n - 1}x)$ and then solve by the previous case and $n = 2$.
