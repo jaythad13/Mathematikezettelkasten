@@ -90,4 +90,4 @@ The most common exact sequence we see is
 	\end{tikzcd}
 \end{document}
 ```
-It is called a short exact sequence and it tells us that $\varphi$ is injective, $\kappa$ is surjective, and $\ker \kappa = \operatorname{im} \varphi$.
+It is called a short exact sequence and it tells us that $\psi$ is injective, $\kappa$ is surjective, and $\ker \kappa = \operatorname{im} \psi$.
