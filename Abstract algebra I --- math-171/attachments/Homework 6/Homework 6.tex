@@ -1,0 +1,153 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{lin-alg-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 171 --- Abstract Algebra I}
+\assignment{Homework 6}
+\duedate{9th February 2024}
+
+\begin{document}
+
+\begin{problem}[Dummit \& Foote \S1.6 \#2]
+	Let $\varphi : G \to H$ is an isomorphism, prove that $\lvert \varphi(x) \rvert = \lvert x \rvert$ for all $x \in G$. Deduce that any two isomorphic groups have the same number of elements of order $n$ for each $n \in \mathbb Z^+$. Is that result true if $\varphi$ is only assumed to be a homomorphism?
+\end{problem}
+
+\begin{solution}
+	Suppose $\lvert x \rvert = m$ and $\lvert \varphi(x) \rvert = n$. Then we have
+	\[
+		\begin{split}
+			\varphi(x)^m & = \varphi(x^m) \\
+				     & = \varphi(1_G) \\
+				     & = 1_H.
+		\end{split}
+	\]
+	Thus, $\lvert \varphi(x) \rvert = n \le m$. Similarly since $\varphi$ is an isomorphism we can consider $\varphi^{-1}$.
+	\[
+		\begin{split}
+			x^n & = \varphi^{-1}(\varphi(x))^n \\
+			    & = \varphi^{-1}(\varphi(x)^n) \\
+			    & = \varphi^{-1}(1_H) \\
+			    & = 1_G.
+		\end{split}
+	\]
+	Similarly, $\lvert x \rvert = m \le n$. By $m \le n$ and $m \ge n$, we have $\lvert \varphi(x) \rvert = \lvert x \rvert$. \\\\
+	For any $k \in \mathbb N$, consider the set of all elements of $G$ of order $k$, which we will denote $G_k$. Consider $\varphi^\text{img}(G_k)$. Since every element in $H_k$ (the set of all elements of $H$ of order $k$) must be mapped to element of order $k$ in $G$, we also have $H_k = \varphi^\text{img}(G_k)$. Thus, the restriction of $\varphi$ to $G_k$ forms a bijection between $G_k$ and $H_k$ giving us that they have the same cardinality. \\\\
+	This result does not hold for all homomorphisms --- consider the canonical homomorphism $\psi : \mathbb Z \to (\mathbb Z/n\mathbb Z, +)$ by $x \mapsto x + n \mathbb Z$. Every element of $\mathbb Z$ has infinite order, and every element of $\mathbb Z/n \mathbb Z$ has order at most $n$.
+\end{solution}
+
+\pagebreak
+
+\begin{problem}[Dummit \& Foote \S1.6 \#3]
+	If $\varphi : G \to H$ is an isomorphism, prove that $G$ is abelian if and only if $H$ is abelian. If $\varphi : G \to H$ is a homomorphism, what additional condition on $\varphi$ (if any) are sufficient to ensure that if $G$ is abelian, then so is $H$.
+\end{problem}
+
+\begin{solution}
+	For any $h_1, h_2 \in H$ let us have $\varphi(g_1) = h_1$ and $\varphi(g_2) = h_2$. (Note that we have the desired $g_1, g_2 \in G$ since $\varphi$ is an isomorphism, and thus, surjective). \\\\
+	Then
+	\[
+		\begin{split}
+			h_1 h_2 & = \varphi(g_1) \varphi(g_2) \\
+				& = \varphi(g_1 g_2) \\
+				& = \varphi(g_2 g_1) \\
+				& = \varphi(g_2) \varphi(g_1) \\
+				& = h_2 h_1.
+		\end{split}
+	\]
+	That is, arbitrary $h_1, h_2 \in H$ commute. \\\\
+	Surjectivity is a sufficient condition on a homomorphism to ensure that it preserves commutativity. The proof follows exactly as above (note that we didn't use the injectivity of an isomorphism, only the surjectivity). Note that surjectivity is also necessary --- just consider the trivial homomorphism from any abelian group to any non-abelian group.
+\end{solution}
+
+\pagebreak
+
+\begin{problem}[Dummit \& Foote \S1.6 \#10]
+	Fill in the details of the proof that the symmetric groups $S_\Delta$ and $S_\Omega$ are isomorphisc if $\lvert \Delta \rvert = \lvert \Omega \rvert$ as folloes: let $\theta : \Delta \to \Omega$ be a bijection. Define $\varphi : S_\Delta \to S_\Omega$ by
+	\[
+		\varphi(\sigma) = \theta \circ \sigma \circ \theta^{-1}
+	\]
+	for all $\sigma \in S_\Delta$ and prove the following:
+	\begin{enumerate}
+		\item
+			$\varphi$ is well defined, that is, if $\sigma$ is a permutation of $\Delta$ then $\theta \circ \sigma \circ \theta^{-1}$ is a permutation of $\Omega$.
+		\item
+			$\varphi$ is a bijection from $S_\Delta$ onto $S_\Omega$. (Find a two-sided inverse for $\varphi$).
+		\item
+			$\varphi$ is a homomorphism, that is, $\varphi(\sigma \circ \tau) = \varphi(\sigma) \circ \varphi(\tau)$.
+	\end{enumerate}
+\end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item
+			Since $\theta, \tau, \theta^{-1}$ are all bijections, their composition $\varphi = \theta \circ \tau \circ \theta^{-1}$ is also a bijection, specifically, a bijection $\Omega \to \Omega$. Thus, it is an element of $S_\Omega$.
+		\item
+			Consider $\psi : S_\Omega \to S_\Delta$ by $\sigma \mapsto \theta^{-1} \circ \sigma \circ \theta$. We claim that this is a two sided inverse of $\varphi$. We can check that this is true ---
+			\[
+				\begin{split}
+					\psi \circ \varphi(\sigma) & = \psi(\varphi(\sigma)) \\
+								   & = \psi(\theta \circ \sigma \circ \theta^{-1}) \\
+								   & = \theta^{-1} \circ \theta \circ \sigma \circ \theta^{-1} \circ \theta \\
+								   & = \sigma
+				\end{split}
+			\]
+			and
+			\[
+				\begin{split}
+					\varphi \circ \psi(\sigma) & = \varphi(\psi(\sigma)) \\
+								   & = \varphi(\theta^{-1} \circ \sigma \circ \theta) \\
+								   & = \theta \circ \theta^{-1} \circ \sigma \circ \theta \circ \theta^{-1} \\
+								   & = \sigma.
+				\end{split}
+			\]
+		\item
+			We can just calculate $\varphi(\sigma \circ \tau)$ to show this ---
+			\[
+				\begin{split}
+					\varphi(\sigma \circ \tau) & = \theta \circ \sigma \circ \tau \circ \theta^{-1} \\
+								   & = \theta \circ \sigma \circ \theta^{-1} \circ \theta \circ \tau \circ \theta^{-1} \\
+								   & = (\theta \circ \sigma \circ \theta^{-1}) \circ (\theta \circ \tau \circ \theta^{-1}) \\
+								   & = \varphi(\sigma) \circ \varphi(\tau).
+				\end{split}
+			\]
+	\end{enumerate}
+\end{solution}
+
+\pagebreak
+
+\begin{problem}[Dummit \& Foote \S1.6 \#23]
+	Let $G$ be a finite group which possesses an automorphism $\sigma$ such that $\sigma(g) = g$ if and only if $g = 1$. If $\sigma^2$ is the identity map from $G$ to $G$, prove that $G$ is abelian (such an automorphism $\sigma$ is called \textit{fixed point free} of order $2$). (Show that every element of $G$ can be written in the form $x^{-1} \sigma(x)$ and apply $\sigma$ to such an expression).
+\end{problem}
+
+\begin{solution}
+	Note that if we have $y^{-1} \sigma(y) = x^{-1} \sigma(x)$ then we have $xy^{-1} = \sigma(xy^{-1})$ and thus, $xy^{-1} = 1$ and $x = y$. That is, the function $G \to G$ by $x \mapsto x^{-1} \sigma(x)$ is injective, and thus, also surjective (by the finiteness of $G$), taking every $g \in G$. Thus, we can write every $g \in G$ as $x^{-1} \sigma(x)$ for some $x \in G$. \\\\
+	Then for $g = x^{-1} \sigma(x)$ and $h = y^{-1} \sigma(y)$ an arbitrary pair of elements in $G$, we have
+	\[
+		\begin{split}
+			\sigma(gh) & = \sigma(x^{-1} \sigma(x) y^{-1} \sigma(y)) \\
+				   & = \sigma(x)^{-1} \sigma^2(x) \sigma(y)^{-1} \sigma^2(y) \\
+				   & = \sigma(x)^{-1} x \sigma(y)^{-1} y.
+		\end{split}
+	\]
+	Note that $x = \sigma(x) g^{-1}$ and $y = \sigma(y) h^{-1}$. Substituting these in, we get
+	\[
+		\sigma(gh) = g^{-1} h^{-1}.
+	\]
+	Thus, for any $g \in G$
+	\[
+		\begin{split}
+			\sigma(g) & = \sigma(1 g) \\
+				  & = 1^{-1} g^{-1} \\
+				  & = g^{-1}.
+		\end{split}
+	\]
+	This allows us to write
+	\[
+		\begin{split}
+			gh & = (h^{-1} g^{-1})^{-1} \\
+			   & = \sigma(h^{-1} g^{-1}) \\
+			   & = hg.
+		\end{split}
+	\]
+	That is, any two elements of $G$ commute.
+\end{solution}
+
+\end{document}
