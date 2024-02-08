@@ -65,7 +65,7 @@ If we generalise the $\phi \in d^\text{img}(\Omega^{k - 1}(\mathbb{R}^n)) \iff \
 
 Here are all the properties (with proof) that we claimed the exterior derivative has but didn't quite prove that it has.
 
-##### _proposition:_ the exterior derivative is linear
+##### _proposition:_ the exterior derivative is linear over $\mathbb{R}$
 
 For $\phi, \psi \in \Omega^k(\mathbb{R}^n)$, we have $\eta = a \, \phi + b \, \psi \in \Omega^k(\mathbb{R}^n)$ for scalars $a, b \in \mathbb{R}$ and
 $$
