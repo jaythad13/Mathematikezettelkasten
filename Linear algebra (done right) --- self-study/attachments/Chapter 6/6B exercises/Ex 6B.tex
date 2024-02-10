@@ -91,6 +91,11 @@
 \end{problem}
 
 \begin{solution}
+	\[
+		\boxed{
+			(1, 0, 0), (0, \frac{1}{\sqrt 2}, \frac{1}{\sqrt 2}), (0, -\frac{1}{\sqrt 2}, \frac{1}{\sqrt 2}).
+		}
+	\] \\
 	Since the Gram-Schmidt process preserves upper-triangular matrices, we can just apply it to the given basis to get an orthonormal basis with respect to which $T$ has an upper-triangular matrix. Let the original basis be $v_1, v_2, v_3$ and the orthonormal basis be $e_1, e_2, e_3$. Let the non-normalised versions of the orthonormal basis be $u_1, u_2, u_3$.\\\\
 	The Gram-Schmidt process gives us the following.
 	\[
@@ -263,6 +268,11 @@
 \end{problem}
 
 \begin{solution}
+	\[
+		\boxed{
+			1, 2 \sqrt 3 \Big ( x - \frac{1}{2} \Big ), 6 \sqrt 5 \Big ( x^2 - x + \frac{1}{6} \Big ).
+		}
+	\] \\
 	Let $v_1, v_2, v_3$ denote the basis $1, x, x^2$, let $e_1, e_2, e_3$ denote the orthonormal basis obtained by applying the Gram-Schmidt procedure to it, and let $u_1, u_2, u_3$ denote the non-normalised version of $e_1, e_2, e_3$. Then
 	\[
 		e_1 = \frac{v_1}{\norm{v_1}} = \frac{1}{\int_0^1 \, dx} = 1
@@ -313,6 +323,11 @@
 \end{problem}
 
 \begin{solution}
+	\[
+		\boxed{
+			1, 2 \sqrt 3 \Big ( x - \frac{1}{2} \Big ), 6 \sqrt 5 \Big ( x^2 - x + \frac{1}{6} \Big ).
+		}
+	\] \\
 	The differentiation operator $D$ with $D p = p'$ has the upper-triangular matrix
 	\[
 		\begin{bmatrix}
@@ -342,6 +357,11 @@
 \end{problem}
 
 \begin{solution}
+	\[
+		\boxed{
+			q = -15 (x^2 - x) - \frac{3}{2}.
+		}
+	\] \\
 	Consider the inner-product on $\mathcal{P}(\bb{R}^2)$ from problems 5 and 6 and the linear functional $\varphi \in \mathcal{P}(\bb{R}^2)^\vee$ given by $\varphi(p) = p(\frac{1}{2})$. Then we can rephrase this problem as finding some $q$ such that
 	\[
 		\linn p, q \rinn = \varphi(p).
@@ -349,7 +369,7 @@
 	Then we know from the Riesz representation theorem that, given an orthonormal basis $e_1, e_2, e_3$, (which we computed in problem 5) we have
 	\[
 		\begin{split}
-			q & = \varphi(e_1) e_1 + \overline{\varphi(e_1)} e_1 + \overline{\varphi(e_2)} e_2 + \overline{\varphi(e_3)} e_3 \\
+			q & = \overline{\varphi(e_1)} \, e_1 + \overline{\varphi(e_2)} \, e_2 + \overline{\varphi(e_3)} \, e_3 \\
 			  & = e_1 + 2 \sqrt 3 \, \Big ( \frac{1}{2} - \frac{1}{2} \Big ) e_2 + 6 \sqrt 5 \, \Big ( \frac{1}{4} - \frac{1}{2} + \frac{1} {6}  \Big ) e_3 \\
 			  & = 1 - \frac{6 \sqrt 5}{12} \, 6 \sqrt 5 \, \Big ( x^2 - x + \frac{1}{6} \Big ) \\
 			  & = -15 (x^2 - x) - \frac{3}{2}.
@@ -366,9 +386,37 @@
 	for every $p \in \curly{P}_2(\bb{R})$.
 \end{problem}
 
+\begin{solution}
+	\[
+		\boxed{
+			q = \frac{\sin \pi}{\pi} + \frac{\cos{\pi} + \pi \sin{\pi} - 1}{\pi^2} \, x + \frac{2 \pi \cos{\pi} + (\pi - 2) \sin{\pi}}{\pi^3} \, x^2.
+		}
+	\] \\
+	Consider the functional on $\varphi \in \mathcal P_2(\mathbb R)^\vee$ by
+	\[
+		\varphi : p \mapsto \int_0^1 p(x) \cos{\pi x} \, dx.
+	\]
+	We know from the Riesz representation theorem that
+	\[
+		q = \overline{\varphi(e_1)} \, e_1 + \overline{\varphi(e_2)} \, e_2 + \overline{\varphi(e_3)} \, e_3
+	\]
+	for the orthonormal basis that we calculated in problem 5. \\\\
+	Thus, we can compute
+	\[
+		\begin{split}
+			q & = \overline{ \left ( \int_0^1 1 \cos{\pi x} \, dx \right )} \, e_1 + \overline{\left ( \int_0^1 x \cos{\pi x} \, dx \right )} \, e_2 + \overline{\left ( \int_0^1 x^2 \cos{\pi x} \, dx \right )} \, e_3 \\
+			  & = \frac{\sin \pi}{\pi} + \frac{\cos{\pi} + \pi \sin{\pi} - 1}{\pi^2} \, x + \frac{2 \pi \cos{\pi} + (\pi - 2) \sin{\pi}}{\pi^3} \, x^2
+		\end{split}
+	\]
+\end{solution}
+
 \begin{problem}[9]
 	What happens if the Gram-Schmidt procedure is applied to a list of vectors that is not linearly independent?
 \end{problem}
+
+\begin{solution}
+	Suppose $v_1, \dots, v_m$ is linearly dependent. Thus, there must be some least $j \in \mathbb N_m$ such that $v_j \in \operatorname{span}(v_1, \dots, v_{j - 1})$. Note then that the Gram-Schmidt procedure works normally for $v_1, \dots, v_{j - 1}$, producing the orthonormal list $e_1, \dots, e_{j - 1}$ with the same span. Thus, $v_j \in \operatorname{span}(e_1, \dots, e_{j - 1})$. From here, we notice that $v_j = \left < v_j, e_1 \right > e_1 + \dots + \left < v, e_{j - 1} \right > e_{j - 1}$, and thus, that $e_j$, which is just a scaled version of $v - v_j = \left < v_j, e_1 \right > e_1 + \dots + \left < v, e_{j - 1} \right > e_{j - 1}$ must be $0$. That is, if we apply the Gram-Schmidt a linearly dependent list, the first vector in the span of the vectors before it will give $0$.
+\end{solution}
 
 \begin{problem}[10]
 	Suppose $V$ is a real inner product space and $v_1 \ldots v_m$ is a linearly independent list of vectors in $V$. Prove that there exist exactly $2^m$ orthonormal lists $e_1, \ldots, e_m$ of vectors in $V$ such that
@@ -403,5 +451,63 @@
 	\]
 	Since $d$ uniquely determines all of the coefficients, and the $e_{j + 1}$ and $- e_{j + 1}$ we get from the Gram-Schmidt process are valid choices, they must be the only two.
 \end{solution}
+
+\begin{problem}[11.]
+	Suppose $\left < \cdot, \cdot \right >_1$ and $\left < \cdot, \cdot \right >_2$ are inner products on $V$ such that $\left < v, w \right >_1 = 0$ if and only if $\left < v, w \right >_2 = 0$. Prove that there is a positive number $c$ such that $\left < v, w \right >_1 = c \left < v, w \right >_2$ for every $v, w \in V$.
+\end{problem}
+
+\begin{problem}[12.]
+	Suppose $V$ is finite-dimensional and $\left < \cdot, \cdot \right >_1, \left < \cdot, \cdot \right >_2$ are inner products on $V$ with corresponding norms $\lVert \cdot \rVert_1$ and $\lVert \cdot \rVert_2$. Prove that there exists a positive number $c$ such that
+	\[
+		\lVert v \rVert_1 \le c \lVert v \rVert_2
+	\]
+	for every $v \in V$.
+\end{problem}
+
+\begin{problem}[13.]
+	Suppose $v_1, \dots, v_m$ is a linearly independent list in $V$. Show that there exists $w \in W$ such that $\left < w, v_j \right > > 0$ for all $j \in \mathbb N_m$.
+\end{problem}
+
+\begin{problem}[14.]
+	Suppose $e_1, \dots, e_n$ is an orthonormal basis of $V$ and $v_1, \dots, v_n$ are vectors in $V$ such that
+	\[
+		\Vert e_j - v_j \Vert < \frac{1}{\sqrt n}
+	\]
+	for each $j \in \mathbb N_n$. Prove that $v_1, \dots, v_n$ is a basis of $V$.
+\end{problem}
+
+\begin{problem}[15.]
+	Suppose $\mathcal C_{\mathbb R}([-1, 1])$ is the vector space of continuous real-valued functions on the interval $[-1, 1]$ with inner product given by
+	\[
+		\left < f, g \right > = \int_{-1}^1 f(x) g(x) \, dx
+	\]
+	for $f, g \in \mathcal C_{\mathbb R}([-1, 1])$. Let $\varphi$ be the linear functional on $\mathcal C_{\mathbb R}([-1, 1])$ defined by $\varphi(f) = f(0)$. Show that there does not exist $g \in \mathcal C_{\mathbb R}([-1, 1])$ such that
+	\[
+		\varphi(f) = \left < f, g \right >
+	\]
+	for every $f \in \mathcal C_{\mathbb R}([-1, 1])$.
+\end{problem}
+
+\begin{problem}[16.]
+	Suppose $V$ is a finite-dimensional vector space over $\mathbb C$, $T \in \mathcal L(V)$, all the eigenvalues of $T$ have absolute value less than $1$, and $\varepsilon > 0$. Prove that there exists a positive integer $m$ such that $\Vert T^m \Vert \le \varepsilon \Vert v \Vert$ for every $v \in V$.
+\end{problem}
+
+\begin{problem}[17.]
+	For $u \in V$, let $\Phi u$ denote the functional on $V$ defined by
+	\[
+		(\Phi u)(v) = \left < v, u \right >
+	\]
+	for $v \in V$.
+	\begin{enumerate}
+		\item
+			Show that if $\mathbb F = \mathbb R$, then $\Phi$ is a linear map from $V$ to $V'$.
+		\item
+			Show that if $\mathbb F = \mathbb C$, and $V \neq \{ 0 \}$, then $\Phi$ is not a linear map.
+		\item
+			Show that $\Phi$ is injective.
+		\item
+			Suppose $\mathbb F = \mathbb R$ and $V$ is finite-dimensional. Use parts $(a)$ and $(c)$ and a dimension-counting argument to show that $\Phi$ is an isomorphism from $V$ onto $V'$.
+	\end{enumerate}
+\end{problem}
 
 \end{document}
