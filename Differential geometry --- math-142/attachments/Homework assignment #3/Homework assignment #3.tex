@@ -1,0 +1,41 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{lin-alg-preamble}
+\begin{document}
+
+\begin{problem}[Problem 1.]
+	Say $U \subset \mathbb{R}^n$ and $V \subset \mathbb{R}^n$ are open sets, and consider a function $F : U \to V$ which sends $\mathbf{p} = (x_1, \dots, x_n) \mapsto \mathbf{q} = (f_1(\mathbf{p}), \dots, f_m(\mathbf{p}))$. We say $F$ is a \textit{mapping} if each coordinate function $f_k : U \to \mathbb{R}$ is smooth; $F$ is \textit{one-to-one} if $F(\mathbf{p}_1) = F(\mathbf{p}_2)$ in $V$ only when $\mathbf{p}_1 = \mathbf{p}_2$ only when $\mathbf{p}_1 = \mathbf{p}_2$ in $U$; and  $F$ is \textit{onto} if for each $\mathbf{q} \in V$ there exists $\mathbf{p} \in U$ such that $\mathbf{q} = F(\mathbf{p})$.
+	\begin{enumerate}
+		\item We say $F$ is a \textit{diffeomorphism} if there is a mapping $F^{-1} : V \to U$ such that $F \circ F^{-1} = \operatorname{id}_V$ and $F^{-1} \circ F = \operatorname{id}_U$ are the identity maps. Give an example to demonstrate that a one-to-one and onto mapping $F : U \to V$ need not be a diffeomorphism.
+		\item Say $m = n$ and $U = V = \mathbb{R}^n$. We say $F$ is \textit{regular} if the Jacobian is an invertible $n \times n$ matrix for every $\mathbf{p} \in \mathbb{R}^n$. Prove that if a one-to-one and onto mapping $F : \mathbb{R}^n \to \mathbb{R}^n$ is regular, then it is a diffeomorphism.
+	\end{enumerate}
+\end{problem}
+
+\begin{problem}[Problem 2.]
+	Show (in two ways) that the map $F : \mathbb{R}^2 \to \mathbb{R}^2$ such that $F(u, v) = (v e^u, 2u)$ is a diffeomorphism:
+	\begin{enumerate}
+		\item Prove that it is one-to-one, onto, and regular.
+		\item Find a formula for its inverse  $F^{-1} : \mathbb{R}^2 \to \mathbb{R}^2$ and observe that $F^{-1}$ is differentiable. Verify the formula by checking that both $F \circ F^{-1}$ and $F^{-1} \circ F$ are identity maps on $\mathbb{R}^2$.
+	\end{enumerate}
+\end{problem}
+
+\begin{problem}[Problem 3.]
+	Let $\mathbf{v}$ and $\mathbf{w}$ be vectors in $\mathbb{R}^3$.
+	\begin{enumerate}
+		\item Prove that $\mathbf{v} \times \mathbf{w} \neq 0$ if and only if $\mathbf{v}$ and $\mathbf{w}$ are linearly independent.
+		\item Show that $\mathbf{v} \times \mathbf{w}$ is the area of the parallelogram with sides $\mathbf{v}$ and $\mathbf{w}$.
+	\end{enumerate}
+\end{problem}
+
+\begin{problem}[Problem 4.]
+	Let $f$ and $g$ be differentiable real-valued functions on an interval $I \subset \mathbb{R}$. Suppose that $f^2 + g^2 = 1$ and that $\vartheta_0$ is a number such that $f(0) = \cos \vartheta_0$ and $g(0) = \sin \vartheta_0$. If $\vartheta : I \to \mathbb{R}$ is the function such that
+	\[
+		\vartheta(t) = \vartheta_0 + \int_0^t f(u) g'(u) - f'(u) g(u) \, du
+	\] 
+	prove that $f(t) = \cos \vartheta$ and $g(t) = \sin \vartheta$.
+\end{problem}
+
+\begin{problem}[Problem 5.]
+	A (parameterisation of a smooth) \textit{curve} is a function $\alpha : I \to \mathbb{R}^3$ which sends $t \mapsto (\alpha_1(t), \alpha_2(t), \alpha_3(t))$ for some smooth functions $\alpha_1, \alpha_2, \alpha_3 : I \to \mathbb{R}$. Its \textit{velocity} $\alpha' : I \to \mathbb{R}^3$ is the map that sends $t \mapsto (\alpha_1'(t), \alpha_2'(t), \alpha_3'(t))$; its \textit{speed} $v : I \to \mathbb{R}$ is that map which sends $t \mapsto \sqrt{\alpha_1(t)^2 + \alpha_2(t)^2 + \alpha_3(t)^2}$; and its \textit{acceleration} $\alpha'' : I t\o \mathbb{R}^3$ is the map that sends $t \mapsto (\alpha_1''(t), \alpha_2''(t), \alpha_3''(t))$. Show that a curve has constant speed if and only if its acceleration is everywhere orthogonal to its velocity.
+\end{problem}
+
+\end{document}
