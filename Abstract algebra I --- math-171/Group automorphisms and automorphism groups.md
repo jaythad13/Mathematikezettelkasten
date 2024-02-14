@@ -11,7 +11,7 @@ lecture:
 
 ##### _definition:_ automorphism
 
-An group automorphism is an isomorphism from a group to itself
+An group automorphism is an [[Group isomorphisms#_definition _ group isomorphism, isomorphic|isomorphism]] from a group to itself.
 
 The set of automorphisms on a group $G$ is $\operatorname{Aut} G$.
 
