@@ -1,14 +1,36 @@
 \documentclass[12 pt, letterpaper]{hmcpset}
 \usepackage{lin-alg-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 142 --- Differential Geometry}
+\assignment{Homework assignment \#3}
+\duedate{16th February 2024}
+
 \begin{document}
 
 \begin{problem}[Problem 1.]
-	Say $U \subset \mathbb{R}^n$ and $V \subset \mathbb{R}^n$ are open sets, and consider a function $F : U \to V$ which sends $\mathbf{p} = (x_1, \dots, x_n) \mapsto \mathbf{q} = (f_1(\mathbf{p}), \dots, f_m(\mathbf{p}))$. We say $F$ is a \textit{mapping} if each coordinate function $f_k : U \to \mathbb{R}$ is smooth; $F$ is \textit{one-to-one} if $F(\mathbf{p}_1) = F(\mathbf{p}_2)$ in $V$ only when $\mathbf{p}_1 = \mathbf{p}_2$ only when $\mathbf{p}_1 = \mathbf{p}_2$ in $U$; and  $F$ is \textit{onto} if for each $\mathbf{q} \in V$ there exists $\mathbf{p} \in U$ such that $\mathbf{q} = F(\mathbf{p})$.
+	Say $U \subset \mathbb{R}^n$ and $V \subset \mathbb{R}^m$ are open sets, and consider a function $F : U \to V$ which sends $\mathbf{p} = (x_1, \dots, x_n) \mapsto \mathbf{q} = (f_1(\mathbf{p}), \dots, f_m(\mathbf{p}))$. We say $F$ is a \textit{mapping} if each coordinate function $f_k : U \to \mathbb{R}$ is smooth; $F$ is \textit{one-to-one} if $F(\mathbf{p}_1) = F(\mathbf{p}_2)$ in $V$ only when $\mathbf{p}_1 = \mathbf{p}_2$ only when $\mathbf{p}_1 = \mathbf{p}_2$ in $U$; and  $F$ is \textit{onto} if for each $\mathbf{q} \in V$ there exists $\mathbf{p} \in U$ such that $\mathbf{q} = F(\mathbf{p})$.
 	\begin{enumerate}
 		\item We say $F$ is a \textit{diffeomorphism} if there is a mapping $F^{-1} : V \to U$ such that $F \circ F^{-1} = \operatorname{id}_V$ and $F^{-1} \circ F = \operatorname{id}_U$ are the identity maps. Give an example to demonstrate that a one-to-one and onto mapping $F : U \to V$ need not be a diffeomorphism.
 		\item Say $m = n$ and $U = V = \mathbb{R}^n$. We say $F$ is \textit{regular} if the Jacobian is an invertible $n \times n$ matrix for every $\mathbf{p} \in \mathbb{R}^n$. Prove that if a one-to-one and onto mapping $F : \mathbb{R}^n \to \mathbb{R}^n$ is regular, then it is a diffeomorphism.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item
+			Consider $F : \mathbb{R} \to \mathbb{R}$ by $x \mapsto x^3$. Note the $F$ is one-to-one, onto, and smooth. However, its inverse $F^{-1} : x \mapsto x^{1/3}$ is not differentiable at $0$ (since $F'(0) = 0$ and ${F^{-1}}'(x)$ is defined as $1/F'(x)$). Thus, $F$ is not a mapping. Thus, $F$ is not a diffeomorphism.
+		\item
+			By the inverse function theorem, around every point $\mathbf{p}$, there is an open set $U_{\mathbf{p}}$ in which $F$ has a differentiable inverse $F^{-1}_{|U_{\mathbf{p}}} : U_{\mathbf{p}} \to V_{\mathbf{p}}$ (since it has an invertible Jacobian). Now we just have to show that we can glue them together into a global inverse. \\\\
+			Note that at the intersection of the open neighbourhoods of any two points $\mathbf{p}, \mathbf{q} \in \mathbb{R}^n$, their respective inverse functions agree on the intersection of the neighbhourhoods because $F$ is a bijection. That is, on the intersection $U_\mathbf{p} \cap U_\mathbf{q}$, $F^{-1}_{|U_\mathbf{p}} = F^{-1}_{U_\mathbf{q}}$. As a result, we also have that their derivatives agree. \\\\
+			All of this means that we have a well defined, differentiable inverse of $F$ ---
+			\[
+				F^{-1}(\mathbf{x}) = F^{-1}_{|U_\mathbf{x}}(\mathbf{x}).
+			\]
+	\end{enumerate}
+\end{solution}
+
+\pagebreak
 
 \begin{problem}[Problem 2.]
 	Show (in two ways) that the map $F : \mathbb{R}^2 \to \mathbb{R}^2$ such that $F(u, v) = (v e^u, 2u)$ is a diffeomorphism:
@@ -18,13 +40,127 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	For this exercise let $\mathbf{x} = (x_1, x_2)$ for vectors $\mathbf{x} \in \mathbb{R}^2$.	
+	\begin{enumerate}
+		\item	
+			First we will show that $F$ is a bijection, and then that it is regular. \\\\
+			Suppose that $F(\mathbf{x}) = F(\mathbf{y})$. Then we have the system of equations
+			\[
+				\begin{gathered}
+					x_2 e^{x_1} = y_2 e^{y_1} \\
+					2 x_1 = 2 y_1
+				\end{gathered}
+			\]
+			Since the first equation gives us $x_1 = y_1$ we have $e^{x_1} = e^{y_1}$ which we can cancel from both sides of the equation since $e^x > 0$ for all $x \in \mathbb{R}$. Cancelling this gives us $x_2 = y_2$, and thus, we have $\mathbf{x} = \mathbf{y}$ as desired. \\\\
+			To show that $F$ is onto, consider any $\mathbf{y} \in \mathbb{R}^2$. If we want $\mathbf{x} \in \mathbb{R}^2$ such that $F(\mathbf{x}) = \mathbf{y}$, then $\mathbf{x}$ should satisfy
+			\[
+				x_2 e^{x_1} = y_1 \\
+				2 x_1 = y_2 \\
+			\]
+			This system clearly uniquely determines $x_1 = y_1/2$ and since $e^x > 0$, we also have $x_2 = \dfrac{y_1}{e^{y_1/2}}$. Thus, for each $\mathbf{y} \in \mathbb{R}^2$ we have an $\mathbf{x} \in \mathbb{R}^2$ such that $F(\mathbf{x}) = \mathbf{y}$. \\\\
+			Finally, we need to show that $F$ is regular. We do so by explicitly computing the matrix of its derivative (the Jacobian), $\mathcal{M}(DF \Big |_{\mathbf{x}})$ at an arbitrary point $\mathbf{x}$ in terms of its partials
+			\[
+				\begin{split}
+					\mathcal{M}(DF \Big |_{\mathbf{x}}) & = \begin{bmatrix}
+						\frac{\partial f_1}{\partial x_1} & \frac{\partial f_1}{x_2} \\
+						\frac{\partial f_2}{\partial x_1} & \frac{\partial f_2}{x_2}
+					\end{bmatrix} \\
+									    & = \begin{bmatrix}
+						x_2 e^{x_1} & e^{x_1} \\
+						2 & 0
+					\end{bmatrix}.
+				\end{split}
+			\]
+			Since this has determinant $-2e^{x_1}$ which is positive for all $x_1 \in \mathbb{R}$, this is always invertible, and thus, $F$ is regular.
+		\item 
+			Consider $F^{-1}$ by
+			\[
+				F^{-1}(\mathbf{x}) = \left ( \frac{x_2}{2}, \frac{x_1}{e^{x_2/2}} \right ).
+			\] \\
+			Note that this is differentiable since it is $\mathcal{C}^1$ --- it has all continuous first order partials
+			\[
+				\begin{gathered}
+					\frac{\partial f_1}{\partial x_1} = 0 \\
+					\frac{\partial f_1}{\partial x_2} = \frac{1}{2} \\
+					\frac{\partial f_2}{\partial x_1} = \frac{1}{e^{x_2/2}} \\
+					\frac{\partial f_2}{\partial x_2} = \frac{e^{x_2/2} x_1}{2 e^{x_2}}.
+				\end{gathered}
+			\] \\
+			We can confirm that this really is an inverse of $F$ by computing $F \circ F^{-1}$ and $F^{-1} \circ F$.
+			\[
+				\begin{split}
+					F \circ F^{-1}(\mathbf{x}) & = F(\frac{x_2}{2}, \frac{x_1}{e^{x_2/2}}) \\
+								   & = \left ( \frac{x_1}{e^{x_2/2}} e^{x_2/2}, 2 \frac{x_2}{2} \right ) \\
+								   & = \left ( x_1, x_2 \right ) \\
+								   & = \mathbf{x}
+				\end{split}
+			\]
+			as desired. Similarly,
+			\[
+				\begin{split}
+					F^{-1} \circ F(\mathbf{x}) & = F^{-1}(x_2 e^{x_1}, 2 x_1) \\
+								   & = (\frac{2 x_1}{2}, \frac{x_2 e^{x_1}}{e^{2x_1/2}}) \\
+								   & = (x_1, x_2) \\
+								   & = \mathbf{x}.
+				\end{split}
+			\]
+			Thus, we have $F \circ F^{-1} = F^{-1} \circ F = \operatorname{id}_{\mathbb{R}^2}$ and $F$ is a diffeomorphism.
+	\end{enumerate}
+\end{solution}
+
+\pagebreak
+
 \begin{problem}[Problem 3.]
 	Let $\mathbf{v}$ and $\mathbf{w}$ be vectors in $\mathbb{R}^3$.
 	\begin{enumerate}
-		\item Prove that $\mathbf{v} \times \mathbf{w} \neq 0$ if and only if $\mathbf{v}$ and $\mathbf{w}$ are linearly independent.
-		\item Show that $\mathbf{v} \times \mathbf{w}$ is the area of the parallelogram with sides $\mathbf{v}$ and $\mathbf{w}$.
+		\item Prove that $\mathbf{v} \times \mathbf{w} \neq \mathbf{0}$ if and only if $\mathbf{v}$ and $\mathbf{w}$ are linearly independent.
+		\item Show that $\lVert \mathbf{v} \times \mathbf{w} \rVert$ is the area of the parallelogram with sides $\mathbf{v}$ and $\mathbf{w}$.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	Let $\mathbf{v} = (v_1, v_2, v_3)$ and $\mathbf{w} = (w_1, w_2, w_3)$.
+	\begin{enumerate}
+		\item
+			We will show the contrapositive of both statements. First we will show that linearly dependent vectors have cross product $\mathbf{0}$. \\\\
+			Suppose $\mathbf{v}, \mathbf{w}$ are linearly dependent. Without loss of generality, we can choose that $\mathbf{w} = \lambda \mathbf{v}$ for some $\lambda \in \mathbb{R}$. Then we can see by direct computation that $\mathbf{v} \times \mathbf{w} = \mathbf{0}$ ---
+			\[
+				\begin{split}
+					\mathbf{v} \times \mathbf{w} & = (v_2 w_3 - v_3 w_2, v_3 w_1 - v_1 w_3, v_1 w_2 - v_2 w_1) \\
+								     & = (\lambda v_2 v_3 - \lambda v_3 v_2, \lambda v_3 v_1 - \lambda v_1 v_3, \lambda v_1 v_2 - \lambda v_2 v_1) \\
+								     & = (0, 0, 0) \\
+								     & = \mathbf{0}.
+				\end{split}
+			\] \\
+			To prove the converse, we can assume without loss of generality that neither of $\mathbf{v}$ or $\mathbf{w}$ is $\mathbf{0}$ since then they would be trivially linearly dependent. \\\\
+			Suppose $\mathbf{v} \times \mathbf{w} = \mathbf{0}$. Let $\sigma$ be the permutation of three elements $(1 \, 2 \, 3)$. Then we know that the $j$th component of the $\mathbf{v} \times \mathbf{w}$ is
+			\[
+				v_{\sigma(j)} w_{\sigma^2(j)} - v_{\sigma^2(j)} w_{\sigma(j)} = 0
+			\]
+			Suppose, without loss of generality that $v_{\sigma_j} \neq 0$. Then we have
+			\[
+				w_{\sigma^2(j)} = \frac{w_{\sigma(j)}}{v_{\sigma(j)}} v_{\sigma^2(j)}.
+			\]
+			Similarly, we have that the $\sigma^2(j)$th component (note that $\sigma^2 = \sigma^{-1}$) is
+			\[
+				v_j w_{\sigma_j} - v_{\sigma(j)} w_j = 0.
+			\]
+			Again, with our assumption that $v_{\sigma_j} \neq 0$, we have
+			\[
+				w_j = \frac{w_{\sigma(j)}}{v_{\sigma(j)}} v_j.
+			\]
+			Finally, we obviously have
+			\[
+				w_{\sigma(j)} = \frac{w_{\sigma(j)}}{v_{\sigma(j)}} v_{\sigma_j}.
+			\]
+			Thus, we have $\mathbf{w} = \lambda \mathbf{v}$ where $\lambda = \frac{w_{\sigma_j}}{v_{\sigma(j)}}$, making $\mathbf{v}$ and $\mathbf{w}$ linearly dependent.
+		\item
+			By Lagrange's identity, we know that $\mathbf{v} \times \mathbf{w} = \lVert \mathbf{v} \rVert \lVert \mathbf{w} \rVert \sin \vartheta$, where $\vartheta$ is the angle between $\mathbf{v}$ and $\mathbf{w}$. We also know that the area of a parallelogram with sides of length $a$ and $b$ is $ab \sin \vartheta$ where $\vartheta$ is the angle between the sides. Thus, the parallelogram with sides $\mathbf{v}$ and $\mathbf{w}$ (and thus sides of length $\lVert \mathbf{v} \rVert$ and $\lVert \mathbf{w} \rVert$) has area $\lVert \mathbf{v} \rVert \lVert \mathbf{w} \rVert \sin \vartheta$.
+	\end{enumerate}
+\end{solution}
+
+\pagebreak
 
 \begin{problem}[Problem 4.]
 	Let $f$ and $g$ be differentiable real-valued functions on an interval $I \subset \mathbb{R}$. Suppose that $f^2 + g^2 = 1$ and that $\vartheta_0$ is a number such that $f(0) = \cos \vartheta_0$ and $g(0) = \sin \vartheta_0$. If $\vartheta : I \to \mathbb{R}$ is the function such that
@@ -34,8 +170,63 @@
 	prove that $f(t) = \cos \vartheta$ and $g(t) = \sin \vartheta$.
 \end{problem}
 
+\begin{solution}
+	Notice that since we have $f^2 + g^2 = 1$, we can implicitly differentiate to get $2 (f f' + g g') = 0$ and thus $f f' + g g' = 0$. Also notice that the expression for $\vartheta$ gives us that $\vartheta' = f g' - f' g$ and $\vartheta(0) = \vartheta_0$. \\\\
+	From here we can consider the function $h : I \to \mathbb{R}$ by $h = (f - \cos \circ \vartheta)^2 + (g - \sin \circ \vartheta)^2$. It is sufficient to show that this is always $0$, since for this to be always $0$, the both terms would have to always be zero (they're both nonnegative, and thus, cannot cancel each other out). Notice that $h(0) = 0$ since $f(0) = \cos \vartheta_0$ and similarly for $g$. Thus, if we can show that $h$ has zero derivative everywhere on $I$, we will have that $h$ is always $0$. Note that we know that $h$ is differentiable everywhere on $I$ because $f, g, \vartheta$ are differentiable and the derivative of $h$ is given from them with the sum, product, and chain rules. \\\\
+	Now we just calculate
+	\[
+		\begin{split}
+			h' & = 2 (f - \cos \circ \vartheta)(f' - (\cos' \circ \vartheta) \vartheta') + 2(g - \sin \circ \vartheta)(g' - (\sin' \circ \vartheta) \vartheta') \\
+			   & = 2 (f - \cos \circ \vartheta)(f' + (\sin \circ \vartheta) \vartheta') + 2(g - \sin \circ \vartheta)(g' - (\cos \circ \vartheta) \vartheta') \\
+			   & = 2 (f f' - (\cos \circ \vartheta) f' + f (\sin \circ \vartheta) \vartheta' - (\cos \circ \vartheta) (\sin \circ \vartheta) \vartheta' \\ 
+			   & + g g' - (\sin \circ \vartheta) g' - g (\cos \circ \vartheta) \vartheta' + (\sin \circ \vartheta) (\cos \circ \vartheta) \vartheta').
+		\end{split}
+	\]
+	This allows us to cancel out the terms $f f' + g g'$ and $(\cos \circ \vartheta) (\sin \circ \vartheta) \vartheta' - (\sin \circ \vartheta) (\cos \circ \vartheta) \vartheta'$ to get
+	\[
+		h' = 2 ((\cos \circ \vartheta) f' + f (\sin \circ \vartheta) \vartheta' - (\sin \circ \vartheta) g' - g (\cos \circ \vartheta) \vartheta'.
+	\]
+	Substituting in the expression for $\vartheta'$ we got earlier gives us
+	\[
+		\begin{split}
+			h' & = 2 (-(\cos \circ \vartheta) f' + f (\sin \circ \vartheta) (f g' - f' g) - (\sin \circ \vartheta) g' - g (\cos \circ \vartheta) (f g' - f' g) \\
+			   & = 2( - f' (\cos \circ \vartheta) + f^2 g' (\sin \circ \vartheta) - f f' g (\sin \circ \vartheta) - g' (\sin \circ \vartheta) - f g g' (\cos \circ \vartheta) + f' g^2 (\cos \circ \vartheta) ). 
+		\end{split}
+	\]
+	Here, we can again use the identity $f f' = - g g'$ to get
+	\[
+		\begin{split}
+			h & = 2 (g' (\sin \circ \vartheta) (f^2 - 1) + g^2 g' (\sin \circ \vartheta) + f' (\cos \circ \vartheta) (g^2 - 1) + f^2 f' (\cos \circ \vartheta)) \\
+			  & = 2 (g' (\sin \circ \vartheta) (-g^2) + g^2 g' (\sin \circ \vartheta) + f' (\cos \circ \vartheta) (- f^2) + f^2 f' (\cos \circ \vartheta)) \\
+			  & = 0.
+		\end{split}
+	\]
+	Thus, we have that $h$ has zero derivative everywhere, and is zero everywhere, finally giving us that $f = \cos \circ \vartheta$ and $g = \sin \circ \vartheta$ as desired.
+\end{solution}
+
+\pagebreak
+
 \begin{problem}[Problem 5.]
-	A (parameterisation of a smooth) \textit{curve} is a function $\alpha : I \to \mathbb{R}^3$ which sends $t \mapsto (\alpha_1(t), \alpha_2(t), \alpha_3(t))$ for some smooth functions $\alpha_1, \alpha_2, \alpha_3 : I \to \mathbb{R}$. Its \textit{velocity} $\alpha' : I \to \mathbb{R}^3$ is the map that sends $t \mapsto (\alpha_1'(t), \alpha_2'(t), \alpha_3'(t))$; its \textit{speed} $v : I \to \mathbb{R}$ is that map which sends $t \mapsto \sqrt{\alpha_1(t)^2 + \alpha_2(t)^2 + \alpha_3(t)^2}$; and its \textit{acceleration} $\alpha'' : I t\o \mathbb{R}^3$ is the map that sends $t \mapsto (\alpha_1''(t), \alpha_2''(t), \alpha_3''(t))$. Show that a curve has constant speed if and only if its acceleration is everywhere orthogonal to its velocity.
+	A (parameterisation of a smooth) \textit{curve} is a function $\alpha : I \to \mathbb{R}^3$ which sends $t \mapsto (\alpha_1(t), \alpha_2(t), \alpha_3(t))$ for some smooth functions $\alpha_1, \alpha_2, \alpha_3 : I \to \mathbb{R}$. Its \textit{velocity} $\alpha' : I \to \mathbb{R}^3$ is the map that sends $t \mapsto (\alpha_1'(t), \alpha_2'(t), \alpha_3'(t))$; its \textit{speed} $v : I \to \mathbb{R}$ is that map which sends $t \mapsto \sqrt{\alpha_1'(t)^2 + \alpha_2'(t)^2 + \alpha_3'(t)^2}$; and its \textit{acceleration} $\alpha'' : I \to \mathbb{R}^3$ is the map that sends $t \mapsto (\alpha_1''(t), \alpha_2''(t), \alpha_3''(t))$. Show that a curve has constant speed if and only if its acceleration is everywhere orthogonal to its velocity.
 \end{problem}
+
+\begin{solution}
+	Notice that since the speed of $\alpha$ is given by $v$ such that $v(t) = \sqrt{\alpha_1(t)^2 + \alpha_2(t)^2 + \alpha_3(t)^2}$, we can write
+	\[
+		v(t)^2 = \alpha_1'(t)^2 + \alpha_2'(t)^2 + \alpha_3'(t)^2.
+	\]
+	Differentiating both sides with respect to $t$ gives us
+	\[
+		\begin{split}
+			2 v'(t) & = 2 \alpha_1'(t) \alpha_1''(t) + 2 \alpha_2'(t) \alpha_2''(t) + 2 \alpha_3'(t) \alpha_3''(t) \\
+				& = 2 \alpha'(t) \cdot \alpha''(t).
+		\end{split}
+	\]
+	Thus, we have
+	\[
+		v'(t) = \alpha'(t) \cdot \alpha''(t).
+	\]
+	$v$ is constant exactly when $v'$ is identically $0$ on $I$, which by this relation happens exactly when $\alpha' \cdot \alpha'' = 0$ identically on $I$ --- that is, exactly when velocity and acceleration are everywhere orthogonal.
+\end{solution}
 
 \end{document}
