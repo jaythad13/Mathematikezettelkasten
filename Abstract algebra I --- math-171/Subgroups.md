@@ -4,6 +4,7 @@ tags:
 - math-171
 lecture:
 - math-171-8
+- math-171-9
 ---
 
 We've seen this idea so many times before in homework, but obviously it's worth defining it explicitly. A subgroup is just a group sitting inside the group with the same operation.
@@ -94,3 +95,30 @@ The [[Matrix groups and the quaternions#_definition _ the quaternions|the quater
 	\end{tikzcd}
 \end{document}
 ```
+
+
+### Subgroup theorems
+
+There are lots of special cases where proving that a subset of a group is a subgroup is easier. Here are some of them.
+
+##### _theorem:_ the subgroup test
+
+If $H \subset G$ is nonempty, $H \le G$ if and only if $xy^{-1} \in H$ for all $x, y \in H$.
+
+##### _proposition:_ finite groups require little work
+
+If $G$ is a finite group and $H \subset G$ is closed under the binary operation, $H \le G$.
+
+##### _proof:_
+
+We just need to show that $H$ is closed under inverses. If $G$ is finite then it has finite order and thus, so do all of its elements. Thus, we have $x^{-1} = x^{\lvert x \rvert - 1} \in H$ for all $x \in H$.
+
+##### _proposition:_ arbitrary intersections of subgroups are subgroups
+
+Suppose $\{ H_{i} \}$ is a collection of subgroups of $G$ indexed by $i \in I$. Then $H = \bigcap_{i \in I} H_{i} \le G$.
+
+##### _proof:_
+
+Note that the intersection is clearly non-empty since all of the subgroups contain the identity.
+
+Suppose $x, y \in H$. Then we have $x y^{-1} \in H_{i}$ for each $i \in I$ by [[#_theorem _ the subgroup test|subgroup test]]. Thus, $xy^{-1} \in H$, and we are done.
