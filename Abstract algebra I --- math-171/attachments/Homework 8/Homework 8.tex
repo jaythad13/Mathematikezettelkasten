@@ -9,8 +9,22 @@
 \begin{document}
 
 \begin{problem}[Dummit \& Foote \S2.1 \#6]
-	Let $G$ be an abelian group. Prove that $\{ g \in G | \lvert g \rvert < \infty \}$ is a subgroup of $G$ (called the \textit{torsion subgroup} of $G$). Five an example where this set is not a subgroup when $G$ is non-abelian.
+	Let $G$ be an abelian group. Prove that $\{ g \in G | \lvert g \rvert < \infty \}$ is a subgroup of $G$ (called the \textit{torsion subgroup} of $G$). Give an example where this set is not a subgroup when $G$ is non-abelian.
 \end{problem}
+
+\begin{solution} 
+	Suppose $G$ is an arbitrary abelian group. Let $H$ denote the set of all elements of finite order. We want to show that $H$ is a subgroup of $G$. Note that we only need to show that for all $x, y \in H$ we have $xy^{-1} \in G$ (and that $H$ is nonempty). \\\\
+	We have trivially that $H$ is nonempty since $1_G$ has finite order. Suppose $x, y \in H$. Specifically, suppose $\lvert x \rvert = m$ and $\lvert y \rvert = n$ with $m, n \in \mathbb{N}$. Then note that
+	\[
+		\begin{split}
+			(xy^{-1})^{mn} & = \underbrace{(xy^{-1}) \dots (xy^{-1})}_{mn \text{ times}} \\
+				       & = x^{mn} (y^{-1})^{mn} \\
+				       & = (x^{m})^n (y^n)^{-m} \\
+				       & = 1_G.
+		\end{split}
+	\]
+	Thus, $\lvert xy^{-1} \rvert \le mn$ and $xy^{-1} \in H$ as desired.
+\end{solution}
 
 \pagebreak
 
