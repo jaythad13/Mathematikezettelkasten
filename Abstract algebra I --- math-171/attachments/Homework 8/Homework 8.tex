@@ -23,7 +23,43 @@
 				       & = 1_G.
 		\end{split}
 	\]
-	Thus, $\lvert xy^{-1} \rvert \le mn$ and $xy^{-1} \in H$ as desired.
+	Thus, $\lvert xy^{-1} \rvert \le mn$ and $xy^{-1} \in H$ as desired. That is, $H$ is a subgroup --- the torsion subgroup of $G$. \\\\
+	Consider $G = \mathrm{GL}_2(\mathbb{R})$. Then $H$ contains $\begin{bmatrix}
+			0 & 1 \\
+			1 & 0
+		\end{bmatrix}$ and $\begin{bmatrix}
+			0 & 2 \\
+			1/2 & 0
+		\end{bmatrix}$ which are both of order $2$. However, $H$ does not contain their product
+		\[
+			\begin{bmatrix}
+				0 & 1 \\
+				1 & 0
+			\end{bmatrix}
+			\begin{bmatrix}
+				0 & 2 \\
+				1/2 & 0 \\
+			\end{bmatrix} = 
+			\begin{bmatrix}
+				1/2 & 0 \\
+				0 & 2
+			\end{bmatrix}
+		\]
+		since
+		\[
+			\begin{bmatrix}
+				1/2 & 0 \\
+				0 & 2
+			\end{bmatrix}^n =
+			\begin{bmatrix}
+				1/2^n & 0 \\
+				0 & 2^n
+			\end{bmatrix}
+		\]
+		which is never $I$ for any $n \in \mathbb{N}$, and thus $\begin{bmatrix}
+			1/2 & 0 \\
+			0 & 2
+		\end{bmatrix}$ is not of finite order.
 \end{solution}
 
 \pagebreak
@@ -31,6 +67,12 @@
 \begin{problem}[Dummit \& Foote \S2.1 \#8]
 	Let $H$ and $K$ be subgroups of $G$. Prove that $H \cup K$ is a subgroup if and only if either $H \subset K$ or $K \subset H$.
 \end{problem}
+
+\begin{solution}
+	First we will show that if $H \subset K$ or $K \subset H$  then $H \cup K$ is a subgroup of $G$. If either of the assumptions is true, then we have $H \cup K = K$ or $H \cup K = H$ respectively. Since they are already subgroups, we have that $H \cup K$ is a subgroup. \\\\
+	Now, suppose $H \not \subset K$ and $K \not \subset H$. Then we must have some $k \in K \setminus H$ and some $h \in H \setminus K$. We claim that though we have $h, k \in H \cup K$, we do not have $hk \in H \cup K$. We will show this by contradiction. \\\\
+	Suppose we had $hk \in H \cup K$ and further, without loss of generality, suppose that we had $hk \in H$. Then, since $h^{-1} \in H$ we would have to have $h^{-1}hk = k \in H$, contradicting that $k \in K \setminus H$. Thus our assumption that $hk \in H \cup K$ must be false.
+\end{solution}
 
 \pagebreak
 
@@ -41,10 +83,21 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item Note that $H \cap K$ is non-empty since $H$ and $K$ both contain the identity $1_G$. Suppose $g_1, g_2 \in H \cap K$. Then $g_1, g_2$ are in both, $H$ and $K$. Thus, by the subgroup criterion, $g_1 g_2^{-1}$ is in both $H$ and $K$. Thus, $g_1 g_2^{-1} \in H \cap K$, giving us that it is a subgroup.
+		\item Suppose we have $\{ H_i \}$, a collection of subgroups of $G$, indexed by $i \in I$. Let $H = \bigcap_{i \in I} H_i$. Notice that $H$ is nonempty since $1_G \in H_i$ for all $i \in I$. Further, suppose that we have $h_1, h_2 \in H$. Then we have $h_1, h_2 \in H_i$ for all $i \in I$. By the subgroup criterion we have $h_1 h_2^{-1} \in H_i$ for each $i \in I$ and thus, we have $h_1 h_2^{-1} \in H$ which by the subgroup criterion gives us that $H$ is a subgroup.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[Dummit \& Foote \S2.1 \#15]
 	Let $H_1 \le H_2 \le \dots$ be an ascending chain of subgroups of $G$. Prove that $\bigcup^\infty_{i = 1} H_i$ is a subgroup of $G$.
 \end{problem}
+
+\begin{solution}
+	Let $H = \bigcup_{i = 1}^\infty$. Notice that $H$ is clearly nonempty since it contains all of these nonempty $H_i$. Suppose $h_1, h_2 \in H$ with $h_1 \in H_j$ and $h_2 \in H_k$. Without loss of generality, assume $k \ge j$. Then $H_j \subset H_k$ and thus, $h_1 \in H_k$. Thus, by the subgroup criterion, we have $h_1 h_2^{-1} \in H_k$, and thus, $h_1 h_2^{-1} \in H$, giving us that $H$ is a subgroup.
+\end{solution}
 
 \end{document}
