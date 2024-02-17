@@ -79,7 +79,7 @@ F_n = \frac{1}{\sqrt{5}} \Big(\Big(\frac{1 + \sqrt{5}}{2}\Big)^n - \Big(\frac{1 
 $$
 ##### _proof:_
 
-See [[Linear Algebra Done Right.pdf#page=192|Linear Algebra Done Right]] or [[generatingfunctionology.pdf#page=13|generatingfunctionology]] for other approaches.
+See [[Linear Algebra Done Right.pdf#page=188|Linear Algebra Done Right]] or [[generatingfunctionology.pdf#page=13|generatingfunctionology]] for other approaches.
 
 Note that
 $$
