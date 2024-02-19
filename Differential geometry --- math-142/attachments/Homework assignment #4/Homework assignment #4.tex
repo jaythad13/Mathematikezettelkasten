@@ -1,0 +1,58 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 142 --- Differential Geometry}
+\assignment{Homework assignment \#4}
+\duedate{23rd February 2024}
+
+\begin{document}
+
+\begin{problem}[Problem 1.]
+	Let $[\mathbf{u}, \mathbf{p}], [\mathbf{v}, \mathbf{p}], [\mathbf{w}, \mathbf{p}] \in \mathrm{T}\mathbb{R}^{3}$ be tangent vectors. Prove the \textit{vector triple product identity}:
+	\[
+		[\mathbf{u}, \mathbf{p}] \times \left ( [\mathbf{v}, \mathbf{p}] \times [\mathbf{w}, \mathbf{p}] \right ) = \left ( [\mathbf{u}, \mathbf{p}] \cdot [\mathbf{w}, \mathbf{p}] \right ) - \left ( [\mathbf{u}, \mathbf{p}] \cdot [\mathbf{v}, \mathbf{p}] \right ) [\mathbf{w}, \mathbf{p}].
+	\]
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Problem 2.]
+	\begin{enumerate}
+		\item The \textit{arc length function} of a curve $\alpha : I \to \mathbb{R}^{3}$ is the map $s\left ( t \right ) = \int_{t_{0}}^{t} \left \Vert \alpha'\left ( u \right ) \right \Vert \, du$. Show that the curve $\alpha\left ( t \right ) = \left ( \cosh{t}, \sinh{t}, t \right )$ starting at $t_{0} = 0$ has arc length function $s\left ( t \right ) = \sqrt 2 \sinh{t}$.
+		\item Say $t\left ( s \right )$ is the inverse of the arc length function $s\left ( t \right )$; then $\beta\left ( s \right ) = \alpha\left ( t\left ( s \right ) \right )$ is the \textit{unit-speed reparameterisation} of $\alpha$. Find the unit-speed parameterisation of $\alpha\left ( t \right ) = \left ( \cosh{t}, \sinh{t}, t \right )$
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Problem 3]
+	Consider the curve $\alpha(t) = (2t, t^{2}, \log t)$ on the interval $I = \{ t \in \mathbb{R}, t > 0 \}$ .
+	\begin{enumerate}
+		\item Show that this curve passes through the points $\mathbf{p} = (2, 1, 0)$ and $\mathbf{q} = (4, 4, \log 2)$.
+		\item The \textit{arc length} between two points $\alpha(t_{0})$ and $\alpha(t_{1})$ is the integral $\int_{t_{0}}^{t_{1}} \Vert \alpha'(u) \Vert \, du$. Find its arc length between the points $\mathbf{p}$ and $\mathbf{q}$.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Problem 4.]
+	Suppose that $\beta_{1}$  and  $\beta_{2}$  are unit-speed reparameterisations of the same curve $\alpha : I \to \mathbb{R}^{3}$ .
+	\begin{enumerate}
+		\item Show that there is a number $s_{0}$ such that $\beta_{2}(s) = \beta_{1}(s + s_{0})$ for all $s$.
+		\item What is the geometric significance of $s_{0}$?
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Problem 5.]
+	Let $\{ \mathbf{T}, \mathbf{N}, \mathbf{B} \}$  be the \textit{Frenet frame} associated with a unit-speed curve $\beta : J \to \mathbb{R}^{3}$ . That is, denote $\mathbf{T} = \beta'$  is the \textit{unit tangent vector}, $\mathbf{N} = \mathbf{T}'/\Vert \mathbf{T}' \Vert$  is the \textit{principal normal vector}, and $\mathbf{B} = \mathbf{T} \times \mathbf{N}$ is the \textit{binormal vector}. Prove the following identities:
+	\begin{enumerate}
+		\item $\mathbf{T} = \mathbf{N} \times \mathbf{B} = - \mathbf{B} \times \mathbf{N}$
+		\item $\mathbf{N} = \mathbf{B} \times \mathbf{T} = - \mathbf{T} \times \mathbf{B}$
+		\item $\mathbf{B} = \mathbf{T} \times \mathbf{N} = - \mathbf{N} \times \mathbf{T}$
+	\end{enumerate}
+\end{problem}
+
+\end{document}
