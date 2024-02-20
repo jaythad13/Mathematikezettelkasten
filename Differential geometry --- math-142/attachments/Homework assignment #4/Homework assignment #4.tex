@@ -11,9 +11,32 @@
 \begin{problem}[Problem 1.]
 	Let $[\mathbf{u}, \mathbf{p}], [\mathbf{v}, \mathbf{p}], [\mathbf{w}, \mathbf{p}] \in \mathrm{T}\mathbb{R}^{3}$ be tangent vectors. Prove the \textit{vector triple product identity}:
 	\[
-		[\mathbf{u}, \mathbf{p}] \times \left ( [\mathbf{v}, \mathbf{p}] \times [\mathbf{w}, \mathbf{p}] \right ) = \left ( [\mathbf{u}, \mathbf{p}] \cdot [\mathbf{w}, \mathbf{p}] \right ) - \left ( [\mathbf{u}, \mathbf{p}] \cdot [\mathbf{v}, \mathbf{p}] \right ) [\mathbf{w}, \mathbf{p}].
+		[\mathbf{u}, \mathbf{p}] \times \left ( [\mathbf{v}, \mathbf{p}] \times [\mathbf{w}, \mathbf{p}] \right ) = \left ( [\mathbf{u}, \mathbf{p}] \cdot [\mathbf{w}, \mathbf{p}] \right ) [\mathbf{v}, \mathbf{p}] - \left ( [\mathbf{u}, \mathbf{p}] \cdot [\mathbf{v}, \mathbf{p}] \right ) [\mathbf{w}, \mathbf{p}].
 	\]
 \end{problem}
+
+\begin{solution}
+	Let $\mathbf{u} = (u_{1}, u_{2}, u_{3})), \mathbf{v} = (v_{1}, v_{2}, v_{3}), \mathbf{w} = (w_{1}, w_{2}, w_{3})$. Thus, we can compute
+	\[
+		\begin{split}
+			[\mathbf{u}, \mathbf{p}] \times ([\mathbf{v}, \mathbf{p}] \times [\mathbf{w}, \mathbf{p}]) & = [\mathbf{u} \times (\mathbf{v} \times \mathbf{w}), \mathbf{p}]. \\
+														   & = [\mathbf{u} \times (v_{2} w_{3} - v_{3} w_{3}, v_{3} w_{1} - v_{1} w_{3}, v_{1} w_{2} - v_{2} w_{1}), \mathbf{p}] \\
+														   & = [(u_{2} v_{1} w_{2} - u_{2} v_{2} w_{1} - u_{3} v_{3} w_{1} + u_{3} v_{1} w_{3}, \\
+														   & u_{3} v_{2} w_{3} - u_{3} v_{3} w_{2} - u_{1} v_{1} w_{2} + u_{1} v_{2} w_{1}, \\
+														   & u_{1} v_{3} w_{1} - u_{1} v_{1} w_{3} - u_{2} v_{2} w_{3} + u_{2} v_{3} w_{2}), \mathbf{p}]
+		\end{split}
+	\]
+	Notice that we can add to the $i$th component of the result the term $u_{i} v_{i} w_{i} - u_{i} v_{i} w_{i} = 0$  This allows us to get
+	\[
+		\begin{split}
+			[\mathbf{u}, \mathbf{p}] \times ([\mathbf{v}, \mathbf{p}] \times [\mathbf{w}, \mathbf{p}]) & = [(u_{1} w_{1} + u_{2} w_{2} + u_{3} w_{3}) v_{1} - (u_{1} v_{1} + u_{2} v_{2} + u_{3} v_{3}) w_{1}, \\
+														   & (u_{1} w_{1} + u_{2} w_{2} + u_{3} w_{3}) v_{2} - (u_{1} v_{1} + u_{2} v_{2} + u_{3} v_{3}) w_{2}, \\
+														   & (u_{1} w_{1} + u_{2} w_{2} + u_{3} w_{3}) v_{3} - (u_{1} v_{1} + u_{2} v_{2} + u_{3} v_{3}) w_{3}), \mathbf{p}] \\
+														   & = [(\mathbf{u} \cdot \mathbf{w}) \mathbf{v} - (\mathbf{u} \cdot \mathbf{v}) \mathbf{w}, \mathbf{p}] \\
+														   & = \left ( [\mathbf{u}, \mathbf{p}] \cdot [\mathbf{w}, \mathbf{p}] \right ) [\mathbf{v}, \mathbf{p}] - \left ( [\mathbf{u}, \mathbf{p}] \cdot [\mathbf{v}, \mathbf{p}] \right ) [\mathbf{w}, \mathbf{p}].
+		\end{split}
+	\]
+\end{solution}
 
 \pagebreak
 
@@ -23,6 +46,46 @@
 		\item Say $t\left ( s \right )$ is the inverse of the arc length function $s\left ( t \right )$; then $\beta\left ( s \right ) = \alpha\left ( t\left ( s \right ) \right )$ is the \textit{unit-speed reparameterisation} of $\alpha$. Find the unit-speed parameterisation of $\alpha\left ( t \right ) = \left ( \cosh{t}, \sinh{t}, t \right )$
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item First, to calculate the arc length parameterisation, we need to find the speed of the curve, $\Vert \alpha' \Vert$. Thus, we compute
+			\[
+				\begin{split}
+					\Vert \alpha'(u) \Vert & = \Vert (\sinh{u}, \cosh{u}, 1) \Vert \\
+							       & = \sqrt{\sinh^{2}{u} + \cosh^{2}{u} + 1} \\
+							       & = \sqrt{\cosh(2u) + 1} \\
+							       & = \sqrt{2 \cosh^{2}{u}} \\
+							       & = \sqrt 2 \cosh u.
+				\end{split}
+			\]
+			Note that the last step holds because $\cosh{u} \ge 0$ for all real $u$. \\\\
+			From here it's easy to compute the arc length --- we just integrate the speed from $0$ to $t$.
+			\[
+				\begin{split}
+					s(t) & = \int_{0}^{t} \Vert \alpha'(u) \Vert \, du \\
+					     & = \int_{0}^{t} \sqrt 2 \cosh{u} \, du \\
+					     & = \sqrt 2 \left ( \sinh{u} \right )\Big |_{0}^{t} \\
+					     & = \sqrt 2 \sinh{u}.
+				\end{split}
+			\]
+	\item
+		\[
+			\boxed{
+				\beta(s) = \left ( \cosh \left ( \sinh^{-1} \left ( {\frac{s}{\sqrt 2}} \right ) \right ), \frac{s}{\sqrt 2}, \sinh^{-1} \left ( \frac{s}{\sqrt 2} \right ) \right ).
+			}
+		\]\\
+		Since $t$ is the inverse function of the smooth function $s$ which is given by $u \mapsto \sqrt 2 \sinh{u}$, then by the inverse function theorem, on the open interval $(0, \infty)$ (this excludes $0$ where $\sinh'{0} = 0$), we have
+		\[
+			t : u \mapsto \sinh^{-1}{\frac{u}{\sqrt 2}}
+		\]
+		as a smooth function. \\\\
+		Thus, we have the unit speed parameterisation $\beta$ given by $\alpha \circ t$ --- that is,
+		\[
+			\beta(s) = \left ( \cosh \left ( \sinh^{-1} \left ( {\frac{s}{\sqrt 2}} \right ) \right ), \frac{s}{\sqrt 2}, \sinh^{-1} \left ( \frac{s}{\sqrt 2} \right ) \right ).
+		\]
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
@@ -34,6 +97,57 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item To show that the curve passes through $\mathbf{p}$  and $\mathbf{q}$ , just notice that
+			 \[
+				\begin{split}
+					\alpha(1) & = (2 \cdot 1, 1^{2}, \log 1) \\
+						  & = (2, 1, 0) \\
+						  & = \mathbf{p}.
+				\end{split}	
+			\]
+			and
+			\[
+				\begin{split}
+					\alpha(2) & = (2 \cdot 2, 2^{2}, \log 2) \\
+						  & = (4, 4, \log 2) \\
+						  & = \mathbf{q}.
+				\end{split}
+			\]
+			Since $\mathbf{p}$ and $\mathbf{q}$ are in the image of curve, the curve passes through them.
+		\item 
+			\[
+				\boxed{
+					\text{arc length} = 3 + \log 2
+				}
+			\] \\
+			By the definition of the arc length between two points, we have that
+			\[
+				\int_{1}^{2} \Vert \alpha'(u) \Vert \, du
+			\]
+			is the arc length between $\mathbf{p}$ and $\mathbf{q}$. To find the arc length explicitly, we compute $\Vert \alpha' \Vert$.
+			\[
+				\begin{split}
+					\Vert \alpha'(u) \Vert & = \Vert (2, 2u, 1/u) \Vert \\
+							       & = \sqrt{4 + 4u^{2} + 1/u^{2}} \\
+							       & = \sqrt{\frac{4u^{4} + 4u^{2} + 1}{u^{2}}} \\
+							       & = \sqrt{\frac{(2u^{2} + 1)^{2}}{u^{2}}} \\
+							       & = \frac{2u^{2} + 1}{u}.
+				\end{split}
+			\]
+			Then we get
+			\[
+				\begin{split}
+					\int_{1}^{2} \Vert \alpha'(u) \Vert \, du & = \int_{1}^{2} 2u + \frac{1}{u} \, du \\
+										  & = (u^{2} + \log(u)) \Big |_{1}^{2} \\
+										  & = (4 + \log 2) - (1 + \log 1) \\
+										  & = 3 + \log 2.
+				\end{split}
+			\]
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[Problem 4.]
@@ -43,6 +157,13 @@
 		\item What is the geometric significance of $s_{0}$?
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item
+		\item $s_{0}$ is the arc length difference between the starting points of $\beta_{1}$ and $\beta_{2}$. That is, if $\beta_{1}$ starts at $t_{1}$ and $\beta_{2}$ starts at $t_{2}$, then $\alpha(t_{1})$ is an arc length of $s_{0}$ ``behind'' $\alpha(t_{2})$ $s_{0}$ (in the direction of $\beta_{1}$)
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
@@ -54,5 +175,42 @@
 		\item $\mathbf{B} = \mathbf{T} \times \mathbf{N} = - \mathbf{N} \times \mathbf{T}$
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item To show that $\mathbf{T} = \mathbf{N} \times \mathbf{B}$, consider $\mathbf{N} \times \mathbf{B}$. By the triple product identity we have
+			\[
+				\begin{split}
+					\mathbf{N} \times \mathbf{B} & = \frac{\mathbf{T}'}{\Vert \mathbf{T}' \Vert} \times (\mathbf{T} \times \mathbf{N}) \\
+								     & = \left ( \frac{\mathbf{T}'}{\Vert \mathbf{T}' \Vert} \cdot \mathbf{N} \right ) \mathbf{T} - \left ( \frac{\mathbf{T}'}{\Vert \mathbf{T}' \Vert} \cdot \mathbf{T} \right ) \mathbf{T} \\
+								     & = \Vert \mathbf{N} \Vert^{2} \mathbf{T} - \frac{(\mathbf{T}' \cdot \mathbf{T}) \mathbf{T}}{\Vert \mathbf{T}' \Vert}.
+				\end{split}
+			\]
+		Note that since $\mathbf{N} = \mathbf{T}'/\Vert \mathbf{T}' \Vert$ we have $\Vert \mathbf{N} \Vert = 1$ always, and similarly, since $\beta$ has unit speed $\Vert \beta' \Vert$ , we have $\Vert \mathbf{T} \Vert = 1$  always. Thus, thinking of $\mathbf{T}$  as a curve, by homework assignment \#3, problem 5, we have that $\mathbf{T} \cdot \mathbf{T}' = 0$  always. Substituting this into our previous work, we get
+		\[
+			\begin{split}
+				\mathbf{N} \times \mathbf{B} & = 1 \mathbf{T} - \frac{0 \mathbf{T}}{\Vert \mathbf{T}' \Vert} \\
+							     & = \mathbf{T}.
+			\end{split}
+		\]
+		Then, by the anti-commutativity of the cross product $\mathbf{N} \times \mathbf{B} = - \mathbf{B} \times \mathbf{N}$ and thus, we have $\mathbf{T} = - \mathbf{B} \times \mathbf{N}$.
+		\item To show that $\mathbf{N} = - \mathbf{T} \times \mathbf{B}$ we use the triple product identity again ---
+			\[
+				\begin{split}
+					- \mathbf{T} \times \mathbf{B} & = - \mathbf{T} \times (\mathbf{T} \times \mathbf{N}) \\
+								     & = - \left ( \mathbf{T} \cdot \frac{\mathbf{T}'}{\Vert \mathbf{T}' \Vert} \right ) \mathbf{T} + \left ( \mathbf{T} \cdot \mathbf{T} \right ) \mathbf{N}
+				\end{split}
+			\]
+			Again, we have that $\mathbf{T} \cdot \mathbf{T} = \Vert \mathbf{T} \Vert = 1$ and thus, $\mathbf{T} \cdot \mathbf{T}' = 0$, and thus
+			\[
+				\begin{split}
+					- \mathbf{T} \times \mathbf{B} & = - 0 \mathbf{T} + 1 \mathbf{N} \\
+								       & = \mathbf{N}
+				\end{split}
+			\]
+			Thus, by anti-commutativity we have $\mathbf{B} \times \mathbf{T} = - \mathbf{T} \times \mathbf{B}$ and thus, $\mathbf{N} = \mathbf{B} \times \mathbf{T}$.
+		\item By definition, we have $\mathbf{B} = \mathbf{T} \times \mathbf{N}$ and by the anti-commutativity of the cross product we have $\mathbf{T} \times \mathbf{N} = - \mathbf{N} \times \mathbf{T}$, and thus, $\mathbf{B} = \mathbf{N} \times \mathbf{T}$.
+	\end{enumerate}
+\end{solution}
 
 \end{document}
