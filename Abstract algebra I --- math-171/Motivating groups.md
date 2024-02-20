@@ -29,7 +29,7 @@ Even though sets themselves have no structure, we can think about structures tha
 
 ##### _example:_ structure on sets
 
-For all the subsets of a set $X$ ($\mathcal{P}(X)$) we can think of the structure induced by taking unions and intersections of sets.
+For all the subsets of a set $X$, often denoted $\mathcal{P}(X)$, we can think of the structure induced by taking unions and intersections of sets.
 
 It turns out that this is an example of a binary operation.
 
@@ -66,7 +66,7 @@ This makes defining groups at least somewhat natural, if you've seen enough natu
 
 Groups are just a nice sub-type of sets with binary relations.
 
-##### _definition:_ group
+##### _definition:_ group, identity, inverse
 
 A group is a set with a binary operation $(G, *)$ such that
 1) $*$ is associative

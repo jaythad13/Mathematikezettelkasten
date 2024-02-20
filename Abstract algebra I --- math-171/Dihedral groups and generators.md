@@ -29,7 +29,7 @@ For a group $G$ and $a, b \in G$ we have $(ab)^{-1} = a^{-1} b^{-1}$
 
 ##### _proposition:_ the generalised associative law
 
-For a group $G$ and $a_{1}, \dots a_{n} \in G$, $a_{1} \cdots a_{n}$ is uniquely determined.
+For a group $G$ and $a_{1}, \dots, a_{n} \in G$, the product $a_{1} \cdots a_{n}$ is uniquely determined.
 
 ### The dihedral group
 
@@ -39,13 +39,13 @@ In the light of this structure, it's easier to see why we would care about group
 
 A symmetry of a regular $n$-gon with vertices $v_{1} \dots v_{n}$ is a rigid motion of the $n$-gon in $3$-space, such that at its conclusion, the $n$-gon can still cover itself (even if the vertices are no longer in the same place).
 
-Note that each symmetry is sort of an "equivalence class" on the set of all ways to achieve that symmetry. For example, we don't think of the two different paths below as different.
+Note that each symmetry is sort of an "equivalence class" on the set of all ways to achieve that symmetry. For example, we don't think of the two different paths below as different (although we have broken down one of the paths into two steps that are symmetries in their own right).
 
 ![[S2_symmetryExample.jpeg]]
 
 Note that each symmetry of a regular polygon can be thought of as a permutation of its vertices. Obviously, not all of the permutations are symmetries (for $n > 4$ we can't have $v_{1}$ and $v_{3}$ adjacent). Since there are finitely many permutations of $n$ vertices, there are fewer, and also finitely many symmetries of a square.
 
-Also note that there is a sensible notion of composing symmetries — if you have some symmetries $g_{1}, g_{2}$, then you can create a composed symmetry $g_{1} g_{2}$ by doing $g_{2}$ and then $g_{1}$. This is a binary operation! 
+Also note that there is a sensible notion of composing symmetries — if you have some symmetries $g_{1}, g_{2}$, then you can create a composed symmetry $g_{1} g_{2}$ by doing $g_{2}$ and then $g_{1}$. For example, exactly what we did above in the two-step path! This is a binary operation! 
 
 Since each of these is a permutation and we can think of the binary operation as composing them, we get associativity too! Function composition is associative! Another way to think of this is that in real life doing things is associative.
 

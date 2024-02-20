@@ -128,7 +128,9 @@ The quaternion group is
 $$
 Q_{8} = \{ 1, -1, i, -i, j, -j, k, -k \}
 $$
-where everything works as you'd expect — that is, $1$ and $-1$ behave like you'd expect, and $i, j, k$ act like $\mathbf{i}, \mathbf{j}, \mathbf{k}$ with cross multiplication in $\mathbb{R}^3$ under quaternion multiplication
+where everything works as you'd expect — that is, $1$ and $-1$ behave like you'd expect, and $i, j, k$ act like $\mathbf{i}, \mathbf{j}, \mathbf{k}$ with cross multiplication in $\mathbb{R}^3$ under quaternion multiplication, except $i^2 = j^2 = k^2 = -1$. 
+
+Note that this is very obviously non-abelian.
 
 ##### _definition:_ the Hamiltonian ring
 
@@ -137,5 +139,10 @@ $$
 \mathbb{H} = \{ a + b i + c j + d k | a, b, c, d \in \mathbb{R} \}
 $$
 with addition component wise and multiplication defined by $\mathbb{R}$ commuting with elements of $Q_{8}$, the regular multiplication on $Q_{8}$ for its elements and the regular multiplication on $\mathbb{R}$ for elements of $\mathbb{R}$.
+
+Note that we have inverses for all non-zero $z \in \mathbb{H}$ —
+$$
+(a + bi + cj + dk)^{-1} = \frac{a - bi - cj - dk}{a^2 + b^2 + c^2 + d^2}.
+$$
 
 We will see that the orthogonal groups and the Hamiltonians and quaternions are related.
