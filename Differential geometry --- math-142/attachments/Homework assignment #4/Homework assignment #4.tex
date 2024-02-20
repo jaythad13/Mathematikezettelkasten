@@ -160,8 +160,43 @@
 
 \begin{solution}
 	\begin{enumerate}
-		\item
-		\item $s_{0}$ is the arc length difference between the starting points of $\beta_{1}$ and $\beta_{2}$. That is, if $\beta_{1}$ starts at $t_{1}$ and $\beta_{2}$ starts at $t_{2}$, then $\alpha(t_{1})$ is an arc length of $s_{0}$ ``behind'' $\alpha(t_{2})$ $s_{0}$ (in the direction of $\beta_{1}$)
+		\item First we will show that any unit speed reparameterisation of $\alpha$ is an arc length parameterisation. Suppose $\beta : J \to \mathbb{R}^{3}$ is a unit speed reparameterisation of $\alpha$. Then note that we have $\beta = \alpha \circ h$ such that the following diagram commutes.
+			\[
+				\begin{tikzcd}
+					J \ar[rd, "\beta"] \ar[d, "h"] \\
+					I \ar[r, "\alpha"] & \mathbb{R}^{3}
+				\end{tikzcd}
+			\]
+			We also have $\Vert \beta' \Vert = 1$ always, and $h'(s) \neq 0$ for all $s \in J$.\\\\
+			By the chain rule, at any point $s \in J$, we have $\Vert \alpha'(h(s)) \, h'(s) \Vert = 1$. Thus, we have at every point $s \in J$
+			\[
+				\vert h'(s) \vert = \frac{1}{\Vert \alpha'(h(s)) \Vert}.
+			\]
+			Since we have $h' \neq 0$, either $h' > 0$ always or $h' < 0$ always. Assume without loss of generality that $h' > 0$ always, and thus,
+			\[
+				h'(s) = \frac{1}{\Vert \alpha'(h(s)) \Vert}
+			\]
+			for all $s \in J$. Since $\alpha$ is regular, this derivative is defined everywhere on $J$, and never $0$. Since $h$ is also regular, by the mean value theorem, there cannot be any disstinct points in $I$ which take the same value under $h$ --- $h$ is injective. Additionally, in order for $\beta$ to be a reparameterisation, $h$ must be surjective. Thus, by the inverse function theorem, $h$ has inverse $\tau$ with derivative defined everywhere by
+			\[
+				\begin{split}
+					\tau'(t) & = \frac{1}{h'(\tau(t))} \\
+						 & = \Vert \alpha'(h(\tau(t))) \Vert \\
+						 & = \Vert \alpha'(t) \Vert.
+				\end{split}
+			\]
+			We can rewrite this as
+			\[
+				\tau(t) = \tau_{0} + \int_{t_{0}}^{t} \Vert \alpha'(u) \Vert \, du
+			\]
+			with $\tau(t_{0}) = \tau_{0}$. \\\\
+			In words, $\tau$ is an arc length function starting at $t_{0}$ and $h$ is its inverse. Thus, $\beta$ is an arc length parameterisation. \\\\
+			Now we know that when we have $\beta_{1}$ and $\beta_{2}$ as unit speed reparameterisations, they are defined by arc length parameterisations $\tau_{1}$ and $\tau_{2}$ with inverses $h_{1}$ and $h_{2}$. Since $\tau_{1}$ and $\tau_{2}$ are antiderivatives of the same function --- $\Vert \alpha' \Vert$, we have that $\tau_{2} = \tau_{1} - s_{0}$ for some $s_{0} \in \mathbb{R}$. \\\\
+			From this, we can get $h_{2}(s) = h_{1}(s + s_{0})$. Notice that for any $s \in J$ we have $s = \tau_{2}(t) = \tau_{1}(t) - s_{0}$. We can rewrite this as $\tau_{2}(t) = s$ and $\tau_{1}(t) = s + s_{0}$. Thus, taking $h_{1}$ and $h_{2}$ of both sides in the first and second equations respectively, we get
+			\[
+				h_{1}(s + s_{0}) = t = h_{2}(s)
+			\]
+			for any $s \in J$.
+		\item $s_{0}$ is the arc length difference between the starting points of $\beta_{1}$ and $\beta_{2}$. That is, if $\beta_{1}$ starts at $t_{1}$ and $\beta_{2}$ starts at $t_{2}$, then $\alpha(t_{1})$ is an arc length of $s_{0}$ ``behind'' $\alpha(t_{2})$ $s_{0}$ (in the direction of $\beta_{1}$).
 	\end{enumerate}
 \end{solution}
 
