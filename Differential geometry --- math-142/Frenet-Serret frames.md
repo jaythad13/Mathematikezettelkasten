@@ -5,6 +5,7 @@ tags:
 lecture:
 - math-142-11
 - math-142-12
+- math-142-13
 ---
 
 With Frenet-Serret frames, we are setting up the [[Frames|frame]]work for a lot of differential geometry.
@@ -135,3 +136,83 @@ $$
 \mathbf{B}' = \omega \times \mathbf{B}
 \end{gathered}
 $$
+
+##### _proof:_
+
+%% again, a bunch of computation, see the lecture notes %%.
+
+Now that we have all of the definitions and identities, done, we can play with some examples to see what they really mean, geometrically.
+
+##### _example:_ a circle
+
+Consider the parameterisation of a circle by $\alpha : \mathbb{R} \to \mathbb{R}^3$ such that $t \mapsto (r \cos\omega t, r \sin \omega t, 0)$.
+
+Then we have its derivatives as follows
+$$
+\begin{gathered}
+\frac{{d\alpha}}{dt} = (- r \omega \sin\omega t, r\omega \cos \omega t, 0) \\
+\frac{{d^2 \alpha}}{dt^2} = (-r \omega^2 \cos \omega t, - r \omega^2 \sin\omega t, 0) \\
+\frac{{d^3 \alpha}}{dt^3} = (rw^3 \sin\omega t, - r\omega^3 \omega t, 0).
+\end{gathered}
+$$
+
+Then
+$$
+\begin{gathered}
+\mathbf{T} = [(- \sin \omega t, \cos \omega t, 0), \mathbf{p}] \\ \\
+\mathbf{N} = [(-\cos \omega t, -\sin \omega t, 0), \mathbf{p}] \\ \\
+\mathbf{B} = [(0, 0, 1), \mathbf{p}]
+\end{gathered}
+$$
+where $\mathbf{p} = \alpha(t)$.
+
+Now we can calculate speed, curvature and torsion as well —
+$$
+\begin{gathered}
+v = r \omega \\ \\
+\kappa = \frac{1}{r} \\ \\
+\tau = 0.
+\end{gathered}
+$$
+
+Notice how $v = r \omega$ is exactly what we expect — angular speed times distance is just speed. 
+
+Notice also that the curvature is inversely proportional to the radius. This means that our curvature somehow measures how tightly wound the coil is.
+
+$\tau$ is $0$, so we can't learn anything about torsion from this example, except that it doesn't have any. If we are a little more interested we can notice that $\tau = 0$ exactly because $\alpha' \times \alpha''$ is in the orthogonal to the $xy$-plane that $\alpha'''$ lies in. This, gives us
+
+##### _example:_ a helix
+
+Consider the helix parameterised by $\alpha : \mathbb{R} \to \mathbb{R}^3$ with $t \mapsto (a \cos t, a \sin t, bt)$. Note that we don't need a $\omega$ parameter since we have one "by comparison" with $b$.
+
+We have derivatives
+$$
+\begin{gathered}
+\frac{{d\alpha}}{dt} = (-a \sin t, a \cos t, b) \\
+\frac{{d^2 \alpha}}{dt^2} = (-a \cos t, - a \sin t, 0) \\
+\frac{{d^3 \alpha}}{dt^3} = (a \sin t, - a \cos t, 0) \\
+\end{gathered}
+$$
+which give us
+$$
+\begin{gathered}
+\mathbf{T} = \left[ \left( -\frac{a}{\sqrt{ a^2 + b^2 }} \sin \omega t, \frac{a}{\sqrt{ a^2 + b^{2} }} \cos t, \frac{b}{\sqrt{ a^{2} + b^{2} }} \right), \mathbf{p} \right] \\ \\
+\mathbf{N} = [(-\cos t, - \sin t, 0), \mathbf{p}] \\ \\
+\mathbf{B} = \left[ \left( \frac{b}{\sqrt{ a^{2} + b^{2} }} \sin t, - \frac{b}{\sqrt{ a^{2} + b^{2} }}, \frac{a}{\sqrt{ a^{2} + b^{2} }} \right), \mathbf{p} \right]
+\end{gathered}
+$$
+Then we have
+$$
+\begin{gathered}
+v = \sqrt{ a^2 + b^2 } \\ \\
+\kappa = \frac{a}{a^{2} + b^{2}} \\ \\
+\tau = \frac{b}{a^2 + b^2}
+\end{gathered}
+$$
+
+Notice that given any $\kappa_{0}, \tau_{0}$ we can find $a, b$ such that we have a helix of constant speed curvature, and torsion (with $\kappa_{0}$ and $\tau_{0}$ for the last two). Specifically, the helix by
+$$
+\alpha(t) = \left( \frac{\kappa_{0}}{\kappa_{0} + \tau_{0}} \cos t, \frac{\kappa_{0}}{\kappa_{0}^2 + \tau_{0}^2} \sin t, \frac{\tau_{0}}{\kappa_{0}^2 + \tau_{0}^2} t \right).
+$$
+
+Notice how as $\tau_{0} \to 0$, $\alpha$ approaches a circle, and when $\kappa_{0} \to 0$ then $\alpha$ approaches a vertical line with velocity $v = \frac{1}{\tau_{0}}$. This tells us that $\tau_{0}$ somehow measures the vertical "stretch". Also notice that actually having $\kappa_{0} = 0$ would make the curve not strongly regular, and so we can only look at the approach.
