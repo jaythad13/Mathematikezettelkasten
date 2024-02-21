@@ -1,0 +1,46 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 171 --- Abstract Algebra I}
+\assignment{Exam 1}
+\duedate{27th February 2024}
+
+\begin{document}
+
+\begin{problem}[1.]
+	Let $G$ and $H$ be groups and let $\alpha : G \to \operatorname{Aut}(H)$ be a group homomorphism so that for $x \in G$ $\alpha(x)$ is a group automorphism from $H$ to itself. We will write $\alpha_{x}$ for $\alpha(x)$. \\\\
+	Consider the set $H \times G$ (with elements $(h, g)$ for $h \in H$ and $g \in H$). Equip it with the binary operation
+	\[
+		(h, g)(k, x) : = (h \alpha_{g}(k), gx).
+	\]\\
+	Under this binary operation, $H \times G$ forms a group, called the semidirect product of $H$ and $G$ with respect to $\alpha$. This group is denoted $H \rtimes_{\alpha} G$. \\\\
+	Verify that the identity of $H \rtimes_{\alpha} G$ is $(1, 1)$ and that $(h, g)^{-1} = (\alpha_{g^{-1}}(h^{-1}), g^{-1})$.
+\end{problem}
+
+\begin{problem}[2.]
+	Let $G$ be a group and fix an element $g \in G$. Define a new binary operation $\star$ on $G$ by setting $a \star b = agb$ for all $a, b \in G$. With respect to this new binary operation is $G$ still a group?
+\end{problem}
+
+\begin{problem}[3.]
+	Suppose a group contains elements $a$ and $b$ such that $\vert a \vert = 4$, $\vert b \vert = 2$, and $a^{3}b = ba$. What can you say about $\vert ab \vert$?
+\end{problem}
+
+\begin{problem}[4.]
+	Prove that no group can have exactly two elements of order $2$.
+\end{problem}
+
+\begin{problem}[5.]
+	Briefly explain why the following statements are true or false
+	\begin{enumerate}
+		\item $Q_{8} \cong D_{8}$
+		\item $\mathbb{Z} / 4 \mathbb{Z} \cong \mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z}$
+		\item If $\sigma \in S_{10}$ and $\sigma = (1 \, 3)(5 \, 7 \, 9)(2 \, 4 \, 6 \, 8)$ then $\vert \sigma \vert = 24$
+		\item Every homomorphism grom a group to itself is an automorphism
+		\item The map from a group $G$ to itself defined by $g \mapsto g^{-1}$ is a homomorphism
+		\item If $G$ is a group and $x \in G$ and $\vert x \vert = n$ then $x, x^{2}, x^{3}, \dots, x^{n}$ are all distinct
+		\item If $G$ is a group and $x, y \in G$ then $\vert xyx \vert = \vert yxy \vert$
+	\end{enumerate}
+\end{problem}
+
+\end{document}
