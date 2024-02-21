@@ -14,21 +14,139 @@
 	\[
 		(h, g)(k, x) : = (h \alpha_{g}(k), gx).
 	\]\\
-	Under this binary operation, $H \times G$ forms a group, called the semidirect product of $H$ and $G$ with respect to $\alpha$. This group is denoted $H \rtimes_{\alpha} G$. \\\\
-	Verify that the identity of $H \rtimes_{\alpha} G$ is $(1, 1)$ and that $(h, g)^{-1} = (\alpha_{g^{-1}}(h^{-1}), g^{-1})$.
+	Under this binary operation, $H \times G$ forms a group, called the semidirect product of $H$ and $G$ with respect to $\alpha$. This group is denoted $H \ltimes_{\alpha} G$. \\\\
+	Verify that the identity of $H \ltimes_{\alpha} G$ is $(1, 1)$ and that $(h, g)^{-1} = (\alpha_{g^{-1}}(h^{-1}), g^{-1})$.
 \end{problem}
+
+\begin{solution}
+	First we show that the identity is $(1, 1)$. \\\\
+	Note that since $\alpha$ is a homomorphism, we must have that $\alpha_{1_{G}} = 1_{\operatorname{Aut(H)}}$ which is just $\operatorname{id}_{H}$. Thus, for any $(k, x)$ we have
+	\[
+		\begin{split}
+			(1_{H}, 1_{G})(k, x) & = (1_{H} \alpha_{1_{G}}(k), 1_{G}x) \\
+				     & = (\operatorname{id}_{H}(k), x) \\
+				     & = (k, x).
+		\end{split}
+	\]
+	Since any automorphism will send $1_{H}$ to $1_{H}$ (since all automorphisms are homomorphisms), we also have
+	\[
+		\begin{split}
+			(h, g)(1_{H}, 1_{G}) & = (h \alpha_{g}(1_{H}), g 1_{G}) \\
+					     & = (h 1_{H}, g) \\
+					     & = (h, g).
+		\end{split}
+	\]
+	Thus, $(1_{H}, 1_{G})$ or $(1, 1)$ is the identity on $H \ltimes_{\alpha} G$. \\\\
+	Now we show that $(h, g)^{-1} = (\alpha_{g^{-1}}(h^{-1}), g^{-1})$. \\\\
+	Note that since homomorphisms preserve inverses, we have that $\alpha_{g}^{-1} = \alpha_{g^{-1}}$. Thus, we can compute
+	\[
+		\begin{split}
+			(h, g)(\alpha_{g^{-1}}(h^{-1}), g^{-1}) & = (h \alpha_{g}(\alpha_{g^{-1}}(h^{-1})), g g^{-1}) \\
+								& = (h (\alpha_{g} \circ \alpha_{g}^{-1})(h^{-1}), 1_{G}) \\
+								& = (h \operatorname{id}_{H}(h^{-1}), 1_{G}) \\
+								& = (h h^{-1}, 1_{G}) \\
+								& = (1_{H}, 1_{G})
+		\end{split}
+	\]
+	Similarly, we can also show that it is a left inverse. We just need to recall that automorphisms, like any other homomorphism, preserve inverses. That is, for any $g \in G, h \in H$, $\alpha_{g}(h^{-1}) = \alpha_{g}(h)^{-1}$ ---
+	\[
+		\begin{split}
+			(\alpha_{g^{-1}}(h^{-1}), g^{-1})(h, g) & = (\alpha_{g^{-1}}(h)^{-1} \alpha_{g^{-1}}(h), g^{-1} g) \\
+								& = (1_{H}, 1_{G}).
+		\end{split}
+	\]
+\end{solution}
+
+\pagebreak
 
 \begin{problem}[2.]
 	Let $G$ be a group and fix an element $g \in G$. Define a new binary operation $\star$ on $G$ by setting $a \star b = agb$ for all $a, b \in G$. With respect to this new binary operation is $G$ still a group?
 \end{problem}
 
+\begin{solution}
+	\[
+		\boxed{
+			\text{Yes, } G \text{ is still a group.}
+		}
+	\] \\
+	First we will show that $\star$ is associative. We do this by direct computation ---
+	\[
+		\begin{split}
+			(a \star b) \star c & = (agb) \star c \\
+					    & = (agb)gc \\
+					    & = ag(bgc) \\
+					    & = ag(b \star c) \\
+					    & = a \star (b \star c).
+		\end{split}
+	\]
+	Notice that the third step follows by the associativity of the original group operation on $G$. \\\\
+	Now we will show that $(G, \star)$ has an identity --- $g^{-1}$. Notice that
+	\[
+		\begin{split}
+			a \star g^{-1} & = a g g^{-1} \\
+				       & = a
+		\end{split}
+	\]
+	and
+	 \[
+		\begin{split}
+			g^{-1} \star a & = g^{-1} g a \\
+				       & = a.
+		\end{split}
+	\]
+	Thus, $g^{-1}$ is an identity on $(G, \star)$ which we denote by $1_{(G, \star)}$. \\\\
+	Finally, we show that every element $a \in G$ has a well defined inverse --- $b = g^{-1} a^{-1} g^{-1}$. To show this, we just compute
+	\[
+		\begin{split}
+			a \star b & = a g g^{-1} a^{-1} g^{-1} \\
+				  & = a a^{-1} g^{-1} \\
+				  & = g^{-1} \\
+				  & = 1_{(G, \star)}
+		\end{split}
+	\]
+	and
+	\[
+		\begin{split}
+			b \star a & = g^{-1} a^{-1} g^{-1} g a \\
+				  & = g^{-1} a^{-1} a \\
+				  & = g^{-1} \\
+				  & = 1_{(G, \star)}.
+		\end{split}
+	\]
+	Thus, $g^{-1} a g^{-1}$ is the inverse of $a$ under $\star$. \\\\
+	Now, since all the group axioms are satisfied for $(G, \star)$, we have that it is a group.
+\end{solution}
+
+\pagebreak
+
 \begin{problem}[3.]
 	Suppose a group contains elements $a$ and $b$ such that $\vert a \vert = 4$, $\vert b \vert = 2$, and $a^{3}b = ba$. What can you say about $\vert ab \vert$?
 \end{problem}
 
+\pagebreak
+
 \begin{problem}[4.]
 	Prove that no group can have exactly two elements of order $2$.
 \end{problem}
+
+\begin{solution}
+	Suppose by way of contradiction that the group $G$  has exactly two elements of order $2$ ---  $x$  and $y$. Note that $x \neq y$ and they will both be self-inverse. Also, notice that $xyx$ is also an element of order $2$. We can verify this by checking that it squares to $1$ and that it is not $1$ itself. \\\\
+	We clearly have
+	\[
+		\begin{split}
+			(xyx)^{2} & = xyxxyx \\
+				  & = xyyx \\
+				  & = xx \\
+				  & = 1
+		\end{split}
+	\]
+	where each step follows by reducing $xx = 1$ or $yy = 1$. \\\\
+	If we had $xyx = 1$, then we would have $xy = x^{-1}$ and thus, $xy = x$ and finally, $y = 1$ by left cancellation of $x$. This would contradict that $\vert y \vert = 2$. Thus, we cannot have $xyx = 1$. \\\\
+	Thus, we have that $\vert xyx \vert \le 2$ and $\vert xyx \vert \neq 1$. Then $\vert xyx \vert$ must be $2$. Now that we have established that $xyx$ is of order $2$, we will show that it must be distinct from $x$ and $y$. \\\\
+	Suppose $xyx = x$. Then, by right cancellation of $x$, we would have $xy = 1$, and thus, $x = y^{-1} = y$. That would leave us with exactly $1$ element of order $2$: $x = y = xyx$. This contradicts our assumption that there are $2$ such elements. Thus, we cannot have $xyx = x$. \\\\
+	Suppose $xyx = y$. This gives us $xyxy = 1$ and thus, $(xy)^{2} = 1$. Note that we can't have $xy = 1$ as that would give us $x = y$ by right multiplication by $y$. Thus, $xy$ has order $2$. Note that we can't have $xy = x$ since that would give us $y = 1$ by left cancellation and we can't have $xy = y$ since that would give us $x = 1$ by right cancellation. Thus, $xy$ is a distinct third element of order $2$. \\\\
+	Thus, we have shown that if $x, y \in G$ are distinct elements of order $2$, then one of $xyx$ or $xy$ is a third distinct element of order $2$.
+\end{solution}
 
 \begin{problem}[5.]
 	Briefly explain why the following statements are true or false
@@ -36,11 +154,59 @@
 		\item $Q_{8} \cong D_{8}$
 		\item $\mathbb{Z} / 4 \mathbb{Z} \cong \mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z}$
 		\item If $\sigma \in S_{10}$ and $\sigma = (1 \, 3)(5 \, 7 \, 9)(2 \, 4 \, 6 \, 8)$ then $\vert \sigma \vert = 24$
-		\item Every homomorphism grom a group to itself is an automorphism
+		\item Every homomorphism from a group to itself is an automorphism
 		\item The map from a group $G$ to itself defined by $g \mapsto g^{-1}$ is a homomorphism
 		\item If $G$ is a group and $x \in G$ and $\vert x \vert = n$ then $x, x^{2}, x^{3}, \dots, x^{n}$ are all distinct
 		\item If $G$ is a group and $x, y \in G$ then $\vert xyx \vert = \vert yxy \vert$
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item \fbox{False} \\\\
+			$Q_{8}$ has exactly one element of order $2$: $-1$. $D_{8}$ has three: $s$, $r^{2}$, and $sr^{2}$. Since isomorphisms preserve the number of elements of each order there cannot be an isomorphism between them.
+		\item \fbox{False} \\\\
+			$\mathbb{Z}/4\mathbb{Z}$ is cyclic and $\mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z}$ is not. Since isomorphisms preserve powers, if they were isomorphic, we would be able to generate all of $\mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z}$ from the image of any of the generators of $\mathbb{Z}/4\mathbb{Z}$ ($\overline{1}$ and $\overline{3}$) under the isomorphism, but since $\mathbb{Z}/2\mathbb{Z}$ is not cyclic, it's clear that we cannot do so.
+		\item \fbox{False} \\\\
+			The order of a permutation is the least common multiple of the lengths of the cycles in its cycle decomposition. Here, $\operatorname{lcm} (2, 3, 4) = 12$, and thus, $\vert \sigma \vert = 12 \neq 24$.
+		\item \fbox{False} \\\\
+			The trivial homomorphism $G \to G$ by $g \mapsto 1$ for all $g \in G$ is clearly not injective, and thus, not an automorphism.
+		\item \fbox{False} \\\\
+			This is only true if $G$ is abelian. Consider on any non-abelian group  $\varphi : G \to G$  by $g \mapsto g^{-1}$ . Note that we have $g, h \in G$  such that $g h \neq h g$ . Then consider that
+			\[
+				\begin{split}
+					\varphi(g^{-1} h^{-1}) & = (g^{-1} h^{-1})^{-1} \\
+							       & = hg \\
+				\end{split}
+			\]
+			and
+			\[
+				\begin{split}
+					\varphi(g^{-1}) \varphi(h^{-1}) & = (g^{-1})^{-1} (h^{-1})^{-1} \\
+									& = gh
+				\end{split}
+			\]
+			mean that $\varphi(g^{-1} h^{-1}) \neq \varphi(g^{-1}) \varphi(h^{-1})$ and thus, $\varphi$ is not a homomorphism.
+		\item \fbox{True} \\\\
+			Suppose by way of contradiction that we have $x^{j} = x^{k}$ with $j, k \in \{ 1, \dots, n \}$ (with $j \neq k$). Assume, without loss of generality, that $j < k$. Then we have $x^{k - j} = 1$ with $0< k - j < n$, contradicting the fact that $\vert x \vert = n$. Thus, we cannot have any two in the list $x, x^{2}, \dots, x^{n}$ be the same.
+		\item \fbox{False} \\\\
+			Consider the counter example $\overline{1}, \overline{2} \in \mathbb{Z}/4\mathbb{Z}$. 
+			\[
+				\begin{split}
+					\vert \overline{1} + \overline{2} + \overline{1} \vert & = \vert \overline{4} \vert \\
+											       & = \vert \overline{0} \vert \\
+											       & = 1
+				\end{split}
+			\]
+			and
+			\[
+				\begin{split}
+					\vert \overline{2} + \overline{1} + \overline{2} \vert & = \vert \overline{5} \vert \\
+											       & = \vert \overline{1} \vert \\
+											       & = 4.
+				\end{split}
+			\]
+	\end{enumerate}
+\end{solution}
 
 \end{document}
