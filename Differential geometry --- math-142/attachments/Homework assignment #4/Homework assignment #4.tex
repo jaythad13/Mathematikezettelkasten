@@ -176,7 +176,7 @@
 			\[
 				h'(s) = \frac{1}{\Vert \alpha'(h(s)) \Vert}
 			\]
-			for all $s \in J$. Since $\alpha$ is regular, this derivative is defined everywhere on $J$, and never $0$. Since $h$ is also regular, by the mean value theorem, there cannot be any disstinct points in $I$ which take the same value under $h$ --- $h$ is injective. Additionally, in order for $\beta$ to be a reparameterisation, $h$ must be surjective. Thus, by the inverse function theorem, $h$ has inverse $\tau$ with derivative defined everywhere by
+			for all $s \in J$. Since $\alpha$ is regular, this derivative is defined everywhere on $J$, and never $0$. Since $h$ is also regular, by the mean value theorem, there cannot be any distinct points in $I$ which take the same value under $h$ --- otherwise there would be a point between them where $h' = 0$. Thus, $h$ is injective. Although we don't have that $h$ is surjective, since it has positive derivative everywhere, its image is an interval $I' \subset I$ onto which it is surjective. Thus, by the inverse function theorem, $h$ has inverse $\tau$ with derivative defined everywhere by
 			\[
 				\begin{split}
 					\tau'(t) & = \frac{1}{h'(\tau(t))} \\
@@ -188,7 +188,7 @@
 			\[
 				\tau(t) = \tau_{0} + \int_{t_{0}}^{t} \Vert \alpha'(u) \Vert \, du
 			\]
-			with $\tau(t_{0}) = \tau_{0}$. \\\\
+			with $\tau(t_{0}) = \tau_{0}$ where $\tau : I' \to J$. \\\\
 			In words, $\tau$ is an arc length function starting at $t_{0}$ and $h$ is its inverse. Thus, $\beta$ is an arc length parameterisation. \\\\
 			Now we know that when we have $\beta_{1}$ and $\beta_{2}$ as unit speed reparameterisations, they are defined by arc length parameterisations $\tau_{1}$ and $\tau_{2}$ with inverses $h_{1}$ and $h_{2}$. Since $\tau_{1}$ and $\tau_{2}$ are antiderivatives of the same function --- $\Vert \alpha' \Vert$, we have that $\tau_{2} = \tau_{1} - s_{0}$ for some $s_{0} \in \mathbb{R}$. \\\\
 			From this, we can get $h_{2}(s) = h_{1}(s + s_{0})$. Notice that for any $s \in J$ we have $s = \tau_{2}(t) = \tau_{1}(t) - s_{0}$. We can rewrite this as $\tau_{2}(t) = s$ and $\tau_{1}(t) = s + s_{0}$. Thus, taking $h_{1}$ and $h_{2}$ of both sides in the first and second equations respectively, we get
