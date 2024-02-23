@@ -111,7 +111,7 @@
 \begin{solution}
 	\begin{enumerate}
 		\item
-			We draw the following diagram
+			We draw the following diagram.
 			\[
 				\begin{tikzcd}
 					\forall V \ar[rrd, bend left, "f_1"] \ar[ddr, bend right, "f_2"] \ar[rd, dashrightarrow , "\exists ! \, f"] \\
@@ -126,21 +126,51 @@
 			We can see this isomorphism clearly in that the commutative diagrams can't tell $P$ and $P'$ apart:
 			\[
 				\begin{tikzcd}
-					 P' \ar[rrd, bend left, "p_1'"] \ar[ddr, bend right, "p_2'"] \ar[rd, dashrightarrow , "\exists ! \, p'"] \\
+					 P' \ar[rrd, bend left, "p_1'"] \ar[ddr, bend right, "p_2'"] \ar[rd, "p'"] \\
 					 & P \ar[r, "p_1"] \ar[d, "p_2"] & X \\
 					 & Y 
 				\end{tikzcd}
 				\begin{tikzcd}
-					 P \ar[rrd, bend left, "p_1"] \ar[ddr, bend right, "p_2"] \ar[rd, dashrightarrow , "\exists ! \, p"] \\
+					 P \ar[rrd, bend left, "p_1"] \ar[ddr, bend right, "p_2"] \ar[rd, "p"] \\
 					 & P' \ar[r, "p_1'"] \ar[d, "p_2'"] & X \\
 					 & Y 
 				\end{tikzcd}
 			\]
 
 		\item
-			Just reverse the arrows from (a)!
+			The desired cone corresponds to the following diagram.
+			\[
+				\begin{tikzcd}
+						          & X \ar[d, "q_{1}"] \ar[rdd, "f_{1}", bend left] \\
+					Y \ar[r, "q_{2}"] \ar[rrd, bend right, "f_{2}"] & Q \ar[rd, "\exists ! \, q", dashrightarrow] \\
+							  & & \forall V 
+				\end{tikzcd}
+			\]
+			Again this can be expressed as the product space, except here it's more natural to think of it as the direct sum. Consider $Q = X \oplus Y$ with inclusions $p_{1} : x \mapsto x + 0_{X} = x$ and $p_{2} : 0_{Y} + y = y$. Then $q$ is defined uniquely by $x + y \mapsto f_{1}(x) + f_{2}(y)$.
+			
 		\item
-			Again, just reverse the arrows!
+			Suppose $(Q', q_{1}', q_{2}')$ is another cone with the same property. Then notice that the following diagrams commute, where $q, q'$ are the unique maps defined by the property.
+			\[
+				\begin{tikzcd}
+						          & X \ar[d, "q_{1}"] \ar[rdd, "q_{1}'", bend left] \\
+					Y \ar[r, "q_{2}"] \ar[rrd, bend right, "q_{2}'"] & Q \ar[rd, "q"] \\
+							  & & Q'
+				\end{tikzcd}
+				\begin{tikzcd}
+						          & X \ar[d, "q_{1}'"] \ar[rdd, "q_{1}", bend left] \\
+					Y \ar[r, "q_{2}'"] \ar[rrd, bend right, "q_{2}"] & Q' \ar[rd, "q'"] \\
+							  & & Q
+				\end{tikzcd}
+			\]
+			Notice then that $q' \circ q$ is a map on $Q$ such that for the cone $(Q, q_{1}, q_{2})$, we have 
+			\[
+				\begin{split}
+					(q' \circ q) \circ q_{j} & = q' \circ (q \circ q_{j}) \\
+								 & = q' \circ q_{j}' \\
+								 & = q_{j}
+				\end{split}
+			\]
+			for $j \in \mathbb{N}_{2}$. Similarly, we can show that $(q \circ q')$ is a map on $Q'$ that gives us $(q \circ q') \circ q_{j}' = q_{j}'$ for all $j \in \mathbb{N}_2$. But we already have that $\operatorname{id}_{Q}$ is the unique map satisfying this on $Q$ and $\operatorname{id}_{Q'}$ for $Q'$. Thus, we must have $(q' \circ q) = \operatorname{id}_{Q}$ and $(q \circ q') = \operatorname{id}_{Q'}$. Thus, $Q \cong Q'$. That is, any other cone that satisfies this property is essentially the same as $Q$.
 	\end{enumerate}
 \end{solution}
 	
