@@ -6,6 +6,7 @@ lecture:
 - math-142-11
 - math-142-12
 - math-142-13
+- math-142-14
 ---
 
 With Frenet-Serret frames, we are setting up the [[Frames|frame]]work for a lot of differential geometry.
@@ -141,6 +142,8 @@ $$
 
 %% again, a bunch of computation, see the lecture notes %%.
 
+### $v$, $\kappa$, $\tau$ and what they really mean
+
 Now that we have all of the definitions and identities, done, we can play with some examples to see what they really mean, geometrically.
 
 ##### _example:_ a circle
@@ -215,4 +218,80 @@ $$
 \alpha(t) = \left( \frac{\kappa_{0}}{\kappa_{0} + \tau_{0}} \cos t, \frac{\kappa_{0}}{\kappa_{0}^2 + \tau_{0}^2} \sin t, \frac{\tau_{0}}{\kappa_{0}^2 + \tau_{0}^2} t \right).
 $$
 
-Notice how as $\tau_{0} \to 0$, $\alpha$ approaches a circle, and when $\kappa_{0} \to 0$ then $\alpha$ approaches a vertical line with velocity $v = \frac{1}{\tau_{0}}$. This tells us that $\tau_{0}$ somehow measures the vertical "stretch". Also notice that actually having $\kappa_{0} = 0$ would make the curve not strongly regular, and so we can only look at the approach.
+Notice how as $\tau_{0} \to 0$, $\alpha$ approaches a circle of radius $r = \frac{1}{\kappa}$ in the $xy$-plane. When $\kappa_{0} \to 0$ then $\alpha$ approaches a vertical line with velocity $v = \frac{1}{\tau_{0}}$. This tells us that $\tau_{0}$ somehow measures the vertical "stretch". 
+
+Note that actually having $\kappa_{0} = 0$ would make the curve not strongly regular, and so we can only look at the the limit as it approaches $0$.
+
+This, and our example of the circle, motivates us to see that basically, a curve only has no torsion if it's a planar curve. That is $\tau$ is a measure of how far a curve is from being fixed in a plane.
+
+##### _theorem:_ torsionless curves
+
+For any strongly regular curve parameterised by $\alpha : I \to \mathbb{R}^3$, the following are equivalent
+1) The torsion $\tau$ is $0$ everywhere.
+2) The binormal vector $\mathbf{B}$ is constant (the vector part is constant).
+3) There exists a plane $\mathcal{P} = \{ (x, y, z) \in \mathbb{R}^3 | ax + by + cz = d \}$ such that all $\alpha(t) \in \mathcal{P}$.
+
+##### _proof:_
+
+We will show that 1) $\implies$ 2) $\implies$ 3) $\implies$ 1).
+
+Suppose a $\alpha$ has torsion $\tau = 0$. Then notice that $\frac{{d\mathbf{B}}}{dt} = - \tau v \mathbf{N}$, and thus, $\frac{d\mathbf{B}}{dt} = 0$ and $\mathbf{B}$ is a constant.
+
+Suppose $\mathbf{B} = [(a, b, c), \alpha(t)]$ has constant vector part. Consider $\gamma : (a, b, c) \cdot \alpha(t)$. Then we have
+$$
+\begin{split}
+\frac{d\gamma}{dt} & = (a, b, c) \cdot \frac{d\alpha}{dt} \\
+& = v(\mathbf{B} \cdot \mathbf{T}) \\
+& = 0
+\end{split}
+$$
+where the last step holds by $\mathbf{B} \cdot \mathbf{T} = 0$ since they form a frame. Thus, $\gamma$ must be a constant, $d$. Then we have $a \alpha_{1}(t) + b\alpha_{2}(t) + c \alpha_{3}(t) = d$, or in other words $\alpha(t)$ always satisfies $ax + by + cz = d$ and is in the plane defined by it.
+
+Finally, suppose $\alpha(t)$ is always in the plane $\mathcal{P}$. Then for
+$$
+\gamma(t) = \frac{a \alpha_{1}(t) + b \alpha_{2}(t) + c \alpha_{3}(t) - d}{\sqrt{ a^2 + b^2 + c^2 }}
+$$
+we have $\gamma = 0$, always.
+
+Notice that we also have $\frac{d\gamma}{dt} = \frac{d^2\gamma}{dt^2} = 0$ with
+$$
+\begin{gathered}
+\frac{d\gamma}{dt} = \mathbf{B}_{0} \cdot \alpha' \\
+\frac{d\gamma}{dt} = \mathbf{B}_{0} \cdot \alpha''
+\end{gathered}
+$$
+and thus, $\mathbf{B}_{0}$ orthogonal to $\mathbf{T}$ and $\mathbf{N}$ (just use the formulas in terms of $\alpha, \alpha', \alpha''$). This means that we must have $\mathbf{B} = \pm \mathbf{B}_{0}$ (with a consistent choice of sign everywhere), since the remaining vector in the orthonormal basis $\mathbf{T}, \mathbf{N}, \mathbf{B}$ must be along $\mathbf{B}_{0}$.
+
+Then, since $\mathbf{B}$ is a constant, we have
+$$
+\begin{split}
+\tau & = - \frac{1}{v}\left( \frac{d\mathbf{B}}{dt} \cdot \mathbf{N} \right) \\
+ & = 0.
+\end{split}
+$$
+
+Notice that if any of these hold then we can say, first of all, that $\alpha \subset \mathcal{P}$ is planar. Moreover, $\mathbf{B}$ is the normal vector to the plane (in one direction or the other), and since $\mathbf{T}, \mathbf{N}$ are orthogonal to it, they "generate the plane".
+
+##### _corollary:_ torsionless curves of constant curvature
+
+Suppose a strongly regular curve $\alpha$ has torsion $\tau = 0$ and constant curvature $\kappa$. Then $\alpha$ is contained in a circle of radius $r = \frac{1}{\kappa_{0}}$.
+
+##### _proof:_
+
+Here let, $\mathbf{T}, \mathbf{N}, \mathbf{B}$ represent just their vector parts. Consider $\alpha^* = \alpha + \frac{1}{\kappa} \mathbf{N}$. Thus,
+$$
+\begin{split}
+(\alpha^*)' & = \alpha' + \frac{1}{\kappa} \mathbf{N}' \\
+ & = v \mathbf{T} + \frac{1}{\kappa}(-\kappa v \mathbf{T} + \tau v \mathbf{B}) \\
+ & = 0
+\end{split}
+$$
+
+Thus, $\alpha^*$ is just a constant point. It turns out this is just the centre of the circle. Particularly, we can show that we always have
+$$
+\begin{split}
+\lVert \alpha(t) - \alpha^*(t) \rVert & = \lVert \frac{1}{\kappa} \mathbf{N} \rVert  \\
+ & = \frac{1}{\kappa}
+\end{split}
+$$
+Thus, $\alpha$ is a constant distance from a fixed point, and lies in a plane $\mathcal{P}$. That is, $\alpha$ is a circle.
