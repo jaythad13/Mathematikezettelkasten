@@ -48,7 +48,7 @@
 								& = (1_{H}, 1_{G})
 		\end{split}
 	\]
-	Similarly, we can also show that it is a left inverse. We just need to recall that automorphisms, like any other homomorphism, preserve inverses. That is, for any $g \in G, h \in H$, $\alpha_{g}(h^{-1}) = \alpha_{g}(h)^{-1}$ ---
+	Similarly, we can also show that it is a left inverse. We just need to recall that automorphisms, like any other homomorphism, preserve inverses. That is, for any $g \in G, h \in H$, $\alpha_{g}(h^{-1}) = \alpha_{g}(h)^{-1}$. This gives us
 	\[
 		\begin{split}
 			(\alpha_{g^{-1}}(h^{-1}), g^{-1})(h, g) & = (\alpha_{g^{-1}}(h)^{-1} \alpha_{g^{-1}}(h), g^{-1} g) \\
@@ -123,6 +123,16 @@
 	Suppose a group contains elements $a$ and $b$ such that $\vert a \vert = 4$, $\vert b \vert = 2$, and $a^{3}b = ba$. What can you say about $\vert ab \vert$?
 \end{problem}
 
+\begin{solution}
+	\[
+		\boxed{
+			\vert ab \vert = 2.
+		}
+	\] \\
+	Notice that if we multiply on the left by $a$ and on the right by $b$, we get $a^{4} b^{2} = ab ab$. Since $a^{4} = b^{2} = 1$, we have $(ab)^{2} = 1$. Thus $\vert ab \vert \le 2$. \\\\
+	If we had $\vert ab \vert = 1$ then we would have $ab = 1$, and thus, $a = b^{-1}$. But notice that $b^{-1} = b$, and then we would have that $\vert a \vert = \vert b \vert = 2$ which is not true. Thus, we cannot have $\vert ab \vert = 1$. Thus, $\vert ab \vert = 2$.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[4.]
@@ -164,13 +174,13 @@
 \begin{solution}
 	\begin{enumerate}
 		\item \fbox{False} \\\\
-			$Q_{8}$ has exactly one element of order $2$: $-1$. $D_{8}$ has three: $s$, $r^{2}$, and $sr^{2}$. Since isomorphisms preserve the number of elements of each order there cannot be an isomorphism between them.
+			$Q_{8}$ has exactly one element of order two: $-1$. $D_{8}$ has five: $r^{2}$, $sr$, $sr^{2}$, and $sr^{3}$. Since isomorphisms preserve the number of elements of each order (we showed this in Homework 6, Dummit \& Foote \S1.6 \#2) there cannot be an isomorphism between them.
 		\item \fbox{False} \\\\
-			$\mathbb{Z}/4\mathbb{Z}$ is cyclic and $\mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z}$ is not. Since isomorphisms preserve powers, if they were isomorphic, we would be able to generate all of $\mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z}$ from the image of any of the generators of $\mathbb{Z}/4\mathbb{Z}$ ($\overline{1}$ and $\overline{3}$) under the isomorphism, but since $\mathbb{Z}/2\mathbb{Z}$ is not cyclic, it's clear that we cannot do so.
+			$\mathbb{Z}/4\mathbb{Z}$ is cyclic and $\mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z}$ is not. Since isomorphisms preserve powers, if they were isomorphic, we would be able to generate all of $\mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z}$ from the image of either of the generators of $\mathbb{Z}/4\mathbb{Z}$ ($\overline{1}$ and $\overline{3}$) under the isomorphism, but since $\mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z}$ is not cyclic, it's we cannot do so.
 		\item \fbox{False} \\\\
 			The order of a permutation is the least common multiple of the lengths of the cycles in its cycle decomposition. Here, $\operatorname{lcm} (2, 3, 4) = 12$, and thus, $\vert \sigma \vert = 12 \neq 24$.
 		\item \fbox{False} \\\\
-			The trivial homomorphism $G \to G$ by $g \mapsto 1$ for all $g \in G$ is clearly not injective, and thus, not an automorphism.
+			The trivial homomorphism $G \to G$ by $g \mapsto 1$ for all $g \in G$ is not (injective since its kernel is all of $G$), and thus, not an automorphism.
 		\item \fbox{False} \\\\
 			This is only true if $G$ is abelian. Consider on any non-abelian group  $\varphi : G \to G$  by $g \mapsto g^{-1}$ . Note that we have $g, h \in G$  such that $g h \neq h g$ . Then consider that
 			\[
