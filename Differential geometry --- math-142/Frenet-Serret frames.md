@@ -28,6 +28,8 @@ The best way to describe this is with a commutative diagram. Suppose we have a c
 \end{document}
 ```
 
+Note that the $\alpha$ arrow makes the diagram technically not commutative anymore.
+
 We only really care about $\alpha'$.
 
 Recall the idea of reparameterisations. 
@@ -75,6 +77,8 @@ Now we can go back to this diagram of our short exact sequence
 ```
 
 Notice how although it's most natural to have $u = \dfrac{d\alpha}{dt}$, we don't have to, and if we use something different, then $Y$ doesn't have to be $\alpha'$ either. This leads to the definition of a vector field on a curve.
+
+Again, note that the $\alpha$ arrow means the diagram doesn't commute, but we're using it to see the short exact sequence.
 
 ##### _definition:_ vector field on a curve
 
