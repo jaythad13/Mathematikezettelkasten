@@ -1,0 +1,65 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 142 --- Differential Geometry}
+\assignment{Homework assignment \#5}
+\duedate{1st March 2024}
+
+\begin{document}
+
+\begin{problem}[Problem 1.]
+	 For the curve $\alpha : \mathbb{R} \to \mathbb{R}^{3}$  defined by $\alpha(t) = (2t, t^{2}, t^{3}/3)$ ,
+	\begin{enumerate}
+		\item Compute the Frenet-Serret apparatus.
+		\item Sketch the curve for $-4 \le t \ge 4$, showing $\mathbf{T}$, $\mathbf{N}$, and $\mathbf{B}$ at $t = 2$.
+		\item Find the limiting values of $\mathbf{T}$, $\mathbf{N}$, and $\mathbf{B}$ as $t \to - \infty$ and $t \to \infty$.
+	\end{enumerate} 
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Problem 2.]
+	We say that a regular curve $\alpha : I \to \mathbb{R}^{3}$ is a \textit{cylindrical helix} if the unit tangent vector $\mathbf{T}$ has a constant angle for some fixed unit tangent vector $[\mathbf{u}, \mathbf{p}] \in \mathrm{T}_{\mathbf{p}}\mathbb{R}^{3}$; that is, $\mathbf{T} \cdot [\mathbf{u}, \mathbf{p}] = \cos{\vartheta}$ whenever $\mathbf{p} = \alpha(t)$.
+	\begin{enumerate}
+		\item If $\alpha : I \to \mathbb{R}^{3}$ is a cylindrical helix, prove that the unit vector $[\mathbf{u}, \mathbf{p}]$ is
+			\[
+				[\mathbf{u}, \mathbf{p}] = \frac{\tau}{\sqrt{\kappa^{2} + \tau^{2}}} \mathbf{T} + \frac{\kappa}{\sqrt{\kappa^{2} + \tau^{2}}} \mathbf{B}.
+			\]
+		\item CHeck (a) for the cylindrical helix $\alpha : \mathbb{R} \to \mathbb{R}^{3}$ defined by $\alpha(t) = (a \cos{t}, a \sin{t}, bt)$ with $a, b \in \mathbb{R} \setminus \{ 0 \}$.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Problem 3.]
+	Let $\alpha : I \to \mathbb{R}^{3}$ be a cylindrical helix with unit vector $[\mathbf{u}, \alpha(t)]$. For each fixed $t_{0} \in I$, the curve $\sigma : I \to \mathbb{R}^{3}$ is defined by
+	\[
+		\sigma(t) = \alpha(t) - ((\alpha(t) - \alpha(t_{0})) \cdot \mathbf{u}) \mathbf{u}
+	\]
+	is called a \textit{cross-sectional curve} of the cylinder on which $\alpha$ lies. Prove:
+	\begin{enumerate}
+		\item $\sigma$ lies on the plane $\mathcal{P} = \{ (x, y, z) \in \mathbb{R}^{3} | u_{1}(x - x_{0}) + u_{2}(y - y_{0}) + u_{3}(z - z_{0}) = 0 \}$ where $\mathbf{u} = (u_{1}, u_{2}, u_{3})$ and $\alpha(t_{0}) = (x_{0}, y_{0}, z_{0})$. 
+		\item The curvature of $\sigma$ is $\kappa/\sin^{2}{\vartheta}$ where $\kappa$ is the curvature of $\alpha$.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Problem 4.]
+	Consider the curve $\alpha : \mathbb{R} \to \mathbb{R}^{3}$  defined by $\alpha(t) = (2t, t^{2}, t^{3}/3)$ .
+	\begin{enumerate}
+		\item Verify that it is a cylindrical helix.
+		\item Find the unit vector $\mathbf{u} = \mathbb{R}^{3}$.
+		\item Find the angle $\vartheta$.
+		\item Compute the cross-sectional curve $\sigma : \mathbb{R} \to \mathbb{R}^{3}$.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Problem 5.]
+	Prove that the cubic curve $\alpha(t) = (at, b t^{2}, c t^{3})$ for some $a, b, c \in \mathbb{R} \setminus \{ 0 \}$ is a cylindrical helix if and only if $3ac = \pm 2b^{2}$.
+\end{problem}
+
+\end{document}
