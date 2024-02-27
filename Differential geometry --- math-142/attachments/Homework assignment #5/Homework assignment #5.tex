@@ -12,10 +12,138 @@
 	 For the curve $\alpha : \mathbb{R} \to \mathbb{R}^{3}$  defined by $\alpha(t) = (2t, t^{2}, t^{3}/3)$ ,
 	\begin{enumerate}
 		\item Compute the Frenet-Serret apparatus.
-		\item Sketch the curve for $-4 \le t \ge 4$, showing $\mathbf{T}$, $\mathbf{N}$, and $\mathbf{B}$ at $t = 2$.
+		\item Sketch the curve for $-4 \le t \le 4$, showing $\mathbf{T}$, $\mathbf{N}$, and $\mathbf{B}$ at $t = 2$.
 		\item Find the limiting values of $\mathbf{T}$, $\mathbf{N}$, and $\mathbf{B}$ as $t \to - \infty$ and $t \to \infty$.
 	\end{enumerate} 
 \end{problem}
+
+\begin{solution}
+	For this exercise let $\mathbf{T}, \mathbf{N}, \mathbf{B}, \alpha', \alpha'', \alpha'''$ denote just the vector parts of the tangent vectors that are usually denoted by them.
+	\begin{enumerate}
+		\item
+			\[
+				\boxed{
+					\begin{gathered}
+						\mathbf{T} = \left ( \frac{2}{t^{2} + 2}, \frac{2t}{t^{2} + 2}, 1 - \frac{2}{t^{2} + 2} \right ). \\
+						\mathbf{N} = \frac{(-2t, 2 - t^{2}, 2t)}{t^{2} + 2}. \\
+						\mathbf{B} = \frac{(t^{4} + 4t^{2}, -2t^{3} - 4t, 2t^{2} + 4)}{(t^{2} + 2)^{2}}. \\
+						v = t^{2} + 2. \\
+						\kappa = \frac{2}{(t^{2} + 2)^{2}}. \\
+						\tau = \frac{2}{(t^{2} + 2)^{2}}.
+					\end{gathered}
+				}
+			\] \\
+			Given $\alpha$, we can compute $\alpha'$, $\alpha''$, and $\alpha'''$ as follows.
+			\[
+				\begin{gathered}
+					\alpha' = (2, 2t, t^{2}) \\
+					\alpha'' = (0, 2, 2t) \\
+					\alpha''' = (0, 0, 2)
+				\end{gathered}
+			\]
+			Thus, we have the speed $v$ given by
+			\[
+				\begin{split}
+					v & = \lVert \alpha' \rVert \\
+					  & = \lVert (2, 2t, t^{2}) \rVert \\
+					  & = \sqrt{4 + 4t^{2} + t^{4}} \\
+					  & = t^{2} + 2.
+				\end{split}
+			\]
+			This also gives us
+			\[
+				\begin{split}
+					\mathbf{T} & = \frac{\alpha'}{v} \\
+						   & = \frac{(2, 2t, t^{2})}{t^{2} + 2} \\
+						   & = \left ( \frac{2}{t^{2} + 2}, \frac{2t}{t^{2} + 2}, 1 - \frac{2}{t^{2} + 2} \right ).
+				\end{split}
+			\] \\
+			Now, we can calculate $\mathbf{N}$ by looking at $\mathbf{T}'$ and its norm ---
+			\[
+				\begin{split}
+					\mathbf{T}' & = \frac{d}{dt} \left ( \frac{2}{t^{2} + 2}, \frac{2t}{t^{2} + 2}, 1 - \frac{2}{t^{2} + 2} \right ) \\
+						    & = \left ( - \frac{4t}{(t^{2} + 2)^{2}}, \frac{2}{t^{2} + 2} - \frac{4t^{2}}{(t^{2} + 2)^{2}}, \frac{4t}{(t^{2} + 2)^{2}} \right ) \\
+						    & = \left ( - \frac{4t}{(t^{2} + 2)^{2}}, \frac{4 - 2t^{2}}{(t^{2} + 2)^{2}}, \frac{4t}{(t^{2} + 2)^{2}} \right ) \\
+						    & = \frac{(-4t, 4 - 2t^{2}, 4t)}{(t^{2} + 2)^{2}}.
+				\end{split}
+			\]
+			Thus, we have $\lVert \mathbf{T}' \rVert$ given by
+			\[
+				\begin{split}
+					\lVert \mathbf{T}' \rVert & = \sqrt{\frac{4t^{4} + 16t^{2} + 16}{(t^{2} + 2)^{4}}} \\
+								 & = \sqrt{\frac{4(t^{2} + 2)^{2}}{(t^{2} + 2)^{4}}} \\
+								 & = \frac{2}{t^{2} + 2}
+				\end{split}
+			\]
+			Thus, we have
+			\[
+				\begin{split}
+					\mathbf{N} & = \frac{\mathbf{T}'}{\lVert \mathbf{T}' \rVert} \\
+						   & = \frac{(-2t, 2 - t^{2}, 2t)}{t^{2} + 2}.
+				\end{split}
+			\] \\
+			From this, we can calculate $\mathbf{B} = \mathbf{T} \times \mathbf{N}$ as follows 
+			\[
+				\begin{split}
+					\mathbf{B} & = \mathbf{T} \times \mathbf{N} \\
+						   & = \frac{(2, 2t, t^{2})}{t^{2} + 2} \times \frac{(-2t, 2 - t^{2}, 2t)}{t^{2} + 2} \\
+						   & = \frac{1}{(t^{2} + 2)^{2}}
+						   \begin{vmatrix}
+							   \mathbf{i} & \mathbf{j} & \mathbf{k} \\
+							   2 & 2t & t^{2} \\
+							   -2t & 2 - t^{2} & 2t
+						   \end{vmatrix} \\
+						   & = \frac{(t^{4} + 4t^{2}, -2t^{3} - 4t, 2t^{2} + 4)}{(t^{2} + 2)^{2}}.
+				\end{split}
+			\]
+			Finally, we can calculate $\kappa$ as
+			\[
+				\begin{split}
+					\kappa & = \frac{\lVert (2, 2t, t^{3}) \times (0, 2, 2t) \rVert}{(t^{2} + 2)^{3}} \\
+					       & = \frac{1}{(t^{2} + 2)^{2}}
+					       \begin{Vmatrix}
+						       \mathbf{i} & \mathbf{j} & \mathbf{k} \\
+						       2 & 2t & t^{2} \\
+						       0 & 2 & 2t
+					       \end{Vmatrix} \\
+					       & = \frac{\lVert (2t^{2}, - 4t, 4) \rVert}{(t^{2} + 2)^{3}} \\
+					       & = \frac{\sqrt{4t^{4} + 16 t^{2} + 16}}{(t^{2} + 2)^{2}} \\
+					       & = \frac{2 (t^{2} + 2)}{(t^{2} + 2)^{3}} \\
+					       & = \frac{2}{(t^{2} + 2)^{2}}.
+				\end{split}
+			\] \\
+			Note that this gives us the result $\lVert \alpha' \times \alpha'' \rVert = 2(t^{2} + 2)$ for $\tau$
+			\[
+				\begin{split}
+					\tau & = \frac{\alpha' \times \alpha'' \cdot \alpha'''}{\lVert \alpha' \times \alpha'' \rVert^{2}} \\
+					     & = \frac{(2t^{2}, -4t, 4) \cdot (0, 0, 2)}{4(t^{2} + 2)^{2}} \\
+					     & = \frac{2}{(t^{2} + 2)^{2}}.
+				\end{split}
+			\]
+		\item
+			
+		\item As $t \to \infty$ we have
+			\[
+				\boxed{
+					\begin{gathered}
+						\mathbf{T} \to (0, 0, 1) \\
+						\mathbf{N} \to (-1, 0, 0) \\
+						\mathbf{B} \to (1, 0, 0).
+					\end{gathered}
+				}
+			\]
+			and as $t \to \infty$
+			\[
+				\boxed{
+					\begin{gathered}
+						\mathbf{T} \to (0, 0, 1) \\
+						\mathbf{N} \to (-1, 0, 0) \\
+						\mathbf{B} \to (1, 0, 0).
+					\end{gathered}
+				}
+			\]
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
@@ -26,7 +154,7 @@
 			\[
 				[\mathbf{u}, \mathbf{p}] = \frac{\tau}{\sqrt{\kappa^{2} + \tau^{2}}} \mathbf{T} + \frac{\kappa}{\sqrt{\kappa^{2} + \tau^{2}}} \mathbf{B}.
 			\]
-		\item CHeck (a) for the cylindrical helix $\alpha : \mathbb{R} \to \mathbb{R}^{3}$ defined by $\alpha(t) = (a \cos{t}, a \sin{t}, bt)$ with $a, b \in \mathbb{R} \setminus \{ 0 \}$.
+		\item Check (a) for the cylindrical helix $\alpha : \mathbb{R} \to \mathbb{R}^{3}$ defined by $\alpha(t) = (a \cos{t}, a \sin{t}, bt)$ with $a, b \in \mathbb{R} \setminus \{ 0 \}$.
 	\end{enumerate}
 \end{problem}
 
