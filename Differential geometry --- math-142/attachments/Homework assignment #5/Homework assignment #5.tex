@@ -26,7 +26,7 @@
 					\begin{gathered}
 						\mathbf{T} = \left ( \frac{2}{t^{2} + 2}, \frac{2t}{t^{2} + 2}, 1 - \frac{2}{t^{2} + 2} \right ). \\
 						\mathbf{N} = \frac{(-2t, 2 - t^{2}, 2t)}{t^{2} + 2}. \\
-						\mathbf{B} = \frac{(t^{4} + 4t^{2}, -2t^{3} - 4t, 2t^{2} + 4)}{(t^{2} + 2)^{2}}. \\
+						\mathbf{B} = \frac{(t^{2}, -2t, 2)}{t^{2} + 2}. \\
 						v = t^{2} + 2. \\
 						\kappa = \frac{2}{(t^{2} + 2)^{2}}. \\
 						\tau = \frac{2}{(t^{2} + 2)^{2}}.
@@ -93,7 +93,8 @@
 							   2 & 2t & t^{2} \\
 							   -2t & 2 - t^{2} & 2t
 						   \end{vmatrix} \\
-						   & = \frac{(t^{4} + 4t^{2}, -2t^{3} - 4t, 2t^{2} + 4)}{(t^{2} + 2)^{2}}.
+						   & = \frac{(t^{4} + 2t^{2}, -2t^{3} - 4t, 2t^{2} + 4)}{(t^{2} + 2)^{2}} \\
+						   & = \frac{(t^{2}, -2t, 2)}{t^{2} + 2}.
 				\end{split}
 			\]
 			Finally, we can calculate $\kappa$ as
@@ -121,13 +122,17 @@
 				\end{split}
 			\]
 		\item
-			
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width = 0.75 \textwidth]{P 1 b curve with Frenet frame}
+				\caption{$\alpha$ for $t \in [-4, 4]$ with the Frenet frame at $t = 2$}
+			\end{figure}
 		\item As $t \to \infty$ we have
 			\[
 				\boxed{
 					\begin{gathered}
 						\mathbf{T} \to (0, 0, 1) \\
-						\mathbf{N} \to (-1, 0, 0) \\
+						\mathbf{N} \to (0, -1, 0) \\
 						\mathbf{B} \to (1, 0, 0).
 					\end{gathered}
 				}
@@ -137,7 +142,7 @@
 				\boxed{
 					\begin{gathered}
 						\mathbf{T} \to (0, 0, 1) \\
-						\mathbf{N} \to (-1, 0, 0) \\
+						\mathbf{N} \to (0, -1, 0) \\
 						\mathbf{B} \to (1, 0, 0).
 					\end{gathered}
 				}
