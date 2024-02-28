@@ -299,3 +299,19 @@ $$
 \end{split}
 $$
 Thus, $\alpha$ is a constant distance from a fixed point, and lies in a plane $\mathcal{P}$. That is, $\alpha$ is a circle.
+
+### Frame field?
+
+Is the Frenet-Serret frame a frame field? It does assign a frame to each point $\mathbf{p} = \alpha(t)$, but $\mathbf{T}, \mathbf{N}, \mathbf{B}$ aren't vector fields — they are actually assigning frames to $t \in I$. Can we find vector fields $\mathbf{E}_{1}, \mathbf{E}_{2}, \mathbf{E}_{3}$ that give us
+$$
+\begin{gathered}
+\mathbf{T}(t) = \mathbf{E}_{1}(\mathbf{p}) \\
+\mathbf{N}(t) = \mathbf{E}_{2}(\mathbf{p}) \\
+\mathbf{B}(t) = \mathbf{E}_{3}(\mathbf{p})
+\end{gathered}
+$$
+where $\mathbf{v}$ is some function of $t$? Possibly, $\mathbf{p} = \alpha(t)$?
+
+Yes we can! As long as our curve doesn't go in multiple different directions at the same point, we're good! This will lead us to the notion of simple closed curves (and simple open curves).
+
+We won't do this rigorously right now, but basically, the circle gives us the cylindrical frame field, and the helix gives us the spherical frame field as their Frenet-Serret frames.
