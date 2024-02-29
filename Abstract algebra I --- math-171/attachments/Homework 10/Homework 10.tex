@@ -1,0 +1,63 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 171 --- Abstract Algebra I}
+\assignment{Homework 10}
+\duedate{1st March 2024}
+
+\begin{document}
+
+\begin{problem}[Dummit \& Foote \S2.3 \#2]
+	If $x$ is an element of the finite group $G$ and $\lvert x \rvert = \lvert G \rvert$, prove that $G = \left < x \right >$. Give an explicit example to show that this result need not be true if $G$ is an infinite group.
+\end{problem}
+
+\begin{solution}
+	Suppose we have $\lvert x \rvert = \lvert G \rvert = n$ for some $n \in \mathbb{N}$. Then we have already shown (in the take-home portion of Exam 1) that we have distinct $x, x^{2}, \dots, x^{n - 1}$ with none of them the identity. Thus, $x, x^{2}, \dots, x^{n}$ are $n$ distinct elements of $G$, and thus, the only $n$ elements of $G$. Since they are all powers of $x$ we have $G = \left < x \right >$. \\\\
+	Consider the additive group of integers $\mathbb{Z}$. $2$ has infinite order in $\mathbb{Z}$ and $\mathbb{Z}$ is a group of infinite order. However, $\mathbb{Z} \neq \left < 2 \right >$ since $1 \notin \left < 2 \right >$.
+\end{solution}
+
+\pagebreak
+
+\begin{problem}[Dummit \& Foote \S2.3 \#4]
+	Find all the generators for $\mathbb{Z}/48 \mathbb{Z}$.
+\end{problem}
+
+\begin{solution}
+	\[
+		\boxed{
+			\text{generators of } \mathbb{Z}/48 \mathbb{Z} = \{ \overline{1}, \overline{5}, \overline{7}, \overline{11}, \overline{13}, \overline{17}, \overline{19}, \overline{23}, \overline{25}, \overline{29}, \overline{31}, \overline{35}, \overline{37}, \overline{41}, \overline{43}, \overline{47} \}.
+		}
+	\]	
+	We know that for any group $G$ and $x \in G$ of finite order $n$, we have that $\lvert x^{a} \rvert = \frac{n}{(n, a)}$. We also have that if $x^{a}$ has order $\lvert G \rvert < \infty$ then $x^{a}$ generates $G$. \\\\
+	Thus, for the finite group $\mathbb{Z}/48\mathbb{Z}$ the generators are all the elements $1^{a} = \overline{a}$ such that $(48, a) = 1$ and thus, $\lvert \overline{a} \rvert = 48$. These are
+	\[
+		\{ \overline{1}, \overline{5}, \overline{7}, \overline{11}, \overline{13}, \overline{17}, \overline{19}, \overline{23}, \overline{25}, \overline{29}, \overline{31}, \overline{35}, \overline{37}, \overline{41}, \overline{43}, \overline{47} \}
+	\]
+\end{solution}
+
+\pagebreak
+
+\begin{problem}[Dummit \& Foote \S2.3 \#8]
+	Let $Z_{48} = \left < x \right >$. For which integers, $a$ does the map $\varphi_{a}$ defined by $\varphi_{a} : \overline{1} \mapsto x^{a}$ extend to an isomorphism from $\mathbb{Z} / 48 \mathbb{Z}$ onto $Z_{48}$?
+\end{problem}
+
+\begin{solution}
+	\[
+		\boxed{
+			a \in \{ \overline{1}, \overline{5}, \overline{7}, \overline{11}, \overline{13}, \overline{17}, \overline{19}, \overline{23}, \overline{25}, \overline{29}, \overline{31}, \overline{35}, \overline{37}, \overline{41}, \overline{43}, \overline{47} \}.
+		}
+	\]
+	Note that if $\lvert x^{a} \rvert < 48$, then we would have $(x^{a})^{m} = (x^{a})^{n}$ for some $m \neq n$ with $0 < m, n < 48$. Thus, $\varphi_{a}(\overline{m}) = \varphi_{a}(\overline{n})$ while $\overline{m} \neq \overline{n}$, making $\varphi_{a}$ non-injective, and thus, not an isomorphism. \\\\
+	If $\lvert x^{a} \rvert = 48$, then we can never have $(x^{a})^{m} = (x^{a})^{n}$ for $m \neq n$ with $0 < m, n < 48$ (we showed this in Exam 1). Thus, $\varphi_{a}$ is injective. Since $\lvert \mathbb{Z}/48 \mathbb{Z} \rvert = \lvert Z_{48} \rvert < \infty$, the surjectivity of $\varphi_{a}$ follows from injectivity, and thus, we have that $\varphi_{a}$ is an isomorphism.
+
+	Thus, $\varphi_{a}$ is an isomorphism if and only if $\lvert x^{a} \rvert = 48$ which, by the previous problem are exactly those $a$ that give $(48, a) = 1$.
+\end{solution}	
+
+\pagebreak
+
+\begin{problem}[Dummit \& Foote \S2.4 \#12]
+	Prove that the subgroup of upper triangular matrices in $\mathrm{GL}_{3}(\mathbb{F}_{2})$ is isomorphic to the dihedral group of order $8$.
+\end{problem}
+
+\end{document}
