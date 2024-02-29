@@ -157,11 +157,81 @@
 	\begin{enumerate}
 		\item If $\alpha : I \to \mathbb{R}^{3}$ is a cylindrical helix, prove that the unit vector $[\mathbf{u}, \mathbf{p}]$ is
 			\[
-				[\mathbf{u}, \mathbf{p}] = \frac{\tau}{\sqrt{\kappa^{2} + \tau^{2}}} \mathbf{T} + \frac{\kappa}{\sqrt{\kappa^{2} + \tau^{2}}} \mathbf{B}.
+				\frac{\tau}{\sqrt{\kappa^{2} + \tau^{2}}} \mathbf{T} + \frac{\kappa}{\sqrt{\kappa^{2} + \tau^{2}}} \mathbf{B}.
 			\]
 		\item Check (a) for the cylindrical helix $\alpha : \mathbb{R} \to \mathbb{R}^{3}$ defined by $\alpha(t) = (a \cos{t}, a \sin{t}, bt)$ with $a, b \in \mathbb{R} \setminus \{ 0 \}$.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item	Let $[\mathbf{u}, \mathbf{p}]$ be the unit constant vector with fixed angle to the tangent vector. Then note that we can show that $[\mathbf{u}, \mathbf{p}]$ has only constant components in the directions of $\mathbf{T}$ and $\mathbf{B}$. \\\\
+			Specifically,
+			\[
+				\begin{split}
+					(\mathbf{T} \cdot [\mathbf{u}, \mathbf{p}])' & = \mathbf{T}' \cdot [\mathbf{u}, \mathbf{p}] + \mathbf{T} \cdot [\mathbf{u}, \mathbf{p}]' \\
+										     & = \kappa v \, \mathbf{N} \cdot [\mathbf{u}, \mathbf{p}]
+				\end{split}
+			\]
+			But we already know that $\mathbf{T} \cdot [\mathbf{u}, \mathbf{p}]$ is constant and thus, that $(\mathbf{T} \cdot [\mathbf{u}, \mathbf{p}])' = 0$. Thus, $\kappa v \, \mathbf{N} \cdot [\mathbf{u}, \mathbf{p}] = 0$ always, and since $\alpha$ is strongly regular $\kappa v$ is never $0$. Thus, $\mathbf{N} \cdot [\mathbf{u}, \mathbf{p}] = 0$ and $[\mathbf{u}, \mathbf{p}]$ has no component along $\mathbf{N}$. \\\\
+			Since we know that $\mathbf{T} \cdot [\mathbf{u}, \mathbf{p}]$ and $\lVert [\mathbf{u}, \mathbf{p}] \rVert = 1$, we can write $\lVert [\mathbf{u}, \mathbf{p}] \rVert$ in the orthonormal basis $\mathbf{T}, \mathbf{N}, \mathbf{B}$ to get
+			\[
+				(\mathbf{T} \cdot [\mathbf{u}, \mathbf{p}])^{2} + (\mathbf{N} \cdot [\mathbf{u}, \mathbf{p}])^{2} + (\mathbf{B} \cdot [\mathbf{u}, \mathbf{p}])^{2} = 1
+			\]
+			which reduces to
+			\[
+				(\mathbf{B} \cdot [\mathbf{u}, \mathbf{p}])^{2} = 1 - \cos^{2}{\vartheta}.
+			\]
+			Since $\cos{\vartheta}$ is constant, we get that $\mathbf{B} \cdot [\mathbf{u}, \mathbf{p}] = \sin{\vartheta}$ is constant. Thus,
+			\[
+				[\mathbf{u}, \mathbf{p}] = \cos{\vartheta} \, \mathbf{T} + \sin{\vartheta} \, \mathbf{B}.
+			\] \\
+			Once we have this result we can differentiate on both sides with respect to $t$ to get
+			\[
+				\begin{split}
+					0 & = [\mathbf{u}, \mathbf{p}]' \\
+					  & = \cos{\vartheta} \, \mathbf{T}' + \sin{\vartheta} \, \mathbf{B}' \\
+					  & = \kappa v \cos{\vartheta} \, \mathbf{N} - \tau v \sin{\vartheta} \, \mathbf{N}
+				\end{split}
+			\]
+			Thus,
+			\[
+				\kappa v \cos{\vartheta} \, \mathbf{N} = \tau v \sin{\vartheta} \, \mathbf{N}
+			\]
+			and since none of $v, \mathbf{N}$ are zero, we have
+			\[
+				\kappa \cos{\vartheta} = \tau \sin{\vartheta}.
+			\] \\
+			Squaring both sides, we get
+			\[
+				\kappa^{2} \cos^{2}{\vartheta} = \tau^{2} (1 - \cos^{2}{\vartheta})
+			\]
+			which we can rewrite as
+			\[
+				\cos^{2}{\vartheta} = \frac{\tau^{2}}{\kappa^{2} + \tau^{2}}.
+			\]
+			Note that this also gives us
+			\[
+				\begin{split}
+					\sin^{2}{\vartheta} & = 1 - \cos^{2}{\vartheta} \\
+							    & = 1 - \frac{\tau^{2}}{\kappa^{2} + \tau^{2}} \\
+							    & = \frac{\kappa^{2}}{\kappa^{2} + \tau^{2}} 
+				\end{split}
+			\] \\
+			Taking square roots we get
+			\[
+				\begin{gathered}
+					\cos{\vartheta} = \frac{\tau}{\sqrt{\kappa^{2} + \tau^{2}}} \\
+					\sin{\vartheta} = \frac{\kappa}{\sqrt{\kappa^{2} + \tau^{2}}}
+				\end{gathered}
+			\]
+			and thus
+			\[
+				[\mathbf{u}, \mathbf{p}] = \frac{\tau}{\sqrt{\kappa^{2} + \tau^{2}}} \mathbf{T} + \frac{\kappa}{\sqrt{\kappa^{2} + \tau^{2}}} \mathbf{B}
+			\]
+			as desired.
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
