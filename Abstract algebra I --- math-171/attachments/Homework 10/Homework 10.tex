@@ -45,12 +45,11 @@
 \begin{solution}
 	\[
 		\boxed{
-			a \in \{ \overline{1}, \overline{5}, \overline{7}, \overline{11}, \overline{13}, \overline{17}, \overline{19}, \overline{23}, \overline{25}, \overline{29}, \overline{31}, \overline{35}, \overline{37}, \overline{41}, \overline{43}, \overline{47} \}.
+			a \in \{ 1, 5, 7, 11, 13, 17, 19, 23, 25, 29, 31, 35, 37, 41, 43, 47 \}.
 		}
 	\]
-	Note that if $\lvert x^{a} \rvert < 48$, then we would have $(x^{a})^{m} = (x^{a})^{n}$ for some $m \neq n$ with $0 < m, n < 48$. Thus, $\varphi_{a}(\overline{m}) = \varphi_{a}(\overline{n})$ while $\overline{m} \neq \overline{n}$, making $\varphi_{a}$ non-injective, and thus, not an isomorphism. \\\\
-	If $\lvert x^{a} \rvert = 48$, then we can never have $(x^{a})^{m} = (x^{a})^{n}$ for $m \neq n$ with $0 < m, n < 48$ (we showed this in Exam 1). Thus, $\varphi_{a}$ is injective. Since $\lvert \mathbb{Z}/48 \mathbb{Z} \rvert = \lvert Z_{48} \rvert < \infty$, the surjectivity of $\varphi_{a}$ follows from injectivity, and thus, we have that $\varphi_{a}$ is an isomorphism.
-
+	If $\lvert x^{a} \rvert < 48$, then we would have $(x^{a})^{m} = (x^{a})^{n}$ for some $m \neq n$ with $0 < m, n < 48$ (since all $48$ powers being distinct would just give us $\lvert x^{a} \rvert = 48$). Thus, $\varphi_{a}(\overline{m}) = \varphi_{a}(\overline{n})$ while $\overline{m} \neq \overline{n}$, making $\varphi_{a}$ non-injective, and thus, not an isomorphism. \\\\
+	If $\lvert x^{a} \rvert = 48$, then we can never have $(x^{a})^{m} = (x^{a})^{n}$ for $m \neq n$ with $0 < m, n < 48$ (we showed this in Exam 1). Thus, $\varphi_{a}$ is injective. Since $\lvert \mathbb{Z}/48 \mathbb{Z} \rvert = \lvert Z_{48} \rvert < \infty$, the surjectivity of $\varphi_{a}$ follows from injectivity, and thus, we have that $\varphi_{a}$ is an isomorphism. \\\\
 	Thus, $\varphi_{a}$ is an isomorphism if and only if $\lvert x^{a} \rvert = 48$ which, by the previous problem are exactly those $a$ that give $(48, a) = 1$.
 \end{solution}	
 
@@ -59,5 +58,72 @@
 \begin{problem}[Dummit \& Foote \S2.4 \#12]
 	Prove that the subgroup of upper triangular matrices in $\mathrm{GL}_{3}(\mathbb{F}_{2})$ is isomorphic to the dihedral group of order $8$.
 \end{problem}
+
+\begin{solution}
+	Let $H$ be the desired subgroup of $\mathrm{GL}_{3}(\mathbb{F}_{2})$. First we will show that $\lvert H \rvert = \lvert D_{8} \rvert = 8$. \\\\
+	Note that since any $h \in H$ is a non-singular upper triangular matrix, it must have all non-zero values on its diagonal. Thus, it must be of the form
+	\[
+		\begin{bmatrix}
+			1 & b & c \\
+			0 & 1 & d \\
+			0 & 0 & 1
+		\end{bmatrix}
+	\]
+	with $b, c, d \in \mathbb{F}_{2}$. Since there are two possible choices for each of $b, c, d \in \mathbb{F}_{2}$, there are $8$ possible choices in total, and thus, $\lvert H \rvert = \lvert D_{8} \rvert = 8$. \\\\
+	Note that for $R = 
+	\begin{bmatrix}
+		1 & 1 & 1 \\
+		0 & 1 & 1 \\
+		0 & 0 & 1
+	\end{bmatrix}$ 
+	and $S = 
+	\begin{bmatrix}
+		1 & 0 & 1 \\
+		0 & 1 & 1 \\
+		0 & 0 & 1
+	\end{bmatrix}$, we have $\lvert R \rvert = 4$, $\lvert S \rvert = 2$, and $R^{m} \neq S$ for any integer $m$. We can prove this by explicit computation.
+	\[
+			R = \begin{bmatrix}
+			1 & 1 & 1 \\
+			0 & 1 & 1 \\
+			0 & 0 & 1
+			\end{bmatrix} \quad
+			R^{2} = 
+			\begin{bmatrix}
+				1 & 0 & 1 \\
+				0 & 1 & 0 \\
+				0 & 0 & 1
+			\end{bmatrix} \quad
+			R^{3} = 
+			\begin{bmatrix}
+				1 & 1 & 0 \\
+				0 & 1 & 1 \\
+				0 & 0 & 1
+			\end{bmatrix} \quad
+			R^{4} = 
+			\begin{bmatrix}
+				1 & 0 & 0 \\
+				0 & 1 & 0 \\
+				0 & 0 & 1
+			\end{bmatrix}
+	\]
+	shows us that $\lvert R \rvert = 4$  and $R^{m} \neq S$  for any integer $m$ .
+	\[
+		S = 
+		\begin{bmatrix}
+			1 & 0 & 1 \\
+			0 & 1 & 1 \\
+			0 & 0 & 1 
+		\end{bmatrix} \quad
+		S^{2} = 
+		\begin{bmatrix}
+			1 & 0 & 0 \\
+			0 & 1 & 0 \\
+			0 & 0 & 1
+		\end{bmatrix}
+	\] \\
+	Thus, the elements $I, R, R^{2}, R^{3}, S, SR, SR^{2}, SR^{3}$ are all distinct. That is, $\lvert \left < S, R \right > \rvert = \lvert H \rvert = 8$. Since $\left < S, R \right > \subset H$, we have $\left < S, R \right > = H$. \\\\
+	Now consider the homomorphism $\varphi : D_{8} \to H$ defined by $s \mapsto S$ and $r \mapsto R$. Note that this is well defined, since $s$ and $r$ are the generators of $D_{8}$. It's also surjective, since $S$ and $R$ are generators of $H$ and have the same orders as $s$ and $r$ respectively. Then, since $\lvert D_{8} \rvert = \lvert H \rvert = 8$, we have that it is a bijection. Thus, $\varphi$ is an isomorphism giving us $H \cong D_{8}$ as desired.
+\end{solution}
 
 \end{document}
