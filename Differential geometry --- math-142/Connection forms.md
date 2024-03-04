@@ -4,6 +4,7 @@ tags:
 - math-142
 lecture:
 - math-142-17
+- math-142-18
 ---
 
 Recall that for the [[Frenet-Serret frames]], we can write the derivatives of each vector field as the a linear combination (with functions as coefficients) of the vector fields themselves —
@@ -26,12 +27,17 @@ In order to generalise this to [[Frames#_definition _ frame, frame field|frame f
 For any frame field $\mathbf{E}_{1}, \mathbf{E}_{2}, \mathbf{E}_{3}$ and any vector field $\mathbf{V}$ there exist $1$-[[Differential 1-forms#_definition _ differential $1$-form, $ Omega 1( mathbb{R} 3)$|forms]] $\omega_{12}, \omega_{13}, \omega_{23}$ such that
 $$
 \begin{align} \\
-\nabla_{\mathbf{V}} \mathbf{E}_{1} & = & \omega_{12}(\mathbf{V}) \, \mathbf{E}_{2}  & - \omega_{31}(\mathbf{V}) \, \mathbf{E}_{3} \\
-\nabla_{\mathbf{V}} \mathbf{E}_{2} & = -\omega_{12}(\mathbf{V}) \, \mathbf{E}_{1} & &  + \omega_{23}(\mathbf{V}) \,  \mathbf{E}_{3} \\
+\nabla_{\mathbf{V}} \mathbf{E}_{1} & = & \omega_{12}(\mathbf{V}) \, \mathbf{E}_{2}  & & - \omega_{31}(\mathbf{V}) \, \mathbf{E}_{3} \\
+\nabla_{\mathbf{V}} \mathbf{E}_{2} & = -\omega_{12}(\mathbf{V}) \, \mathbf{E}_{1} & & & + \omega_{23}(\mathbf{V}) \,  \mathbf{E}_{3} \\
 \nabla_{\mathbf{V}} \mathbf{E}_{3} & = \omega_{31}(\mathbf{V}) \, \mathbf{E}_{1} & - \omega_{23}(\mathbf{V}) \,  \mathbf{E}_{2}
 \end{align}
 $$
 $\omega_{12}, \omega_{23}, \omega_{13}$ are called connection forms.
+
+Note that for the vector field $\omega = \omega_{23}(\mathbf{V}) \, \mathbf{E}_{1} + \omega_{31}(\mathbf{V}) \, \mathbf{E}_{2} + \omega_{12}(\mathbf{V}) \, \mathbf{E}_{3}$, this is equivalent to
+$$
+\nabla_{\mathbf{V}}\mathbf{E}_{i} = \omega \times \mathbf{E}_{i} 
+$$
 
 ##### _proof sketch:_
 
@@ -50,7 +56,7 @@ Then note that $\omega_{ij}$ is a $1$-form — it is linear in its inputs, and 
 
 Note that $\omega_{ij} = -\omega_{ji}$ — just use [[Covariant derivatives#_proposition _ the Leibniz rule for covariant derivatives|the product rule for covariant derivatives]] on $\mathbf{V}[\mathbf{E}_{i} \cdot E_{\mathbf{j}}]$. Thus, we get $\omega_{ii} = 0$.
 
-Finally, to get the actual statement, just notice that since $\mathbf{E}_{1}, \mathbf{E}_{2}, \mathbf{E}_{3}$ is an [[Orthonormal bases|orthonormal basis]] on the space of vector fields, we can get each $\nabla_{\mathbf{V}}\mathbf{E}_{i}$ as a linear combination of the basis by dotting, but the dot product is exactly the corresponding $1$-form.
+Finally, to get the actual statement, just notice that since $\mathbf{E}_{1}, \mathbf{E}_{2}, \mathbf{E}_{3}$ is an [[Orthonormal bases|orthonormal basis]] on the space of vector fields, we can get each $\nabla_{\mathbf{V}}\mathbf{E}_{i}$ as a linear combination of the basis by dotting (the dot product is actually a smooth function that takes points $\mathbf{p}$ to coefficients in $\mathbb{R}$). That dot product is exactly the corresponding $1$-form evaluated on $\mathbf{V}$.
 
 ##### _example:_ connections on the cylindrical frame field
 
@@ -73,3 +79,11 @@ d\vartheta & = \frac{ \partial \vartheta }{ \partial x } dx + \frac{ \partial \v
 $$
 
 Note that $\vartheta$ is not defined consistently everywhere (for example, it is undefined everywhere $x = 0$) and $d\vartheta$ has a hole wherever $x = y = 0$. Thus, this is not technically wrong, but on open connected sets, not containing the origin, and with the right sign orientation, this works.
+
+### Computing connection forms
+
+While the example of the cylindrical frame field is easy because it pops right out when you compute stuff, how would you do this in general? Unfortunately there isn't anything much better than computing
+$$
+\omega_{ij} = (\nabla_{\mathbf{V}} \mathbf{E}_{i}) \cdot \mathbf{E}_{j}
+$$
+directly every time. For $\mathbf{V} = [(v_{1}, v_{2}, v_{3}), \mathbf{p}]$, note that we can replace each instance of $v_{i}$ by $dx_{i}(\mathbf{V})$ in order to get a more general 
