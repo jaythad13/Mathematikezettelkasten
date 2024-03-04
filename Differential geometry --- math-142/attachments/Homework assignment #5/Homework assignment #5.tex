@@ -159,7 +159,7 @@
 			\[
 				\frac{\tau}{\sqrt{\kappa^{2} + \tau^{2}}} \mathbf{T} + \frac{\kappa}{\sqrt{\kappa^{2} + \tau^{2}}} \mathbf{B}.
 			\]
-		\item Check (a) for the cylindrical helix $\alpha : \mathbb{R} \to \mathbb{R}^{3}$ defined by $\alpha(t) = (a \cos{t}, a \sin{t}, bt)$ with $a, b \in \mathbb{R} \setminus \{ 0 \}$.
+		\item Check (a) for the cylindrical helix $\alpha : \mathbb{R} \to \mathbb{R}^{3}$ defined by $\alpha(t) = (a \cos{t}, a \sin{t}, bt)$ with $a, b \in \mathbb{R} \setminus \{ 0 \}$.	
 	\end{enumerate}
 \end{problem}
 
@@ -230,13 +230,63 @@
 				[\mathbf{u}, \mathbf{p}] = \frac{\tau}{\sqrt{\kappa^{2} + \tau^{2}}} \mathbf{T} + \frac{\kappa}{\sqrt{\kappa^{2} + \tau^{2}}} \mathbf{B}
 			\]
 			as desired.
+		\item For $\alpha(t) = (a \cos{t}, a \sin{t}, bt)$ we have 
+			\[
+				\begin{gathered}
+					\alpha' = (- a \sin{t}, a \cos{t}, b) \\
+					\alpha'' = (- a \cos{t}, - a \sin{t}, 0) \\
+					\alpha''' = (a \sin{t}, - a \cos{t}, 0)
+				\end{gathered}
+			\]
+			and thus
+			\[
+				\mathbf{T} = \frac{(- a \sin{t}, a \cos{t}, b)}{\sqrt{a^{2} + b^{2}}}.
+			\]
+			We also have
+			\[
+				\begin{split}
+					\kappa & = \frac{\lVert (- a \sin{t}, a \cos{t}, b) \times (- a \cos{t}, - a \sin{t}, 0) \rVert}{(\sqrt{a^{2} + b^{2}})^{3}} \\
+					       & = \frac{\lVert (ab \sin{t}, -ab \cos{t}, a^{2}) \rVert}{(\sqrt{a^{2} + b^{2}})^{3}} \\
+					       & = \frac{a \sqrt{b^{2} + a^{2}}}{(\sqrt{a^{2} + b^{2}})^{3}} \\
+					       & = \frac{a}{a^{2} + b^{2}}.
+				\end{split}
+			\]
+			Similarly
+			\[
+				\begin{split}
+					\tau & = \frac{(- a \sin{t}, a \cos{t}, bt) \times (-a \cos{t}, - a \sin{t}, 0) \cdot (a \sin{t}, -a \cos{t}, 0)}{a^{2}(a^{2} + b^{2})} \\
+					     & = \frac{(ab \sin{t}, - ab \cos{t}, a^{2}) \cdot (a \sin{t}, -a \cos{t}, 0)}{a^{2}(a^{2} + b^{2})} \\
+					     & = \frac{a^{2}b(\sin^{2}{t} + \cos^{2}{t})}{a^{2}(a^{2} + b^{2})} \\
+					     & = \frac{b}{a^{2} + b^{2}}.
+				\end{split}
+			\]
+			We can also calculate $\mathbf{B}$ as
+			\[
+				\begin{split}
+					\mathbf{B} & = \frac{(- a \sin{t}, a \cos{t}, b) \times (- a \cos{t}, - a \sin{t}, 0)}{\lVert (- a \sin{t}, a \cos{t}, b) \times (- a \cos{t}, - a \sin{t}, 0) \rVert} \\
+						   & = \frac{(ab \sin{t}, - ab \cos{t}, a^{2})}{a \sqrt{a^{2} + b^{2}}}
+				\end{split}
+			\]
+			Now we can check whether $[\mathbf{u}, \alpha(t)]$ is constant. We compute
+			 \[
+				\begin{split}
+					\mathbf{u} & = \frac{\tau}{\sqrt{\tau^{2} + \kappa^{2}}} \mathbf{T} + \frac{\kappa}{\tau^{2} + \kappa^{2}} \mathbf{B} \\
+						   & = \frac{b}{\sqrt{a^{2} + b^{2}}} \frac{(- a \sin{t}, a \cos{t}, b)}{\sqrt{a^{2} + b^{2}}} + \frac{a}{\sqrt{a^{2} + b^{2}}} \frac{(ab \sin{t}, - ab \cos{t}, a^{2})}{a \sqrt{a^{2} + b^{2}}} \\
+						   & = (0, 0, 1).
+				\end{split}
+			\]
+			and thus, $\mathbf{u}$ is constant, and it satisfies the condition that
+			\[
+				\mathbf{T} \cdot [\mathbf{u}, \alpha(t)] = \frac{b}{\sqrt{a^{2} + b^{2}}}
+			\]
+			is constant, as desired.
 	\end{enumerate}
 \end{solution}
 
 \pagebreak
 
 \begin{problem}[Problem 3.]
-	Let $\alpha : I \to \mathbb{R}^{3}$ be a cylindrical helix with unit vector $[\mathbf{u}, \alpha(t)]$. For each fixed $t_{0} \in I$, the curve $\sigma : I \to \mathbb{R}^{3}$ is defined by
+	Let $\alpha : I \to \mathbb{R}^{3}$ be a cylindrical helix with unit vector $[\mathbf{u}, \alpha(t)]$. For each fixed $t_{0} \in I$, the curve $\sigma : I \to \mathbb{R}^{3}$ defined by
 	\[
 		\sigma(t) = \alpha(t) - ((\alpha(t) - \alpha(t_{0})) \cdot \mathbf{u}) \mathbf{u}
 	\]
@@ -246,6 +296,75 @@
 		\item The curvature of $\sigma$ is $\kappa/\sin^{2}{\vartheta}$ where $\kappa$ is the curvature of $\alpha$.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item It suffices to show that $\sigma(t) - \alpha(t_{0})$  is always orthogonal to $\mathbf{u}$ . We can do this by computing
+			\[
+				\begin{split}
+					(\sigma(t) - \alpha(t_{0})) \cdot \mathbf{u} & = (\alpha(t) - \alpha(t_{0})) \cdot \mathbf{u} - ((\alpha(t) - \alpha(t_{0})) \cdot \mathbf{u}) (\mathbf{u} \cdot \mathbf{u}) \\
+										     & = (\alpha(t) - \alpha(t_{0})) \cdot \mathbf{u} - (\alpha(t) - \alpha(t_{0})) \cdot \mathbf{u} \\
+										     & = 0.
+				\end{split}
+			\]
+		Thus, $\sigma(t)$ does indeed lie in $\mathcal{P}$, the plane through $\alpha(t_{0})$ and orthogonal to $\mathbf{u}$.
+		\item To show this, we compute $\sigma'$ and $\sigma''$. First, we compute $\sigma'$.
+			\[
+				\begin{split}
+					\sigma'(t) & = \alpha'(t) - ((\alpha(t) - \alpha(t_{0}))' \cdot [\mathbf{u}, \alpha(t)] + (\alpha(t) - \alpha(t_{0})) \cdot [\mathbf{u}, \alpha(t)]') [\mathbf{u}, \alpha(t)] \\
+						   & = \alpha'(t) - (\alpha'(t) \cdot [\mathbf{u}, \alpha(t)]) [\mathbf{u}, \alpha(t)] \\
+				\end{split}
+			\]
+			Since $\alpha$ is a cylindrical helix, we know that $\mathbf{T} \cdot [\mathbf{u}, \alpha(t)]$ is a constant --- $\cos{\vartheta}$. Thus, $\alpha'(t) \cdot [\mathbf{u}, \alpha(t)] = v \cos{\vartheta}$. Also notice that $[\mathbf{u}, \alpha(t)] = \cos{\vartheta} \, \mathbf{T} + \sin{\vartheta} \, \mathbf{B}$ by our calculations in the previous problem. Thus,
+			\[
+				\begin{split}
+					\sigma'(t) & = \alpha'(t) - v \cos{\vartheta} \, [\mathbf{u}, \alpha(t)] \\
+						   & = v(1 - \cos^{2}{\vartheta}) \mathbf{T} - v \cos{\vartheta} \sin{\vartheta} \, \mathbf{B} \\
+						   & = v \sin^{2}{\vartheta} \, \mathbf{T} - v \cos{\vartheta} \sin{\vartheta} \, \mathbf{B}
+				\end{split}
+			\]
+			From this, we can calculate $\sigma''$.
+			\[
+				\begin{split}
+					\sigma''(t) & = v \sin^{2}{\vartheta} \, \mathbf{T}' - v \cos{\vartheta} \sin{\vartheta} \, \mathbf{B}' + \frac{dv}{dt} \sigma'(t) \\
+						    & = (\kappa v^{2} \sin^{2}{\vartheta} + \tau v^{2} \cos{\vartheta} \sin{\vartheta}) \, \mathbf{N} + \frac{dv}{dt} \sigma'(t) \\
+						    & = (\kappa v^{2} \sin^{2}{\vartheta} + \kappa v^{2} \cos^{2}{\vartheta} ) \, \mathbf{N} + \frac{dv}{dt} \sigma'(t) \\
+						    & = \kappa v^{2} \, \mathbf{N} + \frac{dv}{dt} \sigma'(t).
+				\end{split}
+			\]
+			where we should note that $\tau \sin{\vartheta} = \kappa \cos{\vartheta}$ since $\alpha$ is a cylindrical helix.
+			Thus, we can compute $\sigma' \times \sigma''$ as
+			\[
+				\begin{split}
+					\sigma'(t) \times \sigma''(t) & = (v \sin^{2}{\vartheta} \, \mathbf{T} - v \cos{\vartheta} \sin{\vartheta} \, \mathbf{B}) \times \kappa v^{2} \, \mathbf{N} + \frac{dv}{dt} \sigma'(t) \times \sigma'(t) \\
+								      & = (\kappa v^{3} \sin^{2}{\vartheta}) \, \mathbf{T} \times \mathbf{N} - (\kappa v^{3} \cos{\vartheta} \sin{\vartheta}) \, \mathbf{B} \times \mathbf{N} + 0 \\
+								      & = \kappa v^{3} \cos{\vartheta} \sin{\vartheta} \, \mathbf{T} + \kappa v^{3} \sin^{2}{\vartheta} \, \mathbf{B}.
+				\end{split}
+			\]
+			Thus,
+			\[
+				\begin{split}
+					\lVert \sigma'(t) \times \sigma''(t) \rVert & = \kappa v^{3} \sin{\vartheta} \sqrt{\sin^{2}{\vartheta} + \cos^{2}{\vartheta}} \\
+										    & = \kappa v^{3} \sin{\vartheta}
+				\end{split}
+			\]
+			and
+			\[
+				\begin{split}
+					\lVert \sigma'(t) \rVert & = v \sin{\vartheta}\sqrt{\sin^{2}{\vartheta} + \cos^{2}{\vartheta}} \\
+								 & = v \sin{\vartheta}
+				\end{split}
+			\]
+			Then, we get the curvature of the cross-sectional curve $\sigma$ as
+			\[
+				\begin{split}
+					\text{curvature of } \sigma & = \frac{\kappa v^{3} \sin{\vartheta}}{(v \sin{\vartheta})^{3}} \\
+								    & = \frac{\kappa}{\sin^{2}{\vartheta}}
+				\end{split}
+			\]
+			as desired.
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
@@ -259,10 +378,103 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item Note that since we have $\mathbf{T} = \left [ \left ( \frac{2}{t^{2} + 2}, \frac{2t}{t^{2} + 2}, 1 - \frac{2}{t^{2} + 2} \right ), \alpha(t) \right ]$, we have that the dot product with any tangent vector of the form $[(a, 0, a), \alpha(t)]$ (for some $a \in \mathbb{R}$) is constant ---
+			\[
+				\begin{split}
+					\mathbf{T} \cdot [(a, 0, a), \alpha(t)] & = \frac{2a}{t^{2} + 2} + a - \frac{2a}{t^{2} + 2} \\
+										& = a.
+				\end{split}
+			\]
+		We can choose $a$ so that $[(a, 0, a), \alpha(t)]$ such that $\lVert [(a, 0, a), \alpha(t)] \rVert = 1$. Specifically, for $2a^{2} = 1$ and thus $a = \pm \frac{1}{\sqrt 2}$ we have the desired norm. Thus, we have a constant unit tangent vector $[\mathbf{u}, \alpha(t)]$ such that $\mathbf{T} \cdot [\mathbf{u}, \alpha(t)]$ is constant.
+		\item 
+			\[
+				\boxed{
+				\mathbf{u} = \left ( \frac{1}{\sqrt 2}, 0, \frac{1}{\sqrt 2} \right )
+				}
+			\]
+		\item 
+			\[
+				\boxed{
+					\vartheta = \frac{\pi}{4}
+				}
+			\] 
+			We have by our computation in part (a) that $\mathbf{T} \cdot [\mathbf{u}, \alpha(t)] = \frac{1}{\sqrt 2}$. By the definition of $\vartheta$, we have then that $\cos{\vartheta} = \frac{1}{\sqrt 2}$. Thus,
+			\[
+				\begin{split}
+					\vartheta & = \arccos{\frac{1}{\sqrt 2}} \\
+						  & = \frac{\pi}{4}.
+				\end{split}
+			\]
+		\item
+			\[
+				\boxed{
+					\sigma(t) = (2t, t^{2}, t^{3}/3) - \left ( t - t_{0} + \frac{t^{3} - t_{0}^{3}}{6}, 0, t - t_{0} + \frac{t^{3} - t_{0}^{3}}{6} \right ).
+				}
+			\]
+			For some given $t_{0} \in \mathbb{R}$ we have the cross sectional curve given by
+			 \[
+				\begin{split}
+					\sigma(t) & = \alpha(t) - ((\alpha(t) - \alpha(t_{0})) \cdot \mathbf{u}) \mathbf{u} \\
+						  & = (2t, t^{2}, t^{3}/3) - ((2t - 2t_{0}, t^{2} - t_{0}^{2}, t^{3}/3 - t_{0}^{3}/3) \cdot (1/\sqrt 2, 0, 1/\sqrt 2))(1/\sqrt 2, 0, 1/\sqrt 2) \\
+						  & = (2t, t^{2}, t^{3}/3) - \left ( \sqrt 2(t - t_{0}) + \frac{t^{3} - t_{0}^{3}}{3 \sqrt 2} \right ) (1/\sqrt 2, 0, 1/\sqrt 2) \\
+						  & = (2t, t^{2}, t^{3}/3) - \left ( t - t_{0} + \frac{t^{3} - t_{0}^{3}}{6}, 0, t - t_{0} + \frac{t^{3} - t_{0}^{3}}{6} \right ).
+				\end{split}
+			\]
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[Problem 5.]
 	Prove that the cubic curve $\alpha(t) = (at, b t^{2}, c t^{3})$ for some $a, b, c \in \mathbb{R} \setminus \{ 0 \}$ is a cylindrical helix if and only if $3ac = \pm 2b^{2}$.
 \end{problem}
+
+\begin{solution}
+	By definition $\alpha$  is a cylindrical helix if and only if we have a constant unit tangent vector $[\mathbf{u}, \alpha(t)]$  such that $\mathbf{T} \cdot [\mathbf{u}, \alpha(t)] = \cos{\vartheta}$ for some constant angle $\vartheta$ . The following chain of equivalences follows ---
+	\[
+		\begin{split}
+			& \mathbf{T} \cdot [\mathbf{u}, \alpha(t)] = \cos{\vartheta} \\
+			\iff & \frac{\alpha'(t)}{\lVert \alpha'(t) \rVert} \cdot \mathbf{u} = \cos{\vartheta} \\
+			\iff & \alpha'(t) \cdot \mathbf{u} = \lVert \alpha'(t) \rVert \cos{\vartheta} \\
+			\iff & (\alpha'(t) \cdot \mathbf{u})^{2} = \lVert \alpha'(t) \rVert^{2} \cos^{2}{\vartheta} \\
+			\iff & (\alpha'(t) \cdot \mathbf{u})^{2} - \lVert \alpha'(t) \rVert^{2} \cos^{2}{\vartheta} = 0.
+		\end{split}
+	\]
+	for all $t \in I$. Let us have $\gamma$ defined by $\gamma(t) = (\alpha'(t) \cdot \mathbf{u})^{2} - \lVert \alpha'(t) \rVert^{2} \cos^{2}{\vartheta}$. Then what we want to prove is equivalent to showing that $\gamma$ is identically zero on $I$. \\\\
+	Note that
+	\[
+		\alpha'(t) = [(a, 2b t, 3 c t^{2}), \alpha(t)]
+	\]
+	and thus,
+	\[
+		\lVert \alpha'(t) \rVert^{2} = a^{2} + 4b^{2} t^{2} + 9c^{2} t^{4}. 
+	\]
+	Thus, for $\mathbf{u} = (u_{1}, u_{2}, u_{3})$ we have
+	\[
+		\begin{split}
+			\gamma(t) & = (a u_{1} + 2 b u_{2} t + 3 c u_{3} t^{2})^{2} - \cos^{2}{\vartheta}(a^{2} + 4b^{2} t^{2} + 9 c^{2} t^{4}) \\
+				  & = a^{2}(u_{1}^{2} - \cos^{2}{\vartheta}) - 4b^{2}t^{2}(u_{2}^{2} - \cos^{2}{\vartheta}) + 9 c^{2} t^{4} (u_{3}^{2} - \cos^{2}{\vartheta}) \\ 
+				  & + 2(2 ab u_{1} u_{2} t + 6 bc u_{2} u_{3} t^{3} + 3 ca u_{3} u_{1} t^{2}) \\
+				  & = a^{2}(u_{1}^{2} - \cos^{2}{\vartheta}) - t^{2}(4 b^{2} (u_{2}^{2} - \cos^{2}{\vartheta}) + 6 ac u_{3} u_{1}) + 9 c^{2} t^{4} (u_{3}^{2} - \cos^{2}{\vartheta}) \\ 
+				  & + 4 ab u_{1} u_{2} t + 12 bc u_{2} u_{3} t^{3}) \\
+		\end{split}
+	\]
+	Since $\gamma$ is a polynomial in $t$, $\gamma$ being identically zero is equivalent to all of its coefficients being zero. Note that for the $t^{0}$ coefficient, $a^{2}(u_{1}^{2} - \cos^{2}{\vartheta})$ to be zero, we need $u_{1} = \pm \cos{\vartheta}$ since $a \neq 0$. Similarly, for the $t^{4}$ coefficient, $9c^{2}(u_{3}^{2} - \cos^{2}{\vartheta})$ to be zero, we need $u_{3} = \pm \cos{\vartheta}$. Since we can have $\vartheta \neq \pi/2$ (for a specific example, in the previous problem we have $\vartheta = \pi/4$) and thus, $u_{1} \neq 0$ or $u_{3} \neq 0$ we need $u_{2} = 0$ to ensure that the $t$ and $t^{3}$ coefficients are zero. Notice that all of these are also sufficient to ensure that the coefficients are zero, and thus, are equivalent to the coefficients being zero. \\\\
+	Thus, the $t^{2}$ coefficient being $0$ is equivalent to 
+	\[
+		6ac u_{3} u_{1} - 4 b ^{2} \cos^{2}{\vartheta} = 0
+	\]
+	Since we can have $\cos{\vartheta} \neq 0$, this is equivalent to
+	\[
+		6ac = \pm 4b^{2}
+	\]
+	or
+	\[
+		3ac = \pm 2b^{2}
+	\]
+	where the sign depends on whether $u_{1}$ and $u_{3}$ have the same sign. This is the desired result.
+\end{solution}
 
 \end{document}
