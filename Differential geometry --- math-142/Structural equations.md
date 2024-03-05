@@ -60,7 +60,7 @@ $$
 
 The first part follows from $\theta_{i}(\mathbf{V}) = \mathbf{V} \cdot \mathbf{E}_{i}$ and the fact that $\mathbf{E}_{1}, \mathbf{E}_{2}, \mathbf{E}_{3}$ is an orthonormal basis of vector fields.
 
-The second part follows from the fact that $\phi$ is defined by how it acts on vector fields. If you want to be fancy, you can think of this as the double dual isomorphism reducing to the dual to double dual isomorphism.
+The second part follows from the fact that $\phi$ is defined by how it acts on vector fields. If you want to be fancy, you can think of this as the double dual isomorphism reducing to the dual to double dual isomorphism. Basically, $\theta_{1}, \theta_{2}, \theta_{3}$ is a basis of the vector space of $1$-forms, and so to find the coefficients of a one form with respect to the basis, you need to "dot with $\theta_{i}$" which has the meaning, evaluate at $\mathbf{E}_{i}$ because of the natural double dual isomorphism.
 
 ### Structural equations
 
