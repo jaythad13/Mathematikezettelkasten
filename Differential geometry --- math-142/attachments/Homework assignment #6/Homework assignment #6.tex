@@ -95,28 +95,24 @@
 \pagebreak
 
 \begin{problem}[Problem 4.]
-	Let $\mathbf{E}_{1}, \mathbf{E}_{2}, \mathbf{E}_{3}$ be the cylindrical frame field. If $\mathbf{V}$ is a vector field such that $\mathbf{V}[r] = r$ and $\mathbf{V}[\vartheta] = 1$, compute $\nabla_{\mathbf{V}}(r \cos{\vartheta} \mathbf{E}_{1} + r \sin{\vartheta} \mathbf{E}_{2})$.
+	Let $\mathbf{E}_{1}, \mathbf{E}_{2}, \mathbf{E}_{3}$ be the cylindrical frame field. If $\mathbf{V}$ is a vector field such that $\mathbf{V}[r] = r$ and $\mathbf{V}[\vartheta] = 1$, compute $\nabla_{\mathbf{V}}(r \cos{\vartheta} \, \mathbf{E}_{1} + r \sin{\vartheta} \, \mathbf{E}_{2})$.
 \end{problem}
 
 \begin{solution}
-	To compute this, again, we use linearity, the Leibniz rule, and the chain rule.
 	\[
-		\begin{split}
-			\nabla_{\mathbf{V}}(r \cos{\vartheta} \, \mathbf{E}_{1} + r \sin{\vartheta} \, \mathbf{E}_{2}) & = \mathbf{V}[r \, \cos{\vartheta}] \, \mathbf{E}_{1} + \mathbf{V}[r \sin{\vartheta}] \, \mathbf{E}_{2} + r \cos{\vartheta} \, \nabla_{\mathbf{V}} \mathbf{E}_{1} + r \sin{\vartheta} \, \nabla_{\mathbf{V}} \mathbf{E}_{2} \\
-														       & = (\mathbf{V}[r] \cos{\vartheta} + r \, \mathbf{V}[\cos{\vartheta}]) \mathbf{E}_{1} + (\mathbf{V}[r] \sin{\vartheta} + r \, \mathbf{V}[\sin{\vartheta}]) \mathbf{E}_{2} \\
-														       & + r \cos{\vartheta} \, \omega_{12}(\mathbf{V}) \, \mathbf{E}_{2} - r \sin{\vartheta} \, \omega_{12}(\mathbf{V}) \, \mathbf{E}_{1} \\
-														       & = (r \cos{\vartheta} - r \sin{\vartheta} \, \mathbf{V}[\vartheta]) \mathbf{E}_{1} + (r \sin{\vartheta} + r \cos{\vartheta} \, \mathbf{V}[\vartheta]) \mathbf{E}_{2} \\
-														       & + r \cos{\vartheta} \, d\vartheta (\mathbf{V}) \, \mathbf{E}_{2} - r \sin{\vartheta} \, d\vartheta(\mathbf{V}) \, \mathbf{E}_{1} \\
-														       & = (x - y (1 + d\vartheta(\mathbf{V}))) \mathbf{E}_{1}
-		\end{split}
+		\boxed{
+			\nabla_{\mathbf{V}}(r \cos{\vartheta} \, \mathbf{E}_{1} + r \sin{\vartheta} \, \mathbf{E}_{2}) = \left ( v_{1} - y \frac{-y v_{1} + x v_{2}}{r^{2}} \right ) \mathbf{E}_{1} + \left ( v_{2} + x \frac{-y v_{1} + x v_{2}}{r^{2}} \right ) \mathbf{E}_{2}.
+		}
 	\]
+	To compute this, again, we use linearity, the Leibniz rule, and the chain rule.	
 	Notice that $r \cos{\vartheta} = x$ and $r \sin{\vartheta} = y$. Then using linearity and the Leibniz rule we get
 	\[
 		\begin{split}
 			\nabla_{\mathbf{V}}(r \cos{\vartheta} \, \mathbf{E}_{1} + r \sin{\vartheta} \, \mathbf{E}_{2}) & = \nabla_{\mathbf{V}}(x \, \mathbf{E}_{1} + y \, \mathbf{E}_{2}) \\
 														       & = \mathbf{V}[x] \, \mathbf{E}_{1} + x \nabla_{\mathbf{V}} \mathbf{E}_{1} + \mathbf{V}[y] \, \mathbf{E}_{2} + y \nabla_{\mathbf{V}} \mathbf{E}_{2} \\
 														       & = (v_{1} - y \, \omega_{12}(\mathbf{V})) \mathbf{E}_{1} + (v_{2} + x \, \omega_{12}(\mathbf{V})) \mathbf{E}_{2} \\
-														       & = 
+														       & = (v_{1} - y \, d\vartheta(\mathbf{V})) \mathbf{E}_{1} + (v_{2} + x \, d\vartheta(\mathbf{V})) \mathbf{E}_{2} \\
+														       & = \left ( v_{1} - y \frac{-y v_{1} + x v_{2}}{r^{2}} \right ) \mathbf{E}_{1} + \left ( v_{2} + x \frac{-y v_{1} + x v_{2}}{r^{2}} \right ) \mathbf{E}_{2}.
 		\end{split}
 	\]
 \end{solution}
