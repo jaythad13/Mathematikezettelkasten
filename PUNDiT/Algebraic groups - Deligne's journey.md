@@ -31,27 +31,27 @@ The groups we've talked about so far are discrete (finite). But we can think abo
 
 ### Algebraic groups
 
-##### _example:_ $\bb{GL}_2(\bb{R)}$
+##### _example:_ $\mathrm{GL}_2(\bb{R)}$
 
-$\bb{GL}_2(\bb{R})$ is the set of two by two matrices with non-zero determinant. It's interesting because it's a space!
+$\mathrm{GL}_2(\bb{R})$ is the set of two by two matrices with non-zero determinant. It's interesting because it's a space!
 
-$M_2(\bb{R})$ is clearly a $4$-dimensional vector space. But note, that the vanishing of the determinant (where we think of the determinant as a polynomial on the entries of the matrix) is a closed set. Then it's complement is open! So we can do calculus on the complement! And the complement is just $\bb{GL}_2(\bb{R})$.
+$M_2(\bb{R})$ is clearly a $4$-dimensional vector space. But note, that the vanishing of the determinant (where we think of the determinant as a polynomial on the entries of the matrix) is a closed set. Then it's complement is open! So we can do calculus on the complement! And the complement is just $\mathrm{GL}_2(\bb{R})$.
 
-So what symmetries does $\bb{GL}_2(\bb{R})$ codify?
+So what symmetries does $\mathrm{GL}_2(\bb{R})$ codify?
 
 They codify linear transformations on $\bb{R}^2$! More importantly, they codify invertible linear transformations on $\bb{R}^2$, which we can just think of as a change of basis!
 
 Where does the smoothness come in?
 
-There's always some small bit I can move $A_{j, k}$ for $A \in \bb{GL}_2 (\bb{R})$, I stay inside $\bb{GL}_2 (\bb{R})$! That is, $\bb{GL}_2(\bb{R})$ is a group with smooooooooth structure, and linear transformations on $\bb{R}^2$ are a representation of it!
+There's always some small bit I can move $A_{j, k}$ for $A \in \mathrm{GL}_2 (\bb{R})$, I stay inside $\mathrm{GL}_2 (\bb{R})$! That is, $\mathrm{GL}_2(\bb{R})$ is a group with smooooooooth structure, and linear transformations on $\bb{R}^2$ are a representation of it!
 
 We have more examples of these 
 
 ##### _examples:_ algebraic groups
 
-1) $SL_n{\bb{R}}$? Is the vanishing still closed? 
+1) $\mathrm{SL}_n({\bb{R}})$? Is the vanishing still closed? 
 2) $\bb{R}$ - both the additive and multiplicative groups on it
-3) $O_n{\bb{R}}$ - the group of orthogonal matrices
+3) $\mathrm{O}_n({\bb{R}})$ - the group of orthogonal matrices
 
 It turns out that these things are really fun! Despite them often being uncountably large and multiple dimensional, usually the continuity takes care of stuff and leaves behind just a "crystalline structure" of the group.
 
