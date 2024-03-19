@@ -1,0 +1,291 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 142 --- Differential Geometry}
+\assignment{Homework assignment \#7}
+\duedate{22nd March 2024}
+
+\begin{document}
+
+\begin{problem}[Problem 1.]
+	Assume that $F = C \circ T_{\mathbf{a}}$ is an isometry which is the composition of an orthogonal transformation $C$ and a translation $T_{\mathbf{a}} : \mathbf{q} \mapsto \mathbf{q} + \mathbf{a}$. Show that $F = T_{\mathbf{b}} \circ C$ where $T_{\mathbf{b}} : \mathbf{p} \mapsto \mathbf{p} + \mathbf{b}$ is translation by $\mathbf{b} = C(\mathbf{a})$
+\end{problem}
+
+\begin{solution}
+	We know by the classification of isometries that we can uniquely decompose $F = T \circ D$  where $T$  is a translation, and $D \in O_{3}$ . Specifically, we know that $T$  is given by $T : \mathbf{p} \mapsto \mathbf{p} + F(0)$ and $D = F - F(0)$. We can compute these as
+	\[
+		\begin{split}
+			F(0) & = (C \circ T_{\mathbf{a}})(0) \\
+			     & = C(T_{\mathbf{a}} + 0) \\
+			     & = C(\mathbf{a})
+		\end{split}
+	\]
+	Thus, $T$  is given by $T : \mathbf{p} \mapsto \mathbf{p} + C(\mathbf{a})$  as desired. That is, $T = T_{\mathbf{b}}$. Then
+	\[
+		\begin{split}
+			D(\mathbf{p}) & = F(\mathbf{p}) - F(0) \\
+				      & = C(T_{\mathbf{a}}(\mathbf{p})) - C(\mathbf{a}) \\
+				      & = C(\mathbf{p} + \mathbf{a}) - C(\mathbf{a})
+		\end{split}
+	\]
+	which we can see by the linearity of $C$ just gives us
+	\[
+		D(\mathbf{p}) = C(\mathbf{p}).
+	\]
+	Thus, we have $D = C$ and $F = T_{\mathbf{b}} \circ C$ as desired.
+\end{solution}
+
+\pagebreak
+
+\begin{problem}[Problem 2.]
+	Consider the quantities
+	\[
+		C : \begin{bmatrix}
+			x_{1} \\
+			x_{2} \\
+			x_{3}
+		\end{bmatrix} \mapsto
+		\frac{1}{3}
+		\begin{bmatrix}
+			-2 & 2 & -1 \\
+			2 & 1 & -2 \\
+			1 & 2 & 2
+		\end{bmatrix}
+		\begin{bmatrix}
+			x_{1} \\
+			x_{2} \\
+			x_{3}
+		\end{bmatrix}, \quad \quad
+		\mathbf{p} = \begin{bmatrix}
+			3 \\
+			1 \\
+			-6
+		\end{bmatrix}, \quad \text{and} \quad
+		\mathbf{q} = \begin{bmatrix}
+			1 \\
+			0 \\
+			3
+		\end{bmatrix}
+	\]
+	\begin{enumerate}
+		\item Compute $C(\mathbf{p})$ and $C(\mathbf{q})$,
+		\item Check that $C(\mathbf{p}) \cdot C(\mathbf{q}) = \mathbf{p} \cdot \mathbf{q}$.
+		\item Show that $C$ is \textit{orthogonal} --- that is, $\lVert C(\mathbf{x}) - C(\mathbf{y}) \rVert = \lVert \mathbf{x} - \mathbf{y} \rVert$ and $C(0) = 0$.
+	\end{enumerate}
+\end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item We can compute these directly.
+			\[
+				\begin{split}
+					C(\mathbf{p}) & = \frac{1}{3} \begin{bmatrix}
+			-2 & 2 & -1 \\
+			2 & 1 & -2 \\
+			1 & 2 & 2
+		\end{bmatrix} \begin{bmatrix}
+			3 \\
+			1 \\
+			-6
+		\end{bmatrix} \\
+						      & = \frac{1}{3} \begin{bmatrix}
+						      	2 \\
+							19 \\
+							-7
+						      \end{bmatrix}
+				\end{split}
+			\]
+			and
+			\[
+				\begin{split}
+					C(\mathbf{q}) & = \frac{1}{3} \begin{bmatrix}
+			-2 & 2 & -1 \\
+			2 & 1 & -2 \\
+			1 & 2 & 2
+		\end{bmatrix} \begin{bmatrix}
+			1 \\
+			0 \\
+			3
+		\end{bmatrix} \\
+						      & = \frac{1}{3} \begin{bmatrix}
+						      	-5 \\
+							-4 \\
+							7
+						      \end{bmatrix}
+				\end{split}
+			\]
+		\item Again, we can just compute directly ---
+			\[
+				\begin{split}
+					\mathbf{p} \cdot \mathbf{q} & = \begin{bmatrix}
+						3 \\
+						1 \\
+						-6
+					\end{bmatrix} \cdot \begin{bmatrix}
+						1 \\
+						0 \\
+						3
+					\end{bmatrix} \\
+								    & = 3 - 18 \\
+								    & = -15.
+				\end{split}
+			\]
+			and
+			\[
+				\begin{split}
+					C(\mathbf{p}) \cdot C(\mathbf{q}) & = \frac{1}{9} \begin{bmatrix}
+						2 \\
+						19 \\
+						-7
+					\end{bmatrix} \cdot \begin{bmatrix}
+						-5 \\
+						-4 \\
+						7
+					\end{bmatrix} \\
+									  & = \frac{-10 - 76 - 49}{9} \\
+									  & = -\frac{135}{9} \\
+									  & = - 15.
+				\end{split}
+			\]
+			Thus, we have $C(\mathbf{p}) \cdot C(\mathbf{q}) = \mathbf{p} \cdot \mathbf{q}$.
+		\item Since $C$ is linear, we have $C(0) = 0$. Using the property we proved in part (b), we also have that
+			\[
+				\begin{split}
+					\lVert C(\mathbf{x}) - C(\mathbf{y}) \rVert^{2} & = \lVert C(\mathbf{x} - \mathbf{y}) \rVert^{2} \\
+											& = C(\mathbf{x} - \mathbf{y}) \cdot C(\mathbf{x} - \mathbf{y}) \\
+											& = (\mathbf{x} - \mathbf{y}) \cdot (\mathbf{x} - \mathbf{y}) \\
+											& = \lVert \mathbf{x} - \mathbf{y} \rVert^{2}.
+				\end{split}
+			\] \\
+			Then, since both norms have the same sign, we must have
+			\[
+				\lVert C(\mathbf{x}) - C(\mathbf{y}) \rVert = \lVert \mathbf{x} - \mathbf{y} \rVert
+			\]
+			as desired. \\\\
+			Thus, $C$ is orthogonal.
+	\end{enumerate}
+\end{solution}
+
+\pagebreak
+
+\begin{problem}[Problem 3.]
+	Recall that, for any isogeny $F : \mathbb{R}^{3} \to \mathbb{R}^{3}$ , there exists a unique orthogonal transformation $C$ and translation $T$  such that $F = T \circ C$ . In each case below, decide whether $F$  is an isometry of $\mathbb{R}^{3}$. If so, find its translation and orthogonal parts.
+	\begin{enumerate}
+		\item $F(\mathbf{p}) = - \mathbf{p}$.
+		\item $F(\mathbf{p}) = (p_{3} - 1, p_{2} - 2, p_{1} - 3)$.
+		\item $F(\mathbf{p}) = (\mathbf{p} \cdot \mathbf{u}) \mathbf{u}$ where $\lVert \mathbf{u} \rVert = 1$.
+		\item $F(\mathbf{p}) = (p_{1}, p_{2}, 1)$.
+	\end{enumerate}
+\end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item 
+			\[
+				\boxed{
+					\begin{gathered}
+						F \in \mathcal{E}_{3} \\
+						C = F \\
+						T = I
+					\end{gathered}
+				}
+			\] \\
+			We know that $F$  is an isometry since
+			\[
+				\begin{split}
+					\lVert F(\mathbf{p}) - F(\mathbf{q}) \rVert & = \lVert -\mathbf{p} - (-\mathbf{q}) \rVert \\
+										    & = \lVert -(\mathbf{p} - \mathbf{q}) \rVert \\
+										    & = \lVert \mathbf{p} - \mathbf{q} \rVert.
+				\end{split}
+			\]
+			We can also see that $F$  is orthogonal since $F(0) = 0$ . Then $T$  must be given by $T : \mathbf{p} \mapsto 0 + \mathbf{p}$ or, more succinctly, $T = I$ , the identity on $\mathbb{R}^{3}$ .
+		\item
+			\[
+				\boxed{
+					\begin{gathered}
+						F \in \mathcal{E}_{3} \\
+						C : (p_{1}, p_{2}, p_{3}) \mapsto (p_{3}, p_{2}, p_{1}) \\
+						T : \mathbf{p} \mapsto (-1, -2, -3) + \mathbf{p}.
+					\end{gathered}
+				}
+			\] \\
+			We can just note that the composition $F = T \circ C$ does hold, $C$ is an orthogonal transformation (proof below) and $T$ is clearly a translation, so $F$ is the composition of isometries, and itself an isometry.
+			\[
+				\begin{split}
+					\lVert C(\mathbf{x}) - C(\mathbf{y}) \rVert & = \lVert (x_{3}, x_{2}, x_{1}) - (y_{3}, y_{2}, y_{1}) \rVert \\
+										    & = \sqrt{(x_{3} - y_{3})^{2} + (x_{2} - y_{2})^{2} + (x_{1} - y_{1})^{2}} \\
+										    & = \sqrt{(x_{1} - y_{1})^{2} + (x_{2} - y_{2})^{2} + (x_{3} - y_{3})^{2}} \\
+										    & = \lVert (x_{1}, x_{2}, x_{3}) - (y_{1}, y_{2}, y_{3}) \rVert \\
+										    & = \lVert \mathbf{x} - \mathbf{y} \rVert.
+				\end{split}
+			\]
+			and $C(0, 0, 0)$ is obviously just $(0, 0, 0)$.
+		\item
+			\[
+				\boxed{
+					F \notin \mathcal{E}_{3}.
+				}
+			\] \\
+			Suppose $\mathbf{v}$ is a nonzero vector orthogonal to $\mathbf{u}$ (such a vector always exists). Then we have
+			\[
+				\begin{split}
+					F(\mathbf{p} + \mathbf{v}) & = ((\mathbf{p} + \mathbf{v}) \cdot \mathbf{u}) \mathbf{u} \\
+								   & = (\mathbf{p} \cdot \mathbf{u} + \mathbf{v} \cdot \mathbf{u}) \mathbf{u} \\
+								   & = (\mathbf{p} \cdot \mathbf{u}) \mathbf{u}	\\
+								   & = F(\mathbf{p}).
+				\end{split}
+			\] \\
+			Thus, $\lVert F(\mathbf{p} + \mathbf{v}) - F(\mathbf{p}) \rVert = 0$ even though $\lVert \mathbf{p} + \mathbf{v} - \mathbf{p} \rVert = \lVert \mathbf{v} \rVert$ is nonzero. That is, $F$ is not an isometry.
+		\item
+			\[
+				\boxed{
+					F \notin \mathcal{E}_{3}.
+				}
+			\]
+			Notice that $(0, 0, 0)$ and $(0, 0, 1)$ both get sent to $(0, 0, 1)$ under $F$. Thus, $\lVert F(0, 0, 1) - F(0, 0, 0) \rVert = 0$ even though $\lVert (0, 0, 1) - (0, 0, 0) \rVert = 1$. Thus, $F$ is not an isometry.
+	\end{enumerate}
+\end{solution}
+
+\pagebreak
+
+\begin{problem}[Problem 4.]
+	Two tangent vectors $[\mathbf{v}, \mathbf{p}], [\mathbf{w}, \mathbf{q}] \in \mathrm{T}\mathbb{R}^{3}$ are \textit{parallel} if $\mathbf{v} = \mathbf{w}$. If $T$ is a translation, show that for every tangent vector $[\mathbf{v}, \mathbf{p}]$, the tangent vector $T_{*}([\mathbf{v}, \mathbf{p}])$ is parallel to $[\mathbf{v}, \mathbf{p}]$.
+\end{problem}
+
+\begin{solution}
+	Since all translations are isometries, we can uniquely decompose $T$ into a translation and an orthogonal transformation. The most obvious choice is $T = T \circ I$ where $I$ is the identity on $\mathbb{R}^{3}$. \\\\
+	Since the decomposition is uniquem, we know that for any tangent vector $[\mathbf{v}, \mathbf{p}] \in \mathrm{T}_{\mathbf{p}} \mathbb{R}^{3}$ we have
+	\[
+		\begin{split}
+			T_{*}([\mathbf{v}, \mathbf{p}]) & = [I(\mathbf{v}), T(\mathbf{p})] \\
+							& = [\mathbf{v}, T(\mathbf{p})].
+		\end{split} 
+	\]
+	and thus, $T_{*}([\mathbf{v}, \mathbf{p}])$ is parallel to $[\mathbf{v}, \mathbf{p}]$.
+\end{solution}
+
+\pagebreak
+
+\begin{problem}[Problem 5.]
+	Recall that, given a frame $\mathbf{e}_{1}, \mathbf{e}_{2}, \mathbf{e}_{3}$ in $\mathrm{T}_{\mathbf{p}}\mathbb{R}^{3}$ at $\mathbf{p}$, and a frame $\mathbf{f}_{1}, \mathbf{f}_{2}, \mathbf{f}_{3}$ in $\mathrm{T}_{\mathbf{q}}\mathbb{R}^{3}$	at $\mathbf{q}$, there is a unique isogeny $F : \mathbb{R}^{3} \to \mathbb{R}^{3}$ such that $F_{*}(\mathbf{e}_{i}) = \mathbf{f}_{i}$. \\\\
+	Given the frame
+	\[
+		\begin{split}
+			\mathbf{e}_{1} & = \left [ \left ( \frac{2}{3}, \frac{2}{3}, \frac{1}{3} \right ), \mathbf{p} \right ] \\
+			\mathbf{e}_{2} & = \left [ \left ( -\frac{2}{3}, \frac{1}{3}, \frac{2}{3} \right ), \mathbf{p} \right ] \\
+			\mathbf{e}_{3} & = \left [ \left ( \frac{1}{3}, -\frac{2}{3}, \frac{2}{3} \right ), \mathbf{p} \right ]
+		\end{split}
+	\]
+	at $\mathbf{p} = (0, 1, 0)$ and the frame
+	\[
+		\begin{split}
+			\mathbf{f}_{1} & = \left [ \left ( \frac{1}{\sqrt 2}, 0, \frac{1}{\sqrt 2} \right ), \mathbf{q} \right ] \\
+			\mathbf{f}_{2} & = \left [ \left ( 0, 1, 0 \right ), \mathbf{q} \right ] \\
+			\mathbf{f}_{3} & = \left [ \left ( \frac{1}{\sqrt 2}, 0, -\frac{1}{\sqrt 2} \right ), \mathbf{q} \right ]
+		\end{split}
+	\]
+	at $\mathbf{q} = (3, -1, 0)$ find $\mathbf{a} \in \mathbb{R}^{3}$ and $C \in O_{3}$ such that the isometry $F = T \circ C$ in terms of the translation $T(\mathbf{p}) = \mathbf{p} + \mathbf{a}$ sends the ``$\mathbf{e}$ frame'' to the ``$\mathbf{f}$ frame''.
+\end{problem}
+
+\end{document}
