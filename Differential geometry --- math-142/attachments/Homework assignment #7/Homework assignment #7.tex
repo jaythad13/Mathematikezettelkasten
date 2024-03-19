@@ -288,4 +288,145 @@
 	at $\mathbf{q} = (3, -1, 0)$ find $\mathbf{a} \in \mathbb{R}^{3}$ and $C \in O_{3}$ such that the isometry $F = T \circ C$ in terms of the translation $T(\mathbf{p}) = \mathbf{p} + \mathbf{a}$ sends the ``$\mathbf{e}$ frame'' to the ``$\mathbf{f}$ frame''.
 \end{problem}
 
+\begin{solution}
+	\[
+		\boxed{
+			\begin{gathered}
+				C = \frac{1}{3 \sqrt 2} \begin{bmatrix}
+				  3 & 0 & 3 \\
+				  -2 \sqrt 2 & \sqrt 2 & 2 \sqrt 2 \\
+				  1 & 4 & -1
+			  \end{bmatrix} \\
+				\mathbf{a} = \frac{1}{3} \begin{bmatrix}
+				   	9 \\
+					- 4 \\
+					-2 \sqrt 2
+				   \end{bmatrix}
+			\end{gathered}
+		}
+	\]
+	Let $\hat{\mathbf{e}}_{i}$ and $\hat{\mathbf{f}}_{i}$ be the vector parts of $\mathbf{e}_{i}$ and $\mathbf{f}_{i}$ respectively, for each $i \in \{ 1, 2, 3 \}$. \\\\
+	Let $F = T \circ C$ be the unique decomposition of $F$ into a translation and an orthogonal transformation. Recalling that $F_{*}([\mathbf{v}, \mathbf{p}]) = [C(\mathbf{v}), F(\mathbf{p})]$, this means that we must have $C(\hat{\mathbf{e}}_{i}) = \hat{\mathbf{f}}_{i}$ for all $i \in \{ 1, 2, 3 \}$. \\\\
+	Note that since $\hat{\mathbf{e}}_{1}, \hat{\mathbf{e}}_{2}, \hat{\mathbf{e}}_{3}$ and $\hat{\mathbf{f}}_{1}, \hat{\mathbf{f}}_{2}, \hat{\mathbf{f}}_{3}$ are both bases of $\mathbb{R}^{3}$, there is a well defined linear map $C : \hat{\mathbf{e}}_{i} \mapsto \hat{\mathbf{f}}_{i}$. Now we just need to compute the matrix for this in the standard basis over $\mathbb{R}^{3}$ --- $\mathbf{u}_{1}, \mathbf{u}_{2}, \mathbf{u}_{3}$ with values $(1, 0, 0), (0, 1, 0), (0, 0, 1)$.
+	We know that the matrix that maps $\mathbf{u}_{i} \mapsto \hat{\mathbf{f}}_{i}$ is just
+	\[
+		\begin{bmatrix}
+			\vdots & \vdots & \vdots \\
+			\hat{\mathbf{f}}_{1} & \hat{\mathbf{f}}_{2} & \hat{\mathbf{f}}_{3} \\
+			\vdots & \vdots & \vdots
+		\end{bmatrix}.
+	\]
+	To map $\hat{\mathbf{e}}_{i} \mapsto \hat{\mathbf{f}}_{i}$, we just need the map by $\hat{\mathbf{e}}_{i} \mapsto \mathbf{u}_{i}$. This is the inverse of the map by $\mathbf{u}_{i} \mapsto \hat{\mathbf{e}}_{i}$. Since $\hat{\mathbf{e}}_{1}, \hat{\mathbf{e}}_{2}, \hat{\mathbf{e}}_{3}$ is an orthonormal basis, we can just transpose the matrix. That is,
+	\[
+		\begin{bmatrix}
+			\vdots & \vdots & \vdots \\
+			\hat{\mathbf{e}}_{1} & \hat{\mathbf{e}}_{2} & \hat{\mathbf{e}}_{3} \\
+			\vdots & \vdots & \vdots
+		\end{bmatrix}^{-1} = 
+		\begin{bmatrix}
+			\cdots & \hat{\mathbf{e}}_{1} & \cdots \\
+			\cdots & \hat{\mathbf{e}}_{2} & \cdots \\
+			\cdots & \hat{\mathbf{e}}_{3} & \cdots
+		\end{bmatrix}
+	\]
+	Thus,
+	\[
+		\begin{split}
+			\begin{bmatrix}
+				\vdots & \vdots & \vdots \\
+				\hat{\mathbf{f}}_{1} & \hat{\mathbf{f}}_{2} & \hat{\mathbf{f}}_{3} \\
+					\vdots & \vdots & \vdots
+			\end{bmatrix}
+			\begin{bmatrix}
+				\cdots & \hat{\mathbf{e}}_{1} & \cdots \\
+				\cdots & \hat{\mathbf{e}}_{2} & \cdots \\
+				\cdots & \hat{\mathbf{e}}_{3} & \cdots
+			\end{bmatrix}
+			\begin{bmatrix}
+				\vdots \\
+				\hat{\mathbf{e}}_{i} \\
+				\vdots
+			\end{bmatrix} & = 
+			\begin{bmatrix}
+				\vdots & \vdots & \vdots \\
+				\hat{\mathbf{f}}_{1} & \hat{\mathbf{f}}_{2} & \hat{\mathbf{f}}_{3} \\
+					\vdots & \vdots & \vdots
+			\end{bmatrix}
+			\begin{bmatrix}
+				\vdots \\
+				\mathbf{u}_{i} \\
+				\vdots
+			\end{bmatrix} \\ 
+			& = 
+			\begin{bmatrix}
+				\vdots \\
+				\hat{\mathbf{f}}_{i} \\
+				\vdots
+			\end{bmatrix}.
+		\end{split}
+	\]
+	Thus, we can compute $C$.
+	\[
+		\begin{split}
+			C & = \begin{bmatrix}
+				\vdots & \vdots & \vdots \\
+				\hat{\mathbf{f}}_{1} & \hat{\mathbf{f}}_{2} & \hat{\mathbf{f}}_{3} \\
+					\vdots & \vdots & \vdots
+			\end{bmatrix}
+			\begin{bmatrix}
+				\cdots & \hat{\mathbf{e}}_{1} & \cdots \\
+				\cdots & \hat{\mathbf{e}}_{2} & \cdots \\
+				\cdots & \hat{\mathbf{e}}_{3} & \cdots
+			\end{bmatrix} \\
+			  & = \frac{1}{\sqrt 2} \begin{bmatrix}
+				  1 & 0 & 1 \\
+				  0 & \sqrt 2 & 0 \\
+				  1 & 0 & -1
+			  \end{bmatrix} \frac{1}{3}
+			  \begin{bmatrix}
+				  2 & 2 & 1 \\
+				  -2 & 1 & 2 \\
+				  1 & -2 & 2
+			  \end{bmatrix} \\
+			  & = \frac{1}{3 \sqrt 2} \begin{bmatrix}
+				  3 & 0 & 3 \\
+				  -2 \sqrt 2 & \sqrt 2 & 2 \sqrt 2 \\
+				  1 & 4 & -1
+			  \end{bmatrix}.
+		\end{split}
+	\]
+	Since we want $F(\mathbf{p}) = \mathbf{q}$, for $T : \mathbf{p} \mapsto \mathbf{p} + \mathbf{a}$. we need to have $\mathbf{q} = T(C(\mathbf{p}))$ and thus, $\mathbf{a} = \mathbf{q} - C(\mathbf{p})$.
+	\[
+		\begin{split}
+			\mathbf{a} & = \begin{bmatrix}
+				3 \\
+				-1 \\
+				0
+			\end{bmatrix} - \frac{1}{3 \sqrt 2} \begin{bmatrix}
+				  3 & 0 & 3 \\
+				  -2 \sqrt 2 & \sqrt 2 & 2 \sqrt 2 \\
+				  1 & 4 & -1
+			  \end{bmatrix} \begin{bmatrix}
+			  	0 \\
+				1 \\ 
+				0
+			  \end{bmatrix} \\
+				   & = \begin{bmatrix}
+				   	3 \\
+					-1 \\
+					0
+				   \end{bmatrix} - \frac{1}{3 \sqrt 2} \begin{bmatrix}
+				   	0 \\
+					\sqrt 2 \\
+					4
+				   \end{bmatrix} \\
+				   & = \frac{1}{3} \begin{bmatrix}
+				   	9 \\
+					- 4 \\
+					-2 \sqrt 2
+				   \end{bmatrix}.
+		\end{split}
+	\]
+\end{solution}
+
 \end{document}
