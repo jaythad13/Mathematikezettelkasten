@@ -4,9 +4,12 @@ tags:
 - alg
 lecture:
 - math-171-12
+- math-171-14
 ---
 
-Last time we stated the first isomorphism theorem. We restate it here. 
+### The first isomorphism theorem
+
+[[Fibres and quotients|Last time]] we stated the first isomorphism theorem. We restate it here. 
 
 ##### _theorem:_ the first isomorphism theorem
 
@@ -88,3 +91,46 @@ Yes! Since $\operatorname{im} \varphi = \ker \psi$, by quotienting it out, we're
 2) $\varphi : \mathbb{R}^\times \to \mathbb{R}^\times$ by $x \mapsto \lvert x \rvert$ gives us that $\mathbb{R} / \{ 1, -1 \} = \mathbb{R}_{> 0}^\times$. Basically, identifying $1$ with $-1$ with the group structure forces us to fold over the real line until we only have the positive reals.
 3) $\psi : \mathbb{C}^\times \to \mathbb{R}^\times$ by $z \to \lvert z \rvert^2$ gives us that $\mathbb{C}^\times /\{ z \in \mathbb{C} : \lvert z \rvert = 1 \} \cong \mathbb{R}^\times_{> 0}$. This corresponds to how getting rid of all of the angles is just reducing the complex numbers to their distance from the 
 4) $\theta : \mathbb{Z} / 8 \mathbb{Z} \to \mathbb{Z} / 4 \mathbb{Z}$ tells us that $\mathbb{Z} / 8 \mathbb{Z} \big / \left< \bar{4} \right> \cong \mathbb{Z} / 4 \mathbb{Z}$.
+
+### The second isomorphism theorem
+
+The second isomorphism theorem tells us how normal subgroups come together inside a group. For this, we need to define the product of subgroups, and prove that it really is a group.
+
+##### _definition, theorem:_ product of subgroups, the product of subgroups is a group
+
+Let $H, K$ be subgroups of $G$. We say the product of $H$ and $K$ is
+$$
+HK = \{ hk | h \in H, k \in K \}.
+$$
+
+1) If $\lvert H \rvert, \lvert K \rvert < \infty$, then $\lvert HK \rvert = \frac{\lvert H \rvert \lvert K \rvert}{\lvert H \cap K \rvert}$.
+2) $HK \le G$ if and only if $HK = KH$.
+3) If $H \le N_{G}(K)$ then $HK \le G$.
+4) iF $K$ is a normal subgroup of $G$, then $HK \le G$.
+
+##### _proof:_
+
+1) Basically, $h_{1}K = h_{2}K$ are the same if and only if $h_{1}(K \cap H) = h_{2}(K \cap H)$. Thus, there are $\frac{\lvert H \rvert}{\lvert H \cap K \rvert}$ cosets of $H \cap K$, and thus, that many cosets of $K$ in $H$. There are $\lvert K \rvert$ elements in each of those cosets. The disjoint union of all of these cosets is just $HK$ and thus, has cardinality $\lvert HK \rvert = \frac{\lvert H \rvert \lvert K \rvert}{\lvert H \cap K \rvert}$.
+##### _theorem:_ the second isomorphism theorem
+
+Let $H, K$ be subgroups of $G$ where $H \le N_{G}(K)$. Then
+1) $H \cap K$ is a normal subgroup of $H$
+2) $HK / K \cong H/H \cap K$.
+
+### The third isomorphism theorem
+
+The third isomorphism tells us when quotients behave like fractions — how we can quotient out quotient groups by quotient groups.
+
+##### _theorem:_ the third isomorphism theorem
+
+Let $H, K$ be normal subgroups of $G$ with $H$ a subgroup of $K$. Then
+1) $K / H$ is a normal subgroup of $G / H$.
+2) $(G/H)/(K / H) \cong G / K$.
+
+### The fourth isomorphism theorem
+
+The fourth isomorphism theorem tells us that
+
+##### _theorem:_ the fourth isomorphism theorem
+
+Suppose $G$ is a group with normal subgroup $H$. Then there is a bijection between the set of subgroups of $G$ that contain $H$ and the subgroups of $G/H$ by $K \mapsto K/H$ for $H \le K$.
