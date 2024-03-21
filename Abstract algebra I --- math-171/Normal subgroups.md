@@ -17,7 +17,7 @@ We've seen enough [[Fibres and quotients|examples]] of quotient groups. Now we w
 
 Now we want to relate [[Fibres and quotients#_definition, theorem _ the quotient group is a group|quotients]] to normal subgroups in the obvious way that we've been hinting at this whole time — the subgroups you can quotient out are exactly the normal subgroups.
 
-##### _theorem:_ quotients are only those of normal subgroups
+##### _theorem:_ quotients are exactly those of normal subgroups
 
 If $N \le G$, then the binary operation on the [[Fibres and quotients#_definition _ cosets|cosets]] of $N$ by
 $$

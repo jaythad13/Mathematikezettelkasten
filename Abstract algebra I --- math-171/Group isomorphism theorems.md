@@ -5,6 +5,7 @@ tags:
 lecture:
 - math-171-12
 - math-171-14
+- math-171-15
 ---
 
 ### The first isomorphism theorem
@@ -94,7 +95,7 @@ Yes! Since $\operatorname{im} \varphi = \ker \psi$, by quotienting it out, we're
 
 ### The second isomorphism theorem
 
-The second isomorphism theorem tells us how normal subgroups come together inside a group. For this, we need to define the product of subgroups, and prove that it really is a group.
+The second isomorphism theorem tells us how [[Centralisers, centre, normalisers, and stabilisers#_definition _ normaliser, $N_{G}(A)$|normality type conditions]] allow us to take the product of groups. For this, we need to define the product of subgroups, and prove that it really is a group.
 
 ##### _definition, theorem:_ product of subgroups, the product of subgroups is a group
 
@@ -106,16 +107,72 @@ $$
 1) If $\lvert H \rvert, \lvert K \rvert < \infty$, then $\lvert HK \rvert = \frac{\lvert H \rvert \lvert K \rvert}{\lvert H \cap K \rvert}$.
 2) $HK \le G$ if and only if $HK = KH$.
 3) If $H \le N_{G}(K)$ then $HK \le G$.
-4) iF $K$ is a normal subgroup of $G$, then $HK \le G$.
+4) If $K \trianglelefteq G$, then $HK \le G$.
 
-##### _proof:_
+##### _proof (sketch?):_
 
 1) Basically, $h_{1}K = h_{2}K$ are the same if and only if $h_{1}(K \cap H) = h_{2}(K \cap H)$. Thus, there are $\frac{\lvert H \rvert}{\lvert H \cap K \rvert}$ cosets of $H \cap K$, and thus, that many cosets of $K$ in $H$. There are $\lvert K \rvert$ elements in each of those cosets. The disjoint union of all of these cosets is just $HK$ and thus, has cardinality $\lvert HK \rvert = \frac{\lvert H \rvert \lvert K \rvert}{\lvert H \cap K \rvert}$.
+2) Suppose $HK \le G$. Then for all $k \in K$ and all $h \in H$ we have $k, h \in HK$. Since $HK$ is a group, we must have $kh \in HK$. Thus, $KH \subset HK$. For any $hk \in HK$ we must also have $(hk)^{-1} = h' k'$, (where $h' \in H, k' \in K$) and thus, $hk = (h'k')^{-1}$. But we know that then $hk = k'^{-1} h'^{-1} \in KH$. Thus, $HK \subset KH$.
+	Suppose $HK = KH$. Note that $HK$ is nonempty since $1_{G}$ must be in $HK$. Suppose we have $hk, h'k' \in HK$ with $h, h' \in H$ and $k, k' \in K$. Then we can write
+	$$
+\begin{split}
+hk (h'k')^{-1} & = hkk'^{-1} h'^{-1} \\
+& = h h'' k'' \\
+ & \in HK
+\end{split}
+$$
+	where the second step (that $kk'^{-1}h'^{-1} = h'' k''$) follows from $HK = KH$.
+3) If $H \le N_{G}(K)$, then for any $h \in H$, $hK = Kh$. Since this is true for all $h$, $HK = KH$. By 2), $HK \le G$.
+4) If $K$ is a normal subgroup of $G$, then $H \le G = N_{G}(K)$ and thus, by 3) $HK \le G$.
+
 ##### _theorem:_ the second isomorphism theorem
 
 Let $H, K$ be subgroups of $G$ where $H \le N_{G}(K)$. Then
-1) $H \cap K$ is a normal subgroup of $H$
+1) $H \cap K \trianglelefteq H$
 2) $HK / K \cong H/H \cap K$.
+
+##### _proof:_
+
+1) For any $h \in H$, $x \in H \cap K$, we want to show that $hxh^{-1} \in H \cap K$. Note that $hxh^{-1}$ is obviously in $H$. Note that since $x \in K$, $x \in hKh^{-1} = K$ (since $H \le N_{G}(K)$). Thus $H \cap K$ is a normal subgroup of $H$.
+2) Suppose $hk = h' k'$, (for $h, h' \in H$, $k, k' \in K$). We want $h'^{-1} h \in H \cap K$. We have $h'^{-1}h = k' k^{-1}$ and thus it is in both $H$ and $K$ and thus is in $H \cap K$. Thus the map $$
+\begin{split}
+\varphi & : HK \to H/H \cap K \\
+ & : hk \mapsto h(H \cap K)
+\end{split}
+$$
+	is well defined (any two different representations of $hk$ have $h, h'$ that differ only by an element in $H \cap K$). Note that in $hkh'k'$, $kh' = h'k''$ for some $k'' \in K$ since $h \in N_{G}(K)$. Thus, $hkh'k' = hh'k''k'$. Thus,
+	$$
+\begin{split}
+\varphi(hkh' k') & = \varphi(hh'k''k') \\
+ & = hh'(H \cap K) \\
+ & = h(H \cap K) h'(H \cap K) \\
+ & =  \varphi(hk) \varphi(h' k')
+\end{split}
+$$
+	where the second to last equality follows from the fact that $H/H \cap K$ [[Normal subgroups#_theorem _ quotients are only those of normal subgroups|is a group]]. Thus $\varphi$ is a homomorphism. Note that it is surjective since for any $h(H \cap K)$, we have $\varphi(h) = h(H \cap K)$. Also note that it has kernel $K$ — any $k \in K$ is clearly mapped to $H \cap K$. If $hk \in \ker \varphi$, then $h(H \cap K) = H \cap K$ giving us $h \in H \cap K$ and thus $h \in K$.
+	Then by the [[#_theorem _ the first isomorphism theorem|the first isomorphism theorem]],
+	$$
+HK / K \cong H / H \cap K
+$$
+	since $K = \ker \varphi$.
+
+Notice that this gives us the following lattice
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		& G \\
+		& HK \ar[u] \\
+		H \ar[ru] & & K \ar[lu, "\trianglelefteq"] \\
+		& H \cap K \ar[lu, "\trianglelefteq"] \ar[ru]
+	\end{tikzcd}
+\end{document}
+```
+
+
+
+
 
 ### The third isomorphism theorem
 
@@ -124,7 +181,7 @@ The third isomorphism tells us when quotients behave like fractions — how we 
 ##### _theorem:_ the third isomorphism theorem
 
 Let $H, K$ be normal subgroups of $G$ with $H$ a subgroup of $K$. Then
-1) $K / H$ is a normal subgroup of $G / H$.
+1) $K / H \trianglelefteq G / H$.
 2) $(G/H)/(K / H) \cong G / K$.
 
 ### The fourth isomorphism theorem
