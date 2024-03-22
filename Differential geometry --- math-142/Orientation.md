@@ -4,6 +4,7 @@ tags:
 - diff-geo
 lecture:
 - math-142-22
+- math-142-23
 ---
 
 We've seen already that and [[Proper Euclidean motions#_proposition _ the tangent maps of isometries behave like isometries|the tangent maps of proper Euclidean motions preserve dot products]]. What about cross products?
@@ -74,4 +75,8 @@ $$
 
 ##### _example:_ orientation reversing maps
 
-Any reflection through any plane is orientation reversing.
+Any reflection through any plane is orientation reversing. That is, for the plane $\operatorname{span}(\mathbf{n})^\perp$, the map by
+$$
+C : \mathbf{p} \mapsto \mathbf{p} - 2 \frac{\mathbf{p} \cdot \mathbf{n}}{\lVert \mathbf{n} \rVert ^2} \, \mathbf{n}
+$$
+is orthogonal and orientation reversing
