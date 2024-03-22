@@ -9,8 +9,31 @@
 \begin{document}
 
 \begin{problem}[Dummit \& Foote \S3.1 \#40]
-	Let $F$ be a group, let $N$ be a normal subgroup of $G$ and let $\overline{G} = G/N$. Prove that $\overline{x}$ and $\overline{y}$ commute in $\overline{G}$ if and only if $x^{-1}y^{-1}xy \in N$. (The element $x^{-1}y^{-1}xy$ is called the \textit{commutator} of $x$ and $y$ and is denoted by $[x, y]$.)
+	Let $G$ be a group, let $N$ be a normal subgroup of $G$ and let $\overline{G} = G/N$. Prove that $\overline{x}$ and $\overline{y}$ commute in $\overline{G}$ if and only if $x^{-1}y^{-1}xy \in N$. (The element $x^{-1}y^{-1}xy$ is called the \textit{commutator} of $x$ and $y$ and is denoted by $[x, y]$.)
 \end{problem}
+
+\begin{solution}
+	Suppose $\overline{x}$ and $\overline{y}$ commute in $\overline{G}$. Then we must have that
+	\[
+		x N y N = y N x N.
+	\] \\
+	Since $N$ is a normal group, we know that the standard operation on cosets is well defined, and thus,
+	\[
+		(xy) N = (yx) N.
+	\]
+	We know that for two elements of $G$ to have the same coset of $N$, they must differ by a member of $N$. Thus, $(yx)^{-1}xy \in N$. Note that $(yx)^{-1} = x^{-1} y^{-1}$ and thus, $[x, y] = x^{-1}y^{-1}xy \in N$. \\\\
+	Now we will show the converse. Suppose that $[x, y] \in N$. Then note that $1_{G} N = [x, y] N$. Thus,
+	\[
+		\begin{split}
+			(yx) N & = (yx) N 1_{G} N \\
+			       & = (yx) N [x, y] N \\
+			       & = ((yx)[x, y]) N \\
+			       & = ((yx)(yx)^{-1}xy) N \\
+			       & = (xy) N.
+		\end{split}
+	\]
+	That is, $(xy) N = (yx) N$ as desired.
+\end{solution}
 
 \pagebreak
 
@@ -18,16 +41,80 @@
 	Let $G$ be a group. Prove that $N = \left < x^{-1}y^{-1}xy | x, y \in G \right >$ is a normal subgroup of $G$ and $G/N$ is abelian ($N$ is called the \textit{commutator subgroup} of $G$)
 \end{problem}
 
+\begin{solution}
+	\[
+		\begin{split}
+			g [x, y] g^{-1} & = g x^{-1} y^{-1} x y g^{-1} \\
+		\end{split}
+	\]
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[Dummit \& Foote \S3.1 \#42]
 	Assume both $H$ and $K$ are normal subgroups of $G$ with $H \cap K = 1$. Prove that $xy = yx$ for all $x \in H$ and $y \in K$.
 \end{problem}
 
+\begin{solution}
+	Consider $xy(yx)^{-1} = xy x^{-1} y^{-1}$. Since $H$ and $K$ are both normal, we can write $x y x^{-1} = k \in K$ and $y x^{-1} y^{-1} = h \in H$. Thus, $xy(yx)^{-1} = k y^{-1} \in K$ and $xy(yx)^{-1} = x h \in H$. That is, $xy(yx)^{-1} \in H \cap K$ and thus, $xy(yx)^{1} = 1$. Thus, $xy = yx$ as desired.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[Dummit \& Foote \S3.1 \#43]
 	Assume $\mathcal{P} = \{ A_{i} | i \in I \}$ is any partition of $G$ with the property that $\mathcal{P}$ is a group under the ``quotient operation'' defined as follows: to compute the product of $A_{i}$ with $A_{j}$ take any element $a_{i}$ of $A_{i}$ and any element $a_{j}$ of $A_{j}$ and let $A_{i}A_{j}$ be the element of $\mathcal{P}$ containing $a_{i}a_{j}$ (this operation is assumed to be well defined). Prove that the element of $\mathcal{P}$ that contains the identity of $G$ is a normal subgroup of $G$ and the elements of $\mathcal{P}$ are the cosets of this subgroup (so $\mathcal{P}$ is just a quotient group of $G$ in the usual sense).
 \end{problem}
+
+\begin{solution}
+	Let $[a]$ denote the unique element of $\mathcal{P}$ containing $a$. Note that the quotient operation being well defined just means that $[a][b] = [ab]$. \\\\
+	Thus, since $[a][1_{G}] = [1_{G}][a] = [a]$ and $\mathcal{P}$ is a group, we have that $[1_{G}]$ is the identity $1_{\mathcal{P}}$. Similarly, note that since $[a][a^{-1}] = [1_{G}] = 1_{\mathcal{P}}$, we have that $[a^{-1}] = [a]^{-1}$. \\\\
+	First we will show that $1_{\mathcal{P}}$ is a subgroup of $G$. Suppose by way of contradiction that there exist $a, b \in 1_{\mathcal{P}}$ such that $ab^{-1} \notin 1_{\mathcal{P}}$. Then we would have $[ab^{-1}] \neq 1_{\mathcal{P}}$. Then we should have
+	\[
+		\begin{split}
+			[ab^{-1}][b] & = [ab^{-1}b] \\
+				     & = [a] \\
+				     & = 1_{\mathcal{P}}
+		\end{split}
+	\]
+	and 
+	\[
+		\begin{split}
+			[ab^{-1}][b] & = [ab^{-1}] 1_{\mathcal{P}} \\
+				     & = [ab^{-1}] \\
+				     & \neq 1_{\mathcal{P}}
+		\end{split}
+	\]
+	at the same time, which is a contradiction. Thus for any $a, b \in 1_{\mathcal{P}}$, we have $ab^{-1} \in 1_{\mathcal{P}}$. Since $1_{\mathcal{P}}$ is nonempty by definition (it is defined to contain $1_{G}$), this suffices to show that $1_{\mathcal{P}}$ is a subgroup of $G$. \\\\
+	Now we will show that $1_{\mathcal{P}} \trianglelefteq G$. Since the ``quotient operation'' is well-defined, for any $a \in G$, we can write
+	\[
+		\begin{split}
+			[a] 1_{\mathcal{P}} [a]^{-1} & = [a \, 1_{G} \, a^{-1}] \\
+					   & = [1_{G}] \\
+					   & = 1_{\mathcal{P}}.
+		\end{split}
+	\]
+	Thus, for any $p \in 1_{\mathcal{P}}$ and any $a \in G$, we have
+	\[
+		\begin{split}
+			[apa^{-1}] & = [a][p][a]^{-1} \\ 
+			   & = [a] 1_{\mathcal{P}} [a]^{-1} \\
+			   & = 1_{\mathcal{P}}.
+		\end{split}
+	\]
+	giving us that for any $a \in G, p \in 1_{\mathcal{P}}$, we have $apa^{-1} \in 1_{\mathcal{P}}$. That is, $1_{\mathcal{P}}$ is a normal subgroup of $G$. \\\\
+	Finally, we have to show that all the other elements of $\mathcal{P}$ are just cosets of $1_{\mathcal{P}}$. We will show by double inclusion that $[a] = a \, 1_{\mathcal{P}}$. \\\\
+	Suppose that $b \in a \, 1_{\mathcal{P}}$. Then $b = a p$ for some $p \in 1_{\mathcal{P}}$. Thus,
+	\[
+		\begin{split}
+			[b] & = [ap] \\
+			    & = [a][p] \\
+			    & = [a] 1_{\mathcal{P}} \\
+			    & = [a].
+		\end{split}
+	\]
+	Thus, $b \in [a]$. Thus, $1_{\mathcal{P}} \subset [a]$. \\\\
+	Suppose that $b \in [a]$. Thus, $[b] = [a]$. Then, multiplying on both sides by $[a]^{-1}$ we have $[ba^{-1}] = 1_{\mathcal{P}}$, and thus, $ba^{-1} \in 1_{\mathcal{P}}$. Thus, $b \in a \, 1_{\mathcal{P}}$. Thus, $[a] \subset a 1_{\mathcal{P}}$. \\\\
+	Thus, by double containment, every equivalence class $[a]$ is just the coset $a \, 1_{\mathcal{P}}$.
+\end{solution}
 
 \end{document}
