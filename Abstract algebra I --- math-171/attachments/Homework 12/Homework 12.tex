@@ -42,11 +42,27 @@
 \end{problem}
 
 \begin{solution}
+	First we will show that $N$ is normal. \\\\
+	For any commutator $[x, y]$
 	\[
 		\begin{split}
 			g [x, y] g^{-1} & = g x^{-1} y^{-1} x y g^{-1} \\
+					& = g x^{-1} g^{-1} g y^{-1} g^{-1} g x g^{-1} g y g^{-1} \\
+					& = (g x g^{-1})^{-1} (g y g^{-1})^{-1} g x g^{-1} g y g^{-1} \\
+					& = [g x g^{-1}, g y g^{-1}] \\
+					& = h \in N.
 		\end{split}
 	\]
+	Thus, for any element $h \in N$, which must have the form of a finite product of commutators --- $h = [x_{1}, y_{1}] \cdots [x_{n}, y_{n}]$ we have \[
+		\begin{split}
+			ghg^{-1} & = g [x_{1}, y_{1}] \dots [x_{n}, y_{n}] g^{-1} \\
+				 & = g [x_{1}, y_{1}] g^{-1} \cdots g [x_{n}, y_{n}] g^{-1} \\
+				 & = h_{1} \cdots h_{n} \in N.
+		\end{split}
+	\]
+	where $h_{j} = [g x_{j} g^{-1}, g y_{j} g^{-1}] \in N$ for all $j \in \{ 1, \dots, n \}$. That is, $ghg^{-1} \in N$ for any $g \in G$, and any $h \in N$ --- $N$ is normal in $G$. \\\\
+	Now we will show that $G/N$ is abelian. \\\\
+	Note that for any $x, y \in G$, we have $[x, y] \in N$. Thus, by the previous problem, we have that $\overline{x}$ and $\overline{y}$ commute in $G/N$. That is, any $xN, yN \in G/N$ commute --- $G/N$ is abelian.
 \end{solution}
 
 \pagebreak
@@ -56,7 +72,7 @@
 \end{problem}
 
 \begin{solution}
-	Consider $xy(yx)^{-1} = xy x^{-1} y^{-1}$. Since $H$ and $K$ are both normal, we can write $x y x^{-1} = k \in K$ and $y x^{-1} y^{-1} = h \in H$. Thus, $xy(yx)^{-1} = k y^{-1} \in K$ and $xy(yx)^{-1} = x h \in H$. That is, $xy(yx)^{-1} \in H \cap K$ and thus, $xy(yx)^{1} = 1$. Thus, $xy = yx$ as desired.
+	Consider $xy(yx)^{-1} = xy x^{-1} y^{-1}$. Since $H$ and $K$ are both normal, we can write $x y x^{-1} = k \in K$ and $y x^{-1} y^{-1} = h \in H$. Thus, $xy(yx)^{-1} = k y^{-1} \in K$ and $xy(yx)^{-1} = x h \in H$. That is, $xy(yx)^{-1} \in H \cap K$ and thus, $xy(yx)^{-1} = 1$. Thus, $xy = yx$ as desired.
 \end{solution}
 
 \pagebreak
