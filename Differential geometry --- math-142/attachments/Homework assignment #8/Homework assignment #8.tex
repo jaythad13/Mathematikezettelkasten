@@ -1,0 +1,76 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 142 --- Differential Geometry}
+\assignment{Homework assignment \#8}
+\duedate{29th March 2024}
+
+\begin{document}
+
+\begin{problem}[Problem 1.]
+	\begin{enumerate}
+		 \item Say $F, G : \mathbb{R}^{3} \to \mathbb{R}^{3}$ are isometries. Show that $\operatorname{sgn}(F \circ G) = \operatorname{sgn}(F) \operatorname{sgn}(G)$.
+		\item Show that $F^{-1} : \mathbb{R}^{3} \to \mathbb{R}^{3}$ and $F$ have the same sign. That is, $\operatorname{sgn}(F) = \operatorname{sgn}(F^{-1})$.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Problem 2.]
+	Recall that any orthogonal transformation $C : \mathbb{R}^{3} \to \mathbb{R}^{3}$ can be uniquely expressed in the form $C (\mathbf{x}) = A \mathbf{x}$ for some $3 \times 3$ orthogonal matrix $A$; we define $\operatorname{sgn}(C) = \det A$. A \textit{rotation} is an is an orthogonal transformation $C$  such that $\operatorname{sgn}(C) = 1$ .
+	\begin{enumerate}
+		\item Show that $A$ has eigenvalue $1$ as well as a unit eigenvector $\mathbf{e}_{3}$ satisfying $A \mathbf{e}_{3} = \mathbf{e}_{3}$.
+		\item Prove that $C$ does, in fact, rotate $\mathbb{R}^{3}$ about an axis $L$. Explicitly, given a rotation $C$, show that there exists a number $\vartheta$ and points $\mathbf{e}_{1}, \mathbf{e}_{2}, \mathbf{e}_{3} \in \mathbb{R}^{3}$ with
+			\[
+				\mathbf{e}_{i} \cdot \mathbf{e}_{j} = \begin{cases}
+					1 & \text{if } i = j \text{, and} \\
+					0 & \text{otherwise}
+				\end{cases}
+			\]
+			such that
+			\[
+				\begin{split}
+					C(\mathbf{e}_{1}) & = \cos{\vartheta} \, \mathbf{e}_{1} + \sin{\vartheta} \, \mathbf{e}_{2} \\
+					C(\mathbf{e}_{2}) & = - \sin{\vartheta} \, \mathbf{e}_{1} + \cos{\vartheta} \, \mathbf{e}_{2} \\
+					C(\mathbf{e}_{3}) & = \mathbf{e}_{3}.
+				\end{split}
+			\]
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Problem 3.]
+	Let $\mathbf{a}$  be a point of $\mathbb{R}^{3}$  such that $\lVert \mathbf{a} \rVert = 1$ .
+	\begin{enumerate}
+		\item Prove that the formula
+			\[
+				C(\mathbf{p}) = \mathbf{a} \times \mathbf{p} + (\mathbf{p} \cdot \mathbf{a}) \mathbf{a}
+			\]
+			defines an orthogonal transformation $C : \mathbb{R}^{3} \to \mathbb{R}^{3}$.
+		\item Describe its general effect on $\mathbb{R}^{3}$.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Problem 4.]
+	Let $F : \mathbb{R}^{3} \to \mathbb{R}^{3}$ be an isometry of $\mathbb{R}^{3}$, and write $F = T \circ C$ for some translation $T$ and some orthogonal transformation $C$. Let $\beta : I \to \mathbb{R}^{3}$ be a unit speed curve in $\mathbb{R}^{3}$. Recall that the Frenet-Serret apparatus for $\overline{\beta} = F \circ \beta$ is
+	\begin{align*}
+		\overline{\mathbf{T}} & = F_{*} \circ \mathbf{T} & \overline{\mathbf{N}} & = F_{*} \circ \mathbf{N} & \overline{\mathbf{B}} & = \operatorname{sgn} F (F_{*} \circ \mathbf{B}) \\
+		\overline{v} & = 1 & \overline{\kappa} & = \kappa & \overline{\tau} & = \operatorname{sgn} F \, \tau.
+	\end{align*}
+	\begin{enumerate}
+		\item Show that if $\beta$ is a cylindrical helix, then $\overline{\beta} = F \circ \beta$ is also a cylindrical helix.
+		\item The \textit{spherical image} $\sigma : I \to \mathbb{R}^{3}$ of $\beta$ is that function with the same Euclidean coordinates as that of $\beta'(t)$. That is, $\mathbf{T}(t) = [\sigma(t), \beta(t)]$. Show that, if $\beta$ has spherical image $\sigma$, then $\overline{\beta}$ has spherical image $C \circ \sigma$.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Problem 5.]
+	Let $F$ be an isometry of $\mathbb{R}^{3}$. For each vector field $\mathbf{V}$ which sends a point $\mathbf{p}$ to the tangent vector $\mathbf{V}(\mathbf{p}) = [\mathbf{v}, \mathbf{p}]$, let $\overline{\mathbf{V}}$ be that vector field which sends a point $\mathbf{p}$ to the tangent vector $F_{*}(\mathbf{V}(\mathbf{p}))$. Prove that \textit{isometries preserve covariant derivatives}. That is, show $\overline{\nabla_{\mathbf{V}} \mathbf{W}} = \nabla_{\overline{\mathbf{V}}} \overline{\mathbf{W}}$.
+\end{problem}
+
+\end{document}
