@@ -5,7 +5,6 @@ tags:
 lecture:
 - math-142-20
 - math-142-21
-- math-142-23
 ---
 
 Proper Euclidean motions are basically the nicest maps on metric spaces. We're just going to talk about $\mathbb{R}^n$, with the Euclidean inner product (the dot product).
@@ -151,43 +150,3 @@ for all $k \in \{ 1, 2, 3 \}$ where $\mathbf{q} = F(\mathbf{p})$.
 We want to write $F = T \circ C$. Recall that $F_{*} = [C, F]$, so we can just write $C$ as the orthogonal map that sends the orthonormal basis of the vector parts of $\mathbf{E}_{1}(\mathbf{p}), \mathbf{E}_{2}(\mathbf{p}), \mathbf{E}_{3}(\mathbf{p})$ to the orthonormal basis of the vector parts of $\mathbf{E}_{1}(\mathbf{q}), \mathbf{E}_{2}(\mathbf{q}), \mathbf{E}_{3}(\mathbf{q})$. Note that there is a neat basis change trick that you can use to compute the matrix of that in the standard orthonormal basis on $\mathbb{R}^3$.
 
 Then compute $T$ so that $F\mathbf{p} = \mathbf{q}$ works out.
-
-### The big picture
-
-Recall the notion of a [[Frenet-Serret frames#Vector fields on a curve|vector fields on a curve]] and their associated commutative diagram. What happens when we apply a proper Euclidean motion to it?
-
-Say we apply an isometry $F = T \circ C$, where $T$ is a translation and $C$ is an isometry.
-```tikz
-\usepackage{tikz-cd}
-\usepackage{amsfonts}
-\begin{document}
-	\begin{tikzcd}
-		& I \ar[d, "\mathbf Y"] \ar[rd, "u"] \ar[ld, "\alpha"] \\
-		\mathbb R^3 \ar[r, leftarrow, "\pi"'] \ar[d, "F"] & \mathrm T \mathbb R^3 \ar[r, "\mathbf v_{\mathbf p} \mapsto \mathbf v"'] \ar[d, "F_*"] & \mathbb R^3 \ar[d, "C"] \\
-		\mathbb R^3 \ar[r, leftarrow, "\pi"'] & \mathrm T \mathbb R^3 \ar[r, "\mathbf v_{\mathbf p} \mapsto \mathbf v"'] & \mathbb R^3 \\
-	\end{tikzcd}
-\end{document}
-```
-
-What this means is that if $\mathbf{Y}$ is a vector field on $\alpha$, then $\overline{\mathbf{Y}} = F_{*} \circ \alpha$ forms a vector field on $\overline{\alpha} = F \circ \alpha$ that is in some sense equivalent. We can make this exact by looking at what happens to [[Frenet-Serret frames]] along a strongly regular curve. We should expect them to be basically the same, so that then we can do physics on them. Specifically, we want to prove something like
-##### _theorem:_ Frenet-Serret frames are invariant under orientation-preserving Euclidean motions
-
-which we will make precise later. First, some bookkeeping.
-
-##### _notation:_ $\overline{\alpha}$, $\overline{\mathbf{Y}}$
-
-For any strongly regular curve $\alpha$ and a vector field $\mathbf{Y}$ on it, let $\overline{\alpha}$ denote $F \circ \alpha$ and let $\overline{\mathbf{Y}}$ denote the vector field $F_{*} \circ \mathbf{Y}$ on it.
-
-It's obvious that we should expect Euclidean motions to preserve vector fields, and they do!
-
-##### _proposition:_ Euclidean motions preserve vector fields
-
-Suppose $\mathbf{X}, \mathbf{Y} : I \to \mathrm{T}\mathbb{R}^3$ are vector fields on a curve $\alpha$, and $f, g \in \mathcal{C}^\infty(I)$. 
-1) Then $\mathbf{Z} = f \mathbf{X} + g \mathbf{Y}$ satisfies $\overline{\mathbf{Z}} = f \overline{\mathbf{X}} + g \overline{\mathbf{Y}}$.
-2) $\lVert \overline{\mathbf{Y}} \rVert = \lVert \mathbf{Y} \rVert$.
-3) $\overline{\mathbf{Y}'} = \overline{\mathbf{Y}}'$
-
-##### _proof sketch:_
-
-The first part follows from the linearity of the vector part of $F_{*}$. The second part follows from the fact that $F_{*}$ preserves dot products. The third part follows from the linearity of the derivative and the linearity of the vector part of $F_{*}$.
-
