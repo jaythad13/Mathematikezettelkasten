@@ -15,6 +15,44 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item Suppose $F = T \circ C$ and $G = S \circ D$ where $T, S$ are translations $T : \mathbf{p} \mapsto \mathbf{p} + \mathbf{a}$ and $S : \mathbf{p} \mapsto \mathbf{p}$ and $C, D$ are orthogonal transformations. \\\\
+			Then since $C$ is a linear map (all orthogonal transformations are linear), we have
+			\[
+				\begin{split}
+					(F \circ G) (\mathbf{p}) & = F((S \circ D)(\mathbf{p})) \\
+								 & = F(D(\mathbf{p}) + \mathbf{b}) \\
+								 & = (T \circ C)(D(\mathbf{p}) + \mathbf{b}) \\
+								 & = C(D(\mathbf{p}) + \mathbf{b}) + \mathbf{a} \\
+								 & = (C \circ D)(\mathbf{p}) + (C(\mathbf{b}) + \mathbf{a}).
+				\end{split}
+			\]
+			Thus, we can write $F \circ G$ as the composition $R \circ E$ where $E = C \circ D$ is an orthogonal transformation, and $R$ is translation by $C(\mathbf{b}) + \mathbf{a}$. Thus,
+			\[
+				\begin{split}
+					\operatorname{sgn}(F \circ G) & = \det E \\
+								      & = \det (C \circ D) \\
+								      & = (\det C) (\det D) \\
+								      & = \operatorname{sgn} (F) \operatorname{sgn} (G)
+				\end{split}
+			\]
+			as desired, where the third equality is due to the multiplicity of the determinant for linear operators.
+		\item We know that $F \circ F^{-1} = I$ where $I$ is the identity map on $\mathbb{R}^{3}$. Since $I$ is an orthogonal map itself, we have
+			\[
+				\begin{split}
+					\operatorname{sgn} I & = \det I \\
+							     & = 1.
+				\end{split}
+			\]
+			Thus,
+			\[
+				\operatorname{sgn}(F) \operatorname{sgn}(F^{-1}) = 1.
+			\] \\
+			Since their product is positive, they must have the sign. Since we already know that the sign of any isometry has magnitude $1$, they must be equal.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[Problem 2.]
@@ -53,6 +91,42 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item First we will show that $C$ is linear.
+			\[
+				\begin{split}
+					C(\alpha \mathbf{p} + \beta \mathbf{q}) & = \mathbf{a} \times (\alpha \mathbf{p} + \beta \mathbf{q}) + ((\alpha \mathbf{p} + \beta \mathbf{q}) \cdot \mathbf{a}) \mathbf{a} \\
+								   & = \mathbf{a} \times (\alpha \mathbf{p}) + \mathbf{a} \times (\beta \mathbf{q}) + ((\alpha \mathbf{p}) \cdot \mathbf{a} +  (\beta \mathbf{q}) \cdot \mathbf{a}) \mathbf{a} \\
+								   & = \alpha(\mathbf{a} \times \mathbf{p}) + \beta (\mathbf{a} \times \mathbf{q}) + \alpha(\mathbf{p} \cdot \mathbf{a}) \mathbf{a} + \beta (\mathbf{p} \cdot \mathbf{a}) \mathbf{a} \\
+								   & = \alpha(\mathbf{a} \times \mathbf{p} + (\mathbf{p} \cdot \mathbf{a}) \mathbf{a}) + \beta (\mathbf{a} \times \mathbf{q} + (\mathbf{q} \cdot \mathbf{a}) \mathbf{a}) \\
+								   & = \alpha C(\mathbf{p}) + \beta C(\mathbf{q}).
+				\end{split}
+			\] \\
+			We will now show that $C$ preserves norms.
+			\[
+				\begin{split}
+					\lVert C(\mathbf{p}) \rVert^{2} & = \lVert \mathbf{a} \times \mathbf{p} + (\mathbf{p} \cdot \mathbf{a}) \mathbf{a} \rVert^{2} \\
+									& = \lVert \mathbf{a} \times \mathbf{p} \rVert^{2} + \lVert (\mathbf{p} \cdot \mathbf{a}) \mathbf{a} \rVert^{2} \\
+									& = \lVert \mathbf{a} \rVert^{2} \lVert \mathbf{p} \rVert^{2} - (\mathbf{p} \cdot \mathbf{a})^{2} + (\mathbf{p} \cdot \mathbf{a})^{2} \lVert \mathbf{a} \rVert^{2} \\
+									& = \lVert \mathbf{p} \rVert^{2}.
+				\end{split}
+			\]
+			Here, the third step follows by Lagrange's identity, and the last step follows by the given fact that $\lVert \mathbf{a} \rVert = 1$. Since both are positive, we can take the square root on both sides to get $\lVert C(\mathbf{p}) \rVert = \lVert \mathbf{p} \rVert$. \\\\
+			Using both of these, we can see that $C$ preserves distances. Specifically, 
+			\[
+				\begin{split}
+					d(C(\mathbf{p}), C(\mathbf{q})) & = \lVert C(\mathbf{p}) - C(\mathbf{q}) \rVert \\
+									& = \lVert C(\mathbf{p} - \mathbf{q}) \rVert \\
+									& = \lVert \mathbf{p} - \mathbf{q} \rVert \\
+									& = d(\mathbf{p}, \mathbf{q}).
+				\end{split}
+			\] \\
+			Since $C$ preserves norms and distances, it is an orthogonal transformation.
+		\item $C$ rotates any point by an angle of $\pi/2$ about the axis defined by $\operatorname{span}(\mathbf{a})$.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[Problem 4.]
@@ -70,7 +144,25 @@
 \pagebreak
 
 \begin{problem}[Problem 5.]
-	Let $F$ be an isometry of $\mathbb{R}^{3}$. For each vector field $\mathbf{V}$ which sends a point $\mathbf{p}$ to the tangent vector $\mathbf{V}(\mathbf{p}) = [\mathbf{v}, \mathbf{p}]$, let $\overline{\mathbf{V}}$ be that vector field which sends a point $\mathbf{p}$ to the tangent vector $F_{*}(\mathbf{V}(\mathbf{p}))$. Prove that \textit{isometries preserve covariant derivatives}. That is, show $\overline{\nabla_{\mathbf{V}} \mathbf{W}} = \nabla_{\overline{\mathbf{V}}} \overline{\mathbf{W}}$.
+	Let $F$ be an isometry of $\mathbb{R}^{3}$. For each vector field $\mathbf{V}$ which sends a point $\mathbf{p}$ to the tangent vector $\mathbf{V}(\mathbf{p}) = [\mathbf{v}, \mathbf{p}]$, let $\overline{\mathbf{V}}$ be that vector field which sends a point $\mathbf{q} = F(\mathbf{p})$ to the tangent vector $F_{*}(\mathbf{V}(\mathbf{p}))$. Prove that \textit{isometries preserve covariant derivatives}. That is, show $\overline{\nabla_{\mathbf{V}} \mathbf{W}} = \nabla_{\overline{\mathbf{V}}} \overline{\mathbf{W}}$.
 \end{problem}
+
+\begin{solution}
+	Let $F = T \circ C$ where $C$ is an orthogonal transformation and $T$ is a translation. Let $\mathbf{W}(\mathbf{p}) = [\mathbf{w}, \mathbf{p}]$ where $\mathbf{w}$ is a function $\mathbf{w} : \mathbb{R}^{3} \to \mathbb{R}^{3}$.
+	We know, by definition, that $\nabla_{\mathbf{V}} \mathbf{W}(\mathbf{p}) = [D\mathbf{w} \Big |_{\mathbf{p}}(\mathbf{v}), \mathbf{p}]$. Also, notice that for $\mathbf{q} = F(\mathbf{p})$, we have $\overline{\mathbf{V}}(\mathbf{q}) = [(C \circ \mathbf{v} \circ F^{-1})(\mathbf{q}), \mathbf{q}]$, and similarly for $\overline{\mathbf{W}}$. Thus, for some $\mathbf{q} = F(\mathbf{p})$,
+	\[
+		\begin{split}
+			\nabla_{\overline{\mathbf{V}}} \overline{\mathbf{W}}(\mathbf{q}) & = [D(C \circ \mathbf{w} \circ F^{-1}) \Big |_{\mathbf{p}} (C \circ \mathbf{v})(\mathbf{p}), \mathbf{q}] \\
+									      & = \left [ DC \Big |_{\mathbf{w}(\mathbf{p})} \left ( D \mathbf{w} \Big |_{\mathbf{p}} \left ( DF^{-1} \Big |_{\mathbf{q}} (C(\mathbf{v}(\mathbf{p}))) \right ) \right ), \mathbf{q} \right ] \\
+									      & = \left [ C \left ( D\mathbf{w} \Big |_{\mathbf{p}} (C^{-1}(C(\mathbf{v}(\mathbf{p})))) \right ), \mathbf{q} \right ] \\
+									      & = \left [ C \left ( D \mathbf{w} \Big |_{\mathbf{p}} (\mathbf{v}(\mathbf{p})) \right ), \mathbf{q} \right ] \\
+									      & = F_{*} \left ( \left [ D\mathbf{w} \Big |_{\mathbf{p}} (\mathbf{v}(\mathbf{p})), \mathbf{p} \right ] \right ) \\
+									      & = F_{*}(\nabla_{\mathbf{V}} \mathbf{W}(\mathbf{p})) \\
+									      & = \overline{\nabla_{\mathbf{V}} \mathbf{W}}{(\mathbf{q})}.
+		\end{split}
+	\]
+	Here the second step follows by the multivariable chain rule, the third step follows by noticing that the orthogonal part of $F^{-1}$ is $C^{-1}$ and that the derivative of any linear map is itself, and the steps after those just follow by the definitions. \\\\
+	Note that we used the notation $Df \Big |_{\mathbf{a}}$ to denote the linear map that is the total derivative of the function $f$, at the point $\mathbf{a}$, and the notation $Df \Big |_{\mathbf{a}}(\mathbf{v})$ to denote evaluating that linear map on the vector $\mathbf{v}$.
+\end{solution}
 
 \end{document}
