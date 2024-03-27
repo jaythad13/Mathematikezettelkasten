@@ -5,6 +5,7 @@ tags:
 lecture:
 - math-142-23
 - math-142-24
+- math-142-25
 ---
 
 ### The big picture — Euclidean geometry
@@ -86,7 +87,7 @@ Follows from [[#_proposition _ Euclidean motions preserve vector fields over a c
 Say we have a curve $\alpha$ with Frenet-Serret apparatus $v, \kappa, \tau, \mathbf{T}, \mathbf{N}, \mathbf{B}$, and $\overline{\alpha} = F \circ \alpha$ for some Euclidean motion $F$ has Frenet-Serret apparatus $\overline{v}, \overline{\kappa}, \overline{\tau}, \overline{\mathbf{T}}, \overline{\mathbf{N}}, \overline{\mathbf{B}}$. Then
 $$
 \begin{aligned}
-\overline{v} & = v & \overline{\kappa} & = \kappa & \overline{\tau} & = \tau \\
+\overline{v} & = v & \overline{\kappa} & = \kappa & \overline{\tau} & = \operatorname{sgn} F \, \tau \\
 \overline{\mathbf{T}} & = F_{*} \circ \mathbf{T} & \overline{\mathbf{N}} & = F_{*} \circ \mathbf{N} & \mathbf{B} & = \operatorname{sgn} F (F_{*} \circ \mathbf{B})
 \end{aligned}
 $$
@@ -94,3 +95,36 @@ $$
 ##### _proof sketch:_
 
 Just push the definitions through $F$ [[#_proposition _ Euclidean motions preserve vector fields over a curve|our results on vector fields on curves]].
+
+This leads us to believe that if two curves have all the same speed, curvature, and torsion, they are just the same curve, displaced by a Euclidean motion. Basically, curves are completely determined by their speed, curvature, and torsion. This is basically just the converse of the previous result.
+
+##### _theorem, definition:_ congruence of curves
+
+Say $\alpha, \beta : I \to \mathbb{R}^3$ are strongly regular curves. Then, the following are equivalent
+1) There exists some $F \in \mathcal{E}_{3}$ such that $\beta = F \circ \alpha$.
+2) $v_{\alpha} = v_{\beta}$, $\kappa_{\alpha} = \kappa_{\beta}$, and $\lvert \tau_{\alpha}  \rvert = \lvert \tau_{\beta} \rvert$.
+
+If either holds, we say, $\alpha$ is congruent to $\beta$, denoted by $\alpha \equiv \beta$.
+
+Congruence is an equivalence relation on (strongly regular) curves.
+
+##### _proof:_
+
+We've already shown 1) $\implies$ 2) in our previous result.
+
+Suppose we have 2). That is, we have $v_{\alpha} = v_{\beta}$, $\kappa_{\alpha} = \kappa_{\beta}$, and $\lvert \tau_{\alpha}  \rvert = \lvert \tau_{\beta} \rvert$. Let $\mathbf{e}_{1}, \mathbf{e}_{2}, \mathbf{e}_{3}$ be the Frenet-Serret frame at $\mathbf{p} = \alpha(t)$ at some fixed $t_{0} \in I$. Similarly, define $\mathbf{f}_{1}, \mathbf{f}_{2}, \mathbf{f}_{3}$ and $\mathbf{q}$ for $\beta$.
+
+Recall that at each point [[Proper Euclidean motions#_theorem _ isometries keep track of frame fields|there is a unique Euclidean motion]] $F$ that sends $\mathbf{p}$ to $\mathbf{q}$ and (whose pushforward $F_{*}$) sends each $\mathbf{e}_{i}$ to $\mathbf{f}_{i}$. Pick $F$ at $t_{0}$, and then write $\overline{\alpha} = F \circ \alpha$. We will show that $\overline{\alpha} = \beta$. We will do this by showing that it has exactly the same Frenet-Serret frame.
+
+Consider $f : I \to \mathbb{R}^3$ by $f(t) = \overline{\mathbf{T}}(t) \cdot \mathbf{T}_{\beta}(t) + \overline{\mathbf{N}(t)} \cdot \mathbf{N}_{\beta}(t) + \overline{\mathbf{B}}(t) \cdot \mathbf{B}_{\beta}(t)$. It's clear by [[Norms#_theorem:_ Cauchy-Schwartz inequality|Cauchy-Schwartz]] that $f(t) \le 3$ with equality if and only if $\overline{\mathbf{T}}(t) = \mathbf{T}_{\beta}(t)$, $\overline{\mathbf{N}}(t) = \mathbf{N}_{\beta}(t)$, and $\overline{\mathbf{B}}(t) = \mathbf{B}_{\beta}(t)$. Thus $f(t_{0}) = 3$. We claim that $f$ is constant. We show this by computing
+$$
+\frac{df}{dt} = \left( \frac{d \overline{\mathbf{T}}}{dt} \cdot \mathbf{T}_{\beta} + \overline{\mathbf{T}} \cdot \frac{d \mathbf{T}_{\beta}}{dt} \right) + \left( \frac{d \overline{\mathbf{N}}}{dt} \cdot \mathbf{N}_{\beta} + \overline{\mathbf{N}} \cdot \frac{d \mathbf{N}_{\beta}}{dt} \right) + \left( \frac{d \overline{\mathbf{B}}}{dt} \cdot \mathbf{B}_{\beta} + \overline{\mathbf{B}} \cdot \frac{d \mathbf{B}_{\beta}}{dt} \right)
+$$
+which we can resolve using the [[Frenet-Serret frames#_proposition _ the derivatives of the Frenet-Serret frame|formulas for the derivatives of the Frenet-Serret frame]]. This gives us
+$$
+\frac{df}{dt} = 0.
+$$
+
+Note that in this step we are allowing ourselves to dot $\overline{\mathbf{T}}$ and $\mathbf{T}_{\beta}$ even though they might not be at the same point. We deal with this by taking the dot product of their vector parts, even if they're not at the same point.
+
+Since $\frac{df}{dt} = 0$, $f$ must be constant, and thus, $f(t) = 3$ for all $t \in I$. Thus, $\overline{\mathbf{T}}(t) \cdot \mathbf{T}_{\beta}(t) = \lVert \overline{\mathbf{T}}(t) \rVert \lVert \mathbf{T}_{\beta}(t) \rVert$, giving us that $\overline{\mathbf{T}}(t)$ is parallel to $\mathbf{T}_{\beta}(t)$. Since they have the same length, they must be exactly the same (in their vector part). Since each of the derivatives, $\frac{d \overline{\alpha}_{i}}{dt} = \frac{d\beta_{i}}{dt}$, we have $\overline{\alpha} = \beta + \mathbf{p}$ for some constant $\mathbf{p}$. Since $\overline{\alpha}(t_{0}) = \beta(t_{0})$, $\mathbf{p} = 0$, and $\overline{\alpha} = \beta$ always. That is, $F(\alpha) = \beta$.
