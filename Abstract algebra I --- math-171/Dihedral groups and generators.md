@@ -129,9 +129,3 @@ Then since they commute, we can write every string of $a$s and $bs$ as $a^m b^n$
 $$
 G = \{ 1, a, b, ab \}.
 $$
-
-
-
-
-
-

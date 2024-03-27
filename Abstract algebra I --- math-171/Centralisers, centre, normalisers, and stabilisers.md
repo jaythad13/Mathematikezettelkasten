@@ -67,7 +67,7 @@ See [[Homework 7.pdf#page=1|Homework 7]].
 
 ##### _definition:_ kernel
 
-For $G$ acting on $A$, the stabiliser of $a \in A$ is $\ker_{G}(A)$, the set of all $g \in G$ such that $g \cdot a = a$ for all $a \in A$. 
+For $G$ acting on $A$, the stabiliser of $a \in A$ is $\ker_{G}(A)$, the set of all $g \in G$ such that $g \cdot a = a$ for all $a \in A$.
 
 #### _proof:_
 

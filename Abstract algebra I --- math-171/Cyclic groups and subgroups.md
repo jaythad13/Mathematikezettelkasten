@@ -52,20 +52,23 @@ Suppose we have $m \in \mathbb{Z}$. Note that we have $\left< x^m \right> \subse
 
 We can see that this theorem allows us to easily write the subgroup lattices of a cyclic group. The subgroup lattice for the cyclic group of order $n$ is just the dual category to the divides by poset on $\{ 0, \dots, n \}$.
 
-Even more generally, a similar statement works in all groups.
-
 ```tikz
 \usepackage{tikz-cd}
 \usepackage{amsfonts}
 \begin{document}
 	\begin{tikzcd}
-		\langle \bar 8 \rangle & \langle \bar 12 \rangle \\
+		& \langle \bar 1 \rangle \\
+		\langle \bar 2 \rangle \ar[ru] & & \langle \bar 3 \rangle \ar[lu] \\
+		\langle \bar 4 \rangle \ar[u] & & \langle \bar 6 \rangle \ar[u] \ar[llu] \\
+		\langle \bar 8 \rangle \ar[u] & & \langle \bar{12} \rangle \ar[u] \ar[llu] \\
 		& \langle \bar 0 \rangle \ar[lu] \ar[ru]
 	\end{tikzcd}
 \end{document}
 ```
 
 
+
+Even more generally, a similar statement works in all groups.
 
 ##### _proposition:_ the order of an element raised to a power
 
