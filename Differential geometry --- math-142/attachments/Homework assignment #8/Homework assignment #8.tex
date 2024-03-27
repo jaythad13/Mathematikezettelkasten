@@ -77,6 +77,70 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item Since $C$ is an orthogonal transformation, it preserves norms. Thus, if $\mathbf{v}$ is an eigenvector of $C$ with eigenvalue $\lambda$, we must have
+			\[
+				\begin{split}
+					& \lVert C(\mathbf{v}) \rVert = \lVert \mathbf{v} \rVert \\
+					\implies & \lVert \lambda \rVert \lVert \mathbf{v} \rVert = \lVert \mathbf{v} \rVert \\
+					\implies & \lvert \lambda \rvert \lVert \mathbf{v} \rVert = \lVert \mathbf{v} \rVert \\
+					\implies & \lvert \lambda \rvert = 1. 
+				\end{split}
+			\]
+			Since $C$ must have three eigenvalues counting multiplicity, and for real matrices $\lambda$ is an eigenvalue if and only if its complex conjugate $\overline{\lambda}$ is, we can write the (possibly complex) eigenvalues of $C$ as $\lambda_{1}, \lambda_{2}, \lambda_{3}$. \\\\
+			If all of them are real, we must have at least one of them be positive since
+			\[
+				\det A = \lambda_{1} \lambda_{2} \lambda_{3}.
+			\]
+			If we had $\lambda_{1} = \lambda_{2} = \lambda_{3} = -1$, then we would have $\det A = -1$, which we know it is not. Thus we can assume without loss of generality that $\lambda_{3} = 1$. \\\\
+			If one of them is complex (say without loss of generality $\lambda_{1} \in \mathbb{C} \setminus \mathbb{R}$) then since complex eigenvalues of a real matrix come in conjugate pairs, we must have $\overline{\lambda_{1}}$ as an eigenvalue as well. Suppose without loss of generality that $\lambda_{2} = \overline{\lambda_{1}}$. Then
+			\[
+				\begin{split}
+					\lambda_{3} & = \frac{\det A}{\lambda_{1} \lambda_{2}} \\
+						    & = \frac{1}{\lambda_{1} \overline{\lambda_{1}}} \\
+						    & = \frac{1}{\lvert \lambda_{1} \rvert^{2}} \\
+						    & = 1.
+				\end{split}
+			\]
+			Thus, we have $\lambda_{3} = 1$, an eigenvalue of $C$. \\\\
+			Since $\lambda_{3}$ is an eigenvalue, there exists some nonzero $\mathbf{v} \in \mathbb{R}^{3}$ such that $C(\mathbf{v}) = \mathbf{v}$. If we choose $\mathbf{e}_{3} = \mathbf{v}/\lVert \mathbf{v} \rVert$, we get a unit eigenvector with eigenvalue $\lambda_{3} = 1$ as desired.
+		\item We choose $\mathbf{e}_{3}$ from the previous part to be a unit eigenvector of eigenvalue $1$. Note that $C(\mathbf{e}_{3}) = \mathbf{e}_{3}$ as desired. Also note that since $\mathbf{e}_{3}$ is a unit vector we have $\mathbf{e}_{3} \cdot \mathbf{e}_{3} = 1$, satisfying the orthonormal basis condition for $i = j = 3$. \\\\ 
+			Let $U = \operatorname{span} \mathbf{e}_{3}$ be the line spanned by $\mathbf{e}_{3}$. Then we can consider its orthogonal complement $U^{\perp}$. Since $\operatorname{dim} U^{\perp} = \operatorname{dim} \mathbb{R}^{3} - \operatorname{dim} U$, it has an orthonormal basis of two vectors $\mathbf{e}_{1}$ and $\mathbf{e}_{2}$. Since they form an orthonormal basis, the condition is satisfied for $i, j \in \{ 1, 2 \}$. Finally, since they are in $U^{\perp}$ they are orthogonal to $\mathbf{e}_{3} \in U$, satisfying the remaining orthonormality conditions. That is, $\mathbf{e}_{1}, \mathbf{e}_{2}, \mathbf{e}_{3}$ is an orthonormal basis. \\\\
+			If we write the matrix of $C$ with respect to the basis $\mathbf{e}_{1}, \mathbf{e}_{2}, \mathbf{e}_{3}$, we get
+			\[
+				\begin{bmatrix}
+					a & b & 0 \\
+					c & d & 0 \\
+					0 & 0 & 1
+				\end{bmatrix}
+			\]
+			where $C(\mathbf{e}_{1}), C(\mathbf{e}_{2})$ remain in $\operatorname{span}(\mathbf{e}, \mathbf{e}_{2})$ since they must remain orthonormal to $\mathbf{e}_{3}$ (orthonormal transformations preserve dot products). Additionally, to preserve orthonormality, we must have the column vectors of the matrix form an orthonormal list, and the determinant of the matrix must be $1$. This gives us the following system of equations
+			\[
+				\begin{aligned}
+					a^{2} + c^{2} & = 1 & b^{2} + d^{2} & = 1 \\
+					ab + cd & = 0 & ad - bc & = 1.
+				\end{aligned}
+			\]
+			Since $a^{2} + c^{2} = b^{2} + d^{2} = 1$, we can always find $\vartheta$ such that $a^{2} = d^{2} = \cos^{2}{\vartheta}$ and $b^{2} = c^{2} = \sin^{2}{\vartheta}$. In order to satisfy both of the equations on the second line, we should choose $a = d = \cos{\vartheta}$ and $-b = c = \sin{\vartheta}$. This choice gives us
+			\[
+				\begin{split}
+					ab + cd & = \cos{\vartheta} (- \sin{\vartheta}) + \sin{\vartheta} \cos{\vartheta} \\
+						& = 0.
+				\end{split}
+			\]
+			and
+			\[
+				\begin{split}
+					ad - bc & = \cos{\vartheta} \cos{\vartheta} - (- \sin{\vartheta}) \sin{\vartheta} \\
+						& = \cos^{2}{\vartheta} + \sin^{2}{\vartheta} \\
+						& = 1.
+				\end{split}
+			\]
+			as desired.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[Problem 3.]
