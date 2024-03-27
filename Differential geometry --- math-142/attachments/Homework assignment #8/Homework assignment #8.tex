@@ -205,6 +205,30 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item If $\beta$ is a cylindrical helix, then we have some $[\mathbf{u}, \mathbf{p}] \in \mathrm{T}_{\mathbf{p}}\mathbb{R}^{3}$ with fixed $\mathbf{u}$ such that $\mathbf{T}(t) \cdot [\mathbf{u}, \mathbf{p}]$ is constant at each $\mathbf{p} = \beta(t)$. \\\\
+			Consider $\overline{[\mathbf{u}, \mathbf{p}]} = F_{*}([\mathbf{u}, \mathbf{p}])$ for the unit tangent vector for $\overline{\beta}$. Since we know that $F_{*}$ preserves dot products, we have
+			\[
+				\begin{split}
+					\overline{\mathbf{T}}(t) \cdot \overline{[\mathbf{u}, \mathbf{p}]} & = F_{*}(\mathbf{T}(t)) \cdot F_{*}(\overline{[\mathbf{u}, \mathbf{p}]}) \\
+													   & = \mathbf{T}(t) \cdot [\mathbf{u}, \mathbf{p}]
+				\end{split}
+			\]
+			and thus, $\overline{\mathbf{T}}(t) \cdot \overline{[\mathbf{u}, \mathbf{p}]}$ is constant too. Thus, $\overline{\beta}$ is a cylindrical helix.
+		\item We know that
+			\[
+				\begin{split}
+					\overline{\mathbf{T}}(t) & = F_{*}(\mathbf{T}(t)) \\
+								 & = F_{*}([\sigma(t), \beta(t)]) \\
+								 & = [(C \circ \sigma)(t), F(\beta(t))] \\
+								 & = [(C \circ \sigma)(t), \overline{\beta}(t)].
+				\end{split}
+			\]
+			Thus, $\overline{\beta}$ has the spherical image $C \circ \sigma$.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[Problem 5.]
