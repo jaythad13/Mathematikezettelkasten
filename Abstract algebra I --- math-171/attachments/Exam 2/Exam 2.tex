@@ -1,10 +1,13 @@
 \documentclass[12 pt, letterpaper]{hmcpset}
 \usepackage{hw-preamble}
+\usepackage{amsthm}
 
 \name{Jayden Thadani}
 \class{MATH 171 --- Abstract Algebra}
 \assignment{Exam 2}
 \duedate{2nd April 2024}
+
+\newtheorem*{theorem}{Theorem}
 
 \begin{document}
 
@@ -12,17 +15,75 @@
 	Let $A$ and $B$ be subsets of $S_{4}$ where $A = \{ (1 \, 2), (3 \, 4) \}$ and $B = \{ (1 \, 2)(3 \, 4) \}$. Prove or disprove that $N_{S_{4}}(A)$ is a subgroup of $N_{S_{4}}(B)$.
 \end{problem}
 
+\pagebreak
+
 \begin{problem}[2.]
 	Prove that $S_{4}$ does not have a normal subgroup of order $8$.
 \end{problem}
 
+\pagebreak
+
 \begin{problem}[3.]
 	Write up a proof of the 3rd isomorphism theorem.
 \end{problem}
+	\begin{theorem}
+		For any normal subgroups $H, K$ of $G$, with $H \le K$, we have
+		\[
+			K/H \trianglelefteq G/H
+		\]
+		and
+		\[
+			(G/H)/(K/H) \cong G/H. 
+		\]
+	\end{theorem}
+	\begin{proof}
+		We claim that the map
+		\[
+			\begin{split}
+				\varphi & : G/H \to G/K \\
+					  & : gH \mapsto gK
+			\end{split}
+		\]
+		is a surjective homomorphism with kernel $K/H$ (and that thus, by the first isomorphism theorem we have $K/H \trianglelefteq G/H$ and $(G/H)/(K/H) \cong G/K$). \\\\
+		First we show that $\varphi$ is well-defined. Suppose $g_{1} H = g_{2} H$. Then $g_{1} g_{2}^{-1} \in H$. Since $H \le K$, this gives us that $g_{1} g_{2}^{-1} \in K$, and thus $g_{1} K = g_{2} K$. That is, $\varphi(g_{1} H) = \varphi(g_{2} H)$, and thus, $\varphi$ is well-defined. \\\\
+		Now we show that $\varphi$ is a homomorphism. To do so we can just compute $\varphi((g_{1}H)(g_{2} H))$ for any $g_{1}H, g_{2}H \in G/H$.
+		\[
+			\begin{split}
+				\varphi((g_{1}H)(g_{2}H)) & = \varphi((g_{1}g_{2})H) \\
+							  & = (g_1 g_{2}) K \\
+							  & = (g_{1} K) (g_{2} K) \\
+							  & = \varphi(g_{1} H) \varphi(g_{2} H).
+			\end{split}
+		\]
+		This proves that $\varphi$ is a homomorphism. \\\\
+		For any $gK \in G/K$, we know that there exists $gH \in G/H$, and by definition, $\varphi(gH) = gK$. Thus, $\varphi$ contains every $gK \in G/K$ in its image. That is, $\varphi(G) = G/K$. \\\\
+		Finally, we will show that $\ker \varphi = K/H$ by double containment. \\\\
+		Suppose $gH \in \ker \varphi$. Then $\varphi(gH) = 1_{G/K} = K$. But we know $\varphi(gH) = gK$. Thus, we must have $gK = K$, and thus $g \in K$. Then $gH \in K/H$. Thus $\ker \varphi \subset K/H$.  \\\\
+		Suppose $kH \in K/H$ where $k \in K$. Then
+		\[
+			\begin{split}
+				\varphi(kH) & = kK \\
+					    & = kK \\
+					    & = K \\
+					    & = 1_{K/H}.
+			\end{split}
+		\]
+		Thus, $kH \in \ker \varphi$. Thus, $K/H \subset \ker \varphi$. Then, by double containment. $K/H = \ker \varphi$. \\\\
+		Finally, by the first isomorphism theorem $K/H \trianglelefteq G/H$ and $(G/H)/(K/H) \cong G/K$.
+	\end{proof}
+
+\pagebreak
 
 \begin{problem}[4.]
-	Let $H$ be a normal subgroup of a finite gorup $G$. Prove that if $G/H$ has an element of order $n$, then $G$ has an element of order $n$.
+	Let $H$ be a normal subgroup of a finite group $G$. Prove that if $G/H$ has an element of order $n$, then $G$ has an element of order $n$.
 \end{problem}
+
+\begin{solution}
+	Let $\overline{g} = gH \in G/H$ be an element of order $n$. Thus, $\overline{g}^{j} \neq \overline{g}^{k}$ for any $j \neq k$ with $j, k \in \{ 1, \dots, n \}$ and $\overline{g}^{n} = H$. Thus, $g^{j} g^{-k} \notin H$ for all those $j, k$ and $g^{n} = h \in H$. \\\\
+	Since $G$ is finite, we must have $g$ must also have finite order --- say $\lvert g \rvert = m$. Note that we must have $n \le m$ since if $m < n$ we'd have $g^{m + 1} g^{-1} = 1 \in H$ with $1, m + 1 \in \{ 1, \dots, n \}$. 
+\end{solution}
+
+\pagebreak
 
 \begin{problem}[5.]
 	Briefly explain why the following statements are true or false
@@ -32,8 +93,16 @@
 		\item If $H \trianglelefteq G$, then $H$ is the kernel of some homomorphism with domain $G$.
 		\item If $\lvert G \rvert < \infty$ and $n$ divides $\lvert G \rvert$, then $G$ has a subgroup $H$ such that $\lvert H \rvert = n$.
 		\item If $H$ and $K$ are subgroups of $G$ then $HK$ is a subgroup of $G$.
-		\item Every subring of an integral domain is also an integral domain.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item
+		\item
+		\item \fbox{True} \\\\
+			Since $H \trianglelefteq G$, $G/H$ is a group with the standard binary operation. Consider the projection $\pi : G \to G/H$ by $g \mapsto gH$. Notice that $gH = 1_{G/H}$ if and only if $g \in H$. Thus $\ker \pi = H$.
+	\end{enumerate}
+\end{solution}
 
 \end{document}
