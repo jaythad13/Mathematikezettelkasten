@@ -15,6 +15,23 @@
 	Let $A$ and $B$ be subsets of $S_{4}$ where $A = \{ (1 \, 2), (3 \, 4) \}$ and $B = \{ (1 \, 2)(3 \, 4) \}$. Prove or disprove that $N_{S_{4}}(A)$ is a subgroup of $N_{S_{4}}(B)$.
 \end{problem}
 
+\begin{solution}
+	Suppose $\sigma \in N_{S_{4}}(A)$. Recall that conjugation by any group element is an automorphism, and thus, the restriction of conjugation by $\sigma$ to just the set $A$, must still be bijective. \\\\
+	That is, if $\sigma (1 \, 2) \sigma^{-1} = \alpha$ and $\sigma (3 \, 4) \sigma^{-1} = \beta$, we have $\alpha, \beta \in A$ and $\alpha \neq \beta$. Thus,
+	\[
+		\begin{split}
+			\sigma (1 \, 2) (3 \, 4) \sigma^{-1} & = \sigma (1 \, 2) \sigma^{-1} \sigma (3 \, 4) \sigma^{-1} \\
+							     & = \alpha \beta \\
+							     & = \begin{cases}
+								     (1 \, 2) (3 \, 4) \in B & \text{or} \\
+								     (3 \, 4) (1 \, 2) \in B.
+							     \end{cases}
+		\end{split}
+	\]
+	Thus, any $\sigma$ that normalises $A$, normalises the only element in $B$. Thus, $N_{S_{4}}(A) \subset N_{S_{4}}(B)$. \\\\
+	Since $N_{S_{4}}(A)$ is a group with the same operation as $N_{S_{4}}(B)$, it being a subset gives us $N_{S_{4}}(A) \le N_{S_{4}}(B)$.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[2.]
@@ -98,10 +115,19 @@
 
 \begin{solution}
 	\begin{enumerate}
-		\item
-		\item
+		\item \fbox{False}
+		\item \fbox{True} \\\\
+			We will prove that the relation $g_{1} \sim g_2 \iff g_{1} \in g_{2}H$ is an equivalence relation, and thus, the left cosets of $H$ are equivalence classes of $G$, which must partition the set. Let $g_{1}, g_{2}, g_3 \in G$. \\\\
+			We know that $g_{1} \in g_{1} H$ since $1_{G} \in H$ and thus $g \, 1_{G} = g_1 \in g_{1}H$. \\\\
+			If $g_{1} \sim g_2$, then $g_{1} \in g_{2} H$ giving us $g_{1} = g_{2} h$ for some $h \in H$. Right-multiplying by $h^{-1}$ on both sides gives us $g_{1} h^{-1} = g_{2}$ and thus $g_{2} \in g_{1} H$. Thus $g_{2} \sim g_{1}$. \\\\
+			Suppose $g_{1} \sim g_{2}$ and $g_{2} \sim g_{3}$. Then $g_{1} = g_{2} h_{1}$ and $g_{2} = g_{3} h_{2}$ for some $h_{1}, h_{2} \in H$. Thus $g_{1} = g_{3} h_{2} h_{1}$ and $g_{1} \sim g_{3}$. \\\\
+			Thus, $\sim$ is reflexive, symmetric, and transitive --- an equivalence relation. The equivalence class of $g_{1}$ under this equivalence relation is by definition $g_{1}H$ since $g_{2} \sim g_{1}$ only if $g_{2} \in g_{1} H$. Since the left cosets of $H$ are all equivalence classes, they partition the group $G$.
 		\item \fbox{True} \\\\
 			Since $H \trianglelefteq G$, $G/H$ is a group with the standard binary operation. Consider the projection $\pi : G \to G/H$ by $g \mapsto gH$. Notice that $gH = 1_{G/H}$ if and only if $g \in H$. Thus $\ker \pi = H$.
+		\item \fbox{False} \\\\
+			We have shown in class that the group of rotational symmetries of the regular tetrahedron has order $12$, but no subgroup of order $6$, even though $6 \mid 12$.
+		\item \fbox{False} \\\\
+			We have shown in class (in the lemma prior to our proof of the second isomorphism theorem) that $HK$ is a subgroup of $G$ if and only if $HK = KH$. 
 	\end{enumerate}
 \end{solution}
 
