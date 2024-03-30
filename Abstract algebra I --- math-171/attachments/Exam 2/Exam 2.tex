@@ -16,6 +16,11 @@
 \end{problem}
 
 \begin{solution}
+	\[
+		\boxed{
+			N_{S_{4}}(A) \le N_{S_{4}}(B).
+		}
+	\] \\
 	Suppose $\sigma \in N_{S_{4}}(A)$. Recall that conjugation by any group element is an automorphism, and thus, the restriction of conjugation by $\sigma$ to just the set $A$, must still be bijective. \\\\
 	That is, if $\sigma (1 \, 2) \sigma^{-1} = \alpha$ and $\sigma (3 \, 4) \sigma^{-1} = \beta$, we have $\alpha, \beta \in A$ and $\alpha \neq \beta$. Thus,
 	\[
@@ -24,10 +29,11 @@
 							     & = \alpha \beta \\
 							     & = \begin{cases}
 								     (1 \, 2) (3 \, 4) \in B & \text{or} \\
-								     (3 \, 4) (1 \, 2) \in B.
+								     (3 \, 4) (1 \, 2) \in B
 							     \end{cases}
 		\end{split}
 	\]
+	where $(3 \, 4)(1 \, 2) \in B$ because $(3 \, 4)(1 \, 2) = (1 \, 2)(3 \, 4)$, because disjoint cycles commute. \\\\
 	Thus, any $\sigma$ that normalises $A$, normalises the only element in $B$. Thus, $N_{S_{4}}(A) \subset N_{S_{4}}(B)$. \\\\
 	Since $N_{S_{4}}(A)$ is a group with the same operation as $N_{S_{4}}(B)$, it being a subset gives us $N_{S_{4}}(A) \le N_{S_{4}}(B)$.
 \end{solution}
@@ -97,7 +103,25 @@
 
 \begin{solution}
 	Let $\overline{g} = gH \in G/H$ be an element of order $n$. Thus, $\overline{g}^{j} \neq \overline{g}^{k}$ for any $j \neq k$ with $j, k \in \{ 1, \dots, n \}$ and $\overline{g}^{n} = H$. Thus, $g^{j} g^{-k} \notin H$ for all those $j, k$ and $g^{n} = h \in H$. \\\\
-	Since $G$ is finite, we must have $g$ must also have finite order --- say $\lvert g \rvert = m$. Note that we must have $n \le m$ since if $m < n$ we'd have $g^{m + 1} g^{-1} = 1 \in H$ with $1, m + 1 \in \{ 1, \dots, n \}$. 
+	Since $G$ is finite, $h$ must have finite order --- say $\lvert h  \rvert = m$. Then we have that
+	\[
+		\begin{split}
+			(g^{m})^{n} & = (g^{n})^{m} \\
+				    & = h^{m} \\
+				    & = 1_{G}.
+		\end{split}
+	\]
+	We claim that $g^{m}$ has order $n$. Suppose $(g^{m})^{l} = 1_{G}$ for some positive integer $l$. Then $g^{ml} = 1_{G}$. By the division algorithm, we have that $ml = nq + r$ where $0 \le r < n$. Then we can rewrite
+	\[
+		\begin{split}
+			g^{ml} & = g^{nq + r} \\
+			       & = (g^{n})^{q} g^{r} \\
+			       & = h^{q} g^{r}.
+		\end{split} 
+	\]
+	Since this is $g^{ml} = 1_{G}$, we have $h^{q} g^{r} = 1_{G}$, and thus, $g^{r} = h^{-q} \in H$. Since $n$ is the least positive number such that $g^{n} \in H$, we must have $r = 0$. Thus, $ml = nq$, and $h^{q} = g^{ml} = 1_{G}$. \\\\
+	Since the order of an element divides any power equal to $1_{G}$, we have $m \mid q$, and thus, $q/m = d$ is an integer. Then $l = nd$ and thus, any positive $l$ such that $(g^{m})^{l} = 1_{G}$ is greater than or equal to $n$. In other words, $n$ is the least power such that $g^{m}$ raised to it is the identity, or $\lvert g^{m} \rvert = n$. \\\\
+	Thus, $g^{m}$ is the element of $G$ with order $n$.
 \end{solution}
 
 \pagebreak
@@ -115,7 +139,9 @@
 
 \begin{solution}
 	\begin{enumerate}
-		\item \fbox{False}
+		\item \fbox{False} \\\\
+			From the conditions we have that $K$ is invariant under conjugation by any $h \in H$ and $H$ is invariant under conjugation by any $g \in G$. However, it is still possible that we could have some $g \in G$ such that $gkg^{-1} = h \in H \setminus K$ for some $k \in K$. Then $gkg^{-1} \notin K$ and thus, $K$ would not be normal. \\\\
+			From Dummit \& Foote we have the specific counterexample that $\left < s \right > \trianglelefteq \left < s, r^{2} \right > \trianglelefteq D_{8}$ since each subgroup has index $2$ in the next. ($\lvert \left < s \right > \rvert = 2$, $\lvert \left < s, r^{2} \right > \rvert = 4$ and $\lvert D_{8} \rvert = 8$.) However, $\left < s \right >$ is not a normal subgroup of $D_{8}$ since $rsr^{-1} = sr^{2}$ which is not in $\left < s \right >$. Notice that as we described $rsr^{-1}$ is still a member of $\left < s, r^{2} \right >$.
 		\item \fbox{True} \\\\
 			We will prove that the relation $g_{1} \sim g_2 \iff g_{1} \in g_{2}H$ is an equivalence relation, and thus, the left cosets of $H$ are equivalence classes of $G$, which must partition the set. Let $g_{1}, g_{2}, g_3 \in G$. \\\\
 			We know that $g_{1} \in g_{1} H$ since $1_{G} \in H$ and thus $g \, 1_{G} = g_1 \in g_{1}H$. \\\\
@@ -123,11 +149,13 @@
 			Suppose $g_{1} \sim g_{2}$ and $g_{2} \sim g_{3}$. Then $g_{1} = g_{2} h_{1}$ and $g_{2} = g_{3} h_{2}$ for some $h_{1}, h_{2} \in H$. Thus $g_{1} = g_{3} h_{2} h_{1}$ and $g_{1} \sim g_{3}$. \\\\
 			Thus, $\sim$ is reflexive, symmetric, and transitive --- an equivalence relation. The equivalence class of $g_{1}$ under this equivalence relation is by definition $g_{1}H$ since $g_{2} \sim g_{1}$ only if $g_{2} \in g_{1} H$. Since the left cosets of $H$ are all equivalence classes, they partition the group $G$.
 		\item \fbox{True} \\\\
-			Since $H \trianglelefteq G$, $G/H$ is a group with the standard binary operation. Consider the projection $\pi : G \to G/H$ by $g \mapsto gH$. Notice that $gH = 1_{G/H}$ if and only if $g \in H$. Thus $\ker \pi = H$.
+			Since $H \trianglelefteq G$, $G/H$ is a group with the standard binary operation. Consider the projection $\pi : G \to G/H$ by $g \mapsto gH$. Notice that $gH = H = 1_{G/H}$ if and only if $g \in H$. Thus $\ker \pi = H$.
 		\item \fbox{False} \\\\
-			We have shown in class that the group of rotational symmetries of the regular tetrahedron has order $12$, but no subgroup of order $6$, even though $6 \mid 12$.
+			We have shown in class that the group of rotational symmetries of the regular tetrahedron has order $12$, but no subgroup of order $6$, even though $6 \mid 12$. This is one example of how the converse of Lagrange's theorem is false.
 		\item \fbox{False} \\\\
-			We have shown in class (in the lemma prior to our proof of the second isomorphism theorem) that $HK$ is a subgroup of $G$ if and only if $HK = KH$. 
+			We have shown in class (in the lemma prior to our proof of the second isomorphism theorem) that $HK$ is a subgroup of $G$ if and only if $HK = KH$. We will show that there exists a group $G$ with subgroups $H$ and $K$ such that $HK \neq KH$. \\\\
+			If we consider the free group $G = \left < h, k \right >$ then we have subgroups $H = \left < h \right >$ and $K = \left < k \right >$. Then $HK \neq KH$ since any $g_{1} \in HK$ is of the form $g_{1} = h^{m} k^{n}$ for some integers $m, n$ which by the definition of the free group is not equal to $g_{2} = k^{l} h^{j}$ for any integers $l, j$, which is the form of any element of $KH$. Thus, $HK$ is not a group. We can also see this in that $(hk)^{-1} = k^{-1}h^{-1}$ is not in $HK$ even though $hk$ is. \\\\
+			Note to instructor: I know we haven't actually covered free groups and from reading Dummit \& Foote it seems like they need a lot of machinery to define, but I hope this is okay as a counterexample.
 	\end{enumerate}
 \end{solution}
 
