@@ -19,7 +19,7 @@ $$
 
 Note that the case where $n = m = p = 1$ is just the old chain rule $(g \circ f)'(a) = g'(f(a)) f'(a)$.
 
-##### _proof:_
+###### _proof:_
 
 Let $f(\bvec a) = \bvec b$. Let $S = Df \Big |_{\bvec a}$ and $T = Dg \Big |_{f(\bvec b)}$. We will show that the map $T \circ S$  satisfies the limit condition to be the unique derivative of $g \circ f$.
 
@@ -73,7 +73,7 @@ for all $\bvec a \in A$ at which $f$ is differentiable.
 
 Note that this is basically just all $\bvec a$ in the interior of $A$.
 
-##### _proof:_
+###### _proof:_
 
 We will show that the $\bvec 0$ map satisfies the limit definition of the derivative of a constant function. That is,
 $$
@@ -93,7 +93,7 @@ DT \Big |_{\bvec a} = T.
 $$
 at all $\bvec a \in \bb R^n$.
 
-##### _proof:_
+###### _proof:_
 
 Again, we show that $T$ satisfies the limit definition of its own derivative. Specifically,
 $$
@@ -118,7 +118,7 @@ $$
 Df \Big |_{\bvec a} \bvec v = (Df_1 \Big |_{\bvec a} \bvec v, \ldots, Df_n \Big |_{\bvec a} \bvec v).
 $$
 
-##### _proof:_
+###### _proof:_
 
 Suppose $f$ is differentiable at $\bvec a$. Then any component function $f_i$ is given by $\pi_i \circ f$. Since $\pi_i$ is a linear map, it is its own derivative, making $f_i$ differentiable with derivative given by the [[#_theorem _ chain rule|chain rule]]:
 $$
@@ -165,7 +165,7 @@ D \Sigma \Big |_{\bvec a} = \Sigma \bvec a
 $$
 for all $\bvec a \in \bb R^2$.
 
-##### _proof:_
+###### _proof:_
 
 This follows from the fact that all linear transformations are their own derivative — note that $\Sigma$ is a functional in $(\bb R^2)^\vee$.
 
@@ -176,7 +176,7 @@ $$
 D(f + g) \Big |_{\bvec a} = Df \Big |_{\bvec a} + Dg \Big |_{\bvec a}.
 $$
 
-##### _proof:_
+###### _proof:_
 
 Consider that we have $f + g = \Sigma \circ (f, g)$ where $(f, g) : A \to \bb R^2$ with component functions $f$ and $g$ [[#_theorem _ the projection principle holds for differentiability|and is differentiable]]. Then by the chain rule we have
 $$
@@ -195,7 +195,7 @@ D \Pi \Big |_{\bvec a} \bvec v = a_2 v_1 + a_1 v_2
 $$
 for all $\bvec a \in \bb R^2$.
 
-##### _proof:_
+###### _proof:_
 
 We show that the limit definition works out. Let $\varphi \in (\bb R^2)^\vee$ be defined by $\varphi(\bvec v) = a_2 v_1 + a_1 v_2$. Then we have
 $$
@@ -221,7 +221,7 @@ $$
 D(fg) \Big |_{\bvec a} = Df \Big |_{\bvec a} \times g(\bvec a) + f(\bvec a) \times Dg \Big |_{\bvec a}.
 $$
 
-##### _proof:_
+###### _proof:_
 
 Note that $(fg) = \Pi \circ (f, g)$. Then by the chain rule
 $$

@@ -21,7 +21,7 @@ For $m > 0$ we say $a \equiv b \mod m$, pronounced $a$ is congruent to $b$ $\mod
 
 $a \equiv a \mod m$, if $a \equiv b \mod m$, then $b \equiv a \mod m$, and if $a \equiv b \mod m$ and $b \equiv c \mod m$, then $a \equiv c \mod m$.
 
-##### _proof:_
+###### _proof:_
 
 $a - a = 0$, which is divisible by $m$. 
 
@@ -33,7 +33,7 @@ If $a \equiv b \mod m$ and $b \equiv c \mod m$, then we have $a - b$ and $b - c$
 
 If $a \equiv b \mod m$ and $c \equiv d \mod m$ then $a + c \equiv b + d \mod m$ and $ac \equiv bd \mod m$.
 
-##### _proof:_
+###### _proof:_
 
 Addition is easy: since we have $a - b$ and $c - d$ divisible by $m$, just add them to get $(a + c) - (b + d)$ divisible by $m$.
 
@@ -59,7 +59,7 @@ $6 \times 13 \equiv 6 \times 3 \mod 20$ but $13 \not\equiv 3 \mod 20$.
 
 If $ax \equiv ay \mod m$, and $\gcd(a, m) = 1$ then $x \equiv y \mod m$. More generally $x \equiv y \mod \frac{m}{\gcd(a, m)}$.
 
-##### _proof:_
+###### _proof:_
 
 If $ax \equiv ay \mod m$ then $m|a(x - y)$. If $\gcd(a, m) = 1$, then since it [[Euclid's algorithm and primes#_theorem _ a divisor must divide something or, the important theorem|must divide something]], $m|(x - y)$ and thus, $x \equiv y \mod m$.
 
@@ -73,7 +73,7 @@ An integer $a$ has a multiplicative inverse $b$ $\mod m$ if there exists an inte
 
 $\gcd(a, m) = 1$ if and only if $a$ has a unique multiplicative inverse $\mod m$.
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 Just do the algebra after [[Dividing integers - basic number theory#_theorem _ Bezout's theorem|Bezout's theorem]]. 
 
@@ -85,7 +85,7 @@ We know that we have a characterisation of when we can divide $\mod m$. This giv
 
 If $p$ is prime then $1, 2, \ldots p -1$ have inverses $\mod p$.
 
-##### _proof:_
+###### _proof:_
 
 $1, 2, ... p - 1$ are all coprime with $p$, giving us multiplicative inverses, and thus a field.
 
@@ -93,7 +93,7 @@ $1, 2, ... p - 1$ are all coprime with $p$, giving us multiplicative inverses, a
 
 $(p - 1)! \equiv -1 \mod p$ for any prime $p$ (and the other way around, though that's not so directly a corollary).
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 For any prime greater than $7$, $p - 1$ is its own inverse and so is $1$. The others group in inverse pairs to multiply to $1$. 
 
@@ -107,7 +107,7 @@ Fermat's little theorem makes playing over finite fields even more powerful than
 
 If $p$ is prime, then $a^p \equiv a \mod p$.
 
-##### _proof:_
+###### _proof:_
 
 Suppose $p \mid a$. Then $a \equiv 0 \mod p$. Then $p \mid a^p$ and thus, $a \equiv 0 \mod p$ as well. By transitivity, $a^p \equiv a \mod p$.
 
@@ -145,7 +145,7 @@ $$
 \phi(n) = n \prod_{i = 1}^m (1 - \frac{1}{p_i})
 $$
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 We expect this to be true for probabilistic reasons (expect that even after I remove all the multiples of (for example) $7$, roughly $1/13$th of the rest are divisible by $13$).
 
@@ -169,7 +169,7 @@ $$
 
 If $\gcd(a, m) = 1$ then $a^{\phi(m)} \equiv 1 \mod m$. Note that in the special case that $m$ is prime, this is [[#_theorem _ Fermat's little theorem|Fermat's little theorem]] (the additional hypothesis version).
 
-##### _proof:_
+###### _proof:_
 
 Similar to Fermat's little theorem proof, we will just multiply by the $\phi(m)$ numbers less than $m$ co-prime to $m$.
 

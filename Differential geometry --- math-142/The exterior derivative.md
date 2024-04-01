@@ -72,7 +72,7 @@ $$
 d \eta = a \, d\phi + b \, d\psi \in \Omega^k(\mathbb{R}^n)
 $$
 
-##### _proof:_
+###### _proof:_
 
 Let $\phi = \sum f_{I} \, dx_{I}$ and $\psi = \sum g_{I} \, dx_{I}$. Then $a \, \phi + b \, \psi = \sum (a \, f_{I} + b \, g_{I}) \, dx_{I}$. Thus,
 $$
@@ -92,7 +92,7 @@ For $\phi \in \Omega^k(\mathbb{R}^n)$ and $\psi \in \Omega^l(\mathbb{R}^n)$ we h
 $$
 d(\phi \wedge \psi) = d \phi \wedge \psi + (-1)^k (\phi \wedge d\psi).
 $$
-##### _proof:_
+###### _proof:_
 
 Let $\phi = \sum_{I} f_{I} \, dx_{I}$ and $\psi = \sum_{J} g_{J} \, dx_{J}$ where $I$ is a multi-index of order $k$ and $J$ is a multi-index of order $l$, both on $\mathbb{N}_{n}$. Then $\phi \wedge \psi = \sum_{I, J} f_{I} \, g_{J} \, dx_{I} \wedge dx_{J}$, where by summing over $I, J$ we mean to sum over all possible choices of the pair $I, J$. From here we just bash —
 $$
@@ -117,7 +117,7 @@ $d^2 : \Omega^k(\mathbb{R}^n) \to \Omega^{k + 2}(\mathbb{R}^n)$ by $\phi \mapsto
 
 Equivalently, $d(d \phi) = 0$ for any $\phi \in \Omega^k(\mathbb{R}^n)$.
 
-##### _proof:_
+###### _proof:_
 
 Let $\phi = \sum f_{I} \, dx_{I}$. Then $d\phi = \sum df_{I} \wedge dx_{I}$ which we can rewrite as
 $$

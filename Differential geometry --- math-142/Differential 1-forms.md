@@ -37,7 +37,7 @@ Given $f \in \mathcal{C}^\infty(\mathbb{R}^3)$, we define $f \phi \in \Omega^1(\
 
 $\Omega^1(\mathbb{R}^3)$ is a $\mathcal{C}^\infty(\mathbb{R}^3)$-module (and thus, an $\mathbb{R}$-vector space).
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 It writes itself.
 
@@ -70,7 +70,7 @@ For any $\phi, \psi \in \Omega^1(\mathbb{R}^3)$, $f, g \in \mathcal{C}^\infty(\m
 1) $(f \phi + g \psi)_*(\mathbf{V}) = f \phi_{*}(\mathbf{V}) + g \psi_{*}(\mathbf{W})$
 2) $\phi_{*}(f \mathbf{V} + g \mathbf{W}) = f \phi_{*}(\mathbf{V}) + g \phi_{*}(\mathbf{W})$
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 1) follows literally by definition
 and
@@ -91,7 +91,7 @@ $$
 
 For any smooth function $f : \mathbb{R}^3 \to \mathbb{R}$, $df \in \Omega^1(\mathbb{R}^3)$
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 Trivially follows from the fact that $Df \Big |_{\mathbf{p}}$ is a linear map. 
 
@@ -99,7 +99,7 @@ Trivially follows from the fact that $Df \Big |_{\mathbf{p}}$ is a linear map.
 
 The map $d : \mathcal{C}^\infty(\mathbb{R}^3) \to \Omega^1(\mathbb{R}^3)$ by $f \mapsto df$ is well defined and linear.
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 Follows from the linearity of the derivative.
 
@@ -119,7 +119,7 @@ $$
 df = \frac{ \partial f }{ \partial x_{1} } \, dx_{1} + \frac{ \partial f }{ \partial x_{2} } \, dx_{2} + \frac{ \partial f }{ \partial x_{3} } \, dx_{3}
 $$
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 For any $[\mathbf{v}, \mathbf{p}] \in \mathrm{T}_{\mathbf{p}}\mathbb{R}^3$, let the $\mathbf{v} = (v_{1}, v_{2}, v_{3})$. Note that $dx_{i}([\mathbf{v}, \mathbf{p}]) = v_{i}$. Then
 $$

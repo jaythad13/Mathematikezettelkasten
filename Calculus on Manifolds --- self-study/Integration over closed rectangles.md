@@ -90,7 +90,7 @@ Obviously, something we want to be true is that refining a partition allows us t
 
 Suppose the partition $P'$ refines $P$ (both partitions of $A$), then, for any continuous function $f : A \to \mathbb{R}$ we have $L(f, P) \le L(f, P')$ and $U(f, P') \le U(f, P)$.
 
-##### _proof:_
+###### _proof:_
 
 Let us have $s \in \mathcal{S}(P)$ divided into $s_{1}, \dots ,s_{\nu} \in \mathcal{S}(P')$, with $v(s) = \sum_{i = 1}^\nu v(s_{i})$.
 
@@ -107,7 +107,7 @@ $$
 
 If $P$ and $P'$ are any two partitions of $A$, then $L(f, P') \le U(f, P)$ (for any continuous function $f : A \to \mathbb{R}$).
 
-##### _proof:_
+###### _proof:_
 
 Let $P''$ be a partition that refines both $P$ and $P'$. Note that this does actually exist — try to refine each of $P$ and $P'$, and then look at the intersection of the intervals. Then
 $$
@@ -139,7 +139,7 @@ The following result feels pretty obvious, and is, but is useful to have.
 
 A bounded function $f : A \to \mathbb{R}$ is integrable on $A$ if and only if for every $\varepsilon > 0$ there is a partition $P$ of $A$ is such that $U(f, P) - L(f, P) < \varepsilon$.
 
-##### _proof:_
+###### _proof:_
 
 If there is such a partition for every $\varepsilon > 0$, then it's obvious that since the two sets keep getting closer to each other without touching, they have the least upper/greatest lower bounds.
 

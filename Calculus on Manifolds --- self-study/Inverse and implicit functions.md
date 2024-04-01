@@ -25,7 +25,7 @@ $$
 \norm{f(\bvec x) - f(\bvec y)} \le n^2 M \norm{\bvec x - \bvec y}.
 $$
 
-##### _proof:_
+###### _proof:_
 
 We can do this by bounding the function by its component functions and then bounding them by the mean value theorem.
 
@@ -77,7 +77,7 @@ $$
 D f_{|V}^{-1} \Big |_{\bvec y} = (D f_{|V} \Big |_{f_{|V}^{-1}(\bvec y)})^{-1}
 $$
 
-##### _proof:_
+###### _proof:_
 
 Note that we can assume without loss of generality that $Df \Big |_{\bvec a} = I$. Essentially, if $Df \Big |_{\bvec a} = T$, then $D(T^{-1} \circ f) \Big |_{\bvec a} = I$, and we have the theorem for $g_{|V} : V \to W$ given by $g = T^{-1} \circ f$ — we have a local differentiable inverse $g^{-1}|_{|V}$ (where $V$ and $W$) are open as desired.
 
@@ -187,7 +187,7 @@ Note that an inverse function can still exist even if $\det D f \Big |_{\bvec a}
 
 Suppose that $f : A \to \bb R^n$ (with $A \subset \bb R^n$) is $\mathcal C^n$ (for some $n \in \bb N \cup \set{\infty}$) containing $\bvec a$, and $Df \Big |_{\bvec a}$ is invertible. Then the inverse given by the inverse function theorem, $f_{|V}^{-1}$ is also $\mathcal C^n$.
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 The "adjoint" formula for the entries of an inverse of an invertible matrix is a $\mathcal C^\infty$ function of the entries of the original matrix. Thus, each partial of $f_{|V}^{-1}$ is given by a $\mathcal C^\infty$ function of the $\mathcal C^{n - 1}$ partials of $f_{|V}$, which makes them, by the chain rule, $\mathcal C^{n - 1}$. Thus, $f_{|V}^{-1}$ is $\mathcal C^n$.
 
@@ -215,7 +215,7 @@ Note that $T(\bvec x, \bvec y) = T_{|\bb R^n}(\bvec x) + T_{|\bb R^m}(\bvec y)$.
 
 If $T \in \mathcal L(\bb R^{n + m}, \bb R^m)$ and $T_{|\bb R^m}$ is invertible, to each $\bvec x \in \bb R^n$ corresponds a $\bvec y \in \bb R^m$ such that $T(\bvec x, \bvec y) = \bvec 0$.
 
-##### _proof:_
+###### _proof:_
 
 For $\bvec x \in \bb R^n$, we obviously have $T_{|\bb R^n} (\bvec x) \in \bb R^m$. Thus, we can take $\bvec y = T^{-1}_{|\bb R^m}(- T_{\bb R^n} (\bvec x))$. Then
 $$
@@ -243,7 +243,7 @@ T \bvec v = (\sum_{j = 1}^n D_{n + j} f_1 \Big |_{(\bvec a, \bvec b)} v_j, \ldot
 $$
 If $T$ is invertible, there is an open set $A \subset \bb R^n$ and an open set $B \subset \bb R^m$ with $(\bvec a, \bvec b) \in A \times B$ such that for each $\bvec x \in A$, there is a unique $g(\bvec x) \in B$ such that $f(\bvec x, g(\bvec x)) = \bvec 0$ and $g$ is differentiable.
 
-##### _proof:_
+###### _proof:_
 
 Consider the function $F : \bb R^{n + m} \to \bb R^{n + m}$ with $F(\bvec x, \bvec y) = (\bvec x, f(\bvec x, \bvec y))$.
 $$
@@ -278,7 +278,7 @@ $$
 (f \circ h) (x_1, \ldots, x_n) = (x_{n - p + 1}, \ldots, x_n).
 $$
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 Since $\operatorname{rank} Df \Big |_{\bvec a} = p$, there must be some $p$ columns of the $Df \Big |_{a}$ we can choose such that they form an invertible matrix. Permute the columns by some function $g$ so that they are the last $p$ columns of $D(f \circ g) \Big |_{\bvec a}$. The [[#_theorem _ the implicit function theorem|proof of the implicit function theorem]] tells us that the theorem holds for $f \circ g$ and so we have a function $k$ that gives us 
 $$
@@ -301,7 +301,7 @@ T \bvec v = (\sum_{j = 1}^n D_{n + j} f_1 \Big |_{(\bvec a, \bvec b)} v_j, \ldot
 $$
 and if $T$ is invertible, there is an open set $A \subset \bb R^n$ and an open set $B \subset \bb R^m$ with $(\bvec a, \bvec b) \in A \times B$ such that for each $\bvec x \in A$, there is a unique $g(\bvec x) \in B$ such that $f(\bvec x, g(\bvec x)) = \bvec 0$ and $g$ is differentiable.
 
-##### _proof:_
+###### _proof:_
 
 First we have to show that the derivative of $f_{|\bb R^m}$ really does take the given form. The $j$th partial of the $i$th component function of $f_{|\bb R^m}$ is
 $$

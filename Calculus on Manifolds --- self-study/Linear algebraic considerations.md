@@ -26,7 +26,7 @@ For $\bvec{x}, \bvec{y} \in \bb{R}^n$ and $a \in \bb{R}$ we have
 3) $\norm{\bvec{x} + \bvec{y}} \le \norm{\bvec{x}} + \norm{\bvec{y}}$. 
 4) $\norm{a \bvec{x}} = \abs{a} \norm{\bvec{x}}$.
 
-##### _proof:_
+###### _proof:_
 
 1) follows from positive-definiteness in the [[Inner product spaces|definition of an inner product]] and its induced norm.
 2) is the [[Norms#_theorem:_ Cauchy-Schwartz inequality|Cauchy-Schwartz inequality]].
@@ -42,7 +42,7 @@ $$
 \bvec{x} \cdot \bvec{y} = \frac{\norm{\bvec x + \bvec y}^2 - \norm{\bvec x - \bvec y}^2}{4}.
 $$
 
-##### _proof:_
+###### _proof:_
 
 $$
 \begin{split}

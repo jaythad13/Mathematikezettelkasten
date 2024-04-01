@@ -15,7 +15,7 @@ $$
 $$
 for any $x \in \bb{Z}$.
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 The pairs $a, b$ and $b, a - bx$ have all the same common divisors (use the [[Dividing integers - basic number theory#_theorem _ integer combination theorem|integer combination theorem]]).
 
@@ -51,7 +51,7 @@ That is, $7 = 6a - 25b$, or $7 = 6 \times 847 - 25 \times 203$.
 
 If $d \mid ab$ and $\gcd(d,a) = 1$ then $d \mid b$.
 
-##### _proof:_
+###### _proof:_
 
 If $\gcd(d, a) = 1$, then by [[Dividing integers - basic number theory#_theorem _ Bezout's theorem|Bezout's theorem]] we must have some integer combination $ax + dy = 1$. Thus, $abx + dby = b$, and then since $d = q ab$, for some integer $q$, we have $d(qx + by) = b$ and thus, $d \mid b$.
 
@@ -71,7 +71,7 @@ A natural number greater than $1$ that is not prime is a composite number.
 
 Every natural number $n$, greater than $1$ can be written as the product of finitely many primes.
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 Use strong induction. If $n$ is a prime, we are done. If $n$ is not a prime, it is divisible by some number less than it (because if it were only divisible by itself and one, it would be a prime), and thus, is the product of two numbers less than it that both have prime factorisations.
 
@@ -83,7 +83,7 @@ The martian numbers (we all know martians have two heads), $\bb{E} = \set{2, 4, 
 
 If $p$ is prime and $p \mid a_1 \times \cdots \times a_n$ then $p \mid a_j$ for some $j \in \bb{N}_n$
  
-##### _proof sketch:_
+###### _proof sketch:_
 
 If $p \mid a_1$, then we're done.
 
@@ -98,7 +98,7 @@ $$
 n = p_1 \times \cdots \times p_j
 $$
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 We prove this by contradiction. 
 
@@ -127,7 +127,7 @@ and
 $$
 \operatorname{lcm}(a, b) = \prod_{i = 1}^n p_i^{\max(\alpha_i, \beta_i)}.
 $$
-##### _proof:_
+###### _proof:_
 
 Let $g$ be the first product and $l$ be the second.
 
@@ -145,7 +145,7 @@ $$
 
 There are infinitely many primes.
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 Suppose by contradiction, $p$ is the greatest prime number. $p! + 1$ is prime or has a prime factor greater than $p$.
 
@@ -153,15 +153,16 @@ Suppose by contradiction, $p$ is the greatest prime number. $p! + 1$ is prime or
 
 For any $n \in \bb{N}$ we can find $n$ consecutive composites.
 
-##### _proof:_
+###### _proof:_
 
 $(n + 1)! + 2 \ldots (n + 1)! + (n + 1)$ are $n$ consecutive composites.
 
 Just for fun, let's use do some rationality stuff.
+
 ##### _proposition:_ irrational exponents can be rational
 
 There exist irrational $a, b$ such that $a^b \in \bb{Q}$.
-##### _proof:_
+###### _proof:_
 
 If $\sqrt{2}^{\sqrt{2}}$ is rational, we're done.
 If not, $(\sqrt{2}^{\sqrt{2}})^{\sqrt{2}}$ is $\sqrt{2}^2 = 2$ and a rational exponent of irrationals. 

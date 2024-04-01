@@ -23,7 +23,7 @@ $\mathcal{E}_{n}$ is a group under function composition. That is
 1) For $F, G \in \mathcal{E}_{n}$, $F \circ G \in \mathcal{E}_{n}$.
 2) Every $F \in \mathcal{E}_{n}$ is invertible with $F^{-1} \in \mathcal{E}_{n}$
 
-##### _proof:_
+###### _proof:_
 
 We can show the first one by noting that for $H = F \circ G$
 $$
@@ -45,7 +45,7 @@ We want to classify Euclidean motions. We can start by looking at the most basic
 1) For any fixed $\mathbf{a} \in \mathbb{R}^n$, the map $T : \mathbb{R}^n \to \mathbb{R}^n$ by $\mathbf{p} \mapsto \mathbf{p} + \mathbf{a}$ is a proper Euclidean motion, called a translation. The collection of all translations is $\mathcal{T}_{n}$
 2) For any two translations $S, T \in \mathcal{T}_{n}$ we have $ST^{-1}$, which suffices to show that $\mathcal{T}_{n} \le \mathcal{E}_{n}$.
 
-##### _proof:_
+###### _proof:_
 is too trivial to be written out.
 
 Note that $\mathbb{R}^n \cong \mathcal{T}_{n}$ (as groups under addition and composition respectively, or vector spaces with scalar multiplication) by $\mathbf{a} \mapsto T$ where $T : \mathbb{R}^n \to \mathbb{R}^n$ by $\mathbf{v} \mapsto \mathbf{v} + \mathbf{a}$.
@@ -59,7 +59,7 @@ The following are equivalent for any for any map $C : \mathbb{R}^n \to \mathbb{R
 
 The collection of all such maps is called $O_{n}$. $O_{n} \le \mathcal{E}_{n}$.
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 We will show 1) $\implies$ 2) $\implies$ 3) $\implies$ 1). We write out the first and sketch the rest.
 
@@ -87,7 +87,7 @@ Say $C \in O_{n}$. Then $C(a\mathbf{p} + b\mathbf{q}) = aC\mathbf{p} + b C \math
 
 For any $F \in \mathcal{E}_{n}$ there exist a unique translation $T \in \mathcal{T}_{n}$ and a unique orthogonal transformation $C \in O_{n}$ such that $F = T \circ C$.
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 Just check $C : \mathbf{p} \mapsto F(\mathbf{p}) - F(0)$ and $T : \mathbf{p} \mapsto \mathbf{p} + F(0)$. It's easy to see that these are unique.
 
@@ -118,7 +118,7 @@ $$
 F_{*}([\mathbf{v}, \mathbf{p}]) \cdot F_{*}([\mathbf{w}, \mathbf{p}]) = [\mathbf{v}, \mathbf{p}] \cdot [\mathbf{w}, \mathbf{p}].
 $$
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 Note that by the [[#_theorem _ the classification of Euclidean motions|the classification of Euclidean motions]], we can write $F$ as $T \circ C$ for some translation $T : \mathbf{p} \mapsto \mathbf{p} + \mathbf{a}$ and some $C \in O_{n}$. We can see by the [[Differentiability theorems#_corollary _ the multivariable sum rule|sum rule]] for differentiable maps that the partials will just work out to be the partials of $C$ (since $DT = 0$). Since $C$ is linear, we just have $DC = C$ at every point. Thus
 $$
@@ -145,7 +145,7 @@ F_{*}(\mathbf{E}_{k}(\mathbf{p})) = \mathbf{E}_{k}(\mathbf{q})
 $$
 for all $k \in \{ 1, 2, 3 \}$ where $\mathbf{q} = F(\mathbf{p})$.
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 We want to write $F = T \circ C$. Recall that $F_{*} = [C, F]$, so we can just write $C$ as the orthogonal map that sends the orthonormal basis of the vector parts of $\mathbf{E}_{1}(\mathbf{p}), \mathbf{E}_{2}(\mathbf{p}), \mathbf{E}_{3}(\mathbf{p})$ to the orthonormal basis of the vector parts of $\mathbf{E}_{1}(\mathbf{q}), \mathbf{E}_{2}(\mathbf{q}), \mathbf{E}_{3}(\mathbf{q})$. Note that there is a neat basis change trick that you can use to compute the matrix of that in the standard orthonormal basis on $\mathbb{R}^3$.
 

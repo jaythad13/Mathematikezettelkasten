@@ -32,7 +32,7 @@ If $U, W$ are subsets of $V$,
 4) $U \cap U^\perp \subseteq \{ 0 \}$.
 5) If $W \subseteq U$, the $U^\perp \subseteq W^\perp$.
 
-##### _proof:_
+###### _proof:_
 
 1) First, since $\left< 0, u \right> = 0$ for any $u \in U$, (and in fact any $u \in V$), we have that $0 \in U^\perp$. Suppose $v, w \in U^\perp$ and $\lambda \in \mathbb{F}$. Then 
 $$
@@ -55,7 +55,7 @@ We can do even nicer things if $U$ is a subspace — specifically, we can decom
 
 Suppose $U$ is a finite dimensional subspace of $V$. Then $V = U \oplus U^\perp$.
 
-##### _proof:_
+###### _proof:_
 
 Note that we already have that $U \cap U^\perp \subseteq \{ 0 \}$ by the previous result. This is obviously an equality when $U$ is a subspace since $U^\perp$ is always a subspace. Thus, we only need to show that $V = U + U^\perp$.
 
@@ -83,7 +83,7 @@ $$
 \operatorname{dim} U^\perp = \operatorname{dim} V - \operatorname{dim} U.
 $$
 
-##### _proof:_
+###### _proof:_
 
 Since $V = U \oplus U^\perp$, we have $\operatorname{dim} V = \operatorname{dim} U + \operatorname{dim} U^\perp$. Thus, $\operatorname{dim} U^\perp = \operatorname{dim} V - \operatorname{dim} U$.
 
@@ -91,7 +91,7 @@ Since $V = U \oplus U^\perp$, we have $\operatorname{dim} V = \operatorname{dim}
 
 Suppose $U$ is a finite dimensional subspace of $V$. Then $(U^\perp)^\perp = U$.
 
-##### _proof:_
+###### _proof:_
 
 First we will show that $U \subset (U^\perp)^\perp$. Note that for any $u \in U$, $w \in U^\perp$, we must have $\left< w, u \right> = 0$, and thus $\left< u, w \right> = 0$. Thus, $u \in (U^\perp)^\perp$. That is, $U \subset (U^\perp)^\perp$.
 
@@ -143,7 +143,7 @@ Suppose $U$ is a finite-dimensional subspace of $V$ and $v \in V$. Then
 9) for every orthonormal basis $e_{1}, \dots, e_{m}$ of $U$,$$
 P_{U} v = \left< v, e_{1} \right> e_{1} + \dots + \left< v, e_{m} \right> e_{m}.
 $$
-##### _proof:_
+###### _proof:_
 
 1) Suppose $v_{1}, v_{2} \in V$ and $\lambda \in \mathbb{F}$. Then we can decompose $v_{1} = u_{1} + w_{1}$ and $v_{2} = u_{2} + w_{2}$ where $u_{1}, u_2 \in U$ and $w_{1}, w_{2} \in U^\perp$. Since $\lambda v_{1} + v_{2} = (\lambda u_{1} + u_{2}) + (\lambda w_{1} + w_{2})$ is a unique decomposition into $\lambda u_{1} + u_{2} \in U$ and $\lambda w_{1} + w_{2} \in U^\perp$, we have $$
 \begin{split}

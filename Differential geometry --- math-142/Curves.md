@@ -63,7 +63,7 @@ $$
 \alpha'(t_{0})[f] = Df \Big |_{\alpha(t_{0})} \left( \frac{d\alpha}{dt} \Big |_{t_{0}} \right).
 $$
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 Just chase through the definitions.
 
@@ -102,4 +102,3 @@ The answers follow from the definitions and [[Differentiability theorems#_theore
 - the position is $\mathbf{p} = \alpha(t_{0}) = \beta(\tau_{0})$
 - and the velocity is given by $\mathbf{v} = \frac{d\beta}{d\tau} \Big |_{\tau_{0}} = \frac{d\alpha}{dt} \Big |_{t_{0}} \frac{dh}{d\tau} \Big |_{\tau_{0}}$
 - thus, the tangent vector is $[\mathbf{v}, \mathbf{p}] = \frac{dh}{d\tau} \Big |_{\tau_{0}}\left[ \frac{d\alpha}{dt} \Big |_{t_{0}}, \alpha(t_{0}) \right] = \frac{dh}{d\tau} \Big |_{\tau_{0}} \alpha'(t_{0})$
-

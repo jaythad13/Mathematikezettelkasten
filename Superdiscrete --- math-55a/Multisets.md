@@ -31,7 +31,7 @@ $$
 \Big ( \binom{n}{k} \Big) = \binom{n + k - 1}{k}
 $$
 
-##### _proof:_
+###### _proof:_
 
 We use stars and bars to prove this. Think about choosing the $n$ flavours as dividing your $k$ scoops into $n$ partitions, where some of them can be empty. (Allotting your scoops to flavours).
 
@@ -56,6 +56,6 @@ We can think of this with a different stars and bars analogy! Place $n - 1$ bars
 $$
 \Big( \binom{n}{k} \Big) = \Big ( \binom{n - 1}{k} \Big)
  + \Big ( \binom{n}{k - 1} \Big )$$
-##### _proof sketch:_
+###### _proof sketch:_
 
 How many ways are there to not give $n$inja $n$ any $k$andies? How many ways are there to give $n$inja $n$ at least one $k$andy?

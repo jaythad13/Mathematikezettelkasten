@@ -31,7 +31,7 @@ These examples suggest a certain correspondence between open and closed sets. Sp
 
 A set $E$ is closed if and only if its complement is open.
 
-##### _proof:_
+###### _proof:_
 
 First, we will prove that if $E$ is closed, its complement is open.
 
@@ -60,7 +60,7 @@ $$
 (\bigcup_{\alpha \in A} E_\alpha)^c = \bigcap_{\alpha \in A} (E_\alpha^c)
 $$
 
-##### _proof:_
+###### _proof:_
 
 Let $U = (\bigcup_{\alpha \in A} E_\alpha)^c$ and $I = \bigcap_{\alpha \in A} (E_\alpha^c)$.
 
@@ -74,7 +74,7 @@ Together, these give us $U = I$.
 
 For any collection $\set{G_\alpha}$ of open sets $G_\alpha$ indexed by $\alpha \in A$, $\bigcup_{\alpha \in A} G_\alpha$ is open. If $\set{G_\alpha}$ is finite, $\bigcap_{\alpha \in A} G_\alpha$ is open.
 
-##### _proof:_
+###### _proof:_
 
 First we will prove that the union of any collection of open sets is open.
 
@@ -97,11 +97,12 @@ Since each $G_\alpha$ is open, we have a neighbourhood $N_{r_\alpha}(p)$ contain
 Note that $r_\beta$'s existence is only guaranteed if $A$ is finite.
 
 With $N_{r_\beta}$ we have shown that we have a neighbourhood of an arbitrary point in $I$ contained in $I$. Thus, $I$ is open.
+
 ##### _corollary:_ Finite unions and (potentially infinite) intersections of closed sets are closed
 
 For any collection $\set{F_\alpha}$ of open sets $F_\alpha$ indexed by $\alpha \in A$, $\bigcap_{\alpha \in A} F_\alpha$ is open. If $\set{F_\alpha}$ is finite, $\bigcup_{\alpha \in A} F_\alpha$ is open.
 
-##### _proof:_
+###### _proof:_
 
 First we will show that the intersection of any collection of closed sets is closed.
 

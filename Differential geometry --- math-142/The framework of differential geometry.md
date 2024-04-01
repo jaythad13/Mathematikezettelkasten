@@ -35,7 +35,7 @@ The sum and product of smooth functions are smooth as well, and this gives us a 
 
 For $f, g \in \mathcal{C}^\infty(\mathbb{R}^3)$ both $f + g \in \mathcal{C}^\infty(\mathbb{R}^3)$ and $f, g \in \mathcal{C}^\infty(\mathbb{R}^3)$. Thus, $\mathcal{C}^\infty(\mathbb{R}^3)$ is a commutative ring with identity given by the function $x \mapsto 1$ and a vector space with the regular scalar multiplication.
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 [[Differentiability theorems#_proposition _ sums are differentiable|Sum rule]], [[Differentiability theorems#_proposition _ products are differentiable|product rule]] and an easy verification for the identity function. 
 

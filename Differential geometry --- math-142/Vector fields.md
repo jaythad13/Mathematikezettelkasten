@@ -19,7 +19,7 @@ $$
 $$
 for component functions $F_{1}, F_{2}, F_{3} : \mathbb{R}^3 \to \mathbb{R}$ and $\mathbf{U}_{i}(\mathbf{p}) = [\mathbf{e}_{1}, \mathbf{p}]$.
 
-##### _proof:_
+###### _proof:_
 
 See [[The framework of differential geometry#_examples _ decomposing vector fields|the example]].
 
@@ -73,7 +73,7 @@ For tangent vectors $[\mathbf{v}, \mathbf{p}]$ and $[\mathbf{w}, \mathbf{p}]$, s
 2) linearity in the functions: $[\mathbf{v}, \mathbf{p}][a f + bg] = a [\mathbf{v}, \mathbf{p}][f] + b [\mathbf{v}, \mathbf{p}][g]$
 3) the Leibniz rule for functions: $[\mathbf{v}, \mathbf{p}][f g] = [\mathbf{v}, \mathbf{p}][f] \, g(\mathbf{p}) + f(\mathbf{p}) [\mathbf{v}, \mathbf{p}][g]$
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 1) Follows from the fact that $Df \Big |_{\mathbf{p}}$ is a linear map.
 2) Follows from the [[Differentiability theorems#_proposition _ sums are differentiable|linearity of the derivative]].
@@ -105,7 +105,7 @@ For vector fields on $\mathbb{R}^3$, $\mathbf{V}, \mathbf{W}$ smooth functions $
 2) linearity in the functions: $\mathbf{V} [a f + bg] = a \mathbf{V} [f] + b \mathbf{V} [g]$
 3) the Leibniz rule for functions: $\mathbf{V} [f g] = \mathbf{V}[f] \, g(\mathbf{p}) + f(\mathbf{p}) \, \mathbf{V}[g]$.
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 Follows by applying the [[#_proposition _ linearity and product rules for derivations|linearity and product rules for derivations]] pointwise.
 

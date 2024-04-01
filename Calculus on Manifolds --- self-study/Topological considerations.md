@@ -32,7 +32,7 @@ A silly verification, but still one we should perform to sanity check our defini
 
 Any closed rectangle $[a_1, b_1] \times \cdots \times [a_n, b_n]$ is a closed set.
 
-##### _proof:_
+###### _proof:_
 
 Let $A$ be the closed rectangle. For any point $\bvec x = (x_1, \ldots, x_n) \in \bb R^n \setminus A$, we have at least one $i$ such that $x_i < a_i$ or $x_i > b_i$. Consider the following intervals.
 
@@ -101,7 +101,7 @@ While the fact that compactness is useful will have to wait, we can show that th
 
 The closed interval $[a, b]$ is compact.
 
-##### _proof:_
+###### _proof:_
 
 We will show that $[a, b]$ is compact by looking at all the sets $[a, x]$ with $x \in [a, b]$ that are almost compact. Specifically, for any open cover of $[a, b]$, $\mathcal O$, consider
 $$
@@ -119,7 +119,7 @@ It is easy to see that for a compact subset $B \subset \bb R^m$ and $\bvec x \in
 
 For a compact subset $B \subset \bb R^m$ and $\bvec x \in \bb R^n$, $\set{\bvec x} \times B \subset \bb R^{m + n}$ is compact.
 
-##### _proof:_
+###### _proof:_
 
 Suppose $\mathcal O$ is an open cover of $\set{\bvec x} \times B$. Then for every $\bvec y \in B$ we have $(\bvec x, \bvec y) \in U \in \mathcal O$. 
 
@@ -133,7 +133,7 @@ This allows us to make an even stronger assertion.
 
 If $B \subset \bb R^m$ is compact and $\set{\bvec x} \times B$ (with $\bvec x \in \bb R^n$) has an open cover $\mathcal O$, then there is some open set $\bar U \subset \bb R^n$ such that $\bar U \times B$ is covered by a finite subset of $\mathcal O$.
 
-##### _proof:_
+###### _proof:_
 
 Since $B$ is compact, $\set{\bvec x} \times B$ is compact, and thus, instead of looking at $\mathcal O$ we can look at the finite sub-cover $\bar{\mathcal O}$. 
 
@@ -147,7 +147,7 @@ This gives us as a corollary the result that we're obviously working towards: th
 
 If $A \subset \bb R^n$ and $B \subset \bb R^m$ are compact, then $A \times B \subset \bb R^{m + n}$ is compact.
 
-##### _proof:_
+###### _proof:_
 
 Suppose $\mathcal O$ is an open cover of $A \times B$. Then for each $\bvec x \in A$ it is an open cover of $\set{\bvec x} \times B$, and we have an open set $U_{\bvec x}$ such that $\bvec x \in U_{\bvec x}$ and $U_{\bvec x} \times B$ is covered by a finite subset of $\mathcal O$.
 
@@ -159,7 +159,7 @@ This then allows us to characterise some compact sets on $\bb R^n$.
 
 Any closed rectangle $[a_1, b_1] \times \cdots \times [a_n, b_n] \subset \bb R^n$ is compact
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 Do induction on the product of compact sets being compact, starting from the base case that $[a, b]$ is compact by the [[#_theorem _ the Heine-Borel theorem|Heine-Borel theorem]].
 
@@ -169,7 +169,7 @@ The corollary of this and its converse are also sometimes called the Heine-Borel
 
 A subset of $\bb R^n$ is compact if and only if it is closed and bounded
 
-##### _proof:_
+###### _proof:_
 
 First we will show that if a set $K \subset \bb R^n$ is closed and bounded, it is compact.
 

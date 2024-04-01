@@ -33,6 +33,8 @@ That is, all $g \in G$ such that $A$ is invariant under the induced inner automo
 
 We have the chain of containment $C_{G} \subset C_{G}(A) \subset N_{G}(A)$ for any $A \subset G$. We also have $C_{G} \le C_{G}(A) \le N_{G}(A)$.
 
+###### _proof:_ %% finish later %%
+
 Note that $N_{G}(A)$ is nonempty since it contains $1_{G}$. Suppose $x, y \in N_{G}(A)$. Then we have
 $$
 \begin{split}
@@ -61,7 +63,7 @@ We can generalise these ideas to a group acting on any set. Stabilisers sort of 
 
 For $G$ acting on $A$, stabiliser of $a \in A$ is $\operatorname{stab}_{G}(a)$, the set of all $g \in G$ such that $g \cdot a = a$.
 
-##### _proof:_
+###### _proof:_
 
 See [[Homework 7.pdf#page=1|Homework 7]].
 
@@ -69,7 +71,7 @@ See [[Homework 7.pdf#page=1|Homework 7]].
 
 For $G$ acting on $A$, the stabiliser of $a \in A$ is $\ker_{G}(A)$, the set of all $g \in G$ such that $g \cdot a = a$ for all $a \in A$.
 
-#### _proof:_
+###### _proof:_
 
 Again, see [[Homework 7.pdf#page=1|Homework 7]].
 
@@ -78,5 +80,3 @@ Again, see [[Homework 7.pdf#page=1|Homework 7]].
 Let $N_{G}(A)$ act on $A \subset G$ by conjugation — $g \cdot a = g a g^{-1}$. What is the kernel? 
 
 It's just the centraliser of $A$ under $G$ (recall that $C_{G}(A) \subset N_{G}(A)$).
-
-

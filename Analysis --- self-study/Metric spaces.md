@@ -142,7 +142,7 @@ These definitions lead to some fairly obvious theorems, and later, some non-obvi
 
 For any point $p$ and radius $r > 0$, the neighbourhood $N_r(p)$ is an open set
 
-##### _proof:_
+###### _proof:_
 
 For any point $q$ in the neighbourhood $N_r(p)$, we can construct a neighbourhood of $q$ within $N_r(p)$ by choosing its radius so that it doesn't extend outside of the space. 
 
@@ -158,7 +158,7 @@ That is, $d(p, s) < r$, giving us $s \in N_r(p)$ for any arbitrary $s \in N_{\rh
 
 If $p$ is a limit point of a subset $E$, then every neighbourhood of $p$ contains infinitely many points of $E$.
 
-##### _proof:_
+###### _proof:_
 
 We can prove this theorem by its contrapositive: if some neighbourhood of $p$ contains finitely many points of $E$, then $p$ is not a limit point of $E$.
 

@@ -51,7 +51,7 @@ Suppose $\mathbf{X}, \mathbf{Y} : I \to \mathrm{T}\mathbb{R}^3$ are vector field
 4) $\overline{\mathbf{X} \times \mathbf{Y}} = \operatorname{sgn} F(\overline{\mathbf{X}} \times \mathbf{Y})$
 5) $\overline{\mathbf{Y}'} = \overline{\mathbf{Y}}'$
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 The first part follows from the linearity of the vector part of $F_{*}$. The second and third parts follows from the fact that $F_{*}$ preserves dot products. The fourth part follows from the fact that $F_{*}$ [[Orientation#_proposition _ (tangent maps of) proper Euclidean motions preserve cross products upto sign|preserves cross products, upto sign]]. The last part follows from the linearity of the derivative and the linearity of the vector part of $F_{*}$.
 
@@ -78,7 +78,7 @@ $$
 
 Thus, $\overline{\alpha}$ is strongly regular if and only if $\alpha$ is strongly regular.
 
-##### _(non)proof:_
+###### _(non)proof:_
 
 Follows from [[#_proposition _ Euclidean motions preserve vector fields over a curve|our results on vector fields on curves]].
 
@@ -92,7 +92,7 @@ $$
 \end{aligned}
 $$
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 Just push the definitions through $F$ [[#_proposition _ Euclidean motions preserve vector fields over a curve|our results on vector fields on curves]].
 
@@ -108,7 +108,7 @@ If either holds, we say, $\alpha$ is congruent to $\beta$, denoted by $\alpha \e
 
 Congruence is an equivalence relation on (strongly regular) curves.
 
-##### _proof:_
+###### _proof:_
 
 We've already shown 1) $\implies$ 2) in our previous result.
 

@@ -106,7 +106,7 @@ $$
 0a = a0 = 0
 $$
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 $$
 \begin{split}
@@ -123,7 +123,7 @@ $$
 (-a)b = a(-b) = - ab
 $$
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 $$
 \begin{split}
@@ -140,7 +140,7 @@ $$
 (-a)(-b) = ab
 $$
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 $$
 \begin{split}
@@ -154,7 +154,7 @@ $$
 
 If $R$ has identity $1$, it is unique.
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 Suppose $1'$ is another multiplicative identity. Then
 $$
@@ -168,7 +168,7 @@ $$
 
  $(-1)a = -a$ for $a \in R$.
  
-##### _proof:_
+###### _proof:_
 
 Note that
 $$

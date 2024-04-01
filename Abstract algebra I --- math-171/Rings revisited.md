@@ -30,7 +30,7 @@ A zero divisor in a ring is an element $a \in R$ such that there exists nonzero 
 
 For any unit $r \in R$, there is no $a \in R$ such that $ra = 0$.
 
-##### _proof:_
+###### _proof:_
 
 Suppose $a \in R$ gives $ra = 0$. Then
 $$
@@ -95,7 +95,7 @@ Integral domains are named for the integers.
 
 Suppose $R$ is an integral domain. For $a, b, c \in R$, then if $ab = ac$ we must have $b = c$ or $a = 0$.
 
-##### _proof:_
+###### _proof:_
 
 Suppose $ab = ac$. Then $a(b - c) = 0$. Since there are no nonzero zero-divisors, $a = 0$ or $b = c$.
 
@@ -103,7 +103,7 @@ Suppose $ab = ac$. Then $a(b - c) = 0$. Since there are no nonzero zero-divisors
 
 Suppose $R$ is an integral domain with $\lvert R \rvert < \infty$. Then $R$ is a field.
 
-##### _proof:_
+###### _proof:_
 
 We do this showing that multiplication by an nonzero element must be a bijection.
 

@@ -26,7 +26,7 @@ If $H \le G$ but $H \neq G$, we say $H$ is a proper subgroup of $G$ and we write
 
 If $H \le G$ and $K \le H$ then $K \le H$. That is, $\le$ as a relation on the class of groups, is transitive.
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 Basically everything follows from the definition of $K \le H$.
 
@@ -109,7 +109,7 @@ If $H \subset G$ is nonempty, $H \le G$ if and only if $xy^{-1} \in H$ for all $
 
 If $G$ is a finite group and $H \subset G$ is closed under the binary operation, $H \le G$.
 
-##### _proof:_
+###### _proof:_
 
 We just need to show that $H$ is closed under inverses. If $G$ is finite then it has finite order and thus, so do all of its elements. Thus, we have $x^{-1} = x^{\lvert x \rvert - 1} \in H$ for all $x \in H$.
 
@@ -117,7 +117,7 @@ We just need to show that $H$ is closed under inverses. If $G$ is finite then it
 
 Suppose $\{ H_{i} \}$ is a collection of subgroups of $G$ indexed by $i \in I$. Then $H = \bigcap_{i \in I} H_{i} \le G$.
 
-##### _proof:_
+###### _proof:_
 
 Note that the intersection is clearly non-empty since all of the subgroups contain the identity.
 

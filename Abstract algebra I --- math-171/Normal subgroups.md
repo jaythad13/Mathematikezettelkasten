@@ -25,7 +25,7 @@ $$
 $$
 is well defined if and only if $N \trianglelefteq G$.
 
-##### _proof:_
+###### _proof:_
 
 We have already shown that we need $N \trianglelefteq G$ for the binary operation to be well-defined in our motivation for defining the normal subgroup. Now we will show the converse.
 
@@ -48,7 +48,7 @@ the binary operation is well defined.
 
 $N \trianglelefteq G$ if and only if it is the kernel of some homomorphism from $G$.
 
-##### _proof:_
+###### _proof:_
 
 We've already shown that kernels are normal subgroups. Now we just show that normal subgroups are kernels.
 

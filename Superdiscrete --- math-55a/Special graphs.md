@@ -39,7 +39,7 @@ Note that if we define forests first as any graphs with no cycles, we get the de
 
 For $n \ge 1$ the number of distinct labeled trees with $n$ vertices is $n^{n - 2}$.
 
-##### _proof:_
+###### _proof:_
 is tricky and not given. (Take Math 104 or 106)
 
 ##### _definition:_ leaf
@@ -50,7 +50,7 @@ A vertex of a tree with degree $1$ is called a leaf.
 
 For any $n \ge 2$, any tree with $n$ vertices has a leaf.
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 We can prove this two ways—by contradiction, and by an extremal argument (also contradiction).
 
@@ -60,7 +60,7 @@ Consider the longest path in the graph $v_1 \, \cdots, v_m$. If $v_1$ isn't a le
 
 If we remove a leaf $v$ from a graph $G$, the resultant graph $G - v$ is a tree.
 
-##### _proof:_
+###### _proof:_
 
 %% do this later %%
 
@@ -68,7 +68,7 @@ If we remove a leaf $v$ from a graph $G$, the resultant graph $G - v$ is a tree.
 
 Any tree with $n$ vertices has $n - 1$ edges.
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 Induct on $n$ using the fact about leaves.
 
@@ -76,7 +76,7 @@ Induct on $n$ using the fact about leaves.
 
 For any two vertices $v_1$ and $v_2$ in a tree there is a unique path between them.
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 Show that if there are two paths there is a cycle (from the first vertex after which they diverge to the next vertex they both contain and back).
 
@@ -96,7 +96,7 @@ $K_5$ is non-planar
 
 If $G$ is a connected plane graph with $n$ vertices, $e$ edges, and $f$ faces $n - e + f = 2$.
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 If $G$ is a tree we have $n - 1$ edges and $1$ face. Thus, we have $n - (n - 1) + 1 = 2$ as desired.
 
@@ -108,7 +108,7 @@ One example application of this is that we cannot have a Venn diagram with four 
 
 If a planar graph has $n$ vertices and $e$ edges, $e \le 3n - 6$.
 
-##### _proof:_ 
+###### _proof:_ 
 
 %% do later %%
 
@@ -118,13 +118,13 @@ Note that we can achieve equality with $K_3$ and the converse is not true—$K_{
 
 ##### _proposition:_ $K_{3, 3}$ is non-planar
 
-##### _proof:_
+###### _proof:_
 
 ##### _theorem:_ Kuratowski's theorem
 
 A graph is non-planar if and only if it contains $K_5$, $K_{3, 3}$ or a subdivision of one of them as a subgraph. (A subdivision is just adding vertices on an edge of a graph.)
 
-##### _(non) proof:_
+###### _(non) proof:_
 
 The forward direction is obvious
 
@@ -142,7 +142,7 @@ A tournament is a complete graph where every edge is directed (use ordered pairs
 
 Every tournament with $n$ vertices has a directed [[Special graphs#_definition _ Hamiltonian path, Hamiltonian cycle, Hamiltonian graph|Hamiltonian path]] (a Hamiltonian path along which all the arrows point the same way).
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 By induction on the number of vertices. We have base case $2$ if we need it.
 
@@ -160,8 +160,6 @@ A king (or king chicken) is a vertex such that there is an outward (directed) pa
 
 The player with most wins in a tournament (greatest outward degree) is a king.
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 Any player who can't be reached in $2$ steps must beat the person with most wins and also beat all of the people they beat (otherwise there'd be a $2$ step way to get there). But then they've beat more people than the person with most wins—a contradiction, showing that this person doesn't exist.
-
-

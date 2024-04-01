@@ -40,7 +40,7 @@ $$
 \theta_{i}(\mathbf{E}_{j}) = \delta_{ij}.
 $$
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 The first part follows from $\theta_{i}(\mathbf{U}_{j}) = \mathbf{U}_{j} \cdot \mathbf{E}_{i}$ and the fact that $\mathbf{U}_{1}, \mathbf{U}_{2}, \mathbf{U}_{3}$ is an orthonormal basis of vector fields.
 
@@ -57,7 +57,7 @@ $$
 \phi = \sum_{i = 1}^3 \phi(\mathbf{E}_{i}) \, \theta_{i}
 $$
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 The first part follows from $\theta_{i}(\mathbf{V}) = \mathbf{V} \cdot \mathbf{E}_{i}$ and the fact that $\mathbf{E}_{1}, \mathbf{E}_{2}, \mathbf{E}_{3}$ is an orthonormal basis of vector fields.
 
@@ -107,7 +107,7 @@ $$
 d\omega_{ij} = \sum_{k = 1}^3 \omega_{ik} \wedge \omega_{kj}.
 $$
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 Lots of backbreaking determinant computation. See the lecture notes (or if you can think of a nicer way to do this).
 

@@ -21,7 +21,7 @@ The chromatic number $\chi(G)$ of a graph $G$ is the smallest number such that $
 
 If a graph is bipartite ($2$-colourable), it has no cycles of odd length.
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 Try to colour the odd cycle: you'll fail. This is the contrapositive.
 
@@ -31,7 +31,7 @@ Surprisingly the converse is true too.
 
 If a (connected?) graph has no cycles of odd length, it is bipartite.
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 If $G$ is a tree, do this by induction on the number of vertices—remove a leaf, $2$-colour the previous case, and then add back the leaf and since it's a leaf it can be coloured safely.
 
@@ -51,7 +51,7 @@ For a graph $G$ with vertices $V$ edges $E$ and faces $F$, its dual graph $\hat 
 
 Every planar graph has a vertex of degree $\le 5$.
 
-##### _proof:_
+###### _proof:_
 
 Suppose there is no such graph. Then by the handshake lemma we have $2 \abs{E} > 5n > 3n - \frac{n}{2} \ge 3n - 6$ for $n \ge 12$. (I think just do it manually in the other cases?)
 
@@ -59,7 +59,7 @@ Suppose there is no such graph. Then by the handshake lemma we have $2 \abs{E} >
 
 Every planar graph is $6$-colourable.
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 We induct on $n$, the number of vertices. We have base cases $n \le 6$, obviously.
 
@@ -69,7 +69,7 @@ Suppose $G$ is planar. Then remove the vertex of degree $\le 5$, $6$-colour the 
 
 Every planar graph is $5$-colourable
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 Again, induction on $n$, the number of vertices. We have base cases $n \le 5$, obviously.
 

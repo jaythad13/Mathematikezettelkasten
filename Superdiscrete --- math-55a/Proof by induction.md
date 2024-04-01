@@ -60,7 +60,7 @@ $$
 \sum_{k = 0}^n F_k = F_{n + 2} - 1.
 $$
 
-##### _proof:_
+###### _proof:_
 
 Note that $\sum_{k = 0}^1 F_k = F_0 + F_1 = 1 = 2 - 1 = F_3 - 1$. That is, we have the base case.
 
@@ -71,13 +71,14 @@ $$
 \sum_{k = 0}^n F_k = F_{n + 2} - 1.
 $$
 for all $n \in \bb{N}$.
+
 ##### _theorem:_ Binet's formula
 
 For $n \ge 0$
 $$
 F_n = \frac{1}{\sqrt{5}} \Big(\Big(\frac{1 + \sqrt{5}}{2}\Big)^n - \Big(\frac{1 - \sqrt{5}}{2}\Big)^n\Big).
 $$
-##### _proof:_
+###### _proof:_
 
 See [[Linear Algebra Done Right.pdf#page=188|Linear Algebra Done Right]] or [[generatingfunctionology.pdf#page=13|generatingfunctionology]] for other approaches.
 
@@ -113,7 +114,7 @@ Induction isn't just for identities!
 
 Given a $2^n \times 2^n$ ($n \in \bb{N}$) chessboard with one piece removed, you can cover the board using trominoes.
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 It's possible for $n = 1$ obviously.
 
@@ -129,7 +130,7 @@ is a covering of a chessboard. Different colours indicate levels of recursion. P
 
 For any $n \in \bb{N}$, there is some $k \in \bb{Z}$  such that $2^{2n} - 1 = 3k$.
 
-##### _proof:_
+###### _proof:_
 
 For any $n \in \bb{N}$ we have a tromino covering of the $2^n \times 2^n$ chessboard with one piece removed. Since there are $2^{2n}$ pieces in the chessboard, with one removed, there are $2^{2n} - 1$ pieces, which are covered by some number of trominoes, say $k$. Then, $3k = 2^{2n} - 1$.
 
@@ -142,7 +143,7 @@ Strong induction extends induction by allowing you to assume all previous cases.
 
 For any $n \in N$, we can write $n = \sum_{\alpha \in A} F_\alpha$ for some finite $A \subset \bb{N}$. Note that this means we can't use any number twice, including that we can't use $1$ twice.
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 The greedy algorithm where you take the largest Fibonacci less than the number you want to sum up to works. We can prove this by strong induction.
 
@@ -179,7 +180,7 @@ By convention we have $f_0 = 1$ so we can extend the following result to $0$ if 
 
 For $n \in \bb{N}$ $f_n = F_{n + 1}$.
 
-##### _proof:_
+###### _proof:_
 
 We can show this by induction. 
 
@@ -201,7 +202,7 @@ Looking at more examples shows us that thinking of the Fibonacci numbers as tili
 
 For any $m, n \in \bb{N}$, $f_m f_n + f_{m - 1} f_{n - 1} = f_{m + n}$.
 
-##### _proof:_
+###### _proof:_
 
 By definition there are $f_{m + n}$ ways to tile a $(m + n)$-strip.
 
@@ -224,7 +225,7 @@ $$
 \sum_{k = 0}^n F_k = F_{n + 2} - 1.
 $$
 
-##### _proof:_
+###### _proof:_
 
 Obviously, it is sufficient to just show the analogous result for $f_n$.
 

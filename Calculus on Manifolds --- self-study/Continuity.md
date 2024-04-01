@@ -46,7 +46,7 @@ While these definitions work, continuity can be defined purely topologically, wi
 
 A function $f : A \to \bb R^m$ ($A \subset \bb R^n$) is continuous if and only if every open set $U$ in $\bb R^m$ has an open pre-image in $A$. More strongly, every open set $U \subset \bb R^m$ gives us $f^{\text{pre}}(U) = V \cap A$ for some open set $V \subset \bb R^n$.
 
-##### _proof:_
+###### _proof:_
 
 Suppose $f$ is continuous. Then if $\bvec a \in f^{\text{pre}}(U)$ and thus, $f(\bvec a) \in U$, some open set, we have for every $\varepsilon$-[[Metric spaces#_definition _ r-neighbourhood, radius, $N_r(p)$|neighbourhood]] around $f(\bvec a)$ contained in $U$ (we have one, because [[Topological considerations#Open and closed sets|we have an open rectangle]] in $U$) a $\delta$-neighbourhood around $\bvec a$ such that every $\bvec b$ in that $\delta$-neighbourhood gives $f(\bvec b)$ in the $\varepsilon$-neighbourhood, and thus $f(\bvec b) \in U$. This means that the $\delta$-neighbourhood and thus, the open rectangle inside it, is contained in $f^{\text{pre}}(U)$, making $f^{\text{pre}}(U)$ open.
 
@@ -58,7 +58,7 @@ One example of how this topological definition is useful (and also an example of
 
 If $f : K \to \bb R^m$ is continuous ($K \subset \bb R^n$), and $K$ is compact, then $f^{\text{img}}(K)$ is compact.
 
-##### _proof:_
+###### _proof:_
 
 Let $K' = f^{\text{img}}(K)$. Suppose $\mathcal O$ is an open cover of $K'$. Then each point $f(\bvec x) \in K'$ is contained in some $U \in \mathcal O$ that has an open pre-image in $K$, $U'$ (because of continuity). All of these $U'$ together contain every $\bvec x \in K$, and thus, form an open cover of $K$, $\mathcal O'$. Because $K$ is compact, we can reduce this to a finite sub-cover $\bar{\mathcal O'}$. Since all of the (finitely many) sets in $\bar{\mathcal O'}$ are pre-images of open sets and together contain every point in $K$, their (finitely many) images are open and contain every point in $K'$, and are thus, a finite sub-cover of $\mathcal O$.
 
@@ -88,7 +88,7 @@ A sanity-check that this definition really does measure a "degree of discontinui
 
 A bounded function $f : A \to \bb R$ (with $A \subset \bb R$) is continuous at $\bvec a$ if and only if $o(f, \bvec a) = 0$.
 
-##### _proof:_
+###### _proof:_
 
 Suppose $f$ is continuous at $\bvec a$. Then for any $\varepsilon > 0$ we have $\delta > 0$ such that $\abs{\bvec x - \bvec a} < \delta$ gives us $\abs{f(\bvec x) - f(\bvec a)} < \varepsilon$. Thus, we can get
 $$
@@ -111,7 +111,7 @@ This notion of oscillation allows us to prove useful results — for example, th
 
 If $f : A \to \bb R$ is a bounded function (and $A$ is a closed subset of $\bb R^n$), then for any $\varepsilon > 0$ $V = \set{\bvec x \in A : o(f, \bvec x) \ge \varepsilon}$ is closed.
 
-##### _proof:_
+###### _proof:_
 
 Let $U = \bb R^n \setminus V$. At each point $\bvec x \in U$ we have $o(f, \bvec x) < \varepsilon$ (or $\bvec x \notin A$, and then there is an open rectangle around it since $\bb R^n \setminus A$ is open).
 

@@ -27,7 +27,7 @@ An interesting question is "when is $\varphi^\text{fib}(h)$ a group?"
 
 Suppose $\varphi : G \to H$ is a homomorphism. Then $\varphi^\text{fib}(h)$ is a subgroup of $G$ if and only if $h = 1_H$.
 
-##### _proof:_
+###### _proof:_
 
 If $h = 1_{H}$ then $\varphi^\text{fib}(h)$ is just $\ker \varphi$ which we already know is a subgroup of $G$.
 
@@ -78,7 +78,7 @@ A / \ker \varphi = \{ \varphi^\text{fib}(h) | h \in H \}
 $$
 is a group with the well defined operation $(x \ker \varphi)(y \ker \varphi) = (xy) \ker \varphi$.
 
-##### _proof:_
+###### _proof:_
 
 For this, we will denote $x \ker \varphi$ by $\bar{x}$.
 

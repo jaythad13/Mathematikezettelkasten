@@ -39,7 +39,7 @@ $$
 $$
 for all $a_1, \ldots, a_m \in \bb{F}$.
 
-##### _proof:_
+###### _proof:_
 
 Note that by additivity in the second slot and conjugate scaling that if $v$ is orthogonal to $u$ and $w$, then $v$ is orthogonal to any linear combination of $v$ and $w$:
 $$
@@ -64,7 +64,7 @@ as desired.
 
 Every orthonormal list of vectors is linearly independent.
 
-##### _proof:_
+###### _proof:_
 
 Suppose $e_1, \ldots, e_m$ is an orthonormal list of vectors, and suppose $a_1 e_1 + \cdots + a_m e_m = 0$. 
 
@@ -96,7 +96,7 @@ The following are orthonormal bases
 
 Every orthonormal list of vectors in $V$ of length $\dim V$ is an orthonormal basis of $V$.
 
-##### _proof:_
+###### _proof:_
 
 Since every orthonormal list is linearly independent, every orthonormal list of length $\dim V$ is also a linearly independent list of length $\dim V$, and thus, a basis of $V$.
 
@@ -130,7 +130,7 @@ $$
 v = \langle v, e_1 \rangle e_1 + \cdots + \langle v, e_m \rangle e_m.
 $$
 
-##### _proof:_
+###### _proof:_
 
 Since $e_1, \ldots, e_m$ is a [[Bases|basis]], there must be some way to write $v$ as a linear combination of it, for any $v \in V$. Say
 $$
@@ -153,7 +153,7 @@ Suppose $e_1, \ldots, e_m$ is an orthonormal basis of $V$. Then, for any $v \in 
 $$
 \norm{v}^2 = \abs{\langle v, e_1 \rangle}^2 + \cdots + \abs{\langle v, e_m \rangle}^2
 $$
-##### _proof:_
+###### _proof:_
 
 We know that [[#_proposition _ the norm of an orthonormal linear combination|the norm of an orthonormal linear combination]] is given by
 $$

@@ -62,7 +62,7 @@ We can see how this universal property is sort of the "opposite" property on the
 
 If $A$ is a ring with a unique homomorphism to every ring $R$, then $A \cong \mathbb{Z}$.
 
-##### _proof:_
+###### _proof:_
 
 If $A$ has a unique homomorphism to every ring $R$, then it has a unique homomorphism, $\varphi : A \to \mathbb{Z}$. Similarly, $\mathbb{Z}$ has a unique homomorphism to $\varphi' : \mathbb{Z} \to A$.
 
@@ -127,7 +127,7 @@ Suppose we have another vector space $P$, satisfying the same commutative diagra
 
 Then, $U \otimes V \cong P$ by an isomorphism $i$, such that $i \circ b = b'$.
 
-##### _proof:_
+###### _proof:_
 
 We will try to prove this just using diagrams. 
 

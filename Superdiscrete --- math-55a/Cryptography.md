@@ -45,7 +45,7 @@ then
 $$
 M = c^d \mod n.
 $$
-##### _proof:_
+###### _proof:_
 
 Note that it's enough to show that 
 $$

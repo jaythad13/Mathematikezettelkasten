@@ -39,7 +39,7 @@ $$
 \nabla_{\mathbf{V}}\mathbf{E}_{i} = \omega \times \mathbf{E}_{i} 
 $$
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 %% do rigorously later %%
 

@@ -34,7 +34,7 @@ This generalises!
 $$
 \abs{A_1 \cup \cdots \cup A_n} = \sum_{k = 1}^n \abs{A_k} - \cdots 
 $$
-##### _proof sketch:_
+###### _proof sketch:_
 
 Any element $x \in A_1, \ldots A_m$ (we can choose indexes conveniently without loss of generality) is chosen $\binom{m}{k}$ times among the $k$-intersections. Then the total number of times that $x$ is counted and uncounted is
 $$

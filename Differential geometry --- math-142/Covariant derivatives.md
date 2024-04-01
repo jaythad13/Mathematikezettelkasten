@@ -46,7 +46,7 @@ $$
 \nabla_{\mathbf{V}} \mathbf{Y} = a \nabla_{\mathbf{V}} \mathbf{W} + b \nabla_{\mathbf{V}} \mathbf{Z}.
 $$
 
-##### _proof:_
+###### _proof:_
 
 For the first part, we just chase through the equations using the fact that the derivative of a smooth function $w : \mathbb{R}^3 \to \mathbb{R}^3$ at a point is a linear map —
 $$
@@ -70,6 +70,6 @@ $$
 \mathbf{V}[\mathbf{W} \cdot \mathbf{Z}] = (\nabla_{\mathbf{V}} \mathbf{W}) \cdot \mathbf{Z} + \mathbf{W} \cdot (\nabla_{\mathbf{V}} \mathbf{Z})
 $$
 
-##### _proof:_
+###### _proof:_
 
 %% see lecture notes, then do it yourself %%

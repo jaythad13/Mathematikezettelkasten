@@ -17,7 +17,7 @@ It's almost trivial to see that translations do. Thus, we need to investigate or
 
 An [[Proper Euclidean motions#_proposition, definition _ orthogonal transformations, $O_{n}$,|"orthogonal transformation"]] as we defined it is really an [[Isometries|isometry]] in the sense of linear algebra.
 
-##### _proof:_
+###### _proof:_
 
 See [[Linear Algebra Done Right.pdf#page=273|Linear Algebra Done Right]].
 

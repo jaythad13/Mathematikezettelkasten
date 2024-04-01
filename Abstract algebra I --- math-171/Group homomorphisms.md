@@ -53,7 +53,7 @@ $$
 \varphi(1_{G}) = 1_{H}
 $$
 
-##### _proof:_
+###### _proof:_
 
 $$
 \begin{split}
@@ -75,7 +75,7 @@ $$
 \varphi(x^{-1}) = \varphi(x)^{-1}
 $$
 
-##### _proof:_
+###### _proof:_
 
 We know that
 $$
@@ -101,6 +101,6 @@ $$
 $$
 for any integer $n$.
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 Do it by induction — the base case is obviously true, so is the case for $n = 2$. Look at $\varphi(x^n)$ as $\varphi(x^{n - 1}x)$ and then solve by the previous case and $n = 2$.

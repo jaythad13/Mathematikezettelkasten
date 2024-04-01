@@ -32,7 +32,7 @@ $$
 $$
 making $(n/e)^n \sqrt{2 \pi n}$ a good approximation for $n!$.
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 Look at the logarithm of $n!$. Since this is the logarithm of a product, it is the sum of logarithms. Approximate the area covered using calculus, and then go back to the original factorial by differentiating and then exponentiating. This ends up being Stirling's approximation.
 
@@ -48,7 +48,7 @@ $$
 \binom{n}{k} = \frac{n!}{k! (n - k)!}
 $$
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 We can arrange (order matters) $k$ things from $n$ things in $n(n - 1) \ldots (n - (k - 1))$ ways. We can also arrange $k$ things in $\binom{n}{k} k!$ ways.
 
@@ -107,5 +107,3 @@ We can count all of the pairless hands (choose 5 values, and choose suits for ea
 This gives us $\binom{13}{5} 4^5 - 10 \times 4^5 - 4 \binom{13}{5} + 10 \times 4$. Note that this factors to $(\binom{13}{5} - 10)(4^5 - 4)$! This is just all the choices of 5 values, except the 10 choices that lead to a straight times all the choices of suits, except the four choices that lead to a flush.
 
 Wild cards fuck all of this up! They mess with the probabilities. For example, if you always use your wild card to convert a two pair to a three of a kind, it makes a three of a kind less rare than a two pair, but then if you change the value system to reflect this, you can flip your strategy back.
-
-

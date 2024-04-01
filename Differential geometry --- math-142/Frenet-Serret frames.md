@@ -38,7 +38,7 @@ Recall the idea of reparameterisations.
 
 If $\alpha$ is a [[Curves#_definition _ regularity of a curve|regular curve]], there is an orientation preserving reparameterisation $\beta = \alpha \circ h$ such that $\lVert \beta'(\tau) \rVert = 1$ for all $\tau \in J$.
 
-##### _proof:_
+###### _proof:_
 
 Consider the arc length $\tau$ given by
 $$
@@ -125,7 +125,7 @@ $$
 \end{gathered}.
 $$
 
-##### _proof (along with some extra stuff):_
+###### _proof (along with some extra stuff):_
 
 %% see the lecture notes/homework for this %%
 
@@ -142,7 +142,7 @@ $$
 \end{gathered}
 $$
 
-##### _proof:_
+###### _proof:_
 
 %% again, a bunch of computation, see the lecture notes %%.
 
@@ -235,7 +235,7 @@ For any strongly regular curve parameterised by $\alpha : I \to \mathbb{R}^3$, t
 2) The binormal vector $\mathbf{B}$ is constant (the vector part is constant).
 3) There exists a plane $\mathcal{P} = \{ (x, y, z) \in \mathbb{R}^3 | ax + by + cz = d \}$ such that all $\alpha(t) \in \mathcal{P}$.
 
-##### _proof:_
+###### _proof:_
 
 We will show that 1) $\implies$ 2) $\implies$ 3) $\implies$ 1).
 
@@ -280,7 +280,7 @@ Notice that if any of these hold then we can say, first of all, that $\alpha \su
 
 Suppose a strongly regular curve $\alpha$ has torsion $\tau = 0$ and constant curvature $\kappa$. Then $\alpha$ is contained in a circle of radius $r = \frac{1}{\kappa_{0}}$.
 
-##### _proof:_
+###### _proof:_
 
 Here let, $\mathbf{T}, \mathbf{N}, \mathbf{B}$ represent just their vector parts. Consider $\alpha^* = \alpha + \frac{1}{\kappa} \mathbf{N}$. Thus,
 $$

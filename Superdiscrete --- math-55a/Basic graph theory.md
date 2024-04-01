@@ -24,7 +24,7 @@ We say two vertices of $v_1$ and $v_2$ of $G$ are adjacent if $\set{v_1, v_2} \i
 
 The sum of the degrees of all of the vertices is twice the number of edges
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 Each edge gets counted exactly twice.
 
@@ -32,7 +32,7 @@ Each edge gets counted exactly twice.
 
 There are an even number of vertices with odd degree
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 The sum of all the degrees is even, so the sum of all odd degrees is even, so the number of them is even.
 
@@ -52,7 +52,7 @@ We call the complete graph with $n$ edges $K_n$
 
 If we colour the edges of $K_6$ red or blue, we must have a completely red or completely blue $K_3$ somewhere in the graph.
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 After colouring the edges, look at the edges coming out from any vertex $v$. At least $3$ of them must be the same colour. (Without loss of generality) assume red.
 
@@ -66,7 +66,7 @@ This is often called the $(3, 3)$ Ramsey number. We often phrase this as "among 
 
 If we colour the edges of $K_{10}$ red or blue, we must have a red $K_3$ or a blue $K_4$ somewhere in the graph.
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 At least $4$ red or at least $6$ blue coloured edges.
 
@@ -92,7 +92,7 @@ A path on a graph is a walk with no repeated vertices.
 
 There is a walk on a graph $G$ from $v_1$ to $v_2$ if and only if there is a path from $v_1$ to $v_2$.
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 We use an extremal argument (consider the shortest/longest something).
 
@@ -122,7 +122,7 @@ A connected graph is Eulerian if there is a closed trail that contains all of it
 
 A connected graph is Eulerian if and only if all vertices have even degree.
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 We can do the hard direction (even $\implies$ Eulerian) by strong induction on the number of edges on the graphs.
 
@@ -139,7 +139,3 @@ If $G - C$ isn't connected, it has connected components. That means we can walk 
 ##### _corollary:_ mostly even degree is fine
 
 If $G$ has even degree at every vertex except $v_1$ and $v_2$, there is an Eulerian trail from $v_1$ to $v_2$.
-
-
-
-

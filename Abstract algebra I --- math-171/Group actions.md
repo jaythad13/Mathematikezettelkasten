@@ -43,7 +43,7 @@ Suppose $G$ acts on $X$. For some fixed $g \in G$ the function $\sigma_{g} : X \
 
 Suppose $G$ acts on $X$. For each $g \in G$, $\sigma_{g}$ is a permutation of $X$ and $\varphi : g \to \sigma_{g}$ is a [[Group homomorphisms#_definition _ group homomorphisms|group homomorphism]] $G \to S_{X}$ ([[Group combinatorics and symmetric groups#_definition _ the symmetric group on $ Omega$|the symmetric group]] on $X$).
 
-##### _proof:_
+###### _proof:_
 
 First we will show that $\sigma_{g}$ is a bijection. If $\sigma_{g}(x) = \sigma_{g}(y)$, then $g \cdot x = g \cdot y$. Acting on both of these elements by $g^{-1}$ we get $x = y$. Thus, $\sigma_{g}$ is injective. For any $x \in X$ notice that $y = g^{-1} \cdot x$ gives us $\sigma_{g}(y) = x$. Thus, $\sigma_{g}$ is surjective. Since $\sigma_{g}$ is a bijection $X \to X$ it is a permutation $X \to X$. Notice that we could also show this by noticing that $\sigma_{{g^{-1}}}$ is a two-sided inverse for $\sigma_{g}$.
 

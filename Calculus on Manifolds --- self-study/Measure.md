@@ -18,7 +18,7 @@ It is easy to show that any countable set has measure $0$.
 
 Any countable subset $A \subset \mathbb{R}^n$ has measure $0$.
 
-##### _proof:_
+###### _proof:_
 
 Let the bijection between $A$ and $\mathbb{N}$ be given by writing
 $$
@@ -49,7 +49,7 @@ We can sanity check our definitions to make sure that they don't just make any s
 
 If $a < b$ then $[a, b]$ does not have content $0$. Further, if $\{ U_{1}, \dots U_{n} \}$ is a finite cover of $[a, b]$ by closed intervals, then $\sum_{i = 1}^n v(U_{i}) \ge b - a$.
 
-##### _proof:_
+###### _proof:_
 
 Note that if there is any $U_{i}$ such that $U_{i} \not \subset [a, b]$, then either $[a, b] \subset U_{i}$ and then we have the desired inequality, or we are reduced to showing that the result is true for a smaller interval — $[a, b] \setminus U_{i}$.
 
@@ -76,7 +76,7 @@ Finally, the equivalence of open and closed rectangle definitions of measure and
 
 If $A \subset \mathbb{R}^n$ is compact and has measure $0$, then $A$ has content $0$ as well.
 
-##### _proof:_
+###### _proof:_
 
 If $A$ has measure $0$ then, for any $\varepsilon > 0$, we have a countable open cover $\mathcal{O}_{\varepsilon}$ with
 $$

@@ -109,7 +109,7 @@ $$
 3) If $H \le N_{G}(K)$ then $HK \le G$.
 4) If $K \trianglelefteq G$, then $HK \le G$.
 
-##### _proof (sketch?):_
+###### _proof (sketch?):_
 
 1) Basically, $h_{1}K = h_{2}K$ are the same if and only if $h_{1}(K \cap H) = h_{2}(K \cap H)$. Thus, there are $\frac{\lvert H \rvert}{\lvert H \cap K \rvert}$ cosets of $H \cap K$, and thus, that many cosets of $K$ in $H$. There are $\lvert K \rvert$ elements in each of those cosets. The disjoint union of all of these cosets is just $HK$ and thus, has cardinality $\lvert HK \rvert = \frac{\lvert H \rvert \lvert K \rvert}{\lvert H \cap K \rvert}$.
 2) Suppose $HK \le G$. Then for all $k \in K$ and all $h \in H$ we have $k, h \in HK$. Since $HK$ is a group, we must have $kh \in HK$. Thus, $KH \subset HK$. For any $hk \in HK$ we must also have $(hk)^{-1} = h' k'$, (where $h' \in H, k' \in K$) and thus, $hk = (h'k')^{-1}$. But we know that then $hk = k'^{-1} h'^{-1} \in KH$. Thus, $HK \subset KH$.
@@ -131,7 +131,7 @@ Let $H, K$ be subgroups of $G$ where $H \le N_{G}(K)$. Then
 1) $H \cap K \trianglelefteq H$
 2) $HK / K \cong H/H \cap K$.
 
-##### _proof:_
+###### _proof:_
 
 1) For any $h \in H$, $x \in H \cap K$, we want to show that $hxh^{-1} \in H \cap K$. Note that $hxh^{-1}$ is obviously in $H$. Note that since $x \in K$, $x \in hKh^{-1} = K$ (since $H \le N_{G}(K)$). Thus $H \cap K$ is a normal subgroup of $H$.
 2) Suppose $hk = h' k'$, (for $h, h' \in H$, $k, k' \in K$). We want $h'^{-1} h \in H \cap K$. We have $h'^{-1}h = k' k^{-1}$ and thus it is in both $H$ and $K$ and thus is in $H \cap K$. Thus the map $$
@@ -169,10 +169,6 @@ Notice that this gives us the following lattice
 	\end{tikzcd}
 \end{document}
 ```
-
-
-
-
 
 ### The third isomorphism theorem
 

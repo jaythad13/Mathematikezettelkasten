@@ -56,7 +56,7 @@ Just like with regular derivatives, the maxima and minima of a multivariable fun
 
 Let $A \subset \bb R^n$. If the maximum or minimum of $f : A \to \bb R$ occurs at a point $\bvec a$ in the interior of $A$, then $D_i f \Big |_{\bvec a} = 0$ for all $i$ for which it exists.
 
-##### _proof:_
+###### _proof:_
 
 Let $g_i = f(a_1, \ldots, a_{i - 1}, x, a_{i + 1}, \ldots, a_n)$. If $f$ has a maximum at $\bvec a$, then $g_i$ must have a maximum at $a_i$, and thus, $g_i'(a_i) = D_i f \Big |_{\bvec a} = 0$.
 
@@ -90,7 +90,7 @@ $$
 D f_i \Big |_{\bvec a} = D_1 f_i \Big |_{\bvec a} \bvec e_1^\vee + \cdots + D_n f_i \Big |_{\bvec a} \bvec e_n^\vee.
 $$
 
-##### _proof:_
+###### _proof:_
 
 Note that we have already that the Jacobian of $f_i$ at $\bvec a$ is just the $i$th row of the Jacobian of $f_i$ at $\bvec a$ as [[Differentiability theorems#_theorem _ the projection principle holds for differentiability|a consequence of the projection principle]]. That is, we have $\mathcal M_{i, .} = D f_i \Big |_{\bvec a}$ and we only need to prove that for functions $g : A \to \bb R$ that the Jacobian is given by
 $$
@@ -145,7 +145,7 @@ However, the linear map $\bvec 0 = 0 \bvec e_1^\vee + 0 \bvec e_2^\vee$ does not
 
 For a function $f : A \to \bb R^m$ ($A \subset \bb R^n$) and some $\bvec a \in A$, if $f$ is $\mathcal C^1$ on some open $U \subset A$ with $\bvec a \in U$, $f$ is differentiable at $\bvec a$.
 
-##### _proof:_
+###### _proof:_
 
 Again, note that by [[Differentiability theorems#_theorem _ the projection principle holds for differentiability|the projection principle]], we only need to show that this holds for $m = 1$. Other cases follow by the differentiability of component functions.
 
@@ -191,7 +191,7 @@ $$
 D_i F \Big |_{\bvec a} = \sum_{j = 1}^n D_j f \Big |_{g(\bvec a)} \cdot D_i g_j \Big |_{\bvec a}.
 $$
 
-##### _proof:_
+###### _proof:_
 
 This follows easily from [[Differentiability theorems#_theorem _ chain rule|the stronger chain rule]] and [[#_theorem _ the partials of a differentiable function define its derivative|the composition of the total derivative from partials]].
 

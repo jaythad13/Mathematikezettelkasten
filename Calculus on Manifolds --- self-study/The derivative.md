@@ -43,7 +43,7 @@ $$
 \lim_{\bvec v \to \bvec 0} \frac{\norm{f(\bvec a + \bvec v) - f(\bvec a) - T \bvec v}}{\norm{\bvec v}} = 0.
 $$
 
-##### _proof:_
+###### _proof:_
 
 By the definition of differentiability, this linear map already exists. Now we just have to show that any linear map satisfying the same property must be the same linear map.
 
@@ -90,6 +90,7 @@ $$
 
 
 As you can see at the start of this example, writing down the derivative of a function can be tedious — you have to define a whole linear map. An easier way to do this, is to just think about its matrix with respect to some agreed upon basis.
+
 ##### _definition:_ the Jacobian matrix
 
 For any function $f : A \to \bb R^m$, ($A \subset \bb R^n$) differentiable at $\bvec a$, the Jacobian matrix of $f$ at $\bvec a$ is the matrix (with respect to the [[Linear algebraic considerations#_notation _ $ bvec e_1, ldots bvec e_n$|standard basis]] of $\bb R^n$) of its derivative $Df \Big |_{\bvec a}$.

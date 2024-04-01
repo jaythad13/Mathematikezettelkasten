@@ -44,7 +44,7 @@ $$
 $$
 for every $v \in V$.
 
-##### _proof:_
+###### _proof:_
 
 First we show that there does exist some such $u$.
 
@@ -82,7 +82,7 @@ For finite-dimensional $V$, some $\varphi \in V^\vee$, and orthonormal bases of 
 $$
 \overline{\varphi(e_1)} e_1 + \cdots + \overline{\varphi(e_m)} e_m = \overline{\varphi(f_1)} f_1 + \cdots + \overline{\varphi(f_m)} f_m.
 $$
-##### _proof:_
+###### _proof:_
 
 By the Riesz representation theorem, we have a unique $u \in V$ such that $\varphi(v) = \langle v, u \rangle$ for all $v \in V$. Specifically
 $$

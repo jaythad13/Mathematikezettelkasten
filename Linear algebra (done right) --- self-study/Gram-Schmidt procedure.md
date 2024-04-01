@@ -25,7 +25,7 @@ $$
 $$
 for all $j \in \bb{N}_m$.
 
-##### _proof:_
+###### _proof:_
 
 We can show by induction on $j$ that this holds.
 
@@ -105,7 +105,7 @@ is an orthonormal list of length $3$ in $\mathcal{P}_2(\bb{R})$, that is, a basi
 
 Every finite-dimensional inner product space has an orthonormal basis.
 
-##### _proof:_
+###### _proof:_
 
 Suppose $V$ is finite-dimensional with a basis $v_1, \ldots, v_m$. For $e_1, \ldots, e_m$, given by applying the Gram-Schmidt procedure to the basis, $e_1, \ldots, e_m$ is an orthonormal list of length $m = \dim V$. Since it is an [[Orthonormal bases#_proposition _ an orthonormal list of the right length is an orthonormal basis|orthonormal list of the right length]], it is an orthonormal basis.
 
@@ -113,7 +113,7 @@ Suppose $V$ is finite-dimensional with a basis $v_1, \ldots, v_m$. For $e_1, \ld
 
 Suppose $V$ is finite-dimensional. Then every orthonormal list of vectors in $V$ can be extended to an orthonormal basis of $V$.
 
-##### _proof:_
+###### _proof:_
 
 Suppose $e_1, \ldots, e_m$ is an orthonormal list in $V$. Then, as a linearly independent list, it can be extended to a basis of $V$, $e_1, \ldots, e_m, v_1, \ldots, v_n$. We can apply the Gram-Schmidt procedure to obtain an orthonormal basis from this basis. Notably, by the nature of the process, the first $m$ vectors are unchanged (subtracting inner products of the form $\langle e_j, e_k \rangle$ where $j \neq k$ is akin to doing nothing). Thus, we obtain an orthonormal basis $e_1, \ldots, e_m, f_1, \ldots, f_n$.
 
@@ -121,6 +121,6 @@ Suppose $e_1, \ldots, e_m$ is an orthonormal list in $V$. Then, as a linearly in
 
 Suppose $T \in \mathcal{L}(V)$. If $T$ has an upper-triangular matrix with respect to some basis of $V$, then $T$ has an upper-triangular matrix with respect to some orthonormal basis of $V$.
 
-##### _proof:_
+###### _proof:_
 
 Suppose $T$ has an upper-triangular matrix with respect to some basis $v_1, \ldots, v_m$ which under the Gram-Schmidt procedure gives the orthonormal basis $e_1, \ldots, e_m$. Then, for each $j$, $\vspan{(v_1, \ldots, v_j)}$ [[Upper-triangular matrices|is invariant]] under $T$. But since $\vspan{(e_1, \ldots, e_j)}$ is the same subspace for each $j \in \bb{N}_m$, it too is invariant under $T$. Thus, $\mathcal{M}(T, (e_1, \ldots, e_m))$ must be upper-triangular.

@@ -64,7 +64,7 @@ $$
 F_{*}(a[\mathbf{v}, \mathbf{p}] + b[\mathbf{w}, \mathbf{p}]) = a F_{*}([\mathbf{v}, \mathbf{p}]) + b F_{*}([\mathbf{v}, \mathbf{p}])
 $$
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 [[The derivative#_definition _ derivative, differentiability|The derivative is a linear map]].
 
@@ -75,7 +75,7 @@ $$
 (F \circ G)_{*} = F_{*} \circ G_{*}.
 $$
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 Follows from [[Differentiability theorems#_theorem _ chain rule|the chain rule]].
 
@@ -86,6 +86,6 @@ For a point $\mathbf{p} \in \mathbb{R}^n$, and a mapping $F : \mathbb{R}^n \to \
 - $DF \Big |_{\mathbf{p}}$ is one to one
 - there exists an open set $U \subset \mathbb{R}^n$ containing $\mathbf{p}$ such that the restriction $F_{|U}$ is a differentiable, one-to-one map.
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 Follows from the [[Inverse and implicit functions#_theorem _ the inverse function theorem|inverse function theorem]].

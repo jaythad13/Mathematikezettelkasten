@@ -53,7 +53,7 @@ Finally, there are inverses! Just do the same thing in reverse!
 
 ##### _proposition:_ the symmetries of a polygon are a group
 
-##### _proof:_
+###### _proof:_
 
 See above!
 

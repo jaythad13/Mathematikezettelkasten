@@ -26,7 +26,7 @@ For some fixed $g \in G$ let $\varphi_{g} : x \mapsto g x g^{-1}$. Every element
 
 Note that this is equivalent to surjectivity for $\varphi_{g}$, and for finite $G$, this is equivalent to $\varphi_{g}$ being an automorphism. Also note that showing that $\varphi_{g}$ is an automorphism is sufficient.
 
-##### _proof:_
+###### _proof:_
 
 We can show $\varphi_{g}$ is a homomorphism by standard tricks.
 $$
@@ -111,8 +111,8 @@ These are all the rigid symmetries of the graph —
 
 Label the four symmetries $1, a, b, c$ in $\begin{bmatrix} 1 & a \\ b & c \end{bmatrix}$.
 
-| - | $1$ | $a$ | $b$ | $c$ |
-| ---- | ---- | ---- | ---- | ---- |
+| -   | $1$ | $a$ | $b$ | $c$ |
+| --- | --- | --- | --- | --- |
 | $1$ | $1$ | $a$ | $b$ | $c$ |
 | $a$ | $a$ | $1$ | $c$ | $b$ |
 | $b$ | $b$ | $c$ | $1$ | $a$ |

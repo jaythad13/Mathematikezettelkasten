@@ -24,7 +24,7 @@ Each $n$th row appears to sum to $2^n$. We can give a combinatorial proof of the
 $$
 \sum_{k \ge 0} = 2^n
 $$
-##### _proof sketch:_
+###### _proof sketch:_
 
 Each $\binom{n}{k}$ is the number of subsets with $k$ elements of a set with $n$ elements. Thus, the sum of the binomial coefficients is the total number of subsets of a set of size $n$. But since whenever we construct a subset we have $n$ binary choices - whether to include each element or not. That is, there are $2^n$ subsets of a set of size $n$.
 
@@ -37,7 +37,7 @@ $$
 \binom{n}{k} = \binom{n - 1}{k - 1} + \binom{n - 1}{k}.
 $$
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 For a set of size $n$, consider splitting the set of all subsets into two: all of the subsets that contain the $n$th element, and all that don't. 
 
@@ -70,7 +70,7 @@ We can prove that this holds in general.
 $$
 \sum_{n = k}^N \binom{n}{k} = \binom{N + 1}{k + 1}
 $$
-##### _proof:_
+###### _proof:_
 
 We can have a combinatorial proof. There are $\binom{N + 1}{k + 1}$ ways to choose a team of $k + 1$ hockey players from among a pool of $N + 1$ hockey players.
 
@@ -86,7 +86,7 @@ $$
 \sum_{k = 0}^{k \le n/2} \binom{n - k}{k} = f_n 
 $$
 
-##### _proof sketch:_
+###### _proof sketch:_
 
 We have a combinatorial proof of this as well!
 
@@ -102,12 +102,10 @@ For $n \in \bb{N}$, the sum of all $\binom{n}{k}$ for even $k$ is half the sum o
 $$
 \sum_{k \text{ is even}}^{k \le n} \binom{n}{k} = 2^{n - 1}
 $$
-##### _proof:_
+###### _proof:_
 
 We have a combinatorial proof!
 
 Consider the number of even-numbered committees that can be formed from a group of $n$ people. That is just the sum of all even $k$ binomial coefficients.
 
 However, we can get the same thing another way - freely choose whether to include the first $n-1$ members of the group in the committee, and then choose whether to include the $n$th member based on parity. There are $2^{n - 1}$ ways to do this, and this gives us exactly the even-membered committees.
-
-
