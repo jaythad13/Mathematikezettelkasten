@@ -4,6 +4,7 @@ tags:
 - math-171
 lecture:
 - math-171-17
+- math-171-18
 ---
 
 [[Rings revisited|Last class]] we gave a bunch of definitions for subsets of rings with structure — [[Rings revisited#_definition _ subring|subrings]] and [[Rings revisited#_definition _ (left and right) ideals|ideals]]. Today we do a bunch of stuff that has to do with it. First,
@@ -69,11 +70,32 @@ An ideal $I \subset R$ is principal if $I = (a)$.
 
 Every ideal in $\mathbb{Z}$ is of the form $n\mathbb{Z}$.
 
+### Ideals tell you about the ring
+
+We can use ideals to know things about the rings that they are embedded in.
+
 ##### _proposition:_ when rings are fields
 
-For any ideal $I \subset R$
+For any ideal $I \subset R$ (where $R$ is a ring with identity)
 1) $I = R$ if and only if $I$ contains a [[Rings revisited#_definition _ unit|unit]].
 2) If $R$ is commutative, then $R$ is a field if and only if the only ideals of $R$ are the trivial ring and $R$.
+
+###### _proof:_
+
+1) Suppose $I$ contains a unit $u$. Then for every $r \in R$ we must have $r u^{-1} u \in I$ and thus, $r \in I$. That is $I$ contains every element of $R$, and thus is just $R$.
+	If $I = R$ then it has to contain the unit $1$ (or just any unit $u \in R$).
+2) Suppose $R$ is commutative and only has $0$ and $R$ as ideals. Then $(r) = R$ for any nonzero $r \in R$. Thus $1 \in (r)$, and thus, there exists some $x \in R$ such that $xr = rx = 1$. Note that we need commutativity for $x$ to be a two-sided inverse. That is, any nonzero $r \in R$ is a unit, and thus $R$ is a field.
+	Suppose $R$ is a field. Then every ideal that contains a nonzero element must contain a unit and thus is just $R$. The only other ideal is $(0) = \{ 0 \}$, the trivial ring.
+
+##### _corollary:_ fields map out injectively
+
+If $R$ is a field, then any nontrivial ring homomorphism from $R$ is injective.
+
+###### _proof:_
+
+Note that ring homomorphisms are injective if and only if they have trivial kernel. This follows by treating ring homomorphisms as homomorphisms between their additive groups.
+
+Let $\varphi : R \to S$ be a homomorphism. Then $\ker \varphi$ is an ideal in $R$. But since $R$ is a field $\ker \varphi = 0$ or $\ker \varphi = R$. That is, $\varphi$ is injective, or $\varphi$ is trivial, respectively.
 
 ### Quotient rings
 
