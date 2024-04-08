@@ -5,6 +5,7 @@ tags:
 lecture:
 - math-142-26
 - math-142-27
+- math-142-28
 ---
 
 ### From curves to surfaces
@@ -91,14 +92,41 @@ The sphere $S^2 = \{ \mathbf{p} \in \mathbb{R}^3 \mid \lVert \mathbf{p} \rVert =
 
 We can see this by looking at the coordinate patch $x : D \to \mathbb{R}^3$ by $(u, v) \mapsto(u, v, \sqrt{ 1 - u^{2} - v^{2} })$ where $D$ is the unit open disk centred at the origin.
 
-$x$ is smooth since it is composed of smooth functions (the square root is smooth everywhere that it isn't $0$). $x$ is definitely injective since the first two coordinates force inputs to be equal if outputs are equal. $x$ is regular which you can see by computing its matrix $\begin{bmatrix} 1 & 0 \\ 0 & 1 \\ a & b\end{bmatrix}$ where it doesn't matter what $a, b$ are — the rank is $2$ regardless.
+$x$ is smooth since it is composed of smooth functions (the square root is smooth everywhere that it isn't $0$). $x$ is definitely injective since the first two coordinates force inputs to be equal if outputs are equal. $x$ is regular which you can see by computing the matrix of its derivative — $\begin{bmatrix} 1 & 0 \\ 0 & 1 \\ a & b\end{bmatrix}$ where it doesn't matter what $a, b$ are, the rank is $2$ regardless.
 
 $x$ is proper basically because $\sqrt{ 1 - u^2 - v^2 }$ has continuous inverse on its restricted domain — if it keeps points close to each other, then adding in the points $(u, v, \sqrt{ 1 - u^2 - v^2 })$ can't really move them far apart.
 
-Note that here $x$ does not have a large enough image to cover all of the sphere, however, by symmetry, we can rotate the sphere around so that it's all fine. Note however, that we will not always be so lucky as to be able to use the same formula for all the patches.
+Note that here $x$ does not have a large enough image to cover all of the sphere, however, by symmetry, we can rotate the sphere around so that it's all fine. While we will not always be so lucky as to be able to use the same formula for all the patches, it turns out that this idea does generalise in some way!
 
-##### _definition, proposition:_ Monge patches are regular
+##### _definition, proposition:_ Monge patches are proper
 
-A patch of the form $x : D \to \mathbb{R}^3$ such that $x(u, v) = (u, v, f(u, v))$ where $f$ is smooth is called a Monge patch.
+A patch of the form $x : D \to \mathbb{R}^3$ such that $x(u, v) = (u, v, f(u, v))$ where $f$ is smooth ($\mathcal{C}^\infty$) and $D$ is open in $\mathbb{R}^2$ is called a Monge patch.
 
 Monge patches are proper patches.
+
+###### _proof:_
+
+We need to verify that 
+1) $D$ is open, which is true just by the hypothesis of the proposition,
+2) $x$ is a mapping, which we have since each of its coordinate functions are smooth.
+3) $x$ is one-to-one, which we can see because of the first two coordinates.
+4) $x$ is regular, which is true by the same logic as the example above — since it has a Jacobian $\begin{bmatrix} 1 & 0 \\ 0 & 1 \\ a & b \end{bmatrix}$ for some $a, b \in \mathbb{R}$, which clearly has rank $2$.
+5) $x$ has a continuous inverse $x^{-1} : x^\text{img}(D) \to D$. We claim that $(u, v, f(u, v)) \mapsto (u, v)$ is this map.
+
+##### _corollary:_ level sets are surfaces
+
+For a smooth function $g : \mathbb{R}^3 \to \mathbb{R}$, the set $M = \{ p \in \mathbb{R}^3 \mid g(p)- g(p_{0}) = 0 \}$ for some $p_{0} \in \mathbb{R}^3$, is a surface if and only if there are no $p \in M$ for which $Dg \Big |_{p} = 0$.
+
+###### _proof:_
+
+The [[Inverse and implicit functions#_theorem _ the implicit function theorem|implicit function theorem]] tells us that for $h = g - g(p_{0})$, if we have $Dh \Big |_{p} \neq 0$ for all $p \in \mathbb{R}^3$, then in the open neighbourhood of each $p$, we have a function $f : \mathbb{R}^2 \to \mathbb{R}$ such that $g(x, y, f(x, y)) = 0$. That is, each $p$ is contained in the image of a Monge patch.
+
+This gives us a whole bunch of examples —
+
+##### _examples:_ level sets that are surfaces
+
+1) The plane through $(x_{0}, y_{0}, z_{0})$ and normal vector $(a, b, c)$ is the level set $g(x, y, z) = g(p_{0})$ of the function $g : (x, y, z) \mapsto ax + by + cz$, and thus, is a surface
+2) The sphere centred at $(a, b, c)$ and of radius $r$ is the level set $g(x, y, z) = r^2$ of the function $g :(x, y, z) \mapsto (x - a)^2 + (y - b)^2 + (z - c)^2$.
+3) If we only have to use one Monge patch, we can say $M$ is a simple surface.
+
+Also note that this allows us, in some sense to think of surfaces as parameterised by their coordinate patches.
