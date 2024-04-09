@@ -64,4 +64,4 @@ The converse isn't true.
 ##### _example:_ not every prime ideal is maximal
 
 1) $(0)$ is prime since $ab \in (0)$ only if $a = 0$ or $b = 0$. However it's trivially non-maximal since $(0) \subset (2) \subsetneq \mathbb{Z}$, or for a sillier proof, because $\mathbb{Z} / (0) \cong \mathbb{Z}$ is obviously not a field.
-2) In $\mathbb{Z}[x]$, the ideal $(x)$ is prime since $pq$ only has no constant terms if one of $p$ or $q$ has zero constant terms, or because $\mathbb{Z}[x] / (x) \cong \mathbb{Z}$ is an integral domain by the first isomorphism theorem. It's not a field by the same thing.
+2) In $\mathbb{Z}[x]$, the ideal $(x)$ is prime since $pq$ only has no constant terms if one of $p$ or $q$ has zero constant terms, or because $\mathbb{Z}[x] / (x) \cong \mathbb{Z}$ is an integral domain by the first isomorphism theorem. However, by the same isomorphism, $\mathbb{Z}[x]/(x)$ is not a field, and thus, $(x)$ is not maximal.
