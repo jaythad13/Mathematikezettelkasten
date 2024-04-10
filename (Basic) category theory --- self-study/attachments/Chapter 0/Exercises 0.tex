@@ -34,6 +34,8 @@
 	Thus, $\mathcal I(S)$ satisfies the universal property that for any topological space $X$ and function $F : X \to S$ there exists a unique continuous map $f : X \to \mathcal I(S)$ such that $f \circ i = F$.
 \end{solution}
 
+\pagebreak
+
 \begin{problem}[0.11]
 	Fix a group homomorphism $\theta : G \to H$. Find a universal property satisfied by the pair $(\ker \theta, i)$.
 \end{problem}
@@ -52,12 +54,14 @@
 	$\varphi'$ exists because the condition on $\varphi$ (that $\theta \circ \varphi = \varepsilon \circ \varphi$) forces us to have $\varphi^\text{img}(K) \subset \ker \theta$. Then we can define $\varphi' : K \to \ker \theta$ by $\varphi'(k) = \varphi(k)$ for all $k \in K$. $\varphi$ is unique because for the diagram to commute, we must have $i \circ \varphi' = \varphi$, and thus $\varphi'(k) = \varphi(k)$ for all $k \in K$.
 \end{solution}
 
+\pagebreak
+
 \begin{problem}[0.12]
 	Verify the universal property shown in diagram 0.3.
 \end{problem}
 
 \begin{solution}
-	For a topological space $X$, covered by two open subsets, $U$ and $V$ and another topological space $Y$, we claim that if the diagram without the dashed arrow commutes, so does the diagram with the dashed arrow.
+	For a topological space $X$, covered by two open subsets, $U$ and $V$ and another topological space $Y$, we claim that if the diagram without the dashed arrow commutes, then there is a unique continuous function $h$ such that the diagram with the dashed arrow commutes.
 	\[
 		\begin{tikzcd}
 			U \cap V \arrow[r, hook, "i"] \arrow[d, hook, "j"] & U \arrow[d, hook, "j'"] \arrow[ddr, bend left, "\forall f"] \\
@@ -65,8 +69,11 @@
 						&&\forall Y
 		\end{tikzcd}
 	\]\\
-	This holds because if the diagram without the dashed arrow commutes, then $f$ and $g$ agree on $U \cap V$. Thus, we can choose $h(x) = f(x)$ for $x \in U$ and $h(x) = g(x)$ for $x \in V$ and still have $h(x)$ well defined for $x \in U \cap V$. The gluing lemma tells us that this stays continuous too.
+	$h$ exists because if the diagram without the dashed arrow commutes, then $f$ and $g$ agree on $U \cap V$. Thus, we can choose $h(x) = f(x)$ for $x \in U$ and $h(x) = g(x)$ for $x \in V$ and still have $h(x)$ well defined for $x \in U \cap V$. The gluing lemma tells us that $h$ is continuous too. \\\\
+	$h$ is unique because for the diagram to commute, we must have $h \circ j' = f$ (that is, $h$ agrees with $f$ everywhere on $U$) and $h \circ i' = g$ (that is, $h$ agrees with $g$ everywhere on $V$). Since $X$ is covered by $U$ and $V$, $h$ is specified (and overspecified if $f$ and $g$ disagreed anywhere) at every $x \in X$.
 \end{solution}
+
+\pagebreak
 
 \begin{problem}[0.13]
 	Denote by $\mathbb Z[x]$ the polynomial ring over $\mathbb Z$ in one variable.
@@ -97,6 +104,8 @@
 			Thus, $\psi \circ \varphi: A \to A$ is a ring homomorphism with $\psi \circ \varphi(a) = a$ and $\varphi \circ \psi : \mathbb Z[x] \to \mathbb Z[x]$ is a ring homomorphism with $\varphi \circ \psi(x) = x$. However, we already have such a ring homomorphisms --- $\operatorname{id}_A$ and $\operatorname{id}_{\mathbb Z[x]}$ respectively. Thus by the uniqueness condition, we must have $\psi \circ \varphi = \operatorname{id}_A$ and $\varphi \circ \psi = \operatorname{id}_{\mathbb Z[x]}$. Finally, this gives us that $\varphi$ and $\psi$ are both isomorphisms with $\psi = i$
 	\end{enumerate}
 \end{solution}
+
+\pagebreak
 
 \begin{problem}[0.14]
 	Let $X$ and $Y$ be vector spaces.
