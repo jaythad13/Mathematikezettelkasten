@@ -1,0 +1,62 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 142 --- Differential Geometry}
+\assignment{Homework assignment \#9}
+\duedate{12th April 2024}
+
+\begin{document}
+
+\begin{problem}[Problem 1.]
+	Let $\mathbf{W} : \mathbb{R}^{3} \to \mathrm{T}\mathbb{R}^{3}$ be a vector field defined on a region containing a regular curve $\alpha : I \to \mathbb{R}^{3}$. Then $t \mapsto \mathbf{W}(\alpha(t))$ is a vector field on $\alpha$ called the \textit{restriction of $\mathbf{W}$ to $\alpha$} and denoted $\mathbf{W}_{\alpha}$. Prove that $(\mathbf{W}_{\alpha})'(t_{0}) = (\nabla_{\mathbf{V}} \mathbf{W})(\mathbf{p})$ whenever $\mathbf{V}(\mathbf{p}) = \alpha'(t_{0})$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Problem 2.]
+	Let $\mathbf{E}_{1}, \mathbf{E}_{2}, \mathbf{E}_{3} : \mathbb{R}^{3} \to \mathrm{T} \mathbb{R}^{3}$ be a frame field with dual forms $\theta_{1}, \theta_2, \theta_{3} \in \Omega^{1}(\mathbb{R}^{3})$ and connection forms $\omega_{12}, \omega_{23}, \omega_{31} \in \Omega^{1}(\mathbb{R}^{3})$. \\
+
+	Recall that two curves $\alpha, \beta : I \to \mathbb{R}^{3}$ are \textit{congruent} if there exist frame fields $\mathbf{F}_{1}, \mathbf{F}_{2}, \mathbf{F}_{3} : I \to \mathrm{T}\mathbb{R}^{3}$ for $\alpha$, and $\mathbf{G}_{1}, \mathbf{G}_{2}, \mathbf{G}_3 : I \to \mathrm{T} \mathbb{R}^{3}$ for $\beta$ such that $\alpha' \cdot \mathbf{F}_{i} = \beta' \cdot \mathbf{G}_{i}$ and $\mathbf{F}_{i}' \cdot \mathbf{F}_{j} = \mathbf{G}_{i}' \cdot \mathbf{G}_{j}$ for all $i, j \in \{ 1, 2, 3 \}$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Problem 3.]
+	Given a continuous function $f : I \to \mathbb{R}$ , show that there exists a unit speed curve $\beta : I \to \mathbb{R}^{3}$  fixed in a plane for which $f(s)$  is the curvature. To this end, denote $\beta(s) = (x(s), y(s), z(s))$  where $x, y, z$  are functions given by the solutions to the differential equations
+	\begin{align*}
+		x'(s) & = \cos{\varphi(s)} & y'(s) & = \sin{\varphi(s)} & z'(s) & = 0 \\
+		x(s_{0}) & = 0 & y(s_{0}) & = 0 & z(s_{0}) & = 0
+	\end{align*}
+	where
+	\[
+		\varphi(s) = \int_{s_{0}}^{s} f(u) \, du.
+	\]
+	\begin{enumerate}
+		\item Show that $\beta$ has unit speed.
+		\item Show that $\beta$ has curvature $\kappa(s) = f(s)$.
+		\item Show that $\beta$ has torsion $\tau(s) = 0$.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Problem 4.]
+	A \textit{plane} in $\mathbb{R}^{3}$ is a surface $M = \{ (x, y, z) \mid ax + by + cz = d \}$ where the numbers $a, b, c$ are necessarily not all zero. Prove that every plane in $\mathbb{R}^{3}$ may be described by a vector equation $(\mathbf{r} - \mathbf{p}) \cdot \mathbf{q} = 0$ in terms of $\mathbf{r} = (x, y, z)$
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Problem 5.]
+	Let $x : D \to \mathbb{R}^{3}$  be the function given by
+	\[
+		x(u, v) = (u^{2}, uv, v^{2})
+	\]
+	on the first quadrant $D = \{ (u, v) \in \mathbb{R}^{2} \mid u > 0, v > 0 \}$ .
+	\begin{enumerate}
+		\item Show that $x$ is one-to-one and find a formula for its inverse function $x^{-1} : x^{\text{img}}(D) \to D$.
+		\item Prove that $x$ is a proper patch.
+	\end{enumerate}
+\end{problem}
+
+\end{document}
