@@ -1,5 +1,5 @@
 \documentclass[letterpaper, 12pt]{hmcpset}
-\usepackage{cat-th-preamble}
+\usepackage{hw-preamble}
 
 \name{Jayden Thadani}
 \class{Basic Category Theory self-study}
@@ -48,8 +48,8 @@
 			\forall K  \arrow[u, dashrightarrow, "\exists ! \, \varphi'"] \arrow[ur, "\varphi"]
 		\end{tikzcd}
 	\]
-	That is, the pair $(\ker \theta, i)$ satisfy the universal property that for all groups $K$ with a homomorphism, $\varphi : K \to G$ such that ${\theta \circ \varphi = \varepsilon \circ \varphi}$, there is a homomorphism $\varepsilon' : K \to \ker \theta$ such that $i \circ \varphi' = \varphi$.\\\\
-	This is because the condition on $\varphi$ forces us to have $\varphi^\text{img}(K) = \ker \theta$.
+	That is, the pair $(\ker \theta, i)$ satisfy the universal property that for all groups $K$ with a homomorphism, $\varphi : K \to G$ such that ${\theta \circ \varphi = \varepsilon \circ \varphi}$, there is a unique homomorphism $\varphi' : K \to \ker \theta$ such that $i \circ \varphi' = \varphi$.\\\\
+	$\varphi'$ exists because the condition on $\varphi$ (that $\theta \circ \varphi = \varepsilon \circ \varphi$) forces us to have $\varphi^\text{img}(K) \subset \ker \theta$. Then we can define $\varphi' : K \to \ker \theta$ by $\varphi'(k) = \varphi(k)$ for all $k \in K$. $\varphi$ is unique because for the diagram to commute, we must have $i \circ \varphi' = \varphi$, and thus $\varphi'(k) = \varphi(k)$ for all $k \in K$.
 \end{solution}
 
 \begin{problem}[0.12]
