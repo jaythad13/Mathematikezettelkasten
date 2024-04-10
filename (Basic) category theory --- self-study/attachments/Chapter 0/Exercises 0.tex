@@ -78,8 +78,8 @@
 \begin{problem}[0.13]
 	Denote by $\mathbb Z[x]$ the polynomial ring over $\mathbb Z$ in one variable.
 	\begin{enumerate}
-		\item Prove that for all rings $R$ and all $r \in R$, there exists a unique ring homomorphism $\varphi : \mathbb Z \to R$ such that $\varphi(x) = r$.
-		\item Let $A$ be a ring and $a \in A$. Suppose that for all rings $R$ and all $r \in R$, there exists a unique ring homomorphism $\varphi : A \to R$ such that $\varphi(a) = r$. Prove that there is a unique isomorphism $\i : \mathbb Z[x] \to A$ such that $i(x) = a$.
+		\item Prove that for all rings $R$ and all $r \in R$, there exists a unique ring homomorphism $\varphi : \mathbb Z[x] \to R$ such that $\varphi(x) = r$.
+		\item Let $A$ be a ring and $a \in A$. Suppose that for all rings $R$ and all $r \in R$, there exists a unique ring homomorphism $\varphi : A \to R$ such that $\varphi(a) = r$. Prove that there is a unique isomorphism $i : \mathbb Z[x] \to A$ such that $i(x) = a$.
 	\end{enumerate}
 \end{problem}
 
@@ -87,10 +87,14 @@
 	\begin{enumerate}
 		\item For any polynomial $p = \sum_{i = 1}^n a_i x^i$ consider the ring homomorphism given by
 			\[
+				\varphi(a) = \underbrace{1 + \dots + 1}_{a \text{ times}}
+			\]
+			for any $a \in \mathbb{Z}$, and
+			\[
 				\varphi(p) = \sum_{i = 1}^n \varphi(a_i) r^i.
 			\]
-			This satisfies the definition of a ring homomorphism and the requirement that ${\varphi(x) = r}$.\\\\
-			We can show that this is unique by noticing that for any homomorphism $\psi$ fulfilling the requirements, we must have
+			This is clearly a ring homomorphism (we verified that the restriction $\varphi_{| \mathbb{Z}}$ is a ring homomorphism already) and obviously we have that ${\varphi(x) = r}$.\\\\
+			We can show that this is unique by noticing that for any homomorphism $\psi$ fulfilling the requirements, we must have that $\psi_{| \mathbb{Z}}$ is the unique homomorphism $\psi_{|\mathbb{Z}} : \mathbb{Z} \to R$ and thus, is as described, and since $\psi(x) = r$, we have
 			\[
 				\begin{split}
 					\psi(p) & = \psi \left ( \sum_{i = 1}^n a_i x^i \right ) \\
