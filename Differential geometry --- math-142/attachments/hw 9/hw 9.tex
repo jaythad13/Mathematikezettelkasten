@@ -12,13 +12,66 @@
 	Let $\mathbf{W} : \mathbb{R}^{3} \to \mathrm{T}\mathbb{R}^{3}$ be a vector field defined on a region containing a regular curve $\alpha : I \to \mathbb{R}^{3}$. Then $t \mapsto \mathbf{W}(\alpha(t))$ is a vector field on $\alpha$ called the \textit{restriction of $\mathbf{W}$ to $\alpha$} and denoted $\mathbf{W}_{\alpha}$. Prove that $(\mathbf{W}_{\alpha})'(t_{0}) = (\nabla_{\mathbf{V}} \mathbf{W})(\mathbf{p})$ whenever $\mathbf{V}(\mathbf{p}) = \alpha'(t_{0})$.
 \end{problem}
 
+\begin{solution}
+	Let  $\mathbf{W}$  be given by $\mathbf{W}(\mathbf{p}) = [w(\mathbf{p}), \mathbf{p}]$  for some smooth function $w : \mathbb{R}^{3} \to \mathbb{R}^{3}$ . \\
+
+	Let $D w \Big |_{\mathbf{p}}$  denote the (total) derivative of $w$  at a point $\mathbf{p}$ . Then by the chain rule, we have that
+	\[
+		\begin{split}
+			\mathbf{W}_{\alpha}'(t_{0}) & = \left [\frac{d (w \circ \alpha)}{d t} \Big |_{t_{0}}, \alpha(t_{0}) \right ] \\
+						    & = \left [ D w \Big |_{\alpha(t_{0})} \left ( \frac{d \alpha}{d t} \Big |_{t_{0}} \right ), \alpha(t_{0}) \right ].
+		\end{split}
+	\] \\
+	
+	But if $\mathbf{V}(\mathbf{p}) = \alpha'(t_{0})$, then we have
+	\[
+		\mathbf{V}(\mathbf{p}) = \left [ \frac{d \alpha}{d t} \Big |_{t_{0}}, \alpha(t_{0}) \right ]
+	\]
+	and thus $\mathbf{p} = \alpha(t_{0})$. This allows us to compute the covariant derivative as
+	\[
+		\begin{split}
+			\nabla_{\mathbf{V}} \mathbf{W}(\mathbf{p}) & = D w \Big |_{\alpha(t_{0})} (\mathbf{V}(\alpha(t_{0}))) \\
+								   & = \left [ D w \Big |_{\alpha(t_{0})} \left ( \frac{d \alpha}{d t} \Big |_{t_{0}} \right ), \alpha(t_{0}) \right ].
+		\end{split}
+	\] \\
+
+	Thus, we have the equality
+	\[
+		\mathbf{W}_{\alpha}'(t_{0}) = \nabla_{\mathbf{V}} \mathbf{W}(\mathbf{p})
+	\]
+	wherever $\mathbf{V}(\mathbf{p}) = \alpha'(t_{0})$, as desired.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[Problem 2.]
 	Let $\mathbf{E}_{1}, \mathbf{E}_{2}, \mathbf{E}_{3} : \mathbb{R}^{3} \to \mathrm{T} \mathbb{R}^{3}$ be a frame field with dual forms $\theta_{1}, \theta_2, \theta_{3} \in \Omega^{1}(\mathbb{R}^{3})$ and connection forms $\omega_{12}, \omega_{23}, \omega_{31} \in \Omega^{1}(\mathbb{R}^{3})$. \\
 
-	Recall that two curves $\alpha, \beta : I \to \mathbb{R}^{3}$ are \textit{congruent} if there exist frame fields $\mathbf{F}_{1}, \mathbf{F}_{2}, \mathbf{F}_{3} : I \to \mathrm{T}\mathbb{R}^{3}$ for $\alpha$, and $\mathbf{G}_{1}, \mathbf{G}_{2}, \mathbf{G}_3 : I \to \mathrm{T} \mathbb{R}^{3}$ for $\beta$ such that $\alpha' \cdot \mathbf{F}_{i} = \beta' \cdot \mathbf{G}_{i}$ and $\mathbf{F}_{i}' \cdot \mathbf{F}_{j} = \mathbf{G}_{i}' \cdot \mathbf{G}_{j}$ for all $i, j \in \{ 1, 2, 3 \}$.
+	Recall that two curves $\alpha, \beta : I \to \mathbb{R}^{3}$ are \textit{congruent} if there exist frame fields $\mathbf{F}_{1}, \mathbf{F}_{2}, \mathbf{F}_{3} : I \to \mathrm{T}\mathbb{R}^{3}$ for $\alpha$, and $\mathbf{G}_{1}, \mathbf{G}_{2}, \mathbf{G}_3 : I \to \mathrm{T} \mathbb{R}^{3}$ for $\beta$ such that $\alpha' \cdot \mathbf{F}_{i} = \beta' \cdot \mathbf{G}_{i}$ and $\mathbf{F}_{i}' \cdot \mathbf{F}_{j} = \mathbf{G}_{i}' \cdot \mathbf{G}_{j}$ for all $i, j \in \{ 1, 2, 3 \}$. Show that $\alpha$ and $\beta$ are congruent whenever $\theta_{i}(\alpha') = \theta_{i}(\beta')$ and $\omega_{ij}(\alpha') = \omega_{ij}(\beta')$ for all $i, j \in \{ 1, 2, 3 \}$.
 \end{problem}
+
+\begin{solution}
+	Choose $\mathbf{F}_{i}$ to be the restriction $\mathbf{E}_{i} \circ \alpha$ of $\mathbf{E}_{i}$ to a vector field on $\alpha$ and similarly, choose $\mathbf{G}_{i}$ to be the restriction $\mathbf{E}_{i} \circ \beta$ of $\mathbf{E}_{i}$ to a vector field on $\beta$, for all $i \in \{ 1, 2, 3 \}$. \\
+
+	By definition, we have that $\theta_{i}([\mathbf{v}, \mathbf{p}]) = [\mathbf{v}, \mathbf{p}] \cdot \mathbf{E}_{i}(\mathbf{p})$ for any tangent vector $[\mathbf{v}, \mathbf{p}] \in \mathrm{T}\mathbb{R}^{3}$. Thus, the fact that we always have $\theta_{i}(\alpha') = \theta_{i}(\beta')$ means that we always have the equality
+	\[
+		\alpha'(t_{0}) \cdot \mathbf{E}_{i}(\alpha(t_{0})) = \beta'(t_{0}) \cdot \mathbf{E}_{i}(\beta(t_{0})).
+	\]
+	Since $\mathbf{F}_{i}$ and $\mathbf{G}_{i}$ are just restrictions of $\mathbf{E}_{i}$, this obviously equivalent to the desired equality
+	\[
+		\alpha'(t_{0}) \cdot \mathbf{F}_{i}(t_{0}) = \beta'(t_{0}) \cdot \mathbf{G}_{i}(t_{0})
+	\]
+	for all $t_{0} \in I$ and all $i \in \{ 1, 2, 3 \}$. \\
+
+	Similarly, by definition, we have that $\omega_{ij}([\mathbf{v}, \mathbf{p}]) = (\nabla_{\mathbf{V}} \mathbf{E}_{i}(\mathbf{p})) \cdot \mathbf{E}_{j}(\mathbf{p})$ where $\mathbf{V}$ is any vector field such that $\mathbf{V}(\mathbf{p}) = [\mathbf{v}, \mathbf{p}]$ (for any tangent vector $[\mathbf{v}, \mathbf{p}] \in \mathrm{T}\mathbb{R}^{3}$). Thus, the fact that $\omega_{ij}(\alpha') = \omega_{ij}(\beta')$ means that
+	\[
+		(\nabla_{\mathbf{A}} \mathbf{E}_{i}(\mathbf{p})) \cdot \mathbf{E}_{j}(\mathbf{p}) = (\nabla_{\mathbf{B}} \mathbf{E}_{i}(\mathbf{q})) \cdot \mathbf{E}_{j}(\mathbf{q})
+	\]
+	where $\mathbf{p} = \alpha(t_{0})$, $\mathbf{q} = \beta(t_{0})$ and $\mathbf{A}, \mathbf{B}$ are vector fields such that $\mathbf{A}(\mathbf{p}) = \alpha'(t_{0})$ and $\mathbf{B}(\mathbf{q}) = \beta'(t_{0})$. The previous exercise tells us that $\nabla_{\mathbf{A}} \mathbf{E}_{i}(\mathbf{p}) = \mathbf{F}_{i}'(t_{0})$ and similarly, $\nabla_{\mathbf{B}} \mathbf{E}_{i}(\mathbf{q}) = \mathbf{G}_{i}'(t_{0})$. Rewriting $\mathbf{E}_{j}(\mathbf{p}) = \mathbf{F}_{j}(t_{0})$ and $\mathbf{E}_{j}(\mathbf{q}) = \mathbf{G}_{j}(t_{0})$ this gives us the desired equality ---
+	\[
+		\mathbf{F}_{i}'(t_{0}) \cdot \mathbf{F}_{j}(t_{0}) = \mathbf{G}_{i}'(t_{0}) \cdot \mathbf{G}_{j}(t_{0}).
+	\]
+\end{solution}
 
 \pagebreak
 
@@ -39,11 +92,69 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item Since $\beta'(s) = [(x'(s), y'(s), z'(s)), \beta(s)]$, we have that
+			\[
+				\begin{split}
+					\lVert \beta'(s) \rVert^{2} & = x'(s)^{2} + y'(s)^{2} + z'(s)^{2} \\
+								    & = \cos^{2}{(\varphi(s))} + \sin^{2}{(\varphi(s))} + 0 \\
+								    & = 1.
+				\end{split}
+			\]
+			Thus, $\lVert \beta'(s) \rVert = 1$ always. That is, $\beta$ has unit speed.
+		\item First we can compute $\beta''$. That is
+			\[
+				\begin{split}
+					\beta''(s) & = [(x''(s), y''(s), z''(s)), \beta(s)] \\
+						   & = [(-\sin{(\varphi(s))} \, \varphi'(s), \cos{(\varphi(s))} \, \varphi'(s),  0), \beta(s)].
+				\end{split}
+			\]
+			
+			With this, we can compute $\kappa(s) = \lVert \beta'(s) \times \beta''(s) \rVert/\lVert \beta'(s) \rVert^{3}$.
+			\[
+				\begin{split}
+					\kappa(s) & = \frac{\lVert \beta'(s) \times \beta''(s) \rVert}{\lVert \beta'(s) \rVert^{3}} \\
+						  & = \lVert \beta'(s) \times \beta''(s) \rVert \\
+						  & = \lVert (0, 0, \cos^{2}{(\varphi(s))} \, \varphi'(s) + \sin^{2}{(\varphi(s))} \, \varphi'(s)) \rVert \\
+						  & = \lVert (0, 0, \varphi'(s)) \rVert \\
+						  & = \lVert (0, 0, f(s)) \rVert \\
+						  & = \lvert f(s) \rvert.
+				\end{split}
+			\]
+			Here, we know that the first and second components of $\beta' \times \beta''$ are zero since the last components of $\beta'$ and $\beta''$ are both zero. We know that $\varphi'(s) = f(s)$ by the fundamental theorem of calculus. \\
+
+			Thus, for positive $f$, we have $\kappa(s) = f(s)$.
+		\item Since $z'(s) = 0$ and $z(s_{0}) = 0$, $z(s) = 0$ for all $s \in I$. Thus, $\beta$ is clearly contained in the plane $\{ (x, y, 0) \in \mathbb{R}^{3} \}$. In class we have shown that this means that it has zero torsion.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[Problem 4.]
 	A \textit{plane} in $\mathbb{R}^{3}$ is a surface $M = \{ (x, y, z) \mid ax + by + cz = d \}$ where the numbers $a, b, c$ are necessarily not all zero. Prove that every plane in $\mathbb{R}^{3}$ may be described by a vector equation $(\mathbf{r} - \mathbf{p}) \cdot \mathbf{q} = 0$ in terms of $\mathbf{r} = (x, y, z)$
 \end{problem}
+
+\begin{solution}
+	Let $\mathbf{q} = (a, b, c)$ be the vector normal to the plane. Since, $\mathbf{q} \neq \mathbf{0}$, there exists some $\mathbf{p} \in \mathbb{R}^{3}$ such that $\mathbf{p} \cdot \mathbf{q} = d$ (for example, $\mathbf{p} = d \mathbf{q}/\lVert \mathbf{q} \rVert^{2}$).
+	Notice that
+	\[
+		\begin{split}
+			(\mathbf{r} - \mathbf{p}) \cdot \mathbf{q} & = \mathbf{r} \cdot \mathbf{q} - \mathbf{p} \cdot \mathbf{q} \\
+								   & = (a, b, c) \cdot (x, y, z) - d \\
+								   & = ax + by + cz - d.
+		\end{split}
+	\]
+	
+	Thus, the vector equation
+	\[
+		(\mathbf{r} - \mathbf{p}) \cdot \mathbf{q} = 0.
+	\]
+	is equivalent to
+	\[
+		ax + by + cz = d.
+	\]
+\end{solution}
 
 \pagebreak
 
@@ -58,5 +169,41 @@
 		\item Prove that $x$ is a proper patch.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item
+			\[
+				\boxed{
+					x^{-1}(a, b, c) = (\sqrt a, \sqrt c)
+				}
+			\] \\
+			First we will show that $x$ is one-to-one. Suppose $x(u_{1}, v_{1}) = x(u_{2}, v_2)$. Then we have $(u_{1}^{2}, u_{1} v_{1}, v_{1}^{2}) = (u_{2}^{2}, u_{2} v_2, v_{2}^{2})$. This gives us $u_{1}^{2} = u_2^{2}$ and $v_{1}^{2} = v_{2}^{2}$. Since $u_{1}, u_{2}, v_{1}, v_{2} > 0$, we have $u_{1} = u_{2}$ and $v_{1} = v_{2}$. \\
+
+			For an inverse function $x^{-1}$, we want $x^{-1} : (u^{2}, uv, v^{2}) \mapsto (u, v)$. Since $u, v > 0$, we can just send $(a, b, c)$ to $(\sqrt a, \sqrt c)$. We can check that for $(u, v) \in D$ we have
+			\[
+				\begin{split}
+					(x^{-1} \circ x) (u, v) & = x^{-1}(u^{2}, uv, v^{2}) \\
+							      & = (u, v)
+				\end{split}
+			\]
+			and if $(a, b, c) \in x^{\text{img}}(D)$ (that is, $b = \sqrt{ac}$), we have
+			\[
+				\begin{split}
+					(x \circ x^{-1})(a, b, c) & = x(\sqrt a, \sqrt c) \\
+								  & = (a, \sqrt{ac}, b) \\
+								  & = (a, b, c).
+				\end{split}
+			\]
+		\item
+			To show that $x$ is proper, we need to show that $x^{-1}$ is continuous. We will do so by showing that each of its component functions is continuous. Let $x_{1}^{-1} : x^{\text{img}}(D) \to \mathbb{R}^{+}$ by $(a, b, c) \mapsto \sqrt a$ and, similarly, $x_{2}^{-1} : (a, b, c) \mapsto \sqrt c$ be the component functions of $x$ such that $x(a, b, c) = (x_{1}(a, b, c), x_{2}(a, b, c))$. \\
+			
+			We know that the square root function is continuous on $\mathbb{R}^{+}$. Thus, for any $a_{0} \in \mathbb{R}^{+}$, for any $\varepsilon > 0$, there exists some $\delta > 0$ such that for all $a$ with $\lvert a - a_{0} \rvert < \delta$, we have $\lvert \sqrt a - \sqrt a_{0} \rvert$. \\
+
+			Suppose that for some $\varepsilon > 0$, we had $\lVert (a, b, c) - (a_{0}, b_{0}, c_{0}) \rVert < \delta$ where $\delta$ corresponds to $\varepsilon$ for the continuity of the square root function. Then since $\lvert a - a_{0} \rvert, \lvert c - c_{0} \rvert < \lVert (a, b, c) - (a_{0}, b_{0}, c_{0}) \rVert$, we would have $\lvert \sqrt a - \sqrt a_{0} \rvert < \varepsilon$ and $\lvert \sqrt c - \sqrt c_{0} \rvert < \varepsilon$. That is, at each $(a_{0}, b_{0}, c_{0}) \in x^{\text{img}}(D)$, for all $\varepsilon > 0$, there is some $\delta > 0$ such that $\lvert (a, b, c) - (a_{0}, b_{0}, c_{0}) \rvert < \delta$ guarantees that $\lvert x_{1}^{-1}(a, b, c) - x_{1}^{-1}(a_{0}, b_{0}, c_{0}) \rvert < \varepsilon$ and $\lvert x_{2}^{-1}(a, b, c) - x_{2}^{-1}(a_{0}, b_{0}, c_{0}) \rvert < \varepsilon$. That is, $x_{1}^{-1}$ and $x_{2}^{-1}$ are continuous. \\
+
+			Then, since $x^{-1}$ has continuous component functions, it is itself continuous, and $x$ is proper, as desired.
+	\end{enumerate} 
+\end{solution}
 
 \end{document}
