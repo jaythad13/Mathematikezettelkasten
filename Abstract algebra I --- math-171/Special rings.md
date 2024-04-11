@@ -2,7 +2,9 @@
 tags:
 - math-171
 - alg
-lecture: math-171-19
+lecture: 
+- math-171-19
+- math-171-20
 ---
 
 ### Euclidean domains
@@ -120,3 +122,119 @@ For a ring $R$, if $R[x]$ is a principal ideal domain, $R$ is a field.
 ###### _proof:_
 
 Since $R[x]$ is a principal ideal domain, it is an integral domain, and thus, $R$, as a subring is an integral domain. Then since $R[x]/(x) \cong R$, $R[x] / (x)$ is an integral domain, and thus, $(x)$ [[Special ideals#_proposition _ prime ideals have integral domains as quotients|is prime]], and thus, by the previous result is maximal, and finally, $R \cong R[x] / (x)$ is a field.
+
+### Towards unique factorisation domains
+
+There is a nice generalisation of the idea of a [[#_definition _ prime|prime]].
+
+##### _definitions:_ irreducible elements of an integral domain, associate
+
+Let $R$ be an integral domain.
+
+For a nonzero, non-unit, $r \in R$, $r$ is irreducible if $r = ab$ implies that $a$ or $b$ is a unit.
+
+For $a, b \in R$ we say $a, b$ are associates if $a = ub$ for some unit $u \in R$.
+
+##### _examples:_ irreducible and prime elements
+
+1) $x \in \mathbb{R}[x]$ is prime since $(x)$ is a prime ideal
+2) $3 \in \mathbb{Z}$ is irreducible
+
+As we would expect for a generalisation of primes, all primes are irreducible.
+
+##### _proposition:_ all primes are irreducible
+
+Let $R$ be an integral domain. If $p \in R$ is prime, then it is irreducible.
+
+###### _proof:_
+
+Suppose $p = ab$ for some $a, b \in R$. Then either $a$ or $b$ is in $(p)$. Without loss of generality, choose $a \in (p)$. Then we must have $a = pr$ for some $r \in R$. Thus, $p = prb$, and thus, $rb = 1$. That is, $b$ is a unit.
+
+##### _example:_ not all irreducible elements are prime
+
+Consider $3 \in \mathbb{Z}[\sqrt{ -5 }]$. It is irreducible (proof? trust me bro). It's not prime because $(2 + \sqrt{ -5 })(2 - \sqrt{ -5 }) = 9 \in (3)$ but $2 + \sqrt{ -5 }, 2 - \sqrt{ -5 } \not\in (3)$.
+
+##### _propositions:_ in PIDs, the irreducible elements are exactly the primes
+
+Suppose $R$ is a principal ideal domain. Then $p \in R$ is prime if and only if it is irreducible.
+
+###### _proof:_
+
+Since $R$ is a principal ideal domain, it is an integral domain, and thus, any prime is irreducible.
+
+Suppose $p$ is irreducible. Let $(p) \subset (m)$ for some $m \in R$. Thus, $p \in (m)$, and thus, $p = mr$ for some $r \in R$. Since $p$ is irreducible $m$ is a unit, or $r$ is a unit. If $r$ is a unit, $(p) = (m)$, and if $m$ is a unit, $(m) = R$. Thus, $(p)$ is maximal, and [[Special ideals#_corollary _ every maximal ideal is prime|thus, prime]].
+
+##### _example:_ proving a ring isn't a PID
+
+The previous result is a nice way to show a ring isn't a PID — just find an irreducible, non-prime element. $\mathbb{Z}[\sqrt{ -5 }]$ is not a principal ideal domain because $3$ is irreducible but not prime.
+
+### Unique factorisation domains
+
+We're finally getting where we wanted to be!
+
+##### _definition:_ unique factorisation domains
+
+A unique factorisation domain is an integral domain $R$ such that for any nonzero, non-unit $r \in R$, we have that
+1) $r$ is a finite product of irreducible elements
+2) the product is unique upto reordering and [[#_definitions _ irreducible elements of an integral domain, associate|associates]] (replacing an irreducible element with its associate).
+
+##### _examples:_ unique factorisation domains
+
+1) Every field is a UFD since because every nonzero element is a unit, so vacuously every element fulfils the property.
+2) $\mathbb{Z}$ is a UFD, since [[Euclid's algorithm and primes#_theorem _ unique factorisation|we already have unique factorisation into primes]] and primes are irreducible.
+
+##### _non-examples:_
+
+1) $\mathbb{Z}[\sqrt{ -5 }]$ is not a UFD since $6 = 2 \times 3 = (1 + \sqrt{ -5 })(1 - \sqrt{ -5 })$ are two distinct factorisations of $6$.
+2) $\mathbb{Z}[2i]$ is an integral domain, but not a UFD since $2$ and $2i$ are not associates but $4 = 2 \times 2 = (-2i)(2i)$.
+
+##### _proposition:_ in UFDs, the irreducible elements are exactly the primes
+
+Suppose $R$ is a principal ideal domain. Then $p \in R$ is prime if and only if it is irreducible.
+
+###### _proof:_
+
+We already have that all the primes are irreducible since $R$ is an integral domain.
+
+Suppose $p \in R$ is irreducible and $p = ab$ for some $a, b \in R$. Then note that $ab \in (p)$ and thus, $ab = pr$ for some $r \in R$.
+
+Since we're in a UFD and $p$ is irreducible (and thus its own factorisation is just $p = p$), $p$ or an associate of $p$ must be in the unique factorisation of $a$ or $b$. Say, without loss of generality, $a = (up)t_{2} \cdots t_{n}$. Thus, $a \in (p)$, and $p$ is prime.
+
+##### _example:_ proving a ring isn't a UFD
+
+The previous result is a nice way to show a ring isn't a UFD — just find an irreducible, non-prime element. $\mathbb{Z}[\sqrt{ -5 }]$ is not a unique factorisation domain because $3$ is irreducible but not prime.
+
+##### _theorem:_ Every PID is a UFD
+
+###### _proof:_
+
+We want to show that if $R$ is a PID, for every $r \in R$ we can factorise $r$ into a finite product of irreducible elements and that the factorisation is unique.
+
+To show the first, notice that a prime factorisation is clearly irreducible and thus, will suffice. We will write $r = r_{1} r_{2}$ where $r_{1}, r_{2}$ are non-units. If this is not possible, then $r$ is irreducible and we are done. If we have $r = r_{1} r_{2}$, and $r_{1}$ is not irreducible, so we have $r_{1} = r_{11} r_{12}$, where $r_{11}, r_{12}$ are non-units and then if $r_{11}$ is not irreducible, and so on.
+
+This would give us
+$$
+r = r_{1} r_{2} = (r_{11} r_{12}) r_{2} = ((r_{111} r_{112}) r_{12}) r_{2} = \cdots
+$$
+which (since $r_{2}, r_{12}, \dots$ are not units) gives us an infinite ascending chain
+$$
+(r) \subsetneq (r_{1}) \subsetneq (r_{11}) \subsetneq (r_{111}) \subsetneq \cdots
+$$
+where the non-equality comes from the fact that $r_{2}$, and all of the other "left over factors" are non-units by choice.
+
+Now we will show the uniqueness of the factorisation by induction on the number of factors.
+
+In the case where we just have one factor, $r$ itself is irreducible, and thus, by definition, can only be factorised into its associates.
+
+Suppose factorisation is unique for all factorisations of length between $1$ and $k$ (inclusive). Suppose that $r = p_{1} \cdots p_{k + 1} = q_{1} \cdots q_{m}$ where all $p_{i}$ are irreducible and all $q_{i}$ are irreducible. Note that we must have $m \ge k + 1$ otherwise the inductive hypothesis would break.
+
+Since $p_{1}$ is irreducible, and we're in a PID, $p_{1}$ is prime. Thus, some $q_1 \cdots q_{m} \in (p_{1})$ gives us some $q_{i} \in (p_{1})$, which means that $q_{i} = p_{1} u$ where $u \in R$. Since $q_{i}$ is irreducible and $p_{1}$ is prime and thus, not a unit, $u$ must be a unit.
+
+Choose without loss of generality that $q_{1} = q_{i}$ (because of commutativity, we can just renumber as needed). Thus, cancelling out $p_{1}$ on both sides of the factorisations gives us
+$$
+p_{2} \cdots p_{k + 1} = uq_{2} \cdots q_{m}.
+$$
+
+Then, by our induction hypothesis, (the list on the left is of length $k$), since there is unique factorisation $u q_{2}, \cdots q_{m}$ is just a reordering/associates of $p_{2} \cdots p_{k + 1}$, and since $q_{1}$ is an associate of $p_{1}$, this is true for the full factorisation of $r$.
+
+##### _corollary:_ $\mathbb{Z}$ is a UFD
