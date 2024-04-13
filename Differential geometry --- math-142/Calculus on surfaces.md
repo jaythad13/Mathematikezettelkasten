@@ -4,6 +4,7 @@ tags:
 - math-142
 lecture:
 - math-142-29
+- math-142-30
 ---
 
 Now that we have a good idea of [[Surfaces|surfaces]], we can start to calculus on them, like we would want to (perhaps, for physics, or just for math's own sake). Basically, the openness of each of the domains of the [[Surfaces#_definition _ coordinate patch|coordinate patches]] means that we can take derivatives and limits inside them, and then we will try in some sense to transfer them to the neighbourhoods of the points on the surface.
@@ -52,4 +53,37 @@ Not that $f_{\alpha}$ corresponds to the following diagram.
 ```
 (Here we write $f^{-1}$ instead of $f^\text{pre}$ for the pre-image.)
 
-To actually compute derivatives however, we need a [[Tangent spaces on surfaces|notion of directions on the surface]].
+Note that these definitions of smoothness seem to depend on our choice of family of coordinate maps, but we wouldn't want them to. Do they really?
+
+##### _proposition:_ smoothness is invariant under different patches
+
+Say $M$ is a surface with two different families of proper patches $x_{\alpha} : D_{\alpha} \to \mathbb{R}^3$ indexed by $\alpha \in I$ and $y_{\beta} : E_{\beta} \to \mathbb{R}^3$ indexed by $\beta \in J$, with
+$$
+x_{\alpha}^\text{img}(D_{\alpha}) \cap y^\text{img}_{\beta}(E_{\beta}) \neq \emptyset
+$$
+for some $\alpha \in I$ and $\beta \in J$. We claim that
+1) There exists a smooth function $h$ such that $y_{\beta} = x_{\alpha} \circ h$.
+2) For any well-defined $f : M \to \mathbb{R}$, $f \circ x_{\alpha}$ is smooth for all $\alpha \in I$ if and only if $f \circ y_{\beta}$ is smooth for all $\beta \in I$.
+
+###### _proof:_
+
+Note that what we really want is for the following diagram to commute
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		E_\beta \ar[rrd, "y_\beta"'] \ar[dd, "h"', bend right] \\
+		&& x_{\alpha}(D_{\alpha}) \cap y_{\beta}(E_{\beta}) \subset M \ar[r, "f"] \ar[llu, "y_\beta^{-1}"', bend right] \ar[lld, "x_\alpha^{-1}", bend left] & \mathbb R \\
+		D_\alpha \ar[rru, "x_\alpha"] \ar[uu, "h^{-1}"', bend right]
+	\end{tikzcd}
+\end{document}
+```
+
+Since we have $x_{\alpha}^{-1}$, the obvious choice for $h$ is $h = x_{\alpha}^{-1} \circ y_{\beta}$. Notice that $y_{\beta} = x_{\alpha} \circ h$ and thus, $(y_{\beta})_{*} = (x_{\alpha})_{*} \circ h_{*}$. By the chain rule, since $y_{\beta}$ and $x_{\alpha}$ are smooth, so is $h$, and since $(y_{\beta})_{*}$ is one to one, (by definition), so is $h_{*}$, and thus, $h$ is regular.
+
+Thus, $f \circ x_{\alpha}$ is smooth exactly when $f \circ y_{\beta} = (f \circ h) \circ x_{\alpha}$ is smooth.
+
+%% see lecture notes %%
+
+To actually compute derivatives however, we need a [[Tangent spaces on surfaces|notion of directions on the surface]], which we can finally do!
