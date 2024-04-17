@@ -27,7 +27,13 @@ $$
 
 Thus, by mapping lines through a point onto the surface through its coordinates in $\mathbb{R}^2$, we can get a two-dimensional vector space at each point. This will become the basic idea with which we define the tangent space at each point.
 
-Since this will be useful, we define
+In particular, it can be useful to consider the derivative of the lines that define the axes in $\mathbb{R}^2$. That is, we define the parameter curves
+
+##### _definition:_ $u$-parameter curve, $v$-parameter curve
+
+For a surface $M$ and a patch $x : D \to M$
+1) The $u$-parameter curve, at $(u_{0}, v_{0})$ is $x_{u}(u_{0}, v_{0}) = (x \circ \alpha)'(0)$ where $\alpha : I \to D$ is defined by $\alpha(t) = (u_{0}, v_{0}) + (1, 0)t$.
+2) The $v$-parameter curve, at $(u_{0}, v_{0})$ is $x_{v}(u_{0}, v_{0}) = (x \circ \beta)'(0)$ where $\beta : I \to D$ is defined by $\beta(t) = (u_{0}, v_{0}) + (0, 1)t$.
 
 ### Tangent vectors
 
@@ -37,7 +43,7 @@ First, we'll just do some bookkeeping so we don't have to keep stating hypothese
 
 ##### _notation:_ $M$
 
-For this section $M$ is a surface with at least two families family of proper patches $x_{k} : D_{k} \to M$, $y_{l} : E_{l} \to M$ indexed by $k \in A$ and $l \in B$ respectively.
+For this section $M$ is a surface covered by at least two families family of proper patches $x_{k} : D_{k} \to M$, $y_{l} : E_{l} \to M$ indexed by $k \in A$ and $l \in B$ respectively.
 
 ##### _proposition:_ tangent vectors are derivatives of curves
 
@@ -51,11 +57,39 @@ Let $p$ be a point on $M$. Then the following are equivalent for any $[\mathbf{v
 
 First we will show that 1) and 2) are equivalent.
 
-Suppose $\alpha : I \to M$ satisfies $\alpha'(t_{0}) = [\mathbf{v}, p]$. Then write $p = x_{k}(u_{0}, v_{0})$
+Suppose we have $\alpha : I \to M$ satisfying $\alpha'(t_{0}) = [\mathbf{v}, p]$. We know that we can write $p = x (u_{0}, v_{0})$ for some patch $x = x_{k} : D = D_{k} \to M$. Notice that we can also write 
+$$
+\begin{split}
+a(t) & = (x ^{-1} \circ \alpha)(t) \\
+ & = (a_{1}(t), a_{2}(t))
+\end{split}
+$$
 
-It turns out that this definition is invariant under different patches!
+Note that, [[Calculus on surfaces#_definition _ smooth functions into a surface|by definition]] for $\alpha$ to be smooth, we have that $a = x^{-1} \circ \alpha$ is smooth. Thus, we can think of $\alpha = x \circ a$, and then by the chain rule, we have that
+$$
+\alpha'(t_{0}) = x_{u}(u_{0}, v_{0}) \, \frac{da_{1}}{dt} \Big |_{t_{0}} + x_{v}(u_{0}, v_{0}) \, \frac{da_{2}}{dt} \Big |_{t_{0}}.
+$$
+This gives us $[\mathbf{v}, p] = \alpha'(t_{0})$ as the desired linear combination.
 
-##### _proposition:_ tangent vectors are invariant under patches
+Now suppose we have $[\mathbf{v}, p] = c_{1} x_{u}(u_{0}, v_{0}) + c_{2} (u_{0}, v_{0})$ for some constants, $c_{1}, c_2 \in \mathbb{R}$. Then consider the curve $a : I \to D$ by $a(t) = (u_{0}, v_{0}) + (c_{1}, c_{2})t$. By the openness of $D$, there is a non-empty interval $I \subset \mathbb{R}$ where this curve is actually defined (namely $I = \{ t \in \mathbb{R} \mid \lvert t \rvert < r/\sqrt{ 1 + c_{1}^2 + c_{2}^2} \}$ where $r$ is the radius of a neighbourhood of $(u_{0}, v_{0})$ contained in $D$).
+
+Then if we define $\alpha = x \circ a$, we get
+$$
+\begin{split}
+\alpha'(t_{0}) & = x_{u}(u_{0}, v_{0}) \, \frac{da_{1}}{dt} \Big |_{t_{0}} + x_{v}(u_{0}, v_{0}) \, \frac{da_{2}}{dt} \Big |_{t_{0}} \\
+ & = c_1 x_{u}(u_{0}, v_{0}) + c_{2} x_{v}(u_{0}, v_{0}).
+\end{split}
+$$
+
+Now we will show that 2) and 3) are equivalent. This just amounts to noticing that
+$$
+x_{*}([\mathbf{c}, (u_{0}, v_{0})]) = c_1 x_{u}(u_{0}, v_{0}) + c_2 x_{v}(u_{0}, v_0)
+$$
+since the parameter curves are just the columns of the Jacobian. Then both directions are obvious.
+
+It turns out that this equivalence is invariant under different patches!
+
+##### _proposition:_ tangent vectors are invariant under different patches
 
 For any $p \in M$
 1) There exist patches $x = x_{k}, y = y_{l}$ such that $p = x(u_{0}, v_{0}) = y(z_{0}, w_{0})$ for some $(u_{0}, v_{0}) \in D = D_{k}$ and $(z_{0}, w_{0}) \in E = E_{l}$ for some $k \in A, l \in B$.
@@ -65,9 +99,10 @@ For any $p \in M$
 
 Note that the first part just follows from the definition of a surface — the families of patches must cover $M$.
 
-The second part follows from the fact that first span is exactly the derivative of smooth curves, is exactly the second span.
+The second part follows from the fact that first span is exactly the derivatives of smooth curves (or alternatively, exactly the image of the tangent vectors at $(u_{0}, v_{0})$ under the tangent map $x_{*}$), is exactly the second span.
 
-Thus, we can define the tangent space and the tangent bundle of a surface!
+
+Since these are all equivalent, now we can define the tangent space and the tangent bundle of a surface independently of the patches!
 
 ##### _definition:_ tangent vectors to a surface, tangent space, tangent bundle
 
@@ -79,4 +114,4 @@ The disjoint union of all $\mathrm{T}_{p}M$ (for all points $p \in M$) is $\math
 
 ##### _example:_ the tangent space of a plane
 
-For any plane $M$, then, for any $p \in M$, $T_{p}M$ is isomorphic to the subspace of $\mathbb{R}^3$ that is parallel to $M$ — it's all of the vectors "in the plane".
+For any plane $M$, then, for any $p \in M$, $\mathrm{T}_{p}M$ is isomorphic to the subspace of $\mathbb{R}^3$ that is parallel to $M$ — it's all of the vectors "in the plane".
