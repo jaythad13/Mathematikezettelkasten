@@ -23,6 +23,28 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item By Lagrange's identity we have
+			\[
+				\lVert \mathbf{x}_{u} \times \mathbf{x}_{v} \rVert^{2} = \lVert \mathbf{x}_{u} \rVert^{2} \lVert \mathbf{x}_{v} \rVert^{2} - (\mathbf{x}_{u} \cdot \mathbf{x}_{v})^{2}.
+			\]
+			Note that $E = \lVert \mathbf{x}_{u} \rVert^{2}$ and $G = \lVert \mathbf{x}_{v} \rVert^{2}$ and $F = \mathbf{x}_{u} \cdot \mathbf{x}_{v}$. Thus,
+			\[
+				\begin{split}
+					EG - F^{2} & = \lVert \mathbf{x}_{u} \rVert^{2} \lVert \mathbf{x}_{v} \rVert^{2} - ( \mathbf{x}_{u} \cdot \mathbf{x}_{v})^{2} \\
+						   & = \lVert \mathbf{x}_{u} \times \mathbf{x}_{v} \rVert^{2}
+				\end{split}
+			\]
+			as desired.
+		\item Note that the Jacobian of $x$ has the form $\begin{bmatrix}
+				\vline & \vline \\
+				\mathbf{x}_{u} & \mathbf{x}_{v} \\
+				\vline & \vline
+		\end{bmatrix}$. Thus, the Jacobian having rank $2$ is equivalent to $\mathbf{x}_{u}$ and $\mathbf{x}_{v}$ being linearly independent. This is equivalent to $\mathbf{x}_{u} \times \mathbf{x}_{v}$ never being zero, and thus, $EG - F^2$ never being zero.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[Problem 2.]
