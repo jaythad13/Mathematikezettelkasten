@@ -6,6 +6,7 @@ lecture:
 - math-142-29
 - math-142-30
 - math-142-31
+- math-142-32
 ---
 
 Given a surface $M$, we want to define a tangent space $\mathrm{T}_{p}M$ at each point $p \in M$. Hopefully this will also allow us to define directional derivatives, and vector fields on a surface!
@@ -115,3 +116,71 @@ The disjoint union of all $\mathrm{T}_{p}M$ (for all points $p \in M$) is $\math
 ##### _example:_ the tangent space of a plane
 
 For any plane $M$, then, for any $p \in M$, $\mathrm{T}_{p}M$ is isomorphic to the subspace of $\mathbb{R}^3$ that is parallel to $M$ — it's all of the vectors "in the plane".
+
+### Vector fields and the geometry of the tangent plane
+
+All of these definitions for tangent spaces allow us to define vector fields in the obvious way.
+
+##### _definition:_ tangent vector field (on a surface)
+
+For a surface $M$, a tangent vector field on $M$ is a function $\mathbf{V} : M \to \mathrm{T}M$ such that $p \mapsto [\mathbf{v}, p] \in \mathrm{T}_{p}M$.
+
+Note that we have $\mathrm{T}_{p}\mathbb{R}^3 \cong \mathbb{R}^3$ by $[\mathbf{v}, p] \mapsto \mathbf{v}$ and $\mathrm{T}_{p}M \cong \mathbb{R}^2$ by $c_{1} x_{u}  + c_{2} x_{v} \mapsto (c_{1}, c_{2})$. Thus, we should be able to embed $\mathrm{T}_{p}M$ as a subspace of $\mathrm{T}_p \mathbb{R}^3$, and then in $\mathbb{R}^3$ as well.
+
+To do this we need to talk about normal vectors
+
+##### _proposition, definition:_ normal vectors are the cross product of parameter curves, normal vectors, normal space, normal bundle
+
+The following are equivalent for all $[\mathbf{n}, p] \in \mathrm{T}_{p}\mathbb{R}^3$:
+1) $[\mathbf{n}, p] \cdot [\mathbf{v}, p] = 0$ for all $[\mathbf{v}, p] \in \mathrm{T}_{p}M$.
+2) $[\mathbf{n}, p] = \lambda (x_{u}(u_{0}, v_{0}) \times x_{v}(u_{0}, v_{0}))$ where $x$ is a patch such that $x(u_{0}, v_{0}) = p$.
+
+###### _proof:_
+
+Note that $x_{u}(u_{0}, v_{0}), x_{v}(u_{0}, v_{0}), x_{u}(u_{0}, v_{0}) \times x_{v}(u_{0}, v_{0})$ form a basis for $\mathrm{T}_{p}\mathbb{R}^3$. Note  that $x_{u}(u_{0}, v_{0}), x_{v}(u_{0}, v_{0})$ is a basis of $\mathrm{T}M$. Since $x_{u}(u_{0}, v_{0}) \times x_{v}(u_{0}, v_{0})$ is orthogonal to both $x_{u}(u_{0}, v_{0})$ and $x_{v}(u_{0}, v_{0})$, it is orthogonal to $\mathrm{T}M$ as a whole. Since $\mathrm{T}_{p}\mathbb{R}^3$ is only three dimensional $\mathrm{T}M^\perp = \operatorname{span} (x_{u}(u_{0}, v_{0}) \times x_{v}(u_{0}, v_{0}))$.
+
+Then the equivalence follows.
+
+Thus we can define, a normal vector to $M$ at $p$ is some $[\mathbf{n}, p] \in \mathrm{T}_{p}\mathbb{R}^3$ such that $[\mathbf{n}, p] \cdot [\mathbf{v}, p] = 0$ for all $[\mathbf{v}, p] \in \mathrm{T}_{p}M$.
+
+The collection of all normal vectors to $M$ at $p$ is called the normal space at $p$, denoted $\mathrm{T}_{p}M^\perp$.
+
+The disjoint union of all $\mathrm{T}_{p}M^\perp$ for all $p \in M$ is the normal bundle $\mathrm{T}M^\perp$.
+
+Note that this gives proof gives us the short exact sequence
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		0 \ar[r] & \mathrm T_p M^\perp \ar[r, hook] & \mathrm T_p \mathbb R^3 \ar[r] & \mathrm T_p M \ar[r] & 0
+	\end{tikzcd}
+\end{document}
+```
+and thus the fact that $\mathrm{T}_{p}\mathbb{R}^3 / \mathrm{T}_{p}M^\perp \cong \mathrm{T}_{p} M$.
+
+This also motivates the definition of a normal vector field.
+
+##### _definition:_ normal vector field
+
+For a surface $M$ a normal vector field on $M$ is a function $\mathbf{V} : M \to \mathrm{T}M^\perp$ such that $p \mapsto [\mathbf{n}, p] \in \mathrm{T}_{p}M^\perp$.
+
+##### _example:_ a general, non-trivial example of a vector field
+
+Suppose we have a [[Surfaces#_corollary _ level sets are surfaces|level set that is a surface]]:
+$$
+M = \{ p \in \mathbb{R}^3 \mid g(p) = 0 \}.
+$$
+We know that this is only a surface if $Dg \Big |_{q} \neq 0$ for all $q \in \mathbb{R}^3$. Then the function
+$$
+\begin{split}
+\nabla g &:  M \to \mathrm{T}M^\perp \\
+ &:p \mapsto \left[ \left( \frac{ \partial g }{ \partial x } \Big |_{p}, \frac{ \partial g }{ \partial y } \Big |_{p}, \frac{ \partial g }{ \partial z } \Big |_{p}  \right), p \right]
+\end{split}
+$$
+is a normal vector field.
+
+
+
+
+
