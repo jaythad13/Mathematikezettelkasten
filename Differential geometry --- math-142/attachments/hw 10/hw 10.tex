@@ -1,0 +1,61 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 142 --- Differential Geometry}
+\assignment{Homework assignment \#10}
+\duedate{26th April 2024}
+
+\begin{document}
+
+\begin{problem}[Problem 1.]
+	Let $D \subset \mathbb{R}^{2}$  be an open set. Partial velocities $\mathbf{x}_{u}$  and $\mathbf{x}_{v}$  are defined for an arbitrary mapping $x : D \to \mathbb{R}^{3}$, so we can consider the real-valued functions
+	\[
+		\begin{split}
+			E & = \mathbf{x}_{u} \cdot \mathbf{x}_{u} \\
+			F & = \mathbf{x}_{u} \cdot \mathbf{x}_{v} \\
+			G & = \mathbf{x}_{v} \cdot \mathbf{x}_{v}.
+		\end{split}
+	\]
+	\begin{enumerate}
+		\item Prove $\lVert \mathbf{x}_{u} \times \mathbf{x}_{v} \rVert^{2} = EG - F^{2}$.
+		\item A mapping $x : D \to \mathbb{R}^{3}$ is said to be \textit{regular} if its $2 \times 3$ Jacobian matrix has rank $2$. Deduce that $x$ is a regular mapping if and only if $EG - F^{2}$ is never zero.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Problem 2.]
+	If $[\mathbf{z}, \mathbf{p}]$ is a nonzero vector normal to the surface $M$ at $\mathbf{p}$, let $\overline{T} = \{ \mathbf{r} \in \mathbb{R}^{3} \mid (\mathbf{r} - \mathbf{p}) \cdot \mathbf{z} = 0 \}$ be the Euclidean plane through $p$ orthogonal to $\mathbf{z}$.
+	\begin{enumerate}
+		\item Prove that, if each tangent vector $[\mathbf{v}, \mathbf{p}]$ to $M$ at $p$ is replaced by its ``tip'' $\mathbf{p} + \mathbf{v}$, then $\mathrm{T}_{\mathbf{p}}M$ becomes $\overline{T}$. Thus, $\overline{T}$ gives a concrete representation of $\mathrm{T}_{\mathbf{p}}M$ in $\mathbb{R}^{3}$. It is called the \textit{Euclidean tangent plane} to $M$ at $\mathbf{p}$.
+		\item Prove that if $x : D \to \mathbb{R}^{3}$ is a patch in $M$, then $T_{x(u, v)}M$ consists of all points $\mathbf{r}$ in $\mathbb{R}^{3}$ such that $(\mathbf{r} - x(u, v)) \cdot x_{u}(u, v) \times x_{v}(u, v) = 0$.
+		\item Prove that if $M$ is given explicitly by a level set $g = c$ then $\mathrm{T}_{\mathbf{p}} M$ consists of all points $\mathbf{r}$ in $\mathbb{R}^{3}$ such that $(\mathbf{r} - \mathbf{p}) \cdot \nabla g(\mathbf{p}) = 0$.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Problem 3.]
+	Let $M$  be a surface in $\mathbb{R}^{3}$ . A Euclidean vector field  $\mathbf{Z} : M \to \mathrm{T}\mathbb{R}^{3}$ expressed as $\mathbf{Z} = z_{1} \mathbf{U}_{1} + z_{2} \mathbf{U}_2 + z_{3} \mathbf{U}_{3}$ is \textit{differentiable} on $M$  provided its coordinate functions $z_{1}, z_{2}, z_{3} : M \to \mathbb{R}$  are differentiable.
+	\begin{enumerate}
+		\item For every patch $x : D \to M$ show that every tangent vector field $\mathbf{V}$ can be written as
+			\[
+				\mathbf{V}(x(u, v)) = f(u, v) \mathbf{x}_{u}(u, v) + g(u, v) \mathbf{x}_{v}(u, v)
+			\]
+			for some functions $f, g : M \to \mathbb{R}$.
+		\item Show that $\mathbf{V}$ is differentiable if and only if $f$ and $g$ are differentiable.	
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Problem 4.]
+	Let $M$  be a surface in $\mathbb{R}^{3}$ .
+	\begin{enumerate}
+		\item Suppose that $M = \bigcup_{i} U_{i}$ is covered by open sets $U_{1}, \dots, U_{k}$ and on each $U_{i} \subset \mathbb{R}^{3}$ there is a defined function $f_{i} : U_{i} \to \mathbb{R}$ such that $f_{i} - f_{j}$ is constant on the overlap $U_{i} \cap U_{j}$. Show that there is a $1$-form $\phi$ on $M$ such that $\phi = df_{i}$ on each $U_{i}$.
+		\item Generalise to the case of $1$-forms $\phi_{i}$ such that $\phi_{i} - \phi_{j}$ is closed. Suppose that there are $1$-forms $\phi_{i}$ such that $d(\phi_{i} - \phi_{j}) = 0$ on the overlap $U_{i} \cap U_{j}$. Show that there is a $1$-form $\phi$ on $M$ such that $\phi = df_{i}$ on each $U_{i}$.
+	\end{enumerate}
+\end{problem}
+
+\end{document}
