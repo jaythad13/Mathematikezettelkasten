@@ -16,19 +16,19 @@
 \end{problem}
 
 \begin{solution}
-	We can prove this by induction notating $\bvec x \in \bb R^k$ by $\bvec x^k$. \\\\
+	We can prove this by induction on $n$ for $\bvec x = (x_{1}, \dots, x_{n}) \in \bb R^n$ \\\\
 	For $n = 1$, we have
 	\[
-		\norm{\bvec x^1} = \abs{x_1} \le \abs{x_1}.
+		\norm{\bvec x} = \abs{x_1} \le \abs{x_1}.
 	\]\\
-	Suppose for $\bvec x^k \in \bb R^k$ we have
+	Suppose for all $\bvec x \in \bb R^k$ we have
 	\[
-		\norm{\bvec x^k} \le \sum_{i = 1}^k \abs{x_i}.
+		\norm{\bvec x} \le \sum_{i = 1}^k \abs{x_i}.
 	\]
-	Then, for $\bvec x^{k + 1} \in \bb R^{k + 1}$ we can say that
+	Then, for any $\bvec x \in \bb R^{k + 1}$ we can say that
 	\[
 		\begin{split}
-			\norm{\bvec x^{k + 1}}^2 & = \norm{\bvec x^k}^2 + x_{k + 1}^2 \\
+			\norm{\bvec x}^2 & = \norm{(x_{1}, \dots, x_{k})}^2 + x_{k + 1}^2 \\
 						 & \le \Big ( \sum_{i = 1}^k \abs{x_i} \Big )^2 + x_{k + 1}^2 \\
 						 & \le \Big ( \sum_{i = 1}^k \abs{x_i} \Big )^2 + \abs{x_{k + 1}}^2 + 2 \abs{x_{k + 1}} \sum_{i = 1}^k \abs{x_i} \\
 						 & = \Big ( \abs{x_{k + 1}} + \sum_{i = 1}^k \abs{x_i} \Big )^2.
@@ -36,13 +36,15 @@
 	\]\\
 	That is,
 	\[
-		\norm{\bvec x^{k + 1}}^2 \le \Big ( \sum_{i = 1}^{k + 1} \abs{x_i} \Big )^2
+		\norm{\bvec x}^2 \le \Big ( \sum_{i = 1}^{k + 1} \abs{x_i} \Big )^2
 	\]
 	and it follows for all $\bvec x \in \bb R^n$ for any $n \in \bb N$ that
 	\[
 		\norm{\bvec x} \le \sum_{i = 1}^n \abs{x_i}.
 	\]
 \end{solution}
+
+\pagebreak
 
 \begin{problem}[10]
 	If $T : \bb R^n \to \bb R^m$ is a linear transformation, show that there is a number $M$ such that $\norm{T \bvec v} \le M \norm{\bvec v}$ for all $\bvec v \in \bb R^n$.
@@ -76,6 +78,8 @@
 	Thus, $M = \abs m \sqrt n$ is the desired number that bounds $\norm{T \bvec v}$.
 \end{solution}
 
+\pagebreak
+
 \begin{problem}[12]
 	Let $\bb (R^n)^\vee$ denote the dual space of $\bb R^n$. If $\bvec x \in \bb R^n$, define $\varphi_{\bvec x} \in (\bb R^n)^\vee$ by $\varphi_{\bvec x}(\bvec y) = \bvec x \cdot \bvec y$. Define $T : \bb R^n \to (\bb R^n)^\vee$ by $T \bvec x = \varphi_{\bvec x}$. \\\\
 	Show that $T$ is an invertible linear transformation and conclude that every $\varphi \in (\bb R^n)^\vee$ is $\varphi_{\bvec x}$ for a unique $\bvec x \in \bb R^n$.
@@ -85,6 +89,8 @@
 	If $T \bvec x = \bvec 0$ we must have $\varphi_{\bvec x} (\bvec y) = 0$ for all $\bvec y \in \bb R^n$. Thus, $\varphi_{\bvec x}(\bvec x) = 0$, giving us $\bvec x \cdot \bvec x = 0$ and thus, $\bvec x = \bvec 0$. Thus, $T$ is injective. \\\\
 	Since $\bb R^n$ and $(\bb R^n)^\vee$ are both $n$-dimensional, $T$ is also invertible. Thus, for each $\varphi \in (\bb R^n)^\vee$ we have a unique $\bvec x \in \bb R^n$ such that $T \bvec x = \varphi$, and $\varphi = \varphi_{\bvec x}$.
 \end{solution}
+
+\pagebreak
 
 \begin{problem}[14]
 	Prove that the union of any (even infinite) number of open sets is open. Prove that the intersection of two (and hence, finitely many) open sets is open. Give a counter example for infinitely many open sets.
@@ -102,6 +108,8 @@
 	This result doesn't hold for infinitely many open sets --- the intersection of all open intervals of the form $(-1/n, 1/n)$ is $\set{0}$, which is not open.
 \end{solution}
 
+\pagebreak
+
 \begin{problem}[15]
 	Prove that $\set{\bvec x \in \bb R^n : \norm{\bvec x - \bvec a} < r}$ is open (for any $\bvec a \in \bb R^n$ and any $r > 0$).
 \end{problem}
@@ -114,6 +122,8 @@
 	This is the open rectangle subset (obviously containing $\bvec x$) required for $N_r(\bvec a)$ to be open.
 \end{solution}
 
+\pagebreak
+
 \begin{problem}[19]
 	If $A$ is a closed set that contains every rational number $r \in [0, 1]$, then show that $[0, 1] \subset A$.
 \end{problem}
@@ -122,6 +132,8 @@
 	Note that for $A$ to be closed, we must have $\bb R \setminus A$ open. Suppose, by way of contradiction, that we didn't have $[0, 1] \subset A$, and instead, $x \in [0, 1]$ but $x \notin A$. \\\\
 	Since there is a rational number beween any two real numbers, any open interval $(a, b)$ with $x \in (a, b)$ would contain a rational number in $[0, 1]$. Thus, there would be no open interval $(a, b)$ with $x \in (a, b) \subset \bb R \setminus A$, making it not open, and giving rise to a contradiction. Thus, our supposition that there is such an $x$ must be false.
 \end{solution}
+
+\pagebreak
 
 \begin{problem}[21]
 	\begin{enumerate}
@@ -151,6 +163,8 @@
 	\end{enumerate}
 \end{solution}
 
+\pagebreak
+
 \begin{problem}[22]
 	If (all subsets of $\bb R^n$), $U$ is open, and $C \subset U$ is compact, then show that there is a compact set $D$ such that $C \subset D^\circ$ and $D \subset U$ ($D^\circ$ denotes the interior of $D$).
 \end{problem}
@@ -162,6 +176,8 @@
 	\]
 	More over, since it is the union of finitely many open sets, it is a bounded set. Thus, its closure is a closed and bounded, and therefore compact subset $D \subset U$ and it is $D^\circ$, the open interior that contains $C$.
 \end{solution}
+
+\pagebreak
 
 \begin{problem}[23]
 	If $f : A \to \bb R^m$ and $\bvec a \in A$ show that $\lim_{\bvec x \to \bvec a} f(\bvec x) = \bvec b$ if and only if $\lim_{\bvec x \to \bvec a} f_i(\bvec x) = b_i$ for $i \in \bb N_m$. Here, $f = (f_1, \ldots, f_m)$ and $\bvec b = (b_1, \ldots, b_m)$.
@@ -201,6 +217,8 @@
 	\]
 \end{solution}
 
+\pagebreak
+
 \begin{problem}[24]
 	Prove that $f : A \to \bb R^m$ is continuous at $\bvec a \in A$ if and only if each $f_i$ is. Again, $f = (f_1, \ldots, f_m)$.
 \end{problem}
@@ -209,6 +227,8 @@
 	Let $\bvec b = (b_1, \ldots, b_m) = f(\bvec a)$. Then $f_i(\bvec a) = b_i$ for all $i \in \bb N_m$.\\\\
 	We know that $\lim_{\bvec x \to \bvec a} f(\bvec x) = \bvec b$ if and only if $\lim_{\bvec x \to \bvec a} f_i(\bvec x) = b_i$ for all $i \in \bb N_m$. Thus, $f$ is continuous if and only if each $f_i$ is.
 \end{solution}
+
+\pagebreak
 
 \begin{problem}[25]
 	Prove that a linear transformation $T : \bb R^n \to \bb R^m$ is continuous.
@@ -227,6 +247,8 @@
 	\]\\
 	That is, for all $\bvec x \in \bb R^n$ with $\norm{\bvec x - \bvec a} < \delta$ we have $\norm{T \bvec x - T \bvec a} < \varepsilon$. $T$ is continuous everywhere.
 \end{solution}
+
+\pagebreak
 
 \begin{problem}[26]
 	Let $A = \set{(x, y) \in \bb R^2 : x > 0 \text{ and } 0 < y < x^2 }$.
@@ -254,6 +276,8 @@
 	\end{enumerate}
 \end{solution}
 
+\pagebreak
+
 \begin{problem}[27]
 	Prove that $\set{\bvec x \in \bb R^n : \norm{\bvec x - \bvec a} < r}$ is open by considering the function $f : \bb R^n \to \bb R$ defined by $f(\bvec x) = \norm{\bvec x - \bvec a}$ (for $\bvec a \in \bb R^n$, $r > 0$).
 \end{problem}
@@ -264,6 +288,8 @@
 	Thus, choosing $\delta = \varepsilon$ gives us that for every $\bvec x$ with $\norm{\bvec x - \bvec b} < \delta$ we have $\abs{f(\bvec x) - f(\bvec b)} < \varepsilon$. That is, $f$ is continuous.\\\\
 	Consider the pre-image of the open interval $(-r, r)$ under $f$. That is, consider $\set{\bvec x \in \bb R^n : \norm{\bvec x - \bvec a} <r}$. Since $f$ is continuous and $(-r, r)$ is open, $f^\text{pre}((-r, r))$ is open, as desired.
 \end{solution}
+
+\pagebreak
 
 \begin{problem}[29]
 	If $A \subset \bb R^n$ is compact, prove that every continuous function $f : A \to \bb R$ takes on a maximum and minimum value.
