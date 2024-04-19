@@ -176,3 +176,5 @@ $$for any $v \in V$. Thus $P_{U}^2 = P_{U}$.
 \end{split}
 $$Thus, $\lVert P_{U}v \rVert \le \lVert v \rVert$.
 9) This follow from the construction that we used in [[#_proof _|the proof]] that $V = U \oplus U^\perp$.
+
+It turns out that these ideas have lots of neat [[Applications of orthogonal complements and projections|applications]].
