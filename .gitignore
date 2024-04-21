@@ -10,3 +10,6 @@
 *.jpeg
 *.pdf
 *.swp
+*.nav
+*.snm
+*.toc
