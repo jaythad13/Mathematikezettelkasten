@@ -33,17 +33,44 @@ Note that most $1$-forms on $M$ can be thought of as $1$-forms on $\mathbb{R}^3$
 
 There should then be an obvious way to go from $0$-forms to $1$-forms like the [[The exterior derivative|exterior derivative]] was on $\mathbb{R}^3$.
 
-##### _proposition:_ the exterior derivative on $0$-forms
+##### _proposition, definition:_ the exterior derivative on $0$-forms
 
 Say $f : M \to \mathbb{R}$ is a $0$-form and $[\mathbf{v}, p] \in \mathrm{T}_{p}M$ is given by $[\mathbf{v}, p] = \alpha'(t_{0})$. Let $p = x_{k}(u_{0}, v_{0})$ and let $a = x^{-1} \circ \alpha: \mathbb{R} \to \mathbb{R}^2$. Then the map $df : \mathrm{T}M \to \mathbb{R}$ given by
 $$
-df([\mathbf{v}, p]) = Df_{k} \Big |_{p} (a'(t_{0}))
+df([\mathbf{v}, p]) = D(f \circ \alpha) \Big |_{t_{0}}
 $$
 is a $1$-form.
 
+We say that the map $d : \Omega^0(M) \to \Omega^1(M)$ that sends a smooth $f : M \to \mathbb{R}$ to $df \in \Omega^1(M)$ is the exterior derivative.
+
+###### _proof:_
+
+Let $[\mathbf{v}, p] = \alpha'(t_{0}) \in \mathrm{T}_{p}M$ and $[\mathbf{w}, p] = \beta'(t_{0}) \in \mathrm{T}_{p}M$. Let $\lambda \in \mathbb{R}$.
+
+Notice that
+$$
+\begin{split}
+[\mathbf{v}, p] + \lambda [\mathbf{w}, p] & = \alpha'(t_{0}) + \lambda \beta'(t_{0}) \\
+ & = (\alpha + \lambda \beta)'(t_{0}). 
+\end{split}
+$$
+Let $\gamma = \alpha + \beta$.
+
+Thus,
+$$
+\begin{split}
+df([\mathbf{v}, p] + \lambda [\mathbf{w}, p]) & = D(f \circ \gamma) \Big|_{t_{0}} \\
+ & = Df \Big |_{p} D\gamma \Big |_{t_{0}}  \\
+ & = Df \Big |_{p} D \alpha \Big |_{t_{0}} + \lambda Df \Big |_{p} D \beta \Big |_{t_{0}} \\
+ & = D(f \circ \alpha) \Big |_{t_{0}} + \lambda D(f \circ \beta) \Big |_{t_{0}} \\
+ & = df([\mathbf{v}, p]) + \lambda \, df([\mathbf{w}, p]).
+\end{split}
+$$
+as desired.
+
 ##### _proposition:_ the coordinate expression for $1$-forms on a surface
 
-Fix some $p \in M$
+Fix some $p \in M$ and a patch $x$ with $x(u_{0}, v_{0}) = p$.
 
 1) For any $\phi \in \Omega^1(M)$. Then, restricted to $\mathrm{T}_{p}M$
 $$
@@ -54,3 +81,8 @@ $$
 $$
 df = \frac{ \partial (f \circ x_{k}) }{ \partial u } \Big |_{(u_{0}, v_{0})} \, du + \frac{ \partial (f \circ x_{k}) }{ \partial v } \Big |_{(u_{0}, v_{0})} \, dv
 $$
+
+###### _proof:_
+
+1) follows from writing $\phi = f_{1} \, dx_{1} + f_{2} \, dx_{2} + f_{3} \, dx_{3}$ and noticing that the coordinates $x_{1}, x_{2}, x_{3}$ can be thought of as the component functions of the patch $x$. Here we think of $u$ and $v$ as functions $M \to D$.
+2) follows from applying the chain rule to the formula $df = D((f \circ x) \circ(x ^{-1} \circ \alpha))$.
