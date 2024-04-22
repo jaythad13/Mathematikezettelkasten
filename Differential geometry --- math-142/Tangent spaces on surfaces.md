@@ -137,6 +137,8 @@ The following are equivalent for all $[\mathbf{n}, p] \in \mathrm{T}_{p}\mathbb{
 
 ###### _proof:_
 
+See this note on [[Orthogonal complements and projections#Orthogonal complement|orthogonal complements]] — everything follows naturally from this.
+
 Note that $x_{u}(u_{0}, v_{0}), x_{v}(u_{0}, v_{0}), x_{u}(u_{0}, v_{0}) \times x_{v}(u_{0}, v_{0})$ form a basis for $\mathrm{T}_{p}\mathbb{R}^3$. Note  that $x_{u}(u_{0}, v_{0}), x_{v}(u_{0}, v_{0})$ is a basis of $\mathrm{T}M$. Since $x_{u}(u_{0}, v_{0}) \times x_{v}(u_{0}, v_{0})$ is orthogonal to both $x_{u}(u_{0}, v_{0})$ and $x_{v}(u_{0}, v_{0})$, it is orthogonal to $\mathrm{T}M$ as a whole. Since $\mathrm{T}_{p}\mathbb{R}^3$ is only three dimensional $\mathrm{T}M^\perp = \operatorname{span} (x_{u}(u_{0}, v_{0}) \times x_{v}(u_{0}, v_{0}))$.
 
 Then the equivalence follows.
@@ -178,9 +180,4 @@ $$
  &:p \mapsto \left[ \left( \frac{ \partial g }{ \partial x } \Big |_{p}, \frac{ \partial g }{ \partial y } \Big |_{p}, \frac{ \partial g }{ \partial z } \Big |_{p}  \right), p \right]
 \end{split}
 $$
-is a normal vector field.
-
-
-
-
-
+is a non-trivial (not all zero) normal vector field.
