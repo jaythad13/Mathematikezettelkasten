@@ -33,7 +33,7 @@ We say $f$ is differentiable if all of the $f_{\alpha}$ are differentiable. That
 
 ##### _definition:_ smooth functions on a surface
 
-For a surface $M$ with the family $x_{\alpha} : D_{\alpha} \to \mathbb{R}^3$ of proper patches indexed by $\alpha \in I$, we say a function $f : M \to \mathbb{R}$ is smooth or $f \in \mathcal{C}^\infty(M)$ if each $f_{\alpha} = x_{\alpha} \circ f$ is a smooth function $f_{\alpha} \in \mathcal{C}^\infty(D_{\alpha})$.
+For a surface $M$ with the family $x_{\alpha} : D_{\alpha} \to \mathbb{R}^3$ of proper patches indexed by $\alpha \in I$, we say a function $f : M \to \mathbb{R}$ is smooth or $f \in \mathcal{C}^\infty(M)$ if each $f_{\alpha} = f \circ x_{\alpha}$ is a smooth function $f_{\alpha} \in \mathcal{C}^\infty(D_{\alpha})$.
 
 We can also do something similar to define a smooth functions from $\mathbb{R}^n$ into $M$!
 
