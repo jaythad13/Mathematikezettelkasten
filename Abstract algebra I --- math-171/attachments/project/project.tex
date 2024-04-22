@@ -43,7 +43,7 @@
 				\begin{figure}
 					\centering
 					\includegraphics[width = .4\textwidth]{proj 1 unit circle} \includegraphics[width = .4 \textwidth]{proj 2 unit circle}
-					\caption{$U = S^{1} \setminus \{ (0, 1) \}$ and $V = S^{1} \setminus \{ (0, -1) \}$ cover the circle and $x : U \to \mathbb{R}$ and $y : V \to \mathbb{R}$ are homeomorphism as desired.
+					\caption{$U = S^{1} \setminus \{ (0, 1) \}$ and $V = S^{1} \setminus \{ (0, -1) \}$ cover the circle and $x : U \to \mathbb{R}$ and $y : V \to \mathbb{R}$ are homeomorphisms as desired.
 } 				\end{figure}
 		\end{block}
 		}
@@ -88,7 +88,8 @@
 	\begin{frame}
 		\frametitle{Lie algebras}
 		\only<1>{
-			Whenever we have a complicated smooth object, it's useful to try to linearise it. Lie algebras are the linearisation of Lie groups. Like any linearisation an algebra is a vector space, but it's also a ring --- it has a multiplication $[\cdot, \cdot] : \mathfrak g \times \mathfrak g \to \mathfrak g$ as well. \\~\\
+			Whenever we have a complicated smooth object, it's useful to try to linearise it. Lie algebras are the linearisation of Lie groups. \\~\\
+			Like any linearisation an algebra is a vector space, but it's also a ring. We can scale by elements of the base field, and multiply with $[\cdot, \cdot] : \mathfrak g \times \mathfrak g \to \mathfrak g$ as well. \\~\\
 			\begin{block}{\textit{definition:} Lie algebra}
 				The Lie algebra $\mathfrak{g}$ of a Lie group $G$ is the tangent space of the Lie group at the identity.
 			\end{block} ~\\
@@ -96,18 +97,22 @@
 		}
 		\only<2>{
 			\begin{block}{\textit{example:} the Lie algebra of $S^{1}$}
-				$S^{1}$ has the Lie algebra $(\mathbb{R}, +)$ (the real numbers with the trivial multiplication $[\theta_1, \theta_{2}] = 0$), and the exponential map by $\theta \mapsto e^{i \theta}$. \\~\\
-				Studying the Lie algebra of $S^{1}$ is studying the unit circle by adding angles!
+				$S^{1}$ has the Lie algebra $\mathfrak{s}^{1} = (\mathbb{R}, +)$ (the real numbers with the trivial multiplication), and the exponential map by $\theta \mapsto e^{i \theta}$. 
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width = .4 \textwidth]{lie algebra unit circle}
+					\caption{$\mathfrak{s}^{1}$ represents the unit circle by adding angles!}
+				\end{figure}
 			\end{block}
 		}
 		\only<3>{
-			\begin{block}{\textit{example:} the Lie algebra $\mathfrak{gl}_{n}(\mathbb{C})$ of $\mathrm{GL}_{n}(\mathbb{R})$}
-				We can study $\mathrm{GL}_{n}(\mathbb{C})$ by studying all of the matrices $\mathcal{M}_{n}(\mathbb{C})$, with the multiplication $[A, B] = AB - BA$ since the exponential map
+			\begin{block}{\textit{example:} the Lie algebra $\mathfrak{gl}_{n}(\mathbb{C})$ of $\mathrm{GL}_{n}(\mathbb{C})$}
+				We can study $\mathrm{GL}_{n}(\mathbb{C})$ by studying all of the matrices in $\mathfrak{gl}_{n}(\mathbb{C}) = \mathcal{M}_{n \times n}(\mathbb{C})$, with the multiplication $[A, B] = AB - BA$. Since the exponential map
 				\[
 					\operatorname{exp} : A \mapsto I + A + \frac{A^{2}}{2!} + \dots
 				\]
-				always gives us a matrix with nonzero determinant $e^{\operatorname{tr} A}$. \\~\\
-				Notice that $\operatorname{tr}(AB - BA) = 0$ and thus, $\operatorname{exp}([A, B])$ always has determinant $1$. The multiplication gives us more information than just a tangent space would!
+				always gives us a matrix $\operatorname{exp}(A)$ with nonzero determinant $e^{\operatorname{tr} A}$, we have $\operatorname{exp} : \mathfrak{gl}_{n}(\mathbb{C}) \to \mathrm{GL}_{n}(\mathbb{C})$. \\~\\
+				Notice that $\operatorname{tr}(AB - BA) = 0$ and thus, $\operatorname{exp}([A, B])$ always has determinant $1$. That is, $\operatorname{exp}([A, B]) \in \mathrm{SL}_{n}(\mathbb{C})$ always. The multiplication is giving us extra information!
 			\end{block}
 
 		}
