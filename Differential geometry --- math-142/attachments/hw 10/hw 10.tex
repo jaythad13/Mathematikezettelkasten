@@ -51,10 +51,43 @@
 	If $[\mathbf{z}, \mathbf{p}]$ is a nonzero vector normal to the surface $M$ at $\mathbf{p}$, let $\overline{T} = \{ \mathbf{r} \in \mathbb{R}^{3} \mid (\mathbf{r} - \mathbf{p}) \cdot \mathbf{z} = 0 \}$ be the Euclidean plane through $p$ orthogonal to $\mathbf{z}$.
 	\begin{enumerate}
 		\item Prove that, if each tangent vector $[\mathbf{v}, \mathbf{p}]$ to $M$ at $p$ is replaced by its ``tip'' $\mathbf{p} + \mathbf{v}$, then $\mathrm{T}_{\mathbf{p}}M$ becomes $\overline{T}$. Thus, $\overline{T}$ gives a concrete representation of $\mathrm{T}_{\mathbf{p}}M$ in $\mathbb{R}^{3}$. It is called the \textit{Euclidean tangent plane} to $M$ at $\mathbf{p}$.
-		\item Prove that if $x : D \to \mathbb{R}^{3}$ is a patch in $M$, then $T_{x(u, v)}M$ consists of all points $\mathbf{r}$ in $\mathbb{R}^{3}$ such that $(\mathbf{r} - x(u, v)) \cdot x_{u}(u, v) \times x_{v}(u, v) = 0$.
+		\item Prove that if $x : D \to \mathbb{R}^{3}$ is a patch in $M$, then $\mathrm{T}_{x(u, v)}M$ consists of all points $\mathbf{r}$ in $\mathbb{R}^{3}$ such that $[\mathbf{r} - x(u, v), x(u, v)] \cdot x_{u}(u, v) \times x_{v}(u, v) = 0$.
 		\item Prove that if $M$ is given explicitly by a level set $g = c$ then $\mathrm{T}_{\mathbf{p}} M$ consists of all points $\mathbf{r}$ in $\mathbb{R}^{3}$ such that $(\mathbf{r} - \mathbf{p}) \cdot \nabla g(\mathbf{p}) = 0$.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item
+			We will show that
+			\[
+				\{ \mathbf{v} + \mathbf{p} \mid [\mathbf{v}, \mathbf{p}] \in \mathrm{T}_{\mathbf{p}} M \} = \overline{T}
+			\]
+			by double containment. \\
+
+			Suppose that $[\mathbf{v}, \mathbf{p}] \in \mathrm{T}_{\mathbf{p}} M$. Then $[\mathbf{v}, \mathbf{p}] \cdot [\mathbf{z}, \mathbf{p}] = 0$ and thus, $\mathbf{v} \cdot \mathbf{z} = 0$. Thus, $\mathbf{r} = \mathbf{v} + \mathbf{p}$ gives us $(\mathbf{r} - \mathbf{p}) \cdot \mathbf{z} = 0$. That is, any $\mathbf{v} + \mathbf{p}$ with $[\mathbf{v}, \mathbf{p}] \in \mathrm{T}_{\mathbf{p}}M$ gives us $\mathbf{v} + \mathbf{p} \in \overline{T}$. Thus, $\{ \mathbf{v} + \mathbf{p} \mid [\mathbf{v}, \mathbf{p}] \in \mathrm{T}_{\mathbf{p}} M \} \subset \overline{T}$. \\
+
+			Suppose that $\mathbf{r} \in \overline{T}$. Then choose $\mathbf{v} = \mathbf{r} - \mathbf{p}$. Since we already have $\mathbf{v} \cdot \mathbf{z} = 0$, we also have $[\mathbf{v}, \mathbf{p}] \cdot [\mathbf{z}, \mathbf{p}] = 0$. Thus, $[\mathbf{v}, \mathbf{p}] \in \mathrm{T}_{\mathbf{p}} M$. Then $\overline{T} \subset \mathrm{T}_{\mathbf{p}} M$. \\
+
+			Then by double containment we have $\overline{T} = \mathrm{T}_{\mathbf{p}} M$.
+		\item
+			Let $\mathbf{p} = x(u, v)$ and $[\mathbf{z}, \mathbf{p}] = x_{u}(u, v) \times x_{v}(u, v)$. We know that $x_{u}(u, v) \cdot x_{v}(u, v) = 0$. Note that $\mathrm{T}_{\mathbf{p}} M = \operatorname{span}(x_{u}(u, v), x_{v}(u, v))$ and by definition (since it is in its own span) $[\mathbf{z}, \mathbf{p}]$ is a normal vector to $M$. \\
+
+			Thus, by our previous result, replacing every $[\mathbf{v}, \mathbf{p}] \in \mathrm{T}_{\mathbf{p}} M$ with $\mathbf{p} + \mathbf{v} \in \mathbb{R}^{3}$ gives us all $\mathbf{r} \in \mathbb{R}^{3}$ such that $(\mathbf{r} - \mathbf{p}) \cdot \mathbf{z} = 0$, which is equivalent to $[\mathbf{r} - \mathbf{p}, \mathbf{p}] \cdot [\mathbf{z}, \mathbf{p}] = 0$. That is, the Euclidean tangent plane at $x(u, v)$ consists of all $\mathbf{r} \in \mathbb{R}^{3}$ such that $[\mathbf{r} - x(u, v), x(u, v)] \cdot x_{u}(u, v) \cdot x_{v}(u, v) = 0$.
+		\item
+			Suppose $[\mathbf{v}, \mathbf{p}] \in \mathrm{T}_{\mathbf{p}} M$ is given by $[\mathbf{v}, \mathbf{p}] = \alpha'(t_{0})$ for some curve $\alpha : \mathbb{R} \supset I \to M$. Then note that \[
+				\begin{split}
+					\nabla g(\mathbf{p}) \cdot \alpha'(t_{0}) & = D g \Big |_{\alpha(t_{0})} (\alpha'(t_{0})) \\
+										  & = D (g \circ \alpha) \Big |_{t_{0}} \\
+										  & = 0
+				\end{split}
+			\]
+			where the last step follows since $g \circ \alpha$ is a constant function --- $(g \circ \alpha)(t) = c$ for all $t \in I$. \\
+
+			Thus, $\nabla g$ is a normal vector to $M$ at $\mathbf{p}$. It follows by part (a) again that the Euclidean tangent plane to $M$ at $\mathbf{p}$ consists of all $\mathbf{r} \in \mathbb{R}^{3}$ such that $(\mathbf{r} - \mathbf{p}) \cdot \nabla g(\mathbf{p}) = 0$.
+			
+		\end{enumerate}
+\end{solution}
 
 \pagebreak
 
@@ -65,10 +98,39 @@
 			\[
 				\mathbf{V}(x(u, v)) = f(u, v) \mathbf{x}_{u}(u, v) + g(u, v) \mathbf{x}_{v}(u, v)
 			\]
-			for some functions $f, g : M \to \mathbb{R}$.
+			for some functions $f, g : D \to \mathbb{R}$.
 		\item Show that $\mathbf{V}$ is differentiable if and only if $f$ and $g$ are differentiable.	
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item
+			Since $\mathbf{V}$ is a tangent vector field on $M$, we always have $\mathbf{V}(x(u, v)) = [\mathbf{v}, x(u, v)] \in \mathrm{T}_{x(u, v)} M$. We can always write $[\mathbf{v}, x(u, v)] \in \mathrm{T}_{x(u, v)} M$ uniquely as a linear combination $c_{1} \, x_{u}(u, v) + c_{2} \, x_{v}(u, v)$. \\
+
+			Thus, we can define unambigouously $f, g : D \to \mathbb{R}$ by
+			\[
+				\begin{split}
+					f & : (u, v) \to c_1  \\
+					g & : (u, v) \to c_{2}
+				\end{split}
+			\]
+			such that
+			\[
+				\mathbf{V}(x(u, v)) = c_{1} \, x_{u}(u, v) + c_2 \, x_{v}(u, v).
+			\]
+		\item
+			Let $\mathbf{V}$ be decomposed into component functions such that $\mathbf{V} = [(v_{1}, v_{2}, v_{3}), \mathbf{p}]$. Note that if we write the component functions $x_{u} = (x_{u_{1}}, x_{u_{2}}, x_{u_{3}})$ and $x_{v} = (x_{v_{1}}, x_{v_{2}}, x_{v_{3}})$, just by looking at the $i$th components, we get
+			\[
+				v_{i}(x(u, v)) = f(u, v) \, x_{u_{i}}(u, v) + g(u, v) \, x_{v_i}(u, v).
+			\]
+			That is,
+			\[
+				v_{i} \circ x = f \, \frac{\partial x_{i}}{\partial u} + g \, \frac{\partial x_{i}}{\partial v}.
+			\] \\
+			Then, since $x_{i}$ is $\mathcal{C}^{\infty}$, the differentiability of $v_{i} \circ x$ is just equivalent to the differentiability of $f$ and $g$.
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
@@ -79,5 +141,21 @@
 		\item Generalise to the case of $1$-forms $\phi_{i}$ such that $\phi_{i} - \phi_{j}$ is closed. Suppose that there are $1$-forms $\phi_{i}$ such that $d(\phi_{i} - \phi_{j}) = 0$ on the overlap $U_{i} \cap U_{j}$. Show that there is a $1$-form $\phi$ on $M$ such that $\phi = df_{i}$ on each $U_{i}$.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item
+			Suppose we have $p \in U_{i} \cap U_{j} \subset M$ and $f_{i} - f_{j} = c$ for some $c \in \mathbb{R}$. We can rewrite this as $f_{i} = f_{j} + c$. We know that for any $[\mathbf{v}, p] \in \mathrm{T}_{p} M$ with $[\mathbf{v}, p] = \alpha'(t_{0})$ for a curve $\alpha : \mathbb{R} \supset I \to M$.
+			\[
+				\begin{split}
+					df_{i}([\mathbf{v}, p]) & = \frac{d (f_{i} \circ \alpha)}{d t} \Big |_{t_{0}} \\
+					& = \frac{d (f_{j} \circ \alpha + c)}{d t} \Big |_{t_{0}} \\
+					& = \frac{d (f_{j} \circ \alpha)}{d t} \Big |_{t_{0}} + 0 \\
+					& = df_{j}([\mathbf{v}, p])
+				\end{split}
+			\]
+			Thus, we can define unambiguously $\phi([\mathbf{v}, p]) = df_{i}([\mathbf{v}, p])$ for $p \in U_{i}$.
+	\end{enumerate}
+\end{solution}
 
 \end{document}
