@@ -4,6 +4,8 @@ tags:
 - diff-geo
 lecture:
 - math-142-33
+- math-142-34
+- math-142-35
 ---
 
 We've seen how to deal with [[Differential forms|differential forms]] on $\mathbb{R}^3$. If you replace all of the domains $\mathbb{R}^3$ with a surface $M$, we get differential forms on a surface.
@@ -84,5 +86,64 @@ $$
 
 ###### _proof:_
 
-1) follows from writing $\phi = f_{1} \, dx_{1} + f_{2} \, dx_{2} + f_{3} \, dx_{3}$ and noticing that the coordinates $x_{1}, x_{2}, x_{3}$ can be thought of as the component functions of the patch $x$. Here we think of $u$ and $v$ as functions $M \to D$.
+1) follows from writing $\phi = f_{1} \, dx_{1} + f_{2} \, dx_{2} + f_{3} \, dx_{3}$ and noticing that the coordinates $x_{1}, x_{2}, x_{3}$ can be thought of as the component functions of the patch $x$. Here we think of $u$ and $v$ as functions $M \to \mathbb{R}$.
 2) follows from applying the chain rule to the formula $df = D((f \circ x) \circ(x ^{-1} \circ \alpha))$.
+
+### $k$-forms on a surface
+
+The natural question to ask is if we can generalise this to differential $k$-forms and their exterior derivative on a surface. Of course! We can do [[Differential forms#Exterior algebra and differential $2$-forms|all the same algebra]] to define the wedge product of differential forms on $M$.
+
+For completeness, we list out properties of the wedge product below.
+
+##### _proposition:_ properties of the wedge product
+
+For any $f, g \in \mathcal{C}^\infty(M)$ and $\phi, \psi, \theta_{1}, \dots, \theta_{n} \in \Omega^1(M)$, we have
+
+1) linearity: $(f \, \phi + g \, \psi) \wedge \theta_{1} \wedge \cdots \wedge \theta_{n} = f(\phi \wedge \theta_{1} \wedge \cdots \wedge \theta_{n}) + g(\psi \wedge \cdots \wedge \theta_{n})$
+2) commutativity with $\mathcal{C}^\infty(M)$: $\theta_{1} \wedge \cdots \wedge  f \, \theta_{i} \wedge \cdots \wedge \theta_{n} = f (\theta_{1} \wedge \cdots \wedge \theta_{n})$
+3) alternating: $\phi_{\sigma(1)} \wedge \cdots \wedge \phi_{\sigma(n)} = \operatorname{sgn} \sigma (\phi_{1} \wedge \cdots \wedge \phi_{n})$.
+
+Then, we can define $2$-forms as
+
+##### _definition:_ $2$-forms on a surface
+
+A $2$-form on $M$ is a linear combination of $\sum_{i} \phi_{i} \wedge \psi_{i}$ for $1$-forms $\phi_{i}, \psi_{i}$.
+
+Notice that we don't need to define $k$-forms in general, since we can write any $2$-form as a scalar multiple of $du \wedge dv$, and thus, any further wedging with a $1$-form would cause us to repeat either $du$ or $dv$. That is, any $k$-form on $M$ with $k > 2$ is just $0$ everywhere.
+
+Now we can define the exterior derivative in a natural way!
+
+It turns out to be exactly the same thing as what we did on $\mathbb{R}^n$.
+
+![[The exterior derivative#_definition _ the exterior derivative]]
+
+Here, however, note that this is equivalent to defining
+$$
+d : f \, du + g \, dv \mapsto df \wedge du + dg \wedge du.
+$$
+for the case of $k = 1$.
+
+Note that all this time we've been working with $R = \mathcal{C}^\infty(M)$ as a ring and $V = \Omega^1(M)$, and then $\bigwedge^k(V)$. We don't actually need a manifold to start with — we could just pick a ring and a module and see what we get by assuming that these things are the regular functions and the differentials on some unknown space. Then the $\bigwedge^k(V)$ consist of what are called Kahler differentials, and we are doing algebraic geometry.
+
+It turns out that, again, this definition is equivalent to things we know about! For example, the differential of a $1$-form is just the curl.
+
+##### _proposition:_ exact $2$-forms are curls
+
+Suppose we have $\phi = g_{1} \, du + g_{2} \, dv \in \Omega^1(M)$. Then
+$$
+d \phi = \left( \frac{ \partial g_{2} }{ \partial u } - \frac{ \partial g_{1} }{ \partial v }  \right) du \wedge dv. 
+$$
+
+### Evaluating forms
+
+What does it really mean to evaluate a $1$-form or a $2$-form? Exactly what you might suspect. Let $p = x(u_{0}, v_{0}) = x_{k}(u_{0}, v_{0}) \in M$ and $[\mathbf{v}, p], [\mathbf{w}, p] \in \mathrm{T}_{p}M$ with $[\mathbf{v}, p] = a x_{u} + bx_{v}$ and $[\mathbf{w}, p] = c x_{u} + dx_{v}$.
+Then for $f \in \Omega^0(M)$, $\phi = g \, du + h \, dv \in \Omega^1(M)$, and $\eta = r \, du \wedge dv \in \Omega^2(M)$, we have
+$$
+\begin{split}
+\phi([\mathbf{v}, p]) & = a g_{k}(u_{0}, v_{0}) + b h_{k}(u_{0}, v_{0}) \\
+df([\mathbf{v}, p]) & = a \frac{ \partial f_{k} }{ \partial u } \Big |_{(u_{0}, v_{0})} + b \frac{ \partial f_{k} }{ \partial v } \Big |_{(u_{0}, v_{0})} \\
+\eta([\mathbf{v}, p], [\mathbf{w}, p]) & = (ad - bc) r_{k}(u_{0}, v_{0}) \\
+d\phi([\mathbf{v}, p], [\mathbf{w}, p]) & = (ad - bc) \left( \frac{ \partial h_{k} }{ \partial u } \Big |_{(u_{0}, v_{0})} - \frac{ \partial g_{k} }{ \partial v } \Big |_{(u_{0}, v_{0})} \right). 
+\end{split}
+$$
+
