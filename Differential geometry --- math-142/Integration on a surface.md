@@ -4,6 +4,7 @@ tags:
 - diff-geo
 lecture:
 - math-142-35
+- math-142-36
 ---
 
 ### Path integrals review
@@ -39,7 +40,54 @@ $$
 
 ##### _definition:_ surface integral of a vector field
 
-Given a function $\mathbf{F} : \mathbb{R}^3 \to \mathbb{R}^3$, the integral of $\mathbf{F}$ over $M = x(D)$ is
+Given a function $\mathbf{F} : \mathbb{R}^3 \to \mathbb{R}^3$, the integral of $\mathbf{F}$ over a surface $M = x(D)$ is
 $$
 \iint_{M} \mathbf{F} \cdot d\mathbf{A} = \int \int _{D} \mathbf{F}(x(u, v)) \cdot (x_{u}(u, v) \times x_{v}(u, v)) \, du  \, dv 
+$$
+
+### Integrating forms
+
+The natural way to define integrating a $1$-form is then to integrate it over a $1$-manifold — a curve. Similarly, the natural way to define integrating a $2$-form is to integrate it over a $2$-manifold — a surface. That is, integrating $1$-forms and $2$-forms is just redefining integrating line and surface integrals respectively.
+
+##### _definition:_ integrating a $1$-form over a curve
+
+For any $\phi = f_{1} \, dx_{1} + \dots + f_{n} \, dx_{n} \in \Omega^1(\mathbb{R}^n)$, and any curve $c$ parameterised by $\alpha : [a, b] \to \mathbb{R}^n$, the integral of $\phi$ over $c$ is
+$$
+	\int_{c} \phi = \int_{a}^b \phi(\alpha'(t)) \, dt.
+$$
+
+Note that this relates directly to the notion of the line integral of a "vector field" over a curve — for any smooth "vector field" $\mathbf{F} : \mathbb{R}^n \to \mathbb{R}^n$, with dual $\mathbf{F}^\vee = \phi$ (that is $\phi([\mathbf{v}, p]) = \mathbf{F}(p) \cdot \mathbf{v}$), we have
+$$
+\int_{c} \mathbf{F} \cdot d\mathbf{s} = \int_{c} \phi.
+$$
+Note that for $\mathbf{F}(p) = (f_{1}(p), \dots, f_{n}(p))$ we have $\phi = \mathbf{F}^\vee = f_{1} \, dx_{1} + \dots + f_{n} \, dx_{n}$. This follows just by pushing through the definitions.
+
+##### _theorem:_ the fundamental theorem of calculus for $1$-forms
+
+Suppose $\phi = df$ for some $f \in \mathcal{C}^\infty(\mathbb{R}^n)$. Then the integral of $\phi$ along any curve $c$ parameterised by $\alpha : [a, b] \to \mathbb{R}^n$ only depends on the endpoints $p = \alpha(a)$ and $q = \alpha(b)$. That is,
+$$
+\int_{c} \phi = f(q) - f(p).
+$$
+
+###### _proof:_
+
+Note that if we have $\mathbf{F}^\vee = \phi$, then $\phi = df$ is equivalent to $\mathbf{F} = \nabla f$. Thus, this will also be a proof of the classical fundamental theorem of calculus for line integrals.
+
+$\phi = df$ means that for $\phi = f_{1} \, dx_{1} + \dots + f_{n} \, dx_{n}$ we have $f_{k} = \frac{ \partial f }{ \partial x_{k} }$. Thus
+$$
+\begin{split}
+\phi(\alpha'(t_{0})) & = \sum_{k = 1}^n f_{k}(\alpha(t_{0})) \frac{d \alpha_{k}}{dt} \Big |_{t_{0}} \\
+ & = \sum_{k = 1}^n \frac{ \partial f }{ \partial x_{k} } \Big |_{\alpha(t_{0})} \frac{d \alpha_{k}}{dt} \Big |_{t_{0}} \\
+ & = \frac{d(f \circ \alpha)}{dt} \Big |_{t_{0}}
+\end{split}
+$$
+by the chain rule.
+
+Thus, by the fundamental theorem of calculus,
+$$
+\begin{split}
+\int_{c} \phi & = \int_{a}^b \frac{d(f \circ \alpha)}{dt} dt \\
+ & = (f \circ \alpha) \Big |_{a}^b \\
+ & = f(q) - f(p). 
+\end{split}
 $$

@@ -5,6 +5,7 @@ tags:
 lecture:
 - math-142-29
 - math-142-30
+- math-142-36
 ---
 
 Now that we have a good idea of [[Surfaces|surfaces]], we can start to calculus on them, like we would want to (perhaps, for physics, or just for math's own sake). Basically, the openness of each of the domains of the [[Surfaces#_definition _ coordinate patch|coordinate patches]] means that we can take derivatives and limits inside them, and then we will try in some sense to transfer them to the neighbourhoods of the points on the surface.
@@ -86,4 +87,30 @@ Thus, $f \circ x_{\alpha}$ is smooth exactly when $f \circ y_{\beta} = (f \circ 
 
 %% see lecture notes %%
 
+Finally, there is a natural way to define when maps between surfaces are smooth.
+
+##### _definition:_ smooth maps between surfaces
+
+Say $M$ and $N$ are surfaces in $\mathbb{R}^3$ with families of maps $x_{k} : D_{k} \to \mathbb{R}^3$ for $k \in I$ and $y_{l} : E_{l} \to \mathbb{R}^3$ for $l \in J$ respectively. We say $F : M \to N$ is a mapping if $F_{lk} = y_{l}^{-1} \circ F \circ x_{k}$ is smooth for all $k \in I$ and $l \in J$.
+
 To actually compute derivatives however, we need a [[Tangent spaces on surfaces|notion of directions on the surface]], which we can finally do!
+
+Once we have this notion, we can define
+
+##### _definition:_ the tangent map of a map between surfaces
+
+Say $F : M \to N$ is a mapping between surfaces. Then the tangent map $F_{*} : M  \to N$ is defined by
+$$
+F_{*}([\mathbf{v}, p]) = (F \circ \alpha)'(t_{0})
+$$
+for $[\mathbf{v}, p] = \alpha'(t_{0}) \in \mathrm{T} M$.
+
+Finally, the notion of [[Differential forms on a surface|differential forms on a surface]] gives us a natural pullback $F^* : \Omega^k(N) \to \Omega^k(M)$.
+
+##### _definition:_ the pullback of a smooth map between surfaces
+
+Say $F : M \to N$ is a mapping between surfaces. Then the pullback $F^* : \Omega^k(N) \to \Omega^k(M)$ is defined by
+$$
+F^*(\phi) = \phi \circ (\underbrace{ F_{*}, \dots, F_{*} }_{ k \text{ times} })
+$$
+where $0$ times means $\phi \circ F$ and $\phi \in \Omega^k(N)$.
