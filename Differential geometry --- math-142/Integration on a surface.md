@@ -5,6 +5,7 @@ tags:
 lecture:
 - math-142-35
 - math-142-36
+- math-142-37
 ---
 
 ### Path integrals review
@@ -90,4 +91,69 @@ $$
  & = (f \circ \alpha) \Big |_{a}^b \\
  & = f(q) - f(p). 
 \end{split}
+$$
+
+##### _definition:_ integrating a $2$-form over a surface
+
+Say we have $M$, a surface given by a patch $x : D = [a, b] \times [c, d] \to M$, and a differential form $\eta = g_{1} \, dx_{2} \wedge dx_{3} + g_{2} \, dx_{3} \wedge dx_{1} + g_{3} \, dx_{1} \wedge dx_{2}$. Then the integral of $\eta$ over $M$
+$$
+\iint_{M} \eta = \int_{a}^b \int_c^d \begin{vmatrix}
+(g_{1} \circ x)(u, v) & (g_{2} \circ x)(u, v) & (g_{3} \circ x)(u, v) \\
+\dfrac{ \partial x_{1} }{ \partial u } \Big |_{(u, v)} & \dfrac{ \partial x_{2} }{ \partial u } \Big |_{(u, v)} & \dfrac{ \partial x_{3} }{ \partial u } \Big |_{(u, v)} \\ \\
+\dfrac{ \partial x_{1} }{ \partial v } \Big |_{(u, v)} & \dfrac{ \partial x_{2} }{ \partial v } \Big |_{(u, v)} & \dfrac{ \partial x_{3} }{ \partial v } \Big |_{(u, v)}
+\end{vmatrix}  \, dv   \, du 
+$$
+
+Again, note that this relates directly to the notion of the surface integral of a "vector field". Particularly, note that for the "vector field" $\mathbf{G} = (g_{1}, g_{2}, g_{3})$, we can write
+$$
+\begin{split}
+\eta & = g_{1} \, dx_{2} \wedge dx_{3} + g_{2} \, dx_{3} \wedge dx_{1} + g_{3} \, dx_{1} \wedge dx_{2} \\
+ & = r \, du \wedge dv
+\end{split}
+$$
+where $r$ is just that determinant. Thus, we can equivalently define
+$$
+\iint_{M} \eta = \int_{a}^b \int_{c}^d \eta(x_{u}, x_{v})  \, dv  \, du 
+$$
+or
+$$
+\iint_{M} \eta = \iint \mathbf{G}(x(u, v)) \cdot d\mathbf{A}.
+$$
+
+### Stokes' theorem
+
+We saw already the fundamental theorem of calculus for line integrals. Is there something analogous for surfaces? In particular, if $\eta = d \phi$ for some $1$-form $\phi$, is calculating $\iint_{M} \eta$ any easier?
+
+##### _theorem:_ Stokes' theorem for differential forms
+
+Suppose we have a $2$-form $\eta$ on a surface $M$. Then
+$$
+\iint_{M} \eta = \int_{\partial M} \phi.
+$$
+
+###### _proof:_
+
+Recall that we can write $\phi = g \, du + h \, dv$. Thus, $\phi([\mathbf{v}, p]) = v_{1}g(p) + v_{2} h(p)$ for $[\mathbf{v}, p] = v_{1} x_{u} + v_{2} x_{v}$ and thus $g = \phi(x_{u})$ and $h = \phi(x_{v})$.
+
+Then for $\eta = d \phi$ we have
+$$
+\eta(x_{u}, x_{v}) = \left( \frac{\partial h}{\partial u} \Big |_{(u, v)} - \frac{ \partial g }{ \partial v } \Big |_{(u, v)} \right)
+$$
+
+Then it follows that
+$$
+\begin{split}
+\iint_{M} \eta & = \int_{a}^b \int_{c}^d \eta(x_{u}, x_{v})  \, dv   \, du \\
+ & = \int_{c}^d \int_{a}^b \frac{ \partial h }{ \partial u } \Big |_{(u, v)} \, du    \, dv - \int_{a}^b \int_{c}^d \frac{ \partial g }{ \partial v } \Big |_{(u, v)}  \, dv   \, du \\
+ & = \int_{c}^d h(b, v) - h(a, v) \, dv - \int_{a}^b g(u, d) - g(u, c)  \, du \\
+ & = \int_{x^\text{img}(c_{1})} \phi + \int_{x^\text{img}(c_{2})} \phi + \int_{x^\text{img}(c_{3})} \phi + \int_{x^\text{img}(c_{4})} \phi \\
+ & = \int_{\partial M} \phi. 
+\end{split}
+$$
+
+##### _corollary:_ the classical Stokes' theorem
+
+Assume $\mathbf{G} = \nabla \times \mathbf{F}$ for "vector fields" $\mathbf{F}, \mathbf{G} : \mathbb{R}^3 \to \mathbb{R}^3$. Then 
+$$
+\iint_{M} \mathbf{G} \cdot d\mathbf{A} = \int_{\partial M} \mathbf{F} \cdot d\mathbf{s}.
 $$
