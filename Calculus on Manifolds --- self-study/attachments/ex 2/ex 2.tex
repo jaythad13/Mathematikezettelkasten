@@ -1,0 +1,68 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{Calculus on Manifolds self-study}
+\assignment{Chapter 2 problems --- Differentiation}
+\duedate{}
+
+\begin{document}
+
+\begin{problem}[1.]
+	Prove that if $f : \mathbb{R}^{n} \to \mathbb{R}^{m}$ is differentiable, at $\mathbf{a} \in \mathbb{R}^{n}$, then it is continuous at $\mathbf{a}$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[4.]
+	Let $g$ be a continuous real-valued function on the unit circle $S^{1} = \{ \mathbf{x} \in \mathbb{R}^{2}\mid \lVert \mathbf{x} \rVert = 1 \}$ such that $g(0, 1) = g(1, 0) = 0$ and $g(-\mathbf{x}) = - g(\mathbf{x})$. Define $f : \mathbb{R}^{2} \to \mathbb{R}$ by
+	\[
+		f(\mathbf{x}) = \begin{cases}
+			\lVert \mathbf{x} \rVert \, g \left ( \dfrac{\mathbf{x}}{\lVert \mathbf{x} \rVert} \right ) & \mathbf{x} \neq \mathbf{0} \\
+			0 & \mathbf{x} = \mathbf{0}.
+		\end{cases}
+	\]
+	\begin{enumerate}
+		\item If $\mathbf{x} \in \mathbb{R}^{2}$ and $h : \mathbb{R}^{2} \to \mathbb{R}$ is defined by $h(t) = f(tx)$, show that $h$ is differentiable.
+		\item Show that $f$ is not differentiable at $(0, 0)$ unless $g = 0$.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[7.]
+	Let $f : \mathbb{R}^{n} \to \mathbb{R}$ be a function such that $\lvert f(\mathbf{x}) \rvert \le \lVert \mathbf{x} \rVert^{2}$. Show that $f$ is differentiable at $\mathbf{0}$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[12.]
+	A function $f : \mathbb{R}^{n} \times \mathbb{R}^{m} \to \mathbb{R}^{p}$ is \textit{bilinear} if for $\mathbf{x}_{1}, \mathbf{x}_{2} \in \mathbb{R}^{n}$, $\mathbf{y}_{1}, \mathbf{y}_{2} \in \mathbb{R}^{m}$ and $a \in \mathbb{R}$ we have
+	\[
+		\begin{split}
+			f(a \mathbf{x}_{1}, \mathbf{y}_{1}) & = a f(\mathbf{x}_{1}, \mathbf{y}_{1}) = f(\mathbf{x}_{1}, a \mathbf{y}_{1}) \\
+			f(\mathbf{x}_{1} + \mathbf{x}_{2}, \mathbf{y}_{1}) & = f(\mathbf{x}_{1}, \mathbf{y}) + f(\mathbf{x}_{2}, \mathbf{y}_{1}) \\
+			f(\mathbf{x}_{1}, \mathbf{y}_{1} + \mathbf{y}_{2}) & = f(\mathbf{x}_{1}, \mathbf{y}_{1}) + f(\mathbf{x}_{1}, \mathbf{y}_{2}).
+		\end{split}
+	\]
+	\begin{enumerate}
+		\item Prove that if $f$ is bilinear, then
+			\[
+				\lim_{(\mathbf{h}, \mathbf{k}) \to \mathbf{0}} \frac{\lVert f(\mathbf{h}, \mathbf{k}) \rVert}{\lVert (\mathbf{h}, \mathbf{k}) \rVert} = 0.
+			\]
+		\item Prove that $Df \Big |_{(\mathbf{a}, \mathbf{b})} (\mathbf{x}, \mathbf{y}) = f(\mathbf{a}, \mathbf{y}) + f(\mathbf{x}, \mathbf{b})$.
+		\item Show that the formula for $D \Pi$ where $\Pi : \mathbb{R}^{2} \to \mathbb{R}$ is the product function $(x, y) \mapsto xy$ is a special case of (b).
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[16.]
+	Suppose $f : \mathbb{R}^{n} \to \mathbb{R}^{n}$ is differentiable and has a differentiable inverse $f^{-1} : \mathbb{R}^{n} \to \mathbb{R}^{n}$. Show that $D f^{-1} \Big |_{\mathbf{a}} = (Df \Big |_{f^{-1}(\mathbf{a})})^{-1}$
+\end{problem}
+
+\pagebreak
+
+
+
+\end{document}
