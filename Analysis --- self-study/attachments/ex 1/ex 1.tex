@@ -1,0 +1,200 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{Principles of Mathematical Analysis self-study}
+\assignment{Chapter 1 exercises --- The Real and Complex Number Systems}
+\duedate{}
+
+\begin{document}
+
+\begin{problem}[1.]
+	If $r$ is rational ($r \neq 0$) and $x$ is irrational prove that $r + x$ and $rx$ are irrational.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[2.]
+	Prove that there is no rational number whose square is $12$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[2*.]
+	Prove that between any two real numbers there is an irrational number.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[3.]
+	Prove Proposition 1.15 --- that the axioms for multiplication imply the following statements
+	\begin{enumerate}
+		\item If $x \neq 0$ and $xy = yz$ then $y = z$.
+		\item If $x \neq 0$ and $xy = x$ then $y = 1$.
+		\item If $x \neq 0$ and $xy = 1$, then $y = 1/x$.
+		\item If $x \neq 0$, then $1/(1/x) = x$.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[4.]
+	Let $E$ be a nonempty subset of an ordered set; suppose $\alpha$ is a lower bound of $E$ and $\beta$ is an upper bound of $E$. Prove that $\alpha \le \beta$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[5.]
+	Let $A$ be a nonempty set of real numbers which is bounded below. Let $-A$ be the set of all numbers $-x$ where $x \in A$. Prove that
+	\[
+		\inf A = - \sup (-A).
+	\]
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[6.]
+	Fix $b > 1$.
+	\begin{enumerate}
+		\item If $m, n, p, q$ are integers,  $n > 0$, $q > 0$ and $r = m/n = p/q$, prove that
+			\[
+				(b^{m})^{1/n} = (b^{p})^{1/q}.
+			\]
+			Hence it makes sense to define $b^{r} = (b^{m})^{1/n}$.
+		\item Prove that $b^{r + s} = b^{r}b^{s}$ if $r$ and $s$ are rational.
+		\item If $x$ is real, define $B(x)$ to be the set of all numbers $b^{t}$ where $t$ is rational and $t \le x$. Prove that
+			\[
+				b^{r} = \sup B(r)
+			\]
+			when $r$ is rational. Hence it makes sense to define
+			\[
+				b^{x} = \sup B(x)
+			\]
+			for every real $x$.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[7.]
+	Fix $b > 1$, $y > 0$ and prove that there is a unique real $x$ such that $b^{x} = y$, by completing the following outline. (This $x$ is called the \textit{logarithm of $y$ to the base $b$}.)
+	\begin{enumerate}
+		\item For any positive integer $n$, $b^{n} - 1 > n(b - 1)$.
+		\item Hence $b - 1 > n(b^{1/n} - 1)$.
+		\item If $t > 1$ and $n > (b - 1)(t - 1)$, then $b^{1/n} < t$.
+		\item If $w$ is such that $b^{w} < y$, then $b^{w + 1/n} < y$ for sufficiently large $n$.
+		\item If $b^{w} > y$, then $b^{w - 1/n} > y$ for sufficiently large $n$.
+		\item Let $A$ be the set of all $w$ such that $b^{w} < y$ and show that $x = \sup A$ satisfies $b^{x} = y$.
+		\item Prove that this $x$ is unique.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[8.]
+	Prove that no order can be defined in the complex field that turns it into an ordered field.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[9.]
+	Suppose $z = a + bi$, $w = c + di$. Define $z < w$ if $a < c$, and also if $a = c$ but $b < d$. Prove that this turns the set of all complex numbers into an ordered set. (This type of order relation is called a \textit{dictionary order} or \textit{lexicographic order}, for obvious reasons.) Does this ordered set have the least upper bound property?
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[10.]
+	Suppose $z = a + bi$, $w = c + di$, and
+	\[
+		a = \left ( \frac{\lvert w \rvert + u}{2} \right )^{1/2} \quad b = \left ( \frac{\lvert w \rvert - u}{2} \right )^{1/2}.
+	\]
+	Prove that $z^{2} = w$ if $v \ge 0$ and that $\overline{z}^{2} = w$ if $v \le 0$. Conclude that every complex number (with one exception) has two complex square roots.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[11.]
+	If $z$ is a complex number, prove that there exists an $r \ge 0$ and a complex number $w$ with $\lvert w = 1 \rvert$ such that $z = r w$. Are $w$ and $r$ always uniquely determined by $z$?
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[12.]
+	If $z_{1}, \dots, z_{n}$ are complex, prove that
+	\[
+		\lvert z_{1} + z_{2} + \dots + z_{n} \rvert \le \lvert z_{1} \rvert + \lvert z_{2} \rvert + \dots + \lvert z_{n} \rvert.
+	\]
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[13.]
+	If $x, y$ are complex, prove that
+	\[
+		\lvert \lvert x \rvert - \lvert y \rvert \rvert \le \lvert x - y \rvert.
+	\]
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[14.]
+	If $z$ is a complex number such that $\lvert z  \rvert = 1$, compute
+	\[
+		\lvert 1 + z^{2} \rvert + \lvert 1 - z^{2} \rvert.
+	\]
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[15.]
+	Under what conditions does equality hold in the Schwarz inequality?
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[16.]
+	Suppose $k \ge 3$, $\mathbf{x}, \mathbf{y} \in \mathbb{R}^{k}$, $\lVert \mathbf{x} - \mathbf{y} \rVert = d > 0$, and $r > 0$. Prove:
+	\begin{enumerate}
+		\item If $2r > d$, there are infinitely many $\mathbf{z} \in \mathbb{R}^{k}$ such that 
+			\[
+				\lVert \mathbf{z} - \mathbf{x} \rVert = \lvert \mathbf{z} - \mathbf{y} \rvert = r.
+			\]
+		\item If $2r = d$, there is exactly one such $\mathbf{z}$.
+		\item If $2r < d$, there is no such $\mathbf{z}$.
+	\end{enumerate}
+	How must these statements be modified if $k$ is $2$ or $1$?
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[17.]
+	Prove that
+	\[
+		\lVert \mathbf{x} + \mathbf{y} \rVert^{2} + \lVert \mathbf{x} - \mathbf{y} \rVert^{2} = 2 \lVert \mathbf{x} \rVert^{2} + 2 \lVert \mathbf{y} \rVert^{2}
+	\]
+	f $\mathbf{x} \in \mathbb{R}^{k}$ and $\mathbf{y} \in \mathbb{R}^{k}$. Interpret this geometrically, as a statement about parallelograms.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[18.]
+	If $k \ge 2$ and $\mathbf{x} \in \mathbb{R}^{k}$, prove that there exists $\mathbf{y} \in \mathbb{R}^{k}$ such that $\mathbf{y} \neq \mathbf{0}$, but $\mathbf{x} \cdot \mathbf{y} = 0$. Is this also true if $k = 1$?
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[19.]
+	Suppose $\mathbf{a} \in \mathbb{R}^{k}$ and $\mathbf{b} \in \mathbb{R}^{k}$. Find $\mathbf{c} \in \mathbb{R}^{k}$ and $r > 0$ such that
+	 \[
+		\lVert \mathbf{x} - \mathbf{a} \rVert = 2 \lVert \mathbf{x} - \mathbf{b} \rVert
+	\]
+	if and only if $\lVert \mathbf{x} - \mathbf{c} \rVert = r$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[20.]
+	With reference to the Appendix, suppose that property (III) were omitted from the definition of a cut. Keep the same definitions of order and addition. Show that the resulting ordered set has the least-upper-bound property, that addition satisfies axioms (A1) to (A4) (with a slightly different zero-element) but that (A5) fails.
+\end{problem}
+
+\end{document}
