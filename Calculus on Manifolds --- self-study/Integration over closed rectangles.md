@@ -141,9 +141,11 @@ A bounded function $f : A \to \mathbb{R}$ is integrable on $A$ if and only if fo
 
 ###### _proof:_
 
-If there is such a partition for every $\varepsilon > 0$, then it's obvious that since the two sets keep getting closer to each other without touching, they have the least upper/greatest lower bounds.
+If there is such a partition for every $\varepsilon > 0$, then for any number $u > \sup \{ L(f, P) \}$ we have some $U(f, P') < u$. Just choose $P'$ such that $U(f, P') - L(f, P') < u + \sup \{ L(f, P) \} - L(f, P')$. (This exists by our hypothesis). Thus, $\inf \{ U(f, P)\} \le \sup \{ L(f, P) \}$.
 
-If we have that $f$ is integrable, then there are partitions $P'$ and $P''$ that give us $L(f, P') - U(f, P') < \varepsilon$ for all $\varepsilon > 0$. Thus, if $P$ refines both of them, then it is the desired partition.
+We also always have $U(f, P) > L(f, P')$ for any $P$ and $P'$. That is, every, $L(f, P')$ is a lower bound of $\{ U(f, P) \}$. Thus, $\inf \{ U(f, P) \}$ is an upper bound on $\sup \{ L(f, P) \}$ and finally, $\inf \{ U(f, P) \} \ge \sup \{ L(f, P) \}$.
+
+If we have that $f$ is integrable, then there are partitions $P'$ and $P''$ that give us $L(f, P') - U(f, P'') < \varepsilon$ for all $\varepsilon > 0$. Thus, if $P$ refines both of them, then it is the desired partition.
 
 ##### _example:_ the famous non-integrable Dirichlet function
 
