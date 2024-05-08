@@ -3,6 +3,7 @@ tags:
 - calc
 - self-study
 ---
+
 ### Continuity
 
 In single variable calculus, the expression $\lim_{x \to a} f(x) = L$ means that we can get $f(x)$ arbitrarily close to $L$ for $x$ values within some range of $a$. This generalises neatly in $\bb R^n$ (and indeed in all metric spaces) — we can define limits as below, and then define continuity to be where the limit and the value of a function are the same.
