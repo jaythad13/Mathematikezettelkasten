@@ -12,17 +12,55 @@
 	If $r$ is rational ($r \neq 0$) and $x$ is irrational prove that $r + x$ and $rx$ are irrational.
 \end{problem}
 
+\begin{solution} ~
+	
+	Suppose, by way of contradiction, that we had $0 \neq r \in \mathbb{Q}$ and $r + x \in \mathbb{Q}$ or $rx \in \mathbb{Q}$ for some $x \in \mathbb{R} \setminus \mathbb{Q}$. Then we would have to have $x = r + x - x \in \mathbb{Q}$ or $x = rx/r \in \mathbb{Q}$. Each of these directly contradicts $x \notin \mathbb{Q}$. Thus, $r + x$ and $rx$ must both be irrational.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[2.]
 	Prove that there is no rational number whose square is $12$.
 \end{problem}
 
+\begin{solution} ~
+	
+	Suppose, by way of contradiction, that there is some rational number $p$ with $p^{2} = 12$. Then there must be some $m, n \in \mathbb{Z}$ such that $p = m/n$ and $\gcd (m, n) = 1$. Thus, we must have
+	\[
+		\begin{split}
+			m^{2} & = 12 n^2 \\
+			      & = 3 (2n)^{2}.
+		\end{split}
+	\]
+	If $3 \mid m^{2}$, we must have $3 \mid m$ since $3$ is prime. But then, we can write $m = 3r$ for some $r \in \mathbb{Z}$ giving us
+	\[
+		9 r^{2} = 3 (2n)^{2}
+	\]
+	and thus,
+	\[
+		4n^{2} = 3 r^{2}.
+	\]
+	Since $3 \nmid 4$, we must have $3 \mid n^{2}$ and thus, $3 \mid n$. This contradicts the fact that $\gcd(m, n) = 1$, and thus, there cannot exist any rational number $p$ with $p^{2} = 12$.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[2*.]
 	Prove that between any two real numbers there is an irrational number.
 \end{problem}
+
+\begin{solution}~
+	
+	We know that there is a rational number between any two reals. Thus, for any two $a, b \in \mathbb{R}$ with $a < b$, and a positive $x \in \mathbb{R} \setminus \mathbb{Q}$, we have some rational $r$ such that
+	\[
+		a/x < r < b/x.
+	\]
+	Noting that $rx$ must be irrational (shown in exercise 1), we have
+	\[
+		a < rx < b
+	\]
+	giving us the irrational number between $a$ and $b$.
+\end{solution}
 
 \pagebreak
 
