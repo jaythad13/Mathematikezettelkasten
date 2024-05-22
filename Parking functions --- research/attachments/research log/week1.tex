@@ -1,0 +1,168 @@
+\section{Week 1}
+
+\subsection*{Background and results we used}
+
+Imagine there are $n$ cars trying to park in $n$ spots on a one way street. Each driver has a desired parking spot. They will drive to that spot, and if it's unoccupied, park in it. If the spot is occupied, the driver will park in the next unoccupied spot (in the direction of the one way street), or if there isn't one, not park at all. Parking functions answer the question ``what preference lists allow everyone to park?"
+
+\begin{definition}[parking function]
+    A parking function (of length $n$) is an $n$-tuple $\pi \in [n]^n,$ with $[n]=\{1,2,\ldots,n\},$ such that if $n$ cars wanted to park in $n$ spots on a one-way street with the $j$th car wanting to park in the $\pi_{j}$th spot, then all the cars would get to park.
+
+\end{definition}
+
+Really, it turns out that we can characterise parking functions completely by the non-decreasing rearrangement of the preference list. That is, we can determine whether a preference list is a parking function just with this idea.
+
+\begin{definition}[non-decreasing rearrangement]
+    Given a list $\pi \in [n]^n$, its non-decreasing rearrangement is $\pi' \in [n]^n$ such that $\pi'_{i} \le \pi'_{i + 1}$ for all $i \in [n - 1]$ and $\pi'_{i} = \pi_{\sigma(i)}$ for some permutation $\sigma \in S_{n}$.
+\end{definition}
+
+Specifically, we have the following result.
+
+\begin{proposition}[the $\pi_{i}$ condition for parking functions, from \cite{martinezmori-2024}]
+    A preference list $\pi \in [n]^n$ with non-increasing rearrangement $\pi'$ is a parking function if and only if $\pi_{i}' \le i$ for all $i \in [n]$.
+\end{proposition}
+
+\begin{proof}
+    Suppose $\pi$ is a parking function. Then there cannot be fewer than $i$ cars that want to park in the first $i$ spots --- if there were, then one of the first $i$ spots would be empty, and thus, $\pi$ would not be a parking function. Thus, $\pi_{i}' \le i$.
+    
+    Now suppose $\pi$ is not a parking function. Then there must be some earliest spot unoccupied --- say the $j$th spot. If all $i \le j$ gave $\pi_{i}' \le i$, then cars $\sigma ^{-1}(1), \dots, \sigma ^{-1}(j)$ would be parked in spots $1, \dots, j$ and the $j$th spot would not be empty. (Here $\pi'_i = \pi_{\sigma(i)}$ with $\sigma \in S_n$)
+\end{proof}
+
+\begin{corollary}[parking functions are permutation invariant, from \cite{martinezmori-2024}]
+    Any rearrangement of the values in a parking function will also yield a parking function. That is, the set of parking functions is invariant under the natural group action by $S_n.$
+\end{corollary}
+
+A natural question from enumerative combinatorics: out of the $n^n$ possible preference lists for $n$ cars, how many are parking functions?
+
+\begin{proposition}[enumerating parking functions, from \cite{martinezmori-2024}]
+    There are precisely $(n+1)^{n-1}$ parking functions on $n$ cars.
+\end{proposition}
+
+\begin{proof}
+    We first consider a different problem. Imagine $n+1$ parking spots in a circular lot, and $n$ cars with preferences within this list; instead of proceeding forward, cars proceed clockwise until they have found an empty spot. There is no exit condition; indeed, all of the $(n+1)^n$ possible preference lists will allow all cars to park, since $n+1\ge n$ and all spots are eventually available.
+    
+    In each of these situations, there will be $(n+1)-n=1$ parking spot remaining open at the end; thus there will be $n$ consecutive parking spots filled. The empty parking spot is never chosen as a preference, nor passed over by any car in its search; otherwise it would have been filled already. All activity by cars is therefore confined to a linear stretch of $n$ cars: precisely the behavior of a parking function!
+
+    Every parking function will be represented $n+1$ times by these circular preference lists: once for each spot that could remain empty at the end. Therefore, the total number of parking functions is $\frac{(n+1)^n}{n+1}=(n+1)^{n-1}.$
+\end{proof}
+
+It is often meaningful to consider the permutation of cars induced by various parking functions. We denote a given permutation of this form by representing the layout of the parking lot; for example, the permutation $231$ implies that car 2 has parked in the first spot, car 3 in the second spot, and car 1 in the third spot. \\
+
+All $n!$ permutations are induced by at least one parking function: consider the function where each car prefers the spot it eventually lives in. However, some permutations are induced by more parking functions than others. A result given by Pinsky \cite{pinsky2024distribution} goes as follows:
+
+\begin{proposition}[the size of the pre-image of a permutation, from \cite{pinsky2024distribution}]
+    Consider a permutation $\sigma=\sigma_1\sigma_2\cdots\sigma_n.$ Let $l_{n,i}(\sigma)$ be the length of the longest contiguous stretch in $\sigma$ ending at $\sigma_i$ such that $\sigma_i$ is greater than any other car number within the stretch. Then the number of parking functions which induce the permutation $\sigma$ is $\displaystyle\prod_{i=1}^n l_{n,i}(\sigma).$
+\end{proposition}
+
+\begin{proof}
+    Given a permutation and a car $\sigma_i$, we count the number of ways that it could have landed in spot $i.$ It could have preferred spot $i,$ of course; however, if $\sigma_{i-1}<\sigma_i,$ then it could have preferred spot $i-1$ and been shunted off to spot $i.$ Similarly, for any stretch of length $k+1$ ending in spot $i,$ such that $\sigma_i$ is the largest of the car numbers in question, spot $i-k$ could have been preferred.
+
+    By this logic, the number of extra spots car $\sigma_i$ could have preferred is the length longest stretch of already-full spots leading up to spot $i.$ But this gives us our value $l_{n,i}(\sigma)$; by a product rule for counting, we find that our total is the desired $\displaystyle\prod_{i=1}^n l_{n,i}(\sigma).$
+\end{proof}
+
+\subsection*{``Min-defect'' preference lists and restricted parking functions}
+
+A natural generalisation of the parking function question is the following. If $m$ cars are trying to park in $n$ spots, what preference lists lead to the minimum number ($m - n$) of cars being unable to park? It turns out that these are exactly the parking functions of length $m$ where all cars want to park in the first $n$ spots. The bijection is as follows.
+
+\begin{proposition}[minimum defect preference lists are equivalent to restricted parking functions]
+    The preference lists in $[n]^m$ such that only $m - n$ cars are unable to park are exactly the parking functions of length $m$ in $[n]^m \subset [m]^m$.
+\end{proposition}
+
+\begin{proof}
+    It's obvious that if $\pi \in [n]^m$ is a parking function of length $m$, it leads to minimum defect on $n$ spots --- just ignore the last $m - n$ spots and consider the cars that parked there to have not parked.
+    
+    Suppose $\pi \in [n]^m$, thought of as a preference list of $m$ cars on $n$ spots, leads to only $m - n$ cars being unable to park. Then, thought of as a preference list of $m$ cars on $m$ spots, the $m - n$ unparked cars will just fill out the last $m - n$ spots in order, giving a parking function.
+\end{proof}
+
+Again, it is natural to ask how many such min-defect preference lists/restricted parking functions there are. By sampling preference lists in $[n]^m$ and then later by coding them exactly, we obtained the following sequence for the number of min-defect preference lists when $m = n + 1$.
+\[
+1, 7, 61, 671, 9031, \dots
+\]
+We looked this up in the OEIS and found that it corresponded to sequence \href{https://oeis.org/A213326}{A213326}. This had closed form
+\[
+a_n = (n + 2)^{n} - (n + 1)^n.
+\]
+We can give a combinatorial proof of this result.
+
+\begin{proposition}[min-defect $1$]
+    The number of preference lists of $n + 1$ on $n$ spots such that only $1$ car is unable to park is $(n + 2)^n - (n + 1)^n$.
+\end{proposition}
+
+\begin{proof}
+    The number of these preference lists is exactly the number of parking functions of length $n + 1$ such that no car prefers to park in spot $n + 1$. Note that there are $(n + 2)^n$ parking functions of length $n$, so we just need to subtract off the parking functions where at least one car prefers to park in spot $n + 1$.
+
+    For a parking function, at most one car can prefer to park in spot $n$. If there were more than one, then the car that parked later would not get to park. Thus, there are $n + 1$ ways to choose which one car prefers to park in spot $n + 1$. 
+
+    Any car can choose to park in spot $n + 1$ if and only if the remaining cars form a parking function on the remaining $n$ spots. That is, if $\pi \in [n + 1]^{n + 1}$ and $\pi_i = n + 1$, then $\pi$ is a parking function if and only if $\pi' = (\pi_1, \dots, \pi_{i - 1}, \pi_{i + 1}, \pi_{n + 1})$ is a parking function of length $n$. We can see this as follows.
+
+    Suppose $\pi'$ is a parking function. Then all of the cars, except for the $i$th car, get to park in the first $n$ spots. The $i$th car parks in the spot $n + 1$, and thus all cars get to park. Thus, $\pi$ is a parking function.
+    
+    Suppose $\pi'$ is not a parking function. Then there is some $j$th car with $j \neq i$ that doesn't get to park in the first $n$ spots. Only one of the $i$th and $j$th cars can park in spot $n + 1$, and thus, one of them doesn't get to park. That is, $\pi$ is not a parking function.
+
+    Thus, there are $(n + 1)^n = (n + 1)(n + 1)^{n - 1}$ parking functions of length $n + 1$ such that there is a car that prefers spot $n + 1$. There are $n + 1$ ways to choose the car, and $(n + 1)^{n - 1}$ ways to choose the parking function on the remaining $n$ cars and spots.
+
+    Thus, there are $(n + 2)^n - (n + 1)^n$ parking functions where no car prefers spot $n + 1$.
+\end{proof}
+
+\begin{proposition}
+    The number of preference lists of $m$ on $n$ spots such that only $m-n$ cars are unable to park is $\displaystyle n^m-\sum_{i=1}^n \binom{m}{i-1}i^{i-2}(n-i)^{m-i+1}.$
+\end{proposition}
+
+\begin{proof}
+    The number of these preference lists is exactly the number of parking functions of length $m$ such that every car prefers to park in one of the first $n$ spots. Note that if a preference list does not lead to a parking function, then its gaps will be in the first $n$ spots; after all, no car will ever leave the lot without having gone past the last $m-n$ slots.
+    
+    We count the complement of the set of parking functions we're looking at; there are $n^m$ preference lists in total, and we subtract off the non-parking functions among them. We do casework on the first $n$ spots, based on which of them is the first empty spot.
+    
+    If spot $i$ is the first empty spot, then $i-1$ cars will park prior to it. There are $\binom{n}{i-1}$ ways to choose these cars, and $i^{i-2}$ ways to choose their preferences, since these $i-1$ cars make up a parking function. The remaining $m-i+1$ cars may park however they desire after spot $i,$ in the $n-i$ spots remaining; this gives $\displaystyle\binom{m}{i-1}i^{i-2}(n-i)^{m-i+1}$ total arrangements.
+
+    Therefore, our total is the desired $\displaystyle n^m-\sum_{i=1}^n \binom{m}{i-1}i^{i-2}(n-i)^{m-i+1}.$
+\end{proof}
+
+Note that Cameron et al. get a more general result for the number of preference lists of $m$ cars parking in $n$ spots such that $k$ cars don't get to park. \cite{cameron-johannsen-prellberg-schweitzer-2008}
+
+\begin{remark}
+    Empirical evidence suggests an alternative formula generalizing proposition 1.5, that the number of preference lists of $m$ on $n$ spots with min defect is \[\sum_{i=m}^{n}\binom{m}{i}(i+1)^{i-1}(n-i-1)^{m-i}.\]
+    % Do you have the bounds swapped on the sum?
+    Note that since $n-i-1<0,$ this series alternates between positive and negative terms. A priority for next week is to find a derivation.
+\end{remark}
+
+\subsection*{Permutations induced by restricted parking functions}
+
+Just as it's interesting to think about the permutations induced by parking functions in general, it's interesting to think about which permutations are induced by restricted parking functions. It's obvious that the map from parking functions of length $m$ to $S_m$ is not surjective anymore --- we can't have any permutations that map the first car out of the first $n$ spots. However, are there any less obvious obstructions? It turns out there are not.
+
+\begin{proposition}[enumerating permutations induced by restricted parking functions]
+    The $\binom{m}{n - 1}(n - 1)!$ permutations such that the last $m - n + 1$ slots are filled by cars in increasing order are exactly the permutations induced by a parking function of length $m$ such that all cars prefer to park in the first $n$ spots.
+\end{proposition}
+
+\begin{proof}
+    Choose any $n - 1$ cars that get to park in the first $n - 1$ spots. Permute them among the first $n - 1$ slots. Let the remaining cars all prefer to park in the $n$th spot. They will line up in the last $m - n + 1$ spots in order. Thus, all of the desired permutations can be induced by a restricted parking function.
+
+    If a permutation is induced by the a restricted parking function of the desired form, then out of the last $m - n + 1$ spots, a car can only prefer the first of them --- the $n$th spot. Thus, every car that parks in the last $m - n + 1$ slots will not skip over any spots and will take the least-numbered slot it can. Then the cars in the last slots will be in increasing order. Thus, all of the permutations induced are of the desired form.
+\end{proof}
+
+Note that this is the number of cosets of $S_{k + 1}$ in $S_m$ where $k = m - n$. We can interpret this as $S_{k + 1}$ permuting the last $k + 1$ cars. Each coset contains exactly one valid representative --- the one where the element of $S_{k + 1}$ permutes the last $k + 1$ cars so that they are in increasing order. Unfortunately, $S_{k + 1} \not \trianglelefteq S_m$, so we cannot endow these restricted parking functions with a group structure. \\
+
+However, it turns out that we can get a similar result to Pinsky's \cite{pinsky2024distribution} for the distribution of these restricted parking functions over the permutations they map to.
+
+\begin{proposition}
+    The number of restricted parking functions on $[n]^m$ mapping to a permutation $\sigma\in S_m$ is
+    \[
+    \prod_{i=1}^m \max(0,l_{m,i}(\sigma)-\max(0,i-n)).
+    \]
+    Here $l_{m, i}$ is defined as previously.
+\end{proposition}
+
+\begin{proof}
+    We proceed similarly to Proposition 1.3: we count for each car $\sigma_i$ the number of ways that its preference could lead to its being placed in spot $i.$ With no restrictions, this would simply be $l_{m,i}.$
+    
+    However, if $i>n,$ then this calculation is complicated, as our car cannot prefer the $i-n$ from $n$ to $i$ by our restriction. Thus we subtract $\max(0,i-n)$ from the length of each string. If the difference is negative, this corresponds to the case that a permutation has not all of its last $m - n + 1$ spots in increasing order, and thus, is not mapped to. Thus, we take the maximum of the difference and $0$.
+\end{proof}
+
+Enumerating the restricted parking functions using this formula may be an interesting area for further exploration.
+
+\subsection*{Circular parking functions}
+
+Imagine a variation on the original parking function set up where at the end of the one-way street, there is a route back to the start of the one way street. Thus, if a car does not get to park, it can return to the start of the street and try again. \\
+
+We simulated two different variants of this problem. In both, each car has a ordering of the car spots by preference. The car visits to each of its preferences in order until it reaches an unoccupied spot or the end of the street. In the first variant \textit{front}, once the car reaches the end of the street, it returns to the start of the street before any other cars get to attempt to park. In the second variant \textit{back}, once the car reaches the end of the street, it ends up at the back of the queue and can only try to park after all other cars have tried to park. \\
+
+When we simulated (by sampling) the total number of times cars reached the end of the street without parking, the second variant consistently had slightly fewer parking failures than the first variant. The average difference per sample appears to grow superlinearly with $n$ --- the number of cars (and parking spots). Understanding why this is true is an area for further exploration.

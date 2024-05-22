@@ -1,0 +1,43 @@
+\documentclass[titlepage,12pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{esint}
+
+\usepackage{mathpazo}
+
+\usepackage{hyperref}
+
+\usepackage{tikz-cd}
+
+\usepackage{enumitem}
+\setlist[enumerate, 1]{label = (\alph*)}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+
+\title{Parking functions research log}
+\author{Alan Kappler \& Jayden Thadani}
+\date{Summer 2024}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{corollary}{Corollary}[proposition]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}{Definition}
+\newtheorem*{remark}{Remark}
+
+\begin{document}
+
+\maketitle
+
+\include{week1}
+\nocite{*}
+\bibliographystyle{annotate}
+\bibliography{parkingbibliography}
+
+\end{document}
