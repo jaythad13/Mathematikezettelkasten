@@ -1,0 +1,146 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{Linear Algebra Done Right self-study}
+\assignment{Exercises 6.C --- Orthogonal Complements and Minimisation Problems}
+\duedate{}
+
+\begin{document}
+
+\begin{problem}[1]
+	Suppose $v_{1}, \dots, v_{m} \in V$. Prove that
+	\[
+		\{ v_{1}, \dots, v_{m} \}^{\perp} = (\operatorname{span}(v_{1}, \dots, v_{m}))^\perp.
+	\]
+\end{problem}
+
+\begin{solution}~
+	
+	We will show this by double containment. \\
+
+	Suppose  $u \in \{ v_{1}, \dots, v_{m} \}^{\perp}$. Then $\left < v_{j}, u \right > = 0$ for each $j \in \mathbb{N}_{m}$. Thus, by linearity in the first slot, for any $v = a_{1} v_{1} + \dots + a_m v_{m} \in (\operatorname{span}(v_{1}, \dots, v_{m}))^{\perp}$, we have $\left < v, u \right > = 0$. That is, $v \in (\operatorname{span}(v_{1}, \dots, v_{m}))^{\perp}$, and thus, $(\operatorname{span}(v_{1}, \dots, v_{m}))^{\perp} \subset \{ v_{1}, \dots, v_{m} \}^{\perp}$. \\
+
+	Since $\{ v_{1}, \dots, v_{m} \} \subset \operatorname{span}(v_{1}, \dots, v_{m})$, obviously, we have $(\operatorname{span}(v_{1}, \dots, v_{m}))^{\perp} \subset \{ v_{1}, \dots, v_{m} \}^{\perp}$.
+\end{solution}
+
+\pagebreak
+
+\begin{problem}[2]
+	Suppose $U$ is a finite-dimensional subspace of $V$. Prove that $U^{\perp} = \{ 0 \}$ if and only if $U = V$.
+\end{problem}
+
+\begin{solution}~
+	
+	If $U = V$ then $U^{\perp} = \{ 0 \}$. This is because the only vector $u \in U$ that gives $\left < v, u \right > = 0$ for all $v \in V$ is $u = 0$. \\ 
+
+	Suppose $U^{\perp} = \{ 0 \}$. Then $U = (U^{\perp})^{\perp}$ and thus, $U = \{ 0 \}^{\perp}$. That is, $U = V$.
+\end{solution}
+
+\pagebreak
+
+\begin{problem}[3]
+	Suppose $U$ is a subspace of $V$ with the basis $u_{1}, \dots, u_{m}$ and
+	\[
+		u_{1}, \dots, u_{m}, w_{1}, \dots, w_{n}
+	\]
+	is a basis of $V$. Prove that if the Gram-Schmidt procedure is applied to the basis of $V$ above, producing a list $e_{1}, \dots, e_{m}, f_{1}, \dots, f_{n}$, then $e_{1}, \dots, e_{m}$ is an orthonormal basis of $U$ and $f_{1}, \dots, f_{n}$ is an orthonormal basis of $U^{\perp}$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[4]
+	Suppose $U$ is the subspace of $\mathbb{R}^{4}$ defined by
+	 \[
+		U = \operatorname{span}((1, 2, 3, -4), (-5, 4, 3, 2)).
+	\]
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[5]
+	Suppose $V$ is finite-dimensional and $U$ is a subspace of $V$. Show that $P_{U^{\perp}} = I - P_{U}$, where $I$ is the identity operator on $V$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[6]
+	Suppose $U$ and $W$ are finite-dimensional subspaces of $V$. Prove that $P_{U} P_{W} = 0$ if and only if $\left < u, w \right > = 0$ for all $u \in U$ and all $w \in W$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[7]
+	Suppose $V$ is finite-dimensional and $P \in \mathcal{L}(V)$ is such that $P^{2} = P$ and every vector in $\operatorname{null} P$ is orthogonal to every vector in $\operatorname{range} P$. Prove that there exists a subspace $U$ of $V$ such that $P = P_{U}$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[8]
+	Suppose $V$ is finite-dimensional and $P \in \mathcal{L}(V)$ is such that $P^{2} = P$ and
+	\[
+		\lVert Pv \rVert \le \lVert v \rVert
+	\]
+	for every $v \in V$. Prove that there exists a subspace $U$ of $V$ such that $P = P_{U}$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[9]
+	Suppose $T \in \mathcal{L}(V)$ and $U$ is a finite-dimensional subspace of $V$. Prove that $U$ is invariant under $T$ if and only if $P_{U} T P_{U} = T P_{U}$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[10]
+	Suppose $V$ is finite-dimensional, $\mathrm{T} \in \mathcal{L}(V)$, and $U$ is a subspace of $V$. Prove that $U$ and $U^{\perp}$ are both invariant under $T$ if and only if $P_{U} T = T P_{U}$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[11]
+	In $\mathbb{R}^{4}$ let
+	 \[
+		U = \operatorname{span}((1, 1, 0, 0), (1, 1, 1, 2)).
+	\]
+	Find $u \in U$ such that $\lVert u - (1, 2, 3, 4) \rVert$ is as small as possible.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[12]
+	Find $p \in \mathcal{P}_{3}(\mathbb{R})$ such that $p(0) = 0$, $p'(0) = 0$, and
+	\[
+		\int_{0}^{1} \lvert 2 + 3x - p(x) \rvert^{2} \, dx 
+	\]
+	is as small as possible.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[13]
+	Find $p \in \mathcal{P}_{5}(\mathbb{R})$ that makes
+	\[
+		\int_{- \pi}^{\pi} \lvert \sin{x} - p(x) \rvert^{2} \, dx 
+	\]
+	as small as possible.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[14]
+	Suppose $\mathcal{C}([-1, 1])$ is the vector space of continuous real-valued functions on the interval $[-1, 1]$ with inner product given by
+	\[
+		\left < f, g \right > = \int_{-1}^{1} f(x) g(x) \, dx 
+	\]
+	for $f, g \in \mathcal{C}([-1, 1])$. Let $U$ be the subspace of $\mathcal{C}([-1, 1])$ defined by
+	 \[
+		U = \{ f \in \mathcal{C}([-1, 1]) \mid f(0) = 0 \}.
+	\]
+	\begin{enumerate}
+		\item Show that $U^{\perp} = \{ 0 \}$.
+		\item Show that 6.47 and 6.51 do not hold without the finite-dimensional hypothesis.
+	\end{enumerate}
+\end{problem}
+
+\end{document}
