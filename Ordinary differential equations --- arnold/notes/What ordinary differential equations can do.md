@@ -1,5 +1,6 @@
 ---
 tags:
+- arnold
 - self-study
 - diff-eq
 ---
