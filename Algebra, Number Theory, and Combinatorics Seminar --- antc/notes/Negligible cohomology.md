@@ -20,8 +20,6 @@ A $G$-module is an abelian group $M$ with a group action $G \times M \to M$ such
 
 Every representation is a $G$-module if we treat the vector space like an abelian group.
 
-
-
 ### Group cohomology
 
 The $\mathbb{Z}/2\mathbb{Z}$ example of how you lose surjectivity when you look at $\mathbb{Z} /2\mathbb{Z}$ invariant parts of $\mathbb{Z}$, $2 \mathbb{Z}$, and $\mathbb{Z} / 2\mathbb{Z}$.
