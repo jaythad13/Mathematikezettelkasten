@@ -1,5 +1,6 @@
 ---
 tags:
+- parking-functions
 - research
 - comb
 ---
