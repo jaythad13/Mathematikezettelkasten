@@ -1,5 +1,6 @@
 ---
 tags:
+- ladr
 - self-study
 - lin-alg
 ---
