@@ -2,7 +2,7 @@
 tags:
 - nt
 - alg-nt
-- PUNDiT
+- pundit
 ---
 
 ##### _example:_ sign obstruction

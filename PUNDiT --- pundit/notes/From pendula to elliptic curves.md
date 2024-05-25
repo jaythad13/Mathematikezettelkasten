@@ -1,6 +1,7 @@
 ---
 tags:
 - alg-geo
+- pundit
 ---
 
 ##### _definition:_ congruent numbers

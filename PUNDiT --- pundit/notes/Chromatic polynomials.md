@@ -1,7 +1,7 @@
 ---
 tags:
 - alg-comb
-- PUNDiT
+- pundit
 ---
 
 > Chromatic polynomials are easy to learn!

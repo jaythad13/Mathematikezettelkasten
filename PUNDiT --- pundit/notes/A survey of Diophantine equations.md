@@ -1,7 +1,7 @@
 ---
 tags:
 - nt
-- PUNDiT
+- pundit
 ---
 
 An obviously natural question to ask is for positive integers that give us $a^2 + b^2 = c^2$? What are all the positive integers?

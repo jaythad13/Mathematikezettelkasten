@@ -2,7 +2,7 @@
 tags:
 - nt
 - alg-nt
-- PUNDiT
+- pundit
 ---
 
 We've already seen various Diophantine equations. One more is

@@ -3,7 +3,7 @@ tags:
 - nt
 - alg-nt
 - alg-geo
-- PUNDiT
+- pundit
 ---
 
 av15@rice.edu

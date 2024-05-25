@@ -1,6 +1,7 @@
 ---
 tags:
 - alg
+- pundit
 ---
 
 ### What's a group?
