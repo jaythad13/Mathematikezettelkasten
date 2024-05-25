@@ -1,6 +1,6 @@
 ---
 tags:
-- lecture-series
+- 47-lec
 - moon-duchin
 ---
 
