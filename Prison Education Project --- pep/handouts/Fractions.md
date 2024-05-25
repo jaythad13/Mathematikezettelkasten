@@ -1,3 +1,8 @@
+---
+tags:
+- pep
+---
+
 
 > When introduced to a new idea, always ask why you should care. Do not expect an answer right away, but demand one eventually.
 
