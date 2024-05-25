@@ -1,5 +1,8 @@
 ---
 tags:
+- spivak
+- anal
+- top
 - calc
 - self-study
 ---

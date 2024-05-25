@@ -1,6 +1,7 @@
 ---
 tags:
-- calc
+- spivak
+- lin-alg
 - self-study
 ---
 
