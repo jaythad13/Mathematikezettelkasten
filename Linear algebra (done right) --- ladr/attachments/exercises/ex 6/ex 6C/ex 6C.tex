@@ -47,6 +47,16 @@
 	is a basis of $V$. Prove that if the Gram-Schmidt procedure is applied to the basis of $V$ above, producing a list $e_{1}, \dots, e_{m}, f_{1}, \dots, f_{n}$, then $e_{1}, \dots, e_{m}$ is an orthonormal basis of $U$ and $f_{1}, \dots, f_{n}$ is an orthonormal basis of $U^{\perp}$.
 \end{problem}
 
+\begin{solution}~
+	We know that the Gram-Schmidt procedure preserves spans. Thus, $e_{1}, \dots, e_{m}$ is a basis of $U$. \\
+	
+	By definition, $\left < e_{j}, f_{k} \right > = 0$ for all $j \in \mathbb{N}_{m}, k \in \mathbb{N}_{n}$. Then, by linearity, any $u \in U$ gives $\left < f_{k}, u \right > = \left < u, f_{k} \right >$ for all $k \in \mathbb{N}$. Then, again by linearity, any $w = b_{1} f_{1} + \dots + b_{n} f_{n} \in \operatorname{span}(f_{1}, \dots, f_{n})$ gives us $\left < u, w \right > = 0$ for all $u \in U$. Thus, $\operatorname{span}(f_{1}, \dots, f_{n}) \subset U^{\perp}$. \\
+
+	For any $w \in U^{perp}$, we can write $w = a_{1} e_{1} + \dots a_{m} e_{m} + b_{1} f_{1} + \dots + b_{n} f_{n}$. We must have $\left < e_{j}, w \right > = 0$ for all $j \in \mathbb{N}_{m}$, but $\left < e_{j}, w \right > = a_{j}$. Thus, $a_{j} = 0$ for all $j \in \mathbb{N}_{m}$ and $w \in \operatorname{span}(f_{1}, \dots, f_{n})$. That is, $U^{\perp} \subset \operatorname{span}(f_{1}, \dots, f_{n})$. \\
+
+	Thus, by double containment, $U^{\perp} = \operatorname{span}(f_{1}, \dots, f_{n})$ of which $f_{1}, \dots, f_{n}$ is obviously an orthonormal basis.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[4]
@@ -54,13 +64,38 @@
 	 \[
 		U = \operatorname{span}((1, 2, 3, -4), (-5, 4, 3, 2)).
 	\]
+	Find an orthonormal basis of $U$ and an orthonormal basis of $U^{\perp}$.
 \end{problem}
+
+\begin{solution}~
+	
+	Call the two vectors $u_{1}$ and $u_{2}$ respectively. We can extend $u_{1}, u_{2}$ to a basis of $\mathbb{R}^{4}$. Notice that $(1, 0, 0, 0)$ and $(0, 1, 0, 0)$ are not in $U$. Thus, $u_{1}, u_{2}, e_{1}, e_{2}$ forms a basis of $\mathbb{R}^{4}$. \\
+
+	Applying Gram-Schmidt to this gives us the orthonormal basis
+	\[
+		f_{1}, f_{2}, f_{3}, f_{4} = \frac{(1, 2, 3, -4)}{\sqrt{30}}, \frac{(-77, 56, 39, 38)}{\sqrt{30}}, \frac{(1/401, 117, 60, 151)}{\sqrt{76190}}, \frac{(0, 9, -10, -3)}{\sqrt{190}}.
+	\]
+	$f_{1}, f_{2}$ is an orthonormal basis of $U$ and $f_{3}, f_{4}$ is an orthonormal basis of $U^{\perp}$.
+\end{solution}
 
 \pagebreak
 
 \begin{problem}[5]
 	Suppose $V$ is finite-dimensional and $U$ is a subspace of $V$. Show that $P_{U^{\perp}} = I - P_{U}$, where $I$ is the identity operator on $V$.
 \end{problem}
+
+\begin{solution}~
+	We know that we can uniquely decompose any $v \in V$ into $w + u$ with $w \in U^{\perp}$ and $u \in (U^{\perp})^{\perp} = U$. But then this is also the unique decomposition into $u + w$ with $u \in U$ and $w \in U^{\perp}$. Thus, $P_{U} v = u$ and
+	\[
+		\begin{split}
+			P_{U^{\perp}} & = w \\
+				      & = v - u \\
+				      & = I v - P_{U} v \\
+				      & = (I - P_{U}) v.
+		\end{split}
+	\]
+	Thus, $P_{U^{\perp}} = I - P_{U}$.
+\end{solution}
 
 \pagebreak
 
