@@ -198,6 +198,36 @@
 				\]
 				For any $b \in \mathbb{R}$, choose $a = b^{1/xy}$. Thus, $b = a^{xy}$. Then $b^{1/xy} = a$ and $(b^{1/x})^{1/y} = a$. That is, $b^{1/xy} = (b^{1/x})^{1/y}$.
 			\end{proof}
+		\item Let $r = r_{1}/r_{2}$ and $s = s_{1}/s_{2}$. Then $r + s = (r_{1} s_{2} + s_{1} r_{2})/r_{2} s_{2}$. Then
+			\[
+				\begin{split}
+					b^{r + s} & = b^{(r_{1} s_{2} + s_{1} r_{2})/r_{2} s_{2}} \\
+						  & = (b^{r_{1} s_{2} + s_{1} r_{2}})^{1/r_{2} s_{2}} \\
+						  & = (b^{r_{1} s_{2}} b^{s_{1} r_{2}})^{1/r_{2} s_{2}} \\
+						  & = (b^{r_{1} s_{2}})^{1/r_{2} s_{2}} (b^{s_{1} r_{2}})^{1/r_{2} s_{2}} \\
+						  & = b^{r_{1} s_{2}/r_{2} s_{2}} b^{s_{1} r_{2}/s_{2} r_{2}} \\
+						  & = b^{r_{1}/r_{2}} b^{s_{1}/s_{2}} \\
+						  & = b^{r} b^{s}.
+				\end{split}
+			\]
+			as desired.
+		\item First we will show that $b^{r}$ is an upper bound on $B(r)$. \\
+
+			Any element of $B(r)$ is of the form $b^{t}$ for some rational $t \le r$. We can write $b^{r} = b^{t} b^{r - t}$ where $r - t$ is some nonnegative rational. Since $b > 1$, $b^{r - t} \ge 1$, and thus, $b^{r} \ge b^{t}$. Thus, $b^{r}$ is an upper bound on $B(r)$. Now we will show that it is the least upper bound. \\
+
+			Suppose $b^{r} > \beta \in \mathbb{R}$. Then $\beta$ is less than an element of  $B(r)$ --- $b^{r}$ itself, and thus, is not an upper bound. That is, no real less than $b^{r}$ can be an upper bound of $B(r)$ --- $b^{r}$ is the least upper bound of $B(r)$.
+		\item First we will show that $b^x b^{y}$ is an upper bound on $B(x + y)$. \\
+
+			Note that any element of $B(x + y)$ can be written as $b^{q}$ for some $q \in \mathbb{Q}$ with $q \le x + y$. In turn, $q$ can give us two rationals $q_{1}$ and $q_{2}$, with $q_{1} \le x$ and $q_{2} \le y$ and $q_{1} + q_{2} \ge q$. Choose $q_{1}$ to be a rational between $x - (x + y - q)/2$ and $x$. Choose $q_{2}$ to be a rational between $y - (x + y - q)/2$ and $y$. Thus, $b^{q} \le b^{q_{1}} b^{q_{2}} \le b^{x} b^{y}$, giving us that $b^{x} b^{y}$ is an upper bound. Now we show that it is the least upper bound. \\
+
+			Suppose $b^{x} b^{y} > \beta \in \mathbb{R}^{+}$. Then $\beta/b^{x} < r < b^{y}$ and where $r$ is a rational between the two reals. Since $\beta/r < b^{x}$, it is not an upper bound of $B(x)$. That is, there is some rational $t_{1} \le x$ with $\beta/r < b^{t_{1}}$. Similarly, since $r < y$, it is not an upper bound of $B(y)$, and thus, $r < b^{t_{2}}$ for some rational $t_{2} \le y$. Then $t_{1} + t_{2}$ is a rational less than $x + y$ with $\beta \le b^{t_{1} + t_{2}}$ ---
+			\[
+				\begin{split}
+					\beta & = \frac{\beta}{r} r \\
+					      & \le b^{t_{1}} b^{t_{2}} \\
+					      & = b^{t_{1} + t_{2}}.
+				\end{split}
+			\]
 	\end{enumerate}
 \end{solution}
 
@@ -231,7 +261,7 @@
 \pagebreak
 
 \begin{problem}[10.]
-	Suppose $z = a + bi$, $w = c + di$, and
+	Suppose $z = a + bi$, $w = u + vi$, and
 	\[
 		a = \left ( \frac{\lvert w \rvert + u}{2} \right )^{1/2} \quad b = \left ( \frac{\lvert w \rvert - u}{2} \right )^{1/2}.
 	\]
