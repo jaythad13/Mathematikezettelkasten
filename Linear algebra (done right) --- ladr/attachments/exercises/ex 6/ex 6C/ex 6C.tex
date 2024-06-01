@@ -103,6 +103,13 @@
 	Suppose $U$ and $W$ are finite-dimensional subspaces of $V$. Prove that $P_{U} P_{W} = 0$ if and only if $\left < u, w \right > = 0$ for all $u \in U$ and all $w \in W$.
 \end{problem}
 
+\begin{solution}~
+
+	Suppose $\left < u, w \right > = 0$ for all $u \in U$ and $w \in W$. Then, by definition, $W \subset U^{\perp}$ and $U \subset W^{\perp}$. Thus, $\operatorname{range} P_{W} = W \subset U^{\perp} = \operatorname{null} P_{U}$. Thus, $P_{U} P_{W} = 0$. \\
+
+	Suppose $P_{U} P_{W} = 0$. Then we must have $\operatorname{range} P_{W} \subset \operatorname{null} P_{U}$. However, $\operatorname{range} P_{W}$ is just $W$ and $\operatorname{null} P_{U} = U^{\perp}$. Thus, $W \subset U^{\perp}$. We know that taking the orthogonal complement of both sides reverses the inclusion, so $U \subset W^{\perp}$ as well. Thus, $\left < u, w \right > = 0$ for all $u \in U$ and $w \in W$.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[7]
