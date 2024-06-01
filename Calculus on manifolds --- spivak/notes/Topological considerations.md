@@ -10,7 +10,7 @@ In order to do calculus, having a characterisation of "topologically special" se
 
 ### Open and closed sets
 
-Obviously, the prototypical example of a closed set in $\bb R$ is the closed interval $[a, b]$ and for open sets, the open interval $(a, b)$. These have natural generalisations to closed and open sets in $\bb{R}^n$ — the closed rectangle $[a_1, b_1] \times \cdots \times [a_n, b_n]$, and the open rectangle $(a_1, b_1) \times \cdots \times (a_n, b_n)$. It turns out that we can formulate something equivalent to all the metric space notions of open sets with $r$-neighbourhoods. The basic idea is that since every $r$-neighbourhood contains an open rectangle (the inscribed cube inside a sphere) and every open rectangle contains an $r$-neighbourhood (look at just a cube inside the cuboid, and then look at the inscribed phere inside it), we can make the definitions below.
+Obviously, the prototypical example of a closed set in $\bb R$ is the closed interval $[a, b]$ and for open sets, the open interval $(a, b)$. These have natural generalisations to closed and open sets in $\bb{R}^n$ — the closed rectangle $[a_1, b_1] \times \cdots \times [a_n, b_n]$, and the open rectangle $(a_1, b_1) \times \cdots \times (a_n, b_n)$. Open subsets of $\mathbb{R}^n$ in general should then contain an open rectangle around each point.
 
 ##### _definition:_ closed rectangle
 
@@ -23,6 +23,8 @@ The set $(a_1, b_1) \times \cdots \times (a_n, b_n) \subset \bb R^n$, for real n
 ##### _definition:_ open set
 
 A set $U \subset \bb R^n$ is an open set if for each $\bvec x \in U$ we have some open rectangle $A$ such that $\bvec x \in A \subset U$.
+
+Note that all though this looks different, it is equivalent to the [[Analysis --- rudin/notes/Open and closed sets|metric space notion of open sets]] with $r$-neighbourhoods. The idea is that since $r$-neighbourhoods are open in this "rectangular topology" and open rectangles are open in the "$r$-neighbourhood topology", if a set is open according to one, it's open in the other. For example, if a set is open in the rectangle topology, then inside every rectangle, we can draw an $r$-neighbourhood around the desired point, and thus, the set is open in the $r$-neighbourhood topology.
 
 ##### _definition:_ closed
 
@@ -38,7 +40,7 @@ Any closed rectangle $[a_1, b_1] \times \cdots \times [a_n, b_n]$ is a closed se
 
 Let $A$ be the closed rectangle. For any point $\bvec x = (x_1, \ldots, x_n) \in \bb R^n \setminus A$, we have at least one $i$ such that $x_i < a_i$ or $x_i > b_i$. Consider the following intervals.
 
-If $x_i \in [a_i, b_i]$ let $I_i = (a_i - 1, b_i + 1)$. If $x_i \notin [a_i, b_i]$, then we must either have $x_i < a_i$ or $x_i > b_i$. If we have the former, then let $I_i = (x_i - 1, a_i)$ and $I_i = (b_i, x_i + 1)$. Then $\prod_{i = 1}^n I_i$ is an open rectangle containing $\bvec x$. Since there is at least one $I_i$ that is not contained in the corresponding $[a_i, b_i]$ (for which we have $x_i \notin [a_i, b_i]$), this open rectangle also must only contain points not in $A$ — that is, the open rectangle is a subset of $\bb R^n \setminus A$.
+If $x_i \in [a_i, b_i]$ let $I_i = (a_i - 1, b_i + 1)$. If $x_i \notin [a_i, b_i]$, then we must either have $x_i < a_i$ or $x_i > b_i$. If we have the former, then let $I_i = (x_i - 1, a_i)$ and $I_i = (b_i, x_i + 1)$. Then $\prod_{i = 1}^n I_i$ is an open rectangle containing $\bvec x$. Since there is at least one $I_i$ that has no intersection with the corresponding $[a_i, b_i]$ (for which we have $x_i \notin [a_i, b_i]$), this open rectangle also must only contain points not in $A$ — that is, the open rectangle is a subset of $\bb R^n \setminus A$.
 
 We quote that [[Open and closed sets#_proposition _ (Potentially infinite) unions and finite intersections of open sets are open|arbitrary unions and finite intersections of open sets are open]], and [[Open and closed sets#_corollary _ Finite unions and (potentially infinite) intersections of closed sets are closed|finite unions and arbitrary intersections of closed sets are closed]] without proof, but the result is elementary.
 
@@ -91,7 +93,7 @@ A set $A$ is compact if every open cover $\mathcal O$ of $A$ contains a finite s
 
 ##### _example:_ finite sets are trivially compact
 
-Any finite set is compact — for $n$ points in the set pick the at-most-$n$ open sets of the open cover that contain the $n$ points.
+Any finite set is compact — for $n$ points in the set pick the at-most-$n$ open sets of the open cover necessary to contain the $n$ points.
 
 ##### _example:_ the harmonic numbers (with zero) are compact
 
@@ -111,7 +113,7 @@ A = \set{x \in [a, b] : [a, x] \text{ is covered by a finite subset of } \mathca
 $$
 Note that this set is non-empty (since $[a, a]$ is covered by the open set containing $a$) and is bounded above (by $b$). Thus, it has a least upper bound, $\alpha$. We will show that $A$ contains its least upper bound, and that least upper bound is $b$.
 
-First, note that $\alpha \in U$ for some $U \in \mathcal O$ since $\mathcal O$ covers $[a, b]$. Let the interval in $U$ containing $\alpha$ be $I$. Then note that there must be some $x \in I$ with $x < \alpha$ and $x \in A$ (if there wasn't then the the lower bound of $I$ would be a lesser upper bound on $A$). Thus, $[a, x]$ is covered by finitely many sets of $\mathcal O$, and $[a, \alpha]$ can be covered by adding at most one set ($U$, if needed).
+First, note that $\alpha \in U$ for some $U \in \mathcal O$ since $\mathcal O$ covers $[a, b]$. Let the interval in $U$ containing $\alpha$ be $I$. Then there must be some $x \in I$ with $x < \alpha$ and $x \in A$ (if there wasn't then the lower bound of $I$ would be a lesser upper bound on $A$). Thus, $[a, x]$ is covered by finitely many sets of $\mathcal O$, and $[a, \alpha]$ can be covered by adding at most one set ($U$, if needed).
 
 If $\alpha < b$, then any $y > \alpha$ with $y \in U$ gives us $[a, y]$ covered by a finite subset of $\mathcal O$ (the finite sub-cover of $[a, \alpha]$, since $\alpha \in A$, plus $U$, if needed). This would make $\alpha$ not an upper bound, and thus, lead to a contradiction. Thus, $\alpha \ge b$, but also since $b$ is an upper bound, $\alpha \le b$, giving us $\alpha = b$.
 
@@ -139,9 +141,9 @@ If $B \subset \bb R^m$ is compact and $\set{\bvec x} \times B$ (with $\bvec x \i
 
 Since $B$ is compact, $\set{\bvec x} \times B$ is compact, and thus, instead of looking at $\mathcal O$ we can look at the finite sub-cover $\bar{\mathcal O}$. 
 
-Specifically, for each point $(\bvec x, \bvec y) \in W \in \mathcal O$, look at the open rectangle $U \times V \subset W$ containing it with $U \subset \bb R^n$. Since the sets $V$ form an open cover of $B$, they can be reduced to a finite sub-cover $\set{V_1, \ldots, V_n}$. Also note, that $\bvec x \in U$ for any $U$, and thus, we can also look at only finitely many of the open rectangles $U$ — the corresponding $\set{U_1, \ldots, U_n}$.
+Specifically, for each point $(\bvec x, \bvec y) \in W \in \mathcal O$, look at the open rectangle $U \times V \subset W$ containing it with $U \subset \bb R^n$. Since the sets $V$ form an open cover of $B$, they can be reduced to a finite sub-cover $\set{V_1, \ldots, V_k}$. Also note, that $\bvec x \in U$ for any $U$, and thus, we can also look at only finitely many of the open rectangles $U$ — the corresponding $\set{U_1, \ldots, U_k}$.
 
-Since the finite intersection $\bar U = \bigcap_{i = 1}^n U_i$ is open, and is clearly covered by $\set{U_1, \ldots, U_n}$, we have that $\bar U \times B$ is covered by the finitely many (at most $n$) open sets $W_i \in \mathcal O$ that contain the open rectangles $U_i \times V_i$.
+Since the finite intersection $\bar U = \bigcap_{i = 1}^k U_i$ is open, and is clearly covered by $\set{U_1, \ldots, U_k}$, we have that $\bar U \times B$ is covered by the finitely many (at most $k$) open sets $W_i \in \mathcal O$ that contain the open rectangles $U_i \times V_i$.
 
 This gives us as a corollary the result that we're obviously working towards: that the product of any two compact sets is compact.
 
@@ -153,7 +155,7 @@ If $A \subset \bb R^n$ and $B \subset \bb R^m$ are compact, then $A \times B \su
 
 Suppose $\mathcal O$ is an open cover of $A \times B$. Then for each $\bvec x \in A$ it is an open cover of $\set{\bvec x} \times B$, and we have an open set $U_{\bvec x}$ such that $\bvec x \in U_{\bvec x}$ and $U_{\bvec x} \times B$ is covered by a finite subset of $\mathcal O$.
 
-However, since the set of all of these open sets $\set{U_{\bvec x}}$ is an open cover of the compact set $A$, a finite subset $\set{U_1, \ldots, U_n}$ covers $A$. Then, since $U_i \times B$ is covered by a finite subset of $\mathcal O$ for each $i \in \bb N_n$, we can take the finite union of those finite subsets, to get an open sub-cover that covers all of $A \times B$.
+However, since the set of all of these open sets $\set{U_{\bvec x}}$ is an open cover of the compact set $A$, a finite subset $\set{U_1, \ldots, U_k}$ covers $A$. Then, since $U_i \times B$ is covered by a finite subset of $\mathcal O$ for each $i \in \bb N_n$, we can take the finite union of those finite subsets, to get an open sub-cover that covers all of $A \times B$.
 
 This then allows us to characterise some compact sets on $\bb R^n$.
 
@@ -169,7 +171,7 @@ The corollary of this and its converse are also sometimes called the Heine-Borel
 
 ##### _corollary:_ closed bounded sets are exactly the compact sets
 
-A subset of $\bb R^n$ is compact if and only if it is closed and bounded
+A subset of $\bb R^n$ is compact if and only if it is closed and bounded.
 
 ###### _proof:_
 

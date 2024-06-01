@@ -84,8 +84,8 @@ If we have a discontinuous but bounded function $f : A \to \bb R$, we can measur
 For a bounded function $f : A \to \bb R$ (with $A \subset \bb R^n$), $\bvec a \in A$ and $\delta > 0$ let
 $$
 \begin{gathered}
-M(f, \bvec a, \delta) = \sup \set{f(\bvec x) : \norm{\bvec x - \bvec a} < \delta} \\
-m(f, \bvec a, \delta) = \inf \set{f(\bvec x) : \norm{\bvec x - \bvec a} < \delta}
+M(f, \bvec a, \delta) = \sup \set{f(\bvec x) \mid \norm{\bvec x - \bvec a} < \delta} \\
+m(f, \bvec a, \delta) = \inf \set{f(\bvec x) \mid \norm{\bvec x - \bvec a} < \delta}
 \end{gathered}.
 $$
 Then the oscillation of $f$ at $\bvec a$ is

@@ -5,7 +5,9 @@ tags:
 - self-study
 ---
 
-Calculus is about local linear approximations, and for manifolds, we talk about local linear approximations to Euclidean space — the [[Prototypical vector spaces|prototypical vector space]] $\bb{R}^n$ with our usual notions of length and angle. Specifically we mean
+Calculus is about local linear approximations, and for manifolds, we talk about local linear approximations to Euclidean space — the [[Prototypical vector spaces|prototypical vector space]] $\bb{R}^n$ with our usual notions of length and angle. Specifically, we mean the usual inner product structure on $\mathbb{R}^n$.
+
+### $\mathbb{R}^n$ as an inner product space
 
 ##### _definition:_ Euclidean space
 
@@ -31,10 +33,10 @@ For $\bvec{x}, \bvec{y} \in \bb{R}^n$ and $a \in \bb{R}$ we have
 
 1) follows from positive-definiteness in the [[Inner product spaces|definition of an inner product]] and its induced norm.
 2) is the [[Norms#_theorem:_ Cauchy-Schwartz inequality|Cauchy-Schwartz inequality]].
-3) follows from the Cauchy-Schwartz inequality:
+3) follows from the Cauchy-Schwartz inequality: just compare the squares of both sides.
 4) follows from homogeneity and conjugate homogeneity in the definition of an inner product.
 
-Note that we also have the polarisation identity (that also holds generally in vector spaces and allows us to define an inner product from a norm satisfying the parallelogram law).
+Note that we also have the [[Norms#_theorem_ the polarisation identity|polarisation identity]] (that holds generally in normed spaces and allows us to define an inner product from a norm satisfying the parallelogram law).
 
 ##### _proposition:_ the polarisation identity
 
@@ -54,6 +56,12 @@ $$
 \end{split}
 $$
 
+### Notational conventions
+
+##### _notation:_ $\mathbf{x}$
+
+A boldface lowercase letter like $\mathbf{x}$, denotes a vector $(x_{1}, \dots, x_{n}) \in \mathbb{R}$.
+
 We denote the standard basis of $\bb{R}^n$ by $\bvec e_1, \ldots, \bvec e_n$. Specifically,
 
 ##### _notation:_ $\bvec e_1, \ldots \bvec e_n$
@@ -64,12 +72,12 @@ For a linear transformation $T : \bb{R}^n \to \bb{R}^m$, we denote its matrix, s
 
 ##### _notation:_ matrix of a linear transformation, $A = (a_{i, j})$ 
 
-For a linear transformation $T : \bb{R}^n \to \bb{R}^m$ with $T(e_i) = \sum_{j = 0}^m a_{j, i} e_j$, its matrix $A = (a_{i, j})$ is the $m \times n$ matrix with $a_{i, j}$ in the $i$th row and $j$th column.
+For a linear transformation $T : \bb{R}^n \to \bb{R}^m$ with $T(\mathbf{e}_i) = \sum_{j = 0}^m a_{j, i} \mathbf{e}_j$, its matrix $A = (a_{i, j})$ is the $m \times n$ matrix with $a_{i, j}$ in the $i$th row and $j$th column.
 
 Finally, sometimes we need a convenient notation for $(x_1, \ldots, x_n, y_1, \ldots, y_m)$ for $\bvec x = (x_1, \ldots, x_n) \in \bb R^n$ and $\bvec y = (y_1, \ldots, y_m) \in \bb R^m$.
 
 ##### _notation:_ $(\bvec x, \bvec y)$
 
-For $\bvec x = (x_1, \ldots, x_n) \in \bb R^n$ and $\bvec y = (y_1, \ldots, y_m) \in \bb R^m$ we write $(\bvec x, \bvec y)$ to denote $(x_1, \ldots x_n, y_1, \ldots y_m) \in \bb R^{n + m}$.
+For $\bvec x = (x_1 \in \bb R^n$ and $\bvec y \in \bb R^m$ we write $(\bvec x, \bvec y)$ to denote $(x_1, \ldots x_n, y_1, \ldots y_m) \in \bb R^{n + m}$.
 
 Note that this notation basically says that we consider $\bb R^n \times \bb R^m$ to be the same as $\bb R^{n + m}$.
