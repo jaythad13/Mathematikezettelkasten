@@ -71,7 +71,7 @@ $$
 $$
 Thus, $\norm{T \bvec v - S \bvec v} = 0$ and $S \bvec v = T \bvec v$ for all $\bvec v \in \bb R^n$. That is, $S = T$, and the derivative is unique.
 
-This result will later allow us to prove a simple method to compute the derivative (we just show that that method satisfies the limit).
+This result will later allow us to prove a simple method to compute the derivative (we just show that that method satisfies the limit). Also note that this explains why it's important to consider the limit of $\lVert T \mathbf{v} - S \mathbf{v} \rVert/\lVert \mathbf{v} \rVert$ and not just the numerator by itself.
 
 ##### _example:_ the derivative
 

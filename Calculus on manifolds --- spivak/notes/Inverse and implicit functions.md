@@ -20,7 +20,7 @@ The details are as follows. For any $y = f(a)$, $y + h' \in V$, we should be abl
 
 Generalising this to functions on $\bb R^n$ requires some more involved set up, but amounts to essentially the same argument.
 
-##### _lemma:_ partials bound $\mathcal C^1$ functions
+##### _lemma:_ partials give a Lipschitz condition for $\mathcal C^1$ functions
 
 Let $A \subset \bb R^n$ be a rectangle and let $f : A \to \bb R^n$ be continuously differentiable. If there is some $M \in \bb R$ such that $\abs{D_j f_i \Big |_{\bvec x}} \le M$ for all $\bvec x \in A^{\circ}$, then
 $$

@@ -59,7 +59,7 @@ $$
 \end{split}
 $$
 
-We can apply limits inside $g$ since it is continuous at $\bvec a$.
+We can apply limits inside $g$ since [[Calculus on manifolds --- spivak/attachments/exercises/ex 2/ex 2.pdf|it is continuous]] at $\bvec a$.
 
 ### "Easy" derivatives
 
@@ -111,7 +111,7 @@ as desired.
 
 Using the next three, results, we can make it almost trivial to take the derivative of almost any function. (We will get completely trivial derivatives later).
 
-The [[Continuity#The projection principle|projection principle]] hinted that it sufficed to just look at the component functions of any function $f : A \to \bb R^m$, reducing our work to understanding functions $f : A \to \bb R$ where $A \subset \bb R^n$. We [[Chapter 1.pdf#page=6|showed that this holds for continuity]], and now we show that it holds for differentiability too.
+The [[Continuity#The projection principle|projection principle]] hinted that it sufficed to just look at the component functions of any function $f : A \to \bb R^m$, reducing our work to understanding functions $f : A \to \bb R$ where $A \subset \bb R^n$. We [[Calculus on manifolds --- spivak/attachments/exercises/ex 1/ex 1.pdf#page=11|showed that this holds for continuity]], and now we show that it holds for differentiability too.
 
 ##### _theorem:_ the projection principle holds for differentiability
 
@@ -142,7 +142,7 @@ g_i(\bvec v) =  \frac{f_i(\bvec a + \bvec v) - f_i(\bvec a) - Df_i \Big |_a}{\no
 $$
 and gives
 $$
-\lim_{\bvec v \to \bvec 0} g_i(\bvec v) = \bvec 0.
+\lim_{\bvec v \to \bvec 0} g_i(\bvec v) = 0.
 $$
 
 By the projection principle, this gives us
@@ -155,7 +155,7 @@ $$
 $$
 as desired.
 
-Note that we can also get this by bounding $\norm{g(\bvec v)}$ by the sum of all $\abs{g_i(\bvec v)}$ and avoid the sketchy thing about $0$ norm in the limit implying $\bvec 0$ in the limit. (Though it's pretty easy to see that it's true).
+Note that we can also get this by bounding $\norm{g(\bvec v)}$ by the sum of all $\abs{g_i(\bvec v)}$.
 
 Now we show that differentiation holds for sums and for products using two easier results.
 
