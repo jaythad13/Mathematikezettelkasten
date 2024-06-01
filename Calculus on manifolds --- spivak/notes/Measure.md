@@ -74,7 +74,7 @@ giving us the desired inequality.
 
 Finally, the equivalence of open and closed rectangle definitions of measure and content $0$ give us a trivial way to show that measure $0$ and content $0$ are the same for [[Topological considerations#_definition _ compact|compact]] sets. This tells us that $[a, b]$ obviously does not have measure $0$, ensuring that our definition of measure is sane too.
 
-##### _proposition:_ measure $0$ compact sets have measure $0$
+##### _proposition:_ measure $0$ compact sets have content $0$
 
 If $A \subset \mathbb{R}^n$ is compact and has measure $0$, then $A$ has content $0$ as well.
 
