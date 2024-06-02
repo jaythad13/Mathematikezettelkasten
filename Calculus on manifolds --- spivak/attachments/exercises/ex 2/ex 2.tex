@@ -23,7 +23,7 @@
 		\end{cases}
 	\]
 	\begin{enumerate}
-		\item If $\mathbf{x} \in \mathbb{R}^{2}$ and $h : \mathbb{R}^{2} \to \mathbb{R}$ is defined by $h(t) = f(tx)$, show that $h$ is differentiable.
+		\item If $\mathbf{x} \in \mathbb{R}^{2}$ and $h : \mathbb{R} \to \mathbb{R}$ is defined by $h(t) = f(t\mathbf{x})$, show that $h$ is differentiable.
 		\item Show that $f$ is not differentiable at $(0, 0)$ unless $g = 0$.
 	\end{enumerate}
 \end{problem}
@@ -63,6 +63,116 @@
 
 \pagebreak
 
+\begin{problem}[19.]
+	If $f(x, y) = x^{x^{x^{x^{y}}}} + (\log x)(\arctan{(\arctan{(\arctan{(\sin{(\cos{(xy)})})})})})$, find $D_{2} f \Big |_{(1, y)}$.
+\end{problem}
 
+\pagebreak
+
+\begin{problem}[21.]
+	Let $g_{1}, g_{2} : \mathbb{R}^{2} \to \mathbb{R}$ be continuous. Define $f : \mathbb{R}^{2} \to \mathbb{R}$ by
+	\[
+		f(x, y) = \int_{0}^{x} g_{1}(t, 0) \, dt + \int_{0}^{y} g_{2}(x, t) \, dt.
+	\]
+	\begin{enumerate}
+		\item Show that $D_{2} f \Big |_{(x, y)} = g_{2}(x, y)$.
+		\item How should $f$ be defined so that $D_{1} f \Big |_{(x, y)} = g_{1}(x, y)$?
+		\item Find a function $f : \mathbb{R}^{2} \to \mathbb{R}$ such that $D_{1} f(x, y) = x$ and $D_{2} f(x, y) = y$. Find one such that $D_{1} f(x, y) = y$ and $D_{2} f(x, y) = x$.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[22.]
+	If $f : \mathbb{R}^{2} \to \mathbb{R}$ and $D_{2} f = 0$, show that $f$ is independent of the second variable. If $D_{1} f = D_{2} f = 0$, show that $f$ is constant.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[23.] 
+	Let $A = \{ (x, y) \in \mathbb{R}^{2} \mid x < 0 \text{, or } x \ge 0 \text{ and } y \neq 0 \}$.
+	\begin{enumerate}
+		\item If $f : A \to \mathbb{R}$ and $D_{1} f = D_{2} f = 0$, show that $f$ is constant.
+		\item Find a function $f : A \to \mathbb{R}^{2}$ such that $D_{2} f = 0$ but $f$ is not independent of the second variable.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[25.]
+	Define $f : \mathbb{R} \to \mathbb{R}$ by
+	\[
+		f(x) = \begin{cases}
+			e^{-x^{2}} & x \neq 0 \\
+			0 & x = 0.
+		\end{cases}
+	\]
+	Show that $f$ is a $\mathcal{C}^{\infty}$ function, and $f^{(i)}(0) = 0$ for all $i$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[26.]
+	Let
+	 \[
+		f(x) = \begin{cases}
+			e^{-(x - 1)^{2}} e^{-(x + 1)^{2}} & x \in (-1, 1) \\
+			0 & x = 0.
+		\end{cases}
+	\]
+	\begin{enumerate}
+		\item Show that $f : \mathbb{R} \to \mathbb{R}$ is a $\mathcal{C}^{\infty}$ functions which is positive on $(-1, 1)$ and $0$ elsewhere.
+		\item Show that there is a $\mathcal{C}^{\infty}$ function $g : \mathbb{R} \to [0, 1]$ such that $g(x) = 0$ for $x \le 0$ and $g(x) = 1$ for $x \ge \varepsilon$.
+		\item If $\mathbf{a} \in \mathbb{R}^{n}$ define $g : \mathbb{R}^{n} \to \mathbb{R}$ by
+			\[
+				g(\mathbf{x}) = f((x_{1} - a_{1})/\varepsilon) \cdots f((x_{n} - a_{n})/\varepsilon).
+			\]
+			Show that $g$ is a $\mathcal{C}^{\infty}$ function which is positive on $(a_{1} - \varepsilon, a_{1} + \varepsilon) \times \dots \times (a_{n} - \varepsilon, a_{n} + \varepsilon)$ and zero elsewhere.
+		\item If $A \subset \mathbb{R}^{n}$ is open and $C \subset A$ is compact, show that there is a non-negative $\mathcal{C}^{\infty}$ function $f : A \to \mathbb{R}$ such that $f(\mathbf{x}) > 0$ for $\mathbf{x} \in C$ and $f = 0$ outside of some closed set contained in $A$.
+		\item Show that we can choose such an $f$ so that $f: A \to [0, 1]$ and $f(\mathbf{x}) = 1$ for $\mathbf{x} \in C$.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[29.]
+	Let $f : \mathbb{R}^{n} \to \mathbb{R}$. For $\mathbf{x} \in \mathbb{R}^{n}$, the limit
+	\[
+		\lim_{t \to 0} \frac{f(\mathbf{a} + t \mathbf{v}) - f(\mathbf{a})}{t},
+	\]
+	if it exists, is denoted $D_{\mathbf{v}} f \Big |_{\mathbf{a}}$, and called the \textit{directional derivative} of $f$ at $\mathbf{a}$, in the direction $\mathbf{v}$.
+	\begin{enumerate}
+		\item Show that $D_{\mathbf{e}_{i}} f \Big |_{\mathbf{a}} = D_{i} f \Big |_{\mathbf{a}}$.
+		\item Show that $D_{t\mathbf{v}} f \Big |_{\mathbf{a}} = t D_{\mathbf{v}} f \Big |_{\mathbf{a}}$.
+		\item If $f$ is differentiable at $\mathbf{a}$, show that $D_{\mathbf{v}} f \Big |_{\mathbf{a}} = Df \Big |_{\mathbf{a}} (\mathbf{v})$ and therefore $D_{\mathbf{v} + \mathbf{w}} f \Big |_{\mathbf{a}} = D_{\mathbf{v}} f \Big |_{\mathbf{a}} + D_{\mathbf{w}} f \Big |_{\mathbf{a}}$.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[33.]
+	Show that the continuity of $D_{1} f_{j}$ at $\mathbf{a}$ may be eliminated from the hypothesis of Theorem 2-8.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[36.]
+	Let $A \subset \mathbb{R}^{n}$ be an open set and $f : A \to \mathbb{R}^{n}$ a continuously differentiable one-to-one function such that $\det Df \Big |_{\mathbf{x}} \neq 0$ for all $\mathbf{x}$. Show that $f(A)$ is an open set and $f^{-1} : f(A) \to A$ is differentiable. Show also that $f(B)$ is open for any open set $B \subset A$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[37.]
+	\begin{enumerate}
+		\item Let $f : \mathbb{R}^{2} \to \mathbb{R}$ be a continuously differentiable function. Show that $f$ is not one-to-one.
+		\item Generalise this result to the case of a continuously differentiable function $f : \mathbb{R}^{n} \to \mathbb{R}^{m}$ with $m < n$.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[40.]
+	Use the implicit function theorem to redo Problem 2-15(c).
+\end{problem}
 
 \end{document}
