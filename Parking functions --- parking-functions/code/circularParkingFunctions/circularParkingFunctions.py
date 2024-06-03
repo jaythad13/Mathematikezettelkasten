@@ -1,6 +1,7 @@
 import random
+import numpy as np
 
-def parkingSimulator(m, n, pref, front):
+def parkingSimulator(m, n, pref, front, picky):
     "takes m cars, n spots, a preference matrix width a preference list for each car, and whether the car gets sent to the front or back. outputs the position of each car and the number of times each had to go around"
     tau = [-1]*n
     rev = [0]*m
@@ -17,7 +18,7 @@ def parkingSimulator(m, n, pref, front):
                 pref.pop(0)
                 cars.pop(0)
                 break
-            elif True:  #change to picky
+            elif picky:
                 pref[0].pop(0)
                 if (len(pref[0]) == 1) or (p < pref[0][1]):
                     ""
@@ -27,7 +28,7 @@ def parkingSimulator(m, n, pref, front):
                         pref.append(pref.pop(0))
                         cars.append(cars.pop(0))
                         break
-    return sum(rev)
+    return rev
 
 def samplePreferenceMatrix(m, n, N):
     full_list1 = []
@@ -54,12 +55,21 @@ def samplePermutationList(n):
         tau.append(nums.pop(j))
     return tau
 
-def compareFrontBack(n, N):
+def compareFrontBackPicky(n, N):
     L1, L2 = samplePreferenceMatrix(n, n, N)
-    revF = 0
-    revB = 0
+    revF = [0]*n
+    revB = [0]*n
     for i in range(len(L1)):
-        revF += parkingSimulator(n, n, L1[i], True)
+        addToRevF = parkingSimulator(n, n, L1[i], True, True)
+        for j in range(n):
+            revF[j] += addToRevF[j]
     for i in range(len(L2)):
-        revB += parkingSimulator(n, n, L2[i], False)
-    return revF, revB
+        addToRevB = parkingSimulator(n, n, L2[i], False, True)
+        for j in range(n):
+            revB[j] += addToRevB[j]
+    return (revF, revB)
+
+if __name__ == "__main__":
+    for i in range(100):
+        revF, revB = compareFrontBackPicky(10, 100)
+        print(revF, revB)
