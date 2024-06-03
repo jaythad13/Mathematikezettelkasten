@@ -13,21 +13,20 @@ def parkingSimulator(m, n, pref, front):
         while len(pref[0]) > 0:
             p = pref[0][0]
             if tau[p] == -1:
-                    tau[p] = i
-                    pref.pop(0)
-                    cars.pop(0)
-                    break
-            elif (len(pref[0]) == 1) or (p < pref[0][1]):
+                tau[p] = i
+                pref.pop(0)
+                cars.pop(0)
+                break
+            elif True:  #change to picky
                 pref[0].pop(0)
-            else:
-                rev[i] += 1
-                if front:
-                    pref[0].pop(0)
+                if (len(pref[0]) == 1) or (p < pref[0][1]):
+                    ""
                 else:
-                    pref[0].pop(0)
-                    pref.append(pref.pop(0))
-                    cars.append(cars.pop(0))
-                    break
+                    rev[i] += 1
+                    if not front:
+                        pref.append(pref.pop(0))
+                        cars.append(cars.pop(0))
+                        break
     return sum(rev)
 
 def samplePreferenceMatrix(m, n, N):
