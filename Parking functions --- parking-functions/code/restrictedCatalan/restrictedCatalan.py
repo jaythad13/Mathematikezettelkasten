@@ -11,7 +11,8 @@ def restrictedCatalan(c, s):
         C = C + Catalan(i - 1) * restrictedCatalan(c - i, s - i + 1)
     return C
 
-def run(N):
+if __name__ == "__main__":
+    N = int(input("How many Catalan triangle rows? \n"))
     for i in range(1, N):
         string = ""
         for j in range(1, i + 1):
