@@ -34,7 +34,7 @@ def parkingSimulator(m, n, pref, front, picky):
                     pref.append(pref.pop(0))
                     cars.append(cars.pop(0))
                     break
-    return rev, tau
+    return rev
 
 def samplePreferenceMatrix(m, n, ofthem, N):
     full_list1 = []
@@ -61,21 +61,21 @@ def samplePermutationList(n, ofthem):
         tau.append(nums.pop(j))
     return tau
 
-def compareFrontBackPicky(n, N):
-    L1, L2 = samplePreferenceMatrix(n, n, n, N)
+def compareFrontBackPicky(m, n, N):
+    L1, L2 = samplePreferenceMatrix(m, n, n, N)
     revF = [0]*n
     revB = [0]*n
     for i in range(len(L1)):
-        addToRevF = parkingSimulator(n, n, L1[i], True, True)
+        addToRevF = parkingSimulator(m, m, L1[i], True, True)
         for j in range(n):
             revF[j] += addToRevF[j]
     for i in range(len(L2)):
-        addToRevB = parkingSimulator(n, n, L2[i], False, True)
+        addToRevB = parkingSimulator(m, m, L2[i], False, True)
         for j in range(n):
             revB[j] += addToRevB[j]
     return (revF, revB)
 
-def compareFrontBackNotPicky(n, ofthem, N):
+def compareFrontBackNotPicky(m, n, ofthem, N):
     L1, L2 = samplePreferenceMatrix(n, n, ofthem, N)
     revF = [0]*n
     revB = [0]*n
@@ -89,19 +89,19 @@ def compareFrontBackNotPicky(n, ofthem, N):
             revB[j] += addToRevB[j]
     return (revF, revB)
 
-def countPermutations(n, ofthem, N):
-    L1, L2 = samplePreferenceMatrix(n, n, ofthem, N)
+def countPermutations(m, n, ofthem, N):
+    L1, L2 = samplePreferenceMatrix(m, n, ofthem, N)
     print(L1)
     frontPerm = {}
     backPerm = {}
     for i in range(len(L1)):
-        tau = tuple(parkingSimulator(n, n, L1[i], True, True)[1])
+        tau = tuple(parkingSimulator(m, m, L1[i], True, True)[1])
         if tau in frontPerm:
             frontPerm.update({tau : frontPerm[tau] + 1})
         else:
             frontPerm.update({tau : 1})
     for i in range(len(L2)):
-        tau = tuple(parkingSimulator(n, n, L2[i], False, True)[1])
+        tau = tuple(parkingSimulator(m, m, L2[i], False, True)[1])
         if tau in backPerm:
             backPerm.update({tau : backPerm[tau] + 1})
         else:
@@ -109,5 +109,5 @@ def countPermutations(n, ofthem, N):
     return frontPerm, backPerm
 
 if __name__ == "__main__":
-    frontPerm, backPerm = countPermutations(3, 3, 1)
-    print (frontPerm, backPerm)
+    revF, revB = compareFrontBackPicky(10, 10, 1000)
+    print(sum(revF), sum(revB))
