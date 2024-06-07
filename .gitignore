@@ -7,7 +7,6 @@
 *.fdb_latexmk
 *.fls
 *.sap
-*.jpeg
 *.pdf
 *.swp
 *.nav
