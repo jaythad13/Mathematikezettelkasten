@@ -1,5 +1,6 @@
 import random
 import numpy as np
+import copy
 
 def parkingSimulator(m, n, pref, front, picky):
     "takes m cars, n spots, a preference matrix with a preference list for each car, and whether the car gets sent to the front or back. outputs the position of each car and the number of times each had to go around"
@@ -13,19 +14,19 @@ def parkingSimulator(m, n, pref, front, picky):
         i = cars[0]
         while len(pref[0]) > 0:
             p = pref[0].pop(0)
-            if p == -1:
-                cars.pop(0)
-                pref.pop(0)
-                break
+            #if p == -1:
+                #cars.pop(0)
+                #pref.pop(0)
+                #break
             if tau[p] == -1:
                 tau[p] = i
                 pref.pop(0)
                 cars.pop(0)
                 break
-            elif len(pref[0]) < 1: #only happens if picky
-                for i in range(n - 1):
-                    pref[0].append((p + i)%n)
-                    pref[0].append(-1)
+            elif len(pref[0]) < 1: #only happens if not picky
+                for j in range(1, n):
+                    pref[0].append((p + j)%n)
+                    #pref[0].append(-1)
             if (p < pref[0][0]):
                 ""
             else:
@@ -34,7 +35,7 @@ def parkingSimulator(m, n, pref, front, picky):
                     pref.append(pref.pop(0))
                     cars.append(cars.pop(0))
                     break
-    return rev
+    return tau
 
 def samplePreferenceMatrix(m, n, ofthem, N):
     full_list1 = []
@@ -108,6 +109,40 @@ def countPermutations(m, n, ofthem, N):
             backPerm.update({tau : 1})
     return frontPerm, backPerm
 
+def generatePreferences(c, s):
+    L = []
+    for i in range(s**c):
+        j = i
+        pref = []
+        for k in range(c):
+            pref.append([j % s])
+            j = int(j/s)
+        L.append(pref)
+    return L
+
+def checkBinomialBijection(n):
+    L = generatePreferences(n, n + 1)
+    k1tok2 = {}
+    for pref in L:
+        pref2 = copy.deepcopy(pref)
+        k1 = numNs(pref2, 0)
+        tau = parkingSimulator(n, n + 1, pref, True, False)
+        hole = tau.index(-1)
+        shift = (n + 1 - hole) % (n + 1)
+        new0 = (n + 2 - shift) % (n + 1)
+        k2 = numNs(pref2, new0)
+        if (k1, k2) in k1tok2:
+            k1tok2.update({(k1, k2) : (k1tok2[(k1, k2)] + 1)})
+        else:
+            k1tok2.update({(k1, k2) : 1})
+    return k1tok2
+
+def numNs(L, N):
+    count = 0
+    for i in range(len(L)):
+        if L[i][0] == N:
+            count += 1
+    return count
+
 if __name__ == "__main__":
-    revF, revB = compareFrontBackPicky(10, 10, 1000)
-    print(sum(revF), sum(revB))
+    print(checkBinomialBijection(7))
