@@ -109,13 +109,13 @@ def countPermutations(m, n, ofthem, N):
             backPerm.update({tau : 1})
     return frontPerm, backPerm
 
-def generatePreferences(c, s):
+def generatePreferences(c, s): #note, pref of car 1 will always be spot 0
     L = []
-    for i in range(s**c):
+    for i in range(s**(c - 1)):
         j = i
-        pref1 = []
-        pref2 = []
-        for k in range(c):
+        pref1 = [[0]]
+        pref2 = [[0]]
+        for k in range(c - 1):
             d = j % s 
             pref1.append([d])
             pref2.append([d])
@@ -149,11 +149,14 @@ def numNs(L, N):
     return count
 
 if __name__ == "__main__":
-    n = 7
+    n = 9
     L = checkBinomialBijection(n)
-    i_ones = [0]*(n + 1)
-    for i in range(n + 1):
-        for k in L.keys():
-            if k[1] == i:
-                i_ones[i] += L[k]/(n + 1)
-    print(i_ones)
+    print(L)
+    for key in L.keys():
+        if L[key] != L[(key[1], key[0])]:
+            print(False)
+   # i_ones = [0]*(n + 1)
+    #for i in range(n + 1):
+     #   for k in L.keys():
+      #      if k[0] == i:
+       #         i_ones[i] += L[k]/(n + 1)
