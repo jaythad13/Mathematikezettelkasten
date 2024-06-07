@@ -149,13 +149,15 @@ def numNs(L, N):
     return count
 
 if __name__ == "__main__":
-    n = 9
-    L = checkBinomialBijection(n)
-    print(L)
-    for key in L.keys():
-        if L[key] != L[(key[1], key[0])]:
-            print(False)
-   # i_ones = [0]*(n + 1)
+    N = 9
+    for n in range(1, N):
+     L = checkBinomialBijection(n)
+     print(L)
+     for key in L.keys():
+         if L[key] != L[(key[1], key[0])]:
+                 print(False)
+
+    # i_ones = [0]*(n + 1)
     #for i in range(n + 1):
      #   for k in L.keys():
       #      if k[0] == i:
