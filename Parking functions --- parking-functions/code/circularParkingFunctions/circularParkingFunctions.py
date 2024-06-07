@@ -113,20 +113,24 @@ def generatePreferences(c, s):
     L = []
     for i in range(s**c):
         j = i
-        pref = []
+        pref1 = []
+        pref2 = []
         for k in range(c):
-            pref.append([j % s])
-            j = int(j/s)
-        L.append(pref)
+            d = j % s 
+            pref1.append([d])
+            pref2.append([d])
+            j = int(j / s)
+        L.append((pref1, pref2))
     return L
 
 def checkBinomialBijection(n):
     L = generatePreferences(n, n + 1)
     k1tok2 = {}
-    for pref in L:
-        pref2 = copy.deepcopy(pref)
+    for pair in L:
+        pref1 = pair[0]
+        pref2 = pair[1]
         k1 = numNs(pref2, 0)
-        tau = parkingSimulator(n, n + 1, pref, True, False)
+        tau = parkingSimulator(n, n + 1, pref1, True, False)
         hole = tau.index(-1)
         shift = (n + 1 - hole) % (n + 1)
         new0 = (n + 2 - shift) % (n + 1)
@@ -145,4 +149,11 @@ def numNs(L, N):
     return count
 
 if __name__ == "__main__":
-    print(checkBinomialBijection(7))
+    n = 7
+    L = checkBinomialBijection(n)
+    i_ones = [0]*(n + 1)
+    for i in range(n + 1):
+        for k in L.keys():
+            if k[1] == i:
+                i_ones[i] += L[k]/(n + 1)
+    print(i_ones)
