@@ -136,10 +136,18 @@ def checkBinomialBijection(n):
         new0 = (n + 2 - shift) % (n + 1)
         k2 = numNs(pref2, new0)
         if (k1, k2) in k1tok2:
-            k1tok2.update({(k1, k2) : (k1tok2[(k1, k2)] + 1)})
+            value = k1tok2[(k1, k2)]
+            value[1].append(readable(pref2))
+            k1tok2.update({(k1, k2) : (value[0] + 1, value[1])})
         else:
-            k1tok2.update({(k1, k2) : 1})
+            k1tok2.update({(k1, k2) : (1, [readable(pref2)])})
     return k1tok2
+
+def readable(L1):
+    L2 = []
+    for i in L1:
+        L2.append(i[0])
+    return L2
 
 def numNs(L, N):
     count = 0
@@ -149,13 +157,19 @@ def numNs(L, N):
     return count
 
 if __name__ == "__main__":
-    N = 9
-    for n in range(1, N):
-     L = checkBinomialBijection(n)
-     print(L)
-     for key in L.keys():
-         if L[key] != L[(key[1], key[0])]:
-                 print(False)
+    N = int(input())
+    print("\n")
+    L = checkBinomialBijection(N)
+    for i in range(1, N):
+        for j in range(1, N - i + 1):
+            if j > i:
+                print(f"{(i, j)}:\t {L[(i, j)]}")
+                print()
+                print(f"{(j, i)}:\t {L[(j, i)]}")
+                print("\n")
+    for key in L.keys():
+        if L[key][0] != L[(key[1], key[0])][0]:
+            print(False)
 
     # i_ones = [0]*(n + 1)
     #for i in range(n + 1):
