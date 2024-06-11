@@ -59,7 +59,7 @@ $$
 \end{split}
 $$
 
-We can apply limits inside $g$ since [[Calculus on manifolds --- spivak/attachments/exercises/ex 2/ex 2.pdf|it is continuous]] at $\bvec a$.
+We can apply limits inside $g$ since [[Calculus --- spivak/attachments/exercises/Calculus on Manifolds/ex 2/ex 2.pdf|it is continuous]] at $\bvec a$.
 
 ### "Easy" derivatives
 
@@ -111,7 +111,7 @@ as desired.
 
 Using the next three, results, we can make it almost trivial to take the derivative of almost any function. (We will get completely trivial derivatives later).
 
-The [[Continuity#The projection principle|projection principle]] hinted that it sufficed to just look at the component functions of any function $f : A \to \bb R^m$, reducing our work to understanding functions $f : A \to \bb R$ where $A \subset \bb R^n$. We [[Calculus on manifolds --- spivak/attachments/exercises/ex 1/ex 1.pdf#page=11|showed that this holds for continuity]], and now we show that it holds for differentiability too.
+The [[Continuity#The projection principle|projection principle]] hinted that it sufficed to just look at the component functions of any function $f : A \to \bb R^m$, reducing our work to understanding functions $f : A \to \bb R$ where $A \subset \bb R^n$. We [[Calculus --- spivak/attachments/exercises/Calculus on Manifolds/ex 1/ex 1.pdf#page=11|showed that this holds for continuity]], and now we show that it holds for differentiability too.
 
 ##### _theorem:_ the projection principle holds for differentiability
 

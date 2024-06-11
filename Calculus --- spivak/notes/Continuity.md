@@ -73,7 +73,7 @@ A function $f : \mathbb{R}^n \supset A \to \mathbb{R}^m$ is continuous if and on
 
 ###### _proof:_
 
-[[Calculus on manifolds --- spivak/attachments/exercises/ex 1/ex 1.pdf#page=11|See the exercises]].
+[[Calculus --- spivak/attachments/exercises/Calculus on Manifolds/ex 1/ex 1.pdf#page=11|See the exercises]].
 
 ### Oscillation
 

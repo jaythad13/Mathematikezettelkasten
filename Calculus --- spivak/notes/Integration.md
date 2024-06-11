@@ -6,15 +6,15 @@ tags:
 - self-study
 ---
 
-Once we have a nice notion of [[Calculus on manifolds --- spivak/notes/Integration over closed rectangles|integrating functions over closed rectangles]], it's easy to extend this to arbitrary bounded subsets of $\mathbb{R}^n$. Just multiply the function by an indicator function to say whether it's in the subset, and then integrate over the whole closed rectangle that it's bounded by. But is this product integrable? Most of the time.
+Once we have a nice notion of [[Calculus --- spivak/notes/Integration over closed rectangles|integrating functions over closed rectangles]], it's easy to extend this to arbitrary bounded subsets of $\mathbb{R}^n$. Just multiply the function by an indicator function to say whether it's in the subset, and then integrate over the whole closed rectangle that it's bounded by. But is this product integrable? Most of the time.
 
 ### An aside on integrability
 
-Recall the notion of the [[Calculus on manifolds --- spivak/notes/Continuity#_definition _ oscillation, $o(f, bvec a)$, $M(f, bvec a, delta)$, $m(f, bvec a, delta)$|oscillation]] of $f$ at $\mathbf{a}$. $o(f, \mathbf{a})$ is the limit of the difference of the maximum and minimum values of $f$ on smaller neighbourhoods of $\mathbf{a}$. This allows us to bound the difference between maximum and minimum values, and thus, bound the difference between [[Calculus on manifolds --- spivak/notes/Integration over closed rectangles#_definition _ lower and upper sums|lower and upper sums]].
+Recall the notion of the [[Calculus --- spivak/notes/Continuity#_definition _ oscillation, $o(f, bvec a)$, $M(f, bvec a, delta)$, $m(f, bvec a, delta)$|oscillation]] of $f$ at $\mathbf{a}$. $o(f, \mathbf{a})$ is the limit of the difference of the maximum and minimum values of $f$ on smaller neighbourhoods of $\mathbf{a}$. This allows us to bound the difference between maximum and minimum values, and thus, bound the difference between [[Calculus --- spivak/notes/Integration over closed rectangles#_definition _ lower and upper sums|lower and upper sums]].
 
 ##### _lemma:_ bounded oscillation gives bounded $U(f, P) - L(f, P)$
 
-Let $A \subset \mathbb{R}^n$ be a closed rectangle and let $f : A \to \mathbb{R}^n$ be a bounded function such that $o(f, \mathbf{a}) < \varepsilon$ for all $\mathbf{a} \in A$. Then there is a [[Calculus on manifolds --- spivak/notes/Integration over closed rectangles#_definition _ partition, subrectangles|partition]] of $A$ (say $P$) such that $U(f, P) - L(f, P) < \varepsilon v(A)$.
+Let $A \subset \mathbb{R}^n$ be a closed rectangle and let $f : A \to \mathbb{R}^n$ be a bounded function such that $o(f, \mathbf{a}) < \varepsilon$ for all $\mathbf{a} \in A$. Then there is a [[Calculus --- spivak/notes/Integration over closed rectangles#_definition _ partition, subrectangles|partition]] of $A$ (say $P$) such that $U(f, P) - L(f, P) < \varepsilon v(A)$.
 
 ###### _proof:_
 
@@ -28,7 +28,7 @@ U(f, P) - L(f, P) & = \sum_{s \in \mathcal{S}(P)} (M_{s} - m_{s}) v(s) \\
  & = \varepsilon v(A).
 \end{split}
 $$
-Note that we needed the [[Calculus on manifolds --- spivak/notes/Topological considerations#Compactness|compactness]] of $A$ — otherwise the local boundedness of the maximum-minimum difference wouldn't have translated to global boundedness.
+Note that we needed the [[Calculus --- spivak/notes/Topological considerations#Compactness|compactness]] of $A$ — otherwise the local boundedness of the maximum-minimum difference wouldn't have translated to global boundedness.
 
 This lemma gives us a very powerful result.
 
@@ -40,7 +40,7 @@ Let $A$ be a closed rectangle and $f : A \to \mathbb{R}$ a bounded function. Let
 
 First we will show that $B$ having measure $0$ is sufficient for integrability.
 
-Choose any $\varepsilon > 0$. Note that the subset of $B$ for which we can't bound the oscillation of $f$ by $\varepsilon$ [[Calculus on manifolds --- spivak/notes/Continuity#_proposition _ sufficiently discontinuous sets are closed|is closed]], and thus, [[Calculus on manifolds --- spivak/notes/Topological considerations#_corollary _ closed bounded sets are exactly the compact sets|is compact]]. Call this $B_{\varepsilon}$. To be precise, $B_{\varepsilon} = \{ \mathbf{b} \in B \mid o(f, \mathbf{b}) \ge \varepsilon \}$. Then since it is a compact measure zero set, [[Calculus on manifolds --- spivak/notes/Measure#_proposition _ measure $0$ compact sets have content $0$|it has content zero]]. Thus, we have closed rectangles $U_{1}, \dots, U_{n}$ with interiors covering $B_{\varepsilon}$ and $\sum_{i = 1}^n v(U_{i}) < \varepsilon$.
+Choose any $\varepsilon > 0$. Note that the subset of $B$ for which we can't bound the oscillation of $f$ by $\varepsilon$ [[Calculus --- spivak/notes/Continuity#_proposition _ sufficiently discontinuous sets are closed|is closed]], and thus, [[Calculus --- spivak/notes/Topological considerations#_corollary _ closed bounded sets are exactly the compact sets|is compact]]. Call this $B_{\varepsilon}$. To be precise, $B_{\varepsilon} = \{ \mathbf{b} \in B \mid o(f, \mathbf{b}) \ge \varepsilon \}$. Then since it is a compact measure zero set, [[Calculus --- spivak/notes/Measure#_proposition _ measure $0$ compact sets have content $0$|it has content zero]]. Thus, we have closed rectangles $U_{1}, \dots, U_{n}$ with interiors covering $B_{\varepsilon}$ and $\sum_{i = 1}^n v(U_{i}) < \varepsilon$.
 
 We can partition $A$ (call the partition $P$) with subrectangles $s \in \mathcal{S}(P)$ such that $s$ is either a subset of some $U_{i}$ (we will say $s \in \mathcal{S}_{1}$) or has no intersection with $B_{\varepsilon}$ (we will say $s \in \mathcal{S}_{2}$). To see that this is possible, just cover $B_{\varepsilon}$ with subrectangles that are a subset of $U_{i}$ first, and then extend the partition to the rest of $A$.
 
@@ -58,9 +58,9 @@ U(f, P') - L(f, P') & = \sum_{s' \in \mathcal{S}(P')} (M_{s} - m_{s}) v(s') \\
  & = \varepsilon(2M + v(A))
 \end{split}
 $$
-Since $\varepsilon$ can be any positive real, we can make this difference between upper and lower sums arbitrarily small. [[Calculus on manifolds --- spivak/notes/Integration over closed rectangles#_theorem _ integrable upper and lower sums get arbitrarily close|Thus]], $f$ is integrable.
+Since $\varepsilon$ can be any positive real, we can make this difference between upper and lower sums arbitrarily small. [[Calculus --- spivak/notes/Integration over closed rectangles#_theorem _ integrable upper and lower sums get arbitrarily close|Thus]], $f$ is integrable.
 
-Suppose that $f$ is integrable. Note that the union of all $B_{1/k}$ gives us all the discontinuous points of $f$ ([[Calculus on manifolds --- spivak/notes/Continuity#_proposition _ continuous functions do not oscillate|continuous points have no oscillation]]). We can show that each of these has measure $0$, and thus, [[Calculus on manifolds --- spivak/notes/Measure|so does their countable union]].
+Suppose that $f$ is integrable. Note that the union of all $B_{1/k}$ gives us all the discontinuous points of $f$ ([[Calculus --- spivak/notes/Continuity#_proposition _ continuous functions do not oscillate|continuous points have no oscillation]]). We can show that each of these has measure $0$, and thus, [[Calculus --- spivak/notes/Measure|so does their countable union]].
 
 Since $f$ is integrable, we choose a partition $P$ such that $U(f, P) - L(f, P) < \varepsilon/k$. Let $\mathcal{S}_{1/k}$ be the set of all of the subrectangles that intersect $B_{1/k}$. $\mathcal{S}_{1/k}$ must cover $B_{1/k}$ (since there are no other subrectangles in the partition that will cover it). Note that $M_{s} - m_{s} \ge 1/k$ for each of these $s$ since within their intersection with $B_{1/k}$ even an arbitrarily small neighbourhood of some $\mathbf{b} \in B_{1/k}$ will have sufficiently big $M_{s} - m_{s}$. Thus, we can bound the sum of the volumes by the difference of the upper and lower sums.
 $$
@@ -116,7 +116,7 @@ And then finally, we have the definition of the integral of such "nice" sets.
 
 ##### _example:_ non-Jordan measurable set
 
-We can still have sets that are not Jordan-measurable, and thus, for which integrals are not defined. See [[Calculus on manifolds --- spivak/attachments/exercises/ex 3/ex 3.pdf|the exercises]].
+We can still have sets that are not Jordan-measurable, and thus, for which integrals are not defined. See [[Calculus --- spivak/attachments/exercises/Calculus on Manifolds/ex 3/ex 3.pdf|the exercises]].
 
 
 ##### _definition:_ integral

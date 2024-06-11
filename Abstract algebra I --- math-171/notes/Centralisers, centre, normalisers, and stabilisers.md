@@ -65,7 +65,7 @@ For $G$ acting on $A$, stabiliser of $a \in A$ is $\operatorname{stab}_{G}(a)$, 
 
 ###### _proof:_
 
-See [[Homework 7.pdf#page=1|Homework 7]].
+See [[Abstract Algebra I --- math-171/attachments/homework/hw 7/hw 7.pdf|Homework 7]].
 
 ##### _definition:_ kernel
 
@@ -73,7 +73,7 @@ For $G$ acting on $A$, the stabiliser of $a \in A$ is $\ker_{G}(A)$, the set of 
 
 ###### _proof:_
 
-Again, see [[Homework 7.pdf#page=1|Homework 7]].
+Again, see [[Abstract Algebra I --- math-171/attachments/homework/hw 7/hw 7.pdf|Homework 7]].
 
 ##### _example:_ going back to groups acting on themselves
 

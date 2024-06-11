@@ -27,7 +27,7 @@ One example of a less trivial universal property is the following.
 
 ##### _example:_ $\mathbb{Z}$ is uniquely embedded in every ring
 
-Note that from now on, by [[Rings|ring]], we always mean ring with a multiplicative identity $\mathcal{1}$. With this assumption, we can prove the following universal property.
+Note that from now on, by [[Abstract Algebra I --- math-171/notes/An introduction to rings and fields|ring]], we always mean ring with a multiplicative identity $\mathcal{1}$. With this assumption, we can prove the following universal property.
 
 For all rings $R$, there exists a unique [[Ring homomorphisms|homomorphism]] $\varphi : \mathbb{Z} \to R$.
 

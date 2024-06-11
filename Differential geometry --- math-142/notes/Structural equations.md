@@ -111,6 +111,6 @@ $$
 
 Lots of backbreaking determinant computation. See the lecture notes (or if you can think of a nicer way to do this).
 
-Why would we care to do this backbreaking computation? Why did we care to do all the crazy cross products for [[Connection forms|connection forms]], and [[Frenet-Serret frames]] and in [[Differential geometry --- math-142/attachments/Homework assignment #5/Homework assignment #5.pdf|the homework]]?
+Why would we care to do this backbreaking computation? Why did we care to do all the crazy cross products for [[Connection forms|connection forms]], and [[Frenet-Serret frames]] and in [[Differential Geometry --- math-142/attachments/homework/hw 5/hw 5.pdf|the homework]]?
 
 The idea is that as long as you know some limited information — $\mathbf{V}[f_{i}]$ for each component $f_{i}$ of a vector field $\mathbf{W}$, we can compute $\nabla_{\mathbf{V}}\mathbf{W}$, and similarly for derivatives of $1$-forms $\phi$.

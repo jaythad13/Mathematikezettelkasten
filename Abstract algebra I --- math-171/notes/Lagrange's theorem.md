@@ -15,7 +15,7 @@ If $G$ is a finite group and $H \le G$, then $\lvert H \rvert \mid \lvert G \rve
 
 ###### _proof sketch:_
 
-We've already shown this [[Homework 7.pdf#page=5|in the homework]], just in the language of group actions. Just think of the orbit of $g$ with respect to $H$ as the coset of $g$ with respect to $H$.
+We've already shown this [[Abstract Algebra I --- math-171/attachments/homework/hw 7/hw 7.pdf#page=5|in the homework]], just in the language of group actions. Just think of the orbit of $g$ with respect to $H$ as the coset of $g$ with respect to $H$.
 
 This has two neat corollaries
 
