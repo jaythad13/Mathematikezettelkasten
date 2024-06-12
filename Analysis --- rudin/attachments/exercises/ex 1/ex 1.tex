@@ -184,7 +184,7 @@
 			We used the following result in the proof above.
 
 			\begin{lemma}
-				For any $b \in \mathbb{R}$ and $x, y \in \mathbb{N}$, $b^{1/xy} = (b^{1/x})^{1/y}$.
+				For any $1 < b \in \mathbb{R}$ and $x, y \in \mathbb{N}$, $b^{1/xy} = (b^{1/x})^{1/y}$.
 			\end{lemma}
 
 			\begin{proof}
@@ -213,12 +213,16 @@
 			as desired.
 		\item First we will show that $b^{r}$ is an upper bound on $B(r)$. \\
 
-			Any element of $B(r)$ is of the form $b^{t}$ for some rational $t \le r$. We can write $b^{r} = b^{t} b^{r - t}$ where $r - t$ is some nonnegative rational. Since $b > 1$, $b^{r - t} \ge 1$, and thus, $b^{r} \ge b^{t}$. Thus, $b^{r}$ is an upper bound on $B(r)$. Now we will show that it is the least upper bound. \\
+			Any element of $B(r)$ is of the form $b^{t}$ for some rational $t \le r$. We can write $b^{r} = b^{t} b^{r - t}$ where $r - t$ is some nonnegative rational. Since $b > 1$, $b^{r - t} \ge 1$, and thus, $b^{r} \ge b^{t}$. Thus, $b^{r}$ is an upper bound on $B(r)$. \\
+			
+			Now we will show that it is the least upper bound. \\
 
 			Suppose $b^{r} > \beta \in \mathbb{R}$. Then $\beta$ is less than an element of  $B(r)$ --- $b^{r}$ itself, and thus, is not an upper bound. That is, no real less than $b^{r}$ can be an upper bound of $B(r)$ --- $b^{r}$ is the least upper bound of $B(r)$.
 		\item First we will show that $b^x b^{y}$ is an upper bound on $B(x + y)$. \\
 
-			Note that any element of $B(x + y)$ can be written as $b^{q}$ for some $q \in \mathbb{Q}$ with $q \le x + y$. In turn, $q$ can give us two rationals $q_{1}$ and $q_{2}$, with $q_{1} \le x$ and $q_{2} \le y$ and $q_{1} + q_{2} \ge q$. Choose $q_{1}$ to be a rational between $x - (x + y - q)/2$ and $x$. Choose $q_{2}$ to be a rational between $y - (x + y - q)/2$ and $y$. Thus, $b^{q} \le b^{q_{1}} b^{q_{2}} \le b^{x} b^{y}$, giving us that $b^{x} b^{y}$ is an upper bound. Now we show that it is the least upper bound. \\
+			Note that any element of $B(x + y)$ can be written as $b^{q}$ for some $q \in \mathbb{Q}$ with $q \le x + y$. In turn, $q$ can give us two rationals $q_{1}$ and $q_{2}$, with $q_{1} \le x$ and $q_{2} \le y$ and $q_{1} + q_{2} \ge q$. Choose $q_{1}$ to be a rational between $x - (x + y - q)/2$ and $x$. Choose $q_{2}$ to be a rational between $y - (x + y - q)/2$ and $y$. Thus, $b^{q} \le b^{q_{1}} b^{q_{2}} \le b^{x} b^{y}$, giving us that $b^{x} b^{y}$ is an upper bound. \\
+
+			Now we show that it is the least upper bound. \\
 
 			Suppose $b^{x} b^{y} > \beta \in \mathbb{R}^{+}$. Then $\beta/b^{x} < r < b^{y}$ and where $r$ is a rational between the two reals. Since $\beta/r < b^{x}$, it is not an upper bound of $B(x)$. That is, there is some rational $t_{1} \le x$ with $\beta/r < b^{t_{1}}$. Similarly, since $r < y$, it is not an upper bound of $B(y)$, and thus, $r < b^{t_{2}}$ for some rational $t_{2} \le y$. Then $t_{1} + t_{2}$ is a rational less than $x + y$ with $\beta \le b^{t_{1} + t_{2}}$ ---
 			\[
@@ -238,13 +242,65 @@
 	\begin{enumerate}
 		\item For any positive integer $n$, $b^{n} - 1 > n(b - 1)$.
 		\item Hence $b - 1 > n(b^{1/n} - 1)$.
-		\item If $t > 1$ and $n > (b - 1)(t - 1)$, then $b^{1/n} < t$.
+		\item If $t > 1$ and $n > (b - 1)/(t - 1)$, then $b^{1/n} < t$.
 		\item If $w$ is such that $b^{w} < y$, then $b^{w + 1/n} < y$ for sufficiently large $n$.
 		\item If $b^{w} > y$, then $b^{w - 1/n} > y$ for sufficiently large $n$.
 		\item Let $A$ be the set of all $w$ such that $b^{w} < y$ and show that $x = \sup A$ satisfies $b^{x} = y$.
 		\item Prove that this $x$ is unique.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}~
+	\begin{enumerate}
+		\item Note that $b - 1$ divides $b^{n} - 1$. Specifically,
+			\[
+				b^{n} - 1 = (b^{n - 1} + b^{n - 2} + \cdots + b + 1)(b - 1).
+			\]
+			But since, $b > 1$, each $b^{k} > 1$ (for $k \in \mathbb{N}_{n - 1}$). That gives us
+			\[
+				\begin{split}
+					b^{n} - 1 & > (\underbrace{1 + \cdots + 1}_{n - 1 \text{ times}} + 1)(b - 1) \\
+						  & = n(b - 1)
+				\end{split}
+			\]
+			as desired.
+		\item Let $a = b^{1/n}$. Note that $a > 1$; else we wouldn't have $a^{n} = b > 1$. Thus, we have $a^{n} - 1 > n(a - 1)$. This is just $b - 1 > n(b^{1/n} - 1)$.
+		\item We already have $b - 1 > n(b^{1/n} - 1)$. Since $n > (b - 1)/(t - 1)$, we have
+			\[
+				b - 1 > \frac{b - 1}{t - 1}(b^{1/n} - 1).
+			\]
+			Rearranging, we get
+			\[
+				b^{1/n} - 1 < t - 1
+			\]
+			and finally $b^{1/n} < t$.
+		\item Choose $t = y/b^{w} > 1$. Then by (c), for sufficiently large $n$ we can get $b^{1/n} < t$. Thus,
+			\[
+				\begin{split}
+					b^{w + 1/n} & = b^{w} b^{1/n} \\
+						    & < b^{w} t \\
+						    & = b^{w} \frac{y}{b^{w}} \\
+						    & = y.
+				\end{split}
+			\]
+		\item Choose $t = b^{w}/y > 1$ and proceed similarly to (d).
+		\item Suppose by way of contradiction that $x$ does not give $b^{x} = y$. We must have $b^{x} > y$ or $b^{x} < y$. We will show neither is possible. \\
+
+			If we had $b^{x} > y$, we would have $b^{x - 1/n} > y$ for some large enough $n \in \mathbb{N}$. Then since $x - 1/n$ would be an upper bound of $A$ and $x - 1/n < x$, $x$ would not be the least upper bound of $A$. \\
+
+			If we had $b^{x} < y$, we would have $b^{x + 1/n} < y$ for some large enough $n \in \mathbb{N}$. Then since $x + 1/n \in A$  and $x + 1/n > x$, $x$ would not be an upper bound of $A$.
+		\item This follows from
+			\begin{lemma}
+				For any $1 < b \in \mathbb{R}$ and $x_{1} < x_{2} \in \mathbb{R}^{+}$, $b^{x_{1}} < b^{x_{2}}$.
+			\end{lemma}
+			\begin{proof}
+				First we show that the result holds for rationals. Suppose we have $p_{1}, p_{2} \in \mathbb{Q}$ with $p_{1} < p_{2}$. Write $p_{1} = m_{1}/n$ and $p_{2} = m_{2}/n$ for $m_{1}, m_{2}, n \in \mathbb{Z}$ with $m_{1} < m_{2}$. Then $b^{m_{1}} < b^{m_{2}}$. But then, we must have $(b^{m_{1}})^{1/n} < (b^{m_{2}})^{1/n}$. Else, on raising to the power of $n$, we'd get $b^{m_{2}} \le b^{m_{1}}$. Thus, $b^{p_{1}} < b^{p_{2}}$.
+				
+				Now we can show the corresponding result for positive reals $x_{1} < x_{2}$. Choose rationals $q_{1}, q_{2}$ with $x_{1} < q_{1} < q_{2} < x_{2}$. Then $b^{q} < b^{q_{1}} < b^{q_{2}}$ for any rational $q$ with $q < x_{1} < q_{1} < q_{2}$. Thus, $b^{q_{1}}$ is an upper bound of $B(x_{1})$. Also, by definition, $b^{q_{2}} \in B(x_{2})$ and thus, $b^{q_{2}} \le b^{x_{2}}$. Then, $b^{x_{1}} \le b^{q_{1}} < b^{q_{2}} \le b^{x_{2}}$, which gives us $b^{x_{1}} < b^{x_{2}}$.
+			\end{proof}
+			Thus, if $x, x' \in \mathbb{R}^{+}$ give $b^{x} = b^{x'} = y$, we must have $x = x'$. If we didn't we'd have $b^{x} < b^{x'}$ or $b^{x'} < b^{x}$.
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
