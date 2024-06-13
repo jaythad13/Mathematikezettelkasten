@@ -579,10 +579,29 @@
 	
 	Since  $V$ is a complex vector space, $T$ must have an upper-triangular matrix $A$ with respect to an orthonormal basis $e_{1}, \dots, e_{n}$. Note that since all the eigenvalues are less than $1$, we have $\lvert A_{j, j} \rvert < 1$ for all $j \in \mathbb{N}_{n}$. \\
 
-	Then, for any $v = c_{1} e_{1} + \cdots + c_{n} e_{n}$, we have
+	Then, for any $v = a_{1} e_{1} + \cdots + a_{n} e_{n}$, we have
 	\[
-		Tv = \sum_{j = 1}^{n} \left ( \sum_{k = j}^{n} c_{k} A_{j, k} \right ) e_{j}.
+		Tv = \sum_{j = 1}^{n} \left ( \sum_{k = j}^{n} a_{k} A_{j, k} \right ) e_{j}.
 	\]
+	We want to bound the magnitudes of the coefficients $\lvert \sum_{k = j}^{n} a_{k} A_{j, k} \rvert$ to be less than or equal to $\lambda_{j} \lvert a_{j} \rvert$ where $0 < \lambda_j < 1$. Unfortunately, with $A$, this is only possible for $j = n$ where the coefficient is $\lvert A_{n, n} a_{n} \rvert \le \lvert A_{n, n} \rvert \lvert a_{n} \rvert$ --- in all other cases, the rest of the terms $a_{k} A_{j, k}$ can be too large. \\
+
+	However, by scaling our basis, we can make these terms arbitrarily small. Choose some positive $\delta < 1$, and then set $f_{n + 1 - j} = \delta^{j} e_{n + 1 - j}$ for all $j \in \mathbb{N}_{n}$. Let $B$ be the upper-triangular matrix of $T$ with respect to $f_{1}, \dots, f_{n}$. Then $B_{i, j} = \delta^{j - i} A_{i, j}$. Moreover, for any $v = b_{1} f_{1} + \cdots + b_{n} f_{n} = a_{1} e_{1} + \cdots + a_{n} e_{n}$ we have $b_{j} = a_{j}/\delta^{n + 1 - j}$ \\
+
+	This means that, for any such $v$, we have
+	\[
+		Tv = \sum_{j = 1}^{n} \left ( \sum_{k = j}^{n} b_{k} B_{j, k} \right ) e_{j}
+	\]
+	just as before, but also, we have the bound
+	\[
+		\begin{split}
+			\left \lvert \sum_{k = j}^{n} b_{k} B_{j, k} \right \rvert & \le \left \lvert b_{j} B_{j, j} \right \rvert + \sum_{k = j + 1}^{n} \left \lvert b_{k} B_{j, k} \right \rvert \\
+										   & \le \lvert b_{j} \rvert \lvert A_{j, j} \rvert + \delta \sum_{k = j + 1}^{n} \lvert a_{j} A_{j, k} \rvert \\
+										   & \le \lambda_{j} \lvert b_{j} \rvert
+		\end{split}
+	\]
+	for any $\lambda_{j}$ with $\lvert A_{j, j} \rvert < \lambda_{j} < 1$. \\
+
+	Finally, we can choose $\lambda = \max_{j \in \mathbb{N}_{n}} \lambda_{j}$ and get  $\lVert Tv \rVert \le \lambda \lVert v \rVert$. Thus, for any positive integer $m \ge \log_{\lambda} \varepsilon$, we have $\lVert T^{m} v \rVert \le \varepsilon \lVert v \rVert$ for all $v \in V$.
 \end{solution}
 
 \pagebreak
