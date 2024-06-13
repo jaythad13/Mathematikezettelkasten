@@ -156,6 +156,15 @@ def numNs(L, N):
             count += 1
     return count
 
+def carsAtSpot(pref):
+    spots = []
+    for i in range(len(pref) + 1):
+        spots.append([])
+        for j in range(len(pref)):
+            if pref[j] == i:
+                spots[i].append(j)
+    return spots
+
 if __name__ == "__main__":
     N = int(input())
     print("\n")
@@ -163,16 +172,10 @@ if __name__ == "__main__":
     for i in range(1, N):
         for j in range(1, N - i + 1):
             if j > i:
-                print(f"{(i, j)}:\t {L[(i, j)]}")
+                print(f"{(i, j)}:\t {L[(i, j)][0]} {list(map(carsAtSpot, L[(i, j)][1]))}")
                 print()
-                print(f"{(j, i)}:\t {L[(j, i)]}")
+                print(f"{(j, i)}:\t {L[(j, i)][0]} {list(map(carsAtSpot, L[(j, i)][1]))}")
                 print("\n")
     for key in L.keys():
         if L[key][0] != L[(key[1], key[0])][0]:
             print(False)
-
-    # i_ones = [0]*(n + 1)
-    #for i in range(n + 1):
-     #   for k in L.keys():
-      #      if k[0] == i:
-       #         i_ones[i] += L[k]/(n + 1)
