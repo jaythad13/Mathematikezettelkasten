@@ -575,6 +575,16 @@
 	Suppose $V$ is a finite-dimensional vector space over $\mathbb C$, $T \in \mathcal L(V)$, all the eigenvalues of $T$ have absolute value less than $1$, and $\varepsilon > 0$. Prove that there exists a positive integer $m$ such that $\Vert T^m v \Vert \le \varepsilon \Vert v \Vert$ for every $v \in V$.
 \end{problem}
 
+\begin{solution}~
+	
+	Since  $V$ is a complex vector space, $T$ must have an upper-triangular matrix $A$ with respect to an orthonormal basis $e_{1}, \dots, e_{n}$. Note that since all the eigenvalues are less than $1$, we have $\lvert A_{j, j} \rvert < 1$ for all $j \in \mathbb{N}_{n}$. \\
+
+	Then, for any $v = c_{1} e_{1} + \cdots + c_{n} e_{n}$, we have
+	\[
+		Tv = \sum_{j = 1}^{n} \left ( \sum_{k = j}^{n} c_{k} A_{j, k} \right ) e_{j}.
+	\]
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[17.]
@@ -585,14 +595,42 @@
 	for $v \in V$.
 	\begin{enumerate}
 		\item
-			Show that if $\mathbb F = \mathbb R$, then $\Phi$ is a linear map from $V$ to $V'$.
+			Show that if $\mathbb F = \mathbb R$, then $\Phi$ is a linear map from $V$ to $V^{\vee}$.
 		\item
 			Show that if $\mathbb F = \mathbb C$, and $V \neq \{ 0 \}$, then $\Phi$ is not a linear map.
 		\item
 			Show that $\Phi$ is injective.
 		\item
-			Suppose $\mathbb F = \mathbb R$ and $V$ is finite-dimensional. Use parts $(a)$ and $(c)$ and a dimension-counting argument to show that $\Phi$ is an isomorphism from $V$ onto $V'$.
+			Suppose $\mathbb F = \mathbb R$ and $V$ is finite-dimensional. Use parts $(a)$ and $(c)$ and a dimension-counting argument to show that $\Phi$ is an isomorphism from $V$ onto $V^{\vee}$.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}~
+	\begin{enumerate}
+		\item Suppose $u = \lambda u_{1} + u_{2}$ for some $\lambda \in \mathbb{R}$. Then, for any $v \in V$, we would have
+			\[
+				\begin{split}
+					(\Phi u)(v) & = \left < v, u \right > \\
+						    & = \left < v, \lambda u_{1} + u_{2} \right > \\
+						    & = \left < v, \lambda u_{1} \right > + \left < v, u_{2} \right > \\
+						    & = \lambda \left < v, u_{1} \right > + \left < v, u_{2} \right > \\
+						    & = \lambda (\Phi u_{1})(v) + (\Phi u_{2})(v) \\
+						    & = (\lambda \Phi u_{1} + \Phi u_{2})(v).
+				\end{split}
+			\]
+			Thus, $\Phi (\lambda u_{1} + u_{2}) = \lambda \Phi u_{1} + \Phi u_{2}$ --- $\Phi$ is linear.
+		\item Suppose $V \neq \{ 0 \}$. Then we have some $u, v \in V$ with $u \neq 0$. Notice that
+			\[
+				\begin{split}
+					(\Phi (iu))(v) & = \left < v, iu \right > \\
+						    & = -i \left < v, u \right > \\
+						    & = - i (\Phi u)(v)
+				\end{split}
+			\]
+			We can only have linearity if $(\Phi u)(v) = 0$ always. However, if we choose $v = u \neq 0$, (which we can do) then $\Phi(u) \neq 0$. Thus, $\Phi$ is not linear.
+		\item Suppose we have $u_{1}, u_{2} \in V$ with $\Phi u_{1} = \Phi u_{2}$. Then we must have $(\Phi u_{1})(v) = (\Phi u_{2})(v)$ at each $v \in V$, and thus, $\left < v, u_{1} \right > = \left < v, u_{2} \right >$ at each $v \in V$. But then, by additivity in the last slot, we have $\left < v, u_{1} - u_{2} \right > = 0$ always, even for $v = u_{1} - u_{2}$. Thus, $\left < u_{1} - u_{2}, u_{1} - u_{2} \right > = 0$. This gives us $u_{1} - u_{2} = 0$, and finally, $u_{1} = u_{2}$.
+		\item We already know that $\dim V = \dim V^{\vee}$. Thus, $\Phi$, an injective linear map from $V$ to $V^{\vee}$ is an isomorphism.
+	\end{enumerate}
+\end{solution}
 
 \end{document}
