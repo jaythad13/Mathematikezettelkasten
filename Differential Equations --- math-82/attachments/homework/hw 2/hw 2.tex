@@ -1,0 +1,75 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 82 --- Differential Equations}
+\assignment{Homework 2}
+\duedate{}
+
+\begin{document}
+
+\begin{problem}[1:]
+	Which of these differential equations is separable? For those equations that are separable, separate them.
+	\begin{enumerate}
+		\item $\dfrac{dy}{dx} = \dfrac{e^{x + y}}{xy}$.
+		\item $C'(q) = q^{2} + 2q C(q)$.
+		\item $\dot{z} = \omega$, for some constant $\omega$.
+		\item $y' = \ln(x/y)$.
+		\item $x' + 2 = tx - 2x + t$.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[2:]
+	\begin{enumerate}
+		\item Find the general solution to the equation
+			\[
+				\frac{dy}{dx} = \frac{4 \sin{(2t)}}{y}.
+			\]
+			Write your answer as an explicit function $y(t)$ with two branches (using the $\pm$ sign).
+		\item Now impose the initial condition $y(0) = 1$. What branch of the solution satisfies this initial condition?
+		\item What is the largest $t$-interval on which the solution from (b) is defined?
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[3:]
+	Find all the solutions to the ordinary differential equation
+	\[
+		y y' = (1 - y^{2}) \sin{x}.
+	\]
+	Leave your answer as an implicit function of  $y$ and $x$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[4:]
+	Using the integrating factor method, find the general solution to the following differential equations.
+	\begin{enumerate}
+		\item $2y' + 3y = e^{4t}$.
+		\item $y' + ty = 5t$.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[5:]
+	Determine the solution to the initial value problem $y' = 5 - ty$ with $y(0) = 1$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[6:]
+	You can solve the $y'' = x (y')^{2}$ with the initial conditions $y'(0) = -2$ and $y(0) = 0$, using a change of variables combined with separation of variables. Use the following outline.
+	\begin{enumerate}
+		\item First define a new variable, $w = y'$.
+		\item Rewrite the original differential equation in terms of $w$ to get a separable ordinary differential equation.
+		\item Solve this equation to find $w(x)$.
+		\item Substitute the answer you get for $w(x)$ into $w = y'$ and solve for $y$.
+		\item Show that your solution satisfies the original differential equation and initial conditions.
+	\end{enumerate}
+\end{problem}
+
+\end{document}

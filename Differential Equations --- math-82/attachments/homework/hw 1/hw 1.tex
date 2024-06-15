@@ -1,0 +1,73 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 82 --- Differential Equation}
+\assignment{Homework 1}
+\duedate{}
+
+\begin{document}
+
+\begin{problem}[1:]
+	Verify that $y_{1}(t) = e^{-t}$ and $y_{2}(t) = \sinh{t}$ both satisfy the differential equation $y'' - y = 0$. Is $y(t) = A y_{1}(t) + B y_{2}(t)$ where $A$ and $B$ are arbitrary constants, also a solution? Why or why not?
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[2:]
+	Suppose that an object is moving in a straight line with constant acceleration $a \in \mathbb{R}$. Use properties of integration to show that the position of the object as a function of time $t$ is given by
+	\[
+		p(t) = \frac{at^{2}}{2} + v_{0} t + p_{0},
+	\]
+	where $v_{0}$ and $p_{0}$ denote the velocity and position at time $t = 0$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[3:]
+	Verify that
+	\[
+		y(t) = e^{t^{2}} \int_{0}^{t} e^{-s^{2}} \, ds + e^{t^{2}}
+	\]
+	is a solution to the differential equation $y' - 2t y = 1$ with initial condition $y(0) = 1$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[4:]
+	Determine if $y(x) = x^{2} + 1$ is a solution to the initial value problem consisting of $4yy' = (y')^{3} - 3 y'' x$ and the initial condition $y(0) = 1$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[5:]
+	Write $\cos{\theta}$ and $\sin{\theta}$ as linear combinations of $e^{-i \theta}$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[6:]
+	Calculate the following, assuming $a, t, \omega$ are real numbers.
+	\begin{enumerate}
+		\item $\operatorname{Im}(e^{i \omega t})$.
+		\item $\operatorname{Im}(e^{-i \omega t})$.
+		\item $\operatorname{Re}(e^{(a + i \omega)t})$.
+		\item $\operatorname{Im}(e^{(a + i \omega)t})$.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[7:]
+	For each of the following ordinary differential equations, indicate its order, whether it is linear or non-linear, whether it is autonomous or non-autonomous, and whether it is driven or non-driven.
+	\begin{enumerate}
+		\item $\dfrac{dg}{dx} + g^{3} = 0$.
+		\item $\ddot{y}(t) + e^{t y(t)} = \cosh{t}$.
+		\item $r^{2} R''(r) + r R'(r) - 5R(r) = 0$.
+		\item $\ddot{\theta} + \sin{\theta} = 0$.
+		\item $f''' = f' + xf + 4 \sin{x}$.
+		\item $\frac{y'}{y} = 7$.
+	\end{enumerate}
+\end{problem}
+
+\end{document}

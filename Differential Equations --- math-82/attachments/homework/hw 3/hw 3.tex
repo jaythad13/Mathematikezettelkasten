@@ -1,0 +1,65 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 82 --- Differential Equations}
+\assignment{Homework 3}
+\duedate{}
+
+\begin{document}
+
+\begin{problem}[1:]
+	Consider the initial value problem
+	\[
+		y' = 1 - t + y, \quad y(0) = 1.
+	\]
+	\begin{enumerate}
+		\item Use Euler's method with step-size $h = 0.2$ to estimate the value of $y(1)$. Then, repeat for $h = 0.1$.
+		\item Find the solution to the differential equation analytically and use it to determine the exact value of $y(1)$.
+		\item Verify that halving the step-size $h$ roughly halves the error in your numerical approximations of $y(1)$.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[2:]
+	Consider the differential equation $y' = \cos{t} - y$.
+	\begin{enumerate}
+		\item Find the general solution to this ordinary differential equation.
+		\item Generate a direction field and some solution curves for this differential equation with different initial conditions.
+		\item Based on your graphical exploration in part (b), conjecture what happens to $y(t)$ as $t$ tends to infinity. Corroborate that conjecture using the general solution you found in part (a).
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[3:]
+	\begin{enumerate}
+		\item Sketch a direction field for the differential equation
+			\[
+				y' = - \frac{x}{y}
+			\]
+			for $x \in [-3, 3]$ and $y \in [-3, 3]$.
+		\item If you were given the sketch of the direction field from part (a), but were not given the equation, how would you know that the differential equation was non-autonomous?
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[4:]
+	You have been hired by a fishery to do some preliminary work on modelling a fish population under various harvesting strategies. They have asked you to start with this mathematical model that accounts for logistic growth, death, and harvesting:
+	\[
+		\frac{dP}{dt} = r P(1 - P/K) - \alpha P - H(P).
+	\]
+	Here, $P(t)$ represents the fishery biomass (total mass of fish). The constant $r$ relates to the growth rate of your population, and $K$ is the carrying capacity of your fishery --- the maximum biomass that the fishery can sustain. The term $-\alpha P$ accounts for the natural death of your fish. Assume $r$, $K$, $\alpha$ and $P(t)$ are all positive. \\
+
+	The function $H(t, P)$ describes the harvesting of the fish. The fishery wants to understand what would happen to the population of fish under different scenarios.
+
+	\begin{enumerate}
+		\item Suppose we use kilograms as the units for $P$ and days as the units for $t$. What must be the units for $r$, $\alpha$, and $K$?
+		\item Notice that the problem assumes the harvesting rate of the fish is time invariant since $H(P)$ isn't directly a function of $t$. Here are two natural choices for $H$ in this case: the fishery could harvest at a constant rate or it could harvest at a rate that is proportional to the fishery biomass. In each of these cases, calculate the long-term population of the fish, and the long-term harvesting rate.
+		\item In the case where $H = H_{0}$ is constant, solve for $P(t)$ analytically. In addition, numerically approximate $P(t)$ and verify that your analytic answer agrees with your numerical one.
+	\end{enumerate}
+\end{problem}
+
+\end{document}
