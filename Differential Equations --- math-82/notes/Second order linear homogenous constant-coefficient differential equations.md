@@ -113,6 +113,6 @@ The subset $U$ of all functions into $\mathbb{R}$ such that all $u \in U$ give $
 
 ###### _proof:_
 
-Note that the set of all solutions to the differential equation forms a [[Linear algebra (done right) --- ladr/notes/Vector spaces#_definition _ vector space|vector space]] over $\mathbb{R}$ ([[Differential Equations --- math-82/notes/Existence and uniqueness#_proposition _ solutions of (homogenous) linear differential equations form a vector space|we showed this here]]). Thus, they form a subspace.
+Note that the set of all solutions to the differential equation forms a vector space over $\mathbb{R}$ ([[Differential Equations --- math-82/notes/Existence and uniqueness#_proposition _ solutions of (homogenous) linear differential equations form a vector space|we showed this here]]).
 
 We claim it has dimension $2$. This is due to the [[Differential Equations --- math-82/notes/Existence and uniqueness#_theorem _ existence and uniqueness for second order linear differential equations|second order existence and uniqueness theorem]]. Since every pair of initial conditions $(y(0), y'(0))$ has a unique solution corresponding to it, we have a bijection between $\mathbb{R}^2$ and the space of all solutions. This bijection is linear since evaluating at a point and taking derivatives at a point are both linear maps. That is, $\mathbb{R}^2$ is isomorphic to $U$. Thus, $\dim U = 2$.
