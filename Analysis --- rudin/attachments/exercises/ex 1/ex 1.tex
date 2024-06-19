@@ -308,11 +308,31 @@
 	Prove that no order can be defined in the complex field that turns it into an ordered field.
 \end{problem}
 
+\begin{solution}~
+	
+	We will show that assuming either one of $i > 0$ or $i < 0$ leads to a contradiction. \\
+
+	Suppose that $i > 0$. Then $i^{2} > 0i$, and thus, $-1 > 0$. Finally, this leads to $(-1)i > 0i$ and finally, $-i > 0$. However, with our assumption, in an ordered field, we know that we must have $-i < 0 < i$. \\
+	
+	Suppose that $i < 0$. Then $i^{2} < 0i$, and thus, $-1 < 0$. Finally, this leads to $(-1) i < 0i$ and finally, $-i < 0$. However, with our assumption, in an ordered field, we know that we must have $i < 0 < -i$.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[9.]
 	Suppose $z = a + bi$, $w = c + di$. Define $z < w$ if $a < c$, and also if $a = c$ but $b < d$. Prove that this turns the set of all complex numbers into an ordered set. (This type of order relation is called a \textit{dictionary order} or \textit{lexicographic order}, for obvious reasons.) Does this ordered set have the least upper bound property?
 \end{problem}
+
+\begin{solution}~
+	
+	Suppose $z_{1} = a_{1} + b_{1}i$, $z_{2} = a_{2} + b_{2}i$, and $z_{3} = a_{3} + b_{3}i$. \\
+
+	If $z_{1} \neq z_{2}$ we cannot have both $a_{1} = a_{2}$ and $b_{1} = b_{2}$. If $a_{1} \neq a_{2}$, we must have $a_{1} < a_{2}$ or $a_{2} < a_{1}$, and correspondingly, $z_{1} < z_{2}$ or $z_{2} < z_{1}$. If $a_{1} = a_{2}$, we must have $b_{1} \neq b_{2}$. Thus, we must have $b_{1} < b_{2}$ or $b_{2} < b_{1}$, and correspondingly, $z_{1} < z_{2}$ or $z_{2} < z_{1}$. Thus, we have trichotomy. \\
+
+	Suppose $z_{1} < z_{2}$ and $z_{2} < z_{3}$. Then $a_{1} < a_{2}$ or $a_{1} = a_{2}$ and $b_{1} < b_{2}$. Similarly, $a_{2} < a_{3}$ or $a_{2} = a_{2}$ and $b_{2} < b_{3}$. Thus, the conjunction of these statements is $a_{1} < a_{2}$ and $a_{2} < a_{3}$ or $a_{1} < a_2$ and $a_{2} = a_{3}$ (and $b_{2} < b_{3}$) or $a_{1} = a_{2}$ (and $b_{1} < b_{2}$) and $a_{2} < a_{3}$ or $a_{1} = a_{2}$ and $b_{1} < b_{2}$ and $a_{2} = a_{3}$ and $b_{2} < b_{3}$. Each of these gives us $z_{1} < z_{3}$. Thus, we have transitivity. \\
+
+	Yes, $\mathbb{C}$ with this ordering has the least upper bound property. Specifically, the least upper bound of any bounded $A \subset \mathbb{C}$ is given by $\sup(\operatorname{Re} A) + \sup(\operatorname{Im} A) i$, where $\operatorname{Re} A = \{ \operatorname{Re} z \mid z \in A \}$ and $\operatorname{Im} A = \{ \operatorname{Im} A \mid z \in A \}$ are subsets of $\mathbb{R}$ with the standard ordering.
+\end{solution}
 
 \pagebreak
 
