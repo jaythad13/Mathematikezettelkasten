@@ -34,7 +34,7 @@ A ring $R$ is a set with two binary operations (typically $+$ and $\times$) such
 
 ##### _definition:_ commutative ring
 
-A ring $R$ is commutative if its multiplication $\times$ is [[Motivating groups#_definition _ commutativity|commutative]].
+A ring $R$ is commutative if its multiplication $\times$ is [[Abstract Algebra I --- math-171/notes/Groups, and why you should care#_definition _ commutativity|commutative]].
 
 ##### _definition:_ ring with identity
 

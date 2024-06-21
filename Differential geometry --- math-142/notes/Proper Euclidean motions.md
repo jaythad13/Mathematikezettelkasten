@@ -17,7 +17,7 @@ d(F(\mathbf{p}), F(\mathbf{q})) = d(\mathbf{p}, \mathbf{q}).
 $$
 The collection of all isometries is $\mathcal{E}_{n}$, the Euclidean group.
 
-##### _proposition:_ the Euclidean group is a [[Motivating groups#_definition _ group, identity, inverse|group]]
+##### _proposition:_ the Euclidean group is a [[Abstract Algebra I --- math-171/notes/Groups, and why you should care#_definition _ group, identity, inverse|group]]
 
 $\mathcal{E}_{n}$ is a group under function composition. That is
 1) For $F, G \in \mathcal{E}_{n}$, $F \circ G \in \mathcal{E}_{n}$.

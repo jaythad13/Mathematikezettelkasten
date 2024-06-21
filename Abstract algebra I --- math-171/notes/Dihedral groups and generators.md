@@ -9,7 +9,7 @@ lecture:
 
 ### Emergent structure on groups
 
-Recall the [[Motivating groups#_definition _ group|definition of a group]] from last time. It turns out that these limited axioms determine a lot of other things about a group — the group has some "emergent structure". We leave the proofs because they're kind of trivial (except the last one).
+Recall the [[Abstract Algebra I --- math-171/notes/Groups, and why you should care#_definition _ group|definition of a group]] from last time. It turns out that these limited axioms determine a lot of other things about a group — the group has some "emergent structure". We leave the proofs because they're kind of trivial (except the last one).
 
 ##### _proposition:_ the identity is unique
 

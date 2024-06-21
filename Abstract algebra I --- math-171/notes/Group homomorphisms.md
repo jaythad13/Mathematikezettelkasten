@@ -15,7 +15,7 @@ A homomorphism is a structure preserving operation. This is vague and intentiona
 
 ##### _definition:_ group homomorphisms
 
-Let $G$ and $H$ be [[Motivating groups#_definition _ group|groups]]. A group homomorphism $\varphi : G \to H$ is a function such that for all $x, y \in G$ we have
+Let $G$ and $H$ be [[Abstract Algebra I --- math-171/notes/Groups, and why you should care#_definition _ group|groups]]. A group homomorphism $\varphi : G \to H$ is a function such that for all $x, y \in G$ we have
 $$
 \varphi(xy) = \varphi(x) \varphi(y).
 $$

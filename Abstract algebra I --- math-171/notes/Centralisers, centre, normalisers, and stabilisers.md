@@ -7,7 +7,7 @@ lecture:
 - math-171-9
 ---
 
-Recall [[Group automorphisms and automorphism groups#_proposition _ inner automorphisms are actually automorphisms|inner automorphisms]]. Note that if $G$ is [[Motivating groups#_definition _ abelian group, commutative group|abelian]], then each inner automorphism is just the identity on $G$. The idea here is that group actions tell us something about a group, especially when it acts on itself. What if we look into non-abelian $G$ and its subgroups where inner automorphisms defined by elements are just identity?
+Recall [[Group automorphisms and automorphism groups#_proposition _ inner automorphisms are actually automorphisms|inner automorphisms]]. Note that if $G$ is [[Abstract Algebra I --- math-171/notes/Groups, and why you should care#_definition _ abelian group, commutative group|abelian]], then each inner automorphism is just the identity on $G$. The idea here is that group actions tell us something about a group, especially when it acts on itself. What if we look into non-abelian $G$ and its subgroups where inner automorphisms defined by elements are just identity?
 
 ### Studying $G$ acting on $G$
 
