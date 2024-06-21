@@ -6,6 +6,8 @@ lecture:
 - math-171-17
 ---
 
+All of the [[Abstract Algebra I --- math-171/notes/Group isomorphism theorems|group isomorphism theorems]] hold true for [[Abstract Algebra I --- math-171/notes/Rings|rings]] if you replace "[[Abstract Algebra I --- math-171/notes/Normal subgroups#Normal subgroups|normal subgroup]]" with "[[Abstract Algebra I --- math-171/notes/Ideals and quotients#_definition _ ideal|ideal]]" (and [[Abstract Algebra I --- math-171/notes/Group isomorphisms|group isomorphisms]] with [[Abstract Algebra I --- math-171/notes/Ring homomorphisms#_definition _ ring isomorphism|ring isomorphisms]])
+
 ### First isomorphism theorem
 
 This is exactly analogous to the [[Group isomorphism theorems#The first isomorphism theorem|the first isomorphism theorem for groups]].

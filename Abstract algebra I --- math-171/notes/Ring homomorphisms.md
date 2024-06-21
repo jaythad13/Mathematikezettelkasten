@@ -6,9 +6,9 @@ lecture:
 - math-171-17
 ---
 
-Ring homomorphisms are just more than group homomorphisms.
+Ring homomorphisms of a ring $R$ are [[Abstract Algebra I --- math-171/notes/Group homomorphisms#_definition _ group homomorphisms|group homomorphisms]] of $(R, +)$ that respect the multiplication on $R$ too.
 
-##### _definition:_ ring homomorphism
+##### _definition:_ ring homomorphisms
 
 Let $R$ and $S$ be rings. A map $\varphi : R \to S$ is a ring homomorphism if for all $a, b \in R$
 $$
@@ -41,3 +41,13 @@ For any ring homomorphism $\varphi : R \to S$,
 \end{split}
 $$
 	for some fixed $x$ is a ring homomorphism.
+
+### Isomorphism
+
+With homomorphisms we can define isomorphisms in a natural way —
+
+##### _definition:_ ring isomorphisms, isomorphic
+
+We say a ring homomorphism $\varphi : R \to S$ is an isomorphism if it's bijective.
+
+We say $R \cong S$ ($R$ is isomorphic to $S$) if there exists an isomorphism $\varphi : R \to S$.
