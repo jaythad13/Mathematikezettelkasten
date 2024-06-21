@@ -1,15 +1,23 @@
 ---
 tags:
-- alg
-- math-171
+  - alg
+  - math-171
 lecture:
-- math-171-17
-- math-171-18
+  - math-171-17
+  - math-171-18
 ---
 
-[[Rings revisited|Last class]] we gave a bunch of definitions for subsets of rings with structure — [[Rings revisited#_definition _ subring|subrings]] and [[Rings revisited#_definition _ (left and right) ideals|ideals]]. Today we do a bunch of stuff that has to do with it. First,
+[[Abstract Algebra I --- math-171/notes/Rings#Substructures of rings|Last class]] we defined substructures of rings — subrings and ideals. Today we use these. First, some more definitions.
 
 ### Definitions and examples
+
+##### _definition:_ (left and right) ideals
+
+Let $R$ be a ring. A nonempty subset $I \subset R$ is a left ideal or a right provided
+1) $I$ is a subring of $R$
+2) $ri \in I$ if $i \in I$ for left ideals 
+or, respectively
+2) $ir \in I$ if $i \in I$ for right ideals. 
 
 ##### _definition:_ two-sided ideal
 
@@ -77,7 +85,7 @@ We can use ideals to know things about the rings that they are embedded in.
 ##### _proposition:_ when rings are fields
 
 For any ideal $I \subset R$ (where $R$ is a ring with identity)
-1) $I = R$ if and only if $I$ contains a [[Rings revisited#_definition _ unit|unit]].
+1) $I = R$ if and only if $I$ contains a [[Abstract Algebra I --- math-171/notes/Rings#_definition _ unit|unit]].
 2) If $R$ is commutative, then $R$ is a field if and only if the only ideals of $R$ are the trivial ring and $R$.
 
 ###### _proof:_

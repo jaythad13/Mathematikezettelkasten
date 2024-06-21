@@ -17,7 +17,7 @@ A group action of a group $G$ on a set $X$ is a map $G \times X \to X$ such that
 
 ##### _examples:_ group actions
 
-1) A [[Vector spaces#_definition _ vector space|vector space]] is an [[Motivating groups#_definition _ abelian group, commutative group|abelian group]] $V$ acted on by the multiplicative group of its base [[An introduction to rings and fields#_definition _ fields|field]] $\mathbb{F}^\times$, with the additional requirement that the group action distributes over the operation on the abelian group and $0v = 0$.
+1) A [[Vector spaces#_definition _ vector space|vector space]] is an [[Motivating groups#_definition _ abelian group, commutative group|abelian group]] $V$ acted on by the multiplicative group of its base [[Abstract Algebra I --- math-171/notes/Fields#_definition _ fields|field]] $\mathbb{F}^\times$, with the additional requirement that the group action distributes over the operation on the abelian group and $0v = 0$.
 2) $(\mathbb{Z}, +)$ acts on itself by translation — $z \cdot a = z + a$.
 3) Any group $G$ acts on itself by left multiplication. This is called the left regular action of $G$. Note that this is only true for right multiplication if $G$ is abelian since $(gh) \cdot x = g \cdot (h \cdot x)$ implies that $x g h = x h g$.
 4) A group $G$ also acts on itself by conjugation — by $g \cdot x = g x g^{-1}$. The identity case is trivial and

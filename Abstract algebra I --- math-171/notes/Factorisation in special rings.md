@@ -15,7 +15,7 @@ In the integers, we can find the $\gcd$ of any two numbers by [[Euclid's algorit
 
 ##### _definition:_ norm
 
-If $R$ is an [[Rings revisited#_definition _ integral domain|integral domain]], a function $N : R \to \mathbb{Z}_{\ge 0}$ such that $N(0) = 0$ is a norm.
+If $R$ is an [[Abstract Algebra I --- math-171/notes/Rings#_definition _ integral domain|integral domain]], a function $N : R \to \mathbb{Z}_{\ge 0}$ such that $N(0) = 0$ is a norm.
 
 ##### _definition:_ Euclidean domain
 
@@ -121,7 +121,7 @@ For a ring $R$, if $R[x]$ is a principal ideal domain, $R$ is a field.
 
 ###### _proof:_
 
-Since $R[x]$ is a principal ideal domain, it is an integral domain, and thus, $R$, as a subring is an integral domain. Then since $R[x]/(x) \cong R$, $R[x] / (x)$ is an integral domain, and thus, $(x)$ [[Special ideals#_proposition _ prime ideals have integral domains as quotients|is prime]], and thus, by the previous result is maximal, and finally, $R \cong R[x] / (x)$ is a field.
+Since $R[x]$ is a principal ideal domain, it is an integral domain, and thus, $R$, as a subring is an integral domain. Then since $R[x]/(x) \cong R$, $R[x] / (x)$ is an integral domain, and thus, $(x)$ [[Abstract Algebra I --- math-171/notes/Prime and maximal ideals#_proposition _ prime ideals have integral domains as quotients|is prime]], and thus, by the previous result is maximal, and finally, $R \cong R[x] / (x)$ is a field.
 
 ### Towards unique factorisation domains
 
@@ -162,7 +162,7 @@ Suppose $R$ is a principal ideal domain. Then $p \in R$ is prime if and only if 
 
 Since $R$ is a principal ideal domain, it is an integral domain, and thus, any prime is irreducible.
 
-Suppose $p$ is irreducible. Let $(p) \subset (m)$ for some $m \in R$. Thus, $p \in (m)$, and thus, $p = mr$ for some $r \in R$. Since $p$ is irreducible $m$ is a unit, or $r$ is a unit. If $r$ is a unit, $(p) = (m)$, and if $m$ is a unit, $(m) = R$. Thus, $(p)$ is maximal, and [[Special ideals#_corollary _ every maximal ideal is prime|thus, prime]].
+Suppose $p$ is irreducible. Let $(p) \subset (m)$ for some $m \in R$. Thus, $p \in (m)$, and thus, $p = mr$ for some $r \in R$. Since $p$ is irreducible $m$ is a unit, or $r$ is a unit. If $r$ is a unit, $(p) = (m)$, and if $m$ is a unit, $(m) = R$. Thus, $(p)$ is maximal, and [[Abstract Algebra I --- math-171/notes/Prime and maximal ideals#_corollary _ every maximal ideal is prime|thus, prime]].
 
 ##### _example:_ proving a ring isn't a PID
 

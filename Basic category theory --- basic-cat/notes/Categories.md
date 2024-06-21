@@ -8,7 +8,7 @@ tags:
 ### An intuitive idea of categories, functors, and natural transformations
 
 A category is a bunch of related (mathematical) things (we call them objects) and the relationships between them (we call them arrows, maps, or morphisms). For example, 
-- [[Abstract Algebra I --- math-171/notes/An introduction to rings and fields|rings]] and [[Abstract Algebra I --- math-171/notes/Ring homomorphisms|ring homomorphisms]]
+- [[Abstract Algebra I --- math-171/notes/Rings|rings]] and [[Abstract Algebra I --- math-171/notes/Ring homomorphisms|ring homomorphisms]]
 - topological spaces and continuous maps
 or for a more complicated example
 - topological spaces with a base point, and homotopy equivalence classes of continuous maps.

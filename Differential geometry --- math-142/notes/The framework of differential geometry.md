@@ -29,7 +29,7 @@ If, for $f : \mathbb{R}^3 \to \mathbb{R}$ we can take partial derivatives of all
 
 Theres an obvious way to define the sum and product of functions — do it pointwise.
 
-The sum and product of smooth functions are smooth as well, and this gives us a [[Vector spaces|vector space]] and [[Abstract Algebra I --- math-171/notes/An introduction to rings and fields#_definition _ rings|ring]] structure on the functions.
+The sum and product of smooth functions are smooth as well, and this gives us a [[Vector spaces|vector space]] and [[Abstract Algebra I --- math-171/notes/Rings#_definition _ rings|ring]] structure on the functions.
 
 ##### _proposition:_ $\mathcal{C}^\infty(\mathbb{R}^3)$ is a ring and a vector space
 

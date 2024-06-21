@@ -35,7 +35,7 @@ A much less easy example is the following:
 
 2) Let $R$ be the ring of functions $f : [0, 1] \to \mathbb{R}$. Note that the homomorphism $\operatorname{ev}_{a} : f \mapsto f(a)$. We claim that $\ker \operatorname{ev}_{a}$ is a maximal ideal. We can see this by [[Ring isomorphism theorems#_theorem _ the first isomorphism theorem|the first isomorphism theorem]] — since $\operatorname{ev}_{a}$ is surjective, $R/\ker \operatorname{ev}_{a}$ is a field and thus, $\ker \operatorname{ev}_{a}$ is maximal.
 
-### Prime ideals and [[Rings revisited#_example _ integral domain|integral domains]]
+### Prime ideals and [[Abstract Algebra I --- math-171/notes/Integral domains|integral domains]]
 
 It turns out that ideals have a lot to do with factorisation, as we will see, and thus, we want an analog of primeness. We know that if $p \mid ab$ for some prime $p$, then we must have $p \mid ab$, and similarly, we have prime ideals.
 
@@ -57,7 +57,7 @@ Suppose $a, b \in R$ with $ab \in P$, or equivalently, $\overline{a}\overline{b}
 
 ###### _proof:_
 
-Suppose $I \subset R$ is a maximal ideal. Then $R/I$ is a field. Then $R / I$ is an integral domain (note this follows since [[Rings revisited#_proposition _ every unit is not a zero divisor|units can't be zero divisors]]). Then $I$ is prime.
+Suppose $I \subset R$ is a maximal ideal. Then $R/I$ is a field. Then $R / I$ is an integral domain (note this follows since [[Abstract Algebra I --- math-171/notes/Rings#_proposition _ every unit is not a zero divisor|units can't be zero divisors]]). Then $I$ is prime.
 
 The converse isn't true.
 
