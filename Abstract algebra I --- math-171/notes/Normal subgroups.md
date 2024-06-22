@@ -11,7 +11,19 @@ We've seen enough [[Fibres and quotients|examples]] of quotient groups. Now we w
 
 ### Normal subgroups
 
-%% fill in from the lecture notes %%
+[[Abstract Algebra I --- math-171/notes/Fibres and quotients#_definition, theorem _ the quotient group is a group|We've seen]] that there's a natural group structure on the cosets of a homomorphism kernel. Do we need a subgroup to be a kernel to quotient out by it in that way? Can all subgroups be kernels? Yes and no.
+
+For the quotient of a group $G$ by a subgroup $H$ to have a reasonable structure, we would want the canonical projection $\pi : G \to G/H$ by $g \mapsto gH$ to be a homomorphism. That is, we want $(x H)(y H) = (x y) H$.
+
+Obviously, this needs to be well defined — if $x_{1} H = x_{2} H$ and $y_{1} H = y_{2} H$ we want $(x_{1} y_{1}) H = (x_{2} y_{2}) H$. Particularly, since $hH = 1_{G}H$, we need $(gH)(hH)(g^{-1}H) = 1_{G} H$ for all $g \in G$ and all $h \in H$. This will only happen if $ghg^{-1} \in H$ for all $g$. Note that this is the condition as the [[Abstract Algebra I --- math-171/notes/Centralisers, centre, normalisers, and stabilisers#_definition _ normaliser, $N_{G}(A)$|normaliser]] being the whole group. That's why we call these groups normal!
+
+##### _definition:_ normal subgroups
+
+A subgroup $N \le G$ is normal in $G$ if $ghg^{-1} \in N$ for all $g \in G$ and all $h \in N$.
+
+We denote that $N$ is normal in $G$ by $N \trianglelefteq G$.
+
+Basically, if the group was abelian, we could easily avoid all of this struggle just as easily as we did with [[Quotient spaces|quotient spaces]], but because it's not, we have to settle for normality — the next best thing.
 
 ### Quotient groups
 
@@ -66,3 +78,7 @@ which has kernel $N$ since $nN = 1_{G}N$ (left action is a bijection).
 ##### _proposition:_ normality is not transitive
 
 If $K \trianglelefteq H$ and $H \trianglelefteq G$, we don't necessarily have $K \trianglelefteq G$.
+
+###### _proof:_
+
+In $D_{8}$, $\left< s \right> \trianglelefteq \left< s, r^2 \right> \trianglelefteq D_{8}$ (because each subgroup has [[Abstract Algebra I --- math-171/notes/Lagrange's theorem#_proposition _ index $2$ subgroups are normal|index 2]] in the next with orders 2, 4, and 8 respectively). However $\left< s \right>$ is not normal in $D_{8}$ since $rsr^{-1} = sr^{2} \not\in \left< s \right>$. Note that $sr^{2}$ is still in $\left< s, r^{2} \right>$ since [[Abstract Algebra I --- math-171/notes/Group automorphisms and automorphism groups#_proposition _ inner automorphisms are actually automorphisms|inner automorphisms]] of $D_{8}$ fix $\left< s, r^{2} \right>$. The problem is that even if a subset is invariant under a function, its elements may still get moved around within it.

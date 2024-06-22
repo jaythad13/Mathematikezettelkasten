@@ -74,22 +74,59 @@ Now we can start talking about quotients! The motivating example is
 
 Let $\varphi : G \to H$ be a group homomorphism. Then the quotient group
 $$
-A / \ker \varphi = \{ \varphi^\text{fib}(h) | h \in H \}
+G / \ker \varphi = \{ \varphi^\text{fib}(h) | h \in H \}
 $$
 is a group with the well defined operation $(x \ker \varphi)(y \ker \varphi) = (xy) \ker \varphi$.
 
 ###### _proof:_
 
-For this, we will denote $x \ker \varphi$ by $\bar{x}$.
+For this, we will denote $x \ker \varphi$ by $\overline{x}$.
 
-First we will show that the operation is well defined. Suppose $\bar{x'} = \bar{x}$ and $\bar{y'} = y$
+We really just need to show that the operation is well defined. The rest follows from the group structure of $G$.
 
-Notice that
+Suppose $\overline{x_{1}} = \overline{x_{2}}$ and $\overline{y_{1}} = \overline{y_{2}}$. Then we want to show that $\overline{x_{1}} \, \overline{y_{1}} = \overline{x_{2}} \, \overline{y_{2}}$. This is equivalent to $\overline{x_{1} y_{1}}$ and $\overline{x_{2} y_{2}}$ being the same. Since they're in the same fibre, $x_{1} x_{2}^{-1}, y_{1} y_{2}^{-1} \in \ker \varphi$. Thus,
+$$
+\begin{split}
+ \varphi(x_{1} y_{1} (x_{2} y_{2})^{-1}) & =  & \varphi(x_{1} y_{1} y_{2} ^{-1} x_{2}^{-1}) \\
+ & = \varphi(x_{1}) \varphi(y_{1} y_{2}^{-1}) \varphi(x_{2}^{-1}) \\
+ & = \varphi(x_{1}) \varphi (x_{2}^{-1})  \\
+ & = \varphi(x_{1} x_{2} ^{-1}) \\
+ & = 1_{H}
+\end{split}
+$$
+which gives us $\overline{x_{1} y_{1}} = \overline{x_{2} y_{2}}$ as desired.
+
+Associativity is by
+$$
+\begin{split}
+(\overline{x} \, \overline{y}) \, \overline{z} & = \overline{xy} \, \overline{z} \\
+ & = \overline{(xy) z} \\
+ & = \overline{x(yz)} \\
+ & = \overline{x} \, \overline{yz} \\
+ & = \overline{x} (\overline{y} \, \overline{z}).
+\end{split}
+$$
+
+The identity is just $\overline{1_{G}}$ since
+$$
+\begin{split}
+\overline{1_{G}} \overline{x} & = \overline{1_{G}x} \\
+ & = \overline{x} \\
+ & = \overline{x 1_{G}} \\
+ & = \overline{x} \overline{1_{G}}.
+\end{split}
+$$
+
+We can see that inverses exist and are given by $\overline{x}^{-1} = \overline{x ^{-1}}$ just by
+$$
+\begin{split}
+\overline{x} \overline{x ^{-1}} & = \overline{x x ^{-1}} \\
+ & = \overline{1_{G}}. 
+\end{split}
+$$
 
 ### The first isomorphism theorem
 
-##### _theorem:_ the first isomorphism theorem
+It turns out that, just as we wanted, this quotient group is just a copy of the image of the homomorphism. More specifically, we have
 
-If $\varphi : G \to H$ is a group homomorphism, then
-1) $\ker \varphi \le G$
-2) $G / \ker \varphi \cong \varphi(G)$
+![[Abstract Algebra I --- math-171/notes/Group isomorphism theorems#_theorem _ the first isomorphism theorem|Group isomorphism theorems]]
