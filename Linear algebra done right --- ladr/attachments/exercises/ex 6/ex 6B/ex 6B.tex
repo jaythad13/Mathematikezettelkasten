@@ -545,6 +545,10 @@
 	Suppose $v_1, \dots, v_m$ is a linearly independent list in $V$. Show that there exists $w \in W$ such that $\left < w, v_j \right > > 0$ for all $j \in \mathbb N_m$.
 \end{problem}
 
+\begin{solution}
+	Consider the functional $\varphi \in V^{\vee}$ given by $\varphi(v_{j}) = 1$. By the Riesz representation theorem, there exists a $w \in V$ such that $\left < v, w \right > = \varphi(v)$ for all $v \in V$ (which, of course, includes all the $v_{j}$). Since $\varphi(v_{j}) \in \mathbb{R}$, for all $j$, we can swap the slots. That is, $\left < w, v_{j} \right > = \varphi(v_{j})$ for all $j$. Thus, $\left < w, v_{j} \right > = 1 > 0$ for all $j$.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[14.]
@@ -554,6 +558,27 @@
 	\]
 	for each $j \in \mathbb N_n$. Prove that $v_1, \dots, v_n$ is a basis of $V$.
 \end{problem}
+
+\begin{solution}~
+	
+	Suppose that $a_{1}, \dots, a_{n}$ are not all $0$. Notice that we have
+	\[
+		\begin{split}
+			\left \lVert \sum_{i = 1}^{n} a_{i} e_{i} \right \rVert - \left \lVert \sum_{i = 1}^{n} a_{i} v_{i} \right \rVert & \le \left ( \sum_{i = 1}^{n} \lVert a_{i} e_{i} \rVert \right ) - \left ( \sum_{i = 1}^{n} \lVert a_{i} v_{i} \rVert \right ) \\
+																	  & \le \sum_{i = 1}^{n} \lvert a_{i} \rvert \lVert e_{i} - v_{i} \rVert \\
+																	  & < \frac{1}{\sqrt{n}} \sum_{i = 1}^{n} \lvert a_{i} \rvert \\
+																	  & = \frac{1}{\sqrt n} \left \lVert \sum_{i = 1}^{n} a_{i} e_{i} \right \rVert.
+		\end{split}
+	\]
+	Thus,
+	\[
+		\begin{split}
+			\left \lVert \sum_{i = 1}^{n} a_{i} v_{i} \right \rVert & > \left ( 1 - \frac{1}{\sqrt n} \right ) \left \lVert \sum_{i = 1}^{n} a_{i} e_{i} \right \rVert \\
+										& > 0.
+		\end{split}
+	\]
+	Thus, any non-zero linear combination of $v_{1}, \dots, v_{n}$ is non-zero. That is, $v_{1}, \cdots, v_{n}$ is linearly independent. Since it is a list of the right length, it is a basis.
+\end{solution}
 
 \pagebreak
 
@@ -568,6 +593,17 @@
 	\]
 	for every $f \in \mathcal C_{\mathbb R}([-1, 1])$.
 \end{problem}
+
+\begin{solution}~
+	
+	Suppose, by way of contradiction, that such a $g$ existed. Then, for $f \in \mathcal{C}_{\mathbb{R}}([-1, 1])$ defined by $f(x) = x^{2} g(x)$, we must have
+	\[
+		\int_{-1}^{1} f(x) g(x) \, dx = 0
+	\]
+	since $f(0) = 0$. \\
+
+
+\end{solution}
 
 \pagebreak
 
