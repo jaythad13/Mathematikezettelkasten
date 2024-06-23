@@ -7,7 +7,7 @@ tags:
 
 ### The Riesz representation theorem
 
-One way to tell that orthogonal complements and projections are useful is that they give us a new way to prove [[Linear functionals on inner product spaces#_theorem _ Riesz representation theorem|an old theorem]].
+One way to tell that orthogonal complements and projections are useful is that they give us a new way to prove [[Linear algebra done right --- ladr/notes/The Riesz representation theorem#_theorem _ Riesz representation theorem|an old theorem]].
 
 ##### _theorem:_ Riesz representation theorem
 

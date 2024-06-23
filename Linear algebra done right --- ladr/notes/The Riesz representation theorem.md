@@ -5,6 +5,10 @@ tags:
 - lin-alg
 ---
 
+The Riesz representation theorem gives the relationship between two ways to get a number from vectors — applying a linear functional and taking the inner product with another vector.
+
+### Reviewing linear functionals
+
 Recall the definition of a [[Dual spaces|linear functional]]:
 
 ##### _definition:_ linear functional
@@ -35,7 +39,9 @@ $$
 $$
 for some $u \in \mathcal{P}_2(\bb{R})$ with some inner product. Unlike the previous example, we can't just take the inner product given by the integral of the product of functions over $[-1, 1]$ and $u = \cos{\pi x}$ since $\cos{\pi x}$ is not a polynomial.
 
-The next theorem shows us that we can always find a way to write a functional as an inner product of the input with some fixed vector $u$, even in examples like the previous one where there is no obvious choice for $u$.
+### Riesz representation theorem
+
+The Riesz representation theorem shows us that we can always find a way to write a functional as an inner product of the input with some fixed vector $u$, even in examples like the previous one where there is no obvious choice for $u$.
 
 ##### _theorem:_ Riesz representation theorem
 
