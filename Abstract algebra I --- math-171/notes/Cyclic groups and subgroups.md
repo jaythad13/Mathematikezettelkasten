@@ -22,7 +22,7 @@ Let $G$ be a group and let $x \in G$ have finite order $\lvert x \rvert = n$. If
 
 ###### _proof sketch:_
 
-By [[Dividing integers - basic number theory#_theorem _ the division algorithm|the division algorithm]], if $n \nmid m$, we would have that the remainder $r < n$ gives us $x^r = 1_{G}$ contradicting that $n$ is the least such number.
+By [[Superdiscrete --- math-55A/notes/Dividing integers - basic number theory#_theorem _ the division algorithm|the division algorithm]], if $n \nmid m$, we would have that the remainder $r < n$ gives us $x^r = 1_{G}$ contradicting that $n$ is the least such number.
 
 ##### _theorem:_ cyclic groups have subgroups of all divisor orders
 

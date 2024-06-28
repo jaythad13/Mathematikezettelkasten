@@ -29,7 +29,7 @@ The bank picks two primes $p$ and $q$ and sets $n = pq$.
 
 Then it computes $\phi(n) = \phi(pq) = \phi(p) \phi(q) = (p - 1)(q - 1)$ and picks $d$ such that $\gcd(d, \phi(n)) = 1$ (we can do this by randomly picking $d$ because the probability of coprimality is $\frac{6}{\pi^2}$).
 
-By [[Dividing integers - basic number theory#_theorem _ Bezout's theorem|Bezout's theorem]] we have positive $e, f$ such that 
+By [[Superdiscrete --- math-55A/notes/Dividing integers - basic number theory#_theorem _ Bezout's theorem|Bezout's theorem]] we have positive $e, f$ such that 
 $$
 de - \phi(n)f = 1
 $$
@@ -65,4 +65,4 @@ But $de - \phi(n)f = 1$. Then
 $$
 M^{de} = M M^{\phi(n)f} = M (M^{\phi(n)})^f \equiv M \times 1^f \equiv M \mod n
 $$
-as long as we can apply [[Modular arithmetic#_theorem _ Euler's theorem|Euler's theorem]], that is as long as $\gcd(M, n) = 1$. This is very likely because we would have to have $p \mid M$ or $q \mid M$ which has the very small probability $\frac{1}{p} + \frac{1}{q}$ for large primes. 
+as long as we can apply [[Superdiscrete --- math-55A/notes/Modular arithmetic#_theorem _ Euler's theorem|Euler's theorem]], that is as long as $\gcd(M, n) = 1$. This is very likely because we would have to have $p \mid M$ or $q \mid M$ which has the very small probability $\frac{1}{p} + \frac{1}{q}$ for large primes. 

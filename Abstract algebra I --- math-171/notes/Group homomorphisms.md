@@ -38,7 +38,7 @@ $$
 
 ##### _examples:_ group homomorphisms
 
-1) $\varphi : \mathbb{Z} \to \mathbb{Z}/n\mathbb{Z}$ by $m \mapsto m \pmod n$ is a group homomorphism (the standard definition of addition in both groups). The proof just follows from [[Modular arithmetic#_proposition _ congruence is preserved by addition and multiplication|some basic modular arithmetic]].
+1) $\varphi : \mathbb{Z} \to \mathbb{Z}/n\mathbb{Z}$ by $m \mapsto m \pmod n$ is a group homomorphism (the standard definition of addition in both groups). The proof just follows from [[Superdiscrete --- math-55A/notes/Modular arithmetic#_proposition _ congruence is preserved by addition and multiplication|some basic modular arithmetic]].
 2) $\psi : D_{2n} \to \mathbb{Z}/2\mathbb{Z}$ by $s^j r^k \mapsto j \pmod 2$ is a group homomorphism since you can swap $s^j r^k s^l r^m = s^{j + l} r^k r^m$ when $l$ is odd, and otherwise it doesn't matter.
 
 ### Facts about homomorphisms

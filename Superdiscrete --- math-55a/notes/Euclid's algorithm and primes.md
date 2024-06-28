@@ -17,13 +17,13 @@ for any $x \in \bb{Z}$.
 
 ###### _proof sketch:_
 
-The pairs $a, b$ and $b, a - bx$ have all the same common divisors (use the [[Dividing integers - basic number theory#_theorem _ integer combination theorem|integer combination theorem]]).
+The pairs $a, b$ and $b, a - bx$ have all the same common divisors (use the [[Superdiscrete --- math-55A/notes/Dividing integers - basic number theory#_theorem _ integer combination theorem|integer combination theorem]]).
 
 This theorem has some important corollaries.
 
 ##### _corollary:_ Euclid's algorithm works
 
-For $a, b$ with $a = bq + r$ with $q, r$ the quotient and remainder given by [[Dividing integers - basic number theory#_theorem _ the division algorithm|the division algorithm]], $\gcd{(a, b)} = \gcd{(b, a - bq)} = \gcd{(b, r)}$.
+For $a, b$ with $a = bq + r$ with $q, r$ the quotient and remainder given by [[Superdiscrete --- math-55A/notes/Dividing integers - basic number theory#_theorem _ the division algorithm|the division algorithm]], $\gcd{(a, b)} = \gcd{(b, a - bq)} = \gcd{(b, r)}$.
 
 ##### _algorithm:_ Euclid's algorithm
 
@@ -32,7 +32,7 @@ If not compute $\gcd(b, r)$ recursively, where $r$ is the remainder given by div
 
 Note that Euclid's algorithm is ridiculously fast - at worst $5d$ steps for a $d$ digit number $b$. It's worst case is usually adjacent Fibonacci numbers (because at each step the difference is as large as possible).
 
-Also, note that Euclid's algorithm gives us a construction for [[Dividing integers - basic number theory#_theorem _ Bezout's theorem|Bezout's theorem]].
+Also, note that Euclid's algorithm gives us a construction for [[Superdiscrete --- math-55A/notes/Dividing integers - basic number theory#_theorem _ Bezout's theorem|Bezout's theorem]].
 
 ##### _example:_ the least integer combination of $847$ and $203$
 
@@ -53,7 +53,7 @@ If $d \mid ab$ and $\gcd(d,a) = 1$ then $d \mid b$.
 
 ###### _proof:_
 
-If $\gcd(d, a) = 1$, then by [[Dividing integers - basic number theory#_theorem _ Bezout's theorem|Bezout's theorem]] we must have some integer combination $ax + dy = 1$. Thus, $abx + dby = b$, and then since $d = q ab$, for some integer $q$, we have $d(qx + by) = b$ and thus, $d \mid b$.
+If $\gcd(d, a) = 1$, then by [[Superdiscrete --- math-55A/notes/Dividing integers - basic number theory#_theorem _ Bezout's theorem|Bezout's theorem]] we must have some integer combination $ax + dy = 1$. Thus, $abx + dby = b$, and then since $d = q ab$, for some integer $q$, we have $d(qx + by) = b$ and thus, $d \mid b$.
 
 ### Primes
 

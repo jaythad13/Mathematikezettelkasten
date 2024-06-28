@@ -30,7 +30,7 @@ Thus, $\sum_{k = 1}^n k = \frac{n(n + 1)}{2}$ for all $n \in \bb{N}$.
 
 An even cleverer proof doesn't rely on words!
 
-![[S1_triangleBijection.jpeg]]
+![[Superdiscrete --- math-55A/attachments/for notes/Proof by induction/S1_triangleBijection.jpeg]]
 
 We can see that there is a bijection between the triangular lattice of $n$ rows and pairs of points in the $n + 1$th row, given by picture above. That is, for any pair, draw a line parallel to the left side of the triangle from the left point of the pair and draw a line parallel to the right side of the triangle from the right point of the pair. They define a unique point in the triangular lattice above them.
 
@@ -122,7 +122,7 @@ If it's true for $n$, break the chessboard into four quadrants. One of them has 
 Then, place a tromino such that it has one part in each of the three remaining quadrants. Now each of them has a "removed piece". Cover them.
 
 For example,
-![[S1_trominoCoveredChessboard.jpeg]]
+![[Superdiscrete --- math-55A/attachments/for notes/Proof by induction/S1_trominoCoveredChessboard.jpeg]]
 is a covering of a chessboard. Different colours indicate levels of recursion. Pink is at no level of recursion, green is at one level of recursion, and orange is the base case at two levels of recursion.
 
 ##### _corollary:_ $2^{2n} - 1$ is a multiple of $3$

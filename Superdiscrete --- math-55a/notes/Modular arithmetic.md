@@ -27,7 +27,7 @@ $a - a = 0$, which is divisible by $m$.
 
 If $a \equiv b \mod m$, we have $a - b$ divisible by $m$. Then $b - a$ is divisible by $m$ (multiply by the negation of the thing that divides $a - b$).
 
-If $a \equiv b \mod m$ and $b \equiv c \mod m$, then we have $a - b$ and $b - c$ divisible by $m$, which then, by [[Dividing integers - basic number theory#_theorem _ integer combination theorem|integer combination]] gives us $a - c = (a - b) + (b - c)$ is divisible by $m$.
+If $a \equiv b \mod m$ and $b \equiv c \mod m$, then we have $a - b$ and $b - c$ divisible by $m$, which then, by [[Superdiscrete --- math-55A/notes/Dividing integers - basic number theory#_theorem _ integer combination theorem|integer combination]] gives us $a - c = (a - b) + (b - c)$ is divisible by $m$.
 
 ##### _proposition:_ congruence is preserved by addition and multiplication
 
@@ -37,7 +37,7 @@ If $a \equiv b \mod m$ and $c \equiv d \mod m$ then $a + c \equiv b + d \mod m$ 
 
 Addition is easy: since we have $a - b$ and $c - d$ divisible by $m$, just add them to get $(a + c) - (b + d)$ divisible by $m$.
 
-$ac - bd = (a - b)c + (c - d)b$ which by [[Dividing integers - basic number theory#_theorem _ integer combination theorem|the integer combination theorem]] is divisible by $m$. Thus, $ac \equiv bd \mod m$.
+$ac - bd = (a - b)c + (c - d)b$ which by [[Superdiscrete --- math-55A/notes/Dividing integers - basic number theory#_theorem _ integer combination theorem|the integer combination theorem]] is divisible by $m$. Thus, $ac \equiv bd \mod m$.
 
 ##### _corollary:_ congruence is preserved by (integer) exponentiation
 
@@ -61,7 +61,7 @@ If $ax \equiv ay \mod m$, and $\gcd(a, m) = 1$ then $x \equiv y \mod m$. More ge
 
 ###### _proof:_
 
-If $ax \equiv ay \mod m$ then $m|a(x - y)$. If $\gcd(a, m) = 1$, then since it [[Euclid's algorithm and primes#_theorem _ a divisor must divide something or, the important theorem|must divide something]], $m|(x - y)$ and thus, $x \equiv y \mod m$.
+If $ax \equiv ay \mod m$ then $m|a(x - y)$. If $\gcd(a, m) = 1$, then since it [[Superdiscrete --- math-55A/notes/Euclid's algorithm and primes#_theorem _ a divisor must divide something or, the important theorem|must divide something]], $m|(x - y)$ and thus, $x \equiv y \mod m$.
 
 If $ax \equiv ay \mod m$ then we also have $ax \equiv ay \mod \frac{m}{\gcd(a, m)}$. Since $a$ is co-prime to that, the previous result gives us $x \equiv y \mod \frac{m}{\gcd(a, m)}$.
 
@@ -75,7 +75,7 @@ $\gcd(a, m) = 1$ if and only if $a$ has a unique multiplicative inverse $\mod m$
 
 ###### _proof sketch:_
 
-Just do the algebra after [[Dividing integers - basic number theory#_theorem _ Bezout's theorem|Bezout's theorem]]. 
+Just do the algebra after [[Superdiscrete --- math-55A/notes/Dividing integers - basic number theory#_theorem _ Bezout's theorem|Bezout's theorem]]. 
 
 ### Fermat's little theorem
 
@@ -149,7 +149,7 @@ $$
 
 We expect this to be true for probabilistic reasons (expect that even after I remove all the multiples of (for example) $7$, roughly $1/13$th of the rest are divisible by $13$).
 
-This works out rigorously by [[Inclusion-exclusion#_theorem _ Principle of Inclusion-Exclusion|inclusion-exclusion]].
+This works out rigorously by [[Superdiscrete --- math-55A/notes/Inclusion-exclusion#_theorem _ Principle of Inclusion-Exclusion|inclusion-exclusion]].
 
 Suppose $n = \prod_{i = 1}^m p_i$. Then get rid of all of the multiples of each $p_i$,
 $$

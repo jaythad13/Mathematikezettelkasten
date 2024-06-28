@@ -5,12 +5,12 @@ tags:
 - comb
 ---
 
-We can use the [[Basic combinatorics#_definition _ $ binom{n}{k}$|binomial coefficients]] in interesting ways. Specifically, arranging the binomial coefficients in a triangle shows us some interesting properties.
+We can use the [[Superdiscrete --- math-55A/notes/Basic combinatorics#_definition _ $ binom{n}{k}$|binomial coefficients]] in interesting ways. Specifically, arranging the binomial coefficients in a triangle shows us some interesting properties.
 
 ##### _definition:_ Pascal's triangle
 
 Pascal's triangle is the two dimensional sequence of $\binom{n}{k}$ arranged in a triangle as
-![[S0_Pascal'sTriangle.jpeg]]
+![[Superdiscrete --- math-55A/attachments/for notes/Pascal's triangle/S0_Pascal'sTriangle.jpeg]]
 and so on.
 
 Looking at the triangle suggests several interesting identities.
@@ -45,7 +45,7 @@ For the sets that do contain the $n$th element, we have to pick $k - 1$ other el
 
 We can see some more interesting patterns if we look at Pascal's triangle as a right triangle with rows $\binom{n}{k}$ for all $0 \le k \le n$.
 
-![[S0_Pascal'sRightTriangle.jpeg]]
+![[Superdiscrete --- math-55A/attachments/for notes/Pascal's triangle/S0_Pascal'sRightTriangle.jpeg]]
 
 ##### _example:_ the hockey stick identity
 
@@ -59,7 +59,7 @@ and
 $$
 \binom{6}{3} = 20.
 $$
-![[S0_hockeyStick.jpeg]]
+![[Superdiscrete --- math-55A/attachments/for notes/Pascal's triangle/S0_hockeyStick.jpeg]]
 
 We can prove that this holds in general.
 
@@ -76,7 +76,7 @@ But we can think of lining up all the potential players and assigning them numbe
 
 We can also look at summing along (non-principal) diagonals. Again, computing a few examples reveals a pattern. This time it's the Fibonacci numbers, and we can show that this pattern always holds.
 
-![[S0_diagonalSumsToFibonacci.jpeg]]
+![[Superdiscrete --- math-55A/attachments/for notes/Pascal's triangle/S0_diagonalSumsToFibonacci.jpeg]]
 
 ##### _proposition:_ the Fibonacci series in Pascal's triangle
 
@@ -88,7 +88,7 @@ $$
 
 We have a combinatorial proof of this as well!
 
-We know that $f_n$ is the [[Proof by induction#_definition _ Fibonacci tiling numbers|number of tilings]] of an $n$-strip with dominoes and squares.
+We know that $f_n$ is the [[Superdiscrete --- math-55A/notes/Proof by induction#_definition _ Fibonacci tiling numbers|number of tilings]] of an $n$-strip with dominoes and squares.
 
 It's natural to want to think of $k$ as the number of dominoes since it is at least $0$ and at most $\le n/2$. If we tile an $n$-strip with $k$ dominoes, then there are $n - 2k$ remaining slots for squares, and thus, $n - 2k$ squares. This gives us $n - 2k + k = n - k$ tiles (dominoes or squares) in total. Then the number of tilings with $k$ dominoes is just given by $\binom{n - k}{k}$.
 

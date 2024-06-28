@@ -34,7 +34,7 @@ If a (connected?) graph has no cycles of odd length, it is bipartite.
 
 If $G$ is a tree, do this by induction on the number of vertices—remove a leaf, $2$-colour the previous case, and then add back the leaf and since it's a leaf it can be coloured safely.
 
-Notice that in a tree with a $2$-colouring, the length of the [[Special graphs#_proposition _ unique paths on trees|unique path]] between two vertices of the same colour is even.
+Notice that in a tree with a $2$-colouring, the length of the [[Superdiscrete --- math-55A/notes/Special graphs#_proposition _ unique paths on trees|unique path]] between two vertices of the same colour is even.
 
 If $G$ is not a tree, remove edges from the graph (only to break cycles) until you get a tree. This is the spanning tree. $2$-colour the tree, and then add back the edges. It'll all be fine, because we had no odd cycles, and connecting two vertices of the same colour would produce an odd cycle (the unique even path plus the new edge).
 

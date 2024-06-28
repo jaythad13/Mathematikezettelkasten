@@ -33,7 +33,7 @@ A metric space is a set $X$ (whose elements we call points) with a function, cal
 4) Given any metric space $X$ with metric $d$, any subset $E \subset X$ with the same metric $d$ is a metric space.
 5) The unit circle $S^1$ with the distance between any two points given by the minimum arc length between them is a metric space.
 6) The discrete space is, for any set $X$ the metric space obtained by applying the metric $$ d(p, q) = \begin{cases} 1 & \text{if } p \neq q \\  0 & \text{if } p = q.\end{cases}$$
-7) The set vertices, $S$ of any [[Basic graph theory#_definition _ connected|simple connected graph]] $G$ can be a metric space with the metric as the graph theoretic distance between two vertices. We get the discrete space on $S$ if $G$ is the complete graph on $S$.
+7) The set vertices, $S$ of any [[Superdiscrete --- math-55A/notes/Basic graph theory#_definition _ connected|simple connected graph]] $G$ can be a metric space with the metric as the graph theoretic distance between two vertices. We get the discrete space on $S$ if $G$ is the complete graph on $S$.
 8) Any [[Norms|normed vector space]] is a metric space with the metric $d$ given by $d(u, v) = \Vert u - v \Vert$.
 
 ### Special subsets of metric spaces

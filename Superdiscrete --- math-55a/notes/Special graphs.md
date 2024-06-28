@@ -10,9 +10,9 @@ Hamiltonian is like Eulerian, except for vertices, not paths.
 
 ##### _definition:_ Hamiltonian path, Hamiltonian cycle, Hamiltonian graph
 
-Given a graph $G$, a Hamiltonian path is a [[Basic graph theory#_definition _ path|path]] is a path that visits every vertex of $G$. 
+Given a graph $G$, a Hamiltonian path is a [[Superdiscrete --- math-55A/notes/Basic graph theory#_definition _ path|path]] is a path that visits every vertex of $G$. 
 
-A Hamiltonian cycle is a [[Basic graph theory#_definition _ cycle|cycle]] that visits every vertex of $G$.
+A Hamiltonian cycle is a [[Superdiscrete --- math-55A/notes/Basic graph theory#_definition _ cycle|cycle]] that visits every vertex of $G$.
 
 We say a graph $G$ is Hamiltonian if it contains a Hamiltonian cycle.
 
@@ -139,7 +139,7 @@ A tournament is a complete graph where every edge is directed (use ordered pairs
 
 ##### _theorem:_ someone is always the best
 
-Every tournament with $n$ vertices has a directed [[Special graphs#_definition _ Hamiltonian path, Hamiltonian cycle, Hamiltonian graph|Hamiltonian path]] (a Hamiltonian path along which all the arrows point the same way).
+Every tournament with $n$ vertices has a directed [[Superdiscrete --- math-55A/notes/Special graphs#_definition _ Hamiltonian path, Hamiltonian cycle, Hamiltonian graph|Hamiltonian path]] (a Hamiltonian path along which all the arrows point the same way).
 
 ###### _proof sketch:_
 

@@ -156,7 +156,7 @@ A zero divisor in a ring is an element $a \in R$ such that there exists nonzero 
 
 1) In $\mathbb{Z}$, $1, -1$ are the only units. Note that here they are self-inverse, but in general, they don't have to be
 2) In $\mathbb{Z} / 6\mathbb{Z}$, $\overline{2}$ is a zero divisor since $\overline{2} \times  \overline{3} = \overline{6} = \overline{0}$.
-3) In $\mathbb{Z}/n\mathbb{Z}$ all $a$ coprime with $n$ mean give $\overline{a}$ as unit (see [[Dividing integers - basic number theory#_theorem _ Bezout's theorem|Bezout's theorem]]).
+3) In $\mathbb{Z}/n\mathbb{Z}$ all $a$ coprime with $n$ mean give $\overline{a}$ as unit (see [[Superdiscrete --- math-55A/notes/Dividing integers - basic number theory#_theorem _ Bezout's theorem|Bezout's theorem]]).
 
 ##### _proposition:_ every unit is not a zero divisor
 

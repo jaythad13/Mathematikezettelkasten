@@ -47,7 +47,7 @@ as desired.
 
 We get a new and easy proofs for old results as corollaries of the binomial theorem!
 
-##### _corollary_: [[Pascal's triangle#_proposition _ binomial coefficients count subsets|binomial coefficients count subsets]] 
+##### _corollary_: [[Superdiscrete --- math-55A/notes/Pascal's triangle#_proposition _ binomial coefficients count subsets|binomial coefficients count subsets]] 
 
 $$
 2^n = \sum_{k = 0}^n \binom{n}{k}
@@ -57,7 +57,7 @@ $$
 
 Just substitute $1$ for both $x$ and $y$.
 
-##### _corollary:_ sums of binomial coefficients with even $k$ [[Pascal's triangle#_proposition _ sums of binomial coefficients with even $k$ are half the sum for all $k$|are half the total sum]]
+##### _corollary:_ sums of binomial coefficients with even $k$ [[Superdiscrete --- math-55A/notes/Pascal's triangle#_proposition _ sums of binomial coefficients with even $k$ are half the sum for all $k$|are half the total sum]]
 
 $$
 \sum_{k \text{ is even}}^{k \le n} \binom{n}{k} = \sum_{k \text{ is odd}}^{k \le n} \binom{n}{k} = 2^{n - 1}
