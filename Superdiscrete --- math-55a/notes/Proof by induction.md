@@ -1,8 +1,7 @@
 ---
 tags:
-- math-55a
+- math-55A/1
 - comb
-lecture: math-55a-1
 ---
 
 ### Basic combinatorics by induction

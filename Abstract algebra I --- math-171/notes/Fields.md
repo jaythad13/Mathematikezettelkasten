@@ -1,9 +1,7 @@
 ---
 tags:
 - alg
-- math-171
-lecture:
-- math-171-4
+- math-171/4
 ---
 
 Fields are a special type of commutative ring with identity.

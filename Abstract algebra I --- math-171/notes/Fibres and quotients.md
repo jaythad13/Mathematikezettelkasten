@@ -1,9 +1,7 @@
 ---
 tags:
-- math-171
+- math-171/11
 - alg
-lecture: 
-- math-171-11
 ---
 
 Suppose $\varphi : G \to H$ is a group homomorphism. What about the other way? Even if $\varphi$ is not injective or surjective, what structures can we define that, in some sense go from $H$ to $G$?

@@ -1,8 +1,7 @@
 ---
 tags:
 - alg
-- math-171
-lecture: math-171-14
+- math-171/14
 ---
 
 Remember how subgroups of index $2$ [[Lagrange's theorem#_proposition _ index $2$ subgroups are normal|are normal]]? Let's look at an example.

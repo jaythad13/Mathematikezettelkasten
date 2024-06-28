@@ -1,10 +1,8 @@
 ---
 tags:
-- math-82
 - diff-eq
-lecture:
-- math-82-6
-- math-82-7
+- math-82/6
+- math-82/7
 ---
 
 [[Differential Equations --- math-82/notes/Classifying ordinary differential equations#Order|Second order]], [[Differential Equations --- math-82/notes/Classifying ordinary differential equations#Linearity|linear]], [[Differential Equations --- math-82/notes/Classifying ordinary differential equations#_definition _ homogenous and non-homogenous linear differential equation|homogenous]] constant-coefficient differential equations are exactly what you think they are. They're second order linear homogenous differential equations where the coefficients of the dependent variable and its derivatives are all constant factors.

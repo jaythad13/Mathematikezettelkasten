@@ -1,9 +1,7 @@
 ---
 tags:
-- math-142
+- math-142/8
 - diff-geo
-lecture:
-- math-142-8
 ---
 
 We've dealt a lot with maps $f: \mathbb{R}^3 \to \mathbb{R}$ and $F : \mathbb{R}^3 \to \mathbb{R}^3$. Let's talk about maps $F : \mathbb{R}^n \to \mathbb{R}^m$.

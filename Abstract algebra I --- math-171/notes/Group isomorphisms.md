@@ -1,9 +1,7 @@
 ---
 tags:
-- math-171
 - alg
-lecture:
-- math-171-6
+- math-171/6
 ---
 
 ### Warm up

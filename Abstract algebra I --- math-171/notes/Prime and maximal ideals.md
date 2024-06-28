@@ -1,8 +1,7 @@
 ---
 tags:
 - alg
-- math-171
-lecture: math-171-18
+- math-171/18
 ---
 
 ### Maximal ideals

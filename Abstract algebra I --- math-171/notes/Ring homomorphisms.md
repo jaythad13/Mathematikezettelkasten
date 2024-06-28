@@ -1,9 +1,7 @@
 ---
 tags:
 - alg
-- math-171
-lecture:
-- math-171-17
+- math-171/17
 ---
 
 Ring homomorphisms of a ring $R$ are [[Abstract Algebra I --- math-171/notes/Group homomorphisms#_definition _ group homomorphisms|group homomorphisms]] of $(R, +)$ that respect the multiplication on $R$ too.

@@ -1,10 +1,8 @@
 ---
 tags:
-- math-82
 - diff-eq
-lecture:
-- math-82-6
-- math-82-7
+- math-82/6
+- math-82/7
 ---
 
 Second-order differential equations come up in the context of oscillating systems — there are very many of these.

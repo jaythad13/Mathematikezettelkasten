@@ -1,8 +1,7 @@
 ---
 tags:
 - alg
-- math-171
-lecture: math-171-1
+- math-171/1
 ---
 
 Given $2 + 5x = 16$ how do you find the value of $x$?

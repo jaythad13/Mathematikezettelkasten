@@ -1,8 +1,7 @@
 ---
 tags: 
 - diff-geo
-- math-142
-lecture: math-142-2
+- math-142/2
 ---
 
 Recall that the idea of a [[The framework of differential geometry#_(re)definition _ vector field|vector field]] is that we should be able to figure how things move at every point $\mathbf{p} \in \mathbb{R}^3$.

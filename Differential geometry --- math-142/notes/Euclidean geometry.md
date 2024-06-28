@@ -1,11 +1,9 @@
 ---
 tags:
-- math-142
 - diff-geo
-lecture:
-- math-142-23
-- math-142-24
-- math-142-25
+- math-142/23
+- math-142/24
+- math-142/25
 ---
 
 ### The big picture — Euclidean geometry

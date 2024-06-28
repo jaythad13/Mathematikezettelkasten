@@ -2,9 +2,8 @@
 tags:
 - alg
 - cat-th
-lecture:
-- math-171-6
-- math-171-7
+- math-171/6
+- math-171/7
 ---
 
 ### Group automorphisms

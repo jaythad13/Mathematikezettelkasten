@@ -1,8 +1,7 @@
 ---
 tags:
-- math-55a
+- math-55A/2
 - comb
-lecture: math-55a-1
 ---
 
 Most combinatorial rules come down to a rule for counting sums and a rule for counting products.

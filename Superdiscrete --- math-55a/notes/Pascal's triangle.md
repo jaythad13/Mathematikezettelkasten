@@ -1,10 +1,8 @@
 ---
 tags:
-- math-55a
+- math-55A/1
+- math-55A/2
 - comb
-lecture:
-- math-55a-1
-- math-55a-2
 ---
 
 We can use the [[Basic combinatorics#_definition _ $ binom{n}{k}$|binomial coefficients]] in interesting ways. Specifically, arranging the binomial coefficients in a triangle shows us some interesting properties.

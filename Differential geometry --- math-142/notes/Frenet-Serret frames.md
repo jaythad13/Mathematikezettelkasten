@@ -1,12 +1,10 @@
 ---
 tags:
 - diff-geo
-- math-142
-lecture:
-- math-142-11
-- math-142-12
-- math-142-13
-- math-142-14
+- math-142/11
+- math-142/12
+- math-142/13
+- math-142/14
 ---
 
 With Frenet-Serret frames, we are setting up the [[Frames|frame]]work for a lot of differential geometry.

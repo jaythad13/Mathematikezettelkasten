@@ -1,10 +1,8 @@
 ---
 tags:
   - alg
-  - math-171
-lecture:
-  - math-171-17
-  - math-171-18
+  - math-171/17
+  - math-171/18
 ---
 
 [[Abstract Algebra I --- math-171/notes/Rings#Substructures of rings|Last class]] we defined substructures of rings — subrings and ideals. Today we use these. First, some more definitions.

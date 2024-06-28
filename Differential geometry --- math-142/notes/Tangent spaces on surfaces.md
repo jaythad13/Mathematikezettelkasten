@@ -1,12 +1,10 @@
 ---
 tags:
-- math-142
 - diff-geo
-lecture:
-- math-142-29
-- math-142-30
-- math-142-31
-- math-142-32
+- math-142/29
+- math-142/30
+- math-142/31
+- math-142/32
 ---
 
 Given a surface $M$, we want to define a tangent space $\mathrm{T}_{p}M$ at each point $p \in M$. Hopefully this will also allow us to define directional derivatives, and vector fields on a surface!

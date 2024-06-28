@@ -1,10 +1,8 @@
 ---
 tags:
 - diff-geo
-- math-142
-lecture:
-- math-142-17
-- math-142-18
+- math-142/17
+- math-142/18
 ---
 
 Recall that for the [[Frenet-Serret frames]], we can write the derivatives of each vector field as the a linear combination (with functions as coefficients) of the vector fields themselves —

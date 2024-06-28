@@ -1,10 +1,8 @@
 ---
 tags:
 - alg
-- math-171
-lecture:
- - math-171-2
- - math-171-3
+- math-171/2
+- math-171/3
 ---
 
 ### Emergent structure on groups

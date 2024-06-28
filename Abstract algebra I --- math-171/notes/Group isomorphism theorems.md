@@ -1,11 +1,9 @@
 ---
 tags:
-- math-171
 - alg
-lecture:
-- math-171-12
-- math-171-14
-- math-171-15
+- math-171/12
+- math-171/14
+- math-171/15
 ---
 
 ### The first isomorphism theorem

@@ -1,6 +1,6 @@
 ---
 tags:
-- math-55a
+- math-55A
 - nt
 ---
 

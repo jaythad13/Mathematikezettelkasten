@@ -1,8 +1,7 @@
 ---
 tags:
 - diff-geo
-- math-142
-lecture: math-142-3
+- math-142/3
 ---
 
 In physics, when a particle is moving along a curve, we want to keep track of the position and velocity of the vector. Differential geometry allows us to keep track of both simultaneously with tangent vectors.

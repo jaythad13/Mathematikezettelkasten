@@ -1,9 +1,7 @@
 ---
 tags:
 - diff-eq
-- math-82
-lecture:
-- math-82-1
+- math-82/1
 ---
 
 ### What are they?

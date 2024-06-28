@@ -1,10 +1,8 @@
 ---
 tags:
-- math-82
 - diff-eq
-lecture:
-- math-82-3
-- math-82-4
+- math-82/3
+- math-82/4
 ---
 
 An important class of problems in differential equations is that of equilibrium. We care a lot about where the solution to a differential equation might finally stabilise and what it might stabilise at. Again, an example is the best way to demonstrate why we care about this type of problem.

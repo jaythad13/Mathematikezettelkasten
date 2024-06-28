@@ -1,10 +1,8 @@
 ---
 tags:
 - alg
-- math-171
-lecture:
-- math-171-5
-- math-171-6
+- math-171/5
+- math-171/6
 ---
 
 Remember linear maps? Homomorphisms are to things what linear maps are to vector spaces.

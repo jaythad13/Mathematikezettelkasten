@@ -1,10 +1,8 @@
 ---
 tags:
 - alg
-- math-171
-lecture: 
-- math-171-3
-- math-171-4
+- math-171/3
+- math-171/4
 ---
 
 Finite groups are really combinatorial objects! Last time we used combinatorial arguments about generators to learn a little about 

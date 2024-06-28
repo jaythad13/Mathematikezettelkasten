@@ -1,8 +1,7 @@
 ---
 tags:
-- math-55a
+- math-55A/6
 - graph
-lecture: math-55a-6
 ---
 
 ##### _definition:_ proper colouring

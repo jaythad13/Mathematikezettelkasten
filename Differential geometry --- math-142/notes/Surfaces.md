@@ -1,11 +1,9 @@
 ---
 tags:
-- math-142
 - diff-geo
-lecture:
-- math-142-26
-- math-142-27
-- math-142-28
+- math-142/26
+- math-142/27
+- math-142/28
 ---
 
 ### From curves to surfaces

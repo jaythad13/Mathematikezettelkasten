@@ -1,10 +1,8 @@
 ---
 tags:
 - alg
-- math-171
-lecture: 
-- math-171-4
-- math-171-5
+- math-171/4
+- math-171/5
 ---
 
 ### Linear algebra recap

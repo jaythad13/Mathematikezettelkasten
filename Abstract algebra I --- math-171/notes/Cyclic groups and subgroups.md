@@ -1,10 +1,8 @@
 ---
 tags:
 - alg
-- math-171
-lecture:
-- math-171-9
-- math-171-10
+- math-171/9
+- math-171/10
 ---
 
 Cyclic subgroups are the easiest subgroups to deal with — dealing with something like $\left< 3 \right> \le \mathbb Z$ is much easier than dealing with more elements. Here, we will see that when we are dealing with cyclic groups we never need to deal with non-cyclic subgroups. Note that this also makes [[Subgroups#_example _ the lattice of subgroups of $ mathbb{Z} / 6 mathbb{Z}$|calculating lattices of a cyclic group]] easier.

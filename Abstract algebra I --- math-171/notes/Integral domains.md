@@ -1,9 +1,7 @@
 ---
 tags:
 - alg
-- math-171
-lecture:
-- math-171-16
+- math-171/16
 ---
 
 ### Integer-al domains

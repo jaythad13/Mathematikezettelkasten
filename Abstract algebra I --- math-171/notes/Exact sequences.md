@@ -1,10 +1,8 @@
 ---
 tags:
-- math-171
+- math-171/6
 - alg
 - cat-th
-lecture:
-- math-171-6
 ---
 
 Exact sequences are a category theory thing, but here we're always working in $\mathsf{Grp}$ or $\mathsf{Ring}$.

@@ -1,10 +1,8 @@
 ---
 tags:
 - diff-geo
-- math-142
-lecture:
-- math-142-6
-- math-142-7
+- math-142/6
+- math-142/7
 ---
 
 [[Differential 1-forms#_definition _ the differential/exterior derivative of a $1$-form|We know how to send]] $0$-forms to $1$-forms by

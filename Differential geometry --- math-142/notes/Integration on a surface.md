@@ -1,11 +1,9 @@
 ---
 tags:
-- math-142
 - diff-geo
-lecture:
-- math-142-35
-- math-142-36
-- math-142-37
+- math-142/35
+- math-142/36
+- math-142/37
 ---
 
 ### Path integrals review

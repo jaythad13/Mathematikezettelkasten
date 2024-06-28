@@ -1,8 +1,7 @@
 ---
 tags:
 - diff-geo
-- math-142
-lecture: math-142-1
+- math-142/1
 ---
 
 ### Some motivation

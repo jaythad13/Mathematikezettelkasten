@@ -1,10 +1,8 @@
 ---
 tags:
 - diff-geo
-- math-142
-lecture:
-- math-142-18
-- math-142-19
+- math-142/18
+- math-142/19
 ---
 
 Recall how whenever we wanted to identify the cross product with wedge product, we said we'd just [[The exterior derivative#A special case the curl|slap a Hodge star on it]]? We're going to do this again to write the [[Connection forms#_theorem, definition _ the connection equations, the connection forms|the connection equation]] $\nabla_{\mathbf{V}} \mathbf{E}_{i} = \omega \times \mathbf{E}_{i}$ in the language of differential forms.

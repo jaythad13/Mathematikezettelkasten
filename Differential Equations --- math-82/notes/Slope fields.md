@@ -1,9 +1,7 @@
 ---
 tags:
-- math-82
+- math-82/3
 - diff-eq
-lecture:
-- math-82-3
 ---
 
 Even when we don't have a nice differential equation that we can solve analytically (because it isn't of one of the nice types or because something we have to integrate can't be integrated analytically), we can understand what its properties are with slope fields. These just involve drawing short segments of slope equal to the derivative of the dependent variable at every point where it is defined.

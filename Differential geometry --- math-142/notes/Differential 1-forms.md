@@ -1,10 +1,8 @@
 ---
 tags:
 - diff-geo
-- math-142
-lecture: 
-- math-142-3
-- math-142-4
+- math-142/3
+- math-142/4
 ---
 
 Recall how in multivariable calculus we had

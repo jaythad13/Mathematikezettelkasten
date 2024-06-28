@@ -2,7 +2,7 @@
 tags: 
 - alg-comb
 - comb
-lecture: math-55a-2
+- math-55A/2
 ---
 
 ### The binomial theorem

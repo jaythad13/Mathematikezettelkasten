@@ -1,9 +1,7 @@
 ---
 tags:
-- math-171
+- math-171/13
 - alg
-lecture:
-- math-171-13
 ---
 ### Lagrange's theorem
 

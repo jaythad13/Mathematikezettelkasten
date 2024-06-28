@@ -1,10 +1,8 @@
 ---
 tags:
 - diff-geo
-- math-142
-lecture:
-- math-142-20
-- math-142-21
+- math-142/20
+- math-142/21
 ---
 
 Proper Euclidean motions are basically the nicest maps on metric spaces. We're just going to talk about $\mathbb{R}^n$, with the Euclidean inner product (the dot product).

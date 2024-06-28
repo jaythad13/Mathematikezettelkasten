@@ -1,10 +1,8 @@
 ---
 tags:
-- math-171
+- math-171/19
 - alg
-lecture: 
-- math-171-19
-- math-171-20
+- math-171/20
 ---
 
 ### Euclidean domains

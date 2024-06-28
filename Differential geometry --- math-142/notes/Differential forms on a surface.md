@@ -1,11 +1,9 @@
 ---
 tags:
-- math-142
 - diff-geo
-lecture:
-- math-142-33
-- math-142-34
-- math-142-35
+- math-142/33
+- math-142/34
+- math-142/35
 ---
 
 We've seen how to deal with [[Differential forms|differential forms]] on $\mathbb{R}^3$. If you replace all of the domains $\mathbb{R}^3$ with a surface $M$, we get differential forms on a surface.

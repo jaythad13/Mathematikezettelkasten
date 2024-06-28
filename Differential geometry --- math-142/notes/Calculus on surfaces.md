@@ -1,11 +1,9 @@
 ---
 tags:
 - diff-geo
-- math-142
-lecture:
-- math-142-29
-- math-142-30
-- math-142-36
+- math-142/29
+- math-142/30
+- math-142/36
 ---
 
 Now that we have a good idea of [[Surfaces|surfaces]], we can start to calculus on them, like we would want to (perhaps, for physics, or just for math's own sake). Basically, the openness of each of the domains of the [[Surfaces#_definition _ coordinate patch|coordinate patches]] means that we can take derivatives and limits inside them, and then we will try in some sense to transfer them to the neighbourhoods of the points on the surface.

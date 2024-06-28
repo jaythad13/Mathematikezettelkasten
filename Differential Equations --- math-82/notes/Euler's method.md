@@ -1,9 +1,7 @@
 ---
 tags:
-- math-82
 - diff-eq
-lecture:
-- math-82-4
+- math-82/4
 ---
 
 Euler's method uses the fact that [[The derivative|linear approximations are remarkably good]] to describe approximate solutions to [[Classifying ordinary differential equations#Order|first order]] differential equations. Essentially, it takes an initial point $(x_{0}, y_{0})$, gets the value of $y'$ at $(x_{0}, y_{0})$ and then approximates $(x_{1}, y_{1})$ for a solution of the differential equation by $y_{1} \approx y_{0} + y'(x_{0}, y_{0}) \Delta x$ for $\Delta x = x_{1} - x_{0}$. Then you just keep going.

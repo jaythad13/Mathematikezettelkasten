@@ -1,8 +1,7 @@
 ---
 tags:
 - diff-eq
-- math-82
-lecture: math-82-1
+- math-82/1
 ---
 
 An important part of dealing with differential equations is learning to classify them. Having the vocabulary to describe the salient properties of an [[What are differential equations?#_definition _ ordinary differential equations|ordinary differential equation]] can be very useful to determine their behaviour, deeper properties, and whether analytic solution strategies apply.

@@ -1,8 +1,7 @@
 ---
 tags:
- - math-142
  - diff-geo
-lecture: math-142-15
+ - math-142/15
 ---
 
 Covariant derivatives generalise the notion of a [[Vector fields#_definition _ $ mathbf{V}[f]$, derivation|directional derivative on a vector field]]. They allow us to do to a vector field what the directional derivative on a vector field does to a function.

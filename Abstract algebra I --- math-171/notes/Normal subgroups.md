@@ -1,10 +1,8 @@
 ---
 tags:
-- math-171
 - alg
-lecture:
-- math-171-12
-- math-171-13
+- math-171/12
+- math-171/13
 ---
 
 We've seen enough [[Fibres and quotients|examples]] of quotient groups. Now we want to see whether it makes sense to quotient out by any subgroup or there are some restrictions on what we can quotient out by.

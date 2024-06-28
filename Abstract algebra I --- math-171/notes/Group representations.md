@@ -2,9 +2,7 @@
 tags: 
 - alg
 - rep-th
-- math-171
-lecture:
-- math-171-8
+- math-171/8
 ---
 
 Representations are ways of embedding groups in sets we already understand. Often we do this by way of group actions.

@@ -1,9 +1,7 @@
 ---
 tags:
 - comb
-- math-55a
-lecture:
-- math-55a-2
+- math-55A/2
 ---
 
 We know that

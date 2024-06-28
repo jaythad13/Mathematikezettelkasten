@@ -1,10 +1,8 @@
 ---
 tags:
 - alg
-- math-171
-lecture:
-- math-171-8
-- math-171-9
+- math-171/8
+- math-171/9
 ---
 
 We've seen this idea so many times before in homework, but obviously it's worth defining it explicitly. A subgroup is just a group sitting inside the group with the same operation.

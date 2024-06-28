@@ -1,9 +1,7 @@
 ---
 tags:
-- math-82
+- math-82/3
 - diff-eq
-lecture:
-- math-82-3
 ---
 
 Another really nice subclass of [[Classifying ordinary differential equations#Order|first order]] differential equations is that of first order [[Classifying ordinary differential equations#_definition _ linear differential equation|linear differential equations]]. The best way to see this why they are nice is an example.

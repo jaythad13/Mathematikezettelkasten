@@ -1,10 +1,8 @@
 ---
 tags: 
-- math-142
 - diff-geo
-lecture:
-- math-142-11
-- math-142-16
+- math-142/11
+- math-142/16
 ---
 
 What happens if we want to generalise the idea of the standard basis on $\mathbb{R}^3$? We get the idea of an [[Orthonormal bases#_definition _ orthonormal basis|orthonormal basis]]. But this only preserves properties with respect to the inner product. What if we want to preserve its properties with respect to the cross product as well? Then we get a frame.

@@ -1,10 +1,8 @@
 ---
 tags:
-- math-142
 - diff-geo
-lecture: 
-- math-142-5
-- math-142-6
+- math-142/5
+- math-142/6
 ---
 
 Differential forms help us understanding things we've seen in vector calculus

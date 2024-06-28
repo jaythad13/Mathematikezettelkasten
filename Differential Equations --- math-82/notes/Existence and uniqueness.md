@@ -1,10 +1,8 @@
 ---
 tags:
-- math-82
 - diff-eq
-lecture:
-- math-82-4
-- math-82-5
+- math-82/4
+- math-82/5
 ---
 
 While numerical solutions (like [[Euler's method]]) are really valuable, it's always useful to be able to confirm that our approximations really are converging to something. Existence and uniqueness theorems allow us to confirm exactly where the numerical approximation "works". Note that they don't necessarily give us a way to find the solution — they just confirm that one exists.
