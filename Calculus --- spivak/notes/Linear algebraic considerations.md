@@ -1,6 +1,6 @@
 ---
 tags:
-- spivak
+- spivak/mnfld/1
 - lin-alg
 - self-study
 ---

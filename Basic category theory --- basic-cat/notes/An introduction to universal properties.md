@@ -1,7 +1,7 @@
 ---
 tags:
 - cat-th
-- basic-cat
+- basic-cat/0
 - self-study
 ---
 

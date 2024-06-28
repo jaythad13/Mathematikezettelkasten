@@ -1,6 +1,6 @@
 ---
 tags:
-- rudin
+- rudin/2
 - anal
 - top
 - self-study

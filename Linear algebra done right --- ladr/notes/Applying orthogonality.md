@@ -1,6 +1,6 @@
 ---
 tags:
-- ladr
+- ladr/6C
 - lin-alg
 - self-study
 ---

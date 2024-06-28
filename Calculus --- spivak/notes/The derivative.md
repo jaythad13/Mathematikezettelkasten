@@ -1,6 +1,6 @@
 ---
 tags:
-- spivak
+- spivak/mnfld/2
 - anal
 - calc
 - self-study
