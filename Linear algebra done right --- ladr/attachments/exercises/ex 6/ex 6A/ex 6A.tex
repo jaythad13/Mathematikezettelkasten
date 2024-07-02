@@ -1,5 +1,5 @@
 \documentclass[12pt,letterpaper]{hmcpset}
-\usepackage{math-19-preamble}
+\usepackage{lin-alg-preamble}
 
 % info for header block in upper right hand corner
 \name{Jayden Thadani}
@@ -8,19 +8,23 @@
 
 \begin{document}
 
-\problemlist{}
-
 \begin{problem}[1]
 	Show that the function that takes $((x_1, x_2), (y_1, y_2)) \in \bb{R}^2 \times \bb{R}^2$ to $\abs{x_1 y_1} + \abs{x_2 y_2}$ is not an inner product on $\bb{R}^2$.
 \end{problem}
+
+\pagebreak
 
 \begin{problem}[2]
 	Show that the function that takes $((x_1, x_2, x_3), (y_1, y_2, y_3)) \in \bb{R}^3 \times \bb{R}^3$ to $x_1 y_1 + x_3 y_3$ is not an inner product on $\bb{R}^3$. 
 \end{problem}
 
+\pagebreak
+
 \begin{problem}[3]
 	Suppose $\bb{F} = \bb{R}$ and $V \neq \set{0}$. Replace the positivity condition (which states that $\langle v, v \rangle \ge 0$ for all $v \in V$) in the definition of an inner product with the condition that $\langle v, v \rangle > 0$ for some $v \in V$. Show that this change in the definition does not change the set of functions from $V \times V$ to $\bb{R}$ that are inner products on $V$.
 \end{problem}
+
+\pagebreak
 
 \begin{problem}[4]
 	Suppose $V$ is a real inner product space.
@@ -31,9 +35,13 @@
 	\end{enumerate}
 \end{problem}
 
+\pagebreak
+
 \begin{problem}[5]
 	Suppose $T \in \mathcal{L}(V)$ (for finite-dimensional $V$) is such that $\norm{Tv} \le \norm{v}$ for every $v \in V$. Prove that $T - \sqrt{2} I$ is invertible.
 \end{problem}
+
+\pagebreak
 
 \begin{problem}[6]
 	Suppose $u, v \in V$. Prove that $\langle u, v \rangle = 0$ if and only if
@@ -43,13 +51,19 @@
 	for all $a \in \bb{F}$.
 \end{problem}
 
+\pagebreak
+
 \begin{problem}[7]
 	Suppose $u, v \in V$. Prove that $\norm{au + bv} = \norm{bu + av}$ for all $a, b \in \bb{R}$ if and only if $\norm{u} = \norm{v}$.
 \end{problem}
 
+\pagebreak
+
 \begin{problem}[8]
 	Suppose $u, v \in V$ and $\norm{u} = \norm{v} = 1$ and $\langle u, v \rangle = 1$. Prove that $u = v$.
 \end{problem}
+
+\pagebreak
 
 \begin{problem}[9]
 	Suppose $u, v \in V$ and $\norm{u} \le 1$ and $\norm{v} \le 1$. Prove that
@@ -58,9 +72,13 @@
 	\]
 \end{problem}
 
+\pagebreak
+
 \begin{problem}[10]
 	Find vectors $u, v \in \bb{R}^2$ such that $u$ is a scalar multiple of $(1, 3)$, $v$ is orthogonal to $(1, 3)$, and $(1, 2) = u + v.$
 \end{problem}
+
+\pagebreak
 
 \begin{problem}[11]
 	Prove that
@@ -70,6 +88,8 @@
 	for all positive numbers $a, b, c, d$.
 \end{problem}
 
+\pagebreak
+
 \begin{problem}[12]
 	Prove that
 	\[
@@ -77,6 +97,8 @@
 	\]
 	for all positive integers $n$ and all real numbers $x_1, \ldots, x_n$.
 \end{problem}
+
+\pagebreak
 
 \begin{problem}[13]
 	Suppose $u, v$ are nonzero vectors in $\bb{R}^2$. Prove that
@@ -86,6 +108,8 @@
 	where $\theta$ is the angle between $u$ and $v$ (thinking of $u$ and $v$ as arrows with initial point at the origin).
 \end{problem}
 
+\pagebreak
+
 \begin{problem}[14]
 	The angle between two vectors (thought of as arrows with initial point at the origin) in $\bb{R}^2$ or $\bb{R}^3$ can be defined geometrically. However, geometry is not as clear for $\bb{R}^n$ for $n < 3$. Thus, the angle between two nonzero vectors $x, y \in \bb{R^n}$ is defined to be
 	\[
@@ -94,6 +118,8 @@
 	where the motivation for this definition comes from the previous exercise. Explain why the Cauchy-Schwartz inequality is needed to show that this definition makes sense.
 \end{problem}
 
+\pagebreak
+
 \begin{problem}[15]
 	Prove that
 	\[
@@ -101,6 +127,8 @@
 	\]
 	for all real numbers $a_1, \ldots, a_n$ and $b_1, \ldots, b_n$.
 \end{problem}
+
+\pagebreak
 
 \begin{problem}[16]
 	Suppose $u, v \in V$ are such that
@@ -114,6 +142,8 @@
 	What number does $\norm{v}$ equal?
 \end{problem}
 
+\pagebreak
+
 \begin{problem}[17]
 	Prove or disprove: there is an inner product on $\bb{R}^2$ such that the associated norm is given by
 	\[
@@ -121,6 +151,8 @@
 	\]
 	for all $(x, y) \in  \bb{R}^2$
 \end{problem}
+
+\pagebreak
 
 \begin{problem}[18]
 	Suppose $p > 0$. Prove that there is an inner product on $\bb{R}^2$ such that the associated norm is given by
@@ -130,6 +162,8 @@
 	for all $(x, y) \in \bb{R}^2$ if and only if $p = 2$.
 \end{problem}
 
+\pagebreak
+
 \begin{problem}[19]
 	Suppose $V$ is a real inner product space. Prove that
 	\[
@@ -137,6 +171,8 @@
 	\]
 	for all $u, v \in V$.
 \end{problem}
+
+\pagebreak
 
 \begin{problem}[20]
 	Suppose $V$ is a complex inner product space. Prove that
@@ -146,14 +182,20 @@
 	for all $u, v \in V$.
 \end{problem}
 
+\pagebreak
+
 \begin{problem}[21]
 	A norm on a vector space $U$ is a function $\norm{\,}: U \to [0, \infty)$ such that $\norm{u} = 0$ if and only if $u = 0$, $\norm{\alpha u} = \abs{\alpha} \norm{u}$ for all $\alpha \in \bb{F}$ and all $u \in U$, and $\norm{u + v} \le \norm{u} + \norm{v}$ for all $u, v \in U$. \\\\
 	Prove that a norm satisfying the parallelogram equality comes from an inner product (in other words, show that if $\norm{\,}$ is a norm on $U$ satisfying the parallelogram equality, then there is an inner product $\langle \,\, , \, \rangle$ on $U$ such that $\norm{u} = \langle u, u \rangle^{1/2}$ for all $u \in U$).
 \end{problem}
 
+\pagebreak
+
 \begin{problem}[22]
 	Show that the square of an average is less than or equal to the average of the squares. More precisely, show that if $a_1, \ldots, a_n \in \bb{R}$, then the square of the average of $a_1, \ldots, a_n$ is less than or equal to the average of $a_1^2, \ldots, a_n^2$.
 \end{problem}
+
+\pagebreak
 
 \begin{problem}[23]
 	Suppose $V_1, \ldots, V_m$ are inner product spaces. Show that the equation
@@ -163,6 +205,8 @@
 	defines an inner product on $V_1 \times \cdots \times V_m$
 \end{problem}
 
+\pagebreak
+
 \begin{problem}[24]
 	Suppose $S \in \mathcal{L}(V)$ is an injective operator on $V$. Define $\langle \cdot, \cdot \rangle_1$ by
 	\[
@@ -171,9 +215,13 @@
 	for $u, v \in V$. Show that $\langle \cdot, \cdot \rangle_1$ is an inner product on $V$.
 \end{problem}
 
+\pagebreak
+
 \begin{problem}[25]
 	Suppose $S \in \mathcal{L}(V)$ is not injective. Define $\langle \cdot, \cdot \rangle_1$ as in the exercise above. Explain why $\langle \cdot, \cdot \rangle_1$ is not an inner product on $V$.
 \end{problem}
+
+\pagebreak
 
 \begin{problem}[26]
 	Suppose $f, g$ are differentiable functions from $\bb{R}$ to $\bb{R}^n$.
@@ -187,6 +235,8 @@
 	\end{enumerate}
 \end{problem}
 
+\pagebreak
+
 \begin{problem}[27]
 	Suppose $u, v, w \in V$. Prove that
 	\[
@@ -194,12 +244,16 @@
 	\]
 \end{problem}
 
+\pagebreak
+
 \begin{problem}[28]
 Supppose $C$ is a subset of $V$ with the property that $u, v \in C$ implies $\frac{1}{2} (u + v) \in C$. Let $w \in V$. Show that there is at most one point in $C$ that is closest to $w$. In other words, show that there is at most one $u \in C$ such that
 	\[
 		\norm{w - u} \le \norm{w - v} \text{ for all } v \in C.
 	\]
 \end{problem}
+
+\pagebreak
 
 \begin{problem}[29]
     For \( u , v \in V \), define \( d(u, v) = \Vert u - v \Vert \)
@@ -210,49 +264,60 @@ Supppose $C$ is a subset of $V$ with the property that $u, v \in C$ implies $\fr
     \end{enumerate}
 \end{problem}
 
-\begin{solution}
+\begin{solution}~
+	
     \begin{enumerate}
-        \item In order to show that $d$ is a metric, we need to show that it is positive definite, symmetric, and satisfies the triangle inequality.\\\\
-        First we show that $d$ is positive definite. Let \( u, v, w \) be any vectors in $V$. Since \( \Vert w \Vert = 0 \) if and only if \( w = 0 \), we have that \( d (u, v) = 0 \) if and only if \( u - v = 0 \). Thus, we have \( d (u, v) = 0 \) if and only if \( u = v \). Note also that \( \Vert w \Vert \ge 0 \), giving us \( d(u, v) \ge 0 \) always. Combining these two statements about $d$ gives us that it is positive definite.\\\\
+        \item In order to show that $d$ is a metric, we need to show that it is positive definite, symmetric, and satisfies the triangle inequality.\\
+		
+        First we show that $d$ is positive definite. Let \( u, v, w \) be any vectors in $V$. Since \( \Vert w \Vert = 0 \) if and only if \( w = 0 \), we have that \( d (u, v) = 0 \) if and only if \( u - v = 0 \). Thus, we have \( d (u, v) = 0 \) if and only if \( u = v \). Note also that \( \Vert w \Vert \ge 0 \), giving us \( d(u, v) \ge 0 \) always. Thus, $d$ is positive definite. \\
+	
         Now we show that $d$ is symmetric. This follows obviously from the properties of the norm of a scaled vector. For any \( u, v \in V \)
         \[
-        d(u, v) = \Vert u - v \Vert = \Vert (-1) (v - u) \Vert = \vert -1 \vert \Vert v - u \Vert = \Vert v - u \Vert = d(v, u).
+        \begin{split}
+		d(u, v) & = \Vert u - v \Vert \\
+			& = \Vert (-1) (v - u) \Vert \\
+			& = \vert -1 \vert \Vert v - u \Vert \\
+			& = \Vert v - u \Vert \\
+			& = d(v, u).
+        \end{split}
         \]\\
-        Finally, we only need to point out an obvious conversion between what the triangle means for norms and what it means for metric spaces. For any \( u, v, w \in V \) 
+        Finally, the triangle inequalities for norms and metrics are equivalent. For any \( u, v, w \in V \) 
         \[
         d(u, v) + d(v, w) = \Vert v - u \Vert + \Vert w - v \Vert.
         \]
         By the triangle inequality (for norms) we have
         \[
-        \norm{v - u} + \norm{w - v} \le \norm{(v - u) + (w - v)} = \norm{w - u}.
+        	\begin{split}
+			\norm{v - u} + \norm{w - v} & \le \norm{(v - u) + (w - v)} \\
+						    & = \norm{w - u}.
+        	\end{split}
         \]
-        Thus, we have the triangle inequality for metrics:
+        Thus, we have the triangle inequality for metrics.
         \[
-        d(u, v) + d(v, w) \le d(u, w)
+        d(u, v) + d(v, w) \le d(u, w).
         \]
-        \item If $V$ is finite-dimensional, then we have an orthonormal basis \(u_1, \ldots, u_m\). (This is proven later in the book). Let $\set{v_n}$ be any Cauchy sequence in $V$.\\\\
-        Then we can write each element of the sequence
+        \item If $V$ is finite-dimensional, then we have an orthonormal basis \(e_1, \ldots, e_m\). Let $\set{v_n}$ be any Cauchy sequence in $V$.\\
+		
+        Then we can write each term of the sequence as
         \[
-        v_n = a_{n, 1} u_1 + \ldots + a_{n, m} u_m.
-        \]\\
+        v_n = a_{n, 1} e_1 + \ldots + a_{n, m} e_m.
+        \]
+	
         Since $\set{v_n}$ is Cauchy, we have that for any \( \varepsilon > 0 \), there exists some \( N \in \bb{N} \) such that for all \( j, k > N \) we have \( d(v_j, v_k) < \varepsilon \). We can rewrite the expression as
         \[
-        d(a_{j, 1} u_1 + \ldots + a_{j, m} u_m, a_{k, 1} u_1 + \ldots + a_{k, m} u_m) = \norm{ (a_{j, 1} - a_{k, 1}) u_1 + \ldots + (a_{j, m} - a_{k, m}) u_m}.
+        	d(a_{j, 1} e_1 + \ldots + a_{j, m} e_m, a_{k, 1} e_1 + \ldots + a_{k, m} e_m) = \norm{ (a_{j, 1} - a_{k, 1}) e_1 + \ldots + (a_{j, m} - a_{k, m}) e_m}.
         \]
         Thus,
         \[
-        \norm{ (a_{j, 1} - a_{k, 1}) u_1 + \ldots + (a_{j, m} - a_{k, m}) u_m} < \varepsilon
+	        \norm{ (a_{j, 1} - a_{k, 1}) e_1 + \ldots + (a_{j, m} - a_{k, m}) e_m} < \varepsilon
         \]
-        (with all the same qualifiers for \( j, k, \varepsilon \) ).
-        Since the basis vectors are orthogonal, and the right and left hand sides of the inequality are obviously nonnegative, we get
-        \[
-         \abs{a_{j, 1} - a_{k, 1}}^2 \norm{u_1}^2 + \ldots + \abs{a_{j, m} - a_{k, m}}^2 \norm{u_m}^2 < \varepsilon^2
+	which reduces (by Pythagoras' theorem) to
+	\[
+        	\abs{a_{j, 1} - a_{k, 1}}^2 + \ldots + \abs{a_{j, m} - a_{k, m}}^2 < \varepsilon^2
         \]
-        and since the basis vectors are also unit vectors, we can simplify this to
-        \[
-        \abs{a_{j, 1} - a_{k, 1}}^2 + \ldots + \abs{a_{j, m} - a_{k, m}}^2 < \varepsilon^2
-        \]
-        Since all the terms on the left hand side are nonnegative, we can write
+	(with all the same qualifiers for \( j, k, \varepsilon \) ). \\
+
+	Since all the terms on the left hand side are non-negative, we can write
         \[
         \abs{a_{j, p} - a{k, p}}^2 < \varepsilon^2
         \]
@@ -266,67 +331,72 @@ Supppose $C$ is a subset of $V$ with the property that $u, v \in C$ implies $\fr
         \abs{a_{j, p} - a_{k, p}} < \varepsilon.
         \]
         That is, for any \( p \in \set{1, \ldots m} \) the sequence \( \set{a_{n, p}} \) is Cauchy.\\\\
-        Since $V$ is a field over $\bb{R}$ or $\bb{C}$, both of which are complete, for all $p$, $\set{a_{n, p}}$ converges to some $A_p$. That is, for any \( \varepsilon' > 0 \), there is some \( N \in \bb{N} \) such that for all \( n > N \), \( \abs{A_p - a_{n, p}} < \varepsilon' \). This motivates us to think about the sequence of vectors converging to \( A_1 u_1 + \ldots + A_m u_m \).\\\\
-        For any \( \varepsilon' > 0 \) we can have some $N$ such that for all $n > N$, for all $p$, \( \abs{A_p - a_{n, p}} < \frac{\varepsilon}{m}' \) (if for each sequence of coefficients we get $N_p$, then take some $n$ greater than \( \max{N_p} \)). We consider
+        Since $V$ is a field over $\bb{R}$ or $\bb{C}$, both of which are complete, for all $p$, $\set{a_{n, p}}$ converges to some $A_p$. That is, for any \( \varepsilon' > 0 \), there is some \( N \in \bb{N} \) such that for all \( n > N \), \( \abs{A_p - a_{n, p}} < \varepsilon' \). We will show that the sequence of vectors converges to \( A_1 e_1 + \ldots + A_m e_m \). \\
+
+        For any \( \varepsilon' > 0 \) we can have some $N$ such that for all $n > N$, for all $p$, \( \abs{A_p - a_{n, p}} < \frac{\varepsilon}{m}' \). Specifically, if for each sequence of coefficients we get $N_p$, then $N = \max N_{p}$. We use Pythagoras' theorem again to get
         \[
-        d(A_1 u_1 + \ldots + A_m u_m, a_{n, 1} u_1 + \ldots a_{n, m} u_m) = \norm{(A_1 u_1 + \ldots + A_m u_m) - (a_{n, 1} u_1 + \ldots a_{n, m} u_m)}
-        \]
-        and perform the same expansion as previously to get
-        \[
-        d(A_1 u_1 + \ldots + A_m u_m, a_{n, 1} u_1 + \ldots a_{n, m} u_m) \le \abs{A_1 - a_{n, 1}} + \ldots + \abs{A_m - a_{n, m}} < m \frac{\varepsilon'}{m} = \varepsilon'
-        \]\\
+        \begin{split}
+		d(A_1 e_1 + \ldots + A_m e_m, a_{n, 1} e_1 + \ldots a_{n, m} e_m) & \le \abs{A_1 - a_{n, 1}} + \ldots + \abs{A_m - a_{n, m}} \\
+										  & < m \frac{\varepsilon'}{m} = \varepsilon'
+        \end{split}        \]\\
         Specifically, for any \( \varepsilon' > 0 \) there is some \( N \in \bb{N} \) such that for all \( n > N \)
         \[
-        d(A_1 u_1 + \ldots + A_m u_m, a_{n, 1} u_1 + \ldots a_{n, m} u_m) < \varepsilon'.
+        d(A_1 e_1 + \ldots + A_m e_m, a_{n, 1} e_1 + \ldots a_{n, m} e_m) < \varepsilon'.
         \]
-        That is, \( \set{v_n} \) converges to \( A_1 u_1 + \ldots A_m u_m \).
+        That is, \( \set{v_n} \) converges to \( A_1 e_1 + \ldots A_m e_m \).
         \item By the construction in part (b), any Cauchy sequence in a subspace $U$ of $V$ converges to a point in $U$. Thus, $U$ contains all of its limits points, and thus, is closed.
     \end{enumerate}
 \end{solution}
 
+\pagebreak
+
 \begin{problem}[30]
-	Fix a positive integer $n$. The \textbf{\textit{Laplacian}} $\Delta p$ of a twice differentiable function $p$ on $\bb{R}^n$ is the function on $\bb{R}^n$ defined by
+	Fix a positive integer $n$. The \emph{Laplacian} $\Delta p$ of a twice differentiable function $p$ on $\bb{R}^n$ is the function on $\bb{R}^n$ defined by
 	\[
 		\Delta p = \frac{\partial^2 p}{\partial x_1} + \ldots + \frac{\partial^2 p}{\partial x_n}
 	\]
-A function $p$ is called \textbf{\textit{harmonic}} if \( \Delta p = 0 \).\\\\
-	A \textbf{\textit{polynomial}} on $\bb{R}^n$ is a linear combination of functions of the form \( x_1^{m_1} \cdots x_n^{m_n} \), where \( m_1 \ldots m_n \) are nonnegative integers.\\\\
+A function $p$ is called \emph{harmonic} if \( \Delta p = 0 \).\\\\
+	A \emph{polynomial} on $\bb{R}^n$ is a linear combination of functions of the form \( x_1^{m_1} \cdots x_n^{m_n} \), where \( m_1 \ldots m_n \) are non-negative integers.\\\\
 	Suppose $q$ is a polynomial on $\bb{R}^n$. Prove that there exists a harmonic polynomial $p$ on $\bb{R}^n$ such that \( p(x) = q(x) \) for every \( x \in \bb{R}^n \) with \( \Vert x \Vert = 1 \).
 
 \end{problem}
 
-\begin{solution}
+\begin{solution}~
+	
 	Let $\mathcal{P}(\bb{R}^n)$ denote the space of polynomials on $\bb{R}^n$ and let $\mathcal{P}_m(\bb{R}^n)$ be the space of polynomials on $\bb{R}^n$ of degree at most $m$.
 	If $q \in \mathcal{P}(\bb{R}^n)$, and we want some harmonic polynomial $p$ such that \( p = q \) for every \( x \in \bb{R}^n \) with \( \norm{x} = 1 \), we can reasonably think that
 	\[
 		p = q + (1 - \norm{x}^2)r
 	\]
-	where $r$ is some polynomial. Such a $p$ would necessarily give us \( p = q \) at all the desired points, but there might not be such a harmonic polynomial. Thus, we need to show that there is some harmonic polynomial of the same form. That is, we need to show that there exists some $r$ such that
+	where $r$ is some polynomial. This is because $1 - \lVert x \rVert^{2}$ is effectively a polynomial anti-indicator function for the sphere --- zero everywhere on the sphere, and non-zero everywhere else. \\
+
+	Such a $p$ would necessarily give us \( p = q \) at all the desired points, but there might not be such a harmonic polynomial. Thus, we need to show that there is some harmonic polynomial of the same form. That is, we need to show that there exists some $r$ such that
 	\[
-		\Delta p = \Delta q + \Delta ((1 - \norm{x}^2)r) = 0.
+		\begin{split}
+			\Delta p & = \Delta q + \Delta ((1 - \norm{x}^2)r) \\
+				 & = 0.
+		\end{split}
 	\]
 	This amounts to showing that there exists some $r$ such that
 	\[
 		\Delta ((1 - \norm{x}^2)r) = -\Delta q.
 	\]
-	This, can be done by considering the linear map giving \( r \mapsto \Delta ((1 - \norm{x}^2)r) \) and showing that it is surjective. However, since the space of all polynomials is infinite-dimensional, this would require a direct proof and would not amount to any simplification. Instead, we can choose the right finite-dimensional space so that the map is an operator and we only have to prove that it is injective.\\\\
-	Note that if \( \operatorname{deg} q  = m + 2 \), then \( \operatorname{deg} \Delta q = m \). Similarly, if \( \operatorname{deg} r = m \), then \( \deg (1 - \norm{x}^2) r  = m + 2 \) and thus \( \deg \Delta (1 - \norm{x}^2) r  = m \). Thus, we can just consider the space of polynomials of degree at most $m$.\\\\
-	Specifically, we can consider \( T \in \mathcal{L}(\mathcal{P}_m(\bb{R}^n))\) defined by
-	\[
-		Tr = \Delta (1 - \norm{x}^2) r.
-	\]
-	To be done, we only have to show that $T$ is injective.\\\\
-	Suppose \( Ts = 0 \). Then
+	Notice that \( T : r \mapsto \Delta ((1 - \norm{x}^2)r) \) is a linear map that preserves the degree of the polynomial (multiplying by $\lVert x \rVert^{2}$ increases the degree by $2$, $\Delta$ decreases the degree by $2$, and both are linear). Thus, we can think of $T$ as a linear operator in $\mathcal{L}(\mathcal{P}_{m}(\mathbb{R}^{n}))$ and it will suffice to show that it is injective. \\
+		
+	Suppose \( Ts = 0 \) for some polynomial $s$. Then
 	\[
 		\Delta ((1 - \norm{x}^2) s) = 0
 	\]
-	Thus, \( (1 - \norm{x}^2) s \) is harmonic. Since $(1 - \norm{x}^2) s$ is harmonic and $0$ everywhere on the unit sphere, $(1 - \norm{x}^2)s$ must be $0$ everywhere. Thus $s$ must be zero everywhere. That is, if $Ts = 0$, $s = 0$.\\\\
-	This gives us that $T$ is injective and thus, surjective. Then $Tr = - \Delta q$ for some $r$, giving us the $p$ we want as
+	That is, $(1 - \lVert x \rVert^{2}) s$ is harmonic. Notice that $(1 - \lVert x \rVert^{2}) s = 0$ on the sphere as well. Thus, it must be $0$ everywhere (this is a fact about harmonic functions). Since $1 - \lVert x \rVert^{2}$ is non-zero everywhere that is not the sphere, $s = 0$ everywhere that is not the sphere, and thus, by its analyticity, is the zero polynomial. That is, $s = 0$. \\
+	
+	This gives us that $T$ is injective and thus, surjective. Then, there exists some $r$ with $Tr = - \Delta q$, giving us the $p$ we want as
 	\[
-		p = (1 - \norm{x}^2)r + q
+		p = (1 - \norm{x}^2) r + q
 	\]
 	for that $r$.
 \end{solution}
+
+\pagebreak
 
 \begin{problem}[31]
 	Use inner products to prove Apollonius's identity: in a triangle with sides of length $a$, $b$, and $c$, let $x$ be the length of the line segment from the midpoint of the side of length $c$ to the opposite vertex. Then 
@@ -335,7 +405,8 @@ A function $p$ is called \textbf{\textit{harmonic}} if \( \Delta p = 0 \).\\\\
 	\]
 \end{problem}
 
-\begin{solution}
+\begin{solution}~
+	
 	Consider the obvious choice of $v_a$, $v_b$, $v_c$, and $v_d$ such that \( \norm{v_\alpha} = \alpha \). Note that this then gives us
 	\[
 		\frac{v_c}{2} + v_d = v_a = v_c + v_b
@@ -344,6 +415,7 @@ A function $p$ is called \textbf{\textit{harmonic}} if \( \Delta p = 0 \).\\\\
 	\[
 		\frac{v_c}{2} + v_b = v_d.
 	\]
+	
 	Thus, we have 
 	\[
 		\norm{\frac{v_c}{2} + v_d}^2 = \norm{v_a}^2
@@ -360,6 +432,7 @@ A function $p$ is called \textbf{\textit{harmonic}} if \( \Delta p = 0 \).\\\\
 	\[
 		\frac{c^2}{4} + b^2 + \frac{v_c}{2} \cdot v_b = d^2.
 	\]
+	
 	Swapping sides and adding the equations gives us
 	\[
 		2d^2 + \frac{v_c}{2} \cdot v_d = a^2 + b^2 + \frac{v_c}{2} \cdot v_b
