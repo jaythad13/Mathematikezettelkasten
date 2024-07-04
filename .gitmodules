@@ -5,3 +5,6 @@
 [submodule "An Infinitely Large Napkin --- napkin/attachments/documents"]
 	path = An Infinitely Large Napkin --- napkin/attachments/documents
 	url = https://github.com/jaythad13/napkin
+[submodule "Parking functions --- parking-functions/code"]
+	path = Parking functions --- parking-functions/code
+	url = https://github.com/jaythad13/parking-functions-code.git
