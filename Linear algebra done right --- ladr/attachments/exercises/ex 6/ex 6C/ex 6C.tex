@@ -116,6 +116,22 @@
 	Suppose $V$ is finite-dimensional and $P \in \mathcal{L}(V)$ is such that $P^{2} = P$ and every vector in $\operatorname{null} P$ is orthogonal to every vector in $\operatorname{range} P$. Prove that there exists a subspace $U$ of $V$ such that $P = P_{U}$.
 \end{problem}
 
+\begin{solution}~
+	
+	Note that by rank-nullity we have $\dim \operatorname{null} P + \dim \operatorname{range} P = \dim V$. This, combined with the fact that $\operatorname{null} P \perp \operatorname{range} P$, gives us $\dim (\operatorname{null} P \oplus \operatorname{range} P) = \dim V$. Thus, we have $\operatorname{null} P \oplus \operatorname{range} P = V$. \\
+
+	For any $v \in V$, write $v = u + w$ with $u \in \operatorname{range} P$ and $w \in \operatorname{null} P$. Then, we must have $Pv = Pu$. From here, it is sufficient to show that $Pu = u$ for $u \in \operatorname{range} P$ which would give us $P = P_{U}$ for $U = \operatorname{range} P$. \\
+
+	If $u \in \operatorname{range} P$, then we can write $u = Pv$ for some $v \in V$ and thus, for $v = u' + w'$ as the decomposition into $\operatorname{range} P \oplus \operatorname{null} P$, we have $Pu' = u$ and $u' \in \operatorname{range} P$. Then since we know $P^{2} = P$, and thus,
+	\[
+		\begin{split}
+			P^{2} u' & = P u' \\
+			P u & = u.
+		\end{split}
+	\]
+	Thus, $P$ is just the projection onto $\operatorname{range} P$.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[8]
@@ -126,11 +142,44 @@
 	for every $v \in V$. Prove that there exists a subspace $U$ of $V$ such that $P = P_{U}$.
 \end{problem}
 
+\begin{solution}~
+	
+	We will show that $\operatorname{null} P \perp \operatorname{range} P$ and let the result follow from the previous exercise. Suppose $u = Pv \in \operatorname{range} P$ and $w \in \operatorname{null} P$. Then note that since $P^{2} v = Pv$, we have $Pu = u$. Thus, for any $a \in \mathbb{F}$
+	\[
+		\begin{split}
+			P(u + a w) & = Pu + a Pw \\
+				   & = u + 0 \\
+				   & = u.
+		\end{split}
+	\]
+	That is, $u = P(u + aw)$. Thus, their norms are equal too, giving us
+	\[
+		\begin{split}
+			\lVert u \rVert^{2} & = \lVert P(u + aw) \rVert^{2} \\
+					    & = \lVert u + aw \rVert^{2}
+		\end{split}
+	\]
+	also for all $a \in \mathbb{F}$. By exercise 6A.6, we have that $\left < u, w \right > = 0$. That is, $\operatorname{null} P \perp \operatorname{range} P$ as desired.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[9]
 	Suppose $T \in \mathcal{L}(V)$ and $U$ is a finite-dimensional subspace of $V$. Prove that $U$ is invariant under $T$ if and only if $P_{U} T P_{U} = T P_{U}$.
 \end{problem}
+
+\begin{solution}~
+	First we will show that if $U$ is invariant under $T$, then the equality follows. Suppose $U$ is invariant under $T$. If $U$ is invariant under $T$, then for $u \in U$, $Tu \in U$. Thus, for any $v \in V$, with orthogonal decomposition $v = u + w$ into $U$ and $U^{\perp}$ we have $T P_{U} v = T u$. Since $Tu \in U$, $P_{U} T u = Tu$. That is, $P_{U} T P_{U} = T P_{U}$. \\
+
+	Now we will show that if the equality holds, $U$ must be invariant under $T$. Suppose $P_{U} T P_{U} = T P_{U}$. For any $u \in U$, we of course have $P_{U} u = u$, and thus, $Tu = T P_{U} u$. Thus, we know that
+	\[
+		\begin{split}
+			Tu & = T P_{U} u \\
+			   & = P_{U} T P_{U} u \in U.
+		\end{split}
+	\]
+	That is, $U$ is invariant under $T$.
+\end{solution}
 
 \pagebreak
 
