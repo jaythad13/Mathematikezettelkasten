@@ -134,4 +134,55 @@ We can generalise that last result even further to talk about the null space and
 
 Suppose $T \in \mathcal{L}(V, W)$. Then $\operatorname{null} T^* = (\operatorname{range} T)^\perp$ and $\operatorname{range} T^* = (\operatorname{null} T)^\perp$.
 
+###### _proof:_
+
+Suppose $w \in \operatorname{null} T^*$. Then we must have
+$$
+\begin{split}
+\left< Tv, w \right> & = \left< v, T^* w \right> \\
+ & = \left< v, 0 \right>  \\
+ & = 0.
+\end{split}
+$$
+for all $v \in V$. That is, for any $Tv \in \operatorname{range} T$ we have $w \perp Tv$. In other words, $\operatorname{null} T^* = (\operatorname{range} T)^\perp$ as desired.
+
+Suppose $T^* w \in \operatorname{range} T^*$ and $v \in \operatorname{null} T$. Then we must have
+$$
+\begin{split}
+\left< v, T^*w \right> & = \left< Tv, w \right>  \\
+ & = \left< 0, w \right>  \\
+ & = 0.
+\end{split}
+$$
+That is, $v \perp T^* w$ for any $v \in \operatorname{null} T$ as desired.
+
+Note as a corollary, we can swap $T$ and $T^*$ in both of the equations either by taking the orthogonal complement of both sides of the equation or by thinking of $T$ as $(T^*)^*$. 
+
+
 ### The conjugate transpose matrix
+
+Finally, we can see that this notion of the adjoint really does correspond to the notion of flipping vectors because its matrix is the conjugate transpose (almost all of the time).
+
+##### _definition:_ conjugate transpose
+
+For an $m \times n$ matrix $A$, its conjugate transpose $A^*$ is the $n \times m$ matrix given by interchanging rows and columns and taking the complex conjugate, such that
+$$
+A^*_{j, k} = \overline{A_{k, j}}.
+$$
+
+##### _proposition:_ the adjoint matrix is (almost always) the conjugate transpose
+
+Suppose $V$ has orthonormal basis $e_{1}, \dots, e_{n}$ and $W$ has orthonormal basis $f_{1}, \dots, f_{m}$ while $T \in \mathcal{L}(V, W)$ has matrix $A$ with respect to those bases. Then $T^*$ has matrix $A^*$ with respect to the same bases. 
+
+###### _proof:_
+
+Call the matrix of $T^*$ with respect to the same bases $B$. We know that $B_{j, k}$ is the $e_{j}$ component of $T^* f_{k}$. Thus, $B_{j, k} = \left< T^* f_{k}, e_{j} \right>$. We can use this with the adjoint relation as follows.
+$$
+\begin{split}
+B_{j, k} & = \left< T^* f_{k}, e_{j} \right>  \\
+ & = \overline{\left< e_{j}, T^* f_{k} \right> }  \\
+ & = \overline{\left< T e_{j}, f_{k} \right> } \\
+ & = \overline{A_{k, j}}
+\end{split}
+$$
+The last step follows by the same logic as above — $A_{k, j}$ is the $f_{k}$ component of $T e_{j}$.
