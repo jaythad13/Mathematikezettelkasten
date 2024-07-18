@@ -186,3 +186,7 @@ B_{j, k} & = \left< T^* f_{k}, e_{j} \right>  \\
 \end{split}
 $$
 The last step follows by the same logic as above — $A_{k, j}$ is the $f_{k}$ component of $T e_{j}$.
+
+##### _remark:_ thinking of operators as scalars
+
+An important analogy to notice here is that if we think of an operator $T \in \mathcal{L}(V)$ as something like a scalar in $\mathbb{C}$ (in fact, they literally are for one-dimensional vector spaces) then the adjoint $T^*$ is its complex conjugate.
