@@ -18,7 +18,7 @@ Unfortunately, if we were really celebrating with lots of scoops, this would get
 
 ##### _definition:_ multichoose
 
-$n$ multichoose $k$, denoted $\Big ( \binom{n}{k} \Big )$ is the number of ways to choose $k$ elements from an $n$ element set, with repetitions, but order doesn't matter. 
+$n$ multichoose $k$, denoted $\left( \binom{n}{k} \right)$ is the number of ways to choose $k$ elements from an $n$ element set, with repetitions, but order doesn't matter. 
 
 Another way to say this is that it's the number of ways to choose $k$ items from $n$ types of items (where you can choose as many of any particular type as you want).
 
@@ -27,7 +27,7 @@ Note that for this we can have $n < k$ as long as $n \ge 1$.
 ##### _theorem:_ the multichoose theorem
 
 $$
-\Big ( \binom{n}{k} \Big) = \binom{n + k - 1}{k}
+\left ( \binom{n}{k} \right ) = \binom{n + k - 1}{k}
 $$
 
 ###### _proof:_
@@ -38,7 +38,7 @@ We can draw this with stars and bars. There are $n - 1$ bars and $k$ stars. How 
 
 ##### _example:_ $n$injas and $k$andies
 
-How many ways are there to divide $k$ (identical) $k$andies among $n$ $n$injas? $\Big ( \binom{n}{k} \Big )$! Stars and bars to prove it! Or the definition!
+How many ways are there to divide $k$ (identical) $k$andies among $n$ $n$injas? $\left ( \binom{n}{k} \right )$! Stars and bars to prove it! Or the definition!
 
 Note that this feels different from the idea of choosing items, because we want to think about choosing $k$andies, but here we're choosing ninjas to assign to each $k$andy.
 
@@ -46,15 +46,15 @@ Note that this feels different from the idea of choosing items, because we want 
 
 What if we need to give each $n$inja a $k$andy? Give each $n$inja one $k$andy, and then divide the rest among the $n$injas in any way.
 
-Then there are $\Big ( \binom{n}{k - n} \Big )$ ways. But by the [[#_theorem _ the multichoose theorem|the multichoose theorem]] that is just $\binom{k - 1}{n - 1}$.
+Then there are $\left ( \binom{n}{k - n} \right )$ ways. But by the [[#_theorem _ the multichoose theorem|the multichoose theorem]] that is just $\binom{k - 1}{n - 1}$.
 
 We can think of this with a different stars and bars analogy! Place $n - 1$ bars in the $k - 1$ spaces between the $k$andies so that there are no double bars close together.
 
 ##### _theorem:_ (not Pascal's) multichoose identity
 
 $$
-\Big( \binom{n}{k} \Big) = \Big ( \binom{n - 1}{k} \Big)
- + \Big ( \binom{n}{k - 1} \Big )$$
+\left( \binom{n}{k} \right) = \left ( \binom{n - 1}{k} \right)
+ + \left ( \binom{n}{k - 1} \right )$$
 ###### _proof sketch:_
 
 How many ways are there to not give $n$inja $n$ any $k$andies? How many ways are there to give $n$inja $n$ at least one $k$andy?
