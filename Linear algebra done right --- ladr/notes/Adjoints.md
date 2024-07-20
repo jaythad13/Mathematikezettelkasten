@@ -98,7 +98,7 @@ $$
 The desired result follows pretty easily.
 
 Actually, $-^*$ isn't just almost linear. It's basically as nice as it can be — it's an involution, it distributes over composition anti-symmetrically, it fixes the identity, and it commutes with taking inverses.
-##### _proposition:_
+##### _proposition:_ the properties of $-^*$
 
 Suppose $S \in \mathcal{L}(W, U)$ and $T \in \mathcal{L}(V, W)$. Then
 1) $(T^*)^* = T$
@@ -157,7 +157,6 @@ $$
 That is, $v \perp T^* w$ for any $v \in \operatorname{null} T$ as desired.
 
 Note as a corollary, we can swap $T$ and $T^*$ in both of the equations either by taking the orthogonal complement of both sides of the equation or by thinking of $T$ as $(T^*)^*$. 
-
 
 ### The conjugate transpose matrix
 
