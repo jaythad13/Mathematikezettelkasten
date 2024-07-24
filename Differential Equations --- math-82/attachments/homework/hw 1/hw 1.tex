@@ -1,5 +1,6 @@
 \documentclass[12 pt, letterpaper]{hmcpset}
 \usepackage{hw-preamble}
+\usepackage[color = pink]{todonotes}
 
 \name{Jayden Thadani}
 \class{MATH 82 --- Differential Equation}
@@ -12,6 +13,28 @@
 	Verify that $y_{1}(t) = e^{-t}$ and $y_{2}(t) = \sinh{t}$ both satisfy the differential equation $y'' - y = 0$. Is $y(t) = A y_{1}(t) + B y_{2}(t)$ where $A$ and $B$ are arbitrary constants, also a solution? Why or why not?
 \end{problem}
 
+\begin{solution}
+	It's easy to see that
+	\[
+		\begin{split}
+			y_{1}'' & = \frac{d^{2} y_{1}}{dt^{2}} \\
+				& = \frac{d}{dt}(- e^{-t}) \\
+				& = e^{-t}
+		\end{split}
+	\]
+	and also that
+	\[
+		\begin{split}
+			y_{2}'' & = \frac{d^{2} y_{2}}{d t^{2}} \\
+				& = \frac{d}{dt} (\cosh{t}) \\
+				& = \sinh{t}.
+		\end{split}
+	\]
+	Thus, both of them satisfy the differential equation $y'' - y = 0$.
+
+	Note also that the differential operator on the vector space of $\mathcal{C}^{2}$ functions by $D : y \mapsto y'' - y$ is a linear map (it's the difference of the twice-differentiation and identity operators). Thus, its null space --- exactly the solution space of the differential equation --- is a vector subspace containing all linear combinations of $y_{1}$ and $y_{2}$. That is, $A y_{1} + B y_{2}$ is a solution for $A, B \in \mathbb{R}$.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[2:]
@@ -21,6 +44,24 @@
 	\]
 	where $v_{0}$ and $p_{0}$ denote the velocity and position at time $t = 0$.
 \end{problem}
+
+\begin{solution}
+	We have that $p''(t) = a$, a constant for all $t \in \mathbb{R}$. Thus,
+	\[
+		\begin{split}
+			p'(t) & = \int_{0}^{t} a \, dt + p'(0) \\
+			      & = at + v_{0}.
+		\end{split}
+	\]
+	Similarly,
+	\[
+		\begin{split}
+			p(t) & = \int_{0}^{t} at + v_{0} \, dt + p(0) \\
+			     & = \frac{at^{2}}{2} + v_{0} t + p_{0}
+		\end{split}
+	\]
+	as desired.
+\end{solution}
 
 \pagebreak
 
@@ -32,17 +73,47 @@
 	is a solution to the differential equation $y' - 2t y = 1$ with initial condition $y(0) = 1$.
 \end{problem}
 
+\begin{solution}
+	It's clear that $y(0) = 0$. Now we compute $y'$.
+	\[
+		\begin{split}
+			y'(t) & = 2t e^{t^{2}} + 2t e^{t^{2}} \int_{0}^{t} e^{- s^{2}} \, ds + e^{t^{2}} (e^{-t^{2}} - e^{0}) \\
+			      & = 2t (e^{t^{2}} + e^{t^{2}} \int_{0}^{t} e^{- s^{2}} \, ds ) + 1 \\
+			      & = 2t y + 1.
+		\end{split}
+	\] \todo[inline]{fix $e^{t^{2}}(e^{- t^{2}} - e^{0}) = 1 - e^{t^{2}} \neq 1$}
+	
+	Rearranging gives us $y' - 2t y = 1$ as desired
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[4:]
 	Determine if $y(x) = x^{2} + 1$ is a solution to the initial value problem consisting of $4yy' = (y')^{3} - 3 y'' x$ and the initial condition $y(0) = 1$.
 \end{problem}
 
+\begin{solution}
+	No, it's not. Just notice that the left hand side is always divisible by $4$ nut the right hand side is not. More rigorously, $4yy' = 8 x^{3} + 8 x$ and $(y')^{3} - 3 y'' x = 8 x^{3} - 6 x$ which are not equal as functions.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[5:]
 	Write $\cos{\theta}$ and $\sin{\theta}$ as linear combinations of $e^{-i \theta}$.
 \end{problem}
+
+\begin{solution}
+	\[
+		\boxed{
+			\begin{aligned}
+				\cos{\theta} & = \frac{e^{i \theta} + e^{- i \theta}}{2} \\
+				\sin{\theta} & = \frac{e^{i \theta} - e^{- i \theta}}{2 i}
+			\end{aligned}
+		}	
+	\]
+
+	We know that $e^{i \theta} = \cos{\theta} + i \sin{\theta}$. Thus, $e^{- i \theta} = \cos{\theta} - i \sin{\theta}$. From there, it's easy to just notice that their sums and differences give us the sine and cosine functions like we want.
+\end{solution}
 
 \pagebreak
 
@@ -55,6 +126,23 @@
 		\item $\operatorname{Im}(e^{(a + i \omega)t})$.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item \fbox{$\operatorname{Im} (e^{i \omega t}) = \sin{\omega t}$.}
+
+			Just notice that $e^{i \omega t} = \cos{\omega t} + i \sin{\omega t}$
+		\item \fbox{$\operatorname{Im}(e^{- i \omega t}) = - \sin{\omega t}$.}
+
+			Similarly, $e^{ - i \omega t} = \cos{\omega t} - i \sin{\omega t}$.
+		\item \fbox{$\operatorname{Re}(e^{a + i \omega t}) = e^{a} \cos{\omega t}$.}
+
+			Here $e^{a + i \omega t} = e^{a}(\cos{\omega t} + i \sin{\omega t})$
+		\item \fbox{$\operatorname{Im}(e^{a} \sin{\omega t})$.}
+
+			Follows from the calculation above.
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
@@ -69,5 +157,16 @@
 		\item $\frac{y'}{y} = 7$.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item is a linear, autonomous, non-driven differential equation.
+		\item is a non-linear, non-autonomous, driven differential equation.
+		\item is a linear,  non-autonomous, non-driven differential equation
+		\item is a non-linear, autonomous, non-driven differential equation.
+		\item is a linear, non-autonomous, driven differential equation.
+		\item is a linear, autonomous, non-driven differential equation.
+	\end{enumerate}
+\end{solution}
 
 \end{document}
