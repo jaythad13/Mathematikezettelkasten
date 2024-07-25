@@ -19,19 +19,99 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item 
+			\[
+				\boxed{
+					\frac{y \, dy}{e^{y}} = \frac{e^{x} \, dx}{x}.
+				}
+			\]
+
+			Writing $e^{x + y} = e^{x} e^{y}$ gives us $y'$ as the product of functions $e^{x}/x$ and $y/e^{y}$. Separating them is then just rearranging them.
+		\item is not separable
+		\item
+			\[
+				\boxed{
+					dz = \omega dt.
+				}
+			\]
+
+			Note, here we choose to think of $\omega$ as a constant function in $t$, but we could also think of it as a constant function of $z$ and have its reciprocal on the other side of the equation.
+		\item is not separable
+		\item
+			\[
+				\boxed{
+					\frac{dx}{x + 1} = (t - 2) \, dt.
+				}
+			\]
+			
+			We can factor $x' = tx - 2x + t + 2$ as follows.
+			\[
+				\begin{split}
+					tx - 2x + t - 2 & = x(t - 2) + (t - 2) \\
+							& = (x + 1)(t - 2).
+				\end{split}
+			\]
+			Then rearranging the functions gives us the separated form.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[2:]
 	\begin{enumerate}
 		\item Find the general solution to the equation
 			\[
-				\frac{dy}{dx} = \frac{4 \sin{(2t)}}{y}.
+				\frac{dy}{dt} = \frac{4 \sin{(2t)}}{y}.
 			\]
 			Write your answer as an explicit function $y(t)$ with two branches (using the $\pm$ sign).
 		\item Now impose the initial condition $y(0) = 1$. What branch of the solution satisfies this initial condition?
 		\item What is the largest $t$-interval on which the solution from (b) is defined?
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item 
+			\[
+				\boxed{
+					y(t) = \pm \sqrt{4 \sin^{2}{(t/2)} + y(0)^{2}}.
+				}
+			\]
+
+			We can rewrite the equation as $y \dot{y} = 4 \sin{(2t)}$. Integrating both sides with respect to $t$ from $0$ to $s$, we get
+			\[
+				\int_{0}^{s} y \frac{dy}{dt} \, dt = \int_{0}^{s} 4 \sin{2t} \, dt.
+			\]
+			This is just
+			\[
+				\int_{y(0)}^{y(s)} y \, dy = 8 \int_{0}^{s} \sin{t} \cos{t} \, dt.
+			\]
+
+			We can integrate the integral on the right by $u$-substitution with $u = \sin{t}$ to get
+			\[
+				y^{2}/2 \Big |_{y(0)}^{y(s)} = 8 \sin^{2}{t}/2 \Big |_{0}^{s}.
+			\]
+			Thus,
+			\[
+				y(s)^{2} = 4 \sin^{2}(s/2) + y(0)^{2}
+			\]
+			and the general solution is
+			\[
+				y(t) = \pm \sqrt{4 \sin^{2}{(t/2)} + y(0)^{2}}
+			\]
+		\item 
+			\[
+				\boxed{
+					y(t) = \sqrt{4 \sin^{2}{(t/2)} + 1}
+				}
+			\]
+
+			If we set $y(0) = 1$, notice that we must have $y$ positive at some point, but the negative branch of the solution is negative at every point (it's $-1$ times a square root which is always positive). Thus, we must choose the branch $y(t) = \sqrt{4 \sin^{2}{(t/2)} + 1}$.
+		\item The solution exists for all $t \in \mathbb{R}$ since $4 \sin^{2}{(t/2)} + 1$ is always a positive real.
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
@@ -43,6 +123,32 @@
 	Leave your answer as an implicit function of  $y$ and $x$.
 \end{problem}
 
+\begin{solution}
+	\[
+		\boxed{
+			\ln \left ( \frac{1 - y(x)^{2}}{1 - y(0)^{2}} \right ) = -2 \sin{x}.
+		}
+	\]
+
+	We can separate the equation to get
+	\[
+		\frac{y}{1 - y^{2}} \frac{dy}{dx} = \sin{x}
+	\]
+	and then integrate with respect to $x$ from $0$ to $t$ to get
+	\[
+		\int_{y(0)}^{y(t)} \frac{y}{1 - y^{2}} \, dy = \int_{0}^{t} \sin{x} \, dx.
+	\]
+
+	Using $u$-substitution with $u = - y^{2}$ on the left hand side, we get
+	\[
+		\frac{-1}{2} \ln(1 - y^{2}) \Big |_{y(0)}^{y(t)} = \sin{x} \Big |_{0}^{t}.  
+	\]
+	This finally reduces to
+	\[
+		\ln \left ( \frac{1 - y(x)^{2}}{1 - y(0)^{2}} \right ) = -2 \sin{x}.
+	\]
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[4:]
@@ -52,6 +158,23 @@
 		\item $y' + ty = 5t$.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item
+			\[
+				\boxed{
+					y = \frac{2 e ^{4t}}{11}.
+				}
+			\]
+		\item
+			\[
+				\boxed{
+					y = 
+				}
+			\]
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
