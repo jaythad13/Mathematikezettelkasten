@@ -121,4 +121,4 @@ $$
 \end{split}
 $$
 
-Informally, everything in $\mathscr{A} \times \mathscr{B}$ is a pair of corresponding things in $\mathscr{A}$ and $\mathscr{B}$. The rest of the details (composition, identities) are left as an [[(Basic) category theory --- basic-cat/attachments/exercises/ex 1/ex 1.pdf|exercise]].
+Informally, everything in $\mathscr{A} \times \mathscr{B}$ is a pair of corresponding things in $\mathscr{A}$ and $\mathscr{B}$. The rest of the details (composition, identities) are left as an [[Basic category theory --- basic-cat/attachments/exercises/ex 1/ex 1.1/ex 1.1.pdf#page=3|exercise]].

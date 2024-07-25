@@ -1,0 +1,67 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{Basic category theory}
+\assignment{Exercises 1.1 --- Categories}
+\duedate{}
+
+\begin{document}
+
+\begin{problem}[1.1.12]
+	Find three examples of categories not mentioned above.
+\end{problem}
+
+\begin{solution}
+	\begin{enumerate}[label = (\arabic*)]
+		\item Pick your favourite field of characteristic $0$, call it $\mathbb{F}$. The same-entries matrix category $\mathscr{M}$ has as its objects the set $\mathbb{N}$. The morphisms $\operatorname{Mor}(n, m)$ are exactly the $m \times n$ matrices $A$ such that all $A_{i, j}$ are some constant $a \in \mathbb{F}$ for all $i \in \mathbb{N}_{m}$ and $j \in \mathbb{N}_{n}$. For $A \in \operatorname{Mor}(n, m)$ and $B \in \operatorname{Mor}(m, p)$, the composition $B \circ A$ is just the regular matrix product $BA$. Note that $BA$ is a $p \times n$ matrix in $\operatorname{Mor}(n, p)$.
+
+			We can see that the identity on $n$ is the $n \times n$ matrix with all entries equal to $1/n$. It can be verified that this behaves like an identity for matrices with all entries identical by checking that this is true for left-multiplication by a row matrix and right multiplication by a column matrix.
+		\item The category with topological, $r$-differentiable, real analytic, or complex analytic manifolds as objects, with homomorphisms, $\mathcal{C}^{r}$ maps, real analytic maps, or holomorphic maps between them as morphisms, and just the regular function composition of those maps as the composition. (Also, on a similar note, topological groups, Lie groups, et c. with the right manifold/group maps between them).
+		\item The category of fields with ring homomorphisms between them as morphisms (and just the regular function composition for composition).
+	\end{enumerate}
+\end{solution}
+
+\pagebreak
+
+\begin{problem}[1.1.13]
+	Show that a map in a category can have at most one inverse. That is, given a map $f : A \to B$ there is at most one map $g : B \to A$ such that $gf = \operatorname{id}_{A}$ and $fg = \operatorname{id}_{B}$.
+\end{problem}
+
+\begin{solution}
+	Suppose $g, g'$ are both inverses of $f$. Then we can write
+	\[
+		\begin{split}
+			g' & = g' \operatorname{id}_{B} \\
+			   & = g' (f g) \\
+			   & = (g' f) g \\
+			   & = \operatorname{id}_{A} g \\
+			   & = g
+		\end{split}
+	\]
+	where the third equality follows by associativity of composition. That is, $g = g'$.
+\end{solution}
+
+\pagebreak
+
+\begin{problem}[1.1.14]
+	Let $\mathscr{A}$ and  $\mathscr{B}$ be categories. Construction 1.1.11 defined the product category  $\mathscr{A} \times \mathscr{B}$ except that the definitions of composition and identities in $\mathscr{A} \times \mathscr{B}$ were not given. There is only one sensible way to define them; write it down.
+\end{problem}
+
+\begin{solution}
+	The identities and composition are defined component wise. Specifically, the identity on $(A, B)$ is $(\operatorname{id}_{A}, \operatorname{id}_{B})$ and the composition of $f = (f_{A}, f_{B}) \in \operatorname{Mor}((A_{1}, B_{1}), (A_{2}, B_{2}))$ and $g = (g_{A}, g_{B}) \in \operatorname{Mor}((A_{2}, B_{2}), (A_{3}, B_{3}))$ is $g \circ f = (g_{A} \circ f_{A}, g_{B} \circ f_{B})$.
+\end{solution}
+
+\pagebreak
+
+\begin{problem}[1.1.15]
+	There is a category $\mathsf{Toph}$ whose objects are topological spaces and whose maps $X \to Y$ are homotopy classes of continuous maps from $X$ to $Y$. What do you need to know about homotopy in order to prove that $\mathsf{Toph}$ is a category? What does it mean, in purely topological terms, for objects of $\mathsf{Toph}$ to be isomorphic?
+\end{problem}
+
+\begin{solution}
+	For $\mathsf{Toph}$ to be a category we need to be able to compose homotopy classes associatively. Note that this would follow from the composition of homotopy classes being the homotopy class of the composition of continuous map. Specifically, if $f, f' : X \to Y$ and $g, g' : Y \to Z$ are pairs of homotopic maps, we want to have $fg$ homotopic to  $f' g'$, which allows us to sensibly define the composition of the homotopy classes of $f$ and $g$. Then since function composition is associative, the associativity of homotopy class composition follows.
+
+	 $X$ and $Y$ are isomorphic in $\mathsf{Toph}$ if there are continuous maps  $f : X \to Y$ and $g : Y \to X$ such that $fg$ is homotopic to $\operatorname{id}_{Y}$ and $gf$ is homotopic to $\operatorname{id}_{X}$.
+\end{solution}
+
+\end{document}
