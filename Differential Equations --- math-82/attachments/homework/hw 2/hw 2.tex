@@ -1,5 +1,6 @@
 \documentclass[12 pt, letterpaper]{hmcpset}
 \usepackage{hw-preamble}
+\usepackage[color = pink]{todonotes}
 
 \name{Jayden Thadani}
 \class{MATH 82 --- Differential Equations}
@@ -164,23 +165,45 @@
 		\item
 			\[
 				\boxed{
-					y = \frac{2 e ^{4t}}{11}.
+					y = \frac{e^{11 t/2} + C}{11 e^{3 t/2}}.
 				}
+			\]
+
+			We can rewrite the equation as $y' + 3y/2 = e^{4t}/2$. Then, our integrating factor is $\mu$ with $\mu(t) = \exp(\int_{} 3/2 \, dt ) = e^{3t/2}$. Multiplying by $\mu$ on both sides gives us
+			\[
+				(y \mu)' = \frac{e^{4t} \mu(t)}{2}
+			\]
+			and thus,
+			\[
+				\begin{split}
+					y & = \frac{\int_{} e^{11 t/2} \, dt + C}{2 e^{3 t/2}} \\
+					  & = \frac{e^{11 t/2} + C}{11 e^{3 t/2}}.
+				\end{split}
 			\]
 		\item
 			\[
 				\boxed{
-					y = 
+					y = \frac{-5 e^{- t^{2}/2} + C}{e^{- t^{2}/2}}.
 				}
+			\]
+
+			Here, the equation is already in the desired form. The integrating factor $\mu$ is given by
+			\[
+				\begin{split}
+					\mu(t) & = \exp \left ( \int_{} t \, dt  \right ) \\
+					       & = e^{t^{2}/2}.		
+				\end{split}
+			\]
+			Then multiplying by $\mu$ on both sides gives $(y \mu)' = 5 t \mu$, and thus,
+			\[
+				\begin{split}
+					y & = 5 \frac{\int_{} t e^{- t^{2}/2} \, dt}{e^{- t^{2}/2}} \\
+					  & = -5 \frac{\int_{} - t e^{- t^{2}/2} \, dt }{e^{- t^{2}/2}} \\
+					  & = \frac{-5 e^{- t^{2}/2} + C}{e^{- t^{2}/2}}.
+				\end{split}
 			\]
 	\end{enumerate}
 \end{solution}
-
-\pagebreak
-
-\begin{problem}[5:]
-	Determine the solution to the initial value problem $y' = 5 - ty$ with $y(0) = 1$.
-\end{problem}
 
 \pagebreak
 
@@ -194,5 +217,41 @@
 		\item Show that your solution satisfies the original differential equation and initial conditions.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\[
+		\boxed{
+			y(x) = -2 \arctan{x}.
+		}
+	\]
+
+	Given  $w = y'$, we can rewrite the equation as $w' = x w^{2}$. This equation separates into $w'/w^{2} = x$ which can be solved by integrating on both sides with respect to $x$. Note that $w(0) = y'(0) = -2$. Then
+	\[
+		\int_{w(0)}^{w(t)} \frac{1}{w^{2}} \frac{dw}{dx} \, dx = \int_{0}^{t} x \, dx
+	\]
+	and thus,
+	\[
+		\frac{1}{w(0)} - \frac{1}{w(t)} = \frac{t^{2}}{2}
+	\]
+	becomes
+	\[
+		\frac{-1 - t^{2}}{2} = \frac{1}{w(t)}
+	\]
+	Thus,
+	\[
+		w(t) = \frac{2}{t^{2} + 1}.
+	\]
+
+	By the fundamental theorem of calculus, we get
+	\[
+		\begin{split}
+			y(x) - y(0) & = \int_{0}^{x} w(t) \, dt \\
+				    & = -2 \int_{0}^{x} \frac{1}{t^{2} + 1} \, dt \\
+				    & = -2 (\arctan{x} - \arctan{0}) \\
+				    & = -2 \arctan{x}.
+		\end{split}
+	\]
+	Since $y(0) = 0$, we have  $y(x) = -2 \arctan{x}$.
+\end{solution}
 
 \end{document}
