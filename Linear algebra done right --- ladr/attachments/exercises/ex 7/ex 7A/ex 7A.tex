@@ -1,0 +1,300 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{Linear algebra done right}
+\assignment{Exercises 7A --- Self-Adjoint and Normal Operators}
+\duedate{}
+
+\begin{document}
+
+\begin{problem}[1]
+	Suppose $n$ is a positive integer. Define $T \in \mathcal{L}(\mathbb{F}^{n})$ by
+	\[
+		T(z_{1}, \dots, z_{n}) = (0, z_{1}, \dots, z_{n - 1}).
+	\]
+	Find a formula for $T^{*}(z_{1}, \dots, z_{n})$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[2]
+	Suppose $T \in \mathcal{L}(V, W)$. Prove that
+	\[
+		T = 0 \iff T^{*} = 0 \iff T^{*}T = 0 \iff \mathrm{T}^{*} = 0.
+	\]
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[3]
+	Suppose $T \in \mathcal{L}(V)$ and $\lambda \in \mathbb{F}$. Prove that
+	\[
+		\lambda \text{ is an eigenvalue of } T \iff \overline{\lambda} \text{ is an eigenvalue of } T^{*}.
+	\]
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[4]
+	Suppose $T \in \mathcal{L}(V)$ and $U$ is a subspace of $V$. Prove that
+	\[
+		U \text{ is invariant under } T \iff U^{\perp} \text{ is invariant under } T^{*}.
+	\]
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[5]
+	Suppose $T \in \mathcal{L}(V, W)$. Suppose $e_{1}, \dots, e_{n}$ is an orthonormal basis of $V$ and $f_{1}, \dots, f_{m}$ is an orthonormal basis of $W$. Prove that
+	\[
+		\lVert T e_{1} \rVert^{2} + \dots + \lVert T e_{n} \rVert^{2} = \lVert T^{*} f_{1} \rVert^{2} + \dots + \lVert T^{*} f_{m} \rVert^{2}.
+	\]
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[6]
+	Suppose $T \in \mathcal{L}(V, W)$. Prove that
+	\begin{enumerate}
+		\item $T$ is injective $\iff$ $T^{*}$ is surjective;
+		\item $T$ is surjective $\iff$ $T^{*}$ is injective.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[7]
+	Prove that if $T \in \mathcal{L}(V, W)$, then
+	\begin{enumerate}
+		\item $\dim \operatorname{null} T^{*} = \dim \operatorname{null} T + \dim W - \dim V$;
+		\item $\dim \operatorname{range} T^{*} = \dim \operatorname{range} T$.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[8]
+	Suppose $A$ is an $m$-by-$n$ matrix with entries in $\mathbb{F}$. Use (b) in Exercise 7 to prove that the row rank of $A$ equals the column rank of $A$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[9]
+	Prove that the product of two self-adjoint operators on $V$ is self-adjoint if and only if the two operators commute.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[10]
+	Suppose $\mathbb{F} = \mathbb{C}$ and $\mathrm{T} \in \mathcal{L}(V)$. Prove that $T$ is self-adjoint if and only if
+	 \[
+		\left < Tv, v \right > = \left < T^{*}v, v \right >
+	\]
+	for all $v \in V$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[11]
+	Define an operator $S: \mathbb{F}^{2} \to \mathbb{F}^{2}$ by $S(w, z) = (-z, w)$.
+	\begin{enumerate}
+		\item Find a formula for $S^{*}$.
+		\item Show that $S$ is normal but not self-adjoint.
+		\item Find all eigenvalues of $S$.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[12]
+	An operator $B \in \mathcal{L}(V)$ is called \emph{skew} if
+	\[
+		B^{*} = -B.
+	\]
+	Suppose that $T \in \mathcal{L}(V)$. Prove that $T$ is normal if and only if there exist commuting operators $A$ and $B$ such that $A$ is self-adjoint, $B$ is a skew operator, and $T = A + B$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[13]
+	Suppose $\mathbb{F} = \mathbb{R}$. Define $\mathcal{A} \in \mathcal{L}(\mathcal{L}(V))$ by $\mathcal{A} T = T^{*}$ for all $T \in \mathcal{L}(V)$.
+	\begin{enumerate}
+		\item Find all eigenvalues of $\mathcal{A}$.
+		\item Find the minimal polynomial of $\mathcal{A}$.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[14]
+	Define an inner product on $\mathcal{P}_{2}(\mathbb{R})$ by $\left < p, q \right > = \int_{0}^{1} pq$. Define an operator $T \in \mathcal{L}(\mathcal{P}_{2}(\mathbb{R}))$ by
+	\[
+		T(ax^{2} + bx + c) = bx
+	\]
+	\begin{enumerate}
+		\item Show that this inner product, the operator is not self-adjoint.
+		\item The matrix of $T$ with respect to the basis $1, x, x^{2}$ is
+			\[
+				\begin{bmatrix}
+					0 & 0 & 0 \\
+					0 & 1 & 0 \\
+					0 & 0 & 0
+				\end{bmatrix}
+			\]
+			This matrix equals its conjugate transpose, even though $T$ is not self-adjoint. Explain why this is not a contradiction.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[15]
+	Suppose $T \in \mathcal{L}(V)$ is invertible. Prove that
+	\begin{enumerate}
+		\item $T$ is self-adjoint $\iff$ $T^{-1}$ is self-adjoint;
+		\item $T$ is normal $\iff$ $T^{-1}$ is normal.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[16]
+	Suppose $\mathbb{F} = \mathbb{R}$.
+	\begin{enumerate}
+		\item Show that the set of self-adjoint operators on $V$ is a subspace of $\mathcal{L}(V)$.
+		\item What is the dimension of the subspace of $\mathcal{L}(V)$ in (a) (in terms of $\dim V$)?
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[17]
+	Suppose $\mathbb{F} = \mathbb{C}$. Show that the set of self-adjoint operators on $V$ is not a subspace of $\mathcal{L}(V)$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[18]
+	Suppose $\dim V \le 2$. Show that the set of normal operators on $V$ is not a subspace of $\mathcal{L}(V)$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[19]
+	Suppose $T \in \mathcal{L}(V)$ and $\lVert T^{*} v \rVert \le \lVert Tv \rVert$ for every $v \in V$. Prove that $T$ is normal.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[20]
+	Suppose $P \in \mathcal{L}(V)$ is such that $P^{2} = P$. Prove that the following are equivalent.
+	\begin{enumerate}
+		\item $P$ is self adjoint.
+		\item $P$ is normal.
+		\item There is a subspace of $U$ of $V$ such that $P = P_{U}$.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[21]
+	Suppose $D: \mathcal{P}_{8}(\mathbb{R}) \to \mathcal{P}_{8}(\mathbb{R})$ is the differentiation operator defined by $Dp = p'$. Prove that there does not exist an inner product on $\mathcal{P}_{8}(\mathbb{R})$ that makes $D$ a normal operator.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[22]
+	Give an example of an operator $T \in \mathcal{L}(\mathbb{R}^{3})$ such that $T$ is normal but not self-adjoint.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[23]
+	Suppose $T$ is a normal operator on $V$. Suppose also that $v, w \in V$ satisfy the equations
+	\[
+		\lVert v \rVert = \lVert w \rVert = 2, \quad Tv = 3, \quad Tw = 4w.
+	\]
+	Show that $\lVert T(v + w) \rVert = 10$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[24]
+	Suppose $T \in \mathcal{L}(V)$ and
+	\[
+		a_{0} + a_{1} z + a_{2} z^{2} + \dots + a_{m - 1} z^{m - 1} + z^{m}
+	\]
+	is the minimal polynomial of $T$. Prove that the minimal polynomail of $T^{*}$ is
+	\[
+		\overline{a_{0}} + \overline{a_{1}} z + \overline{a_{2}} z^{2} + \dots + \overline{a_{m - 1}} z^{m - 1} + z^{m}.
+	\]
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[25]
+	Suppose $T \in \mathcal{L}(V)$. Prove that $T$ is diagonalisable if and only if $T^{*}$ is diagonalisable.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[26]
+	Fix $u, x \in V$. Define $T \in \mathcal{L}(V)$ by $Tv = \left < v, u \right > x$ for every $v \in V$.
+	\begin{enumerate}
+		\item Prove that if $V$ is a real vector space, then $T$ is self-adjoint if and only if the list  $u, x$ is linearly dependent.
+		\item Prove that $T$ is normal if and only if the list $u, x$ is linearly dependent.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[27]
+	Suppose $T \in \mathcal{L}(V)$ is normal. Prove that
+	\[
+		\operatorname{null} T^{k} = \operatorname{null} T \text{ and } \operatorname{range} T^{k} = \operatorname{range} T
+	\]
+	for every positive integer $k$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[28]
+	Suppose $T \in \mathcal{L}(V)$ is normal. Prove that if $\lambda \in \mathbb{F}$, then the minimal polynomial of $T$ is not a polynomial multiple of $(x - \lambda)^{2}$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[29]
+	Prove or give a counterexample: If $T \in \mathcal{L}(V)$ and there is an orthonormal basis $e_{1}, \dots, e_{n}$ of $V$ such that $\lVert T e_{k} \rVert = \lVert T^{*} e_{k} \rVert$ for each $k = 1, \dots, n$, then $T$ is normal.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[30]
+	Suppose $T \in \mathcal{L}(\mathbb{F}^{3})$ is normal and $T(1, 1, 1) = (2, 2, 2)$. Suppose $(z_{1}, z_{2}, z_{3}) \in \operatorname{null} T$. Prove that $z_{1} + z_{2} + z_{3} = 0$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[31]
+	Fix a positive integer $n$. In the inner product space of continuous real-valued functions on  $[-\pi, \pi]$ with inner product $\left < f, g \right > = \int_{- \pi}^{\pi} fg$, let
+	\[
+		V = \operatorname{span}(1, \cos{x}, \cos{2x}, \dots, \cos{nx}, \sin{x}, \sin{2x}, \dots, \sin{nx}).
+	\]
+	\begin{enumerate}
+		\item Define $D \in \mathcal{L}(V)$ by $Df = f'$. Show that $D^{*} = - D$. Conclude that $D$ is normal but not self-adjoint.
+		\item Define $T \in \mathcal{L}(V)$ by $Tf = f''$. Show that $T$ is self-adjoint.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[32]
+	Suppose $T : V \to W$ is a linear map. Show that under the standard identification of $V$ with $V^{\vee}$ and the corresponding identification of $W$ with $W^{\vee}$ the adjoint map $T^{*} : W \to V$ corresponds to the dual map $T^{\vee} : W^{\vee} \to V^{\vee}$. More precisely, show that
+	\[
+		T^{\vee}(\varphi_{w}) = \varphi_{T^{*} w}
+	\]
+	for all $w \in W$.
+\end{problem}
+
+\end{document}
