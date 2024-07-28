@@ -98,7 +98,7 @@ Since $\alpha - \beta \neq 0$, we must have $\left< u, w \right> = 0$.
 
 ### More on the analogy between $\mathcal{L}(V)$ and $\mathbb{C}$
 
-Of course, the result as stated below only makes sense when $V$ is a complex vector space, but [[it can be made sense of]] on real vector spaces.
+Of course, the result as stated below only makes sense when $V$ is a complex vector space, but [[Linear algebra done right --- ladr/attachments/exercises/ex 7/ex 7A/ex 7A.pdf#page=12|it can be made sense of]] on real vector spaces.
 
 ##### _proposition:_ the real and imaginary parts of normal operators commute
 
