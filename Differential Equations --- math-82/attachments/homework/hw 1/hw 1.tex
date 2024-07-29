@@ -77,12 +77,11 @@
 	It's clear that $y(0) = 0$. Now we compute $y'$.
 	\[
 		\begin{split}
-			y'(t) & = 2t e^{t^{2}} + 2t e^{t^{2}} \int_{0}^{t} e^{- s^{2}} \, ds + e^{t^{2}} (e^{-t^{2}} - e^{0}) \\
+			y'(t) & = 2t e^{t^{2}} + 2t e^{t^{2}} \int_{0}^{t} e^{- s^{2}} \, ds + e^{t^{2}} e^{-t^{2}} \\
 			      & = 2t (e^{t^{2}} + e^{t^{2}} \int_{0}^{t} e^{- s^{2}} \, ds ) + 1 \\
 			      & = 2t y + 1.
 		\end{split}
-	\] \todo[inline]{fix $e^{t^{2}}(e^{- t^{2}} - e^{0}) = 1 - e^{t^{2}} \neq 1$}
-	
+	\]
 	Rearranging gives us $y' - 2t y = 1$ as desired
 \end{solution}
 
