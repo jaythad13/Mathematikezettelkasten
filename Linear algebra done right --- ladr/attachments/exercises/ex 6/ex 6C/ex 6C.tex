@@ -187,6 +187,12 @@
 	Suppose $V$ is finite-dimensional, $\mathrm{T} \in \mathcal{L}(V)$, and $U$ is a subspace of $V$. Prove that $U$ and $U^{\perp}$ are both invariant under $T$ if and only if $P_{U} T = T P_{U}$.
 \end{problem}
 
+\begin{solution}
+	First we will show the forward direction. Suppose $U$ and $U^{\perp}$ are invariant under $T$. Then for $u \in U$, $P_{U} u = u$ and $T u \in U$, giving $P_{U} T u = Tu$. Thus, $P_{U} T u = T u = T P_{U} u$ for any $u \in U$. If $w \in U^{\perp}$, then $P_{U} w = 0$ and $T w \in W$, giving $P_{U} T w = 0$. Thus, $P_{U} T w = 0 = T P_{U} w$ for any $w \in W$. Since $P_{U} T = T P_{U}$ on $U$ and $U^{\perp}$, and $V = U \oplus U^{\perp}$, the equality holds on all of $V$ as well.
+
+	Now we suppose $P_{U} T = T P_{U}$. Then for any $u \in U$, since $u = P_{U} u$, we can write $Tu$ as $T P_{U} u = P_{U} T u \in U$. Thus, $U$ is invariant under $T$. For any $w \in U^{\perp}$, $P_{U} w = 0$, and thus, $T P_{U} w = 0$. Thus,  $P T w = 0$. That is $T w \in \operatorname{null} P_{U} = U^{\perp}$. Thus, $U^{\perp}$ is invariant under $T$ too.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[11]
@@ -196,6 +202,26 @@
 	\]
 	Find $u \in U$ such that $\lVert u - (1, 2, 3, 4) \rVert$ is as small as possible.
 \end{problem}
+
+\begin{solution}
+	First, we find an orthonormal basis of $U$, by applying Gram-Schmidt to $(1, 1, 0, 0), (1, 1, 1, 2)$. The first basis vector is $(1, 1, 0, 0)$ normalised to $e_{1} = (1, 1, 0, 0)/\sqrt{2}$. Then the second basis vector is
+	\[
+		\begin{split}
+			(1, 1, 1, 2) - \frac{(1, 1, 1, 2) \cdot (1, 1, 0, 0)}{\sqrt{2}} \frac{(1, 1, 0, 0)}{\sqrt{2}} & = (1, 1, 1, 2) - \frac{2}{2} (1, 1, 0, 0) \\
+														      & = (0, 0, 1, 2)
+		\end{split}
+	\]
+	normalised to $e_{2} = (0, 0, 1, 2) / \sqrt{5}$.
+
+	The desired $u$ is then just the projection of  $(1, 2, 3, 4)$ onto $U$ ---
+	\[
+		\begin{split}
+			u & = \frac{(1, 2, 3, 4) \cdot (1, 1, 0, 0)}{\sqrt{2}} \frac{(1, 1, 0, 0)}{\sqrt{2}} + \frac{(1, 2, 3, 4) \cdot (0, 0, 1, 2)}{\sqrt{5}} \frac{(0, 0, 1, 2)}{\sqrt{5}} \\
+			  & = \frac{3}{2} (1, 1, 0, 0) + \frac{11}{5} (0, 0, 1, 2) \\
+			  & = \left ( \frac{3}{2}, \frac{3}{2}, \frac{11}{5}, \frac{22}{5} \right ).
+		\end{split}
+	\]
+\end{solution}
 
 \pagebreak
 
@@ -233,5 +259,14 @@
 		\item Show that 6.47 and 6.51 do not hold without the finite-dimensional hypothesis.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item We can use the same trick from Exercises 6B, 15.
+
+			Suppose $g \in U^{\perp}$. Then $f$ defined by $f(x) = x^{2} g(x)$ gives $f \in U$. Since $g \in U^{\perp}$, we must have $\left < f, g \right > = 0$, but we also know $\left < f, g \right > = \lVert x^{2} g \rVert$. Then $x^{2} g$ has norm zero and must be the zero function. Then since $x = 0$ is the only zero of $x^{2}$, $g$ must be zero everywhere on $\mathbb{R} \setminus \{ 0 \}$, and then, by continuity, at $0$ as well. That is, $g = 0$.
+		\item 6.47 tells us that an inner-product space $V$ should decompose as $U \oplus U^{\perp}$ for a finite-dimensional subspace $U$, but here $U + U^{\perp} = U \subsetneq V$. 6.51 says that $U = (U^{\perp})^{\perp}$. Here $U^{\perp} = \{ 0 \}$ and thus  $(U^{\perp})^{\perp} = V$ but  $U \subsetneq V$. These show that the theorem doesn't hold in the infinite-dimensional case.
+	\end{enumerate}
+\end{solution}
 
 \end{document}
