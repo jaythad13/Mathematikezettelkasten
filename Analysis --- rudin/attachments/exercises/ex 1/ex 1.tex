@@ -12,8 +12,7 @@
 	If $r$ is rational ($r \neq 0$) and $x$ is irrational prove that $r + x$ and $rx$ are irrational.
 \end{problem}
 
-\begin{solution} ~
-	
+\begin{solution}
 	Suppose, by way of contradiction, that we had $0 \neq r \in \mathbb{Q}$ and $r + x \in \mathbb{Q}$ or $rx \in \mathbb{Q}$ for some $x \in \mathbb{R} \setminus \mathbb{Q}$. Then we would have to have $x = r + x - x \in \mathbb{Q}$ or $x = rx/r \in \mathbb{Q}$. Each of these directly contradicts $x \notin \mathbb{Q}$. Thus, $r + x$ and $rx$ must both be irrational.
 \end{solution}
 
@@ -23,8 +22,7 @@
 	Prove that there is no rational number whose square is $12$.
 \end{problem}
 
-\begin{solution} ~
-	
+\begin{solution}
 	Suppose, by way of contradiction, that there is some rational number $p$ with $p^{2} = 12$. Then there must be some $m, n \in \mathbb{Z}$ such that $p = m/n$ and $\gcd (m, n) = 1$. Thus, we must have
 	\[
 		\begin{split}
@@ -49,8 +47,7 @@
 	Prove that between any two real numbers there is an irrational number.
 \end{problem}
 
-\begin{solution}~
-	
+\begin{solution}
 	We know (by Theorem 1.20) that there is a rational number between any two reals. Thus, for any two $a, b \in \mathbb{R}$ with $a < b$, and a positive $x \in \mathbb{R} \setminus \mathbb{Q}$, we have some rational $r$ such that
 	\[
 		a/x < r < b/x.
@@ -124,9 +121,8 @@
 	\]
 \end{problem}
 
-\begin{solution}~
-	
-	Note that any lower bound $\alpha$ of $A$ gives $-\alpha \ge -a$ (by reversing signs from $\alpha \le a$). Thus, any lower bound of $A$ is an upper bound of $-A$. \\
+\begin{solution}
+	Note that any lower bound $\alpha$ of $A$ gives $-\alpha \ge -a$ (by reversing signs from $\alpha \le a$). Thus, any lower bound of $A$ is an upper bound of $-A$.
 	
 	Then, by definition, for any $a \in A$, and any lower bound $\alpha$ of $A$, we have
 	 \[
@@ -179,7 +175,7 @@
 						       & = (b^{p})^{1/q}.
 				\end{split}
 			\]
-			Thus, by the uniqueness of $k$th roots, we have $(b^{m})^{1/n} = (b^{p})^{1/q}$. \\
+			Thus, by the uniqueness of $k$th roots, we have $(b^{m})^{1/n} = (b^{p})^{1/q}$.
 
 			We used the following result in the proof above.
 
@@ -211,18 +207,18 @@
 				\end{split}
 			\]
 			as desired.
-		\item First we will show that $b^{r}$ is an upper bound on $B(r)$. \\
+		\item First we will show that $b^{r}$ is an upper bound on $B(r)$.
 
-			Any element of $B(r)$ is of the form $b^{t}$ for some rational $t \le r$. We can write $b^{r} = b^{t} b^{r - t}$ where $r - t$ is some nonnegative rational. Since $b > 1$, $b^{r - t} \ge 1$, and thus, $b^{r} \ge b^{t}$. Thus, $b^{r}$ is an upper bound on $B(r)$. \\
+			Any element of $B(r)$ is of the form $b^{t}$ for some rational $t \le r$. We can write $b^{r} = b^{t} b^{r - t}$ where $r - t$ is some nonnegative rational. Since $b > 1$, $b^{r - t} \ge 1$, and thus, $b^{r} \ge b^{t}$. Thus, $b^{r}$ is an upper bound on $B(r)$. 
 			
-			Now we will show that it is the least upper bound. \\
+			Now we will show that it is the least upper bound. 
 
 			Suppose $b^{r} > \beta \in \mathbb{R}$. Then $\beta$ is less than an element of  $B(r)$ --- $b^{r}$ itself, and thus, is not an upper bound. That is, no real less than $b^{r}$ can be an upper bound of $B(r)$ --- $b^{r}$ is the least upper bound of $B(r)$.
-		\item First we will show that $b^x b^{y}$ is an upper bound on $B(x + y)$. \\
+		\item First we will show that $b^x b^{y}$ is an upper bound on $B(x + y)$. 
 
-			Note that any element of $B(x + y)$ can be written as $b^{q}$ for some $q \in \mathbb{Q}$ with $q \le x + y$. In turn, $q$ can give us two rationals $q_{1}$ and $q_{2}$, with $q_{1} \le x$ and $q_{2} \le y$ and $q_{1} + q_{2} \ge q$. Choose $q_{1}$ to be a rational between $x - (x + y - q)/2$ and $x$. Choose $q_{2}$ to be a rational between $y - (x + y - q)/2$ and $y$. Thus, $b^{q} \le b^{q_{1}} b^{q_{2}} \le b^{x} b^{y}$, giving us that $b^{x} b^{y}$ is an upper bound. \\
+			Note that any element of $B(x + y)$ can be written as $b^{q}$ for some $q \in \mathbb{Q}$ with $q \le x + y$. In turn, $q$ can give us two rationals $q_{1}$ and $q_{2}$, with $q_{1} \le x$ and $q_{2} \le y$ and $q_{1} + q_{2} \ge q$. Choose $q_{1}$ to be a rational between $x - (x + y - q)/2$ and $x$. Choose $q_{2}$ to be a rational between $y - (x + y - q)/2$ and $y$. Thus, $b^{q} \le b^{q_{1}} b^{q_{2}} \le b^{x} b^{y}$, giving us that $b^{x} b^{y}$ is an upper bound. 
 
-			Now we show that it is the least upper bound. \\
+			Now we show that it is the least upper bound. 
 
 			Suppose $b^{x} b^{y} > \beta \in \mathbb{R}^{+}$. Then $\beta/b^{x} < r < b^{y}$ and where $r$ is a rational between the two reals. Since $\beta/r < b^{x}$, it is not an upper bound of $B(x)$. That is, there is some rational $t_{1} \le x$ with $\beta/r < b^{t_{1}}$. Similarly, since $r < y$, it is not an upper bound of $B(y)$, and thus, $r < b^{t_{2}}$ for some rational $t_{2} \le y$. Then $t_{1} + t_{2}$ is a rational less than $x + y$ with $\beta \le b^{t_{1} + t_{2}}$ ---
 			\[
@@ -250,7 +246,7 @@
 	\end{enumerate}
 \end{problem}
 
-\begin{solution}~
+\begin{solution}
 	\begin{enumerate}
 		\item Note that $b - 1$ divides $b^{n} - 1$. Specifically,
 			\[
@@ -284,9 +280,9 @@
 				\end{split}
 			\]
 		\item Choose $t = b^{w}/y > 1$ and proceed similarly to (d).
-		\item Suppose by way of contradiction that $x$ does not give $b^{x} = y$. We must have $b^{x} > y$ or $b^{x} < y$. We will show neither is possible. \\
+		\item Suppose by way of contradiction that $x$ does not give $b^{x} = y$. We must have $b^{x} > y$ or $b^{x} < y$. We will show neither is possible.
 
-			If we had $b^{x} > y$, we would have $b^{x - 1/n} > y$ for some large enough $n \in \mathbb{N}$. Then since $x - 1/n$ would be an upper bound of $A$ and $x - 1/n < x$, $x$ would not be the least upper bound of $A$. \\
+			If we had $b^{x} > y$, we would have $b^{x - 1/n} > y$ for some large enough $n \in \mathbb{N}$. Then since $x - 1/n$ would be an upper bound of $A$ and $x - 1/n < x$, $x$ would not be the least upper bound of $A$. 
 
 			If we had $b^{x} < y$, we would have $b^{x + 1/n} < y$ for some large enough $n \in \mathbb{N}$. Then since $x + 1/n \in A$  and $x + 1/n > x$, $x$ would not be an upper bound of $A$.
 		\item This follows from
@@ -308,11 +304,10 @@
 	Prove that no order can be defined in the complex field that turns it into an ordered field.
 \end{problem}
 
-\begin{solution}~
-	
-	We will show that assuming either one of $i > 0$ or $i < 0$ leads to a contradiction. \\
+\begin{solution}
+	We will show that assuming either one of $i > 0$ or $i < 0$ leads to a contradiction. 
 
-	Suppose that $i > 0$. Then $i^{2} > 0i$, and thus, $-1 > 0$. Finally, this leads to $(-1)i > 0i$ and finally, $-i > 0$. However, with our assumption, in an ordered field, we know that we must have $-i < 0 < i$. \\
+	Suppose that $i > 0$. Then $i^{2} > 0i$, and thus, $-1 > 0$. Finally, this leads to $(-1)i > 0i$ and finally, $-i > 0$. However, with our assumption, in an ordered field, we know that we must have $-i < 0 < i$. 
 	
 	Suppose that $i < 0$. Then $i^{2} < 0i$, and thus, $-1 < 0$. Finally, this leads to $(-1) i < 0i$ and finally, $-i < 0$. However, with our assumption, in an ordered field, we know that we must have $i < 0 < -i$.
 \end{solution}
@@ -323,13 +318,12 @@
 	Suppose $z = a + bi$, $w = c + di$. Define $z < w$ if $a < c$, and also if $a = c$ but $b < d$. Prove that this turns the set of all complex numbers into an ordered set. (This type of order relation is called a \textit{dictionary order} or \textit{lexicographic order}, for obvious reasons.) Does this ordered set have the least upper bound property?
 \end{problem}
 
-\begin{solution}~
-	
-	Suppose $z_{1} = a_{1} + b_{1}i$, $z_{2} = a_{2} + b_{2}i$, and $z_{3} = a_{3} + b_{3}i$. \\
+\begin{solution}
+	Suppose $z_{1} = a_{1} + b_{1}i$, $z_{2} = a_{2} + b_{2}i$, and $z_{3} = a_{3} + b_{3}i$. 
 
-	If $z_{1} \neq z_{2}$ we cannot have both $a_{1} = a_{2}$ and $b_{1} = b_{2}$. If $a_{1} \neq a_{2}$, we must have $a_{1} < a_{2}$ or $a_{2} < a_{1}$, and correspondingly, $z_{1} < z_{2}$ or $z_{2} < z_{1}$. If $a_{1} = a_{2}$, we must have $b_{1} \neq b_{2}$. Thus, we must have $b_{1} < b_{2}$ or $b_{2} < b_{1}$, and correspondingly, $z_{1} < z_{2}$ or $z_{2} < z_{1}$. Thus, we have trichotomy. \\
+	If $z_{1} \neq z_{2}$ we cannot have both $a_{1} = a_{2}$ and $b_{1} = b_{2}$. If $a_{1} \neq a_{2}$, we must have $a_{1} < a_{2}$ or $a_{2} < a_{1}$, and correspondingly, $z_{1} < z_{2}$ or $z_{2} < z_{1}$. If $a_{1} = a_{2}$, we must have $b_{1} \neq b_{2}$. Thus, we must have $b_{1} < b_{2}$ or $b_{2} < b_{1}$, and correspondingly, $z_{1} < z_{2}$ or $z_{2} < z_{1}$. Thus, we have trichotomy.
 
-	Suppose $z_{1} < z_{2}$ and $z_{2} < z_{3}$. Then $a_{1} < a_{2}$ or $a_{1} = a_{2}$ and $b_{1} < b_{2}$. Similarly, $a_{2} < a_{3}$ or $a_{2} = a_{2}$ and $b_{2} < b_{3}$. Thus, the conjunction of these statements is $a_{1} < a_{2}$ and $a_{2} < a_{3}$ or $a_{1} < a_2$ and $a_{2} = a_{3}$ (and $b_{2} < b_{3}$) or $a_{1} = a_{2}$ (and $b_{1} < b_{2}$) and $a_{2} < a_{3}$ or $a_{1} = a_{2}$ and $b_{1} < b_{2}$ and $a_{2} = a_{3}$ and $b_{2} < b_{3}$. Each of these gives us $z_{1} < z_{3}$. Thus, we have transitivity. \\
+	Suppose $z_{1} < z_{2}$ and $z_{2} < z_{3}$. Then $a_{1} < a_{2}$ or $a_{1} = a_{2}$ and $b_{1} < b_{2}$. Similarly, $a_{2} < a_{3}$ or $a_{2} = a_{2}$ and $b_{2} < b_{3}$. Thus, the conjunction of these statements is $a_{1} < a_{2}$ and $a_{2} < a_{3}$ or $a_{1} < a_2$ and $a_{2} = a_{3}$ (and $b_{2} < b_{3}$) or $a_{1} = a_{2}$ (and $b_{1} < b_{2}$) and $a_{2} < a_{3}$ or $a_{1} = a_{2}$ and $b_{1} < b_{2}$ and $a_{2} = a_{3}$ and $b_{2} < b_{3}$. Each of these gives us $z_{1} < z_{3}$. Thus, we have transitivity.
 
 	Yes, $\mathbb{C}$ with this ordering has the least upper bound property. Specifically, the least upper bound of any bounded $A \subset \mathbb{C}$ is given by $\sup(\operatorname{Re} A) + \sup(\operatorname{Im} A) i$, where $\operatorname{Re} A = \{ \operatorname{Re} z \mid z \in A \}$ and $\operatorname{Im} A = \{ \operatorname{Im} A \mid z \in A \}$ are subsets of $\mathbb{R}$ with the standard ordering.
 \end{solution}

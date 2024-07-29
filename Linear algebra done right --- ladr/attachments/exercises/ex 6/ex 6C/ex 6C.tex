@@ -15,11 +15,10 @@
 	\]
 \end{problem}
 
-\begin{solution}~
-	
-	We will show this by double containment. \\
+\begin{solution}
+	We will show this by double containment.
 
-	Suppose  $u \in \{ v_{1}, \dots, v_{m} \}^{\perp}$. Then $\left < v_{j}, u \right > = 0$ for each $j \in \mathbb{N}_{m}$. Thus, by linearity in the first slot, for any $v = a_{1} v_{1} + \dots + a_m v_{m} \in (\operatorname{span}(v_{1}, \dots, v_{m}))^{\perp}$, we have $\left < v, u \right > = 0$. That is, $v \in (\operatorname{span}(v_{1}, \dots, v_{m}))^{\perp}$, and thus, $(\operatorname{span}(v_{1}, \dots, v_{m}))^{\perp} \subset \{ v_{1}, \dots, v_{m} \}^{\perp}$. \\
+	Suppose  $u \in \{ v_{1}, \dots, v_{m} \}^{\perp}$. Then $\left < v_{j}, u \right > = 0$ for each $j \in \mathbb{N}_{m}$. Thus, by linearity in the first slot, for any $v = a_{1} v_{1} + \dots + a_m v_{m} \in (\operatorname{span}(v_{1}, \dots, v_{m}))^{\perp}$, we have $\left < v, u \right > = 0$. That is, $v \in (\operatorname{span}(v_{1}, \dots, v_{m}))^{\perp}$, and thus, $(\operatorname{span}(v_{1}, \dots, v_{m}))^{\perp} \subset \{ v_{1}, \dots, v_{m} \}^{\perp}$.
 
 	Since $\{ v_{1}, \dots, v_{m} \} \subset \operatorname{span}(v_{1}, \dots, v_{m})$, obviously, we have $(\operatorname{span}(v_{1}, \dots, v_{m}))^{\perp} \subset \{ v_{1}, \dots, v_{m} \}^{\perp}$.
 \end{solution}
@@ -30,9 +29,8 @@
 	Suppose $U$ is a finite-dimensional subspace of $V$. Prove that $U^{\perp} = \{ 0 \}$ if and only if $U = V$.
 \end{problem}
 
-\begin{solution}~
-	
-	If $U = V$ then $U^{\perp} = \{ 0 \}$. This is because the only vector $u \in U$ that gives $\left < v, u \right > = 0$ for all $v \in V$ is $u = 0$. \\ 
+\begin{solution}
+	If $U = V$ then $U^{\perp} = \{ 0 \}$. This is because the only vector $u \in U$ that gives $\left < v, u \right > = 0$ for all $v \in V$ is $u = 0$.
 
 	Suppose $U^{\perp} = \{ 0 \}$. Then $U = (U^{\perp})^{\perp}$ and thus, $U = \{ 0 \}^{\perp}$. That is, $U = V$.
 \end{solution}
@@ -47,12 +45,12 @@
 	is a basis of $V$. Prove that if the Gram-Schmidt procedure is applied to the basis of $V$ above, producing a list $e_{1}, \dots, e_{m}, f_{1}, \dots, f_{n}$, then $e_{1}, \dots, e_{m}$ is an orthonormal basis of $U$ and $f_{1}, \dots, f_{n}$ is an orthonormal basis of $U^{\perp}$.
 \end{problem}
 
-\begin{solution}~
-	We know that the Gram-Schmidt procedure preserves spans. Thus, $e_{1}, \dots, e_{m}$ is a basis of $U$. \\
+\begin{solution}
+	We know that the Gram-Schmidt procedure preserves spans. Thus, $e_{1}, \dots, e_{m}$ is a basis of $U$.
 	
-	By definition, $\left < e_{j}, f_{k} \right > = 0$ for all $j \in \mathbb{N}_{m}, k \in \mathbb{N}_{n}$. Then, by linearity, any $u \in U$ gives $\left < f_{k}, u \right > = \left < u, f_{k} \right >$ for all $k \in \mathbb{N}$. Then, again by linearity, any $w = b_{1} f_{1} + \dots + b_{n} f_{n} \in \operatorname{span}(f_{1}, \dots, f_{n})$ gives us $\left < u, w \right > = 0$ for all $u \in U$. Thus, $\operatorname{span}(f_{1}, \dots, f_{n}) \subset U^{\perp}$. \\
+	By definition, $\left < e_{j}, f_{k} \right > = 0$ for all $j \in \mathbb{N}_{m}, k \in \mathbb{N}_{n}$. Then, by linearity, any $u \in U$ gives $\left < f_{k}, u \right > = \left < u, f_{k} \right >$ for all $k \in \mathbb{N}$. Then, again by linearity, any $w = b_{1} f_{1} + \dots + b_{n} f_{n} \in \operatorname{span}(f_{1}, \dots, f_{n})$ gives us $\left < u, w \right > = 0$ for all $u \in U$. Thus, $\operatorname{span}(f_{1}, \dots, f_{n}) \subset U^{\perp}$.
 
-	For any $w \in U^{perp}$, we can write $w = a_{1} e_{1} + \dots a_{m} e_{m} + b_{1} f_{1} + \dots + b_{n} f_{n}$. We must have $\left < e_{j}, w \right > = 0$ for all $j \in \mathbb{N}_{m}$, but $\left < e_{j}, w \right > = a_{j}$. Thus, $a_{j} = 0$ for all $j \in \mathbb{N}_{m}$ and $w \in \operatorname{span}(f_{1}, \dots, f_{n})$. That is, $U^{\perp} \subset \operatorname{span}(f_{1}, \dots, f_{n})$. \\
+	For any $w \in U^{\perp}$, we can write $w = a_{1} e_{1} + \dots a_{m} e_{m} + b_{1} f_{1} + \dots + b_{n} f_{n}$. We must have $\left < e_{j}, w \right > = 0$ for all $j \in \mathbb{N}_{m}$, but $\left < e_{j}, w \right > = a_{j}$. Thus, $a_{j} = 0$ for all $j \in \mathbb{N}_{m}$ and $w \in \operatorname{span}(f_{1}, \dots, f_{n})$. That is, $U^{\perp} \subset \operatorname{span}(f_{1}, \dots, f_{n})$.
 
 	Thus, by double containment, $U^{\perp} = \operatorname{span}(f_{1}, \dots, f_{n})$ of which $f_{1}, \dots, f_{n}$ is obviously an orthonormal basis.
 \end{solution}
@@ -67,8 +65,7 @@
 	Find an orthonormal basis of $U$ and an orthonormal basis of $U^{\perp}$.
 \end{problem}
 
-\begin{solution}~
-	
+\begin{solution}
 	Call the two vectors $u_{1}$ and $u_{2}$ respectively. We can extend $u_{1}, u_{2}$ to a basis of $\mathbb{R}^{4}$. Notice that $(1, 0, 0, 0)$ and $(0, 1, 0, 0)$ are not in $U$. Thus, $u_{1}, u_{2}, e_{1}, e_{2}$ forms a basis of $\mathbb{R}^{4}$. \\
 
 	Applying Gram-Schmidt to this gives us the orthonormal basis
@@ -84,7 +81,7 @@
 	Suppose $V$ is finite-dimensional and $U$ is a subspace of $V$. Show that $P_{U^{\perp}} = I - P_{U}$, where $I$ is the identity operator on $V$.
 \end{problem}
 
-\begin{solution}~
+\begin{solution}
 	We know that we can uniquely decompose any $v \in V$ into $w + u$ with $w \in U^{\perp}$ and $u \in (U^{\perp})^{\perp} = U$. But then this is also the unique decomposition into $u + w$ with $u \in U$ and $w \in U^{\perp}$. Thus, $P_{U} v = u$ and
 	\[
 		\begin{split}
@@ -103,9 +100,8 @@
 	Suppose $U$ and $W$ are finite-dimensional subspaces of $V$. Prove that $P_{U} P_{W} = 0$ if and only if $\left < u, w \right > = 0$ for all $u \in U$ and all $w \in W$.
 \end{problem}
 
-\begin{solution}~
-
-	Suppose $\left < u, w \right > = 0$ for all $u \in U$ and $w \in W$. Then, by definition, $W \subset U^{\perp}$ and $U \subset W^{\perp}$. Thus, $\operatorname{range} P_{W} = W \subset U^{\perp} = \operatorname{null} P_{U}$. Thus, $P_{U} P_{W} = 0$. \\
+\begin{solution}
+	Suppose $\left < u, w \right > = 0$ for all $u \in U$ and $w \in W$. Then, by definition, $W \subset U^{\perp}$ and $U \subset W^{\perp}$. Thus, $\operatorname{range} P_{W} = W \subset U^{\perp} = \operatorname{null} P_{U}$. Thus, $P_{U} P_{W} = 0$.
 
 	Suppose $P_{U} P_{W} = 0$. Then we must have $\operatorname{range} P_{W} \subset \operatorname{null} P_{U}$. However, $\operatorname{range} P_{W}$ is just $W$ and $\operatorname{null} P_{U} = U^{\perp}$. Thus, $W \subset U^{\perp}$. We know that taking the orthogonal complement of both sides reverses the inclusion, so $U \subset W^{\perp}$ as well. Thus, $\left < u, w \right > = 0$ for all $u \in U$ and $w \in W$.
 \end{solution}
@@ -116,11 +112,10 @@
 	Suppose $V$ is finite-dimensional and $P \in \mathcal{L}(V)$ is such that $P^{2} = P$ and every vector in $\operatorname{null} P$ is orthogonal to every vector in $\operatorname{range} P$. Prove that there exists a subspace $U$ of $V$ such that $P = P_{U}$.
 \end{problem}
 
-\begin{solution}~
-	
-	Note that by rank-nullity we have $\dim \operatorname{null} P + \dim \operatorname{range} P = \dim V$. This, combined with the fact that $\operatorname{null} P \perp \operatorname{range} P$, gives us $\dim (\operatorname{null} P \oplus \operatorname{range} P) = \dim V$. Thus, we have $\operatorname{null} P \oplus \operatorname{range} P = V$. \\
+\begin{solution}
+	Note that by rank-nullity we have $\dim \operatorname{null} P + \dim \operatorname{range} P = \dim V$. This, combined with the fact that $\operatorname{null} P \perp \operatorname{range} P$, gives us $\dim (\operatorname{null} P \oplus \operatorname{range} P) = \dim V$. Thus, we have $\operatorname{null} P \oplus \operatorname{range} P = V$.
 
-	For any $v \in V$, write $v = u + w$ with $u \in \operatorname{range} P$ and $w \in \operatorname{null} P$. Then, we must have $Pv = Pu$. From here, it is sufficient to show that $Pu = u$ for $u \in \operatorname{range} P$ which would give us $P = P_{U}$ for $U = \operatorname{range} P$. \\
+	For any $v \in V$, write $v = u + w$ with $u \in \operatorname{range} P$ and $w \in \operatorname{null} P$. Then, we must have $Pv = Pu$. From here, it is sufficient to show that $Pu = u$ for $u \in \operatorname{range} P$ which would give us $P = P_{U}$ for $U = \operatorname{range} P$.
 
 	If $u \in \operatorname{range} P$, then we can write $u = Pv$ for some $v \in V$ and thus, for $v = u' + w'$ as the decomposition into $\operatorname{range} P \oplus \operatorname{null} P$, we have $Pu' = u$ and $u' \in \operatorname{range} P$. Then since we know $P^{2} = P$, and thus,
 	\[
@@ -142,8 +137,7 @@
 	for every $v \in V$. Prove that there exists a subspace $U$ of $V$ such that $P = P_{U}$.
 \end{problem}
 
-\begin{solution}~
-	
+\begin{solution}
 	We will show that $\operatorname{null} P \perp \operatorname{range} P$ and let the result follow from the previous exercise. Suppose $u = Pv \in \operatorname{range} P$ and $w \in \operatorname{null} P$. Then note that since $P^{2} v = Pv$, we have $Pu = u$. Thus, for any $a \in \mathbb{F}$
 	\[
 		\begin{split}
@@ -168,8 +162,8 @@
 	Suppose $T \in \mathcal{L}(V)$ and $U$ is a finite-dimensional subspace of $V$. Prove that $U$ is invariant under $T$ if and only if $P_{U} T P_{U} = T P_{U}$.
 \end{problem}
 
-\begin{solution}~
-	First we will show that if $U$ is invariant under $T$, then the equality follows. Suppose $U$ is invariant under $T$. If $U$ is invariant under $T$, then for $u \in U$, $Tu \in U$. Thus, for any $v \in V$, with orthogonal decomposition $v = u + w$ into $U$ and $U^{\perp}$ we have $T P_{U} v = T u$. Since $Tu \in U$, $P_{U} T u = Tu$. That is, $P_{U} T P_{U} = T P_{U}$. \\
+\begin{solution}
+	First we will show that if $U$ is invariant under $T$, then the equality follows. Suppose $U$ is invariant under $T$. If $U$ is invariant under $T$, then for $u \in U$, $Tu \in U$. Thus, for any $v \in V$, with orthogonal decomposition $v = u + w$ into $U$ and $U^{\perp}$ we have $T P_{U} v = T u$. Since $Tu \in U$, $P_{U} T u = Tu$. That is, $P_{U} T P_{U} = T P_{U}$.
 
 	Now we will show that if the equality holds, $U$ must be invariant under $T$. Suppose $P_{U} T P_{U} = T P_{U}$. For any $u \in U$, we of course have $P_{U} u = u$, and thus, $Tu = T P_{U} u$. Thus, we know that
 	\[

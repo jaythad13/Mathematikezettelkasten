@@ -16,11 +16,11 @@
 \end{problem}
 
 \begin{solution}
-	We can prove this by induction on $n$ for $\bvec x = (x_{1}, \dots, x_{n}) \in \bb R^n$ \\\\
-	For $n = 1$, we have
+	We can prove this by induction on $n$ for $\bvec x = (x_{1}, \dots, x_{n}) \in \bb R^n$. For $n = 1$, we have
 	\[
 		\norm{\bvec x} = \abs{x_1} \le \abs{x_1}.
-	\]\\
+	\]
+
 	Suppose for all $\bvec x \in \bb R^k$ we have
 	\[
 		\norm{\bvec x} \le \sum_{i = 1}^k \abs{x_i}.
@@ -33,7 +33,8 @@
 						 & \le \Big ( \sum_{i = 1}^k \abs{x_i} \Big )^2 + \abs{x_{k + 1}}^2 + 2 \abs{x_{k + 1}} \sum_{i = 1}^k \abs{x_i} \\
 						 & = \Big ( \abs{x_{k + 1}} + \sum_{i = 1}^k \abs{x_i} \Big )^2.
 		\end{split}
-	\]\\
+	\]
+	
 	That is,
 	\[
 		\norm{\bvec x}^2 \le \Big ( \sum_{i = 1}^{k + 1} \abs{x_i} \Big )^2
@@ -81,12 +82,14 @@
 \pagebreak
 
 \begin{problem}[12]
-	Let $\bb (R^n)^\vee$ denote the dual space of $\bb R^n$. If $\bvec x \in \bb R^n$, define $\varphi_{\bvec x} \in (\bb R^n)^\vee$ by $\varphi_{\bvec x}(\bvec y) = \bvec x \cdot \bvec y$. Define $T : \bb R^n \to (\bb R^n)^\vee$ by $T \bvec x = \varphi_{\bvec x}$. \\\\
+	Let $\bb (R^n)^\vee$ denote the dual space of $\bb R^n$. If $\bvec x \in \bb R^n$, define $\varphi_{\bvec x} \in (\bb R^n)^\vee$ by $\varphi_{\bvec x}(\bvec y) = \bvec x \cdot \bvec y$. Define $T : \bb R^n \to (\bb R^n)^\vee$ by $T \bvec x = \varphi_{\bvec x}$. 
+
 	Show that $T$ is an invertible linear transformation and conclude that every $\varphi \in (\bb R^n)^\vee$ is $\varphi_{\bvec x}$ for a unique $\bvec x \in \bb R^n$.
 \end{problem}
 
 \begin{solution}
-	If $T \bvec x = \bvec 0$ we must have $\varphi_{\bvec x} (\bvec y) = 0$ for all $\bvec y \in \bb R^n$. Thus, $\varphi_{\bvec x}(\bvec x) = 0$, giving us $\bvec x \cdot \bvec x = 0$ and thus, $\bvec x = \bvec 0$. Thus, $T$ is injective. \\\\
+	If $T \bvec x = \bvec 0$ we must have $\varphi_{\bvec x} (\bvec y) = 0$ for all $\bvec y \in \bb R^n$. Thus, $\varphi_{\bvec x}(\bvec x) = 0$, giving us $\bvec x \cdot \bvec x = 0$ and thus, $\bvec x = \bvec 0$. Thus, $T$ is injective. 
+
 	Since $\bb R^n$ and $(\bb R^n)^\vee$ are both $n$-dimensional, $T$ is also invertible. Thus, for each $\varphi \in (\bb R^n)^\vee$ we have a unique $\bvec x \in \bb R^n$ such that $T \bvec x = \varphi$, and $\varphi = \varphi_{\bvec x}$.
 \end{solution}
 
@@ -97,14 +100,18 @@
 \end{problem}
 
 \begin{solution}
-	Suppose we have a collection of open sets, $\set{U_{\alpha}}$, indexed by $\alpha \in A$. For each $\bvec x \in \bigcup_{\alpha \in A} U_\alpha$ we have $\bvec x \in U_{\beta}$ for some $\beta \in A$. Since $U_\beta$ is open, we have $\bvec x \in I \subset U_\beta$ where $I$ is an open rectangle, and since we are looking at the union, we have $\bvec x \in I \subset \bigcup_{\alpha \in A} U_\alpha$. \\\\
-	Suppose we have the open sets $U_1$ and $U_2$. For any $\bvec x \in U_1 \cap U_2$ we must have $\bvec x \in I_1 \subset U_1$ and $\bvec x \in I_2 \subset U_2$ where $I_1$ and $I_2$ are open rectangles. This gives us $\bvec x \in I_1 \cap I_2 \subset U_1 \cap U_2$. \\\\
+	Suppose we have a collection of open sets, $\set{U_{\alpha}}$, indexed by $\alpha \in A$. For each $\bvec x \in \bigcup_{\alpha \in A} U_\alpha$ we have $\bvec x \in U_{\beta}$ for some $\beta \in A$. Since $U_\beta$ is open, we have $\bvec x \in I \subset U_\beta$ where $I$ is an open rectangle, and since we are looking at the union, we have $\bvec x \in I \subset \bigcup_{\alpha \in A} U_\alpha$. 
+
+	Suppose we have the open sets $U_1$ and $U_2$. For any $\bvec x \in U_1 \cap U_2$ we must have $\bvec x \in I_1 \subset U_1$ and $\bvec x \in I_2 \subset U_2$ where $I_1$ and $I_2$ are open rectangles. This gives us $\bvec x \in I_1 \cap I_2 \subset U_1 \cap U_2$. 
+
 	Note that the intersection of any two non-disjoint rectangles is also an open rectangle --- if we have rectangles $I_1 = \prod_{i = 1}^n (a_i, b_i)$ and $I_2 = \prod_{i = 1}^n (c_i, d_i)$ that have $\bvec x \in I_1 \cap I_2$, then we have $a_i, c_i < x_i < b_i, d_i$ for all $i \in \bb N_n$. Thus, we have
 	\[
 		I_1 \cap I_2 = \prod_{i = 1}^n (\max \set{a_i, c_i}, \min \set{b_i, d_i})
 	\]
-	as an open rectangle. \\\\
-	Since this is an open rectangle, we have the desired open rectangle subset containing any point in the intersection of $U_1$ and $U_2$. By induction we can extend this to any finite intersection of open sets. \\\\
+	as an open rectangle. 
+
+	Since this is an open rectangle, we have the desired open rectangle subset containing any point in the intersection of $U_1$ and $U_2$. By induction we can extend this to any finite intersection of open sets. 
+
 	This result doesn't hold for infinitely many open sets --- the intersection of all open intervals of the form $(-1/n, 1/n)$ is $\set{0}$, which is not open.
 \end{solution}
 
@@ -129,7 +136,8 @@
 \end{problem}
 
 \begin{solution}
-	Note that for $A$ to be closed, we must have $\bb R \setminus A$ open. Suppose, by way of contradiction, that we didn't have $[0, 1] \subset A$, and instead, $x \in [0, 1]$ but $x \notin A$. \\\\
+	Note that for $A$ to be closed, we must have $\bb R \setminus A$ open. Suppose, by way of contradiction, that we didn't have $[0, 1] \subset A$, and instead, $x \in [0, 1]$ but $x \notin A$. 
+
 	Since there is a rational number beween any two real numbers, any open interval $(a, b)$ with $x \in (a, b)$ would contain a rational number in $[0, 1]$. Thus, there would be no open interval $(a, b)$ with $x \in (a, b) \subset \bb R \setminus A$, making it not open, and giving rise to a contradiction. Thus, our supposition that there is such an $x$ must be false.
 \end{solution}
 
@@ -149,16 +157,20 @@
 			\[
 				d = \min \set{\abs{x - a_i}, \abs{x - b_i} : i \in \bb N_n}.
 			\]
-			This allows to contain the open ball $N_d(\bvec x) = \set{\bvec y \in \bb R^n : \norm{\bvec y - \bvec x} < d}$ inside $I$. That is, the coordinates of any point in $N_d(\bvec y)$ are displaced by less than the minimum required to leave $I$, and thus, $N_d(\bvec x) \subset I$.\\\\
+			This allows to contain the open ball $N_d(\bvec x) = \set{\bvec y \in \bb R^n : \norm{\bvec y - \bvec x} < d}$ inside $I$. That is, the coordinates of any point in $N_d(\bvec y)$ are displaced by less than the minimum required to leave $I$, and thus, $N_d(\bvec x) \subset I$.
+
 			Since $N_d(\bvec x) \subset I \subset \bb R^n \setminus A$, we have $\bvec y \notin A$ for any point $\bvec y$ with $\norm{\bvec y - \bvec x} < d$, and the contrapositive is the desired property for $d$.
-		\item Since $A$ is closed, for any $\bvec x \in B$, there exists some $d'$ that gives us that $N_{d'} \cap A$ is empty. Consider $\mathcal O$, the open cover of $B$ given by considering a $d'/2$-neighbourhood of each point. By the compactness of $B$, we can reduce this to a finite sub-cover $\bar{\mathcal O} = \set{U_1, \ldots, U_n}$ where each $U_i$ is a $d'_i/2$-neighbourhood of some point in $B$.\\\\
+		\item Since $A$ is closed, for any $\bvec x \in B$, there exists some $d'$ that gives us that $N_{d'} \cap A$ is empty. Consider $\mathcal O$, the open cover of $B$ given by considering a $d'/2$-neighbourhood of each point. By the compactness of $B$, we can reduce this to a finite sub-cover $\bar{\mathcal O} = \set{U_1, \ldots, U_n}$ where each $U_i$ is a $d'_i/2$-neighbourhood of some point in $B$.
+
 			For any point $\bvec x \in B$, we have $\bvec x \in U_i \in \bar{\mathcal O}$, and thus, $\bvec x$ is at distance greater than $d_i'/2$ from any $\bvec y \in A$. Since there are only finitely many $U_i$, there are only finitely many corresponding $d_i'$ and thus, we can bound $d$.
 			\[
 				d > \min \set{d_i' : i \in \bb N_n} > 0.
 			\]
 			That is, we do not have arbitrarily close points of $A$ and $B$.
-		\item Consider $A = \set{(x, y) \in \bb R^2 : y \ge 1/x, x > 0}$ and $B = \set{(x, y) \in \bb R^2 : y \le - 1/x, x > 0}$. Since $1/0$ is undefined, we do not consider any points for which $x = 0$ to be part of either set. \\\\
-			Note that both sets are closed. For any $(x, y) \in \bb R^2 \setminus A$ there is a known technique to find the point on the curve $y = 1/x$ nearest to $(x, y)$. The neighbourhood $N_s(x, y)$ where $s$ is the distance of this nearest point is then contained in $\bb R^2 \setminus A$. Since neighbourhoods are open, this makes $\bb R^2 \setminus A$ open, and thus, $A$ closed. Similarly, we can show that $B$ is closed. Neither of them is compact since neither of them is bounded. \\\\
+		\item Consider $A = \set{(x, y) \in \bb R^2 : y \ge 1/x, x > 0}$ and $B = \set{(x, y) \in \bb R^2 : y \le - 1/x, x > 0}$. Since $1/0$ is undefined, we do not consider any points for which $x = 0$ to be part of either set. 
+
+			Note that both sets are closed. For any $(x, y) \in \bb R^2 \setminus A$ there is a known technique to find the point on the curve $y = 1/x$ nearest to $(x, y)$. The neighbourhood $N_s(x, y)$ where $s$ is the distance of this nearest point is then contained in $\bb R^2 \setminus A$. Since neighbourhoods are open, this makes $\bb R^2 \setminus A$ open, and thus, $A$ closed. Similarly, we can show that $B$ is closed. Neither of them is compact since neither of them is bounded. 
+
 			Note finally, that for any $d > 0$, there is some $2/n < d$ where $n \in \bb N$. Thus, for any $d > 0$ we have the points $(n, 1/n)$ and $(n, -1/n)$ at distance $2/n < d$.
 	\end{enumerate}
 \end{solution}
@@ -174,7 +186,7 @@
 	\[
 		C \subset \bigcup_{V \in \bar{\mathcal O}} V \subset U.
 	\]
-	More over, since it is the union of finitely many open sets, it is a bounded set. Thus, its closure is a closed and bounded, and therefore compact subset $D \subset U$ and it is $D^\circ$, the open interior that contains $C$.
+	Moreover, since it is the union of finitely many open sets, it is a bounded set. Thus, its closure is a closed and bounded, and therefore compact subset $D \subset U$ and it is $D^\circ$, the open interior that contains $C$.
 \end{solution}
 
 \pagebreak
@@ -195,9 +207,12 @@
 	which means
 	\[
 		\norm{f(\bvec x) - f(\bvec a)} \ge \varepsilon.
-	\]\\
-	That is, for some $\varepsilon > 0$, no matter what $\delta > 0$ we choose there will be some point $\bvec x$ with $\norm{\bvec x - \bvec a} < \delta$ and $\norm{f(\bvec x) - f(\bvec a)} \ge \varepsilon$. Thus, $\lim_{\bvec x \to \bvec a} f(\bvec x) \neq \bvec b$.\\\\
-	Suppose we have $\lim_{\bvec x \to \bvec a} f_i(\bvec x) = b_i$ for all $i \in \bb N_m$ and $\varepsilon > 0$. Then let $\varepsilon' = \frac{\varepsilon}{\sqrt m}$.\\\\
+	\]
+
+	That is, for some $\varepsilon > 0$, no matter what $\delta > 0$ we choose there will be some point $\bvec x$ with $\norm{\bvec x - \bvec a} < \delta$ and $\norm{f(\bvec x) - f(\bvec a)} \ge \varepsilon$. Thus, $\lim_{\bvec x \to \bvec a} f(\bvec x) \neq \bvec b$.
+
+	Suppose we have $\lim_{\bvec x \to \bvec a} f_i(\bvec x) = b_i$ for all $i \in \bb N_m$ and $\varepsilon > 0$. Then let $\varepsilon' = \frac{\varepsilon}{\sqrt m}$.
+
 	For each $i \in \bb N_m$ we have some $\delta_i$ such that $\abs{f_i(\bvec x) - f_i(\bvec a)} < \varepsilon'$ for all $\bvec x$ with $\norm{\bvec x - \bvec a} < \delta_i$. Let $ \delta' = \min \set{\delta_i}$. Then for all $\bvec x$ with $\norm{\bvec x - \bvec a} < \delta'$ we have
 	\[
 		\begin{split}
@@ -224,7 +239,8 @@
 \end{problem}
 
 \begin{solution}
-	Let $\bvec b = (b_1, \ldots, b_m) = f(\bvec a)$. Then $f_i(\bvec a) = b_i$ for all $i \in \bb N_m$.\\\\
+	Let $\bvec b = (b_1, \ldots, b_m) = f(\bvec a)$. Then $f_i(\bvec a) = b_i$ for all $i \in \bb N_m$.
+
 	We know that $\lim_{\bvec x \to \bvec a} f(\bvec x) = \bvec b$ if and only if $\lim_{\bvec x \to \bvec a} f_i(\bvec x) = b_i$ for all $i \in \bb N_m$. Thus, $f$ is continuous if and only if each $f_i$ is.
 \end{solution}
 
@@ -235,7 +251,8 @@
 \end{problem}
 
 \begin{solution}
-	Consider any point $T \bvec a \in \bb R^m$ and any $\varepsilon > 0$. We can find points $\bvec x \in \bb R^n$ such that $\norm{T \bvec x - T \bvec a} < \varepsilon$ since we have bounded $T \bvec v$ by $\norm{\bvec v}$. \\\\
+	Consider any point $T \bvec a \in \bb R^m$ and any $\varepsilon > 0$. We can find points $\bvec x \in \bb R^n$ such that $\norm{T \bvec x - T \bvec a} < \varepsilon$ since we have bounded $T \bvec v$ by $\norm{\bvec v}$. 
+
 	Specifically, if we have $\norm{T \bvec v} \le M \norm{\bvec v}$, then we can choose $\delta = \varepsilon/M$. If we look at $\bvec x$ such that $\bvec v = \bvec x - \bvec a$ has $\norm{\bvec v} < \delta$, then we have
 	\[
 		\begin{split}
@@ -244,7 +261,8 @@
 						     & < M \frac{\varepsilon}{M} \\
 						     & = \varepsilon
 		\end{split}
-	\]\\
+	\]
+
 	That is, for all $\bvec x \in \bb R^n$ with $\norm{\bvec x - \bvec a} < \delta$ we have $\norm{T \bvec x - T \bvec a} < \varepsilon$. $T$ is continuous everywhere.
 \end{solution}
 
@@ -267,11 +285,15 @@
 
 \begin{solution}
 	\begin{enumerate}
-		\item Every straight line through $\bvec 0$ is of the form $y = \alpha x$ for some $\alpha \in \bb R$, or $x = 0$.\\\\
-			For $x = 0$, the whole line is not in $A$, obviously. \\\\
+		\item Every straight line through $\bvec 0$ is of the form $y = \alpha x$ for some $\alpha \in \bb R$, or $x = 0$.
+
+			For $x = 0$, the whole line is not in $A$, obviously. 
+
 			For all other lines consider points in the graph of the line with $x \in (-\abs \alpha, \abs \alpha)$. These points give us $x^2 < \alpha x$ and thus, $x^2 < y$ for positive $x$ and positive $\alpha$. For positive $x$ and negative $\alpha$ we have $y < 0$ and nonpositive $x$ are already excluded from $A$. Thus, for $x$ in this interval, we have points in an interval about $\bvec 0$ that are in $\bb R^2 \setminus A$.
-		\item Choose $\delta = \frac{v_2}{v_1}$. Then, for any $\varepsilon > 0$, for all $\lambda$ with $\abs{\lambda - 0} < \delta$ we have $\abs{g_{\bvec v}(\lambda) - g_{\bvec v}(0)} = 0 < \varepsilon$. Thus, $g_{\bvec v}$ is continuous at $0$.\\\\
-			However, for any $0 < \delta$, there are always points $(x, y) = (\frac{\delta}{\sqrt 2}, \frac{\delta}{2 \sqrt 2})$ with $\norm{(x, y) - \bvec 0} = \delta \sqrt{\frac{5}{8}} < \delta$ and $x^2 = \frac{\delta}{2} > \frac{\delta}{2 \sqrt 2} = y$. These points $(x, y)$ are in $A$ and give $f(x,y) = 1$.\\\\
+		\item Choose $\delta = v_{2}/v_{1}$. Then, for any $\varepsilon > 0$, for all $\lambda$ with $\abs{\lambda - 0} < \delta$ we have $\abs{g_{\bvec v}(\lambda) - g_{\bvec v}(0)} = 0 < \varepsilon$. Thus, $g_{\bvec v}$ is continuous at $0$.
+
+			However, for any $0 < \delta$, there are always points $(x, y) = (\delta/\sqrt{2}, \delta/2 \sqrt{2})$ with $\norm{(x, y) - \bvec 0} = \delta \sqrt{5/8} < \delta$ and $x^2 = \delta/2 > \delta/2 \sqrt{2} = y$. These points $(x, y)$ are in $A$ and give $f(x,y) = 1$.
+			
 			Thus, for any $0 < \varepsilon < 1$ there is no $\delta > 0$ such that for all $\bvec v$ with $\norm{\bvec v - \bvec 0} < \delta$ we have $\abs{f(\bvec v) - f(\bvec 0)} < \varepsilon$. That is, $f$ is not continuous at $\bvec 0$.
 	\end{enumerate}
 \end{solution}
@@ -283,9 +305,12 @@
 \end{problem}
 
 \begin{solution}
-	First we will show that $f$ is continuous at all $\bvec b \in \bb R^n$.\\\\
-	For any $\varepsilon > 0$, if we want $\abs{f(\bvec b) - f(\bvec x)} < \varepsilon$, then we are looking for points with $\abs{\norm{\bvec b - \bvec a} - \norm{\bvec x - \bvec a}} < \varepsilon$. The triangle inequality tells us that if we have $\norm{\bvec x - \bvec b} < \varepsilon$ then we will always have $\norm{\bvec x - \bvec a} \le \norm{\bvec x - \bvec b} + \norm{\bvec b - \bvec a}$ and thus, $\norm{\bvec x - \bvec a} - \norm{\bvec b - \bvec a} \le \norm{\bvec x - \bvec b} < \varepsilon$. The triangle inequality also gives us $\norm{\bvec b - \bvec a} \le \norm{\bvec x - \bvec a} + \norm{\bvec x - \bvec b}$ and thus, $\norm{\bvec b - \bvec a} - \norm{\bvec x - \bvec a} \le \norm{\bvec x - \bvec b} < \varepsilon$. \\\\
-	Thus, choosing $\delta = \varepsilon$ gives us that for every $\bvec x$ with $\norm{\bvec x - \bvec b} < \delta$ we have $\abs{f(\bvec x) - f(\bvec b)} < \varepsilon$. That is, $f$ is continuous.\\\\
+	First we will show that $f$ is continuous at all $\bvec b \in \bb R^n$.
+
+	For any $\varepsilon > 0$, if we want $\abs{f(\bvec b) - f(\bvec x)} < \varepsilon$, then we are looking for points with $\abs{\norm{\bvec b - \bvec a} - \norm{\bvec x - \bvec a}} < \varepsilon$. The triangle inequality tells us that if we have $\norm{\bvec x - \bvec b} < \varepsilon$ then we will always have $\norm{\bvec x - \bvec a} \le \norm{\bvec x - \bvec b} + \norm{\bvec b - \bvec a}$ and thus, $\norm{\bvec x - \bvec a} - \norm{\bvec b - \bvec a} \le \norm{\bvec x - \bvec b} < \varepsilon$. The triangle inequality also gives us $\norm{\bvec b - \bvec a} \le \norm{\bvec x - \bvec a} + \norm{\bvec x - \bvec b}$ and thus, $\norm{\bvec b - \bvec a} - \norm{\bvec x - \bvec a} \le \norm{\bvec x - \bvec b} < \varepsilon$. 
+
+	Thus, choosing $\delta = \varepsilon$ gives us that for every $\bvec x$ with $\norm{\bvec x - \bvec b} < \delta$ we have $\abs{f(\bvec x) - f(\bvec b)} < \varepsilon$. That is, $f$ is continuous.
+
 	Consider the pre-image of the open interval $(-r, r)$ under $f$. That is, consider $\set{\bvec x \in \bb R^n : \norm{\bvec x - \bvec a} <r}$. Since $f$ is continuous and $(-r, r)$ is open, $f^\text{pre}((-r, r))$ is open, as desired.
 \end{solution}
 
@@ -296,9 +321,11 @@
 \end{problem}
 
 \begin{solution}
-	Note that we have $f^{\text{img}}(A)$ as compact. Thus it is closed and bounded, and we can talk about $\sup f^{\text{img}}(A)$ and $\inf f^{\text{img}}(A)$. We claim that these are contained in $f^{\text{img}}(A)$ and are thus its respective maximum and minimum values.\\\\
-	Since $f^{\text{img}}(A)$ is closed, it's complement must be open. If $\sup f^\text{img}(A)$ were not in $A$, then it would be in the complement and thus, the complement would contain a point around which it does not contain any open interval making it not open --- any open interval containing $\sup f^\text{img}(A)$ would contain points less than $\sup f^\text{img}(A)$, and thus, would contain points of $A$. Thus, $\sup f^\text{img}(A)$ must be in $A$. Similarly, $\inf f^\text{img}(A)$ must be in $A$. \\\\
-	Then, by their definition they are the maximum and minimum values that $f$ takes on $A$.
+	Note that we have $f^{\text{img}}(A)$ as compact. Thus it is closed and bounded, and we can talk about $\sup f^{\text{img}}(A)$ and $\inf f^{\text{img}}(A)$. We claim that these are contained in $f^{\text{img}}(A)$ and are thus its respective maximum and minimum values.
+
+	Since $f^{\text{img}}(A)$ is closed, it's complement must be open. If $\sup f^\text{img}(A)$ were not in $A$, then it would be in the complement and thus, the complement would contain a point around which it does not contain any open interval making it not open --- any open interval containing $\sup f^\text{img}(A)$ would contain points less than $\sup f^\text{img}(A)$, and thus, would contain points of $A$. Thus, $\sup f^\text{img}(A)$ must be in $A$. Similarly, $\inf f^\text{img}(A)$ must be in $A$.
+
+	Then, by their definition, they are the maximum and minimum values that $f$ takes on $A$.
 \end{solution}
 
 \end{document}

@@ -12,7 +12,8 @@
 \end{problem}
 
 \begin{solution}
-	Let $i$ be the inclusion that sends a point in $S$ to itself in $\mathcal I(S)$.\\\\
+	Let $i$ be the inclusion that sends a point in $S$ to itself in $\mathcal I(S)$.
+
 	Given any topological space $X$ and a function $F : X \to S$, the following diagram commutes.
 	\[
 		\begin{tikzcd}
@@ -29,9 +30,9 @@
 	\[
 		f^\text{pre}(S) = X
 	\]
-	(since every point in $X$ is mapped to some point in $S$), and thus, also trivially open in $X$.\\\\
-	$f$ is obviously a unique function since any other continuous function that agrees with $i \circ F$ everywhere would have to agree with $f$ everywhere too. \\\\
-	Thus, $\mathcal I(S)$ satisfies the universal property that for any topological space $X$ and function $F : X \to S$ there exists a unique continuous map $f : X \to \mathcal I(S)$ such that $f \circ i = F$.
+	(since every point in $X$ is mapped to some point in $S$), and thus, also trivially open in $X$.
+
+	$f$ is obviously a unique function since any other continuous function that agrees with $i \circ F$ everywhere would have to agree with $f$ everywhere too. Thus, $\mathcal I(S)$ satisfies the universal property that for any topological space $X$ and function $F : X \to S$ there exists a unique continuous map $f : X \to \mathcal I(S)$ such that $f \circ i = F$.
 \end{solution}
 
 \pagebreak
@@ -50,7 +51,8 @@
 			\forall K  \arrow[u, dashrightarrow, "\exists ! \, \varphi'"] \arrow[ur, "\varphi"]
 		\end{tikzcd}
 	\]
-	That is, the pair $(\ker \theta, i)$ satisfy the universal property that for all groups $K$ with a homomorphism, $\varphi : K \to G$ such that ${\theta \circ \varphi = \varepsilon \circ \varphi}$, there is a unique homomorphism $\varphi' : K \to \ker \theta$ such that $i \circ \varphi' = \varphi$.\\\\
+	That is, the pair $(\ker \theta, i)$ satisfy the universal property that for all groups $K$ with a homomorphism, $\varphi : K \to G$ such that ${\theta \circ \varphi = \varepsilon \circ \varphi}$, there is a unique homomorphism $\varphi' : K \to \ker \theta$ such that $i \circ \varphi' = \varphi$.
+
 	$\varphi'$ exists because the condition on $\varphi$ (that $\theta \circ \varphi = \varepsilon \circ \varphi$) forces us to have $\varphi^\text{img}(K) \subset \ker \theta$. Then we can define $\varphi' : K \to \ker \theta$ by $\varphi'(k) = \varphi(k)$ for all $k \in K$. $\varphi$ is unique because for the diagram to commute, we must have $i \circ \varphi' = \varphi$, and thus $\varphi'(k) = \varphi(k)$ for all $k \in K$.
 \end{solution}
 
@@ -68,8 +70,10 @@
 			V \arrow[r, hook, "i'"] \arrow[drr, bend right, "\forall g"] & X \arrow[dr, dashrightarrow, "\exists ! \, h"] \\
 						&&\forall Y
 		\end{tikzcd}
-	\]\\
-	$h$ exists because if the diagram without the dashed arrow commutes, then $f$ and $g$ agree on $U \cap V$. Thus, we can choose $h(x) = f(x)$ for $x \in U$ and $h(x) = g(x)$ for $x \in V$ and still have $h(x)$ well defined for $x \in U \cap V$. The gluing lemma tells us that $h$ is continuous too. \\\\
+	\]
+
+	$h$ exists because if the diagram without the dashed arrow commutes, then $f$ and $g$ agree on $U \cap V$. Thus, we can choose $h(x) = f(x)$ for $x \in U$ and $h(x) = g(x)$ for $x \in V$ and still have $h(x)$ well defined for $x \in U \cap V$. The gluing lemma tells us that $h$ is continuous too. 
+
 	$h$ is unique because for the diagram to commute, we must have $h \circ j' = f$ (that is, $h$ agrees with $f$ everywhere on $U$) and $h \circ i' = g$ (that is, $h$ agrees with $g$ everywhere on $V$). Since $X$ is covered by $U$ and $V$, $h$ is specified (and overspecified if $f$ and $g$ disagreed anywhere) at every $x \in X$.
 \end{solution}
 
@@ -93,7 +97,8 @@
 			\[
 				\varphi(p) = \sum_{i = 1}^n \varphi(a_i) r^i.
 			\]
-			This is clearly a ring homomorphism (we verified that the restriction $\varphi_{| \mathbb{Z}}$ is a ring homomorphism already) and obviously we have that ${\varphi(x) = r}$.\\\\
+			This is clearly a ring homomorphism (we verified that the restriction $\varphi_{| \mathbb{Z}}$ is a ring homomorphism already) and obviously we have that ${\varphi(x) = r}$.
+
 			We can show that this is unique by noticing that for any homomorphism $\psi$ fulfilling the requirements, we must have that $\psi_{| \mathbb{Z}}$ is the unique homomorphism $\psi_{|\mathbb{Z}} : \mathbb{Z} \to R$ and thus, is as described, and since $\psi(x) = r$, we have
 			\[
 				\begin{split}
@@ -104,7 +109,8 @@
 						& = \varphi(p).
 				\end{split}
 			\]
-		\item Suppose $A$ is the ring described. Then we have unique ring homomorphisms ${\varphi : A \to \mathbb Z[x]}$ and $\psi : \mathbb Z[x] \to A$ with $\varphi(a) = x$ and $\psi(x) = a$.\\\\ 
+		\item Suppose $A$ is the ring described. Then we have unique ring homomorphisms ${\varphi : A \to \mathbb Z[x]}$ and $\psi : \mathbb Z[x] \to A$ with $\varphi(a) = x$ and $\psi(x) = a$.
+
 			Thus, $\psi \circ \varphi: A \to A$ is a ring homomorphism with $\psi \circ \varphi(a) = a$ and $\varphi \circ \psi : \mathbb Z[x] \to \mathbb Z[x]$ is a ring homomorphism with $\varphi \circ \psi(x) = x$. However, we already have such a ring homomorphisms --- $\operatorname{id}_A$ and $\operatorname{id}_{\mathbb Z[x]}$ respectively. Thus by the uniqueness condition, we must have $\psi \circ \varphi = \operatorname{id}_A$ and $\varphi \circ \psi = \operatorname{id}_{\mathbb Z[x]}$. Finally, this gives us that $\varphi$ and $\psi$ are both isomorphisms with $\psi = i$
 	\end{enumerate}
 \end{solution}
@@ -134,8 +140,10 @@
 			\]
 			Clearly $P = X \times Y$ with $p_1(x, y) = x$ and $p_2(x, y) = y$ as projection functions fit this diagram. For $f_1, f_2$, there is the unique linear map $f \in \mathcal L(V, P)$ with $v \mapsto (f_1 v, f_2 v)$.
 		\item
-			By the property from (a) that both cones have, there must be a unique linear map $p \in \mathcal L(P, P')$ with $p_j' \circ p = p_j$ ($j \in \mathbb N_2$). However, we must also have a unique linear map $p' \in \mathcal L(P', P)$ with $p_j \circ p' = p_j'$ (again, $j \in \mathbb N_2$). Thus, $p \circ p'$ is a linear map operator on $P$ with $p_j \circ (p \circ p') = p_j$ and $p' \circ p$ is a linear operator on $P'$ with $p_j' \circ (p' \circ p) = p_j'$ (for all $j \in \mathbb N_2$). However, we already have $\operatorname{id}_P$ and $\operatorname{id}_{P'}$ satisfying those, and thus, by the uniqueness condition we must have $p \circ p' = \operatorname{id}_P$ and $p' \circ p = \operatorname{id}_{P'}$. \\\\
-			Thus, $p$ and $p'$ with $i = p$ being the desired isomorphism.\\\\
+			By the property from (a) that both cones have, there must be a unique linear map $p \in \mathcal L(P, P')$ with $p_j' \circ p = p_j$ ($j \in \mathbb N_2$). However, we must also have a unique linear map $p' \in \mathcal L(P', P)$ with $p_j \circ p' = p_j'$ (again, $j \in \mathbb N_2$). Thus, $p \circ p'$ is a linear map operator on $P$ with $p_j \circ (p \circ p') = p_j$ and $p' \circ p$ is a linear operator on $P'$ with $p_j' \circ (p' \circ p) = p_j'$ (for all $j \in \mathbb N_2$). However, we already have $\operatorname{id}_P$ and $\operatorname{id}_{P'}$ satisfying those, and thus, by the uniqueness condition we must have $p \circ p' = \operatorname{id}_P$ and $p' \circ p = \operatorname{id}_{P'}$.
+
+			Thus, $p$ and $p'$ with $i = p$ being the desired isomorphism.
+
 			We can see this isomorphism clearly in that the commutative diagrams can't tell $P$ and $P'$ apart:
 			\[
 				\begin{tikzcd}

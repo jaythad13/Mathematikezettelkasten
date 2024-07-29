@@ -19,12 +19,14 @@
 \begin{solution}
 	\begin{enumerate}
 		\item
-			We can show that both of the lists are orthonormal lists of the length $\dim \bb{R}^2 = 2$, and thus, bases.\\\\
+			We can show that both of the lists are orthonormal lists of the length $\dim \bb{R}^2 = 2$, and thus, bases.
+
 			First, note that for $v = (\pm \cos{\theta}, \pm \sin{\theta})$
 			\[
 				v \cdot v = \cos^2{\theta} + \sin^2{\theta} = 1.
 			\]
-			Thus, for either of the lists $e_1, e_2$, we have that $e_j \cdot e_j = 1$ ($j \in \set{1, 2}$).\\\\
+			Thus, for either of the lists $e_1, e_2$, we have that $e_j \cdot e_j = 1$ ($j \in \set{1, 2}$).
+
 			Further, we can see that 
 			\[
 				(\cos{\theta}, \sin{\theta}) \cdot (- \sin{\theta}, \cos{\theta}) = \cos{\theta} \sin{\theta} - \cos{\theta} \sin{\theta} = 0
@@ -33,10 +35,12 @@
 			\[
 				(\cos{\theta}, \sin{\theta}) \cdot (\sin{\theta}, -\cos{\theta}) = -(\cos{\theta}, \sin{\theta}) \cdot (- \sin{\theta}, \cos{\theta}) = 0.
 			\]
-			That is, for either of the lists, we have $e_1 \cdot e_2 = 0$.\\\\
+			That is, for either of the lists, we have $e_1 \cdot e_2 = 0$.
+
 			Thus, both of the lists are orthonormal. Since both of the lists are of length $2 = \dim \bb{R}^2$, they are also orthonormal bases.
 		\item
-			Suppose we have an orthonormal basis of $\bb{R}^2$, say, $e_1, e_2$.\\\\
+			Suppose we have an orthonormal basis of $\bb{R}^2$, say, $e_1, e_2$.
+
 			Then $e_1$ must be a unit vector in $\bb{R}^2$. For angle $\theta$ from the positive $x$-axis, we can write $e_1$ as $(\cos{\theta}, \sin{\theta})$. Since we are working with the Euclidean inner product, $e_2$ must then be $e_1$ rotated $\frac{\pi}{2}$ clockwise or counterclockwise:
 			\[
 				e_2 = (\cos{\theta + \frac{\pi}{2}}, \sin{\theta + \frac{\pi}{2}}) = (-\sin{\theta}, \cos{\theta})
@@ -67,9 +71,10 @@
 	This then naturally gives us
 	\[
 		\norm{v}^2 = \abs{\linn v, e_1 \rinn}^2 + \cdots + \abs{\linn v, e_m \rinn}^2.
-	\]\\
-	Suppose $v \notin \vspan{(e_1, \ldots, e_m)}$.\\\\
-	Consider $u_{m + 1} = v - (\linn v, e_1 \rinn e_1 + \cdots + \linn v, e_m \rinn e_m) \neq 0$ and $e_{m + 1} = \frac{u_{m + 1}}{\norm{u_{m + 1}}}$. That is, expand the basis to include $v_m$ in its span. By the Gram-Schmidt procedure, $e_1, \ldots, e_{m + 1}$ is now an orthonormal basis such that $v \in \vspan (e_1, \ldots, e_{m + 1})$.\\\\
+	\]
+
+	Suppose $v \notin \vspan{(e_1, \ldots, e_m)}$. Consider $u_{m + 1} = v - (\linn v, e_1 \rinn e_1 + \cdots + \linn v, e_m \rinn e_m) \neq 0$ and $e_{m + 1} = \frac{u_{m + 1}}{\norm{u_{m + 1}}}$. That is, expand the basis to include $v_m$ in its span. By the Gram-Schmidt procedure, $e_1, \ldots, e_{m + 1}$ is now an orthonormal basis such that $v \in \vspan (e_1, \ldots, e_{m + 1})$.
+
 	This allows us to write 
 	\[
 		v = \linn v, e_1 \rinn e_1 + \cdots + \linn v, e_m \rinn e_m + \linn v, e_{m + 1} \rinn e_{m + 1}
@@ -99,8 +104,10 @@
 		\boxed{
 			(1, 0, 0), (0, \frac{1}{\sqrt 2}, \frac{1}{\sqrt 2}), (0, -\frac{1}{\sqrt 2}, \frac{1}{\sqrt 2}).
 		}
-	\] \\
-	Since the Gram-Schmidt process preserves upper-triangular matrices, we can just apply it to the given basis to get an orthonormal basis with respect to which $T$ has an upper-triangular matrix. Let the original basis be $v_1, v_2, v_3$ and the orthonormal basis be $e_1, e_2, e_3$. Let the non-normalised versions of the orthonormal basis be $u_1, u_2, u_3$.\\\\
+	\] 
+
+	Since the Gram-Schmidt process preserves upper-triangular matrices, we can just apply it to the given basis to get an orthonormal basis with respect to which $T$ has an upper-triangular matrix. Let the original basis be $v_1, v_2, v_3$ and the orthonormal basis be $e_1, e_2, e_3$. Let the non-normalised versions of the orthonormal basis be $u_1, u_2, u_3$.
+
 	The Gram-Schmidt process gives us the following.
 	\[
 		e_1 = \frac{v_1}{\norm{v_1}} = \frac{(1, 0, 0)}{1} = (1, 0, 0).
@@ -128,7 +135,8 @@
 	\]
 	\[
 		e_3 = \frac{u_3}{\norm{u_3}} = \frac{(0, -\frac{1}{2}, \frac{1}{2})}{1 / \sqrt{2}} = (0, -\frac{1}{\sqrt 2}, \frac{1}{\sqrt 2}).
-	\]\\
+	\]
+
 	Thus, $T$ has an upper-triangular matrix with respect to the orthonormal basis
 	\[
 		(1, 0, 0), (0, \frac{1}{\sqrt 2}, \frac{1}{\sqrt 2}), (0, -\frac{1}{\sqrt 2}, \frac{1}{\sqrt 2}).
@@ -162,7 +170,8 @@
 	\[
 		\linn \frac{\cos{mx}}{\sqrt{\pi}}, \frac{\sin{nx}}{\sqrt \pi} \rinn = 0
 	\]
-	regardless of whether $m = n$.\\\\
+	regardless of whether $m = n$.
+
 	For the first, we have the following calculations.
 	\[
 		\begin{split}
@@ -170,7 +179,8 @@
 										   & = \frac{\pi - (- \pi)}{2 \pi} \\ 
 										   & = 1.
 		\end{split}
-	\]\\
+	\]
+
 	\[
 		\begin{split}
 			\linn \frac{\cos{nx}}{\sqrt \pi}, \frac{\cos{nx}}{\sqrt \pi} \rinn & = \frac{1}{\pi}\int_{-\pi}^\pi \cos^2{nx} \, dx \\
@@ -179,7 +189,8 @@
 						       & = \frac{1}{2 \pi} ((\pi + 0) - (-\pi + 0) ) \\
 						       & = 1.
 		\end{split}
-	\]\\
+	\]
+
 	\[
 		\begin{split}
 			\linn \frac{\sin{nx}}{\sqrt \pi}, \frac{\sin{nx}}{\sqrt \pi} \rinn & = \frac{1}{\pi} \int_{-\pi}^{\pi} \sin^2{nx} \, dx \\
@@ -188,7 +199,8 @@
 											   & = \frac{1}{2 \pi} ((\pi - 0) - (-\pi - 0)) \\
 											   & = 1.
 		\end{split}
-	\]\\
+	\]
+
 	For the second we have the following.
 	\[
 		\begin{split}
@@ -197,7 +209,8 @@
 											 & = \frac{1}{\pi \sqrt 2} (0 - 0) \\
 											 & = 0.
 		\end{split}
-	\]\\
+	\]
+
 	\[
 		\begin{split}
 			\linn \frac{1}{\sqrt{2 \pi}}, \frac{\sin{nx}}{\sqrt \pi} \rinn & = \frac{1}{\pi \sqrt 2} \int_{-\pi}^\pi \sin{nx} \, dx \\
@@ -208,7 +221,8 @@
 										       \end{cases} \\
 										       & = 0.
 		\end{split}
-	\]\\
+	\]
+
 	\[
 		\linn \frac{\cos{mx}}{\sqrt \pi}, \frac{\cos{nx}}{\sqrt \pi} \rinn = \frac{1}{\pi} \int_{-\pi}^\pi \cos{mx} \cos{nx} \, dx.
 	\]
@@ -237,7 +251,8 @@
 											   & = \frac{0 - 0}{\pi (n^2 - m^2)} \\
 											   & = 0.
 		\end{split}
-	\]\\
+	\]
+
 	We could also have done the previous integral more simply by using a trigonometric identity, which we will now do for the case with $\sin$. Specifically, we will use the fact that $\sin{A} \sin{B} = \frac{\cos{(A - B)} - \cos{(A + B)}}{2}$
 	\[
 		\begin{split}
@@ -247,7 +262,8 @@
 											   & = \frac{1}{2 \pi} (0 - 0) \\
 											   & = 0.
 		\end{split}
-	\]\\
+	\]
+
 	Finally, for the third we have
 	\[
 		\begin{split}
@@ -280,7 +296,8 @@
 		\boxed{
 			1, 2 \sqrt 3 \Big ( x - \frac{1}{2} \Big ), 6 \sqrt 5 \Big ( x^2 - x + \frac{1}{6} \Big ).
 		}
-	\] \\
+	\]
+
 	Let $v_1, v_2, v_3$ denote the basis $1, x, x^2$, let $e_1, e_2, e_3$ denote the orthonormal basis obtained by applying the Gram-Schmidt procedure to it, and let $u_1, u_2, u_3$ denote the non-normalised version of $e_1, e_2, e_3$. Then
 	\[
 		e_1 = \frac{v_1}{\norm{v_1}} = \frac{1}{\int_0^1 \, dx} = 1
@@ -329,7 +346,7 @@
 \pagebreak
 
 \begin{problem}[6]
-	Find an othonormal basis of $\curly{P}_2(\bb{R})$ (with inner product as in exercise 5) such that the differentiation operator (the operator that takes $p$ to $p'$) has an upper-triangular matrix with respect to this basis.
+	Find an orthonormal basis of $\curly{P}_2(\bb{R})$ (with inner product as in exercise 5) such that the differentiation operator (the operator that takes $p$ to $p'$) has an upper-triangular matrix with respect to this basis.
 \end{problem}
 
 \begin{solution}
@@ -337,7 +354,8 @@
 		\boxed{
 			1, 2 \sqrt 3 \Big ( x - \frac{1}{2} \Big ), 6 \sqrt 5 \Big ( x^2 - x + \frac{1}{6} \Big ).
 		}
-	\] \\
+	\]
+
 	The differentiation operator $D$ with $D p = p'$ has the upper-triangular matrix
 	\[
 		\begin{bmatrix}
@@ -377,7 +395,8 @@
 	Consider the inner-product on $\mathcal{P}(\bb{R}^2)$ from problems 5 and 6 and the linear functional $\varphi \in \mathcal{P}(\bb{R}^2)^\vee$ given by $\varphi(p) = p(\frac{1}{2})$. Then we can rephrase this problem as finding some $q$ such that
 	\[
 		\linn p, q \rinn = \varphi(p).
-	\]\\
+	\]
+	
 	Then we know from the Riesz representation theorem that, given an orthonormal basis $e_1, e_2, e_3$, (which we computed in problem 5) we have
 	\[
 		\begin{split}
@@ -405,7 +424,8 @@
 		\boxed{
 			q = - \frac{24}{\pi^2} \left ( x - \frac{1}{2} \right ).
 		}
-	\] \\
+	\]
+
 	Consider the functional on $\varphi \in \mathcal P_2(\mathbb R)^\vee$ by
 	\[
 		\varphi : p \mapsto \int_0^1 p(x) \cos{\pi x} \, dx.
@@ -414,7 +434,8 @@
 	\[
 		q = \overline{\varphi(e_1)} \, e_1 + \overline{\varphi(e_2)} \, e_2 + \overline{\varphi(e_3)} \, e_3
 	\]
-	for the orthonormal basis that we calculated in problem 5. \\\\
+	for the orthonormal basis that we calculated in problem 5.
+
 	Thus, we can compute
 	\[
 		\begin{split}
@@ -446,8 +467,10 @@
 \end{problem}
 
 \begin{solution}
-	Apply the Gram-Schmidt procedure to $v_1, \dots, v_m$ to get an orthonormal basis $e_1, \dots, e_m$. Choose to multiply any subset of them by $-1$. This preserves the span of each sublist $e_1, \dots, e_j$. There are $2^m$ ways to do this. \\\\
-	We also have that $e_{j + 1}$ and $-e_{j + 1}$ are the only way to add $v_{j + 1}$ to the span of $e_1, \dots, e_j$ while preserving the orthonormal property. We can prove this as follows. \\\\
+	Apply the Gram-Schmidt procedure to $v_1, \dots, v_m$ to get an orthonormal basis $e_1, \dots, e_m$. Choose to multiply any subset of them by $-1$. This preserves the span of each sublist $e_1, \dots, e_j$. There are $2^m$ ways to do this.
+
+	We also have that $e_{j + 1}$ and $-e_{j + 1}$ are the only way to add $v_{j + 1}$ to the span of $e_1, \dots, e_j$ while preserving the orthonormal property. We can prove this as follows.
+
 	Suppose we have $\operatorname{span}(e_1, \dots e_j) = \operatorname{span}(v_1, \dots, v_j)$ and we want $e_{j + 1}$ such that $e_1, \dots, e_{j + 1}$ is orthonormal, and $\operatorname{span}(e_1, \dots, e_{j + 1}) = \operatorname{span}(v_1, \dots, v_{j + 1}) = \operatorname{span}(e_1, \dots, e_j, v_{j + 1})$. Then notice that we can write $e_{j + 1} \in \operatorname{span}(e_1, \dots, e_j, v_{j + 1})$ as
 	\[
 		e_{j + 1} = c_1 e_1 + \dots + c_j e_j + d v_{j + 1}.
@@ -481,7 +504,8 @@
 	Suppose $v \in V$ gives us
 	\[
 		\frac{\Vert v \Vert_1^2}{\Vert v \Vert_2^2} = c_v > 0.
-	\] \\
+	\]
+
 	Notice that we can write any $w \in V$ in terms of $v$. That is, we can get the orthogonal decompositions
 	\[
 		w = a_i v + w'
@@ -489,8 +513,8 @@
 	where
 	\[
 		a_i = \frac{\left < w, v \right >_i}{\Vert v \Vert_i^2}
-	\] \\
-	Note that since we have $\langle v', u \rangle_i = 0$ we have
+	\]
+	Since we have $\langle v', u \rangle_i = 0$ we have
 	\[
 		\begin{split}
 			\left < v, w - a_1 v \right >_1 & = 0 \\
@@ -500,10 +524,11 @@
 			\langle v, w \rangle_2 - \frac{1}{c_v} \langle v, w \rangle_1 & = 0
 		\end{split}
 	\]
-	and thus
+	and thus,
 	\[
 		\langle v, w \rangle_1 = c_v \langle v, w \rangle_2.
 	\]
+
 	Now we just need to show that $c_u = c_v$ for any $u \in V$. Note that for any $u \in V$ we have
 	\[
 		\langle v, u \rangle_1 = c_v \langle v, u \rangle_2.
@@ -512,7 +537,7 @@
 	\[
 		\langle u, v \rangle_1 = c_u \langle u, v \rangle_2.
 	\]
-	Note that since $c_u \in \mathbb{R}$, we can rewrite this as 
+	Since $c_u \in \mathbb{R}$, we can rewrite this as 
 	\[
 		\langle v, u \rangle_1 = c_u \langle v, u \rangle_2
 	\]
@@ -520,7 +545,8 @@
 	\[
 		(c_v - c_u) \langle v, u \rangle_2 = 0
 	\]
-	for all $u \in U$. This means that whenever, $u$ and $v$ are not orthogonal, we have $c_u = c_v$. When they are orthogonal, consider $v + u$. We have $c_v = c_{v + u}$ and $c_u = c_{v + u}$ since neither of them is orthogonal to $v + u$, and thus, $c_v = c_u$. Let $c = c_v$ for all $v \in V$. \\\\
+	for all $u \in U$. This means that whenever, $u$ and $v$ are not orthogonal, we have $c_u = c_v$. When they are orthogonal, consider $v + u$. We have $c_v = c_{v + u}$ and $c_u = c_{v + u}$ since neither of them is orthogonal to $v + u$, and thus, $c_v = c_u$. Let $c = c_v$ for all $v \in V$.
+
 	Thus, for all $v, w \in V$ we have $\langle v, w \rangle_1 = c \langle v, w \rangle_2$.
 \end{solution}
 
@@ -558,8 +584,7 @@
 	for each $j \in \mathbb N_n$. Prove that $v_1, \dots, v_n$ is a basis of $V$.
 \end{problem}
 
-\begin{solution}~
-	
+\begin{solution}
 	Suppose that $a_{1}, \dots, a_{n}$ are not all $0$. Notice that we have
 	\[
 		\begin{split}
@@ -593,13 +618,12 @@
 	for every $f \in \mathcal C_{\mathbb R}([-1, 1])$.
 \end{problem}
 
-\begin{solution}~
-	
+\begin{solution}
 	Suppose, by way of contradiction, that such a $g$ existed. Then, for $f \in \mathcal{C}_{\mathbb{R}}([-1, 1])$ defined by $f(x) = x^{2} g(x)$, we must have
 	\[
 		\int_{-1}^{1} f(x) g(x) \, dx = 0
 	\]
-	since $f(0) = 0$. \\
+	since $f(0) = 0$.
 
 	But then we must have
 	\[
@@ -614,17 +638,16 @@
 	Suppose $V$ is a finite-dimensional vector space over $\mathbb C$, $T \in \mathcal L(V)$, all the eigenvalues of $T$ have absolute value less than $1$, and $\varepsilon > 0$. Prove that there exists a positive integer $m$ such that $\Vert T^m v \Vert \le \varepsilon \Vert v \Vert$ for every $v \in V$.
 \end{problem}
 
-\begin{solution}~
-	
-	Since  $V$ is a complex vector space, $T$ must have an upper-triangular matrix $A$ with respect to an orthonormal basis $e_{1}, \dots, e_{n}$. Note that since all the eigenvalues are less than $1$, we have $\lvert A_{j, j} \rvert < 1$ for all $j \in \mathbb{N}_{n}$. \\
+\begin{solution}
+	Since  $V$ is a complex vector space, $T$ must have an upper-triangular matrix $A$ with respect to an orthonormal basis $e_{1}, \dots, e_{n}$. Note that since all the eigenvalues are less than $1$, we have $\lvert A_{j, j} \rvert < 1$ for all $j \in \mathbb{N}_{n}$. 
 
 	Then, for any $v = a_{1} e_{1} + \cdots + a_{n} e_{n}$, we have
 	\[
 		Tv = \sum_{j = 1}^{n} \left ( \sum_{k = j}^{n} a_{k} A_{j, k} \right ) e_{j}.
 	\]
-	We want to bound the magnitudes of the coefficients $\lvert \sum_{k = j}^{n} a_{k} A_{j, k} \rvert$ to be less than or equal to $\lambda_{j} \lvert a_{j} \rvert$ where $0 < \lambda_j < 1$. Unfortunately, with $A$, this is only possible for $j = n$ where the coefficient is $\lvert A_{n, n} a_{n} \rvert \le \lvert A_{n, n} \rvert \lvert a_{n} \rvert$ --- in all other cases, the rest of the terms $a_{k} A_{j, k}$ can be too large. \\
+	We want to bound the magnitudes of the coefficients $\lvert \sum_{k = j}^{n} a_{k} A_{j, k} \rvert$ to be less than or equal to $\lambda_{j} \lvert a_{j} \rvert$ where $0 < \lambda_j < 1$. Unfortunately, with $A$, this is only possible for $j = n$ where the coefficient is $\lvert A_{n, n} a_{n} \rvert \le \lvert A_{n, n} \rvert \lvert a_{n} \rvert$ --- in all other cases, the rest of the terms $a_{k} A_{j, k}$ can be too large.
 
-	However, by scaling our basis, we can make these terms arbitrarily small. Choose some positive real $\delta < 1$, and then set $f_{j} = \delta^{n + 1 - j} e_{j}$ for all $j \in \mathbb{N}_{n}$. That is, set $f_{n} = e_{n}$, $f_{n - 1} = \delta e_{n - 1}$, and so on. Let $B$ be the upper-triangular matrix of $T$ with respect to $f_{1}, \dots, f_{n}$. Then $B_{j, k} = \delta^{k - j} A_{j, k}$. Moreover, for any $v = b_{1} f_{1} + \cdots + b_{n} f_{n} = a_{1} e_{1} + \cdots + a_{n} e_{n}$ we have $b_{k} = a_{k}/\delta^{n + 1 - k}$ \\
+	However, by scaling our basis, we can make these terms arbitrarily small. Choose some positive real $\delta < 1$, and then set $f_{j} = \delta^{n + 1 - j} e_{j}$ for all $j \in \mathbb{N}_{n}$. That is, set $f_{n} = e_{n}$, $f_{n - 1} = \delta e_{n - 1}$, and so on. Let $B$ be the upper-triangular matrix of $T$ with respect to $f_{1}, \dots, f_{n}$. Then $B_{j, k} = \delta^{k - j} A_{j, k}$. Moreover, for any $v = b_{1} f_{1} + \cdots + b_{n} f_{n} = a_{1} e_{1} + \cdots + a_{n} e_{n}$ we have $b_{k} = a_{k}/\delta^{n + 1 - k}$.
 
 	This means that, for any such $v$, we have
 	\[
@@ -674,7 +697,7 @@
 	\end{enumerate}
 \end{problem}
 
-\begin{solution}~
+\begin{solution}
 	\begin{enumerate}
 		\item Suppose $u = \lambda u_{1} + u_{2}$ for some $\lambda \in \mathbb{R}$. Then, for any $v \in V$, we would have
 			\[
