@@ -13,7 +13,8 @@
 \begin{solution}
 	\begin{enumerate}
 		\item
-			Call the desired set $\ker(G \to A)$. Suppose we have some arbitrary $g_1, g_2 \in \ker(G \to A)$. We need to show that $g_1 g_2$ and $g_1^{-1}$ are both in $\ker(G \to A)$. Note that $g_1 \cdot a = g_2 \cdot a = a$ for any arbitrary $a \in A$. \\\\
+			Call the desired set $\ker(G \to A)$. Suppose we have some arbitrary $g_1, g_2 \in \ker(G \to A)$. We need to show that $g_1 g_2$ and $g_1^{-1}$ are both in $\ker(G \to A)$. Note that $g_1 \cdot a = g_2 \cdot a = a$ for any arbitrary $a \in A$. 
+
 			By computing
 			\[
 				\begin{split}
@@ -22,7 +23,8 @@
 							  & = a
 				\end{split}
 			\]
-			we can see that $g_1 g_2$ fix any arbitrary $a \in A$. That is, $g_1 g_2 \in \ker(G \to A)$. \\\\
+			we can see that $g_1 g_2$ fix any arbitrary $a \in A$. That is, $g_1 g_2 \in \ker(G \to A)$. 
+
 			Similarly, by noticing that $a = g_1 \cdot a$ and computing
 			\[
 				\begin{split}
@@ -33,7 +35,8 @@
 			\]
 			we see that $g_1^{-1}$ fixes any arbitrary $a$. That is, $g_1^{-1} \in \ker(G \to A)$.
 		\item
-			Call the desired set $\operatorname{stab}_a G$. Suppose we have some arbitrary $g_1, g_2 \in \operatorname{stab}_a G$. We need to show that $g_1 g_2$ and $g_1^{-1}$ are both in $\operatorname{stab}_a G$. Note that $g_1 \cdot a = g_2 \cdot a = a$. \\\\
+			Call the desired set $\operatorname{stab}_a G$. Suppose we have some arbitrary $g_1, g_2 \in \operatorname{stab}_a G$. We need to show that $g_1 g_2$ and $g_1^{-1}$ are both in $\operatorname{stab}_a G$. Note that $g_1 \cdot a = g_2 \cdot a = a$. 
+
 			By computing
 			\[
 				\begin{split}
@@ -42,7 +45,8 @@
 							  & = a
 				\end{split}
 			\]
-			we can see that $g_1 g_2$ fix $a$. That is, $g_1 g_2 \in \operatorname{stab}_a G$. \\\\
+			we can see that $g_1 g_2$ fix $a$. That is, $g_1 g_2 \in \operatorname{stab}_a G$. 
+
 			Similarly, by noticing that $a = g_1 \cdot a$ and computing
 			\[
 				\begin{split}
@@ -74,7 +78,8 @@
 				   & = \sigma(x) \sigma(y)
 		\end{split}
 	\]
-	which holds for any $x, y \in G$. \\\\
+	which holds for any $x, y \in G$. 
+
 	Now we will show that $\sigma_g$ is an isomorphism. We will do this by finding an inverse. We claim specifically, that $\sigma_g^{-1}$ is just $\sigma_{g^{-1}}$. Notice that for any $g \in G$
 	\[
 		\begin{split}
@@ -82,8 +87,10 @@
 							    & = x.
 		\end{split}
 	\]
-	and since the choice of $g$ was arbitrary and $(g^{-1})^{-1} = g$, we have by the same proof that $(\sigma_g \circ \sigma_{g^{-1}})(x) = x$. Thus, $\sigma_{g^{-1}}$ is $\sigma_g^{-1}$, the unique two sided inverse, of $\sigma_g$, and $\sigma_g$ is an isomorphism. \\\\
-	Recall that we have the result that isomorphisms preserve orders. This gives us that $\lvert x \rvert = \lvert \sigma_g(x) \rvert$ and thus, $\lvert x \rvert = \lvert g x g^{-1} \rvert$. \\\\
+	and since the choice of $g$ was arbitrary and $(g^{-1})^{-1} = g$, we have by the same proof that $(\sigma_g \circ \sigma_{g^{-1}})(x) = x$. Thus, $\sigma_{g^{-1}}$ is $\sigma_g^{-1}$, the unique two sided inverse, of $\sigma_g$, and $\sigma_g$ is an isomorphism. 
+
+	Recall that we have the result that isomorphisms preserve orders. This gives us that $\lvert x \rvert = \lvert \sigma_g(x) \rvert$ and thus, $\lvert x \rvert = \lvert g x g^{-1} \rvert$. 
+
 	Finally, consider the restriction of $\sigma_g$, 
 	\[
 		{\sigma_g}_{|A} : A \to \sigma_g^\text{img}(A)
@@ -106,9 +113,12 @@
 \end{problem}
 
 \begin{solution}
-	To show that $\sim$ is an equivalence relation, we need to show reflexivity, symmetry, and transitivity. Let $a, b, c$ be arbitrary elements of $A$, and let $h, h_1, h_2$ be arbitrary elements of $H$.\\\\
-	We can show reflexivity by noticing that $a = 1_H \cdot a$, and thus $a \sim a$. \\\\
-	For symmetry, assume that $a \sim b$. Then we have $a = h \cdot b$. Multiply on both sides by $h^{-1}$ to get $h^{-1} \cdot a = h^{-1} \cdot (h \cdot b)$, which we can rewrite using the associativity of the group action to get $b = h^{-1} \cdot a$, and thus $b \sim a$. \\\\
+	To show that $\sim$ is an equivalence relation, we need to show reflexivity, symmetry, and transitivity. Let $a, b, c$ be arbitrary elements of $A$, and let $h, h_1, h_2$ be arbitrary elements of $H$.
+
+	We can show reflexivity by noticing that $a = 1_H \cdot a$, and thus $a \sim a$. 
+
+	For symmetry, assume that $a \sim b$. Then we have $a = h \cdot b$. Multiply on both sides by $h^{-1}$ to get $h^{-1} \cdot a = h^{-1} \cdot (h \cdot b)$, which we can rewrite using the associativity of the group action to get $b = h^{-1} \cdot a$, and thus $b \sim a$. 
+
 	Finally, for transitivity, assume that $a \sim b$ and $b \sim c$ such that $a = h_1 \cdot b$ and $b = h_2 \cdot c$, then notice that we have
 	\[
 		\begin{split}
@@ -117,7 +127,8 @@
 			  & = (h_1 h_2) \cdot c
 		\end{split}
 	\]
-	and thus, we have $a \sim c$. \\\\
+	and thus, we have $a \sim c$. 
+
 	Since we have shown, reflexivity, symmetry, and transitivity, we have that $\sim$ is an equivalence relation.
 \end{solution}
 
@@ -131,7 +142,8 @@
 \end{problem}
 
 \begin{solution}
-	Let $\varphi$ denote the map $H \to \mathcal{O}_H^x$ by $h \mapsto hx$. First we will show that $\varphi$ is surjective, and then that is injective. \\\\
+	Let $\varphi$ denote the map $H \to \mathcal{O}_H^x$ by $h \mapsto hx$. First we will show that $\varphi$ is surjective, and then that is injective. 
+
 	Notice that by definition, the orbit of $x$ under $H$, $\mathcal{O}_H^x$ is all elements of the form $hx$ since, for any $g \in G$, $x \sim g$ if and only if $g = h x$. Since $\varphi^\text{img}$ is just all of these elements of the form $hx$, we have
 	\[
 		\begin{split}
@@ -139,9 +151,12 @@
 					      & = \mathcal{O}_H^x.
 		\end{split}
 	\]
-	Thus, $\varphi$ is surjective. \\\\
-	To show injectivity, we suppose $\varphi(h_1) = \varphi(h_2)$ for some $h_1, h_2 \in H$. Then we have $h_1 x = h_2 x$. Right cancellation of $x$ then gives us $h_1 = h_2$. Thus, $\varphi$ is injective. \\\\
-	Since $\varphi$ is injective and surjective, it is bijective, and thus, $\lvert H \rvert = \lvert \mathcal{O}_H^x \rvert$, for any $x \in G$. That is, the order of the orbit of any element under the action of $H$ is just the order of $H$. \\\\
+	Thus, $\varphi$ is surjective. 
+
+	To show injectivity, we suppose $\varphi(h_1) = \varphi(h_2)$ for some $h_1, h_2 \in H$. Then we have $h_1 x = h_2 x$. Right cancellation of $x$ then gives us $h_1 = h_2$. Thus, $\varphi$ is injective. 
+
+	Since $\varphi$ is injective and surjective, it is bijective, and thus, $\lvert H \rvert = \lvert \mathcal{O}_H^x \rvert$, for any $x \in G$. That is, the order of the orbit of any element under the action of $H$ is just the order of $H$. 
+
 	Notice that this also means that we have $\lvert \mathcal{O}_H^x \rvert = \lvert \mathcal{O}_H^y \rvert$ for any $x, y \in G$. The orders of the orbits of any two elements are the same --- they're both the order of $H$. By the previous exercise we have that the orbits of elements of $G$ under the action of $H$ partition the group. That is, we have some $x_1, \dots, x_m \in G$, all in different orbits under the action of $H$ such that
 	\[
 		\coprod_{i = 1}^m \mathcal{O}_H^{x_i} = G 
@@ -149,7 +164,8 @@
 	(their disjoint union is $G$), and thus,
 	\[
 		\sum_{i = 1}^m \lvert \mathcal{O}_H^{x_i} \rvert = \lvert G \rvert.
-	\] \\
+	\] 
+
 	Since we have $\lvert \mathcal{O}_H^{x_i} \rvert = \lvert H \rvert$ this is just equivalent to $m \lvert H \rvert = G$ and thus, $\lvert H \rvert$ divides $\lvert G \rvert$.
 \end{solution}
 

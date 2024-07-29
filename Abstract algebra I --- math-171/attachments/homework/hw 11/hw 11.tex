@@ -22,8 +22,10 @@
 					     & = \pi((x, y)) + \pi((u, v))
 		\end{split}
 	\]
-	giving us that $\pi$ is a homomorphism, as desired. \\\\
-	Notice that the kernel is exactly those $(x, y)$ that satisfy $x = - y$. That is, the kernel is the line $y = -x$ passing through the origin. \\\\
+	giving us that $\pi$ is a homomorphism, as desired. 
+
+	Notice that the kernel is exactly those $(x, y)$ that satisfy $x = - y$. That is, the kernel is the line $y = -x$ passing through the origin. 
+
 	Since any two points are in the same fibre exactly when they differ by a vector in the kernel, we can understand that geometrically, the fibres of the map are the lines parallel to $y = -x$. Algebraically, we have $\overline{\mathbf{v}} = \overline{\mathbf{w}}$ if and only if $\mathbf{v} - \mathbf{w} = (a, -a)$ for some $a \in \mathbb{R}$.
 \end{solution}
 
@@ -42,8 +44,10 @@
 				    & = \varphi(x) \varphi(y).
 		\end{split}
 	\]
-	In other words, $\varphi$ is a homomorphism. \\\\
-	The kernel of $\varphi$ consists of the two real numbers of magnitude one --- $\{ 1, -1 \}$. \\\\
+	In other words, $\varphi$ is a homomorphism. 
+
+	The kernel of $\varphi$ consists of the two real numbers of magnitude one --- $\{ 1, -1 \}$. 
+
 	The fibres of $\varphi$ are pairs $\{ a, -a \}$ for $a \in \mathbb{R}^{\times}$. Geometrically, identifying $1$ and $-1$ while preserving the multiplicative structure of the group requires us to fold over the whole real number line about $0$, identifying all numbers with their additive inverses.
 \end{solution}
 
@@ -63,7 +67,8 @@
 				    & = \varphi(z) \varphi(w).
 		\end{split}
 	\] 
-	That is, $\varphi$ is a homomorphism. The kernel of $\varphi$ is just the unit circle --- all the complex numbers with magnitude $1$. \\\\
+	That is, $\varphi$ is a homomorphism. The kernel of $\varphi$ is just the unit circle --- all the complex numbers with magnitude $1$. 
+
 	Since two complex numbers get sent to the same element of $\mathbb{R}^{\times}$ exactly when they have the same magnitude, the fibres of $\varphi$ are just all the circles in the plane. (A circle of radius $r$ corresponds to all of the elements of $\mathbb{C}^{\times}$ sent to $r \in \mathbb{R}^{\times}$).
 \end{solution}
 
@@ -74,9 +79,12 @@
 \end{problem}
 
 \begin{solution}
-	We will prove that this is well defined by showing that if $\overline{a} = \overline{b}$ in $\mathbb{Z} / 8 \mathbb{Z}$ then $\overline{a} = \overline{b}$ in $\mathbb{Z} / 4 \mathbb{Z}$ as well. Suppose $\overline{a} = \overline{b}$ in $\mathbb{Z} / 8 \mathbb{Z}$. Then we have $a - b = 8k$ for some integer $k$. But note that this also means we have $a - b = 4(2k)$ and thus, $\overline{a} = \overline{b}$ in $\mathbb{Z}/4\mathbb{Z}$ as well. Thus, if $\overline{a} = \overline{b}$ (in $\mathbb{Z}/8 \mathbb{Z}$) then we have $\varphi(\overline{a}) = \varphi(\overline{b})$. That is, $\varphi$ is well defined. \\\\
-	To show that $\varphi$ is surjective, we just note that $\mathbb{Z}/4\mathbb{Z} = \{ \overline{0}, \overline{1}, \overline{2}, \overline{3} \}$ and $\mathbb{Z}/8 \mathbb{Z} = \{ \overline{0}, \overline{1}, \overline{2}, \overline{3}, \overline{4}, \overline{5}, \overline{6}, \overline{7} \}$. Thus, for each $\overline{a} \in \mathbb{Z}/4 \mathbb{Z}$ we have $\overline{a} \in \mathbb{Z}/ 8 \mathbb{Z}$ such that $\varphi(\overline{a}) = \overline{a}$. \\\\
-	Its kernel is $\{ \overline{0}, \overline{4} \}$ which we can also write as $\left < \overline{4} \right >$. \\\\
+	We will prove that this is well defined by showing that if $\overline{a} = \overline{b}$ in $\mathbb{Z} / 8 \mathbb{Z}$ then $\overline{a} = \overline{b}$ in $\mathbb{Z} / 4 \mathbb{Z}$ as well. Suppose $\overline{a} = \overline{b}$ in $\mathbb{Z} / 8 \mathbb{Z}$. Then we have $a - b = 8k$ for some integer $k$. But note that this also means we have $a - b = 4(2k)$ and thus, $\overline{a} = \overline{b}$ in $\mathbb{Z}/4\mathbb{Z}$ as well. Thus, if $\overline{a} = \overline{b}$ (in $\mathbb{Z}/8 \mathbb{Z}$) then we have $\varphi(\overline{a}) = \varphi(\overline{b})$. That is, $\varphi$ is well defined. 
+
+	To show that $\varphi$ is surjective, we just note that $\mathbb{Z}/4\mathbb{Z} = \{ \overline{0}, \overline{1}, \overline{2}, \overline{3} \}$ and $\mathbb{Z}/8 \mathbb{Z} = \{ \overline{0}, \overline{1}, \overline{2}, \overline{3}, \overline{4}, \overline{5}, \overline{6}, \overline{7} \}$. Thus, for each $\overline{a} \in \mathbb{Z}/4 \mathbb{Z}$ we have $\overline{a} \in \mathbb{Z}/ 8 \mathbb{Z}$ such that $\varphi(\overline{a}) = \overline{a}$. 
+
+	Its kernel is $\{ \overline{0}, \overline{4} \}$ which we can also write as $\left < \overline{4} \right >$. 
+
 	Thus, its fibres are pairs that differ by $\overline{4}$. The set of all fibres is
 	\[
 		(\mathbb{Z}/8\mathbb{Z})/\left < \overline{4} \right > = \{ \{ \overline{0}, \overline{4} \}, \{ \overline{1}, \overline{5} \}, \{ \overline{2}, \overline{6} \}, \{ \overline{3}, \overline{7} \} \}.

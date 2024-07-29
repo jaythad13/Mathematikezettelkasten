@@ -32,7 +32,8 @@
 						\tau = \frac{2}{(t^{2} + 2)^{2}}.
 					\end{gathered}
 				}
-			\] \\
+			\] 
+
 			Given $\alpha$, we can compute $\alpha'$, $\alpha''$, and $\alpha'''$ as follows.
 			\[
 				\begin{gathered}
@@ -57,7 +58,8 @@
 						   & = \frac{(2, 2t, t^{2})}{t^{2} + 2} \\
 						   & = \left ( \frac{2}{t^{2} + 2}, \frac{2t}{t^{2} + 2}, 1 - \frac{2}{t^{2} + 2} \right ).
 				\end{split}
-			\] \\
+			\] 
+
 			Now, we can calculate $\mathbf{N}$ by looking at $\mathbf{T}'$ and its norm ---
 			\[
 				\begin{split}
@@ -81,7 +83,8 @@
 					\mathbf{N} & = \frac{\mathbf{T}'}{\lVert \mathbf{T}' \rVert} \\
 						   & = \frac{(-2t, 2 - t^{2}, 2t)}{t^{2} + 2}.
 				\end{split}
-			\] \\
+			\] 
+
 			From this, we can calculate $\mathbf{B} = \mathbf{T} \times \mathbf{N}$ as follows 
 			\[
 				\begin{split}
@@ -112,7 +115,8 @@
 					       & = \frac{2 (t^{2} + 2)}{(t^{2} + 2)^{3}} \\
 					       & = \frac{2}{(t^{2} + 2)^{2}}.
 				\end{split}
-			\] \\
+			\] 
+
 			Note that this gives us the result $\lVert \alpha' \times \alpha'' \rVert = 2(t^{2} + 2)$ for $\tau$
 			\[
 				\begin{split}
@@ -165,7 +169,8 @@
 
 \begin{solution}
 	\begin{enumerate}
-		\item	Let $[\mathbf{u}, \mathbf{p}]$ be the unit constant vector with fixed angle to the tangent vector. Then note that we can show that $[\mathbf{u}, \mathbf{p}]$ has only constant components in the directions of $\mathbf{T}$ and $\mathbf{B}$. \\\\
+		\item	Let $[\mathbf{u}, \mathbf{p}]$ be the unit constant vector with fixed angle to the tangent vector. Then note that we can show that $[\mathbf{u}, \mathbf{p}]$ has only constant components in the directions of $\mathbf{T}$ and $\mathbf{B}$. 
+
 			Specifically,
 			\[
 				\begin{split}
@@ -173,7 +178,8 @@
 										     & = \kappa v \, \mathbf{N} \cdot [\mathbf{u}, \mathbf{p}]
 				\end{split}
 			\]
-			But we already know that $\mathbf{T} \cdot [\mathbf{u}, \mathbf{p}]$ is constant and thus, that $(\mathbf{T} \cdot [\mathbf{u}, \mathbf{p}])' = 0$. Thus, $\kappa v \, \mathbf{N} \cdot [\mathbf{u}, \mathbf{p}] = 0$ always, and since $\alpha$ is strongly regular $\kappa v$ is never $0$. Thus, $\mathbf{N} \cdot [\mathbf{u}, \mathbf{p}] = 0$ and $[\mathbf{u}, \mathbf{p}]$ has no component along $\mathbf{N}$. \\\\
+			But we already know that $\mathbf{T} \cdot [\mathbf{u}, \mathbf{p}]$ is constant and thus, that $(\mathbf{T} \cdot [\mathbf{u}, \mathbf{p}])' = 0$. Thus, $\kappa v \, \mathbf{N} \cdot [\mathbf{u}, \mathbf{p}] = 0$ always, and since $\alpha$ is strongly regular $\kappa v$ is never $0$. Thus, $\mathbf{N} \cdot [\mathbf{u}, \mathbf{p}] = 0$ and $[\mathbf{u}, \mathbf{p}]$ has no component along $\mathbf{N}$. 
+
 			Since we know that $\mathbf{T} \cdot [\mathbf{u}, \mathbf{p}]$ and $\lVert [\mathbf{u}, \mathbf{p}] \rVert = 1$, we can write $\lVert [\mathbf{u}, \mathbf{p}] \rVert$ in the orthonormal basis $\mathbf{T}, \mathbf{N}, \mathbf{B}$ to get
 			\[
 				(\mathbf{T} \cdot [\mathbf{u}, \mathbf{p}])^{2} + (\mathbf{N} \cdot [\mathbf{u}, \mathbf{p}])^{2} + (\mathbf{B} \cdot [\mathbf{u}, \mathbf{p}])^{2} = 1
@@ -185,7 +191,8 @@
 			Since $\cos{\vartheta}$ is constant, we get that $\mathbf{B} \cdot [\mathbf{u}, \mathbf{p}] = \sin{\vartheta}$ is constant. Thus,
 			\[
 				[\mathbf{u}, \mathbf{p}] = \cos{\vartheta} \, \mathbf{T} + \sin{\vartheta} \, \mathbf{B}.
-			\] \\
+			\] 
+
 			Once we have this result we can differentiate on both sides with respect to $t$ to get
 			\[
 				\begin{split}
@@ -201,7 +208,8 @@
 			and since none of $v, \mathbf{N}$ are zero, we have
 			\[
 				\kappa \cos{\vartheta} = \tau \sin{\vartheta}.
-			\] \\
+			\] 
+
 			Squaring both sides, we get
 			\[
 				\kappa^{2} \cos^{2}{\vartheta} = \tau^{2} (1 - \cos^{2}{\vartheta})
@@ -217,7 +225,8 @@
 							    & = 1 - \frac{\tau^{2}}{\kappa^{2} + \tau^{2}} \\
 							    & = \frac{\kappa^{2}}{\kappa^{2} + \tau^{2}} 
 				\end{split}
-			\] \\
+			\] 
+
 			Taking square roots we get
 			\[
 				\begin{gathered}
@@ -442,7 +451,8 @@
 			\iff & (\alpha'(t) \cdot \mathbf{u})^{2} - \lVert \alpha'(t) \rVert^{2} \cos^{2}{\vartheta} = 0.
 		\end{split}
 	\]
-	for all $t \in I$. Let us have $\gamma$ defined by $\gamma(t) = (\alpha'(t) \cdot \mathbf{u})^{2} - \lVert \alpha'(t) \rVert^{2} \cos^{2}{\vartheta}$. Then what we want to prove is equivalent to showing that $\gamma$ is identically zero on $I$. \\\\
+	for all $t \in I$. Let us have $\gamma$ defined by $\gamma(t) = (\alpha'(t) \cdot \mathbf{u})^{2} - \lVert \alpha'(t) \rVert^{2} \cos^{2}{\vartheta}$. Then what we want to prove is equivalent to showing that $\gamma$ is identically zero on $I$. 
+
 	Note that
 	\[
 		\alpha'(t) = [(a, 2b t, 3 c t^{2}), \alpha(t)]
@@ -461,7 +471,8 @@
 				  & + 4 ab u_{1} u_{2} t + 12 bc u_{2} u_{3} t^{3}) \\
 		\end{split}
 	\]
-	Since $\gamma$ is a polynomial in $t$, $\gamma$ being identically zero is equivalent to all of its coefficients being zero. Note that for the $t^{0}$ coefficient, $a^{2}(u_{1}^{2} - \cos^{2}{\vartheta})$ to be zero, we need $u_{1} = \pm \cos{\vartheta}$ since $a \neq 0$. Similarly, for the $t^{4}$ coefficient, $9c^{2}(u_{3}^{2} - \cos^{2}{\vartheta})$ to be zero, we need $u_{3} = \pm \cos{\vartheta}$. Since we can have $\vartheta \neq \pi/2$ (for a specific example, in the previous problem we have $\vartheta = \pi/4$) and thus, $u_{1} \neq 0$ or $u_{3} \neq 0$ we need $u_{2} = 0$ to ensure that the $t$ and $t^{3}$ coefficients are zero. Notice that all of these are also sufficient to ensure that the coefficients are zero, and thus, are equivalent to the coefficients being zero. \\\\
+	Since $\gamma$ is a polynomial in $t$, $\gamma$ being identically zero is equivalent to all of its coefficients being zero. Note that for the $t^{0}$ coefficient, $a^{2}(u_{1}^{2} - \cos^{2}{\vartheta})$ to be zero, we need $u_{1} = \pm \cos{\vartheta}$ since $a \neq 0$. Similarly, for the $t^{4}$ coefficient, $9c^{2}(u_{3}^{2} - \cos^{2}{\vartheta})$ to be zero, we need $u_{3} = \pm \cos{\vartheta}$. Since we can have $\vartheta \neq \pi/2$ (for a specific example, in the previous problem we have $\vartheta = \pi/4$) and thus, $u_{1} \neq 0$ or $u_{3} \neq 0$ we need $u_{2} = 0$ to ensure that the $t$ and $t^{3}$ coefficients are zero. Notice that all of these are also sufficient to ensure that the coefficients are zero, and thus, are equivalent to the coefficients being zero. 
+
 	Thus, the $t^{2}$ coefficient being $0$ is equivalent to 
 	\[
 		6ac u_{3} u_{1} - 4 b ^{2} \cos^{2}{\vartheta} = 0

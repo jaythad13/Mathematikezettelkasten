@@ -40,15 +40,17 @@
 			\frac{d \alpha_2}{dt} \Big |_{t_0} = 2 \cos t_0 \\
 			\frac{d \alpha_3}{dt} \Big |_{t_0} = 1.
 		\end{gathered}
-	\] \\
-	From these we can get the tangent lines for each $t_0$ just by calculating
+	\] 
+
+	From these we can get the tangent lines for each $t_0$ just by calculating.
 	\begin{enumerate}
 		\item
 			\[
 				\boxed{
 					\ell(u) = (2, 2 u, u)
 				}
-			\] \\
+			\] 
+
 			We get this by calculating
 			\[
 				\begin{split}
@@ -62,7 +64,8 @@
 				\boxed{
 					\ell(u) = (\sqrt 2 (1 - u), \sqrt 2 (1 + u), \pi/4 + u).
 				}
-			\] \\
+			\] 
+
 			We get this by calculating
 			\[
 				\begin{split}
@@ -93,7 +96,8 @@
 				\boxed{
 					y^2 \, dx ([\mathbf v, \mathbf p]) = 4.
 				}
-			\]\\
+			\]
+
 			We get this by
 			\[
 				\begin{split}
@@ -107,7 +111,8 @@
 				\boxed{
 					(z \, dy - y \, dz)([\mathbf v, \mathbf p]) = -4.
 				}
-			\]\\
+			\]
+
 			We get this by
 			\[
 				\begin{split}
@@ -121,7 +126,8 @@
 				\boxed{
 					((z^2 - 1) \, dx - dy + x^2 \, dz)([\mathbf v, \mathbf p]) = -2.
 				}
-			\]\\
+			\]
+
 			We get this by
 			\[
 				\begin{split}
@@ -149,12 +155,15 @@
 \begin{solution}
 	\begin{enumerate}
 		\item 
-			First we will show that if $\mathbf p$ is a critical point, we have the desired equation. \\\\
-			Note that $df([\mathbf v, \mathbf p])$ is just $\nabla f(\mathbf p) \cdot \mathbf v$. Thus, if $df([\mathbf v, \mathbf p])$ is zero for all tangent vectors in $\mathrm T_{\mathbf p} \mathbb R^3$, we must have $\nabla f(\mathbf p) \cdot \mathbf v = 0$ for all vectors $\mathbf v \in \mathbb R^3$. \\\\
+			First we will show that if $\mathbf p$ is a critical point, we have the desired equation. 
+
+			Note that $df([\mathbf v, \mathbf p])$ is just $\nabla f(\mathbf p) \cdot \mathbf v$. Thus, if $df([\mathbf v, \mathbf p])$ is zero for all tangent vectors in $\mathrm T_{\mathbf p} \mathbb R^3$, we must have $\nabla f(\mathbf p) \cdot \mathbf v = 0$ for all vectors $\mathbf v \in \mathbb R^3$. 
+
 			The only such vector is $\mathbf 0$, and thus, we must have $\nabla f(\mathbf p) = \mathbf 0$, or component-wise,
 			\[
 				\frac{\partial f}{\partial x} \Big |_{\mathbf p} = \frac{\partial f}{\partial y} \Big |_{\mathbf p} = \frac{\partial f}{\partial z} \Big |_{\mathbf p} = 0.
-			\] \\
+			\] 
+
 			Now we will show that if the equation holds, $\mathbf p$ is a critical point. Note that if the equation holds, we have
 			\[
 				\begin{split}
@@ -162,7 +171,8 @@
 							    & = (0, 0, 0) \\
 							    & = \mathbf 0.
 				\end{split}
-			\] \\
+			\] 
+
 			This gives us
 			\[
 				\begin{split}
@@ -179,14 +189,16 @@
 						\mathbf p_2 = \left ( 0, -1, -\frac{1}{2} \right ).
 					\end{gathered}
 				}
-			\] \\
+			\] 
+
 			First, we compute $\nabla f$ to see what its zeroes are. For $\mathbf p = (x, y, z)$
 			\[
 				\begin{split}
 					\nabla f(\mathbf p) & = \left ( \frac{\partial f}{\partial x} \Big |_{\mathbf p}, \frac{\partial f}{\partial y} \Big |_{\mathbf p}, \frac{\partial f}{\partial z} \Big |_{\mathbf p} \right ) \\
 							    & = (3 x^2 y, 1 - x^3 - 2y z, 1 - y^2)
 				\end{split}
-			\] \\
+			\] 
+
 			Since the critical points of $f$ are exactly the points where its gradient is zero, we can just solve for $\nabla f(\mathbf p) = \mathbf 0$.
 			\[
 				\begin{gathered}
@@ -198,7 +210,8 @@
 			Note that in order to solve this system $y = \pm 1$. Since $y \neq 0$, to solve the first equation we must have $x = 0$. This leaves us with two ways to solve the second equation:
 			\[
 				1 - 2z = 0 \text{ for } y = 1 \quad \text{ or } \quad 1 + 2z = 0 \text{ for } y = - 1.
-			\] \\
+			\] 
+
 			Thus, we have critical points $\mathbf p_1 = (0, 1, 1/2)$ and $\mathbf p_2 = (0, -1, -1/2)$.
 	\end{enumerate}
 \end{solution}
@@ -225,7 +238,8 @@
 		& = \sum_{j = 1}^3 (f_{2j} \, f_{3k} - f_{3j} f_{2k}) \, dx_j \wedge dx_k
 		\end{split}
 	\]
-	where $k$ is $\sigma(j)$ where $\sigma$ is the cycle $(1 \, 2 \, 3)$. Now we only need to wedge an additional $\phi_3$ to this. \\\\
+	where $k$ is $\sigma(j)$ where $\sigma$ is the cycle $(1 \, 2 \, 3)$. Now we only need to wedge an additional $\phi_3$ to this. 
+
 	Again, first we use linearity to get
 	\[
 		\begin{split}
@@ -233,7 +247,8 @@
 							   & = \sum_{i = 1}^3 \sum_{j = 1}^3 f_{1 i} (f_{2j} \, f_{3k} - f_{3j} f_{2k}) \, dx_i \wedge dx_j \wedge dx_k.
 		\end{split}
 	\]
-	By applying the alternating property, we know that any wedges with any two indices equal are $0$ and can cancel them out. This means we have to cancel out any terms where $i = j$ or $i = k$ ($j \neq k$). If $i = 1$, then $j$ can only be $2$, and so on --- for any choice of $i$, $j$ must be $\sigma(i)$. \\\\
+	By applying the alternating property, we know that any wedges with any two indices equal are $0$ and can cancel them out. This means we have to cancel out any terms where $i = j$ or $i = k$ ($j \neq k$). If $i = 1$, then $j$ can only be $2$, and so on --- for any choice of $i$, $j$ must be $\sigma(i)$. 
+
 	Writing out the three terms corresponding to $i = 1$, $i = 2$, and $i = 3$, we get
 	\[
 		\begin{split}
@@ -277,7 +292,8 @@
 	and
 	\[
 		dg = \dfrac{\partial g}{\partial x} \, dx + \dfrac{\partial g}{\partial y} \, dy.
-	\]\\
+	\]
+
 	Now, to calculate their wedge product, we first use linearity to get
 	\[
 		\begin{split}

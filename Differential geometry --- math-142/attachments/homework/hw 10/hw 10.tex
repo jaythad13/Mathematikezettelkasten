@@ -63,15 +63,15 @@
 			\[
 				\{ \mathbf{v} + \mathbf{p} \mid [\mathbf{v}, \mathbf{p}] \in \mathrm{T}_{\mathbf{p}} M \} = \overline{T}
 			\]
-			by double containment. \\
+			by double containment. 
 
-			Suppose that $[\mathbf{v}, \mathbf{p}] \in \mathrm{T}_{\mathbf{p}} M$. Then $[\mathbf{v}, \mathbf{p}] \cdot [\mathbf{z}, \mathbf{p}] = 0$ and thus, $\mathbf{v} \cdot \mathbf{z} = 0$. Thus, $\mathbf{r} = \mathbf{v} + \mathbf{p}$ gives us $(\mathbf{r} - \mathbf{p}) \cdot \mathbf{z} = 0$. That is, any $\mathbf{v} + \mathbf{p}$ with $[\mathbf{v}, \mathbf{p}] \in \mathrm{T}_{\mathbf{p}}M$ gives us $\mathbf{v} + \mathbf{p} \in \overline{T}$. Thus, $\{ \mathbf{v} + \mathbf{p} \mid [\mathbf{v}, \mathbf{p}] \in \mathrm{T}_{\mathbf{p}} M \} \subset \overline{T}$. \\
+			Suppose that $[\mathbf{v}, \mathbf{p}] \in \mathrm{T}_{\mathbf{p}} M$. Then $[\mathbf{v}, \mathbf{p}] \cdot [\mathbf{z}, \mathbf{p}] = 0$ and thus, $\mathbf{v} \cdot \mathbf{z} = 0$. Thus, $\mathbf{r} = \mathbf{v} + \mathbf{p}$ gives us $(\mathbf{r} - \mathbf{p}) \cdot \mathbf{z} = 0$. That is, any $\mathbf{v} + \mathbf{p}$ with $[\mathbf{v}, \mathbf{p}] \in \mathrm{T}_{\mathbf{p}}M$ gives us $\mathbf{v} + \mathbf{p} \in \overline{T}$. Thus, $\{ \mathbf{v} + \mathbf{p} \mid [\mathbf{v}, \mathbf{p}] \in \mathrm{T}_{\mathbf{p}} M \} \subset \overline{T}$. 
 
-			Suppose that $\mathbf{r} \in \overline{T}$. Then choose $\mathbf{v} = \mathbf{r} - \mathbf{p}$. Since we already have $\mathbf{v} \cdot \mathbf{z} = 0$, we also have $[\mathbf{v}, \mathbf{p}] \cdot [\mathbf{z}, \mathbf{p}] = 0$. Thus, $[\mathbf{v}, \mathbf{p}] \in \mathrm{T}_{\mathbf{p}} M$. Then $\overline{T} \subset \mathrm{T}_{\mathbf{p}} M$. \\
+			Suppose that $\mathbf{r} \in \overline{T}$. Then choose $\mathbf{v} = \mathbf{r} - \mathbf{p}$. Since we already have $\mathbf{v} \cdot \mathbf{z} = 0$, we also have $[\mathbf{v}, \mathbf{p}] \cdot [\mathbf{z}, \mathbf{p}] = 0$. Thus, $[\mathbf{v}, \mathbf{p}] \in \mathrm{T}_{\mathbf{p}} M$. Then $\overline{T} \subset \mathrm{T}_{\mathbf{p}} M$. 
 
 			Then by double containment we have $\overline{T} = \mathrm{T}_{\mathbf{p}} M$.
 		\item
-			Let $\mathbf{p} = x(u, v)$ and $[\mathbf{z}, \mathbf{p}] = x_{u}(u, v) \times x_{v}(u, v)$. We know that $x_{u}(u, v) \cdot x_{v}(u, v) = 0$. Note that $\mathrm{T}_{\mathbf{p}} M = \operatorname{span}(x_{u}(u, v), x_{v}(u, v))$ and by definition (since it is in its own span) $[\mathbf{z}, \mathbf{p}]$ is a normal vector to $M$. \\
+			Let $\mathbf{p} = x(u, v)$ and $[\mathbf{z}, \mathbf{p}] = x_{u}(u, v) \times x_{v}(u, v)$. We know that $x_{u}(u, v) \cdot x_{v}(u, v) = 0$. Note that $\mathrm{T}_{\mathbf{p}} M = \operatorname{span}(x_{u}(u, v), x_{v}(u, v))$ and by definition (since it is in its own span) $[\mathbf{z}, \mathbf{p}]$ is a normal vector to $M$. 
 
 			Thus, by our previous result, replacing every $[\mathbf{v}, \mathbf{p}] \in \mathrm{T}_{\mathbf{p}} M$ with $\mathbf{p} + \mathbf{v} \in \mathbb{R}^{3}$ gives us all $\mathbf{r} \in \mathbb{R}^{3}$ such that $(\mathbf{r} - \mathbf{p}) \cdot \mathbf{z} = 0$, which is equivalent to $[\mathbf{r} - \mathbf{p}, \mathbf{p}] \cdot [\mathbf{z}, \mathbf{p}] = 0$. That is, the Euclidean tangent plane at $x(u, v)$ consists of all $\mathbf{r} \in \mathbb{R}^{3}$ such that $[\mathbf{r} - x(u, v), x(u, v)] \cdot x_{u}(u, v) \cdot x_{v}(u, v) = 0$.
 		\item
@@ -82,7 +82,7 @@
 										  & = 0
 				\end{split}
 			\]
-			where the last step follows since $g \circ \alpha$ is a constant function --- $(g \circ \alpha)(t) = c$ for all $t \in I$. \\
+			where the last step follows since $g \circ \alpha$ is a constant function --- $(g \circ \alpha)(t) = c$ for all $t \in I$. 
 
 			Thus, $\nabla g$ is a normal vector to $M$ at $\mathbf{p}$. It follows by part (a) again that the Euclidean tangent plane to $M$ at $\mathbf{p}$ consists of all $\mathbf{r} \in \mathbb{R}^{3}$ such that $(\mathbf{r} - \mathbf{p}) \cdot \nabla g(\mathbf{p}) = 0$.
 			
@@ -106,7 +106,7 @@
 \begin{solution}
 	\begin{enumerate}
 		\item
-			Since $\mathbf{V}$ is a tangent vector field on $M$, we always have $\mathbf{V}(x(u, v)) = [\mathbf{v}, x(u, v)] \in \mathrm{T}_{x(u, v)} M$. We can always write $[\mathbf{v}, x(u, v)] \in \mathrm{T}_{x(u, v)} M$ uniquely as a linear combination $c_{1} \, x_{u}(u, v) + c_{2} \, x_{v}(u, v)$. \\
+			Since $\mathbf{V}$ is a tangent vector field on $M$, we always have $\mathbf{V}(x(u, v)) = [\mathbf{v}, x(u, v)] \in \mathrm{T}_{x(u, v)} M$. We can always write $[\mathbf{v}, x(u, v)] \in \mathrm{T}_{x(u, v)} M$ uniquely as a linear combination $c_{1} \, x_{u}(u, v) + c_{2} \, x_{v}(u, v)$. 
 
 			Thus, we can define unambigouously $f, g : D \to \mathbb{R}$ by
 			\[
@@ -127,7 +127,8 @@
 			That is,
 			\[
 				v_{i} \circ x = f \, \frac{\partial x_{i}}{\partial u} + g \, \frac{\partial x_{i}}{\partial v}.
-			\] \\
+			\] 
+
 			Then, since $x_{i}$ is $\mathcal{C}^{\infty}$, the differentiability of $v_{i} \circ x$ is just equivalent to the differentiability of $f$ and $g$.
 	\end{enumerate}
 \end{solution}

@@ -162,7 +162,8 @@
 			\[
 				\lVert C(\mathbf{x}) - C(\mathbf{y}) \rVert = \lVert \mathbf{x} - \mathbf{y} \rVert
 			\]
-			as desired. \\\\
+			as desired. 
+
 			Thus, $C$ is orthogonal.
 	\end{enumerate}
 \end{solution}
@@ -190,7 +191,8 @@
 						T = I
 					\end{gathered}
 				}
-			\] \\
+			\] 
+
 			We know that $F$  is an isometry since
 			\[
 				\begin{split}
@@ -209,7 +211,8 @@
 						T : \mathbf{p} \mapsto (-1, -2, -3) + \mathbf{p}.
 					\end{gathered}
 				}
-			\] \\
+			\] 
+
 			We can just note that the composition $F = T \circ C$ does hold, $C$ is an orthogonal transformation (proof below) and $T$ is clearly a translation, so $F$ is the composition of isometries, and itself an isometry.
 			\[
 				\begin{split}
@@ -226,7 +229,8 @@
 				\boxed{
 					F \notin \mathcal{E}_{3}.
 				}
-			\] \\
+			\] 
+
 			Suppose $\mathbf{v}$ is a nonzero vector orthogonal to $\mathbf{u}$ (such a vector always exists). Then we have
 			\[
 				\begin{split}
@@ -235,7 +239,8 @@
 								   & = (\mathbf{p} \cdot \mathbf{u}) \mathbf{u}	\\
 								   & = F(\mathbf{p}).
 				\end{split}
-			\] \\
+			\] 
+
 			Thus, $\lVert F(\mathbf{p} + \mathbf{v}) - F(\mathbf{p}) \rVert = 0$ even though $\lVert \mathbf{p} + \mathbf{v} - \mathbf{p} \rVert = \lVert \mathbf{v} \rVert$ is nonzero. That is, $F$ is not an isometry.
 		\item
 			\[
@@ -254,7 +259,8 @@
 \end{problem}
 
 \begin{solution}
-	Since all translations are isometries, we can uniquely decompose $T$ into a translation and an orthogonal transformation. The most obvious choice is $T = T \circ I$ where $I$ is the identity on $\mathbb{R}^{3}$. \\\\
+	Since all translations are isometries, we can uniquely decompose $T$ into a translation and an orthogonal transformation. The most obvious choice is $T = T \circ I$ where $I$ is the identity on $\mathbb{R}^{3}$. 
+
 	Since the decomposition is uniquem, we know that for any tangent vector $[\mathbf{v}, \mathbf{p}] \in \mathrm{T}_{\mathbf{p}} \mathbb{R}^{3}$ we have
 	\[
 		\begin{split}
@@ -268,7 +274,8 @@
 \pagebreak
 
 \begin{problem}[Problem 5.]
-	Recall that, given a frame $\mathbf{e}_{1}, \mathbf{e}_{2}, \mathbf{e}_{3}$ in $\mathrm{T}_{\mathbf{p}}\mathbb{R}^{3}$ at $\mathbf{p}$, and a frame $\mathbf{f}_{1}, \mathbf{f}_{2}, \mathbf{f}_{3}$ in $\mathrm{T}_{\mathbf{q}}\mathbb{R}^{3}$	at $\mathbf{q}$, there is a unique isogeny $F : \mathbb{R}^{3} \to \mathbb{R}^{3}$ such that $F_{*}(\mathbf{e}_{i}) = \mathbf{f}_{i}$. \\\\
+	Recall that, given a frame $\mathbf{e}_{1}, \mathbf{e}_{2}, \mathbf{e}_{3}$ in $\mathrm{T}_{\mathbf{p}}\mathbb{R}^{3}$ at $\mathbf{p}$, and a frame $\mathbf{f}_{1}, \mathbf{f}_{2}, \mathbf{f}_{3}$ in $\mathrm{T}_{\mathbf{q}}\mathbb{R}^{3}$	at $\mathbf{q}$, there is a unique isogeny $F : \mathbb{R}^{3} \to \mathbb{R}^{3}$ such that $F_{*}(\mathbf{e}_{i}) = \mathbf{f}_{i}$. 
+
 	Given the frame
 	\[
 		\begin{split}
@@ -305,8 +312,10 @@
 			\end{gathered}
 		}
 	\]
-	Let $\hat{\mathbf{e}}_{i}$ and $\hat{\mathbf{f}}_{i}$ be the vector parts of $\mathbf{e}_{i}$ and $\mathbf{f}_{i}$ respectively, for each $i \in \{ 1, 2, 3 \}$. \\\\
-	Let $F = T \circ C$ be the unique decomposition of $F$ into a translation and an orthogonal transformation. Recalling that $F_{*}([\mathbf{v}, \mathbf{p}]) = [C(\mathbf{v}), F(\mathbf{p})]$, this means that we must have $C(\hat{\mathbf{e}}_{i}) = \hat{\mathbf{f}}_{i}$ for all $i \in \{ 1, 2, 3 \}$. \\\\
+	Let $\hat{\mathbf{e}}_{i}$ and $\hat{\mathbf{f}}_{i}$ be the vector parts of $\mathbf{e}_{i}$ and $\mathbf{f}_{i}$ respectively, for each $i \in \{ 1, 2, 3 \}$. 
+
+	Let $F = T \circ C$ be the unique decomposition of $F$ into a translation and an orthogonal transformation. Recalling that $F_{*}([\mathbf{v}, \mathbf{p}]) = [C(\mathbf{v}), F(\mathbf{p})]$, this means that we must have $C(\hat{\mathbf{e}}_{i}) = \hat{\mathbf{f}}_{i}$ for all $i \in \{ 1, 2, 3 \}$. 
+
 	Note that since $\hat{\mathbf{e}}_{1}, \hat{\mathbf{e}}_{2}, \hat{\mathbf{e}}_{3}$ and $\hat{\mathbf{f}}_{1}, \hat{\mathbf{f}}_{2}, \hat{\mathbf{f}}_{3}$ are both bases of $\mathbb{R}^{3}$, there is a well defined linear map $C : \hat{\mathbf{e}}_{i} \mapsto \hat{\mathbf{f}}_{i}$. Now we just need to compute the matrix for this in the standard basis over $\mathbb{R}^{3}$ --- $\mathbf{u}_{1}, \mathbf{u}_{2}, \mathbf{u}_{3}$ with values $(1, 0, 0), (0, 1, 0), (0, 0, 1)$.
 	We know that the matrix that maps $\mathbf{u}_{i} \mapsto \hat{\mathbf{f}}_{i}$ is just
 	\[

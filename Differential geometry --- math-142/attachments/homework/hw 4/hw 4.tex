@@ -59,7 +59,8 @@
 							       & = \sqrt 2 \cosh u.
 				\end{split}
 			\]
-			Note that the last step holds because $\cosh{u} \ge 0$ for all real $u$. \\\\
+			Note that the last step holds because $\cosh{u} \ge 0$ for all real $u$. 
+
 			From here it's easy to compute the arc length --- we just integrate the speed from $0$ to $t$.
 			\[
 				\begin{split}
@@ -74,12 +75,14 @@
 			\boxed{
 				\beta(s) = \left ( \cosh \left ( \sinh^{-1} \left ( {\frac{s}{\sqrt 2}} \right ) \right ), \frac{s}{\sqrt 2}, \sinh^{-1} \left ( \frac{s}{\sqrt 2} \right ) \right ).
 			}
-		\]\\
+		\]
+
 		Since $t$ is the inverse function of the smooth function $s$ which is given by $u \mapsto \sqrt 2 \sinh{u}$, then by the inverse function theorem, on the open interval $(0, \infty)$ (this excludes $0$ where $\sinh'{0} = 0$), we have
 		\[
 			t : u \mapsto \sinh^{-1}{\frac{u}{\sqrt 2}}
 		\]
-		as a smooth function. \\\\
+		as a smooth function. 
+
 		Thus, we have the unit speed parameterisation $\beta$ given by $\alpha \circ t$ --- that is,
 		\[
 			\beta(s) = \left ( \cosh \left ( \sinh^{-1} \left ( {\frac{s}{\sqrt 2}} \right ) \right ), \frac{s}{\sqrt 2}, \sinh^{-1} \left ( \frac{s}{\sqrt 2} \right ) \right ).
@@ -121,7 +124,8 @@
 				\boxed{
 					\text{arc length} = 3 + \log 2
 				}
-			\] \\
+			\] 
+
 			By the definition of the arc length between two points, we have that
 			\[
 				\int_{1}^{2} \Vert \alpha'(u) \Vert \, du
@@ -167,7 +171,8 @@
 					I \ar[r, "\alpha"] & \mathbb{R}^{3}
 				\end{tikzcd}
 			\]
-			We also have $\Vert \beta' \Vert = 1$ always, and $h'(s) \neq 0$ for all $s \in J$.\\\\
+			We also have $\Vert \beta' \Vert = 1$ always, and $h'(s) \neq 0$ for all $s \in J$.
+
 			By the chain rule, at any point $s \in J$, we have $\Vert \alpha'(h(s)) \, h'(s) \Vert = 1$. Thus, we have at every point $s \in J$
 			\[
 				\vert h'(s) \vert = \frac{1}{\Vert \alpha'(h(s)) \Vert}.
@@ -188,9 +193,12 @@
 			\[
 				\tau(t) = \tau_{0} + \int_{t_{0}}^{t} \Vert \alpha'(u) \Vert \, du
 			\]
-			with $\tau(t_{0}) = \tau_{0}$ where $\tau : I \to J$. \\\\
-			In words, $\tau$ is an arc length function starting at $t_{0}$ and $h$ is its inverse. Thus, $\beta$ is an arc length parameterisation. \\\\
-			Now we know that when we have $\beta_{1}$ and $\beta_{2}$ as unit speed reparameterisations, they are defined by arc length parameterisations $\tau_{1}$ and $\tau_{2}$ with inverses $h_{1}$ and $h_{2}$. Since $\tau_{1}$ and $\tau_{2}$ are antiderivatives of the same function --- $\Vert \alpha' \Vert$, we have that $\tau_{2} = \tau_{1} - s_{0}$ for some $s_{0} \in \mathbb{R}$. \\\\
+			with $\tau(t_{0}) = \tau_{0}$ where $\tau : I \to J$. 
+
+			In words, $\tau$ is an arc length function starting at $t_{0}$ and $h$ is its inverse. Thus, $\beta$ is an arc length parameterisation. 
+
+			Now we know that when we have $\beta_{1}$ and $\beta_{2}$ as unit speed reparameterisations, they are defined by arc length parameterisations $\tau_{1}$ and $\tau_{2}$ with inverses $h_{1}$ and $h_{2}$. Since $\tau_{1}$ and $\tau_{2}$ are antiderivatives of the same function --- $\Vert \alpha' \Vert$, we have that $\tau_{2} = \tau_{1} - s_{0}$ for some $s_{0} \in \mathbb{R}$. 
+
 			From this, we can get $h_{2}(s) = h_{1}(s + s_{0})$. Notice that for any $s \in J$ we have $s = \tau_{2}(t) = \tau_{1}(t) - s_{0}$. We can rewrite this as $\tau_{2}(t) = s$ and $\tau_{1}(t) = s + s_{0}$. Thus, taking $h_{1}$ and $h_{2}$ of both sides in the first and second equations respectively, we get
 			\[
 				h_{1}(s + s_{0}) = t = h_{2}(s)

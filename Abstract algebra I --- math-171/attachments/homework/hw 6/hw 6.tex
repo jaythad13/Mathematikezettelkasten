@@ -30,8 +30,10 @@
 			    & = 1_G.
 		\end{split}
 	\]
-	Similarly, $\lvert x \rvert = m \le n$. By $m \le n$ and $m \ge n$, we have $\lvert \varphi(x) \rvert = \lvert x \rvert$. \\\\
-	For any $k \in \mathbb N$, consider the set of all elements of $G$ of order $k$, which we will denote $G_k$. Consider $\varphi^\text{img}(G_k)$. Since every element in $H_k$ (the set of all elements of $H$ of order $k$) must be mapped to element of order $k$ in $G$, we also have $H_k = \varphi^\text{img}(G_k)$. Thus, the restriction of $\varphi$ to $G_k$ forms a bijection between $G_k$ and $H_k$ giving us that they have the same cardinality. \\\\
+	Similarly, $\lvert x \rvert = m \le n$. By $m \le n$ and $m \ge n$, we have $\lvert \varphi(x) \rvert = \lvert x \rvert$. 
+
+	For any $k \in \mathbb N$, consider the set of all elements of $G$ of order $k$, which we will denote $G_k$. Consider $\varphi^\text{img}(G_k)$. Since every element in $H_k$ (the set of all elements of $H$ of order $k$) must be mapped to element of order $k$ in $G$, we also have $H_k = \varphi^\text{img}(G_k)$. Thus, the restriction of $\varphi$ to $G_k$ forms a bijection between $G_k$ and $H_k$ giving us that they have the same cardinality. 
+
 	This result does not hold for all homomorphisms --- consider the canonical homomorphism $\psi : \mathbb Z \to (\mathbb Z/n\mathbb Z, +)$ by $x \mapsto x + n \mathbb Z$. Every element of $\mathbb Z$ has infinite order, and every element of $\mathbb Z/n \mathbb Z$ has order at most $n$.
 \end{solution}
 
@@ -42,7 +44,8 @@
 \end{problem}
 
 \begin{solution}
-	For any $h_1, h_2 \in H$ let us have $\varphi(g_1) = h_1$ and $\varphi(g_2) = h_2$. (Note that we have the desired $g_1, g_2 \in G$ since $\varphi$ is an isomorphism, and thus, surjective). \\\\
+	For any $h_1, h_2 \in H$ let us have $\varphi(g_1) = h_1$ and $\varphi(g_2) = h_2$. (Note that we have the desired $g_1, g_2 \in G$ since $\varphi$ is an isomorphism, and thus, surjective). 
+
 	Then
 	\[
 		\begin{split}
@@ -53,7 +56,8 @@
 				& = h_2 h_1.
 		\end{split}
 	\]
-	That is, arbitrary $h_1, h_2 \in H$ commute. \\\\
+	That is, arbitrary $h_1, h_2 \in H$ commute. 
+
 	Surjectivity is a sufficient condition on a homomorphism to ensure that it preserves commutativity. The proof follows exactly as above (note that we didn't use the injectivity of an isomorphism, only the surjectivity). Note that surjectivity is also necessary --- just consider the trivial homomorphism from any abelian group to any non-abelian group.
 \end{solution}
 
@@ -118,7 +122,8 @@
 \end{problem}
 
 \begin{solution}
-	Note that if we have $y^{-1} \sigma(y) = x^{-1} \sigma(x)$ then we have $xy^{-1} = \sigma(xy^{-1})$ and thus, $xy^{-1} = 1$ and $x = y$. That is, the function $G \to G$ by $x \mapsto x^{-1} \sigma(x)$ is injective, and thus, also surjective (by the finiteness of $G$), taking every $g \in G$. Thus, we can write every $g \in G$ as $x^{-1} \sigma(x)$ for some $x \in G$. \\\\
+	Note that if we have $y^{-1} \sigma(y) = x^{-1} \sigma(x)$ then we have $xy^{-1} = \sigma(xy^{-1})$ and thus, $xy^{-1} = 1$ and $x = y$. That is, the function $G \to G$ by $x \mapsto x^{-1} \sigma(x)$ is injective, and thus, also surjective (by the finiteness of $G$), taking every $g \in G$. Thus, we can write every $g \in G$ as $x^{-1} \sigma(x)$ for some $x \in G$. 
+
 	Then for $g = x^{-1} \sigma(x)$ and $h = y^{-1} \sigma(y)$ an arbitrary pair of elements in $G$, we have
 	\[
 		\begin{split}

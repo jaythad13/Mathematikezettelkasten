@@ -17,7 +17,8 @@
 
 \begin{solution}
 	\begin{enumerate}
-		\item Suppose $F = T \circ C$ and $G = S \circ D$ where $T, S$ are translations $T : \mathbf{p} \mapsto \mathbf{p} + \mathbf{a}$ and $S : \mathbf{p} \mapsto \mathbf{p}$ and $C, D$ are orthogonal transformations. \\\\
+		\item Suppose $F = T \circ C$ and $G = S \circ D$ where $T, S$ are translations $T : \mathbf{p} \mapsto \mathbf{p} + \mathbf{a}$ and $S : \mathbf{p} \mapsto \mathbf{p}$ and $C, D$ are orthogonal transformations. 
+
 			Then since $C$ is a linear map (all orthogonal transformations are linear), we have
 			\[
 				\begin{split}
@@ -48,7 +49,8 @@
 			Thus,
 			\[
 				\operatorname{sgn}(F) \operatorname{sgn}(F^{-1}) = 1.
-			\] \\
+			\] 
+
 			Since their product is positive, they must have the sign. Since we already know that the sign of any isometry has magnitude $1$, they must be equal.
 	\end{enumerate}
 \end{solution}
@@ -88,12 +90,14 @@
 					\implies & \lvert \lambda \rvert = 1. 
 				\end{split}
 			\]
-			Since $C$ must have three eigenvalues counting multiplicity, and for real matrices $\lambda$ is an eigenvalue if and only if its complex conjugate $\overline{\lambda}$ is, we can write the (possibly complex) eigenvalues of $C$ as $\lambda_{1}, \lambda_{2}, \lambda_{3}$. \\\\
+			Since $C$ must have three eigenvalues counting multiplicity, and for real matrices $\lambda$ is an eigenvalue if and only if its complex conjugate $\overline{\lambda}$ is, we can write the (possibly complex) eigenvalues of $C$ as $\lambda_{1}, \lambda_{2}, \lambda_{3}$. 
+
 			If all of them are real, we must have at least one of them be positive since
 			\[
 				\det A = \lambda_{1} \lambda_{2} \lambda_{3}.
 			\]
-			If we had $\lambda_{1} = \lambda_{2} = \lambda_{3} = -1$, then we would have $\det A = -1$, which we know it is not. Thus we can assume without loss of generality that $\lambda_{3} = 1$. \\\\
+			If we had $\lambda_{1} = \lambda_{2} = \lambda_{3} = -1$, then we would have $\det A = -1$, which we know it is not. Thus we can assume without loss of generality that $\lambda_{3} = 1$. 
+
 			If one of them is complex (say without loss of generality $\lambda_{1} \in \mathbb{C} \setminus \mathbb{R}$) then since complex eigenvalues of a real matrix come in conjugate pairs, we must have $\overline{\lambda_{1}}$ as an eigenvalue as well. Suppose without loss of generality that $\lambda_{2} = \overline{\lambda_{1}}$. Then
 			\[
 				\begin{split}
@@ -103,10 +107,13 @@
 						    & = 1.
 				\end{split}
 			\]
-			Thus, we have $\lambda_{3} = 1$, an eigenvalue of $C$. \\\\
+			Thus, we have $\lambda_{3} = 1$, an eigenvalue of $C$. 
+
 			Since $\lambda_{3}$ is an eigenvalue, there exists some nonzero $\mathbf{v} \in \mathbb{R}^{3}$ such that $C(\mathbf{v}) = \mathbf{v}$. If we choose $\mathbf{e}_{3} = \mathbf{v}/\lVert \mathbf{v} \rVert$, we get a unit eigenvector with eigenvalue $\lambda_{3} = 1$ as desired.
-		\item We choose $\mathbf{e}_{3}$ from the previous part to be a unit eigenvector of eigenvalue $1$. Note that $C(\mathbf{e}_{3}) = \mathbf{e}_{3}$ as desired. Also note that since $\mathbf{e}_{3}$ is a unit vector we have $\mathbf{e}_{3} \cdot \mathbf{e}_{3} = 1$, satisfying the orthonormal basis condition for $i = j = 3$. \\\\ 
-			Let $U = \operatorname{span} \mathbf{e}_{3}$ be the line spanned by $\mathbf{e}_{3}$. Then we can consider its orthogonal complement $U^{\perp}$. Since $\operatorname{dim} U^{\perp} = \operatorname{dim} \mathbb{R}^{3} - \operatorname{dim} U$, it has an orthonormal basis of two vectors $\mathbf{e}_{1}$ and $\mathbf{e}_{2}$. Since they form an orthonormal basis, the condition is satisfied for $i, j \in \{ 1, 2 \}$. Finally, since they are in $U^{\perp}$ they are orthogonal to $\mathbf{e}_{3} \in U$, satisfying the remaining orthonormality conditions. That is, $\mathbf{e}_{1}, \mathbf{e}_{2}, \mathbf{e}_{3}$ is an orthonormal basis. \\\\
+		\item We choose $\mathbf{e}_{3}$ from the previous part to be a unit eigenvector of eigenvalue $1$. Note that $C(\mathbf{e}_{3}) = \mathbf{e}_{3}$ as desired. Also note that since $\mathbf{e}_{3}$ is a unit vector we have $\mathbf{e}_{3} \cdot \mathbf{e}_{3} = 1$, satisfying the orthonormal basis condition for $i = j = 3$. 
+
+			Let $U = \operatorname{span} \mathbf{e}_{3}$ be the line spanned by $\mathbf{e}_{3}$. Then we can consider its orthogonal complement $U^{\perp}$. Since $\operatorname{dim} U^{\perp} = \operatorname{dim} \mathbb{R}^{3} - \operatorname{dim} U$, it has an orthonormal basis of two vectors $\mathbf{e}_{1}$ and $\mathbf{e}_{2}$. Since they form an orthonormal basis, the condition is satisfied for $i, j \in \{ 1, 2 \}$. Finally, since they are in $U^{\perp}$ they are orthogonal to $\mathbf{e}_{3} \in U$, satisfying the remaining orthonormality conditions. That is, $\mathbf{e}_{1}, \mathbf{e}_{2}, \mathbf{e}_{3}$ is an orthonormal basis. 
+
 			If we write the matrix of $C$ with respect to the basis $\mathbf{e}_{1}, \mathbf{e}_{2}, \mathbf{e}_{3}$, we get
 			\[
 				\begin{bmatrix}
@@ -166,7 +173,8 @@
 								   & = \alpha(\mathbf{a} \times \mathbf{p} + (\mathbf{p} \cdot \mathbf{a}) \mathbf{a}) + \beta (\mathbf{a} \times \mathbf{q} + (\mathbf{q} \cdot \mathbf{a}) \mathbf{a}) \\
 								   & = \alpha C(\mathbf{p}) + \beta C(\mathbf{q}).
 				\end{split}
-			\] \\
+			\] 
+
 			We will now show that $C$ preserves norms.
 			\[
 				\begin{split}
@@ -176,7 +184,8 @@
 									& = \lVert \mathbf{p} \rVert^{2}.
 				\end{split}
 			\]
-			Here, the third step follows by Lagrange's identity, and the last step follows by the given fact that $\lVert \mathbf{a} \rVert = 1$. Since both are positive, we can take the square root on both sides to get $\lVert C(\mathbf{p}) \rVert = \lVert \mathbf{p} \rVert$. \\\\
+			Here, the third step follows by Lagrange's identity, and the last step follows by the given fact that $\lVert \mathbf{a} \rVert = 1$. Since both are positive, we can take the square root on both sides to get $\lVert C(\mathbf{p}) \rVert = \lVert \mathbf{p} \rVert$. 
+
 			Using both of these, we can see that $C$ preserves distances. Specifically, 
 			\[
 				\begin{split}
@@ -185,7 +194,8 @@
 									& = \lVert \mathbf{p} - \mathbf{q} \rVert \\
 									& = d(\mathbf{p}, \mathbf{q}).
 				\end{split}
-			\] \\
+			\] 
+
 			Since $C$ preserves norms and distances, it is an orthogonal transformation.
 		\item $C$ rotates any point by an angle of $\pi/2$ about the axis defined by $\operatorname{span}(\mathbf{a})$.
 	\end{enumerate}
@@ -207,7 +217,8 @@
 
 \begin{solution}
 	\begin{enumerate}
-		\item If $\beta$ is a cylindrical helix, then we have some $[\mathbf{u}, \mathbf{p}] \in \mathrm{T}_{\mathbf{p}}\mathbb{R}^{3}$ with fixed $\mathbf{u}$ such that $\mathbf{T}(t) \cdot [\mathbf{u}, \mathbf{p}]$ is constant at each $\mathbf{p} = \beta(t)$. \\\\
+		\item If $\beta$ is a cylindrical helix, then we have some $[\mathbf{u}, \mathbf{p}] \in \mathrm{T}_{\mathbf{p}}\mathbb{R}^{3}$ with fixed $\mathbf{u}$ such that $\mathbf{T}(t) \cdot [\mathbf{u}, \mathbf{p}]$ is constant at each $\mathbf{p} = \beta(t)$. 
+
 			Consider $\overline{[\mathbf{u}, \mathbf{p}]} = F_{*}([\mathbf{u}, \mathbf{p}])$ for the unit tangent vector for $\overline{\beta}$. Since we know that $F_{*}$ preserves dot products, we have
 			\[
 				\begin{split}
@@ -237,6 +248,7 @@
 
 \begin{solution}
 	Let $F = T \circ C$ where $C$ is an orthogonal transformation and $T$ is a translation. Let $\mathbf{W}(\mathbf{p}) = [\mathbf{w}, \mathbf{p}]$ where $\mathbf{w}$ is a function $\mathbf{w} : \mathbb{R}^{3} \to \mathbb{R}^{3}$.
+
 	We know, by definition, that $\nabla_{\mathbf{V}} \mathbf{W}(\mathbf{p}) = [D\mathbf{w} \Big |_{\mathbf{p}}(\mathbf{v}), \mathbf{p}]$. Also, notice that for $\mathbf{q} = F(\mathbf{p})$, we have $\overline{\mathbf{V}}(\mathbf{q}) = [(C \circ \mathbf{v} \circ F^{-1})(\mathbf{q}), \mathbf{q}]$, and similarly for $\overline{\mathbf{W}}$. Thus, for some $\mathbf{q} = F(\mathbf{p})$,
 	\[
 		\begin{split}
@@ -249,7 +261,8 @@
 									      & = \overline{\nabla_{\mathbf{V}} \mathbf{W}}{(\mathbf{q})}.
 		\end{split}
 	\]
-	Here the second step follows by the multivariable chain rule, the third step follows by noticing that the orthogonal part of $F^{-1}$ is $C^{-1}$ and that the derivative of any linear map is itself, and the steps after those just follow by the definitions. \\\\
+	Here the second step follows by the multivariable chain rule, the third step follows by noticing that the orthogonal part of $F^{-1}$ is $C^{-1}$ and that the derivative of any linear map is itself, and the steps after those just follow by the definitions. 
+
 	Note that we used the notation $Df \Big |_{\mathbf{a}}$ to denote the linear map that is the total derivative of the function $f$, at the point $\mathbf{a}$, and the notation $Df \Big |_{\mathbf{a}}(\mathbf{v})$ to denote evaluating that linear map on the vector $\mathbf{v}$.
 \end{solution}
 

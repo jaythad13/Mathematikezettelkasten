@@ -1,8 +1,5 @@
 \documentclass[12 pt, letterpaper]{hmcpset}
 \usepackage{hw-preamble}
-\usepackage{amsthm}
-
-\newtheorem*{lemma}{Lemma}
 
 \name{Jayden Thadani}
 \class{MATH 171 --- Abstract Algebra I}
@@ -62,11 +59,11 @@
 				\end{split}
 			\]
 			for $n$ odd. Thus, we have that $1 + x$ is a unit in both cases.
-		\item We can use a similar proof to show that for any unit $u \in R$, $u + x$ is a unit. \\
+		\item We can use a similar proof to show that for any unit $u \in R$, $u + x$ is a unit. 
 			
-			First note that for any $n \in \mathbb{N}$, $u^{n}$ is a unit --- just consider $u^{n} (u^{-1})^{n} = 1$. Also note that for any unit $u$, if $a, b \in R$ give $ab = u$, then $a, b$ must be units too. We can see this by first noticing if one is a unit, then the other must be. Without loss of generality, suppose $a$ is a unit. Then $b = a^{-1} u$ must be a unit since $u^{-1} a a^{-1} u = 1$. Notice that $a$ must be a unit since $a (b u^{-1}) = 1$, and thus both must be units. \\
+			First note that for any $n \in \mathbb{N}$, $u^{n}$ is a unit --- just consider $u^{n} (u^{-1})^{n} = 1$. Also note that for any unit $u$, if $a, b \in R$ give $ab = u$, then $a, b$ must be units too. We can see this by first noticing if one is a unit, then the other must be. Without loss of generality, suppose $a$ is a unit. Then $b = a^{-1} u$ must be a unit since $u^{-1} a a^{-1} u = 1$. Notice that $a$ must be a unit since $a (b u^{-1}) = 1$, and thus both must be units. 
 			
-			Then by the same factorisation trick, for $n$ such that $x^{n} = 0$, we can write $u^{n} + x^{n}$ or $u^{n} - x^{n}$ (depending on whether $n$ is odd or even) as $(u + x) p(x)$ for some $p \in \mathbb{Z}[x]$. We can use the canonical homomorphism of $\mathbb{Z}$ into every ring to replace the coefficients $a \in \mathbb{Z}$. That is, use $\varphi : \mathbb{Z} \to R$ by $1 \mapsto 1_{R}$ to write $a \mapsto \underbrace{1 + \dots + 1}_{a \text{ times}}$. \\
+			Then by the same factorisation trick, for $n$ such that $x^{n} = 0$, we can write $u^{n} + x^{n}$ or $u^{n} - x^{n}$ (depending on whether $n$ is odd or even) as $(u + x) p(x)$ for some $p \in \mathbb{Z}[x]$. We can use the canonical homomorphism of $\mathbb{Z}$ into every ring to replace the coefficients $a \in \mathbb{Z}$. That is, use $\varphi : \mathbb{Z} \to R$ by $1 \mapsto 1_{R}$ to write $a \mapsto \underbrace{1 + \dots + 1}_{a \text{ times}}$. 
 			
 			Since distributivity still works, we have for all $n \in \mathbb{N}$
 			\[
@@ -100,7 +97,8 @@
 				\boxed{
 					\alpha + \beta = 6 (1) + 3 (1 \, 2) - 3 (2 \, 3) + 14 (1 \, 2 \, 3) - 7 (1 \, 3 \, 2).
 				}
-			\] \\
+			\] 
+
 			It follows by the standard axioms of distributivity and commutativity of addition that
 			\[
 				\begin{split}
@@ -114,7 +112,8 @@
 				\boxed{
 					2 \alpha - 3 \beta = -18 (1) + 6 (1 \, 2) - 16 (2 \, 3) + 49 (1 \, 2 \, 3).
 				}
-			\] \\
+			\] 
+
 			Again, using distributivity and commutativity of addition, we have
 			\[
 				\begin{split}
@@ -129,7 +128,8 @@
 				\boxed{
 					\alpha \beta = -108 (1) + 81 (1 \, 2) - 30 (2 \, 3) - 21 (3 \, 1) + 90 (1 \, 2 \, 3).
 				}
-			\] \\
+			\] 
+
 			Here we use distributivity and commutativity of addition as usual, but we also need to use the fact that elements of $\mathbb{Z}$ commute with elements of $S_{3}$ under multiplication for the second step.
 			\[
 				\begin{split}
@@ -149,6 +149,7 @@
 					\beta \alpha = -108 (1) + 18 (1 \, 2) - 51 (2 \, 3) + 63 (3 \, 1) + 84 (1 \, 2 \, 3) + 6 (1 \, 3 \, 2).
 				}
 			\]
+
 			Like for $\alpha \beta$ this follows from distributivity, commutativity of addition and $\mathbb{Z}$ commuting with $S_{3}$.
 			\[
 				\begin{split}
@@ -168,6 +169,7 @@
 					\alpha^{2} = -16 (1) - 70 (1 \, 2) + 42 (2 \, 3) - 28 (3 \, 1) -15 (1 \, 2 \, 3) + 181 (1 \, 3 \, 2).
 				}
 			\]
+
 			For $\alpha^{2}$ we can use the identity that $(a + b + c)^{2} = a^{2} + b^{2} + c^{2} + ab + bc + ca + ba + cb + ac$ which only requires distributivity, and thus, works in any ring.
 			\[
 				\begin{split}
@@ -191,7 +193,8 @@
 \end{problem}
 
 \begin{solution}
-	Note that $(x)$ being a prime ideal in $R[x]$ is equivalent to $R[x]/(x)$ being an integral domain and $(x)$ being maximal in $R[x]$ is equivalent to $R[x]/(x)$ being a field. We claim that $R[x]/(x) \cong R$ and thus, $(x)$ being a prime ideal is equivalent to $R$ being an integral domain and $(x)$ being a maximal ideal is equivalent to $R$ being a field. \\
+	Note that $(x)$ being a prime ideal in $R[x]$ is equivalent to $R[x]/(x)$ being an integral domain and $(x)$ being maximal in $R[x]$ is equivalent to $R[x]/(x)$ being a field. We claim that $R[x]/(x) \cong R$ and thus, $(x)$ being a prime ideal is equivalent to $R$ being an integral domain and $(x)$ being a maximal ideal is equivalent to $R$ being a field. 
+
 	
 	This proof rests on the following lemmas ---
 	\begin{lemma}
@@ -204,7 +207,8 @@
 		If $R \cong S$ (commutative rings with identity) and $S$ is a field, then $R$ is a field.
 	\end{lemma}
 	\begin{proof}
-		Let $\varphi$ be an isomorphism $\varphi : R \to S$. Suppose $a \in R \setminus \{ 0 \}$. Then $\varphi(a)$ is also nonzero, and since $S$ is a field, it is a unit. Thus there exists some $\varphi(a)^{-1} \in S$. Since $\varphi$ is an isomorphism, there also exists some $\varphi^{-1}(\varphi(a)^{-1}) \in R$. \\\\
+		Let $\varphi$ be an isomorphism $\varphi : R \to S$. Suppose $a \in R \setminus \{ 0 \}$. Then $\varphi(a)$ is also nonzero, and since $S$ is a field, it is a unit. Thus there exists some $\varphi(a)^{-1} \in S$. Since $\varphi$ is an isomorphism, there also exists some $\varphi^{-1}(\varphi(a)^{-1}) \in R$. 
+
 		Note that
 		\[
 			\begin{split}
@@ -231,11 +235,14 @@
 				       & p \mapsto p(0)
 		\end{split}
 	\]
-	(we've shown in class that evaluation is a ring homomorphism). \\
+	(we've shown in class that evaluation is a ring homomorphism). 
+
 	
-	We claim that $\varphi$ is surjective and $\ker \varphi = (x)$. We can see that $\varphi$ is surjective, since for any $a \in R$, the constant polynomial $p = a$ gives $\varphi(p) = a$.  Also note that for any polynomial $p = a_{n} x^{n} + \dots + a_{1} x + a_{0}$, we have $p(0) = a_{0}$. Thus, the kernel of $\varphi$ is just those polynomials $p$ with $a_{0} = 0$, which is just $(x)$. \\
+	We claim that $\varphi$ is surjective and $\ker \varphi = (x)$. We can see that $\varphi$ is surjective, since for any $a \in R$, the constant polynomial $p = a$ gives $\varphi(p) = a$.  Also note that for any polynomial $p = a_{n} x^{n} + \dots + a_{1} x + a_{0}$, we have $p(0) = a_{0}$. Thus, the kernel of $\varphi$ is just those polynomials $p$ with $a_{0} = 0$, which is just $(x)$. 
+
 	
-	Then by the first ring isomorphism theorem, we have $R[x]/\ker \varphi \cong \operatorname{im} \varphi$, which is $R[x]/(x) \cong R$ as desired. \\\\
+	Then by the first ring isomorphism theorem, we have $R[x]/\ker \varphi \cong \operatorname{im} \varphi$, which is $R[x]/(x) \cong R$ as desired. 
+
 	
 \end{solution}
 
@@ -246,11 +253,11 @@
 \end{problem}
 
 \begin{solution}	
-	Suppose $(a) = (b)$, for nonzero $a, b$. Then since $a \in (a)$ and $b \in (b)$, we have that. $a \in (b)$ and $b \in (a)$. Thus, $a = br_{1}$ and $b = a r_{2}$ for some $r_{1}, r_{2} \in R$. Then, by substituting $ar_{2}$ for $b$ we have $a = a r_{2} r_{1}$. \\
+	Suppose $(a) = (b)$, for nonzero $a, b$. Then since $a \in (a)$ and $b \in (b)$, we have that. $a \in (b)$ and $b \in (a)$. Thus, $a = br_{1}$ and $b = a r_{2}$ for some $r_{1}, r_{2} \in R$. Then, by substituting $ar_{2}$ for $b$ we have $a = a r_{2} r_{1}$. 
 
-	If $a = 0$ then $(a) = \{ 0 \}$ and thus, if $(b) = (a)$, $b \in \{ 0 \}$ and $b = 0$ as well. Then $a = 1 b$. as desired. \\
+	If $a = 0$ then $(a) = \{ 0 \}$ and thus, if $(b) = (a)$, $b \in \{ 0 \}$ and $b = 0$ as well. Then $a = 1 b$. as desired. 
 	
-	If $a$ is nonzero, then since $R$ is an integral domain we can cancel to get $r_{1} r_{2} = 1$. Thus, $r_{1} = u$ is the unit such that $a = ub$. \\
+	If $a$ is nonzero, then since $R$ is an integral domain we can cancel to get $r_{1} r_{2} = 1$. Thus, $r_{1} = u$ is the unit such that $a = ub$. 
 
 	Suppose $a = ub$ for some unit $u$. Notice that any $r \in (a)$ must be of the form $ar_{1}$ for some $r_{1} \in R$. But $ar_{1} = b u r_{1}$ and thus, $r = u r_{1} b \in (b)$. That is $(a) \subset (b)$. Since $b = u^{-1} a$, by the same proof we also have $(b) \subset (a)$. Thus $(a) = (b)$, completing the proof.
 \end{solution}

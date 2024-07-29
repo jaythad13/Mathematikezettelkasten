@@ -13,7 +13,7 @@
 \end{problem}
 
 \begin{solution}
-	Let  $\mathbf{W}$  be given by $\mathbf{W}(\mathbf{p}) = [w(\mathbf{p}), \mathbf{p}]$  for some smooth function $w : \mathbb{R}^{3} \to \mathbb{R}^{3}$ . \\
+	Let  $\mathbf{W}$  be given by $\mathbf{W}(\mathbf{p}) = [w(\mathbf{p}), \mathbf{p}]$  for some smooth function $w : \mathbb{R}^{3} \to \mathbb{R}^{3}$. 
 
 	Let $D w \Big |_{\mathbf{p}}$  denote the (total) derivative of $w$  at a point $\mathbf{p}$ . Then by the chain rule, we have that
 	\[
@@ -21,7 +21,7 @@
 			\mathbf{W}_{\alpha}'(t_{0}) & = \left [\frac{d (w \circ \alpha)}{d t} \Big |_{t_{0}}, \alpha(t_{0}) \right ] \\
 						    & = \left [ D w \Big |_{\alpha(t_{0})} \left ( \frac{d \alpha}{d t} \Big |_{t_{0}} \right ), \alpha(t_{0}) \right ].
 		\end{split}
-	\] \\
+	\]
 	
 	But if $\mathbf{V}(\mathbf{p}) = \alpha'(t_{0})$, then we have
 	\[
@@ -33,7 +33,7 @@
 			\nabla_{\mathbf{V}} \mathbf{W}(\mathbf{p}) & = D w \Big |_{\alpha(t_{0})} (\mathbf{V}(\alpha(t_{0}))) \\
 								   & = \left [ D w \Big |_{\alpha(t_{0})} \left ( \frac{d \alpha}{d t} \Big |_{t_{0}} \right ), \alpha(t_{0}) \right ].
 		\end{split}
-	\] \\
+	\] 
 
 	Thus, we have the equality
 	\[
@@ -45,13 +45,13 @@
 \pagebreak
 
 \begin{problem}[Problem 2.]
-	Let $\mathbf{E}_{1}, \mathbf{E}_{2}, \mathbf{E}_{3} : \mathbb{R}^{3} \to \mathrm{T} \mathbb{R}^{3}$ be a frame field with dual forms $\theta_{1}, \theta_2, \theta_{3} \in \Omega^{1}(\mathbb{R}^{3})$ and connection forms $\omega_{12}, \omega_{23}, \omega_{31} \in \Omega^{1}(\mathbb{R}^{3})$. \\
+	Let $\mathbf{E}_{1}, \mathbf{E}_{2}, \mathbf{E}_{3} : \mathbb{R}^{3} \to \mathrm{T} \mathbb{R}^{3}$ be a frame field with dual forms $\theta_{1}, \theta_2, \theta_{3} \in \Omega^{1}(\mathbb{R}^{3})$ and connection forms $\omega_{12}, \omega_{23}, \omega_{31} \in \Omega^{1}(\mathbb{R}^{3})$. 
 
 	Recall that two curves $\alpha, \beta : I \to \mathbb{R}^{3}$ are \textit{congruent} if there exist frame fields $\mathbf{F}_{1}, \mathbf{F}_{2}, \mathbf{F}_{3} : I \to \mathrm{T}\mathbb{R}^{3}$ for $\alpha$, and $\mathbf{G}_{1}, \mathbf{G}_{2}, \mathbf{G}_3 : I \to \mathrm{T} \mathbb{R}^{3}$ for $\beta$ such that $\alpha' \cdot \mathbf{F}_{i} = \beta' \cdot \mathbf{G}_{i}$ and $\mathbf{F}_{i}' \cdot \mathbf{F}_{j} = \mathbf{G}_{i}' \cdot \mathbf{G}_{j}$ for all $i, j \in \{ 1, 2, 3 \}$. Show that $\alpha$ and $\beta$ are congruent whenever $\theta_{i}(\alpha') = \theta_{i}(\beta')$ and $\omega_{ij}(\alpha') = \omega_{ij}(\beta')$ for all $i, j \in \{ 1, 2, 3 \}$.
 \end{problem}
 
 \begin{solution}
-	Choose $\mathbf{F}_{i}$ to be the restriction $\mathbf{E}_{i} \circ \alpha$ of $\mathbf{E}_{i}$ to a vector field on $\alpha$ and similarly, choose $\mathbf{G}_{i}$ to be the restriction $\mathbf{E}_{i} \circ \beta$ of $\mathbf{E}_{i}$ to a vector field on $\beta$, for all $i \in \{ 1, 2, 3 \}$. \\
+	Choose $\mathbf{F}_{i}$ to be the restriction $\mathbf{E}_{i} \circ \alpha$ of $\mathbf{E}_{i}$ to a vector field on $\alpha$ and similarly, choose $\mathbf{G}_{i}$ to be the restriction $\mathbf{E}_{i} \circ \beta$ of $\mathbf{E}_{i}$ to a vector field on $\beta$, for all $i \in \{ 1, 2, 3 \}$. 
 
 	By definition, we have that $\theta_{i}([\mathbf{v}, \mathbf{p}]) = [\mathbf{v}, \mathbf{p}] \cdot \mathbf{E}_{i}(\mathbf{p})$ for any tangent vector $[\mathbf{v}, \mathbf{p}] \in \mathrm{T}\mathbb{R}^{3}$. Thus, the fact that we always have $\theta_{i}(\alpha') = \theta_{i}(\beta')$ means that we always have the equality
 	\[
@@ -61,7 +61,7 @@
 	\[
 		\alpha'(t_{0}) \cdot \mathbf{F}_{i}(t_{0}) = \beta'(t_{0}) \cdot \mathbf{G}_{i}(t_{0})
 	\]
-	for all $t_{0} \in I$ and all $i \in \{ 1, 2, 3 \}$. \\
+	for all $t_{0} \in I$ and all $i \in \{ 1, 2, 3 \}$. 
 
 	Similarly, by definition, we have that $\omega_{ij}([\mathbf{v}, \mathbf{p}]) = (\nabla_{\mathbf{V}} \mathbf{E}_{i}(\mathbf{p})) \cdot \mathbf{E}_{j}(\mathbf{p})$ where $\mathbf{V}$ is any vector field such that $\mathbf{V}(\mathbf{p}) = [\mathbf{v}, \mathbf{p}]$ (for any tangent vector $[\mathbf{v}, \mathbf{p}] \in \mathrm{T}\mathbb{R}^{3}$). Thus, the fact that $\omega_{ij}(\alpha') = \omega_{ij}(\beta')$ means that
 	\[
@@ -122,7 +122,7 @@
 						  & = \lvert f(s) \rvert.
 				\end{split}
 			\]
-			Here, we know that the first and second components of $\beta' \times \beta''$ are zero since the last components of $\beta'$ and $\beta''$ are both zero. We know that $\varphi'(s) = f(s)$ by the fundamental theorem of calculus. \\
+			Here, we know that the first and second components of $\beta' \times \beta''$ are zero since the last components of $\beta'$ and $\beta''$ are both zero. We know that $\varphi'(s) = f(s)$ by the fundamental theorem of calculus. 
 
 			Thus, for positive $f$, we have $\kappa(s) = f(s)$.
 		\item Since $z'(s) = 0$ and $z(s_{0}) = 0$, $z(s) = 0$ for all $s \in I$. Thus, $\beta$ is clearly contained in the plane $\{ (x, y, 0) \in \mathbb{R}^{3} \}$. In class we have shown that this means that it has zero torsion.
@@ -177,8 +177,9 @@
 				\boxed{
 					x^{-1}(a, b, c) = (\sqrt a, \sqrt c)
 				}
-			\] \\
-			First we will show that $x$ is one-to-one. Suppose $x(u_{1}, v_{1}) = x(u_{2}, v_2)$. Then we have $(u_{1}^{2}, u_{1} v_{1}, v_{1}^{2}) = (u_{2}^{2}, u_{2} v_2, v_{2}^{2})$. This gives us $u_{1}^{2} = u_2^{2}$ and $v_{1}^{2} = v_{2}^{2}$. Since $u_{1}, u_{2}, v_{1}, v_{2} > 0$, we have $u_{1} = u_{2}$ and $v_{1} = v_{2}$. \\
+			\] 
+
+			First we will show that $x$ is one-to-one. Suppose $x(u_{1}, v_{1}) = x(u_{2}, v_2)$. Then we have $(u_{1}^{2}, u_{1} v_{1}, v_{1}^{2}) = (u_{2}^{2}, u_{2} v_2, v_{2}^{2})$. This gives us $u_{1}^{2} = u_2^{2}$ and $v_{1}^{2} = v_{2}^{2}$. Since $u_{1}, u_{2}, v_{1}, v_{2} > 0$, we have $u_{1} = u_{2}$ and $v_{1} = v_{2}$. 
 
 			For an inverse function $x^{-1}$, we want $x^{-1} : (u^{2}, uv, v^{2}) \mapsto (u, v)$. Since $u, v > 0$, we can just send $(a, b, c)$ to $(\sqrt a, \sqrt c)$. We can check that for $(u, v) \in D$ we have
 			\[
@@ -196,11 +197,11 @@
 				\end{split}
 			\]
 		\item
-			To show that $x$ is proper, we need to show that $x^{-1}$ is continuous. We will do so by showing that each of its component functions is continuous. Let $x_{1}^{-1} : x^{\text{img}}(D) \to \mathbb{R}^{+}$ by $(a, b, c) \mapsto \sqrt a$ and, similarly, $x_{2}^{-1} : (a, b, c) \mapsto \sqrt c$ be the component functions of $x$ such that $x(a, b, c) = (x_{1}(a, b, c), x_{2}(a, b, c))$. \\
+			To show that $x$ is proper, we need to show that $x^{-1}$ is continuous. We will do so by showing that each of its component functions is continuous. Let $x_{1}^{-1} : x^{\text{img}}(D) \to \mathbb{R}^{+}$ by $(a, b, c) \mapsto \sqrt a$ and, similarly, $x_{2}^{-1} : (a, b, c) \mapsto \sqrt c$ be the component functions of $x$ such that $x(a, b, c) = (x_{1}(a, b, c), x_{2}(a, b, c))$. 
 			
-			We know that the square root function is continuous on $\mathbb{R}^{+}$. Thus, for any $a_{0} \in \mathbb{R}^{+}$, for any $\varepsilon > 0$, there exists some $\delta > 0$ such that for all $a$ with $\lvert a - a_{0} \rvert < \delta$, we have $\lvert \sqrt a - \sqrt a_{0} \rvert$. \\
+			We know that the square root function is continuous on $\mathbb{R}^{+}$. Thus, for any $a_{0} \in \mathbb{R}^{+}$, for any $\varepsilon > 0$, there exists some $\delta > 0$ such that for all $a$ with $\lvert a - a_{0} \rvert < \delta$, we have $\lvert \sqrt a - \sqrt a_{0} \rvert$. 
 
-			Suppose that for some $\varepsilon > 0$, we had $\lVert (a, b, c) - (a_{0}, b_{0}, c_{0}) \rVert < \delta$ where $\delta$ corresponds to $\varepsilon$ for the continuity of the square root function. Then since $\lvert a - a_{0} \rvert, \lvert c - c_{0} \rvert < \lVert (a, b, c) - (a_{0}, b_{0}, c_{0}) \rVert$, we would have $\lvert \sqrt a - \sqrt a_{0} \rvert < \varepsilon$ and $\lvert \sqrt c - \sqrt c_{0} \rvert < \varepsilon$. That is, at each $(a_{0}, b_{0}, c_{0}) \in x^{\text{img}}(D)$, for all $\varepsilon > 0$, there is some $\delta > 0$ such that $\lvert (a, b, c) - (a_{0}, b_{0}, c_{0}) \rvert < \delta$ guarantees that $\lvert x_{1}^{-1}(a, b, c) - x_{1}^{-1}(a_{0}, b_{0}, c_{0}) \rvert < \varepsilon$ and $\lvert x_{2}^{-1}(a, b, c) - x_{2}^{-1}(a_{0}, b_{0}, c_{0}) \rvert < \varepsilon$. That is, $x_{1}^{-1}$ and $x_{2}^{-1}$ are continuous. \\
+			Suppose that for some $\varepsilon > 0$, we had $\lVert (a, b, c) - (a_{0}, b_{0}, c_{0}) \rVert < \delta$ where $\delta$ corresponds to $\varepsilon$ for the continuity of the square root function. Then since $\lvert a - a_{0} \rvert, \lvert c - c_{0} \rvert < \lVert (a, b, c) - (a_{0}, b_{0}, c_{0}) \rVert$, we would have $\lvert \sqrt a - \sqrt a_{0} \rvert < \varepsilon$ and $\lvert \sqrt c - \sqrt c_{0} \rvert < \varepsilon$. That is, at each $(a_{0}, b_{0}, c_{0}) \in x^{\text{img}}(D)$, for all $\varepsilon > 0$, there is some $\delta > 0$ such that $\lvert (a, b, c) - (a_{0}, b_{0}, c_{0}) \rvert < \delta$ guarantees that $\lvert x_{1}^{-1}(a, b, c) - x_{1}^{-1}(a_{0}, b_{0}, c_{0}) \rvert < \varepsilon$ and $\lvert x_{2}^{-1}(a, b, c) - x_{2}^{-1}(a_{0}, b_{0}, c_{0}) \rvert < \varepsilon$. That is, $x_{1}^{-1}$ and $x_{2}^{-1}$ are continuous. 
 
 			Then, since $x^{-1}$ has continuous component functions, it is itself continuous, and $x$ is proper, as desired.
 	\end{enumerate} 

@@ -16,12 +16,14 @@
 	Suppose $\overline{x}$ and $\overline{y}$ commute in $\overline{G}$. Then we must have that
 	\[
 		x N y N = y N x N.
-	\] \\
+	\] 
+
 	Since $N$ is a normal group, we know that the standard operation on cosets is well defined, and thus,
 	\[
 		(xy) N = (yx) N.
 	\]
-	We know that for two elements of $G$ to have the same coset of $N$, they must differ by a member of $N$. Thus, $(yx)^{-1}xy \in N$. Note that $(yx)^{-1} = x^{-1} y^{-1}$ and thus, $[x, y] = x^{-1}y^{-1}xy \in N$. \\\\
+	We know that for two elements of $G$ to have the same coset of $N$, they must differ by a member of $N$. Thus, $(yx)^{-1}xy \in N$. Note that $(yx)^{-1} = x^{-1} y^{-1}$ and thus, $[x, y] = x^{-1}y^{-1}xy \in N$. 
+
 	Now we will show the converse. Suppose that $[x, y] \in N$. Then note that $1_{G} N = [x, y] N$. Thus,
 	\[
 		\begin{split}
@@ -42,8 +44,7 @@
 \end{problem}
 
 \begin{solution}
-	First we will show that $N$ is normal. \\\\
-	For any commutator $[x, y]$
+	First we will show that $N$ is normal. For any commutator $[x, y]$
 	\[
 		\begin{split}
 			g [x, y] g^{-1} & = g x^{-1} y^{-1} x y g^{-1} \\
@@ -60,9 +61,9 @@
 				 & = h_{1} \cdots h_{n} \in N.
 		\end{split}
 	\]
-	where $h_{j} = [g x_{j} g^{-1}, g y_{j} g^{-1}] \in N$ for all $j \in \{ 1, \dots, n \}$. That is, $ghg^{-1} \in N$ for any $g \in G$, and any $h \in N$ --- $N$ is normal in $G$. \\\\
-	Now we will show that $G/N$ is abelian. \\\\
-	Note that for any $x, y \in G$, we have $[x, y] \in N$. Thus, by the previous problem, we have that $\overline{x}$ and $\overline{y}$ commute in $G/N$. That is, any $xN, yN \in G/N$ commute --- $G/N$ is abelian.
+	where $h_{j} = [g x_{j} g^{-1}, g y_{j} g^{-1}] \in N$ for all $j \in \{ 1, \dots, n \}$. That is, $ghg^{-1} \in N$ for any $g \in G$, and any $h \in N$ --- $N$ is normal in $G$. 
+
+	Now we will show that $G/N$ is abelian. Note that for any $x, y \in G$, we have $[x, y] \in N$. Thus, by the previous problem, we have that $\overline{x}$ and $\overline{y}$ commute in $G/N$. That is, any $xN, yN \in G/N$ commute --- $G/N$ is abelian.
 \end{solution}
 
 \pagebreak
@@ -82,8 +83,10 @@
 \end{problem}
 
 \begin{solution}
-	Let $[a]$ denote the unique element of $\mathcal{P}$ containing $a$. Note that the quotient operation being well defined just means that $[a][b] = [ab]$. \\\\
-	Thus, since $[a][1_{G}] = [1_{G}][a] = [a]$ and $\mathcal{P}$ is a group, we have that $[1_{G}]$ is the identity $1_{\mathcal{P}}$. Similarly, note that since $[a][a^{-1}] = [1_{G}] = 1_{\mathcal{P}}$, we have that $[a^{-1}] = [a]^{-1}$. \\\\
+	Let $[a]$ denote the unique element of $\mathcal{P}$ containing $a$. Note that the quotient operation being well defined just means that $[a][b] = [ab]$. 
+
+	Thus, since $[a][1_{G}] = [1_{G}][a] = [a]$ and $\mathcal{P}$ is a group, we have that $[1_{G}]$ is the identity $1_{\mathcal{P}}$. Similarly, note that since $[a][a^{-1}] = [1_{G}] = 1_{\mathcal{P}}$, we have that $[a^{-1}] = [a]^{-1}$. 
+
 	First we will show that $1_{\mathcal{P}}$ is a subgroup of $G$. Suppose by way of contradiction that there exist $a, b \in 1_{\mathcal{P}}$ such that $ab^{-1} \notin 1_{\mathcal{P}}$. Then we would have $[ab^{-1}] \neq 1_{\mathcal{P}}$. Then we should have
 	\[
 		\begin{split}
@@ -100,7 +103,8 @@
 				     & \neq 1_{\mathcal{P}}
 		\end{split}
 	\]
-	at the same time, which is a contradiction. Thus for any $a, b \in 1_{\mathcal{P}}$, we have $ab^{-1} \in 1_{\mathcal{P}}$. Since $1_{\mathcal{P}}$ is nonempty by definition (it is defined to contain $1_{G}$), this suffices to show that $1_{\mathcal{P}}$ is a subgroup of $G$. \\\\
+	at the same time, which is a contradiction. Thus for any $a, b \in 1_{\mathcal{P}}$, we have $ab^{-1} \in 1_{\mathcal{P}}$. Since $1_{\mathcal{P}}$ is nonempty by definition (it is defined to contain $1_{G}$), this suffices to show that $1_{\mathcal{P}}$ is a subgroup of $G$. 
+	
 	Now we will show that $1_{\mathcal{P}} \trianglelefteq G$. Since the ``quotient operation'' is well-defined, for any $a \in G$, we can write
 	\[
 		\begin{split}
@@ -117,8 +121,10 @@
 			   & = 1_{\mathcal{P}}.
 		\end{split}
 	\]
-	giving us that for any $a \in G, p \in 1_{\mathcal{P}}$, we have $apa^{-1} \in 1_{\mathcal{P}}$. That is, $1_{\mathcal{P}}$ is a normal subgroup of $G$. \\\\
-	Finally, we have to show that all the other elements of $\mathcal{P}$ are just cosets of $1_{\mathcal{P}}$. We will show by double inclusion that $[a] = a \, 1_{\mathcal{P}}$. \\\\
+	giving us that for any $a \in G, p \in 1_{\mathcal{P}}$, we have $apa^{-1} \in 1_{\mathcal{P}}$. That is, $1_{\mathcal{P}}$ is a normal subgroup of $G$. 
+
+	Finally, we have to show that all the other elements of $\mathcal{P}$ are just cosets of $1_{\mathcal{P}}$. We will show by double inclusion that $[a] = a \, 1_{\mathcal{P}}$. 
+
 	Suppose that $b \in a \, 1_{\mathcal{P}}$. Then $b = a p$ for some $p \in 1_{\mathcal{P}}$. Thus,
 	\[
 		\begin{split}
@@ -128,8 +134,10 @@
 			    & = [a].
 		\end{split}
 	\]
-	Thus, $b \in [a]$. Thus, $1_{\mathcal{P}} \subset [a]$. \\\\
-	Suppose that $b \in [a]$. Thus, $[b] = [a]$. Then, multiplying on both sides by $[a]^{-1}$ we have $[ba^{-1}] = 1_{\mathcal{P}}$, and thus, $ba^{-1} \in 1_{\mathcal{P}}$. Thus, $b \in a \, 1_{\mathcal{P}}$. Thus, $[a] \subset a 1_{\mathcal{P}}$. \\\\
+	Thus, $b \in [a]$. Thus, $1_{\mathcal{P}} \subset [a]$. 
+
+	Suppose that $b \in [a]$. Thus, $[b] = [a]$. Then, multiplying on both sides by $[a]^{-1}$ we have $[ba^{-1}] = 1_{\mathcal{P}}$, and thus, $ba^{-1} \in 1_{\mathcal{P}}$. Thus, $b \in a \, 1_{\mathcal{P}}$. Thus, $[a] \subset a 1_{\mathcal{P}}$. 
+
 	Thus, by double containment, every equivalence class $[a]$ is just the coset $a \, 1_{\mathcal{P}}$.
 \end{solution}
 

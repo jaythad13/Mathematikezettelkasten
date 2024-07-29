@@ -40,7 +40,8 @@ I collaborated with Zo\"{e} Batterman.
 								       & = [(x, 0, 1), \mathbf p].
 					\end{split}
 				\end{gathered}
-			\]\\
+			\]
+
 			Suppose scalars $a_1, a_2, a_3 \in \mathbb R$ give us $a_1 \mathbf V_1(\mathbf p) + a_2 \mathbf V_2(\mathbf p) + a_3 \mathbf V_3(\mathbf p) = [\mathbf 0, \mathbf p]$ (note that the right hand side is the additive identity in $\mathrm T_{\mathbf p} \mathbb R^3$). Then we must have
 			\[
 				[(a_1 + a_3 \, x, a_2, - a_1 \, x + a_3), \mathbf p] = [(0, 0, 0), \mathbf p]
@@ -65,15 +66,17 @@ I collaborated with Zo\"{e} Batterman.
 					a_3
 				\end{bmatrix} = \mathbf 0
 			\]
-			Since the matrix has determinant $x^2 + 1$, its determinant is non-zero for all $x \in \mathbb R$. Then the matrix is always invertible, and the only solution to the equation is $a_1 = a_2 = a_3 = 0$, regardless of $x$.\\\\
+			Since the matrix has determinant $x^2 + 1$, its determinant is non-zero for all $x \in \mathbb R$. Then the matrix is always invertible, and the only solution to the equation is $a_1 = a_2 = a_3 = 0$, regardless of $x$.
+
 			Thus, $\mathbf V_1(\mathbf p), \mathbf V_2(\mathbf p), \mathbf V_3(\mathbf p)$ is a linearly independent list of vectors in $\mathrm T_{\mathbf p} \mathbb R^3$ for all $\mathbf p \in \mathbb R^3$.
 		\item
 			\[
 				\boxed{
 					\mathbf V = \frac{x - zx}{x^2 + 1} \mathbf V_1 + y \mathbf V_2 + \frac{x^2 + z}{x^2 + 1} \mathbf V_3.
 				}
-			\] \\\\
-			Note that we're thinking of the vector fields as elements of a module over the ring $\mathcal C^\infty(\mathbb R^3)$ with the obvious definitions of addition and scalar multiplication. \\\\
+			\] 
+
+			Note that we're thinking of the vector fields as elements of a module over the ring $\mathcal C^\infty(\mathbb R^3)$ with the obvious definitions of addition and scalar multiplication. 
 			We notice that $-x \mathbf V_1 + \mathbf V_3 = (x^2 + 1) \mathbf U_3$, and thus, we can get
 			\[
 				\mathbf U_3 = \frac{-x}{x^2 + 1} \mathbf V_1 + \frac{1}{x^2 + 1} \mathbf V_3
@@ -127,7 +130,8 @@ I collaborated with Zo\"{e} Batterman.
 				\boxed{
 					\mathbf V[f](\mathbf p) = y^3.
 				}
-			\] \\
+			\] 
+
 			We can just compute explicitly ---
 			\[
 				\begin{split}
@@ -141,7 +145,8 @@ I collaborated with Zo\"{e} Batterman.
 				\boxed{
 					\mathbf V[g](\mathbf p) = - 3 x z^2
 				}
-			\] \\
+			\] 
+
 			Again, we just compute explicitly
 			\[
 				\begin{split}
@@ -155,7 +160,8 @@ I collaborated with Zo\"{e} Batterman.
 				\boxed{
 					\mathbf V[fg](\mathbf p) = y^3 z^3 - 3 x^2 y z^2
 				}
-			\] \\
+			\] 
+
 			Note that here, we use the product rule for gradients --- $\nabla(fg) = (\nabla f) g + f (\nabla g)$
 			\[
 				\begin{split}
@@ -171,7 +177,8 @@ I collaborated with Zo\"{e} Batterman.
 				\boxed{
 					(f \mathbf V[g] + g \mathbf V[f])(\mathbf p) = y^3 z^3 - 3 x^2 y z^2
 				}
-			\] \\
+			\] 
+
 			Here we can use our previous computations of $\mathbf V[f](\mathbf p)$ and $\mathbf V[g](\mathbf p)$ to get
 			\[
 				\begin{split}
@@ -185,7 +192,8 @@ I collaborated with Zo\"{e} Batterman.
 				\boxed{
 					\mathbf V[f^2 + g^2](\mathbf p) = 2 x y^4 - 6 x z^5.
 				}
-			\] \\
+			\] 
+
 			First, we compute $\nabla (f^2 + g^2)$. Here, again we can use the sum and product rules for the gradient.
 			\[
 				\begin{split}
@@ -194,7 +202,8 @@ I collaborated with Zo\"{e} Batterman.
 								     & = 2 ((xy)(y, x, 0) + (z^3)(0, 0, 3z^2)) \\
 								     & = 2 (x y^2, x^2 y, 3z^5).
 				\end{split}
-			\] \\
+			\] 
+
 			Then we get
 			\[
 				\begin{split}
@@ -208,7 +217,8 @@ I collaborated with Zo\"{e} Batterman.
 				\boxed{
 					\mathbf V[\mathbf V[f]] (\mathbf p) = 0.
 				}
-			\] \\
+			\] 
+
 			Let $h : \mathbb R^3 \to \mathbb R$ be given by $\mathbf p \mapsto \mathbf V[f](\mathbf p) = y^3$. Note that $\nabla h(\mathbf p) = (0, 3y^2, 0)$. Then we can calculate
 			\[
 				\begin{split}
@@ -231,7 +241,8 @@ I collaborated with Zo\"{e} Batterman.
 \end{problem}
 
 \begin{solution}
-	For $\mathbf p = (x, y, z) \in \mathbb R^3$, we have $x_1(\mathbf p) = x$, $x_2(\mathbf p) = y$, and $x_3(\mathbf p) = z$. Note that $\nabla x_i = \mathbf e_i$, where $\mathbf e_1, \mathbf e_2, \mathbf e_3$ is the standard orthonormal basis on $\mathbb R^3$. \\\\
+	For $\mathbf p = (x, y, z) \in \mathbb R^3$, we have $x_1(\mathbf p) = x$, $x_2(\mathbf p) = y$, and $x_3(\mathbf p) = z$. Note that $\nabla x_i = \mathbf e_i$, where $\mathbf e_1, \mathbf e_2, \mathbf e_3$ is the standard orthonormal basis on $\mathbb R^3$. 
+
 	Let $\mathbf V(\mathbf p) = [\mathbf v(\mathbf p), \mathbf p]$. Then, since $\mathbf v$ is a function $\mathbb R^3 \to \mathbb R^3$, we can decompose it into component functions $v_1, v_2, v_3 : \mathbb R^3 \to \mathbb R$ such that $\mathbf v(\mathbf p) = (v_1(\mathbf p), v_2(\mathbf p), v_3(\mathbf p))$. Thus, we can evaluate $\mathbf V[x_i]$ as
 	\[
 		\begin{split}
@@ -240,7 +251,8 @@ I collaborated with Zo\"{e} Batterman.
 						  & = v_i(\mathbf p)
 		\end{split}
 	\]
-	at any point $\mathbf p \in \mathbb R^3$. \\\\
+	at any point $\mathbf p \in \mathbb R^3$. 
+
 	Thus, we get
 	\[
 		\begin{split}
@@ -274,14 +286,16 @@ I collaborated with Zo\"{e} Batterman.
 	We know that 
 	\[
 		\nabla f (\mathbf p) = \left ( \frac{\partial f}{\partial x_1}(\mathbf p), \frac{\partial f}{\partial x_2}(\mathbf p), \frac{\partial f}{\partial x_3}(\mathbf p) \right ).
-	\] \\
+	\] 
+
 	Thus,
 	\[
 		\begin{split}
 			\mathbf V[f](\mathbf p) & = \nabla f(\mathbf p) \cdot \mathbf v \\
 						& = \sum_{j = 1}^3 v_j \frac{\partial f}{\partial x_j}(\mathbf p).
 		\end{split}
-	\] \\
+	\] 
+
 	Thus, we can write
 	\[
 		\begin{split}
@@ -289,7 +303,8 @@ I collaborated with Zo\"{e} Batterman.
 			& = \left ( \frac{\partial (\mathbf V[f])}{\partial x_1} \Big |_{\mathbf p}, \frac{\partial (\mathbf V[f])}{\partial x_2} \Big |_{\mathbf p}, \frac{\partial (\mathbf V[f])}{\partial x_3} \Big |_{\mathbf p} \right ) \\
 			& = \left ( \frac{\partial}{\partial x_1} \left ( \sum_{j = 1}^3 v_j \frac{\partial f}{\partial x_j} \Big |_{\mathbf p} \right ) \Big |_{\mathbf p}, \frac{\partial}{\partial x_2} \left ( \sum_{j = 1}^3 v_j \frac{\partial f}{\partial x_j} \Big |_{\mathbf p} \right ) \Big |_{\mathbf p}, \frac{\partial}{\partial x_3} \left ( \sum_{j = 1}^3 v_j \frac{\partial f}{\partial x_j} \Big |_{\mathbf p} \right ) \Big |_{\mathbf p} \right ).
 		\end{split}
-	\] \\
+	\] 
+
 	Finally, we have
 	\[
 		\begin{split}
@@ -299,7 +314,8 @@ I collaborated with Zo\"{e} Batterman.
 			& = \sum_{i = 1}^3 \sum_{j = 1}^3 v_i v_j \frac{\partial^2 f}{\partial x_i \partial x_j} \Big |_{\mathbf p}.
 		\end{split}
 	\]
-	for every $\mathbf p \in \mathbb R^3$. \\\\
+	for every $\mathbf p \in \mathbb R^3$. 
+
 	That is, we have 
 	\[
 		\mathbf V[\mathbf V[f]] = \sum_{i = 1}^3 \sum_{j = 1}^3 v_i v_j \frac{\partial^2 f}{\partial x_i \partial x_j}
@@ -314,7 +330,8 @@ I collaborated with Zo\"{e} Batterman.
 \end{problem}
 
 \begin{solution}
-	Let $\mathbf v(\mathbf p)$ and $\mathbf w(\mathbf p)$ denote the vector parts of $\mathbf V(\mathbf p)$ and $\mathbf W(\mathbf p)$ respectively. \\\\
+	Let $\mathbf v(\mathbf p)$ and $\mathbf w(\mathbf p)$ denote the vector parts of $\mathbf V(\mathbf p)$ and $\mathbf W(\mathbf p)$ respectively. 
+
 	Suppose that $\mathbf V = \mathbf W$. Then, obviously, for at each point $\mathbf p \in \mathbb R^3$, we have $\mathbf v(\mathbf p) = \mathbf w(\mathbf p)$, and thus, 
 	\[
 		\begin{split}
@@ -322,8 +339,10 @@ I collaborated with Zo\"{e} Batterman.
 						& = \nabla f(\mathbf p) \cdot \mathbf w(\mathbf p) \\
 						& = \mathbf W[f](\mathbf p).
 		\end{split}
-	\] \\
-	Since we have $\mathbf V[f](\mathbf p) = \mathbf W[f](\mathbf p)$ for all $\mathbf p \in \mathbb R^3$, we can say $\mathbf V[f] = \mathbf W[f]$. \\\\
+	\] 
+
+	Since we have $\mathbf V[f](\mathbf p) = \mathbf W[f](\mathbf p)$ for all $\mathbf p \in \mathbb R^3$, we can say $\mathbf V[f] = \mathbf W[f]$. 
+
 	To prove the converse, suppose that we have $\mathbf V[f] = \mathbf W[f]$ for all differentiable functions $f : \mathbb R^3 \to \mathbb R$. Then pointwise, we have
 	\[
 		\mathbf V[f](\mathbf p) = \mathbf W[f](\mathbf p)
@@ -335,7 +354,8 @@ I collaborated with Zo\"{e} Batterman.
 	at every point $\mathbf p \in \mathbb R^3$. We rewrite this as
 	\[
 		\nabla f(\mathbf p) \cdot (\mathbf v(\mathbf p) - \mathbf w(\mathbf p)) = 0.
-	\] \\
+	\] 
+
 	Note that we can construct $f : \mathbf p \to a x + b y + c z$ with constant gradient $(a, b, c)$ for any desired $(a, b, c) \in \mathbb R^3$. That means, that at each point $\mathbf p \in \mathbb R^3$, we must have
 	\[
 		(a, b, c) \cdot (\mathbf v(\mathbf p) - \mathbf w(\mathbf p)) = 0
@@ -344,7 +364,8 @@ I collaborated with Zo\"{e} Batterman.
 	\[
 		\lVert \mathbf v(\mathbf p) - \mathbf w(\mathbf p) \rVert^2 = 0
 	\]
-	and thus, $\mathbf v(\mathbf p) = \mathbf w(\mathbf p)$.\\\\
+	and thus, $\mathbf v(\mathbf p) = \mathbf w(\mathbf p)$.
+
 	Finally, this gives us
 	\[
 		\mathbf V(\mathbf p) = [\mathbf v(\mathbf p), \mathbf p] = [\mathbf w(\mathbf p), \mathbf p] = \mathbf W(\mathbf p)
