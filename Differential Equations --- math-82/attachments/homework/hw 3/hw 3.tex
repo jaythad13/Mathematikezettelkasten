@@ -21,28 +21,74 @@
 \end{problem}
 
 \begin{solution}
-	\begin{enumerate}
-		\item Let $y_{j} = y(jh)$ and $y_{j}' = y'(jh)$. Thus, we start with $y_{0} = 1$ and $y_{0}' = 1 - 0 + 1 = 2$. Successively
-			\[
-				y_{n} = y_{n - 1}' h + y_{n - 1}.
-			\]
-			Using the code
-			\begin{verbatim}
-def EulerMethod(x_0, t_0, t_f, h, xdot):
-    x = [x_0]
+	$y_{n}$ as defined below by Euler's method approximates $y$.
+	\[
+		y_{n} = y_{n - 1}' h + y_{n - 1}.
+	\]
+	Specifically, $y_{j} \approx y(jh)$ and $y_{j}' \approx y'(jh)$. We implement this recurrence in the following Python program to solve differential equations using Euler's method.
+\begin{verbatim}
+def EulersMethod(y_0, t_0, t_f, h, ydot):
+    y = [y_0]
     t = [t_0]
+    ydots = []
     while (t[-1] < t_f):
-        x.append(xdot(x[-1], t[-1]) * h + x[-1])
+        ydots.append(ydot(y[-1], t[-1]))
+        y.append(ydots[-1] * h + y[-1])
         t.append(t[-1] + h)
-    return x	
-			\end{verbatim}
-			This gives us
+    return y, ydots	
+\end{verbatim}
+	With a function \texttt{ydot} that takes input \texttt{y} and \texttt{t}, returning \texttt{1 - t + y}, we can numerically solve the differential equation.
+
+	\begin{enumerate}
+		\item
+			\[
+				\boxed{
+					y \approx \begin{cases}
+					3.48832 & \text{for } h = 0.2 \\
+					3.59374 & \text{for } h = 0.1
+				\end{cases}
+			}
+			\]
+
+			Using the Python code --- executing \texttt{EulersMethod(1, 0, 1, 0.2, ydot)} --- we get the following lists for $h = 0.2$.
 			\begin{align*}
+				y_{0} & = 1 & y_{0}' & = 2 \\
 				y_{1} & = 1.4 & y_{1}' & = 2.2 \\
 				y_{2} & = 1.84 & y_{2}' & = 2.44 \\
-				y_{3} & = 2.328 \\
-				y_{4} & = 2.8736 
+				y_{3} & = 2.328 & y_{3}' & = 2.728 \\
+				y_{4} & = 2.8736 & y_{4} & = 3.0736 \\
+				y_{5} & = 3.48832
 			\end{align*}
+			Similarly, for $h = 0.1$ we execute \texttt{EulersMethod(1, 0, 1, 0,1, ydot)} and get $y_{10} \approx 3.59374$ (rounded to five decimal places).
+		\item
+			\[
+				\boxed{
+					y(1) = 1 + e.
+				}
+			\]
+			The equation is just a first order linear differential equation. We can solve it by just noticing that the integrating factor has to be $e^{-t}$. This gives us
+			\[
+				(y e^{-t})' = e^{-t} (1 - t).
+			\]
+			Note that the right hand side is just the $t$-derivative of $e^{-t} t$ and thus, we have
+			 \[
+				 (y e^{-t})' = (e^{-t} t)'.
+			\]
+			Then by the fundamental theorem of calculus,
+			\[
+				y e^{-t} = e^{-t} t + C.
+			\]
+			$C$ can be determined by considering the initial condition $y(0) = 1$ which forces us to have
+			\[
+				1 e^{0} = 0 e^{0} + C
+			\]
+			which is just $C = 1$. Thus,
+			\[
+				y(t) = t + e^{t}.
+			\]
+			and $y(1) = 1 + e$.
+		\item
+			The error is about $-0.22996$ for $h = 0.2$ and about half the magnitude --- it's approximately $0.12088$ for $h = 0$.
 	\end{enumerate}
 \end{solution}
 
