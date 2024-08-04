@@ -88,7 +88,7 @@ def EulersMethod(y_0, t_0, t_f, h, ydot):
 			\]
 			and $y(1) = 1 + e$.
 		\item
-			The error is about $-0.22996$ for $h = 0.2$ and about half the magnitude --- it's approximately $0.12088$ for $h = 0$.
+			The error is about $-0.22996$ for $h = 0.2$ and about half the magnitude for $h = 0.1$ --- approximately $0.12088$.
 	\end{enumerate}
 \end{solution}
 
@@ -103,6 +103,53 @@ def EulersMethod(y_0, t_0, t_f, h, ydot):
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item
+			\[
+				\boxed{
+					y = \frac{\cos{t} + \sin{t}}{2} + C e^{-t}.	
+				}
+			\]
+
+			Again, the equation is just a first order linear differential equation. This time, the integrating factor is clearly, $e^{t}$ ---
+			\[
+				e^{t} y' + e^{t} y = e^{t} \cos{t}
+			\]
+			is clearly just
+			\[
+				(e^{t} y)' = e^{t} \cos{t}.
+			\]
+
+			We can integrate the right hand side (call it $I$) by parts ---
+			\[
+				\begin{split}
+					I & = \int_{} e^{t} \cos{t} \, dt \\
+					  & = \cos{t} \int_{} e^{t} \, dt - \int_{} -\sin{t} \int_{} e^{t} \, dt \, dt \\
+					  & = e^{t} \cos{t} + \int_{} e^{t} \sin{t} \, dt \\
+					  & = e^{t} \cos{t} + \sin{t} \int_{} e^{t} \, dt - \int_{} \cos{t} \int_{} e^{t} \, dt  \, dt \\
+					  & = e^{t} (\cos{t} + \sin{t}) + C - I.
+				\end{split}
+			\]
+			Thus, $2I = e^{t}(\cos{t} + \sin{t}) + C$. That is
+			\[
+				e^{t} y = \frac{e^{t}}{2}(\cos{t} + \sin{t}) + C
+			\]
+			and thus,
+			\[
+				y = \frac{\cos{t} + \sin{t}}{2} + C e^{-t}.
+			\]
+		\item
+			We can plot the direction field using the \texttt{StreamPlot} function in Mathematica.
+			\begin{figure}[H]
+				\centering
+				\includegraphics{P2(b) direction field}
+				\caption{Direction field for the differential equation $y' = \cos{t} - y$ with $x, y \in [-10, 10]$}
+			\end{figure}
+		\item The direction field indicates that as $t$ gets larger, $y(t)$ rapidly approaches $\frac{\cos{t} + \sin{t}}{2}$, which is consistent with the analytic solution which just adds a scaled $e^{-t}$ to $\frac{\cos{t} + \sin{t}}{2}$.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[3:]
@@ -115,6 +162,23 @@ def EulersMethod(y_0, t_0, t_f, h, ydot):
 		\item If you were given the sketch of the direction field from part (a), but were not given the equation, how would you know that the differential equation was non-autonomous?
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item Again, we can sketch the direction field in Mathematica
+			\begin{figure}[H]
+				\centering
+				\includegraphics{P3(a) direction field}
+				\caption{Direction field for $y' = -x/y$ with $x, y \in [-3, 3]$}
+			\end{figure}
+		\item We can tell that the differential equation is non-autonomous since the value of $y'$ depends on the value of $x$. The most clear example of this is how $y'$ at $(a, 0)$ and $(-a, 0)$ point in opposite directions for any $a \in \mathbb{R}$. For contrast, the direction field of the autonomous equation $y' = -1/y$ just looks like translated copies of the same direction field ---
+			\begin{figure}[H]
+				\centering
+				\includegraphics{P3(b) -1:y direction field}
+				\caption{Direction field for $y' = -1/y$ with $x, y \in [-3, 3]$}
+			\end{figure}
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
@@ -133,5 +197,32 @@ def EulersMethod(y_0, t_0, t_f, h, ydot):
 		\item In the case where $H = H_{0}$ is constant, solve for $P(t)$ analytically. In addition, numerically approximate $P(t)$ and verify that your analytic answer agrees with your numerical one.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item $r$ and $\alpha$ have units of $\text{day}^{-1}$, $K$ has units of $\text{kg}$.
+		\item First consider the case where $H(P) = H_{0}$ is constant. Then if $\frac{dP}{dt} = 0$, we must have
+			\[
+				rP(1 - P/K) - \alpha P - H_{0} = 0
+			\]
+			which means that $P$ is the solution of a quadratic equation
+			\[
+				r P^{2} + K(\alpha - r) P + H_{0} K = 0.
+			\]
+			That is,
+			\[
+				P = \frac{K (r - \alpha) \pm \sqrt{K^{2} (\alpha - r)^{2} - 4 H_{0} K r}}{2 r}. 
+			\]
+			By the binomial approximation (assuming, without loss of generality, that $Kr - \alpha > 0$) this gives us
+			\[
+				P = \frac{K(r - \alpha)(1 \pm (1 - 2 H_{0} K r/K^{2}(r - \alpha)^{2}))}{2 r}.
+			\]
+			Which gives two solutions ---
+			\[
+				P = \frac{H_{0}}{r - \alpha} \quad \text{and} \quad P = \frac{K(r - \alpha)}{r} - \frac{H_{0}}{K r(r - \alpha)^{2}}.
+			\]
+			That is, the fishery can be in equilibrium very close to zero fish (or even zero fish if $H_{0} = 0$) or at some positive number of fish less than its carrying capacity.
+	\end{enumerate}
+\end{solution}
 
 \end{document}
