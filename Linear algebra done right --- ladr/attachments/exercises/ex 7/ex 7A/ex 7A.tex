@@ -16,14 +16,38 @@
 	Find a formula for $T^{*}(z_{1}, \dots, z_{n})$.
 \end{problem}
 
+\begin{solution}
+	\[
+		\boxed{
+			T^{*}(z_{1}, \dots, z_{n}) = (z_{2}, \dots, z_{n}, 0).
+		}
+	\]
+
+	By definition, $\left < T(w_{1}, \dots, w_{n}), (z_{1}, \dots, z_{n}) \right > = \left < (w_{1}, \dots, w_{n}), T^{*}(z_{1}, \dots, z_{n}) \right >$. However, we know already that
+	\[
+		\begin{split}
+			\left < T(w_{1}, \dots, w_{n}), (z_{1}, \dots, z_{n}) \right > & = \left < (0, w_{1}, \dots, w_{n - 1}), (z_{1}, \dots, z_{n}) \right > \\
+										       & = w_{1} \overline{z_{2}}, + \dots + w_{n - 1} \overline{z_{n}} \\
+										       & = \left < (w_{1}, \dots, w_{n}), (z_{2}, \dots, z_{n}, 0) \right >.
+		\end{split}
+	\]
+	Thus, we must have $T^{*}(z_{1}, \dots, z_{n}) = (z_{2}, \dots, z_{n}, 0)$.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[2]
 	Suppose $T \in \mathcal{L}(V, W)$. Prove that
 	\[
-		T = 0 \iff T^{*} = 0 \iff T^{*}T = 0 \iff \mathrm{T}^{*} = 0.
+		T = 0 \iff T^{*} = 0 \iff T^{*}T = 0 \iff T T^{*} = 0.
 	\]
 \end{problem}
+
+\begin{solution}
+	Suppose $T = 0$. Then $\left < Tv, w \right > = 0$ for all $v, w \in V$, and thus, $\left < T^{*} w, v \right > = 0$ for all $v, w \in V$, including $v = T^{*} w$. That is, $\lVert T^{*} w \rVert = 0$ for all $w \in V$, and thus, $T^{*} = 0$. Since $(T^{*})^{*} = T$, this also gives us the converse --- that $T^{*} = 0 \implies T = 0$.
+
+	It's obvious that either $T = 0$ or $T^{*} = 0$ is sufficient to show that $T T^{*} = T^{*} T = 0$. Now we will show the opposite direction. Suppose $T T^{*} = 0$. Then $\left < T T^{*} v, w \right > = 0$ always. However $\left < T T^{*} v, w \right > = \left < T^{*} v, T^{*} w \right >$ and by choosing $v = w$, we get that $\lVert T^{*} v \rVert = 0$ always. That is, $T^{*} = 0$, which gives us $T^{*} T = 0$. Thus, we have $T T^{*} = 0 \implies T^{*} = 0 \implies T^{*} T = 0$ (and also implies $T = 0$). Similarly, if  $T^{*} T = 0$, we have $\left < T^{*} T v, w \right > = \left < Tv, Tw \right >$ as $0$ always. Thus, $T^{*} T = 0 \implies T = 0 \implies T T^{*} = 0$ (and also implies $T^{*} = 0$). This completes the equivalence.
+\end{solution}
 
 \pagebreak
 
@@ -33,6 +57,10 @@
 		\lambda \text{ is an eigenvalue of } T \iff \overline{\lambda} \text{ is an eigenvalue of } T^{*}.
 	\]
 \end{problem}
+
+\begin{solution}
+	Suppose $\lambda$ is an eigenvalue of $T$ with eigenvector $v$. This is implies that $T - \lambda I$ is non-invertible, and thus, so is its adjoint, $T^{*} - \overline{\lambda} I$. Since $T^{*} - \overline{\lambda} I$ is non-invertible, $T^{*}$ has $\overline{\lambda}$ as an eigenvalue. Since $(T^{*})^{*} = T$, the converse is also implied.
+\end{solution}
 
 \pagebreak
 
