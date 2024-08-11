@@ -71,6 +71,10 @@
 	\]
 \end{problem}
 
+\begin{solution}
+	First suppose $U$ is invariant under $T$. Then for any $u \in U$ and $w \in U^{\perp}$, we have $Tu \in U$ as well, and thus, $\left < Tu, w  \right > = 0$. Thus, $\left < u, T^{*}w \right > = 0$ for any $w \in U^{\perp}$, $u \in U$. For this, we must have $T^{*} w \in U^{\perp}$ for any $w \in U^{\perp}$. That is, $U^{\perp}$ is invariant under $T$. If $V$ is finite dimensional, the converse follows just from the $-^{*}$ and $-^{\perp}$ operators being involutions.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[5]
@@ -79,6 +83,20 @@
 		\lVert T e_{1} \rVert^{2} + \dots + \lVert T e_{n} \rVert^{2} = \lVert T^{*} f_{1} \rVert^{2} + \dots + \lVert T^{*} f_{m} \rVert^{2}.
 	\]
 \end{problem}
+
+\begin{solution}
+	Since $e_{1}, \dots, e_{n}$ and $f_{1}, \dots, f_{m}$ are orthonormal bases we can write each $T e_{j}$ in the basis $f_{1}, \dots, f_{m}$ and each $T^{*} f_{k}$ in the basis $e_{1}, \dots, e_{n}$. Thus, we can write
+	\[
+		\begin{split}
+			\lVert T e_{1} \rVert^{2} + \dots + \lVert T e_{n} \rVert^{2} & = \sum_{j = 1}^{n} \left \Vert \sum_{k = 1}^{m} \left < T e_{j}, f_{k} \right > f_{k} \right \Vert^{2} \\
+										      & = \sum_{k = 1}^{m} \sum_{j = 1}^{n} \lvert \left < T e_{j}, f_{k} \right > \rvert^{2} \\
+										      & = \sum_{j = 1}^{n} \sum_{k = 1}^{m} \lvert \left < e_{j}, T^{*} f_{k} \right > \rvert^{2} \\
+										      & = \sum_{k = 1}^{m} \sum_{j = 1}^{n} \lvert \left < T^{*} f_{k}, e_{j} \right > \rvert^{2} \\
+										      & = \sum_{k = 1}^{m} \left \lVert \sum_{j = 1}^{n} \left < T^{*} f_{k}, e_{j} \right > e_{j} \right \rVert^{2} \\
+										      & = \lVert T^{*} f_{1} \rVert^{2} + \dots + \lVert T^{*} f_{m} \rVert^{2}.
+		\end{split}
+	\]
+\end{solution}
 
 \pagebreak
 
@@ -90,6 +108,10 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	Since $\dim \operatorname{range} T^{*} = \dim (\operatorname{null} T)^{\perp}$ and $V, W$ are finite-dimensional, we have $\dim \operatorname{range} T^{*} = \dim V - \dim \operatorname{null} T$. Thus, $T$ is injective if and only if $T^{*}$ is surjective. The second equivalence follows from $-^{*}$ being an involution.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[7]
@@ -100,11 +122,40 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	Note again that $\dim \operatorname{range} T^{*} = \dim (\operatorname{null} T)^{\perp} = \dim V - \dim \operatorname{null} T$ and by symmetry, $\dim \operatorname{range} T = \dim W - \dim \operatorname{null} T^{*}$. Also, the rank-nullity theorem gives us that $\dim \operatorname{null} T + \dim \operatorname{range} T = \dim V$, and similarly $\dim \operatorname{null} T^{*} + \dim \operatorname{range} T^{*} = \dim W$
+	\begin{enumerate}
+		\item From the equalities above, it is only a matter of algebraic manipulation to show that
+			\[
+				\begin{split}
+					\dim \operatorname{null} T^{*} & = \dim V - \dim \operatorname{range} T^{*} \\
+								       & = \dim W - (\dim V - \dim \operatorname{null} T) \\
+								       & = \dim \operatorname{null} T + \dim W - \dim \operatorname{null} T.
+				\end{split}
+			\]
+		\item Similarly, it is easily shown that
+			\[
+				\begin{split}
+					\dim \operatorname{range} T^{*} & = \dim V - \dim \operatorname{null} T \\
+									& = \dim \operatorname{range} T.
+				\end{split}
+			\]
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[8]
 	Suppose $A$ is an $m$-by-$n$ matrix with entries in $\mathbb{F}$. Use (b) in Exercise 7 to prove that the row rank of $A$ equals the column rank of $A$.
 \end{problem}
+
+\begin{solution}
+	The row rank of an $m$-by-$n$ matrix in $\mathbb{F}$ is just the same as the column rank of its transpose. We claim that this is also the same as the column rank of its conjugate transpose.
+
+	Suppose we have a matrix $A$ with transpose $A^{\top}$ and conjugate transpose $A^{*}$. Notice that $a_{i_{1}} A^{\top}_{j, 1} + \dots + a_{i_{k}} A^{\top}_{j, i_{k}} = 0$ if and only if $\overline{a_{i_{1}}} A^{*}_{j, i_{1}} + \dots + \overline{a_{i_{k}}} A^{*}_{j, i_{k}} = 0$. Thus, any $k$ columns of  $A^{\top}$ are linearly independent if and only if the same $k$ columns of  $A^{*}$ are linearly independent. That is $A^{\top}$ and $A^{*}$ have the same column rank, and thus, the column rank of $A^{*}$ is the row rank of $A$.
+
+	Note $\operatorname{range} T^{*}$ is the column rank of $A^{*}$, and thus, the row rank of $A$. Since, the column rank of $A$ is $\operatorname{range} T = \operatorname{range} T^{*}$, the column rank of $A$ is the row rank of $A$.
+\end{solution}
 
 \pagebreak
 
