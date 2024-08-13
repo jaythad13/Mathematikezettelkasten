@@ -93,7 +93,7 @@ A preorder is a reflexive transitive binary relation $\le$. A preordered set is 
 
 Our notation is suggestive  — the categorical notion corresponding to a preordered set is a category $\mathscr{A}$ where there is at most one arrow in $\operatorname{Mor}(A, B)$. A partially ordered set corresponds to the only isomorphisms in the category being the identities.
 
-Note that we can choose $A \le B$ to correspond to an arrow in $\operatorname{Mor}(A, B)$ or an arrow in $\operatorname{Mor}(B, A)$. [[Basic category theory --- basic-cat/attachments/texts/Basic Category Theory.pdf#page=15|Leinster]] chooses the former. [[Algebraic geometry --- rising-sea/attachments/texts/The Rising Sea.pdf#page=31|Vakil]] chooses the latter. This motivates a definition to describe this phenomenon.
+Note that we can choose $A \le B$ to correspond to an arrow in $\operatorname{Mor}(A, B)$ or an arrow in $\operatorname{Mor}(B, A)$. [[Basic category theory --- basic-cat/attachments/texts/Basic Category Theory.pdf#page=27|Leinster]] chooses the former. [[Algebraic geometry --- rising-sea/attachments/texts/The Rising Sea.pdf#page=31|Vakil]] chooses the latter. This motivates a definition to describe this phenomenon.
 
 ### Two ways to make new categories
 
