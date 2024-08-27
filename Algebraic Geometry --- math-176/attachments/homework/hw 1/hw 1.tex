@@ -1,0 +1,67 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 176 --- Algebraic Geometry}
+\assignment{Homework assignment \#1}
+\duedate{6th September 2024}
+
+\begin{document}
+
+\begin{problem}[1]
+	If the sides of a triangle having a $60^{\circ}$ angle have sides of lengths $a$, $b$, and $c$, the law of cosines asserts that $a^{2} - ab + b^{2} = c^{2}$. We are interested in integer solutions $(a, b, c)$ to this equation. For any solution $(a, b, c)$, there are integers $m$ and $n$ such that $m/n = a/(c - b)$. Use this to show that
+	\[
+		(a : b : c) = (m^{2} + 2 m n : m^{2} - n^{2} : m^{2} + mn + n^{2}).
+	\]
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[2]
+	Let $a$, $b$, $c$, and $d$ be rational numbers such that $ad$, $bd$, and $cd$ are not all zero (in particular $d$ is non-zero). Consider the intersection of the cone $z^{2} + y^{2} = z^{2}$ with a plane $ax + by + cz = d$.
+	\begin{enumerate}
+		\item Let $m$ and $n$ be integers. Show that
+			\begin{align*}
+				\frac{x}{z - y} & = \frac{m}{n} & & & x & = \frac{d (2 m n)}{a (2 m n) + b (m^{2} - n^{2}) + c(m^{2} + n^{2})} \\
+				ax + by + cz & = d & \text{if and only if} & & y & = \frac{d (m^{2} - n^{2})}{a (2 m n) + b (m^{2} - n^{2}) + c(m^{2} + n^{2})} \\
+				x^{2} + y^{2} & = z^{2} & & & z & = \frac{d (m^{2} + n^{2})}{a (2 m n) + b (m^{2} - n^{2}) + c(m^{2} + n^{2})}.
+			\end{align*}
+			Conclude that the intersection of the cone with the plane above has infinitely many rational points $(x, y, z)$.
+		\item Show that this intersection is a conic section. That is, the curve
+			\begin{align*}
+				& & & & A & = c^{2} - a^{2} & D & = 2 a d \\
+				A x^{2} + B x y + C y^{2} + D x + E y + F & = 0 & \text{in terms of} & & B & = -2 a b & E & = 2 b d \\
+									  & & & & C & = c^{2} - b^{2} & F & = -d^{2}.
+			\end{align*}
+		\item Show that the equation $x^{2} + y^{2} + 1 = 0$ is not the intersection of a cone $x^{2} + y^{2} = z^{2}$ with a plane $ax + by + cz = d$ for any integers $a$, $b$, $c$, or $d$.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[3]
+	 Fix an integer $d$ which is not a square, and consider the equation $x^{2} - d y^{2} = 1$. Let $(z_{1}, y_{1})$ be an integral point on this curve, and define a sequence of integral points $\{ (x_{0}, y_{0}), (x_{1}, y_{1}), \dots, (x_{n}, y_{n}), \dots \}$ via the relation
+	 \[
+	 	x_{n} + y_{n} \sqrt{d} = (x_{1} + y_{1} \sqrt{d})^{n}
+	 \]
+	 \begin{enumerate}
+		 \item By comparing the successive points $(x_{n}, y_{n})$ and $(x_{n - 1}, y_{n - 1})$, show that we have the matrix relation
+			 \[
+			 	\begin{bmatrix}
+					x_{n} & d y_{n} \\
+					y_{n} & x_{n}
+			 	\end{bmatrix} = 
+				\begin{bmatrix}
+					x_{1} & d y_{1} \\
+					y_{1} & x_{1} \\
+				\end{bmatrix}
+				\begin{bmatrix}
+					x_{n - 1} & d y_{n - 1} \\
+					y_{n - 1} & x_{n - 1}
+				\end{bmatrix}.
+			 \]
+		\item Show that $x_{n}^{2} - d y_{n}^{2} = 1$.
+	 \end{enumerate}
+\end{problem}
+
+\end{document}
