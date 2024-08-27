@@ -6,11 +6,12 @@ tags:
 
 ### Basic combinatorics by induction
 
-We can use the [[Peano axioms|axiom of induction]] to prove various combinatorial theorems.
+We can use the [[Mathematical Analysis I --- math-131/notes/Before the real numbers#_definition _ the Peano axioms|axiom of induction]] to prove various combinatorial theorems.
 
 ##### _example:_ the sum of the first $n$ natural numbers
 
 We can prove that $1 + 2 + \ldots + n = \frac{n(n + 1)}{2}$ using the Gauss trick, but it's messy. Induction is more work but less messy.
+
 We know that
 $$
 \sum_{k = 1}^1 k = 1 = \frac{1 (1 + 1)}{2} = 1.

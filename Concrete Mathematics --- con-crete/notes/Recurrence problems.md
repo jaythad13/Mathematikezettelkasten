@@ -19,7 +19,7 @@ The Tower of Hanoi is just the same problem with $8$ disks
 
 We generalise this problem to $n$ annuli and forget pedantry, just calling the annuli disks. Note that this generalisation allows us to look at small cases first, a technique that is almost always useful when solving math problems. It is also useful in the obvious sense: if we solve the problem for all natural numbers $n$ then we have solved the Tower of Hanoi, the problem of Benares temple, the Tower of Brahma, and any other _exotic_ names white mathematicians may assign to problems.
 
-The other strategy we use is formalism: by explicitly naming the things we care about we can manipulate them more easily. In particular using functions (in this case, [[Sequences|sequences]], which are just functions from $\bb{N}$) allows us to very directly manipulate the things we care about. Thus, we let $T_n$ denote the least number of moves for $n$ disks.
+The other strategy we use is formalism: by explicitly naming the things we care about we can manipulate them more easily. In particular using functions (in this case, sequences which are just functions from $\bb{N}$) allows us to very directly manipulate the things we care about. Thus, we let $T_n$ denote the least number of moves for $n$ disks.
 
 We can get some easy small answers. Some trivial cases are
 
@@ -51,7 +51,7 @@ In order to move $n$ disks from post $A$ to post $C$ (when we have three posts: 
 
 Note that this algorithm references itself. We call this algorithm recursive. It's implied that we know how to move one disk between two empty posts, and that moving no disks involves doing nothing but often, when we define a recursive algorithm, we also have to define some _base case._
 
-Since this algorithm is guaranteed to move the $n$ disks (we can show this by [[Peano axioms|induction]]), we know that the least number of steps to move $n$ disks is not more than the number of steps for this algorithm. That is 
+Since this algorithm is guaranteed to move the $n$ disks (we can show this by [[Superdiscrete --- math-55A/notes/Proof by induction|induction]]), we know that the least number of steps to move $n$ disks is not more than the number of steps for this algorithm. That is 
 $$
 T_n \le 2 T_{n-1} + 1 \text{ for } n \in \bb{N}.
 $$
@@ -105,7 +105,7 @@ $$T_5 = 31.$$
 
 Specifically, these $T_n$ look a lot like $2^n - 1$. While we should be careful about assuming that this trend continues forever, there is no harm in investigating it. The recurrence relation we have also strongly suggests this: our recurrence relation tells us that $T_n$ is always just a little more than double $T_{n-1}$, just as we'd expect if we're right about the closed form we've guessed.
 
-We can check whether $T_n$ really is $2^n$ by [[Peano axioms|induction]] on $\bb{N} \cup \{0\}$:
+We can check whether $T_n$ really is $2^n$ by induction on $\bb{N} \cup \{0\}$:
 
 We know that $T_0 = 1 = 2^0 - 1$. If $T_k = 2^k - 1$, then $T_{k+1} = 2(2^k - 1) + 1 = 2^{k+1} - 1$.
 
