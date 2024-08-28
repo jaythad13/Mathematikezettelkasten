@@ -39,7 +39,7 @@ t & = \frac{a}{c - b} \\
 \end{split}
 $$
 
-That is, we have another equation that says $y = tx - 1$. If we look at the circle $x^{2} + y^{2} = 1$ and the line $y = tx - 1$ geometrically, we can see that the line intersects the circle at two points — $(0, -1)$ and $\left(\frac{2t}{t^{2} + 1}, \frac{t^{2} - 1}{t^{2} + 1} \right )$. Then by choosing a rational slope and rational $x$, we can get solutions.
+That is, we have another equation that says $y = tx - 1$. If we look at the circle $x^{2} + y^{2} = 1$ and the line $y = tx - 1$ geometrically, we can see that the line intersects the circle at two points — $(0, -1)$ and $\left(\frac{2t}{t^{2} + 1}, \frac{t^{2} - 1}{t^{2} + 1} \right )$. Thus, by choosing a rational slope $t$, we get a rational point on the circle. Conversely, notice that every rational point on the circle gives us a line of rational slope passing through itself and $(0, -1)$.
 
 ### Conic sections
 
@@ -60,6 +60,7 @@ in terms of $t = m / n$ and
 $$
 \lambda = \frac{(2 A x_{0} + B y_{0} + D) n + (B x_{0} + 2 C y_{0} + E)m}{A n^{2} + B mn + C m^{2}}.
 $$
+This gives us that the intersection of the line and curve is a rational point. Again, the fact that any rational point gives us a line of rational slope through itself and $(0, -1)$ means that this gives us all the rational points.
 
 Specifically,
 
