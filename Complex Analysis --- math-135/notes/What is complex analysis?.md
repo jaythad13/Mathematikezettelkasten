@@ -1,6 +1,7 @@
 ---
 tags:
 - math-135/1
+- math-135/2
 - anal
 ---
 
@@ -19,8 +20,9 @@ Most of these differences are due to a deep "representation" type result that sa
 The complex numbers are one of the following isomorphic notions
 - $\mathbb{R}[i]$ where $i^2 = -1$
 - $\mathbb{R}[x]/(x^2 + 1)$
+- The matrices on $\mathbb{R}^{2}$ of the form $\begin{bmatrix}a & b \\ -b & a\end{bmatrix}$
 
-To see how these are equivalent, consider $\varphi : f \mapsto f(i)$. $\varphi$ has kernel $(x^{2} + 1)$. This is essentially just replacing $x$ with $i$ in each polynomial.
+To see how the first two are equivalent, consider $\varphi : f \mapsto f(i)$. $\varphi$ has kernel $(x^{2} + 1)$. This is essentially just replacing $x$ with $i$ in each polynomial. The first and third are equivalent because of the isomorphism $\varphi : a + bi \mapsto \begin{bmatrix} a & b \\ -b & a\end{bmatrix}$. Also see that we can write the matrix as $\sqrt{ a^{2} + b^{2} } \begin{bmatrix} \cos \theta & \sin \theta \\ \sin \theta & \cos \theta \end{bmatrix}$ — rotating by the argument $\theta$ and then scaling by the magnitude.
 
 Often we write a complex number $z$ as $a + bi$ for some pair real numbers $i$. We say $a$ is the real part of $z$ — $\operatorname{Re} i$ and $b$ is the imaginary part of $i$ — $\operatorname{Im} i$.
 
@@ -99,4 +101,4 @@ Naturally, with the triangle inequality, this magnitude gives us a metric on $\m
 
 Finally, every complex number can be given in polar representation. If we accept as shorthand $e^{i \theta} = \cos \theta + i \sin \theta$, then we can see that every complex number can be represented by its magnitude, $\lvert z \rvert$, and its angle from the positive $x$ axis, $\theta$, also called its argument. Notice that $z$ does not have a unique argument. 
 
-If we accept that the shorthand $e^{i \theta}$ follows the regular multiplication rules for exponents, this also gives a justification for thinking of complex multiplication as adding angles and dilating by the magnitude. That is $e^{i \theta} e^{i \varphi} = e^{i(\theta + \varphi)}$.
+If we accept that the shorthand $e^{i \theta}$ follows the regular multiplication rules for exponents, this also gives a justification for thinking of complex multiplication as adding angles and dilating by the magnitude. That is $e^{i \theta} e^{i \varphi} = e^{i(\theta + \varphi)}$. You can also think about this by using similar triangles (see Knopp?).
