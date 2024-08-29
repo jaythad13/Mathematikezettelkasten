@@ -1,0 +1,92 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 135 --- Complex Analysis}
+\assignment{HW \#1}
+\duedate{5th September 2024}
+
+\begin{document}
+
+\begin{problem}[1]
+	Describe geometrically the sets of points $z$ in the complex plane defined by the following relations:
+	\begin{enumerate}
+		\item $\operatorname{Re}(az + b) > 0$ where $a, b \in \mathbb{C}$.
+		\item $\lvert z \rvert = \operatorname{Re}(z) + 1$.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[5]
+	A set $\Omega$ is said to be \emph{path-connected} if any two points in $\Omega$ can be joined by a (piecewise-smooth) curve entirely contained in $\Omega$. The purpose of this exercise is to prove that an \emph{open set} $\Omega$ is path-connected if and only if $\Omega$ is connected.
+	\begin{enumerate}
+		\item Suppose first that $\Omega$ is open and path-connected, and that it can be written as $\Omega = \Omega_{1} \cup \Omega_{2}$ where $\Omega_{1}$ and $\Omega_{2}$ are disjoint non-empty open sets. Choose two points $w_{1} \in \Omega_{1}$ and $w_{2} \in \Omega_{2}$, and let $\gamma$ denote a curve in $\Omega$ joining $w_{1}$ to $w_{2}$. Consider a parametrisation $z : [0, 1] \to \Omega$ of this curve with $z(0) = w_{1}$ and $z(1) = w_{2}$, and let
+			\[
+				t^{*} = \sup_{0 \le t \le 1} \{ t  : z(s) \in \Omega_{1} \text{ for all }0 \le s \le t \}
+			\]
+			Arrive at a contradiction by considering the point $z(t^{*})$.
+		\item Conversely, suppose that $\Omega$ is open and connected. Fix a point $w \in \Omega$ and let $\Omega_{1} \subset \Omega$ denote the set of all points that can be joined to $w$ by a curve contained in $\Omega$. Also, let $\Omega_{2} \subset \Omega$ denote the set of all points that cannot be joined to $w$ by a curve in $\Omega$. Prove that both  $\Omega_{1}$ and $\Omega_{2}$ are open, disjoint, and their union is $\Omega$. Finally, since $\Omega_{1}$ is non-empty, conclude that $\Omega = \Omega_{1}$ as desired.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[7]
+	The family of mappings introduced here plays an important role in complex analysis. These mappings, sometimes called \emph{Blaschke factors}, will reappear in various applications in later chapters.
+	\begin{enumerate}
+		\item Let $z, w$ be two complex numbers such that $\overline{z} w \neq 1$. Prove that
+			\[
+				\left \lvert \frac{w - z}{1 - \overline{w} z} \right \rvert < 1 \text{ if } \lvert z \rvert < 1 \text{ and } \lvert w \rvert < 1,
+			\]
+			and also that
+			\[
+					\left \lvert \frac{w - z}{1 - \overline{w} z} \right \rvert = 1 \text{ if } \lvert z \rvert = 1 \text{ or } \lvert w \rvert < 1,
+			\]
+		\item Prove that for a fixed $w$ in the unit disk $\mathbb{D}$, the mapping
+			\[
+				F : z \mapsto \frac{w - z}{1 - \overline{w} z}
+			\]
+			satisfies the following conditions:
+			\begin{enumerate}[label = (\roman*)]
+				\item $F$ maps the unit disk to itself and is holomorphic.
+				\item $F$ interchanges $0$ and $w$.
+				\item $\lvert F(z) \rvert = 1$ if $\lvert z \rvert = 1$.
+				\item $F : \mathbb{D} \to \mathbb{D}$ is bijective.
+			\end{enumerate}
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[9]
+	Show that in polar coordinates, the Cauchy-Riemann equations take the form
+	\[
+		\frac{\partial u}{\partial r} = \frac{1}{r} \frac{\partial v}{\partial \theta} \text{ and } \frac{1}{r} \frac{\partial u}{\partial \theta} = - \frac{\partial v}{\partial r}.
+	\]
+	Use these equations to show that the logarithm function defined by
+	\[
+		\log z = \log r + i \theta \text{ where } z = r e^{i \theta} \text{ with } -\pi < \theta < \pi
+	\]
+	is holomorphic in the region $r > 0$ and $-\pi < \theta < \pi$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[11]
+	Use Exercise 10 to prove that if $f$ is holomorphic in the open set $\Omega$, then the real and imaginary parts of $f$ are \emph{harmonic}; that is, their Laplacian is zero.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[13]
+	Suppose that $f$ is holomorphic in an open set $\Omega$. Prove that in any one of the following cases:
+	\begin{enumerate}
+		\item $\operatorname{Re}(f)$ is constant;
+		\item $\operatorname{Im}(f)$ is constant;
+		\item $\lvert f \rvert$ is constant;
+	\end{enumerate}
+	one can conclude that $f$ is constant.
+\end{problem}
+
+\end{document}
