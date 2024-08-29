@@ -12,10 +12,10 @@ It's fairly normal for us to think of a notion of distance on a space:
 
 1) The real numbers $\bb{R}$ with the distance $d$ between $x, y \in \bb{R}$ given by $d(x, y) = \vert x - y \vert.$
 2) The complex plane $\bb{C}$ with distance $d$ between $w, z \in \bb{C}$ given by $d(w, z) = \vert w  - z \vert.$
-3) The real plane $\bb{R}^2$ with the Pythagorean notion of distance: the distance $d$ between $x = (x_1, x_2), y = (y_1, y_2) \in \bb{R}^2$ is given by $d(x, y) = \Vert x - y \Vert = \sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2}.$ This is the notion of distance used in [[Euclidean space|Euclidean geometry]].
+3) The real plane $\bb{R}^2$ with the Pythagorean notion of distance: the distance $d$ between $x = (x_1, x_2), y = (y_1, y_2) \in \bb{R}^2$ is given by $d(x, y) = \Vert x - y \Vert = \sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2}.$ This is the notion of distance used in [[Calculus --- spivak/notes/Linear algebraic considerations#_definition _ Euclidean space|Euclidean space]].
 4) The real plane $\bb{R}^2$ with the "taxicab" distance $d$ between $x = (x_1, x_2), y = (y_1, y_2) \in \bb{R}^2$ given by $d(x, y) = \vert x_1 - y_1 \vert + \vert x_2 - y_2 \vert$. This often thought of as the distance you cover when taking a cab in the grid of Manhattan.
  
-The big ideas of calculus come from looking at functions on a space very closely. For "looking closely" at a function on a space to make sense, the notion of distance on that space is obviously very useful. While our idea for what that notion should be arises naturally from [[Euclidean space|Euclidean space]], in order to use distance on weirder spaces, first, we need to generally define it.
+The big ideas of calculus come from looking at functions on a space very closely. For "looking closely" at a function on a space to make sense, the notion of distance on that space is obviously very useful. While our idea for what that notion should be arises naturally from Euclidean space, in order to use distance on weirder spaces, first, we need to generally define it.
 
 ### What is a metric space?
 
@@ -131,7 +131,7 @@ Boundedness also has some natural intuition attached to it. In $\bb{R}$ we think
 
 A subset $E$ is bounded in $X$ if for some point $p$ we have $d(p, q) < M$ for all points $q \in E$ where $M$ is some fixed real number.
 
-The prototypical example of a dense set is $\bb{Q}$ in $\bb{R}$. Typically we think of there being a [[Real numbers|rational between any two real numbers]], but we can reframe this: given a real number, and any small neighbourhood around it, we can find a rational number in that neighbourhood. That is, every real number is a limit point of the rational numbers.
+The prototypical example of a dense set is $\bb{Q}$ in $\bb{R}$. Typically we think of there being a [[Mathematical Analysis I --- math-131/notes/The reals|rational between any two real numbers]], but we can reframe this: given a real number, and any small neighbourhood around it, we can find a rational number in that neighbourhood. That is, every real number is a limit point of the rational numbers.
 
 ##### _definition:_ dense
 
@@ -187,7 +187,7 @@ Thus, we have a neighbourhood of $p$ containing no distinct points of $E$, givin
 
 ##### _examples:_ closed, open, perfect, and bounded sets
 
-The following are subsets of the [[Euclidean space|Euclidean space]] $\bb{R}^2$. Note that since they have effectively the same metric, we can also think of these sets as subsets of the [[Complex plane|complex plane]] $\bb{C}$. They are variously closed, open, perfect, and bounded as below.
+The following are subsets of the Euclidean space $\bb{R}^2$. Note that since they have effectively the same metric, we can also think of these sets as subsets of the [[Complex Analysis --- math-135/notes/What is complex analysis?#Complex numbers and the complex plane|complex plane]] $\bb{C}$. They are variously closed, open, perfect, and bounded as below.
 
 | Set                                                                       | Closed?                                                                                                                                                        | Open?                                                                                                                                                                                                                                    | Perfect?                                                                                                                                                                                                                                                                                                                         | Bounded?                                                                  |
 | ------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |

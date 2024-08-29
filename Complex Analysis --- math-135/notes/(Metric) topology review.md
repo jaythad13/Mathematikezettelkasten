@@ -55,7 +55,7 @@ $\Omega \subset \mathbb{C}$ is a region if it is open and connected.
 
 $\Omega \subset \mathbb{C}$ is path-connected if for all $a, b \in \Omega$, there exists a continuous path $\gamma : [0, 1] \to \Omega$ with $\gamma(0) = a$ and $\gamma(1) = b$.
 
-An exercise in [[the homework]] is
+An exercise in [[Complex Analysis --- math-135/attachments/homework/hw 1/hw 1.pdf|the homework]] is
 
 ##### _proposition:_ path-connectedness and connectedness are equivalent on open sets
 

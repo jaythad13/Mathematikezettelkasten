@@ -179,7 +179,7 @@ L_0 = 1 \\
 L_n = L_{n - 1} + n.
 \end{gathered}
 $$
-We can see by [[Peano axioms|induction]] that $L_n = 1 + \sum_{k = 1}^n n$ which in turn, again by induction we can evaluate to give us
+We can see by induction that $L_n = 1 + \sum_{k = 1}^n n$ which in turn, again by induction we can evaluate to give us
 $$
 L_n = 1 + \frac{n(n + 1)}{2}.
 $$
