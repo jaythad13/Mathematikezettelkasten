@@ -39,7 +39,7 @@ t & = \frac{a}{c - b} \\
 \end{split}
 $$
 
-That is, we have another equation that says $y = tx - 1$. If we look at the circle $x^{2} + y^{2} = 1$ and the line $y = tx - 1$ geometrically, we can see that the line intersects the circle at two points — $(0, -1)$ and $\left(\frac{2t}{t^{2} + 1}, \frac{t^{2} - 1}{t^{2} + 1} \right )$. Thus, by choosing a rational slope $t$, we get a rational point on the circle. Conversely, notice that every rational point on the circle gives us a line of rational slope passing through itself and $(0, -1)$.
+That is, we have another equation that says $y = tx - 1$. If we look at the circle $x^{2} + y^{2} = 1$ and the line $y = tx - 1$ geometrically, we can see that the line intersects the circle at two points — $(0, -1)$ and $\left(\frac{2t}{t^{2} + 1}, \frac{t^{2} - 1}{t^{2} + 1} \right )$. Thus, by choosing a rational slope $t$, we get a rational point on the circle. The intuitive reason for this is Vieta's equations — we have a rational quadratic polynomial and so if one root is rational, and the sum of the roots is rational, the other root is rational. Conversely, notice that every rational point on the circle gives us a line of rational slope passing through itself and $(0, -1)$.
 
 ### Conic sections
 
