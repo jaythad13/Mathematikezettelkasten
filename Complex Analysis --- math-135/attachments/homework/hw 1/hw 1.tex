@@ -8,6 +8,8 @@
 
 \begin{document}
 
+I collaborated with Kai Mawhinney on this homework assignment. We used the same template.
+
 \begin{problem}[1]
 	Describe geometrically the sets of points $z$ in the complex plane defined by the following relations:
 	\begin{enumerate}
@@ -57,7 +59,13 @@
 
 \begin{solution}
 	\begin{enumerate}
-		\item We will show that $t^{*}$
+		\item We will show that $z(t^{*})$ cannot be in $\Omega_{1}$ and cannot be in $\Omega_{2}$ and thus, arrive at a contradiction. Let $T = \{ t : z(s) \in \Omega_{1} \text{ for all } 0 \le s \le t \}$.
+
+			Suppose $z(t^{*})$ is in $\Omega_{1}$. Then, since $\Omega_{1}$ is open, there exists a neighbourhood  $N_{\varepsilon}(z(t^{*})) \subset \Omega_{1}$. Since $z$ is continuous, there exists some $\delta > 0$ such that $z^{\text{img}}((t^{*} - \delta, t^{*} + \delta))$ is contained in $N_{\varepsilon}(z(t^{*}))$, and thus, in $\Omega_{1}$. But then $t^{*} + \delta/2$ is in $T$ and is also greater than $t^{*}$. That is, $t^{*}$ is not an upper bound of $T$, contradicting our assumption that it is the supremum of $T$. Thus, $z(t^{*})$ cannot be in $\Omega_{1}$.
+
+			Suppose $z(t^{*})$ is in $\Omega_{2}$. Then, again, since $\Omega_{2}$ is open, there exists a neighbourhood $N_{\varepsilon}(z(t^{*})) \subset \Omega_{2}$. Again, since $z$ is continuous, there exists some $\delta > 0$ such that $z^{\text{img}}((t^{*} - \delta, t^{*} + \delta))$ is contained in $N_{\varepsilon}(z(t^{*}))$, and thus, in $\Omega_{2}$. But then $t^{*} - \delta/2$ is a lesser upper bound of $T$ than $t^{*}$. This is because $t^{*}$ is an upper bound of $T$ and none of the reals between $t^{*} - \delta/2$ and $t^{*}$ are in $T$. But this contradicts that $t^{*}$ is the supremum of $T$. Thus, $z(t^{*})$ cannot be in $\Omega_{2}$ either.
+
+			Since $z(t^{*}) \in \Omega$, but not in $\Omega_{1}$ or $\Omega_{2}$ which cover $\Omega$, we have a contradiction. Thus, our assumption that there exist disjoint open sets $\Omega_{1}$ and $\Omega_{2}$ with $\Omega = \Omega_{1} \cup \Omega_{2}$ must be false.
 	\end{enumerate}
 \end{solution}
 
@@ -88,6 +96,78 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item First we will show that it suffices to prove the case where $z$ is some real $r$. Suppose $a \in \mathbb{C}$ with $\lvert a \rvert = 1$ gives $z = ar \in \mathbb{R}$. That is, $a = e^{i \operatorname{arg} z}$. Also let $w' = w / a$. Then
+			\[
+				\begin{split}
+					\left \lvert \frac{aw' - ar}{1 - \overline{aw'} (ar)} \right \rvert & = \lvert a \rvert \left \lvert \frac{w' - z}{1 - \lvert a \rvert^{2} \overline{w'} z} \right \rvert \\
+													  & = \left \lvert \frac{w' - r}{1 - \overline{w'} r} \right \rvert
+				\end{split}
+			\]
+			Thus, if we can show that the inequality holds in the case that $z$ is real (for $r$ and $w'$), we have the inequality for the general case of $z, w \in \mathbb{C}$. 
+
+			Suppose we have $r \in \mathbb{R}$ and $w' \in \mathbb{C}$. Comparing $(r - w)(r - \overline{w})$ and $(1 - rw)(1 - r \overline{w})$ we see
+			\[
+				(r - w)(r - \overline{w}) = r^{2} - r w - r \overline{w} + \lvert w \rvert^{2}
+			\]
+			and
+			\[
+				(1 - r w)(1 - r \overline{w}) = 1 - rw - r\overline{w} + r^{2} \lvert w \rvert^{2}.
+			\]
+			The difference between these is
+			\[
+				\begin{split}
+					(1 - rw)(1 - r\overline{w}) - (r - w)(r - \overline{w}) & = 1 + r^{2} \lvert w \rvert^{2} - r^{2} - \lvert w \rvert^{2} \\
+												& = (1 - r^{2})(1 - \lvert w \rvert^{2})
+				\end{split}	
+			\]
+			which is positive when $\lvert w \rvert < 1$ and $\lvert r \rvert < 1$ and zero when $\lvert w \rvert = 1$ or $\lvert r \rvert = 1$. That is
+			\[
+				\begin{split}
+					\frac{(r - w)(r - \overline{w})}{(1 - rw)(1 - r\overline{w})} & = \frac{(r - w) \overline{(r - w)}}{(1 - r \overline{w}) \overline{(1 - r \overline{w})}} \\
+												      & = \left \lvert \frac{w - r}{1 - \overline{w} r} \right \rvert \le 1
+				\end{split}
+			\]
+			for $\lvert w \rvert, \lvert r \rvert \le 1$ with equality if and only if one of $\lvert w \rvert$ or $\lvert r \rvert$ is $1$. That is, we have the inequality in the case of real $z$, and thus, in the general case.
+		\item
+			\begin{enumerate}[label = (\roman*)]
+				\item Since we have a fixed $w \in \mathbb{C}$ with $\lvert w \rvert < 1$, and any $z \in \mathbb{D}$ has $\lvert z \rvert \le 1$, by part (a), $\lvert F(z) \rvert \le 1$ for any $z \in \mathbb{D}$, and thus, $F(z) \in \mathbb{D}$.
+
+					We can see that $F$ is holomorphic as it is the quotient of two holomorphic functions and $1 - \overline{w} z \neq 0$ since $\lvert \overline{w} z \rvert = \lvert w \rvert \lvert z \rvert < 1$.
+				\item We just compute $F(0)$ and $F(w)$ ---
+					\[
+						\begin{split}
+							F(0) & = \frac{w - 0}{1 - \overline{w} 0} \\
+							     & = w/1 \\
+							     & = w.
+						\end{split}
+					\]
+					\[
+						\begin{split}
+							F(w) & = \frac{w - w}{1 - \overline{w} w} \\
+							     & = \frac{0}{1 - \lvert w \rvert^{2}} \\
+							     & = 0.
+						\end{split}
+					\]
+				\item It follows directly from part (a) that if $\lvert z \rvert = 1$, $\lvert F(z) \rvert = 1$.
+				\item We compute $F \circ F$.
+					\[
+						\begin{split}
+							F \circ F(z) & = F \left ( \frac{w - z}{1 - \overline{w} z} \right ) \\
+								     & = \frac{w - \frac{w - z}{1 - \overline{w} z}}{1 - \overline{w} \frac{w - z}{1 - \overline{w} z}} \\
+								     & = \frac{w(1 - \overline{w} z) - w + z}{1 - \overline{w} z - \overline{w}(w - z)} \\
+								     & = \frac{w - \lvert w \rvert^{2} z - w + z}{1 - \overline{w} z - \lvert w \rvert^{2} + \overline{w} z} \\
+								     & = \frac{(1 - \lvert w \rvert^{2}) z}{(1 - \lvert w \rvert^{2})} \\
+								     & = z.
+						\end{split}
+					\]
+				Since $F$ is its own inverse, $F$ is bijective.
+			\end{enumerate}
+	\end{enumerate}
+	
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[9]
@@ -102,16 +182,86 @@
 	is holomorphic in the region $r > 0$ and $-\pi < \theta < \pi$.
 \end{problem}
 
+\begin{solution}
+	If we compute all the partials, using the original Cauchy-Riemann equations we see that the polar form pops out. For the first equation ---
+	\[
+		\begin{split}
+			\frac{\partial u}{\partial r} & = \frac{\partial u}{\partial x} \frac{\partial x}{\partial r} + \frac{\partial u}{\partial y} \frac{\partial y}{\partial r} \\
+						      & = \frac{\partial u}{\partial x} \cos{\theta} + \frac{\partial u}{\partial y} \sin{\theta}
+		\end{split}
+	\]
+	\[
+		\begin{split}
+			\frac{\partial v}{\partial \theta} & = \frac{\partial v}{\partial x} \frac{\partial x}{\partial \theta} + \frac{\partial v}{\partial y} \frac{\partial y}{\partial \theta} \\
+							   & = - \frac{\partial v}{\partial x} r \sin{\theta} + \frac{\partial v}{\partial y} r \cos{\theta} \\
+		\end{split}
+	\]
+	Substituting according to the Cauchy-Riemann equations we get
+	\[
+		\begin{split}
+			\frac{\partial v}{\partial \theta} & = r \left ( \frac{\partial u}{\partial y} \sin{\theta} + \frac{\partial u}{\partial x} \cos{\theta} \right ) \\
+							   & = r \frac{\partial u}{\partial r}
+		\end{split}
+	\]
+	as desired.
+
+	Similarly, for the second equation
+	\[
+		\begin{split}
+			\frac{\partial u}{\partial \theta} & = \frac{\partial u}{\partial x} \frac{\partial x}{\partial \theta} + \frac{\partial u}{\partial \theta} \frac{\partial y}{\partial \theta} \\
+						      & = - \frac{\partial u}{\partial x} r \sin{\theta} + \frac{\partial u}{\partial y} r \cos{\theta}
+		\end{split}
+	\]
+	\[
+		\begin{split}
+			\frac{\partial v}{\partial \theta} & = \frac{\partial v}{\partial x} \frac{\partial x}{\partial r} + \frac{\partial v}{\partial y} \frac{\partial y}{\partial r} \\
+							   & = \frac{\partial v}{\partial x} \cos{\theta} + \frac{\partial v}{\partial y} \sin{\theta} \\
+		\end{split}
+	\]
+	Substituting according to the Cauchy-Riemann equations we get
+	\[
+		\begin{split}
+			\frac{\partial v}{\partial \theta} & = \frac{1}{r} \left (- \frac{\partial u}{\partial y} r \cos{\theta} + \frac{\partial u}{\partial x} r \sin{\theta} \right ) \\
+							   & = - \frac{1}{r} \frac{\partial u}{\partial \theta}
+		\end{split}
+	\]
+	as desired.
+
+	We can write the log function as $u + i v$ where $u(r e^{i \theta}) = \log r$ and $v(r e^{i \theta}) = \theta$. Thus, for $u_{r} = 1 / r$ which is continuous for $r > 0$ and $v_{\theta} = 1$ which is continuous for $-\pi < \theta < \pi$. Thus $u_{r} = v_{\theta} / r$. $u_{\theta} = v_{r} = 0$ always. That is, $u, v$ are continuously differentiable and satisfy the Cauchy-Riemann equations for $r > 0$ and $- \pi < \theta < \pi$. Thus, $\log$ must be holomorphic.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[11]
 	Use Exercise 10 to prove that if $f$ is holomorphic in the open set $\Omega$, then the real and imaginary parts of $f$ are \emph{harmonic}; that is, their Laplacian is zero.
 \end{problem}
 
+\begin{solution}
+	We already know that if $f$ is holomorphic, ${\partial f}/{\partial \overline{z}} = 0$. Let $f = u + i v$. Then,
+	\[
+		\begin{split}
+			\Delta u + i \Delta v & = \Delta(u + iv) \\
+					      & = \Delta f \\
+					      & = 4 \frac{\partial }{\partial z} \left ( \frac{\partial f}{\partial \overline{z}} \right ) \\
+					      & = 0.
+		\end{split}
+	\]
+	We also know that if $f$ is holomorphic, $\partial f / \partial z = 2 \partial u/ \partial z$. Thus,
+	\[
+		\begin{split}
+			\Delta u & = 4 \frac{\partial }{\partial \overline{z}} \left ( \frac{\partial u}{\partial z} \right ) \\
+				 & = 8 \frac{\partial }{\partial \overline{z}} \left ( \frac{\partial f}{\partial z} \right ) \\
+				 & = 8 \frac{\partial }{\partial z} \left ( \frac{\partial f}{\partial \overline{z}} \right ) \\
+				 & = 0.
+		\end{split}
+	\]
+	Thus, $0 + i \Delta v = 0$, and $\Delta v = 0$.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[13]
-	Suppose that $f$ is holomorphic in an open set $\Omega$. Prove that in any one of the following cases:
+	Suppose that $f$ is holomorphic in a connected open set $\Omega$. Prove that in any one of the following cases:
 	\begin{enumerate}
 		\item $\operatorname{Re}(f)$ is constant;
 		\item $\operatorname{Im}(f)$ is constant;
@@ -119,5 +269,83 @@
 	\end{enumerate}
 	one can conclude that $f$ is constant.
 \end{problem}
+
+\begin{solution}
+	Write $f = u + iv$. Note that since $\Omega$ is open and connected, it is also path-connected with piecewise-smooth paths.
+	\begin{enumerate}
+		\item If $\operatorname{Re} f$ is constant, then $u$ is constant. Thus,
+			 \[
+				\frac{\partial u}{\partial x} = \frac{\partial u}{\partial y} = 0.
+			\]
+			By the Cauchy-Riemann equations, we must also have
+			\[
+				\frac{\partial v}{\partial y} = \frac{\partial u}{\partial x} = 0
+			\]
+			and
+			\[
+				\frac{\partial v}{\partial x} = - \frac{\partial u}{\partial y} = 0.
+			\]
+			By multivariable calculus, we can see that line integrals of the derivatives of  $u$ and $v$ are $0$ between any two points in $\Omega$. Since $\Omega$ is path-connected, the difference in the values of $u$ or $v$ at any two points in $\Omega$ is $0$. That is, $f$ is constant.
+		\item If $\operatorname{Im} f$ is constant, then $v$ is constant. Thus,
+			 \[
+				\frac{\partial u}{\partial x} = \frac{\partial u}{\partial y} = 0.
+			\]
+			By the Cauchy-Riemann equations, we must also have
+			\[
+				\frac{\partial v}{\partial y} = \frac{\partial u}{\partial x} = 0
+			\]
+			and
+			\[
+				\frac{\partial v}{\partial x} = - \frac{\partial u}{\partial y} = 0.
+			\]
+			By multivariable calculus, we can see that line integrals of the derivatives of  $u$ and $v$ are $0$ between any two points in $\Omega$. Since $\Omega$ is path-connected, the difference in the values of $u$ or $v$ at any two points in $\Omega$ can be obtained as the line integral of their derivatives and is $0$. That is, $f$ is constant.
+
+		\item If $\operatorname{Im} f$ is constant, then $v$ is constant. Thus,
+			 \[
+				\frac{\partial v}{\partial x} = \frac{\partial v}{\partial y} = 0.
+			\]
+			By the Cauchy-Riemann equations, we must also have
+			\[
+				\frac{\partial u}{\partial x} = \frac{\partial v}{\partial y} = 0
+			\]
+			and
+			\[
+				\frac{\partial u}{\partial y} = - \frac{\partial v}{\partial x} = 0.
+			\]
+			By the same argument as in part (b), $f$ must be constant.
+		\item If $\lvert f \rvert$ is constant, so is $\lvert f \rvert^{2} = u^{2} + v^{2}$. Thus, 
+			\[
+				2 \left ( u \frac{\partial u}{\partial x} + v \frac{\partial v}{\partial x} \right ) = 0
+			\]
+			and
+			\[
+				2 \left ( u \frac{\partial u}{\partial y} + v \frac{\partial v}{\partial y} \right ) = 0.
+			\]
+			If $u$ or $v$ is constant, we are already done. Thus, we can assume $u, v \neq 0$. Thus,
+			\[
+				\begin{split}
+					\frac{u}{v} \frac{\partial u}{\partial x} & = - \frac{\partial v}{\partial x} \\
+										  & = \frac{\partial u}{\partial y}.
+				\end{split}
+			\]
+			and
+			\[
+				\begin{split}
+					\frac{u}{v} \frac{\partial u}{\partial y} & = - \frac{\partial v}{\partial y} \\
+										  & = - \frac{\partial u}{\partial x}.
+				\end{split}
+			\]
+			The linear system
+			\begin{align*}
+				\frac{u}{v} \frac{\partial u}{\partial x} - \frac{\partial u}{\partial y} & = 0 \\
+				\frac{\partial u}{\partial x} + \frac{u}{v} \frac{\partial u}{\partial y} & = 0
+			\end{align*}
+			has the unique solution
+			\[
+				\frac{\partial u}{\partial x} = \frac{\partial u}{\partial y} = 0
+			\]
+			which we know (by part (a)) will give $f$ constant.
+	\end{enumerate}
+\end{solution}
 
 \end{document}
