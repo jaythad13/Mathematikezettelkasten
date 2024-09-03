@@ -66,6 +66,28 @@ I collaborated with Kai Mawhinney on this homework assignment. We used the same 
 			Suppose $z(t^{*})$ is in $\Omega_{2}$. Then, again, since $\Omega_{2}$ is open, there exists a neighbourhood $N_{\varepsilon}(z(t^{*})) \subset \Omega_{2}$. Again, since $z$ is continuous, there exists some $\delta > 0$ such that $z^{\text{img}}((t^{*} - \delta, t^{*} + \delta))$ is contained in $N_{\varepsilon}(z(t^{*}))$, and thus, in $\Omega_{2}$. But then $t^{*} - \delta/2$ is a lesser upper bound of $T$ than $t^{*}$. This is because $t^{*}$ is an upper bound of $T$ and none of the reals between $t^{*} - \delta/2$ and $t^{*}$ are in $T$. But this contradicts that $t^{*}$ is the supremum of $T$. Thus, $z(t^{*})$ cannot be in $\Omega_{2}$ either.
 
 			Since $z(t^{*}) \in \Omega$, but not in $\Omega_{1}$ or $\Omega_{2}$ which cover $\Omega$, we have a contradiction. Thus, our assumption that there exist disjoint open sets $\Omega_{1}$ and $\Omega_{2}$ with $\Omega = \Omega_{1} \cup \Omega_{2}$ must be false.
+		\item 
+			It's clear that $\Omega_{1} \sqcup \Omega_{2} = \Omega$ --- every point in $\Omega$ is either path-connected to $w$ or not. Now we show $\Omega_{1}$ and $\Omega_{2}$ are open.
+
+			Suppose $w_{1} \in \Omega_{1}$. By the openness, of $\Omega$, we have some  $N_{r}(w_{1}) \subset \Omega$. Since this open neighbourhood is path connected, we can show that $N_{r}(w_{1}) \subset \Omega_{1}$ as well, by fusing the curve that connects $w$ to $w_{1}$ and the curve that connects $w_{1}$ and any other $w_{1}' \in N_{r}(w_{1})$ to form a piecewise smooth curve. Specifically, if $w$ and $w_{1}$ are connected by $\alpha$ parametrised by $z_{\alpha} : [0, 1] \to \Omega$ and $w_{1}$ and $w_{1}'$ are connected by $\beta$, parametrised by $z_{\beta} : [0, 1] \to N_{r}(w_{1})$, consider the curve $\gamma$ parametrised by
+			\[
+				z_{\gamma}(t) = \begin{cases}
+					z_{\alpha}(2t) & t \le 1/2 \\
+					z_{\beta}(2(t - 1/2)) & t > 1/2.
+				\end{cases}
+			\]
+			$\gamma$ is piecewise smooth since $z_{\gamma}$ has at most one more non-smooth point than $z_{\alpha}$ and $z_{\beta}$ combined (at $t = 1/2$). Thus, $N_{r}(w_{1}) \subset \Omega_{1}$ as well, giving us that $\Omega_{1}$ is open.
+
+			We can use a similar argument to show that $\Omega_{2}$ is open. For any $w_{2} \in \Omega_{2}$, consider $N_{r}(w_{2}) \subset \Omega$. Suppose by way of contradiction that there is some $w_{2}' \in N_{r}(w_{2}) \cap \Omega_{1}$ with a path $\alpha$ that connects $w$ to $w_{2}'$. Since $N_{r}(w_{2})$ is path-connected, $w_{2}'$ is connected to $w_{2}$ by a path $\beta$. Then, the path $\gamma$ parametrised by
+			\[
+				z_{\gamma}(t) = \begin{cases}
+					z_{\alpha}(2t) & t \le 1/2 \\
+					z_{\beta}(2(t - 1/2)) & t > 1/2.
+				\end{cases}
+			\]
+			connects $w$ to $w_{2}$, contradicting our assumption that $w_{2} \in \Omega_{2}$. Thus, $N_{r}(w_{2}) \cap \Omega_{1}$ is empty, or equivalently, $N_{r}(w_{2}) \subset \Omega_{2}$. Thus, $\Omega_{2}$ is open.
+
+			Note that $\Omega_{1}$ is non-empty since the curve that is constant at $w$ gives us $w \in \Omega_{1}$. Since $\Omega$ is connected, any pair of disjoint open sets that covers $\Omega$ must have one empty set. We know $\Omega_{1}$ is non-empty, so $\Omega_{2}$ is empty. Thus, $\Omega_{1} = \Omega$. For any point $w \in \Omega$, every other point is path-connected to $w$. Thus, $\Omega$ is path-connected.
 	\end{enumerate}
 \end{solution}
 
@@ -285,21 +307,7 @@ I collaborated with Kai Mawhinney on this homework assignment. We used the same 
 			\[
 				\frac{\partial v}{\partial x} = - \frac{\partial u}{\partial y} = 0.
 			\]
-			By multivariable calculus, we can see that line integrals of the derivatives of  $u$ and $v$ are $0$ between any two points in $\Omega$. Since $\Omega$ is path-connected, the difference in the values of $u$ or $v$ at any two points in $\Omega$ is $0$. That is, $f$ is constant.
-		\item If $\operatorname{Im} f$ is constant, then $v$ is constant. Thus,
-			 \[
-				\frac{\partial u}{\partial x} = \frac{\partial u}{\partial y} = 0.
-			\]
-			By the Cauchy-Riemann equations, we must also have
-			\[
-				\frac{\partial v}{\partial y} = \frac{\partial u}{\partial x} = 0
-			\]
-			and
-			\[
-				\frac{\partial v}{\partial x} = - \frac{\partial u}{\partial y} = 0.
-			\]
-			By multivariable calculus, we can see that line integrals of the derivatives of  $u$ and $v$ are $0$ between any two points in $\Omega$. Since $\Omega$ is path-connected, the difference in the values of $u$ or $v$ at any two points in $\Omega$ can be obtained as the line integral of their derivatives and is $0$. That is, $f$ is constant.
-
+			Thus, $f' = {\partial f}/{\partial z} = 0$ everywhere, and by Corollary 3.4, $f$ is constant on  $\Omega$.
 		\item If $\operatorname{Im} f$ is constant, then $v$ is constant. Thus,
 			 \[
 				\frac{\partial v}{\partial x} = \frac{\partial v}{\partial y} = 0.
@@ -344,7 +352,7 @@ I collaborated with Kai Mawhinney on this homework assignment. We used the same 
 			\[
 				\frac{\partial u}{\partial x} = \frac{\partial u}{\partial y} = 0
 			\]
-			which we know (by part (a)) will give $f$ constant.
+			which we know, by part (a), will give $f$ constant.
 	\end{enumerate}
 \end{solution}
 
