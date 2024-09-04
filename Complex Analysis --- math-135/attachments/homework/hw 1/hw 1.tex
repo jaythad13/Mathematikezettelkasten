@@ -28,8 +28,9 @@ I collaborated with Kai Mawhinney on this homework assignment. We used the same 
 			\]
 			Geometrically, this is all points below the line
 			 \[
-				 y = \frac{a_{1} x  + b_{1}}{a_2}.
+				 y = \frac{a_{1} x  + b_{1}}{a_2}
 			\]
+			or, if $a_{2} = 0$, all points to the right of the line $x = -b_{1} / a_{1}$.
 			Another way to describe the set is all $z$ such that the angle subtended between $z$ and the imaginary axis, after translation by $b$ is less than the angle subtended between $a$ and the real axis.
 		\item Note that the equality is equivalent to squaring both sides as long as we make sure $\operatorname{Re} z + 1 \ge 0$. If we write $z = x + y i$, this is all $x + y i$ with $x > - 1$ and
 			\[
@@ -87,7 +88,13 @@ I collaborated with Kai Mawhinney on this homework assignment. We used the same 
 			\]
 			connects $w$ to $w_{2}$, contradicting our assumption that $w_{2} \in \Omega_{2}$. Thus, $N_{r}(w_{2}) \cap \Omega_{1}$ is empty, or equivalently, $N_{r}(w_{2}) \subset \Omega_{2}$. Thus, $\Omega_{2}$ is open.
 
-			Note that $\Omega_{1}$ is non-empty since the curve that is constant at $w$ gives us $w \in \Omega_{1}$. Since $\Omega$ is connected, any pair of disjoint open sets that covers $\Omega$ must have one empty set. We know $\Omega_{1}$ is non-empty, so $\Omega_{2}$ is empty. Thus, $\Omega_{1} = \Omega$. For any point $w \in \Omega$, every other point is path-connected to $w$. Thus, $\Omega$ is path-connected.
+			Note that $\Omega_{1}$ is non-empty since we $w$ is path-connected to itself. Specifically, given a neighbourhood $N_{r}(w) \subset \Omega$, the curve $\gamma$ parametrised by
+			\[
+				z_{\gamma}(t) = (w - r/3) + \frac{r}{3} e^{2 \pi t i}
+			\]
+			connects $w$ to itself.
+
+			Since $\Omega$ is connected, any pair of disjoint open sets that covers $\Omega$ must have one empty set. We know $\Omega_{1}$ is non-empty, so $\Omega_{2}$ is empty. Thus, $\Omega_{1} = \Omega$. For any point $w \in \Omega$, every other point is path-connected to $w$. Thus, $\Omega$ is path-connected.
 	\end{enumerate}
 \end{solution}
 
@@ -102,7 +109,7 @@ I collaborated with Kai Mawhinney on this homework assignment. We used the same 
 			\]
 			and also that
 			\[
-					\left \lvert \frac{w - z}{1 - \overline{w} z} \right \rvert = 1 \text{ if } \lvert z \rvert = 1 \text{ or } \lvert w \rvert < 1,
+					\left \lvert \frac{w - z}{1 - \overline{w} z} \right \rvert = 1 \text{ if } \lvert z \rvert = 1 \text{ or } \lvert w \rvert = 1,
 			\]
 		\item Prove that for a fixed $w$ in the unit disk $\mathbb{D}$, the mapping
 			\[
@@ -272,8 +279,8 @@ I collaborated with Kai Mawhinney on this homework assignment. We used the same 
 	\[
 		\begin{split}
 			\Delta u & = 4 \frac{\partial }{\partial \overline{z}} \left ( \frac{\partial u}{\partial z} \right ) \\
-				 & = 8 \frac{\partial }{\partial \overline{z}} \left ( \frac{\partial f}{\partial z} \right ) \\
-				 & = 8 \frac{\partial }{\partial z} \left ( \frac{\partial f}{\partial \overline{z}} \right ) \\
+				 & = 2 \frac{\partial }{\partial \overline{z}} \left ( \frac{\partial f}{\partial z} \right ) \\
+				 & = 2 \frac{\partial }{\partial z} \left ( \frac{\partial f}{\partial \overline{z}} \right ) \\
 				 & = 0.
 		\end{split}
 	\]
