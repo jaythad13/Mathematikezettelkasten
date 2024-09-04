@@ -2,6 +2,7 @@
 tags:
 - math-135/1
 - math-135/2
+- math-135/3
 - anal
 ---
 
@@ -61,13 +62,23 @@ An exercise in [[Complex Analysis --- math-135/attachments/homework/hw 1/hw 1.pd
 
 If $\Omega \subset \mathbb{C}$ is open, $\Omega$ is connected if and only if $\Omega$ is path-connected.
 
-### Convergence
+### Sequences and convergence
 
 Things you should know are
 - What a convergent sequence is
 - That convergence happens component-wise — convergence is equivalent to convergence of real and imaginary parts
 - What Cauchy sequences are
 - What completeness is.
+
+##### _definition:_ uniform convergence
+
+We say $f_{n}$ converges uniformly to $f$ on $A \subset \mathbb{C}$ if, for each $\varepsilon$, there is a single $N$ that gives $n > N \implies \lvert f_{n}(a) - f(a) \rvert < \varepsilon$ for all points $a \in A$.
+
+##### _proposition:_ Weierstrass $M$-test
+
+##### _proposition:_ root test
+
+
 
 ### Continuity
 
