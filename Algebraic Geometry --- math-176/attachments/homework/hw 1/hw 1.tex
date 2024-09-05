@@ -15,6 +15,46 @@
 	\]
 \end{problem}
 
+\begin{solution}
+	Write $t = m/n$. Then, substituting  $a = t(c - b)$. Then, since $(a, b, c)$ is a solution,
+	\[
+		t^{2}(c - b)^{2} - t(c - b)b + b^{2} = c^{2}.
+	\]
+	which we can rewrite as
+	\[
+		t^{2} (c - b)^{2} - t(c - b)b - (c - b)(c + b) = 0.
+	\]
+	If $c - b = 0$, the triangle must be an equilateral triangle, giving us $(a : b : c) = (1 : 1 : 1)$. In any other case, we must have
+	\[
+		(c - b) t^{2} - bt - (c + b) = 0.
+	\]
+	We can solve this for $b/c$.
+	\[
+		c t^{2} - c = b(t^{2} + t + 1)
+	\]
+	and thus,
+	\[
+		\begin{split}
+			\frac{b}{c} & = \frac{t^{2} - 1}{t^{2} + t + 1} \\
+				    & = \frac{m^{2} - n^{2}}{m^{2} + mn + n^{2}}.
+		\end{split}
+	\]
+	Note then that we must have
+	\[
+		\begin{split}
+			\frac{a}{b} & = \frac{t(c - b)}{b} \\
+				    & = t \frac{c}{b} - t \\
+				    & = \frac{t(t^{2} + t + 1) - t(t^{2} - 1)}{t^{2} - 1} \\
+				    & = \frac{t^{2} + 2t}{t^{2} - 1} \\
+				    & = \frac{m^{2} + 2mn}{m^{2} - n^{2}}.
+		\end{split}
+	\]
+	With these two ratios, we have exactly the result we wanted ---
+	\[
+		(a : b : c) = (m^{2} + 2mn : m^{2} - n^{2} : m^{2} + mn + n^{2}).
+	\]
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[2]
