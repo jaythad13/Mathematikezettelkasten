@@ -1,6 +1,7 @@
 ---
 tags:
 - math-131/2
+- math-131/3
 - anal
 ---
 
@@ -16,6 +17,6 @@ We say that an ordered set $S$ has the least upper bound property if any subset 
 
 ##### _definition:_ the reals, $\mathbb{R}$
 
-The set of all real numbers $\mathbb{R}$, is the smallest ordered field containing $\mathbb{Q}$, with the least upper bound property.
+The set of all real numbers $\mathbb{R}$, is the smallest ordered [[Abstract Algebra I --- math-171/notes/Fields|field]] containing $\mathbb{Q}$ with the least upper bound property.
 
-Note that hear the least upper bound property is equivalent to the "greatest lower bound property" — since $\mathbb{R}$ is an ordered field, we can look at $-A = \{ -a \mid a \in A \}$ for any $A$ bounded below. $-A$ will be bounded above, and $- \sup(-A)$ will be a lower bound for $A$.
+Note that hear the least upper bound property is equivalent to the "greatest lower bound property" — since $\mathbb{R}$ is an ordered field, we can look at $-A = \{ -a \mid a \in A \}$ for any $A$ bounded below. $-A$ will be bounded above, and $- \sup(-A)$ will be a lower bound for $A$, and in fact with a little work, we can show that it is the infimum. Alternatively, one could consider $\sup B$ for $B = \{ x \mid x \text{ is a lower bound of } A \}$. It almost follows as a tautology that $\inf A = \sup B$.
