@@ -56,7 +56,9 @@ $\Omega \subset \mathbb{C}$ is a region if it is open and connected.
 
 $\Omega \subset \mathbb{C}$ is path-connected if for all $a, b \in \Omega$, there exists a continuous path $\gamma : [0, 1] \to \Omega$ with $\gamma(0) = a$ and $\gamma(1) = b$.
 
-An exercise in [[Complex Analysis --- math-135/attachments/homework/hw 1/hw 1.pdf|the homework]] is
+[[Complex Analysis --- math-135/notes/Complex integration#_definition _ (oriented) curve, curve parametrisation|When integrating on curves]] we will see why it's convenient to require a continuously smooth path with non-zero derivative everywhere.
+
+The following is proved as an exercise in [[Complex Analysis --- math-135/attachments/homework/hw 1/hw 1.pdf#page=2|the homework]].
 
 ##### _proposition:_ path-connectedness and connectedness are equivalent on open sets
 
@@ -72,13 +74,17 @@ Things you should know are
 
 ##### _definition:_ uniform convergence
 
-We say $f_{n}$ converges uniformly to $f$ on $A \subset \mathbb{C}$ if, for each $\varepsilon$, there is a single $N$ that gives $n > N \implies \lvert f_{n}(a) - f(a) \rvert < \varepsilon$ for all points $a \in A$.
+We say the sequence of functions $(f_{n})$ converges uniformly to $f$ on $A \subset \mathbb{C}$ if, for each $\varepsilon$, there is a single $N$ that gives $n > N \implies \lvert f_{n}(a) - f(a) \rvert < \varepsilon$ for all points $a \in A$.
 
-##### _proposition:_ Weierstrass $M$-test
+##### _theorem:_ Weierstrass $M$-test
+
+Suppose each function in the sequence of functions $(f_{n})$ is bounded on $A \subset \mathbb{C}$ by $\lvert f_{n}(a) \rvert \le M_{n}$ for all $a \in A$ and some sequence of real numbers $(M_{n})$. Then $\sum_{n \ge 0} f_{n}$ converges uniformly on $A$ if $\sum_{n \ge 0} M_{n}$ converges. 
 
 ##### _proposition:_ root test
 
-
+Given $\sum_{n \ge 0} a_{n}$, let $\alpha = \limsup_{n \to \infty} \lvert a_{n} \rvert^{1/n}$. Then
+1) if $\alpha > 1$, the series diverges
+2) if $\alpha < 1$, the series converges.
 
 ### Continuity
 
@@ -104,6 +110,7 @@ Things you should know are
 $f: A \to B$ is uniformly continuous on $A$ if for every $\varepsilon > 0$ there is a single $\delta > 0$ that gives $\lvert z - a \rvert < \delta \implies \lvert f(z) - f(a) \rvert < \varepsilon$ for all points $a \in A$.
 
 It's also important that we know the distance lemma — that there is a positive distance between disjoint closed and compact sets
+
 ##### _proposition:_ distance lemma
 
 There is some minimum distance $\rho$ such that $\lvert z_{K} - z_{F} \rvert > \rho$ for any $z_{K} \in K$ and $z_{F} \in F$ where $K$ is compact and $F$ is closed.
@@ -111,3 +118,11 @@ There is some minimum distance $\rho$ such that $\lvert z_{K} - z_{F} \rvert > \
 ###### _proof sketch:_
 
 Note that every point in the compact set is inside the open complement of the closed set. This means you can draw neighbourhoods around each of its points that don't intersect with the closed set. Then do the standard compactness trick.
+
+##### _proposition:_ shrinking nested compact sets
+
+If $K_{1} \supset K_{2} \supset \cdots$ is a sequence of nested compact sets with $\lim_{ n \to \infty } \operatorname{diam}(K_{n}) = 0$, their intersection is a single point.
+
+###### _proof sketch:_
+
+Consider a sequence with one point $w_{n}$ in each $K_{n}$. The sequence must converge to some $w$ since $\operatorname{diam}(K_{n}) \to 0$, and $w \in K_{n}$ since the sets are compact. The point must be the only point in the intersection — otherwise none of the sets could have diameter less than the distance between the two points of their intersection.

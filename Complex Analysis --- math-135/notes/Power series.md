@@ -20,7 +20,7 @@ Given any power series, there exists $R \in [0, \infty]$ such that
 
 ###### _proof sketch:_
 
-The [[Complex Analysis --- math-135/notes/(Metric) topology review#_proposition _ root test|root test]] gives us that $\limsup \lvert a_{n} z^n \rvert ^{1/n}$ should be less than $1$. For this, we just need
+The [[Complex Analysis --- math-135/notes/(Metric) topology review#_proposition _ root test|root test]] gives us that $\limsup_{n \to \infty} \lvert a_{n} z^n \rvert ^{1/n}$ should be less than $1$. That is, $R = 1/\limsup_{n \to \infty} \lvert a_{n} \rvert^{1 / n}$.
 
 The theorem that should follow is that the derivative of a convergent power series is the obvious one.
 
@@ -47,7 +47,7 @@ $$
  & + \frac{E_{N}(z_{0} + h) - E_{N}(z_{0})}{h}
 \end{split}
 $$
-The first two terms converge for obvious reasons for $h$ inside the radius of convergence. In particular, choose $h$ so that $\lvert z_{0} + h \rvert < r< R$. The last term is more complicated. Write it as a difference of squares, then show it is bounded by the tail of the convergent sequence $\sum_{n \ge 0} n a_{n} r^{n - 1}$. Then the tail of convergent series should converge. Thus, everything converges under taking limits as $N \to \infty$ and $h \to 0$.
+The first two terms converge for obvious reasons for $h$ inside the radius of convergence. In particular, choose $h$ so that $\lvert z_{0} + h \rvert < r< R$. The last term is more complicated. Write it as a difference of squares, then show it is bounded by the tail of the convergent sequence $\sum_{n \ge 0} n a_{n} r^{n - 1}$. Then the tail of convergent series should converge to $0$. Thus, everything converges under taking limits as $N \to \infty$ and $h \to 0$.
 
 Note —
 
