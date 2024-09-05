@@ -11,9 +11,24 @@
 \begin{problem}[1.]
 	Let $a_{0} \in \mathbb{N}$, and $a_{1}, a_{2}, \dots \in \{ 0, \dots, 9 \}$. Prove that for any  $j \in \mathbb{N}$,
 	\[
-		\sup \{ a_{0}.a_{1} \cdots a_{k} \} = \sup \{ a_{0}.a_{1} \cdots a_{k} \}
+		\sup \{ a_{0}.a_{1} \cdots a_{k} \mid k \ge 0 \} = \sup \{ a_{0}.a_{1} \cdots a_{k} \mid k \ge j \}
 	\]
 \end{problem}
+
+\begin{solution}
+	We will show that $\alpha = a_{0}.a_{1} a_{2} \dots$ is the supremum of both sets.
+
+	First, we show that $\alpha$ is an upper bound of both sets. Any element of either set must be of the form $a_{0}.a_{1} \cdots a_{k}$ for some $k \in \mathbb{N}$. But $a_{0}.a_{1} \cdots a_{k} \le a_{0}.a_{1} \cdots a_{k} a_{k + 1}$ and thus, $a_{0}.a_{1} \cdot a_{k} \le \alpha$. Thus, $\alpha$ is an upper bound of both sets.
+
+	Now we will show that no $\beta < \alpha$ can be an upper bound of either set. If $\beta = b_{0}.b_{1} b_{2} \cdots < \alpha$, then there must be some first $i$ such that $\beta$'s decimal expansion up to $i$ is less than that $\alpha$'s --- at $i$, we must have $b_{0}.b_{1} \cdots b_{i} < a_{0}.a_{1} \cdots a_{i}$. If $i \ge j$, we both sets would contain $a_{0}.a_{1} \cdots a_{i} > b_{0}.b_{1} \cdots b_{i}$, and thus $a_{0}.a_{1} \cdots a_{i} > \beta$. If $i < j$ then
+	 \[
+		a_{0}.a_{1} \cdots a_{i} \cdots a_{j} \ge a_{0}.a_{1} \cdots a_{i} > \beta.
+	\]
+	Thus, no $\beta < \alpha$ can be an upper bound of either set, and thus, $\alpha$ is the supremum of both sets ---
+	\[
+		\sup \{ a_{0}.a_{1} \cdots a_{k} \mid k \ge 0 \} = \alpha = \sup \{ a_{0}.a_{1} \cdots a_{k} \mid k \ge j \}.
+	\]
+\end{solution}
 
 \pagebreak
 
@@ -21,11 +36,52 @@
 	If $x, y$ are non-negative real numbers, prove that $x + y = y + x$ and that $xy = yx$.
 \end{problem}
 
+\begin{solution}
+	Suppose $x = x_{0}.x_{1} x_{2} \cdots$ and $y = y_{0}.y_{1} y_{2} \cdots$ with $x_{0}, y_{0} \ge 0$.
+
+	First we will show $x + y = y + x$. By definition,
+	\[
+		x + y = \sup \{ x_{0}.x_{1} \cdots x_{n} + y_{0}.y_{1} \cdots y_{n} \mid n \in \mathbb{N} \}.
+	\]
+	Notice that $x_{0}.x_{1} \cdots x_{n} + y_{0}.y_{1} \cdots y_{n} = y_{0}.y_{1} \cdot y_{n} + x_{0}.x_{1} \cdots x_{n}$ because addition of rationals is commutative. Thus,
+	 \[
+		\begin{split}
+			x + y & = \sup \{ x_{0}.x_{1} \cdots x_{n} + y_{0}.y_{1} \cdots y_{n} \mid n \in \mathbb{N} \} \\
+			      & = \sup \{ y_{0}.y_{1} + \cdots + y_{n} + x_{0}.x_{1} + \cdots + x_{n} \mid n \in \mathbb{N} \} \\
+			      & = y + x
+		\end{split}
+	\]
+	as desired. Note that the equality of the supremums is because the sets are equal.
+
+	Similarly, we can show that $xy = yx$. By definition,
+	\[
+		xy = \sup \{ (x_{0}.x_{1} \cdots x_{n})(y_{0}.y_{1} \cdots y_{n}) \mid n \in \mathbb{N} \}.
+	\]
+	Also $(x_{0}.x_{1} \cdots x_{n}) (y_{0}.y_{1} \cdots y_{n}) = (y_{0}.y_{1} \cdot y_{n}) (x_{0}.x_{1} \cdots x_{n})$ since multiplication is commutative in $\mathbb{Q}$. Thus,
+	\[
+		\begin{split}
+			xy & = \sup \{ (x_{0}.x_{1} \cdots x_{n})(y_{0}.y_{1} \cdots y_{n}) \mid n \in \mathbb{N} \} \\
+			      & = \sup \{ (y_{0}.y_{1} \cdot y_{n}) (x_{0}.x_{1} \cdots x_{n}) \mid n \in \mathbb{N} \} \\
+			      & = yx
+		\end{split}
+	\]
+	as desired. Again, the equality of the supremums is because the sets are equal.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[3.]
 	If $x$, $y$, and $z$ are non-negative real numbers with $x < y$, prove that $x + z < y + z$.
 \end{problem}
+
+\begin{solution}
+	Suppose $x = x_{0}.x_{1} x_{2} \cdots$, $y = y_{0}.y_{1} y_{2} \cdots$, and  $z = z_{0}.z_{1} z_{2} \cdots$ where $x_{0}, y_{0}, z_{0} \ge 0$.
+
+	If $x < y$, we know that $x_{0}.x_{1} \cdots x_{n} < y_{0}.y_{1} \cdots y_{n}$ for each $n \in \mathbb{N}$. Since the rationals are an ordered field, $x_{0}.x_{1} \cdots x_{n} + z_{0}.z_{1} \cdots z_{n} < y_{0}.y_{1} \cdots y_{n} + z_{0}.z_{1} \cdots z_{n}$ for each $n \in \mathbb{N}$. We also know that there must be some first $i$ such that $x_{0}.x_{1} \cdots x_{i} < y_{0}.y_{1} \cdots y_{i}$, and thus, $x_{0}.x_{1} \cdots x_{n} < y_{0}.y_{1} \cdots y_{i}$ for any $n \in \mathbb{N}$. Thus,
+	\[
+		x_{0}.x_{1} \cdots x_{n} + z_{0}.z_{1} \cdots z_{n}
+	\]
+\end{solution}
 
 \pagebreak
 
@@ -44,5 +100,17 @@
 \begin{problem}[6.]
 	Prove that if $p$ and $q$ are decimal numbers then there exists an irrational number $z$ such that $p < z < q$.
 \end{problem}
+
+\begin{solution}
+	By the previous exercise, we know that there exists a (rational) decimal number $w$ with
+	\[
+		\frac{p}{\sqrt{2}} < w < \frac{q}{\sqrt{2}}.
+	\]
+	Thus,
+	\[
+		p < w  \sqrt{2} < q.
+	\]
+	Note that $w \sqrt{2}$ cannot be rational --- otherwise $(1 / w) w \sqrt{2} = \sqrt{2}$ would be rational (since the rationals have inverses and are closed under multiplication). Thus, $z = w \sqrt{2}$ is the desired irrational between $p$ and $q$.
+\end{solution}
 
 \end{document}
