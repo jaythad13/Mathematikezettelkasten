@@ -4,7 +4,7 @@ tags:
 - anal
 ---
 
-The idea of Goursat's theorem is to show that primitives exist for holomorphic functions on triangles, and use that to build up to the case of simple shapes.
+The idea of Goursat's theorem is to show that primitives exist for [[Complex Analysis --- math-135/notes/Holomorphic functions|holomorphic function]] on triangles, and use that to build up to the case of simple shapes.
 
 ##### _theorem:_ Goursat's theorem
 
