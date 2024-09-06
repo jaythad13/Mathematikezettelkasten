@@ -1,4 +1,4 @@
-Imagine *n* cars trying to park on a street with *n* parking spots. Each car goes to its preferred parking spot, and tries to park there. If that spot is occupied already, it continues down the road and tries to park in all of the remaining spots. If all cars get to park, the function that assigns each car its preferred spot is called a parking function.
+Imagine *n* cars trying to park on a one-way street with *n* parking spots. Each car goes to its preferred parking spot, and tries to park there. If that spot is occupied already, it continues down the road and tries to park in all of the remaining spots. If all cars get to park, the function that assigns each car its preferred spot is called a parking function.
 
 In our research, we defined and enumerated different types of preference restricted parking functions — parking functions where cars' preferences to some subset of the parking spots available. We considered two cases — 
 - initial segment restriction — cars preferring only the first few spots (which is equivalent to the case where there aren't enough spots)
