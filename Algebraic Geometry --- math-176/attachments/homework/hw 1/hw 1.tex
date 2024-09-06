@@ -58,7 +58,7 @@
 \pagebreak
 
 \begin{problem}[2]
-	Let $a$, $b$, $c$, and $d$ be rational numbers such that $ad$, $bd$, and $cd$ are not all zero (in particular $d$ is non-zero). Consider the intersection of the cone $z^{2} + y^{2} = z^{2}$ with a plane $ax + by + cz = d$.
+	Let $a$, $b$, $c$, and $d$ be rational numbers such that $ad$, $bd$, and $cd$ are not all zero (in particular $d$ is non-zero). Consider the intersection of the cone $x^{2} + y^{2} = z^{2}$ with a plane $ax + by + cz = d$.
 	\begin{enumerate}
 		\item Let $m$ and $n$ be integers. Show that
 			\begin{align*}
@@ -73,9 +73,81 @@
 				A x^{2} + B x y + C y^{2} + D x + E y + F & = 0 & \text{in terms of} & & B & = -2 a b & E & = 2 b d \\
 									  & & & & C & = c^{2} - b^{2} & F & = -d^{2}.
 			\end{align*}
-		\item Show that the equation $x^{2} + y^{2} + 1 = 0$ is not the intersection of a cone $x^{2} + y^{2} = z^{2}$ with a plane $ax + by + cz = d$ for any integers $a$, $b$, $c$, or $d$.
+			which has a rational point $(x_{0}, y_{0})$.
+		\item Show that the equation $x^{2} + y^{2} + 1 = 0$ is not the intersection of a cone $x^{2} + y^{2} = z^{2}$ with a plane $ax + by + cz = d$ for any integers $a$, $b$, $c$, or $d$. 
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item First we show that the point $(x, y, z)$ on the right hand side is indeed a point on the intersection of the cone and plane. It's easy to see that
+			\[
+				\begin{split}
+					ax + by + cz & = \frac{d(a(2mn) + b(m^{2} - n^{2}) + c(m^{2} + n^{2}))}{a(2mn) + b(m^{2} - n^{2}) + c(m^{2} + n^{2})} \\
+						     & = d.
+				\end{split}
+			\]
+			Since $x^{2} + y^{2} = z^{2}$ is a homogeneous equation, it suffices to show that their numerators divided by $d$ are equal (since they have the same denominator). We do so just by expanding ---
+			\[
+				\begin{split}
+					(2mn)^{2} + (m^{2} - n^{2})^{2} & = m^{4} + n^{4} - 2(mn)^{2} + 4(mn)^{2} \\
+									& = m^{4} + n^{4} + 2 m^{2} n^{2} \\
+									& = (m^{2} + n^{2})^{2}.
+				\end{split}
+			\]
+
+			Now we will sow the converse. Write $t = m/n$, and thus $x = (z - y) t$. Substituting this into the equation for the cone gives us
+			\[
+				(z - y)^{2} t^{2} = z^{2} - y^{2}
+			\]
+			and thus,
+			\[
+				t^{2} = \frac{z + y}{z - y}.
+			\]
+			Thus,
+			\[
+				\frac{y}{z} = \frac{t^{2} - 1}{t^{2} + 1}.
+			\]
+			This gives us
+			\[
+				\begin{split}
+					\frac{x}{y} & = \frac{t(z - y)}{y} \\
+						    & = t \frac{z}{y} - t \\
+						    & = \frac{t(t^{2} + 1) - t(t^{2} - 1)}{t^{2} - 1} \\
+						    & = \frac{2t}{t^{2} - 1}.
+				\end{split}
+			\]
+			Thus, $(x : y : z) = (2t : t^{2} - 1 : t^{2} + 1)$. We just need to find the scalar $\lambda$ such that $(x, y, z) = \lambda (2t, t^{2} - 1, t^{2} + 1)$. Since
+			\[
+				\lambda (a (2t) + b(t^{2} - 1) + c(t^{2} + 1)) = d
+			\]
+			we have
+			\[
+				\lambda = \frac{d}{a(2t) + b(t^{2} - 1) + c(t^{2} + 1)}.
+			\]
+			This gives us $(x, y, z)$ as desired.
+
+			Since every rational $m/n$ gives a unique rational point $(x, y, z)$, and there are infinitely many rationals, there are infinitely many rational points $(x, y, z)$ on the intersection.
+		\item We can get the conic section by substituting
+			\[
+				z = \frac{d - ax - by}{c}.
+			\]
+			into the equation of the cone --- $x^{2} + y^{2} = z^{2}$.
+			That is,
+			\[
+				\begin{split}
+					x^{2} + y^{2} & = \left ( \frac{d - ax - by}{c} \right )^{2} \\
+						      & = \frac{d^{2} + a^{2} x^{2} + b^{2} y^{2} - 2ad x - 2 bd y + 2 a b xy}{c^{2}}
+				\end{split}
+			\]
+			which can be rewritten as
+			\[
+				(c^{2} - a^{2}) x^{2} - 2ab xy + (c^{2} - b^{2}) y^{2} + 2ad x + 2bd y - d^{2} = 0
+			\]
+			which is the conic section we wanted.
+		\item $x^{2} + y^{2} + 1 = 0$ has no rational points since $x^{2} + y^{2} > 0$ for all rationals $x, y$. Thus, it cannot be the intersection of a cone with a plane (with integer coefficients).
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
