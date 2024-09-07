@@ -77,10 +77,27 @@
 \begin{solution}
 	Suppose $x = x_{0}.x_{1} x_{2} \cdots$, $y = y_{0}.y_{1} y_{2} \cdots$, and  $z = z_{0}.z_{1} z_{2} \cdots$ where $x_{0}, y_{0}, z_{0} \ge 0$.
 
-	If $x < y$, we know that $x_{0}.x_{1} \cdots x_{n} < y_{0}.y_{1} \cdots y_{n}$ for each $n \in \mathbb{N}$. Since the rationals are an ordered field, $x_{0}.x_{1} \cdots x_{n} + z_{0}.z_{1} \cdots z_{n} < y_{0}.y_{1} \cdots y_{n} + z_{0}.z_{1} \cdots z_{n}$ for each $n \in \mathbb{N}$. We also know that there must be some first $i$ such that $x_{0}.x_{1} \cdots x_{i} < y_{0}.y_{1} \cdots y_{i}$, and thus, $x_{0}.x_{1} \cdots x_{n} < y_{0}.y_{1} \cdots y_{i}$ for any $n \in \mathbb{N}$. Thus,
+	If $x < y$, we know that $x_{0}.x_{1} \cdots x_{n} < y_{0}.y_{1} \cdots y_{n}$ for each $n \in \mathbb{N}$. Since the rationals are an ordered field, $x_{0}.x_{1} \cdots x_{n} + z_{0}.z_{1} \cdots z_{n} < y_{0}.y_{1} \cdots y_{n} + z_{0}.z_{1} \cdots z_{n}$ for each $n \in \mathbb{N}$. We also know that there must be some first $i$ such that $x_{0}.x_{1} \cdots x_{i} < y_{0}.y_{1} \cdots y_{i}$. In particular, this means that $y_{0}.y_{1} \cdots y_{i} - x_{0}.x_{1} \cdots x_{i} \ge 1/10^{i}$, and also $y_{0}.y_{1} \cdots y_{i} - x_{0}.x_{1} \cdots x_{n} \ge 1/10^{i}$ for any $n \in \mathbb{N}$. Finally, notice that $z_{0}.z_{1} \cdots z_{n} - z_{0}.z_{1} \cdots z_{i} < 1/10^{i + 1}$.
+
+	Thus,
 	\[
-		x_{0}.x_{1} \cdots x_{n} + z_{0}.z_{1} \cdots z_{n}
+		(y_{0}.y_{1} \cdots y_{i} + z_{0}.z_{1} \cdots z_{i}) - (x_{0}.x_{1} \cdots x_{n} + z_{0}.z_{1} \cdots z_{n}) > \frac{1}{10^{i}} - \frac{1}{10^{i + 1}}.
 	\]
+	for any $n \in \mathbb{N}$. Notice that by rearranging we get
+	\[
+		y_{0}.y_{1} \cdots y_{i} + z_{0}.z_{1} \cdots z_{i} - (1/10^{i} - 1/10^{i + 1}) > x_{0}.x_{1} \cdots x_{n} + z_{0}.z_{1} \cdots z_{n}.
+	\]
+	That is, $y_{0}.y_{1} \cdots y_{i} + z_{0}.z_{1} \cdots z_{i} - (1/10^{i} - 1/10^{i + 1})$ is an upper bound of $\{ x_{0}.x_{1} \cdots x_{n} + z_{0}.z_{1} \cdots z_{n} \mid n \in \mathbb{N} \}$. Recall that $x + z = \sup \{ x_{0}.x_{1} \cdots x_{n} + z_{0}.z_{1} \cdots z_{n} \mid n \in \mathbb{N} \}$.
+
+	The chain of inequality follows
+	\[
+		\begin{split}
+			y + z & \ge y_{0}.y_{1} \cdots y_{i} + z_{0}.z_{1} \cdots z_{i} \\
+			      & > y_{0}.y_{1} \cdots y_{i} + z_{0}.z_{1} \cdots z_{i} - (1/10^{i} - 1/10^{i + 1}) \\
+			      & \ge x + z.
+		\end{split}
+	\]
+	That is, $y + z > x + z$, as desired.
 \end{solution}
 
 \pagebreak
@@ -89,11 +106,48 @@
 	Let $\varepsilon = a_{0}.a_{1} \cdots$ be a positive real number. Prove that there exists $k > 1$ such that $10^{k} \varepsilon > 1$.
 \end{problem}
 
+\begin{solution}
+	Since $\varepsilon$ is positive, we know that there must be some first $k$ such that $a_{k - 1} > 0$ (else, $\varepsilon \le 0$). Then consider $10^{k} \varepsilon$. By our definition of multiplication we have
+	\[
+		10^{k} \varepsilon = \sup \{ 10^{k} (a_{0}.a_{1} \cdots a_{n}) \mid n \in \mathbb{Z}_{\ge 0} \}.
+	\]
+	The supremum cannot be less than any element of the set. However, we know that the set contains
+	\[
+		\begin{split}
+			10^{k} (a_{0}.a_{1} \cdots a_{k}) & = \sum_{n = 0}^{k} 10^{k - n} a_{n} \\
+							  & \ge 10 a_{k - 1} \\
+							  & \ge 10 \\
+							  & > 1.
+		\end{split}
+	\]
+	Thus,
+	\[
+		\begin{split}
+			10^{k} \varepsilon & = \sup \{ 10^{k}(a_{0}.a_{1} \cdots a_{n}) \mid n \in \mathbb{Z}_{\ge 0} \} \\
+					   & \ge 10^{k} (a_{0}.a_{1} \cdots a_{k}) \\
+					   & > 1.
+		\end{split}
+	\]
+	as desired.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[5.]
 	Let $x = a_{0}.a_{1} \cdots$ and $y = b_{0}.b_{1} \cdots$ be positive real numbers. assuming that $x < y$ prove that there exists a decimal number $w$ such that $x < w < y$.
 \end{problem}
+
+\begin{solution}
+	Consider $\varepsilon = y - x$. We know, by the previous exercise, that there exists some $k$ such that $10^{k} \varepsilon > 1$, and thus, $1/10^{k} < \varepsilon$. Note that $\alpha = 0.0 \cdots 0 a_{k + 1} a_{k + 2} \cdots$, the trailing decimals after $a_{k}$ give $\alpha < 1/10^{k}$. Thus, $0 < 1/10^{k} - \alpha < \varepsilon$. This gives us $x < x + 1/10^{k} - \alpha < y$.
+
+	Now we only need to show that $x - \alpha$ is the decimal $a_{0}.a_{1} \cdots a_{k}$. If we consider. Recall that
+	\[
+		x - \alpha = \sup \{ a_{0}.a_{1} \cdots a_{n} - 0.0 \cdots 0 a_{k + 1} \cdots a_{n} \mid n \in \mathbb{Z}_{\ge 0} \}.
+	\]
+	If $n \le k$, we have the corresponding element $a_{0}.a_{1} \cdots a_{n} - 0 = a_{0}.a_{1} \cdots a_{n} \le a_{0}.a_{1} \cdots a_{k}$ in the set. If $n > k$, we have $a_{0}.a_{1} \cdots a_{k} \cdots a_{n} - 0.0 \cdots 0 a_{k + 1} \cdots a_{n} = a_{0}.a_{1} \cdots a_{k}$ in the set. Thus, $a_{0}.a_{1} \cdots a_{k}$ is an upper bound on the set, and is contained in the set. Thus, it must be the supremum. 
+
+	Thus is, $x -  \alpha$ is a decimal, and so is $w = x - \alpha + 1/10^{k}$ which we've already shown satisfies $x < w < y$.
+\end{solution}
 
 \pagebreak
 
