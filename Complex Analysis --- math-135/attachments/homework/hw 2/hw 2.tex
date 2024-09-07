@@ -1,0 +1,88 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 135 --- Complex Analysis}
+\assignment{Homework 2}
+\duedate{12th September 2024}
+
+\begin{document}
+
+\begin{problem}[16.]
+	Determine the radius of convergence of the series $\sum_{n = 1}^{\infty} a_{n} z^{n}$ when:
+	\begin{enumerate}
+		\item $a_{n} = (\log n)^{2}$ 
+		\item $a_{n} = (n!)^{3}/(3n)!$.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[17.]
+	Show that if $\{ a_{n} \}_{n = 0}^{\infty}$ is a sequence of non-zero complex numbers such that
+	\[
+		\lim_{n \to \infty} \frac{\lvert a_{n + 1} \rvert}{\lvert a_{n} \rvert} = L,
+	\]
+	then
+	\[
+		\lim_{n \to \infty} \lvert a_{n} \rvert^{1/n} = L.
+	\]
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[18.]
+	Let $f$ be a power series centred at the origin. Prove that $f$ has a power series expansion around any point in its disc of convergence.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[20.]
+	Expand $(1 - z)^{-m}$ in powers of $z$. Here $m$ is a fixed positive integer. Also, sho wthat if
+	\[
+		(1 - z)^{-m} = \sum_{n = 0}^{\infty} a_{n} z^{n},
+	\]
+	then one obtains the following asymptotic relation for the coefficients:
+	\[
+		a_{n} \sim \frac{1}{(m - 1)!} n^{m - 1} \text{ as } n \to \infty.
+	\]
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[25.]
+	The next three calculations provide some insight into Cauchy's theorem, which we treat in the next chapter.
+	\begin{enumerate}
+		\item Evaluate the integrals
+			\[
+				\int_{\gamma} z^{n} \, dz 
+			\]
+			for all integers $n$. Here $\gamma$ is any circle centred at the origin with the positive orientation.
+		\item Same question as before, but with $\gamma$ any circle not containing the origin.
+		\item Show that if $\lvert a \rvert < r < \lvert b \rvert$, then
+			\[
+				\int_{\gamma} \frac{1}{(z - a)(z - b)} \, dz = \frac{2 \pi i}{a - b}
+			\]
+			where $\gamma$ denotes the circle centred at the origin, of radius $r$, with the positive orientation.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[5.]
+	Suppose $f$ is continuously \emph {complex} differentiable on $\Omega$, and $T \subset \Omega$ is a triangle whose interior is also contained in $\Omega$. Apply Green's theorem to show that
+	\[
+		\int_{T} f(z) \, dz = 0.
+	\]
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[6.]
+	Let $\Omega$ be an open subset of $\mathbb{C}$ and let $T \subset \Omega$ be a triangle whose interior is also contained in $\Omega$. Suppose that $f$ is a function holomorphic in $\Omega$ except possibly at a point $w$ inside $T$. Prove that if $f$ is bounded near $w$, then
+	\[
+		\int_{T} f(z) \, dz = 0.
+	\]
+\end{problem}
+
+\end{document}
