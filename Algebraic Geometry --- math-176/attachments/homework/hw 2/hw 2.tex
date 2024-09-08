@@ -36,4 +36,21 @@
 	These lines are parallel, so they do not intersect at an affine point $(x, y) \in \mathbb{A}(\mathbb{R})$. Make the substitution $x = x_{1}/x_{0}$ and $y = x_{2}/x_{0}$ and find the projective point $P = (x_{1} : x_{2} : x_{0})$ in $\mathbb{P}^{2}(\mathbb{R})$ where the lines do intersect.
 \end{problem}
 
+\begin{solution}
+	Making the substitutions and multiplying by $x_{0}$ gives us the equations
+	\[
+		\begin{split}
+			x_{2} & = x_{1} + x_{0} \\
+			x_{2} & = x_{1} + 3 x_{0}.
+		\end{split}
+	\]
+	from which we can get
+	 \[
+		2 x_{0} = 0
+	\]
+	by subtracting the first equation from the second.
+
+	From $x_{0} = 0$ we can get that $x_{2} = x_{1} + 0 = x_{1}$. Thus, $P = (1 : 1 : 0)$ is the ideal point in $\mathbb{P}^{2}(\mathbb{R})$ where the lines intersect.
+\end{solution}
+
 \end{document}
