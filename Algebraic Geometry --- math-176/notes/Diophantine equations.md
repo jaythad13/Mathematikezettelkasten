@@ -66,7 +66,7 @@ $A$ is congruent if and only if there's a rational point $(x, y)$ on
 $$
 y^{2} = x^{3} - A^{2} x
 $$
-satisfying $x > n$.
+satisfying $x > A$.
 
 ###### _proof sketch:_
 
