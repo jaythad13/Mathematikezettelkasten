@@ -8,6 +8,8 @@
 
 \begin{document}
 
+Collaborators: Kai Mawhinney, Justin Son
+
 \begin{problem}[16.]
 	Determine the radius of convergence of the series $\sum_{n = 1}^{\infty} a_{n} z^{n}$ when:
 	\begin{enumerate}
@@ -28,6 +30,26 @@
 		\lim_{n \to \infty} \lvert a_{n} \rvert^{1/n} = L.
 	\]
 \end{problem}
+
+\begin{solution}
+	Suppose we have that $\lim_{n \to \infty} \lvert a_{n + 1} \rvert/\lvert a_{n} \rvert = L$. Then for every, $\varepsilon$, we must have some $N$ such that for every $n > N$
+	 \[
+		\left \lvert \frac{\lvert a_{n + 1} \rvert}{\lvert a_{n} \rvert} - L \right \rvert < \varepsilon
+	\]
+	Thus,
+	\[
+		(L - \varepsilon) \lvert a_{n} \rvert < \lvert a_{n + 1} \rvert < (L + \varepsilon) \lvert a_{n} \rvert. 
+	\]
+	Then by induction, we can see that for any $k$, we must have
+	\[
+		(L - \varepsilon)^{k} \lvert a_{n} \rvert < \lvert a_{n + k} \rvert < (L + \varepsilon)^{k} \lvert a_{n} \rvert.
+	\]
+	Taking $(n + k)$th roots, we get
+	\[
+		(L - \varepsilon)^{\frac{k}{n + k}} \lvert a_{n} \rvert^{\frac{1}{n + k}} < \lvert a_{n + k} \rvert^{\frac{1}{n + k}} < (L + \varepsilon)^{\frac{k}{n + k}} \lvert a_{n} \rvert^{\frac{1}{n + k}}
+	\]
+	Choose 
+\end{solution}
 
 \pagebreak
 
@@ -66,6 +88,33 @@
 			where $\gamma$ denotes the circle centred at the origin, of radius $r$, with the positive orientation.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item 
+			\[
+				\boxed{
+					\int_{\gamma} z^{n} \, dz = \begin{cases}
+						0 & n \neq -1 \\
+						2 \pi i r^{n} & n = -1.
+					\end{cases}
+				}
+			\]
+
+			Consider the parametrisation $z : t \to r e^{i t}$ for $t \in [0, 2 \pi]$. Then
+			\[
+				\begin{split}
+					\int_{\gamma} z^{n} \, dz & = \int_{0}^{2 \pi} (r e^{i t})^{n} ir e^{it} \, dt \\
+								  & = i r^{n} \int_{0}^{2 \pi} e^{(n + 1) i t} \, dt.
+				\end{split}
+			\]
+			If $n = -1$, then $e^{(n + 1) i t} = 1$ and the integral is just $2 \pi$, giving us
+			\[
+				\int_{\gamma} z^{n} \, dz = 2 \pi i r^{n}.
+			\]
+			If $n \neq -1$, we can use the fundamental theorem of calculus since $\frac{1}{i(n + 1)} e^{(n + 1) i t}$ is a primitive of $e^{(n + 1) i t}$.
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
