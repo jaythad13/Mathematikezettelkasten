@@ -8,14 +8,14 @@ Our working definition of cohomology is as follows:
 
 ##### _definition:_ cohomology
 
-The cohomology of a cochain complex $(C; d)$ in the $i$th degree is $H^1(C; d) = \ker d^i / \operatorname{im} d^{i - 1}$.
+The cohomology of a cochain complex $(C; d)$ in the $i$th degree is $H^i(C; d) = \ker d^i / \operatorname{im} d^{i - 1}$.
 
 and our working definition of cellular homology is
 
 ##### _definition:_ Euler characteristic of a CW complex
 
 $$
-\chi(X) = \sum (-1)^i \# \{ i-\text{cells} \}
+\chi(X) = \sum (-1)^i \# \{ i\text{-cells} \}
 $$
 
 Basically, we glue together graphs with higher dimensional faces and edges and do $\#\text{vertices} - \# \text{edges}$ in higher dimensions.
