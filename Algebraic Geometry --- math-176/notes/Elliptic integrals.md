@@ -1,6 +1,7 @@
 ---
 tags:
 - math-176/6
+- math-176/7
 - alg-geo
 ---
 
@@ -49,3 +50,34 @@ K(k) = \int_{0}^{\pi / 2}  \frac{d\phi}{\sqrt{ 1 - k^{2} \sin ^{2}\phi }} = \int
 $$
 
 Note that its Taylor series expansion about $k = 0$ is $K(k) = \frac{\pi}{2} + \frac{\pi}{8} k^{2} + \cdots$. That is, Galileo's formula is a first order approximation. 
+
+But why elliptic?
+
+##### _proposition:_ arc length of an ellipse
+
+The arc length of the ellipse
+$$
+\frac{x^{2}}{a^{2}} + \frac{y^{2}}{b^{2}} = 1
+$$
+is given by the integral
+$$
+4 a \int_{0}^{\pi/2} \sqrt{ 1 - k^{2} \sin ^{2}(\phi) } \, d\phi
+$$
+
+where $k = \sqrt{ \frac{a^{2} - b^{2}}{a^{2}} }$.
+
+###### _proof sketch:_
+
+Consider $r(\phi) = (a \sin \phi, b \cos \phi)$ (where sine is first for cosmetic reasons). Differentiate, then integrate the norm. Use symmetry to only integrate from $0$ to $\pi / 2$ four times instead of over all of $0$ to $2 \pi$.
+
+This integral is obviously "elliptic" —
+##### _definition:_ elliptic integral of the second kind
+
+The complete elliptic integral of the second kind is
+$$
+E(k) = \int_{0}^{\pi / 2} \sqrt{ 1 - k^{2} \sin ^{2}\phi } \, d\phi = \int_{0}^1 \sqrt{ \frac{1 - k^{2} x^{2}}{1 - x^{2}} }  \, dx.
+$$
+
+It turns out that we only call the elliptic integrals of the first kind so because they look like elliptic integrals of the second kind.
+
+It's easy enough to compute $K(0)$ and $E(0)$ since they reduce to quadratics polynomials under the root. How can we compute the integral in the general case?
