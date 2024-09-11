@@ -2,6 +2,7 @@
 tags:
 - math-135/1
 - math-135/4
+- math-135/5
 - anal
 ---
 
@@ -43,17 +44,27 @@ For small enough $\varepsilon$, the first term of the integrand approaches $f'(z
 Suppose $\Omega$ is an open set in $\mathbb{C}$ with $f : \Omega \to \mathbb{C}$ holomorphic. Then
 1) $f$ is smooth (infinitely differentiable)
 2) the $n$th derivative of $f$ is given by $f^{(n)}(a) = \frac{n!}{2 \pi i} \int \frac{f(z - a)}{(z - a)^{n + 1}} \, dz$
-3) $f$ is analytic
+3) $f$ is analytic (with a power series expansion about $z_{0}$ on every disc $D_{r}(z_{0})$ with $\overline{D_{r}(z_{0})} \subset \Omega$)
 
 ###### _proof:_
 
-We really only need to show that $f$ is analytic. To do so, we perform a geometric series trick. Let $D \subset \Omega$ be a disc centred at $z_{0}$ with $\overline{D} \subset \Omega$ as well. We know that
+We really only need to show that $f$ is analytic with the given coefficients. To do so, we perform a geometric series trick. Let $D \subset \Omega$ be a disc centred at $z_{0}$ with $\overline{D} \subset \Omega$ as well. We know that
 $$
 \begin{split}
-f(a) = \frac{1}{2 \pi i} \int_{\gamma} \frac{f(z)}{z - a} \, dz.
+f(a) & = \frac{1}{2 \pi i} \int_{\gamma} \frac{f(z)}{z - a} \, dz \\
+ & = \frac{1}{2 \pi i} \int \frac{f(z)}{z - z_{0} - (a - z_{0})} \, dz \\
+ & = \frac{1}{2 \pi i} \int \frac{f(z)}{z - z_{0}}\frac{1}{1 - \frac{a - z_{0}}{z - z_{0}}} \, dz  \\
+ & = \frac{1}{2 \pi i} \int \sum_{n = 0}^\infty \left( \frac{a - z_{0}}{z - z_{0}} \right)^n \frac{f(z)}{z - z_{0}}  \, dz 
 \end{split}
 $$
 
+Since the sum converges uniformly (for varying $z$), we can interchange the order of integration and summation to get a power series
+$$
+\begin{split}
+f(a) & = \sum_{n = 0}^\infty \left( \frac{1}{2 \pi i} \int \frac{f(z)}{(z - z_{0})^{n + 1}} \, dz  \right) (a - z_{0})^n
+\end{split}
+$$
+with the desired coefficients.
 
 ### Consequences!
 
@@ -92,3 +103,47 @@ $$
 Thus, $p(z)$ gets arbitrarily close to $a_{n} z^n$ as we increase $\lvert z \rvert$. Then, there is some $R$ such that for all $z$ with $\lvert z \rvert > R$, we have $\lvert p(z) \rvert \ge \lvert a_{n} z^n \rvert/2$. That is, $p$ is bounded from below outside the disc. Since $p$ has no zeroes and is continuous on the compact set that is the closure of the disc we also have $0 < b < p$. That is, $p$ is bounded from below inside the disc as well. That is, $p$ is bounded from below everywhere, and thus, $1/p$ is bounded from above everywhere.
 
 $1/p$ is clearly holomorphic (just use the [[Complex Analysis --- math-135/notes/Holomorphic functions|quotient rule]]). Thus, by applying Liouville's theorem, we get that $1/p$ is constant, and thus, $p$ is constant.
+
+##### _theorem:_ identity theorem
+
+Suppose $f$ is holomorphic on a region $\Omega$. If the set of zeroes of $f$ on $\Omega$, $Z = \{ z \in \Omega \mid f(z) = 0 \}$. has a limit point in $\Omega$, then $f$ is identically $0$ on $\Omega$.
+
+###### _proof:_
+
+Let $z_{0} \in \Omega$ be the limit point of $Z$. We know that we have a power series expansion about $z_{0}$ in some $D_{r}(z_{0})$ with $\overline{D_{r}(z_{0})} \subset \Omega$. Suppose, by way of contradiction, this power series expansion were nonzero.
+
+Then we can pick the first nonzero coefficient $a_{m}$ and write $f(z) = a_{m} (z - z_{0})^m(1 + g(z))$. On a sequence in $Z$, $w_{n} \to z_{0}$ and choose $w_{n} \neq 0$. Then we have $f(w_{n}) = a_{m}(w_{n} - z_{0})^n(1 + g(z))$. $f(w_{n}) = 0$, 
+
+Now we have that $f = 0$ on a disc around $z_{0}$, we can move the disc all the way to any other point $z$. Given the curve $\gamma$ that connects $z_{0}$ to $z$, we know that there is a [[Complex Analysis --- math-135/notes/(Metric) topology review#_proposition _ distance lemma|finite distance]] $\delta$ between $\gamma$ and $\partial \Omega$. Pick points $z_{0}, z_{1}, \dots, z$ along $\gamma$ such that no consecutive points are more than $\delta / 2$ apart. Then we keep getting $z_{n}$ as limit points and we can move along discs of radius $\delta / 2$ all the way to $z$.
+
+##### _corollary:_ unique analytic continuation
+
+If $\{ z \in \Omega \mid f(z) = g(z) \}$ has a limit point, then $f = g$ on $\Omega$.
+
+##### _theorem:_ Morera's theorem
+
+Let $D$ be an open disk. Suppose $f : D \to \mathbb{C}$ is continuous. If, for all triangles $\Delta \subset D$, $\int_{\partial \Delta} f(z)  \, dz = 0$, then $f$ is holomorphic.
+
+###### _proof sketch:_
+
+In the same way as the proof of [[Complex Analysis --- math-135/notes/Cauchy-Goursat theorem#_corollary _ Cauchy's theorem|Cauchy's theorem]], this gives us an antiderivative $F$ with $F' = f$. But then $F$ is indefinitely differentiable, and thus, it's derivative $f$ must be holomorphic.
+
+Morera's theorem allows us to create holomorphic functions out of holomorphic functions by processes that preserve integrals.
+
+##### _proposition:_ uniform convergence preserves holomorphicity
+
+Suppose $f_{n} : \Omega \to \mathbb{C}$ is a sequence of holomorphic functions that converges to $f$ uniformly on every compact subset of $\Omega$. Further $f'_{n}$ converges uniformly to $f'$ on every compact subset of $\Omega$.
+
+###### _proof:_
+
+Pick an open disc $D$. By uniform convergence, on any triangle $\Delta$ in compact $\overline{D}$, we have
+$$
+\begin{split}
+\int_{\partial \Delta} f(z) \, dz & = \int_{\partial \Delta} \lim_{ n \to \infty } f_{n}(z) \, dz \\
+ & = \lim_{ n \to \infty } \int_{\partial \Delta} f_{n}(z) \, dz  \\
+ & = 0.
+\end{split}
+$$
+Then, by Morera's theorem, $f$ is holomorphic on $D$. Then we can just cover $\Omega$ with discs $D$.
+
+Consider compact subsets $\Omega_{\delta}$ with a distance $\delta$ from the boundary of $\Omega$. Then bound $(f_{n} - f)'$ uniformly using [[#_proposition _ Cauchy inequalities|Cauchy inequalities]].
