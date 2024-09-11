@@ -139,7 +139,7 @@ A subset $E$ is dense in $X$ if every point $p$ is a limit point of $E$ or is in
 
 These definitions lead to some fairly obvious theorems, and later, some non-obvious theorems.
 
-##### _proposition:_ Every neighbourhood is open
+##### _proposition:_ every neighbourhood is open
 
 For any point $p$ and radius $r > 0$, the neighbourhood $N_r(p)$ is an open set
 
@@ -155,7 +155,7 @@ d(p, s) < d(p, q) + d(q, s) < d(p, q) + r - d(p, q) = r
 $$
 That is, $d(p, s) < r$, giving us $s \in N_r(p)$ for any arbitrary $s \in N_{\rho}(q)$. This in turn gives us $N_{\rho}(q) \subset N_r(p)$ for any arbirtary $q \in N_r(p)$, and thus for every point in $N_r(p)$. Thus, every point in $N_r(p)$ is an interior point: $N_r(p)$ is open. 
 
-##### _proposition:_ Every limit point is approached by infinitely many points
+##### _proposition:_ every limit point is approached by infinitely many points
 
 If $p$ is a limit point of a subset $E$, then every neighbourhood of $p$ contains infinitely many points of $E$.
 
@@ -183,7 +183,7 @@ We can then look at $N_\rho(p)$, which is just small enough that no points of $E
 
 Thus, we have a neighbourhood of $p$ containing no distinct points of $E$, giving us the contrapositive, and thus, the theorem.
 
-##### _corollary:_ A finite set has no limit points
+##### _corollary:_ a finite set has no limit points
 
 ##### _examples:_ closed, open, perfect, and bounded sets
 
