@@ -8,7 +8,7 @@ tags:
 
 For this section, $X$ denotes a metric space with metric $d$, and any points or subsets we mention are considered to be elements or subsets of $X$.
 
-Recall the definitions of [[Metric spaces#_definition _ open set|open sets]] and [[Metric spaces#_definition _ closed set|closed sets]] in metric spaces. It turns out that open sets and closed sets are interesting in their own right and are incredibly useful. We will spend time learning why.
+Recall the definitions of [[Analysis --- rudin/notes/Metric spaces#_definition _ open set|open sets]] and [[Analysis --- rudin/notes/Metric spaces#_definition _ closed set|closed sets]] in metric spaces. It turns out that open sets and closed sets are interesting in their own right and are incredibly useful. We will spend time learning why.
 
 ##### _examples:_ open sets
 

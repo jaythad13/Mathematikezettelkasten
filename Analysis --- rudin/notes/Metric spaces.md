@@ -25,6 +25,7 @@ A metric space is a set $X$ (whose elements we call points) with a function, cal
 - $d$ is symmetric: for any points $p, q \in X$ we have $d(p, q) = d(q, p)$.
 - $d$ is positive definite: $d(p, q) \ge 0$ and $d(p, q) = 0$ if and only if $p = q$.
 - $d$ satisfies the triangle inequality: for all $p, q, s \in X$ we have $d(p, q) + d(q, r) = d(p, r)$.
+
 ##### _examples:_ metric spaces
 
 1) All of the examples of "notions of distance" above are examples of metric spaces with the metric given by the "distance function".
@@ -83,14 +84,14 @@ Thinking about closed sets in $X$ requires some more effort. We have to think ab
 
 ##### _definition:_ open ball
 
-By the open ball of radius $r$, centered at $p \in \bb{R}^n$ we mean the set
+By the open ball of radius $r$, centred at $p \in \bb{R}^n$ we mean the set
 $$
 \{ x \in \bb{R}^n : d(p, x) = \Vert x - p \Vert < r \}
 $$
 
 ##### _definition:_ closed ball
 
-By the closed ball of radius $r$, centered at $p \in \bb{R}^n$ we mean the set
+By the closed ball of radius $r$, centred at $p \in \bb{R}^n$ we mean the set
 $$
 \{ x \in \bb{R}^n : d(p, x) = \Vert x - p \Vert \le r \}
 $$
@@ -131,7 +132,7 @@ Boundedness also has some natural intuition attached to it. In $\bb{R}$ we think
 
 A subset $E$ is bounded in $X$ if for some point $p$ we have $d(p, q) < M$ for all points $q \in E$ where $M$ is some fixed real number.
 
-The prototypical example of a dense set is $\bb{Q}$ in $\bb{R}$. Typically we think of there being a [[Mathematical Analysis I --- math-131/notes/The reals|rational between any two real numbers]], but we can reframe this: given a real number, and any small neighbourhood around it, we can find a rational number in that neighbourhood. That is, every real number is a limit point of the rational numbers.
+The prototypical example of a dense set is $\bb{Q}$ in $\bb{R}$. Typically we think of there being a [[Mathematical Analysis I --- math-131/attachments/homework/hw 1/hw 1.pdf#page=5|rational between any two real numbers]], but we can reframe this: given a real number, and any small neighbourhood around it, we can find a rational number in that neighbourhood. That is, every real number is a limit point of the rational numbers.
 
 ##### _definition:_ dense
 

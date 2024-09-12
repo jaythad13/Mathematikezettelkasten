@@ -155,7 +155,7 @@ Although, we've stayed mainly algebraic, we can also have topological universal 
 
 ##### _example:_ every map from the discrete space is continuous
 
-Let $S$ be a set, and let $\mathcal{D}(S)$ be $S$ endowed with the [[Metric spaces#_examples _ metric spaces|discrete topology]]. Since every subset is open, any function $F$, from $S$ to a topological space $X$ is defines a unique continuous function $f$ from $\mathcal{D}(S)$ to $X$ that agrees with $F$ everywhere — just set $f(s) = F(s)$. That is, for $i : S \to \mathcal{D}(S)$ by $s \mapsto s$, the following diagram commutes.
+Let $S$ be a set, and let $\mathcal{D}(S)$ be $S$ endowed with the [[Analysis --- rudin/notes/Metric spaces#_examples _ metric spaces|discrete topology]]. Since every subset is open, any function $F$, from $S$ to a topological space $X$ is defines a unique continuous function $f$ from $\mathcal{D}(S)$ to $X$ that agrees with $F$ everywhere — just set $f(s) = F(s)$. That is, for $i : S \to \mathcal{D}(S)$ by $s \mapsto s$, the following diagram commutes.
 
 ```tikz
 \usepackage{tikz-cd}

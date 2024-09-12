@@ -19,7 +19,7 @@ for $\bvec{x} = (x_1, \ldots, x_n)$ and $\bvec{y} = (y_1, \ldots, y_n)$.
 
 Usually we denote $\langle \bvec{x}, \bvec{y} \rangle$ as $\bvec{x} \cdot \bvec{y}$ for Euclidean space.
 
-Note that this inner product induces a [[Norms|norm]] with $\norm{\bvec{x}} = \sqrt{\bvec{x} \cdot \bvec{x}} = \sqrt{x_1^2 + \cdots + x_n^2}$ and thus, a [[Metric spaces|metric]] $d$ with $d(\bvec{x}, \bvec{y}) = \norm{\bvec{x} - \bvec{y}}$. Also note that verifying that this is indeed an inner product on a vector space gives us the following elementary results, in addition to the usual properties of an inner product.
+Note that this inner product induces a [[Norms|norm]] with $\norm{\bvec{x}} = \sqrt{\bvec{x} \cdot \bvec{x}} = \sqrt{x_1^2 + \cdots + x_n^2}$ and thus, a [[Analysis --- rudin/notes/Metric spaces|metric]] $d$ with $d(\bvec{x}, \bvec{y}) = \norm{\bvec{x} - \bvec{y}}$. Also note that verifying that this is indeed an inner product on a vector space gives us the following elementary results, in addition to the usual properties of an inner product.
 
 ##### _proposition:_ properties of the Euclidean norm
 

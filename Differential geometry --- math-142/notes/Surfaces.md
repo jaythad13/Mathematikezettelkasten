@@ -14,7 +14,7 @@ A "smooth surface" should then, by extension, be something like the image of a s
 
 ### Some (metric) topology
 
-We will use the same definition of "openness" [[Metric spaces#_definition _ open set|as in Rudin]], just restricted to $\mathbb{R}^n$. That is,
+We will use the same definition of "openness" [[Analysis --- rudin/notes/Metric spaces#_definition _ open set|as in Rudin]], just restricted to $\mathbb{R}^n$. That is,
 
 ##### _definition:_ open sets
 
