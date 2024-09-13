@@ -4,7 +4,7 @@
 \name{Jayden Thadani}
 \class{MATH 135 --- Complex Analysis}
 \assignment{Homework 2}
-\duedate{12th September 2024}
+\duedate{12the September 2024}
 
 \begin{document}
 
@@ -57,6 +57,23 @@ Collaborators: Kai Mawhinney, Justin Son
 	Let $f$ be a power series centred at the origin. Prove that $f$ has a power series expansion around any point in its disc of convergence.
 \end{problem}
 
+\begin{solution}
+	 Suppose we have $f(z) = \sum_{n = 0}^{\infty} a_{n} z^{n}$ for $\lvert z \rvert < R$. Consider any $z_{0}$ with $\lvert z_{0} \rvert < R$. For all $z$ with $\lvert z - z_{0} \rvert < R - \lvert z_{0} \rvert$, we must also have $\lvert z \rvert < R$ by the triangle inequality.
+
+	 Thus, we can write
+	 \[
+	 	\begin{split}
+			f(z) & = \sum_{n = 0}^{\infty} a_{n} z^{n} \\
+			     & = \sum_{n = 0}^{\infty} a_{n} \sum_{k = 0}^{n} \binom{n}{k} (z - z_{0})^{k} z_{0}^{n - k}.
+	 	\end{split}
+	 \]
+	 We can rearrange this sum to group terms by the exponent of $(z - z_{0})$. The terms containing $(z - z_{0})^{k}$ are exactly all $a_{k + j} \binom{k + j}{k} z_{0}^{j}$ for $j \ge 0$. Thus, we can write
+	 \[
+		 f(z) = \sum_{k = 0}^{\infty} \left ( \sum_{j = 0}^{\infty} a_{k + j} \binom{k + j}{k} z_{0}^{j} \right ) (z - z_{0})^{k}.
+	 \]
+	 Since the original power series converged absolutely for $\lvert z \rvert < R$, this rearrangement of terms also converges for $\lvert z - z_{0} \rvert < R - \lvert z_{0} \rvert$.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[20.]
@@ -69,6 +86,35 @@ Collaborators: Kai Mawhinney, Justin Son
 		a_{n} \sim \frac{1}{(m - 1)!} n^{m - 1} \text{ as } n \to \infty.
 	\]
 \end{problem}
+
+\begin{solution}
+	Note that
+	\[
+		\frac{1}{1 - z} = \sum_{k = 0}^{\infty} z^{k}
+	\]
+	for $\lvert z \rvert < 1$. Thus, inside this radius of convergence, we can write
+	\[
+		(1 - z)^{-m} = \left ( \sum_{k = 0}^{\infty} z^{k} \right )^{m}.
+	\]
+	If we write this as a sum $\sum_{n = 0}^{\infty} a_{n} z^{n}$, each $a_{n}$ must count the number of ways to write $z^{n} = z^{k_{1}} \cdots z^{k_{m}}$. That is, $a_{n}$ is the number of ordered $m$-partitions of $n$. By stars ($n$ ones) and bars (split into $m$ summands), we must have $a_{n} = \binom{n + m - 1}{n}$.
+
+	To see that $a_{n}$ has the right behaviour, we write it out as factorials.
+	\[
+		\begin{split}
+			a_{n} & = \frac{(n + m - 1)!}{n! (m - 1)!} \\
+			      & = \frac{(n + m - 1) (n + m - 2) \cdots (n + 1)}{(m - 1)!}.
+		\end{split}
+	\]
+	Consider the asymptotic behaviour of the numerator ---
+	\[
+		\begin{split}
+			\lim_{n \to \infty} \frac{(n + m - 1) \cdots (n + 1)}{n^{m - 1}} & = \lim_{n \to \infty} \frac{n^{m - 1} + p(n)}{n^{m - 1}} \\
+											 & = \lim_{n \to \infty} 1 + \frac{p(n)}{n^{m - 1}} \\
+											 & = 1.
+		\end{split}
+	\]
+	where $p(n)$ is a polynomial of degree less than $m - 1$, and the last step holds since $\lim_{n \to \infty} p(n)/n^{m - 1} = 0$. Thus, by definition, $a_{n} \sim n^{m - 1} / (m - 1)!$.
+\end{solution}
 
 \pagebreak
 
@@ -101,7 +147,7 @@ Collaborators: Kai Mawhinney, Justin Son
 				}
 			\]
 
-			Consider the parametrisation $z : t \to r e^{i t}$ for $t \in [0, 2 \pi]$. Then
+			Let $\gamma$ be a circle of radius $r$ centred at the origin. Consider the parametrisation $z : t \mapsto r e^{i t}$ for $t \in [0, 2 \pi]$. Then
 			\[
 				\begin{split}
 					\int_{\gamma} z^{n} \, dz & = \int_{0}^{2 \pi} (r e^{i t})^{n} ir e^{it} \, dt \\
@@ -112,18 +158,104 @@ Collaborators: Kai Mawhinney, Justin Son
 			\[
 				\int_{\gamma} z^{n} \, dz = 2 \pi i r^{n}.
 			\]
-			If $n \neq -1$, we can use the fundamental theorem of calculus since $\frac{1}{i(n + 1)} e^{(n + 1) i t}$ is a primitive of $e^{(n + 1) i t}$.
+			If $n \neq -1$, we can use the fundamental theorem of calculus since $\frac{r^{n}}{i(n + 1)} e^{(n + 1) i t}$ is a primitive of $r^{n} e^{(n + 1) i t}$. Then, since $\gamma$ is a closed curve (by Corollary 3.3)
+			\[
+				\int_{\gamma} z^{n} \, dz = 0.
+			\]
+		\item
+			\[
+				\boxed{
+					\int_{\gamma} z^{n} \, dz = 0.
+				}
+			\]
+
+			First consider $n \neq -1$. By the product and quotient rules, it's clear that $\frac{1}{n + 1} z^{n + 1}$ is a primitive for $z^{n}$ in any region not containing $0$. Thus, by the fundamental theorem of calculus, the integral over the closed curve $\gamma$ is $0$.
+
+			For $n = -1$, we claim that $\log z$ is a primitive of $1 / z$ in any region not containing the origin. From our calculations in HW \#1, we get
+			\[
+				\begin{split}
+					\frac{d (\log z)}{d z} & = 2 \frac{\partial u}{\partial z} \\
+							       & = \frac{\partial u}{\partial x} + \frac{1}{i} \frac{\partial u}{\partial y} \\
+							       & = \left ( \frac{\partial u}{\partial r} \frac{\partial r}{\partial x} + \frac{\partial u}{\partial \theta} \frac{\partial \theta}{\partial x} \right ) + \left ( \frac{\partial u}{\partial r} \frac{\partial r}{\partial y} + \frac{\partial u}{\partial \theta} \frac{\partial \theta}{\partial y} \right ) \\
+							       & = \left ( \frac{1}{r} \cos{\theta} + 0 \right ) + \frac{1}{i} \left ( \frac{1}{r} \sin{\theta} + 0 \right ) \\
+							       & = \frac{\cos{\theta} - i \sin{\theta}}{r} \\
+							       & = \frac{1}{z}.
+				\end{split}
+			\]
+			Since a circle that doesn't contain the origin is contained in the region $r > 0$, $- \pi < \theta < \pi$, $\log z$ is the primitive of $1/z$ everywhere in an open region containing the circle. Thus, by the fundamental theorem of calculus, the integral over the closed curve $\gamma$ is $0$.
+		\item We can split this integral into two integrals by using the partial fraction decomposition
+			\[
+				\frac{1}{(z - a)(z - b)} = \frac{1}{a - b} \left ( \frac{1}{z - a} - \frac{1}{z - b} \right )
+			\]
+			Thus,
+			\[
+				\int_{\gamma} \frac{1}{(z - a)(z - b)} \, dz = \frac{1}{a - b} \left ( \int_{\gamma} \frac{1}{z - a} \, dz - \int_{\gamma} \frac{1}{z - b} \, dz \right ).
+			\]
+			Under the transformation $w = z - b$, we can see that the second integral is just the integral $\int_{\tilde{\gamma}} \frac{1}{w} \, dw $ around a curve $\tilde{\gamma}$ not containing the origin, and thus, by our previous exercise, is $0$. Then we only need to show $\int_{\gamma} \frac{1}{z - a} \, dz = 2 \pi i$. To do so, consider the keyhole contour $\Gamma_{\delta, \varepsilon}$ with the positively oriented outer circle $\gamma$ centred at $0$ and the negatively oriented inner circle $\overline{\gamma}_{\varepsilon}$ of radius $\varepsilon$ centred at $a$. 
+			
+			Again, under the transformation $w = z - a$, this is just the integral of $1/w$ around a curve not enclosing $w = 0$, and thus
+			\[
+				\int_{\Gamma_{\delta, \varepsilon}} \frac{1}{z - a} \, dz = 0
+			\]
+			Considering the limit as $\delta \to 0$, we get $\Gamma_{\delta, \varepsilon} \to \gamma \cup \overline{\gamma}_{\varepsilon}$, and thus,
+			\[
+				\begin{split}
+					\int_{\Gamma_{\delta, \varepsilon}} \frac{1}{z - a} \, dz & = \int_{\gamma} \frac{1}{z - a} \, dz + \int_{\overline{\gamma}_{\varepsilon}} \frac{1}{z - a} \, dz \\
+												  & = \int_{\gamma} \frac{1}{z - a} \, dz - \int_{\gamma_{\varepsilon}} \frac{1}{z - a} \, dz.
+				\end{split}
+			\]
+			where $\gamma_{\varepsilon}$ is the positively oriented circle of radius $\varepsilon$ around $a$. Then, under the transformation $w = z - a$,
+			\[
+				\begin{split}
+					\int_{\gamma_{\varepsilon}} \frac{1}{z - a} \, dz & = \int_{\tilde{\gamma}\varepsilon} \frac{1}{w} \, dw \\
+											  & = 2 \pi i.
+				\end{split} 
+			\]
+			where $\tilde{\gamma}_{\varepsilon}$ is $\gamma_{\varepsilon}$ transformed under $w = z - a$, and thus, is a circle of radius $\varepsilon$ around $w = 0$.
+
+			Thus,
+			\[
+				\int_{\gamma} \frac{1}{z - a} \, dz - 2 \pi i = 0
+			\]
+			and finally,
+			\[
+				\begin{split}
+					\int_{\gamma} \frac{1}{(z - a)(z - b)} \, dz & = \frac{1}{a - b} \int_{\gamma} \frac{1}{z - a} \, dz \\
+										     & = \frac{2 \pi i}{a - b}
+				\end{split} 
+			\]
+			as desired.
 	\end{enumerate}
 \end{solution}
 
 \pagebreak
 
 \begin{problem}[5.]
-	Suppose $f$ is continuously \emph {complex} differentiable on $\Omega$, and $T \subset \Omega$ is a triangle whose interior is also contained in $\Omega$. Apply Green's theorem to show that
+	Suppose $f$ is continuously \emph{complex} differentiable on $\Omega$, and $T \subset \Omega$ is a triangle whose interior is also contained in $\Omega$. Apply Green's theorem to show that
 	\[
 		\int_{T} f(z) \, dz = 0.
 	\]
 \end{problem}
+
+\begin{solution}
+	If $f$ is continuously complex differentiable, then for $f(x + i y) = u(x, y) + iv(x, y)$ we know that the first partials of $u$ and $v$ all exist, are continuous, and satisfy the Cauchy-Riemann equations. Let $T$ be parametrised by $z_{T} : [0, 1] \to T$ with $z_{T} = x + i y$. Note that
+	\[
+		\begin{split}
+			\int_{T} f(z) \, dz & = \int_{0}^{1} (u(x, y) + i v(x, y)) z'(t) \, dt \\
+					    & = \int_{0}^{1} (u(x, y) + i v(x, y))(x(t) + i y(t))' \, dt \\
+					    & = \int_{0}^{1} \left ( (u(x, y) + i v(x, y)) \frac{dx}{dt} + (i u(x, y) - v(x, y)) \frac{dy}{dt} \right ) \, dt \\
+		\end{split}
+	\]
+	Then, by applying Green's theorem and the Cauchy-Riemann equations, we know that for a region $R \subset \Omega$ enclosed by $T$, we have
+	\[
+		\begin{split}
+			\int_{T} f(z) \, dz & = \int_{R} \frac{\partial }{\partial x}(i u - v) - \frac{\partial }{\partial y}(u + i v) \, dA \\
+					    & = \int_{R} - \left ( \frac{\partial u}{\partial y} +  \frac{\partial v}{\partial x} \right ) - i \left ( \frac{\partial u}{\partial x} - \frac{\partial v}{\partial y} \right ) \, dA \\
+					    & = \int_{R} 0 \, dA \\
+					    & = 0.
+		\end{split} 
+	\]
+\end{solution}
 
 \pagebreak
 
