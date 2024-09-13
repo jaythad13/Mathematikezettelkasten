@@ -4,7 +4,7 @@
 \name{Jayden Thadani}
 \class{MATH 135 --- Complex Analysis}
 \assignment{Homework 2}
-\duedate{12the September 2024}
+\duedate{12th September 2024}
 
 \begin{document}
 
@@ -36,7 +36,7 @@ Collaborators: Kai Mawhinney, Justin Son
 	 \[
 		\left \lvert \frac{\lvert a_{n + 1} \rvert}{\lvert a_{n} \rvert} - L \right \rvert < \varepsilon
 	\]
-	Thus,
+	Thus, (for $\varepsilon < \lvert L \rvert$)
 	\[
 		(L - \varepsilon) \lvert a_{n} \rvert < \lvert a_{n + 1} \rvert < (L + \varepsilon) \lvert a_{n} \rvert. 
 	\]
@@ -48,7 +48,31 @@ Collaborators: Kai Mawhinney, Justin Son
 	\[
 		(L - \varepsilon)^{\frac{k}{n + k}} \lvert a_{n} \rvert^{\frac{1}{n + k}} < \lvert a_{n + k} \rvert^{\frac{1}{n + k}} < (L + \varepsilon)^{\frac{k}{n + k}} \lvert a_{n} \rvert^{\frac{1}{n + k}}
 	\]
-	Choose 
+	Consider the limit as $k \to \infty$. We must have
+	\[
+		\lim_{k \to \infty} (L - \varepsilon)^{\frac{k}{n + k}} \lvert a_{n} \rvert^{\frac{1}{n + k}} < \lim_{k \to \infty} \lvert a_{n + k} \rvert^{\frac{1}{n + k}} < \lim_{k \to \infty} (L + \varepsilon)^{\frac{k}{n + k}} \lvert a_{n} \rvert^{\frac{1}{n + k}}.
+	\]
+	Analysing the limits on either side, we see that
+	\[
+		\begin{split}
+			\lim_{k \to \infty} (L \pm \varepsilon)^{\frac{k}{n + k}} \lvert a_{n} \rvert^{\frac{1}{n + k}} & = \left ( \lim_{k \to \infty} (L \pm \varepsilon)^{1 + \frac{n}{n + k}} \right ) \left ( \lim_{k \to \infty} \lvert a_{n} \rvert^{\frac{1}{n + k}} \right ) \\
+															& = (L \pm \varepsilon)^{1 + 0} \lvert a_{n} \rvert^{0} \\
+															& = (L \pm \varepsilon).
+		\end{split}
+	\]
+	where the second equality follows by taking the limit into the exponent. Then, for any $\varepsilon$ with $0 < \varepsilon < L$, we have
+	\[
+		L - \varepsilon < \lim_{k \to \infty} \lvert a_{n + k} \rvert^{\frac{1}{n + k}} < L + \varepsilon
+	\]
+	Thus,
+	\[
+		\lim_{k \to \infty} \lvert a_{n + k} \rvert^{\frac{1}{n + k}} =  L
+	\]
+	and
+	\[
+		\lim_{n \to \infty} \lvert a_{n} \rvert^{1 / n} = L
+	\]
+	as desired.
 \end{solution}
 
 \pagebreak
