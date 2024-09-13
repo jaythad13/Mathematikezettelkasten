@@ -18,6 +18,54 @@ Collaborators: Kai Mawhinney, Justin Son
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item
+			\[
+				\boxed{
+					R = 1.
+				}
+			\]
+
+			We want to determine $\limsup_{n \to \infty} \lvert a_{n} \rvert^{1/n}$. We claim $\limsup_{n \to \infty} \lvert a_{n} \rvert^{1/n} = \lim_{n \to \infty} \lvert a_{n} \rvert^{1/n} = 1$. We will show this by sandwiching the limit between two other limits.
+
+			We know that for all sufficiently large $n$, $(\log n)^{2} \le n$. We can see this by raising to the power of $e$ on both sides to get $n^{\log n} \le e^{n}$ for all sufficiently big $n$ ($a^{b} \le b^{a}$ for $e \le a \le b$). We also know that for all $n \ge e$, $\log n \ge 1$, and thus, $(\log n)^{2} \ge 1$. That is,
+			\[
+				1 \le (\log n)^{2} \le n
+			\]
+			and thus,
+			\[
+				1 \le \lvert (\log n)^2 \rvert^{1 / n} \le n^{1/n}.
+			\]
+			Taking limits as $n \to \infty$, we get
+			\[
+				1 \le \lim_{n \to \infty} \lvert (\log n)^{2} \rvert^{1 / n} \le \lim_{n \to \infty} n^{1/n}.
+			\]
+			Since $\lim_{n \to \infty} n^{1/n} = 1$ we must have $\lim_{n \to \infty} \lvert (\log n)^{2} \rvert^{1/n} = 1$. That is, $\limsup_{n \to \infty} \lvert a_{n} \rvert^{1/n} = 1$ and thus, $\sum_{n = 0}^{\infty} a_{n} z^{n}$ has radius of convergence $R = 1/1 = 1$.
+		\item
+			\[
+				\boxed{
+					R = 27.
+				}
+			\]
+
+			We know that $n! \sim cn^{n + \frac{1}{2}} e^{-n}$. Thus,
+			\[
+				\begin{split}
+					\lim_{n \to \infty} \lvert a_{n} \rvert^{1/n} & = \lim_{n \to \infty} \left \lvert \frac{\left ( cn^{n + \frac{1}{2}} e^{-n} \right )^{3}}{c(3n)^{3n + \frac{1}{2}} e^{-3n}} \right \rvert^{1/n} \\
+										      & = \lim_{n \to \infty} \left \lvert \frac{cn^{3n + \frac{3}{2}} e^{-3n}}{c(3n)^{3n + \frac{1}{2}} e^{-3n}} \right \rvert^{1/n} \\
+										      & = \lim_{n \to \infty} \left \lvert \frac{n^{3 + \frac{1}{2n}}}{(3n)^{3 + \frac{1}{2n}}} \right \rvert \\
+										      & = \lim_{n \to \infty} \left \lvert \frac{n^{3}}{(3n)^{3}} \right \rvert
+				\end{split}
+			\]
+			where the last equality follows since $n^{1/kn} \to 1$ as $n \to \infty$. Clearly
+			\[
+				\lim_{n \to \infty} \left \lvert \frac{n^{3}}{(3n)^{3}} \right \rvert = \frac{1}{27}.
+			\]
+			Thus, $\sum_{n = 0}^{\infty} a_{n} z^{n}$ has radius of convergence $R = 27$.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[17.]
@@ -289,5 +337,43 @@ Collaborators: Kai Mawhinney, Justin Son
 		\int_{T} f(z) \, dz = 0.
 	\]
 \end{problem}
+
+\begin{solution}
+	Consider the sequence of triangles $T_{0} = T, T_{1}, T_{2} \dots$ where each $T_{i + 1}$ is one of the dyadic subtriangles of $T_{i}$, and specifically, that dyadic subtriangle such that
+	 \[
+		\left \lvert \int_{T_{i}} f(z) \, dz \right \rvert \le 4 \left \lvert \int_{T_{i + 1}} f(z) \, dz  \right \rvert.
+	\]
+	Note then that
+	\[
+		\left \lvert \int_{T} f(z) \, dz \right \rvert \le 4^{n} \left \lvert \int_{T_{n}} f(z) \, dz  \right \rvert.
+	\]
+
+	Let $R_{i}$ be the (compact) set bounded by each $T_{i}$. Since the intersection of nested compact sets whose diameter goes to $0$ is always a single point, we can choose some $z_{0}$ to be the single point in the intersection of all of the $R_{i}$. If $z_{0} \neq w$, the proof is exactly as in the case that $f$ is holomorphic everywhere. We will show that even in the case that $z_{0} = w$, the integral is still $0$.
+
+	Let $f$ be bounded at points within distance $r$ of $w$. Thus, we can choose a triangle $T_{n}$ such that $R_{n} \subset N_{r}(w)$. Given any $\varepsilon > 0$, consider all $N_{\delta}(z_{\alpha})$ for $z_{\alpha} \in R_{n}$ where $\lvert z - z_{\alpha} \rvert < \delta \implies  \lvert f(z) - f(z_{\alpha}) - f'(z_{\alpha}) (z - z_{\alpha}) \rvert = \lvert \psi_{\alpha}(z) \rvert < \varepsilon$. Also choose $N$ to be any neighbourhood of $w$ that doesn't intersect $T_{n}$. Then since $R_{n}$ is compact, we can cover $R_{n}$ with finitely many $N_{\delta_{1}}(z_{1}), \dots, N_{\delta_{n}}(z_{n})$ and $N$.
+
+	Since each of the $f(z_{i})$ are bounded (say by $M$), we can linearise $f$ on $T_{n}$ using different points. Then the integral looks something like
+	\[
+		\begin{split}
+			\int_{T_{n}} f(z) \, dz & = \sum_{j = 1}^{m} \int_{I_{i_j}} f(z_{i_{j}}) + f'(z_{i_{j}})(z - z_{i_{j}}) + \psi_{i_{j}}(z) \, dz \\
+						& = \sum_{j = 1}^{m} \int_{I_{i_{j}}} \psi_{i_{j}}(z) \, dz \\
+						& \le \sum_{j = 1}^{m} \varepsilon \operatorname{length}(I_{i_{j}}) \\
+						& = \varepsilon \frac{\operatorname{length}(T_{0})}{2^{n}}
+		\end{split} 
+	\]
+	where $I_{i_{j}}$ are segments of $T_{n}$ where we have linearised $f$. Note that since $\varepsilon$ is not a function of $n$,
+	\[
+		\left \lvert \int_{T} f(z) \, dz  \right \rvert \le 2^{n} \varepsilon
+	\]
+	is sufficient to bound the integral by any $\varepsilon' > 0$. Thus, the integral must be $0$.
+
+	Note to instructor: I don't think that this proof actually works since it doesn't seem to depend on the boundedness condition, and one pole where the function is unbounded seems to be bad enough to cause Cauchy-Goursat to fail (for example, for $f(z) = 1/z$). However, I'm not sure where the proof breaks. Speaking to classmates I found another proof:
+
+	Let $f$ be bounded at points within distance $r$ of $w$. Thus, we can choose a triangle $T_{n}$ such that $R_{n} \subset N_{r}(w)$. Consider the keyhole contour $\Gamma_{\delta, \varepsilon}$ with an outer contour $T_{n}$, oriented positively, and an inner contour $\overline{\gamma}_{\varepsilon}$ that is a circle of radius $\varepsilon$, oriented negatively, connected by a narrow corridor of width $\delta$. Then taking limits as $\delta \to 0$, we get $\Gamma_{\delta, \varepsilon} \to \overline{\gamma}_{\varepsilon} \cup T_{n}$. Thus,
+	\[
+		\int_{T_{n}} f(z) \, dz = \int_{\gamma_{\varepsilon}} f(z) \, dz \le 2 \pi \varepsilon M 
+	\]
+	where $M$ is the bound on $f$ and $\varepsilon$ is independent of $n$, and thus allows us to show that the integral $\int_{T} f(z) \, dz $ has magnitude less than any $\varepsilon'$. That is, $\int_{T} f(z) \, dz = 0$.
+\end{solution}
 
 \end{document}
