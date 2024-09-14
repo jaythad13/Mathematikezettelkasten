@@ -38,9 +38,18 @@ The Cauchy-Riemann equations give the conditions for a function that's different
 
 ##### _theorem:_ Cauchy-Riemann equations
 
-For a function $f$ we need $u_{x} = v_{y}$ and $u_{y} = - v_{x}$ for it to be holomorphic.
+If $f : \Omega \to \mathbb{C}$ is holomorphic on the region $\Omega$ with $f(x + i y) = u(x, y) + iv(x, y)$, the Cauchy-Riemann equations
+$$
+\begin{split}
+\frac{ \partial u }{ \partial x } & = \frac{ \partial v }{ \partial y } \\
+\frac{ \partial u }{ \partial y } & = - \frac{ \partial v }{ \partial x } 
+\end{split}
+$$
 
-See Looman-Menchoff theorem for the (partial) converse (it's in Narasimhan and only requires that $f$ be continuous).
+###### _proof sketch:_
+
+Note that the Jacobian of $F : (x, y) \mapsto (u(x, y), v(x, y))$, must be a homothety. That is, it must be of the form $r \begin{bmatrix} \cos \theta & - \sin \theta \\ \sin \theta & \cos\theta \end{bmatrix}$ for some $r$ and some $\theta$. The Cauchy-Riemann equations follow.
+
+The Looman-Menchoff theorem is a (partial) converse (it's in [[Complex analysis/attachments/texts/Complex Analysis in One Variable.pdf|Narasimhan]] and only requires that $f$ be continuous).
 
 %%all of the crazy new differential operator nonsense%%
-

@@ -42,5 +42,3 @@ Suppose $f$, a function on the open set $\Omega$, has a primitive $F$ that gives
 $$
 \int_{\gamma} f(z) \, dz = F(w_{2}) - F(w_{1})
 $$
-
-
