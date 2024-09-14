@@ -3,54 +3,54 @@
 
 \name{Jayden Thadani}
 \class{MATH 176 --- Algebraic Geometry}
-\assignment{Homework assignment \# 2}
+\assignment{Homework assignment \#2}
 \duedate{13th September 2024}
 
 \begin{document}
 
 \begin{problem}[1]
-	Use continued fractions to find positive integers $x$ and $y$ which satisfy Pell's equation $x^{2} - 19 y^{2} = 1$.
-\end{problem}
-
-\pagebreak
-
-\begin{problem}[2]
-	Fix an integer $a \ge 1$, and consider the cubic curve $C$: $x^{3} + y^{3} = a$.
+	List five examples of positive integral solutions $(x, y)$ to the following equations.
 	\begin{enumerate}
-		\item Say that $P = (p_{1} : p_{2} : p_{0})$ is a rational point on $C$. Show that the projective line tangent to $C$ at $P$ is $L$: $p_{1}^{2} x + p_{2}^{2} x_{2} - a p_{0}^{2} x_{0} = 0$.
-		\item Show that this line intersects $C$ at the points $P$ and
-			\[
-				Q = \left ( p_{1} (p_{1}^{3} + 2 p_{2}^{3}) : -p_{2} (2 p_{1}^{3} + p_{2}^{3}) : p_{0}(p_{1}^{3} - p_{2}^{3}) \right ).
-			\]
-		\item When $a = 7$, use this to find three distinct rational points on $C$.
+		\item $x^{2} - 2y^{2} = -1$.
+		\item $x^{2} - 3y^{2} = 1$.
+		\item $x^{2} - 5 y^{2} = -1$.
+		\item $x^{2} - 7 y^{2} = 1$.
+		\item $x^{2} - 13 y^{2} = -1$.
 	\end{enumerate}
 \end{problem}
 
 \pagebreak
 
-\begin{problem}[3.]
-	Consider the following lines:
-	\[
-		y = x + 1 \text{ and } y = x + 3.
-	\]
-	These lines are parallel, so they do not intersect at an affine point $(x, y) \in \mathbb{A}(\mathbb{R})$. Make the substitution $x = x_{1}/x_{0}$ and $y = x_{2}/x_{0}$ and find the projective point $P = (x_{1} : x_{2} : x_{0})$ in $\mathbb{P}^{2}(\mathbb{R})$ where the lines do intersect.
+\begin{problem}[2]
+	Use continued fractions to find positive integers $x$ and $y$ which satisfy Pell's equation $x^{2} - 19 y^{2} = 1$.
 \end{problem}
 
-\begin{solution}
-	Making the substitutions and multiplying by $x_{0}$ gives us the equations
-	\[
-		\begin{split}
-			x_{2} & = x_{1} + x_{0} \\
-			x_{2} & = x_{1} + 3 x_{0}.
-		\end{split}
-	\]
-	from which we can get
-	 \[
-		2 x_{0} = 0
-	\]
-	by subtracting the first equation from the second.
+\pagebreak
 
-	From $x_{0} = 0$ we can get that $x_{2} = x_{1} + 0 = x_{1}$. Thus, $P = (1 : 1 : 0)$ is the ideal point in $\mathbb{P}^{2}(\mathbb{R})$ where the lines intersect.
-\end{solution}
+\begin{problem}[3]
+	Assume that an integer $n = a^{2} + b^{2}$ is the sum of squares of nonnegative integers $a$ and $b$.
+	\begin{enumerate}
+		\item For any integers $k$, $x_{0}$, and  $y_{0}$ define the coordinates
+			\[
+				\begin{split}
+					x_{k} & = \frac{1}{2} \left ( 1 - \cos{\left ( \frac{2 \pi k}{4} \right ) + \sin{\left ( \frac{2 \pi k}{4} \right )}} \right ) a + \frac{1}{2} \left ( -1 + \cos{\left ( \frac{2 \pi k}{4} \right ) + \sin{\left ( \frac{2 \pi k}{4} \right )}} \right ) \\
+					y_{k} & = \frac{1}{2} \left ( 1 - \cos{\left ( \frac{2 \pi k}{4} \right ) - \sin{\left ( \frac{2 \pi k}{4} \right )}} \right ) a + \frac{1}{2} \left ( -1 - \cos{\left ( \frac{2 \pi k}{4} \right ) + \sin{\left ( \frac{2 \pi k}{4} \right )}} \right ).
+				\end{split}
+			\]
+			Show that $x_{k}$ and $y_{k}$ are integers satisfying the identity
+			\[
+				x_{k} + i y_{k} = (a + i b) \left ( \frac{1 - i^{k}}{1 - i} \right ) + (x_{0} + i y_{0})
+			\]
+			expressed as complex numbers in terms of $i = \sqrt{-1}$.
+		\item Consider the collection of points
+			\[
+				V = \{ P_{k} = (x_{k}, y_{k}) \in \mathbb{R}^{2} \mid k \in \mathbb{Z} \}.
+			\]
+			Show that the distance between consecutive points is $\ell = \lVert P_{k + 1} - P_{k} \rVert = \sqrt{a^{2} + b^{2}}$. Conclude that $V$ is a square whose vertices are integral, and whose area is $n$.
+		\item As a specific example, consider the initial point $P_{0} = (b, 0)$, so that we can have the corresponding points $P_{1} = (a + b, b)$, $P_{2} = (a, a + b)$, and $P_{3} = (0, a)$. Show that these four points form a square whose vertices are non-negative integers and whose area is $n$.
+		\item Conversely, say that $V$ is a square whose vertices $P_{k} = (x_{k}, y_{k})$, labelled counter-clockwise, are integral and whose area is $n$. Show that the coordinates $x_{k}$ and $y_{k}$ must be in the form above for some $a, b, x_{0}, y_{0}$.
+		\item Let $m = c^{2} + d^{2}$ be another integer which is the sum of squares of odd integers $c$ and $d$. Show that $mn = A^{2} + B^{2}$ is also the sum of squares of odd integers $A$ and $B$. Conclude that $mn$ is also the area of a square whose vertices are integral.
+	\end{enumerate}
+\end{problem}
 
 \end{document}

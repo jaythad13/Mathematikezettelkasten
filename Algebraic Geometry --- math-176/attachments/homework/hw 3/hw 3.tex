@@ -1,0 +1,74 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 176 --- Algebraic Geometry}
+\assignment{Homework assignment \# 3}
+\duedate{20th September 2024}
+
+\begin{document}
+
+\begin{problem}[1]
+	Consider a quadratic polynomial $f(x) = Ax^{2} + Bx + C$ having integral coefficients $A$, $B$, and $C$. Say that  $x_{0}$ is a rational number such that $f(x_{0}) = y_{0}^{2}$ is the square of a rational number $y_{0}$. This exercise will show how to find all rational numbers $x$ such that $f(x) = y^{2}$ for some rational number $y$. In particular, we will show that, given any rational number $t$, if we substitute
+	\[
+		x = x_{0} + \frac{2 A x_{0} + B - 2 y_{0} t}{t^{2} - A} \text{ then } f(x) = \left ( y_{0} + t \frac{2 A x_{0} + B - 2 y_{0} t}{t^{2} - A} \right )^{2}.
+	\]
+	\begin{enumerate}
+		\item Using a Taylor series expansion around $x = x_{0}$, show that we have the identity
+			\[
+				f(x) = A x^{2} + B x + C = A(x - x_{0})^{2} + (2 A x_{0} + B)(x - x_{0}) + (A x_{0}^{2} + B x_{0} + C).
+			\]
+		\item Assume that $x$ and $y$ are rational numbers such that $y^{2} = A x^{2} + B x + C$. Show that we have the identity $A(x - x_{0})^{2} + (2 A x_{0} + B)(x - x_{0}) = y^{2} - y_{0}^{2} = (y - y_{0})^{2} + 2 y_{0}(y - y_{0})$.
+		\item Denote the rational number $t = (y - y_{0})/(x - x_{0})$ as the slope of the line $y = t (x - x_{0}) + y_{0}$ going through the point $(x_{0}, y_{0})$. Show that we have the identity
+			\[
+				A(x - x_{0})^{2} + (2 A x_{0} + B)(x - x_{0}) = t^{2}(x - x_{0}) + 2 t y_{0} (x - x_{0}).
+			\]
+		\item Show that the line $y = t(x - x_{0}) + y_{0}$ intersects the curve $y^{2} = A x^{2} + B x + C$ at two points, namely $(x, y) = (x_{0}, y_{0})$ and
+			\[
+				(x, y) = \left (  x_{0} + \frac{2 A x_{0} + B - 2 y_{0} t}{t^{2} - A}, y_{0} + t \frac{2 A x_{0} + B - 2 y_{0} t}{t^{2} - A} \right )
+			\]
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[2]
+	Fix an integer $a \ge 1$, and consider the cubic curve $C$: $x^{3} + y^{3} = a$.
+	\begin{enumerate}
+		\item Say that $P = (p_{1} : p_{2} : p_{0})$ is a rational point on $C$. Show that the projective line tangent to $C$ at $P$ is $L$: $p_{1}^{2} x + p_{2}^{2} x_{2} - a p_{0}^{2} x_{0} = 0$.
+		\item Show that this line intersects $C$ at the points $P$ and
+			\[
+				Q = \left ( p_{1} (p_{1}^{3} + 2 p_{2}^{3}) : -p_{2} (2 p_{1}^{3} + p_{2}^{3}) : p_{0}(p_{1}^{3} - p_{2}^{3}) \right ).
+			\]
+		\item When $a = 7$, use this to find three distinct rational points on $C$.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[3]
+	Consider the following lines:
+	\[
+		y = x + 1 \text{ and } y = x + 3.
+	\]
+	These lines are parallel, so they do not intersect at an affine point $(x, y) \in \mathbb{A}(\mathbb{R})$. Make the substitution $x = x_{1}/x_{0}$ and $y = x_{2}/x_{0}$ and find the projective point $P = (x_{1} : x_{2} : x_{0})$ in $\mathbb{P}^{2}(\mathbb{R})$ where the lines do intersect.
+\end{problem}
+
+\begin{solution}
+	Making the substitutions and multiplying by $x_{0}$ gives us the equations
+	\[
+		\begin{split}
+			x_{2} & = x_{1} + x_{0} \\
+			x_{2} & = x_{1} + 3 x_{0}.
+		\end{split}
+	\]
+	from which we can get
+	 \[
+		2 x_{0} = 0
+	\]
+	by subtracting the first equation from the second.
+
+	From $x_{0} = 0$ we can get that $x_{2} = x_{1} + 0 = x_{1}$. Thus, $P = (1 : 1 : 0)$ is the ideal point in $\mathbb{P}^{2}(\mathbb{R})$ where the lines intersect.
+\end{solution}
+
+\end{document}
