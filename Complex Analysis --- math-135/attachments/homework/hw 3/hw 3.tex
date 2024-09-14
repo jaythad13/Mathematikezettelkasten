@@ -1,0 +1,95 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 135 --- Complex Analysis}
+\assignment{Homework 3}
+\duedate{19th September 2024}
+
+\begin{document}
+
+\begin{problem}[1.]
+	Prove that
+	\[
+		\int_{0}^{\infty} \sin{(x^{2})} \, dx = \int_{0}^{\infty} \cos{(x^{2})} \, dx = \frac{\sqrt{2 \pi}}{4}.
+	\]
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[2]
+	Show that $\displaystyle \int_{0}^{\infty} \frac{\sin{x}}{x} \, dx = \frac{\pi}{2}$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[7.]
+	Suppose $f : \mathbb{D} \to \mathbb{C}$ is holomorphic. Show that the diameter $d = \sup_{z, w \in \mathbb{D}} \lvert f(z) - f(w) \rvert$ of the image of $f$ satisfies
+	\[
+		2 \lvert f'(0) \rvert < d.
+	\]
+	Moreover, it can be shown that equality holds precisely when $f$ is linear, $f(z) = a_{0} + a_{1} z$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[9.]
+	Let $\Omega$ be abounded open subset $\mathbb{C}$, and $\varepsilon : \Omega \to \Omega$ be a holomorphic function. Prove that if there exists a point $z_{0} \in \Omega$ such that
+	\[
+		\varphi(z_{0}) = z_{0} \text{ and } \varphi'(z_{0}) = 1
+	\]
+	then $\varphi$ is linear.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[11.]
+	Let $f$ be a holomorphic function on the disc $D_{R_{0}}$ centred at the origin and of radius $R_{0}$.
+	\begin{enumerate}
+		\item Prove that whenever $0 < R < R_{0}$ and $\lvert z \rvert < R$, then
+			\[
+				f(z) = \frac{1}{2 \pi} \int_{0}^{2 \pi} f(R e^{i \varphi}) \operatorname{Re} \left ( \frac{R e^{i \varphi} + z}{R e^{i \varphi} - z} \right ) \, d\varphi.
+			\]
+		\item Show that
+			\[
+				\operatorname{Re} \left ( \frac{R e^{i \gamma} + r}{R e^{i \gamma} - r} \right ) = \frac{R^{2} - r^{2}}{R^{2} - 2 R r \cos{\gamma} + r^{2}}.
+			\]
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[12.]
+	Let $u$ be a real-valued function defined on the unit disc $\mathbb{D}$. Suppose that $u$ is twice continuously differentiable and harmonic. That is
+	\[
+		\Delta u(x, y) = 0
+	\]
+	for all $(x, y) \in \mathbb{D}$.
+	\begin{enumerate}
+		\item Prove that there exists a holomorphic function $f$ on the unit disc such that
+			\[
+				\operatorname{Re}(f) = u.
+			\]
+			Also show that the imaginary part of $f$ is uniquely defined up to an additive (real) constant.
+		\item Deduce from this result, and from Exercise 11, the Poisson integral representation formula from the Cauchy integral formula: If $u$ is harmonic in the unit disc and continuous on its closure, then if $z = r e^{i \theta}$ one has
+			\[
+				u(z) = \frac{1}{2 \pi} \int_{0}^{2 \pi} P_{r}(\theta - \varphi) u(\varphi) \, d\varphi 
+			\]
+			where $P_{r}(\gamma)$ is the Poisson kernel for the unit disc given by
+			\[
+				P_{r}(\gamma) = \frac{1 - r^{2}}{1 - 2r \cos{\gamma} + r^{2}}.
+			\]
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[13.]
+	Suppose $f$ is an analytic function defined everywhere in $\mathbb{C}$ and such that for each $z_{0} \in \mathbb{C}$ at least one coefficient in the expansion
+	\[
+		f(z) = \sum_{n = 0}^{\infty} c_{n} (z - z_{0})^{n}
+	\]
+	is equal to $0$. Prove that $f$ is a polynomial.
+\end{problem}
+
+\end{document}
