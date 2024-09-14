@@ -12,17 +12,124 @@
 	Let $x = a_{0}.a_{1} \cdots$, $y = b_{0}.b_{1} \cdots$ be positive real numbers with $a_{k} \le b_{k}$ for all $k = 0, 1, \dots$. Prove that $z = \sup \{ b_{0}.b_{1} \cdots b_{k} - a_{0}.a_{1} \cdots a_{k} \mid k \in \mathbb{N} \}$ satisfies $x + z = y$.
 \end{problem}
 
+\begin{solution}
+	Since $a_{k} \le b_{k}$, we know that for all $k \in \mathbb{N}$,
+	\[
+		b_{0}.b_{1} \cdots b_{k} - a_{0}.a_{1} \cdots a_{k} = (b_{0} - a_{0}).(b_{1} - a_{1}) \cdots (b_{k} - a_{k}).
+	\]
+	Thus, we must have $z = (b_{0} - a_{0}).(b_{1} - a_{1}) \cdots$ (we showed in the first problem of Homework 1 that the $\sup_{k \in \mathbb{N}} a_{0}.a_{1} \cdots a_{k} = a_{0}.a_{1} \cdots$). Then
+	\[
+		\begin{split}
+			x + z & = \sup \{ a_{0}.a_{1} \cdots a_{k} + (b_{0} - a_{0}).(b_{1} - a_{1}) \cdots (b_{k} - a_{k}) \mid k \in \mathbb{N} \} \\
+			      & = \sup \{ b_{0}.b_{1} \cdots b_{k} \mid k \in \mathbb{N} \} \\
+			      & = b_{0}.b_{1} \cdots \\
+			      & = y.
+		\end{split}
+	\]
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[2.]
 	If $x$ is a positive real number, prove that there exists a positive real number $y$ such that $y^{2} = x$.
 \end{problem}
 
+\begin{solution}
+	Consider $A = \{ t^{2} < x \mid t > 0, t \in \mathbb{R} \}$. We claim that $y = \sup A$ gives $y^{2} = x$.
+
+	First we will show that $y^{2} \ge x$ by showing that $y^{2} \not < x$. In particular, we claim that if $y^{2} < x$, there exists some $h > 0$ such that $(y + h)^{2} < x$, making $y$ not an upper bound on $A$. We know that for any $h > 0$, we must have
+	\[
+		(y + h)^{2} - y^{2} = 2 y h + h^{2}
+	\]
+	If we choose $h < 1$, we can get the inequality
+	\[
+		\begin{split}
+			(y + h)^{2} - y^{2} & = 2 y h + h^{2} \\
+					    & = 2 h (y + h/2) \\
+					    & = 2 h (y + 1).
+		\end{split}
+	\]
+	If additionally, we have
+	\[
+		h < \frac{x - y^{2}}{2(y + 1)},
+	\]
+	then
+	\[
+		\begin{split}
+			(y + h)^{2} - y^{2} & = 2 h (y + 1) \\
+					    & < \frac{x - y^{2}}{2 (y + 1)} 2 (y + 1) \\
+					    & = x - y^{2}.
+		\end{split}
+	\]
+	Thus, $(y + h)^{2} < x$ for any
+	\[
+		h < \min \left ( 1, \frac{x - y^{2}}{2(y + 1)} \right )
+	\]
+
+	Now we will show that $y^{2} \le x$ by showing that $y^{2} \not > x$. We will show that if $y^{2} > x$, there exists some $h > 0$ such that $(y - h)^{2} > x$. We know that for any $0 < h < 1$,
+	\[
+		\begin{split}
+			y^{2} - (y - h)^{2} & = 2yh - h^{2} \\
+					    & = 2h(y - h/2) \\
+					    & < 2hy 
+		\end{split}
+	\]
+	Thus if we choose
+	\[
+		h < \frac{y^{2} - x}{2y}
+	\]
+	we get
+	\[
+		y^{2} - (y - h)^{2} < y^{2} - x.
+	\]
+	That is, $x < (y - h)^{2}$, and thus  $t \le (y - h)$ for any $t \in A$. That is, $y$ is not the supremum of $A$, contradicting our assumption that it is.
+
+	Then since $y^{2} \le x$ and $y^{2} \ge x$, we must have $y^{2} = x$.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[3.]
 	Let $p$ and $q$ be relatively prime positive integers and $x \in \mathbb{R}_{+}$ be such that $xq = p$. Prove that $x \in \mathbb{D}$ if and only if the only prime factors of $q$ are $2$ and $5$.
 \end{problem}
+
+\begin{solution}
+	First suppose the only prime factors of $q$ are $2$ and $5$. Then $q$ has a unique factorisation $q = 2^{n} 5^{m}$ where $n, m$ are non-negative integers. We can then write
+	\[
+		\begin{split}
+			x & = \frac{p}{q} \\
+			  & = \frac{p}{2^{n} 5^{m}}
+		\end{split}
+	\]
+	If $m > n$, rewrite
+	 \[
+		\begin{split}
+			x & = \frac{p 2^{m - n}}{2^{m} 5^{m}} \\
+			  & = \frac{p 2^{m - n}}{10^{m}}
+		\end{split}
+	\]
+	which is a decimal number. Else, write
+	 \[
+		\begin{split}
+			x & = \frac{p 5^{n - m}}{2^{n} 5^{m}} \\
+			  & = \frac{p 5^{n - m}}{10^{n}}.
+		\end{split}
+	\]
+	which is a decimal number.
+
+	Now suppose $q$ has a prime factor apart from $2$ and $5$. Call that prime $q_{0}$. Then since $p$ and $q$ are coprime, any expression
+	\[
+		x = \frac{kp}{kq}
+	\]
+	will reduce to a prime factorisation
+	\[
+		x = \frac{p_{1}^{n_{1}} \cdots p_{n}^{n_{n}}}{q_{0} q_{1}^{m_{1}} \cdots q_{m}^{m_{m}}}
+	\]
+	where none of the $p_{i}$ are $q_{0}$. Thus, we can never get
+	\[
+		x = \frac{kp}{10^{m}} \in \mathbb{D}.
+	\]
+\end{solution}
 
 \pagebreak
 
@@ -33,6 +140,14 @@
 	\]
 	Prove that the set of all algebraic numbers is countable.	
 \end{problem}
+
+\begin{solution}
+	A complex number $z$ is algebraic if it is the root of a polynomial. Since each non-zero polynomial of degree $n$ has $n$ roots (by the fundamental theorem of algebra), we will show that we can group polynomials into countably many finite families.
+
+	Let $h = n + \lvert a_{0} \rvert + \dots + \lvert a_{n} \rvert$ be the height of a polynomial $a_{0} z^{n} + \dots + a_{n - 1} z + a_{n}$. Then there are only finitely many polynomials of height $h$ for each $h \in \mathbb{Z}_{\ge 0}$. To be precise, there are are $\sum_{n = 0}^{h} \left ( \binom{n}{n - h} \right ) 2^{n - 1}$ polynomials with height $h$, where $\left ( \binom{n}{n - h} \right )$ denotes the number of ordered non-negative integer partitions of $h$. This is because we must have $n \le h$, and for each $n$, there are $\left ( \binom{n}{n - h} \right )$ ways to write $n - h$ as the sum of $n$ non-negative integers. Without loss of generality, we can assume $a_{0} > 0$, and thus, multiply by $2^{n - 1}$ to account for the signs of the other coefficients. Thus, there are at most $\sum_{n = 0}^{h} n \left ( \binom{n}{n - h} \right ) 2^{n - 1}$ distinct algebraic numbers that are roots of a polynomial of height $h$. 
+
+	Then, if we denote by $A_{h}$ the set of algebraic numbers that are roots of a polynomial of height $h$,  $A_{h}$ must be finite. Since the set of all algebraic numbers is the countable union of finite sets $\bigcup_{h = 0}^{n} A_{h}$, set of all algebraic numbers must be countable.
+\end{solution}
 
 \pagebreak
 
@@ -48,5 +163,33 @@
 \begin{problem}[6.]
 	Let $x < y$ be positive real numbers. Prove that $\{ z \in \mathbb{R} \setminus \mathbb{Q} \mid x < z < y \}$ is uncountable.
 \end{problem}
+
+\begin{solution}
+	We showed in class already that the interval $(0, 1)$ is uncountable. We will first show that $(x, y)$ is uncountable. Notice that $(x, y) \cup \mathbb{Q}$ is countable since it is the subset of a countable set $\mathbb{Q}$, and is infinite (consider $q \in (x, y) \cap \mathbb{Q}$ and $q + 1/n$ for sufficiently big $n$). Thus, it follows that $\{ z \in \mathbb{R} / \mathbb{Q} \mid x < z < y \}$ is uncountable --- else the union $(x, y) = ((x, y) \cap \mathbb{Q}) \cup ((x, y) \setminus \mathbb{Q})$ would be countable.
+
+	Consider the map $f : (x, y) \to (0, 1)$ by $z \mapsto \frac{z - x}{y - x}$. We claim that $f$ is invertible, and thus, a bijection. Consider $g : (0, 1) \to (x, y)$ by $z \mapsto z(y - x) + x$. We will show that $f$ and $g$ are inverses since $f \circ g$ and $g \circ f$ are the identity maps on  $(0, 1)$ and $(x, y)$ respectively.
+
+	For any $z \in (0, 1)$ we compute
+	\[
+		\begin{split}
+			(f \circ g)(z) & = f \left ( z(y - x) + x \right ) \\
+				       & = \frac{z(y - x) + x - x}{y - x} \\
+				       & = z \frac{y - x}{y - x} \\
+				       & = z.
+		\end{split}
+	\]
+	That is, $f \circ g$ is the identity map on $(0, 1)$. For any $z \in (x, y)$ we compute
+	\[
+		\begin{split}
+			(g \circ f)(z) & = g \left ( \frac{z - x}{y - x} \right ) \\
+				       & = (y - x) \frac{z - x}{y - x} + x \\
+				       & = z - x + x \\
+				       & = z
+		\end{split}
+	\]
+	giving us that $g \circ f$ is the identity map on $(x, y)$. Thus, $f$ is a bijection between $(0, 1)$ and $(x, y)$.
+
+	 If $(x, y)$ were countable with a bijection $h : (x, y) \to \mathbb{N}$, we would have a bijection $g \circ h : (0, 1) \to \mathbb{N}$, contradicting that $(0, 1)$ is uncountable. Thus, $(x, y)$ must be uncountable. It follows from the arguments we made at the beginning of the problem that $\{ z \in \mathbb{R} \setminus \mathbb{Q} \mid x < z < y \}$ is uncountable.
+\end{solution}
 
 \end{document}
