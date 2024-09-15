@@ -158,6 +158,30 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	If $x, y$ are periodic in $j$ and $k$ respectively, then we know that they must both be periodic in $jk$ as well. That is, we must have $a_{i} = a_{i + jk}$ and $b_{i} = b_{i + jk}$. Consider
+	\[
+		A = \{ 0.0 a_{2} \cdots a_{njk} + 0.0 b_{2} \cdots b_{njk} \mid n \in \mathbb{N} \}.
+	\]
+	We will show that $\sup A = c_{0}.c_{1} \cdots$ is periodic with  $c_{i} = c_{i + njk}$ and $z = x + y$.
+
+	Define $z_{0} = 0.0 a_{2} \cdots a_{jk} + 0.0 b_{2} \cdots b_{jk} = c_{0}.c_{1} \cdots c_{jk}$. Note that $z_{0} < 1$. That is $c_{0} = 0$. Then $z_n = 0.0 a_{2} \cdots a_{(n + 1)jk} + 0.0 b_{2} \cdots b_{(n + 1)jk}$ is just $z_{n - 1} + 10^{-njk} z_{1}$, and thus, by induction, $z_{n} = \sum_{i = 0}^{n} 10^{-ijk} z_{1}$. But then $z_{n}$ is just $0.c_{1} \cdots c_{jk}  \underbrace{\cdots}_{n - 1 \text{ times}} c_{1} \cdots c_{jk}$ (here it's important that $c_{0} = 0$). 
+
+	All elements in $A$ are $z_{n}$ for some non-negative integer $n$. It's clear that $z = 0.\overline{c_{1} \cdots c_{jk}} \ge z_{n}$ since their decimal expansions are equal till the $(njk)$th decimal place, and $z_{n}$ has all zeroes after the $(njk)$th decimal place (which is less than or equal to whatever digits $z$ has in its decimal expansion). Thus, $z$ is an upper bound on $A$.
+
+	Suppose we have some $w = d_{0}.d_{1} \cdots < z = c_{0}.c_{1} \cdots$. Then there must be some first $m$ for which $d_{m} < c_{m}$. Then if we choose $n$ such that  $(n + 1)jk > m$, $z_{n}$, $z$, and $w$ have equal decimal expansions in the first $m - 1$ places and then in the $m$th place, both $z_{n}$ and $z$ have decimals greater than $w$ does. Thus, $z_{n} > w$ and $w$ cannot be an upper bound on $A$. Thus, $z$ is $\sup A$.
+
+	Now we just have to show that $z = x + y$. Recall that $x + y = \sup S$ for
+	\[
+		S = \{ 0.0 a_{1} \cdots a_{m} + 0.0 b_{1} \cdots b_{m} \mid m \in \mathbb{N} \}.
+	\]
+	Note that $A \subset S$. Consider any $s_{m} = 0.0 a_{1} \cdots a_{m} + 0.0 b_{1} \cdots b_{m} \in S$. Choosing $n$ such that $(n + 1)jk > m$, we have $s_{m} < z_{n} < z$. Thus, $z$ is an upper bound on $s$. 
+
+	Suppose we have some $w = d_{0}.d_{1} \cdots < z = c_{0}.c_{1} \cdots$. Then there must be some first $m$ for which $d_{m} < c_{m}$. Then if we choose $n$ such that  $(n + 1)jk > m$, $z_{n}$, $z$, and $w$ have equal decimal expansions in the first $m - 1$ places and then in the $m$th place, both $z_{n}$ and $z$ have decimals greater than $w$ does. Thus, $z_{n} > w$ and $w$ cannot be an upper bound on $S$. That is, $z$ is $\sup S$, and thus, $z = x + y$.
+
+	As desired, we have $z = x + y$ with periodic decimal expansion $c_{0}.c_{1} \cdots$ satisfying $c_{i} = c_{i + jk}$ for all positive integers $i$.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[6.]
