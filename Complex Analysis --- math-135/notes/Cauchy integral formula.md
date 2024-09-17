@@ -3,6 +3,7 @@ tags:
 - math-135/1
 - math-135/4
 - math-135/5
+- math-135/6
 - anal
 ---
 
@@ -147,3 +148,56 @@ $$
 Then, by Morera's theorem, $f$ is holomorphic on $D$. Then we can just cover $\Omega$ with discs $D$.
 
 Consider compact subsets $\Omega_{\delta}$ with a distance $\delta$ from the boundary of $\Omega$. Then bound $(f_{n} - f)'$ uniformly using [[#_proposition _ Cauchy inequalities|Cauchy inequalities]].
+
+##### _proposition:_ holomorphic functions defined by integrals
+
+For any continuous $F : \Omega \times [0, 1] \to \mathbb{C}$ with holomorphic sections $F_{s_{0}} : z \mapsto F(z, s_{0})$, the "average" of these sections, $f$, defined by
+$$
+f(z) = \int_{0}^1 F(z, s)  \, ds 
+$$
+is holomorphic.
+
+###### _proof:_
+
+By Morera's theorem it is sufficient to show that $\int_{\partial \Delta} f(z) \, dz$ for all triangles $\Delta$ in compact disks $\overline{D}$ in $\Omega$. 
+
+Note that if we have Fubini's theorem, we can just exchange the order of integration as follows
+$$
+\begin{split}
+\int_{\partial \Delta} f(z) \, dz & = \int_{\partial \Delta} \int_{0}^1 F(z, s) \, ds   \, dz \\
+ & = \int_{0}^1 \int_{\partial \Delta} F(z, s) \, dz   \, ds \\
+ & = 0
+\end{split} 
+$$
+since [[Complex Analysis --- math-135/notes/Cauchy-Goursat theorem#Goursat's theorem|Goursat's theorem]] gives us that the integral of a holomorphic function $F(z, s_{0})$ over a closed triangle is $0$.
+
+Since we don't we will show that the Riemann sums
+$$
+f_{n} = \sum_{k = 1}^n \frac{F(z, k/n)}{n}
+$$
+uniformly converge to $f$. Thus, the integral of $f$ is just the limit of the integrals of these $f_{n}$. Since each $f_{n}$ is holomorphic, each of their integrals is $0$, and thus, the limit of the integrals is $0$.
+
+To see that they converge uniformly, note that $F$ is continuous on $\Omega$, and thus uniformly continuous on each disk $\overline{D}$. Consider
+$$
+\begin{split}
+\lvert f_{n}(z) - f(z) \rvert & = \left\lvert  \sum_{k = 1}^n \frac{F(z, k/n)}{n} - \int_{0}^1 F(z, s) \, ds   \right\rvert \\
+& = \left\lvert  \sum_{k = 1}^n \int_{ (k - 1) / n}^{k / n} F(z, k/n) - F(z, s)  \, ds   \right\rvert.
+\end{split}
+$$
+Note that on each interval $\left[ \frac{k - 1}{ n}, \frac{k}{n} \right]$, $s$ is within $1/n$ of $\frac{k}{n}$, and thus, for sufficiently large $n$, we can get $\lvert F(z, k / n) - F(z, s) \rvert < \varepsilon$ for all $s$ and all $k$ (by the uniform continuity of $F$ on $\overline{D}$). Thus,
+$$
+\lvert f_{n}(z) - f(z) \rvert \le \sum_{k = 1}^n \frac{\varepsilon}{n} = \varepsilon 
+$$
+Thus, the integral of $f$ over $\partial \Delta$ for any triangle $\Delta$ is the limit of the integral of $f_{n}$, and that is just $0$. By Morera's
+
+##### _theorem:_ Runge's theorem
+
+Any function $f$ holomorphic in a neighbourhood of a compact set $K$ can be approximated uniformly on $K$ by rational functions whose only singularities are in $K^c$. If $K^c$ is connected, $f$ can be approximated uniformly on $K$ by polynomials.
+
+###### _proof sketch:_
+
+Get $f(a)$ at each $a \in K$ by using the Cauchy integral formula on a lattice with squares small enough that you can cover $K$ with squares that do not intersect $\Omega^c$. 
+
+Approximate the integrands using the same Riemann sum.
+
+For $z_{1}$ outside a disc of radius $r$ containing $K$, and $z \in K$ approximate $1/(z - z_{1})$ uniformly by polynomials by using a geometric series trick. Then use connectedness the same way we did to prove the identity theorem to approximate $1/(z - z_{0})$ uniformly by $1 / (z - z_{1})$ for any $z_{0} \not\in K$.
