@@ -3,6 +3,7 @@ tags:
 - math-176/6
 - math-176/7
 - math-176/8
+- math-176/9
 - alg-geo
 ---
 
@@ -126,6 +127,7 @@ $$
 \int \frac{dX}{\sqrt{ X^{3} + AX + B }}.
 $$
 Both of these can be written as incomplete elliptic integrals.
+
 ###### _proof sketch:_
 
 Let $p(x) = a_{4} x^4 + a_{3} x^3 + a_{2} x^{2} + a_{1}x + a_{0}$. Send the four roots $e_{1}, e_{2}, e_{3}, e_{4}$ of $p$ to the four roots of $(1 - x^{2})(1 - k^{2} x^{2})$. That is, send $e_{1}, e_{2}, e_{3}, e_{4}$ to $\pm \frac{1}{k}$ and $\pm 1$.
@@ -156,22 +158,46 @@ $$
 \int_{2}^\infty \frac{dx}{\sqrt{ x^{3} + 4x }} = K(i) = \int_{0}^1 \frac{dx}{\sqrt{ 1- x^4 }}  
 $$
 
-But how do we actually evaluate $K(k)$?
+### Evaluating elliptic integrals
 
-##### _definition:_ Jacobi elliptic function
+This is all very nice, but how do we actually evaluate $K(k)$? To see this, first, more detours.
 
-For some fixed $k \in \mathbb{C}$, $k \neq \pm 1$, the Jacobi elliptic function $w(z) = \operatorname{sn}(z)$ is the inverse of
+Johann Bernoulli said we should consider the lemniscate $(x^{2} + y^{2})^{2} = a^{2}(x^{2} + y^{2})$.
+
+It's easy to see (by evaluating using polar coordinates) that the following proposition holds
+
+##### _proposition:_ arc length of a lemniscate
+
+The arc length of the lemniscate $(x^{2} + y^{2})^{2} = a(x^{2} + y^{2})$ is $4a K(i)$.
+
+###### _proof sketch:_
+
+Note that in polar coordinates we have $r^4 = a^{2} r^{2} \cos{(2\theta)}$, and thus $r = a \sqrt{ \cos(2 \theta) }$. Find $dr / d\theta$ and integrate its norm over $[0, 2\pi]$.
+
+Fagnano asked an interesting question. How much further along a lemniscate do you have to go in order to double the arc length you've traversed already? Fagnano gave the following answer to his question.
+
+##### _proposition:_ Fagnano's duplication formula
+
+Consider the integral
 $$
-z(w) = \int_{0}^w \frac{dx}{\sqrt{ (1 - x^{2})(1 - k^{2} x^{2}) }} = F(\arcsin w, k) 
+	z(w) = \int_{0}^w \frac{dx}{\sqrt{ (1 - x^{2})(1 - k^{2}x^{2}) }}.
+$$
+Then we have $z(W) = 2 z(w)$ for
+$$
+W = \frac{2w\sqrt{ 1 - w^4 }}{1 + w^4}.
 $$
 
-Notice that since $w(z) = \sin(z)$ for $k = 0$. Since $\sin$ is periodic, we know it doesn't have a well defined inverse on all domains and $z(w)$ is dependent on the path between $0$ and $w$ and accumulates residues as you loop around $0$. However, we can quotient out by this residue! That is, we have a well-defined function
+This motivates considering the inverse of the arc length function — the [[Algebraic Geometry --- math-176/notes/Elliptic functions#_definition _ Jacobi elliptic function|Jacobi elliptic function]], which Euler did, and used to greatly generalise this formula!
+
+##### _proposition:_ Euler's angle addition formula
+
+For the Jacobi elliptic function $\operatorname{sn}$, we have
 $$
-z : \mathbb{C} \to \mathbb{C} / 2 \pi \mathbb{Z}
-$$
-by
-$$
-w \mapsto \int_{0}^w \frac{dx}{\sqrt{ 1 - x^{2} }} \pmod {2 \pi n}
+\operatorname{sn}(z_{1} + z_{2}) = \frac{\operatorname{sn}(z_{1}) \operatorname{sn}'(z_{2}) \pm \operatorname{sn}'(z_{1}) \operatorname{sn}(z_{2})}{1 - k^{2} \operatorname{sn}^{2}(z_{1}) \operatorname{sn}^{2}(z_{2})}.
 $$
 
-Similarly, $\operatorname{sn}$ doesn't have a well defined inverse.
+###### _proof sketch:_
+
+> You stare at a certain differential equation and then you solve it.
+
+\- Edray Goins.
