@@ -6,7 +6,7 @@ tags:
 - self-study
 ---
 
-In order to do calculus, having a characterisation of "topologically special" sets in our space is useful — we want a characterisation of [[Analysis --- rudin/notes/Metric spaces#_definition _ open set|open]], [[Analysis --- rudin/notes/Metric spaces#_definition _ closed set|closed]], and [[Compactness|compact]] sets in $\bb{R}^n$. 
+In order to do calculus, having a characterisation of "topologically special" sets in our space is useful — we want a characterisation of [[Analysis --- rudin/notes/Metric spaces#_definition _ open set|open]], [[Analysis --- rudin/notes/Metric spaces#_definition _ closed set|closed]], and [[Analysis --- rudin/notes/Compactness|compact]] sets in $\bb{R}^n$. 
 
 ### Open and closed sets
 
