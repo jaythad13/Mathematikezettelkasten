@@ -4,8 +4,11 @@ tags:
 - math-135/4
 - math-135/5
 - math-135/6
+- math-135/7
 - anal
 ---
+
+### The formula
 
 ##### _theorem:_ Cauchy integral formula
 
@@ -64,10 +67,15 @@ $$
 \begin{split}
 f(a) & = \sum_{n = 0}^\infty \left( \frac{1}{2 \pi i} \int \frac{f(z)}{(z - z_{0})^{n + 1}} \, dz  \right) (a - z_{0})^n
 \end{split}
-$$
-with the desired coefficients.
+$$with the desired coefficients.
 
-### Consequences!
+Note that you could prove this directly by considering the difference between the quotients and the derivative. This proof showed us that if we define
+$$
+g(a) = \frac{1}{2 \pi i} \int \frac{f(z)}{z - a} \, dz 
+$$
+for some continuous function $f$, then $f$ is holomorphic. We will need this to prove [[Complex Analysis --- math-135/notes/Singularities#_theorem _ Riemann's theorem on removable singularities|Riemann's theorem on removable singularities]].
+
+### Consequences
 
 ##### _proposition:_ Cauchy inequalities
 
