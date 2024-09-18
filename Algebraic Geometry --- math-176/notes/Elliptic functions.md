@@ -2,8 +2,8 @@
 tags:
 - alg-geo
 - math-176/9
+- math-176/10
 ---
-
 
 ##### _definition:_ Jacobi elliptic function
 
@@ -23,7 +23,7 @@ $$
 
 Similarly, $\operatorname{sn}$ doesn't have a well defined inverse, but it's doubly periodic.
 
-##### _theorem:_ 
+##### _theorem:_ angle addition on the quartic $y^{2} = (1 - x^{2})(1 - k x^{2})$
 
 For any fixed modulus $k \neq 0, \pm 1$ and $k' = \sqrt{ 1 - k^{2} }$. Then for
 $$
@@ -40,7 +40,32 @@ for any period $\omega$ in the lattice
 $$
 \Lambda_{k} = \{ \omega = m \omega_{1} + n \omega_{2} \mid m, n \in \mathbb{Z} \}.
 $$
-Also, by the [[Abstract Algebra I --- math-171/notes/Group isomorphism theorems#_theorem _ the first isomorphism theorem|first group isomorphism theorem]] there is a bijection $\mathbb{C} / \Lambda_{k} \to E_{k}(\mathbb{C})$ induced by the map
+Also, by the [[Abstract Algebra I --- math-171/notes/Group isomorphism theorems#_theorem _ the first isomorphism theorem|first group isomorphism theorem]] there is a [[Abstract Algebra I --- math-171/notes/Group isomorphisms#_definition _ group isomorphism, isomorphic|isomorphism]]
+$\mathbb{C} / \Lambda_{k} \to E_{k}(\mathbb{C})$ induced by the map
 $$
 z \mapsto (\operatorname{sn} z, \operatorname{sn}' z)
-$$where $E_{k}(\mathbb{C})$ is the set of all points $(x, y)$ in $\mathbb{C}^{2}$ on the curve $y^{2} = (1 - x^{2})(1 - k^{2} x^{2})$ (with the group operation that we'll talk about later)
+$$where $E_{k}(\mathbb{C})$ is the set of all points $(x, y)$ in $\mathbb{C}^{2}$ on the curve $y^{2} = (1 - x^{2})(1 - k^{2} x^{2})$ with the obvious group operation
+$$
+(\operatorname{sn}(z_{1}), \operatorname{sn}'(z_{1})) \oplus (\operatorname{sn}(z_{2}), \operatorname{sn}'(z_{2})) = (\operatorname{sn}(z_{1} + z_{2}), \operatorname{sn'(z_{1} + z_{2})}).
+$$
+
+###### _proof sketch:_
+
+The periodicity follows from some clever calculus substitutions to convert this into the form of a [[Algebraic Geometry --- math-176/notes/Elliptic integrals|complete elliptic integral]].
+
+Note that the integral
+$$
+z = \int_{0}^w  \frac{dx}{\sqrt{ (1 - x^{2})(1 - k^{2} x^{2}) }} 
+$$
+gives us
+$$
+\frac{dz}{dw} = \frac{1}{\sqrt{ (1 - w^{2}) (1 - k^{2} w^{2}) }}
+$$
+and thus,
+$$
+\left( \frac{dw}{dz} \right)^{2} = (1 - w^{2})(1 - k^{2} w^{2}).
+$$
+
+That is, $(w, w')$ is a point on the quartic. Also notice that every point on the quartic corresponds to some distinct $w$ by the size of the period of $\operatorname{sn}$, thus, every point can be described by $(w, w')$.
+
+Now if [[Algebraic Geometry --- math-176/notes/Elliptic integrals#_theorem _ reducing irrational quartic integrals|quartics can be reduced to cubics]], can this idea be used to say something about elliptic curves $y^{2} = x^{2} + ax + b$?
