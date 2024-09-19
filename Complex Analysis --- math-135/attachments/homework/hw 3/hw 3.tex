@@ -15,6 +15,78 @@
 	\]
 \end{problem}
 
+\begin{solution}
+	We consider the integral of $e^{-z^{2}}$ along a contour $\gamma$ — the boundary of a sector of radius $R$, centred at $0$ and with angle $\pi / 4$. Since $e^{-z^{2}}$ is entire (it is the composition of two entire functions), the integral must be zero for each $R$.
+
+	Note that $\gamma$ has three smooth components. $\gamma_{1}$ is the line along the real axis from  $0$ to $R$, $\gamma_{2}$ is the arc along the circumference of a circle from $R$ to $Re^{i \pi /4}$, and $\gamma_{3}$ is the line from $R e^{i \pi /4}$ back to $0$. Thus the integrals along each of these components must sum to zero. We will consider the limit as $R \to \infty$ to obtain the integrals the question asks about.
+
+	First we will show that $\int_{\gamma_{1}} e^{-z^{2}} \, dz = \sqrt{\pi}/2$ for $R \to \infty$. Note that since $\gamma_{1}$ is just a straight line along the real axis, the integral is just
+	\[
+		\int_{0}^{R} e^{-x^{2}} \, dx.
+	\]
+	
+	We know that
+	\[
+		\int_{-\infty}^{\infty} e^{-x^{2}} \, dx = \sqrt{\pi}.
+	\]
+	Notice that $e^{-x^{2}}$ is an even function --- $e^{-(-x)^{2}} = e^{- x^{2}}$. Thus,
+	\[
+		\int_{0}^{\infty} e^{-x^{2}}  \, dx = \frac{\sqrt{\pi}}{2} 
+	\]
+	giving us the result we want.
+
+	Now we will show that $\int_{\gamma_{2}} e^{-z^{2}} \, dz \to 0$ as $R \to \infty$. Consider the parametrisation $z : t \mapsto R e^{i t}$	for $t \in [0, \pi / 4]$. Then
+	\[
+		\begin{split}
+			\int_{\gamma_{2}} e^{-z^{2}} \, dz & = \int_{0}^{\pi / 4} e^{- R^{2} e^{2 i t}} \frac{dz}{dt} \, dt \\
+							  & = \int_{0}^{\pi / 4} e^{- R^{2}(\cos{(2t)} - i \sin{(2t)})} iR e^{it} \, dt \\
+							  & = iR \int_{0}^{\pi / 4} e^{- R^{2} \cos{(2t)}} e^{- i R^{2} \sin{(2t)}} e^{it} \, dt.
+		\end{split}
+	\]
+
+	Consider the substitution $s = 2t$. Clearly $ds/2 = dt$ and $s$ ranges over $[0, \pi / 2]$. That is,
+	\[
+		\int_{\gamma_{2}} e^{-z^{2}} \, dz = iR \int_{0}^{\pi / 2} e^{- R^{2} \cos{s}} e^{- i R^{2} \sin{s}} e^{i s/2} \, ds.
+	\]
+	Notice that $e^{is/2} e^{- i R^{2} \sin{s}}$ is always on the unit circle --- we always have $\lvert e^{i s/2} e^{- i R^{2} \sin{(2t)}} \rvert = 1$. Thus,
+	\[
+		\begin{split}
+			\left \lvert \int_{0}^{\pi / 2} e^{- R^{2} \cos{s}} e^{- i R^{2} \sin{s}} e^{i s/2} \, ds  \right \rvert & \le \left \lvert \int_{0}^{\pi / 2} e^{- R^{2} \cos{s}} \, ds  \right \rvert \\
+			& \le \frac{\pi}{2 R^{2}}
+		\end{split}
+	\]
+	where the last step follows by Jordan's inequality. Then clearly, as $R \to \infty$, the integral goes to $0$.
+
+	Finally, from the integral along $\gamma_{3}$ we get expressions in the form of the integrals we want. Consider the parametrisation $z : t \to t e^{i \pi /4}$ for $t \in [0, R]$. Then
+	\[
+		 \begin{split}
+			 \int_{\gamma_{3}} e^{-z^{2}} \, dz & = \int_{R}^{0} e^{- t^{2} e^{i \pi / 2}} \frac{dz}{dt} \, dt \\
+							    & = \int_{R}^{0} e^{- i t^{2}} e^{\pi / 4} \, dt \\
+							    & = e^{i \pi / 4} \int_{R}^{0} \cos{(- t^{2})} + i \sin{(- t^{2})}  \, dt \\
+							    & = \frac{1 + i}{\sqrt{2}} \int_{R}^{0} \cos{(t^{2})} - i \sin{(t^{2})} \, dt \\
+							    & = \frac{1}{\sqrt{2}} \left ( \int_{R}^{0} \cos{(t^{2})} \, dt + \int_{R}^{0} \sin{(t^{2})} \, dt  \right ) + \frac{i}{\sqrt{2}} \left ( \int_{R}^{0} \cos{(t^{2})} \, dt - \int_{R}^{0} \sin{(t^{2})} \, dt   \right )
+		 \end{split}
+	\]
+
+	Consider the integrals as $R \to \infty$. Since $\int_{\gamma_{2}} e^{-z^{2}} \, dz \to 0$, we must have $\int_{\gamma_{1}} e^{-z^{2}} \, dz  = - \int_{\gamma_{3}} e^{-z^{2}} \, dz $, and thus,
+	\[
+		\frac{\sqrt{\pi}}{2} = \frac{1}{\sqrt{2}} \left ( \int_{0}^{\infty} \cos{(t^{2})} \, dt + \int_{0}^{\infty} \sin{(t^{2})} \, dt  \right ) + \frac{i}{\sqrt{2}} \left ( \int_{0}^{\infty} \cos{(t^{2})} \, dt - \int_{0}^{\infty} \sin{(t^{2})} \, dt   \right ).
+	\]
+	Since the left hand side is purely real, the right hand side must also be real. Thus,
+	\[
+		\int_{0}^{\infty} \cos{(t^{2})} \, dt = \int_{0}^{\infty} \sin{(t^{2})} \, dt.
+	\]
+	Thus,
+	\[
+		\frac{\sqrt{\pi}}{2} = \frac{2}{\sqrt{2}} \int_{0}^{\infty} \cos{(t^{2})} \, dt 
+	\]
+	and thus,
+	\[
+		\int_{0}^{\infty} \sin{(x^{2})} \, dx = \int_{0}^{\infty} \cos{(x^{2})} \, dx = \frac{\sqrt{2 \pi}}{4}
+	\]
+	as desired.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[2]
@@ -34,7 +106,7 @@
 \pagebreak
 
 \begin{problem}[9.]
-	Let $\Omega$ be abounded open subset $\mathbb{C}$, and $\varphi : \Omega \to \Omega$ be a holomorphic function. Prove that if there exists a point $z_{0} \in \Omega$ such that
+	Let $\Omega$ be a bounded open subset $\mathbb{C}$, and $\varphi : \Omega \to \Omega$ be a holomorphic function. Prove that if there exists a point $z_{0} \in \Omega$ such that
 	\[
 		\varphi(z_{0}) = z_{0} \text{ and } \varphi'(z_{0}) = 1
 	\]
