@@ -19,11 +19,180 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	Let $\lVert x + y \sqrt{d} \rVert = x^{2} - d y^{2}$. This norm on $\mathbb{Z}[\sqrt{d}]$ is multiplicative. We describe the procedure to find solutions for the first two equations, but just list solutions for the rest since they follow similarly. I wrote the following Python code to compute powers in $\mathbb{Z}[\sqrt{d}]$ once doing so by hand became intractable
+	\begin{verbatim}
+d = 13 # non-square positive integer
+
+def xp(z, n): # exponentiation
+    if (n == 1):
+        return z
+    else:
+        return mult(xp(z, n - 1), z)
+
+def mult(z1, z2): # multiplication
+    x1 = z1[0]
+    y1 = z1[1]
+    x2 = z2[0]
+    y2 = z2[1]
+    return(x1*x2 + d*y1*y2, x1*y2 + x2*y1)
+
+def norm(z): # norm, for checking
+    x = z[0]
+    y = z[1]
+    return(x**2 - d * y**2)	
+	\end{verbatim}
+	\begin{enumerate}
+		\item
+			\[
+				\boxed{
+					\begin{split}
+						(x_{0}, y_{0}) & = (1, 1) \\
+						(x_{1}, y_{1}) & = (7, 5) \\
+						(x_{2}, y_{2}) & = (41, 29) \\
+						(x_{3}, y_{3}) & = (239, 169) \\
+						(x_{4}, y_{4}) & = (1393, 985).
+					\end{split}
+				}
+			\]
+
+			We can start with $(x_{0}, y_{0}) = (1, 1)$ which clearly give $\lVert x_{0} + y_{0} \sqrt{2} \rVert = x_{0}^{2} - 2 y_{0}^{2} = 1$. Since the norm is multiplicative, we have $\lVert (x_{0} + y_{0} \sqrt{d})^{n} \rVert = (-1)^{n}$ for all $n \in \mathbb{N}$. We define $(x_{n}, y_{n})$ to give $x_{n} + \sqrt{d} y_{n} = (x_{0} + \sqrt{d} y_{0})^{2n + 1}$. Now we just calculate odd powers. Note that
+			\[
+				(1 + \sqrt{2})^{2} = 3 + 2 \sqrt{2}.
+			\]
+			and thus,
+			\[
+				(1 + \sqrt{2})^{3} = (1 + \sqrt{2})(3 + 2 \sqrt{2}) = 7 + 5 \sqrt{2}
+			\]
+			giving us $(x_{1}, y_{1}) = (7, 5)$.
+
+			Similarly
+			\[
+				(1 + \sqrt{2})^{5} = (7 + 5 \sqrt{2})(3 + 2 \sqrt{2}) = 41 + 29 \sqrt{2}
+			\]
+			gives us $(x_{2}, y_{2}) = (41, 29)$,
+			\[
+				(1 + \sqrt{2})^{7} = (41 + 29 \sqrt{2})(3 + 2 \sqrt{2}) = 239 + 169 \sqrt{2}
+			\]
+			gives us $(x_{3}, y_{3}) = (239, 169)$, and
+			\[
+				(1 + \sqrt{2})^{9} = (239 + 169 \sqrt{2}) (3 + 2 \sqrt{2}) = 1393 + 985 \sqrt{2}
+			\]
+			gives us $(x_{4}, y_{4}) = (1393, 985)$
+		\item
+			\[
+				\boxed{
+					\begin{split}
+						(x_{0}, y_{0}) & = (2, 1) \\
+						(x_{1}, y_{1}) & = (7, 4) \\
+						(x_{2}, y_{2}) & = (26, 15) \\
+						(x_{3}, y_{3}) & = (97, 56) \\
+						(x_{4}, y_{4}) & = (362, 209).
+					\end{split}
+				}
+			\]
+
+			Since we have $\lVert x_{0} + y_{0} \sqrt{3} \rVert^{n} = 1$ and we want integer solutions to $\lVert x + y \sqrt{3} \rVert^{n} = 1$ we can take any powers of $(x_{0} + \sqrt{3} y_{0})$, not just odd powers. We choose $(x_{n}, y_{n})$ such that $x_{n} + y_{n} \sqrt{d} = (x_{0} + y_{0} \sqrt{d})^{n + 1}$.
+			\[
+				(2 + \sqrt{3})^{2} = (2 + \sqrt{3})(2 + \sqrt{3}) = 7 + 4 \sqrt{3}
+			\]
+			gives us $(x_{1}, y_{1}) = (7, 4)$.
+			\[
+				(2 + \sqrt{3})^{3} = (7 + 4 \sqrt{3})(2 + \sqrt{3}) = 26 + 15 \sqrt{3}
+			\]
+			gives $(x_{2}, y_{2}) = (26, 15)$.
+			\[
+				(2 + \sqrt{3})^{4} = (26 + 15 \sqrt{3})(2 + \sqrt{3}) = 97 + 56 \sqrt{3}
+			\]
+			gives $(x_{3}, y_{3}) = (97, 56)$. Finally,
+			\[
+				(2 + \sqrt{3})^{5} = (97 + 56 \sqrt{3})(2 + \sqrt{3}) = 362 + 209 \sqrt{3}
+			\]
+			gives $(x_{4}, y_{4}) = (362, 209)$.
+		\item
+			\[
+				\boxed{
+					\begin{split}
+						(x_{0}, y_{0}) & = (2, 1) \\
+						(x_{1}, y_{1}) & = (38, 17) \\
+						(x_{2}, y_{2}) & = (682, 305) \\
+						(x_{3}, y_{3}) & = (12238, 5473)  \\
+						(x_{4}, y_{4}) & = (219602, 98209)
+					\end{split}
+				}
+			\]
+
+			Note $x_{n} + y_{n} \sqrt{5} = (x_{0} + y_{0} \sqrt{5})^{2n + 1}$.
+		\item
+			\[
+				\boxed{
+					\begin{split}
+						(x_{0}, y_{0}) & = (8, 3) \\
+						(x_{1}, y_{1}) & = (127, 48) \\
+						(x_{2}, y_{2}) & = (2024, 765) \\
+						(x_{3}, y_{3}) & = (32257, 12192) \\
+						(x_{4}, y_{4}) & = (514088, 194307)
+					\end{split}
+				}
+			\]
+
+			Here $x_{n} + y_{n} \sqrt{7} = (x_{0} + y_{0} \sqrt{7})^{n + 1}$.
+		\item
+			\[
+				\boxed{
+					\begin{split}
+						(x_{0}, y_{0}) & = (18, 5) \\
+						(x_{1}, y_{1}) & = (23382, 6485) \\
+						(x_{2}, y_{2}) & = (30349818, 8417525) \\
+						(x_{3}, y_{3}) & = (39394040382, 10925940965) \\
+						(x_{4}, y_{4}) & = (51133434066018, 14181862955045)
+					\end{split}
+				}
+			\]
+
+			Here $x_{n} + y_{n} \sqrt{13} = (x_{0} + y_{0} \sqrt{13})^{2n + 1}$.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[2]
 	Use continued fractions to find positive integers $x$ and $y$ which satisfy Pell's equation $x^{2} - 19 y^{2} = 1$.
 \end{problem}
+
+\begin{solution}
+	Writing out the continued fraction sequences $a_{n}$ and $z_{n}$ defined by $a_{n} = \lfloor z_{n} \rfloor$ and $z_{n + 1} = 1 / (z_{n} - a_{n})$ with initial conditions $a_{0} = 4$ and $z_{0} = \sqrt{19}$, we get the following table.
+	\begin{center}
+		\begin{tabular}{|c | c|}
+			\hline
+			$z_{n}$ & $a_{n}$ \\ \hline \hline
+			$\sqrt{19}$ & $4$ \\ \hline
+			$2.7862 \dots$ & $2$ \\ \hline
+			$1.2717 \dots$ & $1$ \\ \hline
+			$3.6774 \dots$ & $3$ \\ \hline
+			$1.4717 \dots$ & $1$ \\ \hline
+			$2.1196 \dots$ & $2$ \\ \hline 
+			$8.3588 \dots$ & $8$ \\ \hline
+			$2.7862 \dots$ & $2$ \\ \hline
+		\end{tabular}
+	\end{center}
+	Notice that $a_{6} = 8 = 2 a_{0}$ after which $z_{7} = z_{1}$ and thus, the values repeat. Then by Lagrange's result, the $6$th convergent
+	 \[
+		4 + \frac{1}{2 + \frac{1}{1 + \frac{1}{3 + \frac{1}{1 + \frac{1}{2}}}}}
+	\]
+	in lowest terms gives a solution to $x^{2} - 19 y^{2} = 1$. We write this out ---
+	\[
+		\begin{split}
+			4 + \frac{1}{2 + \frac{1}{1 + \frac{1}{3 + \frac{1}{1 + \frac{1}{2}}}}} & = 4 + \frac{1}{2 + \frac{1}{1 + \frac{1}{3 + \frac{2}{2 + 1}}}} \\
+												& = 4 + \frac{1}{2 + \frac{1}{1 + \frac{3}{9 + 2}}} \\
+												& = 4 + \frac{1}{2 + \frac{11}{11 + 3}} \\
+												& = 4 + \frac{14}{28 + 11} \\
+												& = \frac{39 \times 4 + 14}{39} \\
+												& = \frac{170}{39}
+		\end{split}
+	\]
+	We can verify that $(x, y) = (170, 39)$ does indeed give us $x^{2} - 19 y^{2} = 1$ as desired.
+\end{solution}
 
 \pagebreak
 
@@ -33,8 +202,10 @@
 		\item For any integers $k$, $x_{0}$, and  $y_{0}$ define the coordinates
 			\[
 				\begin{split}
-					x_{k} & = \frac{1}{2} \left ( 1 - \cos{\left ( \frac{2 \pi k}{4} \right ) + \sin{\left ( \frac{2 \pi k}{4} \right )}} \right ) a + \frac{1}{2} \left ( -1 + \cos{\left ( \frac{2 \pi k}{4} \right ) + \sin{\left ( \frac{2 \pi k}{4} \right )}} \right ) \\
-					y_{k} & = \frac{1}{2} \left ( 1 - \cos{\left ( \frac{2 \pi k}{4} \right ) - \sin{\left ( \frac{2 \pi k}{4} \right )}} \right ) a + \frac{1}{2} \left ( -1 - \cos{\left ( \frac{2 \pi k}{4} \right ) + \sin{\left ( \frac{2 \pi k}{4} \right )}} \right ).
+					x_{k} & = \frac{1}{2} \left ( 1 - \cos{\left ( \frac{2 \pi k}{4} \right ) + \sin{\left ( \frac{2 \pi k}{4} \right )}} \right ) a \\
+					      & + \frac{1}{2} \left ( -1 + \cos{\left ( \frac{2 \pi k}{4} \right ) + \sin{\left ( \frac{2 \pi k}{4} \right )}} \right ) b + x_{0} \\
+					y_{k} & = \frac{1}{2} \left ( 1 - \cos{\left ( \frac{2 \pi k}{4} \right ) - \sin{\left ( \frac{2 \pi k}{4} \right )}} \right ) a \\
+					      & + \frac{1}{2} \left (1 - \cos{\left ( \frac{2 \pi k}{4} \right ) + \sin{\left ( \frac{2 \pi k}{4} \right )}} \right ) b + y_{0}.
 				\end{split}
 			\]
 			Show that $x_{k}$ and $y_{k}$ are integers satisfying the identity
@@ -52,5 +223,182 @@
 		\item Let $m = c^{2} + d^{2}$ be another integer which is the sum of squares of odd integers $c$ and $d$. Show that $mn = A^{2} + B^{2}$ is also the sum of squares of odd integers $A$ and $B$. Conclude that $mn$ is also the area of a square whose vertices are integral.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item Note that
+			\[
+				\left \lvert \cos{\left ( \frac{2 \pi k}{4} \right )} \right \rvert = \begin{cases}
+					1 & k \text{ is even} \\
+					0 & k \text{ is odd}
+				\end{cases}
+			\]
+			and conversely
+			\[
+				\left \lvert \sin{\left ( \frac{2 \pi k}{4} \right )} \right \rvert = \begin{cases}
+					0 & k \text{ is even} \\
+					1 & k \text{ is odd}
+				\end{cases}
+			\]
+			Thus, $x_{k}$ and $y_{k}$ will always be integers --- since exactly one of them has non-zero magnitude for a given $k$, terms inside the parentheses in the formulae for $x_{k}$ and $y_{k}$ are always even, and thus have integer halves.
+
+			Computing $x_{k} + i y_{k}$, we get
+			\[
+				\begin{split}
+					x_{k} + i y_{k} & = \frac{1}{2} \left ( 1 - \cos{\left ( \frac{2 \pi k}{4} \right ) + \sin{\left ( \frac{2 \pi k}{4} \right )}} \right ) a \\
+							& + \frac{1}{2} \left ( -1 + \cos{\left ( \frac{2 \pi k}{4} \right ) + \sin{\left ( \frac{2 \pi k}{4} \right )}} \right ) b + x_{0} \\
+							& + \frac{i}{2} \left ( 1 - \cos{\left ( \frac{2 \pi k}{4} \right ) - \sin{\left ( \frac{2 \pi k}{4} \right )}} \right ) a \\
+							& + \frac{i}{2} \left (1 - \cos{\left ( \frac{2 \pi k}{4} \right ) + \sin{\left ( \frac{2 \pi k}{4} \right )}} \right ) b + i y_{0} \\
+							& = a \left ( \frac{1 + i}{2} \left ( 1 - \cos{(\pi k/2)} \right ) + \frac{1 - i}{2} \sin{(\pi k /2)} \right ) \\
+							& + i b \left ( \frac{i + 1}{2} (1 - \cos{(\pi k / 2)}) + \frac{1 - i}{2} \sin{(\pi k / 2)} \right ) + (x_{0} + i y_{0}) \\
+							& = (a + i b) \left ( \frac{1 + i}{2} (1 - \cos{(\pi k / 2)}) + \frac{1 - i}{2} \sin{(\pi k / 2)} \right ) + (x_{0} + i y_{0}) \\
+							& = (a + i b) \left ( \frac{1 + i - \cos{(\pi k / 2)} - i \cos{(\pi k / 2)} + \sin{(\pi k / 2)}	- i \sin{(\pi k / 2)}}{2} \right ) + (x_{0} + i y_{0}) \\
+							& = (a + i b) \left ( \frac{1 + i - (1 + i)(\cos{(\pi k / 2)} + i \sin{(\pi k / 2)})}{2} \right ) + (x_{0} + i y_{0}) \\
+							& = (a + ib) \left ( \frac{(1 + i)(1 - e^{i k \pi / 2})}{(1 + i)(1 - i)} \right ) + (x_{0} + i y_{0}) \\
+							& = (a + i b) \left ( \frac{1 - i^{k}}{1 - k} \right ) + (x_{0} + i y_{0})
+				\end{split}
+			\]
+			as desired.
+		\item We can just use the formula we have for $x_{k} + i y_{k}$
+			 \[
+				\begin{split}
+					\ell & = \lVert P_{k + 1} - P_{k} \rVert \\
+					     & = \left \lvert (a + i b) \left ( \frac{1 - i^{k + 1}}{1 - i} - \frac{1 - i^{k}}{1 - i} \right ) \right \rvert \\
+					     & = \sqrt{a^{2} + b^{2}} \left \lvert \frac{i^{k} - i^{k + 1}}{1 - i} \right \rvert \\
+					     & = \sqrt{a^{2} + b^{2}} \lvert i^{k} \rvert \\
+					     & = \sqrt{a^{2} + b^{2}}.
+				\end{split}
+			\]
+			Since we have the formula for $x_{k} + i y_{k}$, we know that $x_{k} + i y_{k} = x_{k + 4} + i y_{k + 4}$. Thus, $V$ consists of four points with the same distance between consecutive points. We also know that the distance between any two points $P_{k + 2}$ and $P_{k}$ doesn't depend on $k$. That is, any two diagonals are equal in length ---
+			\[
+				\begin{split}
+					d & = \lVert P_{k + 2} - P_{k} \rVert \\
+					  & = \left \lvert (a + i b) \left ( \frac{1 - i^{k + 2}}{1 - i} - \frac{1 - i^{k}}{1 - i} \right ) \right \rvert \\
+					  & = \sqrt{a^{2} + b^{2}} \left \lvert \frac{i^{k + 2} - i^{k}}{1 - i} \right \rvert \\
+					  & = \sqrt{a^{2} + b^{2}} \left \lvert \frac{-2}{1 - i} \right \rvert
+				\end{split}
+			\]
+			Thus, the points in $V$ form a four-sided shape with all equal sides and all equal diagonals --- which uniquely characterises the shape as a square. Since the area of a square is its side squared, the square has area  $n = \ell^{2} = a^{2} + b^{2}$.
+		\item Clearly, $P_{0}, P_{1}, P_{2}, P_{3}$ are (non-negative) integer points for non-negative integers $a, b$. 
+
+			We can see that $P_{1} - P_{0} = (a, b)$, $P_{2} - P_{1} = (-b, a)$, $P_{3} - P_{2} = (-a, -b)$, and $P_{0} - P_{3} = (b, -a)$ which all have the same norm $\sqrt{a^{2} + b^{2}}$. Also, $P_{2} - P_{0} = (a - b, a + b)$ and $P_{3} - P_{1} = (-a - b, a - b)$ both of which have the same norm $\sqrt{2(a^{2} + b^{2})}$. Thus, they form a four-sided shapes with all equal sides and all equal diagonals --- a square.
+
+			The area of the square is the square of the side --- $n = a^{2} + b^{2}$.
+		\item Let $a = x_{1} - x_{0}$ and $b = y_{1} - y_{0}$. Thus, for $(x_{2}, y_{2})$ we must have
+			\[
+				(x_2 - x_{0})^{2} + (y_{2} - y_{0})^{2} = 2(a^{2} + b^{2})
+			\]
+			and also
+			\[
+				(x_{2} - x_{1})^{2} + (y_{2} - y_{1})^{2} = a^{2} + b^{2}
+			\]
+			which is equivalent to
+			\[
+				(x_{2} - x_{0} - a)^{2} + (y_{2} - y_{0} - b)^{2} = a^{2} + b^{2}.
+			\]
+			Thus,
+			\[
+				(x_{2} - x_{0})^{2} + (y_{2} - y_{0})^{2} -  2 (x_{2} - x_{0}) a - 2(y_{2} - y_{0}) b = 0
+			\]
+			Then by subtracting this equation from the first one, and scaling down, we get
+			\[
+				a (x_{2} - x_{0}) + b (y_{2} - y_{0}) = a^{2} + b^{2}
+			\]
+			From the cross product, we get
+			\[
+				(x_{2} - x_{1})(y_{0} - y_{1}) - (x_{0} - x_{1})(y_{2} - y_{1}) = a^{2} + b^{2}
+			\]
+			which is to say
+			\[
+				(x_{2} - x_{0} - a)(-b) - (-a)(y_{2} - y_{0} - b)
+			\]
+			and thus,
+			\[
+				- b (x_{2} - x_{0}) + a(y_{2} - y_{0}) = a^{2} + b^{2}.
+			\]
+			Scaling, we have the system of equations
+			\[
+				\begin{split}
+					a^{2} (x_{2} - x_{0}) + ab (y_{2} - y_{0}) & = a(a^{2} + b^{2}) \\
+					-b^{2} (x_{2} - x_{0}) + ab (y_{2} - y_{0}) & = b(a^{2} + b^{2})
+				\end{split}
+			\]
+			Subtracting the second equation from the first, we get
+			\[
+				(a^{2} + b^{2}) (x_{2} - x_{0}) = (a - b)(a^{2} + b^{2}).
+			\]
+			Thus,
+			\[
+				x_{2} - x_{0} = a - b
+			\]
+			as desired. Then we must have
+			\[
+				a(a - b) + b(y_{2} - y_{0}) = a^{2} + b^{2}
+			\]
+			and thus,
+			\[
+				b(y_{2} - y_{0}) = b^{2} + ab
+			\]
+			and finally
+			\[
+				y_{2} - y_{0} = a + b
+			\]
+			as desired.
+
+			Now we find $(x_{3}, y_{3})$. We know that the side lengths to $P_{1}$ and $P_{3}$ must be equal. Thus,
+			\[
+				(x_{0} - x_{3})^{2} + (y_{0} - y_{3})^{2} = (x_{2} - x_{3})^{2} + (y_{2} - y_{3})^{2}
+			\]
+			which is
+			\[
+				(x_{0} - x_{3})^{2} + (y_{0} - y_{3})^{2} = (x_{0} - x_{3} + (a - b))^{2} + (y_{0} - y_{3} + (a + b))^{2}.
+			\]
+			Expanding and dividing by $2$, we get the linear equation
+			\[
+				(x_{0} - x_{3})(a - b) + (y_{0} - y_{3})(a + b) = -(a^{2} + b^{2})
+			\]
+			From the cross product, we also get
+			\[
+				(x_{1} - x_{0})(y_{3} - y_{0}) - (x_{3} - x_{0})(y_{1} - y_{0}) = a^{2} + b^{2}.
+			\]
+			This reduces to the linear equation
+			\[
+				b (x_{0} - x_{3}) - a(y_{0} - y_{3}) = a^{2} + b^{2}
+			\]
+			Adding the two equations gives us a third, and an easier linear system
+			\[
+				\begin{split}
+					a(x_{0} - x_{3}) + b(y_{0} - y_{3}) & = 0 \\
+					b(x_{0} - x_{3}) - a(y_{0} - y_{3}) & = a^{2} + b^{2}.
+				\end{split}
+			\]
+			Thus
+			\[
+				(a^{2} + b^{2})(x_{0} - x_{3}) = b(a^{2} + b^{2})
+			\]
+			and thus,
+			\[
+				x_{0} - x_{3} = b
+			\]
+			as desired. From this, we get
+			\[
+				ab + b(y_{0} - y_{3}) = 0
+			\]
+			and thus,
+			\[
+				y_{0} - y_{3} = -a
+			\]
+			also as desired. Thus, we've shown all the necessary relations.
+		\item If $m = c^{2} + d^{2}$, then $mn = (a^{2} + b^{2})(c^{2} + d^{2})$. We claim that $(ac - bd)^{2} + (ad + bc)^{2} = mn$. We can compute
+			\[
+				\begin{split}
+					(ac - bd)^{2} + (ad + bc)^{2} & = a^{2} c^{2} + b^{2} d^{2} + a^{2} d^{2} + b^{2} c^{2} + 2 abcd - 2 abcd \\
+								      & = a^{2}(c^{2} + d^{2}) + b^{2}(c^{2} + d^{2}) \\
+								      & = (a^{2} + b^{2})(c^{2} + d^{2}).
+				\end{split}
+			\]
+			Thus, we can choose $A = \lvert ac - bd \rvert$ and $B = ad + bc$ so that $mn =  A^{2} + B^{2}$.
+	\end{enumerate}
+\end{solution}
 
 \end{document}
