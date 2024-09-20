@@ -1,0 +1,50 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 135 --- Complex Analysis}
+\assignment{Homework 4}
+\duedate{26th September 2024}
+
+\begin{document}
+
+\begin{problem}[11.]
+	Let $f$ be a holomorphic function on the disc $D_{R_{0}}$ centred at the origin and of radius $R_{0}$.
+	\begin{enumerate}
+		\item Prove that whenever $0 < R < R_{0}$ and $\lvert z \rvert < R$, then
+			\[
+				f(z) = \frac{1}{2 \pi} \int_{0}^{2 \pi} f(R e^{i \varphi}) \operatorname{Re} \left ( \frac{R e^{i \varphi} + z}{R e^{i \varphi} - z} \right ) \, d\varphi.
+			\]
+		\item Show that
+			\[
+				\operatorname{Re} \left ( \frac{R e^{i \gamma} + r}{R e^{i \gamma} - r} \right ) = \frac{R^{2} - r^{2}}{R^{2} - 2 R r \cos{\gamma} + r^{2}}.
+			\]
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[12.]
+	Let $u$ be a real-valued function defined on the unit disc $\mathbb{D}$. Suppose that $u$ is twice continuously differentiable and harmonic. That is
+	\[
+		\Delta u(x, y) = 0
+	\]
+	for all $(x, y) \in \mathbb{D}$.
+	\begin{enumerate}
+		\item Prove that there exists a holomorphic function $f$ on the unit disc such that
+			\[
+				\operatorname{Re}(f) = u.
+			\]
+			Also show that the imaginary part of $f$ is uniquely defined up to an additive (real) constant.
+		\item Deduce from this result, and from Exercise 11, the Poisson integral representation formula from the Cauchy integral formula: If $u$ is harmonic in the unit disc and continuous on its closure, then if $z = r e^{i \theta}$ one has
+			\[
+				u(z) = \frac{1}{2 \pi} \int_{0}^{2 \pi} P_{r}(\theta - \varphi) u(\varphi) \, d\varphi 
+			\]
+			where $P_{r}(\gamma)$ is the Poisson kernel for the unit disc given by
+			\[
+				P_{r}(\gamma) = \frac{1 - r^{2}}{1 - 2r \cos{\gamma} + r^{2}}.
+			\]
+	\end{enumerate}
+\end{problem}
+
+\end{document}
