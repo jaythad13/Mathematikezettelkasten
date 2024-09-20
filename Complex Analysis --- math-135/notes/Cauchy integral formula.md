@@ -67,15 +67,16 @@ $$
 \begin{split}
 f(a) & = \sum_{n = 0}^\infty \left( \frac{1}{2 \pi i} \int \frac{f(z)}{(z - z_{0})^{n + 1}} \, dz  \right) (a - z_{0})^n
 \end{split}
-$$with the desired coefficients.
+$$
+with the desired coefficients.
 
 Note that you could prove this directly by considering the difference between the quotients and the derivative. This proof showed us that if we define
 $$
 g(a) = \frac{1}{2 \pi i} \int \frac{f(z)}{z - a} \, dz 
 $$
-for some continuous function $f$, then $f$ is holomorphic. We will need this to prove [[Complex Analysis --- math-135/notes/Singularities#_theorem _ Riemann's theorem on removable singularities|Riemann's theorem on removable singularities]].
+for some continuous function $f$, then $f$ is holomorphic. We will need this to prove [[Complex Analysis --- math-135/notes/Meromorphic functions and singularities#_theorem _ Riemann's theorem on removable singularities|Riemann's theorem on removable singularities]].
 
-### Consequences
+### Consequence
 
 ##### _proposition:_ Cauchy inequalities
 
@@ -83,6 +84,7 @@ If $f$ is holomorphic in an open set that contains the closure of a disc $D$ cen
 $$
 \lvert f^{(n)}(z_{0}) \rvert \le \frac{n! \sup_{z \in C} \lvert f(z) \rvert }{R^n}
 $$
+
 ###### _proof sketch:_
 
 Apply the $ML$ bound to the Cauchy derivative formula.
