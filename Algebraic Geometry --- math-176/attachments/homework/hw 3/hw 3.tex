@@ -21,7 +21,7 @@
 		\item Assume that $x$ and $y$ are rational numbers such that $y^{2} = A x^{2} + B x + C$. Show that we have the identity $A(x - x_{0})^{2} + (2 A x_{0} + B)(x - x_{0}) = y^{2} - y_{0}^{2} = (y - y_{0})^{2} + 2 y_{0}(y - y_{0})$.
 		\item Denote the rational number $t = (y - y_{0})/(x - x_{0})$ as the slope of the line $y = t (x - x_{0}) + y_{0}$ going through the point $(x_{0}, y_{0})$. Show that we have the identity
 			\[
-				A(x - x_{0})^{2} + (2 A x_{0} + B)(x - x_{0}) = t^{2}(x - x_{0}) + 2 t y_{0} (x - x_{0}).
+				A(x - x_{0})^{2} + (2 A x_{0} + B)(x - x_{0}) = t^{2}(x - x_{0})^{2} + 2 t y_{0} (x - x_{0}).
 			\]
 		\item Show that the line $y = t(x - x_{0}) + y_{0}$ intersects the curve $y^{2} = A x^{2} + B x + C$ at two points, namely $(x, y) = (x_{0}, y_{0})$ and
 			\[
@@ -29,6 +29,52 @@
 			\]
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item Since $f$ is a polynomial, it is analytic, and thus, exactly given by it's Taylor series expansion about any point $x_{0}$. To get the Taylor series expansion of $f$ about $x_{0}$, we calculate $f(x_{0})$, $f'(x_{0})$, and $f''(x_{0})$.
+
+			Clearly $f(x_{0}) = A x_{0} + B x_{0} + C$. Since  $f'(x) = 2 A x + B$, $f'(x_{0}) = 2 A x_{0} + B$, and finally, $f''(x_{0}) = f(x) = 2 A$. Then the Taylor series expansion about $x_{0}$ gives us that
+			\[
+				\begin{split}
+					f(x) & = \frac{2A}{2!} (x - x_{0})^{2} + (2 A x_{0} + B) (x - x_{0}) + (A x_{0}^{2} + B x_{0} + C) \\
+					     & = A (x - x_{0})^{2} + (2 A x_{0} + B) (x - x_{0}) + (A x_{0}^{2} + B x_{0} + C).
+				\end{split}
+			\]
+		\item Since $f(x_{0}) = y_{0}^{2}$ and $f(x) = y^{2}$, we can write $f(x) - f(x_{0}) = y^{2} - y_{0}^{2}$. Using the identity for $f(x)$ from the previous subpart, this is just
+			\[
+				A(x - x_{0})^{2} + (2 A x_{0} + B)(x - x_{0}) = y^{2} - y_{0}^{2}
+			\]
+			We can write
+			\[
+				\begin{split}
+					y^{2} - y_{0}^{2} & = (y + y_{0})(y - y_{0}) \\
+							  & = (y - y_{0} + 2 y_{0})(y - y_{0}) \\
+							  & = (y - y_{0})^{2} + 2y_{0}(y - y_{0})
+				\end{split}
+			\]
+			to get the exact form in the problem statement.
+		\item Rewriting the previous equation with $y - y_{0}$ as $t(x - x_{0})$ we get
+			\[
+				A(x - x_{0})^{2} + (2 A x_{0} + B)(x - x_{0})  = t^{2}(x - x_{0})^{2} + 2t y_{0} (x - x_{0}).	
+			\]
+		\item Since the equation above is quadratic, it can have at most two roots. $x_{0}$ is clearly one of them. We can verify the other by substituting it in. On the left hand side we get
+			\[
+				A \left (\frac{2 A x_{0} + B - 2 y_{0}t}{t^{2} - A} \right )^{2} + (2 A x_{0} + B) \left ( \frac{2 A x_{0} + B - 2 y_{0} t}{t^{2} - A} \right ).
+			\]
+			On the right hand side we get
+			\[
+				\begin{split}
+					& t^{2} (x - x_{0})^{2} + 2t y_{0} (x - x_{0}) \\
+					& = t^{2} \left ( \frac{2 A x_{0} + B - 2 y_{0} t}{t^{2} - A} \right )^{2} + 2 t y_{0} \left ( \frac{2 A x_{0} + B - 2 y_{0} t}{t^{2} - A} \right ) \\
+					& = \frac{(2 A x_{0} + B - 2 y_{0} t)^{2}}{t^{2} - A} + 2t y_{0} \left ( \frac{2A x_{0} + B - 2 y_{0} t}{t^{2} - A} \right ) + A \left ( \frac{2 A x_{0} + B - 2 y_{0} t}{t^{2} - A} \right )^{2} \\
+										     & = ((2A x_{0} + B - 2 y_{0} t) + 2 y_{0} t) \left ( \frac{2 A x_{0} + B - 2 y_{0} t}{t^{2} - A} \right ) + A \left ( \frac{2 A x_{0} + B - 2 y_{0} t}{t^{2} - A} \right )^{2} \\
+										     & = (2 A x_{0} + B) \left ( \frac{2 A x_{0} + B - 2 y_{0} t}{t^{2} - A} \right ) + A \left ( \frac{2 A x_{0} + B - 2 y_{0} t}{t^{2} - A} \right )^{2}.
+				\end{split}
+			\]
+			Thus, $x = x_{0} + \frac{2 A x_{0} + B - 2 y_{0} t}{t^{2} - A}$ is the other root. Solving for $y$ such that $y = t(x - x_{0}) + y_{0}$, we get $y = y_{0} + \frac{2 A x_{0} + B - 2 y_{0} t}{t^{2} - A}$ as well.
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
@@ -44,6 +90,75 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item Consider $F(x_{1}, x_{2}, x_{0}) = x_{1}^{3} + x_{2}^{3} - a x_{0}^{3}$ which gives $F(x_{1}, x_{2}, x_{0}) = 0$ for any projective points on $C$. The projective line tangent to $C$ at $P$ must then be parallel to the gradient of $F$ at $P$ and pass through $(p_{1} : p_{2} : p_{0})$.
+
+			Note that
+			\[
+				\nabla F (x_{1}, x_{2}, x_{0}) = (3 x_{1}^{2}, 3 x_{2}^{2}, - 3 a x_{0}^{2}).
+			\]
+			Thus, the projective tangent is given by all triplets in the plane perpendicular to $\nabla F(p_{1}, p_{2}, p_{0}) = (3 p_{1}^{2}, 3 p_{2}^{2}, - 3 a p_{0})$. That is, all points $(x_{1} : x_{2} : x_{0})$ in the tangent projective line give
+			\[
+				p_{1}^{2} (x_{1} - p_{1}) + p_{2}^{2} (x_{2} - p_{2}) - a p_{0}^{2} (x_{0} - p_{0}) = 0
+			\]
+			and thus,
+			\[
+				p_{1}^{2} x_{1} + p_{2}^{2} x_{2} - a p_{0}^{2} x_{0} = - (p_{1}^{3} + p_{2}^{3} - a p_{0}^{3}) = 0
+			\]
+			as desired.
+		\item By construction, $P$ is on both lines. Let $Q = (q_{1} : q_{2} : q_{0})$. We can just verify that $Q$ satisfies both equations. First we show that $Q \in C$. To do so we calculate $q_{1}^{3} + q_{2}^{3} - a q_{0}^{3}$.
+			\[
+				\begin{split}
+					& (p_{1}(p_{1}^{3} + 2 p_{2}^{3}))^{3} + (-p_{2}(2 p_{1}^{3} + p_{2}^{3}))^{3} - a (p_{0}(p_{1}^{3} - p_{2}^{3}))^{3} \\
+					& = p_{1}^{3} (a p_{0}^{3} + p_{2}^{3})^{3} - p_{2}^{3} (p_{1}^{3} + a p_{0}^{3})^{3} - a p_{0}^{3} (p_{1}^{3} - p_{2}^{3})^{3} \\
+					& = a^{3} p_{0}^{9} p_{1}^{3} + p_{1}^{3} p_{2}^{9} + 3 a^{2} p_{0}^{6} p_{1}^{3} p_{2}^{9} + 3 a p_{0}^{3} p_{1}^{3} p_{2}^{6} - p_{1}^{9} p_{2}^{3} - a^{3} p_{0}^{9} p_{2}^{3} - 3 a p_{0}^{3} p_{1}^{6} p_{2}^{3} - 3 a^{2} p_{0}^{6} p_{1}^{3} p_{2}^{3} \\
+					& - a p_{0}^{3} p_{1}^{9} + a p_{0}^{3} p_{2}^{9} + 3 a p_{0}^{3}p_{1}^{6} p_{2}^{3} - 3 ap_{0}^{3} p_{1}^{3} p_{2}^{6} \\
+					& = a^{3} p_{0}^{9} p_{1}^{3} + p_{1}^{3} p_{2}^{9} - p_{1}^{9} p_{2}^{3} - a^{3} p_{0}^{9} p_{2}^{3} - a p_{0}^{3} p_{1}^{9} + a p_{0}^{3} p_{2}^{9} \\
+					& = a^{3} p_{0}^{9} (p_{1}^{3} - p_{2}^{3}) - p_{1}^{3} p_{2}^{3}(p_{1}^{6} - p_{2}^{6}) - a p_{0}^{3}(p_{1}^{9} - p_{2}^{9}) \\
+					& = (p_{1}^{3} - p_{2}^{3}) (a^{3} p_{0}^{9} - p_{1}^{6} p_{2}^{3} - p_{1}^{3} p_{2}^{6} - a p_{0}^{3} p_{1}^{6} - a p_{0}^{3} p_{1}^{3} p_{2}^{3} - a p_{0}^{3} p_{2}^{6}) \\
+					& = (p_{1}^{3} - p_{2}^{3})(a p_{0}^{3}(a^{2} p_{0}^{6} - p_{1}^{6} - p_{1}^{3} p_{2}^{3} - p_{2}^{6}) - p_{1}^{3} p_{2}^{3}(p_{1}^{3} + p_{2}^{3})) \\
+					& = (p_{1}^{3} - p_{2}^{3}) (a p_{0}^{3}(a^{2} p_{0}^{6} - p_{1}^{6} - p_{1}^{3} p_{2}^{3} - p_{2}^{6} + p_{1}^{6} + 2 p_{1}^{3} p_{2}^{3} + p_{2}^{6} + a p_{0}^{3} p_{1}^{3} + a p_{0}^{3} p_{2}^{3}) \\
+					& - (p_{1}^{3} + p_{2}^{3})(a p_{0}^{3} p_{1}^{3} + a p_{0}^{3} p_{2}^{3} +  p_{1}^{3} p_{2}^{3} + a^{2} p_{0}^{6})) \\
+					& = (p_{1}^{3} + p_{2}^{3})(a p_{0}^{3} - p_{1}^{3} - p_{2}^{3})(a p_{0}^{3} p_{1}^{3} + a p_{0}^{3} p_{2}^{3} + p_{1}^{3} p_{2}^{3} + a^{2} p_{0}^{6}) \\
+					& = 0.
+				\end{split}
+			\]
+			where the second equality follows by applying the fact that $p_{1}^{3} + p_{2}^{3} = a p_{0}^{3}$ and the last second to last equality follows by adding and subtracting the same quantity. Note then that $Q$ satisfies the equation of $C$.
+
+			Now we show that $Q \in L$. To do so we calculate $p_{1}^{2} q_{1} + p_{2}^{2} q_{2} - a p_{0}^{2} q_{0}$. 
+			\[
+				\begin{split}
+					& p_{1}^{2} p_{1} (p_{1}^{3} + 2 p_{2}^{3}) + p_{2}^{2} (-p_{2} (2 p_{1}^{3} + p_{2}^{3})) - a p_{0}^{2} p_{0} (p_{1}^{3} - p_{2}^{3}) \\
+					& = p_{1}^{3} (a p_{0}^{3} + p_{2}^{3}) - p_{2}^{3} (p_{1}^{3} + a p_{0}^{3}) - a p_{0}^{3} (p_{1}^{3} - p_{2}^{3}) \\
+					& = a p_{0}^{3} p_{1}^{3} + p_{1}^{3} p_{2}^{3} - p_{1}^{3} p_{2}^{3} - a p_{0}^{3} p_{2}^{3} - a p_{0}^{3} p_{1}^{3} + a p_{0}^{2} p_{2}^{2} \\
+					& = 0
+				\end{split}
+			\]
+			where the second equality follows by applying the fact that $p_{1}^{3} + p_{2}^{3} = a p_{0}^{3}$. That is, $Q$ satisfies the equation of $L$.
+		\item
+			\[
+				\boxed{
+					\begin{split}
+						Q_{1} & = (-15 : -12 : -9) \\
+						Q_{2} & = (102465 : -101736 : 14283) \\
+						Q_{3} & = (-105558503985931891455, 111765780925269157584, 31554864227646369063)
+					\end{split}
+				}
+			\]
+
+			By observation, $(-1)^{3} + 2^{3} = -1 + 8 = 7$. That is $(-1 : 2 : 1)$ is a projective solution to $x^{3} + y^{3} = 7$. Applying the Python code below thrice, we get the points $Q_{1}$, $Q_{2}$, $Q_{3}$. (We could have used $P$ since it's a distinct point but we include $Q_{3}$ to show how the size of the points grows very quickly.)
+			\begin{verbatim}
+def f(P): # outputs Q for given P
+    p1 = P[0]
+    p2 = P[1]
+    p0 = P[2]
+     Q = (p1*(p1**3 + 2*p2**3), - p2*(2*p1**3 + p2**3), p0*(p1**3 - p2**3))
+    return Q
+			\end{verbatim}
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[3]
@@ -51,7 +166,7 @@
 	\[
 		y = x + 1 \text{ and } y = x + 3.
 	\]
-	These lines are parallel, so they do not intersect at an affine point $(x, y) \in \mathbb{A}(\mathbb{R})$. Make the substitution $x = x_{1}/x_{0}$ and $y = x_{2}/x_{0}$ and find the projective point $P = (x_{1} : x_{2} : x_{0})$ in $\mathbb{P}^{2}(\mathbb{R})$ where the lines do intersect.
+	These lines are parallel, so they do not intersect at an affine point $(x, y) \in \mathbb{A}^{2}(\mathbb{R})$. Make the substitution $x = x_{1}/x_{0}$ and $y = x_{2}/x_{0}$ and find the projective point $P = (x_{1} : x_{2} : x_{0})$ in $\mathbb{P}^{2}(\mathbb{R})$ where the lines do intersect.
 \end{problem}
 
 \begin{solution}
@@ -68,7 +183,7 @@
 	\]
 	by subtracting the first equation from the second.
 
-	From $x_{0} = 0$ we can get that $x_{2} = x_{1} + 0 = x_{1}$. Thus, $P = (1 : 1 : 0)$ is the ideal point in $\mathbb{P}^{2}(\mathbb{R})$ where the lines intersect.
+	From $x_{0} = 0$ we can get that $x_{2} = x_{1} + 0 = x_{1}$. Thus, $P = (1 : 1 : 0)$ is the projective point in $\mathbb{P}^{2}(\mathbb{R})$ where the lines intersect.
 \end{solution}
 
 \end{document}
