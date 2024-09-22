@@ -12,11 +12,55 @@
 	Construct a bounded set of real numbers with exactly three limit points.
 \end{problem}
 
+\begin{solution}
+	Consider the set $E = \{ 1/n \mid n \in \mathbb{N} \} \cup \{ 1 + 1/n \mid n \in \mathbb{N} \} \cup \{ 2 + 1/n \mid n \in \mathbb{N} \}$. We claim that $E$ is bounded and has exactly three limit points --- $E' = \{ 0, 1, 2 \}$.
+
+	It's clear that $E$ is bounded --- $E \subset [0, 3]$ and thus, $d(0, p) \le 3$ for any $p \in E$.
+
+	Now we show that $0$, $1$, and $2$ are limit points of $E$. By the Archimedean property, there is $1/n < r$ for any real $r > 0$. Thus, for each $r > 0$, we have the $1/n \in N_{r}(0) \setminus \{ 0 \}$, $1 + 1/n \in N_{r}(1) \setminus \{ 1 \}$, and $2 + 1/n \in N_{r}(2) \setminus \{ 2 \}$. Thus, $0$, $1$ and $2$ are limit points of $E$.
+
+	Finally, we have to show that $0$, $1$, and $2$ are the only limit points of $E$. Suppose $x \in \mathbb{R}$ and $x \neq 0, 1, 2$. If $x \notin [0, 3]$, then since $\mathbb{R} \setminus [0, 3]$ is open, there exists some $r > 0$ such that $N_{r}(x) \subset \mathbb{R} \setminus [0, 3]$. That is, $N_{r}(x) \cap [0, 3]$ is empty, and so is $N_{r}(x) \cap E$ (since $E \subset [0, 3]$). Thus, $x$ is not a limit point of $E$. Further, $3$ is not a limit point of $E$ since $N_{r}(3) \cap E = \{ 3 \}$ for any $r < 1/2$. To see this note that $2 + 1 = 3 > 2 + 1/2 > 2 + 1/n$ for any $n > 2$ and $2 + 1/n > 1 + 1/n > 1/n$ for any $n \in \mathbb{N}$. Thus, for $r < 1/2$, we must have $3 - r > p$ for any $p \in E \setminus \{ 3 \}$.
+
+	Now we consider the three similar cases $x \in (0, 1)$, $x \in (1, 2)$ and $x \in (2, 3)$. Note that if $x \in (s, s + 1)$, then $x$ cannot be a limit point of points outside $(s, s + 1)$ --- since $(s, s + 1)$ is open, there exists  $r > 0$ with $N_{r}(x) \subset (s, s + 1)$, and thus, $N_{r}(x) \cap E$ is empty for any $E \in \mathbb{R} \setminus (s, s + 1)$. Thus, we only need to show that $\{ 1/n \mid n \in \mathbb{N} \}$ has no limit points in $(0, 1)$, $\{ 1 + 1/n \mid n \in \mathbb{N} \}$ has no limit points in $(1, 2)$, and $\{ 2 + 1/n \mid n \in \mathbb{N} \}$ has no limit points in $(2, 3)$. Since these are all equivalent by translation, without loss of generality, we only show that $0$ is the only limit point of $\{ 1/n \mid n \in \mathbb{N} \}$.
+
+	Suppose $x \in (0, 1)$. By the Archimedean property, there is some $n$ such that $1/n < x$. Then, since the set of all $n$ such that $1/n < x$ is non-empty, the well-ordering principle gives us a least such $n$. That is, there is some $n \in \mathbb{N}$ such that
+	\[
+		\frac{1}{n} < x \le \frac{1}{n - 1}
+	\]
+	Where we know $n - 1 \neq 0$ since we cannot have $n = 1$ giving $1 < x$ for $x \in (0, 1)$.
+
+	If $n = 2$, then we have $x \in (1/2, 1)$. Since $(1/2, 1)$ is open, there is some $r > 0$ such that $N_{r}(x) \subset (1/2, 1)$. $N_{r}(x) \cap E$ is empty since there are no $1/n \in (1/2, 1)$ and thus, $x$ is not a limit point of $\{ 1/n \}$.
+
+	If $n > 2$, then we have
+	\[
+		\frac{1}{n} < x \le \frac{1}{n - 1} < \frac{1}{n - 2}.
+	\]
+	If $x \neq \frac{1}{n - 1}$, then $x \in \left ( \frac{1}{n}, \frac{1}{n - 1} \right )$. Since there is no $m \in \mathbb{N}$ such that $n - 1 < m < n$, there is no $m \in \mathbb{N}$ with $\frac{1}{m} \in \left ( \frac{1}{n}, \frac{1}{n - 1} \right )$. Then since the interval is open, there is an $r > 0$ with $N_{r}(x) \subset \left ( \frac{1}{n}, \frac{1}{n - 1} \right )$. Then $N_{r}(x) \cap E$ is empty and $x$ cannot be a limit point of $\{ 1/n \}$.
+
+	If $x = \frac{1}{n - 1}$, then we still have $x \in \left ( \frac{1}{n}, \frac{1}{n - 2} \right )$. Since the only $m \in \mathbb{N}$ such that $n - 2 < m > n$ is  $n - 1$, the only $\frac{1}{m} \in \left ( \frac{1}{n}, \frac{1}{n - 2} \right )$ is $x = \frac{1}{n - 1}$. Then since the interval is open, we have  some $r > 0$ such that $N_{r}(x) \subset \left ( \frac{1}{n}, \frac{1}{n - 2} \right )$ and thus, $N_{r}(x) \cap E \setminus \{ x \}$ is empty. Thus, $x$ is not a limit point of $\{ 1/n \}$.
+
+	By the arguments above, this is sufficient to show that the limit points of $E$ are exactly $\{ 0, 1, 2 \}$, giving us that $E$ is a closed bounded set with exactly three limit points, as desired.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[Rudin chapter 2, problem 6.]
 	Let $E'$ be the set of all limit points of a set $E$. Prove that $E'$ is closed. Prove that $E$ and $\overline{E}$ have the same limit points. Do $E$ and $E'$ always have the same limit points?
 \end{problem}
+
+\begin{solution}
+	We answer the last question first --- $E$ and $E'$ do not always have the same limit points. In the previous exercises we constructed a set $E$ with a finite, non-empty set of limit points $E'$. But then $E'$ has no limit points since it is finite. Thus, $E$ and $E'$ do not have the same limit points.
+
+	Notice that any limit point of $\overline{E}$ must be a limit point of $E$ or $E'$. This is true because any limit point $x$, must have a distinct point of $\overline{E}$ in $N_{r}(x)$ for each $r > 0$. Suppose by way of contradiction that $x$ is not a limit point of $E$ or $E'$, there is some $r > 0$ such that $N_{r}(x) \cap E$ and $N_{r}(x) \cap E'$ are empty (choose $r = \min \{ r_{1}, r_{2} \}$ for $r_{1}, r_{2}$ such that $N_{r_{1}}(x) \cap E$ and $N_{r_{2}}(x) \cap E'$ are empty). Thus,
+	\[
+		N_{r}(x) \cap \overline{E} = N_{r}(x) \cap (E \cup E') = (N_{r}(x) \cap E) \cup (N_{r}(x) \cap E')
+	\]
+	is empty too, contradicting that $x$ is a limit point of $\overline{E}$.
+
+	We will show that any limit point of $E'$ is a limit point of $E$. From this it follows that $E'$ is closed (since any limit point of $E'$ is a limit point of $E$, and is thus contained in $E'$) and that $E$ and $\overline{E}$ have the same limit points (since a limit point of $\overline{E}$ is a limit point of $E$ or $E'$, and thus, a limit point of $E$).
+
+	Suppose $x$ is a limit point of $E'$. Thus, for each $r > 0$, $(N_{r}(x) \setminus \{ x \}) \cap E'$ is non-empty. Choose some limit point of $E$, say $y$, in that intersection. Since $N_{r}(x) \setminus \{ x \}$ is open, there exists some $\varepsilon > 0$ such that $N_{\varepsilon}(y) \subset N_{r}(x) \setminus \{ x \}$. Since $y$ is a limit point of $E$, we must have some $p \in N_{\varepsilon}(y) \in E$. Then since $N_{\varepsilon}(y) \subset N_{r}(x) \setminus \{ x \}$ their intersections with $E$ follow the same relationship --- $N_{\varepsilon}(y) \cap E \subset (N_{r}(x) \setminus \{ x \}) \cap E$. Thus, $p \in (N_{r}(x) \setminus \{ x \}) \cap E$. That is, for any $r > 0$, $(N_{r}(x) \setminus \{ x \}) \cap E$ is non-empty. Thus, any limit point $x$ of $E'$ is a limit point of $E$. From the arguments in the previous paragraph, the desired results follow.
+\end{solution}
 
 \pagebreak
 
@@ -24,9 +68,42 @@
 	Let $A_{1}, A_{2}, A_{3}, \dots$ be subsets of a metric space.
 	\begin{enumerate}
 		\item If $B_{n} = \bigcup_{i = 1}^{n} A_{i}$, prove that $\overline{B_{n}} = \bigcup_{i = 1}^{n} \overline{A_{i}}$, for $n \in \mathbb{N}$.
-		\item If $B = \bigcup_{i \in \mathbb{N}} A_{i}$, prove that $\overline{B} \supset \bigcup_{i \in \mathbb{N}} \overline{A_{i}}$.
+		\item If $B = \bigcup_{i \in \mathbb{N}} A_{i}$, prove that $\overline{B} \supset \bigcup_{i \in \mathbb{N}} \overline{A_{i}}$. Show, by an example, that this inclusion can be proper.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	First we will show in a single common proof that for $I \subset \mathbb{N}$ and $B_{I} = \bigcup_{i \in I} A_{i}$, we have $\overline{B_{I}} \supset \bigcup_{i \in I} \overline{A_{i}}$. Considering $I = \{ 1, \dots, n \}$ gives us $\overline{B_{n}} \supset \bigcup_{i = 1}^{n} \overline{A_{i}}$ and considering $I = \mathbb{N}$ gives us $\overline{B} \supset \bigcup_{i \in \mathbb{N}} \overline{A_{i}}$.
+
+	Suppose $x \in \bigcup_{i \in I} \overline{A_{i}}$. Then $x \in \overline{A_{i}}$ for some $i \in I$. If $x \in A_{i}$, then $x \in B_{I} = \bigcup_{i \in I} A_{i}$ and thus, $x \in \overline{B_{I}} \supset B_{I}$. If $x \notin A_{i}$ then $x$ must be a limit point of $A_{i}$. Thus, for every $r > 0$, $(N_{r}(x) \setminus \{ x \}) \cap A_{i}$ is non-empty. Since $A_{i} \subset B_{I}$, then we must have 
+	\[
+		(N_{r}(x) \setminus \{ x \}) \cap B_{I} \supset (N_{r}(x) \setminus \{ x \}) \cap A_{i}
+	\]
+	and thus, for each $r > 0$, $(N_{r}(x) \setminus \{ x \}) \cap B_{I}$ is non-empty as well. Then, is, $x$ is a limit point of $B_{I}$ and thus, $x \in \overline{B_{I}}$. Thus, we've shown
+	\[
+		\bigcup_{i \in I} \overline{A_{i}} \subset \overline{B_{I}}
+	\]
+	as desired.
+	\begin{enumerate}
+		\item Now we will show that $\overline{B_{n}} \subset \bigcup_{i = 1}^{n} \overline{A_{i}}$. Suppose by way of contradiction that $x \in \overline{B_{n}}$ but $x \notin \bigcup_{i = 1}^{n} \overline{A_{i}}$. We know that $x \notin B_{n}$ since $B_{n} = \bigcup_{i = 1}^{n} A_{i} \subset \bigcup_{i = 1}^{n} \overline{A_{i}}$. Thus, $x$ must be a limit point of $B_{n}$ that is not a limit point of any  $A_{i}$. We will show that this is not possible.
+
+			If $x$ is not a limit point of any $A_{i}$, there must be $r_{i}$ for each $A_{i}$ such that $N_{r_{i}}(x) \cap A_{i}$ is empty. Note that we don't have to consider the punctured neighbourhood $N_{r_{i}}(x) \setminus \{ x \}$ since we already know that $x \notin A_{i}$. But then for $r = \min \{ r_{i} \mid i = 1, \dots, n \}$, we have that $N_{r}(x) \cap A_{i}$ is empty for any $i$. Thus, $N_{r}(x) \cap B_{n}$ is empty since $N_{r}(x) \cap B_{n}$ is the union of all $N_{r}(x) \cap A_{i}$.
+
+			This contradicts the fact that $x$ is a limit point of $B_{n}$. Thus our assumption that there exists $x \in \overline{B_{n}}$ such that $x \notin \bigcup_{i = 1}^{n} \overline{A_{i}}$ was false. That is,
+			\[
+				\overline{B_{n}} \subset \bigcup_{i = 1}^{n} \overline{A_{i}}.
+			\]
+			Then by double inclusion
+			\[
+				\overline{B_{n}} = \bigcup_{i = 1}^{n} \overline{A_{i}}.
+			\]
+		\item Consider $A_{i} = \{ 1/i \}$. Since each $A_{i}$ is finite, $\overline{A_{i}} = A_{i} = \{ 1/i \}$. Thus,
+			\[
+				\bigcup_{i \in \mathbb{N}} \overline{A_{i}} = \bigcup_{i \in \mathbb{N}} A_{i} = B = \{ 1/n \mid n \in \mathbb{N} \}.
+			\]
+			However, we proved in exercise 5 that $B = \{ 1/n \mid n \in \mathbb{N} \}$ has a limit point $0$. Thus, $\overline{B} \supsetneq \bigcup_{i \in \mathbb{N}} \overline{A_{i}}$.
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
@@ -41,16 +118,50 @@
 	Prove that this is a metric. Which subsets of the resulting metric spaces are open? Which are closed? Which are compact?
 \end{problem}
 
+\begin{solution}
+	Let $p, q, x$ be points in $X$.
+
+	First we will show that $d$ is positive definite. This follows from the definition --- $d(p, p) = 0$ and $d(p, q) = 1 > 0$ for $p \neq q$.
+
+	$d$ is also symmetric --- it is clear that $d(p, q) = d(q, p)$ --- if $p = q$, then $d(p, q) = 0 = d(q, p)$ and if $p \neq q$, then $d(p, q) = 1 = d(q, p)$.
+
+	Finally, we will show the triangle inequality. If $p = q$, then $d(p, q) = 0 \le 0 + 0 = d(p, x) + d(x, q)$. If $p \neq q$, then we cannot have $x = p$ and $x = q$ since that would give us $p = x = q$. Thus, we must have $d(p, x) + d(x, q) \ge 1 = d(p, q)$. Thus, $d$ is a metric.
+
+	Every subset of $X$ is open. For any point $p \in E \subset X$, a neighbourhood of radius less than $1$ is just $\{ p \}$ --- every other point is at distance $1$. Thus, $N_{1/2}(p) = \{ p \} \subset E$.
+
+	The compact subsets of $X$ are exactly the finite subsets of $X$. It's clear that the finite subsets are compact. If  $E = \{ p_{1}, \dots, p_{n} \}$ is a finite subset covered by $\mathcal{O}$, then choosing $U_{i} \in \mathcal{O}$ such that $p_{i} \in U_{i}$ gives us $\{ U_{1}, \dots, U_{n} \}$ as a finite subcover of $E$ admitted by $\mathcal{O}$. For any infinite $E \subset X$, consider the open cover  $\mathcal{O} = \{ \{ p \} \mid p \in E \}$. Any finite subset of $\mathcal{O}$ would only cover finitely many points, and thus, $\mathcal{O}$ does not admit finite subcover of $E$.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[Rudin chapter 2, problem 12.]
 	Let $K \subset \mathbb{R}$ consist of $0$ and the numbers $1/n$ for $n \in \mathbb{N}$. Prove that $K$ is compact directly from the definition.
 \end{problem}
 
+\begin{solution}
+	Suppose $\mathcal{O}$ is an open cover of $K$ and $U \in \mathcal{O}$ is an open set that covers $0$. Thus, we have some open neighbourhood of $0$, $(-r, r) \subset U$. By the Archimedean property, there exists some $N$  such that all $n > N$ give $1/n < r$. Thus, there are only finitely many $n$ with $1/n \notin U$. Say there are $k$ of them --- $n_{1}, \dots, n_{k}$.
+
+	Since the sets in $\mathcal{O}$ cover $K$, we need at most $k$ open sets to cover all the $n_{i}$ --- just choose $U_{i}$ such that $n_{i} \in U_{i}$. That is, $\{ U, U_{1}, \dots, U_{k} \} \subset \mathcal{O}$ is a finite subcover admitted by any open cover $\mathcal{O}$ and thus, $K$ is compact.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[Rudin chapter 2, problem 16.]
 	Regard $\mathbb{Q}$, the set of all rational numbers, as a metric space, with $d(p, q) = \lvert p - q \rvert$. Let $E$ be the set of all $p \in \mathbb{Q}$ such that $2 < p^{2} < 3$. Show that $E$ is closed and bounded in $\mathbb{Q}$, but that $E$ is not compact. Is $E$ open in $\mathbb{Q}$?
 \end{problem}
+
+\begin{solution}
+	Note that in order to have $p^{2} < 3$, we must have $\lvert p - 0 \rvert = \lvert p \rvert < 3$. Thus, every point in  $E$ is within distance $3$ of $0$. That is, $E$ is bounded.
+
+	Now we will show that $E$ is closed (in $\mathbb{Q}$). Consider $F = \mathbb{Q} \setminus E$. We can write $F$ as $\{ p \in \mathbb{Q} \mid p^{2} > 3 \text{ or } p^{2} < 2 \}$. Let $V \subset \mathbb{R}$ be following the open set (in $\mathbb{R}$).
+	\[
+		V = (-\infty, -\sqrt{3}) \cup (-\sqrt{2}, \sqrt{2}) \cup (\sqrt{3}, \infty).
+	\]
+	Note that we could also write $V = \{ p \in \mathbb{R} \mid p^{2} > 3 \text{ or } p^{2} < 2 \}$. Thus, $F = V \cap \mathbb{Q}$. But then by Theorem 2.30, $F$ is open in $\mathbb{Q} \subset \mathbb{R}$. It follows that its complement, $E$, is closed in $\mathbb{Q}$.
+
+	Note $E$ is not compact in $\mathbb{R}$ since it is not closed in $\mathbb{R}$ (for example, $\sqrt{2}$ and $\sqrt{3}$ are limit points in $\mathbb{R}$). By Theorem 2.33, if $E$ was compact in $\mathbb{Q} \subset \mathbb{R}$, $E$ would be open in $\mathbb{R}$. Thus, $E$ is not compact in $\mathbb{Q}$.
+
+	Consider the open set (in $\mathbb{R}$) $U = (-\sqrt{3}, - \sqrt{2}) \cup (\sqrt 2, \sqrt{3})$. Note that $E = U \cap \mathbb{Q}$. Thus, by Theorem 2.30, $E$ is open in $\mathbb{R}$.
+\end{solution}
 
 \end{document}
