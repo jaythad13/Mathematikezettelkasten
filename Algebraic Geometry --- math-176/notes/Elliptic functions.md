@@ -68,4 +68,6 @@ $$
 
 That is, $(w, w')$ is a point on the quartic. Also notice that every point on the quartic corresponds to some distinct $w$ by the size of the period of $\operatorname{sn}$, thus, every point can be described by $(w, w')$.
 
-Now if [[Algebraic Geometry --- math-176/notes/Elliptic integrals#_theorem _ reducing irrational quartic integrals|quartics can be reduced to cubics]], can this idea be used to say something about elliptic curves $y^{2} = x^{2} + ax + b$?
+Now if [[Algebraic Geometry --- math-176/notes/Elliptic integrals#_theorem _ reducing irrational quartic integrals|quartics can be reduced to cubics]], can this idea be used to say something about elliptic curves $y^{2} = x^{2} + ax + b$? Yes!
+
+The same transformation that converts quartic to cubics, acts as a group homomorphism.
