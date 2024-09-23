@@ -2,28 +2,10 @@
 tags:
   - anal
   - math-135/7
+  - math-135/8
 ---
 
 Singularities are points where functions are undefined. We show that they can be categorised into (in increasing order of badness) removable singularities, poles, and essential singularities.
-
-### Removable singularities
-
-Removable singularities are fake singularities — the "singularity" in a function like $z / z$ perhaps.
-
-##### _definition:_ removable singularity
-
-If $f : \Omega \to \mathbb{C}$ has a singularity $z_{0}$, but can be extended to a a holomorphic function $g$ with $g = f$ everywhere that is not $z_{0}$, $z_{0}$ is a removable singularity of $f$.
-
-##### _theorem:_ Riemann's theorem on removable singularities
-
-Consider $f : \Omega \to \mathbb{C}$ for some open $\Omega \subset \mathbb{C}$, where $f$ is holomorphic with a singularity $z_{0} \in \Omega$. If $f$ is bounded on a punctured neighbourhood $N_{r}^*(z_{0})$, $z_{0}$ is a removable singularity.
-
-###### _proof sketch:_
-
-For a disk $D$ centred at $z_{0}$ with $\overline{D} \subset \Omega$, consider the keyhole contour to define the extension of $f$ at $z_{0}$. The inner contour goes to zero since $f$ is bounded and we are left to define
-$$
-f(z_{0}) = \int_{\partial D} \frac{f(z)}{z - z_{0}} \, dz 
-$$
 
 ### Zeroes
 
@@ -138,3 +120,105 @@ $$
 ###### _proof sketch:_
 
 Consider the keyhole deformation with keyholes around each pole $z_{i}$.
+
+### Removable singularities
+
+Removable singularities are fake singularities — the "singularity" in a function like $z / z$ perhaps.
+
+##### _definition:_ removable singularity
+
+If $f : \Omega \to \mathbb{C}$ has a singularity $z_{0}$, but can be extended to a a holomorphic function $g$ with $g = f$ everywhere that is not $z_{0}$, $z_{0}$ is a removable singularity of $f$.
+
+##### _theorem:_ Riemann's theorem on removable singularities
+
+Consider $f : \Omega \to \mathbb{C}$ for some open $\Omega \subset \mathbb{C}$, where $f$ is holomorphic with a singularity $z_{0} \in \Omega$. If $f$ is bounded on a punctured neighbourhood $N_{r}^*(z_{0})$, $z_{0}$ is a removable singularity.
+
+###### _proof sketch:_
+
+For a disk $D$ centred at $z_{0}$ with $\overline{D} \subset \Omega$, consider the keyhole contour to define the extension of $f$ at $z_{0}$. The inner contour goes to zero since $f$ is bounded and we are left to define
+$$
+f(z_{0}) = \int_{\partial D} \frac{f(z)}{z - z_{0}} \, dz 
+$$
+
+##### _corollary:_ $f$ is unbounded near poles
+
+If $f$ is a meromorphic function with an isolated singularity at $z_{0}$, $f$ has a pole at $z_{0}$ if and only if $\lvert f(z) \rvert \to \infty$.
+
+###### _proof:_
+
+If $f$ has a pole at $z_{0}$, there is some holomorphic $g$ with $g(z) = 1/f(z)$ for $z \neq z_{0}$ and $g(z) = 0$. Thus, $g(z) \to 0$ near $z_{0}$, and $\lvert f(z) \rvert = \lvert 1/g(z) \rvert \to \infty$.
+
+If $\lvert f(z) \rvert \to \infty$ as $z \to z_{0}$ then $1 / f$ is holomorphic for all $z \neq z_{0}$ and is bounded near $z_{0}$. Thus, $1/f$ has a removable singularity at $z_{0}$. Then there is $g$, the extension of $1/f$ which is holomorphic around $z_{0}$ and $f = 1 / g$ except at $z_{0}$.
+
+### Essential singularities
+
+##### _definition:_ essential singularity
+
+##### _theorem:_ Casorati-Weierstrass
+
+If $f$ is holomorphic in $D_{r}^*(z_{0})$ with $z_{0}$ an essential singularity of $f$, then $f^\text{img}(D_{r}^*(z_{0}))$ is dense in $\mathbb{C}$.
+
+###### _proof:_
+
+Suppose the image of $D_{r}^*(z_{0})$ is not dense. Then there must be a point $w$ such that $D_{\delta}(w)$ contains none of the image of $D_{r}^*(z_{0})$. 
+
+Consider $g(z) = \frac{1}{f(z) - w}$ on $D_{r}^*(z_{0})$. Note that $\lvert g(z) \rvert < 1 / \delta$, and thus, $g$ is bounded and holomorphic around $z_{0}$. Then $g$ just has a removable singularity at $z_{0}$. If we extend $g$ by $g(z_{0}) = 0$, then $f(z) - w$ has a pole at $z_{0}$. Otherwise, if $g(z_{0}) \neq 0$, $f(z) - w$ is holomorphic. In either case, $f$ cannot now have an essential singularity.
+
+### Singularities at $\infty$
+
+It turns out to be important to be useful to think of these functions on the [[Complex Analysis --- math-135/notes/The extended complex plane|extended complex plane]] as well.
+
+##### _definition:_ singularity at $\infty$
+
+Given $f  : \mathbb{C} \setminus D_{r}(0) \to \mathbb{C}$ is holomorphic, if $F(z) = f\left( \frac{1}{z} \right)$ has a removable singularity/pole/essential singularity at $0$, we say $f$ has a removable singularity/pole/essential singularity at infinity.
+
+##### _definition:_ meromorphic on the extended complex plane
+
+We say some meromorphic $f : \mathbb{C} \to \mathbb{C}$ is meromorphic on the extended complex plane, if $f$, at worst, has a pole at $\infty$. That is, $f$ may be holomorphic, have a removable singularity or have a pole, but may not have an essential singularity there.
+
+##### _theorem:_ classifying meromorphic functions on the extended complex plane
+
+$f$ is meromorphic on the extended complex plane if and only if $f$ is a rational function.
+
+###### _proof:_
+
+Since $f$ is meromorphic on the extended complex plane, $F(z) = f\left( \frac{1}{z} \right)$ is holomorphic on $D_{r}(0)$, or has a pole/removable singularity at $0$. In any case $F$ is certainly holomorphic on some $D^*_{r}(0)$. But then $f$ is holomorphic for all $z$ with $\frac{1}{z} \in D_{r}^*(z_{0})$. That is, $f$ is holomorphic on $\mathbb{C} \setminus D_{r}(0)$.
+
+Write $h$ as $f$ less the principal parts $f_{k}$ of each of the poles $z_{k}$. Thus, near $z_{k}$, where $f(z) = f_{k}(z) + g_{k}(z)$ for some holomorphic $g_{k}$ we only have removable singularities. Thus, $h$ can be extended to an entire function. Similarly, remove the pole at infinity. That means we $F(z) = f\left( \frac{1}{z} \right)$ only has removable singularity at $0$. Thus, $h$ must be bounded everywhere.
+
+Thus, by [[Complex Analysis --- math-135/notes/Cauchy integral formula#_theorem _ Liouville's theorem|Liouville's theorem]], we have that (the extension of $h$, and thus,) $h$ is a constant. But then $f$ is just the sum of principal parts, the pole at infinity and a constant. That is, a rational function.
+
+### The argument principle
+
+One of the most striking applications of meromorphic functions is the argument principle.
+
+##### _theorem:_ the argument principle
+
+If $f : \Omega \to \mathbb{C}$ is meromorphic on $\Omega$. Let $D$ be a disc with closure $\overline{D}$ in $\Omega$. Then, if $f$ has no poles or zeroes on $\partial D$
+$$
+\int_{\partial D} \frac{f'(z)}{f(z)} \, dz = Z - P
+$$
+where $Z$ is the number of zeroes of $f$ and $P$ is the number of poles (counted with multiplicity, inside $D$).
+
+###### _proof sketch:_
+
+Write out derivatives as power series. Then every order $n$ zero at $z_{0}$ gives you a term of $\frac{n}{z - z_{0}}$ and every order $n$ pole at $z_{p}$ gives you a term of $-\frac{n}{z - z_{0}}$.
+
+##### _theorem:_ Rouche's theorem
+
+Suppose $f, g$ are holomorphic functions on some open $\Omega \subset \mathbb{C}$. Suppose $D$ is a disc with $\overline{D} \subset \Omega$ and its interior. If $\lvert f(z) \rvert > \lvert g(z) \rvert$ everywhere on $\partial D$, then $f$ and $f + g$ have the same number of zeroes inside $D$.
+
+Note that for $f, g$ meromorphic it is true that for $f$ and $f + g$, $Z - P$ is the same.
+
+###### _proof sketch:_
+
+Consider $f_{t} : \Omega \to \mathbb{C}$ by $f_{t} = f + t g$ for $t \in [0, 1]$. Then by the argument theorem, the number of zeroes $Z$ of $f_{t}$ in $D$ is given by
+$$
+Z(t) = \int_{\partial D} \frac{f_{t}'(z)}{f_{t}(z)} \, dz.
+$$
+
+But then $Z$ is a continuous function $f : [0, 1] \to \mathbb{Z}$, and thus, must be constant. Thus, $Z(0) = Z(1)$ and $f + g$ and $f$ have the same number of zeroes.
+
+##### _example:_ an application!
+
+Take some polynomial $p(z) = z^n + a_{n - 1} z^{n - 1} + \dots + a_{0}$. Let $f(z) = z^n$, $g(z) = a_{n - 1} z^{n - 1} + \dots + a_{0}$. Since on a large enough circle $\lvert f \rvert > \lvert g \rvert$, $f + g$ must have the same number 
