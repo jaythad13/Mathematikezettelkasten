@@ -215,7 +215,9 @@ $$
 
 A division ring is a (non-trivial) ring where every nonzero element is a unit.
 
-One of the most important classes of rings is integral domains.
+### Integral domains
+
+One of the most important classes of rings is that of integral domains.
 
 ![[Abstract Algebra I --- math-171/notes/Integral domains#Integer-al domains|Integral domains]]
 
