@@ -1,0 +1,52 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 176 --- Algebraic Geometry}
+\assignment{Homework assignment \#4}
+\duedate{27th September 2024}
+
+\begin{document}
+
+\begin{problem}[Problem 1.]
+	Let $F$ be a field. Choose three distinct projective points  $a, b, e \in \mathbb{P}^{1}(F)$ and denote by $\mathbb{G}_{m}(F) = \mathbb{P}^{1}(F) \setminus \{ a, b \}$ the \emph{twice punctured sphere}. Observe that we have the M\"{o}bius transformation $\phi : \mathbb{G}_{m}(F) \to \mathbb{P}^{1}(F)$ by
+	\[
+		\phi(z) = \frac{e - b}{e - a} \frac{z - a}{z - b}
+	\]
+	such that
+	\[
+		\phi(a) = (0 : 1), \phi(b) = (1 : 0), \phi(e) = (1 : 1).
+	\]
+	Show that $(\mathbb{G}_{m}(F), \oplus)$ is an abelian group with identity $e$ with the operation
+	\[
+		x \oplus y = \phi^{-1}(\phi(x) \phi(y)) = \frac{(a - e + b)xy - ab(x + y) - a e b}{xy - e(x + y) + (a e - a b + b e)}.
+	\]
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Problem 2.]
+	Let $\mathbb{P}^{1}(\mathbb{R}) \simeq \mathbb{R} \cup \{ \infty \}$ denote the real projective line. Consider the composition law $\oplus : \mathbb{P}^{1}(\mathbb{R}) \times \mathbb{P}^{1}(\mathbb{R}) \to \mathbb{P}^{1}(\mathbb{R})$ which is defined by
+	\[
+		(x_{1} : x_{0}) \oplus (y_{1} : y_{0}) = (x_{1} y_{0} + x_{0} y_{1} : x_{0} y_{0} - x_{1} y_{1})
+	\]
+	\begin{enumerate}
+		\item Show that $\oplus$ is well-defined.
+		\item Show that $(0: 1) \oplus (x_{1} : x_{0}) = (x_{1} : x_{0}) \oplus (0 : 1) = (x_{1} : x_{0})$ for all $(x_{1} : x_{0}) \in \mathbb{P}^{1}(\mathbb{R})$.
+		\item Show that $(\mathbb{P}^{1}(\mathbb{R}), \oplus)$ is an abelian group with identity $e = (0 : 1)$.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Problem 3.]
+	Recall that $(\mathbb{R}, +)$ and $(\mathbb{P}^{1}(\mathbb{R}), \oplus)$ are abelian groups. Define a map $\phi : \mathbb{R} \to \mathbb{P}^{1}(\mathbb{R})$ by $\theta \mapsto (\sin{\pi \theta} : \cos{\pi \theta})$.
+	\begin{enumerate}
+		\item Show that $\phi$ is a group homomorphism.
+		\item Compute the kernel of the map, $\ker \phi \subset \mathbb{R}$.
+		\item Compute the image of the map,  $\phi(\mathbb{R}) \subset \mathbb{P}^{1}(\mathbb{R})$.
+		\item How are the quotient group $\mathbb{R} / \mathbb{Z}$ and the projective line $\mathbb{P}^{1}(\mathbb{R})$ related?
+	\end{enumerate}
+\end{problem}
+
+\end{document}
