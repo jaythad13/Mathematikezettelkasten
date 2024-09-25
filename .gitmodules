@@ -11,3 +11,6 @@
 [submodule "Complex Analysis --- math-135/attachments/documents"]
 	path = Complex Analysis --- math-135/attachments/documents
 	url = https://git.overleaf.com/66ce1caa60dd4a3f687085f6
+[submodule "Abstract Algebra I --- math-171/attachments/homework/solution sketches"]
+	path = Abstract Algebra I --- math-171/attachments/homework/solution sketches
+	url = https://git@git.overleaf.com/66e4af14548d2e845a1fb49e
