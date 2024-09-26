@@ -1,6 +1,8 @@
 ---
 tags:
 - math-131/7
+- math-131/8
+- math-131/9
 - anal
 - top
 ---
@@ -27,6 +29,10 @@ If the collection of open sets $\{ G_{\alpha} \mid \alpha \in A \}$ is an open c
 
 A set $K$ is compact if every open cover of $K$ has a finite subcover.
 
+### Characterising compact sets
+
+What are the compact sets in any metric space? We will get a pretty good idea in general metric spaces $X$, and the best possible idea for $\mathbb{R}^n$.
+
 ##### _theorem:_ compact sets are closed and bounded
 
 If $K$ is compact, it is closed and bounded.
@@ -41,26 +47,6 @@ Note that the converse isn't true. Consider the infinite-dimensional sphere —�
 
 In fact, the converse is only true in complete spaces like $\mathbb{R}^n$. We will prove the converse for $\mathbb{R}^n$.
 
-##### _theorem:_ Heine-Borel theorem
-
-If $K \subset \mathbb{R}^n$ is closed and bounded, it is compact.
-
-###### _proof sketch:_
-
-We will show $I = [a_{1},  b_{1}] \times [a_{2}, b_{2}]$ is compact. It follows from a similar proof that $I = [a_{1}, b_{1}] \times \cdots \times [a_{n}, b_{n}]$ is compact. Finally, any closed and bonded set can be placed inside some interval $I$. Any open cover of $K$, together with its open complement $K^c$, forms an open cover of $I$. This can then be reduced to a finite subcover of $I$. We can remove $K^c$ from the subcover since it clearly doesn't cover $K$, and thus, we are left with a finite subcover of the original open cover of $K$.
-
-
-
-Suppose by way of contradiction that $I$ isn't compact with $\mathcal{O}$ an open cover that does not admit a finite subcover. Break $I$ into $2^n$ subparts. For example, in the case of $n = 2$, consider
-$$
-I = \left[ a_{1}, \frac{a_{1} + b_{1}}{2} \right] \times \left[ a_{2}, \frac{a_{2} + b_{2}}{2} \right] \cup \left[ \frac{a_{1} + b_{1}}{2}, b_{1} \right] \times \left[ \frac{a_{2} + b_{2}}{2}, b_{2} \right] \cup \left[ a_{1}, \frac{a_{1} + b_{1}}{2} \right] \times \left[ \frac{a_{2} + b_{2}}{2}, b_{2} \right] \cup \left[ \frac{a_{1} + b_{1}}{2}, b_{1} \right]  \times \left[ a_{2}, \frac{a_{2} + b_{2}}{2} \right].
-$$
-Set $I_{1}$ to be the subpart such that $I_{1}$ cannot be covered by a finite subcover of $\mathcal{O}$, and choose $I_{2}$, and so on recursively. Since the diameter of $I_{n} \to 0$, and the intersection is non-empty, then unless that point were not covered, we could squeeze a tiny $I_{n}$ into one of the open sets in the open cover.
-
-### Compact set magic
-
-Compact sets give you results that are best described as magic — just see them. For this section, let $X$ be a metric space with metric $d$.
-
 ##### _theorem:_ Bolzano-Weierstrass theorem
 
 Any infinite subset of a compact set has a limit point in the compact set.
@@ -70,3 +56,44 @@ Any infinite subset of a compact set has a limit point in the compact set.
 Let $K \subset X$ be compact and $V \subset K$ be infinite. By way of contradiction, suppose $V$ has no limit point in $K$. Then for each $x \in K$, there is some $r > 0$ such that $N_{r}(x) \cap V \subset \{ x \}$.
 
 Consider all of these $N_{r}(x)$. Since they cover $K$, some finite subcollection of them — $N_{r_{1}}(x_{1}), \dots, N_{r_{n}}(x_{n})$ also covers $K$. Thus, $V \subset K \subset \{ x_{1}, \dots, x_{n} \}$, and thus, $V$ is finite. This is a contradiction.
+
+##### _theorem:_ intervals are compact
+
+Any $n$-cell $I \subset \mathbb{R}^n$ is compact.
+
+###### _proof sketch:_
+
+We will show $I = [a_{1},  b_{1}] \times [a_{2}, b_{2}]$ is compact. It follows from a similar proof that $I = [a_{1}, b_{1}] \times \cdots \times [a_{n}, b_{n}]$ is compact. 
+
+Suppose by way of contradiction that $I$ isn't compact with $\mathcal{O}$ an open cover that does not admit a finite subcover. Break $I$ into $2^n$ subparts. For example, in the case of $n = 2$, consider
+$$
+I = \left[ a_{1}, \frac{a_{1} + b_{1}}{2} \right] \times \left[ a_{2}, \frac{a_{2} + b_{2}}{2} \right] \cup \left[ \frac{a_{1} + b_{1}}{2}, b_{1} \right] \times \left[ \frac{a_{2} + b_{2}}{2}, b_{2} \right] \cup \left[ a_{1}, \frac{a_{1} + b_{1}}{2} \right] \times \left[ \frac{a_{2} + b_{2}}{2}, b_{2} \right] \cup \left[ \frac{a_{1} + b_{1}}{2}, b_{1} \right]  \times \left[ a_{2}, \frac{a_{2} + b_{2}}{2} \right].
+$$
+Set $I_{1}$ to be the subpart such that $I_{1}$ cannot be covered by a finite subcover of $\mathcal{O}$, and choose $I_{2}$, and so on recursively. Since the diameter of $I_{n} \to 0$, and the intersection is non-empty, then unless that point were not covered, we could squeeze a tiny $I_{n}$ into one of the open sets in the open cover.
+
+In particular, we know that there is some $x \in I_{n}$ for all $I_{n}$ — nested intervals have a non-empty intersection. We also must have $x \in U$ for some $U \in \mathcal{O}$. Thus, we have some $N_{\varepsilon}(x) \subset U$. But then, for large enough $n$, we get that the diameter of $I_{n} < \frac{\varepsilon}{2}$. Thus, even if $I_{n}$ has $x$ right at its corner, $I_{n} \subset N_{\varepsilon}(x) \subset U$. Then $I_{n}$ is covered by a finite subcover of $\mathcal{O}$, which contradicts our hypothesis that each $I_{n}$ cannot be covered by a finite subcover of $\mathcal{O}$.
+
+##### _lemma:_ closed $\cap$ compact is compact
+
+The intersection of any compact $K$ and closed $V$ is compact.
+
+###### _proof:_
+
+If $\mathcal{O}$ is an open cover of $K \cap V$, then $\mathcal{O} \cup \{ V^c \}$ is an open cover of $K$. This admits a subcover of $K$ — $\{ U_{1}, \dots, U_{n}, V^c \}$ (with $U_{i} \in \mathcal{O}$).
+
+##### _theorem:_ Heine-Borel theorem
+
+For any set $E \subset \mathbb{R}^n$, the following are equivalent
+1) $E$ is closed and bounded
+2) $E$ is compact
+3) Every infinite subset of $E$ has a limit point in $E$.
+
+In fact, in any metric space, the statements "$E$ is compact" and "every infinite subset of $E$ has a limit point in $E$" are equivalent.
+
+###### _proof:_
+
+First we show 1) implies 2). Any closed and bounded set $E$ can be placed inside some interval $I$. Thus, $E = E \cap I$ and thus, since $E$ is the intersection of a closed set and a compact set, it is compact.
+
+It follows from the [[#_theorem _ Bolzano-Weierstrass theorem|Bolzano-Weierstrass theorem]] that 2) implies 3).
+
+Finally it's not too hard to show 3) implies 2).
