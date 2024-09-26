@@ -76,7 +76,7 @@ g(a) = \frac{1}{2 \pi i} \int \frac{f(z)}{z - a} \, dz
 $$
 for some continuous function $f$, then $f$ is holomorphic. We will need this to prove [[Complex Analysis --- math-135/notes/Meromorphic functions and singularities#_theorem _ Riemann's theorem on removable singularities|Riemann's theorem on removable singularities]].
 
-### Consequence
+### Consequences...
 
 ##### _proposition:_ Cauchy inequalities
 
