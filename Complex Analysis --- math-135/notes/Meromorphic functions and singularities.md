@@ -5,7 +5,7 @@ tags:
   - math-135/8
 ---
 
-Singularities are points where functions are undefined. We show that they can be categorised into (in increasing order of badness) removable singularities, poles, and essential singularities.
+Singularities are points where functions are undefined. We show that they can be categorised into (in increasing order of badness) removable singularities, poles, and essential singularities. Meromorphic functions are almost holomorphic, but they have poles at some points.
 
 ### Zeroes
 
@@ -187,38 +187,3 @@ Since $f$ is meromorphic on the extended complex plane, $F(z) = f\left( \frac{1}
 Write $h$ as $f$ less the principal parts $f_{k}$ of each of the poles $z_{k}$. Thus, near $z_{k}$, where $f(z) = f_{k}(z) + g_{k}(z)$ for some holomorphic $g_{k}$ we only have removable singularities. Thus, $h$ can be extended to an entire function. Similarly, remove the pole at infinity. That means we $F(z) = f\left( \frac{1}{z} \right)$ only has removable singularity at $0$. Thus, $h$ must be bounded everywhere.
 
 Thus, by [[Complex Analysis --- math-135/notes/Cauchy integral formula#_theorem _ Liouville's theorem|Liouville's theorem]], we have that (the extension of $h$, and thus,) $h$ is a constant. But then $f$ is just the sum of principal parts, the pole at infinity and a constant. That is, a rational function.
-
-### The argument principle
-
-One of the most striking applications of meromorphic functions is the argument principle.
-
-##### _theorem:_ the argument principle
-
-If $f : \Omega \to \mathbb{C}$ is meromorphic on $\Omega$. Let $D$ be a disc with closure $\overline{D}$ in $\Omega$. Then, if $f$ has no poles or zeroes on $\partial D$
-$$
-\int_{\partial D} \frac{f'(z)}{f(z)} \, dz = Z - P
-$$
-where $Z$ is the number of zeroes of $f$ and $P$ is the number of poles (counted with multiplicity, inside $D$).
-
-###### _proof sketch:_
-
-Write out derivatives as power series. Then every order $n$ zero at $z_{0}$ gives you a term of $\frac{n}{z - z_{0}}$ and every order $n$ pole at $z_{p}$ gives you a term of $-\frac{n}{z - z_{0}}$.
-
-##### _theorem:_ Rouche's theorem
-
-Suppose $f, g$ are holomorphic functions on some open $\Omega \subset \mathbb{C}$. Suppose $D$ is a disc with $\overline{D} \subset \Omega$ and its interior. If $\lvert f(z) \rvert > \lvert g(z) \rvert$ everywhere on $\partial D$, then $f$ and $f + g$ have the same number of zeroes inside $D$.
-
-Note that for $f, g$ meromorphic it is true that for $f$ and $f + g$, $Z - P$ is the same.
-
-###### _proof sketch:_
-
-Consider $f_{t} : \Omega \to \mathbb{C}$ by $f_{t} = f + t g$ for $t \in [0, 1]$. Then by the argument theorem, the number of zeroes $Z$ of $f_{t}$ in $D$ is given by
-$$
-Z(t) = \int_{\partial D} \frac{f_{t}'(z)}{f_{t}(z)} \, dz.
-$$
-
-But then $Z$ is a continuous function $f : [0, 1] \to \mathbb{Z}$, and thus, must be constant. Thus, $Z(0) = Z(1)$ and $f + g$ and $f$ have the same number of zeroes.
-
-##### _example:_ an application!
-
-Take some polynomial $p(z) = z^n + a_{n - 1} z^{n - 1} + \dots + a_{0}$. Let $f(z) = z^n$, $g(z) = a_{n - 1} z^{n - 1} + \dots + a_{0}$. Since on a large enough circle $\lvert f \rvert > \lvert g \rvert$, $f + g$ must have the same number 
