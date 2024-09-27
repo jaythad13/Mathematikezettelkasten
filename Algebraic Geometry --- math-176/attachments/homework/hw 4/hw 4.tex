@@ -23,6 +23,56 @@
 	\]
 \end{problem}
 
+\begin{solution}
+	To show $(\mathbb{G}_{m}(F), \oplus)$ is a group, we need to show that $\oplus$ is a binary operation on $\mathbb{G}_{m}(F)$ (and thus, $\mathbb{G}_{m}(F)$ is closed under $\oplus$). We need to show $\oplus$ is associative and commutative. We also need to show that $e$ is the identity on $\mathbb{G}_{m}(F)$, giving  $e \oplus x = x$ for any $x \in \mathbb{G}_{m}(F)$, and finally that each $x \in \mathbb{G}_{m}(F)$ has an inverse under $\oplus$.
+
+	We can see that $\oplus$ is a binary operation since  $\phi : \mathbb{G}_{m}(F) \to \mathbb{P}^{1}(F)$ and thus, $\phi^{-1}(\phi(x) \phi(y))$ is always in  $\mathbb{G}_{m}(F)$.
+
+	Note in particular that the image $\phi(\mathbb{G}_{m}(F)) = \mathbb{P}^{1}(F) \setminus \{ (1 : 0), (0 : 1) \}$ which is just the multiplicative group of $F$. We can use this to prove associativity and commutativity. For associativity, consider any $x, y, z \in \mathbb{G}_{m}(F)$. Then
+	\[
+		\begin{split}
+			x \oplus (y \oplus z) & = x \oplus \phi^{-1}(\phi(x) \phi(y)) \\
+					      & = \phi^{-1}(\phi(x) \phi(\phi^{-1}(\phi(x) \phi(y)))) \\
+					      & = \phi^{-1}(\phi(x) (\phi(y) \phi(z))) \\
+					      & = \phi^{-1}((\phi(x) \phi(y)) \phi(z)) \\
+					      & = \phi^{-1}(\phi(\phi^{-1}(\phi(x) \phi(y))) \phi(z)) \\
+					      & = \phi^{-1}(\phi(x) \phi(y)) \oplus \phi(z) \\
+					      & = (x \oplus y) \oplus z
+		\end{split}
+	\]
+
+	where the fourth equality follows from the associativity of multiplication in the field $F$. Similarly, for associativity, consider $x, y \in \mathbb{G}_{m}(F)$. Then
+	\[
+		\begin{split}
+			x \oplus y & = \phi^{-1}(\phi(x) \phi(y)) \\
+				   & = \phi^{-1}(\phi(y) \phi(x)) \\
+				   & = y \oplus x
+		\end{split}
+	\]
+	where the second equality follows from the commutativity of multiplication in the field $F$.
+
+	Note that $\phi(e) = (1 : 1)$ is the multiplicative identity $1_{F}$ in $F$. That is, $e a = a$ for any $a \in F$. Thus, for any $x \in \mathbb{G}_{m}(F)$
+	\[
+		\begin{split}
+			e \oplus x & = \phi^{-1}(\phi(e) \phi(x)) \\
+				   & = \phi^{-1}(\phi(x)) \\
+				   & = x.
+		\end{split}
+	\]
+	Since $\oplus$ is commutative, this also gives $x \oplus e = x$, giving us that $e$ is the identity of $\mathbb{G}_{m}(F)$.
+
+	Finally, we claim that for any $x \in \mathbb{G}_{m}(F)$, $\phi^{-1}(1 / \phi(x))$ where $1 / \phi(x)$ is the multiplicative inverse of $\phi(x)$ in $F$. We can see this by calculating
+	\[
+		\begin{split}
+			x \oplus \phi^{-1}(1 / \phi(x)) & = \phi^{-1}(\phi(x) \phi(\phi^{-1}(1 / \phi(x)))) \\
+							& = \phi^{-1}(\phi(x) (1 / \phi(x))) \\
+							& = \phi^{-1}(1_{F}) \\
+							& = e.
+		\end{split}
+	\]
+	Again, since $\oplus$ is commutative, this also gives $\phi^{-1}(1 / \phi(x)) \oplus x = e$, and thus, that $x^{-1}$ exists.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[Problem 2.]
@@ -37,6 +87,102 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item To show that $\oplus$ is well-defined, we need to show that we can't simultaneously have $x_{1} y_{0} + x_{0} y_{1} = x_{0} y_{0} - x_{1} y_{1} = 0$ and that if $(x_{1} : x_{0}) = (\alpha x_{1} : \alpha x_{0})$, and $(y_{1} : y_{0}) = (\beta y_{1} : \beta y_{0})$ (for any $\alpha, \beta \in \mathbb{R}$), then $(\alpha x_{1} : \alpha x_{0}) \oplus (\beta y_{1} : \beta y_{0}) = (x_{1} : x_{0}) \oplus (y_{1} : y_{0})$.
+
+			Suppose by way of contradiction, we have $(x_{1} : x_{0})$ and $(y_{1} : y_{0})$ with $x_{1} y_{0} + x_{0} y_{1} = x_{0} y_{0} - x_{1} y_{1} = 0$. We cannot have both $x_{1} = 0$ and $x_{0} = 0$. Similarly, we cannot have $y_{1} = y_{0} = 0$. Without loss of generality, we only have to consider the cases $x_{0}, y_{0} \neq 0$ and $x_{0}, y_{1} \neq 0$ since the equations are symmetric under the action of $\sigma = (0 \, 1)$ by $x_{i} \mapsto x_{\sigma(i)}$ and $y_{i} \mapsto y_{\sigma(i)}$.
+
+			If $x_{0}, y_{0} \neq 0$, we can divide by $x_{0} y_{0}$ to get
+			\[
+				\frac{x_{1}}{x_{0}} + \frac{y_{1}}{y_{0}} = 0
+			\]
+			and also
+			\[
+				1 - \frac{x_{1} y_{1}}{x_{0} y_{0}} = 0
+			\]
+			Then substituting $y_{1}/y_{0} = - x_{1} / x_{0}$ from the first equation, we get
+			\[
+				1 + \left ( \frac{x_{1}}{x_{0}} \right )^{2} = 0
+			\]
+			which is a contradiction for real $x_{1}, x_{0}$.
+
+			If $x_{0}, y_{1} \neq 0$, we can divide by $x_{0} y_{1}$ to get
+			\[
+				\frac{x_{1} y_{0}}{x_{0} y_{1}} + 1 = 0
+			\]
+			and
+			\[
+				\frac{y_{0}}{y_{1}} - \frac{x_{1}}{x_{0}} = 0.
+			\]
+			Substituting $y_{0} / y_{1} = x_{1} / x_{0}$ from the first equation, we get
+			\[
+				\left ( \frac{x_{1}}{x_{0}} \right )^{2} + 1 = 0
+			\]
+			which is a contradiction for real $x_{1}, x_{0}$.
+
+			Now we compute
+			\[
+				\begin{split}
+					(\alpha x_{1} : \alpha x_{0}) \oplus (\beta y_{1} : \beta y_{0}) & = (\alpha \beta (x_{1} y_{0} + x_{0} y_{1}) : \alpha \beta (x_{0} y_{0} - x_{1} y_{1})) \\
+													 & = \alpha \beta (x_{1} y_{0} + x_{0} y_{1} : x_{0} y_{0} - x_{1} y_{1}) \\
+													 & = (x_{1} y_{0} + x_{0} y_{1} : x_{0} y_{0} - x_{1} y_{1}) \\
+													 & = (x_{1} : x_{0}) \oplus (y_{1} : y_{0}).
+				\end{split}
+			\]
+			Thus, $\oplus$ is well-defined.
+		\item We just compute the two. First,
+			\[
+				\begin{split}
+					(0 : 1) \oplus (x_{1} : x_{0}) & = (0 x_{0} + 1 x_{1} : 1 x_{0} - 0 x_{1}) \\
+								       & = (x_{1} : x_{0}).
+				\end{split}
+			\]
+			Similarly,
+			\[
+				\begin{split}
+					(x_{1} : x_{0}) & = (1 x_{1} + 0 x_{0} : 1 x_{0} - 0 x_{1}) \\
+							& = (x_{1} : x_{0}).
+				\end{split}
+			\]
+			Thus, $(0 : 1) \oplus (x_{1} : x_{0}) = (x_{1} : x_{0}) = (x_{1} : x_{0}) \oplus (0 : 1)$, as desired.
+		\item We showed that $\oplus$ is well-defined and is indeed a function $\oplus : \mathbb{P}^{1}(\mathbb{R}) \times \mathbb{P}^{1}(\mathbb{R})$. Thus, the closure group axiom is satisfied. We also have the identity axiom satisfied by part (b). It remains to show that $\oplus$ is associative, has inverses, and is commutative.
+
+			To show $\oplus$ is associative, we calculate $((x_{1} : x_{0}) \oplus (y_{1} : y_{0})) \oplus (z_{1} : z_{0})$ and show that it is equal to $(x_{1} : x_{0}) \oplus ((y_{1} : y_{0}) \oplus (z_{1} : z_{0}))$ for any $(x_{1} : x_{0}), (y_{1} : y_{0}), (z_{1} : z_{0}) \in \mathbb{P}^{1}(\mathbb{R})$.
+			\[
+				\begin{split}
+					& ((x_{1} : x_{0}) \oplus (y_{1} : y_{0})) \oplus (z_{1} : z_{0}) \\ 
+					& = (x_{1} y_{0} + x_{0} y_{1} : x_{0} y_{0} - x_{1} y_{1}) \oplus (z_{1} : z_{0}) \\
+					& = ((x_{1} y_{0} + x_{0} y_{1}) z_{0} + (x_{0} y_{0} - x_{1} y_{1}) z_{1} : (x_{0} y_{0} - x_{1} y_{1}) z_{0} - (x_{1} y_{0} + x_{0} y_{1}) z_{1}) \\
+					& = (x_{1} (y_{0} z_{0} - y_{1} z_{1}) + x_{0}(y_{1} z_{0} + y_{0} z_{1}) : x_{0}(y_{0} z_{0} - y_{1} z_{1}) - x_{1}(y_{1} z_{0} + y_{0} z_{1})) \\
+					& = (x_{1} : x_{0}) \oplus (y_{1} z_{0} + y_{0} z_{1} : y_{0} z_{0} - y_{1} z_{1}) \\
+					& = (x_{1} : x_{0}) \oplus ((y_{1} : y_{0}) \oplus (z_{1} : z_{0})).
+				\end{split}
+			\]
+
+			We show commutativity by noticing that
+			\[
+				\begin{split}
+					(x_{1} : x_{0}) \oplus (y_{1} : y_{0}) & = (x_{1} y_{0} + x_{0} y_{1} : x_{0} y_{0} - x_{1} y_{1}) \\
+									       & = (y_{1} x_{0} + y_{0} x_{1} : y_{0} x_{0} - y_{1} x_{1}) \\
+									       & = (y_{1} : y_{0}) \oplus (x_{1} : x_{0})
+				\end{split}
+			\]
+			where the second equality follows by applying commutativity of addition and multiplication on $\mathbb{R}$.
+
+			For each $(x_{1} : x_{0}) \in \mathbb{P}^{1}(\mathbb{R})$ we claim that $(- x_{1} : x_{0})$ is an inverse. (The motivation for considering this is from the next exercise where we show that $(x_{1} : x_{0}) = (\sin{\pi \theta} : \cos{\pi \theta})$, and thus for the inverse, we choose $- \theta$.) Note since we've shown $\oplus$ is commutative it is sufficient just to show that $(-x_{1} x_{0})$ is a left inverse. That is, it is sufficient for us to show
+			\[
+				\begin{split}
+					(x_{1} : x_{0}) \oplus (- x_{1} : x_{0}) & = (x_{1} x_{0} + x_{0} (- x_{1}) : x_{0} x_{0} - (- x_{1} x_{1}) ) \\
+										 & = (0 : x_{0}^{2} + x_{1}^{2}) \\
+										 & = (x_{0}^{2} + x_{1}^{2}) (0 : 1) \\
+										 & = (0 : 1).
+				\end{split}
+			\]
+			Thus, we have that $\mathbb{P}^{1}$ is an abelian group.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[Problem 3.]
@@ -48,5 +194,61 @@
 		\item How are the quotient group $\mathbb{R} / \mathbb{Z}$ and the projective line $\mathbb{P}^{1}(\mathbb{R})$ related?
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item To show that $\phi$ is a group homomorphism we need to show that $\phi(\theta_{1} + \theta_{2}) = \phi(\theta_{1}) \oplus \phi(\theta_{2})$. We compute
+			\[
+				\begin{split}
+					\phi(\theta_{1} + \theta_{2}) & = (\sin{(\pi(\theta_{1} + \theta_{2}))} : \cos{(\pi(\theta_{1} + \theta_{2}))}) \\
+								      & = (\sin{\pi \theta_{1}} \cos{\pi \theta_{2}} + \sin{\pi \theta_{2}} \cos{\pi \theta_{2}} : \cos{\pi \theta_{1}} \cos{\pi \theta_{2}} - \sin{\pi \theta_{1}} \sin{\pi \theta_{2}}) \\
+								      & = (\sin{\pi \theta_{1}} : \cos{\pi \theta_{1}}) \oplus (\sin{\pi \theta_{2}} : \cos{\pi \theta_{2}}) \\
+								      & = \phi(\theta_{1}) + \phi(\theta_{2})
+				\end{split}
+			\]
+			where the second equality follows by the angle addition formulae for sine and cosine functions and the third equality follows from the definition of $\oplus$ on $\mathbb{P}^{1}(\mathbb{R})$. Thus, $\phi$ is a group homomorphism.
+		\item
+			\[
+				\boxed{
+					\ker \phi = \mathbb{Z}.
+				}
+			\]
+
+			The identity on $\mathbb{P}^{1}(\mathbb{R})$ is $(0 : 1)$. Note that $(0 : \lambda) = (0 : 1)$ for any non-zero $\lambda \in \mathbb{R}$ since $(0, \lambda) = \lambda (0, 1)$. Thus, $\phi(\theta) = (0 : 1)$ if $\sin{\pi \theta} = 1$ and $\cos{\pi \theta} \neq 1$.
+
+			$\sin{\pi \theta} = 0$ exactly when $\theta \in \mathbb{Z}$ (the zeroes of $\sin{x}$ are exactly at $x = n \pi$). Also, for $\theta \in \mathbb{Z}$, we $\cos{\pi \theta} \in \{ -1, 1 \}$ and thus, is non-zero. Thus, we have $\phi(\theta) = (0 : 1)$ exactly when $\theta \in \mathbb{Z}$. In other words, $\ker \phi = \mathbb{Z}$.
+		\item
+			\[
+				\boxed{
+					\phi(\mathbb{R}) = \mathbb{P}^{1}(\mathbb{R})
+				}
+			\]
+
+			Note that for any $(a_{1} : a_{0})$ with $a_{0} \neq 0$, we can write $\tan{\vartheta} = a_{1} / a_{0}$ for some $\vartheta \in \mathbb{R}$. This is because $\tan$ is surjective onto $\mathbb{R}$. Consider $\theta = \vartheta / \pi$. We have $\phi(\theta) = (\sin{\vartheta} : \cos{\vartheta})$. Since
+			\[
+				\begin{split}
+					\frac{a_{0}}{\cos{\vartheta}} (\sin{\vartheta}, \cos{\vartheta}) & = (a_{0} \tan{\vartheta}, a_{0}) \\
+												  & = (a_{1}, a_{0})
+				\end{split}
+			\]
+			we have $\phi(\theta) = (\sin{\vartheta} : \cos{\vartheta}) = (a_{1} : a_{0})$. Thus, $\{ (a_{1} : a_{0}) \in \mathbb{P}^{1}(\mathbb{R}) \mid a_{0} \neq 0 \} \subseteq \phi(\mathbb{R})$.
+
+			Further, notice that any $(a : 0), (b : 0) \in \mathbb{P}^{1}(\mathbb{R})$ are actually equal --- since we cannot have $a = 0$ or $b = 0$, we can just write $(a, 0) = a / b(b : 0)$. Thus, its sufficient to have just one $\theta$ with $\phi(\theta) = (a : 0)$. Consider $\theta = 1/2$. Then $\phi(\theta) = (\sin{\pi/2} : \cos{\pi / 2}) = (1 : 0)$. Thus, we also have $(1 : 0) \in \phi(\mathbb{R})$.
+
+			Together with the previous result, we have
+			\[
+				\mathbb{P}^{1}(\mathbb{R}) = \{ (a_{1} : a_{0}) \mid (a_{1}, a_{0}) \neq (0, 0) \} \subset \phi(\mathbb{R})
+			\]
+			Since  $\phi(\mathbb{R}) \subseteq \mathbb{P}^{1}(\mathbb{R})$, because $\phi : \mathbb{R} \to \mathbb{P}^{1}(\mathbb{R})$, by double containment we have $\phi(\mathbb{R}) = \mathbb{P}^{1}(\mathbb{R})$.
+		\item
+			\[
+				\boxed{
+					\mathbb{R} / \mathbb{Z} \cong \mathbb{P}^{1}(\mathbb{R})
+				}
+			\]
+
+			By the first isomorphism theorem, for any homomorphism $\psi : G \to H$, we have $G / \ker \psi = \psi(G)$. Thus, for $\phi$, we have 
+	\end{enumerate}
+\end{solution}
 
 \end{document}
