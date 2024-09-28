@@ -17,10 +17,81 @@
 			\]
 		\item Show that
 			\[
-				\operatorname{Re} \left ( \frac{R e^{i \gamma} + r}{R e^{i \gamma} - r} \right ) = \frac{R^{2} - r^{2}}{R^{2} - 2 R r \cos{\gamma} + r^{2}}.
+				\operatorname{Re} \left ( \frac{R e^{i \varphi} + r}{R e^{i \varphi} - r} \right ) = \frac{R^{2} - r^{2}}{R^{2} - 2 R r \cos{\varphi} + r^{2}}.
 			\]
 	\end{enumerate}
 \end{problem}
+
+\begin{solution} 
+	Let $\lvert z  \rvert = r < R$.
+	\begin{enumerate}
+		\item If we write $\zeta = R e^{i \varphi}$, we can rewrite the real part in the integrand as
+			\[
+				\begin{split}
+					\operatorname{Re} \left ( \frac{\zeta + z}{\zeta - z} \right ) & = \frac{1}{2} \left ( \left ( \frac{\zeta + z}{\zeta - z} \right ) + \overline{\left ( \frac{\zeta + z}{\zeta - z} \right )} \right ) \\
+												       & = \frac{1}{2} \frac{2 \lvert \zeta \rvert^{2} - 2 \lvert z \rvert^{2}}{(\zeta - z)(\overline{\zeta} - \overline{z})} \\
+												       & = \frac{\lvert \zeta \rvert^{2} - \lvert z \rvert^{2}}{(\zeta - z)(R^{2} / \zeta - \overline{z})} \\
+												       & = \frac{R^{2} - r^{2}}{(\zeta - z)(R^{2} / \zeta - \overline{z})}.
+				\end{split}
+			\]
+
+			Thus, we can rewrite the integral ---
+			\[
+				\begin{split}
+					\frac{1}{2 \pi} \int_{0}^{2 \pi} f(R e^{i \varphi}) \operatorname{Re}\left ( \frac{R e^{i \varphi} + z}{R e^{i \varphi} - z} \right ) \, d\varphi & = \frac{1}{2 \pi} \int_{\lvert \zeta \rvert = R} f(\zeta) \frac{R^{2} - r^{2}}{(\zeta - z)(R^{2} / \zeta - \overline{z})} \frac{1}{i \zeta} \, d \zeta \\
+																							  & = \frac{1}{2 \pi i} \int_{\lvert \zeta \rvert = R} \frac{f(\zeta) \frac{R^{2} - r^{2}}{R^{2} - \overline{z} \zeta}}{\zeta - z} \, d \zeta.
+				\end{split}
+			\]
+
+			We claim that $g : D_{R_{0}} \to \mathbb{C}$ by
+
+			\[
+				g(\zeta) = f(\zeta) \frac{R^{2} - r^{2}}{R^{2} - \overline{z} \zeta}
+			\]
+			is holomorphic everywhere in $D_{R_{0}}$. This follows by noticing that $\lvert z \rvert < r < R$ and for $\zeta \in D_{R_{0}}$ that $\lvert \zeta \rvert < R$. Then
+			\[
+				R^{2} > \lvert \overline{z} \zeta \rvert.
+			\]
+			Thus, $R^{2} - \overline{z} \zeta$ is never $0$ , and $g$ is the quotient of a holomorphic function $(R^{2} - r^{2}) f$ by a non-vanishing denominator $R^{2} - \overline{z} \zeta$. Thus, the Cauchy integral formula applies for $g$ on $D_{R_{0}}$. That is, we have
+			\[
+				\begin{split}
+					g(z) & = \frac{1}{2 \pi i} \int_{\lvert \zeta \rvert = R} \frac{g(\zeta)}{\zeta - z} \, d\zeta \\
+					     & = \frac{1}{2 \pi} \int_{0}^{2 \pi} f(R e^{i \varphi}) \operatorname{Re} \left ( \frac{R e^{i \varphi} + z}{R e^{i \varphi} - z} \right ) \, d \varphi.
+				\end{split}
+			\]
+
+			However, notice that
+			\[
+				\begin{split}
+					g(z) & = f(z) \frac{R^{2} - r^{2}}{R^{2} - \overline{z} z} \\
+					     & = f(z) \frac{R^{2} - r^{2}}{R^{2} - r^{2}} \\
+					     & = f(z).
+				\end{split}
+			\]
+			Thus, we have the equality
+			\[
+				f(z) = \frac{1}{2 \pi} \int_{0}^{2 \pi} f(R e^{i \varphi}) \operatorname{Re} \left ( \frac{R e^{i \varphi} + z}{R e^{i \varphi} - z} \right ) \, d \varphi.
+			\]
+		\item In part (a), we show that
+			\[
+				\operatorname{Re} \left ( \frac{\zeta + z}{\zeta - z} \right ) = \frac{R^{2} - r^{2}}{(\zeta - z)\overline{(\zeta - z)}}
+			\]
+			for $\lvert \zeta \rvert = R$ and $\lvert z \rvert = r$. Note that for $\zeta = R e^{i \varphi}$ and $z = r$, we have $\lvert \zeta \rvert = R$ and $\lvert z \rvert = r$. Thus,
+			\[
+				\operatorname{Re} \left ( \frac{\zeta + z}{\zeta - z} \right ) = \frac{R^{2} - r^{2}}{(R e^{i \varphi} - r)\overline{(R e^{i \varphi} - r)}}
+			\]
+
+			We can expand this as follows
+			\[
+				\begin{split}
+					\frac{R^{2} - r^{2}}{(R e^{i \varphi} - r) \overline{(R e^{i \varphi} - r)}} & = \frac{R^{2} - r^{2}}{\lvert R e^{i \varphi} \rvert^{2} + \lvert r \rvert^{2} - r R e^{i \varphi} - r Re^{- i \varphi}} \\
+														     & = \frac{R^{2} - r^{2}}{R^{2} + r^{2} - rR(e^{i \varphi} + e^{i \varphi})} \\
+														     & = \frac{R^{2} - r^{2}}{R^{2} + r^{2} - 2 r R \cos{\varphi}}.
+				\end{split}
+			\]
+			Thus, we have the desired equality.
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
@@ -38,7 +109,7 @@
 			Also show that the imaginary part of $f$ is uniquely defined up to an additive (real) constant.
 		\item Deduce from this result, and from Exercise 11, the Poisson integral representation formula from the Cauchy integral formula: If $u$ is harmonic in the unit disc and continuous on its closure, then if $z = r e^{i \theta}$ one has
 			\[
-				u(z) = \frac{1}{2 \pi} \int_{0}^{2 \pi} P_{r}(\theta - \varphi) u(\varphi) \, d\varphi 
+				u(z) = \frac{1}{2 \pi} \int_{0}^{2 \pi} P_{r}(\theta - \varphi) u(e^{i \varphi}) \, d\varphi 
 			\]
 			where $P_{r}(\gamma)$ is the Poisson kernel for the unit disc given by
 			\[
@@ -46,6 +117,84 @@
 			\]
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item Consider the function $g : \mathbb{D} \to \mathbb{C}$ by
+			\[
+				g = 2 \frac{\partial u}{\partial z} = \frac{\partial u}{\partial x} + \frac{1}{i} \frac{\partial u}{\partial y}.
+			\]
+			Since $u$ is twice continuously differentiable, $g$ is still continuously differentiable. Thus, to show $g$ is holomorphic, it is sufficient to show that $g$ satisfies the Cauchy-Riemann equations. We know that $\operatorname{Re} g = \frac{\partial u}{\partial x}$ and $\operatorname{Im} g = - \frac{\partial u}{\partial y}$.
+
+			Since $g$ is continuously differentiable, Clairaut's theorem holds --- mixed partials are the same. That is
+			\[
+				\begin{split}
+					\frac{\partial \operatorname{Re} g}{\partial y} & = \frac{\partial^{2} u}{\partial y \partial x} \\
+											& = \frac{\partial^{2} u}{\partial x \partial y} \\
+											& = - \frac{\partial \operatorname{Im} g}{\partial x}.
+				\end{split}
+			\]
+			Since $g$ is harmonic,
+			\[
+				\frac{\partial^{2} u}{\partial x^{2}} + \frac{\partial^{2} u}{\partial y^{2}} = 0.
+			\]
+			That is,
+			\[
+				\frac{\partial \operatorname{Re} g}{\partial x} - \frac{\partial \operatorname{Im} g}{\partial y} = 0
+			\]
+			Thus, we have
+			\[
+				\begin{split}
+					\frac{\partial \operatorname{Re} g}{\partial x} & = \frac{\partial \operatorname{Im} g}{\partial y} \\
+					\frac{\partial \operatorname{Re} g}{\partial y} & = - \frac{\partial \operatorname{Im} g}{\partial x}.
+				\end{split}
+			\]
+
+			Since $g$ is holomorphic in $\mathbb{D}$, there exists a primitive $f : \mathbb{D} \to \mathbb{C}$ with $f' = g$ on $\mathbb{D}$. We know that we must have $g = f' = 2 \frac{\partial \operatorname{Re} f}{\partial z}$. Thus,
+			\[
+				\frac{\partial u}{\partial x} + \frac{1}{i} \frac{\partial u}{\partial y} = \frac{\partial \operatorname{Re} f}{\partial x} + \frac{1}{i} \frac{\partial \operatorname{Re} f}{\partial y}.
+			\]
+			Then, by taking real and imaginary parts $\operatorname{Re} f$ has the same partials as $u$. Thus, we must have $\operatorname{Re} f = u + C$  for some real constant $C$. Without loss of generality, we can choose $C = 0$ since if $f$ is holomorphic with real part $C$, so is $f - C$ with real part $u$.
+
+			The Cauchy-Riemann equations fix the partials of $v = \operatorname{Im} f$ --- we must have
+			\[
+				\begin{split}
+					\frac{\partial v}{\partial x} & = - \frac{\partial u}{\partial y} \\
+					\frac{\partial v}{\partial y} & = \frac{\partial u}{\partial x}
+				\end{split}
+			\]
+			Thus, $v$ is determined up to an additive real constant.
+		\item Since $u$ is harmonic on the disc, we know that there is a holomorphic function $f : \mathbb{D} \to \mathbb{C}$ with $\operatorname{Re} f = u$. Let $u(x + i y)$ denote $u(x, y)$. Then we know that
+			\[
+				u(z) = u(r e^{i \theta}) = \operatorname{Re} (f(r e^{i \theta})) = \operatorname{Re} \frac{1}{2 \pi} \int_{0}^{2 \pi} f(r e^{i \varphi}) \operatorname{Re} \left ( \frac{e^{i \varphi} + r e^{i \theta}}{e^{i \varphi} - r e^{i \theta}} \right ) \, d \varphi.
+			\]
+			We can calculate this real part exactly by writing $f = u + iv$. Then, by the linearity of integration, we get
+			\[
+				\begin{split}
+					& \int_{0}^{2 \pi} f(e^{i \varphi}) \operatorname{Re} \left ( \frac{e^{i \varphi} + r e^{i \theta}}{e^{i \varphi} - r e^{i \theta}} \right ) \, d \varphi \\
+					& = \int_{0}^{2 \pi} u(r e^{i \varphi}) \operatorname{Re} \left ( \frac{e^{i \varphi} + r e^{i \theta}}{e^{i \varphi} - r e^{i \theta}} \right ) \, d \varphi + i \int_{0}^{2 \pi} v(r e^{i \varphi}) \operatorname{Re} \left ( \frac{e^{i \varphi} + r e^{i \theta}}{e^{i \varphi} - r e^{i \theta}} \right ) \, d \varphi
+				\end{split}
+			\]
+			Since each of the integrals are now real, we have the real part of the integral as just the integral of $u$. That is
+			\[
+				u(z) = \frac{1}{2 \pi} \int_{0}^{2 \pi} u(r e^{i \varphi}) \operatorname{Re} \left ( \frac{e^{i \varphi} + r e^{i \theta}}{e^{i \varphi} - r e^{i \theta}} \right ) \, d \varphi.
+			\]
+
+			Dividing by $e^{i \theta}$, we get
+			\[
+				\begin{split}
+					\operatorname{Re} \left ( \frac{e^{i \varphi} + r e^{i \theta}}{e^{i \varphi} - r e^{i \theta}} \right ) & = \operatorname{Re} \left ( \frac{e^{i (\varphi - \theta)} + r }{e^{i (\varphi - \theta)} - r} \right ) \\
+																		 & = \frac{1 - r^{2}}{1 + r^{2} - 2 R r \cos{(\varphi - \theta)}	} \\
+																		 & = \frac{1 - r^{2}}{1 + r^{2} - 2 R r \cos{(\theta - \varphi)}} \\
+																		 & = P_{r}(\theta - \varphi).
+				\end{split}
+			\]
+			Thus,
+			\[
+				u(z) = \frac{1}{2 \pi} \int_{0}^{2 \pi} P_{r}(\theta - \varphi) u(e^{i \varphi}) \, d \varphi.
+			\]
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
@@ -56,6 +205,49 @@
 	\]
 	then $f$ is constant.
 \end{problem}
+
+\begin{solution}
+	Note that we can prove the symmetry principle for the circle just as we did for line segments. That is, we can prove the following lemma by applying Morera's theorem on triangles, using continuity and clever subdivision to ensure that the integral of $f$ is zero even for triangles that cross the boundary $\partial \mathbb{D}$.
+	\begin{lemma}
+		If $f_{\text{in}}$ and $f_{\text{out}}$ are holomorphic functions in $\mathbb{D}$ and $\mathbb{C} \setminus \mathbb{D}$ respectively that extend continuously to $\partial \mathbb{D}$ and agree on $\partial \mathbb{D}$, then the function defined on $\mathbb{C}$ by
+		\[
+			f(z) = \begin{cases}
+				f_{\text{in}}(z) & z \in \mathbb{D} \\
+				f_{\text{in}}(z) = f_{\text{out}}(z) & z \in \partial \mathbb{D} \\
+				f_{\text{out}}(z) & z \in \mathbb{C} \setminus \mathbb{D}
+			\end{cases}
+		\]
+		is holomorphic on all of $\mathbb{C}$.
+	\end{lemma}
+
+	Note that since $f$ is continuous and non-vanishing, it must have a minimum $m > 0$ in the disc $\mathbb{D}$. If $f$ is holomorphic in $\mathbb{D}$, then by the chain rule, $g : \mathbb{C} \setminus \mathbb{D \to \mathbb{C}}$ with $g(z) = 1/f(1 / z)$ is holomorphic in $\mathbb{C} \setminus \mathbb{D}$. Thus, it has a power series expansion near each $z_{0} \in \mathbb{C} \setminus \mathbb{D}$ ---
+	\[
+		g(z) = \sum_{n = 0}^{\infty} a_{n} (z - z_{0})^{n}
+	\]
+	Consider $h(z) = \overline{g(\overline{z})} = 1/\overline{f}(1 / \overline{z})$. We have
+	\[
+		h(z) = \sum_{n = 0}^{\infty} \overline{a_{n}} (z - z_{0})^{n}
+	\]
+	which has the same radius of convergence as $g$.
+
+	Then $f$ and $h$ are holomorphic functions on the disc and its complement that extend continuously to its boundary. We can see clearly that for $\lvert z \rvert = 1$ 
+	\[
+		\begin{split}
+			h(z) & = 1/\overline{f(1 / \overline{z})} \\
+			     & = 1/\overline{f(z)} \\
+			     & = f(z).
+		\end{split}
+	\]
+	Note that some of these equalities follow from the fact that $w = 1 / \overline{w}$ for $\lvert w \rvert = 1$. Then by the symmetry principle, $F : \mathbb{C} \to \mathbb{C}$ by
+	\[
+		F(z) = \begin{cases}
+			f(z) & z \in \mathbb{D} \\
+			f(z) = h(z) & z \in \partial \mathbb{D} \\
+			h(z) & z \in \mathbb{C} \setminus \mathbb{D}.
+		\end{cases}
+	\]
+	is an entire function. But since $f$ is bounded below and non-vanishing on the disc $\mathbb{D}$, we then have that $h(z) = 1 / \overline{f(1 /\overline{z})}$ is bounded above on $\mathbb{C}$. Thus, $F$ is entire and bounded, and by Liouville's theorem is constant. Thus, $f$ is constant.
+\end{solution}
 
 \pagebreak
 
@@ -69,6 +261,59 @@
 	Calculate the residue of $1 / \sin{\pi z}$ at $z = n \in \mathbb{Z}$.
 \end{problem}
 
+\begin{solution}
+	\[
+		\boxed{
+			\operatorname{res}_{n} f = \frac{(-1)^{n}}{\pi}.
+		}
+	\]
+
+	If $\sin{\pi z} = 0$,
+	\[
+		\frac{e^{i \pi z} - e^{- i \pi z}}{2 i} = 0
+	\]
+	and thus,
+	\[
+		e^{i \pi z} - e^{- i \pi z} = 0.
+	\]
+	Suppose $z = x + y i$. Then we must have
+	\[
+		e^{i \pi x} e^{- \pi y} - e^{- i \pi x} e^{\pi y} = 0.
+	\]
+	Multiplying by $e^{i \pi x} e^{\pi y}$, we get
+	\[
+		e^{i 2 \pi x} - e^{2 \pi y} = 0.
+	\]
+	Since $\lvert e^{i 2 \pi x} \rvert = 1$ always, we must have $\lvert e^{2 \pi y} \rvert = 1$, and thus, $e^{2 \pi y} = 1$ (since $e^{y}$ is positive for real $y$). Thus, we have
+	\[
+		e^{i 2 \pi x} - 1 = 0.
+	\]
+
+	Thus,
+	\[
+		\cos{(2 \pi x)} + i \sin{2 \pi x} = 1
+	\]
+	That is, $x \in \mathbb{R}$ gives $\cos{(2 \pi x)} = 1$ and $\sin{(2 \pi x) = 0}$. For the former, $x$ must be an integer, and if $x$ is an integer, we have $\sin{(2 \pi x)} = 0$. Thus, the zeroes of $\sin{\pi z}$ are exactly at $z \in \mathbb{Z}$.
+
+	To get the order of the zeroes of $\sin{\pi z}$, we can write the power series expansion about $n \in \mathbb{Z}$
+	\[
+		\begin{split}
+			\sin{\pi z} & = \frac{1}{2 i} \left ( \left ( 1 + i \pi (z - n) + \frac{(i \pi)^{2} (z - n)^{2}}{2!} + \cdots \right ) - \left ( 1 - i \pi(z - n) + \frac{(i \pi)^{2} (z - n)^{2}}{2!} + \cdots \right ) \right ) \\	
+				    & = \frac{1}{2 i} \left ( 2 \pi i (z - n) +  2 \frac{(\pi i)^{3} (z - n)^{3}}{3!} + \cdots \right ).
+		\end{split} 
+	\]
+	Since $(z - n)$ has the first non-zero coefficient, the zero is of order $1$.
+
+	The residue of $1 / \sin{\pi z}$ is given by
+	\[
+		\lim_{z \to n} \frac{z - n}{\sin{\pi z}}
+	\]
+	which by L'H\^{o}pital's rule is just
+	\[
+		\lim_{z \to n} \frac{1}{\pi \cos{\pi z}} = \frac{(-1)^{n}}{\pi}.
+	\]
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[2]
@@ -79,6 +324,68 @@
 	Where are the poles of $1 / (1 + z^{4})$?
 \end{problem}
 
+\begin{solution}
+	\[
+		\boxed{
+			\int_{-\infty}^{\infty} \frac{dx}{1 + x^{4}} = \frac{\pi}{\sqrt{2}}.
+		}
+	\]
+
+	In order to compute the real integral, we integrate $\frac{1}{1 + z^{4}}$ along $\gamma$ the upper semicircle of radius $R$, and then take limits as $R \to 0$. Call the straight line from $-R$ to $R$ $\gamma_{1}$, and the arc of the semicircle $\gamma_{2}$.
+
+	Note that $1 + z^{4}$ has four zeroes (each order $1$) $\omega_{n} = e^{i \pi/4}$ for $n \in \{ 1, 3, 5, 7 \}$. Two of these, $\omega_{1} = e^{i \pi /4}$ and $\omega_{3} = e^{i 3 \pi / 4}$ are contained in the region enclosed by $\gamma$. Thus, by the residue formula
+	\[
+		\int_{\gamma} \frac{dz}{1 + z^{4}} = 2 \pi i(\operatorname{res}_{\omega_{1}} f + \operatorname{res}_{\omega_{2}} f) = \int_{\gamma_{1}} \frac{dz}{1 + z^{4}} + \int_{\gamma_{2}} \frac{dz}{1 + z^{4}}.
+	\]
+
+	We can calculate the residue at $\omega_{1}$ as follows.
+	\[
+		\begin{split}
+			\operatorname{res}_{\omega_{1}} f & = \lim_{z \to \omega_{1}} (z - \omega_{1}) \frac{1}{1 + z^{4}} \\
+							  & = \lim_{z \to \omega_{1}} \frac{1}{(z - \omega_{3})(z - \omega_{5})(z - \omega_{7})} \\
+							  & = \frac{1}{(\omega_{1} - \omega_{3})(\omega_{1} - \omega_{5})(\omega_{1} - \omega_{7})} \\
+							  & = \frac{1}{(2/\sqrt{2})(2 \omega_{1})(2/\sqrt{2} i)} \\
+							  & = \frac{i}{4 \omega_{1}}.
+		\end{split}
+	\]
+	Similarly, we calculate the residue at $\omega_{3}$.
+	\[
+		\begin{split}
+			\operatorname{res}_{\omega_{3}} f & = \lim_{z \to \omega_{3}} (z - \omega_{3}) \frac{1}{1 + z^{4}} \\
+							  & = \lim_{z \to \omega_{1}} \frac{1}{(z - \omega_{1})(z - \omega_{5})(z - \omega_{7})} \\
+							  & = \frac{1}{(\omega_{3} - \omega_{1})(\omega_{3} - \omega_{5})(\omega_{3} - \omega_{7})} \\
+							  & = \frac{1}{(-2/\sqrt{2})(2/\sqrt{2} i)(2 \omega_{3})} \\
+							  & = \frac{- i}{4 \omega_{3}}.
+		\end{split}
+	\]
+
+	Thus, the integral is
+	\[
+		\begin{split}
+			\int_{\gamma} \frac{dz}{1 + z^{4}} & = 2 \pi i \left ( \frac{i}{4 \omega_{1}} - \frac{i}{4 \omega_{3}} \right ) \\
+							   & = \frac{2 \pi i^{2}}{4} (\overline{\omega_{3}} - \overline{\omega_{1}}) \\
+							   & = \frac{- \pi}{2} \frac{1}{\sqrt{2}} ((-1 - i) - (1 - i)) \\
+							   & = \frac{- \pi}{2} \frac{1}{\sqrt{2}} (-2) \\
+							   & = \frac{- \pi}{\sqrt{2}}.
+		\end{split}
+	\]
+	Thus, we only need to show that $\int_{\gamma_{2}} \frac{dz}{1 + z^{4}}$ vanishes as $R \to \infty$. We can see this by using the max-length bound ---
+	\[
+		\begin{split}
+			\left \lvert \int_{\gamma_{2}} \frac{dz}{1 + z^{4}} \right \rvert & \le \sup_{z \in \gamma} \left \lvert \frac{1}{1 + z^{4}} \right \rvert \operatorname{length}(\gamma) \\
+											  & \le \frac{\pi R}{R^{4} - 1}
+		\end{split}
+	\]
+	Here the bound for the supremum comes by considering that $\lvert 1 + z^{4} \rvert = \lvert 1 - (- z^{4}) \rvert$ is bounded below by the triangle inequality to give $\lvert 1 - \lvert z^{4} \rvert \rvert = R^{4} - 1 \le \lvert 1 + z^{4} \rvert$. From this inequality it is clear that the integral over  $\gamma_{2}$ goes to zero as $R \to \infty$. Since, as $R \to \infty$ we get
+	\[
+		\int_{-\infty}^{\infty} \frac{dx}{1 + x^{4}} = \int_{\gamma_{1}} \frac{dz}{1 + z^{4}}
+	\]
+	we have
+	\[
+		\int_{-\infty}^{\infty} \frac{dx}{1 + x^{4}} = \frac{\pi}{\sqrt{2}}.
+	\]
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[3]
@@ -87,6 +394,55 @@
 		\int_{-\infty}^{\infty} \frac{\cos{x}}{x^{2} + a^{2}} \, dx = \pi \frac{e^{-a}}{a}, \text{ for } a > 0.
 	\]
 \end{problem}
+
+\begin{solution}
+	Consider the function $f(z) : \mathbb{C} \setminus \{ \pm a i \} \to \mathbb{C}$ by $f(z) = \frac{e^{iz}}{z^{2} + a^{2}}$. Note that for $z \in \mathbb{R}$, we have $\operatorname{Re} f = \frac{\cos{x}}{x^{2} + a^{2}}$. Thus, we consider the integral of $f$ over $\gamma$, the upper semicircle of radius $R$, and consider the limit as $R \to \infty$. 
+
+	Note that $f$ has a pole of order $1$ at $ai$ enclosed by $\gamma$ (for all $R > a$). If we denote by $\gamma_{1}$, the straight line from $-R$ to $R$, and by $\gamma_{2}$ the clockwise arc of the semicircle, the residue theorem gives us
+	\[
+		\int_{\gamma_{1}} f(z) \, dz + \int_{\gamma_{2}} f(z) \, dz = 2 \pi i \operatorname{res}_{ai} f
+	\]
+
+	To find the residue at $ai$, we compute
+	\[
+		\begin{split}
+			\lim_{z \to ai} (z - ai) \frac{e^{iz}}{(z^{2} + a^{2})} & = \lim_{z \to ai} \frac{e^{iz}}{z + ai} \\
+										& = \frac{e^{-a}}{2 a i}
+		\end{split}
+	\]
+
+	Thus,
+	\[
+		\int_{\gamma_{1}} f(z) \, dz + \int_{\gamma_{2}} f(z) \, dz = \pi \frac{e^{-a}}{a}.
+	\]
+	To show the desired result, we just need to show that the integral over $\gamma_{2}$ vanishes as $R \to \infty$. To do so, consider the parametrisation of $\gamma_{2}$ by $z : \theta \mapsto R e^{i \theta}$ for $\theta \in [0, \pi]$. Then we get
+	\[
+		\int_{\gamma_{1}} \frac{e^{iz}}{z^{2} + a^{2}} \, dz = \int_{0}^{\pi} \frac{e^{i R e^{i \theta}}}{R e^{i 2 \theta} + a^{2}} i R e^{i \theta} \, d \theta
+	\]
+	which we can bound as follows.
+	\[
+		\begin{split}
+			\left \lvert \int_{0}^{\pi} \frac{e^{i R e^{i \theta}}}{R e^{i 2 \theta} + a^{2}} i Re^{i \theta} \, d\theta \right \rvert & = \left \lvert \int_{0}^{\pi} \frac{e^{i R \cos{\theta}} e^{- R \sin{\theta}}}{R e^{i 2 \theta} + a^{2}} \, d\theta \right \rvert x \\
+																		   & \le \left \lvert \int_{} \frac{\lvert e^{i R \cos{\theta}} \rvert e^{-R \sin{\theta}}}{R^{2} - a^{2}} \, d \theta \right \rvert \\
+																		   & = \frac{1}{R^{2} - a^{2}} \left \lvert \int_{0}^{\pi} e^{-R \sin{\theta}} \, d\theta \right \rvert.
+		\end{split}
+	\]
+	We can see that this goes to zero as $R \to \infty$ due to the $\frac{1}{R^{2} -  a^{2}}$, and also by Jordan's inequality.
+
+	Thus, we have
+	\[
+		\int_{\gamma_{1}} \frac{e^{iz}}{z^{2} + a^{2}} \, dz = \pi \frac{e^{-a}}{a}.
+	\]
+	Notice that since $z \in \mathbb{R}$ for $\gamma_{1}$, using Euler's formula, as $R \to \infty$, we get
+	\[
+		\int_{-\infty}^{\infty} \frac{\cos{x}}{x^{2} + a^{2}} \, dx + i \int_{-\infty} ^{\infty}\frac{\sin{x}}{x^{2} + a^{2}} \, dx = \pi \frac{e^{-a}}{a}.
+	\]
+	Since the right hand side clearly has no imaginary part, we have
+	\[
+		\int_{-\infty}^{\infty} \frac{\cos{x}}{x^{2} + a^{2}} \, dx = \pi \frac{e^{-a}}{a}
+	\]
+	as desired.
+\end{solution}
 
 \pagebreak
 
@@ -97,6 +453,50 @@
 	\]
 \end{problem}
 
+\begin{solution}
+	Instead of calculating the real integral, we can calculate the integral of $\frac{1}{1 + z^{2}}$ over $\gamma$, the semicircle of radius $R$ in the upper half plane, and consider the limit as $R \to \infty$.
+
+	Notice that $(1 + z^{2})^{n + 1}$ has zeroes of order $n + 1$ at $\pm i$. For sufficiently big $R$ (all $R > 1$) the pole at $i$ is enclosed by $\gamma$. Thus, if $\gamma_{1}$ is the straight line from $-R$ to $R$ and $\gamma_{2}$ is the arc of the semicircle, we have
+	\[
+		\int_{\gamma_{1}} \frac{dz}{(1 + z^{2})^{n + 1}} + \int_{\gamma_{2}} \frac{dz}{(1 + z^{2})^{n + 1}} = 2 \pi i \operatorname{res}_{i} f
+	\]
+	by the residue formula.
+
+	We need to calculate the residue of $\frac{1}{(1 + z^{2})^{n + 1}}$ at $z = i$. Since the poles are of order $n + 1$, we have
+	\[
+		\begin{split}
+			\operatorname{res}_{i} f & = \lim_{z \to i} \frac{1}{n!} \frac{d^{n}}{d \zeta^{n}} \left ( \frac{(\zeta - i)^{n + 1}}{(\zeta^{2} + 1)^{n + 1}} \right ) \Big |_{z} \\
+						 & = \lim_{z \to i} \frac{1}{n!} \frac{d^{n}}{d \zeta^{n}} \left ( \frac{1}{(\zeta + i)^{n + 1}} \right ) \Big |_{z} \\
+						 & = \lim_{z \to i} \frac{1}{n!} \frac{(-1)^{n} (n + 1) \cdots (2n)}{(z + i)^{2n + 1}} \\
+						 & = \frac{(-1)^{n}(2n)!}{(n!)^{2} (2i)^{2n + 1}} \\
+						 & = \frac{(i^{2})^{n} (-1)^{n}}{2 i} \frac{(2n)!}{(2^{n} n!)^{2}} \\
+						 & = \frac{((-1)^{n})^{2}}{2i} \frac{1 \cdot 2 \cdots (2n - 1) \cdot (2n)}{(2 \cdot 4 \cdots (n - 2) \cdot n)^{2}} \\
+						 & = \frac{1}{2 i} \frac{1 \cdot 3 \cdot 5 \cdots (2n - 1)}{2 \cdot 4 \cdot 6 \cdots (2n)}.
+		\end{split}
+	\]
+	Thus,
+	\[
+		\int_{\gamma_{1}} \frac{dz}{(1 + z^{2})^{n + 1}} + \int_{\gamma_{2}} \frac{dz}{(1 + z^{2})^{n + 1}} = \pi \frac{1 \cdot 3 \cdot 5 \cdots (2n - 1)}{2 \cdot 4 \cdot 6 \cdots (2n)}.
+	\]
+
+	Now we just need to show that as $R \to \infty$,
+	\[
+		\int_{\gamma_{2}} \frac{dz}{(1 + z^{2})^{n + 1}} \to 0
+	\]
+	We can see this by considering the max-length bound ---
+	 \[
+		\left \lvert \int_{\gamma_{2}} \frac{dz}{(1 + z^{2})^{n + 1}} \right \rvert \le \left ( \sup_{z \in \gamma_{2}} \frac{1}{\lvert 1 + z^{2} \rvert^{n + 1}} \right ) \operatorname{length}(\gamma_{2}) \le \frac{\pi R}{(R^{2} - 1)^{n + 1}}.
+	\]
+	Here the bound for the supremum comes by considering that $\lvert 1 + z^{2} \rvert = \lvert 1 - (- z^{2}) \rvert$ is bounded below by the triangle inequality to give $\lvert 1 - \lvert z^{2} \rvert \rvert = R^{2} - 1 \le \lvert 1 + z^{2} \rvert$. From this inequality it is clear that the integral over  $\gamma_{2}$ goes to zero as $R \to \infty$. Since, as $R \to \infty$,
+	\[
+		\int_{- \infty}^{\infty} \frac{dx}{(1 + x^{2})^{n + 1}} = \int_{\gamma_{1}} \frac{dz}{(1 + z^{2})^{n + 1}}
+	\]
+	we have
+	\[
+		\int_{- \infty}^{\infty} \frac{dx}{(1 + x^{2})^{n + 1}} = \pi \frac{1 \cdot 3 \cdot 5 \cdots (2n - 1)}{2 \cdot 4 \cdot 6 \cdots (2n)}.
+	\]
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[13]
@@ -106,5 +506,38 @@
 	\]
 	for some $\varepsilon > 0$, and all $z$ near $z_{0}$. Show that the singularity of $f$ at $z_{0}$ is removable.
 \end{problem}
+
+\begin{solution} 
+	Just as in the proof of Riemann's theorem on removable singularities, we will show that
+	\[
+		g(z) = \frac{1}{2 \pi i} \int_{\partial D_{r}(z_{0})} \frac{f(\zeta)}{\zeta - z} \, d\zeta 
+	\]
+	agrees with $f$ everywhere except at $z_{0}$. Since $g$ is holomorphic (by the proof of Cauchy's derivative formula), this is sufficient to show that $z_{0}$ is a removable singularity.
+
+	Consider $\gamma$, the multiple keyhole integral avoiding $z$ and $z_{0}$. Taking limits as the width of the corridors go to zero, we get.
+	\[
+		\int_{\partial D_{r}(z_{0})} \frac{f(\zeta)}{\zeta - z} \, d \zeta = \int_{\gamma_{z_{0}, \delta_{0}}} \frac{f(\zeta)}{\zeta - z} \, d \zeta + \int_{\gamma_{z, \delta}} \frac{f(\zeta)}{\zeta - z} \, d \zeta 
+	\]
+	where $\gamma_{z_{0}, \delta_{0}}$ is a positively oriented circle of radius $\delta_{0}$ centred at $z_{0}$, and  $\gamma_{z, \delta}$ is a positively oriented circle of radius $\sigma$ centred at $z$.
+
+	By the same argument as for the Cauchy integral formula, as $\delta \to 0$,
+	\[
+		\int_{\gamma_{z, \delta}} \frac{f(\zeta)}{\zeta - z} \, d\zeta = 2 \pi i f(z)
+	\]
+
+	Now, we show that the integral around the curve centred at $z_{0}$ vanishes.
+	\[
+		\begin{split}
+			\left \lvert \int_{\gamma_{z_{0}, \delta_{0}}} \frac{f(\zeta)}{\zeta - z} \, d \zeta \right \rvert & \le \left ( \sup_{\zeta \in \gamma_{z_{0}, \delta_{0}}} \left \lvert \frac{f(\zeta)}{\zeta - z} \right \rvert \right ) \operatorname{length}(\gamma_{z_{0}, \delta_{0}}) \\
+															   & \le \frac{A \delta_{0}^{-1 + \varepsilon}}{\inf_{\zeta \in z} \lvert \zeta - z \rvert} 2 \pi \delta_{0} \\
+															   & = 2 \pi A \frac{\delta_{0}^{\varepsilon}}{\inf_{\zeta \in z} \lvert \zeta - z \rvert}.
+		\end{split}
+	\]
+	Note that as $\delta_{0} \to 0$, $\lvert \zeta - z \rvert$ gets larger since $\zeta$ gets closer to $z_{0}$, and there is a positive distance between $z$ and $z_{0}$. Also as $\delta_{0} \to 0$, we get $\delta_{0}^{\varepsilon} \to 0$. Thus, we can see that the bound goes to $0$ as $\delta_{0} \to 0$. Taking limits as $\delta_{0} \to 0$, we have
+	\[
+		\int_{\partial D_{r}(z_{0})} \frac{f(\zeta)}{\zeta - z} \, d \zeta = 2 \pi i f(z) + 0.
+	\]
+	Thus, $g(z) = f(z)$ everywhere in the disc that $z \neq z_{0}$. Since $g$ is defined and holomorphic at $z_{0}$ as well, we have that $z_{0}$ is a removable singularity of $f$.
+\end{solution}
 
 \end{document}
