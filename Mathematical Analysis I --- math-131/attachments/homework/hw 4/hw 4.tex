@@ -20,6 +20,32 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item Suppose $x \in E^{\circ}$. Then, by definition, there is some $r > 0$ such that the neighbourhood $N_{r}(x)$ is contained in $E$. We claim that $N_{r}(x)$ is open in $E$. That is, every point of $N_{r}(x)$ is an interior point of $E$ and thus, $N_{r}(x) \subset E^{\circ}$. Then we have that every point $x \in E^{\circ}$ is an interior point of $E^{\circ}$, and thus, that $E^{\circ}$ is open.
+
+			To prove that $N_{r}(x)$ is open in $E$, consider any $y \in N_{r}(x_{0})$. Let $\rho = r - d(x, y)$. Then notice that for every point $z \in N_{\rho}(y)$ we have
+			\[
+				\begin{split}
+					d(x, z) & \le d(x, y) + d(y, z) \\
+						& < d(x, y) + \rho \\
+						& = d(x, y) + r - d(x, y) \\
+						& = r.
+				\end{split}
+			\]
+			Thus, $N_{\rho}(y) \subset N_{r}(x)$ and $N_{r}(x)$ must be open in $E$. Then, by the argument in the first paragraph, it follows that $E^{\circ}$ is open.
+		\item If $E$ is open, by definition, all of its points are interior points. That is, $E \subseteq E^{\circ}$. But we already have $E^{\circ} \subseteq E$, and thus, by double containment, $E = E^{\circ}$.
+
+			If $E^{\circ} = E$, then all of the points in $E$ are interior points of $E^{\circ}$. Thus, $E$ is open.
+		\item Suppose $G \subset E$ and $G$ is open. Then for every $x \in G$, there is some $r  > 0$ such that $N_{r}(x) \subset G$ and since $G \subset E$, $N_{r}(x) \subset E$. Thus, every $x \in G$ is an interior point of $E$. That is $G \subset E^{\circ}$.
+		\item By problem 6 in chapter 2, we know that $\overline{E^{c}}$ is the smallest (by inclusion) closed set containing $E^{c}$. Since, for any closed set $F$ containing $E^{c}$, we have $F \supset \overline{E^{c}} \supset E^{c}$, their complements reverse the inclusion, giving us $F^{c} \subset \overline{E^{c}}^{c} \subset E$ with $F^{c}$ and $\overline{E^{c}}^{c}$ open since their complements are closed. That is, $\overline{E^{c}}^{c}$ is the smallest open set contained in  $E$. But by part (d), this is exactly  $E^{\circ}$. Thus, $(E^{\circ})^{c} = \overline{E^{c}}$.
+		\item No,$E$ and $\overline{E}$ don't always have the same interior --- consider when $E$ is the annulus $N_{1}(0) \setminus \{ 0 \} \subset \mathbb{R}^{2}$. 
+
+			Since every neighbourhood of $0$ clearly contains distinct points of the annulus, $0$ is a limit point of $E$, and thus, $0 \in \overline{E}$. Since $N_{1}(0) \subseteq \overline{E}$, it is also an interior point of $\overline{E}$. However, since $0$ is not even in $E$, it is not an interior point of $E$. Thus, $\overline{E}^{\circ} \neq E^{\circ}$.
+		\item No, $E$ and $E^{\circ}$ don't always have the same closure --- consider $E = (0, 1) \cup \{ 2 \}$. Then $E^{\circ} = (0, 1)$. Thus, $\overline{E} = [0, 1] \cup \{ 2 \}$ and $\overline{E^{\circ}} = [0, 1]$ which are not the same.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[Rudin chapter 2, problem 11.]
@@ -28,7 +54,7 @@
 		\begin{split}
 			d_{1}(x, y) & = (x - y)^{2}, \\
 			d_{2}(x, y) & = \sqrt{\lvert x - y \rvert}, \\
-			d_{3}(x, y) & = \lvert x^{2} = y^{2} \rvert, \\
+			d_{3}(x, y) & = \lvert x^{2} - y^{2} \rvert, \\
 			d_{4}(x, y) & = \lvert x - 2y \rvert, \\
 			d_{5}(x, y) & = \frac{\lvert x - y \rvert}{1 + \lvert x - y \rvert}.
 		\end{split}
@@ -36,11 +62,131 @@
 	Determine, for each of these whether it is a metric or not.
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}[label = (\arabic*)]
+		\item
+			\[
+				\boxed{
+					d_{1} \text{ is not a metric}.
+				}
+			\]
+
+			Note that if $x > y > z$, (for example, $x = 2$, $y = 1$, $z = 0$) we have
+			\[
+				\begin{split}
+					d_{1}(x, z) & = (x - z)^{2} \\
+						    & = ((x - y) - (z - y))^{2} \\
+						    & = (x - y)^{2} + (y - z)^{2} - 2(x - y)(z - y) \\
+						    & = (x - y)^{2} + (y - z)^{2} + 2 \lvert x - y \rvert \lvert z - y \rvert \\
+						    & >(x - y)^{2} + (y - z)^{2} \\
+						    & = d(x, y) + d(y, z).
+				\end{split}
+			\]
+			Thus, $d_{1}$ does not satisfy the triangle inequality, and is not a metric.
+		\item
+			\[
+				\boxed{
+					d_{2} \text{ is a metric}.
+				}
+			\]
+
+			Since $d : (x, y) \mapsto \lvert x - y \rvert$ is a metric, $\lvert x - y \rvert \ge 0$ with equality only when $x = y$. Thus, $d_{2}(x, y) = \sqrt{\lvert x - y \rvert} \ge 0$ with equality only when $x = y$. That is, $d_{2}$ is positive definite.
+
+			Since $\lvert x - y \rvert = \lvert y - x \rvert$, we have $d_{2}(x, y) = \sqrt{\lvert x - y \rvert} = \sqrt{\lvert y - x \rvert} = d_{2}(y, x)$. That is, $d_{2}$ is symmetric.
+
+			Finally, suppose by way of contradiction, we had  $d_{2}(x, z) > d_{2}(x, y) + d_{2}(y, z)$. Then we would have 
+			\[
+				\sqrt{\lvert x - z \rvert} > \sqrt{\lvert x - y \rvert} + \sqrt{\lvert y - z \rvert}
+			\]
+			Squaring on both sides, we get
+			\[
+				\begin{split}
+					\lvert x - z \rvert & > \lvert x - y \rvert + \lvert y - z \rvert + 2 \sqrt{\lvert x - y \rvert} \sqrt{\lvert y - z \rvert} \\
+							    & > \lvert x - y \rvert + \lvert y - z \rvert.
+				\end{split}
+			\]
+			However, this is a contradiction since $d : (x, y) \mapsto \lvert x - y \rvert$ is a metric. Thus, our assumption must be false, and $d_{2}$ must satisfy the triangle inequality.
+
+			Thus, $d_{2}$ satisfies the definition of a metric.
+		\item
+			\[
+				\boxed{
+					d_{3} \text{ is not a metric}.
+				}
+			\]
+
+			Note that $d_{3}$ is not positive definite --- for $x = - y$ and $x \neq 0$, we have \[
+				d_{3}(x, y) = \lvert x^{2} - y^{2} \rvert = \lvert x^{2} - (-x)^{2} \rvert = 0
+			\]
+			even though $x \neq y$.
+		\item
+			\[
+				\boxed{
+					d_{4} \text{ is not a metric}.
+				}
+			\]
+
+			Again,  $d_{4}$ is not positive definite --- for $x = 2y$ for any $y \neq 0$ we have
+			\[
+				d_{4}(x, y) = \lvert x - 2y \rvert = \lvert 2y - 2y \rvert = 0
+			\]
+			even though $x \neq y$.
+		\item
+			\[
+				\boxed{
+					d_{5} \text{ is a metric}.
+				}
+			\]
+
+			$d_{4}$ is clearly positive definite ---
+			\[
+				\frac{\lvert x - y \rvert}{1 + \lvert x - y \rvert} \ge 0
+			\]
+			always, and for equality, we must have $\lvert x - y \rvert = 0$ which is only true if $x = y$.
+
+			$d_{5}$ is also clearly symmetric. Since $\lvert x - y \rvert = \lvert y - x \rvert$, we have 
+			\[
+				d_{5}(x, y) = \frac{\lvert x - y \rvert}{1 + \lvert x - y \rvert} = \frac{\lvert y - x \rvert}{1 + \lvert y - x \rvert} = d_{5}(y, x).
+			\]
+
+			Let $d(x, y) = a$, $d(y, z) = b$, and $d(x, z) = c$. We claim the following chain of inequalities are all equivalent.
+			\[
+				\begin{split}
+					d_{5}(x, y) + d_{5}(y, z) & \ge d_{5}(x, z) \\
+					\iff \frac{a}{1 + a} + \frac{b}{1 + b} & \ge \frac{c}{1 + c} \\
+					\iff a(1 + b)(1 + c) + b(1 + c)(1 + a) & \ge c(1 + a)(1 + b) \\
+					\iff a(bc + b + c + 1) + b(ca + c + a + 1) & \ge c(ab + a + b + 1) \\
+					\iff ab + ca + + a + abc + bv + ab + b + abc & \ge abv + ca + bc + c \\
+					\iff a + b + 2ab + abc \ge c
+				\end{split}
+			\]
+			But notice that $a + b \ge c$ by the triangle inequality and $2ab + abc \ge 0$ since the metric is always non-negative. Thus, the final equality is satisfied, and so is the first. That is, $d_{5}$ satisfies the triangle inequality, and is a metric.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[Rudin chapter 2, problem 13.]
 	Construct a compact set of real numbers whose limit points form a countable set.
 \end{problem}
+
+\begin{solution}
+	\[
+		\boxed{
+			K = \{ 0 \} \cup \{ 1/n \mid n \in \mathbb{N} \} \cup \{ 1/n + 1/m \mid m, n \in \mathbb{N} \}.
+		}
+	\]
+
+	Clearly, $\{ 1/n \mid n \in \mathbb{N} \} \cup \{ 0 \}$ are all limit points of $K$ since $\{ a + 1/n \mid n \in \mathbb{N} \}$ has a limit point at $a$ by the Archimedean property. It's also clear that $K$ is bounded since it is a subset of $[0, 2]$ --- $0 < 1/n < 1/n + 1/m \le 2$ for any $n, m \in \mathbb{N}$. If we can show that these are the only limit points of $K$, then we will have shown that $K$ is closed and that it has countably many limit points. Thus, we will have that $K$ is compact (by the Heine-Borel theorem, since it is closed and bounded) and its limit points form a countable set.
+
+	 Note that $x$ can only be a limit point of $K$ if $x \in [0, 1]$. If $x > 1$ is because there are only finitely many $k \in K$ in the neighbourhood $(x - \varepsilon, x + \varepsilon)$ if $x - \varepsilon > 1$, since there are only finitely many $k$ greater than $1 + \varepsilon$. If $x < 0$ this is because there are no $k \in K$ in the neighbourhood $(x - \varepsilon, x + \varepsilon)$ for $x + \varepsilon < 0$.
+
+	 Suppose $x \in [0, 1]$. Let $N$ be the least $N \in \mathbb{N}$ such that $1/N < x$. (This exists, since by the Archimedean property, the set of all $N$ with $1 / N < x$ is non-empty, and by the well-ordering principle, it has a least element.) Choose $\varepsilon > 0$ such that $N_{\varepsilon}(x) = (x - \varepsilon, x + \varepsilon) \subset (1/p, 1/(p - 1))$. We claim that $N_{\varepsilon}(x) \cap K$ is finite, and thus, $x$ cannot be a limit point.
+
+	 Notice that any $k \in K \cap N_{\varepsilon}(x)$ is either in $\{ 1/N + 1/n \mid N < n < 1/\varepsilon \}$ or $\{ 1/m + 1/n \mid m \le n < 1/N - 1/(N + 1) \}$, both of which are finite. Thus, $x$ cannot be a limit point of $K$.
+
+	 Thus, by the arguments above $K$ is compact with countably many limit points.
+\end{solution}
 
 \pagebreak
 
@@ -48,11 +194,46 @@
 	Let $E$ be the set of all $x \in [0, 1]$ whose decimal expansion contains only the digits $4$ and $7$. Is $E$ countable? Is $E$ dense in $[0, 1]$? Is $E$ compact? Is $E$ perfect?
 \end{problem}
 
+\begin{solution}
+	$E$ is not countable --- we can just imitate the diagonalisation proof for the uncountability of $[0, 1]$. If by way of contradiction, we have a countable listing of $E$ below,
+	\[
+		\begin{gathered}
+			x_{0, 0}.x_{0, 1} x_{0, 2} \dots \\
+			x_{1, 0}.x_{1, 1} x_{1, 2} \dots \\
+			\vdots
+		\end{gathered}
+	\]
+	then $y = y_{0}.y_{1} y_{2} \dots$, defined by
+	\[
+		y_{i} = \begin{cases}
+			7 & x_{i, i} = 4 \\
+			4 & x_{i, i} = 7.
+		\end{cases}
+	\]
+	must be distinct from all of the $x_{i, 0}.x_{i, 1} x_{i, 2} \dots$, giving us a contradiction.
+
+	$E$ is clearly not dense in $[0, 1]$ since $E \cap (0, 0.4)$ is empty --- anything in $E$ is greater than or equal to $0.4$.
+
+	$E$ is compact since it is closed and bounded.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[Rudin chapter 2, problem 22.]
 	A metric space is called \emph{separable} if it contains a countable dense subset. Show that $\mathbb{R}^{k}$ is separable.
 \end{problem}
+
+\begin{solution}
+	Consider the countable subset $E = \mathbb{Q}^{k}$ (which we know is countable since $\mathbb{Q}$ is countable and finite Cartesian products of countable sets are countable). We claim $E$ is dense in $\mathbb{R}$.
+
+	Recall that $\mathbb{Q}$ is dense in $\mathbb{R}$. In particular, every $x \in \mathbb{R}$ is the limit point of $\mathbb{Q}$. That is, for every $\varepsilon > 0$,  $(x - \varepsilon, x + \varepsilon) \cap \mathbb{Q}$ is non-empty. But then for any $\delta$, the set
+	\[
+		\{ (y_{1}, \dots, y_{k}) \mid y_{i} \in (x_{i} - \delta, x_{i} + \delta) \}
+	\]
+	has non-empty intersection with $\mathbb{Q}$. That is, the box of side length $2 \delta$ centred at $(x_{1}, \dots, x_{k})$ has non-empty intersection with $\mathbb{Q}$.  Notice that for any $\varepsilon > 0$, the box with $\delta = \varepsilon/\sqrt{2}$ is contained in $N_{\varepsilon}(x_{1}, \dots, x_{k})$. 
+
+	Thus, for every $\varepsilon > 0$ and every $(x_{1}, \dots, x_{k}) \in \mathbb{R}$, $N_{\varepsilon}(x_{1}, \dots, x_{k})$ has non-empty intersection with $\mathbb{Q}$. That is, $\mathbb{Q}$ is dense in $\mathbb{R}$.
+\end{solution}
 
 \pagebreak
 
@@ -61,5 +242,11 @@
 
 	Prove that every separable metric space has a \emph{countable} base.
 \end{problem}
+
+\begin{solution}
+	Suppose $X$ has countable dense subset $E$, and $G$ is open in $X$. Consider $\mathcal{B}$, the set of all $r$-neighbourhoods of points in $E$ for rational $r$. Note that $\mathcal{B}$ is countable as the countable union of the countable sets of rational neighbourhoods of each point.
+
+	Any $x \in G$ must have $N_{r}(x) \subset G$ for some $r > 0$. Choose $q < r/2$. Since $E$ is dense in $X$, there must be some $e \in N_{q}(x)$. Further, since $d(x, e) < q < r/2$, by the triangle inequality, we have $x \in N_{q}(e) \subset N_{r}(x) \subset G$. That is, for every $x \in X$ and every open $G \subset X$ such that $x \in G$, we have $x \in N_{q}(e) \in \mathcal{B}$. That is, $\mathcal{B}$ is base.
+\end{solution}
 
 \end{document}
