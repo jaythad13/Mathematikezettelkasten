@@ -1,0 +1,68 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 135 --- Complex Analysis}
+\assignment{Homework 5}
+\duedate{10th October 2024}
+
+\begin{document}
+
+\begin{problem}[14.]
+	Prove that all entire functions that are also injective take the form $f(z) = az + b$ with $a, b \in \mathbb{C}$ and $a \neq 0$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[15.]
+	Use the Cauchy inequalities or the maximum modulus principle to solve the following problems:
+	\begin{enumerate}
+		\item Prove that if $f$ is an entire function that satisfies
+			\[
+				\sup_{\lvert z \rvert = R} \lvert f(z) \rvert \le A R^{k} + B
+			\]
+			for all $R > 0$, and for some integer $k \ge 0$, and some constants $A, B > 0$, then $f$ is a polynomial of degree $\le k$.
+		\item Show that if the real part of an entire function $f$ is bounded, then $f$ is constant.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[16.]
+	Suppose $f$ and $g$ are holomorphic in a region containing the disc $\lvert z \rvert \le 1$. Suppose that $f$ has a simple zero at $z = 0$ and vanishes nowhere else in $\lvert z \rvert \le 1$.
+
+	Let
+	\[
+		f_{\varepsilon}(z) = f(z) + \varepsilon g(z).
+	\]
+	Show that if $\varepsilon$ is sufficiently small, then
+	\begin{enumerate}
+		\item $f_{\varepsilon}(z)$ has a unique zero in $\lvert z \rvert \le 1$, and
+		\item if $z_{\varepsilon}$ is this zero, the mapping $\varepsilon \mapsto z_{\varepsilon}$ is continuous.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[18.]
+	Give another proof of the Cauchy integral formula
+	\[
+		f(z) = \frac{1}{2 \pi i} = \int_{C} \frac{f(\zeta)}{\zeta - z} \, d\zeta
+	\]
+	using homotopy of curves.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[19.]
+	Prove the maximum principle for harmonic functions:
+	\begin{enumerate}
+		\item If $u$ is a non-constant real-valued harmonic function in a region $\Omega$, then $u$ cannot attain a maximum (or a minimum) in $\Omega$.
+		\item Suppose that $\Omega$ is a region with compact closure $\overline{\Omega}$. If $u$ is harmonic in $\Omega$ and continuous in $\overline{\Omega}$, then
+			\[
+				\sup_{z \in \Omega} \lvert u(z) \rvert \le \sup_{z \in \overline{\Omega} \setminus \Omega} \lvert u(z) \rvert
+			\]
+	\end{enumerate}
+\end{problem}
+
+\end{document}
