@@ -1,0 +1,83 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 176 --- Algebraic Geometry}
+\assignment{Homework assignment \#5}
+\duedate{5th October 2024}
+
+\begin{document}
+
+\begin{problem}[Problem 1.]
+	Say that $(G, \circ)$ is an abelian group with identity $e$. Let $G_{\text{tors}}$ denote all the elements $a \in G$ which have finite order, that is, for which there exists a positive integer $m$ such that
+	\[
+		[m]a = \underbrace{a \circ a \circ \dots \circ a}_{m \text{ times}} = e.
+	\]
+	We say that an abelian group $G$ is a torsion-free abelian group if $G_{\text{tors}} = \{ e \}$ and $G$ is a torsion abelian group if $G_{\text{tors}} = G$.
+	\begin{enumerate}
+		\item Say $G$ is a finite abelian group. Show $G$ is a torsion abelian group.
+		\item Show $G_{\text{tors}}$ is a subgroup of $G$ which is also a torsion abelian group.
+		\item Denote the quotient group $\overline{G} = G / G_{\text{tors}} = \{ \overline{a} \mid a \in G \}$. Show $\overline{G}$ is a torsion free abelian group
+		\item Say $G = \mathbb{Z}^{n}$ is the collection of $n$-dimensional vectors such that each coordinate is an integer. Show $G$ is a torsion-free abelian group.
+		\item Say $G = \mathbb{A}^{n}(\mathbb{Q}) / \mathbb{Z}^{n}$ as a quotient group under addition. Show that $G$ is a torsion abelian group.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Problem 2.]
+	The collection of M\"{o}bius transformations is the group
+	\[
+		\operatorname{Aut}(\mathbb{P}^{1}(\mathbb{C})) = \left \{ \gamma : \mathbb{P}^{1}(\mathbb{C}) \to \mathbb{P}^{1}(\mathbb{C}) \mid \gamma(z) = \frac{az + b}{cz + d} \text{ for some } \begin{bmatrix}
+				a & b \\
+				c & d
+		\end{bmatrix} \in \operatorname{GL}_{2}(\mathbb{C}) \right \},
+	\]
+	while the standard modular group is that group with generators and relations
+	\[
+		\Gamma(1) = D(2, 3, \infty) = \left < \sigma_{0}, \sigma_{1}, \sigma_{\infty} \mid \sigma_{0}^{2} = \sigma_{1}^{3} = \sigma_{0} \sigma_{1} \sigma_{\infty} = 1 \right >.
+	\]
+	\begin{enumerate}
+		\item Consider the map $\phi : \Gamma(1) \to \operatorname{Aut}(\mathbb{P}^{1}(\mathbb{C}))$ which sends
+			\[
+				\phi(\sigma_{0})(z) = - \frac{1}{z}, \quad \phi(\sigma_{1})(z) = - \frac{1}{z + 1}, \quad \text{and} \quad \phi(\sigma_{\infty})(z) = z - 1.
+			\]
+			Show that $\phi$ is a well-defined group homomorphism which is injective but not surjective.
+		\item Show that we have the following identities
+			\begin{align*}
+				\gamma_{0}(P) & = P & & & \gamma_{0} & = \phi(\sigma_{0}) & & & P & = \sqrt{-1} \\
+				\gamma_{1} (Q) & = Q & & \text{in terms of} & \gamma_{1} & = \phi(\sigma_{1}) & & \text{and} & Q & = \frac{-1 + \sqrt{-3}}{2} \\
+				\gamma_{\infty}(R) & = R & & & \gamma_{\infty} & = \phi(\sigma_{\infty}) & & & R & = \infty.
+			\end{align*}
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Problem 3.]
+	Let $A$ and $B$ be integers such that $4A^{3} + 27 B^{2} \neq 0$ and consider the elliptic curve
+	\[
+		E : y^{2} = x^{3} + A x + B.
+	\]
+	We define the \emph{discriminant of the elliptic curve} as the integer $\Delta = -16(4 A^{3} + 27 B^{2})$.
+	\begin{enumerate}
+		\item Show that there is a unique real root $e$ to the equation $x^{3} + A x + B = 0$ if and only if $\Delta < 0$.
+		\item Assume that $\Delta < 0$. For each rational point $P = (x_{0} : y_{0} : 1)$ in $E(\mathbb{Q})$, denote the ratio
+			\[
+				\varphi_{E}(P) = \frac{1}{2 \Omega(E)} \int_{x_{0}}^{\infty} \frac{dx}{\sqrt{x^{3} + A x + B}} \quad \text{where} \quad \Omega(E) = \int_{e}^{\infty} \frac{dx}{\sqrt{x^{3} + Ax + B}} 
+			\]
+			$\Omega(E)$ is called the \emph{real period}. One can show that the map $\varphi_{E} : E(\mathbb{Q}) \to \mathbb{A}^{1}(\mathbb{R}) / \mathbb{A}^{1}(\mathbb{Z})$ is an injective group isomorphism. Using this fact and the ideas in Problem 1, show that $P \in E(\mathbb{Q})_{\text{tors}}$ if and only if $\varphi_{E}(P) \in \mathbb{A}^{1}(\mathbb{Q}) / \mathbb{A}^{1}(\mathbb{Z})$.
+		\item Determine which of the following rational points are torsion on the given elliptic curves.
+			\begin{enumerate}[label = (\roman*)]
+				\item $P = (12 : 24 : 1)$ on $E : y^{2} = x^{3} - 432$.
+				\item $P = (2 : 4 : 1)$ on $E : y^{2} = x^{3} + 4x$.
+				\item $P = (1 : 1 : 1)$ on $E : y^{2} = x^{3} - x + 1$.
+				\item $P = (24 : 108 : 1)$ on $E : y^{2} = x^{3} - 432 x + 8208$.
+				\item $P = (2 : 3 : 1)$ on $E : y^{2} = x^{3} + 1$.
+				\item $P = (3 : 8 : 1)$ on $E : y^{2} = x^{3} - 43 x + 166$.
+				\item $P = (2 : 2 : 1)$ on $E ; y^{2} = x^{3} - 4x + 4$.
+			\end{enumerate}
+	\end{enumerate}
+\end{problem}
+
+\end{document}
