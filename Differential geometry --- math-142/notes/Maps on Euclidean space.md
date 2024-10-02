@@ -8,7 +8,7 @@ We've dealt a lot with maps $f: \mathbb{R}^3 \to \mathbb{R}$ and $F : \mathbb{R}
 
 ### Cells — curves on steroids
 
-Recall our definitions of [[Vector fields#_(temporary) definition _ curves, paths in $ mathbb{R} 3$|curves]], [[Curves#_definition _ reparameterisation|parameterisation and reparameterisation]] and [[Curves#_definition _ tangent vector to a curve|tangent vectors]]. Also recall that we can treat a [[Curves#_proposition _ you can use $ alpha'$ like a vector field|curves as a vector field]], and from a parameterisation $\alpha$ and a smooth function $f$ we can get $\alpha[f]$. We can generalise this to get something new.
+Recall our definitions of [[Vector fields#_(temporary) definition _ curves, paths in $ mathbb{R} 3$|curves]], [[Differential Geometry --- math-142/notes/Curves#_definition _ reparameterisation|parameterisation and reparameterisation]] and [[Differential Geometry --- math-142/notes/Curves#_definition _ tangent vector to a curve|tangent vectors]]. Also recall that we can treat a [[Differential Geometry --- math-142/notes/Curves#_proposition _ you can use $ alpha'$ like a vector field|curves as a vector field]], and from a parameterisation $\alpha$ and a smooth function $f$ we can get $\alpha[f]$. We can generalise this to get something new.
 
 Note that by [[Differentiability theorems#_theorem _ the projection principle holds for differentiability|the projection principle]], we can say any $F : \mathbb{R}^n \to \mathbb{R}^m$ by $F(\mathbf{x}) = (f_{1}(\mathbf{x}), \dots,  f_{m}(\mathbf{x}))$ is differentiable if its component functions $f_{i}$ are $\mathcal{C}^1$. We can impose a stricter requirement
 

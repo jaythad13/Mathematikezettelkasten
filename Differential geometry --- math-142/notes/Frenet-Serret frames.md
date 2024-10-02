@@ -34,7 +34,7 @@ Recall the idea of reparameterisations.
 
 ##### _proposition:_ you can go along any curve at unit speed
 
-If $\alpha$ is a [[Curves#_definition _ regularity of a curve|regular curve]], there is an orientation preserving reparameterisation $\beta = \alpha \circ h$ such that $\lVert \beta'(\tau) \rVert = 1$ for all $\tau \in J$.
+If $\alpha$ is a [[Differential Geometry --- math-142/notes/Curves#_definition _ regularity of a curve|regular curve]], there is an orientation preserving reparameterisation $\beta = \alpha \circ h$ such that $\lVert \beta'(\tau) \rVert = 1$ for all $\tau \in J$.
 
 ###### _proof:_
 

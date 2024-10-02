@@ -147,4 +147,4 @@ This gives us an idea of what is happening, but still not a picture. Unfortunate
 
 $\mathbb{P}^2(\mathbb{R}) = \mathbb{A}^2(\mathbb{R}) \cup S^1(\mathbb{R})$ is a compact non-orientable surface! It's an affine plane with a sphere somewhere at infinity, which is really hard to visualise. Reasonably, $\mathbb{P}^2(\mathbb{C}) = \mathbb{A}^4(\mathbb{R}) \cup S^2(\mathbb{R})$ is even harder to see. Note that the affine parts of $\mathbb{P}^2(\mathbb{R})$ and $\mathbb{P}^1(\mathbb{C})$ are the same, but the behaviour at infinity is different — everything in $\mathbb{P}^1(\mathbb{C})$ glues to form a sphere, while $\mathbb{P}^2(\mathbb{R})$ has to glue everything to get a sphere.
 
-Our goal in this class is going to be to generalise a line $L$ inside $\mathbb{P}^2$ to a [[Algebraic Geometry --- math-176/notes/Varieties|variety]] inside $\mathbb{P}^n$.
+Our goal in this class is going to be to generalise a line $L$ inside $\mathbb{P}^2$ to a [[Algebraic Geometry --- math-176/notes/Non-singular projective varieties|variety]] inside $\mathbb{P}^n$.
