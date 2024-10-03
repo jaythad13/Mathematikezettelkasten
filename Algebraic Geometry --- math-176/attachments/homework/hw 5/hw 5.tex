@@ -18,10 +18,50 @@
 		\item Say $G$ is a finite abelian group. Show $G$ is a torsion abelian group.
 		\item Show $G_{\text{tors}}$ is a subgroup of $G$ which is also a torsion abelian group.
 		\item Denote the quotient group $\overline{G} = G / G_{\text{tors}} = \{ \overline{a} \mid a \in G \}$. Show $\overline{G}$ is a torsion free abelian group
-		\item Say $G = \mathbb{Z}^{n}$ is the collection of $n$-dimensional vectors such that each coordinate is an integer. Show $G$ is a torsion-free abelian group.
+		\item Say $G = \mathbb{Z}^{n}$ is the group of $n$-dimensional vectors such that each coordinate is an integer under addition. Show $G$ is a torsion-free abelian group.
 		\item Say $G = \mathbb{A}^{n}(\mathbb{Q}) / \mathbb{Z}^{n}$ as a quotient group under addition. Show that $G$ is a torsion abelian group.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item By Lagrange's theorem, for finite $G$, $[\lvert G \rvert] g = e$ for every $g \in G$. Thus, each $g \in G$ has finite order $\lvert g \rvert < \lvert G \rvert$. Thus, $G \subseteq G_{\text{tors}}$ and thus, by double containment, $G_{\text{tors}} = G$. That is, $G$ is a torsion abelian group.
+		\item To show that $G_{\text{tors}}$ it suffices to show that $G_{\text{tors}}$ is a non-empty subgroup of $G$ and that the subgroup criterion holds --- for all $g_{1}, g_{2} \in G_{\text{tors}}$, $g_{1} g_{2}^{-1} \in G_{\text{tors}}$.
+
+			 $G_{\text{tors}}$ is by definition a subset of $G$, and since the identity $e$ always has finite order $1$, $G_{\text{tors}}$ is non-empty.
+
+			 Suppose $g_{1}, g_{2} \in G_{\text{tors}}$ with $\lvert g_{1} \rvert = m$ and $\lvert g_{2} \rvert = n$, for some $m, n \in \mathbb{N}$. Notice that we also have 
+			 \[
+				 \begin{split}
+					 (g_{2}^{-1})^{n} & = (g_{2}^{n})^{-1} \\
+							  & = e^{-1} \\
+							  & = e.
+				 \end{split}
+			 \]
+			 Thus, since $G$ is abelian,
+			 \[
+				 \begin{split}
+					 (g_{1} g_{2}^{-1})^{mn} & = (g_{1}^{m})^{n} ((g_{2}^{-1})^{n})^{m} \\
+								 & = e^{n} e^{m} \\
+								 & = e.
+				 \end{split}
+			 \]
+			 That is, $g_{1} g_{2}^{-1} \in G_{\text{tors}}$. Thus, by the subgroup criterion, $G_{\text{tors}}$ is a subgroup of $G$.
+		\item We will show that if $\overline{a}^{n} = \overline{e}$ for any integer $n$, we must have $\overline{a} = \overline{e}$.
+
+			If $\overline{a}^{n} = e$, we must have $\overline{a^{n}} = \overline{e}$ and thus, $a^{n} \in \overline{e}$. By construction $\overline{e} = G_{\text{tors}}$. That is $a^{n} \in G_{\text{tors}}$ with order $m$. Thus $a^{nm} = e$, and thus $a \in G_{\text{tors}}$ with order $nm$. Thus, $\overline{a} = \overline{e}$.
+
+			That is the only element with finite order in $G / G_{\text{tors}}$ is $\overline{e}$. Thus, $(G / G_{\text{tors}})_{\text{tors}} = \{ \overline{e} \}$ and $G / G_{\text{tors}}$ is a torsion-free abelian group.
+		\item Suppose $(m_{1}, \dots, m_{n}) \in \mathbb{Z}^{n}$ has finite (non-zero) order $m \in \mathbb{N}$. Note that $(0, \dots, 0)$ is the identity in $\mathbb{Z}^{n}$.
+
+			Since $[m](m_{1}, \dots, m_{n}) = (0, \dots, 0)$, we must have $m m_{i} = 0$ for each $i \in \{ 1, \dots, n \}$. Thus, $m = 0$ or $m_{i} = 0$. We know $m \neq 0$, so we must have $m_{i} = 0$ for each $i \in \{ 1, \dots, n \}$ --- we have $(m_{1}, \dots, m_{n}) = (0, \dots, 0)$. Then $\mathbb{Z}^{n}_{\text{tors}} = \{ (0, \dots, 0) \}$, and thus, $\mathbb{Z}^{n}$ is a torsion-free abelian group.
+		\item Suppose $\overline{(q_{1}, \dots, q_{n})} \in G = \mathbb{A}^{n}(\mathbb{Q}) / \mathbb{Z}^{n}$ with $q_{1}, \dots, q_{n} \in \mathbb{Q}$. We can express $q_{1}, \dots, q_{n}$ as $m_{1}/m, \dots, m_{n}/m$ with numerators $m_{i} \in \mathbb{Z}$ and all the same denominator $m \in \mathbb{N}$. Then
+			\[
+				[m] \overline{(q_{1}, \dots, q_{n})} = \overline{[m](q_{1}, \dots, q_{n})} = \overline{(m_{1}, \dots, m_{n})}
+			\]
+			But since $(m_{1}, \dots, m_{n}) \in \mathbb{Z}^{n}$, we have $\overline{(m_{1}, \dots, m_{n})} = \overline{(0, \dots, 0)}$, and thus every $\overline{(q_{1}, \dots, q_{n})}$ has finite order $[m]$. That is, $G \subseteq G_{\text{tors}}$ and thus, $G = G_{\text{tors}}$.
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
@@ -51,6 +91,42 @@
 			\end{align*}
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item
+		\item First we will show that $\gamma_{0}(P) = P$ for $P = i = \sqrt{-1}$. We just calculate ---
+			\[
+				\gamma_{0}(i) = - \frac{1}{i} = i.
+			\]
+
+			Thus, $\gamma_{0}(P) = P$.
+
+			Now we show that $\gamma_{1}(Q) = Q$ for the cube root of unity $\omega = \frac{-1 + i \sqrt{3}}{2}$. (We can see that $\omega$ really is the cube root of unity by noticing that $\omega = e^{i 2 \pi /3}$). In particular, since $\omega^{3} = 1$, we can write
+			\[
+				\omega^{3} - 1 = (\omega - 1)(\omega^{2} + \omega + 1) = 0
+			\]
+			and since $\omega \neq 1$, we know we must have
+			\[
+				\omega^{2} + \omega + 1 = 0.
+			\]
+			Thus,
+			\[
+				\omega(\omega + 1) = -1
+			\]
+			and
+			\[
+				\omega = - \frac{1}{\omega + 1} = \gamma_{1}(\omega).
+			\]
+			That is, $Q = \gamma_{1}(Q)$.
+
+			We can write $R = (1 : 0) \in \mathbb{P}^{1}(\mathbb{C})$. Note that then $\gamma_{\infty}$ corresponds to the function $(z_{1} : z_{0}) \mapsto (z_{1} - z_{0} : z_{0})$. We get this by substituting $z = z_{1} / z_{0}$ into $z - 1$. Thus,
+			\[
+				\gamma_{\infty}(1 : 0) = (1 - 0 : 0) = (1 : 0)
+			\]
+			That is, $\gamma_{\infty}(R) = R$.
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
