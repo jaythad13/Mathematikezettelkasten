@@ -2,8 +2,11 @@
 tags:
 - math-135/8
 - math-135/9
+- math-135/10
 - anal
 ---
+
+### Argument principle
 
 One of the most striking applications of meromorphic functions is the argument principle.
 
@@ -71,3 +74,54 @@ If $f : \Omega \to \mathbb{C}$ is holomorphic on the region $\Omega$, and $f$ ha
 ###### _proof:_
 
 Since $\overline{\Omega}$ is compact, $f$ must attain a maximum on $\Omega$. If $f$ is constant, the maximum occurs on the boundary because the maximum occurs everywhere. If $f$ is non-constant, the maximum occurs on the boundary because it can't occur anywhere on $\Omega$.
+
+### Winding number
+
+The notion of winding number allows to rephrase Rouche's theorem in geometric terms.
+
+##### _lemma:_ winding around a simple pole
+
+Let $\gamma$ be a piecewise smooth closed curve that doesn't pass through $z_{0}$. Then $\int_{\gamma} \frac{dz}{z - z_{0}}$ is a multiple of $2 \pi i$.
+
+###### _proof:_
+
+Let $z_{\gamma} : [a, b] \to \mathbb{C}$ be a parametrisation of $\gamma$. Define
+$$
+h(t) = \int_{a}^t \frac{z_{\gamma}'(t)}{z_{\gamma}(t) - z_{0}} \, dz.
+$$
+Note that $h$ is continuous on $[a, b]$ and is differentiable where $\gamma$ is continuous with derivative $\frac{z_{\gamma}'(t)}{z_{\gamma}(t) - z_{0}}$. Also note that $h(b)$ is the integral we want to evaluate.
+
+Consider $e^{-h(t)} (z_{\gamma}(t) - z_{0})$. It has derivative zero, so it is constant. Thus,
+$$
+e^{- h(t)}(z_{\gamma}(t) - z_{0}) = e^{- h(a)} (z_{\gamma}(a) - z_{0}) 
+$$
+and then
+$$
+e^{h(t)} = \frac{z_{\gamma(t)} - z_{0}}{z_{\gamma}(a) - z_{0}}
+$$
+
+But since $z_{\gamma}(b) = z_{\gamma}(a)$, we have $e^{h(b)} = 1$. Thus, $h(b) = n 2 \pi i$ for some integer $n \in \mathbb{Z}$.
+
+##### _definition:_ winding number
+
+The winding number of a curve $\gamma$ with respect to a point $z_{0}$ is
+$$
+n(\gamma, z_{0}) = \frac{1}{2 \pi i} \int _{\gamma} \frac{dz}{z - z_{0}} 
+$$
+Sometimes this is called the index of $z_{0}$ with respect to $\gamma$.
+
+Now we can prove the cutest little generalisation of [[Complex Analysis --- math-135/notes/Cauchy integral formula#_theorem _ Cauchy integral formula|Cauchy's integral formula]] — 
+
+##### _corollary:_ Cauchy's integral formula with winding number
+
+If $f$ is holomorphic on a region $\Omega$, $\gamma$ is a closed curve in $\Omega$, and $a$ is a point somewhere in $\Omega$. Then
+$$
+\frac{1}{2 \pi i} \int \frac{f(z)}{z - a} \, dz = n(\gamma, a) f(a) 
+$$
+
+###### _proof sketch:_
+
+Let
+$$
+F(z) = \frac{f(z) - f(z_{0})}{z - z_{0}}
+$$
