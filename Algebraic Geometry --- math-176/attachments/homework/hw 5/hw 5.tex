@@ -80,7 +80,7 @@
 	\begin{enumerate}
 		\item Consider the map $\phi : \Gamma(1) \to \operatorname{Aut}(\mathbb{P}^{1}(\mathbb{C}))$ which sends
 			\[
-				\phi(\sigma_{0})(z) = - \frac{1}{z}, \quad \phi(\sigma_{1})(z) = - \frac{1}{z + 1}, \quad \text{and} \quad \phi(\sigma_{\infty})(z) = z - 1.
+				\phi(\sigma_{0})(z) = \frac{- 1}{z}, \quad \phi(\sigma_{1})(z) = \frac{- 1}{z + 1}, \quad \text{and} \quad \phi(\sigma_{\infty})(z) = z - 1.
 			\]
 			Show that $\phi$ is a well-defined group homomorphism which is injective but not surjective.
 		\item Show that we have the following identities
@@ -94,7 +94,69 @@
 
 \begin{solution}
 	\begin{enumerate}
-		\item
+		\item To show that $\phi$ is a homomorphism, note that it is sufficient to show that $\phi$ preserves the relations in the presentation of $\Gamma(1)$ (and that $\phi : 1 \mapsto \operatorname{id}_{\mathbb{P}^{1}(\mathbb{C})}$) since if this holds we can just define $\phi(g)$ for any $g \in \Gamma(1)$ by decomposing $g$ into $\sigma_{0}, \sigma_{1}, \sigma_{\infty}$ and choosing the unique $\phi(g)$ such that $\phi$ remains a homomorphism.
+
+			First we show that $\phi(\sigma_{0})^{2} = \operatorname{id}_{\mathbb{P}^{1}(\mathbb{C})}$. We compute
+			\[
+				\begin{split}
+					\phi(\sigma_{0})^{2}(z) & = \phi(\sigma_{0}) \left ( \frac{-1}{z} \right ) \\
+								& = \frac{-1}{-1 / z} \\
+								& = z.
+				\end{split}
+			\]
+			For every $z \in \mathbb{P}^{1}(\mathbb{C})$. Thus, $\phi(\sigma_{0})^{2} = \operatorname{id}_{\mathbb{P}^{1}(\mathbb{C})}$.
+
+			Now we show that $\phi(\sigma_{1})^{3} = \operatorname{id}_{\mathbb{P}^{1}(\mathbb{C})}$. Note that
+			\[
+				\begin{split}
+					\phi(\sigma_{1})^{3}(z) & = \phi(\sigma_{1})^{2} \left ( \frac{-1}{z + 1} \right ) \\
+								& = \phi(\sigma_{1}) \left ( \frac{-1}{\frac{-1}{z + 1} + 1} \right ) \\
+								& = \phi(\sigma_{1}) \left ( \frac{-(z + 1)}{z} \right ) \\
+								& = \frac{-1}{\frac{-(z + 1)}{z} + 1} \\
+								& = \frac{-1}{\frac{-(z + 1) + z}{z}} \\
+								& = z.
+				\end{split}
+			\]
+			So $\phi(\sigma_{1})$ is also $\operatorname{id}_{\mathbb{P}^{1}(\mathbb{C})}$.
+
+			Finally we show that $\phi(\sigma_{0}) \phi(\sigma_{1}) \phi(\sigma_{\infty}) = \operatorname{id}_{\mathbb{P}^{1}(\mathbb{C})}$. The proof follows similarly ---
+			\[
+				\begin{split}
+					(\phi(\sigma_{0}) \phi(\sigma_{1}) \phi(\sigma_{\infty}))(z) & = (\phi(\sigma_{0}) \phi(\sigma_{1})) \left ( z - 1 \right ) \\
+												     & = \phi(\sigma_{0}) \left ( \frac{-1}{(z - 1) + 1} \right ) \\
+												     & = \phi(\sigma_{0}) \left ( \frac{-1}{z} \right ) \\
+												     & =
+\phi(\sigma_{0})^{2} (z) \\
+												     & = z.
+				\end{split}
+			\]
+			Thus, $\phi(\sigma_{0}) \phi(\sigma_{1}) \phi(\sigma_{\infty})$ is $\operatorname{id}_{\mathbb{P}^{1}(\mathbb{C})}$.
+
+			We can almost see from the calculations above that $\phi(\sigma_{0})$, $\phi(\sigma_{1})$, and $\phi(\sigma_{\infty})$ satisfy exactly the same relations. Thus, $\phi(\sigma) = \operatorname{id}_{\mathbb{P}^{1}(\mathbb{C})}$ if and only if $\sigma = 1$. That is, $\ker \phi$ is trivial and $\phi$ is injective.
+
+			Finally, we show that $\phi$ is not surjective. Notice that $\operatorname{Aut}(\mathbb{P}^{1}(\mathbb{C}))$ has the same group operation as $\operatorname{GL}_{2}(\mathbb{C})$. For $\gamma_{1}$ corresponding to $\begin{bmatrix}
+				a_{1} & b_{1} \\
+				c_{1} & d_{1}
+			\end{bmatrix}$ and $\gamma_{2}$ corresponding to $\begin{bmatrix}
+				a_{2} & b_{2} \\
+				c_{2} & d_{2}
+			\end{bmatrix}$ we have
+			\[
+				\begin{split}
+					\gamma_{1} \circ \gamma_{2} (z) & = \frac{a_{1} \frac{a_{2} z + b_{2}}{c_{2} z + d_{2}} + b_{1}}{c_{1} \frac{a_{2} z + b_{2}}{c_{2} z + d_{2}} + d_{1}} \\
+									& = \frac{a_{1}(a_{2} z + b_{2}) + b_{1}(c_{2} z + d_{2})}{c_{1}(a_{2} z + b_{2}) + d_{1}(c_{2} z + d_{2})} \\
+									& = \frac{(a_{1} a_{2} + b_{1} c_{2}) z + (a_{1} b_{2} + b_{1} d_{2})}{(c_{1} a_{2} + d_{1} c_{2}) z + (c_{1} b_{2} + d_{1} d_{2})}
+				\end{split}
+			\]
+			corresponding to $\begin{bmatrix}
+				a_{1} & b_{1} \\
+				c_{1} & d_{1}
+			\end{bmatrix} \begin{bmatrix}
+				a_{2} & b_{2} \\
+				c_{2} & d_{2}
+			\end{bmatrix}$.
+
+			Thus, since $\phi$ sends the generators of $\Gamma(1)$ to $A \in \operatorname{GL}_{2}(\mathbb{Q})$, any products $\phi(g)$ for $g \in \Gamma(1)$ are also in $\operatorname{GL}_{2}(\mathbb{Q}) \subsetneq \operatorname{GL}_2(\mathbb{C})$, and thus, $\phi$ is not surjective.
 		\item First we will show that $\gamma_{0}(P) = P$ for $P = i = \sqrt{-1}$. We just calculate ---
 			\[
 				\gamma_{0}(i) = - \frac{1}{i} = i.
@@ -142,7 +204,7 @@
 			\[
 				\varphi_{E}(P) = \frac{1}{2 \Omega(E)} \int_{x_{0}}^{\infty} \frac{dx}{\sqrt{x^{3} + A x + B}} \quad \text{where} \quad \Omega(E) = \int_{e}^{\infty} \frac{dx}{\sqrt{x^{3} + Ax + B}} 
 			\]
-			$\Omega(E)$ is called the \emph{real period}. One can show that the map $\varphi_{E} : E(\mathbb{Q}) \to \mathbb{A}^{1}(\mathbb{R}) / \mathbb{A}^{1}(\mathbb{Z})$ is an injective group isomorphism. Using this fact and the ideas in Problem 1, show that $P \in E(\mathbb{Q})_{\text{tors}}$ if and only if $\varphi_{E}(P) \in \mathbb{A}^{1}(\mathbb{Q}) / \mathbb{A}^{1}(\mathbb{Z})$.
+			$\Omega(E)$ is called the \emph{real period}. One can show that the map $\varphi_{E} : E(\mathbb{Q}) \to \mathbb{A}^{1}(\mathbb{R}) / \mathbb{A}^{1}(\mathbb{Z})$ is an injective group homomorphism. Using this fact and the ideas in Problem 1, show that $P \in E(\mathbb{Q})_{\text{tors}}$ if and only if $\varphi_{E}(P) \in \mathbb{A}^{1}(\mathbb{Q}) / \mathbb{A}^{1}(\mathbb{Z})$.
 		\item Determine which of the following rational points are torsion on the given elliptic curves.
 			\begin{enumerate}[label = (\roman*)]
 				\item $P = (12 : 24 : 1)$ on $E : y^{2} = x^{3} - 432$.
@@ -155,5 +217,46 @@
 			\end{enumerate}
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item By the fundamental theorem of algebra, we know that $x^{3} + A x + B = 0$ has three complex roots $z_{1}, z_{2}, z_{3} \in \mathbb{C}$. Also, since the equation has real coefficients, we know that its roots come in conjugate pairs (if $z$ is a root, then by taking conjugates, $\overline{z}^{3} + A \overline{z} + B = 0$). Since there is an odd number of roots, at least one is real. Assume without loss of generality that $z_3 \in \mathbb{R}$. Thus, if $z_{1}, z_{2} \notin \mathbb{R}$, then $z_{2} = \overline{z_{1}}$.
+			Consider
+			\[
+				\Delta = 16 (z_{1} - z_{2})^{2} (z_{2} - z_{3})^{2} (z_{3} - z_{1})^{2}.
+			\]
+			Clearly, if $z_{1}, z_{2}, z_{3} \in \mathbb{R}$, we have $\Delta > 0$.
+
+			Suppose $\Delta \in \mathbb{R}$ and $\Delta > 0$. Suppose by way of contradiction that $z_{1}, z_{2} \notin \mathbb{R}$. Notice that 
+			\[
+				\begin{split}
+					\Delta/16 & = (z_{1} - z_{2})^{2}(z_{2} - z_{3})^{2}(z_{3} - z_{1})^{2} \\
+						  & = ((z_{1} - \overline{z_{1}})(\overline{z_{1}} - z_{3})(z_{3} - z_{1}))^{2} \\
+						  & = (2 i \operatorname{Im} z_{1})^{2} (\overline{(z_{1} - z_{3})} (z_{3} - z_{1}))^{2} \\
+						  & = -4 (\operatorname{Im} z_{1})^{2} \lvert z_{1} - z_{3} \rvert^{4} \\
+						  & < 0.
+				\end{split}
+			\]
+			which is a contradiction. Thus, we must have $z_{1}, z_{2} \in \mathbb{R}$ in addition to $z_{3} \in \mathbb{R}$.
+
+			We have shown that $x^{3} + Ax + B = 0$ has three distinct real roots if and only if $\Delta < 0$. We have $\Delta = 0$ if and only if the cubic has a repeated root which must be real (a non-real number cannot equal its conjugate). Thus, $\Delta > 0$ if and only if the cubic has a unique real root.
+		\item Suppose that $P \in E(\mathbb{Q})_{\text{tors}}$. Thus, there must be some $n \in \mathbb{N}$ such that $[n] P = O_{E}$. Evaluating $\varphi_{E}$ on both sides, we get $[n] \varphi(P) = \overline{0}$. 
+
+			If we choose some $p \in \mathbb{R}$ such that $\overline{p} = \varphi(P)$, then we get $[n] p \in \mathbb{Z}$. Thus, we must have $p = \frac{m}{n} \in \mathbb{Q}$. That is, $\varphi(P) = \overline{\left ( \frac{m}{n} \right )} \in \mathbb{A}^{1}(\mathbb{Q}) / \mathbb{A}^{1}(\mathbb{Z})$.
+
+			Now suppose $\varphi_{E}(P) \in \mathbb{A}^{1}(\mathbb{Q})/\mathbb{A}^{1}(\mathbb{Z})$. Then, since we showed that $\mathbb{A}^{1}(\mathbb{Q})/\mathbb{A}^{1}(\mathbb{Z})$ is torsion, we have some $n \in \mathbb{N}$ such that $[n] \varphi_{E}(P) = \overline{0}$. But then $\varphi([n]P) = \overline{0}$ and since $\varphi_{E}$ is injective $[n] P = O_{E}$.
+		\item
+			We use the Sage code provided to estimate the integrals.
+			\begin{enumerate}[label = (\roman*)]
+				\item $P = (12 : 24 : 1)$ is torsion on $y^{2} = x^{3} - 432$ since the Sage approximation suggests $\varphi_{E}(P) = 1/3 \in \mathbb{Q}$.
+				\item $P = (2 : 4 : 1)$ is torsion on $y^{2} = x^{3} + 4x$ since the Sage approximation suggests $\varphi_{E}(P) = 1/4 \in \mathbb{Q}$.
+				\item $P = (1 : 1 : 1)$ is not torsion on $y^{2} = x^{3} - x + 1$ since the Sage approximation suggests $\varphi_{E}(P)$ does not have an eventually periodic decimal expansion and thus, is irrational.
+				\item $P = (24 : 108 : 1)$ is torsion on $y^{2} = x^{3} - 432 x + 8208$ since the Sage approximation suggests $\varphi_{E} = 1/5 \in \mathbb{Q}$.
+				\item $P = (2 : 3 : 1)$ is torsion on $y^{2} = x^{3} + 1$ since the Sage approximation suggests $\varphi_{E}(P) = 1/6 \in \mathbb{Q}$.
+				\item $P = (3 : 8 : 1)$ is not torsion on $y^{2} = x^{3} - 43 x + 166$ since the Sage approximation suggests $\varphi_{E}(P)$ does not have an eventually periodic decimal expansion and thus, is irrational.
+				\item $P = (2 : 2 : 1)$ is not torsion on $y^{2} = x^{3} - 4x + 4$ since the Sage approximation suggests $\varphi_{E}(P)$ does not have an eventually periodic decimal expansion and thus, is irrational.
+			\end{enumerate}
+	\end{enumerate}
+\end{solution}
 
 \end{document}
