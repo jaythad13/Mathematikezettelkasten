@@ -12,6 +12,16 @@
 	Let $X$ be a metric space in which every infinite subset has a limit point. Prove that $X$ is compact.
 \end{problem}
 
+\begin{solution}
+	By exercise 24, $X$ has a countable base. Thus, any open cover $\mathcal{O}$ can be written as a countable subcover $\mathcal{O}'$ by writing the sets $U$ as unions of sets in the countable base. In particular, we write $\mathcal{O}' = \{ U_{1}, U_{2}, \dots \}$.
+
+	Assume by way of contradiction that no finite subcover of $\mathcal{O}'$ covers $X$. Consider $F_{n}$, the complement of $\bigcup_{i = 1}^{n} U_{i}$ for each $n \in \mathbb{N}$. Notice that each $F_{n}$ is closed since it is the complement of the open union of open sets. Also notice that $F_{n + 1} \subset F_{n}$ since taking the complements of $\bigcup_{i = 1}^{n} U_{i} \subset \bigcup_{i = 1}^{n + 1} U_{i}$ reverses the inclusion. 
+
+	Consider $E$, a set containing one point $f_{n}$ from each $F_{n}$. Since $E$ is infinite, it must have a limit point $f$. Since each $F_{n + 1} \subset F_n$, for each $n$, there are at most finitely many $f_{i} \notin F_{n}$. Then $E \cap F_{n}$ has infinitely many points, and thus, a limit point. Since $E \cap F_{n}$ is just $E \setminus A$ for some finite set of points $A$, it must have the same limit point $f$ --- just consider the point $a \in A$ closest to $f$ and note that $E$ must have contained and still contain points closer to $f$ than $a$ in order for $f$ to have been a limit point. Thus, $E \cap F_{n}$ has limit point $f$. Since $f$ is resultantly a limit point of $F_{n}$ and $F_{n}$ is closed, we have $f \in F_{n}$ for each $n$.
+
+	Thus, we have $\bigcap_{n \in \mathbb{N}} F_{n} = \{ f \}$. But this is a contradiction since the countable $\mathcal{O}'$ covers $X$ and thus, every point in $X$ is in some $\bigcup_{i = 1}^{n} U_{i}$ --- $\bigcap_{n \in \mathbb{N}} F_{n}$ should be empty. Thus, our assumption that $\mathcal{O}'$ does not admit a finite subcover was false. Thus, any open cover $\mathcal{O}$ admits a finite subcover --- $X$ is compact.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[Rudin chapter 2, problem 29]
