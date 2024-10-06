@@ -8,6 +8,8 @@
 
 \begin{document}
 
+Collaborators: Mithra Karamchedu
+
 \begin{problem}[Rudin chapter 2, problem 26.]
 	Let $X$ be a metric space in which every infinite subset has a limit point. Prove that $X$ is compact.
 \end{problem}
@@ -15,11 +17,21 @@
 \begin{solution}
 	By exercise 24, $X$ has a countable base. Thus, any open cover $\mathcal{O}$ can be written as a countable subcover $\mathcal{O}'$ by writing the sets $U$ as unions of sets in the countable base. In particular, we write $\mathcal{O}' = \{ U_{1}, U_{2}, \dots \}$.
 
-	Assume by way of contradiction that no finite subcover of $\mathcal{O}'$ covers $X$. Consider $F_{n}$, the complement of $\bigcup_{i = 1}^{n} U_{i}$ for each $n \in \mathbb{N}$. Notice that each $F_{n}$ is closed since it is the complement of the open union of open sets. Also notice that $F_{n + 1} \subset F_{n}$ since taking the complements of $\bigcup_{i = 1}^{n} U_{i} \subset \bigcup_{i = 1}^{n + 1} U_{i}$ reverses the inclusion. 
+	Assume by way of contradiction that no finite subcover of $\mathcal{O}'$ covers $X$. Consider $F_{n}$, the complement of $\bigcup_{i = 1}^{n} U_{i}$ for each $n \in \mathbb{N}$. Notice that each $F_{n}$ is closed since it is the complement of the open union of open sets. Also notice that $F_{n + 1} \subset F_{n}$ since taking the complements of $\bigcup_{i = 1}^{n} U_{i} \subset \bigcup_{i = 1}^{n + 1} U_{i}$ reverses the inclusion. Finally, notice that by De Morgan's laws that the intersection of all $F_{n}$ is empty ---
+	\[
+		\begin{split}
+			\bigcap_{n = 1}^{\infty} F_{n} & = \bigcap_{n = 1}^{\infty} (G_{1} \cup \dots \cup G_{n})^{c} \\
+						       & = \left ( \bigcup_{n = 1}^{\infty} (G_{1} \cup \dots G_{n}) \right )^{c} \\
+						       & = X^{c} \\
+						       & = \emptyset.
+		\end{split}
+	\]
 
-	Consider $E$, a set containing one point $f_{n}$ from each $F_{n}$. Since $E$ is infinite, it must have a limit point $f$. Since each $F_{n + 1} \subset F_n$, for each $n$, there are at most finitely many $f_{i} \notin F_{n}$. Then $E \cap F_{n}$ has infinitely many points, and thus, a limit point. Since $E \cap F_{n}$ is just $E \setminus A$ for some finite set of points $A$, it must have the same limit point $f$ --- just consider the point $a \in A$ closest to $f$ and note that $E$ must have contained and still contain points closer to $f$ than $a$ in order for $f$ to have been a limit point. Thus, $E \cap F_{n}$ has limit point $f$. Since $f$ is resultantly a limit point of $F_{n}$ and $F_{n}$ is closed, we have $f \in F_{n}$ for each $n$.
+	Consider $E$, a set containing one point $f_{n}$ from each $F_{n}$. If $E$ is finite, there must be some $f \in E$ in infinitely many $F_{n}$. In particular, for all $N \in \mathbb{N}$, $f \in F_{n}$ for some $n > N$. But then since the $F_{n}$ are nested, $f$ is in all $F_{n}$. Then $\bigcap_{n = 1}^{\infty} F_{n}$ is non-empty. This is a contradiction.
 
-	Thus, we have $\bigcap_{n \in \mathbb{N}} F_{n} = \{ f \}$. But this is a contradiction since the countable $\mathcal{O}'$ covers $X$ and thus, every point in $X$ is in some $\bigcup_{i = 1}^{n} U_{i}$ --- $\bigcap_{n \in \mathbb{N}} F_{n}$ should be empty. Thus, our assumption that $\mathcal{O}'$ does not admit a finite subcover was false. Thus, any open cover $\mathcal{O}$ admits a finite subcover --- $X$ is compact.
+	If $E$ is infinite, it must have a limit point $f$. Since each $F_{n + 1} \subset F_n$, for each $n$, there are at most finitely many $f_{i} \notin F_{n}$. Then $E \cap F_{n}$ has infinitely many points, and thus, a limit point. Since $E \cap F_{n}$ is just $E \setminus A$ for some finite set of points $A$, it must have the same limit point $f$ --- just consider the point $a \in A$ closest to $f$ and note that $E$ must have contained and still contain points closer to $f$ than $a$ in order for $f$ to have been a limit point. Thus, $E \cap F_{n}$ has limit point $f$. Since $f$ is resultantly a limit point of $F_{n}$ and $F_{n}$ is closed, we have $f \in F_{n}$ for each $n$.
+
+	Thus, we have $\bigcap_{n \in \mathbb{N}} F_{n} = \{ f \}$ which is a contradiction. Thus, our assumption that $\mathcal{O}'$ does not admit a finite subcover was false. Thus, any open cover $\mathcal{O}$ admits a finite subcover --- $X$ is compact.
 \end{solution}
 
 \pagebreak
@@ -28,11 +40,54 @@
 	Prove that every open set in $\mathbb{R}$ is the union of an at most countable collection of disjoint segments.
 \end{problem}
 
+\begin{solution}
+	Let $E \subset \mathbb{R}$ be open. Since $\mathbb{R}$ is separable, we can write $E$ as the union of at most countably many segments of rational length, centred at rational points. Call these segments $U_{n}$. Then $E = \bigcup_{n \in \mathbb{N}} U_{n}$.
+
+	Consider the graph of all $U_{n}$ where $U_{i}$ and $U_{j}$ are adjacent if and only if $U_{i} \cap U_{j}$ is non-empty. Note that each connected component of this graph corresponds to a segment --- the union of all the $U_{i}$ in a connected component of the graph is a segment. Also, no two distinct connected components have any points in common --- else there'd be an edge between two of their vertices. Finally there are at most countably many connected components since they form a partition of the countable set of all $U_{n}$.
+
+	Thus, the collection of all connected components forms an at most countable collection of disjoint segments with union $E$.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[Rudin chapter 3, problem 2]
 	Calculate $\lim_{n \to \infty} \sqrt{n^{2} + n} - n$
 \end{problem}
+
+\begin{solution}
+	 \[
+	 	\boxed{
+			\lim_{n \to \infty} \sqrt{n^{2} + n} - n = \frac{1}{2}
+		}
+	 \]
+
+	 Note that we can write
+	 \[
+		 \begin{split}
+			 \sqrt{n^{2} + n} - n & = \frac{(\sqrt{n^{2} + n} + n)(\sqrt{n^{2} + n} - n)}{\sqrt{n^{2} + n} + n} \\
+					      & = \frac{n^{2} + n - n^{2}}{\sqrt{n^{2} + n} + n} \\
+					      & = \frac{n/n}{(\sqrt{n^{2} + n} + n)/n} \\
+					      & = \frac{1}{\sqrt{1 + 1/n} + 1}
+		 \end{split}
+	 \]
+
+	 We will show that the limit of the denominator is $2$. Then, by Theorem 3.3 (d), the limit of the quotient is $1/2$. Consider $\varepsilon > 0$. Then, by the Archimedean property, there is some $N$ such that for all $n > N$, $1/n < \varepsilon$. However, we know that for $x > 1$, $1 < \sqrt{x} < x$. Thus,
+	 \[
+	 	1 - \varepsilon < 1 \le \sqrt{1 + 1/n} < 1 + \varepsilon.
+	 \]
+	 for all $n > N$. That is,
+	 \[
+	 	\lim_{n \to \infty} \sqrt{1 + 1/n} = 1
+	 \]
+	 and (also by Theorem 3.3)
+	 \[
+	 	\lim_{n \to \infty} \sqrt{1 + 1/n} + 1 = 2.
+	 \]
+	 Thus,
+	 \[
+	 	\lim_{n \to \infty} \sqrt{n^{2} + n} - n = \lim_{n \to \infty} \frac{1}{\sqrt{1 + 1/n} + 1} = \frac{1}{2}.
+	 \]
+\end{solution}
 
 \pagebreak
 
@@ -44,6 +99,22 @@
 	prove that $\{ s_{n} \}_{n}$ converges and that $s_{n} < 2$ for $n \in \mathbb{N}$.
 \end{problem}
 
+\begin{solution}
+	We can show by induction that $s_{n} < 2$. Note that we already have the base case $s_{1} = \sqrt{2} < 2$. Suppose we have $s_{n} < 2$ for some $n$. Then
+	\[
+		s_{n + 1} = \sqrt{2 + \sqrt{s_{n}}} < \sqrt{2 + 2} = 2
+	\]
+	since the square root is an increasing function. That is, $s_{n} < 2$ implies $s_{n + 1} < 2$ and then, by induction, $s_{n} < 2$ for all $n \in \mathbb{N}$.
+
+	Similarly, we can also show that $s_{n} < s_{n + 1}$ by induction. The base case follows since  $2 < 2 + \sqrt{2}$, and thus, $\sqrt{2} < \sqrt{2 + \sqrt{2}}$. Suppose we have $s_{n - 1} < s_{n}$ for some $n$. Then
+	\[
+		s_{n + 1} = \sqrt{2 + \sqrt{s_{n}}} > \sqrt{2 + \sqrt{s_{n - 1}}} = s_{n}
+	\]
+	Thus, $s_{n + 1} > s_{n}$ as well, and thus, by induction $s_{n + 1} > s_{n}$ for all $n \in \mathbb{N}$.
+
+	Now, since $\{ s_{n} \}_{n}$ is an increasing, bounded sequence, it converges.
+\end{solution}	
+
 \pagebreak
 
 \begin{problem}[Rudin chapter 3, problem 4]
@@ -52,6 +123,39 @@
 		s_{1} = 0; \quad s_{2m} = \frac{s_{2m - 1}}{2}; \quad s_{2m + 1} = \frac{1}{2} + s_{2m}.
 	\]
 \end{problem}
+
+\begin{solution}
+	\[
+		\boxed{
+			\begin{split}
+				\liminf_{n \to \infty} s_n = \lim_{m \to \infty} s_{2m} & = \frac{1}{2} \\
+				\limsup_{n \to \infty} s_{n} = \lim_{m \to \infty} s_{2m + 1} & = 1.
+			\end{split}		
+		}
+	\]
+
+	We show that $s_{2m}$ and $s_{2m + 1}$ form two distinct convergent subsequences. Any subsequences $s_{n_{i}}$ that contain infinitely many terms of both cannot converge, where as any subsequences that contain infinitely many terms of only one of the convergent subsequences must converge to the same value. Thus the lesser limit is the $\liminf$ and the greater is the $\limsup$.
+
+	We can show by induction that $s_{2m} = 1/2 - 1/2^{m}$. Notice that $s_{2 \cdot 1} = 0 = 1/2 - 1/2$. Suppose $s_{2m} = 1/2 - 1/2^{m}$ for some $m \in \mathbb{N}$. Thus,
+	\[
+		\begin{split}
+			s_{2(m + 1)} & = \frac{s_{2(m + 1) - 1}}{2} \\
+				     & = \frac{s_{2m + 1}}{2} \\
+				     & = \frac{1}{2} \left ( s_{m} + \frac{1}{2} \right ) \\
+				     & = \frac{1}{2} \left ( \frac{1}{2} - \frac{1}{2^{m}} + \frac{1}{2} \right ) \\
+				     & = \frac{1}{2} - \frac{1}{2^{m + 1}}.
+		\end{split}
+	\]
+	Thus, by induction $s_{2m} = 1/2 - 1/2^{m}$ for all $m \in \mathbb{N}$.	Thus, $\lim_{m \to \infty} s_{2m} = 1/2$ (since $1/2^{m} < \varepsilon$ for any $\varepsilon$ as long as $m$ is sufficiently big).
+
+	It follows then that
+	\[
+		s_{2m + 1} = 1/2 + s_{2m} = 1 - 1/2^{m}.
+	\]
+	Thus, $\lim_{m \to \infty} s_{2m + 1} = 1$.
+
+	Then, by the arguments above, the boxed result follows.
+\end{solution}
 
 \pagebreak
 
@@ -62,5 +166,30 @@
 	\]
 	provided the sum on the right is not of the form $\infty - \infty$.
 \end{problem}
+
+\begin{solution}
+	Let $E$ be the set of subsequential limits of $\{ a_{n} + b_{n} \}_{n}$, let $A$ be the subsequential limits of $\{ a_{n} \}_{n}$ and let $B$ be the subsequential limits of $\{ b_{n} \}_{n}$. We will show that the set of all sums of $a \in A$ and $b \in B$ called $A + B$, \emph{dominates} $E$ --- that is, for every $e \in E$, there is some $f \in A + B$ such that $e \le f$. Then it follows that $\sup E \le \sup A + B = \sup A + \sup B$. The first equality follows since $A + B$ dominates $E$ --- if a number is too small to be an upper bound on $E$, it must be too small to be an upper bound on $A + B$. The last equality $\sup A + B = \sup A + \sup B$ was proven in class.
+
+	First however, we deal with the case that one of $\limsup_{n \to \infty} a_{n}$ or $\limsup_{n \to \infty} b_{n}$ diverges. We are guaranteed that the subsequences don't diverge in opposite directions. Without loss of generality, assume $\limsup_{n \to \infty} a_{n} = \infty$. Then there is some subsequence $\{ a_{n_{i}} \}_{n_{i}}$ that diverges to $\infty$. Thus, the subsequence $\{ a_{n_{i}} + b_{n_{i}} \}_{n_{i}}$ of $\{ a_{n} + b_{n} \}_{n}$ must diverge to $\infty$. If $\{ b_{n_{i}} \}_{n_{i}}$ diverges to $\infty$, then clearly $a_{n_{i}} + b_{n_{i}}$ is larger than any bound for large enough $n_{i}$. If $\{ b_{n_{i}} \}_{n_{i}}$ converges to some $b \in \mathbb{R}$, then for any bound $M$, choose $N$ large enough so that $\lvert b - b_{n_{i}} \rvert < \varepsilon$ and $a_{n_{i}} > M + \varepsilon + \lvert b \rvert$ to get $a_{n_{i}} + b_{n_{i}} > M$ for all $n_{i} > N$. That is, in either case
+	\[
+		\limsup_{n \to \infty} (a_{n} + b_{n}) = \infty \le \infty = \limsup_{n \to \infty} a_{n} + \limsup_{n \to \infty} b_{n}.
+	\]
+	It follows similarly that
+	\[
+		\limsup_{n \to \infty} (a_{n} + b_{n}) = -\infty \le -\infty = \limsup_{n \to \infty} a_{n} + \limsup_{n \to \infty} b_{n}
+	\]
+	if one of $\limsup_{n \to \infty} a_{n}$ or $\limsup_{n \to \infty} b_{n}$ is $-\infty$.
+
+	Now, assume both $\limsup_{n \to \infty} a_{n}$ and $\limsup_{n \to \infty} b_{n}$ are real. Suppose we have $e \in E$. Then $e$ must be the limit of some subsequence $\{ a_{n_{i}} + b_{n_{i}} \}_{n_{i}}$ of $\{ a_{n} + b_{n} \}_{n}$. Choose the subsequences $\{ a_{n_{i}} \}_{n_{i}}$ and $\{ b_{n_{i}} \}_{n_{i}}$. If both of these converge, then
+	\[
+		e = \lim_{i \to \infty} a_{n_{i}} + \lim_{i \to \infty} b_{n_{i}} \in A + B.
+	\]
+
+	If one of $\{ a_{n_{i}} \}_{n_{i}}$ and $\{ b_{n_{i}} \}_{n_{i}}$ doesn't converge then both of them don't converge (since their sum converges). However, since the $\limsup$ exists for both sequences, we can choose a further subsequence $\{ a_{n_{i_{j}}} \}_{n_{i_{j}}}$ that converges to the $\limsup$ (we can do so because the set of subsequential limits is closed and the supremum is a limit point). Note that $\lim_{j \to \infty} (a_{n_{i_{j}}} + b_{n_{i_{j}}}) = \lim_{i \to \infty} (a_{n_{i}} + b_{n_{i}})$. Thus,
+	\[
+		e = \lim_{j \to \infty} a_{n_{i_{j}}} + \lim_{j \to \infty} b_{n_{i_{j}}} \in A + B	
+	\]
+	Thus, $A + B$ dominates $E$. By the arguments in the first paragraph, we are done.
+\end{solution}
 
 \end{document}
