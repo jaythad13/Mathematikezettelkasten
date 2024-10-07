@@ -3,6 +3,7 @@ tags:
 - math-135/8
 - math-135/9
 - math-135/10
+- math-135/11
 - anal
 ---
 
@@ -125,3 +126,27 @@ Let
 $$
 F(z) = \frac{f(z) - f(z_{0})}{z - z_{0}}
 $$
+
+We can reinterpret the argument principle and Rouche's theorem geometrically using the notion of winding number.
+
+We can also show the open mapping theorem in a new way —
+
+##### _lemma:_ the "$n$-to-one" lemma
+
+If $f$ is holomorphic and non-constant on some region $\Omega \subset \mathbb{C}$. Let $z_{0} \in \Omega$ and let $n$ be the multiplicity of $z_{0}$ as a zero of $g : z \mapsto f(z) - f(z_{0})$. For sufficiently small $\varepsilon > 0$ there exists a $\delta > 0$ such that for every point $w \in N_{\delta}^*(f(z_{0}))$, there exist $n$ distinct points $z_{1}, \dots, z_{n}$ in $B_{\varepsilon}^*(z)$.
+
+###### _proof sketch:_
+
+We sort of already showed this in the proof of the open mapping theorem. Note that $g(z_{0})$ is an isolated zero. Thus, there exists a neighbourhood $B_{\varepsilon_{1}}^*(z_{0})$ in which $g$ has no zeroes, and further, we can also choose a neighbourhood $B_{\varepsilon_{2}}^*(z_{0})$ in which $f'$ is non-zero. Choose $\varepsilon < \min{\{ \varepsilon_{1}, \varepsilon_{2} \}}$.
+
+Now consider the image of $\partial B_{\varepsilon}(z_{0})$ (parametrised positively or negatively) under $f$. This wraps around $f(z_{0})$ since $\partial B_{\varepsilon}(z_{0})$ is in $B_{\varepsilon}^*(z_{0})$ and thus cannot hit $f(z_{0})$. Choose $\delta < \lvert f(\partial B_{\varepsilon}(z_{0})) - f(z_{0}) \rvert$. That is, choose $\delta$ less than the distance between the image of the boundary and $f(z_{0})$.
+
+##### _theorem:_ Hurwitz's theorem
+
+Suppose $\{ f_{n} \}_{n}$ is a sequence of holomorphic functions $\Omega \to \mathbb{C}$ with $f_{n} \to f \neq 0$ uniformly. Then $f(z_{0}) = 0$ if and only if there is a sequence of points $\{ z_{n} \}_{n}$ converging to $z_{0}$ such that $f_{n}(z_{n}) = 0$.
+
+###### _proof sketch:_
+
+We will first show that for any simple closed curve there is some $N$ for which $n > N$ gives us that $f_{n}$ and $f$ have the same number of zeroes in the region bounded by the curve. Either use the argument principle and argue that the integrals converge, or use the argument principle and Rouche's theorem — $\lvert f - f_{n} \rvert < m < \lvert f \rvert$ if $f$ takes minimum $m$ on the curve.
+
+Just consider smaller and smaller curves around for larger and larger $n$ to get the convergent sequence (pick points inside the region bounded by the curve).
