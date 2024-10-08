@@ -2,6 +2,7 @@
 tags:
 - math-131/10
 - math-131/11
+- math-131/12
 - anal
 ---
 
@@ -150,3 +151,24 @@ and
 $$
 \liminf x_{n} = \inf E^*.
 $$
+
+### Some special sequences
+
+Here are some real examples of how these sequences are used —
+
+##### _proposition:_ sequences of powers and roots
+
+Let $p > 0$ be a fixed real number. Then
+1) $\lim_{ n \to \infty } \frac{1}{n^p} = 0$.
+2) $\lim_{ n \to \infty } p^{1/n} = 1$.
+3) $\lim_{ n \to \infty } n^{1/n} = 1$.
+4) For $\alpha \in \mathbb{R}$, $\lim_{ n \to \infty } \frac{n^\alpha}{(1 + p)^n}$.
+5) If $\lvert x \rvert < 1$, $\lim_{ n \to \infty } x^n = 0$
+
+###### _proof sketch:_
+
+1) Just choose $N > (1 / \varepsilon)^{1/p}$. Thus, for all $n > N$, we have $n^p > 1 / \varepsilon$ and thus, $\lvert 1 / n^p - 0 \rvert < \varepsilon$.
+2) First, assume $p > 1$. Then $p^{1/n} > 1$ for all $n$. Write $p^{1/n} = 1 +x_{n}$ and note that $x_{n} > 0$ always. Then $p = (1 + x_{n})^n$, which we can expand using the binomial theorem to get $p = 1 + n x_{n} + \dots + x_{n}^n$. Since all of the terms are positive, we have $n x_{n} < p$ and thus, $x_{n} < p/n$. Then $x_{n} \to 0$ and thus, $p^{1/n} \to 1$. Now if $p < 1$, then $(1 / p)^{1/n} \to 1$ and thus, $p^{1/n} \to 1$.
+3) We can use the same trick again — we know that $n^{1/n} \ge 1$, and thus $x_{n} \ge 0$ for $n^{1/n} = 1 + x_{n}$. Using the binomial theorem we see that $\binom{n}{2} x_{n}^2 < n$. Thus, $x_{n} < \frac{2}{\sqrt{n - 1 }}$ and thus, $x_{n} \to 0$.
+4) A bunch of bounds, see the book
+5) Write $x = \frac{1}{1 + p}$ for some $p > 0$.
