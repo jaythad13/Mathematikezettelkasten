@@ -24,12 +24,48 @@
 	is non-zero.
 \end{problem}
 
+\begin{solution}
+	$f$ is non-singular if its derivative has full rank everywhere. Since the derivative of $f$ is a linear map $\mathbb{A}^{3}(F) \to F$, it needs to be rank $1$ --- it needs to be non-zero everywhere. The derivative of $f$ at a point $p = (p_{1}, p_{2}, p_{0})$ is the linear map with matrix
+	\[
+		\begin{bmatrix}
+			\frac{\partial f}{\partial x_{1}}(p) & \frac{\partial f}{\partial x_{2}}(p) & \frac{\partial f}{\partial x_{0}}(p)
+		\end{bmatrix} = \begin{bmatrix}
+			2 a_{1} p_{1} + a_{2} p_{2} + a_{4} p_{0} \\
+			a_{2} p_{1} + 2 a_{3} p_{2} + a_{5} p_{0} \\
+			a_{4} p_{1} + a_{5} p_{2} + 2 a_{6} p_{0}
+		\end{bmatrix}^{T} = \left ( \begin{bmatrix}
+			2 a_{1} & a_{2} & a_{4} \\
+			a_{2} & 2 a_{3} & a_{5} \\
+			a_{4} & a_{5} & 2 a_{6}
+		\end{bmatrix} \begin{bmatrix}
+			p_{1} \\
+			p_{2} \\
+			p_{0}
+		\end{bmatrix} \right )^{T}
+	\]
+
+	By linear algebra, this is non-zero at every point $(p_{1} : p_{2} : p_{0})$ in projective space if and only if the determinant of the $3$-by-$3$ matrix is non-zero. That is, $C$ is non-singular if and only if
+	\[
+		\Delta C = -2(a_{1} a_{5}^{2} + a_{2}^{2} a_{6} + a_{3} a_{4}^{2} - a_{2} a_{4} a_{5} - 4 a_{1} a_{3} a_{6}) = \det \begin{bmatrix}
+			2 a_{1} & a_{2} & a_{4} \\
+			a_{2} & 2 a_{3} & a_{5} \\
+			a_{4} & a_{5} & a_{6}
+		\end{bmatrix}
+	\]
+	is non-zero.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[Problem 2.]
 	For $t \in \mathbb{C}$, consider the \emph{Dwork Family} $E : x_{1}^{3} + x_{2}^{3} + x_{0}^{3} = 3 t x_{1} x_{2} x_{0}$, named after Bernard Morris Dwork.
 	\begin{enumerate}
 		\item Show that with the following substitutions we have the cubic equation $y^{2} = x^{3} + A x + B$:
+			\begin{align*}
+				x_{1} & = y - 3 t x + 9(t^{3} - 4) & & & x & = \frac{3(t^{3} - 4) x_{0} - 9 t^{2}(x_{1} + x_{2})}{x_{1} + x_{2} + t x_{0}} & A & = -27 t(t^3 + 8) \\
+				x_{2} & = -y - 3 t x + 9(t^{3} - 4) & & \iff \\
+				x_{0} & = 6(x + 9 t^{2}) & & & y & = \frac{36(t^{3} - 1)(x_{1} - x_{2})}{x_{1} + x_{2} + x_{0}} & B & = 54(t^{6} - 20 t^{3} - 8)
+			\end{align*}
 		\item Show that $E$ is an elliptic curve if and only if $t^{3} \neq 1$.
 	\end{enumerate}
 \end{problem}
