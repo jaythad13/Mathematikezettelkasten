@@ -1,6 +1,7 @@
 ---
 tags:
 - math-131/12
+- math-131/13
 - anal
 ---
 
@@ -41,3 +42,47 @@ $$
 $$
 Here, the last equality follows since the [[Mathematical Analysis I --- math-131/notes/Sequences and convergence#_proposition _ sequences of powers and roots|the limit vanishes]].
 
+### Results for evaluating series
+
+These results turn out to be very useful for evaluating series —
+
+##### _proposition:_ sampling every $2^k$th partial sum
+
+If $\{ a_{n} \}_{n}$ is a monotonically decreasing sequence, then $\sum_{n = 1}^\infty a_{n}$ converges if and only if $\sum_{k = 0}^\infty 2^k a_{2^k}$ converges.
+
+###### _proof:_
+
+Notice that by monotonicity, $a_{2^k} + a_{2^k + 1} + \dots + a_{2^{k + 1} - 1} \le 2^k a_{2^k}$. Also, bounding in the opposite direction, $a_{2^{k - 1} + 1} + a_{2^{k - 1} + 2} + \dots + a_{2^k} \ge 2^{k - 1} a_{2^k}$. Thus, for each partial sum
+$$
+\frac{1}{2} \sum_{k = 0}^n 2^k a_{2^k} \le \sum_{k = 1}^{2^n} a_{k} \le \sum_{k = 0}^n 2^k a_{2^k}.
+$$
+
+Note that since the partials sums of all these series are monotonically increasing, the series converge if and only if their partial sums are bounded. If the partials sums of the sampling series are bounded, then so must be the partial sums of the full series. If the partial sums of the full series are bounded, then so must be the halves partial sums of the sampling series, and thus, the partial sums of the sampling series.
+
+This has a nice application to the zeta function!
+
+##### _example:_ the Riemann zeta function
+
+The series
+$$
+\zeta(p) = \sum_{n = 1}^\infty \frac{1}{n^p}
+$$
+converges if and only if $p > 1$. In fact, for complex $p$, we can show that this converges if and only if $\operatorname{Re} p > 1$.
+
+We can show this by noting that $\zeta(p)$ converges if and only if
+$$
+\sum_{k = 0}^\infty 2^k \frac{1}{(2^k)^p} = \sum_{k = 0}^p (2^{1 - p})^k
+$$
+converges. As a geometric series, this converges if and only if $2^{1 - p} < 1$. Thus, it converges if and only $p > 1$.
+
+##### _example:_ adding a log $n$ factor
+
+We can also show that the harmonic series, $\sum_{n = 1}^\infty \frac{1}{n}$, which doesn't converge, will converge if we add a small but growing term to the denominator. Specifically, the series
+$$
+\sum_{n = 2}^\infty \frac{1}{n (\ln n)^p}
+$$
+converges if and only if
+$$
+\sum_{k = 1}^\infty \frac{2^k}{2^k (\ln (2^k))^p} = \sum_{k = 1}^\infty \frac{1}{k^p (\ln 2)^p}
+$$
+converges. But this is just a geometric series which converges for $p > 1$.
