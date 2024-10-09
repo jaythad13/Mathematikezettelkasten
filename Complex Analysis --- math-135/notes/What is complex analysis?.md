@@ -99,6 +99,8 @@ $$
 $$
 Naturally, with the triangle inequality, this magnitude gives us a metric on $\mathbb{C}$ that makes it a [[Complex Analysis --- math-135/notes/(Metric) topology review|metric/topological space]].
 
+### Polar representation
+
 Finally, every complex number can be given in polar representation. If we accept as shorthand $e^{i \theta} = \cos \theta + i \sin \theta$, then we can see that every complex number can be represented by its magnitude, $\lvert z \rvert$, and its angle from the positive $x$ axis, $\theta$, also called its argument. Notice that $z$ does not have a unique argument. 
 
 If we accept that the shorthand $e^{i \theta}$ follows the regular multiplication rules for exponents, this also gives a justification for thinking of complex multiplication as adding angles and dilating by the magnitude. That is $e^{i \theta} e^{i \varphi} = e^{i(\theta + \varphi)}$. You can also think about this by using similar triangles (see Knopp?).

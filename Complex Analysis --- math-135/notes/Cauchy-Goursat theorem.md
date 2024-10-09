@@ -73,7 +73,7 @@ as desired.
 
 ##### _corollary:_ Cauchy's theorem
 
-If $f$ is a holomorphic in an open disc. and $\gamma$ is any closed curve in the disc, $\int_{\gamma} f(z) \, dz$.
+If $f$ is a holomorphic in an open disc. and $\gamma$ is any closed curve in the disc, $\int_{\gamma} f(z) \, dz  = 0$. 
 
 ###### _proof sketch.:_
 
