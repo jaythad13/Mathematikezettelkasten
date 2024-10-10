@@ -1,5 +1,14 @@
 \documentclass[12 pt, letterpaper]{hmcpset}
 \usepackage{hw-preamble}
+\usepackage{import}
+\usepackage{xifthen}
+\usepackage{pdfpages}
+\usepackage{transparent}
+
+\newcommand{\incfig}[1]{%
+    \def\svgwidth{0.8 \columnwidth}
+    \import{./figures/}{#1.pdf_tex}
+}
 
 \name{Jayden Thadani}
 \class{MATH 135 --- Complex Analysis}
@@ -65,10 +74,19 @@
 \end{problem}
 
 \begin{solution}
-	Suppose $f$ is holomorphic on the circle $C$ and the disc $D$ that it bounds. Then the quotient $\frac{f(\zeta)}{\zeta - z}$ is holomorphic on $C$ and $D$ except $z$. Notice that $C$ and the circle of radius $\varepsilon$ centred at $z$, $C_{\varepsilon}(z)$, are homotopic. Thus, 
+	Suppose $f$ is holomorphic on the circle $C$ and the disc $D$ that it bounds. Then the quotient $\frac{f(\zeta)}{\zeta - z}$ is holomorphic everywhere on $C$ and $D$ except $z$. We claim that using homotopy, we can show
 	\[
 		\int_{C} \frac{f(\zeta)}{\zeta - z} \, d\zeta = \int_{C_{\varepsilon}(z)} \frac{f(\zeta)}{\zeta - z} \, d\zeta.
 	\]
+
+	Consider the curve $\Gamma$ which is the union of $C_{\varepsilon}(z)$, the circle of radius $\varepsilon$ centred at $z$, and a line connecting it to $C$. Clearly $\Gamma$ and $C$ are homotopic. Further, the integral over $\Gamma$ is just the integral over $C_{\varepsilon}(z)$ since we integrate over the straight line in opposite directions, cancelling the integral out. Thus, we have the result above.
+
+\begin{figure}[H]
+    \centering
+    \incfig{drawing}
+    \caption{$\Gamma$ and $C$.}
+    \label{fig:parking-procedure}
+\end{figure}
 
 	Now we can just imitate the standard proof of the Cauchy integral formula. We rewrite
 	\[
@@ -97,5 +115,19 @@
 			\]
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item Recall that if $u$ is a non-constant real harmonic function on $\Omega$, then we can write $u = \operatorname{Re} f$ for some non-constant holomorphic function $\Omega \to \mathbb{C}$. By the open mapping theorem, $f^{\text{img}}(\Omega)$ is open. Thus, for any $z_{0} \in \Omega$, there exist some $z_{1}, z_{2} \in \Omega$ with $\operatorname{Re} f(z_{1}) > \operatorname{Re} f(z_{0})$ and $\operatorname{Re} f(z_{2}) < \operatorname{Re} f(z_{0})$. 
+
+			In particular, since there is some $r > 0$ with $N_{r}(f(z)) \subset f^{\text{img}}(\Omega)$, choose $f(z_{1}) = f(z_{0}) + \delta \in N_{r}(f(z))$ and $f(z_{2}) = f(z_{0}) - \delta \in N_{r}(f(z))$ such that $0 < \delta < r$. That is, $u(z_{2}) < u(z_{0}) < u(z_{1})$, and thus, $u$ cannot have a maximum or minimum on $\Omega$.
+		\item If $u$ is harmonic on a region $\Omega$ with compact closure $\overline{\Omega}$, $\lvert u \rvert$ must attain a maximum on $\overline{\Omega}$ (since it is a continuous function on a compact set). But a maximum of $\lvert u \rvert$ is a maximum or a minimum of $u$, and thus, cannot occur on $\Omega$ unless $u$ is constant.
+
+			In either case, $\lvert u \rvert^{\text{img}}(\overline{\Omega} \setminus \Omega)$ contains an upper bound on $\lvert u \rvert^{\text{img}}(\Omega)$, and thus,
+			\[
+				\sup_{z \in \Omega} \lvert u(z) \rvert \le \sup_{z \in \overline{\Omega} \setminus \Omega} \lvert u(z) \rvert.
+			\]
+	\end{enumerate}
+\end{solution}
 
 \end{document}
