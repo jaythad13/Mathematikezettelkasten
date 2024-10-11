@@ -64,11 +64,36 @@
 			\begin{align*}
 				x_{1} & = y - 3 t x + 9(t^{3} - 4) & & & x & = \frac{3(t^{3} - 4) x_{0} - 9 t^{2}(x_{1} + x_{2})}{x_{1} + x_{2} + t x_{0}} & A & = -27 t(t^3 + 8) \\
 				x_{2} & = -y - 3 t x + 9(t^{3} - 4) & & \iff \\
-				x_{0} & = 6(x + 9 t^{2}) & & & y & = \frac{36(t^{3} - 1)(x_{1} - x_{2})}{x_{1} + x_{2} + x_{0}} & B & = 54(t^{6} - 20 t^{3} - 8)
+				x_{0} & = 6(x + 9 t^{2}) & & & y & = \frac{36(t^{3} - 1)(x_{1} - x_{2})}{x_{1} + x_{2} + t x_{0}} & B & = 54(t^{6} - 20 t^{3} - 8)
 			\end{align*}
 		\item Show that $E$ is an elliptic curve if and only if $t^{3} \neq 1$.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item We calculate $x_{1}^{3} + x_{2}^{3} + x_{0}^{3} - 3 t x_{1} x_{2} x_{0}$ using Mathematica
+			\[
+				\begin{split}
+					& x_{1}^{3} + x_{2}^{3} + x_{0}^{3} - 3 t x_{1} x_{2} x_{0} \\
+					& = -93312 - 139968 t^{3} + 244944 t^{6} - 11664 t^{9} + (-46656 t + 40824 t^{4} + 5832 t^{7}) x \\
+					& + (216 - 216 t^{3}) x^{3} + (216 - 216 t^{3}) y^{2}.
+				\end{split}
+			\]
+			Dividing by $216(1 - t^{3})$, (which we can do as long as $t \neq 1$) we get
+			\[
+			-432 - 1080 t^{3} + 54 t^{6} - 216 t x - 27 t^{4} x + x^{3} - y^{2} = y^{2} - (x^{3} + A x + B).
+			\]
+			Thus, the two equations are equivalent (as long as $t \neq 1$).
+		\item We use the given fact that the discriminant of $E$ is
+			 \[
+				\Delta = -16(4 A^{3} + 27 B^{2}) = 2^{12} 3^{9} (t^{3} - 1)^{3}
+			\]
+			and the fact that from previous homeworks we know that $y^{2} = x^{3} + A x + B$ is an elliptic curve if and only if $\Delta \neq 0$.
+
+			Since $\Delta = 0$ if and only if $t^{3} - 1 = 0$, $E$ is an elliptic curve if and only if $t \neq 1$.
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
@@ -83,5 +108,61 @@
 		\item Show that $E$ has torsion subgroup $E(\mathbb{Q})_{\text{tors}} \cong Z_{4}$ and rank $r = 0$.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item If $P = (x_{1} : x_{2} : x_{0})$ is a $\mathbb{Q}$-rational point on $E$, then we must have
+			 \[
+				x_{2}^{2} x_{0} = x_{1}^{3} + 4 x_{1} x_{0}^{2}.
+			\]
+			Thus,
+			\[
+				\begin{split}
+					c^{2} & = 16 x_{2}^{2} x_{0}^{2} \\
+					      & = 16 x_{1}^{3} x_{0} + 64 x_{1} x_{0}^{3} \\
+					      & = (8 x_{1} x_{0}) (2 (x_{1}^{2} + 4 x_{0}^{2})) \\
+					      & = (a + b)(a - b) (a^{2} + b^{2}) \\
+					      & = (a^{2} - b^{2}) (a^{2} + b^{2}) \\
+					      & = a^{4} - b^{4}.
+				\end{split}
+			\]
+		\item If $a^{4} - b^{4} = c^{2}$, by Fermat's theorem, $abc = 0$. Thus,
+			\[
+				(x_{1} + 2 x_{0})(x_{1} - 2x_{0})(4 x_{2} x_{0}) = 0
+			\]
+
+			If $x_{0} = 0$, then by the elliptic curve equation, we must have $x_{1}^{3} = 0$, and thus, $x_{1} = 0$. Thus, $P = (0 : 0 : 1)$.
+
+			If $x_{2} = 0$, then $x_{1}^{3} + 4 x_{1} x_{0}^{2} = 0$. That is $x_{1}(x_{1}^{2} + 4 x_{0}^{2}) = 0$. Thus $x_{1} = 0$ and $P = (0 : 0 : 1)$ since $x_{1}^{2} + 4 x_{0}^{2} = 0$ has no rational solutions.
+
+			If $x_{1} = - 2 x_{0}$, then
+			\[
+				x_{2}^{2} x_{0} = -8 x_{0}^{3} - 8 x_{0}^{3}
+			\]
+			which is
+			\[
+				x_{0}(x_{2}^{2} + 16 x_{0}^{2}) = 0.
+			\]
+			Thus, $x_{1} = x_{0} = 0$ and $P = (0 : 1 : 0)$.
+
+			Finally, if $x_{1} = 2 x_{0}$,
+			\[
+				x_{2}^{2} x_{0} = 8 x_{0}^{3} + 8 x_{0}^{3}
+			\]
+			which is
+			\[
+				x_{0}(x_{2}^{2} - 16 x_{0}^{2})
+			\]
+			so $P = (0 : 1 : 0)$ if $x_{0} = 0$ or $x_{2} = \pm 4 x_{0}$ and thus, $P = (2 : \pm 4 : 1)$.
+
+			Thus, the rational points on $E$ are
+			\[
+				E(\mathbb{Q}) = \{ (0 : 0 : 1), (2 : 4 : 1), (2 : -4 : 1), (0 : 1 : 0) \}.
+			\]
+		\item There are only two groups of order $4$ --- the cyclic group and the Klein four-group. In the Klein four-group, all elements are of order $2$.
+
+			Notice that $(2 : 4 : 1)$ and $(2 : -4 : 1)$ are inverses since they are each others reflection in the $x$ axis. Thus, they are not of order $2$, and $E(\mathbb{Q})$ must be the cyclic group.
+	\end{enumerate}
+\end{solution}
 
 \end{document}
