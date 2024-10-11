@@ -6,7 +6,7 @@
 \usepackage{transparent}
 
 \newcommand{\incfig}[1]{%
-    \def\svgwidth{0.8 \columnwidth}
+    \def\svgwidth{0.7 \columnwidth}
     \import{./figures/}{#1.pdf_tex}
 }
 
@@ -47,6 +47,24 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item Since $f$ is entire it has a power series expansion
+			\[
+				f(z) = \sum_{n = 0}^{\infty} a_{n} z^{n}
+			\]
+			about $0$ that converges on all of $\mathbb{C}$. We claim that $a_{n} = 0$ for all $n > k$, and thus, $f$ is a polynomial.
+
+			By the Cauchy inequalities and the fact that $f$ is entire we have
+			\[
+				\lvert f^{(n)}(z) \rvert \le \frac{n! \sup_{\lvert z \rvert = R} \lvert f(z) \rvert}{R^{n}} \le \frac{n! (AR^{k} + B)}{R^{n}}
+			\]
+			for all $R > 0$. For $n > k$, as $R \to \infty$, this bound converges to $0$. Thus, we must have $f^{(n)}(z) = 0$ for all $n > k$.
+		\setcounter{enumi}{3}
+		\item Consider $g : z \to f(1/z)$. $g$ cannot have an essential singularity at $0$ --- since $\operatorname{Re} f$ is bounded, the image of the punctured disc around $0$ under $g$ is not dense in $\mathbb{C}$. Thus, by a similar Laurent series argument to that in problem 1, $f$ is a polynomial. Non-constant polynomials must have unbounded real part, so $f$ must be constant.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[16.]
@@ -62,6 +80,15 @@
 		\item if $z_{\varepsilon}$ is this zero, the mapping $\varepsilon \mapsto z_{\varepsilon}$ is continuous.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item Note that since $g$ is holomorphic in a region containing the disc $\overline{\mathbb{D}}$, it must be bounded on the compact circle $\lvert z \rvert = 1$. Thus, for sufficiently small $\varepsilon > 0$, we have $\lvert f \rvert \ge \lvert \varepsilon g \rvert$ everywhere on the circle. Then by Rouche's theorem, $f$ and $f + \varepsilon g$ have the same zeroes inside $\mathbb{D}$ --- that is, $f + \varepsilon g$ has one simple zero in $\mathbb{D}$.
+		\item Suppose $\varepsilon < \delta$ is sufficient to ensure that $z_{\varepsilon}$ is a zero of $f_{\varepsilon}$. Consider the map $(0, \delta) \to \mathbb{D}$ by $\varepsilon \mapsto z_{\varepsilon}$ where $z_{\varepsilon} = x_{\varepsilon} + i y_{\varepsilon}$ is the unique zero of $f_{\varepsilon}$ in the disc. The map $\varepsilon \mapsto (x_{\varepsilon}, y_{\varepsilon})$ is then the implicit function $h$ that gives  $F(h(\varepsilon), \varepsilon) = 0$ for $F : ((x, y), \varepsilon) \to f_{\varepsilon}(x + i y)$.
+
+			Since $F(0, 0) = f(0) = 0$, by the implicit function theorem we have that $h$ is differentiable, and thus, continuous as long as $f'(0) \neq 0$. This is true since $f(0)$ is a simple zero. Thus $h : \varepsilon \to z_{\varepsilon}$ is continuous.
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
