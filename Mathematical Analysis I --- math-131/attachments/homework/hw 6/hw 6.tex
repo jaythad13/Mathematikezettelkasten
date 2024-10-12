@@ -8,15 +8,96 @@
 
 \begin{document}
 
+Collaborators: Mithra Karamchedu
+
 \begin{problem}[Rudin chapter 3, exercise 6]
 	Investigate the behaviour (convergence or divergence) of $\sum a_{n}$ if
 	\begin{enumerate}
-		\item $a_{n} = \sqrt{n - 1} - \sqrt{n}$
+		\item $a_{n} = \sqrt{n + 1} - \sqrt{n}$
 		\item $a_{n} = \frac{\sqrt{n + 1} - \sqrt{n}}{n}$ 
 		\item $a_{n} = (\sqrt[n]{n} - 1)^{n}$
 		\item $a_{n} = \frac{1}{1 + z^{n}}$ for complex $z$.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item
+			\[
+				\boxed{
+					\sum_{n = 1}^{\infty} \sqrt{n + 1} - \sqrt{n} \text{ diverges to } \infty.
+				}
+			\]
+
+			Consider the partial sums
+			\[
+				\begin{split}
+					s_{N} & = \sum_{n = 1}^{N} a_{n} \\
+					      & = (\sqrt{N + 1} - \sqrt{N}) + (\sqrt{N} - \sqrt{N - 1}) + \dots + (\sqrt{2} - \sqrt{1}) \\
+					      & = \sqrt{N + 1} + (\sqrt{N} - \sqrt{N}) + \dots + (\sqrt{2} - \sqrt{2}) - \sqrt{1} \\
+					      & = \sqrt{N + 1} - 1.
+				\end{split}
+			\]
+			Note that for any $M > 0$, $n > (M + 1)^{2}$ gives
+			\[
+				s_{n} = \sqrt{(M + 1)^{2} + 1} - 1 > M + 1 - 1 = M
+			\]
+			so $s_{n} \to \infty$ and thus, $\sum a_{n} = \infty$.
+		\item
+			\[
+				\boxed{
+					\sum_{n = 1}^{\infty} \frac{\sqrt{n + 1} - \sqrt{n}}{n} = 0.
+				}
+			\]
+
+			Again, we consider the partial sums
+			\[
+				\begin{split}
+					s_{N} & = \sum_{n = 1}^{N} a_{n} \\
+					      & = \sum_{n = 1}^{N} \frac{\sqrt{n + 1} - \sqrt{n}}{n} \\
+					      & < \sum_{n = 1}^{N} \frac{\sqrt{n + 2 \sqrt{n} + 1} - \sqrt{n}}{n} \\
+					      & = \sum_{n = 1}^{N} \frac{\sqrt{n} - \sqrt{n} + 1}{n} \\
+					      & = \frac{1}{N}.
+				\end{split}
+			\]
+
+			By the Archimedean property, $s_{n} \to 0$ and thus, $\sum a_{n} = 0$.
+		\item
+			\[
+				\boxed{
+					\sum_{n = 1}^{\infty} (\sqrt[n]{n} + 1)^{n} \text{ converges.}
+				}
+			\]
+
+			By the root test, $\sum a_{n}$ converges since
+			\[
+				\begin{split}
+					\limsup_{n \to \infty} \lvert a_{n} \rvert^{1/n} & = \lim_{n \to \infty} (n^{1/n} - 1) \\
+											 & = (\lim_{n \to \infty} n^{1/n}) - 1 \\
+											 & = 0 \\
+											 & < 1.
+				\end{split}
+			\]
+		\item
+			\[
+				\boxed{
+					\sum_{n = 1}^{\infty} \frac{1}{1 + z^{n}} \text{ converges for } \lvert z \rvert < 1 \text{ and diverges otherwise.}
+				}
+			\]
+
+			We compare $\lvert 1 + z^{n} \rvert$ to $n^{p}$ for some fixed $p > 1$. If $\lvert z \rvert > 1$, then for large enough $n$ we have $\lvert 1 + z^{n} \rvert > n^{p}$ (this follows from Theorem 3.20). Thus,
+			\[
+				\sum_{n = 1}^{\infty} \frac{1}{\lvert 1 + z^{n} \rvert} = \sum_{n = 1}^{\infty} \frac{1}{n^{p}}
+			\]
+			and converges. It follows from the absolute convergence that the series itself converges.
+
+			However, if $\lvert z \rvert \le 1$ then for $n > 2$ we have $\lvert 1 + z^{n} \rvert < n$. Thus,
+			\[
+				\sum_{n = 1}^{\infty} \frac{1}{n} < \sum_{n = 1}^{\infty} \frac{1}{\lvert 1 + z^{n} \rvert}
+			\]
+			and since the harmonic series diverges, so does the series here.
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
@@ -28,11 +109,34 @@
 	if $a_{n} \ge 0$.
 \end{problem}
 
+\begin{solution}
+	By comparison with harmonic series, we know that since $a_{n}$ converges, it cannot exceed the harmonic series at infinitely many $n$. That is, for sufficiently large $n$, we should have $a_{n} < 1/n$. But then $\sqrt{a_{n}} < 1/\sqrt{n}$ and thus, $\sqrt{a_{n}}/n < 1/n^{3/2}$.
+
+	We know $\sum 1/n^{3/2}$ converges. Thus, by the comparison test we also have that $\sum \sqrt{a_{n}}/n$ converges.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[Rudin chapter 3, exercise 8]
 	If $\sum a_{n}$ converges and if $\{ b_{n} \}_{n}$ is monotonic and bounded, prove that $\sum a_{n} b_{n}$ converges.
 \end{problem}
+
+\begin{solution}
+	Since $b_{n}$ is monotonic and bounded it must converge to some $b$. Given $\epsilon > 0$, choose $ \varepsilon_{0} < \min \{ \varepsilon/2b, \sqrt{\varepsilon}/2 \}$ Suppose for all $m > N_{b}$, we have  $\lvert b_{m} - b \rvert < \varepsilon_{0}$. Also suppose that for all $n > m > N_{a}$ we have $\left \lvert \sum_{k = m + 1}^{n} a_{k} \right \rvert < \varepsilon_{0}$.
+
+	Then for all $n, m > \max \{ N_{a}, N_{b} \}$ we have
+	\[
+		\begin{split}
+			\left \lvert \sum_{k = m + 1}^{n} a_{k} b_{k} \right \rvert & = \left \lvert \sum_{k = m + 1}^{n} a_{k} b + \sum_{k = m + 1}^{n} a_{k} (b_{k} - b) \right \rvert \\
+										    & \le \lvert b \rvert \left \lvert \sum_{k = m + 1}^{n} a_{k} \right \rvert + \lvert b_{k} - b \rvert \left \lvert \sum_{k = m + 1}^{n} a_{k} \right \rvert \\
+										    & < \lvert b \rvert \varepsilon_{0} + \varepsilon_{0}^{2} \\
+										    & < \varepsilon/2 + \varepsilon/2 \\
+										    & = \varepsilon.
+		\end{split}
+	\]
+
+	That is, the partial sums of $\sum a_{n} b_{n}$ form a Cauchy sequence. Thus, $\sum a_{n} b_{n}$ must converge.
+\end{solution}
 
 \pagebreak
 
@@ -46,11 +150,78 @@
 	\end{enumerate}
 \end{problem}
 
-\pagebreak
+\begin{solution}
+	\begin{enumerate}
+		\item
+			\[
+				\boxed{
+					R = 1.
+				}
+			\]
 
-\begin{problem}[Rudin chapter 3, exercise 10]
-	Suppose that the coefficients of the power series $\sum a_{n} z^{n}$ are integers, infinitely many of which are distinct from zero. Prove that the radius of convergence is at most $1$.
-\end{problem}
+			Let $\alpha = \limsup_{n \to \infty} \lvert n^{3} \rvert^{1/n}$ which can be written as $\lim_{n \to \infty} (n^{1/n})^{3}$. Then $R = 1/\alpha$. We have shown in class that $\lim_{n \to \infty} n^{1/n} = 1$. Thus,
+			\[
+				\lim_{n \to \infty} (n^{1/n})^{3} = (\lim_{n \to \infty} n^{1/n})^{3} = 1. 
+			\]
+			But then $\alpha = \lim_{n \to \infty} (n^{1/n})^{3} = 1$ and thus, $R = 1$.
+		\item
+			\[
+				\boxed{
+					R = \infty.
+				}
+			\]
+
+			Let $\alpha = \limsup \left \lvert \frac{2^{n}}{n!} \right \rvert^{1/n}$. Then $R = 1/\alpha$. We claim that $(n!)^{1/n} \ge \sqrt{n}$ for sufficiently large $n$, and thus,
+			\[
+				\left \lvert \frac{2^{n}}{n!} \right \rvert^{1/n} \le \frac{2}{\sqrt{n}}
+			\]
+			We can show this by comparing $(n!)^{2}$ and $n^{n}$. If we write
+			\[
+				(n!)^{2} = n (2(n - 1)) (3(n - 2)) \dots ((n - 2) 3) ((n - 1) 2) n
+			\]
+			we can see that for sufficiently large $n$, each factor is clearly greater than $n$. Thus $(n!)^{2} > n^{n}$.
+
+			Now we have
+			\[
+				\alpha \le \lim_{n \to \infty} \frac{2}{\sqrt{n}} = 0
+			\]
+			So $\alpha = 0$, and the series must converge on all of $\mathbb{C}$. That is, $R = \infty$.
+		\item
+			\[
+				\boxed{
+					R = \frac{1}{2}.
+				}
+			\]
+
+			Let $\alpha = \limsup \left \lvert \frac{2^{n}}{n^{2}} \right \rvert^{1/n}$. Notice that
+			\[
+				\begin{split}
+					\lim_{n \to \infty} \left \lvert \frac{2^{n}}{n^{2}} \right \rvert^{1/n} & = \lim_{n \to \infty} \frac{2}{n^{2/n}} \\
+														 & = \frac{2}{(\lim_{n \to \infty} n^{1/n})^{2}} \\
+														 & = 2.
+				\end{split}
+			\]
+
+			Since the limit exists, the $\limsup$, $\alpha$ must be the limit. That is, $\alpha = 2$ and $R = 1/2$.
+		\item
+			\[
+				\boxed{
+					R = 3.
+				}
+			\]
+
+			Let $\alpha = \limsup_{n \to \infty} \lvert n^{3}/3^{n} \rvert^{1/n}$. Thus, $R = 1/\alpha$. But we've already shown that
+			\[
+				\limsup_{n \to \infty} \lvert n^{3} \rvert^{1/n} = \lim_{n \to \infty} \lvert n^{3} \rvert^{1/n} = 1.
+			\]
+			Thus,
+			\[
+				\limsup_{n \to \infty} \left \lvert \frac{n^{3}}{3^{n}} \right \rvert^{1/n} = \lim_{n \to \infty} \frac{\lvert n^{3} \rvert^{1/n}}{3} = \frac{1}{3}.
+			\]
+			
+			Then $R = 3$.
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
@@ -74,5 +245,50 @@
 			\]
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item If $\sum a_{n}$ then $a_{n}$ must be unbounded. Thus, there exists some $N$ such that for $n > N$, $a_{n} > 1$ is always true. But then
+			\[
+				\frac{a_{n}}{a_{n} + 1} > \frac{1}{2}
+			\]
+			is true for all $n > N$. Thus, the summand doesn't go to zero and the sum must diverge.
+		\item Note that since $a_{n} > 0$, $\{ s_{n} \}_{n}$ is increasing. Thus
+			\[
+				\begin{split}
+					\frac{a_{N + 1}}{s_{N + 1}} + \dots + \frac{a_{N + k}}{s_{N + k}} & \ge \frac{a_{N + 1} + \dots + a_{N + k}}{s_{N + k}} \\
+					& = \frac{s_{N + k} - s_{N}}{s_{N}} \\
+					& = 1 - \frac{s_{N}}{s_{N + k}}.
+				\end{split}
+			\]
+
+			Since $\sum a_{n}$ diverges, its partial sums cannot form a Cauchy sequence. Thus, there is some $k$ with $\lim_{N \to \infty} s_{N}/s_{N + k} \neq 0$. But then
+			\[
+				\frac{a_{N + 1}}{s_{N + 1}} + \dots + \frac{a_{N + k}}{s_{N + k}} > 1 - s > 0.
+			\]
+			This exactly implies that the partial sums of $\sum a_{n} / s_{n}$ do not form a Cauchy sequence --- there is no $N$ such that $n > N$ gives us that the $n$th and $n + k$th partial sums are less than $1 - s$ apart. Thus, $\sum a_{n} / s_{n}$ diverges.
+		\item Again, recall that  $\{ s_{n} \}_{n}$ is increasing. Thus,
+			\[
+				\begin{split}
+					\frac{1}{s_{n - 1}} - \frac{1}{s_{n}} & = \frac{s_{n} - s_{n - 1}}{s_{n} s_{n - 1}} \\
+									      & \ge \frac{a_{n}}{s_{n^{2}}}.
+				\end{split}
+			\]
+
+			Now we can calculate the partial sums of $\sum a_{n} / s_{n}^{2}$ ---
+			\[
+					\sum_{n = 1}^{N} \frac{a_{n}}{s_{n}^{2}} = \frac{a_{1}}{s_{1}^{2}} + \frac{1}{s_{1}} - \frac{1}{s_{N}}.
+			\]
+			Since $s_{N} \to \infty$, we have $1/s_{N} \to 0$, and thus,
+			\[
+				\sum_{n = 1}^{\infty} \frac{a_{n}}{s_{n}^{2}} = \frac{a_{1}}{s_{1}^{2}} + \frac{1}{s_{1}}.
+			\]
+		\item Note that
+			\[
+				\frac{a_{n}}{1 + n^{2} a_{n}} = \frac{1}{1/a_{n} + n^{2}} < \frac{1}{n^{2}}.
+			\]
+			Thus, by the comparison test, $\frac{a_{n}}{1 + n^{2} a_{n}}$ converges for positive $a_{n}$.
+	\end{enumerate}
+\end{solution}
 
 \end{document}
