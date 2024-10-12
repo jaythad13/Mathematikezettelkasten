@@ -1,0 +1,78 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{Mathematical Analysis I --- MATH 131}
+\assignment{Homework 6}
+\duedate{12th October 2024}
+
+\begin{document}
+
+\begin{problem}[Rudin chapter 3, exercise 6]
+	Investigate the behaviour (convergence or divergence) of $\sum a_{n}$ if
+	\begin{enumerate}
+		\item $a_{n} = \sqrt{n - 1} - \sqrt{n}$
+		\item $a_{n} = \frac{\sqrt{n + 1} - \sqrt{n}}{n}$ 
+		\item $a_{n} = (\sqrt[n]{n} - 1)^{n}$
+		\item $a_{n} = \frac{1}{1 + z^{n}}$ for complex $z$.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Rudin chapter 3, exercise 7]
+	Prove that the convergence of $\sum a_{n}$ implies the convergence of
+	\[
+		\sum \frac{\sqrt{a_{n}}}{n}
+	\]
+	if $a_{n} \ge 0$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Rudin chapter 3, exercise 8]
+	If $\sum a_{n}$ converges and if $\{ b_{n} \}_{n}$ is monotonic and bounded, prove that $\sum a_{n} b_{n}$ converges.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Rudin chapter 3, exercise 9]
+	Find the radius of convergence of each of the following power series:
+	\begin{enumerate}
+		\item $\sum n^{3} z^{n}$ 
+		\item $\sum \frac{2^{n}}{n!} z^{n}$ 
+		\item $\sum \frac{2^{n}}{n^{2}} z^{n}$ 
+		\item $\sum \frac{n^{3}}{3^{n}} z^{n}$
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Rudin chapter 3, exercise 10]
+	Suppose that the coefficients of the power series $\sum a_{n} z^{n}$ are integers, infinitely many of which are distinct from zero. Prove that the radius of convergence is at most $1$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Rudin chapter 3, exercise 11]
+	Suppose $a_{n} > 0$, $s_{n} = a_{1} + \dots + a_{n}$, and $\sum a_{n}$ diverges.
+	\begin{enumerate}
+		\item Prove that $\sum \frac{a_{n}}{1 + a_{n}}$ diverges.
+		\item Prove that
+			\[
+				\frac{a_{N + 1}}{s_{N + 1}} + \dots + \frac{a_{N + k}}{s_{N + k}} \ge 1 - \frac{s_{N}}{s_{N + k}}
+			\]
+			and deduce that $\sum \frac{a_{n}}{s_{n}}$ diverges.
+		\item Prove that
+			\[
+				\frac{a_{n}}{s_{n}^{2}} \le \frac{1}{s_{n - 1}} - \frac{1}{s_{n}}
+			\]
+			and deduce that $\sum \frac{a_{n}}{s_{n}^{2}}$ converges.
+		\item What can be said about
+			\[
+				\sum \frac{a_{n}}{1 + n a_{n}} \quad \text{and} \quad \sum \frac{a_{n}}{1 + n^{2} a_{n}}?
+			\]
+	\end{enumerate}
+\end{problem}
+
+\end{document}
