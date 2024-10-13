@@ -110,9 +110,16 @@ Collaborators: Mithra Karamchedu
 \end{problem}
 
 \begin{solution}
-	By comparison with harmonic series, we know that since $a_{n}$ converges, it cannot exceed the harmonic series at infinitely many $n$. That is, for sufficiently large $n$, we should have $a_{n} < 1/n$. But then $\sqrt{a_{n}} < 1/\sqrt{n}$ and thus, $\sqrt{a_{n}}/n < 1/n^{3/2}$.
+	We can write the partial sums of $\sum \sqrt{a_{n}} / n$ as the dot product of two vectors ---
+	\[
+		s_{n} = \frac{\sqrt{a_{1}}}{1} + \dots + \frac{\sqrt{a_{n}}}{n} = (\sqrt{a_{1}}, \dots, \sqrt{a_{n}}) \cdot \left ( 1, \frac{1}{2}, \dots, \frac{1}{n} \right ).
+	\]
 
-	We know $\sum 1/n^{3/2}$ converges. Thus, by the comparison test we also have that $\sum \sqrt{a_{n}}/n$ converges.
+	Then by Cauchy-Schwartz, we have
+	\[
+		\sum_{k = 1}^{n} \frac{\sqrt{a_{k}}}{k} \le \sqrt{\sum_{k = 1}^{n} a_{k}} \sqrt{\sum_{k = 1}^{n} \frac{1}{k^{2}}}
+	\]
+	But since both of the series on the right are convergent, their partial sums are bounded. Thus, the partial sums of $\sum \sqrt{a_{n}} / n$ are bounded. Since the terms are positive, the sequence of partial sums converges, and thus, so does the series.
 \end{solution}
 
 \pagebreak
