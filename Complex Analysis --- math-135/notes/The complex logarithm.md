@@ -1,6 +1,7 @@
 ---
 tags:
 - math-135/12
+- math-135/13
 - anal
 ---
 
@@ -87,7 +88,7 @@ z^a = e^{a \log z}
 $$
 where $\log$ can be any logarithm of $z$.
 
-While this is a valid definition, we need to know that $e^{i \theta} = \cos \theta + i \sin \theta$ in order to show that this is well defined.
+Note that then $z^a$ is not necessarily unique unless $a \in \mathbb{Z}$.
 
 ##### _example:_ two square roots!
 
@@ -95,3 +96,44 @@ Using this definition, we get
 $$
 z^{1/2} = \pm \lvert z \rvert^{1/2} e^{i \operatorname{Arg}(z)/2}.
 $$
+for $n \in \mathbb{Z}$.
+
+##### _theorem:_ logarithms of functions
+
+Let $\Omega$ be a simply connected region. Then for any non-vanishing holomorphic function $f : \Omega \to \mathbb{C}$, there exists a holomorphic function $g : \Omega \to \mathbb{C}$ such that
+$$
+e^g = f.
+$$
+
+###### _proof:_
+
+$g$ defined by
+$$
+g(z) = \int_{\gamma_{z}} \frac{f'(z)}{f(z)} \, dz + \log (f(z_{0}))
+$$
+where $\gamma_{z}$ is any path from $z_{0}$ to $z$, is that function.
+
+Clearly we have $f = g$ at $z_{0}$. Now we have
+$$
+f(z_{0}) e^{- g(z_{0})} = 1.
+$$
+We can show that this holds everywhere by differentiating —
+$$
+\begin{split}
+( f e^{-g} )' & = f' e^{-g} - f e^{-g} g' \\
+ & = f' e^g - f \frac{f'}{f} e^{-g} \\
+ & = 0.
+\end{split}
+$$
+
+##### _corollary:_ functions with identical zeroes differ by an exponential
+
+Given two holomorphic functions $f, g : \Omega \to \mathbb{C}$ with identical zeroes on simply connected region $\Omega$, 
+$$
+f = e^h g
+$$
+(except possibly at finitely many points) for some holomorphic $h$.
+
+###### _proof sketch:_
+
+$f/g$ only has [[Complex Analysis --- math-135/notes/Meromorphic functions and singularities#Removable singularities|removable singularities]] and so can be extended to a holomorphic function.
