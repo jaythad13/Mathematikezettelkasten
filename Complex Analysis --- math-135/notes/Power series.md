@@ -12,15 +12,7 @@ Any expansion of the form $\sum_{n \geq 0} a_{n} z^n$ is a power series in $z$ w
 
 Importantly, we can define a radius of convergence for any power series! (It might be zero though).
 
-##### _theorem:_ every power series has a radius of convergence (Abel)
-
-Given any power series, there exists $R \in [0, \infty]$ such that
-- if $\lvert z \rvert < R$, the series converges absolutely (and unifromly)
-- if $\lvert z \rvert > R$, the series diverges
-
-###### _proof sketch:_
-
-The [[Complex Analysis --- math-135/notes/(Metric) topology review#_proposition _ root test|root test]] gives us that $\limsup_{n \to \infty} \lvert a_{n} z^n \rvert ^{1/n}$ should be less than $1$. That is, $R = 1/\limsup_{n \to \infty} \lvert a_{n} \rvert^{1 / n}$.
+![[Mathematical Analysis I --- math-131/notes/Series#_theorem _ every power series has a radius of convergence (Abel)|Series]]
 
 The theorem that should follow is that the derivative of a convergent power series is the obvious one.
 

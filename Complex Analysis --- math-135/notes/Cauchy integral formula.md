@@ -125,7 +125,7 @@ Let $z_{0} \in \Omega$ be the limit point of $Z$. We know that we have a power s
 
 Then we can pick the first nonzero coefficient $a_{m}$ and write $f(z) = a_{m} (z - z_{0})^m(1 + g(z))$. On a sequence in $Z$, $w_{n} \to z_{0}$ and choose $w_{n} \neq 0$. Then we have $f(w_{n}) = a_{m}(w_{n} - z_{0})^n(1 + g(z))$. $f(w_{n}) = 0$, 
 
-Now we have that $f = 0$ on a disc around $z_{0}$, we can move the disc all the way to any other point $z$. Given the curve $\gamma$ that connects $z_{0}$ to $z$, we know that there is a [[Complex Analysis --- math-135/notes/(Metric) topology review#_proposition _ distance lemma|finite distance]] $\delta$ between $\gamma$ and $\partial \Omega$. Pick points $z_{0}, z_{1}, \dots, z$ along $\gamma$ such that no consecutive points are more than $\delta / 2$ apart. Then we keep getting $z_{n}$ as limit points and we can move along discs of radius $\delta / 2$ all the way to $z$.
+Now we have that $f = 0$ on a disc around $z_{0}$, we can move the disc all the way to any other point $z$. Given the curve $\gamma$ that connects $z_{0}$ to $z$, we know that there is a [[Complex Analysis --- math-135/notes/Analysis and (metric) topology review#_proposition _ distance lemma|finite distance]] $\delta$ between $\gamma$ and $\partial \Omega$. Pick points $z_{0}, z_{1}, \dots, z$ along $\gamma$ such that no consecutive points are more than $\delta / 2$ apart. Then we keep getting $z_{n}$ as limit points and we can move along discs of radius $\delta / 2$ all the way to $z$.
 
 ##### _corollary:_ unique analytic continuation
 

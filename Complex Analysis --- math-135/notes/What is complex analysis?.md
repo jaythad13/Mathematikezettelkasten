@@ -97,7 +97,7 @@ $$
 \lvert z - w \rvert & \ge \lvert w \rvert - \lvert z \rvert 
 \end{split}
 $$
-Naturally, with the triangle inequality, this magnitude gives us a metric on $\mathbb{C}$ that makes it a [[Complex Analysis --- math-135/notes/(Metric) topology review|metric/topological space]].
+Naturally, with the triangle inequality, this magnitude gives us a metric on $\mathbb{C}$ that makes it a [[Complex Analysis --- math-135/notes/Analysis and (metric) topology review|metric/topological space]].
 
 ### Polar representation
 

@@ -22,7 +22,7 @@ $$
 \left\lvert   \int_{\partial \Delta_{0}} f(z) \, dz \right  \rvert \le 4^n \left \lvert \int_{\partial \Delta_{n}} f(z) \, dz  \right \rvert 
 $$
 
-Since the triangles are compact sets that get arbitrarily small, [[Complex Analysis --- math-135/notes/(Metric) topology review#_proposition _ shrinking nested compact sets|their intersection is a single point ]] $z_{0}$.
+Since the triangles are compact sets that get arbitrarily small, [[Complex Analysis --- math-135/notes/Analysis and (metric) topology review#_proposition _ shrinking nested compact sets|their intersection is a single point ]] $z_{0}$.
 
 Then linearise $f(z)$ in an appropriately small triangle (where the error is less than $\varepsilon$) —
 $$

@@ -80,11 +80,7 @@ We say the sequence of functions $(f_{n})$ converges uniformly to $f$ on $A \sub
 
 Suppose each function in the sequence of functions $(f_{n})$ is bounded on $A \subset \mathbb{C}$ by $\lvert f_{n}(a) \rvert \le M_{n}$ for all $a \in A$ and some sequence of real numbers $(M_{n})$. Then $\sum_{n \ge 0} f_{n}$ converges uniformly on $A$ if $\sum_{n \ge 0} M_{n}$ converges. 
 
-##### _proposition:_ root test
-
-Given $\sum_{n \ge 0} a_{n}$, let $\alpha = \limsup_{n \to \infty} \lvert a_{n} \rvert^{1/n}$. Then
-1) if $\alpha > 1$, the series diverges
-2) if $\alpha < 1$, the series converges.
+![[Mathematical Analysis I --- math-131/notes/Series#_theorem _ the root test|Series]]
 
 ### Continuity
 
