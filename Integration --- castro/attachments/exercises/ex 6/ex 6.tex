@@ -1,0 +1,116 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{Integration}
+\assignment{Chapter 6 --- The Riemann-Stieltjes Integral}
+\duedate{}
+
+\begin{document}
+
+\begin{problem}[1.]
+	Suppose $\alpha$ increases on $[a, b]$ and  $a \le x_{0} \le b$, $\alpha$ is continuous at $x_{0}$, $f(x_{0}) = 1$, and $f(x) = 0$ if $x \neq x_{0}$. Prove that $f \in \mathscr{R}(\alpha)$ and that $\int_{}  f \, dx = 0$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[2.]
+	Suppose $f \ge 0$, $f$ is continuous on $[a, b]$, and $\int_{a}^{b} f \, dx = 0$. Prove that $f(x) = 0$ for all $x \in [a, b]$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[3.]
+	Define three functions  $\beta_{1}, \beta_{2}, \beta_{3}$ as follows: $\beta_{j}(x) = 0$ if $x < 0$, $\beta_{j}(x) = 1$ if $x > 0$ for  $j = 1, 2, 3$; $\beta_{1}(0) = 0$, $b_{2}(0) = 1$, and $\beta_{3}(0) = 1/2$.
+	\begin{enumerate}
+		\item Prove that $f \in \mathscr{R}(\beta_{1})$ if and only if $f(0+) = f(0)$ and that then
+			\[
+				\int_{} f \, d\beta_{1} = f(0).
+			\]
+		\item State and prove a similar result for $\beta_{2}$.
+		\item Prove that $f \in \mathscr{R}(\beta_{3})$ if and only if $f$ is continuous at $0$.
+		\item If $f$ is continuous at $0$ prove that
+			\[
+				\int_{} f \, d\beta_{1} = \int_{} f \, d\beta_{2} = \int_{} f \, d\beta_{3}.
+			\]
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[4.]
+	If $f(x) = 0$ for all irrational $x$, $f(x) = 1$ for all rational $x$, prove that $f \notin \mathscr{R}$ on $[a, b]$ for any $a < b$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[5.]
+	Suppose $f$ is a bounded real function on $[a, b]$, and $f^{2} \in \mathscr{R}$ on $[a, b]$. Does it follow that $f \in \mathscr{R}$? Does the answer change if we assume that $f^{3} \in \mathscr{R}$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[7.]
+	Suppose $f$ is a real function on $(0, 1]$ and $f \in \mathscr{R}$ on $[c, 1]$ for every $c > 0$. Define
+	\[
+		\int_{0}^{1} f(x) \, dx = \lim_{c \to 0} \int_{c}^{1} f(x) \, dx
+	\]
+	if this limit exists (and is finite).
+	\begin{enumerate}
+		\item If $f \in \mathscr{R}$ on $[0, 1]$, show that this definition of the integral agrees with the old one.
+		\item Construct a function $f$ such that the above limit exists, although it fails to exist with $\lvert f \rvert$ in place of $f$.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[8.]
+	Suppose $f \in \mathscr{R}$ on $[a, b]$ for every $b > a$ where $a$ is fixed. Define
+	\[
+		\int_{a}^{\infty} f(x) \, dx = \lim_{b \to \infty} \int_{a}^{b} f(x) \, dx
+	\]
+	if this limit exists (and is finite). In that case, we say that the integral on the left \emph{converges}. If it also converges after $f$ has been replaced by $\lvert f \rvert$, it is said to converge \emph{absolutely}.
+
+	Assume that $f(x) \ge 0$ and that $f$ decreases monotonically on $[1, \infty)$. Prove that
+	\[
+		\int_{1}^{\infty} f(x) \, dx 
+	\]
+	converges if and only if
+	\[
+		\sum_{n = 1}^{\infty} f(n)
+	\]
+	converges.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[10.]
+	Let $p$ and $q$ be positive real numbers such that
+	 \[
+		\frac{1}{p} + \frac{1}{q} = 1.
+	\]
+	Prove the following statements
+	\begin{enumerate}
+		\item If $u \ge 0$ and $v \ge 0$, then
+			\[
+				uv \le \frac{u^{p}}{p} + \frac{v^{q}}{q}.
+			\]
+			Equality holds if and only if $u^{p} = v^{q}$.
+		\item If $f \in \mathscr{R}(\alpha)$, $g \in \mathscr{R}(\alpha)$, $f \ge 0$, $g \ge 0$, and
+			\[
+				\int_{a}^{b} f^{p} \, d\alpha = 1 = \int_{a}^{b} g^{q} \, d\alpha,
+			\]
+			then
+			\[
+				\int_{a}^{b} fg \, d\alpha \le 1.
+			\]
+		\item If $f$ and $g$ are complex functions in $\mathscr{R}(\alpha)$, then
+			\[
+				\left \lvert \int_{a}^{b} fg \, d\alpha  \right \rvert \le \left ( \int_{a}^{b} \lvert f \rvert^{p} \, d\alpha  \right )^{1/p} \left ( \int_{a}^{b} \lvert g \rvert^{q} \, d\alpha  \right )^{1/q}. 
+			\]
+			This is \emph{H\"{o}lder's inequality}.
+		\item Show that H\"{o}lder's inequality is also true for ``improper'' integrals described in Exercises 7 and 8.
+	\end{enumerate}
+\end{problem}
+
+\end{document}
