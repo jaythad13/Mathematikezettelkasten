@@ -2,6 +2,7 @@
 tags:
 - math-131/12
 - math-131/13
+- math-131/14
 - anal
 ---
 
@@ -86,3 +87,88 @@ $$
 \sum_{k = 1}^\infty \frac{2^k}{2^k (\ln (2^k))^p} = \sum_{k = 1}^\infty \frac{1}{k^p (\ln 2)^p}
 $$
 converges. But this is just a geometric series which converges for $p > 1$.
+
+### The root and ratio tests
+
+Two of the most important tests for convergence of a series are the root test and the ratio tests. These allow us to leverage the convergence of the geometric series to determine the absolute convergence of other series
+
+##### _theorem:_ the root test
+
+For a sequence $\{ a_{n} \}_{n}$, let $\alpha = \limsup_{n \to \infty} \lvert a_{n} \rvert^{1/n}$
+1) if $\alpha < 1$, then $\sum a_{n}$ converges absolutely,
+2) if $\alpha > 1$ then $\sum a_{n}$ diverges,
+3) if $\alpha = 1$, the test is inconclusive.
+
+###### _proof:_
+
+Suppose $\alpha = \limsup_{n \to \infty} \lvert a_{n} \rvert^{1/n} < 1$. Then for any $\beta \in (\alpha, 1)$ there are only finitely many $n$ with $\lvert a_{n} \rvert^{1/n} \geq \beta$ (else the infinitely many $\lvert a_{n} \rvert^{1/n}$ would converge to some point in $[\beta, 1]$). In particular, there is some $N$ such that for all $n > N$, $\lvert a_{n} \rvert^{1/n} < 1$. Thus, for any $m > N$
+$$
+\begin{split}
+\sum_{n = 1}^m \lvert a_{n} \rvert & = \sum_{n = 1}^N \lvert a_{n} \rvert^{1/n} + \sum_{n = N + 1}^m (\lvert a_{n} \rvert^{1/n})^n \\
+ & \le \sum_{n = 1}^N \lvert a_{n} \rvert^{1/n} + \alpha^N \sum_{n = 1}^m \alpha^n \\
+ & \le \sum_{n = 1}^N \lvert a_{n} \rvert^{1/n} + \frac{\alpha^{N + 1}}{1 - \alpha} \\
+\end{split}
+$$
+Note that the last term is a common bound for any $m$! Now we have that the partial sums are bounded, and thus, converge.
+
+If $\alpha > 1$ then by a converse argument, there are infinitely many $n$ with $\lvert a_{n} \rvert^{1/n} > 1$ (they form the sequence converging to $\alpha$). Thus, $\lvert a_{n} \rvert > 1$ for all $n > N$, and thus, $a_{n}$ does not converge to $0$, which is necessary for the series to converge. 
+
+Note that $\sum 1 / n$ and $\sum 1/n^{2}$ both have that the limit of $n$th roots of $n$th terms is $1$, but the first diverges and the second converges absolutely.
+
+While this is a useful test, it can be difficult to compute the necessary limits. The ratio test is easier to compute but is weaker.
+
+##### _theorem:_ the ratio test
+
+For a sequence $\{ a_{n} \}_{n}$
+1) if $\limsup_{n \to \infty} \lvert a_{n + 1} \rvert / \lvert a_{n} \rvert < 1$ then $\sum a_{n}$ converges absolutely,
+2) if $\liminf_{n \to \infty} \lvert a_{n + 1} \rvert / \lvert a_{n} \rvert > 1$ then $\sum a_{n}$ diverges
+3) if $\lim \lvert a_{n + 1} \rvert / \lvert a_{n} \rvert = 1$ then the test is inconclusive.
+
+##### _theorem:_ the root and the ratio test
+
+If the ratio test is conclusive, so is the root test. In particular, for a sequence of positive numbers $\{ a_{n} \}_{n}$,
+$$
+\begin{split}
+\liminf_{ n \to \infty } \frac{a_{n + 1}}{a_{n}} & \leq \liminf_{ n \to \infty } a_{n}^{1/n} \\
+\limsup_{ n \to \infty } a_{n}^{1/n}  & \leq \limsup_{n \to \infty} \frac{a_{n + 1}}{a_{n}}.
+\end{split}
+$$
+
+###### _proof:_
+
+See [[Complex Analysis --- math-135/attachments/homework/hw 2/hw 2.pdf#page=3|complex analysis homework]].
+
+### Power series
+
+What if we want to convert an infinite series into an infinite polynomial? We get power series —
+
+##### _definition:_ power series
+
+Given a sequence $\{ a_{n} \}_{n}$, a power series is the sum
+$$
+\sum_{n = 0}^\infty a_{n} z^n
+$$
+which may or may not converge for $z \in \mathbb{C}$.
+
+##### _theorem:_ every power series has a radius of convergence (Abel)
+
+Given any power series $\sum a_{n} z^n$, there exists $R \in [0, \infty]$ such that
+- if $\lvert z \rvert < R$, the series converges absolutely (and uniformly)
+- if $\lvert z \rvert > R$, the series diverges
+
+###### _proof sketch:_
+
+The [[Mathematical Analysis I --- math-131/notes/Series#_theorem _ the root test|the root test]] gives us that $\limsup_{n \to \infty} \lvert a_{n} z^n \rvert ^{1/n}$ should be less than $1$. That is, $R = 1/\limsup_{n \to \infty} \lvert a_{n} \rvert^{1 / n}$.
+
+##### _example:_ the geometric series
+
+The geometric series is also an example of a power series (with all coefficients $1$). This has radius of convergence $1$.
+
+##### _example:_ the exponential
+
+The series $\sum \frac{z^n}{n!}$ converges on the whole complex plane. We can see this by using the relationship between the root and ratio test to get
+$$
+\limsup_{n \to \infty} \left( \frac{1}{n!} \right)^{1/n} \leq \limsup_{n \to \infty} \left( \frac{n!}{(n + 1)!} \right) \le 0.
+$$
+
+Thus, the radius of convergence is $\infty$.
