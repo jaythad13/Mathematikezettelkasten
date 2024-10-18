@@ -2,6 +2,7 @@
 tags:
 - math-176/18
 - math-176/20
+- math-176/21
 - alg-geo
 ---
 
@@ -113,7 +114,7 @@ Note that $r = 0$ if and only if $E(\mathbb{Q})$ is finite.
 
 After a long time spent conjecturing, Mazur classified the torsion subgroups of an elliptic curve —
 
-##### _theorem:_ uniform boundedness for torsion points
+##### _theorem:_ uniform boundedness for torsion points (Mazur)
 
 If $E$ is an elliptic curve over $\mathbb{Q}$, there are exactly fifteen possibilities for the torsion subgroup. Either
 $$
@@ -128,3 +129,46 @@ for $N \in \{ 1, 2, 3, 4 \}$.
 Lutz came up with a way to compute $E(\mathbb{Q})_{\text{tors}}$ concretely, given $E$.
 
 While we have such nice theorems for $E(\mathbb{Q})_{\text{tors}}$, it's really difficult to say anything nice about rank. It's a famous conjecture that the rank of curves is unbounded, but most mathematicians now believe that the rank of curves can't be greater than $30$.
+
+### Quartics
+
+Recall that [[Algebraic Geometry --- math-176/notes/Elliptic integrals#Computing irrational integrals of quartics and cubics|we can rewrite the quartic]]
+$$
+y^{2} = (1 - x^{2})(1 - k^{2} x^{2})
+$$
+as a non-singular elliptic curve
+$$
+Y^2 = X^{3} + A X + B
+$$as long as $k \neq 0, \pm 1$.
+
+But then what is the genus of this curve? If we calculate using the degree of the first expression, we get $g = 3$, but using the elliptic curve expression, we get $g = 1$. What's happening is that the quartic is singular at $\infty$.
+
+##### _proposition:_ $y^{2} = (1 - x^{2})(1 - k x^{2})$ is singular at infinity
+
+The homogenous polynomial $f(x_{1} : x_{2} : x_{0}) = x_{2}^{2} x_{0}^{2} - (x_{0}^{2} - x_{1}^{2})(x_{0}^{2} - k^{2} x_{1}^{2})$ has derivative $0$ at $(0 : 1 : 0)$.
+
+Another way of seeing that this is a problem point is by noticing that under the map that sends the quartic to the elliptic curve $(0 : 1 : 0)$ could correspond to two points — $(3(5k^{2} - 1), \pm_{5}4k(k^{2} - 1))$. Maybe we should try to split $(0 : 1 : 0)$ into two points?
+
+We can do this by working in $\mathbb{P}^3(F)$ instead. Consider the embedding
+$$
+\begin{split}
+\mathbb{P}^{2}(F) & \xhookrightarrow{} \mathbb{P}^3(F) \\
+(x_{1} : x_{2} : x_{0}) & \mapsto (x_{1} : x_{2} : x_{1}^{2} : x_{0}).
+\end{split}
+$$
+This has image
+$$
+\{ (x_{1} : x_{2} : x_{3} : x_{0}) \in \mathbb{P}^{3}(F) \mid x_{3} x_{0} - x_{1}^{2} = 0 \}.
+$$
+That is, we embed $\mathbb{P}^{2}(F)$ into the zero set of a polynomial.
+
+Under this embedding, we can rewrite the quartic as
+$$
+x_{2}^{2} = (x_{0} - x_{3})(x_{0} - k^{2} x_{3}).
+$$
+which gives us the original quartic embedded in $V(F)$ —
+$$
+V(F) = \{ (x_{1} : x_{2} : x_{3} : x_{0}) \in \mathbb{P}^{3}(F) \mid x_{1}^{2} - x_{3} x_{0} = (x_{0} - x_{3})(x_{0} - k^{2} x_{3}) = 0 \}.
+$$
+
+Now, there are two points at infinity in $V(F)$ — if $x_{0} = 0$ we can have $(x_{1} : x_{2} : x_{3} : x_{0}) = (0 : \pm k : 1 : 0)$. We claim that now $V(F)$ is a [[Algebraic Geometry --- math-176/notes/Non-singular projective varieties#_definition _ non-singular projective variety|non-singular projective variety]], but also that this is in fact an elliptic curve! This resolves our genus issue.
