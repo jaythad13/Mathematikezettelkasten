@@ -27,6 +27,42 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item We can evaluate $a^{4} - b^{4}$ using Mathematica to get
+			\[
+				\begin{split}
+					a^{4} - b^{4} & = -16 x_{0}^{7} x_{1} - 16 x_{0}^{5} x_{1}^{3} + 16 x_{0}^{3} x_{1}^{5} + 16 x_{0} x_{1}^{7} \\
+						      & = 16 x_{0} x_{1} (-x_{0}^{6} - x_{0}^{4} x_{1}^{2} + x_{0}^{2} x_{1}^{4} + x_{1}^{6}) \\
+						      & = 16 x_{0} x_{1} (-x_{0}^{4}(x_{0}^{2} + x_{1}^{2}) + x_{1}^{4}(x_{1}^{2} + x_{0}^{2})) \\
+						      & = 16 x_{0} x_{1} (x_{1}^{4} - x_{0}^4) (x_{1}^{2} + x_{0}^{2}) \\
+						      & = 16 x_{0} (x_{1}^{3} - x_{1} x_{0}^{2})(x_{1}^{2} + x_{0}^{2})^{2}
+				\end{split}
+			\]
+			Since $(x_{1} : x_{2} : x_{0})$ is a point on $E$, we have
+			\[
+				x_{2}^{2} x_{0} = x_{1}^{3} - x_{1} x_{0}^{2}
+			\]
+			and thus,
+			\[
+				\begin{split}
+					a^{4} - b^{4} & = 16 x_{0} (x_{1}^{3} - x_{1} x_{0}^{2})(x_{1}^{2} + x_{0}^{2})^{2} \\
+						      & = 16 x_{2}^{2} x_{0}^{2} (x_{1}^{2} + x_{0}^{2})^{2} \\
+						      & = c^{2}.
+				\end{split}
+			\]
+		\item By Fermat's theorem, since we have $a^{4} - b^{4} = c^{2}$ for all rational points on $E$, we also have $abc = 0$ for all rational points on $E$. Thus, one of $a$, $b$, $c$ must be zero.
+
+			Note that $a \neq 0$ since there are no rational solutions to $- b^{4} = c^{2}$. If $b = 0$, then $(x_{1} - x_{0})^{2} = 2 x_{0}^{2}$. Then  $x_{1} = (1 \pm \sqrt{2}) x_{0}$. But then either $x_{1} = x_{0} = 0$ or one of $x_{0}$ and $x_{1}$ is irrational.
+
+			Note that one of the factors of $c$ must be zero. If $x_{1}^{2} + x_{2}^{2} = 0$, then $x_{1} = x_{0} = 0$, and thus, $(x_{1} : x_{2} : x_{0}) = (0 : 1 : 0)$. If $x_{1}^{2} + x_{2}^{2} \neq 0$, then, $x_{2} x_{0}$ must be zero. If $x_{0} = 0$, then since $x_{2}^{2} x_{0} = x_{1}^{3} + x_{1} x_{0}^{2}$, we have $x_{1}^{3} = 0$ and $x_{1} = 0$. Thus, $(x_{1} : x_{2} : x_{0}) = (0 : 1 : 0)$. Finally, if we don't know $x_{1} = 0$, we must have $x_{2} = 0$, and thus, $x_{1}^{3} - x_{1} x_{0}^{2} = 0$. Note that we cannot have $x_{0} = 0$ since that would require $x_{1}^{3} = 0$ and thus, $(x_{1} : x_{2} : x_{0}) = (0 : 0 : 0)$. Thus, without loss of generality, we can assume $x_{0} = 1$. Then $x_{1}^{3} - x_{1} = 0$, and thus, $x_{1} = \pm 1$ or $x_{1} = 0$. Thus, $(x_{1} : x_{2} : x_{0})$ is $(1 : 0 : 1)$, $(-1 : 0 : 1)$, or $(0 : 0 : 1)$.
+
+		\item It's clear that $E$ has rank $0$ since $E(\mathbb{Q})$ is finite and we must have $E(\mathbb{Q}) = E(\mathbb{Q})_{\text{tors}}$.
+
+			$E(\mathbb{Q})_{\text{tors}}$ must be one of the only two groups of order $4$ --- $Z_{4}$ and $Z_{2} \times Z_{2}$. Notice that every element in $E(\mathbb{Q})_{\text{tors}} = E(\mathbb{Q})$ is its own inverse --- for the first three, $x_{2} = 0$, and the last element, $O_{E}$ is the identity. Thus, $E(\mathbb{Q})_{\text{tors}}$ cannot be cyclic (all elements have order strictly less than that of the group) and we must have $E(\mathbb{Q})_{\text{tors}} = Z_{2} \times Z_{2}$.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[Problem 2.]
@@ -48,6 +84,24 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item Using Mathematica, we can calculate $a^{4} - b^{4}$ and $c^{2}$. The former is a degree $16$ polynomial in $x_{1}$ and $x_{0}$. The latter is a degree $16$ polynomial in $x_{0}$, $x_{1}$, and $x_{2}$. By substituting in $x_{2}^{2} x_{0} = x_{1}^{3} - 11 x_{1} x_{0}^{2} + 14 x_{0}^{3}$ which we get from the elliptic curve equation, we get $a^{4} - b^{4} = c^{2}$. We omit the calculations due to the size (degree $16$) of the polynomials involved.
+		\item By Fermat's theorem, $abc = 0$. Again, we can't have $a = 0$ since $- b^{4} = c^{2}$ has no rational solutions, and we can't have $b = 0$ since we can verify in Mathematica that $b = 0$ does not have any rational solutions. Thus, $c = 0$.
+
+			If $c = 0$, we must have $x_{2} = 0$, $x_{0} = 0$ or $x_{1} = x_{0}$. We do not consider the other factors being zero since they have no rational solutions. If $x_{1} = 3 x_{0}$, either, $x_{0} = 0$ in which case we have  $x_{1} = x_{0}$ as before, or if $x_{0} \neq 0$, we can assume without loss of generality that $x_{0} = 1$. Then $x_{2}$ cannot be rational for $x_{2}^{2} = x_{1}^{3} - 11 x_{1} + 14$ with $x_{1} = 3$. We can verify in Mathematica that the last factor has non-zero rational roots.
+
+			Suppose $x_{0} = 0$. Then $x_{1}^{3} = 0$ as well, and thus, $x_{1} = 0$, by substituting into the elliptic curve equation. Thus, $(x_{1} : x_{2} : x_{0}) = (0 : 1 : 0)$.
+
+			Suppose $x_{2} = 0$. Then $x_{0} \neq 0$ since that would give all three $x_{1}, x_{2}, x_{0} = 0$. Thus, without loss of generality, we can assume $x_{0} = 1$. Then $0 = x_{1}^{3} - 11 x_{1} + 14$. We can verify with Mathematica that this only has one rational root --- $x_{1} = 2$. Thus, $(x_{1} : x_{2} : x_{0}) = (2 : 0 : 1)$.
+
+			Finally, if $x_{1} = x_{0}$ (and $x_{0} \neq 0$), we can assume without loss of generality that $x_{1} = x_{0} = 1$ and thus, $x_{2}^{2} = 1 - 11 + 14 = 4$. Thus, $x_{2} = \pm 2$ and we get two rational points ---  $(1 : 2 : 1)$ and $(1 : -2 : 1)$.
+		\item Again, it's clear that $E$ has rank $0$ since $E(\mathbb{Q})$ is a finite abelian group.
+
+			By finiteness, $E(\mathbb{Q})_{\text{tors}} = E(\mathbb{Q})$ and has order $4$. Thus, it is $Z_{2} \times Z_{2}$ or $Z_{4}$. All elements in $Z_{2} \times Z_{2}$ are their own inverses, but $(1 : 2 : 1)$ and $(1 : -2 : 1)$ are distinct elements that are each others inverses. Thus, $E(\mathbb{Q})_{\text{tors}} \cong Z_{4}$, not $Z_{2} \times Z_{2}$.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[Problem 3.]
@@ -68,5 +122,17 @@
 		\item Show that $E$ has torsion subgroup $E(\mathbb{Q})_{\text{tors}} \cong Z_{2}$ and rank $r = 0$.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item As previously, we calculate $a^{4} - b^{4}$ and $c^{2}$ using Mathematica. Substituting $x_{2}^{2} x_{0} = x_{1}^{3} - 11 x_{1} x_{0}^{2} - 14 x_{0}^{3}$ from the elliptic curve equation, we get that $a^{4} - b^{4} = c^{2}$. Again, we omit calculations due to the size of the polynomials.
+		\item By Fermat's theorem, $abc = 0$ for any rational point on $E$. We can't have $a = 0$ since $- b^{4} = c^{2}$ obviously has no rational solution. Further, we verify in Mathematica that $b = 0$ has no rational roots. Thus, $c = 0$.
+
+			Similar analysis to the previous problem gives us that for $c = 0$ we must have $x_{2} = 0$ or $x_{0} = 0$ since the other three factors force irrational solutions to $E$ ($(x_{1} + x_{0})$ and $(x_{1} + 2 x_{0})$) or have no rational solutions themselves (as verified in Mathematica). 
+
+			Suppose $x_{0} = 0$. Substituting this into the elliptic curve equation gives $x_{1} = 0$, and thus, $(x_{1} : x_{2} : x_{0}) = (0 : 1 : 0)$. If $x_{0} \neq 0$, we must have $x_{2} = 0$. Thus, since $x_{0} \neq 0$, we assume without loss of generality that $x_{0} = 1$ and find that $x_{1}^{3} - 11 x_{1} - 14 = 0$. This cubic has only one rational root --- $x_{1} = - 2$ giving us $(x_{1} : x_{2} : x_{0}) = (-2 : 0 : 1)$.
+		\item Again, $E$ has rank $0$ since $E(\mathbb{Q})$ is a finite abelian group, and is thus, pure torsion. Since $Z_{2}$ is the only one group of order $2$, $E(\mathbb{Q})_{\text{tors}} = Z_{2}$.
+	\end{enumerate}
+\end{solution}
 
 \end{document}
