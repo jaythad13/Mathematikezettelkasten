@@ -11,9 +11,67 @@
 \begin{problem}[4.]
 	Show that
 	\[
-		\int_{-\infty}^{\infty} \frac{x \sin{x}}{x^{2} + a^{2}} \, dx = \pi \frac{e^{-a}}{a}, \quad \text{for } a > 0.
+		\int_{-\infty}^{\infty} \frac{x \sin{x}}{x^{2} + a^{2}} \, dx = \pi e^{-a}, \quad \text{for } a > 0.
 	\]
 \end{problem}
+
+\begin{solution}
+	Consider $f : \mathbb{C} \setminus \{ \pm ai \} \to \mathbb{C}$ given by
+	\[
+		f(z) = \frac{z e^{iz}}{z^{2} + a^{2}}.
+	\]
+	Note that for $x \in \mathbb{R}$, we have
+	\[
+		\operatorname{Re} f(x) = \frac{x \sin{x}}{x^{2} + a^{2}}
+	\]
+	which is the desired function. Thus, we can integrate $f$ over $\gamma$, the upper semicircle of radius $R$ and consider the limit as $R \to \infty$.
+
+	Note that $f$ has a pole of order $1$ at $ai$ enclosed by $\gamma$ (for all $R > a$). If we denote by $\gamma_{1}$, the straight line from $-R$ to $R$, and by $\gamma_{2}$ the clockwise arc of the semicircle, the residue theorem gives us
+	\[
+		\int_{\gamma_{1}} f(z) \, dz + \int_{\gamma_{2}} f(z) \, dz = 2 \pi i \operatorname{res}_{ai} f
+	\]
+
+	To find the residue at $ai$, we compute
+	\[
+		\begin{split}
+			\lim_{z \to ai} (z - ai) \frac{z e^{iz}}{(z^{2} + a^{2})} & = \lim_{z \to ai} \frac{z e^{iz}}{z + ai} \\
+										& = \frac{ai e^{-a}}{2 a i} \\
+										& = \frac{e^{-a}}{2}.
+		\end{split}
+	\]
+
+	Thus,
+	\[
+		\int_{\gamma_{1}} f(z) \, dz + \int_{\gamma_{2}} f(z) \, dz = \pi i e^{-a}.
+	\]
+	To show the desired result, we just need to show that the integral over $\gamma_{2}$ vanishes as $R \to \infty$. To do so, consider the parametrisation of $\gamma_{2}$ by $z : \theta \mapsto R e^{i \theta}$ for $\theta \in [0, \pi]$. Then we get
+	\[
+		\int_{\gamma_{1}} \frac{e^{iz}}{z^{2} + a^{2}} \, dz = \int_{0}^{\pi} \frac{Re^{i\theta} e^{i R e^{i \theta}}}{R^{2} e^{i 2 \theta} + a^{2}} i R e^{i \theta} \, d \theta = \int_{0}^{\pi} \frac{i R^{2} e^{i 2 \theta} e^{i R e^{i \theta}}}{R^{2} e^{i 2 \theta} + a^{2}} \, d\theta
+	\]
+	which we can bound as follows.
+	\[
+		\begin{split}
+			\left \lvert \int_{0}^{\pi} \frac{i R^{2} e^{i 2 \theta} e^{i R e^{i \theta}}}{R^{2} e^{i 2 \theta} + a^{2}} i Re^{i \theta} \, d\theta \right \rvert & = R^{2} \left \lvert \int_{0}^{\pi} \frac{e^{i R (\cos{\theta} + 2 \theta)} e^{- R \sin{\theta}}}{R^{2} e^{i 2 \theta} + a^{2}} \, d\theta \right \rvert x \\
+																		   & \le R^{2} \left \lvert \int_{0}^{\pi} \frac{\lvert e^{i R (\cos{ \theta} + 2 \theta)} \rvert e^{-R \sin{\theta}}}{R^{2} - a^{2}} \, d \theta \right \rvert \\
+																		   & = \frac{R^{2}}{R^{2} - a^{2}} \left \lvert \int_{0}^{\pi} e^{-R \sin{\theta}} \, d\theta \right \rvert.
+		\end{split}
+	\]
+	We can see that this goes to zero as $R \to \infty$ by Jordan's inequality.
+
+	Thus, we have
+	\[
+		\int_{\gamma_{1}} \frac{z e^{iz}}{z^{2} + a^{2}} \, dz = \pi i e^{-a}.
+	\]
+	Notice that since $z \in \mathbb{R}$ for $\gamma_{1}$, using Euler's formula, as $R \to \infty$, we get
+	\[
+		\int_{-\infty}^{\infty} \frac{x \cos{x}}{x^{2} + a^{2}} \, dx + i \int_{-\infty} ^{\infty}\frac{x \sin{x}}{x^{2} + a^{2}} \, dx = \pi i e^{-a}.
+	\]
+	Since the right hand side clearly has no real part, we have
+	\[
+		\int_{-\infty}^{\infty} \frac{x \sin{x}}{x^{2} + a^{2}} \, dx = \pi e^{-a}.
+	\]
+	as desired.
+\end{solution}
 
 \pagebreak
 
