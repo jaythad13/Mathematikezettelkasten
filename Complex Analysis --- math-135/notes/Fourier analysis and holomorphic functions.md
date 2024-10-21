@@ -1,6 +1,7 @@
 ---
 tags:
 - math-135/13
+- math-135/14
 - anal
 ---
 
@@ -56,16 +57,62 @@ $$
 $$
 for all $x \in \mathbb{R}$.
 
-Now we can state the theorem, but we still need to translate the niceness conditions to the complex plane to prove it.
+Now we can state the theorem, but we still need to translate the niceness condition to the complex plane to prove it.
 
-##### _proposition:_ the Fourier inversion formula
+##### _definition:_ $\mathfrak{F}_{a}$
+
+A complex function $f$ is said to be in $\mathfrak{F}_{a}$ if it is holomorphic on the horizontal strip $S = \{ z \in \mathbb{C} \mid \lvert \operatorname{Im}z \rvert < a\}$, and there is a (uniform) constant of moderate decay $A$, such that
+$$
+\lvert f(x + iy) \rvert \le \frac{A}{1 + x^{2}}
+$$
+for $x + i y \in S$.
+
+##### _lemma:_ holomorphic functions of moderate decay have Fourier transform of rapid decay
+
+If $f \in \mathfrak{F}_{a}$ for any $a > 0$, then
+$$
+\lvert \hat{f}(\xi) \rvert \le Be^{-2 \pi b \lvert \xi \rvert }
+$$
+
+##### _theorem:_ the Fourier inversion formula
 
 If $f, \hat{f}$ are both of moderate decrease, then
 $$
-f(x) = \int_{\mathbb{R}} \hat{f}(\xi) e^{2 \pi i n \xi}  \, d\zeta 
+f(x) = \int_{\mathbb{R}} \hat{f}(\xi) e^{2 \pi i x \xi}  \, d \xi.
 $$
-
 
 ###### _proof sketch:_
 
-Contour integration something something (?)
+To prove this, we need the following lemma —
+
+##### _theorem:_ the Poisson summation formula
+
+If $f \in \mathfrak{F}_{a}$ for some $a > 0$, then
+$$
+\sum_{n \in \mathbb{Z}} f(n) = \sum_{n \in \mathbb{Z}} \hat{f}(n).
+$$
+
+###### _proof sketch:_
+
+We can use the [[Complex Analysis --- math-135/notes/Meromorphic functions and singularities#_theorem _ the residue formula|the residue formula]] by considering the function ${1}/{e^{2 \pi i z} - 1}$ which has simple poles at the integers with residues $1/2 \pi i$. But then
+$$
+g(z) = \frac{f(z)}{e^{2 \pi i z} - 1}
+$$
+gives us
+$$
+\sum_{n = -N}^N f(n) = \frac{1}{2 \pi i} \int_{\gamma_{N}} g(z) \, dz
+$$
+for a rectangle $\gamma_{N}$ that encloses exactly the integers $\{ -N, \dots, N \}$ and has top and bottom sides along the $\operatorname{Im} z = b$ and $\operatorname{Im} z = - b$ lines respectively.
+
+By definition,
+$$
+\begin{split}
+\sum_{n \in \mathbb{Z}} \hat{f}(n) & = \sum_{n = 0}^{\infty} \hat{f}(n + 1) + \sum_{n = 0}^\infty \hat{f}(-n) \\
+ & = \sum_{n = 0}^\infty \int_{\mathbb{R}} f(x) e^{- 2 \pi i (n + 1) x} \, dx + \sum_{n = 0}^\infty \int_{\mathbb{R}} f(x) e^{2 \pi i n x} \, dx.
+\end{split}
+$$
+Using the same trick as before we can shift the contours, getting
+$$
+\sum_{n \in \mathbb{Z}} \hat{f}(n) = \sum_{n = 0}^\infty \int_{\operatorname{Im} z = -b} f(z) e^{- 2 \pi i (n + 1) z} \, dz + \sum_{n = 0}^\infty \int_{\operatorname{Im} z = b} f(z) e^{2 \pi i n z} \, dz.
+$$
+Since we have chosen the signs cleverly enough, the exponentials on the inside of the integrals are all of magnitude strictly less than $1$. Then, using the uniform convergence of the sum, we can interchange the order of summation and 
