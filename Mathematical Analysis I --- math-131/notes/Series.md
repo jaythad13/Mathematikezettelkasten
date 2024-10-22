@@ -3,6 +3,7 @@ tags:
 - math-131/12
 - math-131/13
 - math-131/14
+- math-131/15
 - anal
 ---
 
@@ -14,17 +15,17 @@ Given a sequence of complex numbers $\{ a_{n} \}_{n}$, we say the series $\sum_{
 
 Note that since $\mathbb{C}$ is a [[Mathematical Analysis I --- math-131/notes/Cauchy sequences#_definition _ completeness|complete metric space]], the sum converges if and only if $\{ s_{n} \}_{n}$ is a [[Mathematical Analysis I --- math-131/notes/Cauchy sequences#_definition _ Cauchy sequence|Cauchy sequence]]. Using this, and other results about convergent sequences, we can get conditions for a series to converge —
 
-##### _proposition:_ absolute convergence implies convergence
+##### _definition, proposition:_ absolute convergence, absolute convergence implies convergence.
 
-If $\sum_{n = 1}^\infty \lvert a_{n} \rvert$ converges, then $\sum_{n = 1}^\infty a_{n}$ converges.
+If $\sum \lvert a_{n} \rvert$ converges, then $\sum a_{n}$ converges, and we say $\sum a_{n}$ converges absolutely.
 
 ###### _proof:_
 
-Let $\overline{s}_{n}$ be the partial sums of the absolute values and $s_{n}$ be the regular partial sums. If $\sum_{n = 1}^\infty \lvert a_{n} \rvert$ converges, then given any $\varepsilon > 0$, there exists $N$ such that for $N < m < n$, we have $\lvert s_{n} - s_{m} \rvert = \lvert \lvert a_{m + 1} \rvert + \dots + \lvert a_{n} \rvert \rvert < \varepsilon$. Since all of the terms are absolute values (and thus, non-negative), we have $\lvert a_{m + 1} \rvert + \dots + \lvert a_{n} \rvert < \varepsilon$. Thus, by triangle inequality, $\lvert s_{n} - s_{m} \rvert = \lvert a_{m + 1} + \dots + a_{n} \rvert \le \lvert a_{m + 1} \rvert + \dots + \lvert a_{n} \rvert < \varepsilon$. That is, $\{ s_{n} \}_{n}$ is Cauchy, and thus, the series converges.
+Let $\overline{s}_{n}$ be the partial sums of the absolute values and $s_{n}$ be the regular partial sums. If $\sum \lvert a_{n} \rvert$ converges, then given any $\varepsilon > 0$, there exists $N$ such that for $N < m < n$, we have $\lvert s_{n} - s_{m} \rvert = \lvert \lvert a_{m + 1} \rvert + \dots + \lvert a_{n} \rvert \rvert < \varepsilon$. Since all of the terms are absolute values (and thus, non-negative), we have $\lvert a_{m + 1} \rvert + \dots + \lvert a_{n} \rvert < \varepsilon$. Thus, by triangle inequality, $\lvert s_{n} - s_{m} \rvert = \lvert a_{m + 1} + \dots + a_{n} \rvert \le \lvert a_{m + 1} \rvert + \dots + \lvert a_{n} \rvert < \varepsilon$. That is, $\{ s_{n} \}_{n}$ is Cauchy, and thus, the series converges.
 
 ##### _proposition:_ partials sums of a positive series must be bounded
 
-If $a_{n} \ge 0$ for all $n$ and $\sum_{n = 1}^\infty a_{n}$ converges, then the sequence of partial sums, $\{ s_{n} \}_{n}$ must be bounded.
+If $a_{n} \ge 0$ for all $n$ and $\sum a_{n}$ converges, then the sequence of partial sums, $\{ s_{n} \}_{n}$ must be bounded.
 
 ###### _proof:_
 
@@ -78,7 +79,7 @@ converges. As a geometric series, this converges if and only if $2^{1 - p} < 1$.
 
 ##### _example:_ adding a log $n$ factor
 
-We can also show that the harmonic series, $\sum_{n = 1}^\infty \frac{1}{n}$, which doesn't converge, will converge if we add a small but growing term to the denominator. Specifically, the series
+We can also show that the harmonic series, $\sum \frac{1}{n}$, which doesn't converge, will converge if we add a small but growing term to the denominator. Specifically, the series
 $$
 \sum_{n = 2}^\infty \frac{1}{n (\ln n)^p}
 $$
@@ -137,38 +138,3 @@ $$
 ###### _proof:_
 
 See [[Complex Analysis --- math-135/attachments/homework/hw 2/hw 2.pdf#page=3|complex analysis homework]].
-
-### Power series
-
-What if we want to convert an infinite series into an infinite polynomial? We get power series —
-
-##### _definition:_ power series
-
-Given a sequence $\{ a_{n} \}_{n}$, a power series is the sum
-$$
-\sum_{n = 0}^\infty a_{n} z^n
-$$
-which may or may not converge for $z \in \mathbb{C}$.
-
-##### _theorem:_ every power series has a radius of convergence (Abel)
-
-Given any power series $\sum a_{n} z^n$, there exists $R \in [0, \infty]$ such that
-- if $\lvert z \rvert < R$, the series converges absolutely (and uniformly)
-- if $\lvert z \rvert > R$, the series diverges
-
-###### _proof sketch:_
-
-The [[Mathematical Analysis I --- math-131/notes/Series#_theorem _ the root test|the root test]] gives us that $\limsup_{n \to \infty} \lvert a_{n} z^n \rvert ^{1/n}$ should be less than $1$. That is, $R = 1/\limsup_{n \to \infty} \lvert a_{n} \rvert^{1 / n}$.
-
-##### _example:_ the geometric series
-
-The geometric series is also an example of a power series (with all coefficients $1$). This has radius of convergence $1$.
-
-##### _example:_ the exponential
-
-The series $\sum \frac{z^n}{n!}$ converges on the whole complex plane. We can see this by using the relationship between the root and ratio test to get
-$$
-\limsup_{n \to \infty} \left( \frac{1}{n!} \right)^{1/n} \leq \limsup_{n \to \infty} \left( \frac{n!}{(n + 1)!} \right) \le 0.
-$$
-
-Thus, the radius of convergence is $\infty$.
