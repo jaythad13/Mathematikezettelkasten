@@ -15,7 +15,28 @@ It turns out that the absolute convergence is an even stronger condition than we
 
 Let $f : \mathbb{N} \to \mathbb{N}$ be a bijection. Then the series $\sum a_{f(n)}$ is a rearrangement of the series $\sum a_{n}$.
 
-If a series converges absolutely, then rearrangements don't matter at all.
+##### _theorem:_ non-absolutely convergent series can be rearranged to anything
+
+Let $\sum a_{n}$ be a series that converges but not absolutely. For any $\alpha \le \beta$ in the extended real numbers, there exists a rearrangement $\sum a_{f(n)}$ with partial sums $s_{n}'$ such that
+$$
+\liminf_{n \to \infty } s_{n}' = \alpha
+$$
+and
+$$
+\limsup_{ n \to \infty } s_{n}' = \beta.
+$$
+
+###### _proof sketch:_
+
+Notice that if $\sum a_{n}$ converges but not absolutely, then we must have infinitely many positive and negative $a_{n}$. We also must have that the series of negative terms and the series of positive terms both diverge to $\pm \infty$.
+
+Consider sequences $\alpha_{n} \to \alpha$ and $\beta_{n} \to \beta$. Then rearrange first however many positive terms so that their sum exceeds $\beta_{1}$, then arrange negative terms so that the sum of all the terms (the first few positive and these negatives) is less than $\alpha_{1}$, and so on and so forth. We can do this since the positive and negative subseries diverge.
+
+It's clear by choosing alternate partial sums that we have the desired upper and lower limits.
+
+
+
+However, if a series converges absolutely, then rearrangements don't matter at all.
 
 ##### _theorem:_ absolutely convergent series are invariant under rearrangement
 
@@ -23,25 +44,20 @@ If $\sum a_{n}$ converges absolutely, then $\sum a_{f(n)} = \sum a_{n}$.
 
 ###### _proof:_
 
-First we show that the rearrangement converges. If $\sum a_{n}$ converges absolutely, then the tail sums of absolute values must go to zero. That is, for all $\varepsilon > 0$, there is some $N$ such that
+If $\sum a_{n}$ converges absolutely, then the tail sums of absolute values must go to zero. That is, for all $\varepsilon > 0$, there is some $N$ such that
 $$
 \sum_{n = m}^M \lvert a_{n} \rvert < \varepsilon.
 $$
 for all $M \ge m \ge N$
 
-Now choose $n_{0}, \dots, n_{N - 1}$ such that $f(n_{i}) = i$ and let $m' = \max \{ n_{0}, \dots, n_{N - 1} \}$. Thus,
-$$
-\sum_{n = m + 1}^\infty \lvert a_{f(n)} \rvert \le \sum_{n = N}^\infty \lvert a_{n} \rvert < \varepsilon.
-$$
-since each of the partial sums of the rearrangement's tail contains strictly fewer terms than that on the tail of the original series.
-
-Now suppose the series converged to $L$. We know that the rearrangement converges, so we know it's tail goes to zero. With $m$ as before, note that
+Now choose $n_{0}, \dots, n_{N - 1}$ such that $f(n_{i}) = i$ and let $M' > \max \{ n_{0}, \dots, n_{N - 1} \}$. Now consider the difference of partial sums
 $$
 \begin{split}
-\left\lvert  L - \sum_{n = 0}^{m + 1} a_{f(n)}   \right\rvert & \le \left\lvert  L - \sum_{n = 0}^{N}  \right\rvert
+\lvert s_{M'} - s'_{M'} \rvert  & = \left\lvert  \sum_{n = 1}^{M'} a_{n} - \sum_{n = 1}^{M'} a_{f(n)}  \right\rvert \\
+ & = \left\lvert  \sum_{n = N}^{M'} a_{n} - \sum_{n \neq n_{i}}^{M'} a_{f(n)}  \right\rvert \\
+ & \le \sum_{n = N}^{M'} \lvert a_{n} \rvert  - \sum_{n \neq n_{i}}^{M'} \lvert a_{f(n)} \rvert \\
+ & \le \sum_{n = N}^M' \lvert a_{n} \rvert \\
+  & < \varepsilon.
 \end{split}
 $$
-
-##### _theorem:_ non-absolutely convergent series can be anything
-
-
+for large enough $M'$. Thus, the rearrangement converges to the same value.
