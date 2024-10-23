@@ -102,7 +102,10 @@ gives us
 $$
 \sum_{n = -N}^N f(n) = \frac{1}{2 \pi i} \int_{\gamma_{N}} g(z) \, dz
 $$
-for a rectangle $\gamma_{N}$ that encloses exactly the integers $\{ -N, \dots, N \}$ and has top and bottom sides along the $\operatorname{Im} z = b$ and $\operatorname{Im} z = - b$ lines respectively.
+for a rectangle $\gamma_{N}$ that encloses exactly the integers $\{ -N, \dots, N \}$ and has top and bottom sides along the $\operatorname{Im} z = b$ and $\operatorname{Im} z = - b$ lines respectively. Thus,
+$$
+\sum_{n \in \mathbb{Z}} f(n) = \lim_{ N \to \infty } \frac{1}{2 \pi i} \int_{\gamma_{N}} f(z) \, dz 
+$$
 
 By definition,
 $$
@@ -115,4 +118,15 @@ Using the same trick as before we can shift the contours, getting
 $$
 \sum_{n \in \mathbb{Z}} \hat{f}(n) = \sum_{n = 0}^\infty \int_{\operatorname{Im} z = -b} f(z) e^{- 2 \pi i (n + 1) z} \, dz + \sum_{n = 0}^\infty \int_{\operatorname{Im} z = b} f(z) e^{2 \pi i n z} \, dz.
 $$
-Since we have chosen the signs cleverly enough, the exponentials on the inside of the integrals are all of magnitude strictly less than $1$. Then, using the uniform convergence of the sum, we can interchange the order of summation and 
+Since we have split the $z$ with positive and negative real imaginary part cleverly enough, the exponentials $(e^{- 2 \pi i z})^n$ and $(e^{2 \pi i z})^n$ on the inside of the integrals are all of magnitude strictly less than $1$. Then, using the uniform convergence of the sum, we can interchange the order of summation and integration to get
+$$
+\begin{split}
+\sum_{n \in \mathbb{Z}} \hat{f}(n) & = \int_{\operatorname{Im} z = -b} f(z)  \sum_{n = 0}^\infty (e^{-2 \pi i z})^n \, dz + \int_{\operatorname{Im} z = b} f(z)  \sum_{n = 0}^\infty   (e^{2 \pi i z})^n\, dz. \\
+ & = \int_{\operatorname{Im} z = - b} \frac{f(z)}{1 - e^{ - 2 \pi i z}}  \, dz + \int_{\operatorname{Im} z = b} \frac{f(z)}{1 - e^{2 \pi i z}} \, dz. 
+\end{split}
+$$
+
+Doing case work on the sign of of $z$, and noticing that the integral of $g$ along the vertical sides of $\gamma_{N}$ vanishes as $N \to \infty$, we can see that this is exactly the sum we want —
+$$
+\sum_{n \in \mathbb{Z}} \hat{f}(n) = \int_{\gamma_{N}} g(z) \, dz = \sum_{n \in \mathbb{Z}} f(n).
+$$
