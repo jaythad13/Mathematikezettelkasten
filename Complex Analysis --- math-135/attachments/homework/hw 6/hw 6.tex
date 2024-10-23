@@ -83,6 +83,39 @@
 	for all $\xi$ real.
 \end{problem}
 
+\begin{solution}
+	Notice that the integrand has poles of order $2$ at $\pm i$. The residue at $i$ is
+	\[
+		\begin{split}
+			\operatorname{res}_{i} \frac{e^{2 \pi i z \xi}}{(1 + z^{2})^{2}} & = \lim_{z \to i} \frac{1}{1!} \frac{d}{dz} \left ( (z - i)^{2} \frac{e^{2 \pi i z \xi}}{(z^{2} + 1)^{2}} \right ) \\
+											 & = \lim_{z \to i} \frac{d}{dz} \left ( \frac{e^{2 \pi i z \xi}}{(z + i)^{2}} \right ) \\
+											 & = \lim_{z \to i} 2 \pi i \xi \frac{e^{2 \pi i z \xi}}{(z + i)^{2}} - 2 \frac{e^{2 \pi i z \xi}}{(z + i)^{3}} \\
+											 & = 2 \pi i \xi \frac{e^{- 2 \pi \xi}}{-4} - 2 \frac{e^{-2 \pi \xi}}{(-8 i)} \\
+											 & = - 2 \pi i \xi \frac{e^{- 2 \pi \xi}}{4} - i\frac{e^{- 2 \pi \xi}}{4} \\
+											 & = - \frac{i}{4}(2 \pi \xi + 1) e^{- 2 \pi \xi}.
+		\end{split}
+	\]
+	Thus, for $\xi > 0$, we have
+	\[
+		\operatorname{res}_{i} \frac{e^{2 \pi i z \xi}}{(1 + z^{2})^{2}} = - \frac{i}{4} (2 \pi \lvert \xi \rvert + 1) e^{- 2 \pi \lvert \xi \rvert}
+	\]
+
+	Similarly, we get the residue at $-i$ as
+	\[
+		\begin{split}
+			\operatorname{res}_{-i} \frac{e^{2 \pi i z \xi}}{(1 + z^{2})^{2}} & = \lim_{z \to - i} 2 \pi i \xi \frac{e^{2 \pi i z \xi}}{(z - i)^{2}} - 2 \frac{e^{2 \pi i z \xi}}{(z - i)^{3}} \\
+											  & = 2 \pi i \xi \frac{e^{2 \pi \xi}}{-4} - 2 \frac{e^{2 \pi \xi}}{(8 i)} \\
+											  & = - 2 \pi i \xi \frac{e^{2 \pi \xi}}{4} + i\frac{e^{2 \pi \xi}}{4} \\
+											  & = - \frac{i}{4}(2 \pi \xi + 1) e^{2 \pi \xi} \\
+											  & = \frac{i}{4} (- 2 \pi \xi + 1) e^{2 \pi \xi}.
+		\end{split}
+	\]
+	For $\xi < 0$, this is
+	\[
+		\operatorname{res}_{-i} \frac{e^{2 \pi i z \xi}}{(1 + z^{2})^{2}} = \frac{i}{4} (2 \pi \lvert \xi \rvert + 1) e^{- 2 \pi \lvert \xi \rvert}.
+	\]
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[11.]
