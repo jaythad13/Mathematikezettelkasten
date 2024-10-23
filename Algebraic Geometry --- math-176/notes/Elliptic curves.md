@@ -3,6 +3,7 @@ tags:
 - math-176/18
 - math-176/20
 - math-176/21
+- math-176/23
 - alg-geo
 ---
 
@@ -172,3 +173,72 @@ V(F) = \{ (x_{1} : x_{2} : x_{3} : x_{0}) \in \mathbb{P}^{3}(F) \mid x_{1}^{2} -
 $$
 
 Now, there are two points at infinity in $V(F)$ — if $x_{0} = 0$ we can have $(x_{1} : x_{2} : x_{3} : x_{0}) = (0 : \pm k : 1 : 0)$. We claim that now $V(F)$ is a [[Algebraic Geometry --- math-176/notes/Non-singular projective varieties#_definition _ non-singular projective variety|non-singular projective variety]], but also that this is in fact an elliptic curve! This resolves our genus issue.
+
+Can we generalise this? Yes!
+
+##### _theorem:_ quartics are elliptic curves
+
+Suppose $F$ is a field with $\operatorname{char} F > 3$. Consider the quartic curve with a singular point at $(0 : 1 : 0)$, $E$, given by
+$$
+E : y^{2} = a_{4} x^4 + a_{3} x^3 + a_{2} x^{2} + a_{1} x + a_{0}
+$$
+and denote the quartic in $x$ by $f$.
+
+Then given
+$$
+\begin{split}
+A & = \frac{-a^{2} + 3 a_{1} a_{3} - 12 a_{0} a_{4}}{3} \\
+B & = \frac{2 a_{2}^{3} - 9 a_{1} a_{2} a_{3} + 27 a_{0} a_{3}^{2} + 27 a_{1}^{2} a_{4} - 72 a_{0} a_{2} a_{4}}{27}.
+\end{split}
+$$
+
+1) $f$ has distinct roots in $\overline{F}$ if and only if $\Delta(E) = -16(4 A^3 + 27 B^2) \neq 0$.
+2) $E(F)$ is a non-singular projective variety if and only if $\Delta(E) = 0$.
+3) There exists a substitution over $\overline{F}$ that places $y^{2} = f$ in short Weierstrass form — $Y^{2} = X^{3} + A X + B$.
+
+###### _proof:_
+
+For 1), just consider the product of the roots times $a_{4}^6$, and multiply out using Vieta's formulas relating the sums and products of roots to the coefficient, and get back $A$ and $B$.
+
+Just look at the columns long enough to show that two of them are always linearly independent. Or, do all the strange linear algebra that Goins did in class.
+
+Since $f$ has a factorisation over $\overline{F}$, use it — write
+$$
+\frac{y^{2}}{(x - e_{4})^4} = a_{4} \frac{(x - e_{1})(x- e_{2})(x - e_{3})(x - e_{4})}{(x - e_{4})^4}
+$$
+and thus, get the cubic
+$$
+\frac{y}{(x - e_{4})^4} = a_{4} \left( \frac{x - e_{1}}{x - e_{4}} \right)\left( \frac{x - e_{2}}{x - e_{4}} \right) \left( \frac{x - e_{3}}{x - e_{4}} \right).
+$$
+
+This becomes the elliptic curve we want if we substitute
+$$
+\begin{split}
+X & = \frac{f'(e_{4})}{x - e_{4}} + \frac{f''(e_{4})}{6} \\
+Y & = f'(e_{4}) \frac{y}{(x - e_{4})^{2}}
+\end{split}
+$$
+Note that $f'(e_{4}) \neq 0$ since $f$ does not have repeated roots.
+
+Note that by dividing by $e_{4}$, we send points where $x = e_{4}$ to infinity.
+
+However, note that these substitutions only work over $\overline{F}$, but there are substitutions that work even over $F \neq \overline{F}$. these are written in Cassels' *Lectures on Elliptic Curves* and the lecture notes.
+
+We can generalise this even further!
+
+##### _theorem:_ quadric intersections are elliptic curves
+
+Say $A, B$ are two $4$-by-$4$ symmetric matrices and form homogenous polynomials
+$$
+\begin{split}
+f_{1}(x_{1} : x_{2} : x_{3} : x_{0}) = \frac{1}{2} A (x_{1}, x_{2}, x_{3}, x_{0}) \cdot (x_{1}, x_{2}, x_{3}, x_{0}) \\
+f_{2}(x_{1} : x_{2} : x_{3} : x_{0}) = \frac{1}{2} B (x_{1}, x_{2}, x_{3}, x_{0}) \cdot (x_{1}, x_{2}, x_{3}, x_{0})
+\end{split}
+$$
+Then
+$$
+V(F) = \{ P \in \mathbb{P}^3(F) \mid f_{1}(p) = f_{2}(p) = 0 \}
+$$
+is an elliptic curve, called a quadric intersection
+
+However, this is a difficult result.
