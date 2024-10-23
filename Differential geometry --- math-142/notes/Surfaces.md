@@ -67,7 +67,7 @@ This means that the image of $D$ in $\mathbb{R}^3$ looks like $D$, but it could 
 
 ##### _definition:_ proper patch
 
-A coordinate patch $x : D \to \mathbb{R}^3$ is a proper patch if it has [[Continuity#_definition _ continuity at point, continuous function|continuous]] inverse $x ^{-1}$.
+A coordinate patch $x : D \to \mathbb{R}^3$ is a proper patch if it has [[Calculus --- spivak/notes/Continuity#_definition _ continuity at point, continuous function|continuous]] inverse $x ^{-1}$.
 
 ##### _definition:_ surface
 
