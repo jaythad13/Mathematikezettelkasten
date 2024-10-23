@@ -12,7 +12,7 @@ Any expansion of the form $\sum_{n \geq 0} a_{n} z^n$ is a power series in $z$ w
 
 Importantly, we can define a radius of convergence for any power series! (It might be zero though).
 
-![[Mathematical Analysis I --- math-131/notes/Series#_theorem _ every power series has a radius of convergence (Abel)|Series]]
+![[Mathematical Analysis I --- math-131/notes/Power series#_theorem _ every power series has a radius of convergence (Abel)|Power series]]
 
 The theorem that should follow is that the derivative of a convergent power series is the obvious one.
 
