@@ -1,0 +1,72 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 176 ---}
+\assignment{Homework assignment \#8}
+\duedate{25th October 2024}
+
+\begin{document}
+
+\begin{problem}[Problem 1.]
+	Fix an odd rational prime $p \in \mathbb{Z}$. Consider the elliptic curve $y^{2} = x^{3} - x$, and denote $\lvert E(\mathbb{F}_{p}) \rvert = 1 + \lvert \{ (x, y) \in \mathbb{A}^{2}(\mathbb{F}_{p}) \mid y^{2} = x^{3} - x \} \rvert$. For example, $\lvert E(\mathbb{F}_{3}) \rvert = 4$, $\lvert E(\mathbb{F}_{5}) \rvert = 8$, and $\lvert E(\mathbb{F}_{7}) \rvert = 8$, and $\lvert E(\mathbb{F}_{11}) \rvert = 12$. We denote $a_{p} = p + 1 - \lvert E(\mathbb{F}_{p}) \rvert$. Also, consider the function
+	\[
+		f(q) = q \prod_{n = 1}^{\infty} (1 - q^{4n})^{2} (1 - q^{8n})^{2}.
+	\]
+
+	This is an example of a \emph{modular form}. Denote by $b_{p}$ the coefficient $q^{p}$ in the series of $f(q)$. For example, $b_{2} = 0$, $b_{3} = 0$, and $b_{5} = -2$. For all primes $2 < p < 100$, compute a table of the integers $\lvert E(\mathbb{F}_{p}) \rvert$, $a_{p}$, and $b_{p}$. Do you see some patterns?
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Problem 2.]
+	Fix $a, b, c, d \in \mathbb{C}$ and consider the cubic equation $a x_{1}^{3} + b x_{2}^{3} + c x_{0}^{3} + d x_{1} x_{2} x_{0} = 0$. This curve is known as the \emph{twisted Dwork family}.
+	\begin{enumerate}
+		\item Show that with the following substitutions we have the cubic equation $E : y^{2} = x^{3} + A x + B$.
+			\begin{align*}
+				x & = 3 d^{2} - 36 \frac{a b x_{1} x_{2}}{x_{0}^{2}} & & & A & = -27 d(d^{3} + 24 a b c) \\
+				  & & & \text{and} \\
+				y & = 108 \frac{a^{2} b x_{1}^{3} - a b^{2} x_{2}^{3}}{x_{0}^{3}} & & & A & = 54 (d^{6} + 36 a b c d^{3} + 216 a^{2} b^{2} c^{2}).
+			\end{align*}
+		\item Show that $E$ is an elliptic curve if and only if $a b c(d^{3} + 27 a b c) = 0$.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Problem 3.]
+	Let $F$ be a field. Consider the curve $E : y^{2} = a_{4} x^{4} + a_{3} x^{3} + a_{2} x^{2} + a_{1} x + a_{0}$ with $a_{i} \in F$, where $a_{4}$ is a square in $F$. Recall that $O_{E} = (0 : 1 : 0)$ is a singular point.
+	\begin{enumerate}
+		\item Substitute $(x_{1} : x_{2} : x_{3} : x_{0}) = (x : y : x^{2} : 1)$ and consider the projective variety:
+			\[
+				\tilde{E}(F) = \left \{ (x_{1} : x_{2} : x_{3} : x_{0}) \in \mathbb{P}^{3}(F) \Big | \begin{split}
+						x_{2}^{2} & = x_{0} x_{3} \\
+						x^{2} & = a_{4} x_{3}^{2} + a_{3} x_{1} x_{3} + a_{2} x_{0} x_{3} + a_{1} x_{0} x_{1} + a_{0} x_{0}^{2}
+				\end{split} \right \}.
+			\]
+			Show that any affine point $\tilde{P} = (x_{1} : x_{2} : x_{3} : 1)$  in $\tilde{E}(F)$ is the same as an affine point $P = (x_{1} : x_{2} : 1)$ in $E(F)$ when $x_{0} = 1$.
+		\item Show that $\tilde{E}(F)$ has \emph{two} ``points at infinity'' arising when $x_{0} = 0$, namely $(0 : \pm \sqrt{a_{4}} : 1 : 0)$.
+		\item Fix $k \in F$ with $k \neq -1, 0, 1$. What are the ``points at infinity'' on $y^{2} = (1 - x^{2})(1 - k^{2} x^{2})$?
+		\item We see that $E : y^{2} = (1 - x^{2})(1 - k^{2} x^{2})$ is a \emph{quadric intersection}, that is, it can be expressed as the intersection of the sets of zeroes of two homogeneous quadratic polynomials. Show that these quadratic polynomials $x_{1}^{2} - x_{0} x_{3} = x^{T} A x$ and $x_{2}^{2} - (x_{0} - x_{3})(x_{0} - k^{2} x_{3}) = x^{T} B x$ can be expressed as products of matrices in terms of
+			\begin{align*}
+				x & = \begin{bmatrix}
+					x_{1} \\
+					x_{2} \\
+					x_{3} \\
+					x_{0}
+				\end{bmatrix} & A & = \frac{1}{2} \begin{bmatrix}
+				2 & 0 & 0 & 0 \\
+				0 & 0 & 0 & 0 \\
+				0 & 0 & 0 & -1 \\
+				0 & 0 & -1 & 0
+				\end{bmatrix} & & \text{and} & B & = \frac{1}{2} \begin{bmatrix}
+			0 & 0 & 0 & 0 \\
+			0 & 2 & 0 & 0 \\
+			0 & 0 & -2k^{2} & k^{2} + 1 \\
+			0 & 0 & k^{2} + 1 & -2
+			\end{bmatrix}.
+			\end{align*}
+	\end{enumerate}
+\end{problem}
+
+\end{document}
