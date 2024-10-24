@@ -1,0 +1,76 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 131 --- Mathematical Analysis I}
+\assignment{Homework 7}
+\duedate{2nd November 2024}
+
+\begin{document}
+
+\begin{problem}[Rudin chapter 3, exercise 12.]
+	Suppose $a_{n} > 0$ and $\sum a_{n}$ converges. Put
+	\[
+		r_{n} = \sum_{m = n}^{\infty} a_{m}.
+	\]
+	\begin{enumerate}
+		\item Prove that
+			\[
+				\frac{a_{m}}{r_{m}} + \dots + \frac{a_{n}}{r_{n}} > 1 - \frac{r_{n}}{r_{m}}
+			\]
+			if $m < n$, and deduce that $\sum \frac{a_{n}}{r_{n}}$ diverges.
+		\item Prove that
+			\[
+				\frac{a_{n}}{\sqrt{r_{n}}} < 2(\sqrt{r_{n}} - \sqrt{r_{n + 1}})
+			\]
+			and deduce that $\sum \frac{a_{n}}{\sqrt{r_{n}}}$ converges.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Rudin chapter 3, exercise 13.]
+	Prove that the Cauchy product of two absolutely convergent series converges absolutely.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Rudin chapter 3, exercise 17.]
+	Fix $\alpha > 1$. Take $x_{1} > \sqrt{\alpha}$, and define
+	\[
+		x_{n + 1} = \frac{\alpha + x_{n}}{1 + x_{n}} = x_{n} + \frac{\alpha - x_{n}^{2}}{1 + x_{n}}.
+	\]
+	\begin{enumerate}
+		\item Prove that $x_{1} > x_{3} > x_{5} > \cdots$.
+		\item Prove that $x_{2} < x_{4} < x_{6} < \cdots$.
+		\item Prove that $\lim_{n \to \infty} x_{n} = \sqrt{\alpha}$.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Rudin chapter 4, exercise 1.]
+	Suppose $f$ is a real function defined on $\mathbb{R}$ which satisfies
+	\[
+		\lim_{h \to 0} f(x + h) - f(x - h) = 0
+	\]
+	for every $x \in \mathbb{R}$. Does this imply that $f$ is continuous?
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Rudin chapter 4, exercise 2.]
+	If $f$ is a continuous mapping of a metric space $X$ into a metric space $Y$, prove that
+	\[
+		f^{\text{img}}(\overline{E}) \subset \overline{f^{\text{img}}(E)}
+	\]
+	for every set $E \subset X$. Show, by an example, that $f^{\text{img}}(\overline{E})$ can be a proper subset of $\overline{f^{\text{img}}(E)}$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Rudin chapter 4, exercise 3.]
+	Let $f$ be a continuous real function on a metric space $X$. Let $Z(f)$ (the \emph{zero set} of $f$) be the set of all $p \in X$ at which $f(p) = 0$. Prove that $Z(f)$ is closed.
+\end{problem}
+
+\end{document}
