@@ -136,4 +136,23 @@
 	\end{enumerate}
 \end{problem}
 
+\pagebreak
+
+\begin{problem}[1.]
+	Suppose $f$ is continuous and of moderate decrease and $\hat{f}(\xi) = 0$ for all $\xi \in \mathbb{R}$. Show that $f = 0$ by completing the following outline:
+	\begin{enumerate}
+		\item For each fixed real number $t$, consider the two functions
+			\begin{align*}
+				A(z) & = \int_{-\infty}^{t} f(x) e^{-2 \pi i z(x - t)} \, dx & \text{and} & & B(z) = - \int_{t}^{\infty} f(x) e^{- 2 \pi i z(x - t)} \, dx.
+			\end{align*}
+			Show that $A(\xi) = B(\xi)$ for all $\xi \in \mathbb{R}$.
+		\item Prove that the function $F$ equal to $A$ in the closed upper half-plane, and $B$ in the lower half-plane is entire and bounded, and thus, constant. In fact, show that $F = 0$.
+		\item Deduce that
+			\[
+				\int_{-\infty}^{t} f(x) \, dx,
+			\]
+			for all $t$, and conclude that $f = 0$.
+	\end{enumerate}
+\end{problem}
+
 \end{document}
