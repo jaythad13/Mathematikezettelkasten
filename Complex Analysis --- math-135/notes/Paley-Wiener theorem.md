@@ -13,9 +13,31 @@ For some of the theorems in this note, we do not assume that $f$ is holomorphic,
 
 If $\hat{f}$ satisfies the decay condition $\lvert \hat{f}(\xi) \rvert \leq A e^{2 \pi a \lvert \xi \rvert}$ for some $a, A \in \mathbb{R}$, then $f$ can be extended to a holomorphic function on any horizontal strip $S_{b} = \{ z \mid \lvert \operatorname{Im} z  \rvert < b \}$ for any positive $b < a$.
 
+###### _proof sketch:_
+
+Define the sequence of entire functions $f_{n}$ by
+$$
+f_{n}(z) = \int_{-n}^n \hat{f}(\xi) e^{2 \pi i \xi z}  \, d\xi 
+$$
+and
+$$
+f(z) = \int_{-\infty}^\infty \hat{f}(\xi) e^{2 \pi i \xi z} \, d\xi \le A \int_{-\infty}^\infty e^{- 2 \pi a \lvert \xi \rvert } e^{2 \pi b \lvert \xi \rvert } \, d\xi 
+$$
+which must then converge for $b < a$.
+
+Also,
+$$
+\lvert f(z) - f_{n}(z) \rvert \le A \int_{-\infty}^{-n} e^{-2 \pi a \lvert \xi \rvert } e^{2 \pi b \lvert \xi \rvert } \, d\xi + A \int_{n}^{\infty} e^{-2 \pi a \lvert \xi \rvert } e^{2 \pi b \lvert \xi \rvert } \, d\xi
+$$
+which converges to $0$ as $n \to \infty$, and thus, $f_{n} \to f$.
+
 ##### _corollary:_ exponential Fourier transforms of locally zero functions are zero
 
 If $\hat{f}(\xi) = \mathcal{O}(e^{-2 \pi a \lvert \xi \rvert})$, $a > 0$, and $f$ vanishes on some non-empty open interval, then $f = 0$ everywhere.
+
+###### _proof sketch:_
+
+This is just a consequence of [[Complex Analysis --- math-135/notes/Cauchy integral formula#_theorem _ identity theorem|the identity theorem]].
 
 ##### _theorem:_ Paley-Wiener theorem
 
@@ -88,7 +110,7 @@ $$
  & = C e^{- 2 \pi y(\xi - M)}
 \end{split}
 $$
-where the last step follows by Lebesgue dominated convergence.
+where the last step follows by Lebesgue dominated convergence (?)
 
 This clearly goes to zero as $y \to \infty$, so we must have $\hat{f^+_{\varepsilon}}(\xi) = 0$, and thus $\hat{f}(\xi) = 0$.
 

@@ -83,7 +83,7 @@ $$
 
 ###### _proof sketch:_
 
-To prove this, we need the following lemma —
+
 
 ##### _theorem:_ the Poisson summation formula
 
