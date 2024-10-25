@@ -10,15 +10,11 @@ If rings are meant to be a very broad generalisation of the integers, then integ
 
 ##### _definition:_ integral domain
 
-An integral domain is a commutative ring with identity where every non-zero element is not a zero divisor.
-
-##### _definition:_ integral domain
-
-An integral domain is a commutative ring with identity where every non-zero element is not a zero divisor.
+An integral domain is a [[Abstract Algebra I --- math-171/notes/Rings#_definition _ commutative ring|commutative ring with identity]] where every non-zero element is not a [[Abstract Algebra I --- math-171/notes/Rings#_definition _ zero divisor|zero divisor]].
 
 ##### _example:_ integral domain
 
-Integral domains are named for the integers.
+Integral domains are named for the integers $\mathbb{Z}$. It's the prototypical example! Also $\mathbb{Z} /n\mathbb{Z}$ is an integral domain if and only if $n$ is prime.
 
 ### Facts about integral domains
 

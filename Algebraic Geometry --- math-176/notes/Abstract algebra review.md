@@ -4,38 +4,67 @@ tags:
 - alg-geo
 - math-176/12
 - math-176/13
+- math-176/25
 ---
 
 ### (Abelian) groups
 
 We should know what a group is —
+
 ![[Abstract Algebra I --- math-171/notes/Groups, and why you should care#_definition _ group, identity, inverse|Groups, and why you should care]]
+
 Note that we don't have to assume that the identity and inverses work on the left and the right — just assuming left inverses is enough to prove that the identity and inverses are unique and work on the right too.
 
 Typically in this class we care about abelian groups
+
 ![[Abstract Algebra I --- math-171/notes/Groups, and why you should care#_definition _ abelian group, commutative group|Groups, and why you should care]]
 
 ### (Commutative) rings (with identity)
 
 Obviously, we need to know what a ring is
+
 ![[Abstract Algebra I --- math-171/notes/Rings#_definition _ rings|Rings]]
+
 Again, we don't actually have to assume $(R, +)$ is abelian — distributivity forces $(R, +)$ to be abelian
 
 We will never care about rings without multiplicative identity
+
 ![[Abstract Algebra I --- math-171/notes/Rings#_definition _ ring with identity|Rings]]
+
 We use almost the same definition, but we explicitly exclude the trivial ring where $0 = 1$.
 
 And we will almost always be working with commutative rings
 ![[Abstract Algebra I --- math-171/notes/Rings#_definition _ commutative ring|Rings]]
 
+### Integral domains
+
+We should also recall the definition of integral domains (and thus, we need to recall the definition of zero divisors)
+
+![[Abstract Algebra I --- math-171/notes/Rings#_definition _ zero divisor|zero divisor]]
+
+![[Abstract Algebra I --- math-171/notes/Integral domains#_definition _ integral domain|integral domains]]
+
+We really like integral domains because they have nice properties like cancellation!
+
+![[Abstract Algebra I --- math-171/notes/Integral domains#_proposition _ cancellation in integral domains|Integral domains]]
+
 ### Fields
 
 We should know what a division ring is
+
 ![[Abstract Algebra I --- math-171/notes/Rings#_definition _ division ring|Rings]]
-By unit, we mean that it has an inverse. We should also know what a field is
+
+By unit, we mean that it has an inverse —'
+
+![[Abstract Algebra I --- math-171/notes/Rings#_definition _ unit|Rings]]
+
+The set of all units in a ring $R$ is often denoted $R^*$ and is a group under multiplication!
+
+Obviously we're building up to what a field is —
+
 ![[Abstract Algebra I --- math-171/notes/Fields#_definition _ fields|Fields]]
 
-The characteristic a way to compare the size of a field, using the integers as our point of comparison. 
+The characteristic is a way to compare the size of a field, using the integers as our point of comparison. 
 
 ##### _definition:_ characteristic
 
@@ -92,3 +121,35 @@ We can see that $\mathbb{Q}(d)$ is a field since $(x^{2} - d)$ will be a maximal
 Note that $\overline{\mathbb{Q}}$ is not $\mathbb{C}$. In fact, $\mathbb{C}$ is not even an algebraic extension of $\mathbb{Q}$ since $\mathbb{R} / \mathbb{Q}$ is not algebraic, breaking the tower of extensions ($\pi, e$, for example are not algebraic numbers).
 
 Using the [[Complex Analysis --- math-135/notes/Cauchy integral formula#_theorem _ the fundamental theorem of algebra|fundamental theorem of algebra]] and the fact that $\mathbb{C} \cong \mathbb{R}[x] / (x^{2} + 1)$, we can see that $\overline{\mathbb{R}} = \mathbb{C}$.
+
+### Polynomial rings
+
+We can define polynomials for rings too, and these polynomials form rings themselves!
+
+##### _definition:_ polynomial, degree, $R[x]$
+
+Given a ring $R$, a polynomial $p$ is a formal sum
+$$
+a_{n} x^n + \dots + a_{1} x + a_{0}
+$$
+with $a_{n} \in R$. 
+
+If $n$ is the largest integer with $a_{n} \neq 0$, we say say the degree of $p$ is $\operatorname{deg}(p) = n$. If all coefficients $a_{n}$ are $0$, we say $\operatorname{deg}(p) = -\infty$.
+
+##### _proposition:_ polynomial rings are rings
+
+$R[x]$ is a ring under the obvious multiplication and addition.
+
+##### _proposition:_ polynomials over integral domains are really nice
+
+If $R$ is an integral domain, then $R[x]$ is an integral domain with the same units as $R^*$ and $\operatorname{deg}(pq) = \operatorname{deg} p + \operatorname{deg} q$ for any $p, q \in R[x]$.
+
+###### _proof:_
+
+Suppose $R$ is an integral domain. Consider any non-zero polynomials $p = \sum a_{j} x^j$ and $q = \sum b_{j} x^j$ of degrees $m$ and $n$ in $R[x]$. Their product has a leading term $a_{m} b_{n} x^{m + n}$ and since $R$ is an integral domain, $a_{m} b_{n} \neq 0$. Thus, $\operatorname{deg}(pq) = p + q > -\infty$ giving $pq \neq 0$.
+
+Suppose $R[x]$ is an integral domain. Notice that $R$ is isomorphic to the subring of polynomials of degree $0$ (with the $0$ polynomial added). Thus, $R$ inherits the integral domain property from $R[x]$.
+
+##### _corollary:_ multivariate polynomial rings
+
+If $R$ is an integral domain, then $R[x_{1}, \dots, x_{n}, x_{n + 1}] = R[x_{1}, \dots, x_{n}][x_{n + 1}]$, defined inductively, is an integral domain.
