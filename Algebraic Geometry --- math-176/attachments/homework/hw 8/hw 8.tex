@@ -2,7 +2,7 @@
 \usepackage{hw-preamble}
 
 \name{Jayden Thadani}
-\class{MATH 176 ---}
+\class{MATH 176 --- Algebraic Geometry}
 \assignment{Homework assignment \#8}
 \duedate{25th October 2024}
 
@@ -17,6 +17,42 @@
 	This is an example of a \emph{modular form}. Denote by $b_{p}$ the coefficient $q^{p}$ in the series of $f(q)$. For example, $b_{2} = 0$, $b_{3} = 0$, and $b_{5} = -2$. For all primes $2 < p < 100$, compute a table of the integers $\lvert E(\mathbb{F}_{p}) \rvert$, $a_{p}$, and $b_{p}$. Do you see some patterns?
 \end{problem}
 
+\begin{solution}
+	\begin{center}
+		\begin{tabular}{| c | c | c | c |}
+			\hline
+			$p$ & $a_{p}$ & $E(\mathbb{F}_{p}) $ & $b_{p}$ \\ \hline \hline
+			$2$ & $0$ & $3$ & $0$ \\ \hline
+			$3$ & $0$ & $4$ & $0$ \\ \hline
+			$5$ & $-2$ & $8$ & $-2$ \\ \hline
+			$7$ & $0$ & $8$ & $0$ \\ \hline
+			$11$ & $0$ & $12$ & $0$ \\ \hline
+			$13$ & $6$ & $8$ & $6$ \\ \hline
+			$17$ & $2$ & $16$ & $2$ \\ \hline
+			$19$ & $0$ & $20$ & $0$ \\ \hline
+			$23$ & $0$ & $24$ & $0$ \\ \hline
+			$29$ & $-10$ & $40$ & $-10$ \\ \hline
+			$31$ & $0$ & $32$ & $0$ \\ \hline
+			$37$ & $-2$ & $36$ & $-2$ \\ \hline
+			$41$ & $10$ & $32$ & $10$ \\ \hline
+			$43$ & $0$ & $36$ & $0$  \\ \hline
+			$47$ & $0$ & $48$ & $0$ \\ \hline
+			$53$ & $14$ & $40$ & $14$ \\ \hline
+			$59$ & $0$ & $60$ & $0$ \\ \hline
+			$61$ & $-10$ & $72$ & $-10$ \\ \hline
+			$67$ & $0$ & $68$ & $0$ \\ \hline
+			$71$ & $0$ & $72$ & $0$ \\ \hline
+			$73$ & $-6$ & $80$ & $-6$ \\ \hline
+			$79$ & $0$ & $80$ & $0$ \\ \hline
+			$83$ & $0$ & $84$ & $0$ \\ \hline
+			$89$ & $10$ & $80$ & $10$ \\ \hline
+			$97$ & $18$ & $80$ & $18$ \\ \hline
+		\end{tabular}
+	\end{center}
+
+	From this table we notice that for all $p$, $a_{p} = b_{p}$ and for all $p > 2$, $E(\mathbb{F}_{p})$ is divisible by $4$.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[Problem 2.]
@@ -26,11 +62,37 @@
 			\begin{align*}
 				x & = 3 d^{2} - 36 \frac{a b x_{1} x_{2}}{x_{0}^{2}} & & & A & = -27 d(d^{3} + 24 a b c) \\
 				  & & & \text{and} \\
-				y & = 108 \frac{a^{2} b x_{1}^{3} - a b^{2} x_{2}^{3}}{x_{0}^{3}} & & & A & = 54 (d^{6} + 36 a b c d^{3} + 216 a^{2} b^{2} c^{2}).
+				y & = 108 \frac{a^{2} b x_{1}^{3} - a b^{2} x_{2}^{3}}{x_{0}^{3}} & & & B & = 54 (d^{6} + 36 a b c d^{3} + 216 a^{2} b^{2} c^{2}).
 			\end{align*}
-		\item Show that $E$ is an elliptic curve if and only if $a b c(d^{3} + 27 a b c) = 0$.
+		\item Show that $E$ is an elliptic curve if and only if $a b c(d^{3} + 27 a b c) \neq 0$.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item Inputting the values for $x$ and $y$ into the elliptic curve equation in Mathematica, after clearing non-zero coefficients and denominators, we get
+			\[
+				a^{2} x_{1}^{6} + 2 a b x_{1}^{3} x_{2}^{3} + b^{2} x_{2}^{6} - (c^{2} x_{0}^{6} + 2 c d x_{0}^{4} x_{1} x_{2} - d^{2} x_{0}^{2} x_{1}^{2} x_{2}^{2}) = 0
+			\]
+			which is equivalent to
+			\[
+				(a x_{1}^{3} + b x_{2}^{3})^{2} = (c x_{0}^{3} + d x_{0} x_{1} x_{2})^{2}.
+			\]
+			But if $a x_{1}^{3} + b x_{2}^{3} + cx_{0}^{3} + d x_{0} x_{1} x_{2} = 0$, then  $a x_{1}^{3} + b x_{2}^{3} = -(c x_{0}^{3} + d x_{0} x_{1} x_{2})$, and thus,
+			\[
+				(a x_{1}^{3} + b x_{2}^{3})^{2} = (c x_{0}^{3} + d x_{0} x_{1} x_{2})^{2}
+			\]
+			which is equivalent to
+			\[
+				y^{2} = x^{3} + A x + B.
+			\]
+		\item The discriminant of $E$ is
+			\[
+				\Delta E = -16(4 A^{3} + 27 B^{2}) = -2176782336 a^{3} b^{3} c^{3} (27 abc + d^{3})
+			\]
+			This is non-zero if and only if the $abc(d^{3} + 27 a b c) \neq 0$, which is gives us the desired equivalent condition to $E$ being an elliptic curve.
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
@@ -40,8 +102,8 @@
 		\item Substitute $(x_{1} : x_{2} : x_{3} : x_{0}) = (x : y : x^{2} : 1)$ and consider the projective variety:
 			\[
 				\tilde{E}(F) = \left \{ (x_{1} : x_{2} : x_{3} : x_{0}) \in \mathbb{P}^{3}(F) \Big | \begin{split}
-						x_{2}^{2} & = x_{0} x_{3} \\
-						x^{2} & = a_{4} x_{3}^{2} + a_{3} x_{1} x_{3} + a_{2} x_{0} x_{3} + a_{1} x_{0} x_{1} + a_{0} x_{0}^{2}
+						x_{1}^{2} & = x_{0} x_{3} \\
+						x_{2}^{2} & = a_{4} x_{3}^{2} + a_{3} x_{1} x_{3} + a_{2} x_{0} x_{3} + a_{1} x_{0} x_{1} + a_{0} x_{0}^{2}
 				\end{split} \right \}.
 			\]
 			Show that any affine point $\tilde{P} = (x_{1} : x_{2} : x_{3} : 1)$  in $\tilde{E}(F)$ is the same as an affine point $P = (x_{1} : x_{2} : 1)$ in $E(F)$ when $x_{0} = 1$.
@@ -68,5 +130,95 @@
 			\end{align*}
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item Suppose $\tilde{P} = (x_{1} : x_{2} : x_{3} : x_{0}) \in \tilde{E}(F)$. Then, $x = x_{1}$, $y = x_{2}$, and $x^{2} = x_{3} = x_{1}^{2}$. But then
+			\[
+				\begin{split}
+					y^{2} & = a_{4} x a_{4} x^{4} + a_{3} x^{3} + a_{2} x^{2} + a_{1} x + a_{0}
+				\end{split}.
+			\]
+			which is just an affine point in $E(F)$.
+		\item Suppose $x_{0} = 0$. Then $x_{1}^{2} = x_{0} x_{3} = 0$ as well. Thus,
+			\[
+				x_{2}^{2} = a_{4} x_{3}^{3}.
+			\]
+			Thus, neither $x_{2}$ nor $x_{3}$ can be $0$ since that would mean both of them are $0$, and thus, all of them are $0$. Assume without loss of generality, $x_{3} = 1$, and
+			\[
+				x_{2}^{2} = a_{4}.
+			\]
+			Thus, the two points at infinity are $(0 : \pm \sqrt{a_{4}} : 1 : 0)$.
+		\item We can write
+			\[
+				y^{2} = (1 - x^{2})(1 - k^{2} x^{2})
+			\]
+			and thus
+			\[
+				y^{2} = 1 - (1 + k^{2}) x^{2} + k^{2} x^{4}.
+			\]
+
+			That is, $a_{4} = \pm k^{2}$. Thus, the points at infinity on $y^{2} = (1 - x^{2})(1 - k^{2} x^{2})$ are $(0 : \pm k : 1 : 0)$.
+		\item We can just compute the matrix products.
+			\[
+				\begin{split}
+					x^{T} A x & = \frac{1}{2}
+					\begin{bmatrix}
+						x_{1} & x_{2} & x_{3} & x_{0}
+					\end{bmatrix} \begin{bmatrix}
+						2 & 0 & 0 & 0 \\
+						0 & 0 & 0 & 0 \\
+						0 & 0 & 0 & -1 \\
+						0 & 0 & -1 & 0
+					\end{bmatrix} \begin{bmatrix}
+						x_{1} \\
+						x_{2} \\
+						x_{3} \\
+						x_{0}
+					\end{bmatrix} \\
+							      & = \frac{1}{2} \begin{bmatrix}
+								      x_{1} & x_{2} & x_{3} & x_{0}
+							      \end{bmatrix} \begin{bmatrix}
+							      	2 x_{1} \\
+								0 \\
+								- x_{0} \\
+								- x_{3}
+							      \end{bmatrix} \\
+							      & = \frac{1}{2} (2 x_{1}^{2} - 2 x_{3} x_{0}) \\
+							      & = x_{1}^{2} - x_{3} x_{0}
+				\end{split}
+			\]
+			\[
+				\begin{split}
+					x^{T} B x & = \frac{1}{2} \begin{bmatrix}
+						x_{1} & x_{2} & x_{3} & x_{0}
+					\end{bmatrix}
+					\begin{bmatrix}
+						0 & 0 & 0 & 0 \\
+						0 & 2 & 0 & 0 \\
+						0 & 0 & -2k^{2} & k^{2} + 1 \\
+						0 & 0 & k^{2} + 1 & -2
+					\end{bmatrix}
+					\begin{bmatrix}
+						x_{1} \\
+						x_{2} \\
+						x_{3} \\
+						x_{0}
+					\end{bmatrix} \\
+						  & = \frac{1}{2} \begin{bmatrix}
+							  x_{1} & x_{2} & x_{3} & x_{0}
+						  \end{bmatrix}
+						  \begin{bmatrix}
+						  	0 \\
+							2 x_{2} \\
+							-2k^{2} x_{3} + (k^{2} + 1) x_{0} \\
+							(k^{2} + 1) x_{3} - 2 x_{0}
+						  \end{bmatrix} \\
+						  & = \frac{1}{2} (2 x_{2}^{2} - 2 k^{2} x_{3}^{2} + 2 (k^{2} + 1) x_{0} x_{3} -2 x_{0}^{2}) \\
+						  & = x_{2}^{2} = (x_{0} - x_{3})(x_{0} - k^{2} x_{3})
+				\end{split}
+			\]
+	\end{enumerate}
+\end{solution}
 
 \end{document}
