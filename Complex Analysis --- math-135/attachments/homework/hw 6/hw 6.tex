@@ -84,10 +84,18 @@
 \end{problem}
 
 \begin{solution}
-	Notice that the integrand has poles of order $2$ at $\pm i$. The residue at $i$ is
+	Notice that the integrand can be extended to a meromorphic function
 	\[
 		\begin{split}
-			\operatorname{res}_{i} \frac{e^{2 \pi i z \xi}}{(1 + z^{2})^{2}} & = \lim_{z \to i} \frac{1}{1!} \frac{d}{dz} \left ( (z - i)^{2} \frac{e^{2 \pi i z \xi}}{(z^{2} + 1)^{2}} \right ) \\
+			f & :  \mathbb{C} \setminus \{ \pm i \} \to \mathbb{C} \\
+			  & : z \mapsto \frac{e^{-2 \pi i z \xi}}{(1 + z^{2})^{2}}
+		\end{split}
+	\]
+
+	$f$ has poles of order $2$ at $\pm i$. The residue at $i$ is
+	\[
+		\begin{split}
+			\operatorname{res}_{i} f & = \lim_{z \to i} \frac{1}{1!} \frac{d}{dz} \left ( (z - i)^{2} \frac{e^{2 \pi i z \xi}}{(z^{2} + 1)^{2}} \right ) \\
 											 & = \lim_{z \to i} \frac{d}{dz} \left ( \frac{e^{2 \pi i z \xi}}{(z + i)^{2}} \right ) \\
 											 & = \lim_{z \to i} 2 \pi i \xi \frac{e^{2 \pi i z \xi}}{(z + i)^{2}} - 2 \frac{e^{2 \pi i z \xi}}{(z + i)^{3}} \\
 											 & = 2 \pi i \xi \frac{e^{- 2 \pi \xi}}{-4} - 2 \frac{e^{-2 \pi \xi}}{(-8 i)} \\
@@ -97,13 +105,13 @@
 	\]
 	Thus, for $\xi > 0$, we have
 	\[
-		\operatorname{res}_{i} \frac{e^{2 \pi i z \xi}}{(1 + z^{2})^{2}} = - \frac{i}{4} (2 \pi \lvert \xi \rvert + 1) e^{- 2 \pi \lvert \xi \rvert}
+		\operatorname{res}_{i} f = - \frac{i}{4} (2 \pi \lvert \xi \rvert + 1) e^{- 2 \pi \lvert \xi \rvert}
 	\]
 
 	Similarly, we get the residue at $-i$ as
 	\[
 		\begin{split}
-			\operatorname{res}_{-i} \frac{e^{2 \pi i z \xi}}{(1 + z^{2})^{2}} & = \lim_{z \to - i} 2 \pi i \xi \frac{e^{2 \pi i z \xi}}{(z - i)^{2}} - 2 \frac{e^{2 \pi i z \xi}}{(z - i)^{3}} \\
+			\operatorname{res}_{-i} f & = \lim_{z \to - i} 2 \pi i \xi \frac{e^{2 \pi i z \xi}}{(z - i)^{2}} - 2 \frac{e^{2 \pi i z \xi}}{(z - i)^{3}} \\
 											  & = 2 \pi i \xi \frac{e^{2 \pi \xi}}{-4} - 2 \frac{e^{2 \pi \xi}}{(8 i)} \\
 											  & = - 2 \pi i \xi \frac{e^{2 \pi \xi}}{4} + i\frac{e^{2 \pi \xi}}{4} \\
 											  & = - \frac{i}{4}(2 \pi \xi + 1) e^{2 \pi \xi} \\
@@ -112,7 +120,44 @@
 	\]
 	For $\xi < 0$, this is
 	\[
-		\operatorname{res}_{-i} \frac{e^{2 \pi i z \xi}}{(1 + z^{2})^{2}} = \frac{i}{4} (2 \pi \lvert \xi \rvert + 1) e^{- 2 \pi \lvert \xi \rvert}.
+		\operatorname{res}_{-i} f = \frac{i}{4} (2 \pi \lvert \xi \rvert + 1) e^{- 2 \pi \lvert \xi \rvert}.
+	\]
+
+	Suppose $\xi < 0$. Then consider the integral of $f$ over $\gamma$, the upper semicircle of radius $R$. This integral splits into two parts ---
+	\[
+		\int_{\gamma} f(z) \, dz = \int_{-R}^{R} f(z) \, dz + \int_{\gamma_{0}} f(z) \, dz  
+	\]
+	where $\gamma_{0}$ is the anti-clockwise upper semicircular arc of radius $R$. We can parametrise $\gamma_{0}$ by $z : \theta \mapsto R e^{i \theta}$ for $\theta \in [0, \pi]$
+	\[
+		\begin{split}
+			\left \lvert \int_{\gamma_{0}} f(z) \, dz \right \rvert & = \left \lvert \int_{0}^{\pi} \frac{e^{2 \pi i R \cos{\theta} \lvert \xi \rvert} e^{- 2 \pi R \sin{\theta} \lvert \xi \rvert}}{(1 + R^{2} e^{i 2 \theta})^{2}} \, d\theta  \right \rvert \\
+										& \le \left \lvert \int_{0}^{\pi} \frac{e^{- 2 \pi R \sin{\theta} \lvert \xi \rvert}}{(1 - R^{2})^{2}} \, d\theta  \right \rvert
+		\end{split}
+	\]
+	which clearly goes to zero as $R \to \infty$. By the residue formula,
+	\[
+		\int_{\gamma} f(z) \, dz = 2 \pi i \operatorname{res}_{i} f = \frac{\pi}{2} (2 \pi \lvert \xi \rvert + 1) e^{-2 \pi \lvert \xi \rvert}.
+	\]
+	Thus,
+	\[
+		\int_{-\infty}^{\infty} \frac{e^{-2 \pi i x \xi}}{(1 + x^{2})^{2}} \, dx = 2 \pi i \operatorname{res}_{i} f = \frac{\pi}{2}(2 \pi \lvert \xi \rvert + 1) e^{- 2 \pi \lvert \xi \rvert}.
+	\]
+
+	For $\xi > 0$, we integrate $f$ over $\gamma^{-}$, the lower semicircle of radius $R$. Again, we have
+	\[
+		\int_{\gamma^{-}} f(z) \, dz = - \int_{-R}^{R} f(z) \, dz + \int_{\gamma^{-}_{0}} f(z) \, dz
+	\]
+	where $\gamma^{-}_{0}$ is the anti-clockwise lower semicircular arc of radius $R$. By a similar argument to the previous one, we can show that
+	\[
+		\int_{\gamma^{-}_{0}} f(z) \, dz \to 0
+	\]
+	as $R \to \infty$. By the residue formula
+	\[
+		\int_{\gamma^{-}} f(z) \, dz = 2 \pi i \operatorname{res}_{-i} f = - \frac{\pi}{2}(2 \pi \lvert \xi \rvert + 1) e^{-2 \pi \lvert \xi \rvert}
+	\]
+	and thus,
+	\[
+		\int_{-\infty}^{\infty} \frac{e^{- 2 \pi i x \xi}}{(1 + x^{2})^{2}} \, dx = - 2 \pi i \operatorname{res}_{-i} f = \frac{\pi}{2}(2 \pi \lvert \xi \rvert + 1) e^{-2 \pi \lvert \xi \rvert}.
 	\]
 \end{solution}
 
@@ -126,6 +171,40 @@
 	Then, prove that the above result remains true if we assume only that $\lvert a \rvert \le 1$.
 \end{problem}
 
+\begin{solution}
+	Let $\gamma$ be the circle of radius $\lvert a \rvert$, centred at $0$. Then note that since $\log \lvert z \rvert = \operatorname{Re} \log z \le \lvert \log z \rvert$,
+	\[
+		\left \lvert \int_{0}^{2 \pi} \log \lvert 1 - a e^{i \theta} \rvert \, d\theta \right \rvert \le \left \lvert \int_{\gamma} \frac{\log(1 - z)}{az} \, dz \right \rvert.
+	\]
+	(the effect of the argument of $a$ is just to move the start and end point of the integral).
+
+	Notice that $\log(1 - z)$ is holomorphic on $\mathbb{C} \setminus \{ x \in \mathbb{R} \mid x > 1 \}$. Thus, $f = \frac{\log(1 - z)}{az}$ is meromorphic on the same domain with a pole at $0$. The residue at $0$ is
+	\[
+		\begin{split}
+			\operatorname{res}_{0} f & = \lim_{z \to 0} z \frac{\log(1 - z)}{az} \\
+						 & = \lim_{z \to 0} \frac{\log(1 - z)}{a} \\
+						 & = \frac{\log 1}{a} \\
+						 & = 0.
+		\end{split}
+	\]
+
+	As long as $\lvert a \rvert < 1$, $\gamma$ encloses a region in which $f$ is meromorphic, and thus, by the residue formula,
+	\[
+		\int_{\gamma} \frac{\log(1 - z)}{z} \, dz = 0.
+	\]
+	Since the magnitude of the real integral is bounded by this, it vanishes too.
+
+	To show the result for $\lvert a \rvert = 1$, consider $\gamma$ to be the circle of radius $1$ and centred at $0$ and $\Gamma$ to be $\gamma$ with a sector of angle $2 \theta$ taken out around the positive real so that $\Gamma$ still encloses the region in which $f$ is meromorphic. Again by the residue theorem,
+	\[
+		\int_{\Gamma} \frac{\log(1 - z)}{z}  \, dz = 0
+	\]
+	Taking limits as $\theta \to 0$, and $\Gamma \to \gamma$ we get
+	\[
+		\int_{\gamma} \frac{\log(1 - z)}{z} \, dz = 0
+	\]
+	and thus, the real integral vanishes too.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[17.]
@@ -135,6 +214,17 @@
 		\item If $\lvert f(z) \rvert \ge 1$ whenever $\lvert z \rvert = 1$ and there exists a point $z_{0} \in \mathbb{D}$ such that $\lvert f(z_{0}) \rvert < 1$, then the image of $f$ contains the unit disc.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item First we show that $f$ has at least one root in the disc. Suppose by way of contradiction that $f$ has no roots in $\mathbb{D}$. Then $1/f$ is holomorphic on $\mathbb{D}$. By the maximum modulus principle, $\lvert f(z) \rvert < 1$ at all $z \in \mathbb{D}$ as long as $f$ is non-constant. Thus, $1/f(z) > 1$ inside $\mathbb{D}$, and contradicts the maximum modulus principle (since it is $\lvert 1/f \rvert = \lvert f \rvert = 1$ on $\partial \mathbb{D}$). Thus, $f$ has at least one root in $\mathbb{D}$.
+
+			Consider the constant function by $g(z) = w$ for $w \in \mathbb{D}$. Now notice that $\lvert f(z) \rvert = 1 > \lvert g(z) \rvert$ for any $z \in \partial \mathbb{D}$. Thus, we can apply Rouche's theorem to see that $f$ and $f - g$ have the same number of roots in the disc. That is, for every $w \in \mathbb{D}$ there is at least one $z \in \mathbb{D}$ such that $f(z) - w = 0$. Now we have that every $w \in \mathbb{D}$ is $f(z)$ for some $z \in \mathbb{D}$ --- we have $\mathbb{D} \subset f^{\text{img}}(\mathbb{D})$
+		\item Again, first we show that $f$ has at least one root in the disc. The proof follows similarly. Suppose by way of contradiction that $f$ has no roots in $\mathbb{D}$. Then $1/f$ is holomorphic on $\mathbb{D}$. Since we know that $1/f(z_{0}) > 1 \ge 1/f(z)$ for all $z \in \partial \mathbb{D}$, we have a contradiction of the maximum modulus principle for $1/f$.
+
+			It follows by the same argument as in the previous part that $f(z) - w = 0$ has a root for every $w \in \mathbb{D}$ since $\lvert f(z) \rvert \ge 1 > w$. Thus $\mathbb{D} \subset f^{\text{img}}(\mathbb{D})$ again.
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
@@ -149,10 +239,56 @@
 		\item Prove that the function $F$ equal to $A$ in the closed upper half-plane, and $B$ in the lower half-plane is entire and bounded, and thus, constant. In fact, show that $F = 0$.
 		\item Deduce that
 			\[
-				\int_{-\infty}^{t} f(x) \, dx,
+				\int_{-\infty}^{t} f(x) \, dx = 0
 			\]
 			for all $t$, and conclude that $f = 0$.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item Note that
+			\[
+				\begin{split}
+					A(\xi) & = \int_{-\infty}^{t} f(x) e^{- 2 \pi i \xi (x - t)} \, dx \\
+					       & = e^{2 \pi i t} \int_{-\infty}^{t} f(x) e^{-2 \pi i \xi x} \, dx 
+				\end{split}
+			\]
+			and similarly
+			\[
+				B(\xi) = - e^{2 \pi i t} \int_{t}^{\infty} f(x) e^{- 2 \pi i \xi x} \, dx.
+			\]
+			Thus,
+			\[
+				\begin{split}
+					A(\xi) - B(\xi) & = e^{2 \pi i t} \left ( \int_{-\infty}^{t} f(x) e^{- 2 \pi i \xi x} \, dx + \int_{t}^{\infty} f(x) e^{- 2 \pi i \xi x} \, dx  \right ) \\
+							& = e^{2 \pi i t} \int_{-\infty}^{\infty} f(x) e^{- 2 \pi i \xi x} \, dx \\
+							& = e^{2 \pi i t} \hat{f}(\xi) \\
+							& = 0.
+				\end{split}
+			\]
+			Thus, $A(\xi) = B(\xi)$.
+		\item We can show $A$ and $B$ are holomorphic by considering sequences $A_{n}$ and $B_{n}$ of holomorphic functions uniformly converging to $A$ and $B$. In particular, consider
+			\[
+				A_{n}(z) = \int_{-n}^{t} f(x) e^{-2 \pi i z(x - t)} \, dx \quad \text{and} \quad B_{n}(z) = - \int_{t}^{n} f(x) e^{-2 \pi i z(x - t)} \, dx.
+			\]
+			These are holomorphic by Theorem 5.4 in Chapter 2. They converge uniformly to $A$ and $B$ in the upper and lower half planes respectively since the tail integrals
+			\[
+				\int_{-\infty}^{-n} f(x) e^{- 2 \pi i z(x - t)}  \, dx \quad \text{and}  \quad \int_{n}^{\infty} f(x) e^{- 2 \pi i z(x - t)} \, dx 
+			\]
+			converge uniformly to $0$ by the moderate decrease of $f$ and the fact that in the respective planes the signs of $(x - t)$ and $\operatorname{Im} z$ line up so that the exponential always has magnitude less than $1$. Thus, $A$ and $B$ are holomorphic in the upper and lower half planes.
+
+			Now since $A$ is holomorphic in the upper half plane, $B$ is holomorphic in the lower half plane, and they agree on $\mathbb{R}$, by the symmetry principle, $F$ is entire. Again, since $f$ is of moderate decrease and thus, bounded, and the exponential terms are always less than $1$, we have that $A$ and $B$ are bounded in the upper half and lower half planes respectively. Thus, 
+		\item We can bound the integral of $f$ by the integral of $F$ on the real line ---
+			\[
+				\left \lvert \int_{-\infty}^{t} f(x) \, dx  \right \rvert \le \left \lvert \int_{-\infty}^{t} F(x) \, dx  \right \rvert = 0
+			\]
+			and thus,
+			\[
+				\int_{a}^{b} f(x) \, dx = 0
+			\]
+			for all $a, b \in \mathbb{R}$. Thus, $f = 0$.
+	\end{enumerate}
+\end{solution}
 
 \end{document}
