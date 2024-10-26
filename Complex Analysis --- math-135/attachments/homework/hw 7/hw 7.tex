@@ -1,0 +1,60 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 135 --- Complex Analysis}
+\assignment{Homework \#7}
+\duedate{1st November 2024}
+
+\begin{document}
+
+\begin{problem}[3.]
+	Show, by contour integration, that if $a > 0$ and $\xi \in \mathbb{R}$, then
+	\[
+		\frac{1}{\pi} \int_{-\infty}^{\infty} \frac{a}{a^{2} + x^{2}} e^{-2 \pi i x \xi} \, dx = e^{-2 \pi a \lvert \xi \rvert},
+	\]
+	and check that
+	\[
+		\int_{-\infty}^{\infty} e^{-2 \pi a \lvert \xi \rvert} e^{2 \pi i \xi x} \, d\xi = \frac{1}{\pi} \frac{a}{a^{2} + x^{2}}
+	\]
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[4.]
+	Suppose $Q$ is a polynomial of degree $\ge 2$ with distinct roots, none lying on the real axis. Calculate
+	\[
+		\int_{-\infty}^{\infty} \frac{e^{-2 \pi i x \xi}}{Q(x)} \, dx, \quad \xi \in \mathbb{R}
+	\]
+	in terms of the roots of $Q$. What happens when several roots coincide?
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[7. (a)]
+	The Poisson summation formula applied to specific examples often provides interesting identities.
+
+	Let $\tau$ be fixed with $\operatorname{Im} \tau > 0$. Apply the Poisson summation formula to
+	\[
+		f(z) = (\tau + z)^{-k}
+	\]
+	where $k$ is an integer $\ge 2$ to obtain
+	\[
+		\sum_{n = -\infty}^{\infty} \frac{1}{(\tau + n)^{k}} = \frac{(-2 \pi i)^{k}}{(k - 1)!} \sum_{m = 1}^{\infty} m^{k - 1} e^{2 \pi i m \tau}.
+	\]
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[8.]
+	Suppose $\hat{f}$ has compact support contained in $[-M, M]$ and let $f(z) = \sum_{n = 0}^{\infty} a_{n} z^{n}$. Show that
+	\[
+		a_{n} = \frac{(2 \pi i)^{n}}{n!} \int_{-M}^{M} \hat{f}(\xi) \xi^{n} \, d\xi 
+	\]
+	and as a result
+	\[
+		\limsup_{n \to \infty} (n! \lvert a_{n} \rvert)^{1/n} \le 2 \pi M.
+	\]
+\end{problem}
+
+\end{document}
