@@ -5,6 +5,7 @@ tags:
 - math-176/12
 - math-176/13
 - math-176/25
+- math-176/26
 ---
 
 ### (Abelian) groups
@@ -34,7 +35,30 @@ We will never care about rings without multiplicative identity
 We use almost the same definition, but we explicitly exclude the trivial ring where $0 = 1$.
 
 And we will almost always be working with commutative rings
+
 ![[Abstract Algebra I --- math-171/notes/Rings#_definition _ commutative ring|Rings]]
+
+Finally, we should know what the morphisms between rings are —
+
+![[Abstract Algebra I --- math-171/notes/Ring homomorphisms#_definition _ ring homomorphisms|Ring homomorphisms]]
+
+### Ideals
+
+Recall that if a subring is a generalisation of a [[Abstract Algebra I --- math-171/notes/Subgroups#_definition _ subgroup, $ le$|subgroup]]
+
+![[Abstract Algebra I --- math-171/notes/Rings#_definition _ subring|Rings]]
+
+then an ideal is a generalisation of a [[Abstract Algebra I --- math-171/notes/Normal subgroups#_definition _ normal subgroups|normal subgroup]].
+
+![[Abstract Algebra I --- math-171/notes/Ideals and quotients#_definition _ (left and right) ideals]]
+
+Since we work with commutative rings, we don't have a distinction between left and right ideals — these are all just ideals.
+
+Note that by the first isomorphism theorem, we know that ideals are exactly the subrings that are kernels of homomorphisms, and equivalently, the subrings that give quotient rings —
+
+![[Abstract Algebra I --- math-171/notes/Ring homomorphisms#_proposition _ images and kernels|Ring homomorphisms]]
+
+![[Abstract Algebra I --- math-171/notes/Ring isomorphism theorems#_theorem _ the first isomorphism theorem|Ring isomorphism theorems]]
 
 ### Integral domains
 
@@ -48,13 +72,37 @@ We really like integral domains because they have nice properties like cancellat
 
 ![[Abstract Algebra I --- math-171/notes/Integral domains#_proposition _ cancellation in integral domains|Integral domains]]
 
+We use the following characterisation of prime ideals
+
+![[Abstract Algebra I --- math-171/notes/Prime and maximal ideals#_definition _ prime ideals|Prime and maximal ideals]]
+
+![[Abstract Algebra I --- math-171/notes/Prime and maximal ideals#_proposition _ prime ideals have integral domains as quotients|Prime and maximal ideals]]
+
+These prime ideals are respected by ring homomorphisms —
+
+##### _proposition:_ the pullback on spectra
+
+Suppose $\varphi : R \to S$ is a non-trivial homomorphism between integral domains. Denote the collection of prime ideals by
+$$
+\operatorname{Spec} S = \{ P \subset S \mid P \text{ is prime} \}.
+$$
+
+Then the pre-image of a prime $P \subset S$ is a prime in $R$ — $\varphi^\text{pre}(P)$ is prime in $R$ and the pullback
+$$
+\begin{split}
+\varphi^* & : \operatorname{Spec} S \to \operatorname{Spec} R \\
+ & : P \mapsto \varphi^\text{pre}(P).
+\end{split}
+$$
+is well defined.
+
 ### Fields
 
 We should know what a division ring is
 
 ![[Abstract Algebra I --- math-171/notes/Rings#_definition _ division ring|Rings]]
 
-By unit, we mean that it has an inverse —'
+By unit, we mean that it has an inverse —
 
 ![[Abstract Algebra I --- math-171/notes/Rings#_definition _ unit|Rings]]
 
@@ -90,9 +138,11 @@ Finally, we talk about algebraic closure and field extensions.
 
 For any field $F$, we say $K / F$ is a field extension if $K$ is a field with an injective ring homomorphism $F \xhookrightarrow{} K$.
 
-##### _definition:_ algebraic extensions
+##### _definition:_ algebraic numbers, algebraic extensions
 
 We say $a \in K / F$ is an algebraic number if $a$ is the root of some polynomial in $F[x]$.
+
+If all $a \in K / F$ are algebraic numbers, then $K / F$ is a an algebraic extension.
 
 ##### _proposition:_ towers of algebraic extensions
 
@@ -142,13 +192,13 @@ $R[x]$ is a ring under the obvious multiplication and addition.
 
 ##### _proposition:_ polynomials over integral domains are really nice
 
-If $R$ is an integral domain, then $R[x]$ is an integral domain with the same units as $R^*$ and $\operatorname{deg}(pq) = \operatorname{deg} p + \operatorname{deg} q$ for any $p, q \in R[x]$.
+If $R$ is an integral domain, then $R[x]$ is an integral domain with the same units as $R$ and $\operatorname{deg}(pq) = \operatorname{deg} p + \operatorname{deg} q$ for any $p, q \in R[x]$.
 
 ###### _proof:_
 
-Suppose $R$ is an integral domain. Consider any non-zero polynomials $p = \sum a_{j} x^j$ and $q = \sum b_{j} x^j$ of degrees $m$ and $n$ in $R[x]$. Their product has a leading term $a_{m} b_{n} x^{m + n}$ and since $R$ is an integral domain, $a_{m} b_{n} \neq 0$. Thus, $\operatorname{deg}(pq) = p + q > -\infty$ giving $pq \neq 0$.
+Suppose $R$ is an integral domain. Consider any non-zero polynomials $p = \sum a_{j} x^j$ and $q = \sum b_{j} x^j$ of degrees $m$ and $n$ in $R[x]$. Their product has a leading term $a_{m} b_{n} x^{m + n}$ and since $R$ is an integral domain, $a_{m} b_{n} \neq 0$. Thus, $\operatorname{deg}(pq) = p + q > -\infty$ giving $pq \neq 0$. 
 
-Suppose $R[x]$ is an integral domain. Notice that $R$ is isomorphic to the subring of polynomials of degree $0$ (with the $0$ polynomial added). Thus, $R$ inherits the integral domain property from $R[x]$.
+The units of $R[x]$ are just the polynomials constant on a unit. This is just isomorphic to the units of $R$.
 
 ##### _corollary:_ multivariate polynomial rings
 
