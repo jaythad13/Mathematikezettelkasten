@@ -54,9 +54,9 @@ $$
 
 Using the multiplicative property of the logarithm, we can write
 $$
-\ln \lvert f(0) \rvert - \sum_{j = 1}^k \ln \left\lvert  \frac{B_{a_{j} / r}(0 / r)}{r}  \right\rvert = \frac{1}{2 \pi} \int_{0}^{2 \pi} \ln \lvert f(r e^{i \theta}) \rvert  - \sum_{j = 1}^k  \ln \left\lvert {B_{a_{j} / r}(e^{i \theta})}  \right\rvert  \, d\theta.
+\ln \lvert f(0) \rvert - \sum_{j = 1}^k \ln \left\lvert  B_{a_{j} / r}(z / r)  \right\rvert = \frac{1}{2 \pi} \int_{0}^{2 \pi} \ln \lvert f(r e^{i \theta}) \rvert  - \sum_{j = 1}^k  \ln \left\lvert {B_{a_{j} / r}(e^{i \theta})}  \right\rvert  \, d\theta.
 $$
-Since $\lvert B_{a_{j} / r}(e^{i \theta}) \rvert = 1$ which has logarithm $0$, the sum on the right vanishes. Since $B_{a_{j} / r}(0) = a_{j}$, the sum on the left is just the desired sum.
+Since $\lvert B_{a_{j} / r}(e^{i \theta}) \rvert = 1$ which has logarithm $0$, the sum on the right vanishes. Since $B_{a_{j} / r}(0) = a_{j} / r$, the sum on the left is just the desired sum.
 
 Thus,
 $$
