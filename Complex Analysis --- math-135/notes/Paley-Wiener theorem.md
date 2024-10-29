@@ -2,6 +2,7 @@
 tags:
 - math-135/14
 - math-135/15
+- math-135/16
 - anal
 ---
 
@@ -119,9 +120,35 @@ $$
 f^-_{\varepsilon}(z) = \frac{f(z)}{(1 - i \varepsilon z)^{2}}.
 $$
 
+##### _theorem:_ characterising functions with no negative frequencies
+
+Suppose $f, \hat{f}$ are continuous with moderate decrease. Then $\hat{f}(\xi) = 0$ for all $\xi < 0$ if and only if $f$ can be extended to a continuous bounded function on the closed upper half plane with $f$ holomorphic in the upper half plane.
+
+###### _proof sketch:_
+
+Bound $f$ using the Fourier inversion formula and the moderate decrease of $\hat{f}$. Show it is holomorphic by truncating the Fourier inversion formula and considering these truncated integrals to be a [[Complex Analysis --- math-135/notes/Cauchy integral formula#_proposition _ uniform convergence preserves holomorphicity|sequence of uniformly convergent holomorphic functions]] converging to $f$. 
+
+
 ##### _theorem:_ the Phragmén-Lindelöf theorem
 
-Suppose $f$ is holomorphic in the sector $S$ (for example, $\{ z \mid -\pi/4 < \operatorname{arg} z < \pi / 4 \}$) and continuous on its closure. If $\lvert f(z) \rvert \le 1$ on $\partial S$ and $\lvert f(z) \rvert \le C e^{c \lvert z \rvert}$ for some $c, C \in \mathbb{R}$, then $f(z) < 1$ everywhere in $S$.
+Suppose $f$ is holomorphic in the infinite sector $S$ (for example, $\{ z \mid -\pi/4 < \operatorname{arg} z < \pi / 4 \}$) and continuous on its closure. If $\lvert f(z) \rvert \le 1$ on $\partial S$ and $\lvert f(z) \rvert \le C e^{c \lvert z \rvert}$ for some $c, C \in \mathbb{R}$, then $f(z) < 1$ everywhere in $S$.
+
+###### _proof:_
+
+Again, we create an $\varepsilon$ of room. Specifically, we consider $f_{\varepsilon} : z \mapsto f(z) e^{-\varepsilon z^{3/2}}$ (we choose the square root that halves the argument). We will show that $\lvert f_{\varepsilon}(z) \rvert \le 1$ in $\overline{S}$ by using the maximum modulus principle, and then let $\varepsilon \to 0$ to show that $f$ must also be bounded.
+
+First we show that $f_{\varepsilon}$ is bounded. Notice that we can bound the exponential by the real part of $\lvert z \rvert^{3/2}$.
+$$
+\begin{split}
+\lvert f_{\varepsilon}(z) \rvert & \le f(z) \lvert e^{- \varepsilon z^{3 / 2}} \rvert \\
+ & \le C e^{c \lvert z \rvert } e^{-\varepsilon \lvert z \rvert^{3/2} \cos(3 \operatorname{Arg} z / 2) } \\
+\end{split}
+$$
+But $\cos (3 \operatorname{Arg} z / 2)$ is bounded by some $\alpha$ because of the sector we're working in (in particular, it is non-zero).
+
+Since $f_{\varepsilon} \to 0$, there is some radius outside which it is always less than $1$. Thus, we can work in the compact sector $\{ z \in S \mid \lvert z \rvert < R \}$.
+
+Let $M_{\varepsilon}$ be the supremum of $f_{\varepsilon}$ on $\overline{S}$. Then 
 
 ##### _theorem:_ Lebesgue dominated convergence theorem
 
