@@ -133,7 +133,7 @@ We can also show the open mapping theorem in a new way —
 
 ##### _lemma:_ the "$n$-to-one" lemma
 
-If $f$ is holomorphic and non-constant on some region $\Omega \subset \mathbb{C}$. Let $z_{0} \in \Omega$ and let $n$ be the multiplicity of $z_{0}$ as a zero of $g : z \mapsto f(z) - f(z_{0})$. For sufficiently small $\varepsilon > 0$ there exists a $\delta > 0$ such that for every point $w \in N_{\delta}^*(f(z_{0}))$, there exist $n$ distinct points $z_{1}, \dots, z_{n}$ in $B_{\varepsilon}^*(z)$.
+If $f$ is holomorphic and non-constant on some region $\Omega \subset \mathbb{C}$. Let $z_{0} \in \Omega$ and let $n$ be the multiplicity of $z_{0}$ as a zero of $g : z \mapsto f(z) - f(z_{0})$. For sufficiently small $\varepsilon > 0$ there exists a $\delta > 0$ such that for every point $w \in N_{\delta}^*(f(z_{0}))$, there exist $n$ distinct points $z_{1}, \dots, z_{n}$ in $B_{\varepsilon}^*(z)$ with $f(z_{j}) = f(z_{0})$ for all $j$.
 
 ###### _proof sketch:_
 

@@ -91,7 +91,7 @@ $$
 \lvert \hat{f^+_{\varepsilon}}(\xi) - \hat{f}(\xi) \rvert \le \left\lvert  \int_{-\infty}^{\infty} f(x) \left( \frac{1}{(1 + i \varepsilon x)^{2}} - 1 \right) e^{- 2 \pi i x \xi} \, dx   \right\rvert 
 \end{split} 
 $$
-and recall that $f$ has moderate decrease, so $f$ doesn't blow up faster than $1/(1 + i \varepsilon x)^{2} \to 1$ as $\varepsilon \to 0$.
+and recall that $f$ has moderate decrease, so $f$ doesn't blow up faster than $1/(1 + i \varepsilon x)^{2} \to 1$ as $\varepsilon \to 0$. (This is rigorous with dominated convergence).
 
 We show that the $f^+_{\varepsilon}$ satisfy stronger bounds — in particular, since $\varepsilon$ is fixed, we have
 $$
@@ -111,7 +111,7 @@ $$
  & = C e^{- 2 \pi y(\xi - M)}
 \end{split}
 $$
-where the last step follows by Lebesgue dominated convergence (?)
+where the last step follows by just evaluating the integral.
 
 This clearly goes to zero as $y \to \infty$, so we must have $\hat{f^+_{\varepsilon}}(\xi) = 0$, and thus $\hat{f}(\xi) = 0$.
 
