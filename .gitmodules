@@ -14,3 +14,6 @@
 [submodule "Abstract Algebra I --- math-171/attachments/homework/solution sketches"]
 	path = Abstract Algebra I --- math-171/attachments/homework/solution sketches
 	url = https://git@git.overleaf.com/66e4af14548d2e845a1fb49e
+[submodule "Parking functions --- parking-functions/attachments/documents"]
+	path = Parking functions --- parking-functions/attachments/documents
+	url = https://git@git.overleaf.com/6719e3028e42c355b6e540d7
