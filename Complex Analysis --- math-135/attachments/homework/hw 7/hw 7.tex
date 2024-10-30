@@ -15,9 +15,26 @@
 	\]
 	and check that
 	\[
-		\int_{-\infty}^{\infty} e^{-2 \pi a \lvert \xi \rvert} e^{2 \pi i \xi x} \, d\xi = \frac{1}{\pi} \frac{a}{a^{2} + x^{2}}
+		\int_{-\infty}^{\infty} e^{-2 \pi a \lvert \xi \rvert} e^{2 \pi i \xi x} \, d\xi = \frac{1}{\pi} \frac{a}{a^{2} + z^{2}}
 	\]
 \end{problem}
+
+\begin{solution} 
+	Let $f : \mathbb{C} \setminus \{ \pm ai \} \to \mathbb{C}$ be the function by
+	\[
+		f : z \mapsto \frac{a e^{- 2 \pi i z \xi}}{a^{2} + x^{2}}
+	\]
+	$f$ is meromorphic with poles at $\pm ai$. We can calculate their residues as follows
+	\[
+		\begin{split}
+			\operatorname{res}_{ai} f & = \lim_{z \to ai} (z - ai) \frac{ae^{-2 \pi i z \xi}}{a^{2} + z^{2}} \\
+						  & = \lim_{z \to ai} \frac{a e^{-2 \pi i z \xi}}{z + ai} \\
+						  & = \frac{a e^{- 2 \pi i (a i) \xi}}{2 a i} \\
+						  & = \frac{-i e^{2 \pi a \xi}}{2}.
+		\end{split}
+	\]
+	For $\xi < 0$, this is just $\operatorname{res}_{ai} f = - i e^{- 2 \pi a \lvert \xi \rvert} / 2$. By a similar calculation, $\operatorname{res}_{- ai} f = i e^{- 2 \pi \lvert x \rvert}$ for $\xi > 0$.
+\end{solution}
 
 \pagebreak
 
