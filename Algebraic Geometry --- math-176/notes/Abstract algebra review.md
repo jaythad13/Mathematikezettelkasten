@@ -6,6 +6,7 @@ tags:
 - math-176/13
 - math-176/25
 - math-176/26
+- math-176/27
 ---
 
 ### (Abelian) groups
@@ -72,22 +73,28 @@ We really like integral domains because they have nice properties like cancellat
 
 ![[Abstract Algebra I --- math-171/notes/Integral domains#_proposition _ cancellation in integral domains|Integral domains]]
 
+### Prime and maximal ideals
+
 We use the following characterisation of prime ideals
 
 ![[Abstract Algebra I --- math-171/notes/Prime and maximal ideals#_definition _ prime ideals|Prime and maximal ideals]]
 
 ![[Abstract Algebra I --- math-171/notes/Prime and maximal ideals#_proposition _ prime ideals have integral domains as quotients|Prime and maximal ideals]]
 
-These prime ideals are respected by ring homomorphisms —
+In algebraic geometry, we denote the collection of prime ideals in a ring as follows —
+
+##### _definition:_ $\operatorname{Spec} R$, spectrum
+
+The spectrum of an integral domain, is the collection of all of its prime ideals
+$$
+\operatorname{Spec} R = \{ P \subset R \mid P \text{ is prime} \}.
+$$
+
+The prime ideals are respected by ring homomorphisms and thus induce an inverse map on the spectra. (This is a contravariant functor!)
 
 ##### _proposition:_ the pullback on spectra
 
-Suppose $\varphi : R \to S$ is a non-trivial homomorphism between integral domains. Denote the collection of prime ideals by
-$$
-\operatorname{Spec} S = \{ P \subset S \mid P \text{ is prime} \}.
-$$
-
-Then the pre-image of a prime $P \subset S$ is a prime in $R$ — $\varphi^\text{pre}(P)$ is prime in $R$ and the pullback
+Suppose $\varphi : R \to S$ is a non-trivial homomorphism between integral domains. Then the pre-image of a prime $P \subset S$ is a prime in $R$ — $\varphi^\text{pre}(P)$ is prime in $R$ and the pullback
 $$
 \begin{split}
 \varphi^* & : \operatorname{Spec} S \to \operatorname{Spec} R \\
@@ -95,6 +102,45 @@ $$
 \end{split}
 $$
 is well defined.
+
+###### _proof:_
+
+Suppose $P \subset S$ is prime. First we show that $I = \varphi^\text{pre}(P)$ is an ideal. 
+
+Note that $I$ is non-empty since $0 \in P$ which is mapped to by $0$. If $a, b \in I$ and $r \in R$, then $\varphi(a + b) = \varphi(a) + \varphi(b) \in P$ since $\varphi(a), \varphi(b) \in P$.
+
+Maximal ideals are even more special!
+
+![[Abstract Algebra I --- math-171/notes/Prime and maximal ideals#_definition _ maximal ideal|Prime and maximal ideals]]
+
+![[Abstract Algebra I --- math-171/notes/Prime and maximal ideals#_proposition _ maximal ideals have fields as quotients|Prime and maximal ideals]]
+
+Note that as a corollary
+
+![[Abstract Algebra I --- math-171/notes/Prime and maximal ideals#_corollary _ every maximal ideal is prime|Prime and maximal ideals]]
+
+##### _definition:_ $\operatorname{mSpec} R$, the max spectrum
+
+The max spectrum of $R$ is the collection of all maximal ideals $M \subset R$.
+
+![[Abstract Algebra I --- math-171/notes/Prime and maximal ideals#_example _ not every prime ideal is maximal|Prime and maximal ideals]]
+
+##### _example:_ the spectra of $\mathbb{Z}$
+
+Since $\mathbb{Z}$ is a [[Abstract Algebra I --- math-171/notes/Factorisation in special rings#_definition _ principal ideal domain|principal ideal domain]] the prime ideals and maximal ideals are almost exactly identical — $\mathbb{Z} / n \mathbb{Z}$ is an field if and only if $n$ is prime and an integral domain if $n$ is prime. However, $\mathbb{Z} = \mathbb{Z} / 0 \mathbb{Z}$ is also an integral domain. Thus,
+$$
+\operatorname{Spec} \mathbb{Z} = \{ (0) \} \cup \{ (2), (3), (5), (7), \dots \} = \{ 0 \} \cup \operatorname{mSpec} \mathbb{Z}.
+$$
+
+So $1$ is not a prime, but $0$ is!
+
+##### _example:_ the spectra of a field and its polynomial ring
+
+Say $F$ is our field. Since $F$ is a field, it only has one proper ideal — $(0)$.  That is, $\operatorname{Spec} F = \operatorname{mSpec} F = \{ (0) \}$.
+
+However, $F[x]$ has a lot of maximal ideals! $R/I$ is a field for any $I = (f)$ where $f$ is an irreducible polynomial.
+
+Fix $a \in F$, and define $\varphi : R \to F$ by $f \mapsto f(a)$. What's the pullback? Well, there's only one ideal in $\operatorname{Spec} F$ so there's only one thing to check. What gets sent to zero? All the polynomials that have a root at $a$! That is, $\varphi^*((0)) = (x - a)$.
 
 ### Fields
 
