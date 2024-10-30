@@ -12,23 +12,58 @@
 	Let $F = \mathbb{C}$ be the complex numbers, and let $R = \mathbb{C}[x]$ be the polynomial ring. Denote by $X = \mathbb{A}^{1}(\mathbb{C})$, the affine line over $\mathbb{C}$. This problem constructs the Zariski topology on $X$.
 	\begin{enumerate}
 		\item Assume that $f(x) = a_{0}$ is a constant polynomial. Show that either $Z(f) = \O$ or $Z(f) = X$.
-		\item The \emph{fundamental theorem of algebra} asserts that every non-constant complex polynomial $f(x) = a_{m} x^{m} + \dots + a_{1} x + a_{0} \in R$ has roots in $F$, that is, we can always factor $f(x) = a(x - r_{1})^{e_{1}} (x - r_{2})^{e_{2}} \dots (x - r_{k})^{e_{k}}$ for some distinct complex numbers $r_{1}, r_{2}, \dots, r_{k}$. Show that
+		\item The \emph{fundamental theorem of algebra} asserts that every non-constant complex polynomial $f(x) = a_{m} x^{m} + \dots + a_{1} x + a_{0} \in R$ has roots in $F$, that is, we can always factor $f(x) = a(x - r_{1})^{e_{1}} (x - r_{2})^{e_{2}} \cdots (x - r_{k})^{e_{k}}$ for some distinct complex numbers $r_{1}, r_{2}, \dots, r_{k}$. Show that
 			\[
-				Z(f) = \{ P \in X \mid f(P) = 0 \} = \{ r_{1}, r_{2}, \dots r_{k} \}
+				Z(f) = \{ p \in X \mid f(p) = 0 \} = \{ r_{1}, r_{2}, \dots r_{k} \}
 			\]
 			is always a finite set.
 		\item Show that for any subset $T \subset R$, the set $Z(T)$ is either the empty set $\O$, a finite set $Z(r_{1}, r_{2}, \dots, r_{k})$, or the whole space $X$.
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item If $a_{0} \neq 0$, then $f(x) \neq 0$ for all $x \in X$, and so $Z(f) = \O$. If $a_{0} = 0$, then $f(x) = 0$ for all $x \in X$ so $Z(f) = X$.
+		\item For any $f \in R$, write
+			\[
+				f(x) = a (x - r_{1})^{e_{1}} \cdots (x - r_{k})^{e_{k}} = a_{m} x^{m} + \dots + a_{1} x + a_{0}.
+			\]
+			Thus, $a_{m} x^{m} = a x^{e_{1} + \dots + e_{k}}$, so $k$ must be finite, and $Z(f) = \{ r_{1}, \dots, r_{k} \}$ must be finite.
+		\item By definition, $Z(T)$ is the intersection of the zero sets of each of the polynomials in $T$. Thus, if $T$ contains a constant non-zero polynomial $f$, we have
+			 \[
+				Z(T) = Z(T \setminus \{ f \}) \cap Z(f) \subset Z(f) = \O.
+			\]
+
+			If $T$ contains no constant non-zero polynomials but contains a non-constant polynomial $f$, we have $Z(f)$ finite, and thus,
+			\[
+				Z(T) = Z(T \setminus \{ f \}) \cap Z(f) \subset Z(f)
+			\]
+			is the finite subset of a finite set.
+
+			Finally, if $T$ contains only the zero polynomial, then $Z(T) = X$.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[Problem 2.]
 	\begin{enumerate}
 		\item We say that a subset $U \subset X$ is \emph{Zariski open} if $U = X \setminus Z(T)$, that is, it is the complement of $Z(T) \subset X$ for some subset $T \subset R$. Let $X = \mathbb{A}^{1}(\mathbb{C})$ be the affine line over $\mathbb{C}$. Show that the set $U = \{ x + i y \in \mathbb{C} \mid x^{2} + y^{2} < 1 \}$ is open in the Euclidean topology, but is \emph{not} open in the Zariski topology.
-		\item The \emph{Zariski closure} of a subset $V \subset X$ is the subset $\overline{V} = Z(I_{V})$. Show that the Zariski closure of $V = X - \{ r_{1}, r_{2}, \dots, r_{k} \}$ in $X = \mathbb{A}^{1}(\mathbb{C})$ is $\overline{V} = X$.
+		\item The \emph{Zariski closure} of a subset $V \subset X$ is the subset $\overline{V} = Z(I_{V})$. Show that the Zariski closure of $V = X \setminus \{ r_{1}, r_{2}, \dots, r_{k} \}$ in $X = \mathbb{A}^{1}(\mathbb{C})$ is $\overline{V} = X$.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item The Euclidean topology has as a basis all the $r$-neighbourhoods of points in $X$ --- all sets $N_{r}(z_{0}) = \{ z \in \mathbb{C} \mid \lvert z - z_{0} \rvert < r \}$. Since $U = N_{1}(0)$, it is open in the Euclidean topology.
+
+			The complement $X \setminus U = \{ x + i y \in \mathbb{C} \mid x^{2} + y^{2} \ge 1 \}$ is an infinite proper subset of $X$. However, by the previous exercise, there is no $T \in R$ such that $Z(T)$ is an infinite proper subset of $X$. Thus, $U$ is not the complement of any $Z(T)$ and is not open in the Zariski topology.
+		\item If $V = X \setminus \{ r_{1}, \dots, r_{k} \}$, $V$ is an infinite proper subset of $X$. $I_{V}$ is the ideal of all polynomials that vanish on all of $V$. Since $V$ is an infinite proper subset, the only polynomial that vanishes on it is the zero polynomial. Thus, $I_{V} = \{ 0 \}$. Thus,
+			\[
+				\overline{V} = Z(I_{V}) = Z(\{ 0 \}) = X.
+			\]
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
@@ -39,5 +74,22 @@
 		\item Let $V = Z(f)$. Show that $I(V) = \left < g \right >$ is the radical of $I = \left < f \right >$.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item Let $e = \max \{ e_{1}, \dots, e_{k} \}$. Then $g^{e}$ is clearly a multiple of $f$ --- that is,  $g^{e} \in I$. Since any $r \in \left < g \right >$ can be written as $r = p g$ for some $p \in R$, we have $r^{e} = p^{e} g^{e} \in I$ and thus, $r \in \sqrt{I}$. That is, $\left < g \right > \subseteq I$.
+
+			Suppose $r \in \sqrt{I}$. Then, for some positive integer $e'$, $r^{e'} \in I$, giving us
+			\[
+				r^{e'} = (x - r_{1})^{e_{1}} \cdots (x - r_{k})^{e_{k}} p
+			\]
+			for some polynomial $p \in R$ indivisible by each $(x - r_{j})$. Since each of the $(x - r_{j})$ factors does not have an $e$th root in $R$, we must have $e \mid e_{j}$ for each $j$. Thus,
+			\[
+				r = (x - r_{1}) \cdots (x - r_{k}) q
+			\]
+			for some $q \in R$. This just means $r \in \left < g \right >$ and thus, $\sqrt{I} = \left < g \right >$. Then by double containment we have $\sqrt{I} = \left < g \right >$.
+		\item If $V = Z(f)$, then $V = \{ r_{1}, \dots, r_{k} \}$. Any polynomial in $R$ that vanishes on all of $V$ must have roots on all $r_{1}, \dots, r_{k}$ --- it must be a multiple of $g$. Conversely, any multiple of $g$ vanishes on all of $V$. Thus, $\left < g \right > = I$.
+	\end{enumerate}
+\end{solution}
 
 \end{document}
