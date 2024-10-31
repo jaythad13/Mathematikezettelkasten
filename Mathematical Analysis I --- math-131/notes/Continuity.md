@@ -2,6 +2,7 @@
 tags:
 - math-131/16
 - math-131/17
+- math-131/18
 - anal
 - top
 ---
@@ -9,13 +10,24 @@ tags:
 For this note, let $(X, d_{X})$, $(Y, d_{Y})$, and $(Z, d_{Z})$ be metric spaces.
 
 A function is continuous if it is its [[Mathematical Analysis I --- math-131/notes/Limits#_definition _ limit|limit]].
+
 ##### _definition:_ continuity
 
 For $E \subset X$, we say that $f : E \to Y$ is continuous at $x_{0}$ if $\lim_{ x \to x_{0} } f(x) = x_{0}$.
 
 We say $f$ is continuous on $E$ if $f$ is continuous at every $x_{0} \in E$.
 
-Obviously we can reinterpret this in terms of sequences in the metric space. However, even more useful is a reformulation strictly in terms of the topology of $X$ and $Y$.
+Obviously we can reinterpret this in terms of sequences in the metric space —
+
+##### _proposition:_ $\varepsilon$-$\delta$ continuity is equivalent to sequential continuity
+
+For $E \subset X$, a function $f : E \to Y$ is continuous at $x$, if and only if, for every sequence $x_{n} \to x$, we have $f(x_{n}) \to f(x)$.
+
+###### _proof:_
+
+This follows from [[Mathematical Analysis I --- math-131/notes/Limits#_proposition _ limits of functions are limits of functions on sequences|the corresponding result for limits]].
+
+However, even more useful is a reformulation strictly in terms of the topology of $X$ and $Y$.
 
 ##### _proposition:_ $\varepsilon$-$\delta$ continuity is equivalent to topological continuity
 
@@ -53,6 +65,22 @@ If $f : X \to \mathbb{R}$ is continuous and $K \subset X$ is compact, then $f^\t
 
 $f^\text{img}(K)$ is compact, and thus, closed and bounded. Thus, it contains its supremum and infimum which are the maximum and minimum respectively.
 
+##### _theorem:_ continuous bijections on compact sets have continuous inverses
+
+If $K \subset X$ is compact and $f : K \to Y$ is injective, then $f^{-1} : f^{\text{img}}(K) \to K$ is continuous.
+
+###### _proof:_
+
+Obviously, considering the restriction of codomain $f : K \to f^{\text{img}}(K)$ gives us that $f$ is a bijection. Note that $f^\text{img}(K)$ is compact.
+
+Suppose $y = f(x)$. Choose a sequence $y_{n} \to y$ and $y_{n} = f(x_{n})$. Since $K$ is compact, there must be some convergent subsequence $x_{n_{i}} \to x'$ for some $x' \in X$. By continuity $f(x_{n_{i}}) \to f(x')$. However, we know that $f(x_{n_{i}}) = y_{n_{i}}$, and $y_{n_{i}} \to y = f(x)$. Thus, $f(x') = f(x)$ and by injectivity $x' = x$. Since every subsequence of $x_{n}$ converges to $x$, $x_{n} \to x$. But $x_{n} = f^{-1}(y_{n})$, and now we  have $f^{-1}(y_{n}) \to f^{-1}(y)$ for every convergent sequence $y_{n} \to y$. Thus, $f^{-1}$ is continuous.
+
+Note that continuous functions do not generally have continuous inverses.
+
+##### _example:_ ripping the circle apart
+
+Consider $f : [0, 2 \pi) \to \mathbb{C}$ by $\theta \mapsto e^{i \theta}$. This wraps the half-open interval around into the circle. That is $f^\text{img}([0, 2 \pi)) = S^1$. $f$ is clearly continuous. However $f^{-1} : S^1 \to [0, 2\pi)$ is not continuous because no matter how close you choose them, pairs of points above and below the positive real axis get mapped far away.
+
 ##### _theorem:_ continuity preserves [[Mathematical Analysis I --- math-131/notes/Connectedness#_definition _ connectedness|connectedness]]
 
 If $f : X \to Y$ and $X$ is connected, then $f^\text{img}(X)$ is connected.
@@ -71,15 +99,15 @@ A cleverer application of this shows that there is no homeomorphism from $[0, 1]
 
 If $f$ is a homeomorphism $S^2 \to S^1$, remove two points from $S^2$ and now consider the restriction of $f$ to $S^2$ without the two points. The restriction should still be continuous from a connected space, but now the image of $S^2$ under the restriction is the circle without two points which is disconnected.
 
-### Contin
+### Continuity theorems
 
-##### _proposition:_ the continuity of operations on the complex numbers
+##### _proposition:_ continuity of operations on the complex numbers
 
 If $f, g : X \to \mathbb{C}$ are continuous, then $f + g$, $fg$ and $f / g$ (where $g \neq 0$) are continuous.
 
 ###### _proof:_
 
-Use [[Mathematical Analysis I --- math-131/notes/Limits#_proposition _ limits of functions are limits of functions on sequences|sequences]], and the [[Mathematical Analysis I --- math-131/notes/Sequences and convergence#_proposition _ the convergence of operations on the complex numbers|convergence of these operations on them]].
+Again, this follows from [[Mathematical Analysis I --- math-131/notes/Limits#_proposition _ limits of operations on the complex numbers|the corresponding result for limits]].
 
 ##### _proposition:_ continuous composition
 

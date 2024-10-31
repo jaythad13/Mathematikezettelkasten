@@ -2,6 +2,7 @@
 tags:
 - math-131/16
 - math-131/17
+- math-131/18
 - anal
 - top
 ---
@@ -30,5 +31,22 @@ Suppose the limit holds and $x_{n} \to x_{0}$. Then for any, $\delta > 0$, there
 
 Suppose $\lim_{ x \to x_{0} } f(x) \neq y_{0}$. Thus, for there exists $\varepsilon > 0$ such that for any $\delta > 0$, there is some $x_{\delta}$ with $\delta$ of $x_{0}$ but with $f(x)$ at least $\varepsilon$ away from $y_{0}$. Choose a sequence of these $x_{\delta}$ such that $\delta \to 0$. For example, choose $x_{1/n}$. Obviously $x_{1 / n} \to x_{0}$. However, by our choice, $f(x_{n}) \not \to y_{0}$.
 
-### Left and right limits
+### Limits on the real and complex numbers
 
+On the real and complex numbers, we can leverage their structure to define some natural functions that happen to be continuous. For example — we have continuity of operations on the complex numbers.
+
+##### _proposition:_ limits of operations on the complex numbers
+
+If $f, g : X \to \mathbb{C}$ have defined limits at $x_{0}$, then
+$$
+\begin{split}
+\lim_{ x \to x_{0} } f(x) + g(x) & = \lim_{ x \to x_{0} } f(x) + \lim_{ x \to x_{0} } g(x) \\
+\lim_{ x \to x_{0} } f(x) g(x) & = (\lim_{ x \to x_{0} } f(x)) (\lim_{ x \to x_{0} } g(x)) \\
+\lim_{ x \to x_{0} } \frac{f(x)}{g(x)} & = \frac{\lim_{ x \to x_{0} } f(x)}{\lim_{ x \to x_{0} } g(x)}
+\end{split}
+$$
+(where the last equation holds only if $\lim_{ x \to x_{0} } g(x) \neq 0$).
+
+###### _proof sketch:_
+
+This follows from [[Mathematical Analysis I --- math-131/notes/Sequences and convergence#_proposition _ the convergence of operations on the complex numbers|the corresponding result for sequences]].
