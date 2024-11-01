@@ -12,11 +12,37 @@
 	Suppose $\alpha$ increases on $[a, b]$ and  $a \le x_{0} \le b$, $\alpha$ is continuous at $x_{0}$, $f(x_{0}) = 1$, and $f(x) = 0$ if $x \neq x_{0}$. Prove that $f \in \mathscr{R}(\alpha)$ and that $\int_{}  f \, dx = 0$.
 \end{problem}
 
+\begin{solution}
+	Since $\alpha$ is continuous at $x_{0}$, for any $\varepsilon > 0$, there exists a  $\delta > 0$ such that $\alpha^{\text{img}} (x_{0} - \delta, x_{0} + \delta) = (\alpha(x_{0}) - \varepsilon/2, \alpha(x_{0}) + \varepsilon/2)$. Thus, for a sufficiently refined partition $P$ with
+	\[
+		x_{0} - \delta < x_{i} < x_{0} < x_{i + 1} < x_{0} + \delta
+	\]
+	we have \[
+		\Delta \alpha_{i} < \varepsilon.
+	\]
+
+	$L(P, f, \alpha) = 0$ for all partitions $P$ (since in every interval, there is a point $x$ where $f(x) = 0$), and for this sufficiently refined partition $P$, we have $U(P, f, \alpha) < \varepsilon$. Thus, $\sup L(P, f, \alpha)$ and $\inf U(P, f, \alpha)$ are both $0$.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[2.]
 	Suppose $f \ge 0$, $f$ is continuous on $[a, b]$, and $\int_{a}^{b} f \, dx = 0$. Prove that $f(x) = 0$ for all $x \in [a, b]$.
 \end{problem}
+
+\begin{solution}
+	We prove the contrapositive --- that if we have $f(x_{0}) = y_{0} > 0$ at some $x_{0} \in [a, b]$, then the integral is also positive.
+
+	Since $f$ is continuous, there is some $\delta > 0$ such that $x \in (x_{0} - \delta, x_{0} + \delta)$  forces $f(x) \in (y_{0}/2, 3 y_{0}/2)$. Now we have a lower bound on the lower sums of the integral, and thus, the integral itself over $(x - \delta, x + \delta)$
+	\[
+		\int_{x - \delta}^{x + \delta} f \, dx > \frac{y_{0}}{2} 2 \delta = y_{0} \delta > 0.
+	\]
+
+	Since $f \ge 0$, the integral everywhere else is non-negative as well, so
+	\[
+		\int_{a}^{b} f \, dx = \int_{a}^{x - \delta} f \, dx + \int_{x - \delta}^{x + \delta} f \, dx + \int_{x + \delta}^{b} f \, dx \ge y_{0} \delta > 0.
+	\]
+\end{solution}
 
 \pagebreak
 
@@ -42,11 +68,32 @@
 	If $f(x) = 0$ for all irrational $x$, $f(x) = 1$ for all rational $x$, prove that $f \notin \mathscr{R}$ on $[a, b]$ for any $a < b$.
 \end{problem}
 
+\begin{solution}
+	Note that any partition, $(x_{i})$ of $[a, b]$ must have pairs of consecutive $x_{i - 1}, x_{i}$ with $\Delta x_{i} = x_{i} - x_{i - 1} > 0$, and the sum of all of the lengths of these segments must be $b - a$, since else we couldn't have $a = x_{0} < x_{n} = b$.
+
+	Since there is a rational and an irrational between any two real numbers, there must be an irrational number between each pair of distinct $x_{i - i}$ and $x_{i}$. On each of these segments, $m_{i} = 0$ and $M_{i} = 1$. Thus, the lower sum over any partition is $0$ and the upper sum is $b - a$. By choosing $\varepsilon < b - a$ we can see that $U(P, f) - L(P, f) > \varepsilon$ for all partitions $P$. That is, $f \notin \mathscr{R}$.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[5.]
-	Suppose $f$ is a bounded real function on $[a, b]$, and $f^{2} \in \mathscr{R}$ on $[a, b]$. Does it follow that $f \in \mathscr{R}$? Does the answer change if we assume that $f^{3} \in \mathscr{R}$.
+	Suppose $f$ is a bounded real function on $[a, b]$, and $f^{2} \in \mathscr{R}$ on $[a, b]$. Does it follow that $f \in \mathscr{R}$? Does the answer change if we assume that $f^{3} \in \mathscr{R}$?
 \end{problem}
+
+\begin{solution}
+	We demonstrate a bounded real function on $[0, 1]$ with integrable $f^{2}$ but $f \notin \mathscr{R}$ --- consider $f : [0, 1] \to [-1, 1]$ by
+	\[
+		f(x) = \begin{cases}
+			1 & x \in \mathbb{Q} \\
+			-1 & x \notin \mathbb{Q}.
+		\end{cases}
+	\]
+	$f$ is not integrable by the same argument as for exercise 4. However, $f^{2}$ is a constant function and thus, continuous and integrable. That is, $f^{2} \in \mathscr{R}$ does not imply $f \in \mathscr{R}$.
+
+	Yes the answer changes for $f^{3} \in \mathscr{R}$.
+
+	If $f^{3} \in \mathscr{R}$, then for any $\varepsilon > 0$, there exists $P$ such that $U(P, f^{3}) - L(P, f^{3}) < \varepsilon$. But on each segment $(x_{i - 1}, x_{i})$ of $P$, if $m_{i}$ and $M_{i}$ are the infimum and supremum of $f$, $m_{i}^{3}$ and $M_{i}^{3}$. For $\lvert m_{i} \rvert, \lvert M_{i} \rvert > 1$, since $M_{i} - m_{i} < M_{i}^{3} - m_{i}^{3}$ it follows that $U(P, f) - L(P, f) < \varepsilon$. By the continuity of $x \mapsto x^{1/3}$, even when $\lvert m_{i} \rvert$ or $\lvert M_{i} \rvert$ is less than $1$, we can bound the difference $M_{i} - m_{i}$ by further partitioning the interval $(x_{i - 1}, x_{i})$ so that $M_{i}^{3} - m_{i}^{3}$ is sufficiently small for $M_{i} - m_{i}$ to be less than $\varepsilon$. Thus, if $f^{3} \in \mathscr{R}$, so is $f$.
+\end{solution}
 
 \pagebreak
 
@@ -81,6 +128,20 @@
 	\]
 	converges.
 \end{problem}
+
+\begin{solution}
+	First, suppose the integral converges. Thus, the set of upper sums over all partitions is bounded even as $b \to \infty$. Thus, by considering the partitions $P$ of positive integers $1 \le 2 \le 3 \le \dots \le b$ for positive integers $b$, we get that the partial sums
+	\[
+		\sum_{n = 1}^{b} f(n) \le U(P, f)
+	\]
+	are bounded since they are dominated by the upper sums of the integral. Thus, the series
+	\[
+		\sum_{n = 1}^{\infty} f(n)
+	\]
+	converges.
+
+	Now suppose the series converges.
+\end{solution}
 
 \pagebreak
 
