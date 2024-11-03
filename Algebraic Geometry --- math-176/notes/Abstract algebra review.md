@@ -7,6 +7,7 @@ tags:
 - math-176/25
 - math-176/26
 - math-176/27
+- math-176/28
 ---
 
 ### (Abelian) groups
@@ -61,6 +62,30 @@ Note that by the first isomorphism theorem, we know that ideals are exactly the 
 
 ![[Abstract Algebra I --- math-171/notes/Ring isomorphism theorems#_theorem _ the first isomorphism theorem|Ring isomorphism theorems]]
 
+![[Abstract Algebra I --- math-171/notes/Ring isomorphism theorems#_theorem _ the second isomorphism theorem|Ring isomorphism theorems]]
+
+The second isomorphism theorem is often called the diamond isomorphism theorem for Hasse diagram reasons.
+
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		& R \\
+		& A + B \ar[u, no head] \\
+		A \ar[ur, no head] & & B \ar[ul, no head] \\
+		& A \cap B \ar[ul, no head] \ar[ur, no head]\\
+		& \{ 0 \} \ar[u, no head]
+	\end{tikzcd}
+\end{document}
+```
+
+![[Abstract Algebra I --- math-171/notes/Ring isomorphism theorems#_theorem _ the third isomorphism theorem|Ring isomorphism theorems]]
+
+![[Abstract Algebra I --- math-171/notes/Ring isomorphism theorems#_theorem _ the fourth isomorphism theorem|Ring isomorphism theorems]]
+
+This fourth isomorphism theorem is extremely useful when we start talking about [[Algebraic Geometry --- math-176/notes/Spectra#_definition _ $ operatorname{Spec} R$ spectrum|spectra]] — the collections of all prime ideals of a ring.
+
 ### Integral domains
 
 We should also recall the definition of integral domains (and thus, we need to recall the definition of zero divisors)
@@ -81,34 +106,6 @@ We use the following characterisation of prime ideals
 
 ![[Abstract Algebra I --- math-171/notes/Prime and maximal ideals#_proposition _ prime ideals have integral domains as quotients|Prime and maximal ideals]]
 
-In algebraic geometry, we denote the collection of prime ideals in a ring as follows —
-
-##### _definition:_ $\operatorname{Spec} R$, spectrum
-
-The spectrum of an integral domain, is the collection of all of its prime ideals
-$$
-\operatorname{Spec} R = \{ P \subset R \mid P \text{ is prime} \}.
-$$
-
-The prime ideals are respected by ring homomorphisms and thus induce an inverse map on the spectra. (This is a contravariant functor!)
-
-##### _proposition:_ the pullback on spectra
-
-Suppose $\varphi : R \to S$ is a non-trivial homomorphism between integral domains. Then the pre-image of a prime $P \subset S$ is a prime in $R$ — $\varphi^\text{pre}(P)$ is prime in $R$ and the pullback
-$$
-\begin{split}
-\varphi^* & : \operatorname{Spec} S \to \operatorname{Spec} R \\
- & : P \mapsto \varphi^\text{pre}(P).
-\end{split}
-$$
-is well defined.
-
-###### _proof:_
-
-Suppose $P \subset S$ is prime. First we show that $I = \varphi^\text{pre}(P)$ is an ideal. 
-
-Note that $I$ is non-empty since $0 \in P$ which is mapped to by $0$. If $a, b \in I$ and $r \in R$, then $\varphi(a + b) = \varphi(a) + \varphi(b) \in P$ since $\varphi(a), \varphi(b) \in P$.
-
 Maximal ideals are even more special!
 
 ![[Abstract Algebra I --- math-171/notes/Prime and maximal ideals#_definition _ maximal ideal|Prime and maximal ideals]]
@@ -119,28 +116,8 @@ Note that as a corollary
 
 ![[Abstract Algebra I --- math-171/notes/Prime and maximal ideals#_corollary _ every maximal ideal is prime|Prime and maximal ideals]]
 
-##### _definition:_ $\operatorname{mSpec} R$, the max spectrum
-
-The max spectrum of $R$ is the collection of all maximal ideals $M \subset R$.
 
 ![[Abstract Algebra I --- math-171/notes/Prime and maximal ideals#_example _ not every prime ideal is maximal|Prime and maximal ideals]]
-
-##### _example:_ the spectra of $\mathbb{Z}$
-
-Since $\mathbb{Z}$ is a [[Abstract Algebra I --- math-171/notes/Factorisation in special rings#_definition _ principal ideal domain|principal ideal domain]] the prime ideals and maximal ideals are almost exactly identical — $\mathbb{Z} / n \mathbb{Z}$ is an field if and only if $n$ is prime and an integral domain if $n$ is prime. However, $\mathbb{Z} = \mathbb{Z} / 0 \mathbb{Z}$ is also an integral domain. Thus,
-$$
-\operatorname{Spec} \mathbb{Z} = \{ (0) \} \cup \{ (2), (3), (5), (7), \dots \} = \{ 0 \} \cup \operatorname{mSpec} \mathbb{Z}.
-$$
-
-So $1$ is not a prime, but $0$ is!
-
-##### _example:_ the spectra of a field and its polynomial ring
-
-Say $F$ is our field. Since $F$ is a field, it only has one proper ideal — $(0)$.  That is, $\operatorname{Spec} F = \operatorname{mSpec} F = \{ (0) \}$.
-
-However, $F[x]$ has a lot of maximal ideals! $R/I$ is a field for any $I = (f)$ where $f$ is an irreducible polynomial.
-
-Fix $a \in F$, and define $\varphi : R \to F$ by $f \mapsto f(a)$. What's the pullback? Well, there's only one ideal in $\operatorname{Spec} F$ so there's only one thing to check. What gets sent to zero? All the polynomials that have a root at $a$! That is, $\varphi^*((0)) = (x - a)$.
 
 ### Fields
 
@@ -218,34 +195,3 @@ Note that $\overline{\mathbb{Q}}$ is not $\mathbb{C}$. In fact, $\mathbb{C}$ is 
 
 Using the [[Complex Analysis --- math-135/notes/Cauchy integral formula#_theorem _ the fundamental theorem of algebra|fundamental theorem of algebra]] and the fact that $\mathbb{C} \cong \mathbb{R}[x] / (x^{2} + 1)$, we can see that $\overline{\mathbb{R}} = \mathbb{C}$.
 
-### Polynomial rings
-
-We can define polynomials for rings too, and these polynomials form rings themselves!
-
-##### _definition:_ polynomial, degree, $R[x]$
-
-Given a ring $R$, a polynomial $p$ is a formal sum
-$$
-a_{n} x^n + \dots + a_{1} x + a_{0}
-$$
-with $a_{n} \in R$. 
-
-If $n$ is the largest integer with $a_{n} \neq 0$, we say say the degree of $p$ is $\operatorname{deg}(p) = n$. If all coefficients $a_{n}$ are $0$, we say $\operatorname{deg}(p) = -\infty$.
-
-##### _proposition:_ polynomial rings are rings
-
-$R[x]$ is a ring under the obvious multiplication and addition.
-
-##### _proposition:_ polynomials over integral domains are really nice
-
-If $R$ is an integral domain, then $R[x]$ is an integral domain with the same units as $R$ and $\operatorname{deg}(pq) = \operatorname{deg} p + \operatorname{deg} q$ for any $p, q \in R[x]$.
-
-###### _proof:_
-
-Suppose $R$ is an integral domain. Consider any non-zero polynomials $p = \sum a_{j} x^j$ and $q = \sum b_{j} x^j$ of degrees $m$ and $n$ in $R[x]$. Their product has a leading term $a_{m} b_{n} x^{m + n}$ and since $R$ is an integral domain, $a_{m} b_{n} \neq 0$. Thus, $\operatorname{deg}(pq) = p + q > -\infty$ giving $pq \neq 0$. 
-
-The units of $R[x]$ are just the polynomials constant on a unit. This is just isomorphic to the units of $R$.
-
-##### _corollary:_ multivariate polynomial rings
-
-If $R$ is an integral domain, then $R[x_{1}, \dots, x_{n}, x_{n + 1}] = R[x_{1}, \dots, x_{n}][x_{n + 1}]$, defined inductively, is an integral domain.

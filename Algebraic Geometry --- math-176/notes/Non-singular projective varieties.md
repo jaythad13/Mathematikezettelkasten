@@ -61,7 +61,7 @@ is a homogenous polynomial of degree $e$.
 
 Consider $V(F) = \{ (x_{1} : x_{2} : x_{0}) \in \mathbb{P}^2(F) \mid g(x_{1}, x_{2}, x_{0}) = 0 \}$. Notice that the embedding $\mathbb{A}^2(F) \xhookrightarrow{} \mathbb{P}^2(F)$ by $(x, y) \mapsto (x : y : 1)$ also embeds the affine curve defined by $f$ into the variety $V(F)$. 
 
-Putting in $x_{0} = 1$ in $V(F)$ clearly recovers the affine curve, and thus, so do all points with $x_{0} \neq 0$. What about $x_{0} = 0$? Since this is the intersection of $V(F)$, a curve with the [[Algebraic Geometry --- math-176/notes/Affine and projective space#_example _ projective line|line at infinity]] $x_{0} = 0$. This covers all the points in $V(F)$! Thus,
+Putting in $x_{0} = 1$ in $V(F)$ clearly recovers the affine curve, and thus, so do all points with $x_{0} \neq 0$. What about $x_{0} = 0$? Since this is the intersection of $V(F)$, a curve with the [[Algebraic Geometry --- math-176/notes/Projective space#_example _ projective line|line at infinity]] $x_{0} = 0$. This covers all the points in $V(F)$! Thus,
 $$
 V(F) = \{ (x : y : 1) \mid f(x, y) = 0 \} \cup X
 $$

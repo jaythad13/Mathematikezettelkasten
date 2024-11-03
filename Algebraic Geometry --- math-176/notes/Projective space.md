@@ -16,7 +16,7 @@ For each $n \in \mathbb{N}$, the affine $n$-space over $F$ is
 $$
 \mathbb{A}^n(F) = \{ (x_{1}, \dots, x_{n}) \mid x_{i} \in F \}.
 $$
-Note, one can think of $\mathbb{A}^n$ as a [[functor]] that takes fields and spits out affine spaces.
+Note, one can think of $\mathbb{A}^n$ as a [[Functors|functor]] that takes fields and spits out affine spaces.
 
 
 ##### _proposition:_ the projective equivalence relation on affine space
