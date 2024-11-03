@@ -1,5 +1,7 @@
 \documentclass[12 pt, letterpaper]{hmcpset}
 \usepackage{hw-preamble}
+\usepackage{todonotes}
+\todostyle{jayden}{color = pink}
 
 \name{Jayden Thadani}
 \class{MATH 131 --- Mathematical Analysis I}
@@ -27,11 +29,91 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item If $m < n$, then $r_{m} > r_{n}$ since all $a_{i} > 0$ and $r_{m} = a_{m} + \dots + a_{n - 1} + r_{n}$. Thus, 
+			\[
+				\begin{split}
+					\frac{a_{m}}{r_{m}} + \dots + \frac{a_{n}}{r_{n}} & > \frac{a_{m} + \dots + a_{n}}{r_{m}} \\
+											  & = \frac{r_{m} - r_{n} + a_{n}}{r_{m}} \\
+											  & = 1 - \frac{r_{n}}{r_{m}} + \frac{a_{n}}{r_{m}} \\
+											  & > 1 - \frac{r_{n}}{r_{m}}.
+				\end{split}
+			\]
+			
+			Choose some fixed $\varepsilon \in (0, 1)$. Note that for each fixed denominator $r_{m}$, since $r_{n} \to 0$ as $n \to \infty$ (because the series $\sum a_{n}$ converges), there exists sufficiently large $n$ such that $r_{n}/r_{m} < \varepsilon$, and thus,  $1 - r_{n} / r_{m} > 1 - \varepsilon$.
+
+			Consider the partial sums
+			 \[
+				s_{n} = \sum_{j = 1}^{n} \frac{a_{j}}{r_{j}}.
+			\]
+			For any $s_{m}$, we can always find $s_{n}$ such that $s_{n} - s_{m} > 1 - \varepsilon$ --- choose $n$ such that $1 - r_{n - 1} / r_{m + 1} > 1 - \varepsilon$. Then it follows that
+			\[
+				\begin{split}
+					s_{n} - s_{m} & = \frac{a_{m + 1}}{r_{m + 1}} + \dots + \frac{a_{n - 1}}{a_{m - 1}} \\
+						      & > 1 - \frac{r_{n - 1}}{r_{m + 1}} \\
+						      & > 1 - \varepsilon.
+				\end{split}
+			\]
+			Now we have that $s_{n}$ can be greater than any $N \in \mathbb{N}$ and thus, $s_{n} \to \infty$. Thus, $\sum \frac{a_{n}}{r_{n}}$ must diverge.
+		\item We can compute
+			\[
+				\begin{split}
+					\frac{a_{n}}{\sqrt{r_{n}}} & = \frac{r_{n} - r_{n + 1}}{\sqrt{r_{n}}} \\
+								   & = \sqrt{r_{n}} - \frac{r_{n + 1}}{\sqrt{r_{n}}} \\
+								   & < \sqrt{r_{n}} + \sqrt{r_{n}} - 2 \sqrt{r_{n + 1}} \\
+								   & = 2(\sqrt{r_{n}} - \sqrt{r_{n + 1}}).
+				\end{split}
+			\]
+			Here, the inequality follows by noticing
+			\[
+				\begin{split}
+					\frac{r_{n + 1}}{\sqrt{r_{n}}} & > \left ( 1 - \frac{a_{n}}{r_{n}} - \frac{a_{n + 1}}{r_{n + 1}} \right ) \sqrt{r_{n}} \\
+								       & = \sqrt{r_{n}} - \frac{a_{n} r_{n + 1} + a_{n + 1} r_{n}}{r_{n} r_{n + 1}} \sqrt{r_{n}} \\
+								       & > \sqrt{r_{n + 1}} - \frac{r_{n + 1} (a_{n} + a_{n + 1})}{\sqrt{r_{n}} r_{n + 1}} \\
+								       & = \sqrt{r_{n + 1}} + \frac{r_{n + 2} - r_{n}}{\sqrt{r_{n}}} \\
+								       & = 2 \sqrt{r_{n + 1}} - \sqrt{r_{n}}.
+				\end{split}
+			\]
+
+			Notice that $\sum 2(\sqrt{r_{n}} - \sqrt{r_{n + 1}})$ is a telescoping sum, with partial sums
+			\[
+				\begin{split}
+					s_{N} & = 2 (\sum_{n = 1}^{N} \sqrt{r_{n}} - \sqrt{r_{n + 1}}) \\
+					      & = 2 (\sqrt{r_{1}} - \sqrt{r_{N + 1}}).
+				\end{split}
+			\]
+			Since $r_{n} \to 0$, $s_{n}$ converges to $\sqrt{r_{1}}$. Since the series $\sum \frac{a_{n}}{\sqrt{r_{n}}}$ is term-by-term less than $2(\sqrt{r_{n}} - \sqrt{r_{n + 1}})$, it converges too.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[Rudin chapter 3, exercise 13.]
 	Prove that the Cauchy product of two absolutely convergent series converges absolutely.
 \end{problem}
+
+\begin{solution}
+	Suppose $\sum a_{n}$ and $\sum b_{n}$ are two absolutely convergent series. Then, by Theorem 3.50 in the book, we know that the Cauchy product of their absolute values converges. That is, for $C_{n}$ defined by
+	\[
+		C_{n} = \sum_{k = 0}^{n} \lvert a_{k} \rvert \lvert b_{n - k} \rvert
+	\]
+	the series $\sum C_{n}$ converges.
+
+	The Cauchy product of the two series is the series $\sum c_{n}$ with $c_{n}$ defined by
+	\[
+		c_{n} = \sum_{k = 0}^{n} a_{k} b_{n - k}.
+	\]
+	Notice that
+	\[
+		\begin{split}
+			\lvert c_{n} \rvert & = \left \lvert \sum_{k = 0}^{n} a_{k} b_{n - k} \right \rvert \\
+					    & \le \sum_{k = 0}^{n} \lvert a_{k} \rvert \lvert b_{n - k} \rvert \\
+					    & = C_{n}
+		\end{split}
+	\]
+	where the inequality is just the triangle inequality. But then, since $\sum C_{n}$ converges, so does $\sum \lvert c_{n} \rvert$, and thus, the Cauchy product $\sum c_{n}$ converges absolutely.
+\end{solution}
 
 \pagebreak
 
@@ -47,6 +129,70 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	First, we invert the formula to get $x_{n}$ in terms of $x_{n + 1}$. Notice that
+	\[
+		1 - x_{n + 1} = 1 - \frac{\alpha + x_{n}}{1 + x_{n}}
+	\]
+	and thus,
+	\[
+		1 - x_{n + 1} = \frac{1 - \alpha}{1 + x_{n}}
+	\]
+	which gives us
+	\[
+		x_{n} = \frac{1 - \alpha}{1 - x_{n + 1}} - 1 = \frac{x_{n + 1} - \alpha}{1 - x_{n + 1}}.
+	\]
+	That is,
+	\[
+		x_{n - 1} = \frac{\alpha - x_{n}}{x_{n} - 1} = x_{n} + \frac{\alpha - x_{n}^{2}}{x_{n} - 1}
+	\]
+
+	Also notice that
+	\[
+		\begin{split}
+			\left \lvert \frac{\alpha - x_{n}^{2}}{1 + x_{n}} \right \rvert & > \left \lvert \frac{(\sqrt{\alpha} + x_{n}) (\sqrt{\alpha} - x_{n})}{\sqrt{\alpha} + x_{n}} \right \rvert \\
+							     & = \lvert \sqrt{a} - x_{n} \rvert.
+		\end{split}
+	\]
+	Thus, if $x_{n} > \alpha$, we have  $x_{n + 1} < \alpha$ and vice-versa. Since $x_{1} > \sqrt{\alpha}$ we have $x_{n} > \sqrt{\alpha}$ for all odd $n$, and $x_{n} < \sqrt{\alpha}$ for all even $n$. 
+
+	\begin{enumerate}
+		\item If $n$ is even, then $\alpha - x_{n}^{2} > 0$ and thus,
+			\[
+				x_{n - 1} = x_{n} + \frac{\alpha - x_{n}^{2}}{x_{n} - 1} > x_{n} + \frac{\alpha - x_{n}^{2}}{x_{n} + 1} = x_{n + 1}
+			\]
+			Thus, $x_{1} > x_{3} > x_{5} > \cdots$ as desired.
+		\item If $n$ is odd, then $\alpha - x_{n}^{2} < 0$ and thus,
+			\[
+				x_{n - 1} = x_{n} + \frac{\alpha - x_{n}^{2}}{x_{n} - 1} < x_{n} + \frac{\alpha - x_{n}^{2}}{x_{n} + 1} = x_{n + 1}.
+			\]
+			Thus, $x_{2} < x_{4} < x_{6} < \cdots$ as desired.
+		\item For any $n$,
+			\[
+				x_{n} = x_{n - 1} + \frac{\alpha - x_{n - 1}^{2}}{1 + x_{n - 1}}
+			\]
+			and
+			\[
+				x_{n} = x_{n + 1} + \frac{\alpha - x_{n + 1}^{2}}{x_{n + 1} - 1}.
+			\]
+
+			Thus,
+			\[
+				x_{n - 1} + \frac{\alpha - x_{n - 1}^{2}}{1 + x_{n - 1}} = x_{n + 1} + \frac{\alpha - x_{n + 1}^{2}}{x_{n + 1} - 1}
+			\]
+			which gives us
+			\[
+				\begin{split}
+					\alpha - x_{n + 1}^{2} & = (x_{n + 1} - 1)(x_{n - 1} - x_{n + 1}) + (\alpha - x_{n - 1}^{2}) \frac{x_{n + 1} - 1}{x_{n - 1} + 1} \\
+							       & = (\alpha - x_{n - 1}^{2}) \left ( \frac{x_{n + 1} - 1}{x_{n - 1} + 1} + \frac{(x_{n + 1} - 1)(x_{n - 1} - x_{n + 1})}{\alpha - x_{n - 1}^{2}} \right ) \\
+							       & = \lambda (\alpha - x_{n - 1}^{2})
+				\end{split}
+			\]
+
+			Now, we have $\alpha - x_{n + 1}^{2} < \lambda (\alpha - x_{n - 1}^{2})$ for some $\lambda < 1$. Thus, both odd and even $x_{n}^{2}$ converge to $\alpha$, and thus, $x_{n} \to \sqrt{\alpha}$.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[Rudin chapter 4, exercise 1.]
@@ -56,6 +202,30 @@
 	\]
 	for every $x \in \mathbb{R}$. Does this imply that $f$ is continuous?
 \end{problem}
+
+\begin{solution}
+	No it does not. Consider $f : \mathbb{R} \to \mathbb{R}$ by
+	\[
+		f(x) = \begin{cases}
+			\lvert x \rvert & x \neq 0 \\
+			1 & x = 0.
+		\end{cases}
+	\]
+
+	At every $x \neq 0$, $f$ is continuous, and thus,
+	\[
+		\lim_{h \to 0} f(x + h) - f(x - h) = f(x) - f(x) = 0
+	\]
+	$f$ is also even about $0$, so for $x = 0$, we have
+	\[
+		\begin{split}
+			\lim_{h \to 0} f(0 + h) - f(0 - h) & = \lim_{h \to 0} f(h) - f(-h) \\
+							   & = \lim_{h \to 0} f(h) - f(h) \\
+							   & = 0.
+		\end{split}
+	\]
+	However, $f$ is not continuous at $0$ since $\lim_{x \to 0} \lvert x \rvert = 0$ and thus, $\lim_{x \to 0} f(x) = 0$ but $f(0) \neq 0$ --- $f$ doesn't equal its limit at $0$.
+\end{solution}
 
 \pagebreak
 
@@ -67,10 +237,34 @@
 	for every set $E \subset X$. Show, by an example, that $f^{\text{img}}(\overline{E})$ can be a proper subset of $\overline{f^{\text{img}}(E)}$.
 \end{problem}
 
+\begin{solution}
+	We know that the closure, $\overline{E}$ is the smallest closed set (by inclusion) containing $E$, and similarly, $\overline{f^{\text{img}}(E)}$ is the smallest closed set containing $f^{\text{img}}(E)$. The pre-image of $\overline{f^{\text{img}}(E)}$ under $f$ must then contain $E$, and by continuity, is closed. That is, $f^{\text{pre}}(\overline{f^{\text{img}}(E)})$ is a closed set containing $E$. Since $\overline{E}$ is the smallest such closed set, we have
+	\[
+		\overline{E} \subset f^{\text{pre}}(\overline{f^{\text{img}}(E)}).
+	\]
+	Considering their images under $f$, we get
+	 \[
+		f^{\text{img}}(\overline{E}) \subset \overline{f^{\text{img}}(E)}.
+	\]
+
+	Consider the map $f : \mathbb{R}^{2} \to \mathbb{R}^{2}$ by
+	\[
+		 r e^{i \theta} \mapsto \frac{\arctan{r}}{\pi / 2} e^{i \theta}.
+	\]
+	$f^{\text{img}}(\mathbb{R})$ is the open disc $\mathbb{D}$, and since the closure of $\mathbb{R}^{2}$ is $\mathbb{R}^{2}$ itself, $f^{\text{img}}(\overline{\mathbb{R}^{2}})$ is also the open disc $\mathbb{D}$. However, $\mathbb{D}$ is not closed, and thus, $\overline{f^{\text{img}}(\mathbb{R}^{2})}$ is the closed disc $\overline{\mathbb{D}}$. That is, we have the strict inclusion
+	\[
+		f^{\text{img}}(\overline{\mathbb{R}^{2}}) \subsetneq \overline{f^{\text{img}}(\mathbb{R}^{2})}.
+	\]
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[Rudin chapter 4, exercise 3.]
 	Let $f$ be a continuous real function on a metric space $X$. Let $Z(f)$ (the \emph{zero set} of $f$) be the set of all $p \in X$ at which $f(p) = 0$. Prove that $Z(f)$ is closed.
 \end{problem}
+
+\begin{solution}
+	Notice that the set $\{ 0 \}$ is closed since $\mathbb{R} \setminus \{ 0 \}$ is open. Thus, its pre-image under the continuous function $f$ is closed as well. That is, $Z(f)$ is closed.
+\end{solution}
 
 \end{document}
