@@ -26,7 +26,7 @@ f(z) = \frac{1}{2 \pi i} \int_{C_{\rho_{1}}(z_{0})} \frac{f(\zeta)}{\zeta - z} \
 $$
 Using the same trick we used [[Complex Analysis --- math-135/notes/Cauchy integral formula#_corollary _ the derivative form (holomorphic functions are smooth and analytic)|to get a power series from the Cauchy integral formula]], we can write the first integral as a power series —
 $$
-\frac{1}{2 \pi i} \int_{C_{\rho_{2}}} \frac{f(\zeta)}{\zeta - z} \, d\zeta = \sum_{n = 0}^\infty (z - z_{0})^n \frac{1}{2 \pi i} \int_{C_{\rho_{2}}} \frac{f(\zeta)}{(\zeta - z_{0})^{n + 1}} \, d\zeta 
+\frac{1}{2 \pi i} \int_{C_{\rho_{1}}} \frac{f(\zeta)}{\zeta - z} \, d\zeta = \sum_{n = 0}^\infty (z - z_{0})^n \frac{1}{2 \pi i} \int_{C_{\rho_{1}}} \frac{f(\zeta)}{(\zeta - z_{0})^{n + 1}} \, d\zeta 
 $$
 
 However, we can't do the same thing with the second integral —
@@ -61,7 +61,7 @@ Once we move the $z$ out of the integrals, we can just deform $C_{\rho_{1}}$ and
 
 Note that these coefficients are unique, since
 $$
-a_{n} = \int_{C} (z - z_{0})^{1 - n} \sum_{n = - \infty}^\infty a_{n} (z - z_{0})^n \, dz = \int_{C} (z - z_{0})^{1 - n}f(z) \, dz 
+a_{n} = \frac{1}{2 \pi i} \int_{C} (z - z_{0})^{1 - n} \sum_{n = - \infty}^\infty a_{n} (z - z_{0})^n \, dz = \frac{1}{2 \pi i} \int_{C} (z - z_{0})^{1 - n}f(z) \, dz 
 $$
 
 ##### _example:_ a very contrived application
@@ -93,7 +93,7 @@ We get a useful extension of [[Complex Analysis --- math-135/notes/Cauchy-Goursa
 
 ##### _theorem:_
 
-If $f$ is holomorphic on a disc $D \setminus \{ \zeta_{1}, \dots, \zeta_{k} \}$. If for all $j$, $\lim_{ z \to \zeta_{j} } (z - \zeta_{j}) = 0$ for any closed curve in $D$, then
+If $f$ is holomorphic on a disc $D \setminus \{ \zeta_{1}, \dots, \zeta_{k} \}$. If for all $j$, $\lim_{ z \to \zeta_{j} } (z - \zeta_{j})  f(z) = 0$ for any closed curve in $D$, then
 $$
 \int_{\gamma} f(z) \, dz = 0
 $$

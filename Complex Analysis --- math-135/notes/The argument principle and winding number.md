@@ -88,7 +88,7 @@ Let $\gamma$ be a piecewise smooth closed curve that doesn't pass through $z_{0}
 
 Let $z_{\gamma} : [a, b] \to \mathbb{C}$ be a parametrisation of $\gamma$. Define
 $$
-h(t) = \int_{a}^t \frac{z_{\gamma}'(t)}{z_{\gamma}(t) - z_{0}} \, dz.
+*h(t) = \int_{a}^t \frac{z_{\gamma}'(t)}{z_{\gamma}(t) - z_{0}} \, dz.*
 $$
 Note that $h$ is continuous on $[a, b]$ and is differentiable where $\gamma$ is continuous with derivative $\frac{z_{\gamma}'(t)}{z_{\gamma}(t) - z_{0}}$. Also note that $h(b)$ is the integral we want to evaluate.
 

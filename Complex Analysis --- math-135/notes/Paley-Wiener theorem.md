@@ -62,7 +62,7 @@ $$
 \lvert f(z) \rvert & \le \int_{-M}^M \lvert \hat{f}(\xi) \rvert \lvert e^{2 \pi i(x + i y) \xi} \rvert  \, d\xi \\
  & = \int_{-M}^M \lvert \hat{f}(\xi) \rvert \lvert e^{- 2 \pi y \xi} \rvert \lvert e^{- 2 \pi i x \xi} \rvert   \, d\xi \\
  & = \int_{-M}^M \lvert \hat{f}(\xi) \rvert e^{- 2 \pi y \xi}   \, d\xi \\
- & \le \sup_{\xi \in [-M, M]} \lvert \hat{f}(\xi) \rvert \lvert e^{-2 \pi y \xi} \rvert \\
+ & \le (2M) \sup_{\xi \in [-M, M]} \lvert \hat{f}(\xi) \rvert \lvert e^{-2 \pi y \xi} \rvert \\
  & = Ae^{2 \pi M y}  \\
  & = A e^{2 \pi M \lvert z \rvert }.
 \end{split}
@@ -70,7 +70,7 @@ $$
 
 Now suppose $f$ has an entire extension $f$ with $\lvert f(z) \rvert < A e^{2 \pi M \lvert z \rvert}$. Notice that the boundedness of $\operatorname{supp} \hat{f}$ implies a stronger condition than $\lvert f(z) \rvert \le A e^{2 \pi M \lvert z \rvert}$. In particular, it gives us $\lvert f(z) \rvert \le A e^{2 \pi M \lvert \operatorname{Im} z \rvert}$. Thus, to prove the converse, we need a variant of the maximum modulus principle to tighten the bound on $f$ 
 
-![[#_theorem _ the Phragmén-Lindelöf theorem]]
+![[#_theorem _ the Phragmén-Lindelöf principle]]
 
 Using this, we can strengthen our bound to $\lvert f(z) \rvert \le A e^{2 \pi M \lvert \operatorname{Im} z \rvert}$. Consider the function $F(z) = g(z) e^{2 \pi i M z}$. Note that $F / A \le e^{2 \pi M(z + i z)}$. If $z = x \in \mathbb{R}$, then
 $$
@@ -129,26 +129,30 @@ Suppose $f, \hat{f}$ are continuous with moderate decrease. Then $\hat{f}(\xi) =
 Bound $f$ using the Fourier inversion formula and the moderate decrease of $\hat{f}$. Show it is holomorphic by truncating the Fourier inversion formula and considering these truncated integrals to be a [[Complex Analysis --- math-135/notes/Cauchy integral formula#_proposition _ uniform convergence preserves holomorphicity|sequence of uniformly convergent holomorphic functions]] converging to $f$. 
 
 
-##### _theorem:_ the Phragmén-Lindelöf theorem
+##### _theorem:_ the Phragmén-Lindelöf principle
 
 Suppose $f$ is holomorphic in the infinite sector $S$ (for example, $\{ z \mid -\pi/4 < \operatorname{arg} z < \pi / 4 \}$) and continuous on its closure. If $\lvert f(z) \rvert \le 1$ on $\partial S$ and $\lvert f(z) \rvert \le C e^{c \lvert z \rvert}$ for some $c, C \in \mathbb{R}$, then $f(z) < 1$ everywhere in $S$.
 
 ###### _proof:_
 
-Again, we create an $\varepsilon$ of room. Specifically, we consider $f_{\varepsilon} : z \mapsto f(z) e^{-\varepsilon z^{3/2}}$ (we choose the square root that halves the argument). We will show that $\lvert f_{\varepsilon}(z) \rvert \le 1$ in $\overline{S}$ by using the maximum modulus principle, and then let $\varepsilon \to 0$ to show that $f$ must also be bounded.
+Again, we create an $\varepsilon$ of room. Specifically, we consider $f_{\varepsilon} : z \mapsto f(z) e^{-\varepsilon z^{3/2}}$. (We choose the principle branch of the square root that halves arguments in $[-\pi, \pi]$, and is thus, continuous on $S$). We will show that $\lvert f_{\varepsilon}(z) \rvert \le 1$ in $\overline{S}$ by using the maximum modulus principle, and then let $\varepsilon \to 0$ to show that $f$ must also be bounded.
 
-First we show that $f_{\varepsilon}$ is bounded. Notice that we can bound the exponential by the real part of $\lvert z \rvert^{3/2}$.
+First we show that $f_{\varepsilon}$ is bounded. Notice that we can bound the exponential by the real part of $\lvert z \rvert^{3/2}$. For $\operatorname{Arg} z = \theta$,
 $$
 \begin{split}
 \lvert f_{\varepsilon}(z) \rvert & \le f(z) \lvert e^{- \varepsilon z^{3 / 2}} \rvert \\
- & \le C e^{c \lvert z \rvert } e^{-\varepsilon \lvert z \rvert^{3/2} \cos(3 \operatorname{Arg} z / 2) } \\
+ & \le C e^{c \lvert z \rvert } e^{-\varepsilon \lvert z \rvert^{3/2} \cos(3 \theta / 2) } \\
 \end{split}
 $$
-But $\cos (3 \operatorname{Arg} z / 2)$ is bounded by some $\alpha$ because of the sector we're working in (in particular, it is non-zero).
+But $\cos (3 \theta / 2)$ is strictly positive because of the sector we're working in (specifically, $- \pi / 2 < 3 \theta / 2 < \pi / 2$). Thus,
+$$
+\lvert f_{\varepsilon}(z) \rvert \le C e^{c \lvert z \rvert  - a \varepsilon \lvert z \rvert^{3/2}}
+$$
+where $a$ depends only on the argument of $z$. Thus, as $\lvert z \rvert \to \infty$ along a particular direction from the origin, $\lvert f_{\varepsilon} \rvert \to 0$.
 
-Since $f_{\varepsilon} \to 0$, there is some radius outside which it is always less than $1$. Thus, we can work in the compact sector $\{ z \in S \mid \lvert z \rvert < R \}$.
+Since $f_{\varepsilon} \to 0$, there is some radius $R$ outside which it is always less than $1$. Thus, we can work in the bounded sector $S_{c} = \{ z \in S \mid \lvert z \rvert < R \}$ (outside which $\lvert f_{\varepsilon} \rvert < 1$).
 
-Let $M_{\varepsilon}$ be the supremum of $f_{\varepsilon}$ on $\overline{S}$. Then 
+Let $M$ be the supremum of $f_{\varepsilon}$ on $\overline{S}$ and let $z_{n}$ be a sequence with $\lvert f_{\varepsilon}(z_{n}) \rvert \to M$. Since $f_{\varepsilon} \to 0$ as $\lvert z \rvert \to \infty$, we know that if $z_{n} \to \infty$, $M < 1$. Else, $z_{n}$ converge to some $z$ inside $S_{c}$, at which $f_{\varepsilon}$ achieves a maximum. By the [[Complex Analysis --- math-135/notes/The argument principle and winding number#_theorem _ the maximum modulus principle|maximum modulus principle]], $z$ is on the boundary $\partial S_{c} \subset \partial S$ where we already have that $\lvert f_{\varepsilon}(z) \rvert \le 1$.
 
 ##### _theorem:_ Lebesgue dominated convergence theorem
 

@@ -148,11 +148,13 @@ If $f$ is a meromorphic function with an isolated singularity at $z_{0}$, $f$ ha
 
 If $f$ has a pole at $z_{0}$, there is some holomorphic $g$ with $g(z) = 1/f(z)$ for $z \neq z_{0}$ and $g(z) = 0$. Thus, $g(z) \to 0$ near $z_{0}$, and $\lvert f(z) \rvert = \lvert 1/g(z) \rvert \to \infty$.
 
-If $\lvert f(z) \rvert \to \infty$ as $z \to z_{0}$ then $1 / f$ is holomorphic for all $z \neq z_{0}$ and is bounded near $z_{0}$. Thus, $1/f$ has a removable singularity at $z_{0}$. Then there is $g$, the extension of $1/f$ which is holomorphic around $z_{0}$ and $f = 1 / g$ except at $z_{0}$.
+If $\lvert f(z) \rvert \to \infty$ as $z \to z_{0}$ then $1 / f$ is holomorphic for all $z \neq z_{0}$ and is bounded near $z_{0}$. Thus, $1/f$ has a removable singularity at $z_{0}$. Then there is $g$, the extension of $1/f$ which is holomorphic around $z_{0}$ and $f = 1 / g$ except at $z_{0}$. Since $1 / \lvert f(z) \rvert \to 0$ as $z \to z_{0}$, $g(z_{0})$ must be $0$.
 
 ### Essential singularities
 
 ##### _definition:_ essential singularity
+
+An essential singularity is an isolated singularity of a function that is not a pole nor a removable singularity.
 
 ##### _theorem:_ Casorati-Weierstrass
 
