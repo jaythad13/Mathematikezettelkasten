@@ -84,7 +84,7 @@ The second isomorphism theorem is often called the diamond isomorphism theorem f
 
 ![[Abstract Algebra I --- math-171/notes/Ring isomorphism theorems#_theorem _ the fourth isomorphism theorem|Ring isomorphism theorems]]
 
-This fourth isomorphism theorem is extremely useful when we start talking about [[Algebraic Geometry --- math-176/notes/Spectra#_definition _ $ operatorname{Spec} R$ spectrum|spectra]] — the collections of all prime ideals of a ring.
+This fourth isomorphism theorem is extremely useful when we start talking about [[Algebraic Geometry --- math-176/notes/Spectra#_definition _ $ operatorname{Spec} R$ spectrum|spectra]] — the collections of all prime ideals of a ring. In particular
 
 ### Integral domains
 
@@ -118,6 +118,14 @@ Note that as a corollary
 
 
 ![[Abstract Algebra I --- math-171/notes/Prime and maximal ideals#_example _ not every prime ideal is maximal|Prime and maximal ideals]]
+
+##### _proposition:_ the fourth isomorphism theorem preserves prime and maximal ideals
+
+Let $I \subset R$ be an ideal. Then $P$ with $I \subset P \subset R$ is a prime ideal if and only if $P / I \subset R / I$ is a prime ideal. Also, $M$ with $I \subset M \subset R$ is a maximal ideal if and only if $M / I \subset R / I$.
+
+###### _proof sketch:_
+
+Apply the third isomorphism theorem to see that $(R / I) / (J / I) \cong R / J$ and thus, $R / J$ [[Abstract Algebra I --- math-171/attachments/homework/hw 13/hw 13.pdf#page=5|is a field/integral domain if and only if]] $(R / I) / (J / I)$ is too.
 
 ### Fields
 
