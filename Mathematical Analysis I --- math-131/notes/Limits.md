@@ -3,6 +3,7 @@ tags:
 - math-131/16
 - math-131/17
 - math-131/18
+- math-131/19
 - anal
 - top
 ---
@@ -50,3 +51,13 @@ $$
 ###### _proof sketch:_
 
 This follows from [[Mathematical Analysis I --- math-131/notes/Sequences and convergence#_proposition _ the convergence of operations on the complex numbers|the corresponding result for sequences]].
+
+We can also define limits at infinity and limits tending to infinity.
+
+##### _definition:_ limits tending to infinity
+
+ For a function $f : X \to \mathbb{R}$, we say $\lim_{x \to x_{0}} f(x) = \pm \infty$ if for every $M > 0$ there exists $\delta > 0$ such that $d_{X}(x, x_{0}) < \delta$ forces $f(x) > M$ or $f(x) < -M$ respectively.
+
+##### _definition:_ limits at infinity
+
+For a function $f : \mathbb{R} \to Y$, we say $\lim_{ x \to \pm \infty} f(x) = y$ if for every $\varepsilon > 0$ there exists $M > 0$ such that $x > M$ or $x < - M$ respectively, forces $d_{Y}(f(x), y) < \varepsilon$.
