@@ -121,7 +121,7 @@ Note that as a corollary
 
 ##### _proposition:_ the fourth isomorphism theorem preserves prime and maximal ideals
 
-Let $I \subset R$ be an ideal. Then $P$ with $I \subset P \subset R$ is a prime ideal if and only if $P / I \subset R / I$ is a prime ideal. Also, $M$ with $I \subset M \subset R$ is a maximal ideal if and only if $M / I \subset R / I$.
+Let $I \subset R$ be an ideal. Then $P$ with $I \subset P \subset R$ is a prime ideal if and only if $P / I \subset R / I$ is a prime ideal. Also, $M$ with $I \subset M \subset R$ is a maximal ideal if and only if $M / I \subset R / I$ is a maximal ideal.
 
 ###### _proof sketch:_
 
