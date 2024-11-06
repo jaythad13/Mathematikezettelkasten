@@ -2,13 +2,12 @@
 tags:
 - math-176/15
 - math-176/16
-- math-176/29
 - alg-geo
 ---
 
 Varieties are the great generalisation of lines. The simplest case is that of non-singular projective varieties. At first, we can just define them as nice sets in an ambient space
 
-### Varieties as nice sets
+### Zero sets of loci
 
 ##### _definition:_ non-singular projective variety
 
@@ -95,9 +94,9 @@ Again, $V(F) = \{ p \in \mathbb{P}^2(F) \mid g(p) = 0 \}$ has only one point at 
 
 Do we really want to do all the differentiation to show this is non-singular though?
 
-### Varieties as ideals
+### Zero sets of ideals
 
-It's nice to have a concrete sense of what a variety is as zero loci, but that's a very non-algebraic concept. Instead, we can replace these by zero sets of ideals. For now, we won't worry about singularity.
+It's nice to have a concrete sense of what a variety is [[Algebraic Geometry --- math-176/notes/Non-singular projective varieties#_definition _ non-singular projective variety|as zero loci of a set of polynomials]], but that's a very non-algebraic concept. Instead, we can replace these by zero sets of ideals. For now, we won't worry about singularity.
 
 The zero set of an ideal in $F[x_{1}, \dots, x_{n}]$ is exactly what you think it is
 
@@ -121,20 +120,12 @@ $$
 
 Is in the homework somewhere?
 
-Now we can start to think about replacing varieties by ideals. We even define functions on these nice zero sets.
+##### _definition:_ affine variety
 
-##### _proposition:_ functions on a variety
+An affine variety over $F$ is the zero set $Z(I)$ of some prime ideal $I$ in $F[x_{1}, \dots, x_{n}]$.
 
-Suppose $I = (f_{1}, \dots, f_{n})$ is a prime ideal of $R$. Denote $\mathcal{O} = R / I$. Then each $\overline{f} \in \mathcal{O}$ defines a function
-$$
-\begin{split}
-\overline{f} & : Z(I) \to \mathbb{A}(F) \\
- & : p \mapsto f(p)
-\end{split} 
-$$
+Now, the study of varieties becomes the study of ideals — with the right choice of [[Algebraic Geometry --- math-176/notes/The Zariski topology|topology]], we can use
 
-###### _proof:_
+![[Algebraic Geometry --- math-176/notes/Functions on varieties#_proposition, definition _ functions on a variety]]
 
-We just need to show that $\overline{f}$ is a well-defined function. That is, if $\overline{f} = \overline{g}$ then $\overline{f}(p) = \overline{g}(p)$.
-
-Note that if $\overline{f} = \overline{g}$, then $f - g \in I$. Thus, $f(p) = g(p) + i(p)$ where $i \in I$. But $p \in Z(I)$ so $f(p) = g(p)$, and thus, $\overline{f}(p) = \overline{g}(p)$.
+and further make sense of which of these functions are continuous.
