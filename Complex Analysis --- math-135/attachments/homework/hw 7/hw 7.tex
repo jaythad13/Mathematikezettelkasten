@@ -4,7 +4,7 @@
 \name{Jayden Thadani}
 \class{MATH 135 --- Complex Analysis}
 \assignment{Homework \#7}
-\duedate{1st November 2024}
+\duedate{6th November 2024}
 
 \begin{document}
 
@@ -15,7 +15,7 @@
 	\]
 	and check that
 	\[
-		\int_{-\infty}^{\infty} e^{-2 \pi a \lvert \xi \rvert} e^{2 \pi i \xi x} \, d\xi = \frac{1}{\pi} \frac{a}{a^{2} + z^{2}}
+		\int_{-\infty}^{\infty} e^{-2 \pi a \lvert \xi \rvert} e^{2 \pi i \xi x} \, d\xi = \frac{1}{\pi} \frac{a}{a^{2} + x^{2}}
 	\]
 \end{problem}
 
@@ -33,7 +33,59 @@
 						  & = \frac{-i e^{2 \pi a \xi}}{2}.
 		\end{split}
 	\]
-	For $\xi < 0$, this is just $\operatorname{res}_{ai} f = - i e^{- 2 \pi a \lvert \xi \rvert} / 2$. By a similar calculation, $\operatorname{res}_{- ai} f = i e^{- 2 \pi \lvert x \rvert}$ for $\xi > 0$.
+	For $\xi < 0$, this is just $\operatorname{res}_{ai} f = - i e^{- 2 \pi a \lvert \xi \rvert} / 2$. By a similar calculation, $\operatorname{res}_{- ai} f = i e^{- 2 \pi a \lvert \xi \rvert} / 2$ for $\xi > 0$.
+
+	For $\xi < 0$, the residue theorem says that the integral over the upper semicircle of radius $R$, $\gamma$ is
+	\[
+		\frac{1}{\pi} \int_{\gamma} f(z) \, dz = \frac{2 \pi i}{\pi} \operatorname{res}_{ai} f = e^{-2 \pi a \lvert \xi \rvert}.
+	\]
+	But as $R \to \infty$
+	\[
+		\int_{\gamma} f(z) \, dz = \int_{-\infty}^{\infty} f(x) \, dx + \int_{\gamma_{\text{arc}}} f(z) \, dz.
+	\]
+	where $\gamma_{\text{arc}}$ is the arc of the semicircle. Thus, if we show that
+	\[
+		\int_{\gamma_{\text{arc}}} f(z) \, dz \to 0
+	\]
+	then we have the desired result.
+
+	Consider the parametrisation of $\gamma_{\text{arc}}$ by $z_{\gamma_{\text{arc}}} : \theta \to R e^{i \theta}$ for $\theta \in [0, \pi]$. Then
+	\[
+		\begin{split}
+			\left \lvert \int_{\gamma_{\text{arc}}} f(z) \, dz \right \rvert & = \left \lvert \int_{0}^{\pi} \frac{a e^{2 \pi R \lvert \xi \rvert (i \cos{\theta} - \sin{\theta})}}{a^{2} + R^{2} e^{2 i \theta}} i R e^{i \theta} \, d\theta \right \rvert \\
+											 & \le \left \lvert \frac{R}{R^{2} - a^{2}} \right \rvert \left \lvert \int_{0}^{\pi} \lvert e^{2 \pi R \lvert \xi \rvert i \cos{\theta}} \rvert e^{- 2 \pi R \lvert \xi \rvert \sin{\theta}} \, d\theta  \right \rvert.
+		\end{split}
+	\]
+	This goes to $0$ as $R \to \infty$ since the exponent in the integral is negative ($\sin{\theta}$ is positive for $\theta \in [0, \pi]$) , and the rational outside goes to $0$ as well. Thus,
+	\[
+		\int_{-\infty}^{\infty} \frac{a}{a^{2} + x^{2}} e^{-2 \pi i x \xi}  \, dx = e^{-2 \pi a \lvert \xi \rvert}
+	\]
+	for $\xi < 0$.
+
+	To get the same result for $\xi > 0$ we can perform similar analysis for the integral over the lower semicircle. Here the residue theorem gives
+	\[
+		\int_{\infty}^{- \infty} f(x) \, dx + \int_{\text{arc}} f(z) \, dz = - e^{-2 \pi a \lvert \xi \rvert}.
+	\]
+	By a similar proof, we have that the integral over the arc vanishes as the radius of the semicircle goes to infinity, and thus,
+	 \[
+		\int_{\infty}^{-\infty} f(x) \, dx = - e^{-2 \pi a \lvert \xi \rvert}.
+	\]
+	That is,
+	\[
+		\int_{- \infty}^{\infty} f(x) \, dx = e^{-2 \pi a \lvert \xi \rvert}
+	\]
+	as desired.
+
+	Now we compute the inversion formula ---
+	\[
+		\begin{split}
+			\int_{-\infty}^{\infty} e^{-2 \pi a \lvert \xi \rvert} e^{2 \pi i \xi x} \, d \xi & = \int_{-\infty}^{0} e^{2 \pi (a + i x) \xi} \, d \xi + \int_{0}^{\infty} e^{- 2 \pi (a - i x) \xi} \, d \xi \\
+													  & = \frac{1}{2 \pi (a + i x)} (e^{2 \pi (a + i x) \xi}) \Big |_{-\infty}^{0} - \frac{1}{2 \pi (a - i x)} (e^{- 2 \pi (a - i x) \xi}) \Big |_{0}^{\infty} \\
+													  & = \frac{1}{2 \pi} \left ( \frac{1}{a + i x} + \frac{1}{a - i x} \right ) \\
+													  & = \frac{1}{\pi} \frac{a}{a^{2} + x^{2}}.
+		\end{split}
+	\]
+	as desired.
 \end{solution}
 
 \pagebreak
@@ -45,6 +97,20 @@
 	\]
 	in terms of the roots of $Q$. What happens when several roots coincide?
 \end{problem}
+
+\begin{solution}
+	For $Q(z) = a \prod_{i = 1}^{n} (z - e_{i})$
+	\[
+		\boxed{
+			\int_{-\infty}^{\infty} \frac{e^{-2 \pi i x \xi}}{Q(x)} \, dx = \begin{cases}
+				\displaystyle \sum_{\operatorname{Im} e_{i} > 0} \frac{e^{2 \pi i \lvert \xi \rvert e_{i}}}{a \prod_{j \neq i} (e_{i} - e_{j})} & \xi < 0 \\
+				\displaystyle \sum_{\operatorname{Im} e_{i} < 0} \frac{e^{2 \pi i \lvert \xi \rvert e_{i}}}{a \prod_{j \neq i} (e_{i} - e_{j})} & \xi > 0.
+			\end{cases}
+		}
+	\]
+
+	By the residue theorem, 
+\end{solution}
 
 \pagebreak
 
@@ -60,6 +126,27 @@
 		\sum_{n = -\infty}^{\infty} \frac{1}{(\tau + n)^{k}} = \frac{(-2 \pi i)^{k}}{(k - 1)!} \sum_{m = 1}^{\infty} m^{k - 1} e^{2 \pi i m \tau}.
 	\]
 \end{problem}
+
+\begin{solution}
+	The $m$th Fourier coefficient is given by the integral
+	\[
+		\int_{-\infty}^{\infty} \frac{e^{-2 \pi i m z}}{(\tau + z)^{k}} \, dz.
+	\]
+	If we write
+	\[
+		g_{m}(z) = \frac{e^{- 2 \pi i m z}}{(\tau + z)^{k}}
+	\]
+	we can evaluate the Fourier coefficients in terms of the residues of $g$. $g_{m}$ has only one pole --- a pole of order $k$ at $- \tau$ in the lower half plane. At that pole, it has residue
+	\[
+		\begin{split}
+			\operatorname{res}_{- \tau} g_{m} & = \frac{1}{(k - 1)!} \lim_{z \to - \tau} \frac{d^{k - 1}}{dz^{k - 1}} \left ( \frac{e^{-2 \pi i m z}}{(\tau + z)^{k}} (\tau + z)^{k} \right ) \\
+							  & = \frac{1}{(k - 1)!} \lim_{z \to - \tau} (-2 \pi i m)^{k - 1} e^{-2 \pi i m z} \\
+							  & = \frac{(- 2 \pi i)^{k - 1}}{(k - 1)!} e^{2 \pi i m \tau}.
+		\end{split}
+	\]
+
+	For $m < 0$
+\end{solution}
 
 \pagebreak
 
