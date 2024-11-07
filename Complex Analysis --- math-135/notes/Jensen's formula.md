@@ -8,9 +8,9 @@ If $g$ is holomorphic in the unit disc and never vanishes, then we can consider 
 $$
 \ln \lvert g \rvert = \operatorname{Re} (\log g)
 $$
-and thus, we can apply the [[Complex Analysis --- math-135/attachments/homework/hw 4/hw 4.pdf#page=3|mean value property]] of [[Complex Analysis --- math-135/attachments/homework/hw 1/hw 1.pdf#page=8|harmonic functions]] to get
+and thus, we can apply the [[Complex Analysis --- math-135/attachments/homework/hw 4/hw 4.pdf#page=3|mean value property]] (from [[Complex Analysis --- math-135/notes/Cauchy integral formula#_theorem _ Cauchy integral formula|the Cauchy integral formula]]) of [[Complex Analysis --- math-135/attachments/homework/hw 1/hw 1.pdf#page=8|harmonic functions]] to get
 $$
-\ln \lvert g(0) \rvert = \frac{1}{2 \pi} \int_{0}^{2 \pi} \ln \lvert g(e^{i \theta}) \rvert  \, d\theta
+\ln \lvert g(0) \rvert = \frac{1}{2 \pi} \int_{0}^{2 \pi} \ln \lvert g(e^{i \theta}) \rvert  \, d\theta.
 $$
 
 Jensen's formula tries to do this by for arbitrary functions by making them non-vanishing, using Blaschke factors.
@@ -25,6 +25,7 @@ B_{a}(z) = \frac{z - a}{1 - \overline{a}z}
 $$
 
 We proved the following important properties of Blaschke factors in an early [[Complex Analysis --- math-135/attachments/homework/hw 1/hw 1.pdf#page=4|homework]].
+
 ##### _proposition:_ properties of Blaschke factors
 
 1) The restriction $B_{a} : \mathbb{D} \to \mathbb{D}$ is a bijection (in particular, an involution interchanging $0$ and $a$).
