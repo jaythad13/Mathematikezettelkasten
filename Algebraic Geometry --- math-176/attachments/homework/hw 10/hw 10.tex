@@ -1,0 +1,57 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 176 --- Algebraic Geometry}
+\assignment{Homework assignment \#10}
+\duedate{15th November 2024}
+
+\begin{document}
+
+\begin{problem}[Problem 1.]
+	Let $\mathcal{O}$ be an integral domain.
+
+	\begin{enumerate}
+		\item Consider a chain $I_{1} \subseteq I_{2} \subseteq \dots I_{k} \dots \subsetneq \mathcal{O}$ of proper ideals of $\mathcal{O}$. Show that $I = \bigcup_{k \ge 1} I_{k}$ is also a proper ideal of $\mathcal{O}$.
+		\item Show that each proper ideal $I$ of $\mathcal{O}$ is contained in a maximal ideal $M$ of $\mathcal{O}$.
+	\end{enumerate} 
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Problem 2.]
+	For a prime ideal $I$ of an integral domain $\mathcal{O}$, define $\operatorname{ht} I$, the \emph{height} of $I$ as the largest $m$ such that there is a chain $I_{0} \subsetneq I_{1} \subsetneq \dots \subsetneq I_{m}$ of primes $I_{k}$ satisfying $I_{0} = \{ 0 \}$ and $I_{m} = I$.
+	\begin{enumerate}
+		\item Given a prime ideal $I$, show there exists a maximal ideal $M$ such that $\operatorname{ht} M \ge \operatorname{ht} I$.
+		\item Show that $\operatorname{ht} I = 0$ if and only if $I$ is the zero ideal.
+		\item Assume that $\mathcal{O}$ is a unique factorisation domain. Show that a non-zero prime has $\operatorname{ht} 1$ if and only if $I = \left < f \right >$ for some irreducible element $f \in \mathcal{O}$.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Problem 3.]
+	Let $\mathcal{O}$ be an integral domain. Define $\operatorname{dim} \mathcal{O}$, the \emph{Krull dimension} of $\mathcal{O}$ as the largest $\operatorname{ht} I$ ranging over $I \in \operatorname{Spec} \mathcal{O}$.
+	\begin{enumerate}
+		\item Show that $\dim \mathcal{O} = 0$ if and only if $\mathcal{O}$ is a field.
+		\item Show that the following are equivalent:
+			\begin{enumerate}[label = (\roman*)]
+				\item $\dim \mathcal{O} = 1$.
+				\item Every non-zero $I \in \operatorname{Spec} \mathcal{O}$ has $\operatorname{ht} I = 1$.
+				\item Every prime ideal $I$ of $\mathcal{O}$ is either the zero ideal or a maximal ideal.
+			\end{enumerate}
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Problem 4.]
+	Let $R = F[x_{1}, x_{2}, \dots, x_{n}]$ be the polynomial ring in $n$ variables over an algebraically closed $F$.
+	\begin{enumerate}
+		\item Show that $\dim \mathcal{O} = \dim R - \operatorname{ht} I$ whenever $\mathcal{O} = R / I$ for some prime ideal $I$.
+		\item Show $\dim R = n$.
+		\item Show $\operatorname{ht} M = n$ for any $M \in \operatorname{mSpec} R$.
+	\end{enumerate}
+\end{problem}
+
+\end{document}
