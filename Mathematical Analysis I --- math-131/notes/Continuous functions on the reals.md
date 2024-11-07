@@ -1,6 +1,7 @@
 ---
 tags:
-- math-131-18
+- math-131/18
+- anal
 ---
 
 ### Monotonic functions

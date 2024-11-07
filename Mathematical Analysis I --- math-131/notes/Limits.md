@@ -34,7 +34,7 @@ Suppose $\lim_{ x \to x_{0} } f(x) \neq y_{0}$. Thus, for there exists $\varepsi
 
 ### Limits on the real and complex numbers
 
-On the real and complex numbers, we can leverage their structure to define some natural functions that happen to be continuous. For example — we have continuity of operations on the complex numbers.
+On the real and complex numbers, we can leverage their structure to define some natural functions that happen to be continuous. For example — we have continuity of operations on the complex numbers and we have left and right limits on the real numbers.
 
 ##### _proposition:_ limits of operations on the complex numbers
 

@@ -2,6 +2,7 @@
 tags:
 - math-131/14
 - math-131/15
+- anal
 ---
 
 What if we want to go from an infinites series into an infinite polynomial? We get power series!
