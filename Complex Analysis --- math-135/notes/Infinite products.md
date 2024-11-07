@@ -4,7 +4,7 @@ tags:
 - anal
 ---
 
-We want to show that given any countable collection of zeroes without a limit point, there is an entire function that vanishes at exactly those points. The obvious way to do this for a finite collection $\{ a_{1}, \dots, a_{n} \}$ is just to consider $f : z \mapsto (z - a_{1}) \dots (z - a_{n})$.
+We want to show that given any countable collection of zeroes without a limit point, there is an entire function that vanishes at exactly those points — [[Complex Analysis --- math-135/notes/Weierstrass factorisation|the Weierstrass factorisation theorem]]. The obvious way to do this for a finite collection $\{ a_{1}, \dots, a_{n} \}$ is just to consider $f : z \mapsto (z - a_{1}) \dots (z - a_{n})$. To do this for an infinite collection we need a sensible notion of multiplying together infinitely many functions with the roots we want. This is where infinite products come in!
 
 ##### _definition:_ infinite products
 
