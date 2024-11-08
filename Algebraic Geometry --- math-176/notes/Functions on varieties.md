@@ -2,10 +2,11 @@
 tags:
 - math-176/29
 - math-176/30
+- math-176/31
 - alg-geo
 ---
 
-Using the [[Algebraic Geometry --- math-176/notes/Non-singular projective varieties#_definition _ affine variety|ring-theoretic definition of affine varieties]], we can get a sensible set of functions on an affine variety.
+Using the [[Algebraic Geometry --- math-176/notes/Non-singular projective varieties#_definition _ affine variety|ring-theoretic definition of affine varieties]], we can get a sensible set of functions on an affine variety. Grothendieck's philosophy tells us that the best way to understand an affine variety $X$ is to understand $\mathcal{O}$, the ring of functions on it. Then we can replace points $p \in X$ with ideals in the [[Algebraic Geometry --- math-176/notes/Spectra#_definition _ $ operatorname{mSpec} R$, the max spectrum|max spectrum]] and ultimately, just the [[Algebraic Geometry --- math-176/notes/Spectra#_definition _ $ operatorname{Spec} R$, spectrum|spectrum]] of $\mathcal{O}$.
 
 ##### _proposition, definition:_ functions on a variety
 
