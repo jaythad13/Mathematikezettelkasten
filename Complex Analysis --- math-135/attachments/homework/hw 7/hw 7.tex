@@ -11,7 +11,7 @@
 \begin{problem}[3.]
 	Show, by contour integration, that if $a > 0$ and $\xi \in \mathbb{R}$, then
 	\[
-		\frac{1}{\pi} \int_{-\infty}^{\infty} \frac{a}{a^{2} + x^{2}} e^{-2 \pi i x \xi} \, dx = e^{-2 \pi a \lvert \xi \rvert},
+		\frac{1}{\pi} \int_{-\infty}^{\infty} \frac{a}{a^{2} + x^{2}} e^{-2 \pi i x \xi} \, dx = e^{-2 \pi a \lvert \xi \rvert}
 	\]
 	and check that
 	\[
@@ -49,7 +49,7 @@
 	\]
 	then we have the desired result.
 
-	Consider the parametrisation of $\gamma_{\text{arc}}$ by $z_{\gamma_{\text{arc}}} : \theta \to R e^{i \theta}$ for $\theta \in [0, \pi]$. Then
+	Consider the parametrisation of $\gamma_{\text{arc}}$ by $z_{\gamma_{\text{arc}}} : \theta \mapsto R e^{i \theta}$ for $\theta \in [0, \pi]$. Then
 	\[
 		\begin{split}
 			\left \lvert \int_{\gamma_{\text{arc}}} f(z) \, dz \right \rvert & = \left \lvert \int_{0}^{\pi} \frac{a e^{2 \pi R \lvert \xi \rvert (i \cos{\theta} - \sin{\theta})}}{a^{2} + R^{2} e^{2 i \theta}} i R e^{i \theta} \, d\theta \right \rvert \\
@@ -103,13 +103,41 @@
 	\[
 		\boxed{
 			\int_{-\infty}^{\infty} \frac{e^{-2 \pi i x \xi}}{Q(x)} \, dx = \begin{cases}
-				\displaystyle \sum_{\operatorname{Im} e_{i} > 0} \frac{e^{2 \pi i \lvert \xi \rvert e_{i}}}{a \prod_{j \neq i} (e_{i} - e_{j})} & \xi < 0 \\
-				\displaystyle \sum_{\operatorname{Im} e_{i} < 0} \frac{e^{2 \pi i \lvert \xi \rvert e_{i}}}{a \prod_{j \neq i} (e_{i} - e_{j})} & \xi > 0.
+				\displaystyle 2 \pi i \sum_{\operatorname{Im} e_{i} > 0} \frac{e^{2 \pi i \xi e_{i}}}{a \prod_{j \neq i} (e_{i} - e_{j})} & \xi < 0 \\
+				\displaystyle - 2 \pi i \sum_{\operatorname{Im} e_{i} < 0} \frac{e^{2 \pi i \xi e_{i}}}{a \prod_{j \neq i} (e_{i} - e_{j})} & \xi > 0.
 			\end{cases}
 		}
 	\]
 
-	By the residue theorem, 
+	The function $f : \mathbb{C} \setminus \{ e_{1}, \dots, e_{n} \} \to \mathbb{C}$ by $f(z) = e^{-2 \pi i z \xi} / Q(z)$ is meromorphic with poles at the $e_{1}, \dots, e_{n}$. Using the same trick as before, we can evaluate the integral over upper and lower half semicircles depending on the sign of $\xi$. Thus, we calculate the residues at each root.
+	\[
+		\begin{split}
+			\operatorname{res}_{e_{i}} f & = \lim_{z \to e_{i}} (z - e_{i}) \frac{e^{-2 \pi i z \xi}}{a \prod_{j = 1}^{n} (z - e_{j})} \\
+						     & = \frac{e^{2 \pi i \xi e_{i}}}{a \prod_{j \neq i} (e_{i} - e_{j})}.
+		\end{split}
+	\]
+
+	Thus, the integral of $f$ over the upper half semicircle $\gamma$ is
+	\[
+		\int_{\gamma} f(z) \, dz = 2 \pi i \sum_{\operatorname{Im} e_{i} > 0} \frac{e^{2 \pi i \xi e_{i}}}{a \prod_{j \neq i} (e_{i} - e_{j})}.
+	\]
+	Again, this means that we can write
+	\[
+		2 \pi i \sum_{\operatorname{Im} e_{i} > 0} \frac{e^{2 \pi i \xi e_{i}}}{a \prod_{j \neq i} (e_{i} - e_{j})} = \int_{\gamma_{\text{arc}}} f(z) \, dz + \int_{-\infty}^{\infty} f(x) \, dx
+	\]
+	where $\gamma_{\text{arc}}$ is the semicircular arc parametrised by $z : \theta \mapsto e^{i \theta}$. If $\xi < 0$ we can show that the integral over $\gamma_{\text{arc}}$ goes to $0$.
+	\begin{align*}
+		\left \lvert \int_{\gamma_{\text{arc}}} f(z) \, dz \right \rvert & = \left \lvert \int_{0}^{\pi} \frac{e^{-2 \pi i \xi R (\cos{\theta} + i \sin{\theta})}}{Q(R e^{i \theta})} \, dz \right \rvert \\
+										 & \le \frac{1}{\lvert Q(R e^{i \theta}) \rvert} \left \lvert \int_{0}^{\pi} e^{2 \pi \xi R \sin{\theta}} \lvert e^{-2 \pi i \xi R \cos{\theta}} \rvert \, d\theta \right \rvert \\
+										 & \le \frac{1}{Q(\lvert R e^{i \theta}) \rvert} \left \lvert \int_{0}^{\pi} e^{2 \pi \xi R \sin{\theta}} \, d\theta 
+ \right \rvert.
+	\end{align*}
+	For $\xi < 0$, the integral goes to zero as $R \to \infty$ by Jordan's inequality, so we're left with
+	\[
+		\int_{-\infty}^{\infty} \frac{e^{-2 \pi i x \xi}}{Q(x)} \, dx = 2 \pi i \sum_{\operatorname{Im} e_{i} > 0} \frac{e^{2 \pi i \xi e_{i}}}{a \prod_{j \neq i} (e_{i} - e_{j})}
+	\]
+
+	Similar analysis using the lower semicircle in the lower semicircle gives us the corresponding result for $\xi > 0$. The sign is reversed because the integral goes counter-clockwise from $R$ to $-R$.
 \end{solution}
 
 \pagebreak
@@ -130,7 +158,7 @@
 \begin{solution}
 	The $m$th Fourier coefficient is given by the integral
 	\[
-		\int_{-\infty}^{\infty} \frac{e^{-2 \pi i m z}}{(\tau + z)^{k}} \, dz.
+		\int_{-\infty}^{\infty} \frac{e^{-2 \pi i m x}}{(\tau + x)^{k}} \, dx.
 	\]
 	If we write
 	\[
@@ -145,7 +173,45 @@
 		\end{split}
 	\]
 
-	For $m < 0$
+	For $m > 0$, in order to evaluate the Fourier coefficient, we consider the integral of $g_{m}$ over $\gamma$, the lower half semicircle of radius $R$ and take limits as $R \to \infty$. We know by the residue formula that for large enough $R$ (all $R > \lvert \tau \rvert$)
+	\[
+		\int_{\gamma} g_{m}(z) \, dz = 2 \pi i \operatorname{res}_{- \tau} g_{m} = - \frac{(- 2 \pi i)^{k - 1}}{(k - 1)!} e^{2 \pi i m \tau}.
+	\]
+	
+	We can also write the integral as the sum of the Fourier coefficient and the integral of $g_{m}$ over the semicircular arc $\gamma_{\text{arc}}$.
+	\[
+		\begin{split}
+			- \frac{(- 2 \pi i )^{k}}{(k - 1)!} e^{2 \pi i m \tau} & =  \int_{\gamma} g_{m}(z) \, dz \\
+									       & = - \int_{\gamma_{\text{arc}}} g_{m}(z) \, dz - \int_{-\infty}^{\infty} g_{m}(x) \, dx
+		\end{split}
+	\]
+
+	We show that the integral over the arc vanishes as we did in previous problems. With parametrisation of the reverse arc by $z : \theta \mapsto R e^{- i \theta}$ for $\theta \in [0, \pi]$, we get
+	\[
+		\begin{split}
+			\left \lvert \int_{\gamma_{\text{arc}}} g_{m}(z) \, dz \right \rvert & = \left \lvert \int_{0}^{\pi} \frac{e^{- 2 \pi i m R(\cos{\theta} - i \sin{\theta})}}{(\tau + R e^{i \theta})^{k}} \, dz \right \rvert \\
+											     & \le \frac{1}{(R - \lvert \tau \rvert)^{k}} \left \lvert \int_{0}^{\pi} e^{-2 \pi i m R \cos{\theta}} e^{- 2 \pi m R \sin{\theta}} \, d\theta  \right \rvert \\
+											     & \le \frac{1}{(R - \lvert \tau \rvert)^{k}} \left \lvert \int_{0}^{\pi} e^{- 2 \pi m R \sin{\theta}} \, d \theta \right \rvert.
+		\end{split}
+	\]
+	As $R \to \infty$, this integral goes to $0$.
+
+	This leaves us with
+	\[
+		\int_{-\infty}^{\infty} g_{m}(x) \, dx = \frac{(-2 \pi i)^{k}}{(k - 1)!} e^{2 \pi i m \tau}
+	\]
+	for $m > 0$, as desired.
+
+	For $m \le 0$, we consider the integral over the upper semicircle as its radius $R \to \infty$. This encloses no residue, so the total integral is zero. Again, by a similar analysis as in the previous part of the problem, the integral over the arc vanishes (the $m  = 0$ case is slightly different, but again is a simple application of the triangle inequality). Thus, we're left with
+	\[
+		\int_{-\infty}^{\infty} g_{m}(x) \, dx = 0 - 0 = 0
+	\]
+	for $m \le 0$.
+
+	Thus, all the Fourier coefficients are the necessary values for the Poisson summation formula to give
+	\[
+		\sum_{n = -\infty}^{\infty} \frac{1}{(\tau + n)^{k}} = \frac{(-2 \pi i)^{k}}{(k - 1)!} \sum_{m = 1}^{\infty} m^{k - 1} e^{2 \pi i m \tau}.
+	\]
 \end{solution}
 
 \pagebreak
@@ -153,12 +219,38 @@
 \begin{problem}[8.]
 	Suppose $\hat{f}$ has compact support contained in $[-M, M]$ and let $f(z) = \sum_{n = 0}^{\infty} a_{n} z^{n}$. Show that
 	\[
-		a_{n} = \frac{(2 \pi i)^{n}}{n!} \int_{-M}^{M} \hat{f}(\xi) \xi^{n} \, d\xi 
+		a_{n} = \frac{(2 \pi i)^{n}}{n!} \int_{-M}^{M} \hat{f}(\xi) \xi^{n} \, d\xi
 	\]
 	and as a result
 	\[
 		\limsup_{n \to \infty} (n! \lvert a_{n} \rvert)^{1/n} \le 2 \pi M.
 	\]
 \end{problem}
+
+\begin{solution}
+	We know that $a_{n}$ is just $f^{(n)}(0) / n!$. By the Fourier inversion formula, this is
+	\[
+		\begin{split}
+			a_{n} & = \frac{f^{(n)}(0)}{n!} \\
+			      & = \frac{1}{n!} \frac{d^{n}}{dz^{n}} \left ( \int_{-M}^{M} \hat{f}(\xi) e^{2 \pi i z \xi} \, d\xi \right ) \Big |_{z = 0} \\
+			      & = \frac{1}{n!} \int_{-M}^{M} \hat{f}(\xi) \left ( \frac{\partial^{n}(e^{2 \pi i z \xi})}{\partial z^{n}} \right ) \Big |_{z = 0} \, d\xi \\
+			      & = \frac{1}{n!} \int_{-M}^{M} \hat{f}(\xi) (2 \pi i \xi)^{n} e^{2 \pi i \xi 0} \, d\xi \\
+			      & = \frac{(2 \pi i)^{n}}{n!} \int_{-M}^{M} \hat{f}(\xi) \xi^{n} \, d\xi.
+		\end{split}
+	\]
+	Here, moving the derivative under the integral sign is justified by the function $e^{2 \pi i z \xi}$ having continuous partials with respect to $z$.
+	
+	We can bound $a_{n}$ by the triangle inequality ---
+	\[
+		\begin{split}
+			(n! \lvert a_{n} \rvert)^{1/n} & = \left \lvert (2 \pi i)^{n} \int_{-M}^{M} \hat{f}(\xi) \xi^{n} \, d\xi  \right \rvert^{1/n} \\
+						       & \le 2 \pi M \lvert \hat{f}(\xi) \rvert^{1/n}
+		\end{split}
+	\]
+	For large enough $n$, $\lvert \hat{f}(\xi) \rvert^{1/n} \le 1$, and thus,
+	\[
+		\limsup_{n \to \infty} (n! \lvert a_{n} \rvert)^{1/n} \le 2 \pi M.
+	\]
+\end{solution}
 
 \end{document}
