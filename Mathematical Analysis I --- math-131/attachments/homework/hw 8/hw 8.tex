@@ -12,6 +12,12 @@
 	Let $f$ and $g$ be continuous mappings of a metric space $X$ into a metric space $Y$ and let $E$ be a dense subset of $X$. Prove that $f^{\text{img}}(E)$ is dense in $f^{\text{img}}(X)$. If $g(p) = f(p)$ for all $p \in E$, prove that $g(p) = f(p)$ for all $p \in X$.
 \end{problem}
 
+\begin{solution}
+	Since $f$ is continuous, given any $\varepsilon > 0$ and $f(x) \in f^{\text{img}}(X)$ there exists a $\delta > 0$ so that the open ball around $x$ is mapped into the open ball around $f(x)$ --- $f^{\text{img}}(B_{\delta}(x)) \subset B_{\varepsilon}(f(x))$. Since $E$ is dense in $X$, there is some $p \in E \cap B_{\delta}(x)$, and thus, $f(p) \in f^{\text{img}}(E) \cap B_{\varepsilon}(f(x))$. That is, for any $\varepsilon > 0$, and any $f(x) \in f^{\text{img}}(X)$, the intersection $f^{\text{img}}(E) \cap B_{\varepsilon}(f(x))$ is non-empty --- $f^{\text{img}}(E)$ is dense in $f^{\text{img}}(X)$.
+
+Suppose $f$ and $g$ agree on the dense subset $E$. Since $E$ is dense in $X$, for any point $x \in X$, there is a sequence $x_{n} \in E$ with $x_{n} \to x$. Since $f$ and $g$ are continuous, the $f(x_{n}) \to f(x)$ and the $g(x_{n}) \to g(x)$. Since $f(x_{n}) = g(x_{n})$, we have $f(x) = g(x)$.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[Rudin chapter 4, exercise 6]
@@ -19,6 +25,14 @@
 
 	Suppose $E$ is compact, and prove that $f$ is continuous on $E$ if and only if its graph is compact.
 \end{problem}
+
+\begin{solution}
+	First, suppose $f$ is continuous. Then we have that $f^{\text{img}}(E)$ is compact. Since $E$ and $f^{\text{img}}(E)$ are bounded, it follows that $E \times f^{\text{img}}(E)$ is bounded, and thus, that the graph of $f$, which is a subset of $E \times f^{\text{img}}(E)$ is bounded too. Thus, we only need to show that the graph of $f$ is closed. 
+
+	Suppose $(x_{0}, y_{0})$ is a limit point of the graph of $f$. Thus, for any $\varepsilon > 0$, we can find $(x, f(x))$ within distance $\varepsilon$ of $(x_{0}, y_{0})$. Thus, for  $\delta = \varepsilon$, we can force  $\lvert f(x) - y_{0} \rvert < \varepsilon$ for all $\lvert x - x_{0} \rvert < \delta$. That is, $\lim_{x \to x_{0}} f(x) = y_{0}$. Thus, by continuity, $f(x_{0}) = y_{0}$, and $(x_{0}, y_{0})$ is in the graph of $f$. Thus, the graph of $f$ is closed, and since it is bounded, it is also compact.
+
+	Now we prove the converse. Suppose that the graph of $f$ is compact and $\lim_{x \to x_{0}} f(x) = y_{0}$. Then $(x_{0}, y_{0})$ is a limit point of the graph of $f$ since for every, $\varepsilon > 0$ there is $\delta > 0$ with $0 < \lvert x - x_{0} \rvert < \delta$ forcing $\lvert f(x) - y_{0} \rvert < \varepsilon$. Thus, for every $r > 0$, we can choose $\varepsilon < r$ so that we can choose some $x$ with $\lvert x - x_{0} \rvert < \min \{ \delta, \sqrt{r^{2} - \varepsilon^{2}} \}$, and thus, $(x, f(x))$ is within $r$ of $(x_{0}, y_{0})$. That is, $(x_{0}, y_{0})$ is a limit point of the graph of $f$. Thus, $(x_{0}, y_{0})$ is a point of the graph of $f$, giving us $f(x_{0}) = y_{0}$. That is, at every point, $f$ equals its limit --- $f$ is continuous.
+\end{solution}
 
 \pagebreak
 
@@ -28,6 +42,42 @@
 	Define $f$ and $g$ on $\mathbb{R}^{2}$ by $f(0, 0) = g(0, 0) = 0$, $f(x, y) = xy^{2} / (x^{2} + y^{4})$, $g(x, y) = x y^{2}/(x^{2} + y^{6})$ if $(x, y) \neq (0, 0)$. Prove that $f$ is bounded on $\mathbb{R}^{2}$, that $g$ is unbounded in every neighbourhood of $(0, 0)$ and that $f$ is not continuous at $(0, 0)$; nevertheless the restrictions of both $f$ and $g$ to every straight line in $\mathbb{R}^{2}$ are continuous.
 \end{problem}
 
+\begin{solution}
+	First we show that $f$ is bounded. We know that for any $x, y \in \mathbb{R}$, $(x - y^{2})^{2} \ge 0$. Thus,
+	\[
+		x^{2} + y^{4} - 2 x y^{2} \ge 0.
+	\]
+	Then
+	\[
+		x^{2} + y^{4} \ge 2 x y^{2}
+	\]
+	and finally,
+	\[
+		\frac{x y^{2}}{x^{2} + y^{4}} \le \frac{1}{2}.
+	\]
+	Thus, $f$ is bounded.
+
+	All straight lines apart from $x = 0$ are given by $y = \lambda x$ for some $\lambda \in \mathbb{R}$. Thus, the restriction of $f$ to the line is $f_{\lambda}$ given by
+	\[
+		f_{\lambda}(x) = \frac{\lambda^{2} x^{3}}{x^{2} + \lambda^{4} x^{4}}
+	\]
+	for $x \neq 0$ and $f(0) = 0$. Since $f_{\lambda}$ is the quotient of non-zero functions everywhere except $x = 0$, we just have to verify $\lim_{x \to 0} f_{\lambda}(x) = 0$.
+	\begin{equation*}
+		\lim_{x \to 0} \frac{\lambda^{2} x^{3}}{x^{2} + \lambda^{4} x^{4}} = \lim_{x \to 0} \frac{\lambda x}{1 + \lambda^{4} x^{2}} = 0.
+	\end{equation*}
+	For the line $x = 0$, the restriction is $0$ everywhere, and thus, the restriction is continuous
+
+	Similarly we can define the restriction $g_{\lambda}$ defined by
+	\[
+		g_{\lambda}(x) = \frac{\lambda x^{3}}{x^{2} + \lambda^{6} x^{6}}
+	\]
+	for $x \neq 0$ and $g(0) = 0$. For the same reasons as previously, we only need to show that $\lim_{x \to 0} g_{\lambda}(x) = 0$. This follows as
+	\[
+		\lim_{x \to 0} \frac{\lambda^{2} x^{3}}{x^{2} + \lambda^{6} x^{6}} = \lim_{x \to 0} \frac{\lambda^{2} x}{1 + \lambda^{6} x^{4}} = 0.
+	\]
+	and on the line $x = 0$, the restriction is $0$ everywhere, and thus, the restriction is continuous.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[Rudin chapter 4, exercise 8]
@@ -35,6 +85,12 @@
 
 	Show that the conclusion is false if boundedness of $E$ is omitted from the hypothesis.
 \end{problem}
+
+\begin{solution}
+	Suppose $f$ is uniformly continuous on $E$. Then $f$ is the union of finitely many connected components --- intervals. Choose some $\varepsilon > 0$, and find $\delta > 0$ such that for all $x_{0} \in E$, we have $\lvert f(x) - f(x_{0}) \rvert < \varepsilon$ for $\lvert x - x_{0} \rvert < \delta$. Then on each connected component $(a, b)$ of $E$, choose $[a + \delta, b - \delta]$. Since this is compact, so is its image. Applying uniform continuity to the $a$ and $b$, we get that $f$ is bounded on all of $(a, b)$. Thus, there are finitely many bounds on $f$ and $f$ is bounded. (Similarly if the connected component is $(a, b]$, we consider $[a + \delta, b]$, for $[a, b)$ we consider $[a, b - \delta]$, and $[a, b]$ is compact itself).
+
+	Consider $f : x \mapsto x$ which is uniformly continuous on $\mathbb{R}$. $f$ is unbounded.
+\end{solution}	
 
 \pagebreak
 
@@ -47,5 +103,11 @@
 \begin{problem}[Problem 6]
 	Prove that there is no continuous bijection between the interval $[0, 1]$ and the triangle in $\{ (x, 0) \mid x \in [0, 1] \} \cup \{ (x, x) \mid x \in [0, 1] \} \cup \{ (1, y) \mid y \in [0, 1] \}$.
 \end{problem}
+
+\begin{solution}
+	Denote the triangle by $\Delta$. Suppose by way of contradiction that there was a continuous bijection $f : \Delta \to [0, 1]$. Pick some $a \in (0, 1)$. Since $f$ is a bijection, there is a unique $f^{-1}(a)$.
+
+	Consider the restriction of $f$ to $\Delta \setminus \{ f^{-1}(a) \}$. This function has range $[0, 1] \setminus \{ a \}$ which is not connected. However, the restriction is still continuous since it is still equal to its limit everywhere in $\Delta \setminus \{ f^{-1}(a) \}$, and $\Delta \setminus \{ f^{-1}(a) \}$ is connected (since one can see that it is clearly path connected). This is a contradiction since the image of a connected set under a continuous function is connected. Thus, there is no continuous bijection $f : \Delta \to [0, 1]$.
+\end{solution}
 
 \end{document}
