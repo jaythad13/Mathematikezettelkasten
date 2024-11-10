@@ -98,6 +98,22 @@ Suppose $f$ and $g$ agree on the dense subset $E$. Since $E$ is dense in $X$, fo
 	Suppose $f$ is a uniformly continuous mapping of a metric space $X$ into a metric space $Y$ and prove that $\{ f(x_{n}) \}_{n}$ is a Cauchy sequence in $Y$ for every Cauchy sequence $\{ x_{n} \}_{n}$ in $X$. Use this result to give an alternative proof of the theorem stated in exercise 13.
 \end{problem}
 
+\begin{solution}
+	Consider the Cauchy sequence $x_{n}$. Since $f$ is uniformly continuous, we have that for any $\varepsilon > 0$, there is a uniform $\delta > 0$ such that at any $x_{n}$ we can force $d(f(x), f(x_{n})) < \varepsilon$ for any $d(x, x_{n}) < \delta$. But then, for any $x_{m}, x_{n}$ with $d(x_{n} - x_{m}) < \delta$, we have $d(f(x_{n}), f(x_{m})) < \varepsilon$.
+
+	Since $x_{n}$ is a Cauchy sequence, there exists a positive integer $N$ such that for all $m, n > N$ we have $d(x_{n}, x_{m}) < \delta$ for any positive $\delta$. Now it follows that for any $\varepsilon > 0$ there exists a positive integer $N$ such that for all $m, n > N$, we have $d(f(x_{n}), f(x_{m}))  < \varepsilon$. That is, $f(x_{n})$ is a Cauchy sequence.
+
+	The theorem in exercise 13 asks us to show that a uniformly continuous real function $f : E \to \mathbb{R}$ from a dense subset $E \subset X$ has a continuous extension to all of $X$. Since $E$ is dense in $X$, for every $x \in X$, there exists a sequence $x_{n} \in E$ converging to $X$. Since this sequence converges, it is Cauchy. By our previous result, the sequence $f(x_{n})$ must also be Cauchy as well. Since $\mathbb{R}$ is complete, this sequence converges. Thus, define the extension
+	\[
+		g(x) = \lim_{n \to \infty} f(x_{n}) \quad \text{for} \quad x_{n} \to x.
+	\]
+	Note that this is clearly equal to the continuous $f$ on $E$, but we need to show that this is well defined. 
+
+	For any two sequences $x_{n}, z_{n} \to x$, note that for sufficiently large $n$, we can get $d(x_{n}, z_{n}) < \delta$ for any $\delta > 0$. (This follows by applying the triangle inequality to the convergence of both sequences to $x$).  Thus, by uniform continuity, for sufficiently large $n$, we can get $\lvert f(x_{n}) - f(z_{n}) \rvert < \varepsilon$. Since both of these are convergent sequences, it follows by the triangle inequality that since both of them converge to the same real number.
+
+	This serves as a proof that $g$ is well defined, and since $E$ is dense in $X$, any sequence converging to $x$ is arbitrarily close to a sequence in $E$, and so this also serves as a proof of sequential continuity. That is, $g$ is a continuous extension of $f$.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[Problem 6]
@@ -105,9 +121,9 @@ Suppose $f$ and $g$ agree on the dense subset $E$. Since $E$ is dense in $X$, fo
 \end{problem}
 
 \begin{solution}
-	Denote the triangle by $\Delta$. Suppose by way of contradiction that there was a continuous bijection $f : \Delta \to [0, 1]$. Pick some $a \in (0, 1)$. Since $f$ is a bijection, there is a unique $f^{-1}(a)$.
+	Denote the triangle by $\Delta$. Note since both, the triangle and the interval are compact, a continuous bijection between them has a continuous inverse. Thus, without loss of generality, we can suppose for contradiction that there was a continuous bijection $f : \Delta \to [0, 1]$. 
 
-	Consider the restriction of $f$ to $\Delta \setminus \{ f^{-1}(a) \}$. This function has range $[0, 1] \setminus \{ a \}$ which is not connected. However, the restriction is still continuous since it is still equal to its limit everywhere in $\Delta \setminus \{ f^{-1}(a) \}$, and $\Delta \setminus \{ f^{-1}(a) \}$ is connected (since one can see that it is clearly path connected). This is a contradiction since the image of a connected set under a continuous function is connected. Thus, there is no continuous bijection $f : \Delta \to [0, 1]$.
+	Pick some $a \in (0, 1)$. Since $f$ is a bijection, there is a unique $f^{-1}(a)$. Consider the restriction of $f$ to $\Delta \setminus \{ f^{-1}(a) \}$. This function has range $[0, 1] \setminus \{ a \}$ which is not connected. However, the restriction is still continuous since it is still equal to its limit everywhere in $\Delta \setminus \{ f^{-1}(a) \}$, and $\Delta \setminus \{ f^{-1}(a) \}$ is connected (since one can see that it is clearly path connected). This is a contradiction since the image of a connected set under a continuous function is connected. Thus, there is no continuous bijection $f : \Delta \to [0, 1]$.
 \end{solution}
 
 \end{document}
