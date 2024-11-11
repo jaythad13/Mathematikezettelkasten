@@ -84,7 +84,7 @@ The second isomorphism theorem is often called the diamond isomorphism theorem f
 
 ![[Abstract Algebra I --- math-171/notes/Ring isomorphism theorems#_theorem _ the fourth isomorphism theorem|Ring isomorphism theorems]]
 
-This fourth isomorphism theorem is extremely useful when we start talking about [[Algebraic Geometry --- math-176/notes/Spectra#_definition _ $ operatorname{Spec} R$ spectrum|spectra]] — the collections of all prime ideals of a ring. In particular
+This fourth isomorphism theorem is extremely useful when we start talking about [[Algebraic Geometry --- math-176/notes/Spectra#_definition _ $ operatorname{Spec} R$ spectrum|spectra]] — the collections of all prime ideals of a ring.
 
 ### Integral domains
 
