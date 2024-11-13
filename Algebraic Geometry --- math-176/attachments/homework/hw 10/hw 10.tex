@@ -120,4 +120,41 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item By the fourth isomorphism theorem, we have an inclusion preserving bijection between the ideals of $\mathcal{O}$ and the ideals of $R$ that contain $I$. Further, using the third isomorphism theorem we can show that this bijection preserves primeness. Specifically, for any $P$ with $I \subseteq P$ we have $\frac{\mathcal{O}}{P / I} \cong R / P$. Now since $\frac{\mathcal{O}}{P / I}$ is an integral domain if and only if $R / P$ is an integral domain, $P / I$ is a prime ideal if and only if $P$ is a prime ideal.
+
+			Thus, for any proper chain of prime ideals
+			\[
+				\{ 0 \} = \overline{J}_{0} \subsetneq \overline{J}_{1} \subsetneq \dots \subsetneq \overline{J}_{k} = \overline{J}
+			\]
+			we have a chain of prime ideals
+			\[
+				I = J_{0} \subsetneq J_{1} \subsetneq \dots \subsetneq J_{k} = J
+			\]
+			where $J_{i} / I = \overline{J}_{i}$. Since there exists a chain of prime ideals up to $I$ with maximal length $\operatorname{ht} I$, and the maximum length of a chain of prime ideals in $R$ is $\dim R$, the maximal length of a chain of ideals in $\mathcal{O}$ must be the difference. That is, $\dim \mathcal{O} = \dim R - \dim I$.
+		\item We show that $\dim F[x_{1}, \dots , x_{n}] = n$ by induction. Note that we have $\dim F = 0$ since the only prime ideal of $F$ is the zero ideal. Suppose $\dim F[x_{1}, \dots, x_{n - 1}] = n - 1$. Notice that $\left < x_{n} \right >$ is prime in $F[x_{1}, \dots, x_{n}]$ with height $1$ by problem 2. Since
+			 \[
+				F[x_{1}, \dots, x_{n}] / \left < x_{n} \right > \cong F[x_{1}, \dots, x_{n}]
+			\]
+			we have
+			\[
+				\dim F[x_{1}, \dots, x_{n}] - \operatorname{ht} \left < x_{n} \right > = \dim F[x_{1}, \dots, x_{n}].
+			\]
+			Rearranging, we get
+			\[
+				\dim F[x_{1}, \dots, x_{n}] = n - 1 + 1 = n.	
+			\]
+		\item We know that the maximal ideals of $R$ are all of the form
+			\[
+				M = \left < x_{1} - a_{1}, \dots, x_{n} - a_{n} \right >
+			\]
+			for $a_{j} \in F$. Consider the chain
+			\[
+				\{ 0 \} = I_{0} \subsetneq \left < x_{1} - a_{1} \right > \subsetneq \left < x_{1} - a_{1}, x_{2} - a_{2} \right > \subsetneq \dots \subsetneq M.
+			\]
+			Since each $I_{i} = \left < x_{1} - a_{1}, \dots, x_{i} - a_{i} \right >$ quotients out to give an integral domain $R / I_{k} \cong F[x_{i + 1}, \dots, x_{n}]$, each $I_{k}$ is prime. Thus, $\operatorname{ht} M \ge n$. But since $\dim R = n$, we also have $\operatorname{ht} M \le n$. Thus, $p\operatorname{ht} M = n$.
+	\end{enumerate}
+\end{solution}
+
 \end{document}
