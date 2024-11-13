@@ -1,10 +1,11 @@
 ---
 tags:
 - math-176/32
+- math-176/33
 - alg-geo
 ---
 
-What did we mean when we said [[Algebraic Geometry --- math-176/notes/Non-singular projective varieties#_definition _ non-singular projective variety|a variety has to be irreducible]]?
+What did we mean when we said [[Algebraic Geometry --- math-176/notes/Non-singular projective varieties#_definition _ non-singular projective variety|a variety has to be irreducible]]? Does this have an algebraic meaning?
 
 ##### _proposition:_ $V$ irreducible implies $I(V)$ prime
 
@@ -24,8 +25,11 @@ By our assumption, $V_{1}$ and $V_{2}$ cannot both be proper subsets of $V$. Wit
 
 Note that since $V$ is closed, its [[Algebraic Geometry --- math-176/notes/The Zariski topology|Zariski closure]] is just itself — $V = Z(I(V))$. Suppose there are proper closed subsets whose union is $V$. Then [[Algebraic Geometry --- math-176/notes/Hilbert's Nullstellensatz#_proposition _ $I$ and $Z$ turn unions to intersections|the unions are inverted to give]] $I(V) = I(V_{1}) \cap I(V_{2})$ for proper closed subsets of $I(V)$. But recall that the product of ideals is contained in their intersection, and so by choosing $a_{1} \in I(V_{1}) \setminus I(V)$ and $a_{2} \in I(V_{2}) \setminus I(V)$ we get $a_{1} a_{2} \in I(V_{1}) \cap I(V_{2}) = I(V)$ so $I(V)$ is not prime.
 
-So we have that a geometric sense of irreducibility corresponds to an algebraic sense.
+So we have that a geometric sense of irreducibility corresponds to an algebraic sense. In fact, further, in some sense, the nice varieties over $F$ just correspond to ideals in $\operatorname{Spec} F[x_{1}, \dots, x_{n}]$.
 
-##### _example:_
+##### _example:_ affine varieties over $\mathbb{C}$
 
-If $V = \mathbb{A}^n(F)$, the coordinate ring is just $F[x_{1}, \dots, x_{n}]$.
+If we consider ambient space to be $X = \mathbb{A}(\mathbb{C})$, then the Zariski closed sets are just $\varnothing$, $X$, and finite sets of roots. But then the irreducible subsets are just $\varnothing$, $\mathbb{C}$, and sets of just one root. This corresponds to the prime ideals of $\mathbb{C}[x]$ just being
+$$
+\operatorname{Spec} \mathbb{C}[x] = \{ (0) \} \cup \{ (x - a) \mid a \in \mathbb{C} \}.
+$$
