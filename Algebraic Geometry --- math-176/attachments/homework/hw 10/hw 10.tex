@@ -17,6 +17,15 @@
 	\end{enumerate} 
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item To show $I$ is an ideal, we need to show that for any $i_{1}, i_{2} \in I$, and any $r \in \mathcal{O}$, we have $i_{1} + i_{2}, r i_{1} \in I$. If $i_{1}, i_{2} \in I$, then they must be in some $I_{k_{1}}$ and $I_{k_{2}}$ respectively. If we assume, without loss of generality that $k_{1} \le k_{2}$, then $I_{k_{1}} \subseteq I_{k_{2}}$ so $i_{1}, i_{2} \in I_{k_{2}}$ giving us $i_{1} + i_{2} \in I_{k_{2}} \subseteq I$. Further, $r i_{1} \in I_{k_{1}} \subseteq I$. Thus, $I$ is an ideal of $\mathcal{O}$.
+
+			Note that $1 \notin I_{k}$ for all $k$ since they are all proper ideals, so $1 \notin I$. Thus, $I$ is a proper ideal.
+		\item Part (a) is exactly the hypothesis of Zorn's lemma --- every chain of proper ideals, is contained in the upper bound proper ideal that is the union of the ideals. Thus, every ideal is contained in a maximal proper ideal.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[Problem 2.]
@@ -27,6 +36,40 @@
 		\item Assume that $\mathcal{O}$ is a unique factorisation domain. Show that a non-zero prime has $\operatorname{ht} 1$ if and only if $I = \left < f \right >$ for some irreducible element $f \in \mathcal{O}$.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item Every prime ideal $I$ is contained in a maximal ideal $M$. Thus, there's a chain
+			\[
+				I_{0} \subsetneq I_{1} \subsetneq \dots \subsetneq I_{\operatorname{ht} I} \subsetneq M.
+			\]
+			Thus, $\operatorname{ht} M \ge \operatorname{ht} I + 1 \ge \operatorname{ht} I$.
+		\item If $I \neq \{ 0 \}$, then there exists a chain of length $1$ ---
+			\[
+				I_{0} \subsetneq I	
+			\]
+			so $\operatorname{ht} I \ge 1$ and is not $0$.
+		\item Suppose $\operatorname{ht} I = 1$. By unique factorisation, there exists an irreducible $f \in I$ (just factorise any $i \in I$ into irreducible elements and apply the primeness of $I$). Clearly
+			\[
+				I_{0} \subsetneq \left < f \right > \subseteq I.
+			\]
+			Since $\operatorname{ht} I = 1$, this chain must have length $1$ with $I = \left < f \right >$.
+
+			Suppose $I = \left < f \right >$ for an irreducible $f$. If we have a chain
+			\[
+				I_{0} \subsetneq I_{1} \subseteq \dots \subseteq I_{m} = I
+			\]
+			then by unique factorisation there is an irreducible $f_{1} \in I_{1}$ giving us the chain
+			\[
+				I_{0} \subsetneq \left < f_{1} \right > \subseteq I_{1} \subseteq \dots \subseteq I_{m} = \left < f \right >.
+			\]
+			Thus, $f \mid f_{1}$. But $f_{1}$ and $f$ are irreducible, so $f_{1} = u f$ for some unit $u$. Thus, $\left < f \right > = \left < f_{1} \right >$ and the chain reduces to
+			\[
+				I_{0} \subsetneq \left < f_{1} \right > = I_{1} = \dots = I_{m} = \left < f \right >.
+			\]
+			That is, any chain of length $n$ reduces to a proper chain of length $1$, so $\operatorname{ht} I = 1$.
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
@@ -42,6 +85,29 @@
 			\end{enumerate}
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item $\mathcal{O}$ is a field if and only if its only ideals are $\mathcal{O}$ and $\{ 0 \}$ --- since $\mathcal{O} / \{ 0 \} \cong \mathcal{O}$ is a field when $\mathcal{O}$ is a field, the zero ideal must be maximal in any field.
+
+			Thus, if $\mathcal{O}$ is a field, the only prime ideal is $\{ 0 \}$ and the largest height of a prime ideal is $0$.
+
+			If the largest $\operatorname{ht} I$ for  $I \in \operatorname{Spec} \mathcal{O}$ is $0$, then the largest maximal ideal height is also $0$. That is, $\{ 0 \}$ is the only maximal ideal. Thus, $\mathcal{O} \neq \mathcal{O} / \{ 0 \}$ is a field.
+		\item We can see that (i) and (ii) are equivalent since $\dim \mathcal{O} = 1$ is equivalent to $\operatorname{ht} I \le 1$ and the existence of a non-zero prime $I$ (for which we already have $0 < \operatorname{ht} I$).
+
+			Now we show that (ii) and (iii) are equivalent. Suppose every non-zero prime $I$ has height $1$. The maximal ideal $M$ containing $I$ is also a prime, and so has height $1$. Since
+			\[
+				I_{0} \subsetneq I \subseteq M
+			\]
+			we must have $I = M$. That is, $I$ is its own maximal ideal --- $I$ is maximal.
+
+			Suppose every non-zero prime ideal is maximal. Then for any chain of primes
+			\[
+				I_{0} \subseteq I_{1} \subseteq \dots \subseteq I_{m}
+			\]
+			since $I_{1}$ is maximal, $I_{1} = \dots = I_{m}$. Thus, the longest proper chain of primes has length at most $1$.
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
