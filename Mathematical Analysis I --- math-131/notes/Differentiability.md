@@ -1,6 +1,7 @@
 ---
 tags:
-- math-135/20
+- math-131/20
+- math-131/22
 - anal
 ---
 
@@ -70,3 +71,13 @@ If $f : (a, b) \to \mathbb{R}$ and $g : (c, d) \to \mathbb{R}$ are differentiabl
 $$
 h'(x) = g'(f(x)) f'(x).
 $$
+
+### Higher order derivative
+
+If $f : I \to \mathbb{R}$ is differentiable everywhere on its domain, then we have a function $f' : I \to \mathbb{R}$ that sends $x$ to $f'(x)$. What if this function is differentiable?
+
+##### _definition:_ higher-order derivatives
+
+If $f$ is differentiable, $f'$ is its first derivative. If $f$ has a differentiable $n$th derivative $f^{(n)}$, the $(n + 1)$th derivative of $f$ is $(f^{(n)})'$.
+
+If $f$ has an $n$th derivative, we say it is $n$ times differentiable.

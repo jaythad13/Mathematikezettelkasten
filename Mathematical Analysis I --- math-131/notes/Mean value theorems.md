@@ -2,6 +2,7 @@
 tags:
 - math-131/20
 - math-131/21
+- math-131/22
 - anal
 ---
 
@@ -106,4 +107,47 @@ $$
  & < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} \\
  & = \varepsilon
 \end{split}
+$$
+
+### Taylor's theorem
+
+Taylor's theorem allows us to estimate a function using its [[Mathematical Analysis I --- math-131/notes/Differentiability#_definition _ higher-order derivatives|higher order derivatives]] — it gives a mean value style formula in terms of the $n$th power of the difference between points and the $n$th derivative of a function. If we have reasonable bounds on the size of the $n$th derivative of the function, this allows us to approximate the function by a polynomial.
+
+##### _theorem:_ Taylor's theorem
+
+Suppose $f : [a, b] \to \mathbb{R}$ is $n$ times differentiable with $f^{(n)}$ continuous on $[a, b]$. For any two $\alpha, \beta \in [a, b]$, there is some $x_{0}$ between $\alpha$ and $\beta$ such that
+$$
+f(\beta) - p(\beta) = \frac{f^{(n)}(x_{0})}{n!} (\beta - \alpha)^n
+$$
+for the polynomial $p$ with
+$$
+p(x) = \sum_{j = 0}^{n - 1} \frac{f^{j}(\alpha)}{i!} (x - \alpha)^j
+$$
+
+###### _proof:_
+
+Define the real $M$ so that $f(\beta) - p(\beta) = M (\beta - \alpha)^n$. We want to show that there is some $x_{0}$ with $f^{(n)}(x_{0}) / n! = M$. Consider
+$$
+g(x) = f(x) - p(x) + M (x - \alpha)^n.
+$$
+
+This has $n$th derivative
+$$
+g^{(n)}(x) = f^{(n)}(x) - n! M
+$$
+so if we have $g^{(n)}(x) = 0$ at some point between $\alpha$ and $\beta$ we are done.
+
+Notice that since $f^{(j)}(\alpha) = p^{(j)}(\alpha)$ for all positive integers $j < n$ (by our construction), we have $g^{(j)}(\alpha) = 0$ for all $j < n$. Since $g(\beta) = 0$ we can apply the mean value theorem to find some $x_{1}$ between $\alpha$ and $\beta$ where 
+$$
+g'(x_{1}) = \frac{g(\beta) - g(\alpha)}{\beta - \alpha} = 0
+$$
+and similarly, using the mean value theorem on $x_{j}$ we can get $x_{j + 1}$ where
+$$
+g^{j + 1}(x_{j + 1}) = \frac{g^{j}(x_{j}) - g^{j}(\alpha)}{x_{j} - \alpha} = 0
+$$
+for all $j < n$.
+
+Thus, there is some $x_{0} = x_{n}$ in $[a, b]$ where $g^{(n)}(x_{0}) = 0$ and thus,
+$$
+\frac{f^{(n)}(x_{0})}{n!} = M.
 $$
