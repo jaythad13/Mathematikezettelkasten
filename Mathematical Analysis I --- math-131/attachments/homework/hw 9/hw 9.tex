@@ -8,6 +8,8 @@
 
 \begin{document}
 
+\emph{Collaborators:} Mithra Karamchedu
+
 \begin{problem}[Rudin chapter 5, exercise 1]
 	Let $f$ be defined for all real $x$ and suppose that
 	\[
@@ -15,6 +17,26 @@
 	\]
 	for all real $x$ and $y$. Prove that $f$ is constant.
 \end{problem}
+
+\begin{solution}
+	Using the given bound, we can prove that $f$ is differentiable and has derivative $0$ everywhere. Note that at any $x \in \mathbb{R}$
+	\begin{align*}
+		\left \lvert \frac{f(x + h) - f(x)}{h} \right \rvert & \le \left \lvert \frac{f(x + h) - f(x)}{x + h - x} \right \rvert \\
+								     & \le \frac{(x + h - x)^{2}}{x + h - x} \\
+		& = \lvert h \rvert.
+	\end{align*}
+	Thus, for every $\varepsilon > 0$, we can choose $h \in (-\delta, \delta)$ for $\delta < \varepsilon$ to get
+	\[
+		-\varepsilon < 0 \le \left \lvert \frac{f(x + h) - f(x)}{h} \right \rvert \le \delta < \varepsilon.
+	\]
+	That is,
+	\[
+		\lvert f'(x) \rvert = \lim_{h \to 0} \left \lvert \frac{f(x + h) - f(x)}{h} \right \rvert = 0
+	\]
+	at each $x$.
+
+	Since $f'(x) = 0$ everywhere, $f$ must be constant --- if $f$ were not constant, the mean value theorem would force the derivative to be non-zero at some point. 
+\end{solution}
 
 \pagebreak
 
@@ -25,11 +47,51 @@
 	\]
 \end{problem}
 
+\begin{solution}
+	For any $\alpha < \beta$ both in $(a, b)$, we have some $\gamma \in (\alpha, \beta)$ such that
+	\[
+		f'(\gamma) = \frac{f(\beta) - f(\alpha)}{\beta - \alpha}
+	\]
+	by the mean value theorem. Since $f'(\gamma) > 0$ and $\alpha < \beta$, this gives us
+	\[
+		f(\beta) - f(\alpha) = f'(\gamma) (\beta - \alpha) > 0
+	\]
+	which implies
+	\[
+		f(\alpha) < f(\beta).
+	\]
+	That is, for any $\alpha < \beta$, we have $f(\alpha) < f(\beta)$ --- $f$ is increasing.
+
+		Since $f$ is differentiable and thus, continuous, its image must be connected, so we have $f^{\text{img}}((a, b)) = (c, d)$ for some interval $(c, d)$. In particular, $f : (a, b) \to (c, d)$ is a bijection (since strictly increasing functions are injective). 
+
+		Any $y \in (c, d)$ must be $y = f(x)$ for some unique $x \in (a, b)$. Further, for sufficiently small $\varepsilon$ we have $y + \varepsilon \in (c, d)$ with $f(x + \delta) = y + \varepsilon$. Thus, the inverse function $g$ gives
+		\[
+			\frac{g(y + \varepsilon) - g(y)}{\varepsilon} = \frac{x + \delta - x}{y + \varepsilon - y} = \frac{\delta}{f(x + \delta) - f(x)}
+		\]
+		Since $\varepsilon \to 0$ as $\delta \to 0$ for continuous $f$, we have
+		\begin{align*}
+			\frac{1}{f'(x)} & = 1 / \lim_{\delta \to 0} \frac{f(x + \delta) - f(x)}{\delta} \\
+					& = \lim_{\delta \to 0} \frac{\delta}{f(x + \delta) - f(x)} \\
+					& = \lim_{\varepsilon \to 0} \frac{g(y + \varepsilon) - g(y)}{\varepsilon} \\
+					& = g'(y) \\
+					& = g'(f(x)).
+		\end{align*}
+		as desired.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[Rudin chapter 5, exercise 3]
 	Suppose $g$ is a real function on $\mathbb{R}$, with bounded derivative (say $\lvert g' \rvert \le M$). Fix $\varepsilon > 0$, and define $f(x) = x + \varepsilon g(x)$. Prove that $f$ is one-to-one if $\varepsilon$ is small enough.
 \end{problem}
+
+\begin{solution}
+	By the linearity of the derivative, $f'(x) = 1 + \varepsilon g'(x)$ for all $x \in \mathbb{R}$. Since $\lvert g'(x) \rvert \le M$, we can bound the distance of $f'$ from $1$ --- 
+	\[
+		f'(x) \in (1 - \varepsilon M, 1 + \varepsilon M).
+	\]
+	Thus, for sufficiently small $\varepsilon$ (specifically, for $\varepsilon < 1 / M$), we get $f'(x) > 0$ for all $x \in \mathbb{R}$. Then by the previous exercise, $f$ is strictly increasing on $\mathbb{R}$, and thus, by the previous exercise, injective.
+\end{solution}
 
 \pagebreak
 
@@ -45,11 +107,43 @@
 	has at least one real root between $0$ and $1$.
 \end{problem}
 
+\begin{solution}
+	Consider the polynomial $p : \mathbb{R} \to \mathbb{R}$ with
+	\[
+		p(x) = C_{0} x + \frac{C_{1}}{2} x^{2} + \dots + \frac{C_{n}}{2} x^{n + 1}.
+	\]
+	Then since $p$ is a polynomial, it is differentiable with
+	\[
+		p'(x) = C_{0} + C_{1} x + \dots + C_{n} x^{n}.
+	\]
+	Clearly, $p(0) = 0$, since the constant term is zero, and by our hypothesis,
+	\[
+		p(1) = C_{0} + \frac{C_{1}}{2} + \dots + \frac{C_{n}}{n + 1} = 0
+	\]
+
+	By the mean value theorem, there is some $a \in (0, 1)$ where
+	\[
+		p'(a) = \frac{p(1) - p(0)}{1 - 0} = 0.
+	\]
+	That is, $p'$ has a root $a \in (0, 1)$, as desired.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[Rudin chapter 5, exercise 5]
 	Suppose $f$ is defined and differentiable for every $x > 0$, and $f'(x) \to 0$ as $x \to \infty$. Put $g(x) = f(x + 1) - f(x)$. Prove that $g(x) \to 0$ as $x \to \infty$.
 \end{problem}
+
+\begin{solution}
+	By the mean value theorem, we have
+	\[
+		g(x) = f'(a)
+	\]
+	for some $a \in (x, x + 1)$. As $x \to \infty$, we also have $a \to \infty$ (since $a > x$). Thus, 
+	\[
+		g(x) = f'(a) \to 0.
+	\]
+\end{solution}
 
 \pagebreak
 
@@ -68,5 +162,30 @@
 	\]
 	and prove that $g$ is monotonically increasing.
 \end{problem}
+
+\begin{solution}
+	By the quotient rule, we have
+	\[
+		g'(x) = \frac{x f'(x) - f(x)}{x^{2}}
+	\]
+	By the mean value theorem, we have
+	\[
+		f(x) - f(0) = f'(a) (x - 0)
+	\]
+	for some $a \in (0, x)$. That is, $f(x) = f'(a) x$, since $f(0) = 0$. Since $f'$ is monotonically increasing, we have
+	\[
+		f(x) = f'(a) x \le f'(x).
+	\]
+
+	Thus,
+	\[
+		g'(x) = \frac{x'f'(x) - f(x)}{x} \ge 0 \quad c \in (a, b)
+	\]
+	By                 another application of the mean value theorem, we have
+	\[
+		g(b) - g(a) = g(c) (b - a) \ge 0
+	\]
+	for any $a \le b$. That is, $g$ is monotonically increasing.
+\end{solution}
 
 \end{document}
