@@ -1,0 +1,65 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 176 --- Algebraic Geometry}
+\assignment{Homework assignment \#11}
+\duedate{22nd November 2024}
+
+\begin{document}
+
+For this week's problems let $\mathbb{P}^{n}(F)$ denote projective $n$-space over a field $F$. Recall that $S = F[x_{1}, \dots, x_{n}, x_{0}]$ is a \emph{graded ring}, that is, $S = \bigcup_{e \ge 0} S_{e}$ where the collection $S_{e}$ of homogeneous polynomials of degree $e$ satisfies (i) $S_{0} = F$, (ii) $S_{i} \cap S_{j} = \{ 0 \}$ whenever $i \neq j$, and (iii) $S_{i} S_{j} \subset S_{i + j}$.
+
+\begin{problem}[Problem 1.]
+	Let $T \subset S$ be a subset. Show that the following are equivalent:
+	\begin{enumerate}[label = (\roman*)]
+		\item Each $f \in T$ can be uniquely expressed as $f = f_{0} + f_{1} + \dots + f_{n}$ where each $f_{e} \in T \cap S_{e}$.
+		\item $T = \sum_{e \ge 0} (T \cap S_{e})$ and $(T \cap S_{i}) \cap (T \cap S_{i}) \subset \{ 0 \}$ whenever $i \neq j$.
+		\item $T \subset \sum_{e \ge 0} (T \cap S_{e})$.
+	\end{enumerate}
+	Any $T$ satisfying either of these is said to be a \emph{homogeneous set}, and we write ${T = \bigoplus_{e \ge 0} (T \cap S_{e})}$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Problem 2.]
+	Let $\{ T_{\alpha} \mid \alpha \in \mathcal{I} \}$ denote a family of homogeneous sets $T_{\alpha} \subset S$ indexed by some set $\mathcal{I}$.
+	\begin{enumerate}
+		\item Show that a single set $T = \{ f \}$ is a homogeneous set for any homogeneous polynomial $f \in S_{e}$.
+		\item Show that the union $T = \cup_{\alpha \in \mathcal{I}} T_{\alpha}$ of homogeneous sets $T_{\alpha}$ is also a homogeneous set.
+		\item Assume $\lvert \mathcal{I} \rvert < \infty$ and write $\mathcal{I} = \{ \alpha_{1}, \dots, \alpha_{n} \}$. Show that the following is also a homogeneous set.
+			\[
+				T = \prod_{\alpha \in \mathcal{I}} T_{\alpha} = \{ f_{\alpha_{1}} f_{\alpha_{2}} \dots f_{\alpha_{r}} \mid f_{\alpha} \in T_{\alpha} \text{ for each } \alpha \in \mathcal{I} \}
+			\]
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Problem 3.]
+	Given a homogeneous subset $T \subset S$, define $Z(T) = \{ p \in \mathbb{P}^{n}(F) \mid f(p) = 0 \text{ for all } f \in T \}$.
+	\begin{enumerate}
+		\item Say that $\{ T_{\alpha} \mid \alpha \in \mathcal{I} \}$ is an arbitrary family of homogeneous sets. Show
+			\[
+				Z(T) = \bigcap_{\alpha \in \mathcal{I}} = \bigcap_{\alpha \in \mathcal{I}} Z(T_{\alpha}) \quad \text{whenever} \quad T = \bigcup_{\alpha \in \mathcal{I}} T_{\alpha}
+			\]
+		\item Say $\{ T_{\alpha} \mid \alpha \in \mathcal{I} \}$ is a \emph{finite} family of homogeneous sets. Show
+			\[
+				Z(T) = \bigcup_{\alpha \in \mathcal{I}} Z(T_{\alpha}) \quad \text{whenever} \quad T = \prod_{\alpha \in \mathcal{I}} T_{\alpha}
+			\]
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Problem 4.]
+	We say $U \subset \mathbb{P}^{n}(F)$ is \emph{Zariski open} if there is some homogeneous $T$ such that $U = \mathbb{P}^{n}(F) \setminus Z(T)$.
+	\begin{enumerate}
+		\item Show that both $\O$ and $\mathbb{P}^{n}(F)$ are Zariski open.
+		\item Say $\{ U_{\alpha} \mid \alpha \in \mathcal{I} \}$ is an arbitrary family of Zariski open sets. Show $\bigcup_{\alpha \in \mathcal{I}} U_{\alpha}$ is also Zariski open.
+		\item Say $\{ U_{\alpha} \mid \alpha \in \mathcal{I} \}$ is a \emph{finite} family of Zariski open sets. Show $\bigcap_{\alpha \in \mathcal{I}} U_{\alpha}$ is also Zariski open.
+	\end{enumerate}
+	Denoting the family of all Zariski open sets by $\{ U_{\alpha} \mid \alpha \in \mathcal{I} \}$, we say $(\mathbb{P}^{n}(F), \{ U_{\alpha} \mid \alpha \in \mathcal{I} \})$ is the \emph{Zariski topology on projective space}
+\end{problem}
+
+\end{document}
