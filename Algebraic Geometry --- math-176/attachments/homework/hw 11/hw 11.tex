@@ -14,11 +14,27 @@ For this week's problems let $\mathbb{P}^{n}(F)$ denote projective $n$-space ove
 	Let $T \subset S$ be a subset. Show that the following are equivalent:
 	\begin{enumerate}[label = (\roman*)]
 		\item Each $f \in T$ can be uniquely expressed as $f = f_{0} + f_{1} + \dots + f_{n}$ where each $f_{e} \in T \cap S_{e}$.
-		\item $T = \sum_{e \ge 0} (T \cap S_{e})$ and $(T \cap S_{i}) \cap (T \cap S_{i}) \subset \{ 0 \}$ whenever $i \neq j$.
-		\item $T \subset \sum_{e \ge 0} (T \cap S_{e})$.
+		\item $T = \sum_{e \ge 0} T \cap S_{e}$ and $(T \cap S_{i}) \cap (T \cap S_{j}) \subset \{ 0 \}$ whenever $i \neq j$.
+		\item $T \subset \sum_{e \ge 0} T \cap S_{e}$.
 	\end{enumerate}
-	Any $T$ satisfying either of these is said to be a \emph{homogeneous set}, and we write ${T = \bigoplus_{e \ge 0} (T \cap S_{e})}$.
+	Any $T$ satisfying either of these is said to be a \emph{homogeneous set}, and we write ${T = \bigoplus_{e \ge 0} T \cap S_{e}}$.
 \end{problem}
+
+\begin{solution}
+	We will show (i) $\implies$ (ii) $\implies$ (iii) $\implies$ (i).
+
+	Note that each $S_{j}$ is closed under scalar multiplication by elements of $F$ and is also closed under addition.
+
+	Suppose (i) --- that each  $f \in T$ can be uniquely written as $f = f_{0} + f_{1} + \dots + f_{n}$ with $f_{e} \in S_{e}$. Then clearly
+	\[
+		T = \sum_{e \ge 0} T \cap S_{e}
+	\]
+	since each we have written each $f$ as the sum of elements in $T \cap S_{e}$. Further, we can see that $(T \cap S_{i}) \cap (T \cap S_{j}) \subset \{ 0 \}$ when $i \neq j$ since else we could write $0$ in two different ways --- as $0 + \dots + 0$ or as $0 + \dots + 0 + f + \dots - f + 0 + \dots 0$ where $f$ is in both $T \cap S_{i}$ and $T \cap S_{j}$.
+
+	Now suppose (ii). Since $T$ is equal to the sum of all the intersections, it is certainly a subset of them.
+
+	Finally, suppose (iii). Note that we have that
+\end{solution}
 
 \pagebreak
 
