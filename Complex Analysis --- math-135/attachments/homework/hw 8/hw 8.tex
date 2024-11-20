@@ -17,6 +17,47 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item
+			\[
+				\boxed{
+					\rho = 0
+				}
+			\]
+
+			Note that $e^{\lvert z \rvert^{\epsilon}}$ is a Taylor series $\sum_{n = 0}^{\infty} (\lvert z \rvert^{\varepsilon})^{n} / n!$. Since all the terms in the Taylor series are positive, we have
+			\[
+				\lvert z \rvert^{\varepsilon} + \frac{\lvert z \rvert^{2 \varepsilon}}{2!} + \dots + \frac{\lvert z \rvert^{m \varepsilon}}{m!} < e^{\lvert z \rvert^{\varepsilon}}
+			\]
+			for all $m$. Since large enough $m$ gives us $m \varepsilon > n$ for any $n$ by the Archimedean property, any polynomial $p$ of degree $n$ gives
+			\[
+				\lvert p(z) \rvert \le \lvert z \rvert^{\varepsilon} + \frac{\lvert z \rvert^{2 \varepsilon}}{2!} + \dots + \frac{\lvert z \rvert^{m \varepsilon}}{m!} \le e^{\lvert z \rvert^\varepsilon}
+			\]
+			for large enough $z$.
+		\item
+			\[
+				\boxed{
+					\rho = n	
+				}
+			\]
+
+			We know that any $\lvert a \rvert \lvert z \rvert^{r}$ is eventually less than $\lvert b \rvert \lvert z \rvert^{n}$ for $r < n$. Thus, $\lvert e^{a z^{r}} \rvert$ is eventually less than $\lvert e^{b z^{n}} \rvert$. We also know that $\lvert e^{b z^{n}} \rvert \le e^{\lvert b \rvert \lvert z \rvert^{n}}$. Thus, $\rho \le n$ and $r \le \rho$ for any $r < n$. Thus, $\rho = n$.
+		\item
+			\[
+				\boxed{
+					\rho = \infty
+				}
+			\]
+
+			We know that at large enough $z$, $\lvert e^{z} \rvert \ge b \lvert z \rvert^{r}$ for any $b, r$. Thus,
+			\[
+				e^{e^{z}} \ge e^{\lvert e^{z} \rvert} \not \le e^{b \lvert z \rvert^{r}} \ge A e^{B \lvert z \rvert^{r}}
+			\]
+			with the right choice of $b$. Thus there is no real number $\rho$ such that $\lvert e^{e^{z}} \rvert \le \lvert e^{B z^{\rho}} \rvert$.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[3.]
@@ -46,6 +87,30 @@
 	\]
 \end{problem}
 
+\begin{solution}
+	Consider $\sin{(z/ 2^{n})}$ times the partial product ---
+	\[
+		\sin{(z/2^{n})} \prod_{k = 1}^{n} \cos{(z/2^{k})}.
+	\]
+	Using the fact that
+	\[
+		\sin{(z / 2^{n})} \cos{z / 2^{n}} = \frac{\sin{(z / 2^{n - 1})}}{2}
+	\]
+	and proceeding by induction, we get
+	\[
+		\sin{(z / 2^{n})} \prod_{k = 1}^{n} \cos{(z / 2^{k})} = \frac{\sin{z}}{2^{n}}.
+	\]
+
+	With some algebraic manipulation, we get the partial product
+	\[
+		\prod_{k = 1}^{n} \cos{(z / 2^{k})} = \frac{\sin{z}}{z} \frac{z / 2^{n}}{\sin{(z / 2^{n})}}.
+	\]
+	Using the fact that $\lim_{z \to 0} \sin (z) / z = 1$, we get
+	\[
+		\lim_{n \to 0} \prod_{k = 1}^{n} \cos{(z / 2^{k})} = \lim_{n \to 0} \frac{\sin{z}}{z} \frac{z/2^{n}}{\sin{(z / 2^{n})}} = \frac{\sin{z}}{z}.
+	\]
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[9.]
@@ -54,5 +119,16 @@
 		(1 + z)(1 + z^{2})(1 + z^{4})(1 + z^{8}) \dots = \prod_{k = 0}^{\infty} (1 + z^{2^{k}}) = \frac{1}{1 - z}.
 	\]
 \end{problem}
+
+\begin{solution}
+	Consider the partial product
+	\[
+		\prod_{k = 0}^{n} (1 + z^{2^{k}}) = \sum_{k = 0}^{2^{n + 1} - 1} z^{k}.
+	\]
+	Thus, the partial products form a subsequence of the partial sums of the geometric series. Since this sequence converges for $\lvert z \rvert < 1$, the subsequence also converges to the geometric series. That is,
+	\[
+		\prod_{k = 0}^{\infty} (1 + z^{2^{k}}) = \lim_{n \to \infty} \prod_{k = 0}^{n} (1 + z^{2^{k}}) = \lim_{n \to \infty} \sum_{k = 0}^{2^{n + 1} - 1} z^{k} = \frac{1}{1 - z}.
+	\]
+\end{solution}
 
 \end{document}
