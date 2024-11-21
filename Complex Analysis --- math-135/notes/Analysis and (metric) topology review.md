@@ -8,7 +8,7 @@ tags:
 
 ### $\mathbb{C}$ as a metric space
 
-Since the norm $\lvert z \rvert$ of a complex number $z$ is positive definite and satisfies the triangle inequality, $\mathbb{C}$ is a [[Analysis --- rudin/notes/Metric spaces#_definition_ metric space, metric|metric space]] with the metric $d(z, w) = \lvert z - w \rvert$. In a very obvious way $\mathbb{C} \cong \mathbb{R}^2$ (as topological spaces)
+Since the norm $\lvert z \rvert$ of a complex number $z$ is positive definite and satisfies the triangle inequality, $\mathbb{C}$ is a [[Mathematical Analysis I --- math-131/notes/Metric spaces#_definition_ metric space, metric|metric space]] with the metric $d(z, w) = \lvert z - w \rvert$. In a very obvious way $\mathbb{C} \cong \mathbb{R}^2$ (as topological spaces)
 
 ### Open and closed sets
 

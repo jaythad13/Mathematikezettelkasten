@@ -14,15 +14,15 @@ A "smooth surface" should then, by extension, be something like the image of a s
 
 ### Some (metric) topology
 
-We will use the same definition of "openness" [[Analysis --- rudin/notes/Metric spaces#_definition _ open set|as in Rudin]], just restricted to $\mathbb{R}^n$. That is,
+We will use the same definition of "openness" [[Mathematical Analysis I --- math-131/notes/Metric spaces#_definition _ open set|as in Rudin]], just restricted to $\mathbb{R}^n$. That is,
 
 ##### _definition:_ open sets
 
 A subset $U \subset \mathbb{R}^n$ is said to be an open set if for any point $p \in U$, there exists $\delta > 0$ such that the ball of radius $\delta$, centred at $p$, $B_{\delta}(p)$ is contained in $U$.
 
-Here is a standard result about open sets [[Open and closed sets|from analysis]]:
+Here is a standard result about open sets [[Mathematical Analysis I --- math-131/notes/Open and closed sets|from analysis]]:
 
-![[Open and closed sets#_proposition _ (Potentially infinite) unions and finite intersections of open sets are open]]
+![[Mathematical Analysis I --- math-131/notes/Open and closed sets#_proposition _ (Potentially infinite) unions and finite intersections of open sets are open]]
 
 It then becomes natural to try to extend these definitions to subsets of $\mathbb{R}^3$.
 

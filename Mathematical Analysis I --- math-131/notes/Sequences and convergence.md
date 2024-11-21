@@ -48,7 +48,7 @@ $\{ (-1)^n \}_{n}$ is a bounded sequence that doesn't converge.
 
 ##### _proposition:_ limit points induce convergent sequences
 
-If $x$ is a [[Analysis --- rudin/notes/Metric spaces#_definition _ limit point|limit point]] of $E \subset X$, then there is a sequence $\{ x_{n} \}_{n}$ in $E$ converging to $x$.
+If $x$ is a [[Mathematical Analysis I --- math-131/notes/Metric spaces#_definition _ limit point|limit point]] of $E \subset X$, then there is a sequence $\{ x_{n} \}_{n}$ in $E$ converging to $x$.
 
 ###### _proof sketch:_
 

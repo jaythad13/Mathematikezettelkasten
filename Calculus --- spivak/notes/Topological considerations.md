@@ -6,7 +6,7 @@ tags:
 - self-study
 ---
 
-In order to do calculus, having a characterisation of "topologically special" sets in our space is useful — we want a characterisation of [[Analysis --- rudin/notes/Metric spaces#_definition _ open set|open]], [[Analysis --- rudin/notes/Metric spaces#_definition _ closed set|closed]], and [[Analysis --- rudin/notes/Compactness|compact]] sets in $\bb{R}^n$. 
+In order to do calculus, having a characterisation of "topologically special" sets in our space is useful — we want a characterisation of [[Mathematical Analysis I --- math-131/notes/Metric spaces#_definition _ open set|open]], [[Mathematical Analysis I --- math-131/notes/Metric spaces#_definition _ closed set|closed]], and [[Analysis --- rudin/notes/Compactness|compact]] sets in $\bb{R}^n$. 
 
 ### Open and closed sets
 
@@ -24,7 +24,7 @@ The set $(a_1, b_1) \times \cdots \times (a_n, b_n) \subset \bb R^n$, for real n
 
 A set $U \subset \bb R^n$ is an open set if for each $\bvec x \in U$ we have some open rectangle $A$ such that $\bvec x \in A \subset U$.
 
-Note that all though this looks different, it is equivalent to the [[Analysis --- rudin/notes/Open and closed sets|metric space notion of open sets]] with $r$-neighbourhoods. The idea is that since $r$-neighbourhoods are open in this "rectangular topology" and open rectangles are open in the "$r$-neighbourhood topology", if a set is open according to one, it's open in the other. For example, if a set is open in the rectangle topology, then inside every rectangle, we can draw an $r$-neighbourhood around the desired point, and thus, the set is open in the $r$-neighbourhood topology.
+Note that all though this looks different, it is equivalent to the [[Mathematical Analysis I --- math-131/notes/Open and closed sets|metric space notion of open sets]] with $r$-neighbourhoods. The idea is that since $r$-neighbourhoods are open in this "rectangular topology" and open rectangles are open in the "$r$-neighbourhood topology", if a set is open according to one, it's open in the other. For example, if a set is open in the rectangle topology, then inside every rectangle, we can draw an $r$-neighbourhood around the desired point, and thus, the set is open in the $r$-neighbourhood topology.
 
 ##### _definition:_ closed
 
@@ -42,7 +42,7 @@ Let $A$ be the closed rectangle. For any point $\bvec x = (x_1, \ldots, x_n) \in
 
 If $x_i \in [a_i, b_i]$ let $I_i = (a_i - 1, b_i + 1)$. If $x_i \notin [a_i, b_i]$, then we must either have $x_i < a_i$ or $x_i > b_i$. If we have the former, then let $I_i = (x_i - 1, a_i)$ and $I_i = (b_i, x_i + 1)$. Then $\prod_{i = 1}^n I_i$ is an open rectangle containing $\bvec x$. Since there is at least one $I_i$ that has no intersection with the corresponding $[a_i, b_i]$ (for which we have $x_i \notin [a_i, b_i]$), this open rectangle also must only contain points not in $A$ — that is, the open rectangle is a subset of $\bb R^n \setminus A$.
 
-We quote that [[Open and closed sets#_proposition _ (Potentially infinite) unions and finite intersections of open sets are open|arbitrary unions and finite intersections of open sets are open]], and [[Open and closed sets#_corollary _ Finite unions and (potentially infinite) intersections of closed sets are closed|finite unions and arbitrary intersections of closed sets are closed]] without proof, but the result is elementary.
+We quote that [[Mathematical Analysis I --- math-131/notes/Open and closed sets#_proposition _ (Potentially infinite) unions and finite intersections of open sets are open|arbitrary unions and finite intersections of open sets are open]], and [[Mathematical Analysis I --- math-131/notes/Open and closed sets#_corollary _ Finite unions and (potentially infinite) intersections of closed sets are closed|finite unions and arbitrary intersections of closed sets are closed]] without proof, but the result is elementary.
 
 If $A \subset \bb R^n$ and $\bvec x \in \bb R^n$, then exactly one of the following must hold
 1) There is an open rectangle $B$ such that $\bvec x \in B \subset A$

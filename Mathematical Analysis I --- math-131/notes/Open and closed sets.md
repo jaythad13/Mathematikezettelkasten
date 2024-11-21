@@ -1,14 +1,13 @@
 ---
 tags:
-- rudin/2
+- math-131/6
 - anal
 - top
-- self-study
 ---
 
 For this section, $X$ denotes a metric space with metric $d$, and any points or subsets we mention are considered to be elements or subsets of $X$.
 
-Recall the definitions of [[Analysis --- rudin/notes/Metric spaces#_definition _ open set|open sets]] and [[Analysis --- rudin/notes/Metric spaces#_definition _ closed set|closed sets]] in metric spaces. It turns out that open sets and closed sets are interesting in their own right and are incredibly useful. We will spend time learning why.
+Recall the definitions of [[Mathematical Analysis I --- math-131/notes/Metric spaces#_definition _ open set|open sets]] and [[Mathematical Analysis I --- math-131/notes/Metric spaces#_definition _ closed set|closed sets]] in metric spaces. It turns out that open sets and closed sets are interesting in their own right and are incredibly useful. We will spend time learning why.
 
 ##### _examples:_ open sets
 
@@ -28,7 +27,7 @@ The half-open interval $[0, 1)$ and its complement in $\bb{R}$, $(-\infty, 0) \c
 
 These examples suggest a certain correspondence between open and closed sets. Specifically,
 
-##### _theorem:_ Closed sets are complements of open sets
+##### _theorem:_ closed sets are complements of open sets
 
 A set $E$ is closed if and only if its complement is open.
 
@@ -71,7 +70,7 @@ If $x \in I$, then $x \in E_\alpha^c$ for all $\alpha \in A$. Thus, $x \notin E_
 
 Together, these give us $U = I$.
 
-##### _proposition:_ (Potentially infinite) unions and finite intersections of open sets are open
+##### _proposition:_ (potentially infinite) unions and finite intersections of open sets are open
 
 For any collection $\set{G_\alpha}$ of open sets $G_\alpha$ indexed by $\alpha \in A$, $\bigcup_{\alpha \in A} G_\alpha$ is open. If $\set{G_\alpha}$ is finite, $\bigcap_{\alpha \in A} G_\alpha$ is open.
 
@@ -99,7 +98,7 @@ Note that $r_\beta$'s existence is only guaranteed if $A$ is finite.
 
 With $N_{r_\beta}$ we have shown that we have a neighbourhood of an arbitrary point in $I$ contained in $I$. Thus, $I$ is open.
 
-##### _corollary:_ Finite unions and (potentially infinite) intersections of closed sets are closed
+##### _corollary:_ finite unions and (potentially infinite) intersections of closed sets are closed
 
 For any collection $\set{F_\alpha}$ of open sets $F_\alpha$ indexed by $\alpha \in A$, $\bigcap_{\alpha \in A} F_\alpha$ is open. If $\set{F_\alpha}$ is finite, $\bigcup_{\alpha \in A} F_\alpha$ is open.
 
