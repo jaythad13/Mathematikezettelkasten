@@ -8,10 +8,10 @@
 
 \begin{document}
 
-For this week's problems let $\mathbb{P}^{n}(F)$ denote projective $n$-space over a field $F$. Recall that $S = F[x_{1}, \dots, x_{n}, x_{0}]$ is a \emph{graded ring}, that is, $S = \bigcup_{e \ge 0} S_{e}$ where the collection $S_{e}$ of homogeneous polynomials of degree $e$ satisfies (i) $S_{0} = F$, (ii) $S_{i} \cap S_{j} = \{ 0 \}$ whenever $i \neq j$, and (iii) $S_{i} S_{j} \subset S_{i + j}$.
+For this week's problems let $\mathbb{P}^{n}(F)$ denote projective $n$-space over a field $F$. Recall that $S = F[x_{1}, \dots, x_{n}, x_{0}]$ is a \emph{graded ring}, that is, $S = \sum_{e \ge 0} S_{e}$ where the collection $S_{e}$ of homogeneous polynomials of degree $e$ satisfies (i) $S_{0} = F$, (ii) $S_{i} \cap S_{j} = \{ 0 \}$ whenever $i \neq j$, and (iii) $S_{i} S_{j} \subset S_{i + j}$.
 
 \begin{problem}[Problem 1.]
-	Let $T \subset S$ be a subset. Show that the following are equivalent:
+	Let $T \subset S$ be an ideal. Show that the following are equivalent:
 	\begin{enumerate}[label = (\roman*)]
 		\item Each $f \in T$ can be uniquely expressed as $f = f_{0} + f_{1} + \dots + f_{n}$ where each $f_{e} \in T \cap S_{e}$.
 		\item $T = \sum_{e \ge 0} T \cap S_{e}$ and $(T \cap S_{i}) \cap (T \cap S_{j}) \subset \{ 0 \}$ whenever $i \neq j$.
@@ -21,19 +21,27 @@ For this week's problems let $\mathbb{P}^{n}(F)$ denote projective $n$-space ove
 \end{problem}
 
 \begin{solution}
-	We will show (i) $\implies$ (ii) $\implies$ (iii) $\implies$ (i).
+	We will show (i) $\iff$ (ii) $\iff$ (iii).
 
-	Note that each $S_{j}$ is closed under scalar multiplication by elements of $F$ and is also closed under addition.
+	Note that each $S_{j}$ is closed under scalar multiplication by elements of $F$ and is also closed under addition (by $S_{0} S_{j} = S_{j}$ and by definition respectively).
 
-	Suppose (i) --- that each  $f \in T$ can be uniquely written as $f = f_{0} + f_{1} + \dots + f_{n}$ with $f_{e} \in S_{e}$. Then clearly
+	Suppose (i) --- that each  $f \in T$ can be uniquely written as $f = f_{0} + f_{1} + \dots + f_{n}$ with $f_{e} \in S_{e}$. Then clearly $T = \sum_{e \ge 0} T \cap S_{e}$ since each we have written each $f$ as the sum of elements in $T \cap S_{e}$. Further, we can see that $(T \cap S_{i}) \cap (T \cap S_{j}) \subset \{ 0 \}$ when $i \neq j$ since else we could write $0$ in two different ways --- as $0 + \dots + 0$ or as $0 + \dots + 0 + f + \dots - f + 0 + \dots 0$ where $f$ is in both $T \cap S_{i}$ and $T \cap S_{j}$.
+
+	Now suppose (ii). Since $T$ is the sum of its intersections with the $S_{e}$, we can write any $f \in T$ as the sum of $f_{e} \in S_{e}$. It only remains to show that this sum is unique. Suppose that we can write
 	\[
-		T = \sum_{e \ge 0} T \cap S_{e}
+		f = f_{0} + f_{1} + \dots + f_{n} = g_{0} + g_{1} + \dots + g_{n}.
 	\]
-	since each we have written each $f$ as the sum of elements in $T \cap S_{e}$. Further, we can see that $(T \cap S_{i}) \cap (T \cap S_{j}) \subset \{ 0 \}$ when $i \neq j$ since else we could write $0$ in two different ways --- as $0 + \dots + 0$ or as $0 + \dots + 0 + f + \dots - f + 0 + \dots 0$ where $f$ is in both $T \cap S_{i}$ and $T \cap S_{j}$.
+	Then,
+	\[
+		0 = (f_{0} - g_{0}) + (f_{1} - g_{1}) + \dots + (f_{n} - g_{n})
+	\]
+	Suppose by way of contradiction that $i$ is the first index for which $f_{i} - g_{i} \neq 0$. Then
+	\[
+		f_{i} - g_{i} = (g_{i + 1} - f_{i + 1}) + \dots + (g_{n} - f_{n})
+	\]
+	giving us $S_{i} \cap \sum_{e > i} S_{e} \neq \{ 0 \}$. However, this is false, and thus, all the $f_{i} - g_{i} = 0$ giving us that the sum is unique.
 
-	Now suppose (ii). Since $T$ is equal to the sum of all the intersections, it is certainly a subset of them.
-
-	Finally, suppose (iii). Note that we have that
+	Again, suppose (ii). Since $T$ is equal to the sum of all the intersections, it is certainly a subset of them. Now suppose (iii). Note that we have $S_{i} \cap S_{j} = \{ 0 \}$ from the definition of $S$. Thus, clearly, $(T \cap S_{i}) \cap (T \cap S_{j}) \subset S_{i} \cap S_{j} \subset \{ 0 \}$ when $i \neq j$. Since $T$ is an ideal, it contains every linear combination of its elements, and thus, contains $\sum_{e \ge 0} T \cap S_{e}$. Thus, by double containment, $T = \sum_{e \ge 0} T \cap S_{e}$.
 \end{solution}
 
 \pagebreak
@@ -41,9 +49,9 @@ For this week's problems let $\mathbb{P}^{n}(F)$ denote projective $n$-space ove
 \begin{problem}[Problem 2.]
 	Let $\{ T_{\alpha} \mid \alpha \in \mathcal{I} \}$ denote a family of homogeneous sets $T_{\alpha} \subset S$ indexed by some set $\mathcal{I}$.
 	\begin{enumerate}
-		\item Show that a single set $T = \{ f \}$ is a homogeneous set for any homogeneous polynomial $f \in S_{e}$.
-		\item Show that the union $T = \cup_{\alpha \in \mathcal{I}} T_{\alpha}$ of homogeneous sets $T_{\alpha}$ is also a homogeneous set.
-		\item Assume $\lvert \mathcal{I} \rvert < \infty$ and write $\mathcal{I} = \{ \alpha_{1}, \dots, \alpha_{n} \}$. Show that the following is also a homogeneous set.
+		\item Show that the ideal $T = \left < f \right >$ is a homogeneous set for any homogeneous polynomial $f \in S_{e}$.
+		\item Show that the union $T = \cup_{\alpha \in \mathcal{I}} T_{\alpha}$ of homogeneous ideals $T_{\alpha}$ is also a homogeneous ideal.
+		\item Assume $\lvert \mathcal{I} \rvert < \infty$ and write $\mathcal{I} = \{ \alpha_{1}, \dots, \alpha_{n} \}$. Show that the following is also a homogeneous ideal.
 			\[
 				T = \prod_{\alpha \in \mathcal{I}} T_{\alpha} = \{ f_{\alpha_{1}} f_{\alpha_{2}} \dots f_{\alpha_{r}} \mid f_{\alpha} \in T_{\alpha} \text{ for each } \alpha \in \mathcal{I} \}
 			\]
@@ -53,13 +61,13 @@ For this week's problems let $\mathbb{P}^{n}(F)$ denote projective $n$-space ove
 \pagebreak
 
 \begin{problem}[Problem 3.]
-	Given a homogeneous subset $T \subset S$, define $Z(T) = \{ p \in \mathbb{P}^{n}(F) \mid f(p) = 0 \text{ for all } f \in T \}$.
+	Given a homogeneous ideal $T \subset S$, define $Z(T) = \{ p \in \mathbb{P}^{n}(F) \mid f(p) = 0 \text{ for all } f \in T \}$.
 	\begin{enumerate}
-		\item Say that $\{ T_{\alpha} \mid \alpha \in \mathcal{I} \}$ is an arbitrary family of homogeneous sets. Show
+		\item Say that $\{ T_{\alpha} \mid \alpha \in \mathcal{I} \}$ is an arbitrary family of homogeneous ideals. Show
 			\[
 				Z(T) = \bigcap_{\alpha \in \mathcal{I}} = \bigcap_{\alpha \in \mathcal{I}} Z(T_{\alpha}) \quad \text{whenever} \quad T = \bigcup_{\alpha \in \mathcal{I}} T_{\alpha}
 			\]
-		\item Say $\{ T_{\alpha} \mid \alpha \in \mathcal{I} \}$ is a \emph{finite} family of homogeneous sets. Show
+		\item Say $\{ T_{\alpha} \mid \alpha \in \mathcal{I} \}$ is a \emph{finite} family of homogeneous ideals. Show
 			\[
 				Z(T) = \bigcup_{\alpha \in \mathcal{I}} Z(T_{\alpha}) \quad \text{whenever} \quad T = \prod_{\alpha \in \mathcal{I}} T_{\alpha}
 			\]
