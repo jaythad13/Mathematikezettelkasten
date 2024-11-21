@@ -1,6 +1,7 @@
 ---
 tags:
 - math-131/23
+- math-131/24
 - anal
 ---
 
@@ -66,7 +67,7 @@ $$
 L(P_{1}, f) \le L(P, f) \le U(P, f) \le U(P_{2}, f).
 $$
 
-### Integrability
+### The integral
 
 With this last proposition, we have a natural definition of "lower" and "upper" integrals.
 
@@ -94,3 +95,66 @@ $$
 ![[Calculus --- spivak/notes/Integration over closed rectangles#_example _ the famous non-integrable Dirichlet function|Integration over closed rectangles]]
 
 ![[Calculus --- spivak/notes/Integration over closed rectangles#_theorem _ integrable upper and lower sums get arbitrarily close|Integration over closed rectangles]]
+
+An incredibly nice fact that just so turns out to be true is that continuous functions are integrable. In fact, integrable functions don't have to be integrable everywhere — almost everywhere is enough.
+
+Note that for this theorem, our hypothesis that $f$ is bounded is crucial.
+
+##### _theorem:_ finitely discontinuous functions are integrable
+
+If the set of discontinuities of $f$ is finite, then $f$ is Riemann integrable.
+
+###### _proof sketch:_
+
+Suppose $f$ has discontinuities at $z_{1}, \dots, z_{k}$. Choose partitions containing $z_{i} \pm 1 / n$ for small enough $n$ so that the "integral" over all the intervals around the $z_{i}$ can be bounded using the bound on the function and just making $n$ sufficiently small.
+
+Excluding these open intervals, $K = [a, b] \setminus \bigcup_{i = 1}^k (z_{i} - 1 / n, z_{i} + 1 / n)$ is compact, so $f$ is [[Mathematical Analysis I --- math-131/notes/Uniform continuity#_definition _ uniform continuity|uniformly continuous]] on $K$. Thus, by picking small enough partitions on $K$, we will get that the difference between the maximum and minimum on the interval is small.
+
+Thus, we can get the difference between the upper and lower partitions to be
+
+The real theorem here is that functions that are "almost everywhere" continuous are integrable. Using the definition of measure zero.
+
+![[Calculus --- spivak/notes/Measure#_definition _ measure $0$|Measure]]
+
+it's easy to see that we can pull the same trick as we did earlier — we can draw open neighbourhoods of arbitrarily small total length around the discontinuities, bound the integral over them by the maximum and minimum, and leave the rest to continuity to take care of. 
+
+##### _corollary:_ monotonic functions are integrable
+
+If $f$ is monotonic(ally increasing or decreasing), it is Riemann integrable.
+
+###### _proof:_
+
+[[Mathematical Analysis I --- math-131/notes/Continuous functions on the reals#_theorem _ monotonic functions are continuous almost everywhere|Monotonic functions are continuous almost everywhere]] since [[Calculus --- spivak/notes/Measure#_proposition _ countable sets have measure $0$|countable sets have measure zero]].
+
+Note that we can also prove this by noting that the difference between the maximum and minimum values of a monotonic function on an interval is just the difference between the values on the boundary. Since this sum is telescoping, uniform partitions with subintervals of length $1/n$, will cause the difference between upper and lower sums to go to zero — $(f(b) - f(a))/n$ goes to zero.
+
+##### _proposition:_ composition of a continuous and integrable function
+
+If $f$ is Riemann integrable and $g : [-M, M]$ is continuous, then $h = g \circ f : [a, b] \to \mathbb{R}$ is Riemann integrable.
+
+###### _proof:_
+
+By bounding the difference between upper and lower sums of $f$ by say $\delta^{2}$, show that the intervals of partitions where the difference between the maximum and minimum of $f$ is bigger than $\delta$, are also smaller in length than $\delta$. Bound by the maximum of the function and the length of the intervals on those. On the rest, since we can bound the difference between its maximum and minimum by $\delta$, 
+
+Note that it is not sufficient for both functions to be integrable –
+
+##### _example:_ Thomae's function and non-integrable compositions
+
+Consider
+$$
+f = \begin{cases}
+0 & x = 0 \\
+1 & x \neq 0
+\end{cases}
+$$
+and Thomae's function
+$$
+g = \begin{cases}
+0 & x \not\in\mathbb{Q} \\
+\frac{1}{q} & x = \frac{p}{q} \in \mathbb{Q}.
+\end{cases}
+$$
+
+$f$ is clearly continuous everywhere except at $0$ and $g$ is continuous on the irrationals since approximating an irrational by rationals requires denominators $q \to \infty$, so both $f$ and $g$ are continuous almost everywhere.
+
+However, $f \circ g$ is just the Dirichlet function which we already showed is not integrable.

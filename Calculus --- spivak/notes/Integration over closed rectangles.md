@@ -154,8 +154,8 @@ If we have that $f$ is integrable, then there are partitions $P'$ and $P''$ that
 Consider $f : [0, 1] \to \mathbb{R}$ defined by
 $$
 f(x) = \begin{cases}
-0 & x \in \mathbb{Q} \\
-1 & x \not\in \mathbb{Q}.
+1 & x \in \mathbb{Q} \\
+0 & x \not\in \mathbb{Q}.
 \end{cases}
 $$
 
