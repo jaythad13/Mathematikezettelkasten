@@ -3,6 +3,7 @@ tags:
 - anal
 - math-135/18
 - math-135/19
+- math-135/20
 ---
 
 The Hadamard factorisation theorem gives an improvement to [[Complex Analysis --- math-135/notes/Weierstrass factorisation|Weierstrass' result]] if you know something about the growth of a function.
@@ -125,6 +126,12 @@ $$
 \operatorname{Re} p \le A e^{C \lvert z \rvert^s}
 $$
 which gives us that $p$ is a polynomial of degree at most $s$ and thus, degree at most $k = \lfloor s \rfloor$.
+
+Thus, we only need to bound the product from below. Given a particular, $z$ we can divide the $a_{n}$ into two cases — $\lvert z / a_{n} \rvert \le 1/2$ and otherwise. If $\lvert z / a_{n} \rvert \le 1 / 2$, then we can just use our [[Complex Analysis --- math-135/notes/Weierstrass factorisation#_proposition _ bounding the growth of Weierstrass factors|bound on the growth of elementary factors]], and otherwise we can bound the exponential parts of the elementary factors from below using the triangle inequality and [[Mathematical Analysis I --- math-131/notes/Series#_example _ the geometric series|geometric series]]. Thus, we are only left to show that
+$$
+\prod_{\lvert z / a_{n} \rvert \ge 1 / 2} \left\lvert  1 - \frac{z}{a_{n}}  \right\rvert \ge e^{-c \lvert z \rvert^s}.
+$$
+We show this by showing that the bound holds for all $z$ that are more than $1 / \lvert a_{n} \rvert^{k + 1}$ away from each $a_{n}$ (it is non-trivial that there is a sequence of these $z$ that goes off to infinity) and using our bound on the growth of the number of zeroes of a function, we get the bound proper.
 
 ##### _lemma:_ functions with bounded real part growth are polynomials
 
