@@ -49,14 +49,46 @@ For this week's problems let $\mathbb{P}^{n}(F)$ denote projective $n$-space ove
 \begin{problem}[Problem 2.]
 	Let $\{ T_{\alpha} \mid \alpha \in \mathcal{I} \}$ denote a family of homogeneous sets $T_{\alpha} \subset S$ indexed by some set $\mathcal{I}$.
 	\begin{enumerate}
-		\item Show that the ideal $T = \left < f \right >$ is a homogeneous set for any homogeneous polynomial $f \in S_{e}$.
-		\item Show that the union $T = \cup_{\alpha \in \mathcal{I}} T_{\alpha}$ of homogeneous ideals $T_{\alpha}$ is also a homogeneous ideal.
-		\item Assume $\lvert \mathcal{I} \rvert < \infty$ and write $\mathcal{I} = \{ \alpha_{1}, \dots, \alpha_{n} \}$. Show that the following is also a homogeneous ideal.
+		\item Show that the ideal $T = \left < f \right >$ is a homogeneous ideal for any homogeneous polynomial $f \in S_{e}$.
+		\item Show that the union $T = \bigcup_{\alpha \in \mathcal{I}} T_{\alpha}$ of homogeneous ideals $T_{\alpha}$ is also a homogeneous ideal.
+		\item Assume $\lvert \mathcal{I} \rvert < \infty$ and write $\mathcal{I} = \{ \alpha_{1}, \dots, \alpha_{r} \}$. Show that the following is also a homogeneous ideal.
 			\[
-				T = \prod_{\alpha \in \mathcal{I}} T_{\alpha} = \{ f_{\alpha_{1}} f_{\alpha_{2}} \dots f_{\alpha_{r}} \mid f_{\alpha} \in T_{\alpha} \text{ for each } \alpha \in \mathcal{I} \}
+				T = \prod_{\alpha \in \mathcal{I}} T_{\alpha} = \left \{ \sum_{i_{1}, i_{2}, \dots, i_{r}} c_{i_{1}, i_{2}, \dots, i_{r}} f_{\alpha_{1}} f_{\alpha_{2}} \cdots f_{\alpha_{r}} \mid f_{\alpha} \in T_{\alpha} \text{ for each } \alpha \in \mathcal{I} \right \}
 			\]
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item Since $S$ is graded, every polynomial $g \in S$ can be written as the sum of homogeneous components uniquely. Say $g = g_{0} + g_{1}, \dots + g_{m}$ with $g_{i}$ homogeneous of degrees $i$ with $i$ in $1$ through $m$. Thus, $fg$ can be written as the sum of homogeneous components ---
+			\[
+				fg = fg_{0} + fg_{1} + \dots + fg_{m}
+			\]
+			with $f g_{i}$ of degree $ei$. That is,
+			\[
+				\left < f \right > \subset \sum_{e \ge 0} \left < f \right > \cap S_{e}
+			\]
+			which is sufficient to say that $f$ is homogeneous.
+		\item Note that since $T = \bigcup_{\alpha \in \mathcal{I}} T_{\alpha}$, we have $T \cap S_{e} = \bigcup_{\alpha \in \mathcal{I}} T_{\alpha} \cap S_{e}$ by distributing the intersection over the unions. But then we can write
+			\begin{equation*}
+				\sum_{e \ge 0} T \cap S_{e} = \sum_{e \ge 0} \bigcup_{\alpha \in \mathcal{I}} T_{\alpha} \cap S_{e}.
+			\end{equation*}
+			It suffices to show
+			\[
+				\bigcup_{\alpha \in \mathcal{I}} \sum_{e \ge 0} T_{\alpha} \cap S_{e} \subset \sum_{e \ge 0} \bigcup_{\alpha \in \mathcal{I}} T_{\alpha} \cap S_{e}
+			\]
+			since
+			\[
+				T = \bigcup_{\alpha \in \mathcal{I}} T_{\alpha} = \bigcup_{\alpha \in \mathcal{I}} \sum_{e \ge 0} T_{\alpha} \cap S_{e}
+			\]
+			giving us
+			\[
+				T \subset \sum_{e \ge 0} \bigcup_{\alpha \in \mathcal{I}} T_{\alpha} \cap S_{e} = \sum_{e \ge 0} T \cap S_{e}.
+			\]
+			But this inclusion just follows since any $f \in \bigcup_{\alpha \in \mathcal{I}} \sum_{e \ge 0} T_{\alpha} \cap S_{e}$ is just an element of $\sum_{e \ge 0} T_{\alpha} \cap S_{e}$ for some $\alpha \in \mathcal{I}$ which can be obtained as an element of $\sum_{e \ge 0} \bigcup_{\alpha \in \mathcal{I}} T_{\alpha} \cap S_{e}$ by picking the same $\alpha$ in the union for each $e$.
+		\item Since each $f_{\alpha_{i}} \in T_{\alpha_{i}}$ can be written uniquely as the sum of homogeneous parts, by expanding out, we can write each $f \in T$ as the sum of homogeneous parts. 
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
@@ -65,7 +97,7 @@ For this week's problems let $\mathbb{P}^{n}(F)$ denote projective $n$-space ove
 	\begin{enumerate}
 		\item Say that $\{ T_{\alpha} \mid \alpha \in \mathcal{I} \}$ is an arbitrary family of homogeneous ideals. Show
 			\[
-				Z(T) = \bigcap_{\alpha \in \mathcal{I}} = \bigcap_{\alpha \in \mathcal{I}} Z(T_{\alpha}) \quad \text{whenever} \quad T = \bigcup_{\alpha \in \mathcal{I}} T_{\alpha}
+				Z(T) = \bigcap_{\alpha \in \mathcal{I}} Z(T_{\alpha}) \quad \text{whenever} \quad T = \bigcup_{\alpha \in \mathcal{I}} T_{\alpha}
 			\]
 		\item Say $\{ T_{\alpha} \mid \alpha \in \mathcal{I} \}$ is a \emph{finite} family of homogeneous ideals. Show
 			\[
@@ -73,6 +105,29 @@ For this week's problems let $\mathbb{P}^{n}(F)$ denote projective $n$-space ove
 			\]
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item Suppose $p \in Z(T)$. Thus, $f(p) = 0$ for all $f \in T$ and since $T$ is the union of all $T_{\alpha}$, $f(p) = 0$ for all $f \in T_{\alpha}$ for all $\alpha \in \mathcal{I}$. Thus, $p \in Z(T_{\alpha})$ for all $\alpha \in \mathcal{I}$. That is, $p \in \bigcap_{\alpha \in \mathcal{I}} Z(T_{\alpha})$. Thus, $Z(T) \subset \bigcap_{\alpha \in \mathcal{I}} Z(T_{\alpha})$.
+
+			Now suppose $p \in \bigcap_{\alpha \in \mathcal{I}} Z(T_{\alpha})$. Since $f(p) = 0$ for all $f \in T_{\alpha}$ for all $\alpha \in \mathcal{I}$ and the elements of $T$ are exactly those functions, we also have $f(p) = 0$ for all $f \in T$. Thus, $p \in Z(T)$. Now, by double containment,
+			\[
+				Z(T) = \bigcap_{\alpha \in \mathcal{I}} Z(T_{\alpha}).
+			\]
+		\item Let $\mathcal{I} = \{ \alpha_{1}, \dots, \alpha_{\lvert \mathcal{I} \rvert} \}$.
+
+			Suppose $p \in Z(T)$. Suppose by way of contradiction that $f \notin Z(T_{\alpha})$ for any $\alpha \in \mathcal{I}$. Notice that $Z(T)$ contains all products $f = f_{\alpha_{1}} \cdots f_{\alpha_{\lvert \mathcal{I} \rvert}}$ and we can choose $f_{\alpha_{i}}$ all not to vanish at $p$ (this is our supposition). Then we have $f \in T$ with
+			\[
+				f(p) = f_{\alpha_{1}}(p) \cdots f_{\alpha_{\lvert \mathcal{I} \rvert}}(p) \neq 0.
+			\]
+			which contradicts $p \in Z(T)$. Thus our supposition is false and $p \in Z(T_{\alpha})$ for some $\alpha \in \mathcal{I}$. That is, $p \in \bigcup_{\alpha \in \mathcal{I}} Z(T_{\alpha})$.
+
+			Suppose $p \in \bigcup_{\alpha \in \mathcal{I}} Z(T_{\alpha})$. Thus, all $f$ in some $T_{\alpha}$ vanish on $p$. Since every $h \in T$ is a product of $h = f g$, we have $h(p) = f(p) g(p) = 0$ for all $h \in T$. That is, $p \in Z(T)$. Thus, by double containment,
+			\[
+				Z(T) = \bigcup_{\alpha \in \mathcal{I}} Z(T_{\alpha}).
+			\]
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
@@ -85,5 +140,29 @@ For this week's problems let $\mathbb{P}^{n}(F)$ denote projective $n$-space ove
 	\end{enumerate}
 	Denoting the family of all Zariski open sets by $\{ U_{\alpha} \mid \alpha \in \mathcal{I} \}$, we say $(\mathbb{P}^{n}(F), \{ U_{\alpha} \mid \alpha \in \mathcal{I} \})$ is the \emph{Zariski topology on projective space}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item Note that $\O = Z(S)$ since there are no points on which all polynomials in  $F[x_{0}, x_{1}, \dots, x_{n}]$ vanish, and $\mathbb{P}^{n}(F) = Z(\left < 0 \right >)$ since the zero polynomial vanishes everywhere. But  
+			\[
+				\O =  \mathbb{P}^{n}(F) \setminus \mathbb{P}^{n}(F) = \mathbb{P}^{n}(F) \setminus Z(\left < 0 \right >)
+			\]
+			and
+			\[
+				\mathbb{P}^{n}(F) = \mathbb{P}^{n}(F) \setminus \O = \mathbb{P}^{n}(F) \setminus Z(S).
+			\]
+			Thus, both sets are open.
+		\item We can write $U_{\alpha} = \mathbb{P}^{n}(F) \setminus Z(T_{\alpha})$ for each $\alpha \in \mathcal{I}$. Note that by De Morgan's laws
+			\[
+				\bigcup_{\alpha \in \mathcal{I}} U_{\alpha} = \bigcup_{\alpha \in \mathcal{I}} \mathbb{P}^{n}(F) \setminus Z(T_{\alpha}) = \mathbb{P}^{n}(F) \setminus \bigcap_{\alpha \in \mathcal{I}} Z(T_{\alpha}).
+			\]
+			By the previous exercise, we can write $\bigcap_{\alpha \in \mathcal{I}} Z(T_{\alpha}) = Z(T)$ for $T = \bigcup_{\alpha \in \mathcal{I}} T_{\alpha}$. Thus, $\bigcup_{\alpha \in \mathcal{I}} U_{\alpha} = \mathbb{P}^{n}(F) \setminus Z(T)$ is Zariski open.
+		\item We can write $U_{\alpha} = \mathbb{P}^{n}(F) \setminus Z(T_{\alpha})$ for each $\alpha \in \mathcal{I}$. Note that by De Morgan's laws
+			\[
+				\bigcap_{\alpha \in \mathcal{I}} U_{\alpha} = \bigcap_{\alpha \in \mathcal{I}} \mathbb{P}^{n}(F) \setminus Z(T_{\alpha}) = \mathbb{P}^{n}(F) \setminus \bigcup_{\alpha \in \mathcal{I}} Z(T_{\alpha}).
+			\]
+			By the previous exercise, we can write $\bigcup_{\alpha \in \mathcal{I}} Z(T_{\alpha}) = Z(T)$ for $T = \prod_{\alpha \in \mathcal{I}} T_{\alpha}$ when $\mathcal{I}$ is a finite indexing set. Thus, $\bigcap_{\alpha \in \mathcal{I}} U_{\alpha} = \mathbb{P}^{n}(F) \setminus Z(T)$ is Zariski open.
+	\end{enumerate}
+\end{solution}
 
 \end{document}
