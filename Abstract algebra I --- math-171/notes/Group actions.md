@@ -62,7 +62,7 @@ Note that a stabiliser is sort of "dual" to the notion of the set of fixed point
 
 The kernel of a group action $G \circlearrowright X$ is $\ker (G \circlearrowright X)$, the set of all $g \in G$ that fix all $x \in X$ — all $g \in G$ such that $g \cdot x = x$ for any $x \in X$.
 
-There is an incredibly useful theorem relating the structure on $G$ (stabilisers) and the structure on $X$ (orbits). This allows us to understand the structure of finite groups through [[Abstract Algebra I --- math-171/notes/The class equation#_theorem _ the class equation|the class equation]] and [[The Sylow theorems|the Sylow theorems]], and it gives us a powerful tool to solve combinatorial problems in [[Abstract Algebra I --- math-171/notes/Burnside's lemma]].
+There is an incredibly useful theorem relating the structure on $G$ (stabilisers) and the structure on $X$ (orbits). This allows us to understand the structure of finite groups through [[Abstract Algebra I --- math-171/notes/The class equation#_theorem _ the class equation|the class equation]] and [[Abstract Algebra I --- math-171/notes/Sylow's theorem|the Sylow theorems]], and it gives us a powerful tool to solve combinatorial problems in [[Abstract Algebra I --- math-171/notes/Burnside's lemma]].
 
 ##### _theorem:_ the orbit-stabiliser theorem
 
