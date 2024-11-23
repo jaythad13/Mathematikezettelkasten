@@ -65,8 +65,40 @@
 	\[
 		\Theta(z \mid \tau) = \sum_{n = -\infty}^{n = \infty} e^{\pi i n^{2} \tau} e^{2 \pi i n z}
 	\]
-	is of order $2$ as a function of $z$.
+	is of order $\le 2$ as a function of $z$.
 \end{problem}
+
+\begin{solution}
+	Write $\operatorname{Im} \tau = t > 0$ and $\operatorname{Im} z = y$. We can bound the theta function by the triangle inequality and proceed from there ---
+	\begin{align*}
+		\lvert \Theta(z \mid \tau) \rvert & = \left \lvert \sum_{n = - \infty}^{\infty} e^{\pi i n^{2} \tau} e^{2 \pi i n z} \right \rvert \\
+						  & \le \sum_{n = -\infty}^{\infty} \lvert e^{\pi i n^{2} \tau} e^{2 \pi i n z} \rvert \\
+						  & = \sum_{n = -\infty}^{\infty} \lvert e^{-\pi n^{2} t - 2 \pi n y} \rvert \\
+						  & \le \sum_{n = -\infty}^{\infty} \lvert e^{\pi(- n^{2} t + 2 n \lvert z \rvert)} \rvert \\
+						  & \le 2 \sum_{n = 0}^{\infty} \lvert e^{\pi(-n^{2} t + 2 n \lvert z \rvert)} \rvert.
+	\end{align*}
+
+	Here, we use the hint that $-n^{2} t + 2 n \lvert z \rvert \le - n^{2} t / 2$ when $n \ge 4 \lvert z \rvert / t$ and use this to split the sum at $n = \lfloor 4 \lvert z \rvert / t \rfloor$ (while this does depend on $\lvert z \rvert$, we will show that we can still bound the sum). Splitting the sum as described, we obtain
+	\begin{align*}
+		\lvert \Theta(z \mid \tau) \rvert & \le 2 \left ( \sum_{n = 0}^{\lfloor 4 \lvert z \rvert / t \rfloor} \lvert e^{\pi (-n^{2} t + 2 n \lvert z \rvert)} \rvert + \sum_{n = \lfloor 4 \lvert z \rvert / t \rfloor + 1}^{\infty} \lvert e^{\pi (-n^{2} t + 2 n \lvert z \rvert)} \rvert \right ) \\
+						  & \le 2 \left ( \sum_{n = 0}^{\lfloor 4 \lvert z \rvert / t \rfloor} \lvert e^{\pi (-n^{2} t + 2 n \lvert z \rvert)} \rvert + \sum_{n = \lfloor 4 \lvert z \rvert / t \rfloor + 1}^{\infty} \lvert e^{- \pi n^{2} t/2} \rvert \right )
+	\end{align*}
+	Since the sum on the right is always less than a constant by comparison with the Gaussian integral. Thus we only need to show that the sum on the left is of order at most $2$.
+
+	Note that in the sum up to $n = 4 \lvert z \rvert / t$, $e^{- \pi n^{2} t}$ is maximised when $n = 0$ and $e^{2 \pi n \lvert z \rvert}$ is maximised when $n = \lfloor 4 \lvert z \rvert / t \rfloor$. Thus, the summand $e^{- \pi n^{2} t} e^{2 \pi n \lvert z \rvert}$ is bounded by the product of its maximised factors. In particular
+	\[
+		e^{\pi(-n^{2} t + 2 n \lvert z \rvert)} \le e^{8 \pi n \lvert z \rvert^{2} / t}.
+	\]
+	Bounding the sum by the maximum summand, we get
+	\[
+		\lvert \Theta(z \mid \tau) \rvert \le \frac{4 \lvert z \rvert}{t} e^{8 \pi n \lvert z \rvert^{2} / t}.
+	\]
+	Since sufficiently large positive $A, B \in \mathbb{R}$ will give
+	\[
+		\frac{4 \lvert z \rvert}{t} e^{8 \pi n \lvert z \rvert / t} \le A e^{B \lvert z \rvert^{2 + \varepsilon}}
+	\]
+	for any $\varepsilon > 0$, $\Theta(z \mid \tau)$ must have growth of order less than or equal to $2$.
+\end{solution}
 
 \pagebreak
 
