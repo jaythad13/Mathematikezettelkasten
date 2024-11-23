@@ -3,15 +3,20 @@ tags:
 - alg
 - math-171/7
 - math-171/8
+- math-171/15+
 ---
 
 A lot of the time we think of groups as [[Dihedral groups and generators|representing the symmetries of an object]]. However, a symmetry of a thing is a finicky thing and sometimes its better to think of the group as acting on the object instead, keeping compositions of actions separate from states of the object.
 
-##### _definition:_ group action
+##### _definition:_ (left) group action
 
-A group action of a group $G$ on a set $X$ is a map $G \times X \to X$ such that
+A (left) group action of a group $G$ on a set $X$ is a map $G \times X \to X$ such that
 - $g \cdot (h \cdot x) = (gh) \cdot x$ for all $g, h \in G$ and all $x \in X$
 - $1 \cdot x$ for all $x \in X$.
+
+We often write the action of $G$ on $X$ by $G \circlearrowright X$.
+
+Note that there is also a sensible definition of a right group action where $g \cdot (h \cdot x) = (hg) \cdot x$ but we will rarely have need to use this.
 
 ##### _examples:_ group actions
 
@@ -29,9 +34,55 @@ $$
 5) If $G$ is graph, then $\operatorname{Aut} g$ [[Group automorphisms and automorphism groups#_example _ the automorphism group of a symmetric graph|acts on the set of vertices]] of $G$.
 6) $S_{\Omega}$ acts on $\Omega$ by permuting.
 
-### Automorphisms from group actions
+Obviously, a group action induces structure on the set it acts on. One very important notion is that of an orbit —
 
-We can build [[Group automorphisms and automorphism groups|group automorphisms]] from group actions.
+##### _definition:_ orbit
+
+The orbit of $x \in X$ under an action $G \circlearrowright X$ is $\mathcal{O}_{G}(x)$. the set of all $y \in X$ such that $y = g \cdot x$ for some $g \in G$. 
+
+We verify in [[Abstract Algebra I --- math-171/attachments/homework/hw 7/hw 7.pdf#page=3|the homework]] that the equivalence relation $x \sim y$ if $y = g \cdot x$ for some $g \in G$ is an equivalence relation. We can understand the orbits as equivalence classes under this relation. Note that this means the orbits partition $X$!
+
+Another important notion is that of fixed points.
+
+##### _definition:_ fixed point
+
+A fixed point of $g \in G$ under an action $G \circlearrowright X$ is $x$ such that $g \cdot x = x$.
+
+We usually write the set of all fixed points of $g$ as $\operatorname{fix}_{X}(g)$.
+
+It's also notable that a group action induces structure on the group itself. Again, in [[Abstract Algebra I --- math-171/attachments/homework/hw 7/hw 7.pdf#page=1|the homework]] we verify that the subsets below really are [[Abstract Algebra I --- math-171/notes/Subgroups#_definition _ subgroup, $ le$|subgroups]].
+
+##### _definition:_ stabiliser
+
+The stabiliser of $x \in X$ under a group action $G \circlearrowright X$ is $\operatorname{stab}_{G} x$, the subgroup of all $g \in G$ that fix $X$ — all $g \in G$ with $g \cdot x = x$.
+
+Note that a stabiliser is sort of "dual" to the notion of the set of fixed points.
+
+##### _definition:_ kernel
+
+The kernel of a group action $G \circlearrowright X$ is $\ker (G \circlearrowright X)$, the set of all $g \in G$ that fix all $x \in X$ — all $g \in G$ such that $g \cdot x = x$ for any $x \in X$.
+
+There is an incredibly useful theorem relating the structure on $G$ (stabilisers) and the structure on $X$ (orbits). This allows us to understand the structure of finite groups through [[Abstract Algebra I --- math-171/notes/The class equation#_theorem _ the class equation|the class equation]] and [[The Sylow theorems|the Sylow theorems]], and it gives us a powerful tool to solve combinatorial problems in [[Abstract Algebra I --- math-171/notes/Burnside's lemma]].
+
+##### _theorem:_ the orbit-stabiliser theorem
+
+Consider a group action of $G$ on a non-empty set $X$. For each $x \in X$ the size of the orbit containing $x$ is $\lvert G : \operatorname{stab}_{G}(x) \rvert = \lvert G \rvert / \lvert \operatorname{stab}_{G}(x) \rvert$ .
+
+###### _proof:_
+
+The notation referring to [[Abstract Algebra I --- math-171/notes/Lagrange's theorem#_definition _ index, $ lvert G H rvert$|the index]] of $\operatorname{stab}_{G}(x)$ is deliberate. Consider the map from the orbistat of $x$ to the set of cosets of $\operatorname{stab}_{G}(x)$ $g \cdot x \mapsto g \operatorname{stab}_{G}(x)$. This map is in fact well defined — if $g_{1} \cdot x = g_{2} \cdot x$ then $g_{1}$ differs from $g_{2}$ by an element $h \in \operatorname{stab}_{G}(x)$, so they have the same coset. We claim this is a bijection.
+
+If $g_{1} \operatorname{stab}_{G}(x) = g_{2} \operatorname{stab}_{G}(x)$, then $g_{1}^{-1} g_{2} \in \operatorname{stab}_{G}(x)$. That is, $(g_{1}^{-1} g_{2}) \cdot x = x$, and thus,
+$$
+g_{1} \cdot x = g_{1} \cdot ((g_{1}^{-1} g_{2}) \cdot x) = g_{2} \cdot x.
+$$
+That is, the map is injective. The map is clearly surjective, since all the orbit of $x$, by definition contains all $g \cdot x$ and thus, map to all $g \operatorname{stab}_{G}(x)$.
+
+Since this is a bijection, the sizes of the sets are the same. The last equality is just [[Abstract Algebra I --- math-171/notes/Lagrange's theorem#_theorem _ Lagrange's theorem|Lagrange's theorem]].
+
+### Permutations from group actions
+
+An important perspective to have is understanding group actions as homomorphisms to the [[Abstract Algebra I --- math-171/notes/Group combinatorics and symmetric groups#_definition _ the symmetric group on $ Omega$|symmetric group]] of the set they act on.
 
 ##### _definition:_ $\sigma_{g}$
 

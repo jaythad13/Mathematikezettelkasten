@@ -13,7 +13,7 @@ We've seen enough [[Fibres and quotients|examples]] of quotient groups. Now we w
 
 For the quotient of a group $G$ by a subgroup $H$ to have a reasonable structure, we would want the canonical projection $\pi : G \to G/H$ by $g \mapsto gH$ to be a homomorphism. That is, we want $(x H)(y H) = (x y) H$.
 
-Obviously, this needs to be well defined — if $x_{1} H = x_{2} H$ and $y_{1} H = y_{2} H$ we want $(x_{1} y_{1}) H = (x_{2} y_{2}) H$. Particularly, since $hH = 1_{G}H$, we need $(gH)(hH)(g^{-1}H) = 1_{G} H$ for all $g \in G$ and all $h \in H$. This will only happen if $ghg^{-1} \in H$ for all $g$. Note that this is the condition as the [[Abstract Algebra I --- math-171/notes/Centralisers, centre, normalisers, and stabilisers#_definition _ normaliser, $N_{G}(A)$|normaliser]] being the whole group. That's why we call these groups normal!
+Obviously, this needs to be well defined — if $x_{1} H = x_{2} H$ and $y_{1} H = y_{2} H$ we want $(x_{1} y_{1}) H = (x_{2} y_{2}) H$. Particularly, since $hH = 1_{G}H$, we need $(gH)(hH)(g^{-1}H) = 1_{G} H$ for all $g \in G$ and all $h \in H$. This will only happen if $ghg^{-1} \in H$ for all $g$. Note that this is the condition as the [[Abstract Algebra I --- math-171/notes/Centralisers, centre, and normalisers#_definition _ normaliser, $N_{G}(A)$|normaliser]] being the whole group. That's why we call these groups normal!
 
 ##### _definition:_ normal subgroups
 

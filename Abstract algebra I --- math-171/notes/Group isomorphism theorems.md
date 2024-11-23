@@ -93,7 +93,7 @@ Yes! Since $\operatorname{im} \varphi = \ker \psi$, by quotienting it out, we're
 
 ### The second isomorphism theorem
 
-The second isomorphism theorem tells us how [[Centralisers, centre, normalisers, and stabilisers#_definition _ normaliser, $N_{G}(A)$|normality type conditions]] allow us to take the product of groups. For this, we need to define the product of subgroups, and prove that it really is a group.
+The second isomorphism theorem tells us how [[Abstract Algebra I --- math-171/notes/Centralisers, centre, and normalisers#_definition _ normaliser, $N_{G}(A)$|normality type conditions]] allow us to take the product of groups. For this, we need to define the product of subgroups, and prove that it really is a group.
 
 ##### _definition, theorem:_ product of subgroups, the product of subgroups is a group
 

@@ -17,9 +17,9 @@ The centraliser of a set $A \subset G$ in $G$ is $C_{G}(A)$, set of all elements
 
 Note that this is equivalent to all elements such that there induced inner automorphism fixes all $a \in A$.
 
-##### _definition:_ centre, $C_{G}$
+##### _definition:_ centre, $Z(G)$
 
-The centre of a group $G$ is $C_{G}$, the centraliser of $G$ in $G$.
+The centre of a group $G$ is $Z(G)$, the centraliser of $G$ in $G$.
 
 ##### _definition:_ normaliser, $N_{G}(A)$
 
@@ -29,7 +29,7 @@ That is, all $g \in G$ such that $A$ is invariant under the induced inner automo
 
 ##### _proposition:_ the hierarchy of centralisers, centres, normalisers
 
-We have the chain of containment $C_{G} \subset C_{G}(A) \subset N_{G}(A)$ for any $A \subset G$. We also have $C_{G} \le C_{G}(A) \le N_{G}(A)$.
+We have the chain of containment $Z(G)\subset Z_{G}(A) \subset N_{G}(A)$ for any $A \subset G$. We also have $Z(G) \le Z_{G}(A) \le N_{G}(A)$.
 
 ###### _proof:_ %% finish later %%
 
@@ -51,30 +51,10 @@ For $G = S_{3}$ and $A$ is the set of all transpositions, we have $C_{G}(A) = C_
 
 ##### _example:_ abelian groups
 
-For any abelian group we have $C_{G} = C_{G}(A) = N_{G}(A)$ for all $A \subset G$
+For any abelian group we have $Z(G) = Z_{G}(A) = N_{G}(A)$ for all $A \subset G$
 
-### $G$ acting on $A$
+##### _example:_ the kernel of conjugation
 
-We can generalise these ideas to a group acting on any set. Stabilisers sort of correspond to centralisers and kernels to the centre, but only sort of for both.
+Let $N_{G}(A)$ act on $A \subset G$ by conjugation — $g \cdot a = g a g^{-1}$. What is the [[Abstract Algebra I --- math-171/notes/Group actions#_definition _ kernel|kernel]]? 
 
-##### _definition:_ stabiliser
-
-For $G$ acting on $A$, stabiliser of $a \in A$ is $\operatorname{stab}_{G}(a)$, the set of all $g \in G$ such that $g \cdot a = a$.
-
-###### _proof:_
-
-See [[Abstract Algebra I --- math-171/attachments/homework/hw 7/hw 7.pdf|Homework 7]].
-
-##### _definition:_ kernel
-
-For $G$ acting on $A$, the stabiliser of $a \in A$ is $\ker_{G}(A)$, the set of all $g \in G$ such that $g \cdot a = a$ for all $a \in A$.
-
-###### _proof:_
-
-Again, see [[Abstract Algebra I --- math-171/attachments/homework/hw 7/hw 7.pdf|Homework 7]].
-
-##### _example:_ going back to groups acting on themselves
-
-Let $N_{G}(A)$ act on $A \subset G$ by conjugation — $g \cdot a = g a g^{-1}$. What is the kernel? 
-
-It's just the centraliser of $A$ under $G$ (recall that $C_{G}(A) \subset N_{G}(A)$).
+It's just the centraliser of $A$ under $G$ (recall that $Z_{G}(A) \subset N_{G}(A)$).

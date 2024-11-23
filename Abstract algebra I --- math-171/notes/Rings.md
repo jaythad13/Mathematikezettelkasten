@@ -233,6 +233,6 @@ A subring of a ring $R$ is a subgroup of $(R, +)$ that is also closed under mult
 
 $\mathbb{R}$ is a subring of $\mathbb{C}$.
 
-While we can quotient out a subgroup $(S, +) \le (R, +)$ to get $(R, +)/(S, +)$ this doesn't say anything about the multiplicative structure. Notably, we want the natural projection from $R$ to $R/S$ to be a [[Abstract Algebra I --- math-171/notes/Ring homomorphisms|ring homomorphism]]. Since we can't ensure this with a [[Abstract Algebra I --- math-171/notes/Centralisers, centre, normalisers, and stabilisers#_definition _ normaliser, $N_{G}(A)$|normality condition]] (we probably don't have multiplicative inverses), we just require absorption under multiplication by any element of $R$, not just the substructure.
+While we can quotient out a subgroup $(S, +) \le (R, +)$ to get $(R, +)/(S, +)$ this doesn't say anything about the multiplicative structure. Notably, we want the natural projection from $R$ to $R/S$ to be a [[Abstract Algebra I --- math-171/notes/Ring homomorphisms|ring homomorphism]]. Since we can't ensure this with a [[Abstract Algebra I --- math-171/notes/Centralisers, centre, and normalisers#_definition _ normaliser, $N_{G}(A)$|normality condition]] (we probably don't have multiplicative inverses), we just require absorption under multiplication by any element of $R$, not just the substructure.
 
 ![[Abstract Algebra I --- math-171/notes/Ideals and quotients#_definition _ ideal]]
