@@ -42,7 +42,7 @@ $$
 
 The mean value theorem has some incredible consequences. For instance, we can also use the mean value theorem to get an analogue of [[Mathematical Analysis I --- math-131/notes/Continuity#_corollary _ intermediate value theorem|intermediate value theorem]] for derivatives, even though the derivative of a function need not be continuous.
 
-##### _corollary:_ intermediate value theorem for derivative
+##### _corollary:_ the intermediate value property of derivatives
 
 If $f$ is differentiable on some $[a, b]$ (on some open interval containing it), then, for any $\lambda \in (f'(a), f'(b))$, (assuming without loss of generality that $f'(a) < f'(b)$) then there exists $x$ such that $f'(x) = \lambda$.
 
@@ -50,7 +50,7 @@ If $f$ is differentiable on some $[a, b]$ (on some open interval containing it),
 
 Consider $g : [a, b] \to \mathbb{R}$ by $g(t) = f(t) - \lambda t$. Then $g'(t) = f'(t) - \lambda t$. Since $[a, b]$ is compact, $g'(a) < 0$, and $g'(b) > 0$, $g$ does not attain its maximum on the boundary $[a, b]$, but instead at a point $x$ in its interior. There $g'(x) = 0$ and thus, $f'(t) = \lambda$.
 
-Note that this means that discontinuous functions must have fairly complicated discontinuities — they cannot just be jump discontinuities since that would break the intermediate value condition.
+Note that this means that discontinuous derivatives must have fairly complicated discontinuities — they cannot just be jump discontinuities since that would break the intermediate value condition.
 
 ##### _theorem:_ L'Hôpital's rule
 
