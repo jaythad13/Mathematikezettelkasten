@@ -17,7 +17,7 @@
 	\[
 		\lim_{h \to 0} \frac{f(x + h) - f(x)}{h}.
 	\]
-	Since $f$ is continuous, the numerator and denominator approach $0$ as $h \to 0$. Thus, we an apply L'H\^opital's rule (differentiating with respect to $h$) to get
+	Since $f$ is continuous, the numerator and denominator approach $0$ as $h \to 0$. Thus, we can apply L'H\^opital's rule (differentiating with respect to $h$) to get
 	\begin{equation*}
 		\lim_{h \to 0} \frac{f(0 + h) - f(0)}{h} = \lim_{h \to 0} \frac{f'(0 + h) - 0}{1} = \lim_{h \to 0} f'(h) = 3.
 	\end{equation*}
@@ -116,6 +116,15 @@
 					a x^{a - 1} \sin{(\lvert x \rvert^{-c})} + c x^{a - c - 1} \cos{(-x^{-c})} & x > 0
 				\end{cases}
 			\]
+			By similar analysis as in part (a), when $a > 1$ the limits agree.
+		\item Using the expression for $f'$ in the previous part, the $x^{a - c - 1}$ is only bounded when $a \ge 1 + c$, so the derivative is only bounded when $a \ge 1 + c$ --- then the function is just bounded by the fact that $\sin{}$ and $\cos{}$ are bounded.
+		\item For $x \neq 0$, $f'$ is differentiable with
+			\[
+				f''(x) = a x^{a - 2} \sin{(\lvert x^{-c} \rvert)} + a x^{a - 1} \cos{\lvert x \rvert^{-c}} + c x^{a - c - 2} \cos{(x^{-c})} 
+			\]
+		$f''(0)$ only exists when the $x^{a - 2 - c}$ term has positive exponent in front of the $\sin$ function --- exactly when $a > 2 + c$.
+	\item For boundedness, we consider the $\cos{}$ term which needs $a \ge 2 + 2c$ for the $x^{a - 2 - 2c}$ term in front of it to have non-negative exponent after which the function is again bounded by the boundedness of trigonometric functions.
+	\item Again, if the $x^{a - 2 - 2c}$ term has strictly positive exponenent, all trigonometric functions are dominated by the polynomial terms and are thus continuous at $x = 0$.
 	\end{enumerate}
 \end{solution}
 
