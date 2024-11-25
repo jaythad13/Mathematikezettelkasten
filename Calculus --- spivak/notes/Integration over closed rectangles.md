@@ -6,7 +6,7 @@ tags:
 - self-study
 ---
 
-Integrating over closed rectangles is basically just the same as [[Mathematical Analysis I --- math-131/notes/Riemann-Stieljes integration|integrating over closed intervals]] in $\mathbb{R}$. 
+Integrating over closed rectangles is basically just the same as [[Mathematical Analysis I --- math-131/notes/Riemann integration|integrating over closed intervals]] in $\mathbb{R}$. 
 
 ##### _notation:_ $A$
 
