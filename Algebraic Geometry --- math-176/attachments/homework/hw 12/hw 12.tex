@@ -1,0 +1,62 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 176 --- Algebraic Geometry}
+\assignment{Homework assignment \#12}
+\duedate{6th December 2024}
+
+\begin{document}
+
+For this week's set, let $X = \operatorname{Spec} \mathcal{O}$ for an integral domain $\mathcal{O}$. The \emph{quotient field} of $\mathcal{O}$ is the smallest field containing it, namely $K = \{ p/q \mid p, q \in \mathcal{O}, q \neq 0 \}$. For any Zariski open $U \subset X$, define the integral domain $\mathcal{O}_{X}(U) = \bigcap_{I \in U} \mathcal{O}_{I}$ in terms of the local rings $\mathcal{O}_{I} = \{ p / q \in K \mid q \in I \}$.
+
+\begin{problem}[Problem 1.]
+	We say that subset $V \subset X$ is \emph{Zariski closed} if $V = Z_{J} = \{ I \in \operatorname{Spec} \mathcal{O} \mid J \subset I \} \cong \operatorname{Spec} \mathcal{O} / J$ for some ideal $J \subset \mathcal{O}$. We say that a subset $U \subset X$ is \emph{Zariski open} if $V = X \setminus U$ is Zariski closed.
+	\begin{enumerate}
+		\item Show that both $\O$ and $X$ are Zariski open.
+		\item Say that $\{ U_{\alpha} \mid \alpha \in \mathcal{I} \}$ is an arbitrary family of Zariski open sets. Show that $U = \bigcup_{\alpha \in \mathcal{I}} U_{\alpha}$ is also Zariski open.
+		\item Say that $\{ U_{\alpha} \mid \alpha \in \mathcal{I} \}$ is a \emph{finite} family of Zariski open sets. Show $U = \bigcap_{\alpha \in \mathcal{I}} U_{\alpha}$ is also Zariski open.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Problem 2.]
+	Denote $\mathcal{O} = \mathbb{Z}$, so that its quotient field is $K = \mathbb{Q}$.
+	\begin{enumerate}
+		\item Assume that $I = \{ 0 \}$ is the zero ideal. Show that we have the localisation $\mathcal{O}_{I} = \mathbb{Q}$.
+		\item Assume that $I = \left < \ell \right > = \ell \mathbb{Z}$ for a rational prime $\ell$. Show that $\mathcal{O}_{I} = \{ p / q \in \mathbb{Q} \mid \ell \text{ does not divide } q \}$.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Problem 3.]
+	Since $\mathcal{O} = \mathbb{Z}$ is a Dedekind domain, we see that $X = \operatorname{Spec} \mathbb{Z}$ is a non-singular affine curve. Say that $V = \{ \ell_{1}, \ell_{2}, \dots, \ell_{n} \} \subset \mathbb{Z}$ is a finite collection of rational primes.
+	\begin{enumerate}
+		\item Upon identifying $\ell_{\alpha} \in V$ with $\left < \ell_{\alpha} \right > \in X$, show that the complement $U = X \setminus V$ is a Zariski open subset.
+		\item Show that $\mathcal{O}_{X}(U) = \bigcap_{I \in U} \mathcal{O}_{I} = \{ p / q \in \mathbb{Q} \mid \text{no } \ell_{\alpha} \in V \text{ divides } q \}$.	
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Problem 4.]
+	Denote $\mathcal{O} = F[x]$ as the collection of polynomials $p(x) = a_{n} x^{n} + \dots + a_{1} x + a_{0}$ with coefficients in a field $F$, so that its quotient field $K = F(x)$ consists of rational functions $p(x) / q(x)$.
+	\begin{enumerate}
+		\item Assume that $I = \{ 0 \}$ is the zero ideal. Show that the localisation $\mathcal{O}_{I} = F(x)$.
+		\item Assume that $I = \left < f \right >$ for the linear polynomial $f(x) = x - r$. Show that $q(x) \in I$ if and only if $q(r) = 0$, and conclude that the localisation is $\mathcal{O}_{I} = \{ p(x) / q(x) \in F(x) \mid q(r) \neq 0 \}$.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Problem 5.]
+	Since $\mathcal{O} = F[x]$ is a Dedekind domain, we see that $X = \operatorname{Spec} \mathcal{O} = \mathbb{A}^{1}_{F}$ is a non-singular affine curve. Say that $V = \{ r_{1}, r_{2}, \dots, r_{n} \} \subset F$ is a finite collection of elements.
+	\begin{enumerate}
+		\item Upon identifying $r_{\alpha} \in V$ with $\left < x - r_{\alpha} \right > \in X$, show the complement $U = X \setminus V$ is a Zariski open subset. Show that $V \cong Z_{J} = \{ I \in X \mid J \subset I \}$ in terms of the ideal $J = \left < (x - r_{1}) (x - r_{2}) \dotsm (x - r_{n}) \right >$.
+		\item Show that $\mathcal{O}_{X}(U) = \bigcap_{I \in U} \mathcal{O}_{I} = \{ p(x) / q(x) \in F(x) \mid q(r_{\alpha}) \neq 0 \text{ for each } r_{\alpha} \in V \}$.
+	\end{enumerate}
+\end{problem}
+
+\end{document}
