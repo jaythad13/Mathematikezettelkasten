@@ -127,34 +127,3 @@ If $f$ is monotonic(ally increasing or decreasing), it is Riemann integrable.
 [[Mathematical Analysis I --- math-131/notes/Continuous functions on the reals#_theorem _ monotonic functions are continuous almost everywhere|Monotonic functions are continuous almost everywhere]] since [[Calculus --- spivak/notes/Measure#_proposition _ countable sets have measure $0$|countable sets have measure zero]].
 
 Note that we can also prove this by noting that the difference between the maximum and minimum values of a monotonic function on an interval is just the difference between the values on the boundary. Since this sum is telescoping, uniform partitions with subintervals of length $1/n$, will cause the difference between upper and lower sums to go to zero — $(f(b) - f(a))/n$ goes to zero.
-
-##### _proposition:_ composition of a continuous and integrable function
-
-If $f$ is Riemann integrable and $g : [-M, M]$ is continuous, then $h = g \circ f : [a, b] \to \mathbb{R}$ is Riemann integrable.
-
-###### _proof:_
-
-By bounding the difference between upper and lower sums of $f$ by say $\delta^{2}$, show that the intervals of partitions where the difference between the maximum and minimum of $f$ is bigger than $\delta$, are also smaller in length than $\delta$. Bound by the maximum of the function and the length of the intervals on those. On the rest, since we can bound the difference between its maximum and minimum by $\delta$, 
-
-Note that it is not sufficient for both functions to be integrable –
-
-##### _example:_ Thomae's function and non-integrable compositions
-
-Consider
-$$
-f = \begin{cases}
-0 & x = 0 \\
-1 & x \neq 0
-\end{cases}
-$$
-and Thomae's function
-$$
-g = \begin{cases}
-0 & x \not\in\mathbb{Q} \\
-\frac{1}{q} & x = \frac{p}{q} \in \mathbb{Q}.
-\end{cases}
-$$
-
-$f$ is clearly continuous everywhere except at $0$ and $g$ is continuous on the irrationals since approximating an irrational by rationals requires denominators $q \to \infty$, so both $f$ and $g$ are continuous almost everywhere.
-
-However, $f \circ g$ is just the Dirichlet function which we already showed is not integrable.
