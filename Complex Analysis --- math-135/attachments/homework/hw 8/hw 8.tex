@@ -110,6 +110,28 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item
+		\item By analysing the proof that absolutely convergent $\sum a_{n}$  implies convergent  $\prod (1 + a_{n})$ we see that we want convergent $\sum a_{n}$ such that  $\sum \log (1 + a_{n})$ diverges. Such a series is given by
+			\[
+				a_{n} = \frac{(-1)^{n}}{\sqrt{n}}.
+			\]
+
+			By the alternating series test $\sum a_{n}$ converges.
+
+			If we write out $\log(1 + a_{n})$ using Taylor series we see that
+			 \[
+				\log (1 + a_{n}) = a_{n} - \frac{a_{n}^{2}}{2} + \dots = a_{n} - \frac{1}{2n} + \dots
+			\]
+			where the rest of the terms are $O(n^{-3/2})$. Since the higher order terms converge in series by the  $p$-test, $\sum a_{n}$ converges as as shown earlier, and $\sum -2/n$ diverges, the series must diverge. Thus
+			\[
+				\prod_{n = 1}^{\infty} (1 + a_{n}) = e^{\sum \log(1 + a_{n})}
+			\]
+			diverges.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[8.]
