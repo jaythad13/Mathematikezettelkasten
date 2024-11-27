@@ -3,7 +3,7 @@ tags:
 - alg
 - comb
 - alg-comb
-- math-171/15+
+- math-171/15x
 ---
 
 ### $G$ acting on itself by conjugation

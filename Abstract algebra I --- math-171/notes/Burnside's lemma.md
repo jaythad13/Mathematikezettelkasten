@@ -3,7 +3,7 @@ tags:
 - alg
 - alg-comb
 - comb
-- math-171/15+
+- math-171/15x
 ---
 
 Burnside's lemma is a clever application of [[Abstract Algebra I --- math-171/notes/Group actions#_theorem _ the orbit-stabiliser theorem|the orbit-stabiliser theorem]] to count things "up to symmetry". For example, how many three-colourings of the cube are there, up to symmetry of rotation (we consider two colourings of the cube to be the same if you can rotate one into the other). 
