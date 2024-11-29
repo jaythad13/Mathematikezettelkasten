@@ -8,7 +8,7 @@
 
 \begin{document}
 
-For this week's set, let $X = \operatorname{Spec} \mathcal{O}$ for an integral domain $\mathcal{O}$. The \emph{quotient field} of $\mathcal{O}$ is the smallest field containing it, namely $K = \{ p/q \mid p, q \in \mathcal{O}, q \neq 0 \}$. For any Zariski open $U \subset X$, define the integral domain $\mathcal{O}_{X}(U) = \bigcap_{I \in U} \mathcal{O}_{I}$ in terms of the local rings $\mathcal{O}_{I} = \{ p / q \in K \mid q \in I \}$.
+For this week's set, let $X = \operatorname{Spec} \mathcal{O}$ for an integral domain $\mathcal{O}$. The \emph{quotient field} of $\mathcal{O}$ is the smallest field containing it, namely $K = \{ p/q \mid p, q \in \mathcal{O}, q \neq 0 \}$. For any Zariski open $U \subset X$, define the integral domain $\mathcal{O}_{X}(U) = \bigcap_{I \in U} \mathcal{O}_{I}$ in terms of the local rings $\mathcal{O}_{I} = \{ p / q \in K \mid q \notin I \}$.
 
 \begin{problem}[Problem 1.]
 	We say that subset $V \subset X$ is \emph{Zariski closed} if $V = Z_{J} = \{ I \in \operatorname{Spec} \mathcal{O} \mid J \subset I \} \cong \operatorname{Spec} \mathcal{O} / J$ for some ideal $J \subset \mathcal{O}$. We say that a subset $U \subset X$ is \emph{Zariski open} if $V = X \setminus U$ is Zariski closed.
@@ -18,6 +18,18 @@ For this week's set, let $X = \operatorname{Spec} \mathcal{O}$ for an integral d
 		\item Say that $\{ U_{\alpha} \mid \alpha \in \mathcal{I} \}$ is a \emph{finite} family of Zariski open sets. Show $U = \bigcap_{\alpha \in \mathcal{I}} U_{\alpha}$ is also Zariski open.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item Note that $\O$ is the set of primes $I \in \operatorname{Spec} \mathcal{O}$ that contain any maximal $M \in \operatorname{Spec} \mathcal{O}$ since, by definition, there are none. Thus, $\O$ is Zariski closed and its complement, $X$, is Zariski open.
+			Similarly, note that $X = \operatorname{Spec} \mathcal{O} / \{ 0 \}$, and thus, $X$ is Zariski closed too. Thus, its complement, $\O$, is Zariski open.
+		\item To show that the arbitrary union of open sets is open, we need to show that their complement is closed. By De Morgan's laws, an arbitrary union of open sets $U_{\alpha}$ has complement
+			\[
+				\left ( \bigcup_{\alpha \in \mathcal{I}} U_{\alpha} \right )^{c} = \bigcap_{\alpha \in \mathcal{I}} U_{\alpha}^{c}
+			\]
+			which is an arbitrary intersection of closed sets.
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
