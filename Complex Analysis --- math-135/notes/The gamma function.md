@@ -22,7 +22,7 @@ F_{\varepsilon} = \int_{\varepsilon}^{1/\varepsilon} e^{-t} t^{s - 1}  \, dx
 $$
 As per, $F_{\varepsilon}$ [[Complex Analysis --- math-135/notes/Cauchy integral formula#_proposition _ holomorphic functions defined by integrals|is holomorphic]], and thus, by proving $F_{\varepsilon} \to F$ in the strip uniformly, we have $F$ holomorphic in the strip.
 
-The primary reason the gamma function is of interest of course is that it obeys the functional equation $\Gamma(s + 1) = s \Gamma(s)$, and since $\Gamma(1) = 1$, we have $\Gamma(n) = n!$!
+The primary reason the gamma function is of interest of course is that it obeys the functional equation $\Gamma(s + 1) = s \Gamma(s)$, and since $\Gamma(1) = 1$, we have $\Gamma(n + 1) = n!$!
 
 ##### _proposition:_ the gamma functional equation
 
