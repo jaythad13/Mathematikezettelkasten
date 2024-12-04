@@ -22,12 +22,14 @@ For this week's set, let $X = \operatorname{Spec} \mathcal{O}$ for an integral d
 \begin{solution}
 	\begin{enumerate}
 		\item Note that $\O$ is the set of primes $I \in \operatorname{Spec} \mathcal{O}$ that contain any maximal $M \in \operatorname{Spec} \mathcal{O}$ since, by definition, there are none. Thus, $\O$ is Zariski closed and its complement, $X$, is Zariski open.
-			Similarly, note that $X = \operatorname{Spec} \mathcal{O} / \{ 0 \}$, and thus, $X$ is Zariski closed too. Thus, its complement, $\O$, is Zariski open.
-		\item To show that the arbitrary union of open sets is open, we need to show that their complement is closed. By De Morgan's laws, an arbitrary union of open sets $U_{\alpha}$ has complement
+			Similarly, note that $X = \operatorname{Spec} \mathcal{O} / \left < 0 \right >$, and thus, $X$ is Zariski closed too. Thus, its complement, $\O$, is Zariski open.
+		\item To show that the arbitrary union of open sets is open, we need to it suffices to show their complement is closed. By De Morgan's laws, an arbitrary union of open sets $U_{\alpha}$ has complement
 			\[
-				\left ( \bigcup_{\alpha \in \mathcal{I}} U_{\alpha} \right )^{c} = \bigcap_{\alpha \in \mathcal{I}} U_{\alpha}^{c}
+			X \setminus \left ( \bigcup_{\alpha \in \mathcal{I}} U_{\alpha} \right ) = \bigcap_{\alpha \in \mathcal{I}} X \setminus U_{\alpha}
 			\]
-			which is an arbitrary intersection of closed sets.
+			which is an intersection of closed sets.
+
+			Write $V_{\alpha} = X \setminus U_{\alpha}$ for each $\alpha \in I$. By definition, $V_{\alpha} = \operatorname{Spec} \mathcal{O} / J_{\alpha}$ for some ideal $J_{\alpha} \subset \mathcal{O}$. Notice that if $J_{\alpha} \subset I \in \operatorname{Spec} \mathcal{O}$.
 	\end{enumerate}
 \end{solution}
 
@@ -41,6 +43,19 @@ For this week's set, let $X = \operatorname{Spec} \mathcal{O}$ for an integral d
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item Since $\mathcal{O} = \mathbb{Z}$ is an integral domain, $I = \{ 0 \}$ is a prime ideal, and $\mathcal{O}_{I}$ is a well defined localisation away from $I$. In particular,
+			\[
+				\mathcal{O}_{I} = \{ p / q \mid q \notin I \} = \{ p / q \mid q \neq 0 \} = \mathbb{Q}.
+			\]
+		\item For primes $\ell \in \mathbb{Z}$, $I = \left < \ell \right >$ is a prime ideal of $\mathcal{O} = \mathbb{Z}$ consisting of the multiples of $\ell$. Thus, $\mathcal{O}_{I}$ is a well defined localisation away from $I$. In particular,
+			\[
+				\mathcal{O}_{I} = \{ p / q \mid q \notin I \} = \{ p / q \mid \ell \text{ does not divide } q \}.
+			\]
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[Problem 3.]
@@ -50,6 +65,24 @@ For this week's set, let $X = \operatorname{Spec} \mathcal{O}$ for an integral d
 		\item Show that $\mathcal{O}_{X}(U) = \bigcap_{I \in U} \mathcal{O}_{I} = \{ p / q \in \mathbb{Q} \mid \text{no } \ell_{\alpha} \in V \text{ divides } q \}$.	
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item Since each $\left < \ell_{\alpha} \right >$ is prime, each $V_{\alpha} = \{ \left < \ell_{\alpha} \right > \}$ is Zariski closed, and each $U_{\alpha} = X \setminus V_{\alpha}$ is Zariski open. By De Morgan's laws
+			\[
+				U = X \setminus \left ( \bigcup_{\alpha = 1}^{n} V_{\alpha} \right ) = \bigcap_{\alpha = 1}^{n} X \setminus V_{\alpha} = \bigcap_{\alpha = 1}^{n} U_{\alpha}.
+			\]
+			By the first exercise, this finite intersection of open sets is open.
+		\item By the previous exercise, each localisation away from $\left < \ell_{\alpha} \right >$ is
+			\[
+				\mathcal{O}_{\left < \ell_{\alpha} \right >} = \{ p / q \in \mathbb{Q} \mid \ell_{\alpha} \text{ does not divide } q \}.
+			\]
+			Since $\mathcal{O}_{X}(U)$ is defined to be the intersection of all these local rings, we have
+			\[
+				\mathcal{O}_{X}(U) = \bigcap_{\alpha = 1}^{n} \mathcal{O}_{\left < \ell_{\alpha} \right >} = \{ p / q \mid \text{no } \ell_{\alpha} \in V \text{ divides } q \}.
+			\]
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
@@ -61,6 +94,22 @@ For this week's set, let $X = \operatorname{Spec} \mathcal{O}$ for an integral d
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item Since $I = \{ 0 \}$ is a prime ideal, we have the well-defined localisation
+			\[
+				\mathcal{O}_{I} = \{ p(x) / q(x) \mid q \notin I \} = \{ p(x) / q(x) \mid q(x) \neq 0 \} = F(x).
+			\]
+		\item Suppose $q(x) \in I$. Then $f$ divides $q$, so $q(r) = f(r) g(r) = 0$. Suppose conversely that $q(r) = 0$. Then by the division algorithm, $f(x) = x - r$  divides $q(x)$ and thus, $q \in I$.
+
+			Since $I = \left < x - r \right >$ is a prime (in fact, it is maximal), we have the well defined localisation
+			\[
+				\mathcal{O}_{I} = \{ p(x) / q(x) \mid q \notin I \} = \{ p(x) / q(x) \in F(x) \mid q(r) \neq 0 \}
+			\]
+			where the last equality follows from our earlier result that $I$ contains exactly those polynomials vanishing at $r$.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[Problem 5.]
@@ -70,5 +119,23 @@ For this week's set, let $X = \operatorname{Spec} \mathcal{O}$ for an integral d
 		\item Show that $\mathcal{O}_{X}(U) = \bigcap_{I \in U} \mathcal{O}_{I} = \{ p(x) / q(x) \in F(x) \mid q(r_{\alpha}) \neq 0 \text{ for each } r_{\alpha} \in V \}$.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item Since each $\left < x - r_{\alpha} \right >$ is prime, each $V_{\alpha} = \{ \left < x - r_{\alpha} \right > \}$ is Zariski closed, and each $U_{\alpha} = X \setminus V_{\alpha}$ is Zariski open. By De Morgan's laws
+			\[
+				U = X \setminus \left ( \bigcup_{\alpha = 1}^{n} V_{\alpha} \right ) = \bigcap_{\alpha = 1}^{n} X \setminus V_{\alpha} = \bigcap_{\alpha = 1}^{n} U_{\alpha}.
+			\]
+			By the first exercise, this finite intersection of open sets is open.
+		\item By the previous exercise, each localisation away from $\left < x - r_{\alpha} \right >$ is
+			\[
+				\mathcal{O}_{\left < x - r_{\alpha} \right >} = \{ p(x) / q(x) \in F(x) \mid q(r_{\alpha}) \neq 0 \}.
+			\]
+			Since $\mathcal{O}_{X}(U)$ is defined to be the intersection of all these local rings, we have
+			\[
+				\mathcal{O}_{X}(U) = \bigcap_{\alpha = 1}^{n} \mathcal{O}_{\left < x - r_{\alpha} \right >} = \{ p / q \mid q(r_{\alpha}) \neq 0 \text{ for each } r_{\alpha} \in V \}.
+			\]
+	\end{enumerate}
+\end{solution}
 
 \end{document}
