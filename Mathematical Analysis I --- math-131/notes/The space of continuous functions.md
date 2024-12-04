@@ -1,6 +1,7 @@
 ---
 tags:
 - math-131/26
+- math-131/27
 - anal
 ---
 
@@ -48,4 +49,8 @@ f(x) = \begin{cases}
 $$
 Note here that this sequence of functions is not Cauchy under our $\sup$ metric since the steep slope of the functions near $1$ allows the maximum point-wise distance between any two functions be sufficiently large. In particular, $\lvert x^{2n} - x^n \rvert$ always achieves $1/4$ for the right $x$.
 
-We can show that this is true by picking $N$ large enough and $x$ close enough to $x_{0}$ at each $x_{0}$.
+We can show that $f$ is continuous is true by picking $N$ large enough and $x$ close enough to $x_{0}$ at each $x_{0}$. It only remains to show that the point-wise limit $f$ is really the limit of the $f_{n}$ under the $\sup$ metric.
+
+First we show that $f_{n} \to f$ locally — for any $\varepsilon > 0$, around each $x \in K$ there is an open ball $B_{\delta}(x)$ with its image under $f - f_{n}$ less than $\varepsilon$ away from $0$. This follows by choosing $\delta$ small enough that $f$ is close to $f(x)$ and $f_{n}$ is close to $f_{n}(x)$, and $n$ large enough that $f_{n}(x)$ is close to $f(x)$. (Technically, to avoid $\delta$ depending on $n$, we use a fourth term in the triangle inequality to show with $N$ big enough that the Cauchy condition holds, so that we can have a uniform $\delta$ to compare against).
+
+But then these $B_{\delta}(x)$ form an open cover of compact $K$, and [[Mathematical Analysis I --- math-131/notes/Compactness#_definition _ compact|must reduce to a finite sub-cover]]. Then by picking the largest $n$ required in any of the $\delta$-balls for $f$ and $f_{n}$ to be close, we have $f$ and $f_{n}$ uniformly close on $K$.
