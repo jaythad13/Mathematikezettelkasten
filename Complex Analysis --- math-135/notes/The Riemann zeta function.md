@@ -1,6 +1,7 @@
 ---
 tags:
 - math-135/23
+- math-135/24
 - anal
 ---
 
@@ -78,7 +79,17 @@ $$
 
 ###### _proof sketch:_
 
-Prove this is true for real $s > 0$ by double inequality by comparing finite sums to infinite products and taking limits and vice versa.
+Prove this is true for real $s > 0$ by double inequality by comparing finite sums to infinite products and taking limits and vice versa. 
+
+This requires showing that the Euler product does actually define a holomorphic function for all $\operatorname{Re} s > 1$. We can do so by showing that the products have [[Complex Analysis --- math-135/notes/Infinite products#_theorem _ infinite products of holomorphic functions|bounded distance]] from $1$. In particular, on any compact $K \subset \{ s \in \mathbb{C} \mid \operatorname{Re} s > 1 \}$.
+$$
+\frac{1}{1 - p^{-s}} - 1 = \frac{p^{-s}}{1 - p^{-s}}
+$$
+has absolute value
+$$
+\left\lvert  \frac{1}{1 - 1 / p^s}  \right\rvert \left\lvert  \frac{1}{p^s}  \right\rvert < 2 p^{-\sigma}
+$$
+for $1 < \sigma < \operatorname{Re} s$ — the first term is less than $2$, since $p > 2$.
 
 ### Analytic continuation to the complex plane (minus $1$)
 
@@ -112,7 +123,7 @@ The first follows by noticing that $\vartheta$ is even in $n$, and thus,
 $$
 \vartheta(t) = 1 + 2 \sum_{n = 1}^\infty e^{-\pi n^{2} t}.
 $$
-Bounding this sjum
+Bounding this sum
 
 We are now going to try to get a functional equation for $\zeta$ in terms of [[Complex Analysis --- math-135/notes/The gamma function#_definition _ the gamma function|the gamma function]].
 
@@ -122,3 +133,57 @@ For all $s$ in the right half plane of $\mathbb{C}$,
 $$
 \pi^{-s / 2} \, \Gamma\left( \frac{s}{2} \right) \, \zeta(s) = \pi^{(s - 1)/2} \, \Gamma\left( \frac{1 - s}{2} \right) \, \zeta(1 - s).
 $$
+
+###### _proof:_
+
+This proof follows from several lemmas.
+
+##### _lemma:_ gamma, zeta, and theta
+
+If $\operatorname{Re} s > 1$,
+$$
+\pi^{-s / 2} \, \Gamma\left( \frac{s}{2} \right) \, \zeta(s) = \int_{0}^\infty u^{s / 2 - 1} \frac{\vartheta(u) - 1}{2}  \, dx 
+$$
+
+###### _proof:_
+
+We start from the right.
+
+First, by the Lebesgue dominated convergence theorem (if everything lives in a lemon, you're fine theorem), we can exchange summation and integration inside the integral on the right to get
+$$
+\int_{0}^\infty u^{s / 2}  \, dx 
+$$
+Letting $u = t / \pi n^{2}$ and changing variables to $t$, we get exactly what we want.
+
+##### _definition:_ the $\xi$ function
+
+The $\xi$ function is defined by
+$$
+\xi(s) = \pi^{-s / 2} \, \Gamma\left( \frac{s}{2} \right) \, \zeta(s)
+$$
+for $\operatorname{Re} s > 1$.
+
+Now we can restate our functional equation in terms of $\xi$!
+
+##### _theorem:_ $\xi$ has an meromorphic extension to $\mathbb{C}$
+
+$\xi$ has a meromorphic extension to $\mathbb{C}$ with simple poles at $0$ and $1$ and satisfies the functional equation
+$$
+\xi(s) = \xi(1 - s)
+$$
+
+###### _proof:_
+
+Write $\xi(s)$ in terms of the integral of $\vartheta$ using our previous lemma. Change some variables, and get an integral of a function with exponential delay plus $1 / (s - 1) + 1/s$.
+
+##### _corollary:_ $\zeta$ on the left half plane
+
+$\zeta$ has a meromorphic extension to the complex plane with all zeroes either trivial zeroes in $\{ 0, -2, -4, \dots \}$ or in the critical strip $\{ s \in \mathbb{C} \mid 0 \le \operatorname{Re} s \le 1 \}$ and a single simple pole at $1$.
+
+###### _proof sketch:_
+
+Now it makes sense to state the Riemann hypothesis!
+
+##### _conjecture:_ the Riemann hypothesis
+
+All non-trivial zeroes of $\zeta$ lie on the line $\operatorname{Re} s = 1/2$.
