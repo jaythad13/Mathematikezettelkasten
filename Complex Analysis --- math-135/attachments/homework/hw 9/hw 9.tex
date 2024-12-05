@@ -12,6 +12,44 @@
 	Find the Hadamard product for $e^{z} - 1$.
 \end{problem}
 
+\begin{solution}
+	Note that $e^{z} - 1 = 0$ exactly at $z = a_{n} = 2 n \pi i$ for all integers $n$. Also, $e^{z} - 1$ clearly has order of growth $1$. It has order of growth at most $1$ since
+	\[
+		\lvert e^{z} - 1 \rvert \le \lvert e^{z} \rvert + 1 \le 2 \lvert e^{\lvert z \rvert} \rvert
+	\]
+	and it has order of growth at least $1$, since
+	\[
+		\lvert e^{z} - 1 \rvert \ge \lvert e^{z} \rvert - 1
+	\]
+	which is eventually greater than any $A e^{B \lvert z \rvert^{1 - \varepsilon}}$.
+
+	Thus,
+	\begin{align*}
+		e^{z} - 1 & = e^{az + b} z \prod_{n = 1}^{\infty} E_{1} \left ( \frac{z}{2n \pi i} \right ) E_{1} \left ( \frac{z}{- 2n \pi i} \right ) \\
+			  & = e^{az + b} z \prod_{n = 1}^{\infty} e^{z / 2 n \pi i} \left ( 1 - \frac{z}{2n \pi i} \right )  e^{- z / 2n \pi i} \left ( 1 + \frac{z}{2n \pi i} \right ) \\
+			  & = e^{az + b} z \prod_{n = 1}^{\infty} \left ( 1 + \frac{z^{2}}{4 n^{2} \pi^{2}} \right ).
+	\end{align*}
+
+	We can solve for $a, b \in \mathbb{C}$ by calculating the infinite product. Compare the product to
+	\[
+		\sin{z} = z \prod_{n = 1}^{\infty} \left ( 1 - \frac{z^{2}}{\pi^{2} n^{2}} \right )
+	\]
+	and notice that
+	\[
+		\frac{z}{2i} \prod_{n = 1}^{\infty} \left ( 1 + \frac{z^{2}}{4 \pi^{2} n^{2}} \right ) = \sin{\left ( \frac{z}{2 i} \right )}.
+	\]
+	Using Euler's formula, we get
+	\[
+		z \prod_{n = 1}^{\infty} \left ( 1 + \frac{z^{2}}{4 \pi^{2} n^{2}} \right ) = 2i \frac{e^{iz / 2i} - e^{-iz / 2i}}{2i} = e^{z / 2} - e^{-z / 2}.
+	\]
+
+	Now we can solve for $a$ and $b$. Just by observation, $a = 1/2$ and $b = 0$ gives us the Hadamard factorisation
+	\begin{align*}
+		e^{z/2} z \prod_{n = 1}^{\infty} \left ( 1 + \frac{z^{2}}{4 n^{2} \pi^{2}} \right ) & = e^{z/2} (e^{z/2} - e^{-z/2}) \\
+												       & = e^{z} - 1.
+	\end{align*}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[11.]
