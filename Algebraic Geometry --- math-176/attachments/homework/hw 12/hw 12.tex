@@ -23,13 +23,20 @@ For this week's set, let $X = \operatorname{Spec} \mathcal{O}$ for an integral d
 	\begin{enumerate}
 		\item Note that $\O$ is the set of primes $I \in \operatorname{Spec} \mathcal{O}$ that contain any maximal $M \in \operatorname{Spec} \mathcal{O}$ since, by definition, there are none. Thus, $\O$ is Zariski closed and its complement, $X$, is Zariski open.
 			Similarly, note that $X = \operatorname{Spec} \mathcal{O} / \left < 0 \right >$, and thus, $X$ is Zariski closed too. Thus, its complement, $\O$, is Zariski open.
-		\item To show that the arbitrary union of open sets is open, we need to it suffices to show their complement is closed. By De Morgan's laws, an arbitrary union of open sets $U_{\alpha}$ has complement
+		\item To show that the arbitrary union of open sets is open, it suffices to show its complement is closed. By De Morgan's laws, an arbitrary union of open sets $U_{\alpha}$ has complement
 			\[
-			X \setminus \left ( \bigcup_{\alpha \in \mathcal{I}} U_{\alpha} \right ) = \bigcap_{\alpha \in \mathcal{I}} X \setminus U_{\alpha}
+			X \setminus \bigcup_{\alpha \in \mathcal{I}} U_{\alpha} = \bigcap_{\alpha \in \mathcal{I}} X \setminus U_{\alpha}
 			\]
 			which is an intersection of closed sets.
 
-			Write $V_{\alpha} = X \setminus U_{\alpha}$ for each $\alpha \in I$. By definition, $V_{\alpha} = \operatorname{Spec} \mathcal{O} / J_{\alpha}$ for some ideal $J_{\alpha} \subset \mathcal{O}$. Notice that if $J_{\alpha} \subset I \in \operatorname{Spec} \mathcal{O}$.
+			Write $V_{\alpha} = X \setminus U_{\alpha}$ for each $\alpha \in I$. By definition, $V_{\alpha} = \operatorname{Spec} \mathcal{O} / J_{\alpha}$ for some ideal $J_{\alpha} \subset \mathcal{O}$. 
+		\item To show that the finite intersection of open sets is open, it suffices to show that its complement is closed. By De Morgan's laws, a finite intersection of open sets $U_{\alpha}$ has complement
+			\[
+				X \setminus \bigcap_{\alpha \in \mathcal{I}} U_{\alpha} = \bigcup_{\alpha \in \mathcal{I}} X \setminus U_{\alpha}
+			\]
+			which is a finite union of closed sets.
+
+			Write $V_{\alpha} = X \setminus U_{\alpha}$ for each $\alpha \in I$. By definition, $V_{\alpha} = \operatorname{Spec} \mathcal{O} / J_{\alpha}$ for some ideal $J_{\alpha} \subset \mathcal{O}$.
 	\end{enumerate}
 \end{solution}
 
@@ -62,7 +69,7 @@ For this week's set, let $X = \operatorname{Spec} \mathcal{O}$ for an integral d
 	Since $\mathcal{O} = \mathbb{Z}$ is a Dedekind domain, we see that $X = \operatorname{Spec} \mathbb{Z}$ is a non-singular affine curve. Say that $V = \{ \ell_{1}, \ell_{2}, \dots, \ell_{n} \} \subset \mathbb{Z}$ is a finite collection of rational primes.
 	\begin{enumerate}
 		\item Upon identifying $\ell_{\alpha} \in V$ with $\left < \ell_{\alpha} \right > \in X$, show that the complement $U = X \setminus V$ is a Zariski open subset.
-		\item Show that $\mathcal{O}_{X}(U) = \bigcap_{I \in U} \mathcal{O}_{I} = \{ p / q \in \mathbb{Q} \mid \text{no } \ell_{\alpha} \in V \text{ divides } q \}$.	
+		\item Show that $\mathcal{O}_{X}(U) = \bigcap_{I \in U} \mathcal{O}_{I} = \{ p / q \in \mathbb{Q} \mid \text{no } \ell \in U \text{ divides } q \}$.	
 	\end{enumerate}
 \end{problem}
 
@@ -73,13 +80,15 @@ For this week's set, let $X = \operatorname{Spec} \mathcal{O}$ for an integral d
 				U = X \setminus \left ( \bigcup_{\alpha = 1}^{n} V_{\alpha} \right ) = \bigcap_{\alpha = 1}^{n} X \setminus V_{\alpha} = \bigcap_{\alpha = 1}^{n} U_{\alpha}.
 			\]
 			By the first exercise, this finite intersection of open sets is open.
-		\item By the previous exercise, each localisation away from $\left < \ell_{\alpha} \right >$ is
+		\item Since $\mathbb{Z}$ is also a principle ideal domain, every prime ideal is just $\left < \ell \right >$ for some rational prime $\ell \in \mathbb{Z}$. Thus, the prime ideals $I \in U$ are exactly the ideals $\left < \ell \right >$ where $\ell \in \mathbb{Z}$ is a prime not equal to any $\ell_{\alpha} \in V$. 
+
+			By the previous exercise, the localisation away from $I$ is
 			\[
-				\mathcal{O}_{\left < \ell_{\alpha} \right >} = \{ p / q \in \mathbb{Q} \mid \ell_{\alpha} \text{ does not divide } q \}.
+				\mathcal{O}_{I} = \{ p / q \in \mathbb{Q} \mid \ell \text{ does not divide } q \}.
 			\]
-			Since $\mathcal{O}_{X}(U)$ is defined to be the intersection of all these local rings, we have
+			The intersection of all of these $\mathcal{O}_{I}$ is then exactly the set of fractions $p / q$ where no  $\ell \in I$ for any $I \in U$ divides $q$. But then since the primes in $I$ in $U$ are just the primes in $U$, we have
 			\[
-				\mathcal{O}_{X}(U) = \bigcap_{\alpha = 1}^{n} \mathcal{O}_{\left < \ell_{\alpha} \right >} = \{ p / q \mid \text{no } \ell_{\alpha} \in V \text{ divides } q \}.
+				\mathcal{O}_{X}(U) = \bigcap_{I \in U} = \{ p / q \in \mathbb{Q} \mid \text{no } \ell \in U \text{ divides } q \}
 			\]
 	\end{enumerate}
 \end{solution}
@@ -116,7 +125,7 @@ For this week's set, let $X = \operatorname{Spec} \mathcal{O}$ for an integral d
 	Since $\mathcal{O} = F[x]$ is a Dedekind domain, we see that $X = \operatorname{Spec} \mathcal{O} = \mathbb{A}^{1}_{F}$ is a non-singular affine curve. Say that $V = \{ r_{1}, r_{2}, \dots, r_{n} \} \subset F$ is a finite collection of elements.
 	\begin{enumerate}
 		\item Upon identifying $r_{\alpha} \in V$ with $\left < x - r_{\alpha} \right > \in X$, show the complement $U = X \setminus V$ is a Zariski open subset. Show that $V \cong Z_{J} = \{ I \in X \mid J \subset I \}$ in terms of the ideal $J = \left < (x - r_{1}) (x - r_{2}) \dotsm (x - r_{n}) \right >$.
-		\item Show that $\mathcal{O}_{X}(U) = \bigcap_{I \in U} \mathcal{O}_{I} = \{ p(x) / q(x) \in F(x) \mid q(r_{\alpha}) \neq 0 \text{ for each } r_{\alpha} \in V \}$.
+		\item Show that $\mathcal{O}_{X}(U) = \bigcap_{I \in U} \mathcal{O}_{I} = \{ p(x) / q(x) \in F(x) \mid q(r) \neq 0 \text{ for each } \left < x - r \right > \in U \}$.
 	\end{enumerate}
 \end{problem}
 
@@ -127,14 +136,17 @@ For this week's set, let $X = \operatorname{Spec} \mathcal{O}$ for an integral d
 				U = X \setminus \left ( \bigcup_{\alpha = 1}^{n} V_{\alpha} \right ) = \bigcap_{\alpha = 1}^{n} X \setminus V_{\alpha} = \bigcap_{\alpha = 1}^{n} U_{\alpha}.
 			\]
 			By the first exercise, this finite intersection of open sets is open.
-		\item By the previous exercise, each localisation away from $\left < x - r_{\alpha} \right >$ is
+		\item The prime ideals $I \in U$ are exactly the ideals $\left < x - r \right >$ where $r \neq r_{\alpha}$ for any $r_{\alpha} \in V$	. 
+
+			By the previous exercise, the localisation away from $I = \left < x - r \right >$ is
 			\[
-				\mathcal{O}_{\left < x - r_{\alpha} \right >} = \{ p(x) / q(x) \in F(x) \mid q(r_{\alpha}) \neq 0 \}.
+				\mathcal{O}_{I} = \{ p / q \in \mathbb{Q} \mid q(r) \neq 0 \}.
 			\]
-			Since $\mathcal{O}_{X}(U)$ is defined to be the intersection of all these local rings, we have
+			The intersection of all of these $\mathcal{O}_{I}$ is then exactly the set of rational functions $p(x) / q(x)$ where $q(r) \neq 0$ for any $r$ with $\left < x - r \right > \in U$. That is,
 			\[
-				\mathcal{O}_{X}(U) = \bigcap_{\alpha = 1}^{n} \mathcal{O}_{\left < x - r_{\alpha} \right >} = \{ p / q \mid q(r_{\alpha}) \neq 0 \text{ for each } r_{\alpha} \in V \}.
+				\mathcal{O}_{X}(U) = \bigcap_{I \in U} \mathcal{O}_{I} = \{ p(x) / q(x) \in F(x) \mid q(r) \neq 0 \text{ for each } \left < x - r \right > \in U \}
 			\]
+			as desired.
 	\end{enumerate}
 \end{solution}
 
