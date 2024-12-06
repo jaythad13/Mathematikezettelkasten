@@ -29,14 +29,24 @@ For this week's set, let $X = \operatorname{Spec} \mathcal{O}$ for an integral d
 			\]
 			which is an intersection of closed sets.
 
-			Write $V_{\alpha} = X \setminus U_{\alpha}$ for each $\alpha \in I$. By definition, $V_{\alpha} = \operatorname{Spec} \mathcal{O} / J_{\alpha}$ for some ideal $J_{\alpha} \subset \mathcal{O}$. 
+			Write $V_{\alpha} = X \setminus U_{\alpha}$ for each $\alpha \in I$ and $V$ for their intersection. By definition, $V_{\alpha} = \operatorname{Spec} \mathcal{O} / J_{\alpha}$ for some ideal $J_{\alpha} \subset \mathcal{O}$. Consider $J = \left < J_{\alpha} \right >_{\alpha \in \mathcal{I}}$ the ideal consisting of all finite linear combinations of $x_{\alpha} \in J_{\alpha}$. We claim $V = \operatorname{Spec} \mathcal{O} / J$.
+
+			Suppose $I \in V$. Then $J_{\alpha} \subset I$ for all $J_{\alpha}$. Since $I$ is additively, closed this gives us all sums $\sum x_{\alpha} \in I$, and thus, $J \subset I$. Conversely, suppose $I \in \operatorname{Spec} \mathcal{O} / J$. Since $J_{\alpha} \subset J \subset I$ for all $J_{\alpha}$, we have $I \in \operatorname{Spec} \mathcal{O} / J_{\alpha}$ for all $J_{\alpha}$. Now we have double containment, and thus, $V = \operatorname{Spec} \mathcal{O} / J$.
 		\item To show that the finite intersection of open sets is open, it suffices to show that its complement is closed. By De Morgan's laws, a finite intersection of open sets $U_{\alpha}$ has complement
 			\[
 				X \setminus \bigcap_{\alpha \in \mathcal{I}} U_{\alpha} = \bigcup_{\alpha \in \mathcal{I}} X \setminus U_{\alpha}
 			\]
 			which is a finite union of closed sets.
 
-			Write $V_{\alpha} = X \setminus U_{\alpha}$ for each $\alpha \in I$. By definition, $V_{\alpha} = \operatorname{Spec} \mathcal{O} / J_{\alpha}$ for some ideal $J_{\alpha} \subset \mathcal{O}$.
+			Write $V_{\alpha} = X \setminus U_{\alpha}$ for each $\alpha \in I$ and $V$ for their intersection. By definition, $V_{\alpha} = \operatorname{Spec} \mathcal{O} / J_{\alpha}$ for some ideal $J_{\alpha} \subset \mathcal{O}$. Consider the product $J = \prod_{\alpha \in \mathcal{I}} J_{\alpha}$. We claim $V = \operatorname{Spec} \mathcal{O} / J$.
+
+			Suppose $I \in V$. Then $J_{\beta} \subset I$ for some $\beta \in \mathcal{I}$. But
+			\[
+				J = \prod_{\alpha \in \mathcal{I}} J_{\alpha} \subset J_{\beta} \subset I
+			\]
+			so $I \in \operatorname{Spec} \mathcal{O} / J$.
+
+			Conversely, suppose $I \in \operatorname{Spec} \mathcal{O} / J$. Note that this means $I$ is prime. If any $J_{\alpha} \subset I$, then $I \in \operatorname{Spec} \mathcal{O} / J_{\alpha} \subset V$ and we are done. If we don't know of some $J_{\alpha} \subset I$, we can choose $J_{\alpha} \not \subset I$ for each $\alpha \neq \beta$ (for all $\alpha \in \mathcal{I}$ except one). Then, for each of these $\alpha \neq \beta$, there must be at least one $j_{\alpha} \in J_{\alpha}$ such that $j_{\alpha} \notin I$. If $\alpha_{1}, \dots, \alpha_{n}$ are all the $\alpha \neq \beta$, we can show $J_{\beta} \subset I$ by analysing $j_{\alpha_{1}} \dotsm j_{\alpha_{n}} j_{\beta} \in J \subset I$ for each $j_{\beta} \in J_{\beta}$. Notice that $j_{\alpha_{1}} \dotsm j_{\alpha_{n}} \notin I$ since $I$ is prime and each $j_{\alpha_{k}} \notin I$. But then, since  $I$ is prime with $(j_{\alpha_{1}} \dotsm j_{\alpha_{n}}) j_{\beta} \in I$, we have $j_{\beta} \in I$.
 	\end{enumerate}
 \end{solution}
 
@@ -125,7 +135,8 @@ For this week's set, let $X = \operatorname{Spec} \mathcal{O}$ for an integral d
 	Since $\mathcal{O} = F[x]$ is a Dedekind domain, we see that $X = \operatorname{Spec} \mathcal{O} = \mathbb{A}^{1}_{F}$ is a non-singular affine curve. Say that $V = \{ r_{1}, r_{2}, \dots, r_{n} \} \subset F$ is a finite collection of elements.
 	\begin{enumerate}
 		\item Upon identifying $r_{\alpha} \in V$ with $\left < x - r_{\alpha} \right > \in X$, show the complement $U = X \setminus V$ is a Zariski open subset. Show that $V \cong Z_{J} = \{ I \in X \mid J \subset I \}$ in terms of the ideal $J = \left < (x - r_{1}) (x - r_{2}) \dotsm (x - r_{n}) \right >$.
-		\item Show that $\mathcal{O}_{X}(U) = \bigcap_{I \in U} \mathcal{O}_{I} = \{ p(x) / q(x) \in F(x) \mid q(r) \neq 0 \text{ for each } \left < x - r \right > \in U \}$.
+		\item Show that $V \simeq Z_{J} = \operatorname{Spec} \mathcal{O} / J$ in terms of the ideal $J = \left < (x - r_{1}) (x - r_{2}) \dots (x - r_{n}) \right >$
+		\item Show that $\mathcal{O}_{X}(U) = \bigcap_{I \in U} \mathcal{O}_{I} = \{ p(x) / q(x) \in F(x) \mid q(r) \neq 0 \text{ for each } r \in U \}$.
 	\end{enumerate}
 \end{problem}
 
@@ -136,6 +147,7 @@ For this week's set, let $X = \operatorname{Spec} \mathcal{O}$ for an integral d
 				U = X \setminus \left ( \bigcup_{\alpha = 1}^{n} V_{\alpha} \right ) = \bigcap_{\alpha = 1}^{n} X \setminus V_{\alpha} = \bigcap_{\alpha = 1}^{n} U_{\alpha}.
 			\]
 			By the first exercise, this finite intersection of open sets is open.
+		\item In the proof of part (c) of the first problem, we show that the finite union of closed sets $V_{\alpha} = \operatorname{Spec} \mathcal{O} / J_{\alpha}$ is a closed set $V = \operatorname{Spec} \mathcal{O} / J$ where $J = \prod_{\alpha \in \mathcal{I}} J_{\alpha}$. But here $V$ is the finite union of closed sets $V_{\alpha} = \{ \left < x - r_{\alpha} \right > \}$, but since $\left < x - r_{\alpha} \right >$ is maximal, the only prime ideal that contains it is itself --- that is, $V_{\alpha} = \operatorname{Spec} \mathcal{O} / \left < x - r_{\alpha} \right >$. Thus, $J_{\alpha} = \left < x - r_{\alpha} \right >$ and their product $J$ is $\left < (x - r_{1}) \dotsm (x - r_{n}) \right >$ with $V = \operatorname{Spec} \mathcal{O} / J = Z_{J}$ as desired.
 		\item The prime ideals $I \in U$ are exactly the ideals $\left < x - r \right >$ where $r \neq r_{\alpha}$ for any $r_{\alpha} \in V$	. 
 
 			By the previous exercise, the localisation away from $I = \left < x - r \right >$ is
@@ -146,7 +158,7 @@ For this week's set, let $X = \operatorname{Spec} \mathcal{O}$ for an integral d
 			\[
 				\mathcal{O}_{X}(U) = \bigcap_{I \in U} \mathcal{O}_{I} = \{ p(x) / q(x) \in F(x) \mid q(r) \neq 0 \text{ for each } \left < x - r \right > \in U \}
 			\]
-			as desired.
+			which is exactly the desired result under our identification of $r$ with $\left < x - r \right >$.
 	\end{enumerate}
 \end{solution}
 
