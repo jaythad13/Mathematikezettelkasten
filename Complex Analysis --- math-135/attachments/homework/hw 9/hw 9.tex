@@ -104,4 +104,55 @@
 	Here, the left hand side is not identically zero, but has infinitely many zeroes, and the right hand side has either finitely many zeroes or is identically zero. Thus, we have a contradiction, and our supposition that $e^{z} - z$ has only finitely many zeroes must be false.
 \end{solution}
 
+\pagebreak
+
+\begin{problem}[1.]
+	Prove that
+	\[
+		\Gamma(s) = \lim_{n \to \infty} \frac{n^{s} n!}{s (s + 1) \dotsm (s + n)}
+	\]
+	whenever $s \neq 0, -1, -2, \dots$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[3.]
+	Show that Wallis product formula can be written as
+	\[
+		\sqrt{\frac{\pi}{2}} = \lim_{n \to \infty} \frac{2^{2n} (n!)^{2}}{(2n + 1)!} (2n + 1)^{1/2}.
+	\]
+	As a result, prove the following identity:
+	\[
+		\Gamma(s) \, \Gamma(s + 1/2) = \sqrt{\pi} \, 2^{1 - 2 s} \, \Gamma(s).	
+	\]
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[5.]
+	Use the fact that $\Gamma(s) \, \Gamma(1 - s) = \pi / \sin{(\pi s)}$ to prove that
+	\[
+		\lvert \Gamma(1/2 + i t) \rvert = \sqrt{\frac{2 \pi}{e^{\pi t} + e^{-\pi t}}}, \text{ whenever } t \in \mathbb{R}.
+	\]
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[7.]
+	The \emph{Beta function} is defined for $\operatorname{Re} \alpha > 0$ and $\operatorname{Re} \beta > 0$ by
+	\[
+		B(\alpha, \beta) = \int_{0}^{1} (1 - t)^{\alpha - 1} t^{\beta - 1} \, dt.
+	\]
+	\begin{enumerate}
+		\item Prove that
+			\[
+				B(\alpha, \beta) = \frac{\Gamma(a) \Gamma(b)}{\Gamma(a + b)}.
+			\]
+		\item Show that
+			 \[
+				B(\alpha, \beta) = \int_{0}^{\infty} \frac{u^{\alpha - 1}}{(1 + u)^{\alpha + \beta}} \, du.
+			\]
+	\end{enumerate}
+\end{problem}
+
 \end{document}
