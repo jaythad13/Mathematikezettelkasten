@@ -56,16 +56,52 @@
 	Show that if  $f$ is an entire function of finite order that omits two values, then $f$ is constant. This result remains true for any entire function and is known as Picard's little theorem.
 \end{problem}
 
+\begin{solution} 
+	Without loss of generality, we can assume that $f$ has no zeroes, since it is only a translation away from a function that has no zeroes. Thus, $f$ is an entire, non-vanishing function of finite order, and must have Hadamard factorisation
+	\[
+		f(z) = e^{p(z)}
+	\]
+	for some polynomial $p$. Non-constant polynomials are surjective on $\mathbb{C}$ by the fundamental theorem of calculus, and the complex plane $\mathbb{C}$ has image $\mathbb{C} \setminus \{ 0 \}$ under the exponential function $z \mapsto e^{z}$, so if $p$ is non-constant, $f$ only omits $0$. Thus, $p$ must be constant, and thus, so is $f$.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[12.]
 	Suppose $f$ is entire and never vanishes, and that none of the higher derivatives of $f$ ever vanish. Prove that if $f$ is also of finite order, then $f(z) = e^{az + b}$ for some constants $a$ and $b$.
 \end{problem}
 
+\begin{solution}
+	Since $f$ is entire, never vanishes, and is of finite order, we have the Hadamard factorisation
+	\[
+		f(z) = e^{p(z)}
+	\]
+	for some polynomial $p$. By the chain rule,
+	\[
+		f'(z) = p'(z) e^{p(z)}
+	\]
+	but this has a zero unless $p'$ is a constant function. Thus, $p'$ is constant, and $p(z) = az + b$.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[13.]
-	Show that the equation $e^{z} - z$ has infinitely many solutions in $\mathbb{C}$.
+	Show that the equation $e^{z} - z = 0$ has infinitely many solutions in $\mathbb{C}$.
 \end{problem}
+
+\begin{solution}
+	Suppose by way of contradiction that $e^{z} - z$ has only finitely many zeroes in $\mathbb{C}$. Then, since $e^{z} - z \le 2 e^{\lvert z \rvert}$ has order at most $1$, by Hadamard's theorem we have
+	\[
+		e^{z} - z = e^{az + b} \prod_{n = 1}^{N} E_{1} \left ( \frac{z}{a_{n}} \right ) = e^{az + b} e^{\sum z / a_{n}} \prod_{n = 1}^{N} (1 - z / a_{n})
+	\]
+	where $a_{n}$ are the $N$ (non-zero) zeroes of $e^{z} - z$, counted with multiplicity. That is,
+	\[
+		e^{z} - z = e^{A z + B} p(z)
+	\]
+	where $p$ is a polynomial of degree $N$ and $A, B \in \mathbb{C}$ are some constants. We can take the derivative on both sides to get
+	\[
+		e^{z} - 1 = e^{Az + B} (A p(z) + p'(z)).
+	\]
+	Here, the left hand side is not identically zero, but has infinitely many zeroes, and the right hand side has either finitely many zeroes or is identically zero. Thus, we have a contradiction, and our supposition that $e^{z} - z$ has only finitely many zeroes must be false.
+\end{solution}
 
 \end{document}
