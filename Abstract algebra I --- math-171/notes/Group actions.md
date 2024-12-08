@@ -3,7 +3,7 @@ tags:
 - alg
 - math-171/7
 - math-171/8
-- math-171/15+
+- math-171/15x
 ---
 
 A lot of the time we think of groups as [[Dihedral groups and generators|representing the symmetries of an object]]. However, a symmetry of a thing is a finicky thing and sometimes its better to think of the group as acting on the object instead, keeping compositions of actions separate from states of the object.
