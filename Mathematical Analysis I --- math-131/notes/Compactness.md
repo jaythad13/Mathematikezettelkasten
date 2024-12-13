@@ -41,7 +41,7 @@ If $K$ is compact, it is closed and bounded.
 
 First we show $K$ is bounded. Consider the open cover of $K$ by picking $x \in K$, and considering all $B_{r}(x)$ where $r \in \mathbb{N}$. Then, the open cover of $K$ reduces to a finite subcover, which has a maximum radius $R$. Thus, $K$ is bounded — it is within distance $R$ of $x$.
 
-Now we show that $K$ is closed. Consider any $z \in K^c$. We can pick an open cover of $K$ that is an $r$-neighbourhood of each $x \in K$ such that $z \not\in N_{r}(x)$. In particular, pick $r = \frac{d(x, z)}{3}$. By compactness, we can reduce this cover to a finite subcover — $K \subset N_{r_{1}}(x_{1}) \cup \dots \cup N_{r_{n}}(x_{n})$ and take the minimum radius $r$. Then notice that $N_{r}(z) \subset K$. Else we'd have some $y$ within distance $r$ of $z$ and distance $r$ of some $x_{i}$. Then, by the triangle inequality $d(x_{i}, z) \le 2r$, but this impossible since $r > 0$ and $d(x_{i}, z) = 3r$.
+Now we show that $K$ is closed. Consider any $z \in K^c$. We can pick an open cover of $K$ that is an $r$-neighbourhood of each $x \in K$ such that $z \not\in N_{r}(x)$. In particular, pick $r = \frac{d(x, z)}{3}$. By compactness, we can reduce this cover to a finite subcover — $K \subset N_{r_{1}}(x_{1}) \cup \dots \cup N_{r_{n}}(x_{n})$ and take the minimum radius $r$. Then notice that $N_{r}(z) \subset K^c$. Else we'd have some $y$ within distance $r$ of $z$ and distance $r$ of some $x_{i}$. Then, by the triangle inequality $d(x_{i}, z) \le 2r$, but this impossible since $r > 0$ and $d(x_{i}, z) = 3r$.
 
 Note that the converse isn't true. Consider the infinite-dimensional sphere — this is closed and bounded, but not compact. To see this, consider an open cover of neighbourhoods at each point $(0, \dots, 1, \dots )$, such that each $(0, \dots, 1, \dots)$ is covered by only one open set.
 
@@ -79,7 +79,7 @@ The intersection of any compact $K$ and closed $V$ is compact.
 
 ###### _proof:_
 
-If $\mathcal{O}$ is an open cover of $K \cap V$, then $\mathcal{O} \cup \{ V^c \}$ is an open cover of $K$. This admits a subcover of $K$ — $\{ U_{1}, \dots, U_{n}, V^c \}$ (with $U_{i} \in \mathcal{O}$).
+If $\mathcal{O}$ is an open cover of $K \cap V$, then $\mathcal{O} \cup \{ V^c \}$ is an open cover of $K$. This admits a finite subcover of $K$, say $\{ U_{1}, \dots, U_{n}, V^c \}$ (with $U_{i} \in \mathcal{O}$). Now, $\{ U_{1}, \dots, U_{n} \}$ is a finite subcover of $V$ admitted by $\mathcal{O}$ since we can remove $V^c$ without changing whether this covers $V$.
 
 ##### _theorem:_ Heine-Borel theorem
 

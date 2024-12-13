@@ -16,7 +16,7 @@ Let $I \subset \mathbb{R}$ be an open interval. If $f : I \to \mathbb{R}$ is mon
 
 We will show that $\lim_{ x \to a^- } f(x) = \sup \{ f(x) \mid x \in I, x < a \}$ for a monotonically increasing function. By similar proofs, we have the left and right limits in all the cases we want.
 
-First note that $A = \{ f(x) \mid x \in I, x < a \}$ is bounded above by $f(a)$ since $f$ is monotonic. Thus, it has a supremum $\alpha \in \mathbb{R}$. For any $\varepsilon > 0$, $\alpha - \varepsilon$ cannot be an upper bound on $A$, so we must have some $y \in I$, $y < a$ with $\alpha - \varepsilon < f(y)$. In fact, by monotonicity, every $x \in (y, a)$ gives us $\alpha - \varepsilon < f(x) \leq \alpha$. But then taking $\delta = a - y$ this exactly the definition of the left limit to say 
+First note that $A = \{ f(x) \mid x \in I, x < a \}$ is bounded above by $f(a)$ since $f$ is monotonic. Thus, it has a supremum $\alpha \in \mathbb{R}$. For any $\varepsilon > 0$, $\alpha - \varepsilon$ cannot be an upper bound on $A$, so we must have some $y \in I$, $y < a$ with $\alpha - \varepsilon < f(y)$. In fact, by monotonicity, every $x \in (y, a)$ gives us $\alpha - \varepsilon < f(x) \leq \alpha$. But then taking $\delta = a - y$ this exactly the definition of the left limit.
 
 ##### _theorem:_ monotonic functions are continuous almost everywhere
 

@@ -33,5 +33,5 @@ where $r_{u}$ is the radius of the open ball around $u$ that we are guaranteed i
 
 Suppose $V$ is open in $X$ and $U = Y \cap V$. Then for all $v \in V$, there is some $r > 0$ such that $\{ x \in X \mid d(v, x) < r \} \subset V$. Taking intersections with $Y$ on both sides, we get that for every $v \in V$,
 $$
-\{ x \in Y \mid d(v, y) < r \} \subset V \cap Y = U.
+\{ y \in Y \mid d(v, y) < r \} \subset V \cap Y = U.
 $$
