@@ -69,7 +69,7 @@ Note that this formula can be proven for discs centred at any point in $\mathbb{
 ##### _corollary:_ Jensen's inequality
 
 $$
-\ln \lvert f(0) \rvert \le \frac{1}{2 \pi} \int_{0}^{2 \pi} \lvert f(r e^{i \theta}) \rvert  \, d\theta 
+\ln \lvert f(0) \rvert \le \frac{1}{2 \pi} \int_{0}^{2 \pi} \ln \lvert f(r e^{i \theta}) \rvert  \, d\theta 
 $$
 
 ###### _proof:_
@@ -86,7 +86,7 @@ If $f$ is holomorphic on $\overline{D}$, a disc of radius $R$, then $\mathfrak{n
 
 If $\{ a_{1}, \dots, a_{k} \}$ are all the zeroes of $f$ in $\overline{D}$, then
 $$
-\int_{0}^R \frac{\mathfrak{n}_{f}(r)}{r} \, dr = \sum_{j = 1}^k \log \left\lvert  \frac{r}{a_{j}}  \right\rvert 
+\int_{0}^R \frac{\mathfrak{n}_{f}(r)}{r} \, dr = \sum_{j = 1}^k \log \left\lvert  \frac{R}{a_{j}}  \right\rvert 
 $$
 
 ###### _proof sketch:_
@@ -99,6 +99,6 @@ Thus,
 $$
 \begin{split}
 \int_{0}^R \frac{\mathfrak{n}_{f}(r)}{r} \, dr & = \sum_{j = 1}^k \int_{\lvert a_{j} \rvert }^R \frac{1}{r} \, dr  \\
-  & = \sum_{j = 1}^k \log \left\lvert  \frac{r}{a_{j}}  \right\rvert.
+  & = \sum_{j = 1}^k \log \left\lvert  \frac{R}{a_{j}}  \right\rvert.
 \end{split}
 $$

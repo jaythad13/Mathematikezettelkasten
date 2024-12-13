@@ -85,7 +85,7 @@ for any $\varepsilon > 0$. Thus, $1 / \Gamma$ has order of growth $1$.
 
 The reciprocal of the gamma function has Hadamard factorisation
 $$
-\frac{1}{\Gamma(s)} = e^{\gamma s} \prod_{n = 1}^\infty \left( 1 + \frac{s}{n} \right) e^{-s/n}.
+\frac{1}{\Gamma(s)} = e^{\gamma s} s \prod_{n = 1}^\infty \left( 1 + \frac{s}{n} \right) e^{-s/n}.
 $$
 where $\gamma$ is the [[Complex Analysis --- math-135/notes/Euler-Mascheroni constant|Euler-Mascheroni constant]].
 ###### _proof:_

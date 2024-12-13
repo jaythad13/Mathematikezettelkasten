@@ -66,8 +66,8 @@ Again, since $f$ is non-zero, there can't be infinitely many zeroes of $f$ withi
 $$
 \begin{split}
 \sum_{\lvert a_{n} \rvert > 1} \frac{1}{\lvert a_{n} \rvert^s} & = \sum_{j = 0}^\infty \sum_{2^j < \lvert a_{j} \rvert < 2^{j + 1}} \frac{1}{\lvert a_{j} \rvert^s }  \\
- & = \sum_{j = 0}^\infty \mathfrak n_{f}(2^{j + 1}) 2^{-j s}  \\
- & = C \sum_{j = 0}^\infty 2^{(j + 1) \rho} 2^{-j s} \\
+ & \le \sum_{j = 0}^\infty \mathfrak n_{f}(2^{j + 1}) 2^{-j s}  \\
+ & \le C \sum_{j = 0}^\infty 2^{(j + 1) \rho} 2^{-j s} \\
  & = 2^\rho C \sum_{j = 0}^\infty 2^{(\rho - s)j}.
 \end{split}
 $$
@@ -148,7 +148,7 @@ $$
 a_{n} r^n = \frac{1}{2 \pi} \int g(r e^{i \theta}) e^{- i n \theta} \, d\theta.
 $$
 
-Adding $g + \overline{g}$ to get $2 u$, we get
+Adding $g + \overline{g}$ to get $2 u$, and noticing that the corresponding integral of $\overline{g} e^{-in \theta} = 0$ when $n > 0$ (by taking conjugates of the integral $g e^{i n \theta}$ which is $0$ for $n > 0$)
 $$
 a_{n} = \frac{1}{\pi r^n} \int_{0}^{2 \pi} u(r e^{i \theta}) e^{- i n \theta} \, d\theta
 $$
