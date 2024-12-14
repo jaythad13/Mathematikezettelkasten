@@ -43,4 +43,136 @@
 	}
 \end{frame}
 
+\begin{frame}
+	\frametitle{What is a line on a surface?}
+
+	It's exactly what you think it is.
+
+	\begin{definition}[line on a surface]
+		Given a surface $X \subset \mathbb{P}^{3}$, a line on a surface is a line $\ell \subset \mathbb{P}^{3}$ with $\ell \subset X$.
+	\end{definition} \pause
+
+	Really, we're looking for the intersections of \emph{planes} planes and a surface. We want points $(x_{1} : x_{2} : x_{3} : x_{0})$ that satisfy
+	\begin{align*}
+		a x_{1} + b x_{2} + c x_{3} + d x_{0} & = e \\
+		a' x_{1} + b' x_{2} + c' x_{3} + d' x_{0} & = e'
+	\end{align*}
+	and  $p(x_{1} : x_{2} : x_{3} : x_{0}) = 0$ for some cubic polynomial $p$.
+\end{frame}
+
+\begin{frame}
+	\frametitle{Finitely many lines on a surface, morally}
+
+	For simplicity, we will work in the affine space $\mathbb{C}^{3}$. \pause
+
+	If we have an arbitrary line $\ell \in \mathbb{C}^{3}$ that is the intersection of planes $ax + by + cz = d$ and $a'x + b'y + c'z = d'$, then we have restrictions on the coefficients of our cubic $p$. 
+
+	We lose ``four degrees of freedom''.
+
+	The space of lines in $\mathbb{C}^{3}$ is four dimensional. Losing four degrees of freedom means that the set of lines that have common zeroes with our cubic should have dimension $0$. \pause
+
+	So there are finitely many lines in the surface $X$ cut out by $p$.
+\end{frame}
+
+\begin{frame}
+	\frametitle{The Fermat cubic}
+
+	The Fermat cubic is the most symmetric cubic surface in $\mathbb{P}^{3}$.
+	\only<1>{
+		\begin{figure}
+			\centering
+			\includegraphics[height = 0.6 \textheight]{figures/fermat cubic}
+			\caption{A picture of the Fermat cubic in $\mathbb{R}^{3}$}
+		\end{figure}
+	}
+
+	\only<2, 3>{
+		\begin{definition}[Fermat cubic]
+			The Fermat cubic is the surface $X \subset \mathbb{P}^{3}$ that is the zero set of $x_{1}^{3} + x_{2}^{3} + x_{3}^{3} + x_{0}^{3}$.
+		\end{definition}
+		Because of its symmetries, it is a particularly convenient surface for which to show directly
+		\begin{theorem}
+			The Fermat cubic contains exactly $27$ lines.
+		\end{theorem}
+
+		\pause
+
+		Now we can just show that every cubic has the same number of lines!
+	}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Parameter spaces!}
+
+	\only<1, 2, 3>{
+		We can identify the cubics in $4$ variables with a $\binom{(4 - 1) + 3}{3} = 20$ dimensional vector space. Removing one dimension for homogeneous cubics over $\mathbb{P}^{3}$, we get $19$-dimensional space. \pause
+
+		The \emph{parameter space} of cubic surfaces is $\mathbb{P}^{19}$. \pause
+
+		It is a fact (Bertini's theorem) that the set of smooth cubics is a dense open subset $U \subset \mathbb{P}^{19}$.
+	}
+
+	\only<4>{
+		We can also think of the lines in $\mathbb{P}^{3}$ as parameterised by the $2$-dimensional subspaces of $\mathbb{A}^{4}$. \pause
+
+		We call this the \emph{Grassmannian} $G(2, 4)$.
+	}
+\end{frame}
+
+\begin{frame}
+	\frametitle{The incidence correspondence}
+
+	Now we can put together $U$ and $G(2, 4)$ to get a space of all cubic surfaces and lines --- $U \times G(2, 4)$. The incidence correspondence consists of pairs with the line contained in the surface. \pause
+
+	\begin{definition}[incidence correspondence]
+		The incidence correspondence is
+		\[
+			M = \{ (X, \ell) \mid \ell \subset X \} \subset U \times G(2, 4).
+		\]
+	\end{definition}
+
+	There is of course a natural projection $\pi : (X, \ell) \mapsto X$, which gives us that the size of $\pi^{-1}(X)$ is the number of lines on the cubic. We will show this is constant!
+\end{frame}
+
+\begin{frame}
+	\frametitle{Calculus!}
+
+	To prove that $\pi^{-1}$ is constant, we need to use calculus. In particular, it follows by a version of the implicit function theorem that
+	\begin{lemma}
+		The incidence correspondence $M$ is closed in the Zariski topology of $U \times G(2, 4)$, and is locally the graph of a $\mathcal{C}^{1}$ function $U \to G(2, 4)$ (in the classical topology).
+	\end{lemma}
+	\pause
+
+	We're almost there!
+\end{frame}
+
+\begin{frame}
+	\frametitle{$27$ lines}
+	\begin{theorem}
+		Every smooth cubic surface $X \subset \mathbb{P}^{3}$ contains exactly $27$ lines.
+	\end{theorem}
+
+	\begin{proof}
+		We can pick a fixed $X \in U$ and let $\ell \subset \mathbb{P}^{3}$ be an arbitrary line.
+
+		\only<1, 2>{
+			If $\ell \subset X$, then $M$ looks like a $\mathcal{C}^{1}$ function around $(X, \ell)$ in the open neighbourhood we call $V_{\ell} \times W_{\ell} \subset U \times G(2, 4)$. That is, each surface in  $V_{\ell}$ is assigned exactly one line in  $W_{\ell}$. \pause
+
+			If $\ell \not \subset X$, then $(X, L) \in U \times G(2, 4) \setminus M$ and since $M$ is closed, there is an open neighbourhood $V_{\ell} \times W_{\ell}$ of $(X, \ell)$ that has no intersection with $M$ --- no cubic in $V_{\ell}$ contains any line.
+		}
+		\only<3>{
+			As we let $\ell$ vary, since $G(2, 4)$ is projective, and thus, compact, the cover of all neighbourhoods $W_{\ell}$ can be reduced to a finite subover of $G(2, 4)$, and thus, the intersection $V$ of all the corresponding $V_{\ell}$ is a finite intersection of open sets.
+
+			Since $V \subset V_{\ell}$, all cubics in $V$ contain all the lines $\ell$ corresponding to each $W_{\ell}$. Since $U$ is connected the local constant function is a globally constant function. 
+
+			We're done!
+		}
+	\end{proof}
+\end{frame}
+
+\nocite{*}
+
+\bibliography{references}
+\bibliographystyle{alpha}
+
 \end{document}
