@@ -12,17 +12,41 @@
 	Find three examples of functors not mentioned above.
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}[label = (\arabic*)]
+		\item $F$ that sends manifolds $M$ to their tangent bundles $\mathrm{T} M$, and sends smooth maps $f : M \to N$ to their tangent maps $f_{*} : \mathrm{T} M \to \mathrm{T} N$ is a functor on the category of smooth manifolds.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[1.2.21]
 	Show that functors preserve isomorphism. That is, prove that if $F : \mathscr{A} \to \mathscr{B}$ is a functor, and $A, A' \in \mathscr{A}$ with $A \cong A'$, then $F(A) \cong F(A')$.
 \end{problem}
 
+\begin{solution}
+	If $A \cong A'$, then there exist morphisms $f : A \to A'$ and $f' : A' \to A$ with $f \circ f' = \operatorname{id}_{A}$ and $f' \circ f = \operatorname{id}_{A'}$. We claim $F(f)$ and $F(f')$ serve the same purpose for $F(A)$ and $F(A')$.
+
+	In particular, $F(f) \circ F(f') : F(A) \to F(A)$ is just
+	\[
+		F(f \circ f') = F(\operatorname{id}_{A}) = \operatorname{id}_{F(A)}.
+	\]
+	Similarly, $F(f') \circ F(f) : F(A') \to F(A')$ is just 
+	\[
+		F(f' \circ f) = F(\operatorname{id}_{A'}) = \operatorname{id}_{F(A')}.
+	\]
+	Thus, $F(f) : F(A) \to F(A')$ is the desired isomorphism.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[1.2.22]
 	Prove the assertion made in Example 1.2.9. In other words, given ordered sets $A$ and $B$, and denoting by $\mathscr{A}$ and $\mathscr{B}$ the corresponding categories, show that a functor $\mathscr{A} \to \mathscr{B}$ amounts to an order-preserving map $A \to B$.
 \end{problem}
+
+\begin{solution}
+	In a pre-order category $\mathscr{P}$ corresponding to the pre-ordered set $P$, there exists a morphism $f : p_{1} \to p_{2}$ if and only if $p_{1} \le p_{2}$ in $P$. A functor $F : \mathscr{A} \to \mathscr{B}$ has a map $F(a_{1}) \to F(a_{2})$ if and only if there is a map $a_{1} \to a_{2}$. Equivalently, on the corresponding pre-ordered sets, $F(a_{1}) \le F(a_{2})$ in $B$ if and only if $a_{1} \le a_{2}$ in $A$ --- $F$ is an order preserving map.
+\end{solution}
 
 \pagebreak
 
