@@ -1,0 +1,88 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{Basic category theory}
+\assignment{Exercises 1.2 --- Functors}
+\duedate{}
+
+\begin{document}
+
+\begin{problem}[1.2.20]
+	Find three examples of functors not mentioned above.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[1.2.21]
+	Show that functors preserve isomorphism. That is, prove that if $F : \mathscr{A} \to \mathscr{B}$ is a functor, and $A, A' \in \mathscr{A}$ with $A \cong A'$, then $F(A) \cong F(A')$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[1.2.22]
+	Prove the assertion made in Example 1.2.9. In other words, given ordered sets $A$ and $B$, and denoting by $\mathscr{A}$ and $\mathscr{B}$ the corresponding categories, show that a functor $\mathscr{A} \to \mathscr{B}$ amounts to an order-preserving map $A \to B$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[1.2.23]
+	Two categories $\mathscr{A}$ and $\mathscr{B}$ are \emph{isomorphic}, written as $\mathscr{A} \cong \mathscr{B}$, if they are isomorphic as objects of $\mathsf{CAT}$.
+	\begin{enumerate}
+		\item Let $G$ be a group, regarded as a one-object category all of whose maps are isomorphisms. Then its opposite $G^{\text{op}}$ is also a one-object category all of whose maps are isomorphisms, and can therefore be regarded as a group too. What is $G^{\text{op}}$, in purely group-theoretic terms? Prove that $G$ is isomorphic to $G^{\text{op}}$.
+		\item Find a monoid not isomorphic to its opposite.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[1.2.24]
+	Is there a functor $Z : \mathsf{Grp} \to \mathsf{Grp}$ with the property that $Z(G)$ is the centre of $G$ for all groups $G$?
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[1.2.25]
+	Sometimes we meet functors whose domain is a product $\mathscr{A} \times \mathscr{B}$ of categories. Here you will show that such a functor can be regarded as an interlocking pair of families of functors, one defined on $\mathscr{A}$ and the other defined on $\mathscr{B}$. (This is very like the situation for bilinear and linear maps).
+	\begin{enumerate}
+		\item Let $F : \mathscr{A} \times \mathscr{B} \to \mathscr{C}$ be a functor. Prove that for each $A \in \mathscr{A}$, there is a functor $F^{A} : \mathscr{B} \to \mathscr{C}$ defined on objects $B \in \mathscr{B}$ by $F^{A}(B) = F(A, B)$ and on maps $g \in \mathscr{B}$ by $F^{A}(g) = F(\operatorname{id}_{A}, g)$. Prove that for each $B \in \mathscr{B}$, there is a functor $F_{B} : \mathscr{A} \to \mathscr{C}$ defined similarly.
+		\item Let $F : \mathscr{A} \times \mathscr{B} \to \mathscr{C}$ be a functor. With notation as in (a), show that the families of functors $(F^{A})_{A \in \mathscr{A}}$ and $(F_{B})_{B \in \mathscr{B}}$ satisfy the following two conditions:
+			\begin{enumerate}[label = (\roman*)]
+				\item if $A \in \mathscr{A}$ and $B \in \mathscr{B}$, then $F^{A}(B) = F_{B}(A)$ 
+				\item $f : A \to A'$ in $\mathscr{A}$ and $g : B \to B'$ in $\mathscr{B}$, then $F^{A'}(g) \circ F_{B}(f) = F_{B'}(f) \circ F^{A}(g)$.
+			\end{enumerate}
+		\item Now take categories $\mathscr{A}$, $\mathscr{B}$, and $\mathscr{C}$, and take families of functors $(F^{A})_{A \in \mathscr{A}}$ and $(F_{B})_{B \in \mathscr{B}}$ satisfying the two conditions in (b). Prove that there is a unique functor $F : \mathscr{A} \times \mathscr{B} \to \mathscr{C}$ satisfying the equations in (a).
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[1.2.26]
+	Fill in the details of Example 1.2.11, thus constructing a functor $C : \mathsf{Top}^{\text{op}} \to \mathsf{Ring}$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}
+	Find an example of a functor $F : \mathscr{A} \to \mathscr{B}$ such that $F$ is faithful, but there exist distinct maps $f_{1}$ and $f_{2}$ in $\mathscr{A}$ with $F(f_{1}) = F(f_{2})$. 
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[1.2.28]
+	\begin{enumerate}
+		\item Of the examples of functors appearing in this section, which are faithful and which are full?
+		\item Write down one example of a functor that is both full and faithful, one that is full but not faithful, one that is faithful but not full, and one that is neither.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[1.2.29]
+	\begin{enumerate}
+		\item What are the subcategories of an ordered set? Which are full?
+		\item What are the subcategories of a group? Which are full?
+	\end{enumerate}
+\end{problem}
+
+\end{document}
