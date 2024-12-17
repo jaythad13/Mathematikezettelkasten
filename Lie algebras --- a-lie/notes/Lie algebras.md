@@ -74,7 +74,7 @@ $$
 
 ##### _example:_ $\mathfrak{sl}_{2}(\mathbb{C})$
 
-The special linear Lie algebra of order $2$ over $\mathbb{C}$ is the vector space of traceless $2$-by-$2$ matrices over $\mathbb{C}$ with the same commutator Lie bracket (in fact, it's a [[Lie algebras --- a-lie/notes/Subalgebras and ideals#|subalgebra]] of $\mathfrak{gl}_{2}(\mathbb{C})$).
+The special linear Lie algebra of order $2$ over $\mathbb{C}$ is the vector space of traceless $2$-by-$2$ matrices over $\mathbb{C}$ with the same commutator Lie bracket (in fact, it's a [[Lie algebras --- a-lie/notes/Subalgebras, ideals, and quotients#|subalgebra]] of $\mathfrak{gl}_{2}(\mathbb{C})$).
 
 Note that $\mathfrak{sl}_{2}(\mathbb{C})$ has basis $e, f, h$ where
 $$
