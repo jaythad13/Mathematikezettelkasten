@@ -14,7 +14,9 @@
 
 \begin{solution}
 	\begin{enumerate}[label = (\arabic*)]
-		\item $F$ that sends manifolds $M$ to their tangent bundles $\mathrm{T} M$, and sends smooth maps $f : M \to N$ to their tangent maps $f_{*} : \mathrm{T} M \to \mathrm{T} N$ is a functor on the category of smooth manifolds.
+		\item The pushforward that sends manifolds $M$ to their tangent bundles $\mathrm{T} M$, and sends smooth maps $f : M \to N$ to their tangent maps $f_{*} : \mathrm{T} M \to \mathrm{T} N$ is a functor from the category of smooth manifolds to the category of tangent bundles.
+
+			In general, pushforwards are (covariant) functors. For example, a continuous map $\pi : X \to Y$ sends a sheaf $\mathscr{F}$ on $X$ to a pushforward sheaf $\pi_{*} \mathscr{F}$ on $Y$ defined by $\pi_{*} \mathscr{F}(U) = \mathscr{F}(\pi^{\text{pre}}(U))$. A morphism of sheaves $\phi : \mathscr{F} \to \mathscr{G}$ on $X$ is mapped to a morphism of sheaves $\pi_{*} \phi : \pi_{*} \mathscr{O} \to \pi_{*} \mathscr{G}$ where if $\phi(U) : \mathscr{F}(U) \mapsto \mathscr{G}(U)$, then $\pi_{*} \phi : \pi_{*} \mathscr{F}(U) \mapsto \pi_{*} \mathscr{G}(U)$.
 	\end{enumerate}
 \end{solution}
 
@@ -82,8 +84,32 @@
 \pagebreak
 
 \begin{problem}[1.2.26]
-	Fill in the details of Example 1.2.11, thus constructing a functor $C : \mathsf{Top}^{\text{op}} \to \mathsf{Ring}$.
+	Fill in the details of Example 1.2.11, thus constructing a functor  $C : \mathsf{Top}^{\text{op}} \to \mathsf{Ring}$.
 \end{problem}
+
+\begin{solution}
+	We define $C$ on objects by defining $C(X)$ to be the ring of continuous real functions on $X$. 
+
+	Consider any continuous map $f : X \to Y$. Then, each map $\varphi : Y \to \mathbb{R}$ induces a map $\varphi \circ f : X \to \mathbb{R}$. We claim that the pullback $f^{*} : C(Y) \to C(X)$ by $\varphi \mapsto \varphi \circ f$ is a ring homomorphism. This follows since for any $\varphi, \psi \in C(Y)$, we have
+	\begin{align*}
+		f^{*}(\varphi + \psi)(p) & = ((\varphi + \psi) \circ f)(p) \\
+				      & = (\varphi + \psi)(f(p)) \\
+				      & = \varphi(f(p)) + \psi(f(p)) \\
+				      & = (\varphi \circ f)(p) + (\psi \circ f)(p) \\
+				      & = f^{*} \varphi(p) + f^{*} \psi(p).
+	\end{align*}
+	at every point, giving $f^{*}(\varphi + \psi) = f^{*} \varphi + f^{*} \psi$. Similarly $f^{*} (\varphi \psi) = (f^{*} \varphi) (f^{*} \psi)$. Thus, we define $C(f) = f^{*}$. To show $C$ is a contravariant functor we need to show that $C$ commutes with composition (in the opposite direction) and preserves the identity.
+
+	First, the identity $\operatorname{id}_{X}$ on any topological space $X$ has $C(\operatorname{id}_{X}) : \varphi \mapsto \varphi \circ \operatorname{id}_{X} = \varphi$, so $C(\operatorname{id}_{X}) = \operatorname{id}_{C(X)}$ as desired. For any continuous maps $f : X \to Y$ and $g : Y \to Z$, the continuous map $g \circ f$ has $C(g \circ f) : \varphi \mapsto \varphi \circ (g \circ f)$. By the associativity of composition we have
+	\begin{align*}
+		C(g \circ f)(\varphi) & = \varphi \circ (g \circ f) \\
+				   & = (\varphi \circ g) \circ f \\
+				   & = C(g)(\varphi) \circ f \\
+				   & = C(f)(C(g)(\varphi)) \\
+				   & = (C(f) \circ C(g))(\varphi).
+	\end{align*}
+	That is $C(g \circ f) = C(f) \circ C(g)$, so $C$ is a functor.
+\end{solution}
 
 \pagebreak
 
