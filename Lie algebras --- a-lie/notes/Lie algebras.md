@@ -23,6 +23,12 @@ $$
 
 See that the notation $[\cdot, \cdot]$ imitates that of the [[Abstract Algebra I --- math-171/attachments/homework/hw 12/hw 12.pdf|commutator]] in group theory and ring theory.
 
+The Jacobi identity might be best expressed as saying that the operator $[x, \cdot]$ satisfies the Leibniz rule —
+$$
+[x, [y, z]] = [[x, y], z] + [y, [x, z]].
+$$
+
+
 In fields not of [[Algebraic Geometry --- math-176/notes/Abstract algebra review#_definition _ characteristic|characteristic]] $2$, the Lie bracket is really antisymmetric
 
 ##### _proposition:_ Lie brackets are usually antisymmetric
