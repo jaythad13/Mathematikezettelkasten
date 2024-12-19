@@ -1,6 +1,7 @@
 ---
 tags:
 - a-lie/2
+- a-lie/3
 - alg
 - diff-geo
 - self-study
@@ -29,6 +30,8 @@ Just as for [[Abstract Algebra I --- math-171/notes/Ideals and quotients|rings]]
 ##### _definition:_ (Lie) ideal 
 
 A (Lie) ideal $I$ of a Lie algebra $L$ is a vector subspace $I \subseteq L$ that has the absorption property $[i, x] \in I$ for all $i \in I$ and $x \in L$.
+
+Note that there is no notion of [[Abstract Algebra I --- math-171/notes/Ideals and quotients#_definition _ (left and right) ideals|left and right ideals]] even though the multiplication isn't commutative this is because the multiplication is anticommutative and bilinear. That is, the absorption property as we have written it is equivalent to $[x, i] \in I$ for all $i \in I$ and $x \in L$.
 
 ##### _example:_ $\mathfrak{sl}_{n}(F)$ is an ideal
 
@@ -110,6 +113,79 @@ $$
  & = 0.
 \end{align}
 $$
+
+Most of the standard properties of ideals of rings also hold for Lie algebras. In particular, the sum, intersection, and bracket of ideals are ideals.
+
+##### _proposition:_ sum of ideals
+
+The sum of ideals $I, J$ of a Lie algebra $L$ is an ideal 
+$$
+I + J = \{ i + j \mid i \in I, j \in J \}. 
+$$
+
+###### _proof:_
+
+We already have that $I + J$ is a subspace, so we just need to show that it has the absorption property. For any $i + j \in I + J$, $x \in L$, we have
+$$
+[i + j, x] = [i, x] + [j, x]
+$$
+but $[i, x] \in I$ and $[j, x] \in J$ so their sum is in $I + J$.
+
+##### _proposition:_ intersection of ideals
+
+The intersection of ideals $I, J$ of a Lie algebra is an ideal.
+
+###### _proof:_
+
+Again, we already have that $I \cap J$ is a vector subspace, so we just need to show that it has the absorption property. Suppose $z \in I \cap J$ and $x \in L$. Then $[z, x] \in I$ since $z \in I$ and $[z, x] \in J$ since $z \in J$. Thus, $[z, x] \in I \cap J$.
+
+##### _proposition:_ bracket of ideals
+
+The bracket of ideals $I, J$ of a Lie algebra is an ideal
+$$
+[I, J] = \operatorname{span} \{ [i, j] \mid i \in I, j \in J \} \subset I \cap J
+$$
+###### _proof:_
+
+It follows directly from the absorption property that $[I, J] \subset I \cap J$, and we have that it is a vector subspace by definition. Thus, we only need to show that it is closed under the Lie bracket.
+
+Suppose $z = a_{1} [i_{1}, j_{1}] + \dots + a_{n} [i_{n}, j_{n}] \in [I, J]$. Then for any $x \in L$
+$$
+\begin{align}
+[z, x] & = a_{1}[x, [i_{1}, j_{1}]] + \dots + a_{n} [x, [i_{n}, j_{n}]] \\
+ & = - (a_{1} ([i_{1}, [j_{1}, x]] + [j_{1}, [x, i_{1}]]) + \dots + a_{n} ([i_{n}, [j_{n}, x]] + [j_{n}, [x, i_{n}]])).
+\end{align}
+$$
+Since $[i_{k}, x] \in I$ and $[j_{k}, x] \in J$ this is just a linear combination of elements of the form $[i, j]$. That is, this is an element of $[I, J]$.
+
+An important example of a bracket ideal of any Lie algebra is the commutator
+
+##### _definition:_ commutator
+
+The commutator subalgebra of a Lie algebra $L$ is a subalgebra
+$$
+L' = [L, L] = \operatorname{span} \{ [x, y] \mid x, y \in L \}.
+$$
+
+The commutator gives insight into the structure of a Lie algebra. For example
+
+##### _example:_ $\mathfrak{sl}_{2}(\mathbb{C}) = \mathfrak{gl}_{2}(\mathbb{C})'$
+
+We've [[Lie algebras --- a-lie/notes/Lie algebras#_example _ $ mathfrak{sl}_{2}( mathbb{C})$|seen already]] that $\mathfrak{sl}_{2}(\mathbb{C})$ is spanned by the traceless matrices $e, f, h$. Since the identity matrix $i$ is linearly independent of these, $i, e, f, h$ forms a linearly independent list of length $4$, and thus, a basis of $\mathfrak{gl}_{2}(\mathbb{C})$. We can find the commutator, by finding the span of all possible brackets of these basis vectors
+
+Clearly,
+$$
+[i, x] = [e, e] = [f, f] = [h, h] = 0.
+$$
+Further, it turns out that
+$$
+\begin{align}
+[e, f] & = h \\
+[f, h] & = 2f \\
+[h, e] & = 2e 
+\end{align}
+$$
+so the span of all commutators is just the span of $\{ 0, h, 2f, 2e \}$. This is just $\mathfrak{sl}_{2}(\mathbb{C})$!
 
 ### Quotient Lie algebras
 
