@@ -44,9 +44,11 @@
 \end{problem}
 
 \begin{solution}
-	Suppose $T = 0$. Then $\left < Tv, w \right > = 0$ for all $v, w \in V$, and thus, $\left < T^{*} w, v \right > = 0$ for all $v, w \in V$, including $v = T^{*} w$. That is, $\lVert T^{*} w \rVert = 0$ for all $w \in V$, and thus, $T^{*} = 0$. Since $(T^{*})^{*} = T$, this also gives us the converse --- that $T^{*} = 0 \implies T = 0$.
+	Suppose $T = 0$. Then $\left < Tv, w \right > = 0$ for all $v, w \in V$, and thus, $\left < T^{*} w, v \right > = 0$ for all $v, w \in V$, including $v = T^{*} w$. That is, $\lVert T^{*} w \rVert = 0$ for all $w \in V$, and thus, $T^{*} = 0$. Since $(T^{*})^{*} = T$, this also gives us the converse --- that $T^{*} = 0$ implies $T = 0$. Thus, we have that the first two statements are equivalent.
 
-	It's obvious that either $T = 0$ or $T^{*} = 0$ is sufficient to show that $T T^{*} = T^{*} T = 0$. Now we will show the opposite direction. Suppose $T T^{*} = 0$. Then $\left < T T^{*} v, w \right > = 0$ always. However $\left < T T^{*} v, w \right > = \left < T^{*} v, T^{*} w \right >$ and by choosing $v = w$, we get that $\lVert T^{*} v \rVert = 0$ always. That is, $T^{*} = 0$, which gives us $T^{*} T = 0$. Thus, we have $T T^{*} = 0 \implies T^{*} = 0 \implies T^{*} T = 0$ (and also implies $T = 0$). Similarly, if  $T^{*} T = 0$, we have $\left < T^{*} T v, w \right > = \left < Tv, Tw \right >$ as $0$ always. Thus, $T^{*} T = 0 \implies T = 0 \implies T T^{*} = 0$ (and also implies $T^{*} = 0$). This completes the equivalence.
+	It's obvious that either $T = 0$ or $T^{*} = 0$ is sufficient to show that $T T^{*} = T^{*} T = 0$. Now we will show the opposite direction, and that $T T^{*} = 0$ is equivalent to $T^{*} T = 0$.
+
+	Suppose $T T^{*} = 0$. Then $\left < T T^{*} v, w \right > = 0$ always. However $\left < T T^{*} v, w \right > = \left < T^{*} v, T^{*} w \right >$ and by choosing $v = w$, we get that $\lVert T^{*} v \rVert = 0$ always. That is, $T^{*} = 0$, which gives us $T^{*} T = 0$ and $T = 0$ as well. Similarly, if  $T^{*} T = 0$, we have $\left < T^{*} T v, w \right > = \left < Tv, Tw \right >$ as $0$ always. Again, choosing $v = w$, we get $\lVert T v \rVert = 0$ always, and thus, $T T^{*}$ and $T^{*}$ are $0$ as well. This is all the equivalences we need to show. 
 \end{solution}
 
 \pagebreak
@@ -163,6 +165,28 @@
 	Prove that the product of two self-adjoint operators on $V$ is self-adjoint if and only if the two operators commute.
 \end{problem}
 
+\begin{solution}
+	Suppose $S$ and $T$ are self-adjoint and commute. Then
+	\[
+		(ST)^{*} = T^{*} S^{*} = TS = ST.
+	\]
+	so $ST$ is self-adjoint.
+
+	Conversely, suppose $ST$, $S$, and $T$ are self adjoint. Then
+	\[
+		(ST)^{*} = ST.
+	\]
+	However, we know
+	\[
+		(ST)^{*} = T^{*} S^{*} = TS.
+	\]
+	Thus, we must have
+	\[
+		TS = (ST)^{*} = ST.
+	\]
+	That is, the operators commute.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[10]
@@ -172,6 +196,16 @@
 	\]
 	for all $v \in V$.
 \end{problem}
+
+\begin{solution}
+	Suppose $T$ is self-adjoint. Then
+	\[
+		\left < Tv, v \right > = \left < v, T^{*} v \right > = \left < v, Tv \right > = \left < T^{*} v, v \right >
+	\]
+	for all $v \in V$.
+
+	Conversely, suppose $T$ satisfies $\left < Tv, v \right > = \left < T^{*} v, v \right >$ for all $v \in V$. Since $\left < T^{*} v, v \right > = \left < v, T v \right >$, we have $\left < Tv, v \right > = \left < v, Tv \right >$. That is, $T^{*}$ is just $T$.
+\end{solution}
 
 \pagebreak
 
@@ -184,6 +218,35 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item
+			\[
+				\boxed{
+					S^{*}(w, z) = (z, -w)
+				}
+			\]
+
+			For $(w_{1}, z_{1}), (w_{2}, z_{2}) \in \mathbb{F}^{2}$, we have
+			\[
+				\left < S(w_{1}, z_{1}), (w_{2}, z_{2}) \right > = \left < (- z_{1}, w_{1}), (w_{2}, z_{2}) \right > = w_{1} z_{2} - w_{2} z_{1}
+			\]
+			and
+			\[
+				\left < (w_{1}, z_{1}), S^{*}(w_{2}, z_{2}) \right > = \left < (w_{1}, z_{1}), (z_{2}, - w_{2}) \right > = w_{1} z_{2} - w_{2} z_{1}.
+			\]
+
+			Geometrically, the length projection of $\pi/ 2$ rotated $(w_{1}, z_{1})$ onto $(w_{2}, z_{2})$ is the same as the length projection of $(w_{1}, z_{1})$ onto $-\pi / 2$ rotated $(w_{2}, z_{2})$.
+		\item Notice that $S^{*} S = I$, so $S^{*} = S^{-1}$.
+		\item If $S(w, z) = \lambda (w, z)$, we have the system of equations
+			\begin{align}
+				-z & = \lambda w \\
+				w & = \lambda z
+			\end{align}
+			and so, $-z = \lambda^{2} z$. That is, $(\lambda^{2} + 1) z = 0$. If $z = 0$, then $w = 0$ by (2), leaving $\lambda$ no longer an eigenvalue. Thus, $\lambda^{2} + 1 = 0$ giving $\lambda = \pm i$, corresponding to eigenvectors $(-1, i)$ and $(1, i)$ respectively.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[12]
@@ -194,6 +257,28 @@
 	Suppose that $T \in \mathcal{L}(V)$. Prove that $T$ is normal if and only if there exist commuting operators $A$ and $B$ such that $A$ is self-adjoint, $B$ is a skew operator, and $T = A + B$.
 \end{problem}
 
+\begin{solution}
+	Suppose $T$ is normal. Consider operators
+	\[
+		A = \frac{T + T^{*}}{2} \quad B = \frac{T - T^{*}}{2}.
+	\]
+	$A$ is self adjoint as in the proof of 7.23, and we see that
+	\[
+		B^{*} = \frac{T^{*} - T}{2} = - B
+	\]
+	so $B$ is skew.
+
+	Now suppose $T = A + B$ with $A$ self-adjoint and $B$ skew. Then $T^{*} = A - B$. Thus,
+	\begin{align*}
+		T T^{*} & = (A + B)(A - B) \\
+			& = A^{2} + AB - AB - B^{2} \\
+			& = A(A + B) - B(A + B) \\
+			& = (A - B)(A + B) \\
+			& = T^{*} T.
+	\end{align*}
+	That is, $T$ is normal.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[13]
@@ -203,6 +288,36 @@
 		\item Find the minimal polynomial of $\mathcal{A}$.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item
+			\[
+				\boxed{
+					\lambda = \pm 1
+				}
+			\]
+
+			If $\lambda$ is an eigenvalue of $\mathcal{A}$, there is a non-zero eigenoperator $T$ with $T^{*} = \lambda T$. In particular, $T$ must be normal. Writing $T = A + B$ as the sum of a self-adjoint and skew operator, we get $A + B = \lambda(A - B)$. Rearranging, we have
+			\[
+				(1 - \lambda) A + (1 + \lambda) B = 0.
+			\]
+			We use the following lemma ---
+			\begin{lemma}
+				A non-zero self-adjoint operator $A$ and a non-zero skew operator $B$ are linearly independent.
+			\end{lemma}
+
+			Thus, for the equation to hold and $T = A + B$ to be non-zero, we need $\lambda = \pm 1$. These are indeed eigenvalues of $\mathcal{A}$ (for self-adjoint and skew operators), so the eigenvalues of $\mathcal{A}$ are exactly these.
+		\item
+			\[
+				\boxed{
+					\mathcal{A}^{2} - 1
+				}
+			\]
+
+			The minimal polynomial must have degree at least $2$ since $\mathcal{A}$ has two distinct eigenvalues. Since the adjoint is an involution, $\mathcal{A}^{2}$ is the identity on $\mathcal{L}(V)$ and thus, $\mathcal{A}^{2} - 1 = 0$.
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
@@ -235,6 +350,24 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item Suppose $T$ is self adjoint. Then, taking adjoints on both sides of $T T^{-1} = I$, we get $(T^{-1})^{*} T^{*} = I$. Using the self-adjoint property, $(T^{-1})^{*} T = I$, so $(T^{-1})^{*}$ is just the inverse of $T$ ---  $T^{-1}$.
+
+			Since $(T^{-1})^{-1} = T$, this shows the converse as well.
+		\item Suppose $T$ is normal. We use the fact that $(T^{*})^{-1} = (T^{-1})^{*}$ to write
+			\begin{align*}
+				T^{-1} (T^{-1})^{*} & = T^{-1} (T^{*})^{-1} \\
+						    & = (T^{*} T)^{-1} \\
+						    & = (T T^{*})^{-1} \\
+						    & = (T^{*})^{-1} T^{-1} \\
+						    & = (T^{-1})^{*} T^{-1}.
+			\end{align*}
+			
+			As in (a), this suffices to show the converse as well
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[16]
@@ -245,11 +378,29 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item The set of self-adjoint operators on $V$ is the eigenspace $E(1, \mathcal{A})$ of the linear operator $\mathcal{A}$ on $\mathcal{L}(V)$ by $T \mapsto T^{*}$. Thus, it is a subspace.
+		\item
+			\[
+				\boxed{
+					\dim E(1, \mathcal{A}) = \frac{(\dim V)(\dim V + 1)}{2}.
+				}
+			\]
+
+			Working over an orthonormal basis, we see that self-adjoint operators correspond exactly to symmetric matrices --- matrices that equal their transposes. These are determined by the (not strictly) upper triangular entries of the matrix.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[17]
 	Suppose $\mathbb{F} = \mathbb{C}$. Show that the set of self-adjoint operators on $V$ is not a subspace of $\mathcal{L}(V)$.
 \end{problem}
+
+\begin{solution}
+	Suppose $T$ is self-adjoint and non-zero (for example, the identity). Then $i T$ has transpose $- i T^{*} = - i T$ and is thus, not self-adjoint. 
+\end{solution}
 
 \pagebreak
 
