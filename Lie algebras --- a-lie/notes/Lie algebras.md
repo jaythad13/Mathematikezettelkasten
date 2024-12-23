@@ -18,7 +18,7 @@ $$
 $$
 and the Jacobi identity
 $$
-[x, [y, z]] + [y, [z, x]] +  + [z, [x, y]] = 0.
+[x, [y, z]] + [y, [z, x]] + [z, [x, y]] = 0.
 $$
 
 See that the notation $[\cdot, \cdot]$ imitates that of the [[Abstract Algebra I --- math-171/attachments/homework/hw 12/hw 12.pdf|commutator]] in group theory and ring theory.
@@ -58,6 +58,10 @@ we have $[v, w] = -[w, v]$.
 Now suppose $[v, w] = -[w, v]$ for all $v, w$. Then clearly $[v, v] = -[v, v]$. Since $\operatorname{char} F \neq 2$, this implies $[v, v] = 0$.
 
 Note over fields of characteristic $2$, we can have $[v, v] = 1$, and thus, $[v, v] = -[v, v]$ without $[v, v] = 0$.
+
+##### _definition:_ abelian Lie algebra
+
+We say a Lie algebra is abelian if the bracket is trivial (sends everything to zero).
 
 Many matrix algebras are Lie algebras with the commutator product.
 

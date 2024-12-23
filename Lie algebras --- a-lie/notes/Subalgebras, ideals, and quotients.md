@@ -2,6 +2,7 @@
 tags:
 - a-lie/2
 - a-lie/3
+- a-lie/5
 - alg
 - diff-geo
 - self-study
@@ -20,8 +21,8 @@ A Lie subalgebra $K$ of a Lie algebra $L$ is a vector subspace $K \subseteq L$ w
 ##### _examples:_ Lie subalgebras of $\mathfrak{gl}_{n}(F)$
 
 1) $\mathfrak{sl}_{n}(F)$ is the subalgebra of all traceless matrices in $\mathfrak{gl}_{n}(F)$ [[Lie algebras --- a-lie/notes/Lie algebras|as we've seen already]] in the case $n = 2$, $F = \mathbb{C}$.
-2) $\mathfrak{b}_{n}(F)$ is the subalgebra of all [[Upper-triangular matrices|upper-triangular matrices]] in $\mathfrak{gl}_{n}(F)$.
-3) $\mathfrak{n}_{n}(F)$ is the subalgebra of all strictly upper-triangular matrices in $\mathfrak{gl}_{n}(F)$.
+2) $\mathfrak{b}_{n}(F)$ ($\mathfrak{b}$ for Borel) is the subalgebra of all [[Upper-triangular matrices|upper-triangular matrices]] in $\mathfrak{gl}_{n}(F)$.
+3) $\mathfrak{n}_{n}(F)$ ($\mathfrak{n}$ for [[Lie algebras --- a-lie/notes/Nilpotency|nilpotent]]) is the subalgebra of all strictly upper-triangular matrices in $\mathfrak{gl}_{n}(F)$.
 
 ### Ideals
 
@@ -160,14 +161,15 @@ Since $[i_{k}, x] \in I$ and $[j_{k}, x] \in J$ this is just a linear combinatio
 
 An important example of a bracket ideal of any Lie algebra is the commutator
 
-##### _definition:_ commutator
+##### _definition:_ commutator, derived subalgebra
 
 The commutator subalgebra of a Lie algebra $L$ is a subalgebra
 $$
 L' = [L, L] = \operatorname{span} \{ [x, y] \mid x, y \in L \}.
 $$
+It's also called the derived subalgebra.
 
-The commutator gives insight into the structure of a Lie algebra. For example
+The commutator gives insight into the structure of a Lie algebra.
 
 ##### _example:_ $\mathfrak{sl}_{2}(\mathbb{C}) = \mathfrak{gl}_{2}(\mathbb{C})'$
 
