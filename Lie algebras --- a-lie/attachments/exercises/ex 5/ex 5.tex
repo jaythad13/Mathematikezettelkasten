@@ -24,6 +24,12 @@
 	Show every nilpotent Lie algebra is soluble and give an example of a soluble Lie algebra that is not nilpotent.
 \end{problem}
 
+\begin{solution}
+	 Notice that for any Lie algebra $L$, $[L', L'] \subset [L, L']$. That is $L^{{(2)}} \subset L^{2}$. Since $L^{(n)} = [L^{(n)}, L^{(n)}]$ and $L^{n} = [L, L^{n}]$, it follows by induction that $L^{(n)} \subset L^{n}$. Thus, if $L$ is nilpotent with $L^{N} = 0$, we also have $L$ soluble with $L^{(N)} = 0$.
+
+	 The Lie algebra of upper triangular matrices $\mathfrak{b}_{n}(\mathbb{F})$ is always soluble, but not nilpotent for $n \ge 2$.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[4]
@@ -34,9 +40,13 @@
 				c & -a & 0 & 0 \\
 				0 & 0 & x & y \\
 				0 & 0 & z & -x
-		\end{pmatrix} \mid a, b, c, x, y, z \in F \right \}
+		\end{pmatrix} \mid a, b, c, x, y, z \in \mathbb{C} \right \}
 	\]
 	is semisimple, but not simple.
 \end{problem}
+
+\begin{solution}
+	$L = \mathfrak{sl}_{2}(\mathbb{C}) \oplus \mathfrak{sl}_{2}(\mathbb{C})$ so $L$ clearly has non-trivial ideals. However, since $\mathfrak{sl}_{2}(\mathbb{C})$ is not soluble, $L$ has no soluble ideals.
+\end{solution}
 
 \end{document}
