@@ -1,6 +1,7 @@
 ---
 tags:
 - a-lie/5
+- a-lie/6
 - lie
 - alg
 - diff-geo
@@ -52,3 +53,41 @@ If $L / Z(L)$ is nilpotent, $L$ is nilpotent.
 ###### _proof:_
 
 Suppose $L / Z(L)$ is nilpotent with $(L / Z(L))^N = 0$. By a lemma above, we can write $(L^N + Z(L)) / Z(L) = 0$. Thus, $L^N \subset Z(L)$. But $Z(L)' = 0$ so $L^{N + 1} \subset Z(L)' = 0$.
+
+### Nilpotent maps
+
+Nilpotent maps are basically just strictly [[Upper-triangular matrices|upper-triangular matrices]].
+
+##### _definition:_ nilpotent map
+
+A nilpotent map is some non-zero $x \in \mathfrak{gl}(V)$ such that $x^N = 0$ for some $N \in \mathbb{N}$.
+
+##### _example:_ nilpotent matrices
+
+Matrices are [[Lie algebras --- a-lie/notes/Subalgebras, ideals, and quotients#_examples _ Lie subalgebras of $ mathfrak{gl}_{n}(F)$|nilpotent]] if and only if they have a strictly upper-triangular matrix. This is because any complex linear operator has an upper-triangular matrix, and if it had any eigenvalues other than zero, it wouldn't be nilpotent.
+
+There is an important example of a Lie algebra [[Lie algebra representations|representation]] of $\mathfrak{gl}(V)$ on $\mathfrak{gl}(\mathfrak{gl}(V))$ — the adjoint representation. It preserves nilpotency!
+
+##### _definition:_ the adjoint representation
+
+Given any $x \in \mathfrak{gl}(V)$, the adjoint representation is the [[Lie algebras --- a-lie/notes/Morphisms of Lie algebras#_definition _ Lie algebra homomorphism|homomorphism]] $\mathfrak{gl}(V) \to \mathfrak{gl}(\mathfrak{gl}(V))$ given by
+$$
+\operatorname{ad} : x \mapsto \operatorname{ad}_{x}
+$$
+where
+$$
+\operatorname{ad}_{x} : y \mapsto [x, y].
+$$
+
+##### _proposition:_ the adjoint representation preserves nilpotency
+
+If $x \in \mathfrak{gl}(V)$ is nilpotent, then $\operatorname{ad}_{x} \in \mathfrak{gl}(\mathfrak{gl}(V))$ is nilpotent.
+
+###### _proof:_
+
+We claim that the adjoint representation has a [[Superdiscrete --- math-55A/notes/Somewhat algebraic combinatorics#The binomial theorem|binomial expansion]]
+$$
+(\operatorname{ad}_{x})^n y = \sum_{k = 0}^n (-1)^k \binom{n}{k} x^{n - k} y x^k.
+$$
+
+Thus, if $x^N = 0$, $(\operatorname{ad}_{x})^{2N} = 0$.
