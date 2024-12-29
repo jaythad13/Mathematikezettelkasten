@@ -408,6 +408,15 @@
 	Suppose $\dim V \ge 2$. Show that the set of normal operators on $V$ is not a subspace of $\mathcal{L}(V)$.
 \end{problem}
 
+\begin{solution}
+	Suppose $S, T \in \mathcal{L}(V)$ are normal. Consider whether $S + T$ is normal. We can compare $(S + T)^{*} (S + T)$ and $(S + T) (S + T)^{*}$.
+	\begin{align*}
+		(S + T)^{*} (S + T) - (S + T) (S + T)^{*} & = (S^{*} + T^{*}) (S + T) - (S + T)(S^{*} + T^{*}) \\
+							  & = S^{*} S - S S^{*} + T^{*} T - T T^{*} + T^{*} S + S^{*} T - S T^{*} - T S^{*} \\
+							  & = T^{*} S + S^{*} T - S T^{*} - T S^{*}.
+	\end{align*}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[19]
