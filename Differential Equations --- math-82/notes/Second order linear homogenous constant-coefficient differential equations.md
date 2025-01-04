@@ -53,7 +53,7 @@ Note that $y(x) = e^{ \lambda x }$ is only a solution if
 $$
 e^{ \lambda x }(a \lambda^{2} + b \lambda + c) = 0
 $$
-for all $x$. Since $e^{ \lambda x }$ is always nonzero, we must have that $a \lambda^{2} + b \lambda + c = 0$. That is, we must have that $\lambda$ is a root of the characteristic polynomial.
+for all $x$. Since $e^{ \lambda x }$ is always nonzero, we must have that $a \lambda^{2} + b \lambda + c = 0$. That is, $\lambda$ is a root of the characteristic polynomial.
 
 Note that we need the following ![[#_lemma _ the solution space of $ay'' + by' + cy = 0$ has dimension $2$]]
 If we have two distinct real roots $\lambda_{1}, \lambda_{2} \in \mathbb{R}$, then note that the two solutions $e^{ \lambda_{1} x }, e^{ \lambda_{2} x }$ are linearly independent and thus span all solutions.

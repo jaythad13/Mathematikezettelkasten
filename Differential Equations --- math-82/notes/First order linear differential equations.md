@@ -45,9 +45,9 @@ $$
 $$
 and thus, can be solved by the same method.
 
-What this is really doing
+What this is really doing?
 
-To generalise this trick, we need a way to find the function of $x$ to multiply by. Luckily this works out really nicely.
+To generalise this trick, we need a way to find the function of $x$ to multiply by. Luckily this isn't too hard to find.
 
 ##### _proposition, definition:_ solving linear differential equations, the integrating factor
 
@@ -55,12 +55,12 @@ Given a linear differential equation $y' + p(x) y = q(x)$, the function $\mu$ de
 $$
 \frac{d(\mu(x) y)}{dx} = \mu(x) q(x)
 $$
-and thus
+and thus,
 $$
-y(x) = \frac{1}{\mu(x)} \int \mu(x) q(x) \, dx 
+y(x) = \frac{1}{\mu(x)} \int \mu(x) q(x) \, dx .
 $$
 
-$\mu$ is called the integrating factor of the differential equation
+$\mu$ is called the integrating factor of the differential equation.
 
 ###### _proof:_
 
