@@ -17,3 +17,6 @@
 [submodule "Parking functions --- parking-functions/attachments/documents"]
 	path = Parking functions --- parking-functions/attachments/documents
 	url = https://git@git.overleaf.com/6719e3028e42c355b6e540d7
+[submodule "Trees and parking functions --- tree-ifr/attachments/documents"]
+	path = Trees and parking functions --- tree-ifr/attachments/documents
+	url = https://git@git.overleaf.com/6784f60c09043868bf87e785
