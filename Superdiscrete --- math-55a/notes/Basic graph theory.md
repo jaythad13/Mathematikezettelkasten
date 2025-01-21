@@ -8,9 +8,9 @@ We are not talking about the graph of a function!!!
 
 ##### _definition:_ graph
 
-A graph $G$ is consists of a pair - a finite set of vertices $V$ and a set of pairs (we will say size $2$ subsets) of vertices $E$ that we think of as the edges between them.
+A graph $G$ consists of a pair — a finite set of vertices $V(G)$ and a set of pairs (we will say size $2$ subsets) of vertices $E(G)$ that we think of as the edges between them.
 
-The definition that we are thinking of is often called a simple graph - no directed edges, no self pointing edges, and no multiple edges between the same vertices.
+The definition that we are thinking of is often called a simple graph — no directed edges, no self pointing edges (loops), and no multiple edges between the same vertices.
 
 This, is a dumb way to think of a very visual thing so we will talk about a graph as just its picture
 
