@@ -90,13 +90,15 @@ A path on a graph is a walk with no repeated vertices.
 
 ##### _theorem:_ walks give you paths
 
-There is a walk on a graph $G$ from $v_1$ to $v_2$ if and only if there is a path from $v_1$ to $v_2$.
+There is a walk on a graph $G$ from $v_1$ to $v_2$ if and only if there is a path from $v_1$ to $v_2$. The path has length less than the walk.
 
 ###### _proof sketch:_
 
 We use an extremal argument (consider the shortest/longest something).
 
-Consider the shortest walk, get rid of the repetitions, and then if you don't have a path, you have a shorter walk and a contradiction.
+Consider the shortest walk. This has to be a path — else there would be a cycle at some $v_{j}$ which we could remove to get a shorter path. That is, the walk looks like $v_{1}, \dots, v_{j - 1}, v_{j}, u_{1}, \dots, u_{m}, v_{j}, v_{j + 1}, \dots v_{n}$, but a shorter walk is $v_{1}, \dots, v_{j - 1}, v_{j}, v_{j + 1}, \dots, v_{n}$.
+
+Note that this also suggests an algorithm for turning any walk into a path — successively collapse cycles until there are no more.
 
 ##### _definition:_ trail
 
