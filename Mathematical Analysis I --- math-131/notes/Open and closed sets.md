@@ -124,10 +124,8 @@ U^c = \bigcap_{\alpha \in A}(F_\alpha^c).
 $$
 By the proposition, $U^c$ is open, and thus, $U$ is closed.
 
-##### _example:_ a non-open infinite intersection of open sets
+##### _example:_ a non-open (countably) infinite intersection of open sets
 
-Consider the collection of open sets $\set{G_n}$ with $G_n = (-\frac{1}{n}, \frac{1}{n})$ for each $n \in \bb{N}$ in the metric space $\bb{R}$.
+Consider the collection of all open sets $G_n = (-1 / n, 1 / n)$ for each $n \in \bb{N}$ in the (Euclidean) metric space $\bb{R}$.
 
-By the Archimedean property, for any $x > 0$ we can find $n \in \bb{N}$ with $\frac{1}{n} < x$ and for any $x < 0$ we can find $n \in \bb{N}$ with $-\frac{1}{n} > x$. Thus, for any $x \neq 0$, there is some $G_n$ such that $x \notin G_n$. Note that $0 \in G_n$ for all $n \in \bb{N}$.
-
-Thus, the intersection $\bigcap_{n \in \bb{N}} G_n = \set{0}$, which is obviously not open in $\bb{R}$.
+By the [[Mathematical Analysis I --- math-131/attachments/homework/hw 1/hw 1.pdf|Archimedean property]], there is no positive real number less than every $1 / n$, and similarly, there is no negative real number greater than every $- 1/n$. Thus, the intersection of all the open sets is $\bigcap_{n \in \bb{N}} G_n = \set{0}$, which is not open in $\bb{R}$.
