@@ -65,7 +65,7 @@ In the future, we will see that linear algebra is really useful for graph theory
 
 ##### _definition:_ adjacency matrix
 
-Tha adjacency matrix $A(G)$ of a graph $G$ has rows and columns labeled by the vertices of $G$ with the $(u, v)$th entry $1$ if $u$ and $v$ are adhacent and $0$ otherwise.
+Tha adjacency matrix $A(G)$ of a graph $G$ has rows and columns labeled by the vertices of $G$ with the $(u, v)$th entry $1$ if $u$ and $v$ are adjacent and $0$ otherwise.
 
 ##### _example:_ the adjacency matrix of a simple graph
 
