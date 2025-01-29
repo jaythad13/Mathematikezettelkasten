@@ -1,0 +1,114 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 139 --- Fourier Analysis}
+\assignment{HW \#1}
+\duedate{29th January 2025}
+
+\begin{document}
+
+\begin{problem}[2.]
+	If $z = x + i y$ is a complex number with $x, y \in \mathbb{R}$, we define the \emph{complex conjugate} of $z$ by
+	\[
+		\overline{z} = z - i y.
+	\]
+	\begin{enumerate}
+		\item What is the geometric interpretation of $\overline{z}$.
+		\item Show that $\lvert z \rvert^{2} = z \overline{z}$.
+		\item Prove that if $z$ belongs to the unit circle, then $1 / z = \overline{z}$.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[3.]
+	\begin{enumerate}
+		\item Show that a converging sequence of complex numbers has a unique limit.
+		\item Prove that a sequence of complex numbers converges if and only if it is a Cauchy sequence.
+		\item  Let $\{ a_{n} \}_{n = 1}^{\infty}$ be a sequence of non-negative real numbers such that the series $\sum_{n} a_{n}$ converges. Show that if $\{ z_{n} \}_{n = 1}^{\infty}$ is a sequence of complex numbers satisfying $\lvert z_{n} \rvert \le a_{n}$ for all $n$, then the series $\sum_{n} z_{n}$ converges.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[4.]
+	For $z \in \mathbb{C}$ we define the \emph{complex exponential} by
+	\[
+		e^{z} = \sum_{n = 0}^{\infty} \frac{z^{n}}{n!}
+	\]
+	\begin{enumerate}
+		\item Prove that the above definition makes sense, by showing that the series converges for every complex number $z$. Moreover, show that the convergence is uniform on every bounded subset of $\mathbb{C}$.
+		\item If $z_{1}, z_2$ are two complex numbers, prove that $e^{z_{1}} e^{z_{2}} = e^{z_{1} + z_{2}}$.
+		\item Show that if $z$ is purely imaginary, that is $z = i y$ with $y \in \mathbb{R}$, then
+			\[
+				e^{z} = e^{i y} = \cos{y} + i \sin{y}.
+			\]
+			This is Euler's identity.
+		\item More generally,
+			\[
+				e^{x + iy} = e^{x} (\cos{y} + i \sin{y})
+			\]
+			whenever $x, y \in \mathbb{R}$, and show that
+			\[
+				\lvert e^{x + i y} \rvert = e^{x}.
+			\]
+		\item Prove that $e^{z} = 1$ if and only if $z = 2 \pi k i$ for some integer $k$.
+		\item Show that every complex number $z = x + i y$ can be written in the form
+			\[
+				z = r e^{i \theta}
+			\]
+			where $r$ is unique and in the range $0 \le r < \infty$, and $\theta \in \mathbb{R}$ is unique up to an integer multiple of $2 \pi$. Check that
+			 \[
+				r = \lvert z \rvert \quad \text{and} \quad \theta = \arctan{(y / x)}
+			\]
+			whenever these formulas make sense.
+		\item In particular $i = e^{i \pi / 2}$. What is the geometric meaning of multiplying a complex number by $i$? Or by $e^{i \theta}$ for any $\theta \in \mathbb{R}$?
+		\item Given $\theta \in \mathbb{R}$, show that
+			\[
+				\cos{\theta} = \frac{e^{i \theta} + e^{-i \theta}}{2} \quad \text{and} \quad \sin{\theta} = \frac{e^{i \theta} - e^{- i \theta}}{2 i}.
+			\]
+			These are also called Euler's identities.
+		\item Use the complex exponential to derive trigonometric identities such as
+			\[
+				\cos{(\theta + \vartheta)} = \cos{\theta} \cos{\vartheta} - \sin{\theta} \sin{\vartheta},
+			\]
+			and then show that
+			\begin{align*}
+				2 \sin{\theta} \sin{\vartheta} & = \cos{(\theta - \vartheta)} - \cos{(\theta + \vartheta)} \\
+				2 \sin{\theta} \cos{\vartheta} & = \sin{(\theta + \vartheta)} + \sin{(\vartheta - \vartheta)}.
+			\end{align*}
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[6.]
+	Prove that if $f$ is a twice continuously differentiable function on $\mathbb{R}$ which is a solution of the equation
+	\[
+		f''(t) + c^{2} f(t) = 0
+	\]
+	then there exist constants $a$ and $b$ such that
+	\[
+		f(t) = a \cos{(c t)} + b \sin{(c t)}.
+	\]
+	This can be done by differentiating the two functions $g(t) = f(t) \cos{(c t)} - (1 / c) f'(t) \sin{(c t)}$ and $h(t) = f(t) \sin{(c t)} + (1 / c) f'(t) \cos{(ct)}$
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[8.]
+	Suppose $F$ is a function on $(a, b)$ with two continuous derivatives. Show that whenever $x$ and $x + h$ belong to $(a, b)$, one may write
+	\[
+		F(x + h) = F(x) + h F'(x) + \frac{h^{2}}{2} F''(x) + h^{2} \varphi(h),
+	\]
+	where $\varphi(h) \to 0$ as $h \to 0$.
+
+	Deduce that
+	\[
+		\frac{F(x + h) + F(x - h) - 2 F(x)}{h^{2}} \to F''(x)
+	\]
+	as $h \to 0$.
+\end{problem}
+
+\end{document}
