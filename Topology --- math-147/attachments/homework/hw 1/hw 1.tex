@@ -12,11 +12,31 @@
 	Briefly summarise three things that stood out to you from the readings.
 \end{problem}
 
+\begin{solution}
+	The idea that math isn't just meant to be done by geniuses really appealed to me --- often reading through the theorems proved in a course gives me the impression that I couldn't have done anything like that, which conflicts with the fact that I want to be a mathematician, and part of my job will be to prove (hopefully impressive) theorems. I hope this book helps me discover that I too can prove impressive theorems and ``be'' a mathematician in the most complete sense of the word.
+
+	I really enjoyed the emphasis on the fact that proving theorems takes time --- even weeks, but can be done and was done by people who had never seen the results or ideas before. This gives me confidence that even when I can't work as fast as other mathematicians, that is okay.
+
+	 Finally, I liked the discussion in pages 27 -- 30 which seemed to hint that from a categorical point of view, topological spaces are the right objects for the category in which the morphisms are continuous maps. This agrees with a previous example I've seen that $(0, 1)$ is homeomorphic to $\mathbb{R}$ even though the former is bounded and the latter is not. That is continuous maps don't always preserve metric properties.
+
+
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[Theorem 2.3]
 	A set $U$ is open in a topological space $(X, \mathcal{T})$ if and only if for every point $x \in U$, there exists an open set $U_{x}$ such that $x \in U_{x} \subseteq U$.
 \end{problem}
+
+\begin{solution}
+	If $U$ is open, then one can choose $U_{x} = U$ for each $x$.
+
+	If for each $x \in U$, there is a neighbourhood $U_{x} \subseteq U$, then the union of all these neighbourhoods contains all $x \in U$ and thus, $U$. Conversely, since each neighbourhood is contained in $U$, so is their union. Thus,
+$$
+U = \bigcup_{x \in U} U_{x}
+$$
+and as the union of open sets, is open.
+\end{solution}
 
 \pagebreak
 
@@ -24,16 +44,73 @@
 	Verify that the discrete, indiscrete, finite complement, and countable complement topologies are indeed topologies for any set $X$.
 \end{problem}
 
+\begin{solution}
+	For the discrete topology, since every subset is open, so are the empty set $\O$, the whole set  $X$, pairwise intersections, and arbitrary unions. Thus, the discrete topology satisfies all four requirements to be a topology.
+
+	For the indiscrete topology, the only open subsets are $\O$ and $X$. These clearly satisfiy the first two requirements for a collection of subsets to be a topology. Since the only intersections and unions of these two sets are $\O$ and $X$ themselves, the indiscrete topology is closed under pairwise intersections and arbitrary unions --- it is a topology.
+
+	For the finite complement and countable complement topologies, we will use the following lemmas from set theory without proof.
+	\begin{lemma}
+		Subsets and finite unions of finite sets are finite.
+	\end{lemma}
+	\begin{lemma}
+		Subsets and finite unions of countable sets are countable.
+	\end{lemma}
+	It follows that (arbitrary) intersections of finite and countable sets are finite and countable respectively since they are subsets of the respective sets.
+
+	We will also use De Morgan's laws.
+
+	\begin{theorem}[De Morgan's laws]
+		Given any subsets $U_{\alpha} \subseteq X$ (indexed by $\alpha \in \mathcal{I}$)
+		\[
+			X \setminus \bigcup_{\alpha \in \mathcal{I}} U_{\alpha} = \bigcap_{\alpha \in \mathcal{I}} (X \setminus U_{\alpha})
+		\]
+		and conversely
+		\[
+			X \setminus \bigcap_{\alpha \in \mathcal{I}} U_{\alpha} = \bigcup_{\alpha \in \mathcal{I}} (X \setminus U_{\alpha}).
+		\]
+	\end{theorem}
+
+	In the finite and countable complement topologies $X$ is open since it has finite and countable complement $\O$. The empty set $\O$ is open by definition.
+
+	Suppose $U$ and $V$ are subsets of $X$. By De Morgan's laws, $X \setminus (U \cap V) = (X \setminus U) \cup (X \setminus V)$. If $U$ and $V$ are open in the finite complement topology, $X \setminus U$ and $X \setminus V$ are finite and by the lemmas above so is their union. Thus, $X \setminus (U \cap V)$ is finite, and $U \cap V$ is open. Similarly, if $U$ and $V$ are open in the countable complement topology, $X \setminus U$ and $X \setminus V$ are countable and so is their union. Thus, $X \setminus (U \cap V)$ is countable, and $U \cap V$ is open.
+
+	Suppose $U_{\alpha}$ are subsets of $X$ indexed by $\alpha \in \mathcal{I}$. By De Morgan's laws
+	\[
+		X \setminus \bigcup_{\alpha \in \mathcal{I}} U_{\alpha} = \bigcap_{\alpha \in \mathcal{I}} (X \setminus U_{\alpha})
+	\]
+	If the $U_{\alpha}$ are open in the finite complement topology, all the subsets $X \setminus U_{\alpha}$ are finite. By the lemmas above, so is their intersection (which is a subset of each of them). Thus, $X \setminus \bigcup_{\alpha \in \mathcal{I}} U_{\alpha}$ is finite, giving us $\bigcup_{\alpha \in \mathcal{I}} U_{\alpha}$ open. Similarly, if the $U_{\alpha}$ are open in the countable complement topology, all the $X \setminus U_{\alpha}$ are countable and so is their intersection. Thus, $X \setminus \bigcup_{\alpha \in \mathcal{I}} U_{\alpha}$ is countable, giving $\bigcup_{\alpha \in \mathcal{I}} U_{\alpha}$ open.
+	
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[Exercise 2.8]
 	Let $X = \mathbb{R}$ and $A = (1, 2)$. Verify that $0$ is a limit point of $A$ in the indiscrete topology and the finite complement topology, but not in the standard topology nor the discrete topology on $\mathbb{R}$.
 \end{problem}
 
+\begin{solution}
+	$0$ is a limit point of $(1, 2)$ in the indiscrete topology on $\mathbb{R}$ because the only non-empty open set and thus, the only open set containing $0$ is the whole set $\mathbb{R}$. Since $(\mathbb{R} \setminus \{ 0 \}) \cap (1, 2)$ is just $(1, 2)$ and clearly non-empty, $0$ must be a limit point of $(1, 2)$.
+
+	Any open neighbourhood $U$ of $0$ in the cofinite topology on $\mathbb{R}$ can only exclude finitely many points of $(1, 2)$. Since $(1, 2)$ is uncountably infinite, $U$ must have an infinite intersection with $(1, 2)$. Thus, $(U \setminus \{ 0 \}) \cap (1, 2)$ is non-empty. That is, $0$ is a limit point of $(1, 2)$ in the cofinite topology.
+
+	Note that $0 \in (-1, 1)$ which has empty intersection with $(1, 2)$. Since $(-1, 1)$ is open in the standard topology (as an open ball) and in the discrete topology (as is any subset), we have that $0$ is not a limit point of $(1, 2)$ in the standard and discrete topologies.
+\end{solution}
+	
 \pagebreak
 
 \begin{problem}[Theorem 2.13]
 	For any topological space $(X, \mathcal{T})$ and $A \subseteq X$, the set $\overline{A}$ is closed. That is, for any set $A$ in a topological space, $\overline{A} = \overline{\overline{A}}$.
 \end{problem}
+
+\begin{solution}
+	By definition, $\overline{A} \subseteq \overline{\overline{A}}$. We will show $\overline{\overline{A}} \subseteq \overline{A}$ by showing that any limit point of $\overline{A}$ is a limit point of $A$ or in $A$. 
+
+	Suppose $p$ is a limit point of $\overline{A}$. If $p \in A \subseteq \overline{A}$, then we are done. Suppose not. By definition of a limit point, every open neighbourhood $U$ of $p$ has a non-trivial intersection with $\overline{A}$, containing a distinct point $q \in \overline{A}$.
+
+	We want to show that $U$ has non-empty intersection with $A$. Whenever $q \in A$, we are done. If not, $q$ is a limit point of $A$ not contained in $A$. Thus, every open neighbourhood $V$ of $q$ has a non-empty intersection with $A$. Since $U$ is open, we can pick a neighbourhood $V$ of $q$ so that $V \subseteq U$. This gives us that $U$ also has non-empty intersection with $A$. 
+
+	Since $p \notin A$, to show $p \in \overline{A}$, it is sufficient to show that every neighbourhood of $p$ has non-empty intersection with $A$. Since we have done this, we have $p \in \overline{A}$.
+\end{solution}
 
 \end{document}
