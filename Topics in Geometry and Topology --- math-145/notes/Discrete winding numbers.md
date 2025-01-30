@@ -145,4 +145,8 @@ $$
 
 ###### _proof sketch(y):_
 
-This follows by casework or a sketchy thing where you define $\operatorname{X}$ to be what you're proving it is.
+The essential bit is the formula
+$$
+\theta(\overline{\mathbf{a}, \mathbf{b}}, \mathbf{x}) = \overline{\operatorname{arg}}_{\phi}(\mathbf{b}) - \overline{\operatorname{arg}}_{\phi}(\mathbf{a}) + 2 \pi \operatorname{X}(\overline{\mathbf{a}, \mathbf{b}}, R_{\mathbf{x}, \phi})
+$$
+which can be proven either by casework or by definition of $\operatorname{X}$.
