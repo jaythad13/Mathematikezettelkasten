@@ -17,11 +17,19 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width = 0.72 \textwidth]{figures/P1 cycle.pdf}
+		\caption{The cycle $\alpha$ with corrected arrows in red and winding number written inside each region in blue}
+	\end{figure}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[2.]
 	\begin{enumerate}
-		\item Let $\gamma = \sum_{i = 1}^{n}$ be a $1$-cycle, and let $\mathbf{x} \in \mathbb{R}^{2} \setminus \lvert \gamma \rvert$. Show that the inequality
+		\item Let $\gamma = \sum_{i = 1}^{n} [\mathbf{a}_{i}, \mathbf{b}_{i}]$ be a $1$-cycle, and let $\mathbf{x} \in \mathbb{R}^{2} \setminus \lvert \gamma \rvert$. Show that the inequality
 			\[
 				\sum_{i = 1}^{n} \lvert \theta([\mathbf{a}_{i}, \mathbf{b}_{i}], \mathbf{x}) \rvert < 2 \pi
 			\]
@@ -39,12 +47,40 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item Suppose the inequality holds. Then, by the triangle inequality, the winding number of $\gamma$ about $\mathbf{x}$ satisfies the inequality
+			\[
+				\lvert w(\gamma, \mathbf{x}) \rvert \le \left \lvert \frac{1}{2 \pi} \sum_{i = 1}^{n} \theta([\mathbf{a}_{i}, \mathbf{b}_{i}], \mathbf{x}) \right \rvert \le \frac{1}{2 \pi} \sum_{i = 1}^{n} \lvert \theta([\mathbf{a}_{i}, \mathbf{b}_{i}], \mathbf{x}) \rvert < 1
+			\]
+			Since the winding number is an integer, it must be the only integer with norm less than $1$ --- $w(\gamma, \mathbf{x}) = 0$.
+		\item Consider the tangents from $\mathbf{x}$ to the circle
+		\item Suppose $R > r / \sin{(\pi / n)}$ or equivalently, $r / R < \sin{(\pi / n)}$. Then since we're in the region where $\sin$ is an increasing function
+			\[
+				\arcsin{(r / R)} < \arcsin{(\sin{(\pi / n)})} < \pi / n.
+			\]
+
+			Since each directed line segment $[\mathbf{a}_{i},  \mathbf{b}_{i}]$ has support inside the circle, it satisfies
+			\[
+				\lvert \theta([\mathbf{a}_{i}, \mathbf{b}_{i}]) \rvert < 2 \arcsin{(r / R)} < 2 \pi / n
+			\]
+			Thus,
+			\[
+				\sum_{i = 1}^{n} \lvert \theta([\mathbf{a}_{i}, \mathbf{b}_{i}], \mathbf{x}) \rvert < 2 \pi,
+			\]
+			forcing $w(\gamma, \mathbf{x}) = 0$ by part (i).
+		\item By the ray escape formula, for any point $\mathbf{x}$ outside the circle, one can pick a ray $R$ in the direction away from the circle. This will have zero crossings with the $1$-cycle, and thus, the $\gamma$, contained in the circle, has winding number $w(\gamma, \mathbf{x}) = 0$ about $\mathbf{x}$.
+
+			In the lecture notes this is generalised to the convex containment formula --- the circle can be any convex set. I think this could be even stronger --- I think this would work for any simply connected set.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[3.]
 	Here are a few of my favourite $1$-cycles. Let $n$ be a positive integer. Define points $v_{\ell}$ on the unit circle by the following formula:
 	\[
-		v_{\ell} = e^{2 \pi i \ell / n}
+		v_{\ell} = e^{2 \pi i \ell / n}.
 	\]
 	Note that these are periodic in that $v_{\ell + n} = v_{\ell}$ for all $\ell$. Let $k$ be any integer. Define the \emph{regular cycle} $E(n, k)$ as follows:
 	\[
@@ -54,8 +90,7 @@
 	\begin{enumerate}
 		\item $E(5, 1)$ 
 		\item $E(5, 2)$ 
-		\item $E(5, 3)$ 
-		\item $E(5, 3)$ 
+		\item $E(5, 3)$
 		\item $E(6, 3)$ 
 		\item $E(8, 2)$ 
 		\item $E(8, 3)$ 
@@ -65,11 +100,81 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	In each of the diagrams below, winding numbers of each region are written in blue.
+	\begin{enumerate}
+		\item The pentagon
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width = 0.5 \textwidth]{figures/P3i E5-1.pdf}
+				\caption{$E(5, 1)$}
+			\end{figure}
+		\item The five point star
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width = 0.5 \textwidth]{figures/P3ii E5-2.pdf}
+				\caption{$E(5, 2)$}
+			\end{figure}
+		\item The reverse (clockwise) five point star
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width = 0.5 \textwidth]{figures/P3iii E5-3.pdf}
+				\caption{$E(5, 3)$}
+			\end{figure}
+		\item The asterisk
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width = 0.5 \textwidth]{figures/P3iv E6-3.pdf}
+				\caption{$E(6, 3)$}
+			\end{figure}
+		\item The double square
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width = 0.5 \textwidth]{figures/P3v E8-2.pdf}
+				\caption{$E(8, 2)$}
+			\end{figure}
+		\item The eight point star
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width = 0.5 \textwidth]{figures/P3vi E8-3.pdf}
+				\caption{$E(8, 3)$}
+			\end{figure}
+		\item The line
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width = 0.5 \textwidth]{figures/P3vii E2-1.pdf}
+				\caption{$E(5, 3)$}
+			\end{figure}
+		\item Also the reverse five point star
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width = 0.5 \textwidth]{figures/P3iii E5-3.pdf}
+				\caption{$E(5, -2)$}
+			\end{figure}
+		\item ``Hexagons are the bestagons'' --- CGP Grey
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width = 0.5 \textwidth]{figures/P3ix E6-1.pdf}
+				\caption{$E(5, 3)$}
+			\end{figure}
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[4.]
 	Obtain a simple general formula for $w(E(n, k), 0)$, under the assumption that $0 < k < n / 2$.
 \end{problem}
+
+\begin{solution}
+	\[
+		\boxed{
+			w(E(n, k), 0) = k
+		}
+	\]
+
+	I don't know how to prove this but I'm sure it's true.
+\end{solution}	
 
 \pagebreak
 
@@ -80,6 +185,26 @@
 		\item For all $n$, exhibit a $1$-cycle $\gamma$ and a point $\mathbf{x} \in \mathbb{R}^{2} \setminus \lvert \gamma \rvert$ such that $w(\gamma, \mathbf{x}) = \lfloor \frac{n - 1}{2} \rfloor$.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item By definition, for any $\mathbf{a}, \mathbf{b}, \mathbf{x} \in \mathbb{R}^{2}$, we have $\lvert \theta([\mathbf{a}, \mathbf{b}], \mathbf{x}) \rvert < \pi$ whenever $\mathbf{x} \notin \lvert [\mathbf{a}, \mathbf{b}] \rvert$. Thus, for any $1$-cycle $\gamma = [\mathbf{a}_{1}, \mathbf{b}_{1}] + \dots + [\mathbf{a}_{n}, \mathbf{b}_{n}]$, and any $\mathbf{x} \notin \lvert \gamma \rvert$ we have
+			 \begin{align*}
+				 \lvert w(\gamma, \mathbf{x}) \rvert & = \left \lvert \frac{1}{2 \pi} \sum_{i = 1}^{n} \theta([\mathbf{a}_{i}, \mathbf{b}_{i}], \mathbf{x}) \right \rvert \\
+								     & \le \frac{1}{2 \pi} \sum_{i = 1}^{n} \lvert \theta([\mathbf{a}_{i}, \mathbf{b}_{i}], \mathbf{x}) \rvert \\
+								     & < \frac{n \pi}{2 \pi} \\
+								     & = \frac{n}{2}.
+			\end{align*}
+			Here, the first inequality is the triangle inequality and the second follows from the bound on the angle cocycle $\theta$.
+		\item
+			\[
+				\boxed{
+					w \left ( E \left ( n, \left \lfloor \frac{n - 1}{2} \right \rfloor \right ), 0 \right ) = \left \lfloor \frac{n - 1}{2} \right \rfloor
+			}
+			\]
+			assuming my answer to problem 4 is correct.
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
@@ -99,11 +224,46 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item
+			\[
+				\boxed{
+					\operatorname{area}(\alpha) = -21/2
+				}
+			\]
+			We can calculate the areas of each of the connected regions of $\alpha$ as follows ---
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width = 0.72 \textwidth]{figures/P2 cycle.pdf}
+				\caption{The cycle $\alpha$ with areas in green and winding numbers in blue for each region}
+			\end{figure}
+			
+			Note that we ignored the area of regions with zero winding number since the total area of $\alpha$ is the sum of these areas weighted by winding number. Calculating the total winding number we get
+			\[
+				\operatorname{area}(\alpha) = (-1)(23 + 5/2 + 1/2) + 1(5/2 + 3/2 + 4 + 3 + 1/2) + 2(2) = -21/2.
+			\]
+		\item Consider the quadrilateral $\kappa$ with $\mathbf{a} = (-1, 1)$, $\mathbf{b} = (1, -1)$, $\mathbf{c} = (-1, -1)$ and $\mathbf{d} = (1, 1)$. It divides $\mathbb{R}^{2}$ into three connected components --- one unbounded component with winding number $0$ and two bounded components of equal area with winding numbers $1$ and $-1$.
+
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width = 0.5 \textwidth]{figures/P2ii quad.pdf}
+				\caption{The quadrilateral $\kappa$ with winding numbers in blue and areas in green for each (bounded) region}
+			\end{figure}
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[7.]
 	Give a 1-line proof that $\operatorname{area}(\gamma_{1} + \gamma_{2}) = \operatorname{area}(\gamma_{1}) + \operatorname{area}(\gamma_{2})$ for any two $1$-cycles $\gamma_{1}, \gamma_{2}$.
 \end{problem}
+
+\begin{solution}
+	\[
+		\operatorname{area}(\gamma_{1} + \gamma_{2}) = \int_{\mathbb{R}^{2}} w(\gamma_{1} + \gamma_{2}, \mathbf{x}) \, d\mathbf{x} = \int_{\mathbb{R}^{2}} w(\gamma_{1}, \mathbf{x}) + w(\gamma_{2}, \mathbf{x}) \, d\mathbf{x} = \operatorname{area}(\gamma_{1}) + \operatorname{area}(\gamma_{2}).
+	\]
+\end{solution}
 
 \pagebreak
 
@@ -111,21 +271,73 @@
 	\begin{enumerate}
 		\item Let $\gamma = \sum_{i = 1}^{n} [\mathbf{a}_{i}, \mathbf{b}_{i}]$ be a $1$-chain, and let $\mathbf{y} \in \mathbb{R}^{2}$. Show that the $1$-chain
 			\[
-				\hat{\gamma} = \sum ([\mathbf{a}_{i}, \mathbf{b}_{i}] + [\mathbf{b}_{i}, \mathbf{y}] + [\mathbf{y}, \mathbf{a}_{i}])
+				\hat{\gamma} = \sum_{i = 1}^{n} ([\mathbf{a}_{i}, \mathbf{b}_{i}] + [\mathbf{b}_{i}, \mathbf{y}] + [\mathbf{y}, \mathbf{a}_{i}])
 			\]
 			is always a $1$-cycle.
 		\item Suppose $\gamma$ itself is a $1$-cycle. Show that $w(\gamma, \mathbf{x}) = w(\hat{\gamma}, \mathbf{x})$ for all $\mathbf{x} \in \mathbb{R}^{2} \setminus \lvert \hat{\gamma} \rvert$.
 		\item Deduce that
 			\[
-				\operatorname{area}(\gamma) = \frac{1}{2} \sum_{i = 1}^{n} \lvert \mathbf{y} - \mathbf{a}_{i} \rvert \cdot \lvert \mathbf{y} - \mathbf{b}_{i} \rvert \sin{(\theta([\mathbf{a}_{i}, \mathbf{b}_{i}], \mathbf{y}))}.
+				\operatorname{area}(\gamma) = \frac{1}{2} \sum_{i = 1}^{n}  \lVert \mathbf{y} - \mathbf{a}_{i} \rVert \cdot \lVert \mathbf{y} - \mathbf{b}_{i} \rVert \sin{(\theta([\mathbf{a}_{i}, \mathbf{b}_{i}], \mathbf{y}))}.
 			\]
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item Note that each term $[\mathbf{a}_{i}, \mathbf{b}_{i}] + [\mathbf{b}_{i}, \mathbf{y}] + [\mathbf{y}, \mathbf{a}_{i}]$ has each of $\mathbf{a}_{i}$, $\mathbf{b}_{i}$, and $\mathbf{y}$ as the start of a line segment as many times as it is the end of a line segment. Thus, in total, $\mathbf{y}$ and each $\mathbf{a}_{i}$ and $\mathbf{b}_{i}$ are each the start of a line segment as many times as they are the end of a line segment.
+		\item By definition,
+			\[
+				w(\gamma, \mathbf{x}) = \sum_{i = 1}^{n} \theta([\mathbf{a}_{i}, \mathbf{b}_{i}], \mathbf{x}).
+			\]
+			and
+			\begin{align*}
+				w(\hat{\gamma}, \mathbf{x}) & = \sum_{i = 1}^{n} \theta([\mathbf{a}_{i}, \mathbf{b}_{i}], \mathbf{x}) + \theta([\mathbf{b}_{i}, \mathbf{y}], \mathbf{x}) + \theta([\mathbf{y}, \mathbf{a}_{i}], \mathbf{x}) \\
+						      & = w(\gamma, \mathbf{x}) + \sum_{i = 1}^{n} \theta([\mathbf{b}_{i}, \mathbf{y}], \mathbf{x}) + \theta([\mathbf{y}, \mathbf{a}_{i}], \mathbf{x})
+			\end{align*}
+
+			Notice that since $\gamma$ is a $1$-cycle, the sum on the right is the winding number of the sum of $1$-cycles
+			\[
+				 [\mathbf{a}_{i}, \mathbf{y}] + [\mathbf{y}, \mathbf{b}_{i}] + [\mathbf{b}_{i}, \mathbf{y}] + [\mathbf{y}, \mathbf{a}_{i}].
+			\]
+			Since $\theta([\mathbf{a}, \mathbf{b}], \mathbf{x}) = - \theta([\mathbf{a}, \mathbf{b}], \mathbf{x})$, each of the four edge $1$-cycles above has winding number $0$.  Thus,
+			\[
+				\sum_{i = 1}^{n} \theta([\mathbf{b}_{i}, \mathbf{y}], \mathbf{x}) + \theta([\mathbf{y}, \mathbf{a}_{i}], \mathbf{x}) = 0.
+			\]
+			Substituting this into our expression for $w(\hat{\gamma}, \mathbf{x})$ clearly gives $w(\hat{\gamma}, \mathbf{x}) = w(\gamma, \mathbf{x})$, as desired.
+		\item First we calculate the area of $\hat{\gamma}$. 
+
+			We can write $\hat{\gamma}$ as the sum of all triangles $\Delta_{i} = [\mathbf{a}_{i}, \mathbf{b}_{i}] + [\mathbf{b}_{i}, \mathbf{y}] + [\mathbf{y}, \mathbf{a}_{i}]$. A triangle's area is the half the product of two sides and the sine of the angle subtended between them. Accordingly,
+			\[
+				\operatorname{area}(\Delta_{i}) = \lVert \mathbf{y} - \mathbf{a}_{i} \rVert \lVert \mathbf{y} - \mathbf{b}_{i} \rVert \sin{(\theta, [\mathbf{a}_{i}, \mathbf{b}_{i}], \mathbf{y})}.
+			\]
+			Since area is additive, the area of $\hat{\gamma}$ is the sum of the areas of all of these triangles. That is,
+			\[
+				\operatorname{area}(\hat{\gamma}) = \sum_{i = 1}^{n} \operatorname{area}(\Delta_{i}) = \frac{1}{2} \sum_{i = 1}^{n} \lVert \mathbf{y} - \mathbf{a}_{i} \rVert \cdot \lVert \mathbf{y} - \mathbf{b}_{i} \rVert \sin{(\theta([\mathbf{a}_{i}, \mathbf{b}_{i}], \mathbf{y}))}.
+			\]
+
+			Since $\hat{\gamma}$ has the same winding number as $\gamma$ everywhere, it must have the same total area (equal functions have equal integrals). Hence, $\operatorname{area}(\gamma) = \operatorname{area}(\hat{\gamma})$ and the desired result follows.
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
 \begin{problem}[9.]
 	Calculate $\operatorname{area}(E(n, k))$.
 \end{problem}
+
+\begin{solution}
+	\[
+		\boxed{
+			\operatorname{area}(E(n, k)) = \begin{cases}
+				n \sin{\left ( \frac{2 \pi k}{n} \right )} & k < n/2 \\
+				- n \sin{\left ( \frac{2 \pi k}{n} \right )} & k > n/2 \\
+				0.
+			\end{cases}
+		}
+	\]
+	For $\gamma = E(n, k)$ and $\mathbf{y} = 0$, consider $\hat{\gamma}$. Now $\hat{\gamma}$ can be seen as the sum of $n$ triangles $\Delta_{i}$. Each of $\Delta_{i}$ has two sides of length $1$ with angle $2 \pi k / n$ between them. Thus, each triangle has $\operatorname{area}(\Delta_{i}) = \sin{(2 \pi k / n)}$. 
+
+	For $k < n / 2$ these triangles are all oriented positively and for $k > n / 2$ these triangles are all oriented negatively. For $k = n / 2$ these triangles are all zero area. Adding up the areas of all of these triangles gives the desired formula.
+\end{solution}
 
 \end{document}
