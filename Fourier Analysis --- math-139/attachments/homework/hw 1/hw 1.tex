@@ -20,6 +20,24 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item Conjugation corresponds to reflection in the real axis.
+		\item We can just compute both sides for $z = x + i y$.
+			\begin{align*}
+				z \overline{z} & = (x + i y) (x - i y) \\
+					       & = x^{2} - i^{2} y^{2} + i x y - i x y \\
+					       & = x^{2} + y^{2} \\
+					       & = \lvert z \rvert^{2}.
+			\end{align*}
+		\item If $z$ belongs to the unit circle, $\lvert z \rvert = 1$. Note that (for $z \neq 0$)
+			\[
+				z \frac{\overline{z}}{\lvert z \rvert^{2}} = \frac{\lvert z \rvert^{2}}{\lvert z \rvert^{2}} = 1.
+			\]
+			Since inverses are unique, we have  $1 / z = \overline{z} / \lvert z \rvert^{2}$. For $z$ on the circle where $\lvert z \rvert^{2} = 1$, this is just saying $1 / z = \overline{z}$.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[3.]
@@ -29,6 +47,53 @@
 		\item  Let $\{ a_{n} \}_{n = 1}^{\infty}$ be a sequence of non-negative real numbers such that the series $\sum_{n} a_{n}$ converges. Show that if $\{ z_{n} \}_{n = 1}^{\infty}$ is a sequence of complex numbers satisfying $\lvert z_{n} \rvert \le a_{n}$ for all $n$, then the series $\sum_{n} z_{n}$ converges.
 	\end{enumerate}
 \end{problem}
+
+\begin{enumerate}
+	\item Suppose there is a convergent sequence $\{ z_{n} \}_{n \in \mathbb{N}}$ that converges to both, $z$ and $z'$. We will show that $z = z'$. 
+
+		By definition, for any real $\varepsilon > 0$, there are $N, N' \in \mathbb{N}$ such that for all $n > N$ we have $\lvert z - z_{n} \rvert < \varepsilon / 2$ and for $n > N'$ we have $\lvert z' - z_{n} \rvert < \varepsilon / 2$. Thus, there is some $N'' \in \mathbb{N}$ such thatfor all $n > N''$, we have both $\lvert z - z_{n} \rvert < \varepsilon / 2$ and $\lvert z' - z_{n} \rvert < \varepsilon / 2$.
+
+		By the triangle inequality, this means that for any $\varepsilon > 0$ we have
+		\begin{align*}
+			\lvert z - z' \rvert & \le \lvert z - z_{n} \rvert + \lvert z_{n} - z' \rvert \\
+					     & < \varepsilon/2 + \varepsilon / 2 \\ 
+					     & = \varepsilon.
+		\end{align*}
+		Since $z$ and $z'$ have distance less than any $\varepsilon > 0$, they must have distance $0$, and thus, be the same number --- $z = z'$.
+	\item Suppose that $\{ z_{n} \}_{n \in \mathbb{N}}$ is a sequence of complex numbers converging to $z$. Again, for any real $\varepsilon > 0$, there is some $N$ such that for each pair $n, m > N$ we have $\lvert z_{m} - z \rvert < \varepsilon / 2$ and $\lvert z_{n} - z \rvert < \varepsilon / 2$. By the triangle inequality, we get
+		\begin{align*}
+			\lvert z_{m} - z_{n} \rvert & \le \lvert z_{m} - z \rvert + \lvert z - z_{n} \rvert \\ 
+						    & < \varepsilon / 2 + \varepsilon / 2 \\
+						    & = \varepsilon.
+		\end{align*}
+		That is, for any $\varepsilon > 0$, there is some $N \in \mathbb{N}$ such that for each pair $m, n > N$ we have $\lvert z_{m} - z_{n} \rvert < \epsilon$ --- the sequence $\{ z_{n} \}_{n \in \mathbb{N}}$ is Cauchy.
+
+		Suppose $\{ z_{n} = x_{n} + i y_{n} \}_{n \in \mathbb{N}}$ is a Cauchy sequence of complex numbers. We will show that the sequences of real numbers $\{ x_{n} \}_{n \in \mathbb{N}}$ and $\{ y_{n} \}_{n \in \mathbb{N}}$ are Cauchy, and further, for $x_{n} \to x$ and $y_{n} \to y$, we have $z_{n} \to z = x + i y$.
+
+		Note that for any $\varepsilon > 0$, there is some $N \in \mathbb{N}$ such that for  each pair $m, n > N$ we have $\lvert z_{n} - z_{m} \rvert < \varepsilon$. Equivalently,
+		\[
+			(x_{n} - x_{m})^{2} + (y_{n} - y_{m})^{2} < \varepsilon^{2}.
+		\]
+		Thus, for each $\varepsilon > 0$ there exists some $N \in \mathbb{N}$, such that for each pair $m, n > N$ we have both $\lvert x_{n} - x_{m} \rvert < \varepsilon$ and $\lvert y_{n} - y_{m} \rvert < \varepsilon$. That is, both $\{ x_{n} \}_{n \in \mathbb{N}}$ and $\{ y_{n} \}_{n \in \mathbb{N}}$ are Cauchy sequences.
+
+		Any Cauchy sequence of real numbers converges ($\mathbb{R}$ is a complete metric space). Say $x_{n} \to x$ and $y_{n} \to y$ as $n \to \infty$. Then consider $z = x + i y$. For each real $\varepsilon > 0$, there exists some $N \in \mathbb{N}$ such that for all $n > N$, both $\lvert x_{n} - x \rvert$ and $\lvert y_{n} - y \rvert$ are less than $\varepsilon / \sqrt{2}$. Thus, for all $n > N$ we have
+		\begin{align*}
+			\lvert z_{n} - z \rvert^{2} & = (x_{n} - x)^{2} + (y_{n} - y)^{2} \\
+						    & < \varepsilon^{2}/2 + \varepsilon^{2} /2 \\
+						    & = \varepsilon^{2}.
+		\end{align*}
+		Thus, for all $\varepsilon > 0$ there is some $N \in \mathbb{N}$ such that for all $n > N$, we have $\lvert z_{n} - z \rvert < \varepsilon$ --- $z_{n} \to z$  as $n \to \infty$.
+	\item If the series $\sum_{n} a_{n}$ converges, then it's partial sums are a convergent, and thus, Cauchy sequence. That is, for each $\varepsilon > 0$ there is some $N \in \mathbb{N}$ such that each pair $m, n$ gives $\sum_{k = m + 1}^{n} a_{k} < \varepsilon$.
+
+		Since $\lvert z_{n} \rvert \le a_{n}$, the series $\sum_{n} z_{n}$ has partial sums satisfying
+		\begin{align*}
+			\left \lvert \sum_{k = 1}^{n} z_{k} - \sum_{k = 1}^{m} z_{k} \right \rvert & = \left \lvert \sum_{k = m + 1}^{n} z_{n} \right \rvert \\ 
+												   & \le \sum_{k = m + 1}^{n} \lvert z_{n} \rvert \\
+												   & = \sum_{k = m + 1}^{n} a_{n} \\
+												   & < \varepsilon.
+		\end{align*}
+		That is, the partial sums of the series are Cauchy, and thus, the series converges.
+\end{enumerate}
 
 \pagebreak
 
@@ -81,6 +146,42 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item 
+		\item Consider the $N$th partial sum of the left hand side ---
+			\[
+				 \sum_{n = 1}^{N} \frac{(z_{1} + z_{2})^{n}}{n!} = \sum_{n = 1}^{N} \frac{1}{n!} \sum_{k = 1}^{n} \binom{n}{k} z_{1}^{k} z_{2}^{n - k}
+			\]
+		\item Recall the power series
+			\begin{align*}
+				\cos{y} & = \sum_{n = 1}^{\infty} \frac{(-1)^{n}}{(2n)!} y^{2n} \\
+				\sin{y}	& = \sum_{n = 1}^{\infty} \frac{(-1)^{n}}{(2n + 1)!} y^{2n + 1}.
+			\end{align*}
+			Computing the power series corresponding to $e^{iy}$ and picking out odd and even terms we see
+			\begin{align*}
+				e^{iy} & = \sum_{n = 1}^{\infty} \frac{(iy)^{n}}{n!} \\
+				       & = \left ( 1 + i^{2} \frac{y^{2}}{2!} + i^{4} \frac{y^{4}}{4!} \dots \right ) + \left ( i y + i^{3} \frac{y^{3}}{3!} + \dots \right ) \\
+				       & = \sum_{n = 1}^{\infty} \frac{(-1)^{n}}{(2n)!} y^{2n} + i \sum_{n = 1}^{\infty} \frac{(-1)^{n}}{(2n + 1)!} y^{2n + 1} \\
+				       & = \cos{y} + i \sin{y}.
+			\end{align*}
+		\item By part (b), $e^{x + iy} = e^{x} e^{iy} = e^{x}(\cos{y} + i \sin{y})$. Thus,
+			\[
+				\lvert e^{x + i y} \rvert = \lvert e^{x} \rvert \lvert e^{iy} \rvert.
+			\]
+			Note that
+			\begin{align*}
+				\lvert e^{iy} \rvert^{2} & = \lvert \cos{y} + i \sin{y} \rvert^{2} \\
+							 & = \cos^{2}{y} + \sin^{2}{y} \\
+							 & = 1.
+			\end{align*}
+			Thus, the magnitude is just
+			\[
+				\lvert e^{x + iy} \rvert = \lvert e^{x} \rvert = e^{x}.
+			\]
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[6.]
@@ -94,6 +195,36 @@
 	\]
 	This can be done by differentiating the two functions $g(t) = f(t) \cos{(c t)} - (1 / c) f'(t) \sin{(c t)}$ and $h(t) = f(t) \sin{(c t)} + (1 / c) f'(t) \cos{(ct)}$
 \end{problem}
+
+\begin{solution}
+	We will first show that $g$ and $h$ are just constants and then show that $f(t) = g(t) \cos{(c t)} + h(t) \sin{(c t)}$.
+
+	The first derivative of $g$ is
+	\begin{align*}
+		g'(t) & = f'(t) \cos{(c t)} - c f(t) \sin{(c t)} - (1/c) f''(t) \sin{(c t)} - (c / c) f'(t) \cos{(c t)} \\
+		      & = f'(t) \cos{(c t)} - f'(t) \cos{(c t)} + (c^{2} / c) f(t) \sin{(c t)} - c f(t) \sin{(c t)} \\
+		      & = 0.
+	\end{align*}
+	Thus, $g$ is constant. Note that in the second equality we use the fact that $f''(t) = - c^{2} f(t)$ from the differential equation.
+
+	Similarly, the first derivative of $h$ is
+	\begin{align*}
+		h'(t) & = f'(t) \sin{(c t)} + c f(t) \cos{(c t)} + (1 / c) f''(t) \cos{(c t)} - (c / c) f'(t) \sin{(c t)} \\
+		      & = f'(t) \sin{(c t)} - f'(t) \sin{(c t)} + c f(t) \cos{(c t)} - (c^{2} / c) f(t) \cos{(c t)} \\
+		      & = 0.
+	\end{align*}
+	That is, $h$ is constant. Again, in the second equality we use the fact that $f''(t) = - c^{2} f(t)$.
+
+	If we choose $a = g(0) = g(t)$ and $b = h(0) = h(t)$, we can check that
+	\begin{align*}
+		a \cos{(c t)} + b \sin{(c t)} & = g(t) \cos{(c t)} + h(t) \sin{(c t)} \\
+					      & = f(t) \cos^{2}{(c t)} - (1 / c) f'(t) \sin{(c t)} \cos{(c t)} \\
+					      & + f(t) \sin^{2}{(c t)} + (1 / c) f'(t) \cos{(c t)} \sin{(c t)} \\
+					      & = f(t) (\cos^{2}{(c t)} + \sin^{2}{(c t)}) + f(t) (\cos{(c t)} \sin{(c t)} - \sin{(c t)} \cos{(c t)}) \\
+					      & = f(t)
+	\end{align*}
+	as desired.
+\end{solution} 
 
 \pagebreak
 
