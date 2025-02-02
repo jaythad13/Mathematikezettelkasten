@@ -148,11 +148,26 @@
 
 \begin{solution}
 	\begin{enumerate}
-		\item 
+		\item We know from calculus that for every real $R > 0$,  $e^{R} = \sum_{n \ge 0} R^{n}/n!$. Thus, on every subset $X \subset \mathbb{C}$ with $X$ bounded from the origin by $R$, we have $\lvert z \rvert^{n} / n! < R^{n} / n!$ for all $z \in X$. Since we have uniform bounds on each term, by the Weierstrass $M$-test the series $\sum_{n} z^{n} / n!$ converges uniformly on each bounded $X \subset \mathbb{C}$.
 		\item Consider the $N$th partial sum of the left hand side ---
 			\[
-				 \sum_{n = 1}^{N} \frac{(z_{1} + z_{2})^{n}}{n!} = \sum_{n = 1}^{N} \frac{1}{n!} \sum_{k = 1}^{n} \binom{n}{k} z_{1}^{k} z_{2}^{n - k}
+				 \sum_{n = 0}^{N} \frac{(z_{1} + z_{2})^{n}}{n!} = \sum_{n = 0}^{N} \frac{1}{n!} \sum_{k = 0}^{n} \binom{n}{k} z_{1}^{k} z_{2}^{n - k} = \sum_{n = 0}^{N} \sum_{k = 0}^{n} \frac{z_{1}^{k}}{k!} \frac{z_{2}^{n - k}}{(n - k)!}.
 			\]
+			Thus, the left hand side is just
+			\[
+				\sum_{n = 1}^{\infty} \sum_{k = 1}^{n} \frac{z_{1}^{k}}{k!} \frac{z_{2}^{n - k}}{(n - k)!}.
+			\]
+
+			The $2N$th partial sum of the right hand side is
+			\[
+				\left ( \sum_{n = 0}^{N} \frac{z_{1}^{n}}{n!} \right ) \left ( \sum_{n = 0}^{N} \frac{z_{2}^{n}}{n!} \right ) = \sum_{n_{1} = 0}^{N} \sum_{n_{2} = 0}^{N} \frac{z_{1}^{n_{1}}}{n_{1}!} \frac{z_{2}^{n_{2}}}{n_{2}!} = \sum_{n = 0}^{N} \sum_{k = 0}^{n} \frac{z_{1}^{k}}{k!} \frac{z_{2}^{n - k}}{(n - k)!} + \sum_{n = N + 1}^{2N} \sum_{k, n - k \le N} \frac{z_{1}^{k}}{k!} \frac{z_{2}^{n - k}}{(n - k)!}.
+			\]
+
+			This means that we have
+			\[
+				\sum_{n = 0}^{N} \frac{(z_{1} + z_{2})^{n}}{n!} \le \left ( \sum_{n = 0}^{N} \frac{z_{1}^{n}}{n!} \right ) \left ( \sum_{n = 0}^{N} \frac{z_{2}^{n}}{n!} \right ) \le \sum_{n = 0}^{2N} \frac{(z_{1} + z_{2})^{n}}{n!}
+			\]
+			Taking limits as $N \to \infty$ we get that the two series are equal (choose $N$ large enough that the difference between the $N$th and $2N$th partial sums is less than $\varepsilon$, the same inequality applies to the difference between the partial sums of $e^{z_{1}} e^{z_{2}}$ and $e^{z_{1} + z_{2}}$).
 		\item Recall the power series
 			\begin{align*}
 				\cos{y} & = \sum_{n = 1}^{\infty} \frac{(-1)^{n}}{(2n)!} y^{2n} \\
@@ -179,6 +194,73 @@
 			\[
 				\lvert e^{x + iy} \rvert = \lvert e^{x} \rvert = e^{x}.
 			\]
+		\item Suppose that for $z = x + i y$, we have $e^{z} = 1$. Then $\lvert e^{z} \rvert = e^{x} = 1$. Thus, $x = 0$.
+
+			Further, $e^{iy} = \cos{y} + i \sin{y} = 1$, so $\cos{y} = 1$ and $\sin{y} = 0$. The solutions for real $y$ are exactly $y = 2 \pi k$ for some $k \in \mathbb{Z}$. That is, $z = x + i y = 2 \pi k i$ for some $k \in \mathbb{Z}$.
+		\item Note that every complex number can be written as the product of a number with norm $1$ and its own norm --- just write $z \in \mathbb{C}$ as $\lvert z \rvert (z / \lvert z \rvert)$. 
+
+			Each complex number with norm $1$ can be written as $\cos{\theta} + i \sin{\theta}$ for some real $\theta$, unique up to a multiple of $2 \pi$. In particular, for $z / \lvert z \rvert = (x + i y) / \lvert z \rvert$ we have $\cos{\theta} = x/\lvert z \rvert$ and $\sin{\theta} = y / \lvert z \rvert$. Thus, $\tan{\theta} = y / x$ and in the appropriate domain (where $x > 0$), we have $\theta = \arctan{(y / x)}$. 
+
+			Thus, writing $z / \lvert z \rvert = \cos{\theta} + i \sin{\theta}$ for some $\theta \in \mathbb{R} / 2 \pi \mathbb{Z}$ and $r = \lvert z \rvert$ we have $z = r e^{i \theta}$ with the choice of real representative of $\theta$ unique up to a multiple of $2 \pi$.
+		\item For $\theta \in \mathbb{R}$, to multiply by some $e^{i \theta}$ is to rotate by an angle of $\theta$ counterclockwise. In particular, to multiply by $i$ is to rotate $\pi / 2$ counterclockwise.
+		\item Recall that $\sin$ is odd and $\cos$ is even. Thus,
+			\begin{align*}
+				\frac{e^{i\theta} + e^{-i \theta}}{2} & = \frac{(\cos{\theta} + i \sin{\theta}) + (\cos{(-\theta)} + i \sin{(-\theta)})}{2} \\
+								      & = \frac{2 \cos{\theta} + i(\sin{\theta} - \sin{\theta})}{2} \\
+								      & = \cos{\theta}.
+			\end{align*}
+
+			Similarly,
+			\begin{align*}
+				\frac{e^{i\theta} - e^{-i \theta}}{2 i} & = \frac{(\cos{\theta} + i \sin{\theta}) - (\cos{(-\theta)} + i \sin{(-\theta)})}{2 i} \\
+								      & = \frac{\cos{\theta} - \cos{\theta} + i(\sin{\theta} - (- \sin{\theta}))}{2 i} \\
+								      & = \frac{2 i \sin{\theta}}{2 i} \\
+								      & = \sin{\theta}.
+			\end{align*}
+		\item We will prove the identities
+			\begin{align*}
+				\cos{(\theta + \vartheta)} & = \cos{\theta} \cos{\vartheta} - \sin{\theta}  \sin{\vartheta} \\
+				\sin{(\theta + \vartheta)} & = \sin{\theta} \cos{\vartheta} + \cos{\theta} \sin{\vartheta}
+			\end{align*}
+			for all $\theta, \vartheta \in \mathbb{R}$ by comparing expressions for both sides of the equations in terms of exponentials.
+
+			First consider
+			\[
+				\cos{(\theta + \vartheta)} = \frac{e^{i(\theta + \vartheta)} + e^{-i(\theta + \vartheta)}}{2} = \frac{e^{i \theta} e^{i \vartheta} + e^{-i \theta} e^{-i \vartheta}}{2}
+			\]
+			and
+			\begin{align*}
+				\cos{\theta} \cos{\vartheta} - \sin{\theta} \sin{\vartheta} & = \frac{(e^{i \theta} + e^{-i \theta}) (e^{i \vartheta} + e^{-i \vartheta})}{4} - \frac{(e^{i \theta} - e^{-i \theta}) (e^{i \vartheta} - e^{-i \vartheta})}{4 i^{2}} \\
+											    & = \frac{2 e^{i \theta} e^{i \vartheta} + 2 e^{-i \theta} e^{-i \vartheta} + (e^{i \theta} e^{-i \vartheta} - e^{i \theta} e^{-i \vartheta}) + (e^{-i \theta} e^{i \vartheta} - e^{-i \theta} e^{i \vartheta})}{4} \\
+											    & = \frac{e^{i \theta} e^{i \vartheta} + e^{-i \theta} e^{-i \vartheta}}{2}.
+			\end{align*}
+			That is, both sides are equal for the first identity --- the identity holds.
+
+			Similarly
+			\[
+				\sin{(\theta + \vartheta)} = \frac{e^{i(\theta + \vartheta)} - e^{-i(\theta + \vartheta)}}{2i} = \frac{e^{i \theta} e^{i \vartheta} - e^{-i \theta} e^{-i \vartheta}}{2i}
+			\]
+			and
+			\begin{align*}
+				\sin{\theta} \cos{\vartheta} + \cos{\theta} \sin{\vartheta} & = \frac{(e^{i \theta} - e^{-i \theta}) (e^{i \vartheta} + e^{-i \vartheta})}{4i} + \frac{(e^{i \theta} + e^{-i \theta}) (e^{i \vartheta} - e^{-i \vartheta})}{4i} \\
+											    & = \frac{2 e^{i \theta} e^{i \vartheta} - 2 e^{-i \theta} e^{-i \vartheta} + (e^{i \theta} e^{-i \vartheta} - e^{i \theta} e^{-i \vartheta}) + (e^{-i \theta} e^{i \vartheta} - e^{-i \theta} e^{i \vartheta})}{4i} \\
+											    & = \frac{e^{i \theta} e^{i \vartheta} - e^{-i \theta} e^{-i \vartheta}}{2i}.
+			\end{align*}
+			Both sides of the second identity are equal --- the identity holds.
+
+			Now we can prove the second pair of identities using the fact that $\cos{(-\vartheta)} = \cos{\vartheta}$ and $\sin{(-\vartheta)} = - \sin{\vartheta}$. First,
+			\begin{align*}
+				\cos{(\theta - \vartheta)} - \cos{(\theta + \vartheta)} & = \cos{\theta} \cos{(-\vartheta)} - \sin{\theta} \sin{(- \vartheta)} - (\cos{\theta} \cos{\vartheta} - \sin{\theta} \sin{\vartheta}) \\
+											& = \cos{\theta} \cos{\vartheta} + \sin{\theta}  \sin{\vartheta} - \cos{\theta} \cos{\vartheta} + \sin{\theta}  \sin{\vartheta} \\
+											& = 2 \sin{\theta} \sin{\vartheta}.
+			\end{align*}
+			Second,
+			\begin{align*}
+				\sin{(\theta + \vartheta)} + \sin{(\theta - \vartheta)} & = \sin{\theta} \cos{\vartheta} + \cos{\theta} \sin{\vartheta} + \sin{\theta} \cos{(-\vartheta)} + \cos{\theta} \sin{(- \vartheta)} \\
+											& = \sin{\theta} \cos{\vartheta} + \cos{\theta} \sin{\vartheta} + \sin{\theta} \cos{\vartheta} - \cos{\theta}  \sin{\vartheta} \\
+											& = 2 \sin{\theta} \cos{\vartheta}.
+			\end{align*}
+
 	\end{enumerate}
 \end{solution}
 
@@ -241,5 +323,17 @@
 	\]
 	as $h \to 0$.
 \end{problem}
+
+\begin{solution}
+	Taylor's theorem from analysis says that if $F$ is twice continuously differentiable on $[x, x + h]$, there is some $x_{0}$ between $x$ and $x + h$ such that
+	\[
+		F(x + h) = F(x) + h F'(x) + \frac{h^{2}}{2} F''(x_{0}).
+	\]
+	We can rewrite this as
+	\[
+		F(x + h) = F(x)	+ h F'(x) + \frac{h^{2}}{2} F''(x) + h^{2} \frac{F''(x_{0}) - F''(x)}{2}
+	\]
+	Since $x_{0} \in [x, x + h]$ and $F''$ is continuous, as $h \to 0$ and thus, $x_{0} \to x$, $F''(x_{0}) \to F''(x)$, and thus, the function $\varphi(h) = (F''(x_{0}) - F''(x)) / 2$ goes to zero.
+\end{solution}
 
 \end{document}
