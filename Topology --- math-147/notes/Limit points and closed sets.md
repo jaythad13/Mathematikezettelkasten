@@ -96,4 +96,4 @@ Any $A \subseteq X$ is closed if and only if $X \setminus A$ is open.
 
 First suppose $A$ is closed. Since $A$ contains all its limit points, every point $x \in X \setminus A$ is not a limit point of $A$, and thus has an open neighbourhood $U_{x} \subseteq X \setminus A$ (a neighbourhood with no intersection with $A$). [[Topology --- math-147/notes/Topologies#_proposition, definition _ checking openness by neighbourhood, neighbourhood|Thus,]] $X \setminus A$ is open.
 
-Suppose $X \setminus A$ is open. Then every point $x \in X \setminus A$ has an open neighbourhood $U_{x} \subseteq X \setminus A$, and thus, has no intersection with $A$. That is, $x$ is not a limit point of $A$. Thus, $A$ contains both of its limit points.
+Suppose $X \setminus A$ is open. Then every point $x \in X \setminus A$ has an open neighbourhood $U_{x} \subseteq X \setminus A$, and thus, has no intersection with $A$. That is, $x$ is not a limit point of $A$. Thus, $A$ contains all its limit points.
