@@ -30,6 +30,8 @@ $$
 \end{cases}
 $$
 
+### The Poisson kernel
+
 ##### _definition:_ the Poisson kernel
 
 For $r \in [0, 1)$, Poisson kernel is the function $P_{r} [-\pi, \pi] \to \mathbb{C}$
