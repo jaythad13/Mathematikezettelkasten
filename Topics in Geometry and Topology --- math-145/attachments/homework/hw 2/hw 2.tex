@@ -1,0 +1,119 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+\setlist[enumerate, 1]{label = (\roman*)}
+
+\name{Jayden Thadani}
+\class{MATH 145 --- Topics in Geometry and Topology}
+\assignment{Homework 2}
+\duedate{5th February 2025}
+
+\begin{document}
+
+\begin{problem}[10.]
+	Recall from class that $f, g \in \operatorname{loops}(D)$ are homotopic, written $f \simeq g$, if there exists a continuous function (called a \emph{homotopy})
+	\[
+		H : [0, 1] \times [0, 1] \to D
+	\]
+	such that
+	\begin{align*}
+		H(0,t) & = f(t) & \text{for all $t \in [0,1]$}, \\
+		H(1,t) & = g(t) & \text{for all $t \in [0,1]$}, \\
+		H(s,0) & = H(s,1) & \text{for all $s \in [0,1]$}.
+	\end{align*}
+
+	Show that $\simeq$ is an equivalence relation.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[11.]
+	Let $p(z) = z^{d} + \sum_{k = 0}^{d - 1} a_{k} z^{k}$ be a monic complex polynomial. Let $R$ be such that
+	\[
+		R > \lvert a_0 \rvert + \dots + \lvert a_{d-1} \rvert \quad \text{and} \quad R \ge 1.
+	\]
+
+	Show that
+	\[
+		\lvert z^{d} \rvert > \left \lvert \sum_{k = 0}^{d - 1} a_{k} z^{k} \right \rvert
+	\]
+	for any complex number of magnitude $\lvert z \rvert = R$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[12.]
+	\begin{enumerate}
+		\item Let $f, g \in \operatorname{loops}(\mathbb{C})$ such that $\lvert f(t) \rvert > \lvert g(t) \rvert$ for all $t \in [0, 1]$. Show that $f$ and $f + g$ both belong to $\operatorname{loops}(\mathbb{C} \setminus \{ 0 \})$, and that $f \simeq f + g$ in $\mathbb{C} \setminus \{ 0 \}$.
+		\item Give an example of $f, g \in \operatorname{loops}(\mathbb{C})$ such that $f$ and $f + g$ both belong to $\operatorname{loops}(\mathbb{C} \setminus \{ 0 \})$ but $w(f, 0) \neq w(f + g, 0)$. Identify a value of $t$ for which $\lvert f(t) \rvert \le \lvert g(t) \rvert$.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[13. (Proof of the fundamental theorem of algebra)]
+	Let $p(z) = z^{d} + \sum_{k = 0}^{d - 1} a_{k} z^{k}$ be a complex polynomial. Let $R$ be a real number such that:
+	\[
+		R > \lvert a_{0} \rvert + \dots + \lvert a_{d - 1} \rvert \quad \text{and} \quad R \ge 1
+	\]
+
+	Define five loops in $\mathbb{C}$ as follows:
+	\begin{align*}
+		f(t) & = e^{2\pi i d t} \\
+		g(t) & = R^d e^{2\pi i d t} \\
+		h(t) & = p(Re^{2\pi i t}) \\
+		k(t) & = a_0 \\
+		\ell(t) & = 1
+	\end{align*}
+
+	Then $f, g, \ell$ self-evidently are loops in $\mathbb{C} \setminus \{ 0 \}$ and problem 12 implies that $h$ is too. Finally, if we assume that $p$  has no roots then $a_{0} = 0$ and so the same is true for $k$. The next step is to show that these loops are homotopic in $\mathbb{C} \setminus \{ 0 \}$.
+	\begin{enumerate}
+		\item Show that $f \simeq g$.
+		\item Show that $g \simeq h$.
+		\item Assume that $p$ has no roots. Show that $h \simeq k$.
+		\item Assume that $p$ has no roots. Show that $k \simeq \ell$.
+	\end{enumerate}
+
+	These four results lead to a contradiction if we assume that $p$ has no roots, because then the continuous winding theorem implies:
+	\[
+		d = w(f, 0) = w(g, 0) = w(h, 0) = w(k, 0) = w(\ell, 0) = 0.
+	\]
+	It follows that $p$ must have at least one root.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[14.]
+	Consider the complex polynomial
+	\[
+		p(z) = 9 + 3z + 22z^2 - 17z^3 + 3z^4.
+	\]
+
+	We can deduce from 13 (ii) that
+	\[
+		w(p(Re^{2\pi i t}), 0) = 4
+	\]
+	when $R$ is large enough. Thus, $p$ applied to a large circle has a winding number of $4$.
+
+	Now we will consider the winding number of $p$ applied to a small circle around a root.
+
+	\begin{enumerate}
+		\item Show that $p(z)$ has a double root at $z = 3$, and determine all four roots of $p$.
+		\item What are the roots of the polynomial $q(z) = p(3 + z)$?
+		\item Write out $q(z) = p(3+z)$ in the form $a_2 z^2 + a_3 z^3 + a_4 z^4$.
+		\item Let $r > 0$ be chosen sufficiently small that
+			\[
+				(\lvert a_{3} \rvert + \lvert a_{4} \rvert) \, r < |a_2| \quad \text{and} \quad r \leq 1.
+			\]
+			Show that
+			\[
+				w(p(3 + re^{2\pi i t}), 0) = 2.
+			\]
+
+			Write down a specific such value of $r$.
+		\item Conjecture a lemma that generalizes (iv) to an arbitrary polynomial and a small loop around an arbitrary point in the plane. You are not required to prove the lemma.
+		\item Draw the four roots of~$p$ in the complex plane, and draw two loops.
+
+	\end{enumerate}
+\end{problem}
+
+\end{document}
