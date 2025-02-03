@@ -1,0 +1,123 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 139 --- Fourier Analysis}
+\assignment{Homework \#2}
+\duedate{6th February 2025}
+
+\begin{document}
+
+\begin{problem}[10.]
+	Show that the expression of the Laplacian
+	\[
+		\Delta = \frac{\partial^{2}}{\partial x^{2}} + \frac{\partial^{2}}{\partial y^{2}}
+	\]
+	is given in polar coordinates by the formula
+	\[
+		\Delta = \frac{\partial^{2}}{\partial r^{2}} + \frac{1}{r} \frac{\partial }{\partial r} + \frac{1}{r^{2}} \frac{\partial^{2}}{\partial \theta^{2}}
+	\]
+
+	Also, prove that
+	\[
+		\left \lvert \frac{\partial u}{\partial x} \right \rvert^{2} + \left \lvert \frac{\partial u}{\partial y} \right \rvert^{2} = \left \lvert \frac{\partial u}{\partial r} \right \rvert^{2} + \frac{1}{r^{2}} \left \lvert \frac{\partial u}{\partial \theta} \right \rvert^{2}
+	\]
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Problem 1.]
+	Consider the Dirichlet problem in a rectangle.
+
+	More precisely, we look for a solution of the steady-state heat equation $\Delta u = 0$ in the rectangle $R = \{ (x, y) \mid 0 \le x \le \pi, 0 \le y \le 1 \}$ that vanishes on the vertical sides of $R$, and so that
+	\[
+		u(x, 0) = f_{0}(x) \quad \text{and} \quad u(x, 1) = f_{1}(x),
+	\]
+	where $f_{0}$ and $f_{1}$ are initial data which fix the temperature distribution on the horizontal sides of the rectangle.
+
+	Use separation of variables to show that if $f_{0}$ and $f_{1}$ have Fourier expansions
+	\[
+		f_{0}(x) = \sum_{k = 1}^{\infty} A_{k} \sin{(k x)} \quad \text{and} \quad f_{1}(x) = \sum_{k = 1}^{\infty} B_{k} \sin{(k x)},
+	\]
+	then
+	\[
+		u(x, y) = \sum_{k = 1}^{\infty} \left ( \frac{\sinh{(k(1 - y))}}{\sinh{k}} A_{k} + \frac{\sinh{(k a)}}{\sinh{k}} \right ) \sin{(k x)}.
+	\]
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[2.]
+	In this exercise we show how the symmetries of a function imply certain properties of its Fourier coefficients. Let $f$ be a $2 \pi$-periodic Riemann integrable function defined on $\mathbb{R}$.
+	\begin{enumerate}
+		\item Show that the Fourier series of the function $f$ can be written as
+			\[
+				f(\theta) \sim \hat{f}(0) + \sum_{n \ge 1} (\hat{f}(n) + \hat{f}(-n)) \cos{(n \theta)} + i (\hat{f}(n) - \hat{f}(-n)) \sin{(n \theta)}.
+			\]
+		\item Prove that if $f$ is even, then $\hat{f}(n) = \hat{f}(-n)$, and we get a cosine series.
+		\item Prove that if $f$ is odd, then $\hat{f}(n) = -\hat{f}(-n)$, and we get a sine series.
+		\item Suppose that $f(\theta + \pi) = f(\theta)$ for all $\theta \in \mathbb{R}$. Show that $\hat{f}(n) = 0$ for all odd $n$.
+		\item Show that $f$ is real-valued if and only if $\overline{\hat{f}(n)} = \hat{f}(-n)$ for all $n$.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[3.]
+	We return to the problem of the plucked string discussed in Chapter 1. Show that the initial condition $f$ is \emph{equal} to its Fourier sine series
+	\[
+		f(x) = \sum_{m = 1}^{\infty} A_{m} \sin{(m x)} \quad \text{with} \quad A_{m} = \frac{2h}{m^{2}} \frac{\sin{(m p)}}{p(\pi - p)}.
+	\]
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[4.]
+	Consider the $2 \pi$-periodic odd function defined on $[0, \pi]$ by $f(\theta) + \theta(\pi - \theta)$.
+	\begin{enumerate}
+		\item Draw the graph of $f$.
+		\item Compute the Fourier coefficients of $f$, and show that
+			\[
+				f(\theta) = \frac{8}{\pi} \sum_{k \text{ odd} \ge 1} \frac{\sin{(k \theta)}}{k^{3}}.
+			\]	
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[7.]
+	Suppose $\{ a_{n} \}_{n \in \mathbb{N}}$ and $\{ b_{n} \}_{n \in \mathbb{N}}$ are two finite sequences of complex numbers. Let $B_{k} = \sum_{n = 1}^{k} b_{n}$ denote the partial sums of the series $\sum b_{n}$ with the convention $B_{0} = 0$.
+	\begin{enumerate}
+		\item Prove the \emph{summation by parts} formula
+			\[
+				\sum_{n = M}^{N} a_{n} b_{n} = a_{N} B_{N} - a_{M} B_{M - 1} - \sum_{n = M}^{N - 1} (a_{n + 1} - a_{n}) B_{n}.
+			\]
+		\item Deduce from this formula Dirichlet's test for convergence of a series: if the partial sums of the series $\sum b_{n}$ are bounded, and $\{ a_{n} \}$ is a sequence of real numbers that decreases monotonically to $0$, then $\sum a_{n} b_{n}$ converges.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[8.]
+	Verify that $\frac{1}{2i} \sum_{n \neq 0} \frac{e^{i n x}}{n}$ is the Fourier series of the $2 \pi$-periodic \emph{sawtooth} function, defined by $f(0) = 0$, and
+	\[
+		f(x) = \begin{cases}
+			- \frac{\pi}{2} - \frac{x}{2} & \text{if } -\pi < x < 0, \\
+			\frac{\pi}{2} - \frac{x}{2} & \text{if } 0 < x < \pi.
+		\end{cases}
+	\]
+
+	Note that this function is not continuous. Show that nevertheless, the series converges for every $x$. In particular, the value of the series at the origin, namely $0$, is the average of the values of $f(x)$ as $x$ approaches the origin from the left and right.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[10.]
+	Suppose $f$ is a periodic function of period $2 \pi$ which belongs to the class $\mathcal{C}^{k}$. Show that
+	\[
+		\hat{f}(n) = O(1/\lvert n \rvert^{k}) \quad \text{as } \lvert n \rvert \to \infty.
+	\]
+	This notation means that there exists a constant $C$ such that $\lvert \hat{f}(n) \rvert \le C / \lvert n \rvert^{k}$. We could also write this as $\lvert n \rvert^{k} \hat{f}(n) = O(1)$, where $O(1)$ means bounded.
+\end{problem}
+
+\end{document}
