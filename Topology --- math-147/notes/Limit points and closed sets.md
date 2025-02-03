@@ -2,6 +2,7 @@
 tags:
 - math-147/2
 - math-147/3
+- math-147/4
 - top
 ---
 
@@ -88,7 +89,7 @@ In the finite complement topology, the finite sets are exactly the closed sets �
 
 This seems to hint that the closed sets are just the complement of open sets. [[Mathematical Analysis I --- math-131/notes/Open and closed sets#_theorem _ closed sets are complements of open sets|Just as for metric spaces]] this is true.
 
-##### _proposition:_ closed sets are complements of open sets
+##### _theorem:_ closed sets are complements of open sets
 
 Any $A \subseteq X$ is closed if and only if $X \setminus A$ is open.
 
@@ -97,3 +98,53 @@ Any $A \subseteq X$ is closed if and only if $X \setminus A$ is open.
 First suppose $A$ is closed. Since $A$ contains all its limit points, every point $x \in X \setminus A$ is not a limit point of $A$, and thus has an open neighbourhood $U_{x} \subseteq X \setminus A$ (a neighbourhood with no intersection with $A$). [[Topology --- math-147/notes/Topologies#_proposition, definition _ checking openness by neighbourhood, neighbourhood|Thus,]] $X \setminus A$ is open.
 
 Suppose $X \setminus A$ is open. Then every point $x \in X \setminus A$ has an open neighbourhood $U_{x} \subseteq X \setminus A$, and thus, has no intersection with $A$. That is, $x$ is not a limit point of $A$. Thus, $A$ contains all its limit points.
+
+Closed and open sets preserve our intuition from [[Mathematical Analysis I --- math-131/notes/Open and closed sets|metric spaces]]. For one, we can remove an open set from a closed set to get a closed set, and vice versa.
+
+##### _proposition:_ open set minus closed set and closed set minus open set
+
+If $A \subseteq X$ is closed and $U \subseteq X$ is open, then $U \setminus A$ is open and $A \setminus U$ is open.
+
+###### _proof:_
+
+$U \setminus A = U \cap (X \setminus A)$ is the intersection of two open sets, and thus, is open by definition.
+
+Similarly, $X \setminus (A \setminus U) = U \cup (X \setminus A)$ is the union of two open sets and thus, is open. Now, by our previous propositions, $A \setminus U$ must be closed.
+
+By using [[Mathematical Analysis I --- math-131/notes/Open and closed sets#_theorem _ De Morgan's law|De Morgan's law]], we can also get the same result about closed sets as in metric spaces. In fact, this is an alternate definition of a topological space.
+
+##### _theorem:_ finite unions and arbitrary intersections of closed sets are closed
+
+Suppose $(X, \mathcal{T})$ is a topological space. Then
+1) $\emptyset$ is closed
+2) $X$ is closed
+3) unions of finitely many closed sets are closed
+4) arbitrary intersections of closed sets $A_{\alpha}$, $\bigcap_{\alpha} A_{\alpha}$ are also closed.
+
+###### _proof:_
+
+Since $\emptyset, X$ are open, their complements $X, \emptyset$ respectively are closed.
+
+Recall De Morgan's law —
+![[Mathematical Analysis I --- math-131/notes/Open and closed sets#_theorem _ De Morgan's law|Open and closed sets]]
+
+Since finite unions of closed sets $A_{i}$ are just finite unions of complements of open sets $U_{i} = X \setminus A_{i}$, their complement is just the finite intersection of open sets $X \setminus \bigcup_{i = 1}^n A_{i} = \bigcap_{i = 1}^n U_{i}$, and is open. Thus, the finite union is closed
+
+Similarly, since intersections of closed sets $A_{\alpha}$ are just intersections of complements $U_{\alpha} = X \setminus A_{\alpha}$, their complement is just the union of open sets $X \setminus \bigcap A_{\alpha} = \bigcup_{\alpha} U_{\alpha}$, and is open. Thus, the intersection is closed.
+
+##### _example:_ a non-closed (countably) infinite union of closed sets
+
+We can use the "dual" example to the following.
+![[Mathematical Analysis I --- math-131/notes/Open and closed sets#_example _ a non-open (countably) infinite intersection of open sets|Open and closed sets]]
+
+That is, the union of all closed sets $A_{n} = (-\infty, -1 / n] \cup [1 / n, \infty)$ is $\mathbb{R} \setminus \{ 0 \}$ (since every real number other than $0$ has magnitude greater than sum $1 / n$). However, this set is not closed since $0$ is a limit point and not contained in it.
+
+##### _example:_ closed and open sets
+
+Consider the topological space $\mathbb{R} \sqcup \mathbb{R}$ — the disjoint union of two copies of the real line (with the Euclidean topology). The open sets here are precisely the disjoint unions of open sets in each copy of $\mathbb{R}$. We will call the two copies $\mathbb{R}_{1}$ and $\mathbb{R}_{2}$.
+
+Each normal open set on $\mathbb{R}$ (on either copy of the line) is an open set and similarly for closed sets. For example $(0, 1) \subseteq \mathbb{R}_{1}$ is open, but not closed, and $[0, 1] \subseteq \mathbb{R}_{2}$ is closed, but not open.
+
+However, in addition to the empty set and the whole space, we have two new sets that are both closed and open —$\mathbb{R}_{1}$ and $\mathbb{R}_{2}$ both.
+
+Finally, $(0, 1) \sqcup [0, 1]$ is neither open nor closed — no open neighbourhood of $1 \in \mathbb{R}_{2}$ is contained in the set, and $0 \in \mathbb{R}_{1}$ is a limit point of the set, but not contained in it.
