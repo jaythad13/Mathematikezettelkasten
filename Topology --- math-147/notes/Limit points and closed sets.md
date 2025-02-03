@@ -111,7 +111,7 @@ $U \setminus A = U \cap (X \setminus A)$ is the intersection of two open sets, a
 
 Similarly, $X \setminus (A \setminus U) = U \cup (X \setminus A)$ is the union of two open sets and thus, is open. Now, by our previous propositions, $A \setminus U$ must be closed.
 
-By using [[Mathematical Analysis I --- math-131/notes/Open and closed sets#_theorem _ De Morgan's law|De Morgan's law]], we can also get the same result about closed sets as in metric spaces. In fact, this is an alternate definition of a topological space.
+By using [[Mathematical Analysis I --- math-131/notes/Open and closed sets#_theorem _ De Morgan's law|De Morgan's law]], we can also get the [[Mathematical Analysis I --- math-131/notes/Open and closed sets#_corollary _ finite unions and (potentially infinite) intersections of closed sets are closed|same result about unions and intersections of closed sets]] as in metric spaces. In fact, this is an alternate definition of a topological space.
 
 ##### _theorem:_ finite unions and arbitrary intersections of closed sets are closed
 
@@ -148,3 +148,66 @@ Each normal open set on $\mathbb{R}$ (on either copy of the line) is an open set
 However, in addition to the empty set and the whole space, we have two new sets that are both closed and open —$\mathbb{R}_{1}$ and $\mathbb{R}_{2}$ both.
 
 Finally, $(0, 1) \sqcup [0, 1]$ is neither open nor closed — no open neighbourhood of $1 \in \mathbb{R}_{2}$ is contained in the set, and $0 \in \mathbb{R}_{1}$ is a limit point of the set, but not contained in it.
+
+##### _example:_ closed sets in various topological spaces
+
+In $\mathbb{Z}$ with the [[Topology --- math-147/notes/Topologies#_example _ the finite and countable complement topologies|finite complement topology]], $\{ 0, 1, 2 \}$ is closed, the prime numbers are neither closed nor open, and $\{ n \mid \lvert n \rvert \ge 10 \}$ is open.
+
+In $\mathbb{R}$ with the Euclidean topology, $(0, 1)$ is open, $(0, 1]$ is neither open nor closed, $[0, 1]$ is closed, $\{ 0, 1 \}$ is closed, $\{ 1 /n \mid n \in \mathbb{N} \}$ is neith er open nor closed.
+
+In $\mathbb{R}^{2}$ with the Euclidean topology, the circle $S^1$ is closed, the complement of the closed disc $\mathbb{R}^{2} \setminus  \overline{\mathbb{D}}$ is open, and the complement of the open disc $\mathbb{R}^{2} \setminus \mathbb{D}$ is closed. (Here $\mathbb{D} = \{ (x, y) \mid \lVert (x, y) \rVert < 1 \}$ and $\overline{\mathbb{D}} = \{ (x, y) \mid \lVert (x, y) \rVert \le 1 \}$).
+
+##### _proposition:_ the closure is the smallest closed set
+
+For any $A \subseteq X$, the closure of $A$ is the intersection of all closed sets containing $A$ —
+$$
+\overline{A} = \bigcap_{A \subseteq B, B \text{ closed}} B.
+$$
+
+###### _proof:_
+
+We will show double inclusion. If $x \in \overline{A}$, then $x$ is in $A$ or a limit point of $A$. Thus, $x$ is either contained in each $B \supseteq A$ or is a limit point of it (respectively). Thus, $x$ is contained in any such closed $B$. That is, $\overline{A}$ is a subset of the intersection of all closed sets containing $A$.
+
+If $a \in \bigcap_{A \subseteq B, B \text{ closed}} B$, then since $\overline{A}$ is closed and contains $A$, $x \in \overline{A}$. That is, the intersection of all closed sets containing $A$ is a subset of $\overline{A}$. 
+
+By double inclusion, we have the desired equality.
+
+Using this result, we can show that closure plays nicely with unions and subsets.
+
+##### _proposition:_ set-theoretic properties of closure
+
+For any $A, B \subseteq X$, $A \subseteq B$ implies $\overline{A} \subseteq \overline{B}$ and $\overline{A \cup B} = \overline{A} \cup \overline{B}$.
+
+###### _proof:_
+
+Every closed set containing $B$ must contain $A$. By the previous result the closure of $A$ must be contained in every closed set containing $A$, and thus, in every closed set containing $B$. Since $\overline{B}$ is a closed set containing $B$, we have $\overline{A} \subseteq \overline{B}$.
+
+Every closed set containing both $A$ and $B$, contains all the limit points of $A$ and $B$, and thus, contains $\overline{A}$ and $\overline{B}$. That is, $A \subseteq A \cup B$ and $B \subseteq A \cup B$ gives us $\overline{A} \subseteq  \overline{A \cup B}$ and $\overline{B} \subseteq \overline{A \cup B}$. Thus, $\overline{A} \cup \overline{B} \subseteq \overline{A \cup B}$. Since $\overline{A} \cup \overline{B}$ is closed (as the finite union of closed sets) and contains $A$ and $B$, by the previous result, $\overline{A \cup B} \subseteq \overline{A} \cup \overline{B}$. By double inclusion, we have the desired equality.
+
+Obviously the theorem about pairwise unions can be extended by induction to finite unions. However, it does not extend to arbitrary unions.
+
+##### _example:_ closure of an infinite union of sets
+
+Recall our example of infinite unions of closed sets not being open. ![[#_example _ a non-closed (countably) infinite union of closed sets|Open and closed sets]]
+The union of the open sets $U_{n} = (-\infty, -1 / n) \cup (1/n, \infty)$ is just $\mathbb{R} \setminus \{ 0 \}$ which has closure $\mathbb{R}$. However, each of these open sets has closure $\overline{U_{n}} = A_{n}$ which have union $\mathbb{R} \setminus \{ 0 \}$.
+
+##### _example:_ two non-obvious closures
+
+The closure of the topologist's sine curve 
+$$
+S = \{ (x, \sin(1 / x)) \mid x \in (0, 1) \}
+$$
+involves adding all the points $(0, y)$ for $y \in [-1, 1]$ as well as $\sin(1 / 1)$. That is,
+$$
+\overline{S} = S \cup \{ (1, \sin(1)) \} \cup \{ (0, y) \mid y \in [-1, 1] \}
+$$
+
+The closure of the topologist's comb 
+$$
+C = \{ (x, 0) \mid x \in [0, 1] \} \cup \bigcup_{n = 1}^\infty \{ (1 / n, y) \mid y \in [0, 1] \}
+$$
+is similar. It involves adding the line segment from $0$ to $1$ on the $y$-axis —
+$$
+\overline{C} = C \cup \{ (0, y) \in \mathbb{R}^{2} \mid y \in [0, 1] \}.
+$$
+the comb and flea space is $C$ with a flea at the point $(0, 1)$.
