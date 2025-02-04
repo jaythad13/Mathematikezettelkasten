@@ -2,6 +2,7 @@
 tags:
 - math-135/3
 - anal
+- complex
 ---
 
 Power series are central to complex analysis because it turns out that every holomorphic function has one! Essentially, any holomorphic function is just an infinite polynomial.

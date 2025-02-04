@@ -3,6 +3,7 @@ tags:
 - math-135/17
 - math-135/18
 - anal
+- complex
 ---
 
 If we wanted to create a function with zeroes exactly on a finite set, we consider $f(z) = (z - a_{1}) \dots (z - a_{n})$. If we want $f$ to have zeroes exactly on an infinite sequence, even with a [[Complex Analysis --- math-135/notes/Infinite products#_definition _ infinite products|sensible notion of infinite products]] we can't just write $f(z) = \prod (z - a_{n})$ over all $n$ since this might not converge. The Weierstrass elementary functions $E_{p}$ are functions that we can just multiply together like that.

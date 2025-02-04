@@ -3,6 +3,7 @@ tags:
 - math-135/12
 - math-135/13
 - anal
+- complex
 ---
 
 Recall that [[Complex Analysis --- math-135/notes/What is complex analysis?#Polar representation|we defined]] $e^z = e^x e^{iy}$ for a complex number $z = x + iy$ where $e^{iy} = \cos{y} + i \sin{y}$. Thus, we noted that we could write any $w \in \mathbb{C}$ as $R e^{i \theta}$ for some $R, \theta \in \mathbb{R}$ (in fact there are infinitely many such $\theta \in \mathbb{R}$). We define

@@ -2,6 +2,7 @@
 tags:
 - a-lie/3
 - alg
+- lie
 - diff-geo
 - self-study
 ---

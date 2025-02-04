@@ -3,6 +3,7 @@ tags:
 - math-139/4
 - math-139/5
 - anal
+- fourier
 ---
 
 Convolutions allow one to compute something like a weighted average of a function against another.

@@ -3,6 +3,7 @@ tags:
 - math-135/9
 - math-135/12
 - anal
+- complex
 ---
 
 Homotopy allows us to talk about when two curves are the basically the same in all the ways that we care about.

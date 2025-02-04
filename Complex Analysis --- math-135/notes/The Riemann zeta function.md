@@ -3,6 +3,7 @@ tags:
 - math-135/23
 - math-135/24
 - anal
+- complex
 ---
 
 The Riemann zeta function is an important function in analytic number theory. Its importance was first recognised by Euler, who showed that it can be written as an [[Complex Analysis --- math-135/notes/Infinite products|infinite product]] related to the [[Superdiscrete --- math-55A/notes/Euclid's algorithm and primes#Primes|primes]].

@@ -2,6 +2,7 @@
 tags:
 - math-135/3
 - anal
+- fourier
 ---
 
 Due to properties from complex analysis, it's helpful for us to have kernels — families of functions that have higher and higher bumps at $0$, that are in some sense, in the limit, the Dirac delta function.

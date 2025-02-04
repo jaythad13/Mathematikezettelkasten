@@ -3,6 +3,7 @@ tags:
 - math-135/21
 - math-135/22
 - anal
+- complex
 ---
 
 Often in a real analysis course, one defines the gamma function as a function of real values. Here, we will define it on the complex right half plane, where we will show it is analytic. We will extend it to a meromorphic function on the whole plane and show that its reciprocal is entire!

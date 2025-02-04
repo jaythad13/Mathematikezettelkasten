@@ -3,6 +3,7 @@ tags:
 - math-139/3
 - math-139/4
 - anal
+- fourier
 ---
 
 The $n$th Fourier coefficient of an integrable function is the inner product with the $n$th element of the [[Fourier Analysis --- math-139/notes/Fourier analysis in physics#Superposition of standing waves|orthogonal list]] $e^{2 \pi i n x}$.

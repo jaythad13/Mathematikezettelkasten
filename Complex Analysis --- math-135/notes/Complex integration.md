@@ -2,6 +2,7 @@
 tags:
 - math-135/3
 - anal
+- complex
 ---
 
 In order to integrate functions and accumulate the change between two points, we need to integrate along a curve. Specifically, we want to make sure that we integrate only in one direction and don't go over any points twice. That's why

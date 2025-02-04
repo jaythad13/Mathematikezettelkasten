@@ -2,6 +2,7 @@
 tags:
 - math-139/1
 - anal
+- fourier
 ---
 
 To do Fourier analysis, we will need some basic facts from analysis about [[Mathematical Analysis I --- math-131/notes/Riemann integration|Riemann integration]] and some definitions for convergence. We won't prove all of them, but they are proven in the appendix of [[Fourier Analysis --- math-139/attachments/texts/Fourier Analysis.pdf|the book]].

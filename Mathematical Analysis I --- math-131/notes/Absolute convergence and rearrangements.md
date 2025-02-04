@@ -1,6 +1,7 @@
 ---
 tags:
 - math-131/15
+- anal
 ---
 
 Recall the definition of absolute convergence, and that it is a strictly stronger condition than convergence.

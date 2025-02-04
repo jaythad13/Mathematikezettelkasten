@@ -2,6 +2,7 @@
 tags:
 - math-135/16
 - anal
+- complex
 ---
 
 If $g$ is holomorphic in the unit disc and never vanishes, then we can consider $\log \lvert g \rvert$. In particular,

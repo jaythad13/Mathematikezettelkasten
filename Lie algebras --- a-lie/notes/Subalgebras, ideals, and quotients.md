@@ -4,6 +4,7 @@ tags:
 - a-lie/3
 - a-lie/5
 - alg
+- lie
 - diff-geo
 - self-study
 ---

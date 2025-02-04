@@ -3,6 +3,8 @@ tags:
 - math-135/13
 - math-135/14
 - anal
+- complex
+- fourier
 ---
 
 Notice that for a holomorphic function in a disc $D_{R}(z_{0})$, [[Complex Analysis --- math-135/notes/Cauchy integral formula#_corollary _ the derivative form (holomorphic functions are smooth and analytic)|we have a power series]]

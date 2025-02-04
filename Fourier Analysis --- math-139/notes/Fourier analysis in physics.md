@@ -3,6 +3,7 @@ tags:
 - math-139/2
 - math-139/3
 - anal
+- fourier
 ---
 
 The motto of Fourier analysis (on $\mathbb{R} / \mathbb{Z}$) is to decompose things into oscillations. This idea comes from physics.
