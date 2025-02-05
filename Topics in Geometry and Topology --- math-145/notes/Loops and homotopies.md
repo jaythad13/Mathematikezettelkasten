@@ -27,7 +27,7 @@ We say $f \simeq g$ to denote that they are homotopic.
 ##### _proposition:_ homotopy is an equivalence relation
 
 ###### _proof:_
-is left to the homework
+is left to the [[Topics in Geometry and Topology --- math-145/attachments/homework/hw 2/hw 2.pdf|homework]].
 
 A very useful result is that continuous maps preserve homotopy.
 

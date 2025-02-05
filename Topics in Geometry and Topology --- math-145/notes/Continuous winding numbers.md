@@ -21,3 +21,5 @@ Making the edges shorter doesn't make any difference — in particular, refining
 You can do the same partitioning trick with $[0, 1] \times [0, 1]$ divided into a grid of squares of side length less than $\delta$. Essentially, the homotopy of curves induces a homotopy of a bunch of polygons. More explicitly, you could think of this as inducing a cycle on $[0, 1] \times [0, 1]$ and do things explicitly.
 
 Since the loop is homotopic to the approximating polygon and homotopy is an equivalence relation, the winding number is homotopy invariant.
+
+On the [[Topics in Geometry and Topology --- math-145/attachments/homework/hw 2/hw 2.pdf#page=5|homework]], we use this result to prove the [[Complex Analysis --- math-135/notes/Cauchy integral formula#_theorem _ the fundamental theorem of algebra|fundamental theorem of algebra]].
