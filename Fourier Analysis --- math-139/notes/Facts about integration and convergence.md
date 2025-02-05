@@ -1,6 +1,6 @@
 ---
 tags:
-- math-139/1
+- math-139/0
 - anal
 - fourier
 ---
@@ -53,7 +53,7 @@ Pointwise convergence doesn't preserve continuity, integrability, or limits unde
 
 Given a sequence of functions $f_{n} : E \to \mathbb{C}$ we say $f_{n}$ converges uniformly to $f$ on $E$, if for each $\varepsilon > 0$, there exists an $N$ such that $\lvert f_{n}(x) - f(x) \rvert > \varepsilon$ for all $x \in E$. We write this as $f_{n} \rightrightarrows f$.
 
-Finally, it'll be useful to know the [[Complex Analysis --- math-135/notes/Analysis and (metric) topology review#_theorem _ Weierstrass $M$-test|Weierstrass criterion]] for uniform covnergence of series (the $M$-test).
+Finally, it'll be useful to know the [[Complex Analysis --- math-135/notes/Analysis and (metric) topology review#_theorem _ Weierstrass $M$-test|Weierstrass criterion]] for uniform convergence of series (the $M$-test).
 
 ##### _theorem:_ Weierstrass $M$-test
 

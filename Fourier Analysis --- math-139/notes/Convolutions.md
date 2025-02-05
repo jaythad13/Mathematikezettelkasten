@@ -1,8 +1,8 @@
 ---
 tags:
+- math-139/6
 - math-139/4
 - math-139/5
-- math-139/6
 - anal
 - fourier
 ---
