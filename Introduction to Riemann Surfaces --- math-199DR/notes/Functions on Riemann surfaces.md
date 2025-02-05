@@ -1,6 +1,6 @@
 ---
 tags:
-- math-196/4
+- math-199DR/4
 - diff-geo
 - complex
 - cx-geo
@@ -8,7 +8,7 @@ tags:
 
 Here let $X$ be a Riemann surface with an atlas consisting of charts $(U_{\alpha}, \phi_{\alpha})$ indexed by $\alpha \in \mathcal{I}$.
 
-The raison d'etre for the complicate definition of a [[Introduction to Riemann Surfaces --- math-196/notes/Riemann surfaces#_definition _ (compact, connected) Riemann surface, (holomorphic) atlas|holomorphic atlas]], is that we want to define holomorphic functions on (open sets) of a Riemann surface. In particular, we push everything to the complex numbers and since all charts are holomorphically equivalent, we're okay.
+The raison d'etre for the complicate definition of a [[Introduction to Riemann Surfaces --- math-199DR/notes/Riemann surfaces#_definition _ (compact, connected) Riemann surface, (holomorphic) atlas|holomorphic atlas]], is that we want to define holomorphic functions on (open sets) of a Riemann surface. In particular, we push everything to the complex numbers and since all charts are holomorphically equivalent, we're okay.
 
 ##### _definition:_ holomorphic functions
 

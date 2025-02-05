@@ -2,9 +2,9 @@
 tags:
 - diff-geo
 - cx-geo
-- math-196/1
-- math-196/2
-- math-196/3
+- math-199DR/1
+- math-199DR/2
+- math-199DR/3
 ---
 
 ##### _definition:_ (compact, connected) Riemann surface, (holomorphic) atlas
