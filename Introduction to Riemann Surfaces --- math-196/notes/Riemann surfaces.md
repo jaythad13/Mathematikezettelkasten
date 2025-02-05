@@ -1,6 +1,7 @@
 ---
 tags:
 - diff-geo
+- cx-geo
 - math-196/1
 - math-196/2
 - math-196/3
