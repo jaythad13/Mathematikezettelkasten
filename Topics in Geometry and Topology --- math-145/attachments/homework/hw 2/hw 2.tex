@@ -24,6 +24,30 @@
 	Show that $\simeq$ is an equivalence relation.
 \end{problem}
 
+\begin{solution}
+	Note that a homotopy giving $f \simeq g$ is essentially a continuous function from the cylinder $[0, 1] \times S^{1}$ such that each circular ``section'' of the cylinder is mapped to a loop with $f$ at the bottom and $g$ at the top. We can use this geometric intuition to describe the homotopies that make $\simeq$ an equivalence relation.
+
+	First, the identity homotopy gives $f \simeq f$ with each copy of $S^{1}$ mapped to the loop $f$.
+
+	To be exact, $H : [0, 1] \times [0, 1] \to D$ by $H(s, t) = f(t)$ for all $s \in [0, 1]$. This is continuous since it is constant in $s$ and $f$ is a continuous function of $t$ --- each open set $V$ of $f$ has as its pre-image the open set $[0, 1] \times U$ where $U \subseteq S^{1}$ is the pre-image of $V$ in the map $f : S^{1} \to \mathbb{R}^{2}$. It clearly satisfies $H(0, t) = H(1, t) = f(t)$. It satisfies $H(s, 0) = H(s, 1)$ for each $s$ since $H(s, 0) = f(0) = f(1) = H(s, 1)$.
+
+	Second, given any loops $f \simeq g$ (a cylinder with $f$ at the bottom and $g$ at the top) we can ``flip the cylinder'' to get $g \simeq f$ (a cylinder with $g$ at the bottom and $f$ at the top).
+
+	Formally, if we have a homotopy $H_{1}$ that gives $f \simeq g$, then the homotopy $H_{2}$ with $H_{2}(s, t) = H_{2}(1 - s, t)$ gives $g \simeq f$. It is continuous as the composition of $H_{1}$ with continuous function $(s, t) \mapsto (1 - s, t)$. It also satisfies $H_{2}(0, t) = H_{1}(1 - 0, t) = g(t)$ and $H_{2}(1, t) = H_{1}(1 - 1, t) = f(t)$. Finally, each section is indeed a loop --- $H_{2}(s, 0) = H_{1}(1 - s, 0) = H_{1}(1 - s, 1) = H_{2}(s, 1)$
+
+	Finally given three loops with $f \simeq g$ and $g \simeq h$, we can scale the two cylinders down by half and stack them to get a cylinder with bottom $f$ and top $h$ (with $g$ at the midway point). That is, $f \simeq h$.
+
+	Suppose we are given $f \simeq g$ by a homotopy $H_{1}$ and $g \simeq h$ by another homotopy $H_{2}$. Then consider $H_{3} : [0, 1] \times [0, 1] \to D$ by
+	\[
+		H_{3}(s, t) = \begin{cases}
+			H_{1}(s/2, t) & s \in [0, 1/2] \\
+			H_{2}(1/2 + s/2, t) & s \in [1/2, 1].
+		\end{cases}
+	\]
+
+	It is continuous at each $s \neq 1/2$ since in small enough neighbourhood around $s$, it is one of the two continuous functions $H_{1}$ and $H_{2}$. At $s = 1/2$, $H_{3}$ is continuous since every open neighbourhood containing $H(1/2, t)$ is the (open) gluing (along a segment of the curve) of the open pre-images of the neighbourhood under $H_{1}$ and $H_{2}$. It clearly satisfies $H_{3}(0, t) = H_{1}(0, t) = f(t)$ and $H_{3}(1, t) = H_{2}(1, t) = h(t)$.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[11.]
@@ -39,6 +63,19 @@
 	for any complex number of magnitude $\lvert z \rvert = R$.
 \end{problem}
 
+\begin{solution}
+	This follows as a chain of inequalities ---
+	\begin{align*}
+		\left \lvert \sum_{k = 0}^{d - 1} a_{k} z^{k} \right \rvert & \le \sum_{k = 0}^{d - 1} \lvert a_{k} \rvert \lvert z \rvert^{k} \\
+									& \le \sum_{k = 0}^{d - 1} \lvert a_{k} \rvert R^{k} \\
+									& \le \sum_{k = 0}^{d - 1} \lvert a_{k} \rvert R^{d - 1} \\
+									& \le \left ( \sum_{k = 0}^{d - 1} \lvert a_{k} \rvert \right )  R^{d - 1} \\
+									& < R R^{d - 1} \\
+									& = R^{d}.
+	\end{align*}
+	Here, the first inequality is the triangle inequality, and the third holds because $R \ge 1$.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[12.]
@@ -47,6 +84,21 @@
 		\item Give an example of $f, g \in \operatorname{loops}(\mathbb{C})$ such that $f$ and $f + g$ both belong to $\operatorname{loops}(\mathbb{C} \setminus \{ 0 \})$ but $w(f, 0) \neq w(f + g, 0)$. Identify a value of $t$ for which $\lvert f(t) \rvert \le \lvert g(t) \rvert$.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item Since $\lvert f(t) \rvert > \lvert g(t) \rvert \ge 0$ for all $t$ $\lvert f(t) \rvert > 0$ and thus, $f \in \operatorname{loops}(\mathbb{C} \setminus \{ 0 \})$. Also, by the reverse triangle inequality, $\lvert (f + g)(t) \rvert > \lvert f(t) \rvert - \lvert g(t) \rvert = 0$. That is, $f + g$ is in $\operatorname{loops}(\mathbb{C} \setminus \{ 0 \})$.
+
+			For each $t \in [0, 1]$, the support of the line segment $[f(t), (f + g)(t)]$ is $\{ f(t) + s g(t) \mid s \in [0, 1] \} \subset \mathbb{C}$. In fact (again by the reverse triangle inequality) $\lvert f(t) + s g(t) \rvert \ge \lvert f(t) \rvert - s \lvert g(t) \rvert > 0$. Thus, support of each line segment is in fact a subset of $\mathbb{C} \setminus \{ 0 \}$.
+
+			Thus, by the straight line homotopy, $f \simeq f + g$ in $\mathbb{C} \setminus \{ 0 \}$.
+		\item Consider $f = \{ z \in \mathbb{C} \setminus \{ 0 \} \mid \lvert z - 1/2 \rvert = 1/4 \}$, the circle of radius $1/4$ centred at $1/2$, and $g = \{ z \in \mathbb{C} \setminus \{ 0 \} \mid \lvert z \rvert = 1 \}$, the circle of radius $1$ centred at $0$.
+
+			$f$ winds about $0$ zero times but $f + g$ winds about $0$ once. That is, $w(f, 0) \neq w(f + g, 0)$
+
+			$\lvert f(t) \rvert \le 3/4 < \lvert g(t) \rvert = 1$ for all $t$, including, say, $0$.
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
@@ -80,6 +132,15 @@
 	It follows that $p$ must have at least one root.
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item Notice that $(g - f)(t) = (R^{d} - 1) e^{2 \pi i d t}$. Since $R > 1$ this means $\lvert (f - g)(t) \rvert = \lvert (g - f)(t) \rvert < \lvert f(t) \rvert$ for all $t$. By problem 12 part (i), this means $(f - g) + g = f \simeq g$ (in $\mathbb{C} \setminus \{ 0 \}$).
+		\item The statement of problem 11 is exactly that $\lvert g(t) \rvert = R^{d} > \lvert g(t) - h(t) \rvert$. Thus, $\lvert h(t) - g(t) \rvert < \lvert g(t) \rvert$ too. Thus, $(h - g) + g = h \simeq g$.
+		\item We can use the ``pushforward homotopy'' --- the fact that continuous functions preserve homotopy. If $p$ has no roots, then it is a continuous function $\mathbb{C} \to \mathbb{C} \setminus \{ 0 \}$. Note that $k = a_{0} = p(0)$. Since the circle of radius $R$ (the loop $R e^{2 \pi i t}$) is homotopic to the constant loop $0$ in $\mathbb{C}$, the loop obtained from the continuous function $p$ applied to the circle (the loop $h$) is homotopic to the constant loop $k = p(0)$ in $\mathbb{C} \setminus \{ 0 \}$.
+		\item Since $\mathbb{C} \setminus \{ 0 \}$ is path connected, any two constant loops are homotopic --- given a path $\gamma$ from $a_{0}$ to $1$, there is a homotopy $H(s, t) = \gamma(s)$ giving $k \simeq \ell$.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[14.]
@@ -111,9 +172,29 @@
 
 			Write down a specific such value of $r$.
 		\item Conjecture a lemma that generalizes (iv) to an arbitrary polynomial and a small loop around an arbitrary point in the plane. You are not required to prove the lemma.
-		\item Draw the four roots of~$p$ in the complex plane, and draw two loops.
+		\item Draw the four roots of~$p$ in the complex plane, and draw two loops
+			\[
+				\gamma_{1}, \gamma_{2} \in \operatorname{loops}(\mathbb{C} \setminus \{ \text{roots of } p \})
+			\]
+			such that
+			\[
+				w(p \circ \gamma_{1}, 0) = -4 \quad \text{and} \quad w(p \circ \gamma_{2}, 0) = 7.
+			\]
 
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item
+		\item
+		\item
+		\item
+		\item
+			\begin{lemma}
+				Given a polynomial $p \in \mathbb{C}[z]$, there exists a loop $f$ around $z \in \mathbb{C}$ of small enough radius (maximum distance from $z$) such that $w(p \circ f, 0)$ is the multiplicity of the polynomial's root at $z$.
+			\end{lemma}
+	\end{enumerate}
+\end{solution}
 
 \end{document}
