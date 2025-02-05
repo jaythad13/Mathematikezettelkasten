@@ -20,3 +20,4 @@
 | #diff-eq  | differential equations  |
 | #complex  | complex analysis        |
 | #fourier  | Fourier analysis        |
+| #cx-geo   | complex geometry        |
