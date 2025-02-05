@@ -4,6 +4,7 @@ tags:
 - math-135/12
 - anal
 - complex
+- alg-top
 ---
 
 Homotopy allows us to talk about when two curves are the basically the same in all the ways that we care about.
