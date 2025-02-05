@@ -2,6 +2,7 @@
 tags:
 - math-139/4
 - math-139/5
+- math-139/6
 - anal
 - fourier
 ---
@@ -25,7 +26,7 @@ $$
 $$
 Then $(f * g)(x)$ is the average of $g$ on the interval $[x - 1 / 2, x + 1 / 2]$.
 
-##### _example:_ convolving with the [[Fourier Analysis --- math-139/notes/A couple kernels#_definition _ the Dirichlet kernel|Dirichlet kernel]]
+##### _example:_ convolving with the [[Fourier Analysis --- math-139/notes/Kernels#_definition _ the Dirichlet kernel|Dirichlet kernel]]
 
 Check that
 $$
@@ -35,7 +36,7 @@ the $N$th [[Fourier Analysis --- math-139/notes/Fourier series#_definition _ Fou
 
 ### Properties of convolution
 
-Convolution is a really nice operation. In particular, it turns $2\pi$-periodic integrable functions into a commutative Banach algebra. In addition,
+Convolution is a really nice operation. In particular, it turns $2\pi$-periodic integrable functions into a commutative Banach algebra (with respect to the $L^1$ norm). In addition,
 
 ##### _proposition:_ convolutions are continuous
 
@@ -64,15 +65,15 @@ $$
 \end{align}
 $$
 
-Now, given $f, g$ integrable and continuous sequences $f_{n} \to f$ and $g_{n} \to g$ (in the $L^1$ norm) it suffices to show that $f_{n} * g_{n} \to f * g$ uniformly (since ). That is, given any $\varepsilon > 0$, we want to show that there exists some $N$ such that for all $n > N$
+Now, given $f, g$ integrable and continuous sequences $f_{n} \to f$ and $g_{n} \to g$ (in the $L^1$ norm) it suffices to show that $f_{n} * g_{n} \to f * g$ uniformly. That is, given any $\varepsilon > 0$, we want to show that there exists some $N$ such that for all $n > N$
 $$
 \lvert (f_{n} * g_{n})(x) - (f * g)(x) \rvert < \varepsilon
 $$
-at each $x \in [-\pi, \pi]$. The trick here, is to rewrite the left hand side as
+at each $x \in [-\pi, \pi]$. The trick here is to rewrite the left hand side as
 $$
 \lvert (f_{n} * g_{n})(x) - (f * g_{n})(x) + (f * g_{n})(x) - (f * g)(x) \rvert \leq \lvert (f_{n} * g_{n})(x) - (f * g_{n})(x) \rvert + \lvert (f * g_{n})(x) - (f * g)(x) \rvert 
 $$
-Then using the fact that
+Then the convergence of each term in $L^1$, we get the desired answer.
 
 ##### _proposition:_ the Fourier transform turns convolution into multiplication
 
@@ -99,4 +100,4 @@ If $f_{n} \to f$ and $g_{n} \to g$ are continuous sequences converging in the $L
 $$
 \widehat{f * g}(n) = \widehat{\lim_{ k \to \infty } f_{k} * g_{k}(n)} = \lim_{ k \to \infty } \widehat{f_{k} * g_{k}}(n) = \lim_{ k \to \infty } \hat{f_{k}}(n) \hat{g}_{k}(n)
 $$
-and the limit of the Fourier coefficients is the Fourier coefficient of the limit because the Fourier coefficient is integral based.
+and the limit of the Fourier coefficients is the Fourier coefficient of the limit because the Fourier coefficient is integral based and so is the convergence. (This last fact is useful enough it should probably be a lemma).

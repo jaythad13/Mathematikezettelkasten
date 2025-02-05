@@ -89,7 +89,7 @@ By [[Complex Analysis --- math-135/notes/Analysis and (metric) topology review#_
 
 This raises the question of when it is true that $\sum \lvert \hat{f}(n) \rvert < \infty$. One answer is the [[Complex Analysis --- math-135/notes/Fourier analysis and holomorphic functions#_theorem _ the Poisson summation formula|Poisson summation formula]]. However, we can get a more analytic flavour of answer.
 
-##### _proposition:_ $\mathcal{C}^2$ functions have 
+##### _proposition:_ $\mathcal{C}^2$ functions have absolutely summable coefficients
 
 If $f : [-\pi, \pi] \to \mathbb{C}$ is twice continuously differentiable, then $\hat{f}(n) = O(1/n^{2})$. That is, there exists a positive constant $C$ with $\lim_{ x \to \infty } n^{2} \hat{f}(n) \le C$.
 
