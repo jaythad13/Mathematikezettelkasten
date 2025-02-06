@@ -109,17 +109,17 @@ The generators of a group, with relations that generate all of the relations bet
 
 A natural question to ask then is how much you can tell about a group just from its presentation. It turns out to be a lot, but not everything, and there are some finicky cases. A nice case is the following
 
-##### _example:_ a group given completely by its presentation
+##### _example:_ the Klein four-group given completely by its presentation
 
 We've spoiled the ending already, but consider the group
 $$
-G = \left< a, b, c \vert abc = a^2 = b^2 = c^2 = 1  \right> 
+G = \left< a, b, c \mid abc = a^2 = b^2 = c^2 = 1  \right> 
 $$
 where $1$ is the identity.
 
 Note that we can get rid of any one of the elements, say for convenience, $c$. This is because $abc = c^2$ allows us to cancel out $c$ and get $c = ab$. Then
 $$
-G = \left< a, b \vert (ab)^2 = a^2 = b^2 = 1 \right>.
+G = \left< a, b \mid (ab)^2 = a^2 = b^2 = 1 \right>.
 $$
 Note that $a$ and $b$ commute since cancelling $a$ in $a^2 = (ab)^2$ gives us $a = bab$ and thus, $ba = bbab = ab$. 
 
@@ -127,3 +127,5 @@ Then since they commute, we can write every string of $a$s and $bs$ as $a^m b^n$
 $$
 G = \{ 1, a, b, ab \}.
 $$
+
+$G$ is called the Klein four-group and is often denoted $V$.

@@ -5,11 +5,11 @@ tags:
 - math-171/4
 ---
 
-Finite groups are really combinatorial objects! Last time we used combinatorial arguments about generators to learn a little about 
+Finite groups are really combinatorial objects! Last time we used combinatorial arguments about generators to learn a little about the [[Abstract Algebra I --- math-171/notes/Dihedral groups and generators#_definition _ the dihedral group|dihedral group]] and the [[Abstract Algebra I --- math-171/notes/Dihedral groups and generators#_example _ the Klein four-group given completely by its presentation|Klein-four group]].
 
 ##### _example:_ how to use order arguments about group presentations
 
-Say we have $X_{2n} = \left< x, y \vert x^n = y^2 = 1, xy = yx^2 \right>$. What can we say about this group just from this presentation? Can we estimate its order? Find its elements?
+Say we have $X_{2n} = \left< x, y \mid x^n = y^2 = 1, xy = yx^2 \right>$. What can we say about this group just from this presentation? Can we estimate its order? Find its elements?
 
 Consider the second relation. Since we have $xy = yx^2$, if there's an $x$ that is followed by $y$s, we can always shift the $x$ to the end, increasing powers along the way (note that by induction $x^n y = y x^{2n}$). Thus, we can always write an element as $y^i x^j$. Formally we can do this by induction on $i + j$.
 
@@ -31,7 +31,7 @@ Another sort of combinatorial way to think about groups is a group table. The ea
 
 ##### _example:_ a nice group table
 
-Recall $G = \left< a, b, c \vert abc = a^2 = b^2 = c^2 = 1  \right>$ from [[Dihedral groups and generators#_example _ a group given completely by its presentation|last time]]. Remembering that this really is just $\{ 1, a, b, ab \}$ and abelian we can write
+Recall $G = \left< a, b, c \mid abc = a^2 = b^2 = c^2 = 1  \right>$ from [[Dihedral groups and generators#_example _ a group given completely by its presentation|last time]]. Remembering that this really is just $\{ 1, a, b, ab \}$ and abelian we can write
 
 | - | $1$ | $a$ | $b$ | $ab$ |
 | ---- | ---- | ---- | ---- | ---- |
