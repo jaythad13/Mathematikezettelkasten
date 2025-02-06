@@ -13,6 +13,12 @@
 	Let $(X, \mathcal{T})$ be a topological space, and let $U$ be an open set and $A$ a closed subset of $X$. Then the set $U \setminus A$ is open and the set $A \setminus U$ is closed.
 \end{problem}
 
+\begin{solution}
+	$U \setminus A = U \cap (X \setminus A)$ is the intersection of two open sets since by 2.13, $X \setminus A$ is open. Thus, $U \setminus A$ is open by definition of a topology.
+
+	Similarly, $X \setminus (A \setminus U) = U \cup (X \setminus A)$ is the union of two open sets and thus, is open. By 2.13, $A \setminus U$ must be closed.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[2.20]
@@ -22,6 +28,24 @@
 	\]
 	where $\mathcal{C}$ is the collection of all closed sets in $X$.
 \end{problem}
+
+\begin{solution}
+	We will show double inclusion. However, first, we need the following lemma.
+
+	\begin{lemma}
+		If $A \subseteq B \subseteq X$ are subsets of a topological space, then every limit point of $A$ is a limit point of $B$.
+	\end{lemma}
+
+	\begin{proof}
+		If $x$ is a limit point of $A$, then each open neighbourhood $U$ of $x$ has $(U \setminus \{ x \}) \cap A$ non-empty. Since $(U \setminus \{ x \}) \cap A \subseteq (U \setminus \{ x \}) \cap B$, each intersection $(U \setminus \{ x \}) \cap B$ is also non-empty. That is, $x$ is a limit point of $B$.
+	\end{proof}
+
+	If $x \in \overline{A}$, then $x$ is in $A$ or a limit point of $A$. By the definition of containment and our lemma (respectively), $x$ is either contained in each $B \supseteq A$ or is a limit point of it (respectively). Thus, $x$ is contained in each closed $B \supseteq A$. That is, $\overline{A}$ is a subset of each closed set containing $A$, and thus, their intersection.
+
+	If $a \in \bigcap_{A \subseteq B, B \in \mathcal{C}} B$, then since $\overline{A}$ is closed and contains $A$, $x \in \overline{A}$. That is, the intersection of all closed sets containing $A$ is a subset of $\overline{A}$.
+
+	By double inclusion, we have the desired equality.
+\end{solution}
 
 \pagebreak
 
@@ -33,6 +57,17 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item By 2.21, the closure of $A$ must be contained in every closed set containing $A$. Since $\overline{B}$ is a closed set containing $B$, it contains $A$ as well. Thus, we have $\overline{A} \subseteq \overline{B}$.
+
+		\item Every closed set containing both $A$ and $B$, contains all the limit points of $A$ and $B$, and thus, contains $\overline{A}$ and $\overline{B}$. That is, $A \subseteq A \cup B$ and $B \subseteq A \cup B$ gives us $\overline{A} \subseteq  \overline{A \cup B}$ and $\overline{B} \subseteq \overline{A \cup B}$. Thus, $\overline{A} \cup \overline{B} \subseteq \overline{A \cup B}$.
+
+			Since $\overline{A} \cup \overline{B}$ is closed (as the finite union of closed sets) and contains $A$ and $B$, by the previous result, $\overline{A \cup B} \subseteq \overline{A} \cup \overline{B}$. By double inclusion, we have the desired equality.
+
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[2.23]
@@ -43,10 +78,32 @@
 	true?
 \end{problem}
 
+\begin{solution}
+	No the statement is not true. In general, this is not true because the left hand side is the closure of a set and thus, must be closed, but the right hand side is a (arbitrary) union of closed sets and is not necessarily closed.
+
+	A specific example can be obtained over the real line. Consider the closed sets $A_{n} = (-\infty, -1/n] \cup [1/n, \infty)$ indexed by $n \in \mathbb{N}$. They are their own closure --- $\overline{A}_{n} = A_{n}$. Thus,
+	\[
+		\bigcup_{n \in \mathbb{N}} A_{n} = \bigcup_{n \in \mathbb{N}} \overline{A}_{n} = \mathbb{R} \setminus \{ 0 \}
+	\]
+	since every non-zero real number $x$ has $\lvert x \rvert \ge 1/n$ for some $n$, giving $x \in A_{n}$. Only $0 \notin A_{n}$ for each $n$.
+
+	However,
+	\[
+		\overline{\bigcup_{n \in \mathbb{N}} A_{n}} = \overline{\mathbb{R} \setminus \{ 0 \}} = \mathbb{R} \neq \mathbb{R} \setminus \{ 0 \} = \bigcup_{n \in \mathbb{N}} \overline{A}_{n}.
+	\]
+	($0$ is a limit point of $\mathbb{R}$ since every open neighbourhood $(-\delta, \delta)$ contains non-zero points of $\mathbb{R}$).
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[2.26]
 	Let $A$ be a subset of a topological space $X$. Then $p$ is an interior point of $A$ if and only if there exists an open set $U$ with $p \in U \subseteq A$.
 \end{problem}
+
+\begin{solution}
+	Suppose $p \in A^{\circ}$. Then $p \in \bigcup_{U \subseteq A, U \in \mathcal{T}} U$. By definition of the union, there must be some open $U \subseteq A$ containing $p$.
+
+	If there is some open $U \subseteq A$ containing $p$, then $p$ is contained in the union of all open sets contained in $A$. That is, $p \in A^{\circ}$.
+\end{solution}
 
 \end{document}
