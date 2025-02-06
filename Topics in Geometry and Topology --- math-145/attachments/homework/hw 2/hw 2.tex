@@ -186,14 +186,53 @@
 
 \begin{solution}
 	\begin{enumerate}
+		\item We will show that $(z - 3)^{2}$ divides $p$. Specifically, consider
+			\begin{align*}
+				(z - 3)^{2} (3 z^{2} + z + 1) & = (z^{2} - 6 z + 9) (3z^{2} + z + 1) \\
+							      & = 3 z^{4} - 18 z^{3} + z^{3} + z^{2} + 27 z^{2} - 6 z^{2} - 6z + 9z + 9 \\
+							      & = 3 z^{4} - 17 z^{3} + 22 z^{2} + 3 z + 9 \\
+							      & = p(z).
+			\end{align*}
+
+			From the quadratic formula, we see that $3z^{2} + z + 1$ has two roots ---
+			\[
+				z = \frac{-1 \pm \sqrt{11} i}{6}
+			\]
+			each of multiplicity one. Together with the double root at $z = 3$, these account for all of the ``four'' roots of $p$.
+		\item $z$ is a root of $q$ exactly when $z + 3$ is a root of $p$. Thus, $q$ has a double root at $0$, and simple roots at $(-4 \pm \sqrt{11} i)/6$.
 		\item
-		\item
-		\item
-		\item
+			\[
+				\boxed{
+					q(z) = 31 z^{2} + 19 z^{3} + 3 z^{4}.
+				}
+			\]
+
+			
+			\begin{align*}
+				q(z) & = ((3 + z) - 3)^{2} (3 (3 + z)^{2} + (3 + z) + 1) \\
+				     & = z^{2} (3 z^{2} + 19 z + 31) \\
+				     & = 31 z^{2} + 19 z^{3} + 3 z^{4}.
+			\end{align*}
+		\item Denote by $f$ the loop $t \mapsto p(3 + r e^{2 \pi i t})$ and by $g$ the loop $t \mapsto a_{2} r e^{2 \pi i d t}$ for $d = 2$. Since $r \le 1$, for all $z \in \mathbb{C}$ with $\lvert z \rvert \le r$
+			\begin{align*}
+				\lvert a_{3} z^{3} + a_{4} z^{4} \rvert & \le \lvert a_{3} \rvert r^{3} + \lvert a_{4} \rvert r^{4} \\
+									& < ( \lvert a_{3} \rvert + \lvert a_{4} \rvert ) r^{3} \\
+									& \le \lvert a_{2} \rvert r^{2}.
+			\end{align*}
+
+			That is, $\lvert g(t) \rvert > \lvert (f - g)(t) \rvert$. By problem 12 part (i), $(f - g) + g = f \cong g$. Since $g$ has (by definition) winding number $2$ about $0$, so does $f$. That is, $w(p(3 + r e^{2 \pi i t}), 0) = 2$. 
 		\item
 			\begin{lemma}
-				Given a polynomial $p \in \mathbb{C}[z]$, there exists a loop $f$ around $z \in \mathbb{C}$ of small enough radius (maximum distance from $z$) such that $w(p \circ f, 0)$ is the multiplicity of the polynomial's root at $z$.
+				Given a polynomial $p \in \mathbb{C}[z]$, there exists a loop $f$ around $z \in \mathbb{C}$ of small enough radius distance from $z$ such that $w(p \circ f, 0)$ is the multiplicity of the polynomial's root at $z$.
 			\end{lemma}
+		\item
+			We can construct the loops $\gamma$ as winding around each of the roots an integer number of times. The total winding number of the loop $p \circ \gamma$ is the sum of the number of times it winds around each root, weighted by the multiplicity of the root.
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width = 0.4 \textwidth]{figures/P14vi gamma1.pdf}
+				\includegraphics[width = 0.4 \textwidth]{figures/P14vi gamma2.pdf}
+				\caption{$\gamma_{1}$ winds around all the roots once, clockwise. $\gamma_{2}$ winds around $3$ and $(-1 + \sqrt{11} i) / 6$ twice, and winds around $(-1 - \sqrt{11} i) / 6$ once.}
+			\end{figure}
 	\end{enumerate}
 \end{solution}
 
