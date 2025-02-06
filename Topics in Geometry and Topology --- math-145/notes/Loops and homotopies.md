@@ -1,14 +1,18 @@
 ---
 tags:
 - math-145/2
+- math-145/3
+- alg-top
 - top
 ---
 
-We want a way to extend our definition of the [[Topics in Geometry and Topology --- math-145/notes/Discrete winding numbers#_definition _ winding number (of a $1$-chain)|discrete winding number]] to loops.
+We want a way to extend our definition of the [[Topics in Geometry and Topology --- math-145/notes/Discrete winding number#_definition _ winding number (of a $1$-chain)|discrete winding number]] to loops.
 
-##### _definition:_ loop
+##### _definition:_ loop, curves
 
-A loop in a region $D \subset \mathbb{R}^{2}$ is a [[Mathematical Analysis I --- math-131/notes/Continuity#_definition _ continuity|continuous]] function $f : [0, 1] \to D$ such that $f(0) = f(1)$.
+A loop in a region $D \subseteq \mathbb{R}^{2}$ is a [[Mathematical Analysis I --- math-131/notes/Continuity#_definition _ continuity|continuous]] function $f : [0, 1] \to D$ such that $f(0) = f(1)$.
+
+A curve in $D \subseteq \mathbb{R}^{2}$ is just a continuous function $f : [0, 1] \to D$.
 
 ##### _example:_ the circle
 
@@ -45,7 +49,7 @@ If $H$ is the homotopy in $D$, then $p \circ H$ is the homotopy in $E$.
 
 ##### _proposition:_ straight line homotopy
 
-If $f, g$ are loops on $D$, and each [[Topics in Geometry and Topology --- math-145/notes/Discrete winding numbers#_definition _ line segment, support of a line segment|line segment]] $\overline{f(t), g(t)}$ has support in $D$, then $f \simeq g$.
+If $f, g$ are loops on $D$, and each [[Topics in Geometry and Topology --- math-145/notes/Discrete winding number#_definition _ line segment, support of a line segment|line segment]] $\overline{f(t), g(t)}$ has support in $D$, then $f \simeq g$.
 
 ###### _proof:_
 
