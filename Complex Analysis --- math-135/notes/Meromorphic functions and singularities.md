@@ -51,7 +51,7 @@ is holomorphic, then $z_{0}$ is a pole of $f$.
 
 ##### _proposition:_ meromorphic functions have polynomial denominators
 
-If $f$ has a pole at $z_{0}$, the n there exists a punctured neighbourhood $N^*_{r}(z_{0})$ in which $f(z) = (z - z_{0})^{-n} h(z)$ for some holomorphic, non-vanishing $h(z)$. $h$ is unique.
+If $f$ has a pole at $z_{0}$, then there exists a punctured neighbourhood $N^*_{r}(z_{0})$ in which $f(z) = (z - z_{0})^{-n} h(z)$ for some holomorphic, non-vanishing $h(z)$. $h$ is unique.
 
 ###### _proof:_
 
