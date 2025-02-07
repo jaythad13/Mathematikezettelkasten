@@ -5,36 +5,40 @@ tags:
 - math-199DR/1
 - math-199DR/2
 - math-199DR/3
+- math-199DR/4
+- math-199DR/5
 ---
 
-##### _definition:_ (compact, connected) Riemann surface, (holomorphic) atlas
+##### _definition:_ (compact, connected) Riemann surface, (holomorphic) atlas, chart
 
 A (compact, connected) Riemann surface is a pair of a ([[Mathematical Analysis I --- math-131/notes/Compactness#_definition _ compact|compact]], [[Mathematical Analysis I --- math-131/notes/Connectedness#_definition _ connectedness|connected]]) second  countable, Hausdorff topological space $X$ and a holomorphic atlas $\mathcal{A}$. 
 
 That is, $\mathcal{A}$ is an open cover $\{ U_{\alpha} \}$ such that each $U_{\alpha}$ is homeomorphic (with the homeomorphism being $\phi_{\alpha}$) to an open, connected subset of $\mathbb{C}$. Further, each "transition map" $\phi_{\beta} \circ \phi_{\alpha} ^{-1}$ is a [[Complex Analysis --- math-135/notes/Holomorphic functions#_definition _ holomorphic, $ mathbb{C}$-differentiable, regular, the derivative, $f'(z_{0})$|holomorphic]] function $\phi_{\alpha}(U_{\alpha} \cap U_{\beta}) \to \phi_{\beta}(U_{\alpha} \cap U_{\beta})$.
 
-The Hausdorff condition is a reasonability condition on topological spaces — for any two distinct points in the topological space, we can separate them in $\mathbb{C}$.
+Each pair $(\phi_{\alpha},U_{\alpha})$ is called a chart.
 
-Usually given reasonable sets $X$, we can topologise $X$ so that the ope n cover is open.
+The Hausdorff condition is a reasonability condition on topological spaces — for any two distinct points in the topological space, the topology can tell them apart. Without this condition, nice classification theorems just aren't possible.
 
 The main theorem that we want to learn is that compact connected Riemann surfaces are completely classified —
 
 ##### _theorem:_ the uniformisation theorem
 
 A compact connected Riemann surface $X$ is one of three things
-1) the Riemann sphere $\mathbb{P}^1(\mathbb{C})$ (the one-point compactification of $\mathbb{C}$) with genus $0$
+1) the Riemann sphere $\mathbb{C}_{\infty }$ (the one-point compactification of $\mathbb{C}$) with genus $0$
 2) Euclidean — a torus $\mathbb{C} / \Lambda$ for some lattice $\Lambda$ with genus $1$
 3) hyperbolic — $X$ is the right cosets of the (compactified) upper half plane $\mathbb{H}^*$ modulo some group $\Gamma$ with genus $g \ge 2$.
 
 When we say "is", we mean something specific, but we will not specify what that is that we mean.
 
-##### _example:_ the Riemann sphere
+##### _example:_ the Riemann sphere and the complex projective line
 
-The (topological space of the) sphere is exactly the sphere $S^2$ sitting in $\mathbb{R}^3$. We can cover this with one open set $U_{1}$ staying away from the south pole, and another $U_{2}$ staying away from the north pole. Both of these have an obvious homeomorphism to $\mathbb{C}$ itself by stereographic projection. We often call this projective $1$-space and write that as $\mathbb{P}^1(\mathbb{C})$.
+The (topological space of the) sphere is exactly the sphere $S^2$ sitting in $\mathbb{R}^3$. We can cover this with one open set $U_{1}$ staying away from the south pole, and another $U_{2}$ staying away from the north pole. Both of these have an obvious homeomorphism to $\mathbb{C}$ itself by stereographic projection. We often write this as $\mathbb{C}_{\infty}$.
 
 The transition map is $z \mapsto 1/z$ which is indeed holomorphic on $\mathbb{C}$. Applying this to the sphere is essentially flipping the sphere.
 
-This means that we actually have a natural metric on $\mathbb{P}^1(\mathbb{C})$ — it's just the metric inherited by the $2$-sphere $S^2$ sitting in $\mathbb{R}^3$.
+This means that we actually have a natural metric on $\mathbb{C}_{\infty}$ — it's just the metric inherited by the $2$-sphere $S^2$ sitting in $\mathbb{R}^3$.
+
+This is the same thing as the complex projective line $\mathbb{C} \mathbb{P}^1$ which is the surface parameterising all lines through the origin in $\mathbb{C}^{2}$. It can be written $(\mathbb{C}^{2} \setminus \{ 0 \}) / \mathbb{C}^*$ as each line is the data of the ratio of its slope $(z_{1} : z_{0})$, and two ratios correspond to the same line if they are scalar multiples of each other — $(z_{1} : z_{0}) = (\lambda z_{1} : \lambda z_{0})$. To identify this with the Riemann sphere, just identify $(z_{1} : z_{0})$ with $z_{1} / z_{0}$ when $z_{0} \neq 0$ and $\infty$ otherwise.
 
 ##### _example:_ [[Algebraic Geometry --- math-176/notes/Elliptic curves#_proposition, definition _ reducing cubics, elliptic curves|elliptic curves]]
 
