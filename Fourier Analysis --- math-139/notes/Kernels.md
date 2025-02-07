@@ -2,6 +2,7 @@
 tags:
 - math-139/3
 - math-139/6
+- math-139/7
 - anal
 - fourier
 ---
@@ -104,12 +105,80 @@ If $f$ is continuous on all of $[-\pi, \pi]$, $f$ is [[Mathematical Analysis I -
 
 ### Cesaro summability and Abel means
 
-Good kernels are nice because even if the Fourier series itself doesn't recover the function, we can recover the function using good kernels (that also emp). The Dirichlet kernel isn't a good kernel because it isn't $L^1$, so the Fourier coefficients may not be [[Fourier Analysis --- math-139/notes/Fourier series#_corollary _ recovering a continuous function from Fourier series|absolutely summable]], but Cesaro summability, and Abel means
+Good kernels are nice because even if the Fourier series itself doesn't recover the function, we can recover the function using good kernels (that also emp). The Dirichlet kernel isn't a good kernel because it isn't $L^1$, so the Fourier coefficients may not be [[Fourier Analysis --- math-139/notes/Fourier series#_corollary _ recovering a continuous function from Fourier series|absolutely summable]], but Cesaro summability and Abel means provide a way to get around this.
 
 ##### _definition:_ Cesaro mean
 
-Given a series $\sum a_{k}$, let $\left\{ \Sigma_{n} = \sum_{k  =1}^n a_{k}  \right\}$ be the sequence of partial sums.
+Given a series $\sum a_{n}$, let $\left\{ \Sigma_{N} = \sum_{n  = 1}^N a_{n}  \right\}$ be the sequence of partial sums.
 
-The $n$th Cesaro mean is the mean of the first $n$ partial sums $\Sigma_{n}$, denoted $\sigma_{n}$.
+The $n$th Cesaro mean is the mean of the first $n$ partial sums $\Sigma_{N}$, denoted $\sigma_{N}$.
 
-It's a standard exercise in real analysis to show that if a series converges, it's Cesaro means converge to the same thing. The series summing $(-1)^n$ shows that the converse is not true ($\sigma_{n} \to 1 / 2$ but the series does not converge).
+It's a standard exercise in real analysis to show that if a series converges, it's Cesaro means converge to the same thing. The series summing $(-1)^n$ shows that the converse is not true ($\sigma_{n} \to 1 / 2$ but the series does not converge). That's essentially why this is useful — the idea of the Fejér kernel is to consider the Cesaro means of the partial sums of the Fourier series — we consider $f * \frac{1}{N} \sum_{k = 0}^{N - 1} D_{n}$.
+
+##### _definition:_ Fejér kernel
+
+The $N$th Fejér kernel $F_{N}$ is a function $\mathbb{R} \to \mathbb{R}$ given by
+$$
+F_{N}(x) = \frac{1}{N} \sum_{n = 1}^N D_{n}(x).
+$$
+
+This is a good kernel! As a result, $(f * F_{N})(x) \to f(x)$ as $N \to \infty$.
+
+##### _lemma:_ the closed form of the Fejér kernel
+
+$$
+F_{N}(x) = \frac{1}{N} \frac{\sin ^{2}\left( Nx / 2 \right)}{\sin ^{2}(x / 2)}.
+$$
+
+###### _proof:_
+is left to the homework.
+
+##### _proposition:_ the Fejér kernel is a good kernel
+
+###### _proof:_
+
+By the closed form, $F_{N}$ is positive, so if we show that $F_{N}$ has integral $1$ over $\mathbb{R} / 2 \pi \mathbb{Z}$, we simultaneously show it is $L^1$. Since each $D_{n}$ has integral $1$ over $\mathbb{R} / 2\pi \mathbb{Z}$ (the integrals of positive and negative characters cancel) and $F_{N}$ is their average, $F_{N}$ also has integral $1$ on the circle.
+
+Since $\sin ^{2}(Nx / 2) \le 1$ and $\sin ^{2}(x / 2)$ increases away from the origin (and thus, $\lvert x \rvert > \delta$ gives $\sin ^{2}(x / 2) \ge \sin ^{2}(\delta / 2)$ for any $\delta > 0$), we have the bound
+$$
+F_{N}(x) \le \frac{1}{N} \frac{1}{\sin ^{2}(\delta / 2)}
+$$
+for $x$ with $\lvert x \rvert > \delta$. Thus, as $N \to \infty$, $F_{N} \to 0$ outside $[-\delta, \delta]$.
+
+##### _corollary:_ Fejér kernels recover continuous functions
+
+Any continuous function on the circle can be uniformly approximated by trigonometric polynomials.
+
+###### _proof:_
+
+$f * F_{N}$ is a trigonometric polynomial.
+
+Abel means use the convergence of a [[Mathematical Analysis I --- math-131/notes/Power series|power series]] to verify summability. Recall that for a power series with coefficients $a_{n}$ to converge on radius $1$ we only need $\limsup \lvert a_{n} \rvert^{1 / n}$ to be less than $1$.  This is even weaker than Cesaro summability (for example $\sum_{n} (-1)^n (n + 1)$ is Abel summable but not Cesaro summable).
+
+##### _definition:_ Abel mean, Abel summability
+
+Given a series $\sum a_{n}$, the Abel sum is
+$$
+A(r) = \sum_{n = 0}^\infty a_{n} r^n
+$$
+
+If $A(r)$ converges for each non-negative $r < 1$, and $\lim_{ r \to 1 } A(r) = s$, we say $\sum a_{n}$ is summable to $s$.
+
+Given an integrable function, we do this
+
+##### _definition:_ Abel mean of a Fourier series
+
+Given an integrable function $f$ with $\hat{f}(n) = a_{n}$, the Abel mean of $f$ is $A_{r}f$ given by
+$$
+A_r f(x) = \sum_{n = -\infty}^\infty a_{n} r^{\lvert n \rvert } e^{i n x}
+$$
+
+##### _lemma:_ the Abel mean is convolution with the Poisson kernel
+
+$$
+A_{r} f (x) = (f * P_{r})(x)
+$$
+
+###### _proof sketch:_
+
+They have the same (absolutely summable) Fourier coefficients (the convolution of $f * P_{r}$ has coefficients that are the [[Fourier Analysis --- math-139/notes/Convolutions#_proposition _ the Fourier transform turns convolution into multiplication|product]] $\hat{f}(n) \hat{P_{r}}(n)$). Since they are continuous and  absolutely summable, [[Fourier Analysis --- math-139/notes/Fourier series#_corollary _ recovering a continuous function from Fourier series|the functions are recovered from the Fourier coefficients]].
