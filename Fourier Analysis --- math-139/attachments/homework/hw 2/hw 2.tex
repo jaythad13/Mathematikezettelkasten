@@ -24,6 +24,62 @@
 	\]
 \end{problem}
 
+\begin{solution}
+	Given a function $u : \mathbb{R}^{2} \to \mathbb{R}$, the Laplacian of $u$ is
+	\[
+		\Delta u = \frac{\partial^{2} u}{\partial x^{2}} + \frac{\partial^{2} u}{\partial y^{2}}.
+	\]
+	Recall that $r^{2} = x^{2} + y^{2}$, $\cos{\theta} = x / r$ and $\sin{\theta} = y / r$ so the partials of $r$ and $\theta$ are as follows.
+	\begin{align*}
+		\frac{\partial r}{\partial x} & = \frac{2x}{2r} = \cos{\theta} & \frac{\partial r}{\partial y} & = \frac{2y}{2r} = \sin{\theta} \\
+		\frac{\partial \theta}{\partial x} & = \frac{-\sin{\theta}}{r} = \frac{-y}{x^{2} + y^{2}} & \frac{\partial \theta}{\partial y} & = \frac{\cos{\theta}}{r} = \frac{x}{x^{2} + y^{2}}.
+	\end{align*}
+	Further, the second partials are
+	\begin{align*}
+		\frac{\partial^{2} r}{\partial x^{2}} & = \frac{1 - \cos^{2}{\theta}}{r} & \frac{\partial^{2} r}{\partial y^{2}} = \frac{1 - \sin^{2}{\theta}}{r^{2}} \\
+		\frac{\partial^{2} \theta}{\partial x^{2}} & = - \frac{\partial^{2} \theta}{\partial y^{2}} = \frac{-2 x y}{(x^{2} + y^{2})^{2}} = -2 \cos{\theta} \sin{\theta}
+	\end{align*}
+
+	Assuming $u$ to be $\mathcal{C}^{2}$, by Clairaut's theorem mixed partials are equal ---
+	\[
+		\frac{\partial^{2} u}{\partial r \partial \theta} = \frac{\partial^{2} u}{\partial \theta \partial r}
+	\]
+
+	Finally, the chain rule that says
+	\[
+		\frac{\partial u}{\partial x} = \frac{\partial r}{\partial x} \frac{\partial u}{\partial r} + \frac{\partial \theta}{\partial x} \frac{\partial u}{\partial \theta} = \cos{\theta} \frac{\partial u}{\partial r} - \frac{\sin{\theta}}{r} \frac{\partial u}{\partial \theta}.
+	\]
+	and similarly,
+	\[
+		\frac{\partial u}{\partial y} = \sin{\theta} \frac{\partial u}{\partial r} + \frac{\cos{\theta}}{r} \frac{\partial u}{\partial \theta}.
+	\]
+	Thus,
+	\begin{align*}
+		\frac{\partial^{2} u}{\partial x^{2}} & = \frac{\partial }{\partial x} \left ( \frac{\partial r}{\partial x} \frac{\partial u}{\partial r} + \frac{\partial \theta}{\partial x} \frac{\partial u}{\partial \theta} \right ) \\
+						      & = \frac{\partial^{2} r}{\partial x^{2}} \frac{\partial u}{\partial r} + \frac{\partial^{2} \theta}{\partial x^{2}} \frac{\partial u}{\partial \theta} + \frac{\partial r}{\partial x} \left ( \frac{\partial r}{\partial x} \frac{\partial^{2} u}{\partial r^{2}} + \frac{\partial \theta}{\partial x} \frac{\partial^{2} u}{\partial \theta \partial r} \right ) + \frac{\partial \theta}{\partial x} \left ( \frac{\partial r}{\partial x} \frac{\partial^{2} u}{\partial r \partial \theta} + \frac{\partial \theta}{\partial x} \frac{\partial ^{2} u}{\partial \theta^{2}} \right ) \\
+						      & = \left ( \frac{\partial r}{\partial x} \right )^{2} \frac{\partial^{2} u}{\partial r^{2}} + \frac{\partial^{2} r}{\partial x^{2}} \frac{\partial u}{\partial r} + \left ( \frac{\partial \theta}{\partial x} \right )^{2} \frac{\partial^{2} u}{\partial \theta^{2}} + \frac{\partial^{2} \theta}{\partial x^{2}} \frac{\partial u}{\partial \theta} + 2 \frac{\partial r}{\partial x} \frac{\partial \theta}{\partial x} \frac{\partial^{2} u}{\partial r \partial \theta}.
+	\end{align*}
+	By symmetry,
+	\[
+		\frac{\partial^{2} u}{\partial y^{2}} = \left ( \frac{\partial r}{\partial y} \right )^{2} \frac{\partial^{2} u}{\partial r^{2}} + \frac{\partial^{2} r}{\partial y^{2}} \frac{\partial u}{\partial r} + \left ( \frac{\partial \theta}{\partial y} \right )^{2} \frac{\partial^{2} u}{\partial \theta^{2}} + \frac{\partial^{2} \theta}{\partial y^{2}} \frac{\partial u}{\partial \theta} + 2 \frac{\partial r}{\partial y} \frac{\partial \theta}{\partial y} \frac{\partial^{2} u}{\partial r \partial \theta}.
+	\]
+	Thus,
+	\begin{align*}
+		\Delta u & = (\cos^{2}{\theta} + \sin^{2}{\theta}) \frac{\partial^{2} u}{\partial r^{2}} + \frac{2 - \cos^{2}{\theta} - \sin^{2}{\theta}}{r} \frac{\partial u}{\partial r} + \frac{\cos^{2}{\theta} + \sin^{2}{\theta}}{r^{2}} \frac{\partial^{2} u}{\partial \theta^{2}} \\
+			 & + \frac{\sin{\theta} \cos{\theta} - \sin{\theta} \cos{\theta}}{r} \frac{\partial^{2} u}{\partial r \partial \theta} \\
+			 & = \frac{\partial^{2} u}{\partial r^{2}} + \frac{1}{r} \frac{\partial u}{\partial r} +  \frac{1}{r^{2}} \frac{\partial^{2} u}{\partial \theta^{2}}
+	\end{align*}
+	as desired.
+
+	Also, using the first partials of $u$ computed earlier,
+	\begin{align*}
+		\left \lvert \frac{\partial u}{\partial x} \right \rvert^{2} + \left \lvert \frac{\partial u}{\partial y} \right \rvert^{2} & = \left ( \cos{\theta} \frac{\partial u}{\partial r} - \frac{\sin{\theta}}{r} \frac{\partial u}{\partial \theta} \right )^{2} + \left ( \sin{\theta} \frac{\partial u}{\partial r} + \frac{\cos{\theta}}{r} \frac{\partial u}{\partial \theta} \right )^{2} \\
+		& = (\cos^{2}{\theta} + \sin^{2}{\theta}) \left \lvert \frac{\partial u}{\partial r} \right \rvert^{2} + \frac{\cos^{2}{\theta} + \sin^{2}{\theta}}{r^{2}} \left \lvert \frac{\partial u}{\partial \theta} \right \rvert^{2} \\
+		& + 2 \left ( \frac{\cos{\theta} \sin{\theta} - \sin{\theta} \cos{\theta}}{r^{2}} \right ) \frac{\partial u}{\partial r} \frac{\partial u}{\partial \theta} \\
+		& = \left \lvert \frac{\partial u}{\partial r} \right \rvert^{2} + \frac{1}{r^{2}} \left \lvert \frac{\partial u}{\partial \theta} \right \rvert^{2}.
+	\end{align*}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[Problem 1.]
