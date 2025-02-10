@@ -149,7 +149,7 @@ However, in addition to the empty set and the whole space, we have two new sets 
 
 Finally, $(0, 1) \sqcup [0, 1]$ is neither open nor closed — no open neighbourhood of $1 \in \mathbb{R}_{2}$ is contained in the set, and $0 \in \mathbb{R}_{1}$ is a limit point of the set, but not contained in it.
 
-##### _example:_ closed sets in various topological spaces
+##### _example:_ closedness versus openness in different topological spaces
 
 In $\mathbb{Z}$ with the [[Topology --- math-147/notes/Topologies#_example _ the finite and countable complement topologies|finite complement topology]], $\{ 0, 1, 2 \}$ is closed, the prime numbers are neither closed nor open, and $\{ n \mid \lvert n \rvert \ge 10 \}$ is open.
 
