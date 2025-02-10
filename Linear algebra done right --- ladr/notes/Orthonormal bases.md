@@ -5,7 +5,7 @@ tags:
 - lin-alg
 ---
 
-We've already tried to generalise the idea of like $(1, 0, 0), (0, 1, 0), (0, 0, 1)$ in $\bb{F}^3$ to [[Bases|bases]] in abstract vector spaces. However, bases don't always preserve all of the properties of the standard basis of $\bb{F}^3$: basis vectors can have any "length" and can lie at any "angle" (except $0$ or $\pi$) to one another, whereas with the standard basis of $\bb{F}^3$ the basis vectors all have the same length - $1$ and are all perpendicular to each other. We call such a list of vectors orthonormal.
+We've already tried to generalise the idea of lists like $(1, 0, 0), (0, 1, 0), (0, 0, 1)$ in $\bb{F}^3$ to [[Linear algebra done right --- ladr/notes/Bases|bases]] in abstract vector spaces. However, bases don't always preserve all of the properties of the standard basis of $\bb{F}^3$: basis vectors can have any "length" and can lie at any "angle" (except $0$ or $\pi$) to one another, whereas with the standard basis of $\bb{F}^3$ the basis vectors all have the same length - $1$ and are all perpendicular to each other. We call such a list of vectors orthonormal.
 
 ##### _definition:_ orthonormal
 
@@ -133,7 +133,7 @@ $$
 
 ###### _proof:_
 
-Since $e_1, \ldots, e_m$ is a [[Bases|basis]], there must be some way to write $v$ as a linear combination of it, for any $v \in V$. Say
+Since $e_1, \ldots, e_m$ is a [[Linear algebra done right --- ladr/notes/Bases|bases]], there must be some way to write $v$ as a linear combination of it, for any $v \in V$. Say
 $$
 v = a_1 e_1 + \cdots + a_m e_m.
 $$

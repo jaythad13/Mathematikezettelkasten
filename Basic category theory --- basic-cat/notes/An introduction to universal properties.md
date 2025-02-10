@@ -73,7 +73,7 @@ Note that this proof has basically nothing to do with ring theory — it basical
 
 ##### _example:_ the basis determines a linear map
 
-Suppose we have a [[Vector spaces|vector space]] $V$, and a choice of [[Bases|basis]] $(v_{s})_{s \in S}$. Choose a target vector space $W$. For every function $f : S \to W$, there is a unique linear map $T_{f} \in \mathcal{L}(V, W)$ such that $T_{f} \circ i = f$. Here $i(s) = v_{s}$ for all $s \in S$.
+Suppose we have a [[Vector spaces|vector space]] $V$, and a choice of [[Linear algebra done right --- ladr/notes/Bases|basis]] $(v_{s})_{s \in S}$. Choose a target vector space $W$. For every function $f : S \to W$, there is a unique linear map $T_{f} \in \mathcal{L}(V, W)$ such that $T_{f} \circ i = f$. Here $i(s) = v_{s}$ for all $s \in S$.
 
 This basically amounts to the fact that a [[Linear maps|linear map from a vector space is uniquely determined by its values on the basis]]. We can rephrase this as $\Phi : \mathcal{L}(V, W) \to \{ f : S \to W \}$ given by $\Phi(T_{f}) = T_{f} \circ i$ is a bijection.
 
