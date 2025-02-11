@@ -3,6 +3,7 @@ tags:
 - math-139/3
 - math-139/6
 - math-139/7
+- math-139/8
 - anal
 - fourier
 ---
@@ -145,7 +146,7 @@ F_{N}(x) \le \frac{1}{N} \frac{1}{\sin ^{2}(\delta / 2)}
 $$
 for $x$ with $\lvert x \rvert > \delta$. Thus, as $N \to \infty$, $F_{N} \to 0$ outside $[-\delta, \delta]$.
 
-##### _corollary:_ Fejér kernels recover continuous functions
+##### _corollary:_ Weierstrass approximation theorem
 
 Any continuous function on the circle can be uniformly approximated by trigonometric polynomials.
 
@@ -181,4 +182,17 @@ $$
 
 ###### _proof sketch:_
 
-They have the same (absolutely summable) Fourier coefficients (the convolution of $f * P_{r}$ has coefficients that are the [[Fourier Analysis --- math-139/notes/Convolutions#_proposition _ the Fourier transform turns convolution into multiplication|product]] $\hat{f}(n) \hat{P_{r}}(n)$). Since they are continuous and  absolutely summable, [[Fourier Analysis --- math-139/notes/Fourier series#_corollary _ recovering a continuous function from Fourier series|the functions are recovered from the Fourier coefficients]].
+They have the same (absolutely summable) Fourier coefficients (the convolution of $f * P_{r}$ has coefficients that are the [[Fourier Analysis --- math-139/notes/Convolutions#_proposition _ the Fourier transform turns convolution into multiplication|product]] $\hat{f}(n) \hat{P_{r}}(n)$). Since they are continuous and absolutely summable, [[Fourier Analysis --- math-139/notes/Fourier series#_corollary _ recovering a continuous function from Fourier series|the functions are recovered from the Fourier coefficients]].
+
+
+##### _lemma:_ the Poisson kernel is a good kernel (as $r \to 1^-$)
+
+The Poisson satisfies the same general properties as a good kernel ($L^1$ and integral $1$) and as $r \to 1$ from below, the Poisson kernel satisfies the same limiting property that good kernels do as $n \to \infty$.
+
+###### _proof sketch:_
+
+##### _corollary:_ Abel means converge at points of continuity
+
+##### _corollary:_ Abel means recover continuous functions
+
+
