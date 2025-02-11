@@ -1,5 +1,6 @@
 \documentclass[12 pt, letterpaper]{hmcpset}
 \usepackage{hw-preamble}
+\usepackage{tikz}
 
 \name{Jayden Thadani}
 \class{MATH 139 --- Fourier Analysis}
@@ -117,6 +118,60 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item Recall that $e^{i n \theta} = \cos{(n \theta)} + i \sin{(n \theta)}$ and since $\cos$ is even and $\sin{}$ is odd, $e^{i (-n) \theta} = \cos{(n \theta)} - i \sin{(n \theta)}$. Thus, each partial sum of the Fourier series is
+			\[
+				\sum_{\lvert n \rvert \le N} \hat{f}(n) e^{i n \theta} = \hat{f}(0) e^{0} + \sum_{n \ge 1}^{N} (\hat{f}(n) + \hat{f}(-n)) \cos{(n \theta)} + i (\hat{f}(n) - \hat{f}(-n)) \sin{(n \theta)}.
+			\]
+			As $N \to \infty$, we get the desired result.
+		\item The formula for the $n$th Fourier coefficient is
+			\[
+				\hat{f}(n) = \int_{-\pi}^{\pi} f(x) e^{-i n x} \, dx. 
+			\]
+			If $f$ is even, then $f(x) = f(-x)$ and thus, by change of variables $u = -x$
+			\begin{align*}
+				\hat{f}(-n) & = \frac{1}{2 \pi} \int_{-\pi}^{\pi} f(x) e^{i n x} \, dx \\
+					    & = \frac{1}{2 \pi} \int_{\pi}^{-\pi} - f(-u) e^{- i n u} \, du \\
+					    & = \frac{1}{2 \pi} \int_{- \pi}^{\pi} f(u) e^{-i n u} \, du \\
+					    & = \hat{f}(n).
+			\end{align*}
+		\item If $f$ is even, then $f(x) = - f(-x)$ and thus, by change of variables $u = -x$
+			\begin{align*}
+				\hat{f}(-n) & = \frac{1}{2 \pi} \int_{-\pi}^{\pi} f(x) e^{i n x} \, dx \\
+					    & = \frac{1}{2 \pi} \int_{\pi}^{-\pi} - f(-u) e^{- i n u} \, du \\
+					    & = \frac{1}{2 \pi} - \int_{- \pi}^{\pi} f(u) e^{-i n u} \, du \\
+					    & = - \hat{f}(n).
+			\end{align*}
+		\item Note that $f$'s periodicity means we can split the integral defining the Fourier coefficient at $0$ and use change of variables to negate them. That is,
+			\begin{align*}
+				2 \pi \, \hat{f}(n) & = \int_{-\pi}^{\pi} f(\theta) e^{-i n \theta} \, d \theta \\
+					   & = \int_{-\pi}^{0} f(\theta) e^{-i n \theta} \, d\theta + \int_{0}^{\pi} f(\theta) e^{-i n \theta} \, d \theta \\
+					   & = \int_{0}^{\pi} f(\phi - \pi) e^{-i n (\phi - \pi)} \, d \phi + \int_{0}^{\pi} f(\theta) e^{-i n \theta} \, d \theta \\
+					   & = (e^{i \pi})^{n} \int_{0}^{\pi} f(\phi) e^{-i n \phi} \, d \phi + \int_{0}^{\pi} f(\theta) e^{-i n \theta} \, d \theta
+			\end{align*}
+			with the substitution $\phi = \pi + \theta$.
+
+			If $n$ is odd, $(e^{i \pi})^{n}$ is negative, and thus, the terms cancel giving $\hat{f}(n) = 0$ for odd $n$.
+
+		\item Recall that since integration is $\mathbb{R}$-linear, $\overline{\int_{[-\pi, \pi]} f} = \int_{[-\pi, \pi]} \overline{f}$. Suppose $f$ is real valued, $\overline{f} = f$, and thus
+			\begin{align*}
+				\overline{\hat{f}(n)} & = \overline{\frac{1}{2 \pi} \int_{-\pi}^{\pi} f(x) e^{-i n x} \, dx} \\
+						      & = \frac{1}{2 \pi} \int_{-\pi}^{\pi} \overline{f(x)} \, \overline{e^{-i n x}} \, dx \\
+						      & = \frac{1}{2 \pi} \int_{-\pi}^{\pi} f(x) e^{-i (-n) x} \, dx \\
+						      & = \hat{f}(-n).
+			\end{align*}
+
+			Now suppose $\overline{\hat{f}(n)} = \hat{f}(-n)$ for all $n$. Consider the difference
+			\begin{align*}
+				\overline{\hat{f}(n)} - \hat{f}(-n) & = \overline{\frac{1}{2 \pi} \int_{-\pi}^{\pi} f(x) e^{-i n x} \, dx} - \frac{1}{2 \pi} \int_{-\pi}^{\pi} f(x) e^{-i (-n) x} \, dx \\
+								    & = \frac{1}{2 \pi} \int_{-\pi}^{\pi} (\overline{f(x)} - f(x) ) \, e^{i n x} \, dx \\
+								    & = \widehat{(\overline{f} - f)}(-n).
+			\end{align*}
+			We know the first expression is $0$ for all $n \in \mathbb{Z}$ and thus, $\widehat{(\overline{f} - f)}(-n) = 0$ for all $n \in \mathbb{Z}$. If $f$ is continuous, this recovers $\overline{f} - f = 0$ identically on $[-\pi, \pi]$ --- that is, $f$ is real valued.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[3.]
@@ -129,7 +184,7 @@
 \pagebreak
 
 \begin{problem}[4.]
-	Consider the $2 \pi$-periodic odd function defined on $[0, \pi]$ by $f(\theta) + \theta(\pi - \theta)$.
+	Consider the $2 \pi$-periodic odd function defined on $[0, \pi]$ by $f(\theta) = \theta(\pi - \theta)$.
 	\begin{enumerate}
 		\item Draw the graph of $f$.
 		\item Compute the Fourier coefficients of $f$, and show that
@@ -138,6 +193,44 @@
 			\]	
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item
+			The plot below was created in TikZ.
+			\begin{figure}[H]
+				\centering
+				\begin{tikzpicture}
+					\draw[->] (-4, 0) -- (4, 0) node[right] {$\theta$};
+					\draw[->] (0, -3) -- (0, 3) node[above] {$f(\theta)$};
+					\draw[scale = 1, domain = 0:3.14, smooth, variable = \x, blue] plot ({\x}, {3.14 * \x - \x * \x});
+					\draw[scale = 1, domain = -3.14:0, smooth, variable = \x, red] plot ({\x}, {3.14 * \x + \x * \x});
+				\end{tikzpicture}
+				\caption{The initial function $f$ in blue and its $2\pi$-periodic extension in red}
+			\end{figure}
+		\item Note that
+			\[
+				f(\theta) = \begin{cases}
+					\theta (\pi - \theta) & \theta \in [0, \pi] \\
+					\theta (\pi + \theta) & \theta \in [-\pi, 0]
+				\end{cases}
+			\]
+			Also note that by 2 part (c) we have that $f(\theta) \sim \hat{f}(0) + \sum_{n \ge 1} (\hat{f}(n) + \hat{f}(-n)) \sin{(n \theta)}$ and by essentially the same proof as part (d), since $f(\theta + \pi) = - f(\theta)$, we have $\hat{f}(n) = 0$ for all even $n$. Finally, since $f$ is real, $\hat{f}(-n) = \overline{\hat{f}(n)}$
+
+			Thus, we compute
+			\begin{align*}
+				\hat{f}(n) & = \frac{1}{2 \pi} \int_{-\pi}^{\pi} f(\theta) e^{-i n \theta} \, d \theta \\
+					   & = \frac{1}{2 \pi} \left ( \int_{0}^{\pi} \theta (\pi - \theta) e^{-i n \theta} \, d \theta + \int_{-\pi}^{0} \theta (\pi + \theta) e^{-i n \theta} \, d \theta \right ) \\
+					   & = \frac{1}{2 \pi} \left (  \right )
+			\end{align*}
+
+			Computing the integral on the right in Mathematica and substituting odd $n$ we get
+			\begin{align*}
+				\hat{f}(n) + \hat{f}(-n) & = \frac{4 \pi n - 2 (\pi^{2} n^{2} - 2) \sin{(\pi n) - 4 \pi n \cos{(\pi n)}}}{\pi n^{3}} \\
+							 & = \frac{4 \pi n (1 - \cos{(\pi n)})}{n^{3}}.
+			\end{align*}
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
