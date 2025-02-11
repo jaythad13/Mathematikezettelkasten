@@ -1,0 +1,144 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+\setlist[enumerate, 1]{label = (\roman*)}
+
+\name{Jayden Thadani}
+\class{MATH 145 --- Topics in Geometry and Topology}
+\assignment{Homework 3}
+\duedate{12th February 2025}
+
+\begin{document}
+
+\begin{problem}[15. (Brouwer's fixed point theorem in 2D)]
+	Let $D^{2}$ denote the closed unit disc in the complex plane, and let $f : D^{2} \to D^{2}$ be continuous. Brouwer's theorem asserts that $f$ has at least one \emph{fixed point}, that is, a point $x \in D^{2}$ such that $f(x) = x$.
+
+	Suppose $f$ has no fixed points. Then we can define a continuous function $g : D^{2} \to \mathbb{C} \setminus \{ 0 \}$ by the formula $g(z) = z - f(z)$.
+	\begin{enumerate}
+		\item Show that the loops
+			\[
+				t \mapsto g(e^{2 \pi i t}) \quad \text{and} \quad t \mapsto e^{2 \pi i t}
+			\]
+			are homotopic in $\mathbb{C} \setminus \{ 0 \}$. It follows that $w(g(e^{2 \pi i t}), 0) = 1$.
+		\item Show that the loops
+			\[
+				t \mapsto g(e^{2 \pi i t}) \quad \text{and} \quad t \mapsto g(0)
+			\]
+			are homotopic in $\mathbb{C} \setminus \{ 0 \}$. It follows that $w(g(e^{2 \pi i t}), 0) = 0$.
+	\end{enumerate}
+	This contradiction implies the Brouwer fixed point theorem in 2 dimensions.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[16.]
+	Let's define a \emph{Brouwer space} to be a topological space $X$ such that every continuous map $f : X \to X$ has at least one fixed point. It is a known theorem that the closed unit disc in $n$-dimensional space, $D^{n}$ is a Brouwer space for every $n$.
+
+	Let us now study some properties of Brouwer spaces.
+	\begin{enumerate}
+		\item Let $Y$ be a Brouwer space. Suppose $X$ is homeomorphic to $Y$. This means that there are continuous functions
+			\[
+				p : X \to Y \quad \text{and} \quad q : Y \to X
+			\]
+			such that
+			\[
+				qp = \operatorname{id}_{X} \quad \text{and} \quad pq = \operatorname{id}_{Y}.
+			\]
+			Show that $X$ is a Brouwer space.
+		\item Let $Y$ be a Brouwer space. Suppose $X$ is a \emph{retract} of $Y$. This means that $X$ is a subspace of $Y$, with inclusion map written $p : X \to Y$ and there is a continuous function $q : Y \to X$ such that $qp = \operatorname{id}_{X}$.
+
+			Show that $X$ is a Brouwer space.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[17.]
+	\begin{enumerate}
+		\item The unit sphere in $n$-dimensions
+			\[
+				S^{n - 1} = \{ x \in \mathbb{R}^{n} \mid \lVert x \rVert = 1 \}
+			\]
+			is a subspace of the annulus
+			\[
+				A^{n} = \{ x \in \mathbb{R}^{n} \mid 1/2 \le \lVert x \rVert \le 1 \}.
+			\]
+			Show that $S^{n - 1}$ is a retract of $A^{n}$.
+		\item Show that $S^{n - 1}$ is not a Brouwer space (for any $n$)
+		\item The unit sphere $S^{n - 1}$ is a subspace of the closed unit disc
+			\[
+				D^{n} = \{ x \in \mathbb{R}^{n} \mid \lVert x \rVert \le 1 \}.
+			\]
+
+			Assuming the general Brouwer theorem, show that $S^{n - 1}$ is not a retract of $D^{n}$.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[18.]
+	\begin{enumerate}
+		\item Let $Q$ denote the closed square disc
+			\[
+				\{ (x, y) \in \mathbb{R}^{2} \mid \max \{ \lvert x \rvert, \lvert y \rvert \} \le 1 \}
+			\]
+			and let $X$ denote its cross-shaped subspace
+			\[
+				X = \{ (x, y) \in Q \mid \lvert x \rvert = \lvert y \rvert \}
+			\]
+
+			Show that $X$ is a retract of $Q$, by writing down a suitable continuous map $Q \to X$.
+
+		\item It follows from (i) that the cross-shaped space $X$ is a Brouwer space. Sketch or otherwise describe an entertainingly mildly complicated continuous function $f : X \to X$ and indicate at least one fixed point.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[19.]
+	\begin{enumerate}
+		\item Explain how to interpret the following diagram as a $1$-cycle with coefficients in $\mathbb{F}_{2}$.
+
+			Specifically, label the vertices $a, b, c, d, e$ in counter-clockwise order from the top. Write down the $1$-cycle in the form  $\sum \lambda_{i} [a_{i}, b_{i}]$ and confirm that it is a $1$-cycle in $\mathbb{F}_{2}$.
+		\item Calculate the $\mathbb{F}_{2}$ winding number $w_{\mathbb{F}_{2}}$ of your cycle in each region.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[20.]
+	\begin{enumerate}
+		\item Show that the twelve edges of the following graph can be oriented to form a $1$-cycle over the field $\mathbb{F}_{3} = \mathbb{Z} / 3 \mathbb{Z}$.
+		\item Calculate the $\mathbb{F}_{3}$-winding number $w_{\mathbb{F}_{3}}$ of your cycle in each region.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[21.]
+	We have three loops
+	\[
+		f, g, h : [0, 1] \to \mathbb{R}^{2} \setminus \{ 0 \}
+	\]
+	that are related in the following way.
+
+	Let $D$ denote this region in the plane:
+
+	Let $\alpha, \beta, \psi : [0, 1] \to D$ be loops defined as follows
+	\begin{itemize}
+		\item $\alpha$ traverses the small interior boundary square on the left side of $D$ counter-clockwise at uniform speed, starting and ending at the square's bottom right corner.
+		\item $\beta$ traverses the small interior boundary square on the right hand side of $D$, counter-clockwise at uniform speed, starting and ending at the square's bottom right corner.
+		\item $\gamma$ traverses the rectangular outer boundary of $D$, counter-clockwise at uniform speed, starting and ending at the rectangle's bottom right corner.
+	\end{itemize}
+
+	Suppose we have a map $H : D \to \mathbb{R}^{2} \setminus 0$ such that
+	\[
+		f(t) = H(\alpha(t)), \quad g(t) = H(\beta(t)), \quad h(t) = H(\gamma(t))
+	\]
+	for all $t \in [0, 1]$. Show that the winding numbers are related by the formula
+	\[
+		w(f, 0) + w(g, 0) = w(h, 0)
+	\]
+	by considering a subdivision of $D$ into $13 N^{2}$ equal squares where $N$ is sufficiently large.
+\end{problem}
+
+\end{document}
