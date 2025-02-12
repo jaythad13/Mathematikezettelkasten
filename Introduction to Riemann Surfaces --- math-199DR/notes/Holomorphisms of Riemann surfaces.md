@@ -210,6 +210,8 @@ $$
 $$
 for each open $U \subseteq X$.
 
+Note that in the case of a holomorphism $\pi : X \to Y$, the pushforward of the structure sheaf, $\pi_{*}\mathcal{O}_{X}$ is a sheaf on $Y$, with each $\pi_{*}\mathcal{O}_{X}(U)$ being a ring of holomorphic functions on $\pi^\text{pre}(U)$ which is a subset of $X$. That is, the pushforward sheaf is a sheaf on the codomain ($Y$) taking values that are rings of functions on the domain ($X$).
+
 We can express the relationship between these sheaves by a sheaf morphism.
 
 ##### _definition:_ sheaf morphism
