@@ -96,15 +96,21 @@ $\mathbb{R}_{\text{har}}$ is the topological space on $\mathbb{R}$ with a basis 
 
 Note however, that $-H = \{ -1 / n \mid n \in \mathbb{N} \}$ still has limit point $0$, since every open set containing zero contains some $(- r, r)$ possibly excluding some points greater than zero, but still including all the points less than $0$, and thus, including the negative harmonic sequence.
 
-However, $0$ is not a limit point of $H$ — in fact, we can separate zero from the harmonic sequence — $(-1, 1) \setminus H$ is open, contains zero, and excludes the harmonic sequence while $(0, 2)$ is open, contains the harmonic sequence and excludes $0$.
+While $0$ is not a limit point of $H$ — but we cannot separate them with disjoint open sets since every open set containing $H$ contains an open neighbourhood of each $1 / n$. If an open set containing $0$ contains $(-r, r)$ we are done. Suppose not. Since every open interval containing $0$ contains some $1 / n$, and thus, any other (not an open interval) basic open set containing $0$ contains $(1 / n - r, 1 / n) \cup (1 / n, 1 / n + r)$ for some $r > 0$.
 
 ##### _example:_ the sticky bubble topology
 
 There is a really funky topology on the (closed) upper half-plane $\mathbb{H} = \{ (x, y) \in \mathbb{R}^{2} \mid y \ge 0 \}$. The basis consists all the regular balls contained in the plane, with the addition of sticky bubbles — sets $B((x, y), r) \cup \{ (x, 0) \}$ for $r = y >0$. The resulting topological space is called $\mathbb{H}_{\text{bub}}$.
 
-This is a really interesting topology for reasons of separation properties.
+This is a really interesting topology for reasons of separation properties. In particular, if we [[Mathematical Analysis I --- math-131/notes/Subspaces|use the idea of subspace topologies]] from real analysis, we'd see that $\mathbb{R} \times \{ 0 \}$ is given the [[Topology --- math-147/notes/Topologies#_example _ the discrete and indiscrete topologies|discrete topology]]. (Does this carry over to topological spaces in general? We'll find out soon).
 
 Notice that the only basic open sets containing points in the $x$-axis are the sticky bubbles. Each of the non-stuck points in a sticky bubble can be separated from $x$-axis $\mathbb{R} \times \{ 0 \}$ by a non-sticky bubble of the same centre and radius. Further, each of the points on $\mathbb{R} \times \{ 0 \}$ has an open-neighbourhood that contains no other points on $\mathbb{R} \times \{ 0 \}$ — the sticky bubble at the point. Thus, every subset of the $x$-axis is closed. In particular, the closure of the rationals $\mathbb{Q} \times \{ 0 \}$, is just itself.
+
+Furthermore, we can separate any subset $A \subseteq \mathbb{R} \times \{ 0 \}$ from any point $x \in \mathbb{R} \times \{0  \}$ not in $A$ using open sets. In particular, choose any sticky bubble $U$ (of radius, say $r$) stuck on $x$, and using geometry, draw a sticky bubble around each $a \in A$ that doesn't intersect with $U$.
+
+In fact, we can separate any two countable sets $A, B \subseteq \mathbb{R} \times \{ 0 \}$. Just draw sticky bubbles around $a_{1}, b_{1}, a_{2}, b_{2} \dots$ such that each $n$th bubble intersects none of the previous bubbles.
+
+However, we cannot separate $\mathbb{Q} \times \{ 0 \}$ and $\mathbb{R} \setminus \mathbb{Q} \times \{ 0 \}$. We do this by bubbling under bubbles.
 
 ##### _example:_ Furstenberg's proof of the infinitude of the primes
 
@@ -112,4 +118,4 @@ Hillel Furstenberg gave a "topological" proof of the infinitude of the primes wh
 
 Essentially, he used the fact that the arithmetic progressions on $\mathbb{Z}$ characterise the arithmetic structure, and thus, the [[Superdiscrete --- math-55A/notes/Euclid's algorithm and primes#_definition _ prime numbers|primes]]. Using a basis $\mathcal{B}$ of arithmetic progressions $\{ az  + b \mid z \in \mathbb{Z} \}$ (where $a, b \in \mathbb{Z}$) on $\mathbb{Z}$, we can generate a topology — all of $\mathbb{Z}$ is an arithmetic progression, the intersection of arithmetic progressions $\{ a z + b \}$ and $\{ cz + d \}$ is the arithmetic progression $\{ \operatorname{lcm}(a, c) z + z_{0} \}$ if they have some common $z_{0}$ and $\operatorname{Ø}$ otherwise. We call the resulting topological space $\mathbb{Z}_{\text{arith}}$.
 
-Note that each [[Abstract Algebra I --- math-171/notes/Ideals and quotients#_definition _ ideal|ideal]] $p\mathbb{Z}$ is an arithmetic progression. The intersection of all of these ideals is just $\{ 0 \}$ which is not open since every basic open set (arithmetic progression) contains more integers than just $\{ 0 \}$. But we know that [[Topology --- math-147/notes/Topologies#_proposition _ finite intersections of open sets are open|finite intersections of open sets]] are open, so there must be infinitely many primes.
+Note that each [[Abstract Algebra I --- math-171/notes/Ideals and quotients#_definition _ ideal|ideal]] $p\mathbb{Z}$ is an arithmetic progression and thus, open, but also so is every $p\mathbb{Z} + b$ where $b$ is not a multiple of $p$. Thus, $p\mathbb{Z}$ is closed. The union of all of these ideals is just $\mathbb{Z} \setminus \{ -1, 1 \}$. But $\{ -1, 1 \}$ is not open since every arithmetic progression contains more than just two numbers. [[Topology --- math-147/notes/Limit points and closed sets#_theorem _ closed sets are complements of open sets|Thus,]] the union of all these closed $p\mathbb{Z}$ is not closed. For this to be true, there [[Topology --- math-147/notes/Limit points and closed sets#_theorem _ finite unions and arbitrary intersections of closed sets are closed|infinitely many closed sets]].
