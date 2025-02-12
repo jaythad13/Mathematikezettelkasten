@@ -2,6 +2,7 @@
 tags:
 - top
 - math-147/6
+- math-147/7
 ---
 
 Let $(X, \mathcal{T})$ be a topological space (unless otherwise stated).
@@ -40,7 +41,7 @@ We also might want an easier way to check that a basis forms any topology at all
 
 ##### _proposition:_ equivalent conditions to be a basis of any topology
 
-If $X$ is a set and $\mathcal{B}$ is a collection of subsets of $X$, then $\mathcal{B}$ forms a basis of a topology on $X$ if and only if each point of $X$ is in some basic open set, and the intersection of any two basic open sets $U, V \in \mathcal{B}$ is covered by basic open neighbourhoods — for all $p \in U \cap V$, there is some $W \in \mathcal{B}$ with $p \in W \subseteq U \cap V$.
+If $X$ is a set and $\mathcal{B}$ is a collection of subsets of $X$, then $\mathcal{B}$ is the basis of a topology on $X$ if and only if each point of $X$ is in some basic open set, and the intersection of any two basic open sets $U, V \in \mathcal{B}$ is covered by basic open neighbourhoods — for all $p \in U \cap V$, there is some $W \in \mathcal{B}$ with $p \in W \subseteq U \cap V$.
 
 ###### _proof:_
 
@@ -52,13 +53,18 @@ Since every open set is union of basic open sets, and thus, every union of these
 
 Finally, if $U$ and $V$ are open, they are covered by basic open sets. Thus, each $x \in U \cap V$ is in basic open sets $U_{x}$ and $V_{x}$ and thus, in the set $U_{x} \cap V_{x} \subseteq U \cap V$. By the second condition, $U_{x} \cap V_{x}$ has a basic open neighbourhood $W_{x} \subseteq U_{x} \cap V_{x} \subseteq U \cap V$. Unioning all these basic open neighbourhoods $W_{x}$ just gets us $U \cap V$.
 
+### Generating interesting topologies with bases
+
 ##### _example:_ lower limit topology
 
 We can generate the lower limit topology on $\mathbb{R}$ from the basis $\{ [a, b) \subseteq \mathbb{R} \mid a, b \in \mathbb{R} \}$. We often call this $\mathbb{R}_{\text{LL}}$, but it's also called the Sorgenfrey line or $\mathbb{R}^1_{\text{bad}}$.
 
 This is because each $x \in \mathbb{R}_{\text{LL}}$ is contained in, say $[x, x + 1)$, and each intersection looks like a basis element $[a, b)$.
 
-It's clear that $\mathbb{R}_{\text{LL}}$ has open sets that are not open in $\mathbb{R}$ — $[a, b)$ is not open in Euclidean $\mathbb{R}$. However, every open set in Euclidean $\mathbb{R}$ is open in $\mathbb{R}_{\text{LL}}$ we can see this by showing that the basis
+It's clear that $\mathbb{R}_{\text{LL}}$ has open sets that are not open in $\mathbb{R}$ — $[a, b)$ is not open in Euclidean $\mathbb{R}$. However, every open set in Euclidean $\mathbb{R}$ is open in $\mathbb{R}_{\text{LL}}$ we can see this by showing that each basic open set in the basis of open intervals is contained is open in $\mathbb{R}_{\text{LL}}$. That is, consider the union
+$$
+(a, b) = \bigcup_{x \in (a, b)} [x, b).
+$$
 
 Now seems as good a time as any to introduce the notion of the strength of a topology.
 
@@ -73,3 +79,37 @@ We add strictly to these descriptors if the inclusion is proper.
 The Euclidean topology on $\mathbb{R}$ clearly contains open sets, like open intervals $(a, b)$, that the [[Topology --- math-147/notes/Topologies#_example _ the finite and countable complement topologies|cocountable]] topology does not. However the cocountable topology has $\mathbb{R} \setminus \{ 1 / n \mid n \in \mathbb{N} \}$ open, which the Euclidean topology does not. This is because its complement $\{ 1/n \mid n \in \mathbb{N} \}$ is [[Topology --- math-147/notes/Limit points and closed sets#_theorem _ closed sets are complements of open sets|not closed]].
 
 Also, the twopological space $(\mathbb{R}, \{ \mathbb{R}, \emptyset, \{ 2 \} \})$ is incomparable with the Euclidean topology on $\mathbb{R}$.
+
+##### _example:_ the double-headed snake
+
+Let $\mathbb{R}_{+00}$ be the set $\mathbb{R}_{+} \cup \{ 0_{1}, 0_{2} \}$ — the positive numbers and two different zeroes. Consider the topology with the consisting of all open intervals in $\mathbb{R}_{+}$ and all $[0_{1}, b) := (0, b) \cup \{ 0_{1} \}$ and $[0_{2}, b) := (0, b) \cup \{ 0_{2} \}$.
+
+Since the open intervals form the basis of an open set, we only need to check that the intersection of two basic open sets contains a basic open neighbourhood of each point.
+
+This is actually the precursor to the idea of a [[Topology --- math-147/notes/Quotient spaces|quotient space]] — $\mathbb{R}_{+00}$ is $\mathbb{R}_{\ge 0} \sqcup \mathbb{R}_{\ge 0} / \sim$ where the equivalence relation sets both copies of each positive $x$ to be equivalent. What this equivalence relation is doing is saying that all the points are the same except the zeroes. But because all the neighbourhoods of the zeroes have to contain other points, topologically we can't tell the zeroes apart.  That is, there are no disjoint open sets $U$ and $V$ so that $0_{1} \in U$ and $0_{2} \in V$. 
+
+Suppose $U, V$ are open sets with $0_{1} \in U$ and $0_{2} \in V$. Thus, for some $b_{1}, b_{2} \in \mathbb{R}$, we have $[0_{1}, b_{1}) \subseteq U$ and $[0_{2}, b_{2}) \subseteq V$. Choosing any $a < \min \{ b_{1}, b_{2} \}$ we get $a$ in each basic open set, and thus, $a \in U \cap V$. That is, $U$ and $V$ cannot be disjoint.
+
+##### _example:_ the harmonic complement topology
+
+$\mathbb{R}_{\text{har}}$ is the topological space on $\mathbb{R}$ with a basis consisting of open intervals $(a, b)$ and open intervals with the harmonic sequence removed — $(a, b) \setminus H$ for $H = \{ 1 / n \mid n \in \mathbb{N} \}$.
+
+Note however, that $-H = \{ -1 / n \mid n \in \mathbb{N} \}$ still has limit point $0$, since every open set containing zero contains some $(- r, r)$ possibly excluding some points greater than zero, but still including all the points less than $0$, and thus, including the negative harmonic sequence.
+
+However, $0$ is not a limit point of $H$ — in fact, we can separate zero from the harmonic sequence — $(-1, 1) \setminus H$ is open, contains zero, and excludes the harmonic sequence while $(0, 2)$ is open, contains the harmonic sequence and excludes $0$.
+
+##### _example:_ the sticky bubble topology
+
+There is a really funky topology on the (closed) upper half-plane $\mathbb{H} = \{ (x, y) \in \mathbb{R}^{2} \mid y \ge 0 \}$. The basis consists all the regular balls contained in the plane, with the addition of sticky bubbles — sets $B((x, y), r) \cup \{ (x, 0) \}$ for $r = y >0$. The resulting topological space is called $\mathbb{H}_{\text{bub}}$.
+
+This is a really interesting topology for reasons of separation properties.
+
+Notice that the only basic open sets containing points in the $x$-axis are the sticky bubbles. Each of the non-stuck points in a sticky bubble can be separated from $x$-axis $\mathbb{R} \times \{ 0 \}$ by a non-sticky bubble of the same centre and radius. Further, each of the points on $\mathbb{R} \times \{ 0 \}$ has an open-neighbourhood that contains no other points on $\mathbb{R} \times \{ 0 \}$ — the sticky bubble at the point. Thus, every subset of the $x$-axis is closed. In particular, the closure of the rationals $\mathbb{Q} \times \{ 0 \}$, is just itself.
+
+##### _example:_ Furstenberg's proof of the infinitude of the primes
+
+Hillel Furstenberg gave a "topological" proof of the infinitude of the primes when he was only 19!
+
+Essentially, he used the fact that the arithmetic progressions on $\mathbb{Z}$ characterise the arithmetic structure, and thus, the [[Superdiscrete --- math-55A/notes/Euclid's algorithm and primes#_definition _ prime numbers|primes]]. Using a basis $\mathcal{B}$ of arithmetic progressions $\{ az  + b \mid z \in \mathbb{Z} \}$ (where $a, b \in \mathbb{Z}$) on $\mathbb{Z}$, we can generate a topology — all of $\mathbb{Z}$ is an arithmetic progression, the intersection of arithmetic progressions $\{ a z + b \}$ and $\{ cz + d \}$ is the arithmetic progression $\{ \operatorname{lcm}(a, c) z + z_{0} \}$ if they have some common $z_{0}$ and $\operatorname{Ø}$ otherwise. We call the resulting topological space $\mathbb{Z}_{\text{arith}}$.
+
+Note that each [[Abstract Algebra I --- math-171/notes/Ideals and quotients#_definition _ ideal|ideal]] $p\mathbb{Z}$ is an arithmetic progression. The intersection of all of these ideals is just $\{ 0 \}$ which is not open since every basic open set (arithmetic progression) contains more integers than just $\{ 0 \}$. But we know that [[Topology --- math-147/notes/Topologies#_proposition _ finite intersections of open sets are open|finite intersections of open sets]] are open, so there must be infinitely many primes.
