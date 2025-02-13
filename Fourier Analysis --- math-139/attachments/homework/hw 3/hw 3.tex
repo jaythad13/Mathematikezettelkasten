@@ -1,0 +1,91 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 139 --- Fourier Analysis}
+\assignment{Homework \#3}
+\duedate{14th February 2025}
+
+\begin{document}
+
+\begin{problem}[S \& S \S 2.6 \#6.]
+	Let $f$ be the function defined on $[-\pi, \pi]$ by $f(\theta) = \lvert \theta \rvert$.
+	\begin{enumerate}
+		\item Draw the graph of $f$.
+		\item Calculate the Fourier coefficients of $f$, and show that
+			\[
+				\hat{f}(n) = \begin{cases}
+					\pi / 2 & \text{if } n = 0m \\
+					\frac{-1 + (-1)^{n}}{\pi n^{2}} & \text{otherwise}.
+				\end{cases}
+			\]
+		\item What is the Fourier series of $f$ in terms of sines and cosines?
+		\item Taking $\theta = 0$, prove that
+			\[
+				\sum_{n \text{ odd} \ge 1} \frac{1}{n^{2}} = \frac{\pi^{2}}{8} \quad \text{and} \quad \sum_{n = 1}^{\infty} \frac{1}{n^{2}} = \frac{\pi^{2}}{6}
+			\]
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[S \& S \S 2.6 \#9.]
+	Let $f = \chi_{[a, b]}$ be the characteristic function of the interval $[a, b] \subseteq [-\pi, \pi]$, that is,
+	\[
+		\chi_{[a, b]}(x) = \begin{cases}
+			1 & \text{if } x \in [a, b] \\
+			0 & \text{otherwise}.
+		\end{cases}
+	\]
+	\begin{enumerate}
+		\item Show that the Fourier series of $f$ is given by
+			\[
+				f(x) \sim \frac{b - a}{2 \pi} + \sum_{n = 0} \frac{e^{-i n a}  - e^{-i n b}}{2 \pi i n} e^{i n x}
+			\]
+			The sum extends over all positive and negative integers excluding $0$.
+		\item Show that if $a \neq -\pi$ or $b \neq -\pi$ and $a \neq b$, then the Fourier series does not converge absolutely for any $x$.
+		\item However, prove that the Fourier series converges at every point $x$. What happens if $a \neq - \pi$ and $b = \pi$?
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[S \& S \S 2.6 \#11.]
+	Suppose that $\{ f_{k} \}_{k \in \mathbb{N}}$ is a sequence of Riemann integrable functions on the interval $[0, 1]$ such that
+	\[
+		\int_{0}^{1} \lvert f_{k}(x) - f(x) \rvert \, dx 
+	\]
+	as $k \to \infty$.
+
+	Show that $\hat{f}_{k}(n) \to \hat{f}(n)$ uniformly in $n$ as $k \to \infty$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[S \& S \S 2.6 \#12.]
+	Prove that if a series of complex numbers $\sum c_{n}$ converges to $s$, then $\sum c_{n}$ is also Ces\`aro summable to $s$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[S \& S \S 2.6 \#15]
+	Prove that the Fej\'er kernel is given by
+	\[
+		F_{N}(x) = \frac{1}{N} \frac{\sin^{2}{(Nx / 2)}}{\sin^{2}{(x / 2)}}.
+	\]
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[S \& S \S 2.6 \#16]
+	The Weierstrass approximation theorem states:
+	\begin{theorem}[Weierstrass approximation theorem]
+		Let $f$ be a continuous function on the closed and bounded interval $[a, b] \subseteq \mathbb{R}$. Then, for any $\varepsilon > 0$, there exists a polynomial $P$ such that
+		\[
+			\sup_{x \in [a, b]} \lvert f(x) - P(x) \rvert < \varepsilon.
+		\]
+	\end{theorem}
+	Prove this by applying Fej\'er's theorem and using the fact that the exponential function $e^{i x}$ can be approximated by polynomials uniformly on any interval.
+\end{problem}
+
+\end{document}
