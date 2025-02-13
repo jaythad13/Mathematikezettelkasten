@@ -28,6 +28,19 @@
 	This contradiction implies the Brouwer fixed point theorem in 2 dimensions.
 \end{problem}
 
+\begin{solution}
+	We will write $h : t \mapsto e^{2 \pi i t}$.
+	\begin{enumerate}
+		\item We claim that $g \circ h(z)$ and $h(z)$ always have (the support of) the straight line segment between them contained in $\mathbb{C} \setminus \{ 0 \}$. 
+
+			Since $g \circ h = h - f \circ h$, $\lvert h \rvert = 1$, and $\lvert f \rvert \le 1$, the line segment between  $g \circ h(z)$ and $h(z)$ has length $1$. The only line segment with length less than or equal to $1$ that has one endpoint on the circle $h$ and is not contained in $\mathbb{C} \setminus \{ 0 \}$ is the radius, which has as its other end point $0$. Since $g \circ h(z)$ is never $0$, the straight line between $h$ and $g \circ h$ is always contained in $\mathbb{C} \setminus \{ 0 \}$.
+
+			Thus, there is a straight line homotopy giving $g \circ h \simeq h$ in $\mathbb{C} \setminus \{ 0 \}$.
+
+		\item Notice that $h$ and $0$ are homotopic in $\mathbb{C}$ by straight line homotopy. Since $g$ is a continuous function $\mathbb{C} \to \mathbb{C} \setminus \{ 0 \}$ we have that $g \circ h \simeq g(0)$ in the codomain $\mathbb{C} \setminus \{ 0 \}$.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[16.]
@@ -41,14 +54,37 @@
 			\]
 			such that
 			\[
-				qp = \operatorname{id}_{X} \quad \text{and} \quad pq = \operatorname{id}_{Y}.
+				q \circ p = \operatorname{id}_{X} \quad \text{and} \quad p \circ q = \operatorname{id}_{Y}.
 			\]
 			Show that $X$ is a Brouwer space.
-		\item Let $Y$ be a Brouwer space. Suppose $X$ is a \emph{retract} of $Y$. This means that $X$ is a subspace of $Y$, with inclusion map written $p : X \to Y$ and there is a continuous function $q : Y \to X$ such that $qp = \operatorname{id}_{X}$.
+		\item Let $Y$ be a Brouwer space. Suppose $X$ is a \emph{retract} of $Y$. This means that $X$ is a subspace of $Y$, with inclusion map written $p : X \to Y$ and there is a continuous function $q : Y \to X$ such that $q \circ p = \operatorname{id}_{X}$.
 
 			Show that $X$ is a Brouwer space.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item Notice that if $X$ is homeomorphic to $Y$, then it is a retract of $Y$ since $p$ is still an inclusion (an injective continuous map) and $q \circ p = \operatorname{id}_{X}$. Thus, we can use part (ii) to show that this is true.
+		\item Suppose $f : X \to X$ is continuous. Notice that $g = p \circ f \circ q$ is continuous too and the composition $Y \to X \to X \to Y$ yields a map $Y \to Y$. That is, the diagram below commutes
+			\[
+				\begin{tikzcd}
+					X \ar[r, "f"] & X \ar[d, "p"] \\
+					Y \ar[u, "q"] \ar[r, "g"] & Y
+				\end{tikzcd}
+			\]
+
+			Since  $Y$ is a Brouwer space, $g$ has a fixed point $y \in Y$. We claim that $q(y)$ is a fixed point of $f$ --- 
+
+			We can see this
+			\[
+				f(q(y)) = (\operatorname{id}_{X} \circ f \circ q)(y) = q \circ (p \circ f \circ q)(y) = q(g(y)) = q(y)
+			\]
+			where the second equality is because $\operatorname{id}_{X} = q \circ p$ and the third equality is because we defined $g = p \circ f \circ q$.
+
+			We could alternatively argue that $q(y) = y$ since $g$ has image contained in $X$, and thus, any fixed point in $Y$ must be a fixed point in $X$.
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
@@ -73,6 +109,20 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item Since $S^{n - 1}$ is a subspace of the annulus, we have the inclusion $p : S^{n - 1} \to A^{n}$. For $q$ we dilate each point in the annulus onto the sphere. That is,
+			\[
+				q : x \mapsto \frac{x}{\lVert x \rVert}.
+			\]
+			This is the continuous quotient of the identity function and the norm and thus, continuous. Since all $x \in S^{n - 1}$ have $\lVert x \rVert = 1$,  $q \circ p = \operatorname{id}_{S^{n - 1}}$.
+
+		\item Consider the continuous map $x \mapsto -x$ on $\mathbb{R}^{n}$ restricted to $S^{n - 1}$. Since $\lVert x \rVert = \lVert -x \rVert$ this is a map $S^{n - 1} \to S^{n - 1}$. However, $0 \notin S^{n - 1}$ which is the only fixed point of the map on $\mathbb{R}^{n}$. Thus, the map does not have a fixed point --- $S^{n - 1}$ is not a Brouwer space.
+
+		\item By Brouwer's fixed point theorem $D^{n}$ is a Brouwer space. If $S^{n - 1}$ were a retract of $D^{n}$ we know by problem 16 that it must also be a Brouwer space. In the previous subpart we have shown that $S^{n - 1}$ is not a Brouwer space. Thus, $S^{n - 1}$ cannot be a retract of $D^{n}$.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[18.]
@@ -92,6 +142,20 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item Notice that the hypotenuse of a right-angled triangle is a retract of the whole triangle. For concreteness, consider the triangle $\Delta = \{ (x, y) \in \mathbb{R}^{2} \mid x > 0, y > 0, x + y \le 1 \}$. The continuous map $(x, y) \mapsto (x, 1 - x)$ is the retraction map. By dividing the polydisc into eight triangles and orienting them so that the continuous on each triangle on intersections, we get a retraction map $q : Q \to X$.
+
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width = 0.4 \textwidth]{figures/P18i retract}
+				\caption{Arrows indicating the flow of the retraction map $q : Q \to X$}
+			\end{figure}
+
+		\item We can try to avoid fixed points except $0$ by first flipping both arms of $X$ --- mapping $(x, y) \mapsto -(x, y)$. Then to remove the fixed point at $0$ we can compose the flipping with squishing one of the arms towards one end (given a homeomorphism $f : [0, 1] \to \{ (x, y) \in Q \mid x = y \}$ with $f(1/2) = 0$ consider $f \circ x^{2} \circ f^{-1}$) and the other arm accordingly so that the function is continuous. However, if we squish all of $X$ in one direction there will be a point that was close to $(0, 0)$ before flipping (on the side towards which we squish the arm) and gets flipped away and then squished back to itself under squishing. In our example of squishing, $0.5 - 0.12 \approx (0.5 + 0.12)^{2}$.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[19.]
@@ -103,6 +167,27 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item We choose the order-preserving labeling --- if $a_{1} < a_{2}$ lexicographically, we orient the edge between them $[a_{1}, a_{2}]$. Thus, our $1$-cycle is
+			\[
+				[a, b] + [a, c] + [a, d] + [a, e] + [b, c] + [b, d] + [b, e] + [c, d] + [c, e] + [d, e]
+			\]
+			(all the coefficients are $1$). This works because $K_{5}$ has an odd number of vertices and thus, each vertex has even degree. If $I$ is the number of edges pointing in and $O$ is the number pointing out, we must have $I + O = 4$, and thus, $I - O = I + O - 2 O$ is even too. That is, $I + O$ is sent to $0$ in the canonical map $\mathbb{Z} \to \mathbb{F}_{2}$.
+
+			Notice that this proof works for any orientation of $K_{5}$ that has nonzero coefficient for all of its edges. Another way to see this is that reversing orientation is equivalent to negating coefficients since $-[a, b] = [b, a]$, but $1 = -1$ in $\mathbb{F}_{2}$.
+
+		\item The winding numbers below were calculated using the ray escape formula. Since $-1 = 1$ in $\mathbb{F}_{2}$, the sign of the crossing doesn't matter --- the winding number is determined by the parity of the number of lines crossed. 
+
+			The outermost triangles require one crossing, the inner triangles require two, and the pentagon requires three. The winding number in the unbounded region is $0$ by the distant cycle lemma. Thus, the winding numbers are as follows ---
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width = 0.4 \textwidth]{figures/P19i K5}
+				\caption{The winding numbers in each (bounded) connected region of the complement $K_{5}$ are written in blue}
+			\end{figure}
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[20.]
@@ -111,6 +196,17 @@
 		\item Calculate the $\mathbb{F}_{3}$-winding number $w_{\mathbb{F}_{3}}$ of your cycle in each region.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	One can verify that each vertex in the graph below either has outdegree $3$ or indegree $3$. Both are sent to zero $0$ in the canonical map $\mathbb{Z} \to \mathbb{F}_{3}$.
+
+	The winding numbers were calculated using the ray escape formula again. Note that in $\mathbb{F}_{3}$ we have $-1 = 2$ so regions with clockwise crossings have winding number $2$.
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width = 0.5 \textwidth]{figures/P20i cube.pdf}
+				\caption{The winding numbers in each (bounded) connected region of the complement of the cube are written in blue}
+			\end{figure}
+\end{solution}
 
 \pagebreak
 
@@ -122,6 +218,11 @@
 	that are related in the following way.
 
 	Let $D$ denote this region in the plane:
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width = 0.4 \textwidth]{figures/P21 D8.pdf}
+	\end{figure}
 
 	Let $\alpha, \beta, \psi : [0, 1] \to D$ be loops defined as follows
 	\begin{itemize}
@@ -140,5 +241,37 @@
 	\]
 	by considering a subdivision of $D$ into $13 N^{2}$ equal squares where $N$ is sufficiently large.
 \end{problem}
+
+\begin{solution}
+	Let $m$ be the minimum distance of $H$ from $0$ --- that is, $m = \min \{ \lVert H(\mathbf{x}) \rVert \mid \mathbf{x} \in D \}$. Note that this minimum exists and is positive since each of the compositions with $H$ is a continuous function from the compact set $D$ to $\mathbb{R}^{2} \setminus \{ 0 \}$.
+
+	Since $H$ is a (uniformly) continuous function on a compact set, we can choose $\delta$ such that for all $\mathbf{x}_{1}, \mathbf{x}_{2} \in D$ with $\lVert \mathbf{x}_{2} - \mathbf{x}_{1} \rVert < \delta$, we have
+	\[
+		\lVert H(\mathbf{x}_{2}) - H(\mathbf{x}_{1}) \rVert < m / 2
+	\]
+
+	We choose $N$ so that $1 / N < \delta$, divide $D$ into thirteen unit squares, and further subdivide each of those squares into the $N^{2}$ squares, each of side length $1 / N$ like so ---
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width = 0.5 \textwidth]{figures/P21 D8 annotated}
+		\caption{The figure 8 $D$ divided into $13$ squares and each square further subdivided into $N^{2}$ parts, with curves $\alpha$, $\beta$, and $\gamma$}
+	\end{figure}
+
+	Now we can replace each of $\alpha, \beta, \gamma$ with the $1$-cycles $\alpha_{T}, \beta_{T}, \gamma_{T}$ obtained by sampling their points on the partition of $D$. Since the partition we chose is fine enough, the winding numbers of $H \circ \alpha_{T}, H \circ \beta_{T}, H \circ \gamma_{T}$ around $0$ don't change by refining any further.
+
+	Consider all the squares (positively oriented) between $\gamma_{T}$ and $\alpha_{T}, \beta_{T}$. We claim that under mapping by $H$, their total winding number around $0$ is $0$, and thus, the winding number of $H \circ \gamma_{T}$ is just the sum of the winding numbers of $H \circ \alpha_{T}$ and $H \circ \beta_{T}$. 
+
+	This follows from the distant cycle lemma. Given any square with vertices $\mathbf{a}, \mathbf{b}, \mathbf{c}, \mathbf{d}$ we have $H(\mathbf{a}) \ge m$ and by the triangle inequality (this is why we used $m / 2$ to define $\delta$ earlier) the distance between each pair of $H(\mathbf{a}), H(\mathbf{b}), H(\mathbf{c}), H(\mathbf{d})$ is less than $m$. Thus, by the distant cycle lemma, we have that the cycle of the square (pushed forward by $H$ into $\mathbb{R}^{2}$) has winding number $0$ around $0$.
+
+	By cancelling out the common edges of the squares between $\gamma_{T}$ and $\alpha_{T}, \beta_{T}$, since we oriented the squares counterclockwise, we're left with a $1$-chain $\Gamma = \gamma_{T} - (\alpha_{T} + \beta_{T})$ and $w(H \circ \Gamma, 0) = 0$. By additivity, $w(H \circ \gamma_{T}) = w(H \circ \alpha_{T}) + w(H \circ \beta_{T})$, and since the samplings on the partition have the same winding number as the actual curves, we have
+	\[
+		w(H \circ \gamma, 0) = w(H \circ \alpha, 0) + w(H \circ \beta, 0)
+	\]
+	which is just
+	\[
+		w(f, 0) + w(g, 0) = w(h, 0)
+	\]
+	as desired.
+\end{solution}
 
 \end{document}
