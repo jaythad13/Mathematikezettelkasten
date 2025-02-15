@@ -47,7 +47,7 @@ $$
 
 Convergence of the Fourier series is then exactly equivalent to convergence of the partial sums.
 
-### Uniqueness
+### Recovering the function
 
 We said earlier that the Fourier series cannot recover functions uniquely since you could change functions on a set of [[Calculus --- spivak/notes/Measure#_definition _ measure $0$|measure]] zero without changing their Fourier series. However, when $f$ is continuous, we can! The idea is to show that the only continuous function orthogonal to every element of the orthonormal list of functions $e^{i n x}$.
 
