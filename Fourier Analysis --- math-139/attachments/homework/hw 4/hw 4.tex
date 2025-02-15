@@ -1,0 +1,113 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 139 --- Fourier Analysis}
+\assignment{Homework \#4}
+\duedate{21st February 2025}
+
+\begin{document}
+
+\begin{problem}[S \& S \S 2.6 \#13.]
+	The purpose of this exercise is to prove that Abel summability is stronger than the standard or Ces\`aro methods of summation.
+	\begin{enumerate}
+		\item Show that if the series $\sum_{n = 1}^{\infty} c_{n}$ of complex numbers converges to a finite limit $s$, then the series is Abel summable to $s$.
+		\item However, show that there exist series which are Abel summable, but that do not converge.
+		\item Argue similarly to prove that if a series $\sum_{n = 1}^{\infty} c_{n}$ is Ces\`aro summable to $\sigma$, then it is Abel summable to $\sigma$.
+		\item Give an example of a series that is Abel summable but not Ces\`aro summable.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[S \& S \S 2.6 \#14.]
+	This exercise deals with a theorem of Tauber which says that under an additional condition on the coefficients $c_{n}$, the above arrows can be reversed.
+	\begin{enumerate}
+		\item If $\sum c_{n}$ is Ces\`aro summable to $\sigma$ and $c_{n} = o(1 / n)$, then $\sum c_{n}$ converges to $\sigma$.
+		\item The above statement holds if we replace Ces\`aro summable by Abel summable.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[S \& S \S 2.6 \#18.]
+	If $P_{r}(\theta)$ denotes the Poisson kernel, show that the function
+	\[
+		u(r, \theta) = \frac{\partial P_{r}}{\partial \theta},
+	\]
+	defined for $0 \le r \le 1$ and $\theta \in \mathbb{R}$, satisfies:
+	\begin{enumerate}[label = (\roman*)]
+		\item $\Delta u = 0$ in the disc.
+		\item $\lim_{r \to 1} u(r, \theta) = 0$ for each $\theta$.
+	\end{enumerate}
+	However, $u$ is not identically zero.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[S \& S \S 2.7 \#2.]
+	Let $D_{N}$ denote the Dirichlet kernel
+	\[
+		D_{N}(\theta) = \sum_{k = -N}^{N} e^{i k \theta} = \frac{\sin{((N + 1/2) \theta)}}{\sin{(\theta / 2)}}
+	\]
+	and define
+	\[
+		L_{N} = \frac{1}{2 \pi} \int_{-\pi}^{\pi} \lvert D_{N}(\theta) \rvert \, d \theta
+	\]
+	\begin{enumerate}
+		\item Prove that
+			\[
+				L_{N} \ge c \log N
+			\]
+			for some constant $c > 0$. A more careful estimate gives
+			\[
+				L_{N} = \frac{4}{\pi^{2}} \log N + O(1).
+			\]
+		\item Prove the following as a consequence: for each $n \ge 1$, there exists a continuous function $f_{n}$ such that $\lvert f_{n} \rvert \le 1$ and $\lvert S_{n}f_{n}(0) \rvert \ge c' \log n$.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[S \& S \S 3.3 \#1.]
+	Show that the first two examples of inner product spaces, namely $\mathbb{R}^{d}$ and $\mathbb{C}^{d}$ are complete.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[S \& S \S 3.3 \#3.]
+	Construct a sequence of integrable functions $\{ f_{k} \}_{k \in \mathbb{N}}$ on $[0, 2\pi]$ such that
+	\[
+		\lim_{k \to \infty} \frac{1}{2 \pi} \int_{0}^{2 \pi} \lvert f_{k}(\theta) \rvert^{2} \, d\theta 
+	\]
+	but $\lim_{k \to \infty} f_{k}(\theta)$ fails to exist for any $\theta$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[S \& S \S 3.4 \#4.]
+	Recall the vector space $\mathcal{R}$ of integrable functions with its inner product and norm.
+	\begin{enumerate}
+		\item Show that there exist non-zero integrable functions $f$ for which $\lVert f \rVert = 0$ 
+		\item However, show that if $f \in \mathcal{R}$ with $\lVert f \rVert = 0$ then $f(x) = 0$ whenever $f$ is continuous at $x$.
+		\item Conversely, show that if $f \in \mathcal{R}$ vanishes at all of its points of continuity, then $\lVert f \rVert = 0$.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[S \& S \S 3.3 \#13.]
+	Suppose that $f$ is periodic and of class $\mathcal{C}^{k}$. Show that
+	\[
+		\hat{f}(n) = o(1 / \lvert n \rvert^{k}),
+	\]
+	that is, $\lvert n \rvert^{k} \hat{f}(n)$ goes to $0$ as $\lvert n \rvert \to \infty$. This is an improvement over \S 2.6 \#10.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[S \& S \S 3.3 \#14.]
+	Prove that the Fourier series of a continuously differentiable function $f$ on the circle is absolutely convergent.
+\end{problem}
+
+\end{document}
