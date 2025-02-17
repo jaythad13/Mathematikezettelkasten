@@ -4,7 +4,7 @@
 
 \name{Jayden Thadani}
 \class{MATH 145 --- Topics in Geometry and Topology}
-\assignment{Homework 1}
+\assignment{Homework 1 redo}
 \duedate{29th January 2025}
 
 \begin{document}
@@ -54,7 +54,19 @@
 				\lvert w(\gamma, \mathbf{x}) \rvert \le \left \lvert \frac{1}{2 \pi} \sum_{i = 1}^{n} \theta([\mathbf{a}_{i}, \mathbf{b}_{i}], \mathbf{x}) \right \rvert \le \frac{1}{2 \pi} \sum_{i = 1}^{n} \lvert \theta([\mathbf{a}_{i}, \mathbf{b}_{i}], \mathbf{x}) \rvert < 1
 			\]
 			Since the winding number is an integer, it must be the only integer with norm less than $1$ --- $w(\gamma, \mathbf{x}) = 0$.
-		\item Consider the tangents from $\mathbf{x}$ to the circle
+		\item Consider the tangents from $\mathbf{x}$ to the circle. These are perpendicular to the radius of the circle at the point. Call the line segment between $\mathbf{x}$ and the centre of the circle $[0, \mathbf{x}]$ and the tangents $[\mathbf{x}, \mathbf{y}_{1}]$ and $[\mathbf{x}, \mathbf{y}_{2}]$.
+
+			Each $[\mathbf{x}, \mathbf{y}_{i}]$ forms a right angled triangle with $[0, \mathbf{x}]$ and $[0, \mathbf{y}_{i}]$. Thus, $\phi = \lvert \theta([0, \mathbf{y}_{i}], \mathbf{x}) \rvert = \arcsin{(r / R)}$. We can see clearly that $\lvert \theta([0, \mathbf{a}], \mathbf{x}) \rvert < \phi$ and similarly for $\mathbf{b}$. Since the circle is convex, we can just add the angles to get the desired inequality ---
+			\[
+				\lvert \theta([\mathbf{a}, \mathbf{b}], \mathbf{x}) \rvert = \lvert \theta([\mathbf{a}, 0], \mathbf{x}) \rvert + \lvert \theta([0, \mathbf{b}], \mathbf{x}) \rvert < 2 \phi = 2 \arcsin{(r / R)}
+			\]
+			as desired. Here I haven't been too careful about orientation and sign. I just dded absolute angles since $\mathbf{a}, \mathbf{b}$ lie inside a convex region and we shouldn't run into too many problems. See the picture below.
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width = 0.5 \textwidth]{figures/P2ii circle.pdf}
+				\caption{The tangents from $\mathbf{x}$ to the circle subtend an angle $2 \phi$ than $\theta([\mathbf{a}, \mathbf{b}], \mathbf{x})$}
+			\end{figure}
+	Note that the angle subtended by $[\mathbf{b}, \mathbf{x}]$ and $[0, \mathbf{x}]$ is not generally $\theta([\mathbf{a}, \mathbf{b}], \mathbf{x}) / 2$, but summing with the corresponding angle for $\mathbf{a}$, we do get $\theta([\mathbf{a}, \mathbf{b}], 0)$.
 		\item Suppose $R > r / \sin{(\pi / n)}$ or equivalently, $r / R < \sin{(\pi / n)}$. Then since we're in the region where $\sin$ is an increasing function
 			\[
 				\arcsin{(r / R)} < \arcsin{(\sin{(\pi / n)})} < \pi / n.
@@ -143,7 +155,7 @@
 			\begin{figure}[H]
 				\centering
 				\includegraphics[width = 0.5 \textwidth]{figures/P3vii E2-1.pdf}
-				\caption{$E(5, 3)$}
+				\caption{$E(2, 1)$}
 			\end{figure}
 		\item Also the reverse five point star
 			\begin{figure}[H]
@@ -155,7 +167,7 @@
 			\begin{figure}[H]
 				\centering
 				\includegraphics[width = 0.5 \textwidth]{figures/P3ix E6-1.pdf}
-				\caption{$E(5, 3)$}
+				\caption{$E(6, 1)$}
 			\end{figure}
 	\end{enumerate}
 \end{solution}
@@ -169,11 +181,25 @@
 \begin{solution}
 	\[
 		\boxed{
-			w(E(n, k), 0) = k
+			w(E(n, k), 0) = k.
 		}
 	\]
 
-	I don't know how to prove this but I'm sure it's true.
+	Notice that for $k = n / 2$,  $v_{1}$ and $v_{1 + k}$ are an angle of $\pi$ apart, and thus, the line between them passes through the origin. That is, for $k = n / 2$, the winding number about $0$ is not defined.
+
+	Note that
+	\begin{align*}
+		\operatorname{arg} v_{\ell + k} - \operatorname{arg} v_{\ell} = \left ( \frac{(\ell + k) 2 \pi}{n} + 2 \pi \mathbb{Z} \right ) - \left ( \frac{\ell 2 \pi}{n} + 2 \pi \mathbb{Z} \right ) = \frac{2 \pi k}{n} + 2 \pi \mathbb{Z}.
+	\end{align*}
+	For $k < n / 2$, this is less than $\pi$ and thus,
+	\[
+		\theta([v_{\ell}, v_{\ell + k}], 0) = \frac{2 \pi k}{n} < \frac{2 \pi (n / 2)}{n} = \pi.
+	\]
+
+	The winding number is the sum of all of these angles ---
+	\[
+		w(E(n, k), 0) = \frac{1}{2 \pi} \sum_{\ell = 1}^{n} \theta([v_{\ell}, v_{\ell + k}], 0) = \frac{n}{2 \pi} \frac{2 \pi k}{n} = k.
+	\]
 \end{solution}	
 
 \pagebreak
@@ -232,10 +258,11 @@
 					\operatorname{area}(\alpha) = -21/2
 				}
 			\]
+
 			We can calculate the areas of each of the connected regions of $\alpha$ as follows ---
 			\begin{figure}[H]
 				\centering
-				\includegraphics[width = 0.72 \textwidth]{figures/P2 cycle.pdf}
+				\includegraphics[width = 0.71 \textwidth]{figures/P2 cycle.pdf}
 				\caption{The cycle $\alpha$ with areas in green and winding numbers in blue for each region}
 			\end{figure}
 			
@@ -247,7 +274,7 @@
 
 			\begin{figure}[H]
 				\centering
-				\includegraphics[width = 0.5 \textwidth]{figures/P2ii quad.pdf}
+				\includegraphics[width = 0.5 \textwidth]{figures/P6ii quad.pdf}
 				\caption{The quadrilateral $\kappa$ with winding numbers in blue and areas in green for each (bounded) region}
 			\end{figure}
 	\end{enumerate}
@@ -329,13 +356,17 @@
 	\[
 		\boxed{
 			\operatorname{area}(E(n, k)) = \begin{cases}
-				n \sin{\left ( \frac{2 \pi k}{n} \right )} & k < n/2 \\
-				- n \sin{\left ( \frac{2 \pi k}{n} \right )} & k > n/2 \\
-				0.
+				n \sin{\left ( \left \lvert \frac{2 \pi k}{n} \right \rvert \right )} & k < n/2 \\
+				- n \sin{\left ( \left \lvert \frac{2 \pi k}{n} \right \rvert \right )} & k > n/2 \\
+				0
+			\end{cases} = \begin{cases}
+				n \sin{\left ( \frac{2 \pi k}{n} \right )} & k \neq n / 2 \\
+				0 & k = n/2
 			\end{cases}
 		}
 	\]
-	For $\gamma = E(n, k)$ and $\mathbf{y} = 0$, consider $\hat{\gamma}$. Now $\hat{\gamma}$ can be seen as the sum of $n$ triangles $\Delta_{i}$. Each of $\Delta_{i}$ has two sides of length $1$ with angle $2 \pi k / n$ between them. Thus, each triangle has $\operatorname{area}(\Delta_{i}) = \sin{(2 \pi k / n)}$. 
+
+	For $\gamma = E(n, k)$ and $\mathbf{y} = 0$, consider $\hat{\gamma}$. Now $\hat{\gamma}$ can be seen as the sum of $n$ triangles $\Delta_{i}$. Each of $\Delta_{i}$ has two sides of length $1$ with angle $\lvert 2 \pi k / n \rvert$ between them. Thus, each triangle has $\operatorname{area}(\Delta_{i}) = \sin{(\lvert 2 \pi k / n \rvert)}$. 
 
 	For $k < n / 2$ these triangles are all oriented positively and for $k > n / 2$ these triangles are all oriented negatively. For $k = n / 2$ these triangles are all zero area. Adding up the areas of all of these triangles gives the desired formula.
 \end{solution}
