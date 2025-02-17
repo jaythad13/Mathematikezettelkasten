@@ -3,6 +3,7 @@ tags:
 - top
 - math-147/6
 - math-147/7
+- math-147/8
 ---
 
 Let $(X, \mathcal{T})$ be a topological space (unless otherwise stated).
@@ -118,4 +119,6 @@ Hillel Furstenberg gave a "topological" proof of the infinitude of the primes wh
 
 Essentially, he used the fact that the arithmetic progressions on $\mathbb{Z}$ characterise the arithmetic structure, and thus, the [[Superdiscrete --- math-55A/notes/Euclid's algorithm and primes#_definition _ prime numbers|primes]]. Using a basis $\mathcal{B}$ of arithmetic progressions $\{ az  + b \mid z \in \mathbb{Z} \}$ (where $a, b \in \mathbb{Z}$) on $\mathbb{Z}$, we can generate a topology — all of $\mathbb{Z}$ is an arithmetic progression, the intersection of arithmetic progressions $\{ a z + b \}$ and $\{ cz + d \}$ is the arithmetic progression $\{ \operatorname{lcm}(a, c) z + z_{0} \}$ if they have some common $z_{0}$ and $\operatorname{Ø}$ otherwise. We call the resulting topological space $\mathbb{Z}_{\text{arith}}$.
 
-Note that each [[Abstract Algebra I --- math-171/notes/Ideals and quotients#_definition _ ideal|ideal]] $p\mathbb{Z}$ is an arithmetic progression and thus, open, but also so is every $p\mathbb{Z} + b$ where $b$ is not a multiple of $p$. Thus, $p\mathbb{Z}$ is closed. The union of all of these ideals is just $\mathbb{Z} \setminus \{ -1, 1 \}$. But $\{ -1, 1 \}$ is not open since every arithmetic progression contains more than just two numbers. [[Topology --- math-147/notes/Limit points and closed sets#_theorem _ closed sets are complements of open sets|Thus,]] the union of all these closed $p\mathbb{Z}$ is not closed. For this to be true, there [[Topology --- math-147/notes/Limit points and closed sets#_theorem _ finite unions and arbitrary intersections of closed sets are closed|infinitely many closed sets]].
+Note that each [[Abstract Algebra I --- math-171/notes/Ideals and quotients#_definition _ ideal|ideal]] $p\mathbb{Z}$ is an arithmetic progression and thus, open, but also so is every $p\mathbb{Z} + b$ where $b$ is not a multiple of $p$. Thus, $\mathbb{Z} \setminus p\mathbb{Z} = \bigcup_{b = 1}^{p - 1} p\mathbb{Z} + b$ is open and $p\mathbb{Z}$ is closed. The union of all of these ideals is just $\mathbb{Z} \setminus \{ -1, 1 \}$. But $\{ -1, 1 \}$ is not open since every arithmetic progression contains more than just two numbers. [[Topology --- math-147/notes/Limit points and closed sets#_theorem _ closed sets are complements of open sets|Thus,]] the union of all these closed $p\mathbb{Z}$ is not closed. For this to be true, there [[Topology --- math-147/notes/Limit points and closed sets#_theorem _ finite unions and arbitrary intersections of closed sets are closed|infinitely many closed sets]].
+
+If we choose a different topology $\mathbb{Z}_{\text{coprime}}$ with basis $\{ a\mathbb{Z} + b \mid \gcd(a, b) = 1 \}$, then Dirichlet's theorem is just the statement that the primes are dense in $\mathbb{Z}_{\text{coprime}}$.
