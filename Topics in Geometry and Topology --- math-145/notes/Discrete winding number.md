@@ -78,7 +78,7 @@ This formula motivates the sum notation for polygons — $w$ is some sort of add
 
 ##### _theorem:_ winding number 
 
-Let $\gamma$ be a closed directed polygon $P(\mathbf{a}_{0}, \mathbf{a}_{1}, \dots, \mathbf{a}_{n})$ and $x$ be a point outside its support. Then the discrete winding number is its support $w(\gamma, x)$.
+Let $\gamma$ be a closed directed polygon $P(\mathbf{a}_{0}, \mathbf{a}_{1}, \dots, \mathbf{a}_{n})$ and $x$ be a point outside its support. Then the discrete winding number about $x$ is an integer $w(\gamma, x)$.
 
 ###### _proof:_
 
