@@ -92,7 +92,7 @@ I trust Noah.
 
 ### Hurwitz' formula
 
-Hurwitz' formula allows us to relate
+Hurwitz' formula allows us to relate the topology of two Riemann surfaces given the topological data of a map between them.
 
 ##### _theorem:_ Hurwitz' formula
 
