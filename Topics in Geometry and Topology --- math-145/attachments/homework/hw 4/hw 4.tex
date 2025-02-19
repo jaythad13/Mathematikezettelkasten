@@ -1,0 +1,96 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+\setlist[enumerate, 1]{label = (\roman*)}
+
+\name{Jayden Thadani}
+\class{MATH 145 --- Topics in Geometry and Topology}
+\assignment{Homework 4}
+\duedate{19th February 2025}
+
+\begin{document}
+
+\begin{problem}[22.]
+	\begin{enumerate}
+		\item Let $\mathbf{a} \in U \subseteq \mathbb{R}^{2}$ and define a function $m_{\mathbf{a}} : \mathrm{C}_{0}(U, \mathbb{F}) \to \mathbb{F}$ by setting
+			\[
+				m_{\mathbf{a}}([\mathbf{p}]) = \begin{cases}
+					1 & \text{if there is a polygonal chart in } U \text{ from } \mathbf{a} \text{ to }  \mathbf{p} \\
+					0 & \text{otherwise}
+				\end{cases}
+			\]
+			on basis elements $[\mathbf{p}]$ and extending the map linearly to all $0$-chains. Prove that $m_{\mathbf{a}} \partial_{0} = 0$.
+		\item Deduce that if $[\mathbf{b}] - [\mathbf{a}] \in \operatorname{img} \partial_{0}$ then there is a polygonal path from $\mathbf{a}$ to $\mathbf{b}$ within $U$.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[23.]
+	Consider the following open subset $U \subseteq \mathbb{R}^{2}$:
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width = 0.3 \textwidth]{figures/P22i U.pdf}	
+	\end{figure}
+	In this question, we will work through the steps that show that the quotient vector space
+	\[
+		\mathrm{H}_{0}(U) = \mathrm{C}_{0}(U) / \mathrm{B}_{0}(U) = \mathrm{C}_{0}(U) / \operatorname{img} \partial_{0}
+	\]
+	has dimension $3$. Let $\mathbf{p}_{1}, \mathbf{p}_{2}, \mathbf{p}_{3}$ be points in $U$ selected from each  of the three connected components.
+	\begin{enumerate}
+		\item Show that every $0$-chain $\alpha = \sum_{k = 1}^{n} \lambda_{k} [\mathbf{a}_{k}]$ can be written in the form
+			\[
+				\alpha = \mu_{1} [\mathbf{p}_{1}] + \mu_{2} [\mathbf{p}_{2}] + \mu_{3} [\mathbf{p}_{3}] + \partial_{0} \gamma
+			\]
+			where $\gamma$ is a $1$-chain.
+		\item Show that there exist linear maps
+			\[
+				m_{i} : \mathrm{C}_{0}(U) \to \mathbb{F}
+			\]
+			such that
+			\[
+				m_{i} \partial_{0} = 0
+			\]
+			and
+			\[
+				m_{i}([\mathbf{p}_{j}]) = \begin{cases}
+					1 & \text{if } i = j \\
+					0 & \text{otherwise}.
+				\end{cases}
+			\]
+		\item Suppose
+			\[
+				0 = \mu_{1} [\mathbf{p}_{1}] + \mu_{2} [\mathbf{p}_{2}] + \mu_{3} [\mathbf{p}_{3}] + \partial_{0} \gamma
+			\]
+			where the $\mu_{i}$ are scalars and $\gamma$ is a $1$-chain. Show that $\mu_{1} = \mu_{2} = \mu_{3} = 0$.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[24.]
+	Let $U \subseteq \mathbb{R}^{2}$.
+	\begin{enumerate}
+		\item If $\mathbf{a} \in U$, show that $[\mathbf{a}, \mathbf{a}]$ is the boundary of a $2$-chain in $\mathbf{U}$.
+		\item If $\lvert [\mathbf{a}, \mathbf{b}] \rvert \subseteq U$, show that $[\mathbf{a}, \mathbf{b}] + [\mathbf{b}, \mathbf{a}]$ is the boundary of a $2$-chain in $U$.
+		\item If $\lvert [\mathbf{a}, \mathbf{b}, \mathbf{c}] \rvert \subseteq U$ show that $[\mathbf{a}, \mathbf{b}] + [\mathbf{b} \mathbf{c}] + [\mathbf{c}, \mathbf{a}]$ is the boundary of a $2$-chain in $U$.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[25.]
+	Let's consider a specific example of the coverage theorem. Let $\gamma = [\mathbf{a}, \mathbf{d}] + [\mathbf{d}, \mathbf{c}] + [\mathbf{c}, \mathbf{b}] + [\mathbf{b}, \mathbf{a}]$:
+	\begin{enumerate}
+		\item Draw a picture highlighting the region $U_{\gamma}$.
+		\item Write down a $2$-chain $\sigma$ in the plane that satisfies $\gamma = \partial_{1} \sigma$ with the smallest possible number of triangles. This will necessarily have $\lvert \sigma \rvert \supsetneq U_{\gamma}$. Sketch $\sigma$ and its geometric support.
+		\item Write down a $2$-chain $\sigma$ with $\gamma = \partial_{1} \sigma$ such that $\lvert \sigma \rvert = U_{\gamma}$.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[26.]
+	Find a non-trivial $2$-cycle in the plane. In other words, find $\sigma = \sum_{k} \lambda_{k} [\mathbf{a}_{k}, \mathbf{b}_{k}, \mathbf{c}_{k}]$ such that $\partial_{1} \sigma = 0$. Each is required to be non-degenerate.
+\end{problem}
+
+\end{document}
