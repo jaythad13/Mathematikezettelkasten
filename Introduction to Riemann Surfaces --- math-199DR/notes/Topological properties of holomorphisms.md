@@ -1,6 +1,7 @@
 ---
 tags:
 - math-199DR/7
+- math-199DR/8
 - cx-geo
 - diff-geo
 ---
@@ -22,6 +23,20 @@ Let $\pi : X \to Y$ be a non-constant function [[Introduction to Riemann Surface
 ##### _definition:_ multiplicity
 
 Given $\pi : X \to Y$ (non-constant, holomorphic near $p \in X$) the unique $m$ of the local normal form, is called the multiplicty of $\pi$ at $p$, denoted $\operatorname{mult}_{p}\pi$.
+
+Multiplicity has an interpretation in terms of stalks. [[Introduction to Riemann Surfaces --- math-199DR/notes/Holomorphisms of Riemann surfaces#The sheaf-theoretic view|Recall]] that a holomorphism $\pi$ induces a map on stalks
+$$
+\pi^* : \mathcal{O}_{Y, \pi(p)} \to \mathcal{O}_{X, p}
+$$
+by
+$$
+\pi^* : f \mapsto \pi^*f = f \circ \pi
+$$
+that is a $\mathbb{C}$-algebra homorphism and a local ring homomorphism sending the unique maximal ideal of [[Introduction to Riemann Surfaces --- math-199DR/notes/Functions on Riemann surfaces#_definition _ holomorphic functions|holomorphic functions]] vanishing at $\pi(p)$, $\mathfrak{m}_{Y, \pi(p)}$ into $\mathfrak{m}_{X, p}$. In fact, we can say exactly what it is. 
+
+##### _proposition:_ the map on stalks has image $\mathfrak{m}_{X, p}^m$
+
+For $\pi : X \to Y$ having multiplicity $m$ at $p$, the induced map on stalks $\pi^* : \mathcal{O}_{Y, \pi(p)} \to \mathcal{O}_{X, p}$ has ${\pi^*}^\text{img}(\mathfrak{m}_{Y, \pi(p)}) = \mathfrak m_{X, p}^m$.
 
 ##### _example:_ charts have multiplicity $1$
 
@@ -89,7 +104,6 @@ Given $f : X \to \mathbb{C}$ meromorphic and $\pi_{f} : X \to \mathbb{C}_{\infty
 
 I trust Noah.
 
-
 ### Hurwitz' formula
 
 Hurwitz' formula allows us to relate the topology of two Riemann surfaces given the topological data of a map between them.
@@ -98,9 +112,51 @@ Hurwitz' formula allows us to relate the topology of two Riemann surfaces given 
 
 Given (a non-constant holomorphism of compact Riemann surfaces) $\pi : X \to Y$
 $$
-2g_{X} - 2 = \operatorname{deg} \pi (2g_{Y} - 2) + \sum_{p \in X} (\operatorname{mult}_{p} \pi - 1).
+2g_{X} - 2 = \operatorname{deg} \pi (2g_{Y} - 2) + \sum_{p \text{ ramified}} (\operatorname{mult}_{p} \pi - 1).
 $$
 
 ###### _proof:_
 
 Triangulate $Y$ with vertices at branch points. Pull the triangulation back under $\pi$. Everything gets multiplied by $\operatorname{deg} \pi$ except the number of vertices which we have to correct for by adding the multiplicity term.
+
+### Example
+
+There are lots of good examples of the kinds of behaviour we're talking about.
+
+##### _example:_ meromorphic functions on the Riemann sphere
+
+Meromorphic functions on the [[Introduction to Riemann Surfaces --- math-199DR/notes/Riemann surfaces#_example _ the Riemann sphere and the complex projective line|Riemann sphere/complex projective plane]] have really nice behaviour. We've seen earlier that [[Introduction to Riemann Surfaces --- math-199DR/notes/Functions on Riemann surfaces#_example _ meromorphic functions on the Riemann sphere and projective line|they are just rational functions]]. For a rational function that looks like
+$$
+\pi(z) = \frac{\prod_{i = 1}^n(z - z_{i})^{\alpha_{i}}}{\prod_{j = 1}^m (z - p_{j})^{\beta_{j}}}.
+$$
+
+Clearly, at $z_{i}$, $\pi$ has multiplicity $\alpha_{i}$ and at $p_{j}$ it has multiplicity $\beta_{j}$. At $\infty$, to find the multiplicity, we essentially want the absolute value of the order of $\pi(1 / z)$ at $0$. But this is just $\left\lvert  \sum_{i} \alpha_{i} - \sum_{j} \beta_{i}  \right\rvert$ (as long as the difference isn't $0$ in which case things get annoying, but we will ignore that).
+
+We're going to (very weakly) check that degree is constant by calculating it at $\infty$ and $0$. The preimages of infinity are just the poles $p_{j}$ which each have multiplicity $\beta_{j}$, so the degree is $\sum_{j} \beta_{j} - \max \{ 0, \sum_{j} \beta_{j} - \sum_{i} \alpha_{j} \}$ the last term adds the order of a possible pole at infinity. By thinking we can see that this is just saying the degree is $\max \left\{  \sum_{i} \alpha_{i}, \sum_{j} \beta_{j}  \right\}$. By similar analysis at $0$ we again see $\deg \pi = \max \left\{ \sum_{i} \alpha_{i}, \sum_{j} \beta_{j} \right\}$.
+
+This essentially because we're solving for
+$$
+\prod_{i} (z - z_{i})^{\alpha_{i}} = y \prod_{j} (z - p_{j})^{\beta_{j}}
+$$
+to get the degree of $\pi$ at $y$. By setting each side to zero this can be solved the desired number of times.
+
+##### _example:_ meromorphic functions and automorphisms of elliptic curves
+
+Consider the elliptic curve $X$ consisting of the one point compactification of its complex points — $\{ (x, y) \in \mathbb{C}^2 \mid y^{2} = x^3 + 13 \} \cup \{ \infty \}$. Consider the meromorphic function $\pi : X \to \mathbb{C}_{\infty}$ by $\pi : (x, y) \mapsto \frac{1 + y}{2}$.
+
+Since $X$ is "cubic", most points have $3$ pre-images. Since the ramification points are discrete, the degree must be $3$.
+
+$\pi$ is ramified at $(0, \pm 1)$ which have corresponding branch points $1$ and $0$ and is also ramified at $\infty$. Note that the non-$\infty$ points are those where the partial with respect to $x$ of the function defining $X$ is zero which is because $\pi$ looks like projection onto the $y$ axis (but isn't quite). Another way to see this is that at the (non-$\infty$, $\pi$ looks like
+$$
+\pi(x, y) = \frac{1 \pm \sqrt{ x^3 + 1 }}{2} = \frac{1 \pm (1 + x^3 / 2 + O(x^6))}{2}
+$$
+so should locally look like a cubic.
+
+By Hurwitz formula, since the multiplicity at each ramification point is $3$, we get
+$$
+2 g_{X} - 2 = \deg \pi (2 g_{\mathbb{C}_{\infty}} - 2) + \sum_{p \in \{ (0, \pm {1}), \infty \}} \operatorname{mult}_{p} \pi  - 1.
+$$
+
+If $\xi_{6}$ is a sixth root of unity, then $\rho_{X} : X \to X$ by $\rho(x, y) = (\xi_{6}^2, \xi_{6}^3)$ is an automorphism (notice that $\rho_{X}^6$ is the identity).
+
+Similarly on the elliptic curve $Y = \{ (x, y) \in \mathbb{C}^{2} \mid y^{2} = x^{3} + x \} \cup \{ \infty \}$, there is an automorphism $\rho_{Y} : Y \to Y$ by $(x, y) \mapsto (\xi_{4}^{2} x, \xi_{4}^3 y) = (-x, -iy)$.
