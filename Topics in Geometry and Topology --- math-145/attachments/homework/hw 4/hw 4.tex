@@ -13,7 +13,7 @@
 	\begin{enumerate}
 		\item Let $\mathbf{a} \in U \subseteq \mathbb{R}^{2}$ and define a function $m_{\mathbf{a}} : \mathrm{C}_{0}(U, \mathbb{F}) \to \mathbb{F}$ by setting
 			\[
-				m_{\mathbf{a}}([\mathbf{p}]) = \begin{cases}
+				m_{\mathbf{a}}[\mathbf{p}] = \begin{cases}
 					1 & \text{if there is a polygonal chart in } U \text{ from } \mathbf{a} \text{ to }  \mathbf{p} \\
 					0 & \text{otherwise}
 				\end{cases}
@@ -22,6 +22,20 @@
 		\item Deduce that if $[\mathbf{b}] - [\mathbf{a}] \in \operatorname{img} \partial_{0}$ then there is a polygonal path from $\mathbf{a}$ to $\mathbf{b}$ within $U$.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item We claim that if $[\mathbf{b}, \mathbf{c}]$ has support in $U$, then $m_{\mathbf{a}}[\mathbf{b}] = m_{\mathbf{a}}[\mathbf{c}]$. If there is a polygonal path $\gamma_{1}$ from $\mathbf{a}$ to $\mathbf{b}$. Thus, there is a polygonal path $\gamma_{1} + [\mathbf{b}, \mathbf{c}]$ from $\mathbf{a}$ to $\mathbf{c}$. If there is a polygonal path $\gamma_{2}$ from $\mathbf{a}$ to $\mathbf{c}$, then there is a polygonal path $\gamma_{2} + [\mathbf{c}, \mathbf{b}]$ from $\mathbf{a}$ to $\mathbf{b}$. That is, there being a polygonal path from $\mathbf{a}$ to $\mathbf{b}$ is equivalent to there being a polygonal path from $\mathbf{a}$ to $\mathbf{c}$. Thus, $m_{\mathbf{a}}[\mathbf{b}] = m_{\mathbf{a}}[\mathbf{c}]$.
+
+			Thus, for each line segment $[\mathbf{b}, \mathbf{c}]$
+			\[
+				m_{\mathbf{a}} \partial_{0} [\mathbf{b}, \mathbf{c}] = m_{\mathbf{a}}([\mathbf{c}] - [\mathbf{b}]) = m_{\mathbf{a}}[\mathbf{c}] - m_{\mathbf{a}}[\mathbf{b}] = 0.
+			\]
+			By extending linearly, each chain $\gamma = \sum_{k} \lambda_{k} [\mathbf{a}_{k}, \mathbf{b}_{k}]$ has $m_{\mathbf{a}} \partial_{0} \gamma = 0$.
+
+		\item If $[\mathbf{b}] - [\mathbf{a}] \in \operatorname{img} \partial_{0}$, we have some $\gamma \in \mathrm{C}_{1}(U)$ such that $\partial_{0} \gamma = [\mathbf{b}] - [\mathbf{a}]$. Since  $m_{\mathbf{a}} \partial \gamma = 0$, we have $m_{\mathbf{a}}([\mathbf{b}] - [\mathbf{a}]) = 0$. Since $[\mathbf{a}, \mathbf{a}] \subseteq U$, we have $m_{\mathbf{a}}[\mathbf{a}] = 1$, and thus, $m_{\mathbf{a}}[\mathbf{b}] = m_{\mathbf{a}}[\mathbf{a}] = 1$. That is, there is a polygonal path from $\mathbf{a}$ to $\mathbf{b}$.
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
@@ -52,7 +66,7 @@
 			\]
 			and
 			\[
-				m_{i}([\mathbf{p}_{j}]) = \begin{cases}
+				m_{i}[\mathbf{p}_{j}] = \begin{cases}
 					1 & \text{if } i = j \\
 					0 & \text{otherwise}.
 				\end{cases}
@@ -65,21 +79,80 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item Notice that each point $\mathbf{a} \in U$ is in one of the connected components of $U$, and thus must have a path to some $\mathbf{p}_{i}$. That is, there is some $i$ such that $[\mathbf{a}] - [\mathbf{p}_{i}] \in \operatorname{img} \partial_{0}$. Writing $[\mathbf{a}] = [\mathbf{p}_{i}] + [\mathbf{a}] - [\mathbf{p}_{i}]$, we get $[\mathbf{a}]$ in the desired form.
+
+			Since $\operatorname{img} \partial_{0}$ is a linear subspace, and any $0$-chain is a linear combination of points, the corresponding linear combination of boundaries, is also a boundary. That is, for $[\mathbf{a}_{i}] = \mu_{i, 1} \mathbf{p}_{1} + \mu_{i, 2} \mathbf{p}_{2} + \mu_{i, 3} \mathbf{p}_{3} + \partial_{0} \gamma_{i}$, we have
+			\[
+				\alpha = \sum_{i = 1}^{n} [\mathbf{a}_{i}] = \left ( \sum_{i = 1}^{n} \mu_{i, 1} \right ) \mathbf{p}_{1} + \left ( \sum_{i = 1}^{n} \mu_{i, 2} \right ) \mathbf{p}_{2} + \left ( \sum_{i = 1}^{n} \mu_{i, 3} \right ) \mathbf{p}_{3} + \partial_{0} \left ( \sum_{i = 1}^{n} \gamma_{i} \right )
+			\]
+			as desired.
+		\item There are no polygonal paths between $\mathbf{p}_{i}$ and $\mathbf{p}_{j}$ unless $i = j$ (since they are in separate connected components of $U$ and connectivity implies path connectivity in $\mathbb{R}^{2}$). Thus, $m_{i} = m_{\mathbf{p}_{i}}$ is the desired choice of linear maps.
+
+		\item Note that by linearity, for each $i$
+			\[
+				m_{i}(0) = 0.
+			\]
+			However, calculating $m_{i}$ explicitly, we see
+			\[
+				m_{i}\left ( \sum_{j = 1}^{3} \mu_{j} \mathbf{p}_{j} + \partial_{0} \gamma \right ) = \mu_{i} m_{i}[\mathbf{p}_{i}] + m_{i} \partial_{0} \gamma = \mu_{i} + 0.
+			\]
+			Thus, we must have $\mu_{i} = 0$.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[24.]
 	Let $U \subseteq \mathbb{R}^{2}$.
 	\begin{enumerate}
-		\item If $\mathbf{a} \in U$, show that $[\mathbf{a}, \mathbf{a}]$ is the boundary of a $2$-chain in $\mathbf{U}$.
+		\item If $\mathbf{a} \in U$, show that $[\mathbf{a}, \mathbf{a}]$ is the boundary of a $2$-chain in $U$.
 		\item If $\lvert [\mathbf{a}, \mathbf{b}] \rvert \subseteq U$, show that $[\mathbf{a}, \mathbf{b}] + [\mathbf{b}, \mathbf{a}]$ is the boundary of a $2$-chain in $U$.
-		\item If $\lvert [\mathbf{a}, \mathbf{b}, \mathbf{c}] \rvert \subseteq U$ show that $[\mathbf{a}, \mathbf{b}] + [\mathbf{b} \mathbf{c}] + [\mathbf{c}, \mathbf{a}]$ is the boundary of a $2$-chain in $U$.
+		\item If $\lvert [\mathbf{a}, \mathbf{b}, \mathbf{c}] \rvert \subseteq U$ show that $[\mathbf{a}, \mathbf{b}] + [\mathbf{b}, \mathbf{c}] + [\mathbf{c}, \mathbf{a}]$ is the boundary of a $2$-chain in $U$.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item If $\mathbf{a} \in U$, then $\lvert [\mathbf{a}, \mathbf{a}, \mathbf{a}] \rvert = \{ \mathbf{a} \} \subseteq U$. Note that
+			\[
+				\partial_{1} [\mathbf{a}, \mathbf{a}, \mathbf{a}] = [\mathbf{a}, \mathbf{a}] + [\mathbf{a}, \mathbf{a}] - [\mathbf{a}, \mathbf{a}] = [\mathbf{a}, \mathbf{a}].
+			\]
+			Thus, $[\mathbf{a}, \mathbf{a}, \mathbf{a}]$ is the desired $2$-chain. Call it $\sigma_{1}$.
+
+		\item If $\lvert [\mathbf{a}, \mathbf{b}] \rvert \subseteq U$, then $\lvert [\mathbf{a}, \mathbf{b}, \mathbf{a}] \rvert = \lvert [\mathbf{a}, \mathbf{b}] \rvert \subseteq U$ and $\mathbf{a} \in U$. Notice that
+			\[
+				\partial_{1} [\mathbf{a}, \mathbf{b}, \mathbf{a}] = [\mathbf{a}, \mathbf{b}] + [\mathbf{b}, \mathbf{a}] - [\mathbf{a}, \mathbf{a}].
+			\]
+			Thus, 
+			\[
+				\partial_{1}([\mathbf{a}, \mathbf{b}, \mathbf{a}] + \sigma_{1}) = [\mathbf{a} , \mathbf{b}] + [\mathbf{b}, \mathbf{a}] - [\mathbf{a}, \mathbf{a}] + [\mathbf{a}, \mathbf{a}] = [\mathbf{a}, \mathbf{b}] + [\mathbf{b}, \mathbf{a}].
+			\]
+
+			That is, $[\mathbf{a}, \mathbf{b}, \mathbf{a}] + \sigma_{1}$ is the desired $2$-chain. 
+
+			We denote the $2$-chain with boundary $[\mathbf{a}, \mathbf{c}]$ and support contained in $\lvert [\mathbf{a}, \mathbf{c}] \rvert$ by $\sigma_{2} = [\mathbf{a}, \mathbf{c}, \mathbf{a}] + \sigma_{1}$.
+
+		\item If $[\mathbf{a}, \mathbf{b}, \mathbf{c}] \subseteq U$, then $\lvert [\mathbf{c}, \mathbf{a}] \rvert = \lvert -[\mathbf{a}, \mathbf{c}] \rvert \subseteq U$. Note that
+			\[
+				\partial_{1} [\mathbf{a}, \mathbf{b}, \mathbf{c}] = [\mathbf{a}, \mathbf{b}] + [\mathbf{b}, \mathbf{c}] - [\mathbf{a}, \mathbf{c}].
+			\]
+			Thus,
+			\[
+				\partial_{1}([\mathbf{a}, \mathbf{b}, \mathbf{c}] + \sigma_{2}) = [\mathbf{a}, \mathbf{b}] + [\mathbf{b}, \mathbf{c}] - [\mathbf{a}, \mathbf{c}] + [\mathbf{a}, \mathbf{c}] + [\mathbf{c}, \mathbf{a}] = [\mathbf{a}, \mathbf{b}] + [\mathbf{b}, \mathbf{c}] + [\mathbf{c}, \mathbf{a}].
+			\]
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
 \begin{problem}[25.]
 	Let's consider a specific example of the coverage theorem. Let $\gamma = [\mathbf{a}, \mathbf{d}] + [\mathbf{d}, \mathbf{c}] + [\mathbf{c}, \mathbf{b}] + [\mathbf{b}, \mathbf{a}]$:
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width = .3 \textwidth]{figures/P25 quad.pdf}
+	\end{figure}
 	\begin{enumerate}
 		\item Draw a picture highlighting the region $U_{\gamma}$.
 		\item Write down a $2$-chain $\sigma$ in the plane that satisfies $\gamma = \partial_{1} \sigma$ with the smallest possible number of triangles. This will necessarily have $\lvert \sigma \rvert \supsetneq U_{\gamma}$. Sketch $\sigma$ and its geometric support.
@@ -87,10 +160,56 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item $U_{\gamma}$ is the region of the two ``inner triangles'' in the picture.
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width = 0.3 \textwidth]{figures/P25i shaded.pdf}
+				\caption{The region $U_{\gamma}$}
+			\end{figure}
+
+		\item Notice that $[\mathbf{b}, \mathbf{a}, \mathbf{d}] + [\mathbf{d}, \mathbf{c}, \mathbf{b}]$ has boundary $\gamma - ([\mathbf{b}, \mathbf{d}] + [\mathbf{d}, \mathbf{b}])$. Adding the $\sigma_{0}$ from problem 24 with boundary $[\mathbf{b}, \mathbf{d}] + [\mathbf{d}, \mathbf{b}]$, we get a $2$-chain, $\sigma = [\mathbf{b}, \mathbf{a}, \mathbf{d}] + [\mathbf{d}, \mathbf{c}, \mathbf{b}] + \sigma_{0}$ which has boundary $\partial \sigma = \gamma$.
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width = 0.3 \textwidth]{figures/P25ii min quad.pdf}
+				\caption{The geometric support of $\sigma$}
+			\end{figure}
+		\item Write $\mathbf{x}$ for the central vertex. Consider negation of the sum of two triangles $-[\mathbf{a}, \mathbf{x}, \mathbf{b}] - [\mathbf{c}, \mathbf{x}, \mathbf{d}]$. It has boundary
+			\[
+				[\mathbf{a}, \mathbf{x}] + [\mathbf{x}, \mathbf{b}] - [\mathbf{a}, \mathbf{b}] + [\mathbf{c}, \mathbf{x}] + [\mathbf{x}, \mathbf{d}] - [\mathbf{c}, \mathbf{d}].
+			\]
+			Notice that negation of the sum of triangles $-[\mathbf{c}, \mathbf{x}, \mathbf{b}] - [\mathbf{a},\mathbf{x}, \mathbf{d}]$ has boundary
+			\[
+				- ([\mathbf{c}, \mathbf{x}] + [\mathbf{x}, \mathbf{b}] - [\mathbf{c}, \mathbf{b}] + [\mathbf{a}, \mathbf{x}] + [\mathbf{x}, \mathbf{d}] - [\mathbf{a}, \mathbf{d}])
+			\]
+			and thus, $2$-chain $[\mathbf{a}, \mathbf{x}, \mathbf{b}] + [\mathbf{c}, \mathbf{x}, \mathbf{d}] - [\mathbf{c}, \mathbf{x}, \mathbf{b}] - [\mathbf{a}, \mathbf{x}, \mathbf{d}]$ 
+			has boundary
+			\[
+				- [\mathbf{a}, \mathbf{b}] - [\mathbf{c}, \mathbf{d}] + [\mathbf{c}, \mathbf{b}] + [\mathbf{a}, \mathbf{d}].
+			\]
+
+			Given the two $2$-chains $\sigma_{1}, \sigma_{2}$ that have boundaries $[\mathbf{b}, \mathbf{a}] + [\mathbf{a}, \mathbf{b}]$ and $[\mathbf{c}, \mathbf{d}] + [\mathbf{d}, \mathbf{c}]$. We get a $2$-chain $[\mathbf{a}, \mathbf{x}, \mathbf{b}] + [\mathbf{c}, \mathbf{x}, \mathbf{d}] - [\mathbf{c}, \mathbf{x}, \mathbf{b}] - [\mathbf{a}, \mathbf{x}, \mathbf{d}] + \sigma_{1} + \sigma_{2}$ with boundary $\gamma$ as desired.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[26.]
 	Find a non-trivial $2$-cycle in the plane. In other words, find $\sigma = \sum_{k} \lambda_{k} [\mathbf{a}_{k}, \mathbf{b}_{k}, \mathbf{c}_{k}]$ such that $\partial_{1} \sigma = 0$. Each is required to be non-degenerate.
 \end{problem}
+
+\begin{solution}
+	Given $\mathbf{a}_{0} = 0$ and  $\mathbf{a}_{1}, \mathbf{a}_{2}, \mathbf{a}_{3}$ cube roots of unity, we can construct a $2$-chain that looks like the boundary of a solid projected down into the plane. Consider
+	\[
+		\sigma = [\mathbf{a}_{0}, \mathbf{a}_{1}, \mathbf{a}_{2}] + [\mathbf{a}_{3}, \mathbf{a}_{0}, \mathbf{a}_{2}] - [\mathbf{a}_{3}, \mathbf{a}_{0}, \mathbf{a}_{1}] - [\mathbf{a}_{3}, \mathbf{a}_{1}, \mathbf{a}_{2}].
+	\]
+	It has boundary
+	\begin{align*}
+		\partial_{1} \sigma & = [\mathbf{a}_{0}, \mathbf{a}_{1}] + [\mathbf{a}_{1}, \mathbf{a}_{2}] - [\mathbf{a}_{0}, \mathbf{a}_{2}] + [\mathbf{a}_{3}, \mathbf{a}_{0}] + [\mathbf{a}_{0}, \mathbf{a}_{2}] - [\mathbf{a}_{3}, \mathbf{a}_{1}] \\
+				    &- \left ( [\mathbf{a}_{3}, \mathbf{a}_{0}] + [\mathbf{a}_{0}, \mathbf{a}_{1}] - [\mathbf{a}_{3}, \mathbf{a}_{1}] + [\mathbf{a}_{3}, \mathbf{a}_{1}] + [\mathbf{a}_{1}, \mathbf{a}_{2}] - [\mathbf{a}_{3}, \mathbf{a}_{2}] \right ) \\
+				    & = 0.
+	\end{align*}
+\end{solution}
 
 \end{document}
