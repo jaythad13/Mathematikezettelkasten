@@ -47,7 +47,7 @@ $$
 
 Convergence of the Fourier series is then exactly equivalent to convergence of the partial sums.
 
-### Recovering the function
+### Uniqueness of Fourier series and recovering the function
 
 We said earlier that the Fourier series cannot recover functions uniquely since you could change functions on a set of [[Calculus --- spivak/notes/Measure#_definition _ measure $0$|measure]] zero without changing their Fourier series. However, when $f$ is continuous, we can! The idea is to show that the only continuous function orthogonal to every element of the orthonormal list of functions $e^{i n x}$.
 
@@ -57,7 +57,7 @@ If $f$ is integrable on $[-\pi, \pi]$, $\hat{f}(n) = 0$ for all $n \in \mathbb{Z
 
 ###### _proof:_
 
-Without loss of generality, assume $\theta_{0} = 0$, and suppose by way of contradiction that $f(0) > 0$. By continuity, $f(x) > f(x)/2 > 0$ in some neighbourhood $(-\delta, \delta)$.
+Without loss of generality, assume $\theta_{0} = 0$, and suppose by way of contradiction that $f(0) > 0$. By continuity, $f(x) > f(0)/2 > 0$ in some neighbourhood $(-\delta, \delta)$.
 
 Since $\hat{f} = 0$, we should have $f$ orthogonal to all trigonometric polynomials (finite linear combinations of $e^{i n x}$). We will create a sequence where this is not true. Consider first
 $$
@@ -79,7 +79,7 @@ There is a unique continuous function $f$ with Fourier coefficients $\hat{f}(n)$
 
 From what we've just proved, we can even get that (continuous) $f$ are recovered from Fourier series.
 
-##### _corollary:_ recovering a continuous function from Fourier series
+##### _corollary:_ absolutely summable Fourier series recover continuous functions
 
 For a continuous $f : [-\pi, \pi] \to \mathbb{C}$ with $\sum \lvert \hat{f}(n) \rvert < \infty$, the Fourier series $\sum_{n \in \mathbb{Z}} \hat{f}(n) e^{i n x}$ converges uniformly to $f$.
 
@@ -91,7 +91,7 @@ This raises the question of when it is true that $\sum \lvert \hat{f}(n) \rvert 
 
 ##### _proposition:_ $\mathcal{C}^2$ functions have absolutely summable coefficients
 
-If $f : [-\pi, \pi] \to \mathbb{C}$ is twice continuously differentiable, then $\hat{f}(n) = O(1/n^{2})$. That is, there exists a positive constant $C$ with $\lim_{ x \to \infty } n^{2} \hat{f}(n) \le C$.
+If $f : [-\pi, \pi] \to \mathbb{C}$ is twice continuously differentiable, then $\hat{f}(n) = O(1/n^{2})$. That is, there exists a positive constant $C$ with $\lim_{ x \to \infty } \lvert n^{2} \rvert \lvert \hat{f}(n) \rvert \le C$.
 
 ###### _proof:_
 
@@ -99,9 +99,20 @@ We can use [[Mathematical Analysis I --- math-131/notes/Fundamental theorem of c
 $$
 \begin{align}
 2 \pi \hat{f}(n) & = \int_{-\pi}^{\pi} f(x) e^{-i n x} \, dx \\
- & =  \\
- & = 0 + \frac{-1}{n^{2}} \int f''(x) e^{- i n x} \, dx 
+ & \vdots \\
+ & = 0 + \frac{-1}{n^{2}} \int_{-\pi}^{\pi} f''(x) e^{- i n x} \, dx
 \end{align}
 $$
+and thus
+$$
+\lvert n^{2} \rvert \lvert \hat{f}(n) \rvert  =  \left\lvert  \frac{1}{2 \pi} \int_{- \pi}^\pi f''(x) e^{i n x} \, dx  \right\rvert \le \lvert e^{i n x} \rvert \left\lvert  \int_{- \pi}^\pi f''(x)  \, dx   \right\rvert = C.
+$$
 
-In fact, a stronger result holds — we only need Holder continuity of order $\alpha > 1 / 2$ for Fourier coefficients to converge absolutely.
+In fact, a stronger result holds — we only need Holder continuity of order $\alpha > 1 / 2$ for Fourier coefficients to converge absolutely. That is,
+
+##### _definition:_ Holder continuity of order $\alpha$
+
+A function $f : [a, b] \to \mathbb{C}$ is Holder continuous of order $\alpha$ if there exists a constant $A$ such that for all $x \in [a, b]$ and $h$ such that $x + h \in [a, b]$,
+$$
+\lvert f(x + h) - f(x) \rvert \le A \lvert h \rvert ^\alpha.
+$$

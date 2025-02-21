@@ -16,9 +16,9 @@ Let $f : \mathbb{R} / 2 \pi \mathbb{Z} \to \mathbb{R}$ be an integrable function
 $$
 u(r, \theta) = f * P_{r}(\theta)
 $$
-is the [[Fourier Analysis --- math-139/notes/Kernels#The Poisson kernel|Poisson integral]] of $f$ and solves the heat equation on the disc. That is, $\Delta u = 0$ on $\mathbb{D}$ and $u = f$ (or can be extended to a continuous function such that this is true) on $\partial \mathbb{D}$.
+is the [[Fourier Analysis --- math-139/notes/Kernels#The Poisson kernel|Poisson integral]] of $f$ and solves the heat equation on the disc. That is, $\Delta u = 0$ on $\mathbb{D}$ and $\lim_{ r \to 1^- } u(r, \theta) = f(\theta)$ so $u$ can be extended to a continuous function that equals $f$ on $\partial \mathbb{D}$. If $f$ is continuous everywhere the convergence is uniform.
 
-Further, if $f$ is continuous $u$ is the unique solution of the heat equation.
+Further, if $f$ is continuous $u$ is the unique (twice-differentiable) solution of the heat equation.
 
 ###### _proof:_
 

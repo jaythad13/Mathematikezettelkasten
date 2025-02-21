@@ -13,7 +13,7 @@ Convolutions allow one to compute something like a weighted average of a functio
 
 Given two $2\pi$ periodic functions $f, g : \mathbb{R} \to \mathbb{C}$, the convolution of $f$ with $g$ is 
 $$
-f * g(x) = \frac{1}{2 \pi} \int_{- \pi}^\pi f(y) g(y - x)  \, dy 
+f * g(x) = \frac{1}{2 \pi} \int_{- \pi}^\pi f(y) g(x - y)  \, dy 
 $$
 
 It's an exercise in change of variables to show that $f * g = g * f$.
@@ -51,21 +51,20 @@ $$
 
 Thus, first, we will show that the proposition holds under the additional hypothesis that $f, g$ are continuous. That is, given any $\varepsilon > 0$, we want to give a $\delta > 0$ such that $\lvert x_{1} - x_{2} \rvert < \delta$ forces
 $$
-\frac{1}{2 \pi} \left\lvert  \int_{-\pi}^\pi f(y) g(x_{1} - y) - f(x) g(x_{2} - y)  \, dy   \right\rvert < \varepsilon.
+\frac{1}{2 \pi} \left\lvert  \int_{-\pi}^\pi f(y) g(x_{1} - y) - f(y) g(x_{2} - y)  \, dy   \right\rvert < \varepsilon.
 $$
 
-Since $g$ is continuous on the compact interval $[a, b]$, there is a $\delta > 0$ such that for any $z_{1}, z_{2}$ within $\delta$ of each other, $g(z_{1}), g(z_{2})$ are within $2 \pi \varepsilon / B$ of each other. Now, see that
-Note that (by the [[Mathematical Analysis I --- math-131/notes/Properties of the Riemann integral#_proposition _ the triangle inequality for integrals|triangle inequality for integrals]])
+Since $g$ is continuous on the compact interval $[a, b]$, there is a $\delta > 0$ such that for any $z_{1}, z_{2}$ within $\delta$ of each other, $g(z_{1}), g(z_{2})$ are within $2 \pi \varepsilon / B$ of each other. Now, see that we can choose $z_{i} = x_{i} - y$. Note that (by the [[Mathematical Analysis I --- math-131/notes/Properties of the Riemann integral#_proposition _ the triangle inequality for integrals|triangle inequality for integrals]])
 $$
 \begin{align}
-\frac{1}{2 \pi} \left\lvert  \int_{-\pi}^\pi f(y) g(x_{1} - y) - f(x) g(x_{2} - y)  \, dy   \right\rvert & \le \frac{1}{2 \pi} \int_{-\pi}^\pi \lvert f(y) \rvert \lvert g(x_{1} - y) - g(x_{2} - y) \rvert  \, dy \\
+\frac{1}{2 \pi} \left\lvert  \int_{-\pi}^\pi f(y) g(x_{1} - y) - f(y) g(x_{2} - y)  \, dy   \right\rvert & \le \frac{1}{2 \pi} \int_{-\pi}^\pi \lvert f(y) \rvert \lvert g(x_{1} - y) - g(x_{2} - y) \rvert  \, dy \\
  & < \frac{1}{2 \pi} \int_{-\pi}^\pi B \frac{\varepsilon}{B} \, dx  \\
  & \le \frac{1}{2\pi} 2 \pi \epsilon \\
  & = \varepsilon
 \end{align}
 $$
 
-Now, given $f, g$ integrable and continuous sequences $f_{n} \to f$ and $g_{n} \to g$ (in the $L^1$ norm) it suffices to show that $f_{n} * g_{n} \to f * g$ uniformly. That is, given any $\varepsilon > 0$, we want to show that there exists some $N$ such that for all $n > N$
+Now, given $f, g$ integrable and continuous sequences $f_{n} \to f$ and $g_{n} \to g$ (in the $L^1$ norm) [[Fourier Analysis --- math-139/notes/Facts about integration and convergence#_proposition _ uniform limit of continuous functions is continuous|it suffices]] to show that $f_{n} * g_{n} \to f * g$ uniformly. That is, given any $\varepsilon > 0$, we want to show that there exists some $N$ such that for all $n > N$
 $$
 \lvert (f_{n} * g_{n})(x) - (f * g)(x) \rvert < \varepsilon
 $$
@@ -101,3 +100,13 @@ $$
 \widehat{f * g}(n) = \widehat{\lim_{ k \to \infty } f_{k} * g_{k}(n)} = \lim_{ k \to \infty } \widehat{f_{k} * g_{k}}(n) = \lim_{ k \to \infty } \hat{f_{k}}(n) \hat{g}_{k}(n)
 $$
 and the limit of the Fourier coefficients is the Fourier coefficient of the limit because the Fourier coefficient is integral based and so is the convergence. (This last fact is useful enough it should probably be a lemma).
+
+##### _lemma:_ Fourier coefficients of a sequence approach Fourier coefficient of their limit
+
+If $f_{k} \to f$ in $L^1$, then $\hat{f}_{k}(n) \to f(n)$ as $k \to \infty$.
+
+###### _proof sketch:_
+
+$$
+\lvert \hat{f}(n) - \hat{f}_{k}(n) \rvert = \frac{1}{2 \pi} \left\lvert  \int_{-\pi}^\pi (f(x) - f_{k}(x)) e^{i n x} \, dx   \right\rvert \le \lVert f(x) - f_{k}(x) \rVert_{L^1}.
+$$

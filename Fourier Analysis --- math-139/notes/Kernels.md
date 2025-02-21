@@ -23,16 +23,25 @@ $$
 
 Equivalently
 $$
-D_{N}(x) = \frac{\sin\left( \frac{2n + 1}{2}  x\right)}{\sin(x / 2)},
+D_{N}(x) = \frac{\sin\left( \frac{2N + 1}{2}  x\right)}{\sin(x / 2)},
 $$
 
-Note that $D_{N}$ is the continuous function with
+###### _proof sketch:_
+
+Consider $D_{N}$ to be the sum of two geometric sums $\sum_{n = 0}^N (e^{ix})^n$ and $\sum_{n = -N}^{-1} (e^{ix})^n$.
+
+##### _proposition:_ the Fourier coefficients of $D_{N}$
+
+$D_{N}$ is the continuous function with
 $$
 \hat{D}_{N} = \begin{cases}
 1 & -N \le n \le N \\
 0.
 \end{cases}
 $$
+
+##### _proof:_
+by computation.
 
 ### The Poisson kernel
 
@@ -79,8 +88,9 @@ $$
 $$
 the function has uniformly bounded integral (it is $L^1$ bounded by $M$ independently of $n$) and the mass of the function is more concentrated around $0$ as $n \to \infty$. That is, for any $\delta > 0$
 $$
-\frac{1}{2 \pi} \int_{\lvert x \rvert > \delta}  \lvert K_{n}(x) \rvert  \, dx \to 0.
+\frac{1}{2 \pi} \int_{\lvert x \rvert > \delta}  \lvert K_{n}(x) \rvert  \, dx \to 0
 $$
+as $n \to \infty$.
 
 This really is an approximation to the identity in practice as well —
 
@@ -182,17 +192,34 @@ $$
 
 ###### _proof sketch:_
 
-They have the same (absolutely summable) Fourier coefficients (the convolution of $f * P_{r}$ has coefficients that are the [[Fourier Analysis --- math-139/notes/Convolutions#_proposition _ the Fourier transform turns convolution into multiplication|product]] $\hat{f}(n) \hat{P_{r}}(n)$). Since they are continuous and absolutely summable, [[Fourier Analysis --- math-139/notes/Fourier series#_corollary _ recovering a continuous function from Fourier series|the functions are recovered from the Fourier coefficients]].
+They have the same (absolutely summable) Fourier coefficients (the convolution of $f * P_{r}$ has coefficients that are the [[Fourier Analysis --- math-139/notes/Convolutions#_proposition _ the Fourier transform turns convolution into multiplication|product]] $\hat{f}(n) \hat{P_{r}}(n)$). Since they are both continuous, [[Fourier Analysis --- math-139/notes/Fourier series#_corollary _ each Fourier series comes from a unique continuous function|they are the same function]].
 
 
 ##### _lemma:_ the Poisson kernel is a good kernel (as $r \to 1^-$)
 
-The Poisson satisfies the same general properties as a good kernel ($L^1$ and integral $1$) and as $r \to 1$ from below, the Poisson kernel satisfies the same limiting property that good kernels do as $n \to \infty$.
+The Poisson satisfies the same general properties as a good kernel ($L^1$ and integral $1$) and as $r \to 1^{-}$ the Poisson kernel satisfies the same limiting property that good kernels do as $n \to \infty$.
 
 ###### _proof sketch:_
 
+From [[#_lemma _ the closed form of the Poisson kernel |the closed form of the Poisson kernel]] we know that $P_{r}(\theta)$ is non-negative. By uniform convergence, we can swap the order of integration and summation to get
+$$
+\frac{1}{2 \pi} \int_{-\pi}^\pi P_{r}(\theta)  \, d\theta = \frac{1}{2 \pi} \sum_{n = -\infty}^\infty \int_{-\pi}^\pi r^{\lvert n \rvert } e^{i n \theta} \, d\theta = 1
+$$
+since the integral is only non-zero when $n = 0$.
+
+For $\theta$ with $\pi \ge \lvert \theta \rvert > \delta > 0$, we can bound the denominator of the closed form as long as $r \ge 1/2$ —
+$$
+1 - 2r \cos\theta + r^{2} = (1 - r^{2}) + 2r (1 - \cos\theta) \geq 1 / 4 + (1 - \cos\theta) \ge c_{\delta} > 0
+$$
+since $5 / 4 - \cos\theta$ increases away from $0$. Thus,
+$$
+P_{r}(\theta) \leq \frac{1 - r^{2}}{c_{\delta}}
+$$
+when $\delta < \lvert \theta \rvert \le \pi$. As $r \to 1^-$, this gives arbitrary bounds on $P_{r}(\theta)$, and thus, on its integral. That is,
+$$
+\lim_{ r \to 1^- } \int_{-\pi}^\pi P_{r}(\theta) \, d\theta = 0
+$$
+
 ##### _corollary:_ Abel means converge at points of continuity
 
-##### _corollary:_ Abel means recover continuous functions
-
-
+If $f : \mathbb{R} / 2 \pi \mathbb{Z} \to \mathbb{C}$ is continuous at $x_{0}$, then $A_{r} f(x_{0}) \to f(x_{0})$. If $f$ is continuous everywhere, then $A_{r}f \rightrightarrows f$.

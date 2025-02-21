@@ -48,7 +48,7 @@ But this is just
 $$
 S_{N}f(x_{0}) - f(x_{0}) = \frac{1}{2 \pi} \left( \int_{-\pi}^\pi t \cot(t / 2) \Delta f(t) \sin(N t) \, dt + \int_{-\pi}^\pi t \Delta f(t) \cos(N t) \, dt \right)
 $$
-which is the sum of two integrals that the [[Fourier Analysis --- math-139/notes/Square convergence of Fourier series#_corollary _ Riemann-Lebesgue lemma|Riemann-Lebesgue lemma]] tells us must go to $0$.
+which is the sum of two integrals that the [[Fourier Analysis --- math-139/notes/Square convergence of Fourier series#_corollary _ Riemann-Lebesgue lemma|Riemann-Lebesgue lemma]] tells us must go to $0$ as $N \to \infty$.
 
 Thus, $S_{N}f(x_{0}) \to f(x_{0})$.
 

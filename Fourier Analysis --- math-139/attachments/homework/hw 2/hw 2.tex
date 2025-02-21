@@ -9,7 +9,7 @@
 
 \begin{document}
 
-\begin{problem}[10.]
+\begin{problem}[S \& S \S 1.4 \#10.]
 	Show that the expression of the Laplacian
 	\[
 		\Delta = \frac{\partial^{2}}{\partial x^{2}} + \frac{\partial^{2}}{\partial y^{2}}
@@ -83,7 +83,7 @@
 
 \pagebreak
 
-\begin{problem}[Problem 1.]
+\begin{problem}[S \& S \S 1.5 \#1.]
 	Consider the Dirichlet problem in a rectangle.
 
 	More precisely, we look for a solution of the steady-state heat equation $\Delta u = 0$ in the rectangle $R = \{ (x, y) \mid 0 \le x \le \pi, 0 \le y \le 1 \}$ that vanishes on the vertical sides of $R$, and so that
@@ -104,7 +104,7 @@
 
 \pagebreak
 
-\begin{problem}[2.]
+\begin{problem}[S \& S \S 2.6 \#2.]
 	In this exercise we show how the symmetries of a function imply certain properties of its Fourier coefficients. Let $f$ be a $2 \pi$-periodic Riemann integrable function defined on $\mathbb{R}$.
 	\begin{enumerate}
 		\item Show that the Fourier series of the function $f$ can be written as
@@ -174,7 +174,7 @@
 
 \pagebreak
 
-\begin{problem}[3.]
+\begin{problem}[S \& S \S 2.6 \#3.]
 	We return to the problem of the plucked string discussed in Chapter 1. Show that the initial condition $f$ is \emph{equal} to its Fourier sine series
 	\[
 		f(x) = \sum_{m = 1}^{\infty} A_{m} \sin{(m x)} \quad \text{with} \quad A_{m} = \frac{2h}{m^{2}} \frac{\sin{(m p)}}{p(\pi - p)}.
@@ -183,7 +183,7 @@
 
 \pagebreak
 
-\begin{problem}[4.]
+\begin{problem}[S \& S \S 2.6 \#4.]
 	Consider the $2 \pi$-periodic odd function defined on $[0, \pi]$ by $f(\theta) = \theta(\pi - \theta)$.
 	\begin{enumerate}
 		\item Draw the graph of $f$.
@@ -215,26 +215,34 @@
 					\theta (\pi + \theta) & \theta \in [-\pi, 0]
 				\end{cases}
 			\]
-			Also note that by 2 part (c) we have that $f(\theta) \sim \hat{f}(0) + \sum_{n \ge 1} (\hat{f}(n) + \hat{f}(-n)) \sin{(n \theta)}$ and by essentially the same proof as part (d), since $f(\theta + \pi) = - f(\theta)$, we have $\hat{f}(n) = 0$ for all even $n$. Finally, since $f$ is real, $\hat{f}(-n) = \overline{\hat{f}(n)}$
+			Also note that by 2 part (c) we have that $f(\theta) \sim \hat{f}(0) + \sum_{n \ge 1} i (\hat{f}(n) - \hat{f}(-n)) \sin{(n \theta)}$ and by essentially the same proof as part (d), since $f(\theta + \pi) = - f(\theta)$, we have $\hat{f}(n) = 0$ for all even $n$.
 
-			Thus, we compute
+			Thus, we have
 			\begin{align*}
 				\hat{f}(n) & = \frac{1}{2 \pi} \int_{-\pi}^{\pi} f(\theta) e^{-i n \theta} \, d \theta \\
-					   & = \frac{1}{2 \pi} \left ( \int_{0}^{\pi} \theta (\pi - \theta) e^{-i n \theta} \, d \theta + \int_{-\pi}^{0} \theta (\pi + \theta) e^{-i n \theta} \, d \theta \right ) \\
-					   & = \frac{1}{2 \pi} \left (  \right )
+					   & = \frac{1}{2 \pi} \left ( \int_{0}^{\pi} \theta (\pi - \theta) e^{-i n \theta} \, d \theta + \int_{-\pi}^{0} \theta (\pi + \theta) e^{-i n \theta} \, d \theta \right ).
 			\end{align*}
 
-			Computing the integral on the right in Mathematica and substituting odd $n$ we get
-			\begin{align*}
-				\hat{f}(n) + \hat{f}(-n) & = \frac{4 \pi n - 2 (\pi^{2} n^{2} - 2) \sin{(\pi n) - 4 \pi n \cos{(\pi n)}}}{\pi n^{3}} \\
-							 & = \frac{4 \pi n (1 - \cos{(\pi n)})}{n^{3}}.
-			\end{align*}
+			Computing the integrals above in Wolfram Alpha and substituting $n$ odd, we get
+
+			\[
+				\hat{f}(n) = \frac{1}{2 \pi} \frac{2 i (\pi n \sin{(\pi n)} + 2 \cos{(\pi n)} - 2)}{n^{3}} = \frac{2i(0 - 2 - 2)}{2 \pi n^{3}} = \frac{-4 i}{\pi n^{3}}.
+			\]
+			Finally, since $f$ is real $\hat{f}(-n) = \overline{\hat{f}(n)}$ which gives
+			\[
+				i(\hat{f}(n) - \hat{f}(-n)) = 2 i^{2} \operatorname{Im} \hat{f}(n) = \frac{8}{\pi n^{3}}.
+			\]
+			Thus,
+			\[
+				f(\theta) = \sum_{k = 1}^{\infty} i(\hat{f}(k) - \hat{f}(-k)) = \sum_{k \text{ odd} \ge 1} \frac{\sin{(k \theta)}}{k^{3}}
+			\]
+			as desired.
 	\end{enumerate}
 \end{solution}
 
 \pagebreak
 
-\begin{problem}[7.]
+\begin{problem}[S \& S \S 2.6 \#7.]
 	Suppose $\{ a_{n} \}_{n \in \mathbb{N}}$ and $\{ b_{n} \}_{n \in \mathbb{N}}$ are two finite sequences of complex numbers. Let $B_{k} = \sum_{n = 1}^{k} b_{n}$ denote the partial sums of the series $\sum b_{n}$ with the convention $B_{0} = 0$.
 	\begin{enumerate}
 		\item Prove the \emph{summation by parts} formula
@@ -247,7 +255,7 @@
 
 \pagebreak
 
-\begin{problem}[8.]
+\begin{problem}[S \& S \S 2.6 \#8.]
 	Verify that $\frac{1}{2i} \sum_{n \neq 0} \frac{e^{i n x}}{n}$ is the Fourier series of the $2 \pi$-periodic \emph{sawtooth} function, defined by $f(0) = 0$, and
 	\[
 		f(x) = \begin{cases}
@@ -259,9 +267,31 @@
 	Note that this function is not continuous. Show that nevertheless, the series converges for every $x$. In particular, the value of the series at the origin, namely $0$, is the average of the values of $f(x)$ as $x$ approaches the origin from the left and right.
 \end{problem}
 
+\begin{solution}
+	Notice that $f$ is almost-everywhere equal to the function $g : [0, 2 \pi] \to \mathbb{C}$ by $g(x) = \pi / 2 - x / 2$. Thus, the Fourier coefficients of $f$ and $g$ are the same. That is, we have
+	\begin{align*}
+		\hat{f}(n) & = \hat{g}(n) \\
+			   & = \frac{1}{2 \pi} \int_{0}^{2 \pi} \frac{\pi - x}{2} e^{-i n x} \, dx \\
+			   & = \frac{1}{2 \pi} \left ( \frac{-1 + e^{-2 \pi i n}(1 + 2 i \pi n)}{2 n^{2}} - \frac{i \pi(1 - e^{-2 \pi i n})}{2 n} \right ) \\
+			   & = -\frac{1}{2 \pi} \frac{2 i \pi}{2 n} \\
+			   & = \frac{1}{2 i n}
+	\end{align*}
+	when $n \neq 0$. Since $\hat{f}(0) = \int_{-\pi}^{\pi} f(x) \, dx = 0$ we have the desired series.
+
+	Notice that by the symmetries of the series, we can write
+	\[
+		\frac{1}{2 i} \sum_{n \neq 0} \frac{e^{i n x}}{n} = \frac{1}{2 i} \sum_{n = 1}^{\infty} \frac{e^{i n x} - e^{-i n x}}{n} = \sum_{n = 1}^{\infty} \frac{\sin{(n x)}}{n}.
+	\]
+	Clearly, since $\sin{0} = 0$, the series converges to $0$ at $0$. From part 7 (b) we can see that the series converges at every other $x$. Clearly $1 / n \to 0$ as $n \to \infty$ and using the closed form for the Dirichlet kernel, we can see that 
+	 \[
+		\sum_{n \neq 0, n = -N}^{N} {e^{i n x}} = D_{N}(x) = \frac{\sin{((N + 1/2) x)}}{\sin{(x / 2)}} < \frac{1}{\sin{(x / 2)}}
+	\]
+	which is a well defined bound for all $x \in (-\pi, \pi) \setminus \{ 0 \}$. Thus, the series converges everywhere away from $0$ too.
+\end{solution}
+
 \pagebreak
 
-\begin{problem}[10.]
+\begin{problem}[S \& S \S 2.6 \# 10.]
 	Suppose $f$ is a periodic function of period $2 \pi$ which belongs to the class $\mathcal{C}^{k}$. Show that
 	\[
 		\hat{f}(n) = O(1/\lvert n \rvert^{k}) \quad \text{as } \lvert n \rvert \to \infty.

@@ -92,7 +92,7 @@ Since $g$ is approximated by $\{ p_{n} \}_{n \in \mathbb{N}}$ with $\lVert g - p
 
 Let $f : \mathbb{R} / 2 \pi \mathbb{Z} \to \mathbb{C}$ be integrable. Then
 $$
-\lVert \{ \hat{f}(n) \}_{n \in \mathbb{N}} \rVert_{\ell^{2}} = \sum_{n = - \infty}^\infty \lvert \hat{f}(n) \rvert^{2} = \int_{-\pi}^\pi \lvert f(x) \rvert^{2}  \, dx =  \lVert f \rVert_{L^2}sr^2.
+\lVert \{ \hat{f}(n) \}_{n \in \mathbb{N}} \rVert^{2}_{\ell^{2}} = \sum_{n = - \infty}^\infty \lvert \hat{f}(n) \rvert^{2} = \int_{-\pi}^\pi \lvert f(x) \rvert^{2}  \, dx =  \lVert f \rVert_{L^2}^2.
 $$
 
 ###### _proof sketch:_
@@ -103,12 +103,12 @@ Extend the proof that $\lVert v \rVert^{2}$ is [[Linear algebra done right --- l
 
 Under the same hypotheses on $f$ and $g$
 $$
-\left< f, g \right>_{L^2} = \left< \{ \hat{f}(n) \}_{n \in \mathbb{N}}, \{ \hat{g}(n) \}_{n \in \mathbb{N}} \right>.
+\left< f, g \right>_{L^2} = \left< \{ \hat{f}(n) \}_{n \in \mathbb{N}}, \{ \hat{g}(n) \}_{n \in \mathbb{N}} \right>_{\ell^{2}}.
 $$
 
 ###### _proof sketch:_
 
-Use the polarisation identity to recover the inner product from the norm.
+Use [[the polarisation identity]] to recover the inner product from the norm.
 
 ##### _corollary:_ Riemann-Lebesgue lemma
 
