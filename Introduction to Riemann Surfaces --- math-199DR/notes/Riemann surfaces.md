@@ -86,4 +86,4 @@ $X$ is connected because $\pi$ it is the image of a continuous map from the conn
 
 For $X$ to be Hausdorff, we need each of the orbits to be closed in $\mathbb{H}$. This happens exactly when $\Gamma$ acts properly dicontinuously — points in different orbits have open neighbourhoods that never intersect, even after action by $\Gamma$. Equivalently, $\Gamma$ is discrete — it has the [[Topology --- math-147/notes/Topologies#_example _ the discrete and indiscrete topologies|discrete topology]] as a [[Mathematical Analysis I --- math-131/notes/Subspaces#_theorem _ the subspace topology|subspace]]. We call such subgroups of $\operatorname{PSL}_{2}(\mathbb{R})$ Fuchsian. For example $\operatorname{PSL}_{2}(\mathbb{Z})$ is Fuchsian.
 
-The atlas is the one inherited from $\mathbb{H}$ (pushforward sheaf?).
+The atlas is [[Introduction to Riemann Surfaces --- math-199DR/notes/Group actions on Riemann surfaces#$X$ and its quotient|the one inherited]] from $\mathbb{H}$ (pushforward sheaf?).
