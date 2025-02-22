@@ -1,0 +1,111 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+\setlist[enumerate, 1]{label = (\arabic*)}
+
+\name{Jayden Thadani}
+\class{MATH 147 --- Topology}
+\assignment{Homework \#4}
+\duedate{20th February 2025}
+
+\begin{document}
+
+\begin{problem}[3.16.]
+	Suppose $X$ is a set and $\mathcal{S}$ is a collection of subsets of $X$. Then $\mathcal{S}$ is a subbasis for some topology on $X$ if and only if every point of $X$ is in some element of $\mathcal{S}$.
+\end{problem}
+
+\begin{solution}
+Write $\mathcal{B}$ for the collection of finite intersections of subbasic open sets in $\mathcal{S}$. We will show $\mathcal{B}$ is a basis.
+
+Suppose each $p$ is contained in a subbasic open set $U_{p}$. Then clearly, $\mathcal{B}$ has each $p \in X$ contained in a basic open set. Further, each intersection of basic open sets $U$ and $V$ is a basic open set (since finite intersections of finite intersections are just finite intersections of the original sets — $\left( \bigcap_{i = 1}^m U_{i} \right) \cap \left(  \bigcap_{i = m + 1}^n U_{i} \right) = \bigcap_{i = 1}^n U_{i}$). Thus, every $U \cap V$ is covered by subbasic open sets which are in $\mathcal{B}$. By theorem 3.3, this is sufficient to establish that $\mathcal{B}$ is a basis of a topology on $X$, and thus, that $\mathcal{S}$ is a subbasis of that topology.
+
+Suppose $\mathcal{S}$ is a subbasis of some topology. Since $X$ must be open in this topology, $X$ is the union of some collection of subbasic open sets, and thus, each $p \in X$ is contained in at least one of them.
+\end{solution}
+
+\pagebreak
+
+\begin{problem}[3.21.]
+	In the lexicographically ordered square find the closures of the following subset:
+	\[
+		D = \{ (x, 1 / 2) \mid 0 < x < 1 \}.
+	\]
+\end{problem}
+
+\begin{solution}
+	\[
+		\boxed{
+			\overline{D} = D.
+		}
+	\]
+ 
+	Given any point $(x_{1}, x_{2}) \notin D$, we either have $x_{2} \neq 1 / 2$, or the two points  $(0, 1 / 2)$ and $(1, 1/2)$. Conversely, if $(x_{1}, x_{2}) \in L$ the lexicographically ordered square, but $x_{2} \neq 1 / 2$, then  $(x_{1}, x_{2}) \notin D$.
+
+	First, suppose $x_{2} \neq 1 / 2$. Then choose $r$ small enough that the open interval on the real line  $(r - x_{2}, x_{2} + r)$ does not contain $1 / 2$ (since points are closed in the standard topology/by the Archimedean property of $\mathbb{R}$ we can do this). Thus, the ``open interval''  $\{ (x_{1}, z_{2}) \mid z_{2} \in (x_{2} - r, x_{2} + r) \subseteq \mathbb{R}  \}$ around $(x_{1}, x_{2})$ does not contain any points $(z_{1}, z_{2})$ with $z_{2} = 1 / 2$, and thus, does not contain any points of $D$.
+
+	For the exceptional point $(0, 1 / 2)$ notice that any basic open neighbourhood $\{ (0, z_{2}) \mid 0 < z_{2} < 1 \}$ contains no points  $(z_{1}, z_{2})$ with $z_{1} > 0$, and thus, no points of $D$. Similarly, $\{ (1, z_{2}) \mid 0 < z_{2} < 1 \}$ contains no points of $D$ either.
+
+	We've demonstrated that every point not in $D$ has an open neighbourhood disjoint from $D$. By theorem 2.9, this is sufficient to show that each point not in $D$ is not a limit point of $D$. It follows that $D$ contains all its limit points and is closed.
+\end{solution}	
+
+\pagebreak
+
+\begin{problem}[3.25.]
+	Let $(X, \mathcal{T})$ be a topological space and $Y \subseteq X$. Then the collection of sets $\mathcal{T}_{Y}$ is in fact a topology on $Y$.
+\end{problem}
+
+\begin{solution}
+	We will show that $(Y, \mathcal{T}_{Y})$ to be a topological space are satisfied.
+
+	We can write $\O = \O \cap Y$ and $Y = X \cap Y$, to show that the empty set and the whole space are intersections of $Y$ with open sets in $\mathcal{T}$. Thus, the first two requirements for $(Y, \mathcal{T}_{Y})$ to be a topological space are satisfied.
+
+	Suppose $U_{Y}, V_{Y}$ are open sets in $(Y, \mathcal{T}_{Y})$ with $U_{Y} = U \cap Y$ and $V_{Y} = V \cap Y$ for some $X$-open sets $U, V \in \mathcal{T}$. Then
+	\[
+		U_{Y} \cap V_{Y} = (U \cap Y) \cap (V \cap Y) = U \cap V \cap Y = (U \cap V) \cap Y.
+	\]
+	Since $U \cap V$ is open in $X$ (by the definition of a topology), we have $U_{Y} \cap V_{Y}$ written as the intersection of an open set in $X$ with $Y$ --- we have $U_{Y} \cap V_{Y} \in \mathcal{T}_{Y}$. That is, the third requirement for $\mathcal{T}_{Y}$ to be a topology is satisfied.
+
+	Finally, suppose $\{ U_{\alpha, Y} \}_{\alpha \in \mathcal{I}}$ is a collection of open sets in $Y$ with each $U_{\alpha, Y} = U_{\alpha} \cap Y$ for some $X$-open set $U_{\alpha} \in \mathcal{T}$. Recall that $\bigcap_{\alpha \in \mathcal{I}} U_{\alpha}$ is open in $X$. Now,
+	\[
+		\bigcup_{\alpha \in \mathcal{I}} U_{\alpha, Y} = \bigcup_{\alpha \in \mathcal{I}} (U_{\alpha} \cap Y) = \left ( \bigcup_{\alpha \in \mathcal{I}} U_{\alpha} \right ) \cap Y.
+	\]
+	That is, the union of all  $U_{\alpha, Y}$ is the intersection of an $X$-open set with $Y$, and is thus, open --- the final requirement for $\mathcal{T}_{Y}$ to be a topology is satisfied.
+\end{solution}
+
+\pagebreak
+
+\begin{problem}[3.28.]
+	Let $(Y, \mathcal{T}_{Y})$ be a subspace of $(X, \mathcal{T})$. A subset $C \subseteq Y$ is closed in $(Y, \mathcal{T}_{Y})$ if and only if there is a set $D \subseteq X$, closed in $(X, \mathcal{T})$, such that $C = D \cap Y$.
+\end{problem}
+
+\begin{solution}
+	We can show this by a chain of equivalences.
+
+	By theorem 2.14, $C$ being closed in $Y$ is equivalent to $Y \setminus C$ being open in $Y$. $Y \setminus C$ being open in $Y$ is (by definition) equivalent to $(Y \setminus C) = U \cap Y$ for some $U$ open in $X$. $U$ must contain $Y \setminus C$ and thus, $X \setminus U$ must contain in its intersection with $Y$ exactly those points of $Y$ that are not in $Y \setminus C$. That is, our previous statements are equivalent to $(X \setminus U) \cap Y = C$.
+
+	Again, by theorem 2.14 $U$ open is equivalent to $X \setminus U$ is closed, and so with the choice $D = X \setminus U$, this is equivalent to $C = D \cap Y$ for $D$ closed in $X$.
+\end{solution}
+
+\pagebreak
+
+\begin{problem}[3.31.]
+	Consider the following subspaces of the lexicographically ordered square:
+	\begin{enumerate}
+		\item $D = \{ (x, 1 / 2) \mid 0 < x < 1 \}$.
+		\item $E = \{ (1 / 2, y) \mid 0 < y < 1 \}$.
+		\item $F = \{ (x, 1) \mid 0 < x < 1 \}$.
+	\end{enumerate}
+	As sets they are all lines. Describe their relative topologies, especially noting any connections to topologies you have seen already.
+\end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item $D$ has the discrete (subspace) topology. In fact, this is the ``same'' topological space as $(0, 1)$ with the discrete topology if we forget about the $1 / 2$ in the second component of its points.
+
+			We can see that $D$ is discrete by showing that every point is open. Notice that for any $(x, 1 / 2) \in D$, there is a basic open set $\{ (x, y) \mid 0 < y < 1 \}$ in the lexicographically ordered square. It intersects $D$ at exactly one point --- $(x, 1 / 2)$. Thus, each point is open and $D$ is discrete.
+		\item $E$ has the usual Euclidean topology of $(0, 1)$. It is the ``same'' topological space as $(0, 1)$ with the subspace topology inherited from $\mathbb{R}_{\text{std}}$ if we forget about the $1 / 2$ in the first component of its points.
+
+			Any subbasic open set has intersection $\{ 1 /2 \} \times (0, b)$ or $\{ 1 / 2 \} \times (a, 1)$ with $E$. Thus, taking finite intersections of these yields the familiar intervals $(a, b) \subseteq \mathbb{R}$ rotated onto the square as $\{ 1 / 2 \} \times (a, b)$.
+		\item $F$ has the lower limit topology of $(0, 1)$. Consider the intersection of any basic open set $U = \{ (x, y) \mid (x_{1}, y_{1}) < (x, y) < (x_{2}, y_{2}) \}$ in the lexicographical square with $F$. If  $y_{1} < 1$, then $(x_{1}, y_{1}) < (x_{1}, 1)$ and $U \cap F$ must contain $(x_{1}, 1)$. Further, all $x_{1} < x < x_{2}$ have $(x, 1) < (x_{2}, y_{2})$ so $U \cap F$ is all of the half open interval $[x_{1}, x_{2})$. This generates the lower limit topology on $F$.
+	\end{enumerate}
+\end{solution}
+
+\end{document}
