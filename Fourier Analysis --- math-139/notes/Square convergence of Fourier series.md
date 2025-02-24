@@ -92,7 +92,7 @@ Since $g$ is approximated by $\{ p_{n} \}_{n \in \mathbb{N}}$ with $\lVert g - p
 
 Let $f : \mathbb{R} / 2 \pi \mathbb{Z} \to \mathbb{C}$ be integrable. Then
 $$
-\lVert \{ \hat{f}(n) \}_{n \in \mathbb{N}} \rVert^{2}_{\ell^{2}} = \sum_{n = - \infty}^\infty \lvert \hat{f}(n) \rvert^{2} = \int_{-\pi}^\pi \lvert f(x) \rvert^{2}  \, dx =  \lVert f \rVert_{L^2}^2.
+\lVert \{ \hat{f}(n) \}_{n \in \mathbb{N}} \rVert^{2}_{\ell^{2}} = \sum_{n = - \infty}^\infty \lvert \hat{f}(n) \rvert^{2} = \frac{1}{2 \pi} \int_{-\pi}^\pi \lvert f(x) \rvert^{2}  \, dx =  \lVert f \rVert_{L^2}^2.
 $$
 
 ###### _proof sketch:_
