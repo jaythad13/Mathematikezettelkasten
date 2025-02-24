@@ -47,3 +47,13 @@ $A \subseteq Y \subseteq X$ is closed in $Y$ if and only if $A = \operatorname{C
 If $A = \operatorname{Cl}_{X}(A) \cap Y$ then it is the intersection of $Y$ with a larger closed set and is thus closed.
 
 If $A$ is closed, then there is some closed $B \subseteq X$ such that $B \cap Y = A$. Since the closure, is the [[Topology --- math-147/notes/Limit points and closed sets#_proposition _ the closure is the smallest closed set|smallest closed set]] containing $A$, $\operatorname{Cl}_{X}(A) \cap Y \subseteq A$, but since both the closure and $Y$ contain $A$, the inclusion is reversed too — $A = \operatorname{Cl}_{X}(A) \cap Y$.
+
+##### _proposition:_ [[Topology --- math-147/notes/Bases|bases]] for a subspace
+
+If $Y \subseteq X$ is a subspace, and $\mathcal{B}$ is a basis for the topology $\mathcal{T}$ on $X$, then $\mathcal{B}_{Y} = \{ B \cap Y \mid B \in  \mathcal{B} \}$ is a basis for the subspace topology $\mathcal{T}_{Y}$ on $Y$.
+
+###### _proof:_
+
+Clearly, $\mathcal{B}_{Y} \subseteq \mathcal{T}_{Y}$ since $\mathcal{B} \subseteq \mathcal{T}$ and $\mathcal{B}_{Y}$ consists of intersections with $Y$.
+
+Each open $U$ in $\mathcal{T}_{Y}$ is $V \cap Y$ for some open set $V$ in $\mathcal{T}$. Thus, for each point $p \in U \subseteq V$, there is a basic open set $B \in \mathcal{B}$ with $p \in B \subseteq V$. Thus, $p \in B \cap Y \subseteq U$. That is, each open set in $\mathcal{T}_{Y}$ is covered by basic open sets which is [[Topology --- math-147/notes/Bases#_proposition _ equivalent conditions to be a basis of a specific topology|sufficient to show]] $\mathcal{B}_{Y}$ is a basis of $\mathcal{T}_{Y}$ .
