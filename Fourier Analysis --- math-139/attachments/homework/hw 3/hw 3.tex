@@ -15,7 +15,7 @@
 		\item Calculate the Fourier coefficients of $f$, and show that
 			\[
 				\hat{f}(n) = \begin{cases}
-					\pi / 2 & \text{if } n = 0m \\
+					\pi / 2 & \text{if } n = 0 \\
 					\frac{-1 + (-1)^{n}}{\pi n^{2}} & \text{otherwise}.
 				\end{cases}
 			\]
@@ -26,6 +26,78 @@
 			\]
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item The plot below was created in TikZ.
+			\begin{figure}[H]
+				\centering
+				\begin{tikzpicture}
+					\draw[->] (-4, 0) -- (4, 0) node[right] {$\theta$};
+					\draw[->] (0, -1) -- (0, 4) node[above] {$f(\theta)$};
+					\draw[scale = 1, domain = 0:3.14, smooth, variable = \x, blue] plot ({\x}, {\x});
+					\draw[scale = 1, domain = -3.14:0, smooth, variable = \x, blue] plot ({\x}, {-\x});
+				\end{tikzpicture}
+				\caption{The absolute value function $f$ in blue}
+			\end{figure}
+
+		\item Notice that
+			\[
+				\hat{f}(0) = \frac{1}{2 \pi} \int_{-\pi}^{\pi} f(\theta) \, d \theta = \frac{1}{2 \pi} 2 \frac{\pi^{2}}{2} = \frac{\pi}{2}
+			\]
+			since the integral is just the area of two right angles each with base and height $\pi$.
+
+			For other $n$, we can integrate by parts
+			\begin{align*}
+				\hat{f}(n) & = \frac{1}{2 \pi} \int_{-\pi}^{\pi} f(\theta) e^{-i n \theta} \, d\theta \\
+					   & = \frac{1}{2 \pi} \left ( \int_{0}^{\pi} \theta e^{-i n \theta} \, d\theta - \int_{-\pi}^{0} \theta e^{-i n \theta} \, d\theta \right ) \\
+					   & = \frac{1}{2 \pi} \left ( \left ( \frac{e^{-i n \theta}}{n^{2}} - \frac{\theta e^{-i n \theta}}{i n} \right ) \Big |_{0}^{\pi} - \left ( \frac{e^{-i n \theta}}{n^{2}} - \frac{\theta e^{-i n \theta}}{i n} \right ) \Big |_{-\pi}^{0} \right ) \\
+					   & = \frac{1}{2 \pi} \left ( \left ( \frac{(-1)^{n}}{n^{2}} - \frac{\pi (-1)^{n}}{in} - \frac{1}{n^{2}} \right ) - \left ( \frac{1}{n^{2}} - \frac{\pi (-1)^{n}}{in} - \frac{(-1)^{n}}{n^{2}} \right ) \right ) \\
+					   & = \frac{2}{2 \pi} \left ( \frac{(-1)^{n} - 1}{n^{2}}  \right ) \\
+					   & = \frac{-1 + (-1)^{n}}{\pi n^{2}}.
+			\end{align*}
+
+		\item
+			\[
+				\boxed{
+					f(\theta) \sim \frac{\pi}{2} - \sum_{n \text{ odd} \ge 1} \frac{4}{\pi n^{2}} \cos{(n \theta)}.
+				}
+			\]
+
+			Notice that $\hat{f}(n) = \hat{f}(-n)$. Since $e^{i n \theta} + e^{-i n \theta} = 2 \cos{(n \theta)}$. Further since $\hat{f}(n) = 0$ for even $n$, we have
+			\begin{align*}
+				\sum_{n = -\infty}^{\infty} \hat{f}(n) e^{-i n \theta} & = \frac{\pi}{2} + \sum_{n = 1}^{\infty} 2 \hat{f}(n) \cos(n \theta) \\
+										       & = \frac{\pi}{2} - \sum_{n \text{ odd} \ge 1} \frac{4}{\pi n^{2}} \cos{(n \theta)}.
+			\end{align*}
+
+		\item Since $f$ is continuous (at $0$, but also everywhere) and $\hat{f}(n) = O(1 / n^{2})$, the Fourier series recovers the function at $0$. Specifically
+			\[
+				\sum_{n = -\infty}^{\infty} \hat{f}(n) e^{i n 0} = f(0).
+			\]
+			
+			Since $f(0) = 0$, evaluating the Fourier series at $0$ gives
+			\[
+				0 = \frac{\pi}{2} - \sum_{n \text{ odd} \ge 1} \frac{4}{\pi n^{2}} \cos{0}.
+			\]
+			Rearranging gives us
+			\[
+				\sum_{n \text{ odd} \ge 1} \frac{1}{n^{2}} = \frac{\pi^{2}}{8}.
+			\]
+
+			Every even number $n$ is $2^{k}$ times a unique odd number. Thus,
+			\begin{align*}
+				\sum_{n \text{ even} \ge 1} \frac{1}{n^{2}} & = \sum_{k = 1}^{\infty} \sum_{n \text{ odd} \ge 1} \frac{1}{(2^{k} n)^{2}} \\
+									    & =  \sum_{k = 1}^{\infty} \frac{1}{4^k} \frac{\pi^{2}}{8} \\
+									    & = \frac{\pi^{2}}{8} \frac{1 /4}{1 - 1/4} \\
+									    & = \frac{\pi^{2}}{24}.
+			\end{align*}
+
+			It follows that
+			\[
+				\sum_{n = 1}^{\infty} \frac{1}{n^{2}} = \frac{\pi^{2}}{8} + \frac{\pi^{2}}{24} = \frac{\pi^{2}}{6}.
+			\]
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
@@ -40,13 +112,52 @@
 	\begin{enumerate}
 		\item Show that the Fourier series of $f$ is given by
 			\[
-				f(x) \sim \frac{b - a}{2 \pi} + \sum_{n = 0} \frac{e^{-i n a}  - e^{-i n b}}{2 \pi i n} e^{i n x}
+				f(x) \sim \frac{b - a}{2 \pi} + \sum_{n \neq 0} \frac{e^{-i n a}  - e^{-i n b}}{2 \pi i n} e^{i n x}
 			\]
 			The sum extends over all positive and negative integers excluding $0$.
 		\item Show that if $a \neq -\pi$ or $b \neq -\pi$ and $a \neq b$, then the Fourier series does not converge absolutely for any $x$.
-		\item However, prove that the Fourier series converges at every point $x$. What happens if $a \neq - \pi$ and $b = \pi$?
+		\item However, prove that the Fourier series converges at every point $x$. What happens if $a = - \pi$ and $b = \pi$?
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item Since $f = \chi_{[a, b]}$ has support only in $[a, b]$ where it is the identity, we only have to integrate the characters over that interval. Specifically, for all $n \neq 0$ 
+			\begin{align*}
+				\hat{f}(n) & = \frac{1}{2 \pi} \int_{a}^{b} e^{-i n x} \, dx \\
+					   & = \frac{1}{2 \pi} \left ( \frac{e^{-i n x}}{-in} \right ) \Big |_{a}^{b} \\
+					   & = \frac{e^{-i n a} - e^{-i n b}}{2 \pi i n}.
+			\end{align*}
+			For $n = 0$, integrating the character $e^{i 0 x} = 1$ over $[a, b]$ just gives
+			\[
+				\hat{f}(0) = \frac{1}{2 \pi} \int_{a}^{b}  \, dx = \frac{b - a}{2 \pi}.
+			\]
+
+		\item The magnitude of a generic term of the Fourier series is
+			\[
+				\frac{\lvert e^{-i n a} - e^{-i n b} \rvert}{2 \pi \lvert n \rvert} = \frac{\lvert e^{-i n a/2} e^{i n b/2} \rvert \lvert e^{i n (b - a)/2} - e^{-i n (b - a) / 2} \rvert}{2 \pi \lvert n \rvert} = \frac{\lvert \sin{(n \theta)} \rvert}{\pi \lvert n \rvert}.
+			\]
+			for $\theta = (b - a) / 2$. We claim there are infinitely many $n \theta$ such that $\lvert \sin{(n \theta)} \rvert$ is bounded away from $0$.
+
+			We can see this by considering $\lvert \sin{(n \theta)} \rvert + \lvert \sin{((n + 1) \theta)} \rvert$. If $\theta$ is not a multiple of $\pi$, the terms are never simultaneously zero. Considering the continuous function on the compact set $[-\pi, \pi]$ (since $\sin$ is $2 \pi$ periodic), the function achieves a minimum away from $0$, and thus, can be bounded above $0$. That is, there are infinitely many $n$ such that $\lvert \sin{(n \theta)} \rvert \ge c > 0$. By comparison with the harmonic series the series diverges.
+
+		\item We can use the Dirichlet test to show that the series converges for each $x$. Clearly $a_{n} = 1 / 2 \pi i n$ is monotonically decreasing. Further $b_{n} = (e^{-i n a} - e^{-i n b}) e^{i n x}$. Has bounded partial sums
+			\[
+				B_{N} = \sum_{1 \le \lvert n \rvert \le N} e^{-i n a} e^{i n x} - \sum_{1 \le \lvert n \rvert \le N} e^{-i n b} e^{i n x}.
+			\]
+			These partial sums are bounded since the Dirichlet kernels $D_{N} = \sum_{\lvert n \rvert \le N} e_{i n x}$ are bounded.
+
+			If $a = -\pi$ and $b = \pi$, then for all $n \neq 0$,
+			\[
+				\hat{f}(n) = \frac{e^{-i n (-\pi)} - e^{-i n \pi}}{2 \pi i n} = \frac{-1 - (-1)}{2 \pi i n} = 0.
+			\]
+			but
+			\[
+				\hat{f}(0) = \frac{\pi - (-\pi)}{2 \pi} = 1.
+			\]
+			Thus, $\chi_{[a, b]}(x) = \hat{f}(0) = 1$ for all $x \in [-\pi, \pi]$.
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
@@ -60,11 +171,42 @@
 	Show that $\hat{f}_{k}(n) \to \hat{f}(n)$ uniformly in $n$ as $k \to \infty$.
 \end{problem}
 
+\begin{solution}
+	We can compute the difference between $\hat{f}_{k}$ and $\hat{f}$ and bound it by pulling out absolute values. Specifically, we write
+	\begin{align*}
+		\lvert \hat{f}(n) - \hat{f}_{k}(n) \rvert & = \left \lvert \int_{-\pi}^{\pi} (f(x) - f_{k}(x)) e^{-i n x} \, dx  \right \rvert \\
+							  & \le \lvert e^{-i n x} \rvert \left \lvert \int_{-\pi}^{\pi} \lvert f(x) - f_{k}(x) \rvert \, dx  \right \rvert \\
+							  & = \left \lvert \int_{-\pi}^{\pi} \lvert f(x) - f_{k}(x) \rvert \, dx  \right \rvert.
+	\end{align*}
+
+	Thus, $\lvert \hat{f}(n) - \hat{f}_{k}(n) \rvert \to 0$ as well. Since our bound was independent of  $n$ ($\lvert e^{-i n x} \rvert = 1$ for all $n$) the convergence is uniform.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[S \& S \S 2.6 \#12.]
 	Prove that if a series of complex numbers $\sum c_{n}$ converges to $s$, then $\sum c_{n}$ is also Ces\`aro summable to $s$.
 \end{problem}
+
+\begin{solution}
+	Write $s_{n}$ for the $n$th partial sum $\sum_{k = 1}^{n} c_{k}$ and $\sigma_{n}$ for the $n$th Ces\`aro sum $(\sum_{k = 1}^{n} s_{n})/n$
+
+	Since $s_{n} \to s$, for each $\varepsilon > 0$, there is some $N \in \mathbb{N}$ such that all $n > N$ give $\lvert s - s_{n} \rvert < \varepsilon$. Suppose $\sum_{n = 1}^{N} \lvert s - s_{n} \rvert = S$. Choose $M \in \mathbb{N}$ large enough that $S / M < \varepsilon/2$ and $M > N$. Since all $\lvert s - s_{n} \rvert$ with $n > N$ have $s_{n} < \varepsilon / 2$, for any $m > M$ we have
+	\[
+		\frac{\lvert s - s_{N + 1} \rvert + \dots + \lvert s - s_{m} \rvert}{m} \le \frac{ \lvert s - s_{N + 1} \rvert + \dots + \lvert s - s_{m} \rvert}{m - N} < \varepsilon / 2.
+	\]
+
+	Thus, for all $m > M$
+	\begin{align*}
+		\lvert s - \sigma_{m} \rvert & = \left \lvert \frac{ms - \sum_{n = 1}^{m} s_{n}}{m} \right \rvert \\
+					     & \le \frac{\sum_{n = 1}^{m} \lvert s - s_{n} \rvert}{m} \\
+					     & = \frac{S}{m} + \frac{\sum_{n = N + 1}^{m} \lvert s - s_{n} \rvert}{m} \\
+					     & < \frac{S}{M} + \frac{\varepsilon}{2} \\
+					     & = \varepsilon.
+	\end{align*}
+
+	That is, we have a crude estimate showing $\sigma_{n} \to s$ as desired.
+\end{solution}
 
 \pagebreak
 
@@ -75,10 +217,46 @@
 	\]
 \end{problem}
 
+\begin{solution}
+	Recall that the $k$th Dirichlet kernel is given by $D_{k}(x) = \sum_{\lvert n \rvert \le k} e^{i n x}$ and the $N$th Fej\'er kernel is $\frac{1}{N} \sum_{k = 0}^{N - 1} D_{k}$.
+
+	Understanding each $D_{k}$ as a sum of geometric sums of $\omega$ and $\overline{\omega} = 1 / \omega$ for $\omega = e^{i x}$, we get
+	\[
+		D_{k} = \frac{\omega^{-k} - \omega^{k + 1}}{1 - \omega}.
+	\]
+	Thus,
+	\[
+		F_{N}(x) = \frac{1}{N} \frac{\sum_{k = 0}^{N - 1} \omega^{-k} - \omega^{k + 1}}{1 - \omega}.
+	\]
+
+	Notice that
+	\begin{align*}
+		4 \sin^{2}{(x / 2)} & = - (2 i \sin{(x / 2)})^{2} \\
+				    & = - (e^{i x / 2} - e^{-i x / 2})^{2} \\
+				    & = - (e^{i x} + e^{-i x} - 2 e^{i x / 2} e^{-i x / 2}) \\
+				    & = (1 - \omega) + (1 - \omega^{-1}) \\
+				    & = (1 - \omega) - \omega^{-1}(1 - \omega) \\
+				    & = (1 - \omega)(1 - \omega^{-1})
+	\end{align*}
+	This motivates considering $(1 - \omega^{-1})$ times the numerator of the F\'ejer kernel
+	\begin{align*}
+		(1 - \omega^{-1}) \sum_{k = 0}^{N - 1} \omega^{-k} - \omega^{k + 1} & = \sum_{k = 0}^{N - 1} \omega^{-k} + \omega^{k} - \omega^{k + 1} - \omega^{-(k + 1)} \\
+										    & = \omega^{0} + \omega^{0} - (\omega^{N} + \omega^{-N}) \\
+										    & = 2 - 2 \cos{(N x)} \\
+										    & = 2(1 - \cos{(N x)}) \\
+										    & = 4 \sin^{2}{(N x) / 2}.
+	\end{align*}
+	Here the second equality is because the preceding sum is telescoping.
+
+	Taking the quotient gives us the desired formula ---
+	\[
+		F_{N}(x) = \frac{1}{N} \frac{(1 - \omega^{-1}) \sum_{k = 0}^{N - 1} \omega^{-k} - \omega^{k + 1}}{(1 - \omega^{-1}) (1 - \omega)} = \frac{1}{N} \frac{\sin^{2}{(N x / 2)}}{\sin^{2}{(x / 2)}}.
+	\]
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[S \& S \S 2.6 \#16]
-	The Weierstrass approximation theorem states:
 	\begin{theorem}[Weierstrass approximation theorem]
 		Let $f$ be a continuous function on the closed and bounded interval $[a, b] \subseteq \mathbb{R}$. Then, for any $\varepsilon > 0$, there exists a polynomial $P$ such that
 		\[
@@ -87,5 +265,22 @@
 	\end{theorem}
 	Prove this by applying Fej\'er's theorem and using the fact that the exponential function $e^{i x}$ can be approximated by polynomials uniformly on any interval.
 \end{problem}
+
+\begin{solution}
+	Recall that uniform convergence implies $L^{\infty}$ convergence.
+
+	By F\'ejer's theorem, there exists a trigonometric polynomial $p$ such that
+	\[
+		\sup_{x \in [a, b]} \lvert f(x) - p(x) \rvert < \varepsilon /2.
+	\]
+	We are given that there exists a polynomial $P$ such that
+	\[
+		\sup_{x \in [a, b]} \lvert p(x) - P(x) \rvert < \varepsilon / 2.
+	\]
+	Thus, by the triangle inequality,
+	\[
+		\sup_{x \in [a, b]} \lvert f(x) - P(x) \rvert < \varepsilon.
+	\]
+\end{solution}
 
 \end{document}
