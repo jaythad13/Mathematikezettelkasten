@@ -20,13 +20,13 @@ We don't have to check that a collection of open sets is a basis directly every 
 
 ##### _proposition:_ equivalent conditions to be a basis of a specific topology
 
-A subset $\mathcal{B} \subseteq \mathcal{T}$ is a basis if and only if, for each open set $U \subseteq X$ and point $x \in U$, there is a basic open set $V$ such that $p \in V \subseteq U$. That is, every point in an open set has  a basic open neighbourhood contained in the open set.
+A subset $\mathcal{B} \subseteq \mathcal{T}$ is a basis if and only if, for each open set $U \subseteq X$ and point $p \in U$, there is a basic open set $V$ such that $p \in V \subseteq U$. That is, every point in an open set has  a basic open neighbourhood contained in the open set.
 
 ###### _proof:_
 
-Suppose we have the desired condition. Then, for each open set $U \subseteq X$ and each point $x \in U$, we have a basic [[Topology --- math-147/notes/Topologies#_proposition, definition _ checking openness by neighbourhood, neighbourhood|open neighbourhood]] of $x$, say $V_{x} \in \mathcal{B}$, contained in $U$. The union of these is $U$. That is, $U$ is the union of basic open sets.
+Suppose we have the desired condition. Then, for each open set $U \subseteq X$ and each point $p \in U$, we have a basic [[Topology --- math-147/notes/Topologies#_proposition, definition _ checking openness by neighbourhood, neighbourhood|open neighbourhood]] of $x$, say $V_{p} \in \mathcal{B}$, contained in $U$. The union of these is $U$. That is, $U$ is the union of basic open sets.
 
-Suppose $\mathcal{B}$ is a basis and by way of contradiction, there is a point $x$ in an open set $U$ with no basic open neighbourhood $V_{x} \subseteq U, V_{x} \in \mathcal{B}$. Then $U$ cannot be written as the union of basic open sets of $\mathcal{B}$ — $x$ is not contained in any union of basic open sets.
+Suppose $\mathcal{B}$ is a basis and by way of contradiction, there is a point $x$ in an open set $U$ with no basic open neighbourhood $V_{p} \subseteq U, V_{p} \in \mathcal{B}$. Then $U$ cannot be written as the union of basic open sets of $\mathcal{B}$ — $p$ is not contained in any union of basic open sets.
 
 ##### _example:_ bases of the real line
 
