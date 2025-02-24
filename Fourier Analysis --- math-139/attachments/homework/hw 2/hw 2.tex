@@ -98,9 +98,36 @@
 	\]
 	then
 	\[
-		u(x, y) = \sum_{k = 1}^{\infty} \left ( \frac{\sinh{(k(1 - y))}}{\sinh{k}} A_{k} + \frac{\sinh{(k a)}}{\sinh{k}} \right ) \sin{(k x)}.
+		u(x, y) = \sum_{k = 1}^{\infty} \left ( \frac{\sinh{(k(1 - y))}}{\sinh{k}} A_{k} + \frac{\sinh{(k y)}}{\sinh{k}} B_{k} \right ) \sin{(k x)}.
 	\]
 \end{problem}
+
+\begin{solution}
+	By separation of variables, we assume a solution has form $v(x, y) = \varphi(x) \psi(y)$. Since $\Delta u = 0$, we have
+	\[
+		\frac{\partial^{2} \varphi}{\partial x^{2}} \psi + \frac{\partial^{2} \psi}{\partial y^{2}} \varphi = 0
+	\]
+	and thus,
+	\[
+		\frac{1}{\varphi} \frac{\partial^{2} \varphi}{\partial x^{2}} = - \frac{1}{\psi} \frac{\partial^{2} \psi}{\partial y^{2}}.
+	\]
+	Since the two sides depend on different variables, they must both be some constant, say $\lambda \in \mathbb{R}$. That is,
+	\[
+		\varphi'' - \lambda \varphi = 0 \quad \text{and} \quad \psi'' + \lambda \psi = 0.
+	\]
+
+	By our initial conditions, $\lambda < 0$ so we can write $\lambda = -k^{2}$ and
+	\[
+		\varphi(x) = A \cos{(k x)} + B \sin{(k x)}.
+	\]
+	Since $u(0, 0) = 0$, $\varphi(0) = 0$, giving $A = 0$. Without loss of generality, we can choose $B = 1$ (since we can always move the constant on to $\psi$).
+
+	For $\psi$, the differential equation is $\psi'' = k^{2} \psi$ which has solution $\psi(y) = - A_{k} e^{k y} + B_{k} e^{-k y}$. We can rewrite this as
+	\[
+		\psi(y) = A_{k} \frac{e^{k(1 - y)} - e^{-k(1 - y)}}{e^{k} - e^{k}} + B_{k} \frac{e^{k y} - e^{-k y}}{e^{k} - e^{-k}} =  \frac{\sinh{(k(1 - y))}}{\sinh{k}} A_{k} + \frac{\sinh{(k y)}}{\sinh{k}} B_{k}.
+	\]
+	Summing over all of these solutions to meet the boundary conditions, we get the desired solution for $u$.
+\end{solution}
 
 \pagebreak
 
@@ -181,6 +208,14 @@
 	\]
 \end{problem}
 
+\begin{solution}
+	Notice that
+	\[
+		A_{m} = \frac{2h}{m^{2}} \frac{\sin{(mp)}}{p (\pi - p)} \le \frac{1}{m^{2}} \frac{2h}{p(\pi - p)} \in O(1 / m^{2}).
+	\]
+	Thus, $\sum_{m = 1}^{\infty} \lvert A_{m} \rvert < \infty$. Thus, by the Weierstrass $M$-test, the Fourier series $\sum_{m = 1}^{\infty} A_{m} \sin{(m x)}$ converges uniformly to a continuous function. Since there is a unique continuous function with given Fourier coefficients and $f$ is continuous, the Fourier series converges to $f$.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[S \& S \S 2.6 \#4.]
@@ -253,6 +288,36 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item Motivated by the proof of integration by parts from the fundamental theorem of calculus, we consider the ``derivative'' (difference) of $a_{n} B_{n}$
+			\begin{align*}
+				a_{n + 1} B_{n} - a_{n} B_{n - 1} & = (a_{n + 1} - a_{n}) B_{n} + a_{n}(B_{n} - B_{n - 1}) \\
+								  & = (a_{n + 1} - a_{n}) B_{n} + a_{n} b_{n}.
+			\end{align*}
+			Rearranging, we get
+			\[
+				a_{n} b_{n} = a_{n + 1} B_{n} - a_{n} B_{n - 1} - (a_{n + 1} - a_{n}) B_{n}.
+			\]
+			Summing from $M$ to $N$ on both sides of the equation, we get
+			\begin{align*}
+				\sum_{n = M}^{N} a_{n} b_{n} & = \sum_{n = M}^{N} (a_{n + 1} B_{n} - a_{n} B_{n - 1}) - \sum_{n = M}^{N} (a_{n + 1} - a_{n}) B_{n} \\
+							     & = a_{N + 1} B_{N} - a_{M} B_{M - 1} - (a_{N + 1} - a_{N}) B_{N} - \sum_{n = M}^{N - 1} (a_{n + 1} - a_{n}) B_{n} \\
+							     & = a_{N} B_{N} - a_{M} B_{M - 1} - \sum_{n = M}^{N - 1} (a_{n + 1} - a_{n}) B_{n}
+			\end{align*}
+			where the first equality is because the first sum is telescoping.
+
+		\item Suppose $a_{n}$ is monotonically decreasing and $\lvert B_{n} \rvert$ is bounded by some $B$. We can show that the partial sums of $\sum a_{n} b_{n}$ are Cauchy by showing that for sufficiently large $M, N$, $\sum_{n = M}^{N} a_{n} b_{n}$ can be made arbitrarily small. Since $B_{n}$ is bounded and $a_{n} \to 0$ monotonically, we have $a_{N} B_{N} \to 0$ and $a_{M} B_{M - 1} \to 0$. We're only left to show that the sum on the right can be made arbitrarily small.
+
+			Consider
+			\begin{align*}
+				\left \lvert \sum_{n = M}^{N - 1} (a_{n + 1} - a_{n}) B_{n} \right \rvert & \le B \left \lvert \sum_{n = M}^{N - 1} (a_{n + 1} - a_{n}) \right \rvert \\
+				& = B \lvert a_{N} - a_{M} \rvert.
+			\end{align*}
+			Since $\{ a_{n} \}_{n \in \mathbb{N}}$ is Cauchy, this goes to $0$. Notice that we need $a_{n}$ to be monotonically decreasing for the first inequality to hold (otherwise alternating signs might mess things up).
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[S \& S \S 2.6 \#8.]
@@ -298,5 +363,26 @@
 	\]
 	This notation means that there exists a constant $C$ such that $\lvert \hat{f}(n) \rvert \le C / \lvert n \rvert^{k}$. We could also write this as $\lvert n \rvert^{k} \hat{f}(n) = O(1)$, where $O(1)$ means bounded.
 \end{problem}
+
+\begin{solution}
+	If $f$ is differentiable, we can rewrite its Fourier coefficients by integration by parts
+	\begin{align*}
+		\hat{f}(n) & = \frac{1}{2 \pi} \int_{-\pi}^{\pi} f(x) e^{-i n x} \, dx \\
+			   & = \frac{1}{2 \pi} \left ( f(x) \int_{-\pi}^{\pi} e^{-i n x} \, dx - \int_{-\pi}^{\pi} f'(x) \int_{} e^{-i n x} \, dx  \, dx   \right ) \\
+			   & = \frac{1}{2 \pi} \left ( f(x) (e^{- i n \pi} - e^{-i n (-\pi)}) - \frac{(-1)}{i n} \int_{-\pi}^{\pi} f'(x) e^{-i n x} \, dx  \right )\\
+			   & = \frac{1}{2 \pi} \frac{1}{in} \int_{-\pi}^{\pi} f'(x) e^{-i n x} \, dx.
+	\end{align*}
+
+	By induction, for $f \in \mathcal{C}^{k}$, we have
+	\[
+		\hat{f}(n) = \frac{1}{2 \pi} \frac{1}{(i n)^{k}} \int_{-\pi}^{\pi} f^{(k)}(x) e^{-i n x} \, dx
+	\]
+	so we can bound
+	\[
+		\lvert \hat{f}(n) \rvert = \left \lvert \frac{1}{(i n)^{k}} \frac{1}{2 \pi} \int_{-\pi}^{\pi} f^{(k)}(x) e^{-i n x} \, dx  \right \rvert \le \left \lvert \frac{1}{n^{k}} \right \rvert \lvert e^{-i n x} \rvert \left \lvert \int_{-\pi}^{\pi} f^{(k)}(x) e^{-i n x} \, dx  \right \rvert \le \frac{C}{\lvert n \rvert^{k}}.
+	\]
+
+	Thus, $\hat{f}(n) \in O(1 / \lvert n \rvert^{k})$.
+\end{solution}
 
 \end{document}
