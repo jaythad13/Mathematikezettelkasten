@@ -1,0 +1,99 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+\setlist[enumerate, 1]{label = (\roman*)}
+
+\name{Jayden Thadani}
+\class{MATH 145 --- Topics in Geometry and Topology}
+\assignment{Homework 5}
+\duedate{26th February 2025}
+
+\begin{document}
+
+\begin{problem}[28.]
+	Let $U \subseteq \mathbb{R}^{2}$ be a star-shaped region in the plane.
+	\begin{enumerate}
+		\item Show that $\mathrm{b}_{0}(U) = 1$.
+		\item Show that $\mathrm{b}_{1}(U) = 0$.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[29.]
+	Let $\gamma = \sum \lambda_{k} [\mathbf{a}_{k}, \mathbf{b}_{k}]$ be a $1$-cycle in $\mathbb{R}^{2} \setminus \{ 0 \}$. For any $\phi \in \mathbb{R}$, the ray-escape formula
+	\[
+		\mathrm{x}_{\phi}(\gamma) = \sum \lambda_{k} \mathrm{X}([\mathbf{a}_{k}, \mathbf{b}_{k}], R_{\phi})
+	\]
+	computes the winding number of $\gamma$ about $0$. Moreover, we know that this formula gives the same answer for all choices of $\phi$. Let $\phi$ be chosen uniformly randomly in the interval $[0, 2 \pi)$. By considering the expected value
+	\[
+		\mathbb{E}(\mathrm{x}_{\phi}(\gamma))
+	\]
+	show how to recover the original formula for the winding number in terms of subtended angles.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[30.]
+	Recall that if $z = r e^{i \theta}$ (with $r > 0$) is a non-zero complex number, then $\operatorname{arg} z = [\theta]$.
+	\begin{enumerate}
+		\item Let $a, b \in \mathbb{C}$ such that $0 \notin \lvert [{a}, {b}] \rvert$. Show that
+			\[
+				\theta([{a}, {b}], 0) = \overline{\operatorname{arg}}(b / a)
+			\]
+			where $\overline{\operatorname{arg}}$ is taken in the interval $(-\pi, \pi)$.
+		\item Let $a, b, c, d \in \mathbb{C}$ with $0 \notin \lvert [{a}, {b}] \rvert$ and $0 \notin \lvert [\mathbf{c}, \mathbf{d}] \rvert$. Suppose
+			\[
+				\lvert \theta([a, b], 0) \rvert < \pi / 2 \quad \text{and} \quad \lvert \theta([c, d], 0) \rvert < \pi / 2.
+			\]
+			Show that $0 \notin \lvert [ac, bd] \rvert$ and
+			\[
+				\theta([ac, bd], 0) = \theta([a, b], 0) + \theta([c, d], 0).
+			\]
+		\item If $f, g$ are loops in $\mathbb{C} \setminus \{ 0 \}$, then so is their pointwise product $fg$. Show that
+			\[
+				w(fg, 0) = w(f, 0) + w(g, 0)
+			\]
+			by using a sufficiently fine subdivision of the interval.
+	\end{enumerate}	
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[31.]
+	Consider a complex polynomial $p(z)$. Let $\Lambda \subseteq \mathbb{C}$ denote the set of roots of $p$, and let $m(\lambda, p)$ denote the multiplicity of a root $\lambda$.
+
+	\begin{theorem}
+		The winding number formula
+		\[
+			w(p \circ f, 0) = \sum_{\lambda \in \Lambda} w(f, \lambda) m(\lambda, p)
+		\]
+		holds for any $f \in \operatorname{loops}(\mathbb{C} \setminus \Lambda)$.
+	\end{theorem}
+
+	\begin{enumerate}
+		\item Prove this theorem in the special case where $p$ is a polynomial of degree $1$.
+		\item Prove the general theorem, assuming the fundamental theorem of algebra.
+	\end{enumerate}	
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[32.]
+	Consider a rational function
+	\[
+		r(z) = \frac{p(z)}{q(z)}
+	\]
+	where $p, q$ are complex polynomials with no shared root. Let $\Lambda, M \subseteq \mathbb{C}$ denote the sets of roots of $p, q$ with $m(\lambda, p), m(\mu, q)$ denoting the multiplicities of the roots.
+
+	\begin{theorem}
+		The winding number formula
+		\[
+			w(r \circ f, 0) = \sum_{\lambda \in \Lambda} w(f, \lambda) m(\lambda, p) - \sum_{\mu \in M} w(f, \mu) m(\mu. q)
+		\]
+		holds for any $f \in \operatorname{loops}(\mathbb{C} \setminus (\Lambda \cup M))$.
+	\end{theorem}
+	
+	Prove it.
+\end{problem}
+
+\end{document}
