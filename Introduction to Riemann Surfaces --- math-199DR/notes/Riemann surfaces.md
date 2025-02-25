@@ -54,7 +54,7 @@ Since it is doubly periodic with periods given by $\Lambda$, and its derivative 
 $$
 \wp'_{\Lambda}(z)^{2} = \wp_{\Lambda}(z)^{3} + A \wp_{\Lambda}(z) + B,
 $$
-we have a bijection $\mathbb{C} / \Lambda \to E(\mathbb{C})$ by $z \mapsto (\wp_{\Lambda}(z), \wp_{\Lambda}'(z))$. If we're willing to believe this is actually a homeomorphism (it's actually an analytic group isomorphism with the [[Algebraic Geometry --- math-176/notes/Elliptic curves#The elliptic curve group|elliptic curve group]]) where $E(\mathbb{C})$ is thought of as a [[Mathematical Analysis I --- math-131/notes/Subspaces|subspace]], then $E(\mathbb{C})$ must just be the torus.
+we have a bijection $\mathbb{C} / \Lambda \to E(\mathbb{C})$ by $z \mapsto (\wp_{\Lambda}(z), \wp_{\Lambda}'(z))$. If we're willing to believe this is actually a homeomorphism (it's actually an analytic group isomorphism with the [[Algebraic Geometry --- math-176/notes/Elliptic curves#The elliptic curve group|elliptic curve group]]) where $E(\mathbb{C})$ is thought of as a [[Mathematical Analysis I --- math-131/notes/Metric subspaces|subspace]], then $E(\mathbb{C})$ must just be the torus.
 
 All elliptic curves are the same as Riemann surfaces, but if you have a finer notion of maps, then you can tell them apart.
 
@@ -84,6 +84,6 @@ If we consider $X = \Gamma \setminus \mathbb{H}$ to be the set of all [[Abstract
 
 $X$ is connected because $\pi$ it is the image of a continuous map from the connected space $\mathbb{H}$. It's second countable, again because $\mathbb{H}$ is. We compactify it later. It only remains to show $X$ is Hausdorff.
 
-For $X$ to be Hausdorff, we need each of the orbits to be closed in $\mathbb{H}$. This happens exactly when $\Gamma$ acts properly dicontinuously — points in different orbits have open neighbourhoods that never intersect, even after action by $\Gamma$. Equivalently, $\Gamma$ is discrete — it has the [[Topology --- math-147/notes/Topologies#_example _ the discrete and indiscrete topologies|discrete topology]] as a [[Mathematical Analysis I --- math-131/notes/Subspaces#_theorem _ the subspace topology|subspace]]. We call such subgroups of $\operatorname{PSL}_{2}(\mathbb{R})$ Fuchsian. For example $\operatorname{PSL}_{2}(\mathbb{Z})$ is Fuchsian.
+For $X$ to be Hausdorff, we need each of the orbits to be closed in $\mathbb{H}$. This happens exactly when $\Gamma$ acts properly dicontinuously — points in different orbits have open neighbourhoods that never intersect, even after action by $\Gamma$. Equivalently, $\Gamma$ is discrete — it has the [[Topology --- math-147/notes/Topologies#_example _ the discrete and indiscrete topologies|discrete topology]] as a [[Mathematical Analysis I --- math-131/notes/Metric subspaces#_theorem _ the subspace topology|subspace]]. We call such subgroups of $\operatorname{PSL}_{2}(\mathbb{R})$ Fuchsian. For example $\operatorname{PSL}_{2}(\mathbb{Z})$ is Fuchsian.
 
 The atlas is [[Introduction to Riemann Surfaces --- math-199DR/notes/Group actions on Riemann surfaces#$X$ and its quotient|the one inherited]] from $\mathbb{H}$ (pushforward sheaf?).

@@ -6,7 +6,7 @@ tags:
 
 Let $(X, \mathcal{T})$ be a topological space.
 
-If we have a topological space $X$, what's the natural way to make $Y \subseteq X$ a topological space? [[Mathematical Analysis I --- math-131/notes/Subspaces#_theorem _ the subspace topology|In analysis]], we saw that the natural idea is to consider intersections of open sets in $X$ with $Y$. Our idea for topological spaces should generalise this, and in fact, are just this idea.
+If we have a topological space $X$, what's the natural way to make $Y \subseteq X$ a topological space? [[Mathematical Analysis I --- math-131/notes/Metric subspaces#_theorem _ the subspace topology|In analysis]], we saw that the natural idea is to consider intersections of open sets in $X$ with $Y$. Our idea for topological spaces should generalise this, and in fact, are just this idea.
 
 ##### _definition:_ subspace topology
 

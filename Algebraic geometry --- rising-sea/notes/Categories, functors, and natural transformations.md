@@ -10,7 +10,7 @@ Why do this through category theory? Because it's the cleanest language to do it
 
 ##### _example:_ product
 
-There are many types of products — of sets, [[Product spaces|vector spaces]], groups, topological spaces, even of manifolds. We usually define each type of product separately, but really they all possess the same "universal property". The idea is that there isn't one single product, but rather, any two products have a unique isomorphism between them. Consider, for example, the product of sets.
+There are many types of products — of sets, [[Linear algebra done right --- ladr/notes/Product spaces|vector spaces]], groups, topological spaces, even of manifolds. We usually define each type of product separately, but really they all possess the same "universal property". The idea is that there isn't one single product, but rather, any two products have a unique isomorphism between them. Consider, for example, the product of sets.
 
 Both $\{ \{ u, \{ v \} \} \mid u \in U, v \in V \}$ and $\{ \{ \{ u \}, v \} \mid u \in U, v \in V \}$ are reasonable definitions of $U \times V$, and there's an obvious sense in which it doesn't matter which one you pick. Similarly, it doesn't matter how you cut up two manifolds into charts, take products and glue them back together — there's some sense in which all these encodings are the same.
 

@@ -31,7 +31,7 @@ The collection of all $0$-forms on $\mathbb{R}^3$ is $\Omega^0(\mathbb{R}^3)$
 
 ### Exterior algebra and differential $2$-forms
 
-Recall the idea of a [[Product spaces|product vector space]]. We can do this with modules too, and especially $\Omega^1(\mathbb{R}^3)$
+Recall the idea of a [[Linear algebra done right --- ladr/notes/Product spaces|product vector space]]. We can do this with modules too, and especially $\Omega^1(\mathbb{R}^3)$
 
 While we want a sort of bilinearity over the product space with
 $$
