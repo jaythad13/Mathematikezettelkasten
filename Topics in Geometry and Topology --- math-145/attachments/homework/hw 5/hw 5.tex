@@ -39,7 +39,7 @@
 \begin{problem}[29.]
 	Let $\gamma = \sum \lambda_{k} [\mathbf{a}_{k}, \mathbf{b}_{k}]$ be a $1$-cycle in $\mathbb{R}^{2} \setminus \{ 0 \}$. For any $\phi \in \mathbb{R}$, the ray-escape formula
 	\[
-		\mathrm{x}_{\phi}(\gamma) = \sum \lambda_{k} \mathrm{X}([\mathbf{a}_{k}, \mathbf{b}_{k}], R_{\phi})
+		\mathrm{x}_{\phi}(\gamma) = \sum_{k = 1}^{n} \lambda_{k} \mathrm{X}([\mathbf{a}_{k}, \mathbf{b}_{k}], R_{\phi})
 	\]
 	computes the winding number of $\gamma$ about $0$. Moreover, we know that this formula gives the same answer for all choices of $\phi$. Let $\phi$ be chosen uniformly randomly in the interval $[0, 2 \pi)$. By considering the expected value
 	\[
@@ -47,6 +47,30 @@
 	\]
 	show how to recover the original formula for the winding number in terms of subtended angles.
 \end{problem}
+
+\begin{solution}
+	By linearity of expectation
+	\[
+		\mathbb{E}(\mathrm{x}_{\phi}(\gamma)) = \sum_{k = 1}^{n} \lambda_{k} \mathbb{E}(\mathrm{X}([\mathbf{a}_{k}, \mathbf{b}_{k}], R_{\phi})).
+	\]
+
+	Thus, need to calculate the probability that, given a line segment $[\mathbf{a}, \mathbf{b}]$, a ray $R_{\phi}$ crosses it clockwise or counter-clockwise, (and thus, the expected value of $\mathrm{X}([\mathbf{a}, \mathbf{b}], R_{\phi})$).
+
+	Set $\theta_{\mathbf{a}} = {\operatorname{arg}} \mathbf{a}$ and $\theta_{\mathbf{b}} = {\operatorname{arg}} \mathbf{b} \in [0, 2 \pi)$. Let $\theta_{0}$ be the representative of $\theta_{\mathbf{b}} - \theta_{\mathbf{a}}$ in $[0, 2 \pi)$.
+
+	$R_{\phi}$ crosses $[\mathbf{a}, \mathbf{b}]$ counterclockwise if $\theta_{0} < \pi$ (which has probability $1 / 2$) and $\phi$ lies between $\theta_{\mathbf{b}}$ and $\theta_{\mathbf{a}}$ (which has probability $\theta([\mathbf{a}, \mathbf{b}], 0) / 2 \pi$). Thus, the total probability that $R_{\phi}$ crosses $[\mathbf{a}, \mathbf{b}]$ counter-clockwise is $\theta([\mathbf{a}, \mathbf{b}], 0) / 4 \pi$.
+
+	$R_{\phi}$ crosses $[\mathbf{a}, \mathbf{b}]$ clockwise if $\theta_{0} > \pi$ (which has probability $1 / 2$) and $\phi$ lies between $\theta_{\mathbf{b}}$ and $\theta_{\mathbf{a}}$. In this case, since $\theta_{0} > \pi$, we have $\theta([\mathbf{a}, \mathbf{b}], 0) < 0$. Thus, the probability that $\phi$ lies between $\theta_{\mathbf{a}}$ and $\theta_{\mathbf{b}}$ is instead $\theta([\mathbf{b}, \mathbf{a}], 0) / 2$. This leaves a total probability of $\theta([\mathbf{a}, \mathbf{b}], 0) / 4 \pi$.
+
+	Thus, the expected value of $\mathrm{X}([\mathbf{a}, \mathbf{b}], R_{\phi})$ is
+	\[
+		\mathbb{E}(\mathrm{X}([\mathbf{a}, \mathbf{b}], R_{\phi})) = 1 \frac{\theta([\mathbf{a}, \mathbf{b}], 0)}{4 \pi} + (-1) \frac{\theta([\mathbf{b}, \mathbf{a}], 0)}{4 \pi} = \frac{\theta([\mathbf{a}, \mathbf{b}], 0)}{2 \pi}.
+	\]
+	Summing up these expectations, we recover
+	\[
+		w(\gamma, 0) = \mathbb{E}(\mathrm{x}_{\phi}(\gamma)) = \frac{\sum_{k = 1}^{n} \lambda_{k} \mathbb{E}(\mathrm{X}([\mathbf{a}_{k}, \mathbf{b}_{k}], R_{\phi}))}{2 \pi}.
+	\]
+\end{solution}
 
 \pagebreak
 
