@@ -146,6 +146,16 @@
 	\begin{enumerate}
 		\item Notice that the hypotenuse of a right-angled triangle is a retract of the whole triangle. For concreteness, consider the triangle $\Delta = \{ (x, y) \in \mathbb{R}^{2} \mid x > 0, y > 0, x + y \le 1 \}$. The continuous map $(x, y) \mapsto (x, 1 - x)$ is the retraction map. By dividing the polydisc into eight triangles and orienting them so that the continuous on each triangle on intersections, we get a retraction map $q : Q \to X$.
 
+			We can give a direct formula for $q$ as well.
+			\[
+				q(x, y) = \begin{cases}
+					(x, 1 - \lvert x \rvert) & y > 0, y > \lvert x \rvert \\
+					(x, -1 + \lvert x \rvert) & y < 0, \lvert y \rvert > \lvert x \rvert \\
+					(1 - \lvert y \rvert, y) & x > 0, x > \lvert y \rvert \\
+					(-1 + \lvert y \rvert, y) & x < 0, \lvert x \rvert > \lvert y \rvert.
+				\end{cases}
+			\]
+
 			\begin{figure}[H]
 				\centering
 				\includegraphics[width = 0.4 \textwidth]{figures/P18i retract}
