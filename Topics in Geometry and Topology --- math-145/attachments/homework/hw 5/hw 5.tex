@@ -17,6 +17,23 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item Suppose $\mathbf{p}$ is the point in $U$ such that $\lvert [\mathbf{p}, \mathbf{x}] \rvert \subseteq U$ or each $\mathbf{x} \in U$. Thus, for any $\mathbf{x}, \mathbf{y} \in U$, $[\mathbf{x}, \mathbf{p}] + [\mathbf{p}, \mathbf{y}]$ is a polygonal path connecting $\mathbf{x}$ and $\mathbf{y}$. Thus, $U$ has one polygonally path-connected component --- $\mathrm{b}_{0}(U) = 1$.
+		\item Given a $1$-chain $\gamma = \sum_{i = 1}^{n} [\mathbf{a}_{i}, \mathbf{b}_{i}]$ with $\lvert \gamma \rvert \subseteq U$, consider the $2$-chain $\sigma = \sum_{i = 1}^{n} [\mathbf{a}_{i}, \mathbf{b}_{i}, \mathbf{p}]$. Notice that $\lvert \sigma \rvert \subseteq U$ since the line segment $[\mathbf{a}_{i}, \mathbf{b}_{i}]$ has support in $U$, and thus, each line segment $[\mathbf{x}, \mathbf{p}]$ from $\mathbf{x} \in \lvert [\mathbf{a}_{i}, \mathbf{b}_{i}] \rvert$ is also in $U$. The union of all of these supports $\lvert [\mathbf{x}, \mathbf{p}] \rvert$ is just the support of the corresponding triangle $[\mathbf{a}_{i}, \mathbf{b}_{i}, \mathbf{p}]$.
+
+			Notice that $\sigma$ has boundary
+			\[
+				\partial \sigma = \sum_{i = 1}^{n} [\mathbf{a}_{i}, \mathbf{b}_{i}] + [\mathbf{b}_{i}, \mathbf{p}] - [\mathbf{a}_{i}, \mathbf{p}] = \gamma - \sum_{i = 1}^{n} [\mathbf{a}_{i}, \mathbf{p}] + \sum_{i = 1}^{n} [\mathbf{b}_{i}, \mathbf{p}].
+			\]
+			By the cycle condition on $\gamma$,
+			\[
+				\sum_{i = 1}^{n} [\mathbf{a}_{i}, \mathbf{p}] = \sum_{i = 1}^{n} [\mathbf{b}_{i}, \mathbf{p}]
+			\]
+			so the two sums cancel and $\partial \sigma = \gamma$ as desired.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[29.]
@@ -57,6 +74,48 @@
 	\end{enumerate}	
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item Suppose $a = r_{a} e^{i \theta_{a}}$ and $b = r_{b} e^{i \theta_{b}}$. Then
+			\[
+				\operatorname{arg}(b / a) = \operatorname{arg} \left ( \frac{r_{1} e^{i (\theta_{b} - \theta_{a})})}{r_{2}} \right ) = [\theta_{b} - \theta_{a}].
+			\]
+			Thus, $\overline{\operatorname{arg}}(b / a)$ is the unique $\theta \in (-\pi, \pi)$ such that $[\theta] = [\theta_{b} - \theta_{a}]$. We know $\theta \neq \pi$, since that would imply $a$ and $b$ are on opposite sides of zero, and thus $0 \in \lvert [a, b] \rvert$.
+
+			However, by definition, $\theta([a, b], 0)$ is the unique representative $\theta \in (-\pi, \pi)$ such that $[\theta] = \operatorname{arg} b - \operatorname{arg} a = [\theta_{b} - \theta_{a}]$. Thus, they are the same ---
+			\[
+				\theta([a, b], 0) = \overline{\operatorname{arg}}(b / a).
+			\]
+		\item Call the sum of the angles $\theta$.
+
+			By the equality shown in part (i), we must also have $\lvert \overline{\operatorname{arg}}(b / a) \rvert, \lvert \overline{\operatorname{arg}}(d / c) \rvert < \pi / 2$. Since the polar form for complex numbers gives us
+			\[
+				\operatorname{arg}(bd / ac) = \operatorname{arg}(bd) - \operatorname{arg}(ac)
+			\]
+			and given our inequalities, we have
+			\[
+				\lvert \theta \rvert = \lvert \overline{\operatorname{arg}}(bd) - \overline{\operatorname{arg}}(ac) \rvert < \pi	
+			\]
+			with $[\overline{\operatorname{arg}}(bd) - \overline{\operatorname{arg}}(ac)] = \operatorname{arg}(bd / ac)$ (since addition of representatives lifts to addition of equivalence classes).
+
+			Thus, $\theta$ is the unique angle in $(-\pi, \pi)$ with $[\theta] = [\operatorname{arg}(bd) - \operatorname{arg}(ac)]$ --- $\theta = \theta([ac, bd], 0)$ as desired.
+		\item Given $f$, $g$, and $fg$, there are partitions $T_{1}, T_{2}, T_{3}$ of $[0, 1]$ fine enough that the winding numbers of the discretisations of the loops by their respective partitions are the same as the winding numbers of the loops and further refinement of the partition doesn't change the winding number. That is, $w(f_{T_{1}}, 0) = w(f, 0)$ and $w(f_{T_{1}'}, 0) = w(f_{T_{1}}, 0)$ for any refinement $T_{1}'$ of $T_{1}$. Similarly for all the other loops.
+
+			Choose the partition $T$ refining all of them such that $\lvert \theta([f(x_{i - 1}), f(x_{i})], 0) \rvert < \pi / 2$. This partition has the same property as $T_{1}$ for $f$ and $T_{2}$ for $g$ and so on. If $T$ is the partition $0 = x_{0} < \dots < x_{n} = 1$, then
+			\[
+				fg_{T} = \sum_{i = 1}^{n} [f(x_{i - 1}) g(x_{i - 1}), f(x_{i}) g(x_{i})]
+			\]
+			and similarly for the other loops. But then using part (ii) and our condition on $T$,
+			\begin{align*}
+				w(fg, 0) & = w(fg_{T}, 0) \\
+					 & = \sum_{i = 1}^{n} \theta([f(x_{i - 1}) g(x_{i - 1}), f(x_{i}) g(x_{i})], 0) \\
+					 & = \sum_{i = 1}^{n} \theta([f(x_{i - 1}), f(x_{i})], 0) + \sum_{i = 1}^{n} \theta([g(x_{i - 1}), g(x_{i})], 0) \\
+					 & = w(f_{T}, 0) + w(g_{T}, 0) \\
+					 & = w(f, 0) + w(g, 0).
+			\end{align*}
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[31.]
@@ -76,6 +135,22 @@
 	\end{enumerate}	
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item Suppose $p$ is a linear polynomial. Further, since scaling doesn't change winding number we can assume $p$ is monic (recall  $w(fg, 0) = w(f, 0) + w(g, 0)$ and a non-zero constant $g$ has winding number $0$ about $0$). Thus, $p = z - \lambda$ with a multiplicity $1$ zero at $\lambda$.
+
+			Since $p$ is just a translation, and thus, a homeomorphism, $w(f, \lambda) = w(p \circ f, p(\lambda))$. In fact, by definition, $w(f, \lambda) = w(f - \lambda, 0)$ since that is how the discrete winding number about non-zero points is defined. Thus, $w(p \circ f, 0) = w(f, \lambda)$ as desired.
+
+		\item By the fundamental theorem of algebra a (degree $n$) polynomial $p$ factors as $p(z) = (z - \lambda_{1}) \cdots (z - \lambda_{n})$ with the $\lambda_{n}$ possibly non-distinct. By the formula in problem 30, and the previous part of this problem we get
+			\begin{align*}
+				w(p \circ f) & = \sum_{i = 1}^{n} w((z - \lambda_{i}) \circ f, 0) \\
+					     & = \sum_{i = 1}^{n} w(f, \lambda_{i}) \\
+					     & = \sum_{\lambda \in \Lambda} w(f, \lambda) m(\lambda, p).
+			\end{align*}
+			This is the desired winding number formula.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[32.]
@@ -88,12 +163,21 @@
 	\begin{theorem}
 		The winding number formula
 		\[
-			w(r \circ f, 0) = \sum_{\lambda \in \Lambda} w(f, \lambda) m(\lambda, p) - \sum_{\mu \in M} w(f, \mu) m(\mu. q)
+			w(r \circ f, 0) = \sum_{\lambda \in \Lambda} w(f, \lambda) m(\lambda, p) - \sum_{\mu \in M} w(f, \mu) m(\mu, q)
 		\]
 		holds for any $f \in \operatorname{loops}(\mathbb{C} \setminus (\Lambda \cup M))$.
 	\end{theorem}
 	
 	Prove it.
 \end{problem}
+
+\begin{solution}
+	It follows from problem 30 that for any loop $f$, we have $w(f / f, 0) = w(f, 0) + w(1 / f, 0)$. Notice that if $f \neq 0$, then $1 / f$ is also a continuous function from the interval to the plane with equal endpoints. Since $w(f / f, 0) = w(1, 0) = 0$, we have $w(1 / f, 0) = - w(f, 0)$.
+
+	Since $w(q \circ f, 0) = \sum_{\mu \in M} w(f, \mu) m(\mu, q)$, it follows that
+	\[
+		w(r \circ f, 0) = w\left ( \frac{p \circ f}{q \circ f}, 0 \right ) = \sum_{\lambda \in \Lambda} w(f, \lambda) m(\lambda, p) - \sum_{\mu \in M} w(f, \mu) m(\mu, q).
+	\]
+\end{solution}
 
 \end{document}
