@@ -1,0 +1,91 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 139 --- Fourier Analysis}
+\assignment{Homework \#5}
+\duedate{26th February 2025}
+
+\begin{document}
+
+\begin{problem}[S \& S \S 3.3 \#5]
+	Let
+	\[
+		f(\theta) = \begin{cases}
+			0 & \text{for } \theta = 0 \\
+			\log(1 / \theta) & \text{for } 0 < \theta \le 2 \pi
+		\end{cases}
+	\]
+	and define a sequence of functions in $\mathcal{R}$ by
+	\[
+		f_{n}(\theta) = \begin{cases}
+			0 & \text{for } 0 \le \theta \le 1 / n \\
+			f(\theta) &  \text{for } 1/n < \theta < 2 \pi.
+		\end{cases}
+	\]
+
+	Prove that $\{ f_{n} \}_{n \in \mathbb{N}}$ is a Cauchy sequence in $\mathcal{R}$. However, $f$ does not belong to $\mathcal{R}$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[S \& S \S 3.3 \#6]
+	Consider the sequence $\{ a_{k} \}_{k \in \mathbb{Z}}$ defined by
+	\[
+		a_{k} = \begin{cases}
+			1 / k & \text{if } k \ge 1 \\
+			0 & \text{if } k \le 0
+		\end{cases}
+	\]
+	Note that $\{ a_{k} \}_{k \in \mathbb{Z}} \in \ell^{2}(\mathbb{Z})$, but that no Riemann integrable function has $k$th Fourier coefficient equal to $a_{k}$ for all $k$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[S \& S \S 3.3 \#7]
+	Show that the trigonometric series
+	\[
+		\sum_{n \ge 2} \frac{1}{\log n} \sin{(n x)}
+	\]
+	converges for every $x$, yet it is not the Fourier series of a Riemann integrable function.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[S \& S \S 3.3 \#8]
+	\begin{enumerate}
+		\item Let $f$ be the function defined on $[-\pi, \pi]$ by $f(\theta) = \lvert \theta \rvert$ use Parseval's identity to find the sums of the following two series:
+			\[
+				\sum_{n = 0}^{\infty} \frac{1}{(2n + 1)^{4}} \quad \text{and} \quad \sum_{n = 1}^{\infty} \frac{1}{n^{4}}.
+			\]
+			In fact, they are $\pi^{4} / 96$ and $\pi^{4} / 90$ respectively.
+		\item Consider the $2 \pi$-periodic odd function defined on $[0, \pi]$ by $f(\theta) = \theta (\pi - \theta)$. Show that
+			\[
+				\sum_{n = 0}^{\infty} \frac{1}{(2n + 1)^{6}} = \frac{\pi^{6}}{960} \quad \text{and} \quad \sum_{n = 1}^{\infty} \frac{1}{n^{6}} = \frac{\pi^{6}}{945}.
+			\]
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[S \& S \S 3.3 \#11]
+	The inequalities of Wirtinger and Poincar\'e establish a relationship between the norm of a function and that of its derivative.
+	\begin{enumerate}
+		\item If $f$ is $2 \pi$-periodic, continuous, and piecewise $\mathcal{C}^{1}$ with $\int_{0}^{2 \pi} f(t) \, dt = 0$, show that
+			\[
+				\int_{0}^{2 \pi} \lvert f(t) \rvert^{2} \, dt \le \int_{0}^{2 \pi} \lvert f'(t) \rvert^{2} \, dt.
+			\]
+			with equality if and only if $f(t) = A \sin{t} + B \cos{t}$.
+		\item If $f$ is as above and $g$ is just $\mathcal{C}^{1}$ and $2 \pi$-periodic, prove that
+			\[
+				\left \lvert \int_{0}^{2 \pi} \overline{f(t)} g(t) \, dt  \right \rvert \le \int_{0}^{2 \pi} \lvert f(t) \rvert^{2} \, dt \int_{0}^{2 \pi} \lvert g'(t) \rvert^{2} \, dt.
+			\]
+		\item For any compact interval $[a, b]$ and any continuously differentiable function $f$ with $f(a) = f(b) = 0$  show that
+			\[
+				\int_{a}^{b} \lvert f(t) \rvert^{2} \, dt \le \frac{(b - a)^{2}}{\pi^{2}} \int_{a}^{b} \lvert f'(t) \rvert^{2} \, dt.
+			\]
+			Discuss the case of equality, and prove that the constant $(b - a)^{2} / \pi^{2}$ cannot be improved.
+	\end{enumerate}
+\end{problem}
+
+\end{document}
