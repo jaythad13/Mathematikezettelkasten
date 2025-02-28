@@ -73,26 +73,99 @@
 	Show that the first two examples of inner product spaces, namely $\mathbb{R}^{d}$ and $\mathbb{C}^{d}$ are complete.
 \end{problem}
 
+\begin{solution}
+	Recall that $\mathbb{C}^{d}$ is homeomorphic to $\mathbb{R}^{2d}$ and the regular metric on $\mathbb{C}^{d}$ is the same as the metric induced by this homeomorphism. Thus, $\mathbb{C}^{d}$'s completeness is equivalent to the completeness of $\mathbb{R}^{2d}$. All of this is to say that we need only prove the theorem for arbitrary $\mathbb{R}^{d}$.
+
+	We need the following lemma.
+	\begin{lemma}
+		If $\{ x_{n} \}_{n \in \mathbb{N}}$ is a Cauchy sequence (in any metric space $X$), the sequence is bounded.
+	\end{lemma}
+	\begin{proof}
+		Choose $N \in \mathbb{N}$ such that for all $m, n \ge N$, the distance between any two points of the sequence is bounded --- say $d(x_{m}, x_{n}) < 1$. Thus, for any $k \in \mathbb{N}$,
+		\[
+			d(x_{k}, x_{N}) \le \max \{ 1, d(x_{1}, x_{N}), \dots, d(x_{N - 1}, x_{N}) \}.
+		\]
+	\end{proof}
+
+	If $\{ x_{n} \}_{n \in \mathbb{N}}$ has finite range, then by choosing $\varepsilon < \min \{ d(x_{m}, x_{n}) \mid m, n \in \mathbb{N} \}$ and $N$ such that all $m, n > N$ have $d(x_{m}, x_{n}) < \varepsilon$, then $\{ x_{n} \}_{n \in \mathbb{N}}$ is eventually constant.
+
+	Suppose $\{ x_{n} \}_{n \in \mathbb{N}}$ has infinite range. Then it is an infinite bounded set. Containing it in a closed, bounded set, by Heine-Borel, the sequence is an infinite subset of a compact set. By the Bolzano-Weierstrass theorem, the sequence has a limit point, and thus, a convergent subsequence $x_{n_{i}} \to x$. We claim $x_{n} \to x$ as well.
+
+	Given $\varepsilon > 0$, choose $I$ such that for all $i > I$, we have $d(x_{n_{i}}, x) < \varepsilon /2$ and choose $N$ such that for all $N$ such that for all $m, n > N$ we have  $d(x_{m}, x_{n}) < \varepsilon/2$. Then for $n \ge \max \{ I, N \}$
+$$
+d(x_{n}, x) \le d(x_{n}, x_{n_{n}}) + d(x_{n_{n}}, x) < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon.
+$$
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[S \& S \S 3.3 \#3.]
 	Construct a sequence of integrable functions $\{ f_{k} \}_{k \in \mathbb{N}}$ on $[0, 2\pi]$ such that
 	\[
-		\lim_{k \to \infty} \frac{1}{2 \pi} \int_{0}^{2 \pi} \lvert f_{k}(\theta) \rvert^{2} \, d\theta 
+		\lim_{k \to \infty} \frac{1}{2 \pi} \int_{0}^{2 \pi} \lvert f_{k}(\theta) \rvert^{2} \, d\theta = 0
 	\]
 	but $\lim_{k \to \infty} f_{k}(\theta)$ fails to exist for any $\theta$.
 \end{problem}
 
+\begin{solution}
+	Consider the ``triangular'' sequence of intervals $J_{n, m} \subseteq [0, 2 \pi]$ such that for a fixed $n$ there are $2^{n}$ intervals $J_{n, m}$ given by
+	 \[
+		J_{n, m} = \left [ \frac{m 2 \pi}{2^{n}}, \frac{(m + 1) 2 \pi}{2^{n}} \right ]
+	\]
+	for $n$ a non-negative integer and $m \in \{ 0, 1, \dots, 2^{n} - 1 \}$. Writing the $J_{n, m}$ out lexicographically as
+	\[
+		J_{0, 0}, J_{1, 0}, J_{1, 1}, J_{2, 0}, J_{2, 1}, J_{2, 2}, J_{2, 3}, \dots
+	\]
+	we get a sequence of intervals $I_{k}$. Consider $f_{k} = \chi_{I_{k}}$.
+
+	Notice that for $I_{k} = J_{n, m}$, as $k \to \infty$ we have $n \to \infty$ too. Further,
+	\[
+		\frac{1}{2 \pi} \int_{0}^{2 \pi} \lvert f_{k} \rvert^{2} \, d\theta = \frac{\operatorname{length} J_{n, m}}{2 \pi} = \frac{1}{2^{n}}.
+	\]
+	Thus,
+	\[
+		\lim_{k \to \infty} \frac{1}{2 \pi} \int_{0}^{2 \pi} \lvert f_{k}(\theta) \rvert^{2} \, d\theta = 0.
+	\]
+
+	However, ``by binary search'' each  $\theta \in [0, 2 \pi]$ is in infinitely many $I_{k}$. Specifically, for each $n$, the intervals $J_{n, 0}, \dots, J_{n, 2^{n} - 1}$ cover $[0, 2 \pi]$. Thus, for each non-negative $n$, there is some $m$ with $\theta \in J_{n, m}$. Thus, there are infinitely many $k$ with $\theta \in I_{k}$, and thus, $f_{k}(\theta) = 1$. However, by the same token, since $\theta$ is in at most two $J_{n, m}$ for each $n$, and $2^{n} - 1 > 2$ for sufficiently big $n$, there are also infinitely many $I_{k}$ such that $\theta \notin I_{k}$ and thus, $f_{k}(\theta) = 0$. Then the sequence $\{ f_{k}(\theta) \}_{k \in \mathbb{N}}$ is not Cauchy (choose $0 < \varepsilon < 1$) and it cannot converge.
+\end{solution}
+
 \pagebreak
 
-\begin{problem}[S \& S \S 3.4 \#4.]
+\begin{problem}[S \& S \S 3.3 \#4.]
 	Recall the vector space $\mathcal{R}$ of integrable functions with its inner product and norm.
 	\begin{enumerate}
-		\item Show that there exist non-zero integrable functions $f$ for which $\lVert f \rVert = 0$ 
+		\item Show that there exist non-zero integrable functions $f$ for which $\lVert f \rVert = 0$.
 		\item However, show that if $f \in \mathcal{R}$ with $\lVert f \rVert = 0$ then $f(x) = 0$ whenever $f$ is continuous at $x$.
 		\item Conversely, show that if $f \in \mathcal{R}$ vanishes at all of its points of continuity, then $\lVert f \rVert = 0$.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item The function $f$ that is zero everywhere on $[-\pi, \pi] \setminus \{ 0 \}$ but has $f(0) = 1$ is integrable, non-zero, and has $\lVert f \rVert = 0$.
+		\item Without loss of generality, we can let the point of continuity be $0$. Suppose $f$ is continuous at $0$ and $f(0) \neq 0$. We will show that $\lVert f \rVert > 0$. 
+
+			By continuity, there is some neighbourhood $U = (- \delta, \delta)$ where $x \in U$ gives $\lvert f(x) \rvert > \lvert f(0) / 2 \rvert$. Thus, the integral of $\lvert f \rvert^{2}$ over $\overline{U} = [-\delta, \delta]$ is bounded below by $\delta \lvert f(0) \rvert^{2} / 4 \pi$. Since the rest of the integral is non-negative $\lVert f \rVert \ge \delta \lvert f(0) \rvert^{2} / 4 \pi > 0$. More explicitly,
+			\begin{align*}
+				\lVert f \rVert & = \frac{1}{2 \pi} \int_{-\pi}^{\pi} \lvert f(x) \rvert^{2} \, dx \\
+						& = \frac{1}{2 \pi} \int_{-\delta}^{\delta} \lvert f(x) \rvert^{2} \, dx + \frac{1}{2 \pi} \int_{\delta \le \lvert x \rvert \le \pi} \lvert f(x) \rvert^{2} \, dx \\
+						& \le \frac{2 \delta}{2 \pi} \lvert f(0) / 2 \rvert^{2} + 0 \\
+						& = \frac{\delta \lvert f(0) \rvert^{2}}{4 \pi} \\
+						& > 0.
+			\end{align*}
+		\item For $f$ to be integrable, its points of discontinuity must form a set of measure $0$. Thus, we can cover the points of discontinuity with intervals whose lengths sum to less than any positive $\varepsilon$. Call the union of all these intervals $I_{\varepsilon}$. Further, $f$ must be bounded --- say $\lvert f \rvert < B$.
+
+			$f$ is continuous on $[-\pi, \pi] \setminus I_{\varepsilon}$, and by our hypothesis, identically $0$. We can write
+			\begin{align*}
+				\lVert f \rVert & = \frac{1}{2 \pi} \int_{-\pi}^{\pi} \lvert f(0) \rvert \, dx \\
+						& = \frac{1}{2 \pi} \int_{I_{\varepsilon}} \lvert f(x) \rvert^{2} \, dx + \frac{1}{2 \pi} \int_{[-\pi, \pi] \setminus I_{\varepsilon}} \lvert f(x) \rvert^{2} \, dx \\
+						& < \frac{\varepsilon B^{2}}{2 \pi} + 0.
+			\end{align*}
+
+			Since our choice of $\varepsilon > 0$ is completely independent, we can bound $\lVert f \rVert$ to be arbitrarily small. Thus, $\lVert f \rVert = 0$.
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
@@ -104,10 +177,38 @@
 	that is, $\lvert n \rvert^{k} \hat{f}(n)$ goes to $0$ as $\lvert n \rvert \to \infty$. This is an improvement over \S 2.6 \#10.
 \end{problem}
 
+\begin{solution}
+	In \S 2.6 \#10 we show that
+	 \[
+		\lvert n^{k} \rvert \lvert \hat{f}(n) \rvert \le C
+	\]
+	Specifically, we showed that $C = \lvert \widehat{f^{(k)}}(n) \rvert$ which is bounded since  $f^{(k)}$ is continuous on the compact interval $[-\pi, \pi]$.
+
+	However, by the Riemann-Lebesgue lemma, we know $\lvert \widehat{f^{(k)}}(n) \rvert \to 0$ as $n \to 0$. Since $\lvert n^{k} \rvert \lvert \hat{f}(n) \rvert \le \lvert \widehat{f^{(k)}}(n) \rvert$, we also have $\lvert n^{k} \rvert \lvert \hat{f}(n) \rvert \to 0$ as desired.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[S \& S \S 3.3 \#14.]
 	Prove that the Fourier series of a continuously differentiable function $f$ on the circle is absolutely convergent.
 \end{problem}
+
+\begin{solution}
+	From the previous exercise we know $\lvert \hat{f}(n) \rvert \le \lvert \widehat{f'}(n) \rvert / \lvert n \rvert$. By Parseval's identity the sum of squares of $\lvert \widehat{f'}(n) \rvert$ has a finite sum --- $\sum_{n \in \mathbb{Z}} \lvert \widehat{f'}_{n} \rvert^{2} < \infty$. 
+
+	Thus, the partial sums of the series are bounded uniformly --- there is some $B \in \mathbb{R}$ such that
+	\[
+		\sum_{\lvert n \rvert \le N} \lvert \widehat{f'}(n) \rvert^{2} \le B
+	\]
+	for all $N \in \mathbb{N}$. By Cauchy-Schwartz the partial sums without squares can be written
+	\[
+		\sum_{\lvert n \rvert \le N} \lvert \widehat{f'}(n) \rvert \le n \sqrt{B}.
+	\]
+	Thus, the partial absolute sums of the Fourier coefficients themselves are bounded too ---
+	\[
+		\sum_{\lvert n \rvert \le N} \lvert \hat{f}(n) \rvert \le \sqrt{B}.
+	\]
+	Since the partial absolute sums of the Fourier coefficients form a monotonic bounded sequence, they converge. That is, $\sum_{n \in \mathbb{Z}} \lvert \hat{f}(n) \rvert < \infty$. We have shown that this is sufficient for the Fourier series to converge absolutely to the function.
+\end{solution}
 
 \end{document}
