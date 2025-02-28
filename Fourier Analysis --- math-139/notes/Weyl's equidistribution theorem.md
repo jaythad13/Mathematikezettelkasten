@@ -3,6 +3,7 @@ tags:
 - math-139/13
 - fourier
 - anal
+- nt
 ---
 
 We want to consider how the sequence of residues of $n \gamma$ in $\mathbb{R} / \mathbb{Z}$ (for $n \in \mathbb{N}$) is distributed in $(0, 1)$. Kronecker's theorem says it is dense, but we want something stronger. If irrational numbers have "random" decimal expansions, we want the sequence of residues of $n \gamma$ to be distributed uniformly at random in $(0, 1)$.
