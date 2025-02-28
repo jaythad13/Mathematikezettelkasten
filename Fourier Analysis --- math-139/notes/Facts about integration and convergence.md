@@ -2,7 +2,6 @@
 tags:
 - math-139/0
 - anal
-- fourier
 ---
 
 To do Fourier analysis, we will need some basic facts from analysis about [[Mathematical Analysis I --- math-131/notes/Riemann integration|Riemann integration]] and some definitions for convergence. We won't prove all of them, but they are proven in the appendix of [[Fourier Analysis --- math-139/attachments/texts/Fourier Analysis.pdf|the book]].
@@ -102,3 +101,59 @@ The uniform limit of differentiable functions doesn't necessarily have as its de
 If $\{ f_{n} : [a, b] \to \mathbb{C} \}_{n \in \mathbb{N}}$ is a sequence of [[Mathematical Analysis I --- math-131/notes/Differentiability|differentiable]] functions, the $f'_{n}$ converge uniformly on $[a, b]$, and the $f_{n}$ converge pointwise at $x_{0} \in [a, b]$, then
 1) $f_{n} \rightrightarrows f$ for some differentiable $f$
 2) $f'(x) = \lim_{ n \to \infty }f_{n}'(x)$ for all $x \in [a, b]$.
+
+### Improper integrals
+
+To understand the Fourier transform, which gives the Fourier coefficient of every real frequency for a function defined on all of $\mathbb{R}$, we need to integrate over all of $\mathbb{R}$, and we should properly define what we mean by that.
+
+##### _definition:_ improper integral
+
+We define the improper integral of a function $f : \mathbb{R} \to \mathbb{C}$ integrable on $\mathbb{R}$ to be
+$$
+\int_{-\infty}^\infty f(x) \, dx = \lim_{ N \to \infty } \int_{-N}^N f(x) \, dx
+$$
+if it exists.
+
+Note that thinking of this as a sequence of integrals $I_{n} = \int_{-N}^N f(x) \, dx$, it is sufficient to show $\{ I_{n} \}_{n \in \mathbb{N}}$ is [[Mathematical Analysis I --- math-131/notes/Cauchy sequences#_theorem _ real spaces are complete|Cauchy]].
+
+The functions of moderate decrease are a very nice class of functions!
+
+##### _definition:_ functions of moderate decrease
+
+A [[Mathematical Analysis I --- math-131/notes/Continuity#_definition _ continuity|continuous]] function $f : \mathbb{R} \to \mathbb{C}$ is of moderate decrease if there is a constant $A \in \mathbb{R}$ with
+$$
+\lvert f(x) \rvert \le \frac{A}{1 + x^{2}}
+$$
+for all $x \in \mathbb{R}$.
+
+We could also replace $2$ by $1 + \varepsilon$, for some positive $\varepsilon$ but we don't need to choose $\varepsilon < 1$ for the work we're going to do.
+
+The functions of moderate decrease have very nice properties under the improper integral. For the rest of this section, let $f, g$ be functions of moderate decrease.
+
+##### _proposition:_ the improper integral is linear
+
+For $a, b \in \mathbb{C}$, then
+$$
+\int_{-\infty}^\infty a f(x) + b g(x) \, dx = a \int_{-\infty}^\infty f(x) \, dx + b \int_{-\infty}^\infty g(x) \, dx.
+$$
+
+##### _proposition:_ the improper integral is translation invariant
+
+For every $a \in \mathbb{R}$, then
+$$
+\int_{-\infty}^\infty f(x - a) \, dx = \int_{-\infty}^\infty f(x) \, dx.
+$$
+
+##### _proposition:_ the improper integral scales dilated functions
+
+For any $\delta > 0$,
+$$
+\int_{-\infty}^\infty f(\delta x) \, dx = \frac{1}{\delta} \int_{-\infty}^\infty f(x) \, dx.
+$$
+
+##### _proposition:_ the improper integral is continuous
+
+As $h \to 0$,
+$$
+\int_{-\infty}^\infty \lvert f(x - h) - f(x) \rvert  \, dx \to 0.
+$$
