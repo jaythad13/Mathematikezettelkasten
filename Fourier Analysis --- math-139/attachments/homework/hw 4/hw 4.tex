@@ -18,6 +18,78 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item Notice that it suffices to prove this in the case that the infinite series is $0$. Suppose $\sum_{n = 1}^{\infty} c_{n} = s$. Then consider the series $\{ b_{n} \}_{n \in \mathbb{N}}$, with $b_{n} = c_{n}$ for all $n$ except $b_{1} = c_{1} - s$. Clearly $\sum_{n = 1}^{\infty} b_{n} = 0$. If $\sum_{n = 1}^{\infty} b_{n} r^{n} \to 0$ as $r \to 1$, then since $s r \to s$ as $r \to 1$, we have $\sum_{n = 1}^{\infty} c_{n} r^{n} = s$.
+
+			Thus, suppose $\sum_{n = 1}^{\infty} c_{n} = 0$ with partial sums $s_{N} = \sum_{n = 1}^{N} c_{n}$. We can rearrange terms to get
+			\[
+				\sum_{n = 1}^{\infty} c_{n} r^{n} = s_{N} r^{N + 1} + (1 - r) \sum_{n = 1}^{N} s_{n} r^{n}.
+			\]
+			We get this result by writing the right hand side as a telescoping sum ---
+			\begin{align*}
+				s_{N} r^{N + 1} + (1 - r) \sum_{n = 1}^{N} s_{n} r^{n} & = s_{N} r^{N + 1} + \sum_{n = 1}^{N} s_{N} r^{N} - s_{N} r^{N + 1} \\
+										       & = (s_{N} - s_{N}) r^{N + 1} + (s_{N} - s_{N - 1}) r^{N} + \dots + (s_{2} - s_{1}) r^{2} + s_{1} r \\
+										       & = \sum_{n = 1}^{N} c_{n} r^{n}.
+			\end{align*}
+			Since $r < 1$, as $N \to \infty$, we have $r^{N + 1} \to 0$. Thus,
+			\[
+				(1 - r) \sum_{n = 1}^{\infty} s_{n} r^{n} = \sum_{n = 1}^{\infty} c_{n} r^{n}.
+			\]
+
+			Finally, as $r \to 1$ $r^{n} - r^{n + 1} \to 0$ and $s_{N} \to 0$. Thus, each term $s_{n} (r^{n} - r^{n + 1})$ in the sum on the left goes to zero, and thus, the whole sum goes to zero. That is, $\sum_{n = 1}^{\infty} c_{n} r^{n = 0} = 0$ as desired.
+
+		\item Consider $c_{n} = (-1)^{n}$. The series $\sum c_{n}$ is Abel summable since it is a geometric series with
+			\[
+				\sum_{n = 1}^{\infty} c_{n} r^{n} = \sum_{n = 1}^{\infty} (-r)^{n} = \frac{1}{1 + r}
+			\]
+			for all $r < 1$. As $r \to 1$, this gives us $\sum_{n = 1}^{\infty} c_{n} r^{n} \to 1 / 2$.
+
+			However, $\sum_{n = 1}^{\infty} (-1)^{n}$ doesn't converge because it has partial sum series $-1, 0, -1, 0, \dots$ which doesn't not converge.
+
+		\item For the same reasons as in part (a), it suffices to show the case that $\sum_{n = 1}^{\infty} c_{n}$ is Ces\`aro summable to $0$. That is, its Ces\`aro means $\sigma_{n}$ converge to $0$.
+
+			We will show
+			\[
+				\sum_{n = 1}^{\infty} c_{n} r^{n} = (1 - r)^{2} \sum_{n = 1}^{\infty} n \sigma_{n} r^{n}.
+			\]
+			Thus, as $r \to 1$, and $n \sigma_{n} (r^{n} - r^{n + 2}) \to 0$ for each $n$, we have
+			\[
+				\sum_{n = 1}^{\infty} c_{n} r^{n} \to 0.
+			\]
+
+			We can show the desired identity by rearranging partial sums to be telescoping ---
+			\begin{align*}
+				(1 - r)^{2} \sum_{n = 1}^{N} n \sigma_{n} r^{n} & = (1 - r)^{2}	\sum_{n = 1}^{N} n \sigma_{n} r^{n} \\
+										& = \sum_{n = 1}^{N} n \sigma_{n} r^{n + 2} + n \sigma_{n} r^{n} - 2 n \sigma_{n} r^{n + 1} \\
+										& = N \sigma_{N} (r^{N + 2} - r^{N + 1} + r^{N} - r^{N + 1}) + (N - 1) \sigma_{N - 1} (r^{N + 1} - r^{N} + r^{N - 1} - r^{N}) \\
+										& + \dots + 2 \sigma_{2} (r^{4} - r^{3} + r^{2} - r^{3}) + \sigma_{1}(r^{3} - r^{2} + r - r^{2}) \\
+										& = N \sigma_{N} (r^{N + 2} - r^{N + 1}) + (N \sigma_{N} -(N - 1) \sigma_{N - 1})(r^{N} - r^{N + 1}) \\
+										& + \dots + (2 \sigma_{2} - \sigma_{1}) (r^{2} - r^{3}) + \sigma_{1} (r - r^{2}) \\
+										& = N \sigma_{N} (r^{N + 2} - r^{N + 1}) + \sum_{n = 1}^{N} s_{n} (r^{n} - r^{n + 1}) \\
+										& = N \sigma_{N} (r^{N + 2} - r^{N + 1}) + (1 - r) \sum_{n = 1}^{N} s_{n} r^{n}.
+			\end{align*}
+
+			Taking limits as $N \to \infty$ we get $(1 - r) \sum_{n = 1}^{N} s_{n} r^{n} = \sum c_{n} r^{n}$ by the previous part. Thus,
+			\[
+				(1 - r)^{2} \sum_{n = 1}^{\infty} n \sigma_{n} r^{n} = N \sigma_{N} (r^{N + 2} - r^{N + 1}) + \sum_{n = 1}^{\infty} c_{n} r^{n}.
+			\]
+
+			Further, as $r \to 1$ we have $N \sigma_{N} (r^{N + 2} - r^{N + 1}) \to 0$ and $(1 - r)^{2} \sum_{n = 1}^{N} n \sigma_{n} r^{n} \to 0$. Thus,
+			\[
+				(1 - r)^{2} \sum_{n = 1}^{\infty} n \sigma_{n} r^{n} = \sum_{n = 1}^{\infty} c_{n} r^{n}.
+			\]
+
+		\item Consider $c_{n} = (-1)^{n - 1} n$. The series $\sum c_{n}$ is Abel summable. Since the geometric series is uniformly convergent for $r$ in any closed interval $[a, b] \subset (0, 1)$, we can exchange the order of summation and differentiation to obtain
+			\[
+				\sum_{n = 1}^{\infty} (-1)^{n - 1} n r^{n}  = -r \sum_{n = 1}^{\infty} \frac{d }{d r} (-r)^{n} = -r \frac{d}{dr} \left ( \frac{1}{1 + r} \right ) = \frac{r}{(1 + r)^{2}}
+			\]
+			for each $r < 1$.
+
+			Thus, as $r \to 1$, the series has Abel sum $1 / 4$. However, since the partial sums of the series are $-1, 1, -2, 2, \dots$ the Ces\`aro means $\sigma_{N}$ of the series are $0$ whenever $N$ is even and $(N + 1) / 2N > 1 / 2$ whenever $N$ is odd. Thus, the Ces\`aro means cannot converge.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[S \& S \S 2.6 \#14.]
@@ -42,6 +114,31 @@
 	\end{enumerate}
 	However, $u$ is not identically zero.
 \end{problem}
+
+\begin{solution}
+	Notice that we can write $u$ in two different ways. Differentiating term-by-term by the uniform convergence of the Poisson kernel, we can write
+	\[
+		u(r, \theta) = \sum_{n = -\infty}^{\infty} in r^{\lvert n \rvert} e^{i n \theta}.
+	\]
+	However, differentiating the closed form of $P_{r}(\theta)$ using the quotient rule we get
+	\[
+		u(r, \theta) = \frac{-2r \sin{\theta} (1 - r^{2})}{(1 + r^{2} - 2 r \cos{\theta})^{2}}.
+	\]
+
+	To evaluate the Laplacian, we use the first form, and again, by uniform convergence, differentiate term by term ---
+	\begin{align*}
+		\Delta u & = \sum_{n = -\infty}^{\infty} in \left ( \frac{\partial^{2} (r^{\lvert n \rvert})}{\partial r^{2}} e^{i n \theta} + \frac{1}{r} \frac{\partial (r^{\lvert n \rvert})}{\partial r} e^{i n \theta} + \frac{1}{r^{2}} r^{\lvert n \rvert} \frac{\partial^{2} (e^{i n \theta})}{\partial^{2} \theta} \right ) \\
+			 & = \sum_{n = -\infty}^{\infty} in \left ( \lvert n \rvert (\lvert n \rvert - 1) r^{\lvert n \rvert - 2} + \lvert n \rvert r^{\lvert n \rvert - 2} + (in)^{2} r^{\lvert n \rvert^{2}} \right ) \\
+			 & = \sum_{n = -\infty}^{\infty} i n r^{\lvert n \rvert - 2}(\lvert n \rvert^{2} - \lvert n \rvert^{2} + \lvert n \rvert - \lvert n \rvert) \\
+			 & = 0.
+	\end{align*}
+
+	To check the boundary condition on $u$ we use the first form. If $\sin{\theta} = 0$ (that is, if $\theta = -\pi, 0, \pi$) then $u(r, \theta) = 0$ for all $r \neq 1$. Thus, $\lim_{r \to 1} u(r, \theta) = 0$ at the zeroes of $\sin{}$.
+
+	If $\sin{\theta} \neq 0$, then $\cos{\theta} \neq 1$. Thus, the polynomial $1 + r^{2} - 2 r \cos{\theta}$ has discriminant $4 \cos^{2}{\theta} - 4 < 0$ and has no real roots. Then as $r \to 1$, the convergence of the numerator $(1 - r^{2}) \to 0$ is sufficient to guarantee the fraction converges to zero.
+
+	Clearly, $u$ is not identically zero since $u(1/2, \pi / 2) = -12/25 \neq 0$.
+\end{solution}
 
 \pagebreak
 
