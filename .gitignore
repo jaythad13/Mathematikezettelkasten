@@ -37,3 +37,4 @@
 *.snm
 *.synctex.gz
 __pycache__
+*.xlsx
