@@ -56,4 +56,18 @@ If $Y \subseteq X$ is a subspace, and $\mathcal{B}$ is a basis for the topology 
 
 Clearly, $\mathcal{B}_{Y} \subseteq \mathcal{T}_{Y}$ since $\mathcal{B} \subseteq \mathcal{T}$ and $\mathcal{B}_{Y}$ consists of intersections with $Y$.
 
-Each open $U$ in $\mathcal{T}_{Y}$ is $V \cap Y$ for some open set $V$ in $\mathcal{T}$. Thus, for each point $p \in U \subseteq V$, there is a basic open set $B \in \mathcal{B}$ with $p \in B \subseteq V$. Thus, $p \in B \cap Y \subseteq U$. That is, each open set in $\mathcal{T}_{Y}$ is covered by basic open sets which is [[Topology --- math-147/notes/Bases#_proposition _ equivalent conditions to be a basis of a specific topology|sufficient to show]] $\mathcal{B}_{Y}$ is a basis of $\mathcal{T}_{Y}$ .
+Each open $U$ in $\mathcal{T}_{Y}$ is $V \cap Y$ for some open set $V$ in $\mathcal{T}$. Thus, for each point $p \in U \subseteq V$, there is a basic open set $B \in \mathcal{B}$ with $p \in B \subseteq V$. Thus, $p \in B \cap Y \subseteq U$. That is, each open set in $\mathcal{T}_{Y}$ is covered by basic open sets which is [[Topology --- math-147/notes/Bases#_proposition _ equivalent conditions to be a basis of a specific topology|sufficient to show]] $\mathcal{B}_{Y}$ is a basis of $\mathcal{T}_{Y}$.
+
+##### _example:_ a subspace of the lexicographically ordered square
+
+The [[Topology --- math-147/notes/Subbases#_example _ the lexicographical order on the square|lexicographically ordered square]] $[0, 1] \times [0, 1]$ has interesting subspaces.
+
+$D = \{ (x, 1 / 2) \mid 0 < x < 1 \}$ has the discrete (subspace) topology (as does any generic open horizontal line segment). In fact, this is the "same" topological space as $(0, 1)$ with the discrete topology if we forget about the $1 / 2$ in the second component of its points.
+
+We can see that $D$ is discrete by showing that every point is open. Notice that for any $(x, 1 / 2) \in D$, there is a basic open set $\{ (x, y) \mid 0 < y < 1 \}$ in the lexicographically ordered square. It intersects $D$ at exactly one point — $(x, 1 / 2)$. Thus, each point is open and $D$ is discrete.
+
+ $E = \{ (1 / 2, y) \mid 0 < y < 1 \}$ has the usual Euclidean topology of $(0, 1)$ (as does any generic open vertical line segment). It is the "same" topological space as $(0, 1)$ with the subspace topology inherited from $\mathbb{R}$ if we forget about the $1 / 2$ in the first component of its points.
+
+Any [[Topology --- math-147/notes/Subbases#_definition _ subbasis|subbasic open set]] has intersection $\{ 1 /2 \} \times (0, b)$ or $\{ 1 / 2 \} \times (a, 1)$ with $E$. Thus, taking finite intersections of these yields the familiar intervals $(a, b) \subseteq \mathbb{R}$ rotated onto the square as $\{ 1 / 2 \} \times (a, b)$.
+
+$F = \{ (x, 1) \mid 0 < x < 1 \}$ has the [[Topology --- math-147/notes/Bases#_example _ lower limit topology|lower limit topology]] of $(0, 1)$ (it is a special, non-generic horizontal line segment). Consider the intersection of any basic open set $U = \{ (x, y) \mid (x_{1}, y_{1}) < (x, y) < (x_{2}, y_{2}) \}$ in the lexicographical square with $F$. If  $y_{1} < 1$, then $(x_{1}, y_{1}) < (x_{1}, 1)$ and $U \cap F$ must contain $(x_{1}, 1)$. Further, all $x_{1} < x < x_{2}$ have $(x, 1) < (x_{2}, y_{2})$ so $U \cap F$ is all of the half open interval $[x_{1}, x_{2})$. This generates the lower limit topology on $F$.
