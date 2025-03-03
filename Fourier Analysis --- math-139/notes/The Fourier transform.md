@@ -1,6 +1,7 @@
 ---
 tags:
 - math-139/15
+- math-139/16
 - fourier
 - anal
 ---
@@ -19,6 +20,16 @@ Our hope is that the Fourier transform of a function carries all the data of the
 Thus, we define a nicer space of functions that is closed under the Fourier transform and has nice enough decay conditions to make everything work.
 
 ### The Schwartz space — the nicest functions for Fourier analysis
+
+By proving some really nice properties of these functions we will see that
+
+From here on, let $f : \mathbb{R} \to \mathbb{C}$ be Schwartz, $h$ be some real constant, and $\delta > 0$ be some positive real constant.
+
+##### _proposition:_ translation and modulation
+
+The function $g_{1}(x) = f(x + h)$ has Fourier transform $\hat{g}_{1}(\xi) = \hat{f}(\xi) e^{2 \pi i h \xi}$ and $g_{2}(x) = e^{2 \pi i h x} f(x)$ has Fourier transform $\hat{g}_{2}(\xi) = \hat{f}(\xi + h)$.
+
+##### _proposition:_ dilation and scaling
 
 ##### _proposition:_ Fourier inversion of the derivative of the Fourier transform
 
@@ -42,3 +53,14 @@ $$
 $$
 
 Splitting the integral cleverly, we get the whole thing controlled by some constant times $\varepsilon$.
+
+##### _corollary:_ Schwartz functions are closed under the Fourier transform
+
+If $f$ is Schwartz, then its Fourier transform $\hat{f}$ is also Schwartz.
+
+###### _proof:_
+
+We want to show that all derivatives of $f$ are rapidly decreasing. Note that since multiplication and differentiation preserve the Schwartz class, the function
+$$
+g(x) = \frac{1}{(2 \pi i)^k} \frac{d^k}{dx^k} ((-2 \pi i x)^\ell f(x)).
+$$
