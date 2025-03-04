@@ -13,11 +13,37 @@
 	Using the standard topology on $\mathbb{R}$, is the product topology on $\mathbb{R} \times \mathbb{R}$ the same as the standard topology on $\mathbb{R}^{2}$?
 \end{problem}
 
+\begin{solution}
+	We will show that the product basis $\mathcal{B}$ of the product topology on $\mathbb{R} \times \mathbb{R}$ generates the standard Euclidean topology on $\mathbb{R}^{2}$.
+
+	We need the following lemma from from Euclidean geometry for which we will only sketch the proof.
+	\begin{lemma}[inscribed squares exist]
+		Every disc (of radius $r$, centred at $p$) $B_{r}(p) \subseteq \mathbb{R}^{2}$ contains an inscribed open square disc centred at $p$ of sidelength $\sqrt{2} r$.
+	\end{lemma}
+	\begin{proof}[Proof sketch]
+		To be in the square described, a point $q$ must have horizontal and vertical distances from $p$ less than $\sqrt{2} r / 2$ each. But then the distance from $p$ is
+		 \[
+			d(p, q) < \sqrt{\frac{2r^{2}}{4} + \frac{2r^{2}}{4}} = \sqrt{r^{2}} = r
+		\]
+		so $q$ is in $B_{r}(p)$.
+	\end{proof}
+
+	Each basic open set $U \times V$ in $\mathcal{B}$ is the product of disjoint unions of open intervals, and thus, can be broken up into the disjoint union of rectangles (products of open intervals). These open rectangles are open in the Euclidean topology on $\mathbb{R}^{2}$ --- for any $(x, y) \in (a, b) \times (c, d)$, the open ball  $B_{r}(x, y) \subseteq (a, b) \times (c, d)$ for $r = \min \{ \lvert x - a \rvert, \lvert x - b \rvert, \lvert y - c \rvert, \lvert y - d \rvert \}$.
+
+	For any open $U \subseteq \mathbb{R}^{2}$ (in the Euclidean topology) and $p \in U$ there is some $r > 0$ so that $B_{r}(p) \subseteq U$. But by the existence of inscribed squares, this $B_{r}(p)$ contains a basic open set $I_{1} \times I_{2} \in \mathcal{B}$ with $p \in I_{1} \times I_{2}$. By theorem 3.1, this is sufficient to show $\mathcal{B}$ generates the Euclidean topology on $\mathbb{R}^{2}$.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[3.39]
 	In the product space $2^{\mathbb{R}}$, what is the closure of the set $Z$ consisting of all elements of $2^{\mathbb{R}}$ that are $0$ on every rational coordinate, but may be $0$ or $1$ on any irrational coordinate? Equivalently, thinking of $2^{\mathbb{R}}$ as subsets of $\mathbb{R}$, what is the closure of the set $Z$ consisting of all subsets of $\mathbb{R}$ that do not contain any rational?
 \end{problem}
+
+\begin{solution}
+	In the product $2^\mathbb{R}$, the set $Z = \{ x : \mathbb{R} \to \{ 0, 1 \} \mid x^\text{img}(\mathbb{Q}) = \{ 0 \} \}$ is the set of all functions that are zero on the rationals, or equivalently, the set of all subsets of the irrational numbers.
+
+	Each $x : \mathbb{R} \to \{ 0, 1 \}$ with $x(q) = 1$ (that is, each $x \not\in Z$) for some rational $q$, is contained in the basic open set $\pi_{q}^\text{pre}(\{ 1 \})$ — the open set of all $f : \mathbb{R} \to \{ 0, 1 \}$ with $f(q) = 1$ or equivalently, all subsets containing the rational $q$. This open set by definition excludes all of $Z$ since the functions in $Z$ have their support contained in the irrationals. Thus, $Z$ has no limit points not in $Z$ and is its own closure.
+\end{solution}
 
 \pagebreak
 
@@ -26,6 +52,16 @@
 	
 	Then show that in the box topology $0$ is a limit point of the set $A$, but there is no sequence of points in $A$ converging to $0$.
 \end{problem}
+
+\begin{solution}
+	In the box topology, every open set containing $0$ contains the product of open sets $U_{i}$ with $0 \in U_{i} \subseteq \mathbb{R}$. Each of these $U_{i}$ must contain some positive $x_{i} \in U_{i} \subseteq \mathbb{R}$. Thus, $(x_{1}, x_{2}, \dots) \in \prod_{i \in \mathbb{N}} U_{i}$. Since each open set containing $0$ contains elements of $A$, and $0 \not\in A$, $0$ is a limit point of $A$.
+
+Since the box topology is finer than the product topology, $0$ must be a limit point of $A$ in the product topology too. We can also prove this directly by demonstrating a sequence in $A$ that converges to $0$ (in the product topology).
+
+In the product topology, $\{ x_{n} = (1 / n, 1 / n, \dots) \}_{n \in \mathbb{N}} \subseteq A$ converges to $0$. Any open set $U$ containing $0$ contains $U_{i_{1}} \times \dots \times U_{i_{m}}$ for some finite $m$ and of $X_{i}$ in $i \neq i_{k}$. Choosing $N$ large enough so that $1 / N \in U_{i_{k}}$ for each $k$ (which we can do since there are only finitely many $U_{i_{k}}$), we get $x_{n} \in U$ for all $n > N$. By definition we have $x_{n} \to x$.
+
+However, in the box topology, given any sequence $\{ x_{n} \}_{n \in \mathbb{N}} \subseteq A$, we can create an open set $U$ so that the $n$th component of $x_{n}$ is not in $U$. We choose $U_{n} = (-a_{n}, a_{n})$ where $a_{i} < \pi_{n}(x_{n})$ (note here that we're taking the $n$th component of $x_{n}$ which is a full element of the product and not just the $n$th component of an element). Then for $U = \prod_{n \in \mathbb{N}} U_{n}$, for each $n$ we have $x_{n} \not\in U$ and thus, we can't have any $N \in \mathbb{N}$ such that for all $n > N$, all $x_{n}$ are in $U$ — $x_{n}$ does not converge to $A$.
+\end{solution}
 
 \pagebreak
 
@@ -41,10 +77,31 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	I chose to prove this in general for metric spaces rather than in the special case of $\mathbb{R}^{2}$. (Since $\mathbb{R}^{2}$ is a metric space, this proof works in the special case too). 
+
+	Consider any closed sets $A, B$ in a metric space $X$, and a point $p \in X$ not in $A$.
+	\begin{enumerate}
+		\item Since $A$ is closed and $p \not\in A$, then $p \in X \setminus A$ which is open. Thus, there is an open ball of some radius $r > 0$ centred at $p$ such that $B_{r}(p) \subseteq {X \setminus A}$. Then $r$ is a positive lower bound on $\{ d(p, a) \mid a \in A \}$ since all points $x$ with $d(p, x) < r$ are in the ball, not in $A$. Thus, the set has positive infimum.
+
+		\item Thus, taking $U$ to be the union of all balls of radius $r / 2$ (centred at points in $a$) and $V$ to be the ball of radius $r / 2$ at $p$, we have separated $A$ and $p$. If $U \cap V$ were non-empty, we would have, by the triangle inequality, a point in $a$ separated from $p$ by distance less than $r / 2 + r / 2 = r$ which is impossible --- we chose $r$ to be a lower bound on the distances between $a \in A$ and $p$.
+
+		\item In $\mathbb{R}^{2}$, the curves $\{ (x, 1 / x) \mid x \ge 1 \}$ and $\{ (x, -1 / x) \mid x \ge 1 \}$ get infinitely close despite each of their points being separated from all of the other set. This is because the distance between two points in the same vertical line is $2 / x$ which goes to $0$ as $x \to \infty$.
+
+		\item By taking small enough balls around each point, we can separate points. Specifically, for $a \in A$, choose the ball $B_{r_{a} / 2}(a)$ where $r_{a} = \inf \{ d(a, b) \mid b \in B \}$ and similarly for $b \in B$. No two balls $B_{r_{a} / 2}(a)$ and $B_{r_{b} / 2}(b)$ intersect — if they did, by the triangle inequality, the distance between $a$ and $b$ would be less than $r_{a} / 2 + r_{b} / 2 \leq r_{a}$ (assuming without loss of generality that $r_{a} > r_{b}$). Since we chose $r_{a}$ to be a lower bound on the distances between $a$ and points in $B$, this is impossible.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[4.8]
 	A topological space $X$ is regular if and only if for each point $p$ in $X$ and open set $U$ containing $p$ there exists an open set $V$ such that $p \in V$ and $\overline{V} \subseteq U$.
 \end{problem}
+
+\begin{solution}
+	Suppose $X$ is regular. If $p \in U$ with $U$ open, we must be able to separate $p$ from the closed set ${A = X \setminus U}$ which it is not contained in. That is, there is an open neighbourhood $V$ of $p$ and an open set $W$ containing $A$ with $V \cap W = \O$. Notice then that ${X \setminus W}$ is closed, contains $V$, and is contained in $U = {X \setminus A}$. Since $\overline{V}$ is the smallest closed set containing $V$, we must have $\overline{V} \subseteq {X \setminus W} \subseteq U$. That is, $X$ has the desired ``super containment'' property. 
+
+	Suppose $X$ has the ``super containment'' property. Consider a closed set $A$ and a point $p$ not in it. Since $U = X \setminus A$ is open, and $p \in U$, there is some open $V$ with $p \in V \subseteq \overline{V} \subseteq U$. Then $V$ and $W = {X \setminus \overline{V}} \supseteq {X \setminus U}$ are disjoint open sets with $p \in V$ and $A \subseteq W$. Since we can separate an arbitrary closed set and point not in it, $X$ must be regular.
+\end{solution}
 
 \end{document}
