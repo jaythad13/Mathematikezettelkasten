@@ -1,0 +1,54 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 139 --- Fourier Analysis}
+\assignment{Homework \#6}
+\duedate{7th March 2025}
+
+\begin{document}
+
+\begin{problem}[3.]
+	Suppose $\Gamma$ is a curve in the plane, and that there exists a set of coordinates $x$ and $y$ so that the $x$-axis divides the curve into the union of the graph of two continuous functions $y = f(x)$ and $y = g(x)$ for $0 \le x \le 1$, and with $f(x) \ge g(x)$. Let $\Omega$ denote the region between the graphs of these two functions:
+	\[
+		\Omega = \{ (x, y) \mid 0 \le x \le 1 \text{ and } g(x) \le y \le f(x) \}
+	\]
+
+	With the familiar interpretation that the integral $\int  h(x) \, dx$ gives the area under the graph of the function $h$, we see that the area of $\Omega$ is $\int_{0}^{1} f(x) \, dx - \int_{0}^{1} g(x) \, dx$. Show that this definition coincides with the area formula $\mathfrak{A}$ given in the text. That is,
+	\[
+		\int_{0}^{1} f(x) \, dx - \int_{0}^{1} g(x) \, dx = \left \lvert - \int_{\Gamma} y \, dx  \right \rvert = \mathfrak{A}.
+	\]
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[4.]
+	Observe that with the definition of $\ell$ and $\mathfrak{A}$ given in the text, the isoperimetric inequality continues to hold (with the same proof) even when $\Gamma$ is not simple.
+
+	Show that this stronger version of the isoperimetric inequality is equivalent to Wirtinger's inequality, which says that if $f$ is $2 \pi$-periodic, of class $\mathcal{C}^{1}$, and satisfies  $\int_{0}^{2 \pi} f(t) \, dt = 0$, then
+	\[
+		\int_{0}^{2 \pi} \lvert f(t) \rvert^{2} \, dt \le \int_{0}^{2 \pi} \lvert f'(t) \rvert^{2} \, dt.
+	\]
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[5.]
+	Prove that the sequence $\{ \gamma_{n} \}_{n \in \mathbb{N}}$ where $\gamma_{n}$ is the fractional part of
+	\[
+		\left ( \frac{1 + \sqrt{5}}{2} \right )^{n}
+	\]
+	is not equidistributed in $[0, 1]$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[7.]
+	Prove the second part of Weyl's criterion: if a sequence of numbers $\xi_{1}, \xi_{2}, \dots$ in $[0, 1)$ is equidistributed, then for all $k \in \mathbb{Z} \setminus \{ 0 \}$ 
+	\[
+		\frac{1}{N} \sum_{n = 1}^{N} e^{2 \pi i k \xi_{n}} \to 0
+	\]
+	as $N \to \infty$.
+\end{problem}
+
+\end{document}
