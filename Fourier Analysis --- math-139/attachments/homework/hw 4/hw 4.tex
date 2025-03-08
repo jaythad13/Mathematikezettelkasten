@@ -100,6 +100,39 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item Suppose the Ces\`aro sums $\sigma_{n}$ converge to $\sigma$ as $n \to \infty$. If, for large enough $n$, we can bound $\lvert s_{n} - \sigma_{n} \rvert < \varepsilon$ for any positive $\varepsilon$, we will get, by the triangle inequality $s_{n} \to \sigma$ as well.
+
+			We can write
+			\begin{align*}
+				\lvert s_{n} - \sigma_{n} \rvert & = \left \lvert \frac{n s_{n}}{n} - \frac{s_{n} + \dots + s_{1}}{n} \right \rvert \\
+								 & = \left \lvert \frac{(s_{n} - s_{n}) + (s_{n} - s_{n - 1}) + \dots + (s_{n} - s_{1})}{n} \right \rvert \\
+								 & = \left \lvert \frac{c_{2} + 2 c_{3} + \dots + (n - 1) c_{n}}{n} \right \rvert \\
+								 & \le \frac{\lvert c_{2} \rvert + 2 \lvert c_{3} \rvert + \dots + (n - 1) \lvert c_{n} \rvert}{n}.
+			\end{align*}
+
+			Since $c_{n} = o(1 / n)$, for any $\varepsilon > 0$ there must be some $N$ such that for all $k > N$, we have $k \lvert c_{k} \rvert < \varepsilon / n$. Thus, separating the first $N - 1$ summands as $C = \lvert c_{2} \rvert + \dots + \lvert c_{N} \rvert$, we get
+			\begin{align*}
+				\lvert s_{n} - \sigma_{n} \rvert & \le \frac{C}{n} + \frac{\varepsilon / n + \dots + \varepsilon / n}{n} \\
+								 & = \frac{C}{n} + \frac{n - k}{n} \varepsilon.
+			\end{align*}
+			For large enough $n$ this expression clearly goes to zero.
+
+		\item Suppose the Abel means $A_{r}$ converge to  $A$ as $r \to 1^{-}$. It suffices to consider $r_{N} = 1 - 1/N$ as $N \to \infty$. Thus,
+			\[
+				\lvert s_{N} - A_{r_{N}} \rvert \le \left \lvert \sum_{n = 1}^{N} c_{n} - \sum_{n = 1}^{N} c_{n} r_{N}^{n} \right \rvert + \left \lvert \sum_{n = N}^{\infty} c_{n} r_{N}^{n} \right \rvert.
+			\]
+			Since $A_{r}$ converges for each $r < 1$, $\sum_{n = N}^{\infty} c_{n} r_{N}^{n} \to 0$ as $N \to \infty$. We're only left to check the left sum.
+			\begin{align*}
+				\left \lvert \sum_{n = 1}^{N} c_{n} \left ( 1 - \left ( 1 - \frac{1}{N} \right )^{n} \right ) \right \rvert & = \sum_{n = 1}^{N} \lvert c_{n} \rvert \left ( 1 - n \left ( 1 - \frac{1}{N} \right ) \right ) \\
+																	    & \le \sum_{n = 1}^{N} n \lvert c_{n} \rvert \left ( 1 - \left ( 1 - \frac{1}{N} \right ) \right ) \\
+																	    & \le \left ( 1 - \left ( 1 - \frac{1}{N} \right ) \right ) \sum_{n = 1}^{k} n \lvert c_{n} \rvert + \frac{\varepsilon}{N} \sum_{n = k + 1}^{N} \left ( 1 - \left ( 1 - \frac{1}{N} \right ) \right )^{N}.
+			\end{align*}
+			Here, the last line follows by using $(1 - x)^{n} \le 1 - n x$ for small $x$ and using  $c_{n} = o(1 / n)$ to get all $c_{n}$ with $n > k$ to have $c_{n} < \varepsilon / N$. Clearly the sum on the right goes to $0$ as $N \to \infty$.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[S \& S \S 2.6 \#18.]
@@ -163,6 +196,51 @@
 		\item Prove the following as a consequence: for each $n \ge 1$, there exists a continuous function $f_{n}$ such that $\lvert f_{n} \rvert \le 1$ and $\lvert S_{n}f_{n}(0) \rvert \ge c' \log n$.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item First, we will bound $D_{N}$ from below. In particular, we will show that $\lvert \sin{(\theta / 2)} \rvert \le \theta$, and thus, that the bound is reversed for the reciprocals. At $\theta = 0$, we have $\sin{(\theta / 2)} = \theta = 0$, and for all $\theta \in \mathbb{R}$, we have
+			\[
+				\left \lvert \frac{d}{d \theta} \sin{(\theta / 2)} \right \rvert = \left \lvert \frac{\cos{(\theta / 2)}}{2} \right \rvert < 1 = \left \lvert \frac{d \theta}{d \theta} \right \rvert.
+			\]
+			Since $\frac{d \theta}{d \theta}$ is also positive for positive $\theta$ and negative for negative $\theta$, we must have $\lvert \sin{(\theta / 2)} \rvert < \lvert \theta \rvert$. Reversing the bounds for the reciprocals, we have
+			\[
+				\lvert D_{N}(\theta) \rvert = \left \lvert \frac{\sin{((N + 1/2) \theta)}}{ \sin{(\theta / 2)} } \right \rvert \ge \left \lvert \frac{\sin{((N + 1 /2) \theta)}}{\theta} \right \rvert.
+			\]
+
+			Using the change of variables $\phi = (N + 1/2) \theta$, we get
+			\begin{align*}
+				L_{N} & = \frac{1}{2 \pi} \int_{-\pi}^{\pi} \lvert D_{N}(\theta) \rvert \, d\theta \\
+				      & \ge \frac{1}{2 \pi} \int_{-\pi}^{\pi} \frac{\lvert \sin{((N + 1/2) \theta)} \rvert}{\lvert \theta \rvert} \, d\theta \\
+				      & = \frac{1}{2 \pi} \int_{-N \pi - \pi/2}^{N \pi + \pi/2} \frac{\lvert \sin{\phi} \rvert}{\lvert \phi \rvert d \theta / d \phi} \frac{d \theta}{d \phi} \, d\phi \\
+				      & = \frac{1}{2 \pi} \int_{-N \pi - \pi /2}^{N \pi + \pi/2} \frac{\lvert \sin{\phi} \rvert}{\lvert \phi \rvert} \, d\phi.
+			\end{align*}
+
+			Since the integrand is even in $\phi$, we have
+			\begin{align*}
+				L_{N} & = \frac{2}{2 \pi} \int_{0}^{N \pi + \pi/2} \frac{\lvert \sin{\phi} \rvert}{\lvert \phi \rvert} \, d \phi \\
+				      & = c \int_{\pi}^{N \pi} \frac{\lvert \sin{\phi} \rvert}{\lvert \phi \rvert} \, d \phi + c \int_{N \pi}^{(N + 1/2) \pi} \frac{\lvert \sin{\phi} \rvert}{\lvert \phi \rvert} \, d \phi + c \int_{0}^{\pi} \frac{\lvert \sin{\phi} \rvert}{\lvert \phi \rvert} \, d \phi.
+			\end{align*}
+
+			We can write the leftmost integral as a sum and bound below by $1 / k$. That is,
+			\begin{align*}
+				L_{N} & \ge \sum_{k = 1}^{N - 1} \int_{k \pi}^{(k + 1) \pi} \frac{\lvert \sin{\phi} \rvert}{k + 1} \, d\phi \\
+				      & = \sum_{k = 2}^{N} \frac{1}{k} \int_{k \pi}^{(k + 1) \pi} \lvert \sin{\phi} \rvert  \, d \phi \\
+				      & = c \sum_{k = 1}^{N} \frac{1}{k} - 1 \\
+				      & = c \log N - 1
+			\end{align*}
+			Here the constant $c$ is the constant value of the integral of $\pi$-periodic $\lvert \sin{\phi} \rvert$.
+
+			The rightmost integral is $O(1)$. As $N \to \infty$ the integral in the middle is bounded above by
+			\[
+				\int_{N}^{(N + 1/2) \pi} \frac{1}{\phi} \, d\phi = \frac{1}{(N + 1 /2)^{2} \phi^{2}} - \frac{1}{N^{2} \phi^{2}}
+			\]
+			which goes to $0$ as $N \to \infty$. Thus,
+			\[
+				L_{N} \ge c \log N + O(1).
+			\]
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
