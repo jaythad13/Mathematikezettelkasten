@@ -1,0 +1,75 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 139 --- Fourier Analysis}
+\assignment{Homework \#7}
+\duedate{14th March 2025}
+
+\begin{document}
+
+\begin{problem}[S \& S \S 5.5 \#1]
+	Corollary 23 in Chapter 2 leads to the following simplified version of the Fourier inversion formula. Suppose $f$ is a continuous function supported on an interval $[-M, M]$, whose Fourier transform $\hat{f}$ is of moderate decrease.
+	\begin{enumerate}
+		\item Fix $L$ with $L / 2 > M$, and show that $f(x) = \sum a_{n}(L) e^{2 \pi i n x / L}$ where
+			\[
+				a_{n}(L) = \frac{1}{L} \int_{-L/2}^{L/2} f(x) e^{-2 \pi i n x / L} \, dx = \frac{1}{L} \hat{f}(n / L).
+			\]
+			Alternatively, we may write $f(x) = \delta \sum \hat{f}(n \delta) e^{2 \pi i n \delta x}$ with $\delta = 1 / L$.
+		\item Prove that if $F$ is continuous and of moderate decrease, then
+			\[
+				\int_{-\infty}^{\infty} F(\xi) \, d\xi = \lim_{\delta \to 0^{+}} \sigma \sum_{n = -\infty}^{\infty} F(\delta n)
+			\]
+		\item Conclude that
+			\[
+				f(x) = \int_{-\infty}^{\infty} \hat{f}(\xi) e^{2 \pi i x \xi} \, d\xi.
+			\]
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[S \& S  \S 5.5 \#2]
+	Let $f$ and $g$ be the functions defined by
+	\[
+		f(x) = \chi_{[-1, 1]}(x) \quad \text{and} \quad g(x) = \begin{cases}
+			1 - \lvert x \rvert & \lvert x \rvert \le 1 \\
+			0
+		\end{cases}
+	\]
+	Although $f$ is not continuous, the integral defining its Fourier transform still makes sense. show that
+	\[
+		\hat{f}(\xi) = \frac{\sin{(2 \pi \xi)}}{\pi \xi} \quad \text{and} \quad \hat{g}(\xi) = \left ( \frac{\sin{(\pi \xi)}}{\pi \xi} \right )^{2}
+	\]
+	with the understanding that $\hat{f}(0) = 2$ and $\hat{g}(0) = 1$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[S \& S \S 5.5 \#3]
+	The following exercise illustrates the principle that the decay of $\hat{f}$ is related to the continuity properties of $f$.
+	\begin{enumerate}
+		\item Suppose that $f$ is a function of moderate decrease on $\mathbb{R}$ whose Fourier transform $\hat{f}$ is continuous and satisfies
+			\[
+				\hat{f}(\xi) = O\left ( \frac{1}{\lvert \xi \rvert^{1 + \alpha}} \right )
+			\]
+			as $\lvert \xi \rvert \to \infty$ for some $0 < \alpha < 1$. Prove that $f$ satisfies a H\"older condition of order $\alpha$. That is, that
+			\[
+				\lvert f(x + h) - f(x) \rvert < M \lvert h \rvert^{\alpha}
+			\]
+			for some $M > 0$ and all $x, h \in \mathbb{R}$.
+		\item Let $f$ be a continuous function on $\mathbb{R}$ which vanishes for $\lvert x \rvert \ge 1$, with $f(0) = 0$, and which is equal to $1 / \log(1 / \lvert x \rvert)$ for all $x$ in a neighbourhood of the origin. Prove that $\hat{f}$ is not of moderate decrease. In fact, there is no $\varepsilon > 0$ so that $\hat{f}(\xi) = O(1 / \lvert \xi \rvert^{1 + \varepsilon})$ as $\lvert \xi \rvert \to \infty$.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[S \& S \S 5.5 \#5]
+	Suppose $f$ is continuous and of moderate decrease.
+	\begin{enumerate}
+		\item Prove that $\hat{f}$ is continuous and $\hat{f}(\xi) \to 0$ as $\lvert \xi \rvert \to \infty$.
+		\item Show that if $\hat{f}(\xi) = 0$ for all $\xi$, then $f$ is identically $0$.
+	\end{enumerate}
+\end{problem}
+ 
+\end{document}
