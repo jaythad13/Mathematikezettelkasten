@@ -65,7 +65,7 @@ $f - g$ is $0$ in a neighbourhood of $x_{0}$ so $(f - g)'(x_{0}) = 0$. Since $f 
 
 This is bizarre because the convergence only depends on behaviour around $x_{0}$. While [[Complex Analysis --- math-135/notes/Cauchy integral formula#_theorem _ identity theorem|the identity theorem]] which is also true for real analytic functions, can be expected since power series are created from local information, the Fourier series is not obtained from local information and it is surprising that its convergence only depends on that.
 
-### Continuous functions need not converge
+### Fourier series of continuous functions need not converge
 
 We might hope that we can extend this to convergence of the Fourier series for all continuous functions, but we can't. There is a counterexample. Recall the sawtooth function from [[Fourier Analysis --- math-139/attachments/homework/hw 2/hw 2.pdf|the second homework]]. It's a non-continuous function that has Fourier series $\sum_{n \neq 0} \frac{e^{i n x}}{n}$ everywhere. By breaking this into two sums, we can break the Fourier series
 
