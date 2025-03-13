@@ -27,6 +27,21 @@
 	Prove that $\{ f_{n} \}_{n \in \mathbb{N}}$ is a Cauchy sequence in $\mathcal{R}$. However, $f$ does not belong to $\mathcal{R}$.
 \end{problem}
 
+\begin{solution}
+	Clearly $f$ is not integrable --- it is unbounded near $0$. As $\theta \to 0$, $1 / \theta$ gets arbitrarily large, and thus, so does $\log(1 / \theta)$.
+
+	For any $m < n$, since $\log(1 / x) = - \log x$, and the functions are identical everywhere except $[1/n, 1/m]$ where $f_{m} = 0$,
+	\[
+		\lVert f_{n} - f_{m} \rVert_{L^{2}} = \int_{1/n}^{1/m} (\log \theta)^{2} \, d\theta.
+	\]
+
+	Since $(\log \theta)^{2}$ has continuous antiderivative $F(\theta) = \theta (\log \theta)^{2} - 2 \theta \log \theta + 2 \theta$, we have
+	\[
+		\lVert f_{n} - f_{m} \rVert = F(1 / n) - F(1/m).
+	\]
+	By continuity, as $m \to \infty$ and $1/m \to 0$, the difference $1/m - 1/n \to 0$, and thus, $\lvert F(1 / m) - F(1 / n) \rvert \to 0$. That is, the sequence $\{ f_{n} \}_{n \in \mathbb{N}}$ is Cauchy.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[S \& S \S 3.3 \#6]
@@ -40,6 +55,14 @@
 	Note that $\{ a_{k} \}_{k \in \mathbb{Z}} \in \ell^{2}(\mathbb{Z})$, but that no Riemann integrable function has $k$th Fourier coefficient equal to $a_{k}$ for all $k$.
 \end{problem}
 
+\begin{solution}
+	Suppose $f$ is an integrable function with $\hat{f}(k) = a_k$.
+
+	Since $f$ can be $L^{1}$ approximated by continuous functions, by a lemma proved in class, there is a sequence of continuous functions $f\{ f_{n} \}_{n \in \mathbb{N}}$ with Fourier coefficients approximating the Fourier coefficients of $f$. Since $\sum_{k} \lvert a_{k} \rvert^{2} < \infty$, summing the Fourier series of each of these $f_{n}$ recovers the function.
+
+	 Notice that $\operatorname{Re} f \sim \sum_{k = 1}^{\infty} \cos{(kx)}/k$ so $\operatorname{Re} f$ has Fourier series that is unbounded at $0$. Since $f_{n}$ have Fourier series approximating this Fourier series, their Fourier series must also be unbounded at $0$. Since the $f_{n}$ are recovered by their Fourier series, but are supposed to be continuous, this is a contradiction.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[S \& S \S 3.3 \#7]
@@ -49,6 +72,18 @@
 	\]
 	converges for every $x$, yet it is not the Fourier series of a Riemann integrable function.
 \end{problem}
+
+\begin{solution}
+	Note that $\sum_{n \ge 2}^{N} \sin{(n x)}$ is the imaginary part of the sum $\sum_{n = 2}^{N} e^{inx} = D_{N}(x) - e^{ix} - 1$. Since the Dirichlet kernel $D_{N}$ is bounded at each $x$ (and so are $1$ and $e^{ix}$), the partial sums $\sum_{n \ge 2} \sin{(n x)}$ are bounded. Since $1 / \log n \to 0$ as $n \to \infty$, by the Dirichlet test, $\sum_{n \ge 2} \sin{(n x)} / \log n$ converges.
+
+	By Parseval's identity, the coefficients of the Fourier series of an integrable function should have absolutely summable square. We claim that $\sum_{n \ge 2} 1 / (\log n)^{2}$ does not converge, and thus, the sum in question cannot be the Fourier series of any integrable function.
+
+	Consider, the condensed series $\sum_{n \ge 2} 2^{n} / (\log 2^{n})^{2}$. We have
+	\[
+		\sum_{n \ge 2} \frac{2^{n}}{(\log 2^{n})^{2}} = \frac{1}{(\log 2)^{2}} \sum_{n \ge 2} \frac{2^{n}}{n^{2}}.
+	\]
+	This clearly does not converge. Thus, by the Cauchy condensation test, neither does $\sum_{n \ge 2} 1/(\log n)^{2}$.
+\end{solution}
 
 \pagebreak
 
@@ -66,6 +101,86 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item Recall that in \S 2.6 \#6 we showed the function $f : [-\pi, \pi] \to \mathbb{C}$ by $f(\theta) = \lvert \theta \rvert$ has Fourier coefficients
+			\[
+				\hat{f}(n) = \begin{cases}
+					\pi / 2 & n = 0 \\
+					\frac{-2}{\pi n^{2}} & n \text{ odd} \\
+					0 & \text{otherwise}.
+				\end{cases}
+			\]
+			Notice also that
+			\[
+				\frac{1}{2 \pi} \int_{-\pi}^{\pi} \lvert \theta \rvert^{2} \, d\theta = \frac{2}{2 \pi} \frac{\theta^{3}}{3} \Big |_{0}^{\pi} = \frac{\pi^{2}}{3}.
+			\]
+
+			By Parseval's identity, we have
+			\[
+				\frac{\pi^{2}}{3} = \frac{\pi^{2}}{4} + \sum_{n \text{ odd}} \left ( \frac{-2}{\pi n^{2}} \right )^{2}.
+			\]
+			Rearranging algebraically,
+			\[
+				\frac{\pi^{2}}{3} - \frac{\pi^{2}}{4} = 2 \sum_{n = 0}^{\infty} \frac{4}{\pi^{2} (2n + 1)^{4}}
+			\]
+			and thus,
+			\[
+				\sum_{n = 0}^{\infty} \frac{1}{(2n + 1)^{4}} = \frac{\pi^{2}}{96}.
+			\]
+
+			Every positive even number is a power of $2$ times a unique odd number. Thus,
+			\begin{align*}
+				\sum_{m = 1}^{\infty} \frac{1}{m^{4}} & = \sum_{k = 0}^{\infty} \sum_{n = 0}^{\infty} \frac{1}{(2^{k} (2n + 1))^{4}} \\
+								      & = \sum_{k = 0}^{\infty} \frac{1}{2^{4k}} \sum_{n = 0}^{\infty} \frac{1}{(2n + 1)^{4}} \\
+								      & = \sum_{k = 0}^{\infty} \frac{1}{16^{k}} \frac{\pi^{2}}{96}.
+			\end{align*}
+			As a geometric sum with $r = 1/16 < 1$, we have
+			\[
+				\sum_{m = 1}^{\infty} \frac{1}{m^{4}} = \frac{\pi^{2}}{96} \frac{1}{1 - 1 /16} = \frac{\pi^{2}}{96} \frac{16}{15} = \frac{\pi^{2}}{90}
+			\]
+			as desired.
+		\item In \S 2.6 \#4, we showed that the $2 \pi$-periodic odd function defined by extending $f : [0, \pi] \to \mathbb{C}$ with $f(\theta) = \theta (\pi - \theta)$ has Fourier coefficients
+			\[
+				\hat{f}(n) = \begin{cases}
+					\frac{-4i}{\pi n^{3}} & n \text{ odd} \\
+					0 & \text{otherwise}.
+				\end{cases}
+			\]
+			Notice also that since the function is odd, we can easily compute its norm ---
+			\begin{align*}
+				\frac{1}{2 \pi} \int_{-\pi}^{\pi} (\theta (\pi - \theta))^{2} \, d\theta & = \frac{2}{2 \pi} \int_{0}^{\pi} (\theta (\pi - \theta))^{2} \, d \theta \\
+													 & = \frac{1}{\pi} \int_{0}^{\pi} \theta^{4} + \theta^{2} \pi^{2} - 2 \pi \theta^{3} \, d \theta \\
+													 & = \frac{1}{\pi} \left ( \frac{\pi^{5}}{5} + \frac{\pi^{5}}{3} - 2 \pi \frac{\pi^{4}}{4} \right ) \\
+													 & = \frac{\pi^{4}}{30}.
+			\end{align*}
+
+			By Parseval's identity, we must have
+			\[
+				\sum_{n \text{ odd}} \left ( \frac{-4 i}{\pi n^{3}} \right )^{2} = \frac{\pi^{4}}{30}.
+			\]
+			Then,
+			\[
+				2 \sum_{n = 0}^{\infty} \frac{16}{\pi^{2}} \frac{1}{(2n + 1)^{6}} = \frac{\pi^{4}}{30}
+			\]
+			and finally
+			\[
+				\sum_{n = 0}^{\infty} \frac{1}{(2n + 1)^{6}} = \frac{\pi^{6}}{960}.
+			\]
+
+			Just as previously, we write every positive integer as a non-negative integer power of $2$ times a unique odd number. Thus,
+			\begin{align*}
+				\sum_{m = 1}^{\infty} \frac{1}{m^{6}} & = \sum_{k = 0}^{\infty} \sum_{n = 1}^{\infty} \frac{1}{(2^{k} (2n + 1))^{6}} \\
+								      & = \sum_{k = 0}^{\infty} \frac{1}{2^{6k}} \sum_{n = 0}^{\infty} \frac{1}{(2n + 1)^{6}} \\
+								      & = \sum_{k = 0}^{\infty} \frac{1}{64^{k}} \frac{\pi^{6}}{960}.
+			\end{align*}
+			Again, simplifying as a geometric sum, we get
+			\[
+				\sum_{m = 1}^{\infty} \frac{1}{m^{6}} = \frac{\pi^{6}}{960} \frac{1}{1 - 63/64} = \frac{\pi^{6}}{960} \frac{64}{63} = \frac{\pi^{6}}{945}.
+			\]
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[S \& S \S 3.3 \#11]
@@ -78,7 +193,7 @@
 			with equality if and only if $f(t) = A \sin{t} + B \cos{t}$.
 		\item If $f$ is as above and $g$ is just $\mathcal{C}^{1}$ and $2 \pi$-periodic, prove that
 			\[
-				\left \lvert \int_{0}^{2 \pi} \overline{f(t)} g(t) \, dt  \right \rvert \le \int_{0}^{2 \pi} \lvert f(t) \rvert^{2} \, dt \int_{0}^{2 \pi} \lvert g'(t) \rvert^{2} \, dt.
+				\left \lvert \int_{0}^{2 \pi} \overline{f(t)} g(t) \, dt  \right \rvert^{2} \le \int_{0}^{2 \pi} \lvert f(t) \rvert^{2} \, dt \int_{0}^{2 \pi} \lvert g'(t) \rvert^{2} \, dt.
 			\]
 		\item For any compact interval $[a, b]$ and any continuously differentiable function $f$ with $f(a) = f(b) = 0$  show that
 			\[
@@ -87,5 +202,63 @@
 			Discuss the case of equality, and prove that the constant $(b - a)^{2} / \pi^{2}$ cannot be improved.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item Notice that $\hat{f}(0) = \int_{0}^{2 \pi} f(t) \, dt = 0$. We also showed previously that $\hat{f'}(n) = in \hat{f}(n)$. Thus, we clearly have $\lvert \hat{f}(n) \rvert \le \lvert \hat{f'}(n) \rvert$ for all $n$, with equality only when $\lvert n \rvert = 1$ (and since $\hat{f}(0) = 0$ when $n = 0$).
+
+			Using Parseval's identity, we can compare the $\ell^{2}$ norm of the Fourier coefficients instead of the $L^{2}$ norm of $f$ and $f'$. This gives
+			\[
+				\int_{0}^{2 \pi} \lvert f(t) \rvert^{2} \, dt = \sum_{n \in \mathbb{Z}} \lvert \hat{f}(n) \rvert^{2} \le \sum_{n \in \mathbb{Z}} \lvert \hat{f'}(n) \rvert^{2} = \int_{0}^{2 \pi} \lvert f'(t) \rvert^{2} \, dt
+			\]
+			as desired. 
+
+			Since the coefficients of the sums are only equal for $\lvert n \rvert \le 1$, we can only have equality if $\hat{f}(n) = 0$ for all $n$ with $\lvert n \rvert > 1$. Since $f$ is differentiable, it is recovered by its Fourier series everywhere --- we have
+			\begin{align*}
+				f(t) & = \hat{f}(-1)(\cos{t} - i \sin{t}) + \hat{f}(1) (\cos{t} + i \sin{t}) \\
+				     & = (\hat{f}(1) + \hat{f}(-1)) \cos{t} + (\hat{f}(1) - \hat{f}(-1)) \sin{t}.
+			\end{align*}
+			This is the desired condition. It is easy to see conversely that if $f(t) = A \cos{t} + B \sin{t}$ then $f$ is the sum of waves of frequency $1$, and $\hat{f} : \mathbb{Z} \to \mathbb{C}$ is only supported for $\lvert n \rvert = 1$. Thus, the equality holds.
+
+		\item If $g$ is $\mathcal{C}^{1}$ and $2 \pi$-periodic, then
+			 \[
+				\int_{0}^{2 \pi} g'(t) \, dt = g(2 \pi) - g(0) = 0
+			\]
+			so $g'$ satisfies the hypotheses of the inequality above. Then, by the Cauchy-Schwartz inequality
+			\begin{align*}
+				\left \lvert \int_{0}^{2 \pi} \overline{f(t)} g(t) \, dt \right \rvert^{2} & = \lvert 2 \pi \left < f, g \right >_{L^{2}} \rvert^{2} \\
+													   & \le 4 \pi^{2} \lVert f \rVert_{L^{2}} \lVert g \rVert_{L^{2}} \\
+													   & \le 4 \pi^{2} \lVert f \rVert_{l^{2}} \lVert g' \rVert_{L^{2}} \\
+													   & = \int_{0}^{2 \pi} \lvert f(t) \rvert^{2} \, dt \int_{0}^{2 \pi} \lvert g'(t) \rvert^{2} \, dt.
+			\end{align*}
+
+		\item Without loss of generality, assume $a = 0$. This will make the algebra much easier.
+
+			Given $f : [a, b] \to \mathbb{C}$, with $f(a) = f(b) = 0$, we can construct a function satisfying the hypotheses of part (a) --- $2 \pi$-periodic, $\mathcal{C}^{1}$, and with zero integral. Consider $g : [0, \pi] \to \mathbb{C}$ by $g(u) = f(\pi u / b)$. Then we can extend $g$ to an odd, $2 \pi$-periodic function. Since $f$ is $\mathcal{C}^{1}$ and the scaling in the input is smooth, $g$ is also $\mathcal{C}^{1}$. Since $g$ is odd, $\int_{0}^{2 \pi} g(u) \, du = \int_{-\pi}^{\pi} g(u) \, du = 0$. Thus, we have $\lVert g \rVert_{L^{2}} \le \lVert g' \rVert_{L^{2}}$.
+
+			Notice that under change of coordinates $t = b u/ \pi$ we get
+			\[
+				\int_{0}^{2 \pi} \lvert g(u) \rvert^{2} \, du = \int_{0}^{2 b} \lvert f(t) \rvert^{2} \frac{b}{\pi} \, dt
+			\]
+			where we extend $f$ to an odd $2b$-periodic function to make this integral well-defined. Note however, under the same change of coordinates, we do not have $g'(u) = f'(t)$. Rather,
+			\[
+				\frac{dg}{du} = \frac{df}{dt} \frac{dt}{du} = \frac{b}{\pi} f'(t).
+			\]
+			Thus,
+			\[
+				\int_{0}^{2 \pi} \lvert g'(u) \rvert^{2} \, du = \int_{0}^{2 b} \frac{b^{2}}{\pi^{2}} \lvert f'(t) \rvert \frac{b}{\pi} \, dt.
+			\]
+
+			Applying the inequalities from part (a) to $g$ we get
+			\[
+				\frac{b}{\pi} \int_{0}^{2 b} \lvert f(t) \rvert^{2} \, dt \le \frac{b^{3}}{\pi^{3}} \int_{0}^{2 \pi} \lvert f'(t) \rvert^{2} \, dt.
+			\]
+			Translating to allow arbitrary $a$ rather than just $a = 0$, and recalling that $f$ is odd (so that the integral over $[-b, b]$ is the same as twice the integral over $[a, b]$) and $2b$-periodic by construction, we get the desired result
+			\[
+				\int_{a}^{b} \lvert f(t) \rvert^{2} \, dt \le \frac{(b - a)^{2}}{\pi^{2}} \int_{a}^{b} \lvert f'(t) \rvert^{2} \, dt.
+			\]
+			By linear change of coordinates, any improvement in the constant is equivalent to an improvement to the inequality established in part (a). However, we have shown that the inequality there is sharp, with equality achieved in the case $g(u) = A \cos{u} + B \sin{u}$. Under change of coordinates we obtain the $2b$-periodic function that achieves the corresponding equality.
+	\end{enumerate}
+\end{solution}
 
 \end{document}
