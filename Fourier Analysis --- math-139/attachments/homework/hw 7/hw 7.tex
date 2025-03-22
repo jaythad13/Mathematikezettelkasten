@@ -18,7 +18,7 @@
 			Alternatively, we may write $f(x) = \delta \sum \hat{f}(n \delta) e^{2 \pi i n \delta x}$ with $\delta = 1 / L$.
 		\item Prove that if $F$ is continuous and of moderate decrease, then
 			\[
-				\int_{-\infty}^{\infty} F(\xi) \, d\xi = \lim_{\delta \to 0^{+}} \sigma \sum_{n = -\infty}^{\infty} F(\delta n)
+				\int_{-\infty}^{\infty} F(\xi) \, d\xi = \lim_{\delta \to 0^{+}} \delta \sum_{n = -\infty}^{\infty} F(\delta n)
 			\]
 		\item Conclude that
 			\[
@@ -37,7 +37,7 @@
 			0
 		\end{cases}
 	\]
-	Although $f$ is not continuous, the integral defining its Fourier transform still makes sense. show that
+	Although $f$ is not continuous, the integral defining its Fourier transform still makes sense. Show that
 	\[
 		\hat{f}(\xi) = \frac{\sin{(2 \pi \xi)}}{\pi \xi} \quad \text{and} \quad \hat{g}(\xi) = \left ( \frac{\sin{(\pi \xi)}}{\pi \xi} \right )^{2}
 	\]
