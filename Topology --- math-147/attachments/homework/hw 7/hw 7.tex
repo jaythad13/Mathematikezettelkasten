@@ -13,11 +13,43 @@
 	Every compact, Hausdorff space is normal.
 \end{problem}
 
+\begin{solution}
+	Let $X$ be a compact, Hausdorff space with closed subsets $A$ and $B$. In proving theorem 6.9, that any compact subspace of Hausdorff space is closed, we construct a finite open cover of a compact set that has no intersection with an open neighbourhood of a point not in it. We recount this proof below.
+
+	\begin{theorem}[6.9]
+		Let $A$ be a compact subspace of a Hausdorff space $X$. Then $A$ is closed.
+	\end{theorem}
+
+	\begin{proof}
+		Consider any point $p \in {X \setminus A}$. We will show that it's not a limit point of $A$. Since $X$ is Hausdorff, for each $a \in A$, we have $p \neq a$ and there is an open neighbourhood of $a$, say $U_{a}$ that doesn't intersect a corresponding open neighbourhood $V_{a}$ of $p$.
+
+$\mathcal{O} = \{ U_{a} \}_{a \in A}$ is an open cover of $A$ and admits a finite subcover $\mathcal{O}' = \{ U_{a_{1}}, \dots, U_{a_{n}} \}$. The corresponding $V_{a_{i}}$ have finite intersection $V$ that is disjoint from each $U_{a_{i}}$, and thus, their union. Since $A \subseteq \bigcup_{i = 1}^n U_{a_{i}}$ it too is disjoint from $V$. This non-intersecting open neighbourhood is sufficient to show that $p \not\in A$ is not a limit point of $A$.
+	\end{proof}
+
+	Combined with theorem 6.8 --- that any closed set of a compact space is compact, this shows that compact Hausdorff spaces are regular since you can separate any closed (and thus compact) set from any point not contained in it.
+
+	Since $X$ is regular, consider the open cover of $B$ by open neighbourhoods $V_{b}$ of $b \in B$ that are disjoint from corresponding open sets $U_{b}$ containing all of $A$. By compactness of $B$, this open cover reduces to a finite subcover $\{ V_{b_{1}}, \dots, V_{b_{n}} \}$ with each intersection $U_{b_{i}} \cap V_{b_{i}}$ empty.
+
+	Since the intersection $U = \bigcap_{i = 1}^{n} U_{b_{i}}$ is finite, it is open. Thus, $U$ is an open set containing $A$. Further, since it is the intersection of all $U_{b_{i}}$, it is disjoint from each $V_{b_{i}}$, and thus, is disjoint from their union. That is, $U$ and $V = \bigcup_{i = 1}^{n} V_{b_{i}}$ are disjoint open sets with $A \subseteq U$ and $V \subseteq B$ --- $X$ is regular.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[7.1, (3)  $\implies$ (4)]
 	Let $X$ and $Y$ be topological spaces and let $f : X \to Y$ be a function. If for every limit point $p$ of a set $A$ in $X$, the image $f(p)$ belongs to $\overline{f^{\text{img}}(A)}$, then for every $x \in X$ and open set $V$ containing $f(x)$, there is an open set $U$ containing $x$ such that $f^{\text{img}}(U) \subseteq V$.
 \end{problem}
+
+\begin{solution}
+	Suppose (3). 
+
+	Given $x \in X$, consider any open neighbourhood $V$ of $f(x)$. Note that $Y \setminus V$ is closed and $f(x) \notin Y \setminus V = \overline{Y \setminus V}$. By properties of preimages and images, $f^{\text{img}}(A) \subseteq Y \setminus V$ and by properties of closure (and (3)) $\overline{f^{\text{img}}(\overline{A})} \subseteq \overline{Y \setminus V}$. We have $f(x) \notin \overline{Y \setminus V}$ but if $x$ were a point of $\overline{A}$, (3) would force $f(x) \in \overline{f^{\text{img}}(\overline{A})} \subseteq \overline{Y \setminus V}$. It follows that $x$ is not a limit point nor a point of $A = f^{\text{pre}}(Y \setminus V)$.
+
+	Since $x$ is not in $\overline{A}$, we must have an open neighbourhood $U$ of $x$ with $U \subseteq X \setminus A$. This neighbourhood is the desired neighbourhood since 
+	\[
+		f^{\text{img}}(U) \subseteq f^{\text{img}}(X \setminus A) \subseteq Y \setminus f^{\text{img}}(A) = Y \setminus (Y \setminus V) \subseteq V.
+	\]
+	Here we can exclude $f^{\text{img}}(U)$ from $Y \setminus V$ since $A$ is the complete preimage of $Y \setminus V$.
+\end{solution}
 
 \pagebreak
 
@@ -25,16 +57,48 @@
 	Let $X$ be a space with a dense set $D$, and let $Y$ be Hausdorff. Let $f : X \to Y$ and $g : X \to Y$ be continuous functions such that for every $d$ in $D$, $f(d) = g(d)$. Then for all $x \in X$, $f(x) = g(x)$
 \end{problem}
 
+\begin{solution}
+
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[7.24]
 	Let $X$ be compact and let $Y$ be Hausdorff. Then any continuous function $f : X \to Y$ is closed.
 \end{problem}
 
+\begin{solution}
+	Suppose $A \subseteq X$ is closed. Then, by theorem 6.8, $A$ is compact. It follows from theorem 7.15 that $f^{\text{img}}(A)$ is compact in $Y$. Finally, it is theorem 6.9 that since $f^{\text{img}}(A)$ is compact in the Hausdorff space $Y$, it is closed.
+
+	Since every closed set has a closed image, $f$ is a closed map.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[7.41]
 	Let $\mathbb{R}^{\omega}$ be the countably infinite product of $\mathbb{R}$ with itself. Let $f : \mathbb{R} \to \mathbb{R}^{\omega}$ be defined by $f(x) = (x, x, x, \dots)$. Then $f$ is continuous if $\mathbb{R}^{\omega}$ is given the product topology, but not if given the box topology.
 \end{problem}
+
+\begin{solution}
+	First suppose $\mathbb{R}^{\omega}$ is given the product topology. Then, for each $x \in \mathbb{R}$, each open neighbourhood $V$ of $f(x)$ contains a basic open set that is the product of finitely many boxes followed by the rest that are the whole factor space $\mathbb{R}$. That is, there is some basic open set
+	\[
+		\prod_{n = 1}^{N} (x - r_{n}, x + r_{n}) \times \prod_{n = N + 1}^{\infty} \mathbb{R}
+	\]
+	contained in $V$.
+
+	Since there are finitely many $r_{n}$, we can choose $r = \min \{ r_{n} \}$. Then the open neighbourhood $U = (x - r, x + r)$ of $x$ has image contained in the basic open set, and thus $V$ too. That is,
+	\[
+		f^{\text{img}}(U) = \prod_{n = 1}^{\infty} (x - r, x + r) \subseteq \prod_{n = 1}^{N} (x - r_{n}, x + r_{n}) \times \prod_{n = N + 1}^{\infty} \mathbb{R} \subseteq V.
+	\]
+	This shows that $f$ is continuous at each $x \in \mathbb{R}$, and thus, is continuous on all of  $X$.
+
+	Now suppose $\mathbb{R}^{\omega}$ is given the box topology. Consider the open neighbourhood
+	\[
+		V = \prod_{n = 1}^{\infty} (-1/n, 1/n)
+	\]
+	of $(0, 0, \dots)$. Notice that $f(0) = (0, 0, \dots)$. We claim that there is no open neighbourhood $U$ of $0$ such that $f^{\text{img}}(U) \subseteq V$. Thus, by theorem 7.1 (4), $f$ is not continuous.
+
+	By definition of the Euclidean topology on $\mathbb{R}$, any open neighbourhood $U$ of $0$ contains some open interval $(-r, r)$. However, by the Archimedean property of $\mathbb{R}$, there is some $n \in \mathbb{N}$ such that $1/n < r$. Thus, $f^{\text{img}}(-r, r) = \prod_{n = 1}^{\infty} (-r, r) \not\subseteq V$. Since $(-r, r) \subseteq U$, we have  $f^{\text{img}}(-r, r) \subseteq f^{\text{img}}(U)$ and thus, $f^{\text{img}}(U) \not\subseteq V$ as well.
+\end{solution}
 
 \end{document}
