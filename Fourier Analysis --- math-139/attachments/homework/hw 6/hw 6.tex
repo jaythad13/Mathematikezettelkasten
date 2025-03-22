@@ -8,7 +8,7 @@
 
 \begin{document}
 
-\begin{problem}[3.]
+\begin{problem}[S \& S \S 4.5 \#3.]
 	Suppose $\Gamma$ is a curve in the plane, and that there exists a set of coordinates $x$ and $y$ so that the $x$-axis divides the curve into the union of the graph of two continuous functions $y = f(x)$ and $y = g(x)$ for $0 \le x \le 1$, and with $f(x) \ge g(x)$. Let $\Omega$ denote the region between the graphs of these two functions:
 	\[
 		\Omega = \{ (x, y) \mid 0 \le x \le 1 \text{ and } g(x) \le y \le f(x) \}
@@ -16,13 +16,53 @@
 
 	With the familiar interpretation that the integral $\int  h(x) \, dx$ gives the area under the graph of the function $h$, we see that the area of $\Omega$ is $\int_{0}^{1} f(x) \, dx - \int_{0}^{1} g(x) \, dx$. Show that this definition coincides with the area formula $\mathfrak{A}$ given in the text. That is,
 	\[
-		\int_{0}^{1} f(x) \, dx - \int_{0}^{1} g(x) \, dx = \left \lvert - \int_{\Gamma} y \, dx  \right \rvert = \mathfrak{A}.
+		\int_{0}^{1} f(x) \, dx - \int_{0}^{1} g(x) \, dx = \left \lvert - \int_{\Gamma} y \, dx  \right \rvert = \mathfrak{A}(\Omega).
 	\]
 \end{problem}
 
+\begin{solution}
+	Given $f$ and $g$ we can parametrise $\Gamma$ as $\mathbf{v}_{\Gamma} : [0, 2] \to \mathbb{R}^{2}$ with
+	\[
+		\mathbf{v}_{\Gamma}(t) = (x(t), y(t)) = \begin{cases}
+			(t, f(t)) & t \in [0, 1] \\
+			(2 - t, g(2 - t)) & t \in [1, 2].
+		\end{cases}
+	\]
+	This encloses the area
+	\[
+		\mathfrak{A}(\Omega) = \frac{1}{2} \int_{0}^{2} x \frac{dy}{dt} - y \frac{dx}{dt} \, dt
+	\]
+	Splitting the integral into integrals over $[0, 1]$ and $[1, 2]$ and applying the change of coordinates $u = 2 - t$,
+	\begin{align*}
+		\mathfrak{A}(\Omega) & = \frac{1}{2} \left \lvert \int_{0}^{1} t f'(t) - f(t) \, dt + \int_{1}^{0} u (-g'(u)) - g(u) (-1) \, (-du)  \right \rvert \\
+				     & = \frac{1}{2} \left \lvert - \int_{0}^{1} f(t) \, dt + \int_{0}^{1} g(u) \, du + \int_{0}^{1} t f'(t) \, dt - \int_{0}^{1} u g'(u) \, du \right \rvert.
+	\end{align*}
+
+	For a $\mathcal{C}^{1}$ function $h$, notice that we have
+	\begin{align*}
+		\frac{d }{d t} ((t - 1) h(t)) & = h(t) + (t - 1) h'(t) \\
+					      & = h(t) - h'(t) + t h'(t).
+	\end{align*}
+	Rearranging, we get
+	\[
+		t h'(t) = \frac{d }{d t} ((t - 1) h(t)) - h(t) + h'(t).
+	\]
+	Integrating over $[0, 1]$ on both sides, we have
+	\[
+		\int_{0}^{1} t h'(t) \, dt = 0 h(1) - 1 h(0) - \int_{0}^{1} h(t) \, dt + h(1) - h(0) = - \int_{0}^{1} h(t) \, dt.
+	\]
+	Applying this for $h = f$ and $h = g$ we get
+	\begin{align*}
+		\mathfrak{A}(\Omega) & = \frac{1}{2} \left \lvert - \int_{0}^{1} f(t) \, dt + \int_{0}^{1} g(u) \, du + \int_{0}^{1} t f'(t) \, dt - \int_{0}^{1} u g'(u) \, du \right \rvert \\
+				     & = \frac{2}{2} \left \lvert - \int_{0}^{1} f(t) \, dt + \int_{0}^{1} g(u) \, du \right \rvert \\
+				     & = \int_{0}^{1} f(t) \, dt - \int_{0}^{1} g(u) \, du.
+	\end{align*}
+	This is the desired formula.
+\end{solution}
+
 \pagebreak
 
-\begin{problem}[4.]
+\begin{problem}[S \& S \S 4.5 \#4.]
 	Observe that with the definition of $\ell$ and $\mathfrak{A}$ given in the text, the isoperimetric inequality continues to hold (with the same proof) even when $\Gamma$ is not simple.
 
 	Show that this stronger version of the isoperimetric inequality is equivalent to Wirtinger's inequality, which says that if $f$ is $2 \pi$-periodic, of class $\mathcal{C}^{1}$, and satisfies  $\int_{0}^{2 \pi} f(t) \, dt = 0$, then
@@ -31,9 +71,47 @@
 	\]
 \end{problem}
 
+\begin{solution}
+	Given $(x, y) : [0, 2 \pi] \to \mathbb{R}^{2}$, an arc-length parametrisation of the closed curve $\Gamma$, we can write
+	\[
+		\mathfrak{A} = \pi \left \lvert \left < x, y' \right >_{L^{2}} - \left < y, x' \right >_{L^{2}} \right \rvert
+	\]
+	and
+	\[
+		\frac{\ell}{2 \pi} = \lVert x' \rVert_{L^{2}}^{2} + \lVert y' \rVert_{L^{2}}^{2}.
+	\]
+	Notice that
+	\begin{align*}
+		\left < x, y' \right >_{L^{2}} - \left < y, x' \right >_{L^{2}} & = \left < x, y' \right >_{L^{2}} + \left < y, x' \right >_{L^{2}} - 2 \left < y, x' \right >_{L^{2}} \\
+										& = \frac{1}{2 \pi} \int_{0}^{2 \pi} x(t) y'(t) - y(t) x'(t) \, dt - 2 \left < y, x' \right >_{L^{2}} \\
+										& = \frac{1}{2 \pi} \int_{0}^{2 \pi} (x y)'(t) \, dt - 2 \left < y, x' \right >_{L^{2}} \\
+										& = \frac{(xy)(2 \pi) - (xy)(0)}{2 \pi} - 2 \left < y, x' \right >_{L^{2}} \\
+										& = - 2 \left < y, x' \right >_{L^{2}}.
+	\end{align*}
+	Here, the last equality follows because $x$ and $y$ are $2 \pi$-periodic.
+
+	Choosing $y = f$, and since $\int_{0}^{2 \pi} f(t) \, dt = 0$, choosing $x' = f$ the following is a chain of equations each implying the next
+	\begin{align*}
+		\mathfrak{A} & \le \frac{\ell^{2}}{4 \pi} \\
+		\int_{0}^{2 \pi} y(t) x'(t) \, dt & \le \pi \left ( \frac{1}{2 \pi}  \int_{0}^{2 \pi} x'(t)^{2} + y'(t)^{2} \, dt \right )^{2} \\
+		\int_{0}^{2 \pi} \lvert f(t) \rvert^{2} \, dt & \le \frac{\pi}{2 \pi} \int_{0}^{2 \pi} f(t)^{2} + f'(t)^{2} \, dt \\
+		\frac{1}{2} \int_{0}^{2 \pi} \lvert f(t) \rvert^{2} \, dt & \le \frac{1}{2} \int_{0}^{2 \pi} \lvert f'(t) \rvert^{2} \, dt.
+	\end{align*}
+	Here, the third inequality follows from applying the Cauchy-Schwartz inequality and noticing that $(x'(t)^{2} + y'(t)^{2})^{2} = x'(t)^{2} + y'(t)^{2}$ since the parametrisation is an arc-length parametrisation. Scaling by $2$ on both sides, we get Wirtinger's inequality as stated.
+
+	Now we prove the converse, with $(x, y)$ still an arc-length parametrisation of $\Gamma$, we assume Wirtinger's inequality. Note that without loss of generality, we can assume the curve is centred at $(0, 0)$, and thus, $y$ satisfies the hypothesis that $\int_{0}^{2 \pi} y(t) \, dt $. Then
+	\begin{align*}
+		\mathfrak{A} & = \int_{0}^{2 \pi} y(t) x'(t) \, dt \\
+			     & \le \int_{0}^{2 \pi} \frac{y'(t)^{2} + x'(t)^{2}}{2} \, dt \\
+			     & = \frac{2 \pi}{2} \\
+			     & = \pi
+	\end{align*}
+	which is the isoperimetric inequality for $\ell = 2 \pi$. Here the second equality follows because  $2 a b \le a^{2} + b^{2}$ since $(a - b)^{2} \ge 0$. Equality only occurs if $x' = y$, and by symmetry of the area formula, $y' = x$. Thus, $x'' = x$ and $y'' = y$. With the boundary conditions for this to be a curve of length $2 \pi$ centred at $(0, 0)$, we must have a unit circle.
+\end{solution}
+
 \pagebreak
 
-\begin{problem}[5.]
+\begin{problem}[S \& S \S 4.5 \#5.]
 	Prove that the sequence $\{ \gamma_{n} \}_{n \in \mathbb{N}}$ where $\gamma_{n}$ is the fractional part of
 	\[
 		\left ( \frac{1 + \sqrt{5}}{2} \right )^{n}
@@ -41,14 +119,57 @@
 	is not equidistributed in $[0, 1]$.
 \end{problem}
 
+\begin{solution}
+	Using the classical solution to linear recurrences (guessing that an exponential satisfies the recurrence and then taking linear combinations of the exponentials to satisfy the initial conditions), we see that the $n$th Fibonacci number is given by
+	\[
+		F_{n} = \left ( \frac{1 + \sqrt{5}}{2} \right )^{n} + \left ( \frac{1 - \sqrt{5}}{2} \right )^{n}.
+	\]
+
+	Notice that since $(1 - \sqrt{5})/2 < 1$, as $n \to \infty$,
+	\[
+		\left ( \frac{1 - \sqrt{5}}{2} \right )^{n} \to 0 \quad \text{and thus,} \quad \left ( \frac{1 + \sqrt{5}}{2} \right )^{n} \to F_{n}.
+	\]
+	Since the exponential is approaching an integer, its fractional part $\gamma_{n} \to 0$. But then, there is some $N$ such that for all $n > N$, $\gamma_{n} < 1 / 2$. Then $\gamma_{n}$ cannot be equidistributed in $[0, 1]$.
+\end{solution}
+
 \pagebreak
 
-\begin{problem}[7.]
+\begin{problem}[S \& S \S 4.5 \#7.]
 	Prove the second part of Weyl's criterion: if a sequence of numbers $\xi_{1}, \xi_{2}, \dots$ in $[0, 1)$ is equidistributed, then for all $k \in \mathbb{Z} \setminus \{ 0 \}$ 
 	\[
 		\frac{1}{N} \sum_{n = 1}^{N} e^{2 \pi i k \xi_{n}} \to 0
 	\]
 	as $N \to \infty$.
 \end{problem}
+
+\begin{solution}
+	Since, for all $k \in \mathbb{Z} \setminus \{ 0 \}$, the function $x \mapsto e^{2 \pi i k \xi_{n}}$ is continuous and has integral $\int_{0}^{1} e^{2 \pi i k \xi_{n}} \, dx = 0$, it suffices to show that for every continuous function $g$ on $[0, 1)$, we have
+	\[
+		\frac{1}{N} \sum_{n = 1}^{N} g(\xi_{n}) \to \int_{0}^{1} g(x) \, dx 
+	\]
+	as $N \to \infty$.
+
+	We showed in the proof of Weyl's equidistribution theorem that the equidistribution of a sequence $\{ \xi_{n} \}_{n \in \mathbb{N}} \subseteq [0, 1)$ is equivalent to the statement that the partial Riemann sums of every characteristic function $\chi_{(a, b)}$ with $(a, b) \subseteq [0, 1)$ over an evenly spaced partitions over $\xi_{n}$ approximates the Riemann integral of $\chi_{(a, b)}$. That is, for each $(a, b) \subseteq [0, 1)$
+	\[
+		\frac{1}{N} \sum_{n = 1}^{N} \chi_{(a, b)}(\xi_{n}) \to \int_{0}^{1} \chi_{(a, b)}(x) \, dx 
+	\]
+	as $N \to \infty$. Since step functions are linear combinations of characteristic functions, the result still holds for step functions --- for $f$ a step function on $[0, 1)$ we have
+	\[
+		\frac{1}{N} \sum_{n = 1}^{N} f(\xi_{n}) \to \int_{0}^{1} f(x) \, dx
+	\]
+
+	Continuous functions are uniformly approximated by step functions, so for any continuous $g$, we have a sequence of step functions $f_{k} \rightrightarrows g$. On the right hand side this means
+	\[
+		\int_{0}^{1} f_{k}(x) \, dx \to \int_{0}^{1} g(x) \, dx 
+	\]
+	as $k \to \infty$. On the left hand side, since uniform convergence implies pointwise convergence, we also have
+	\[
+		\frac{1}{N} \sum_{n = 1}^{N} f_{k}(\xi_{n}) \to \frac{1}{N} \sum_{n = 1}^{N} g(\xi_{n})
+	\]
+	as $k \to \infty$. Thus, as $N \to \infty$, we have the desired equality
+	\[
+		\frac{1}{N} \sum_{n = 1}^{N} g(\xi_{n}) = \lim_{k \to \infty} \frac{1}{N} \sum_{n = 1}^{N} f_{k}(\xi_{n}) = \lim_{k \to \infty} \int_{0}^{1} f_{k}(x) \, dx = \int_{0}^{1} g(x) \, dx.
+	\]
+\end{solution}
 
 \end{document}
