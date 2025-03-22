@@ -1,12 +1,13 @@
 ---
 tags:
 - math-139/0
+- math-139/15
 - anal
 ---
 
 To do Fourier analysis, we will need some basic facts from analysis about [[Mathematical Analysis I --- math-131/notes/Riemann integration|Riemann integration]] and some definitions for convergence. We won't prove all of them, but they are proven in the appendix of [[Fourier Analysis --- math-139/attachments/texts/Fourier Analysis.pdf|the book]].
 
-### Integration
+### Riemann integration
 
 ##### _lemma:_ integrable functions are approximated by continuous functions
 
@@ -102,7 +103,7 @@ If $\{ f_{n} : [a, b] \to \mathbb{C} \}_{n \in \mathbb{N}}$ is a sequence of [[M
 1) $f_{n} \rightrightarrows f$ for some differentiable $f$
 2) $f'(x) = \lim_{ n \to \infty }f_{n}'(x)$ for all $x \in [a, b]$.
 
-### Improper integrals
+### Improper integrals and functions of moderate decrease
 
 To understand the Fourier transform, which gives the Fourier coefficient of every real frequency for a function defined on all of $\mathbb{R}$, we need to integrate over all of $\mathbb{R}$, and we should properly define what we mean by that.
 
@@ -126,9 +127,20 @@ $$
 $$
 for all $x \in \mathbb{R}$.
 
-We could also replace $2$ by $1 + \varepsilon$, for some positive $\varepsilon$ but we don't need to choose $\varepsilon < 1$ for the work we're going to do.
+This condition is essentially just to ensure the integral over all of $\mathbb{R}$ is defined. We could also replace $2$ by $1 + \varepsilon$, for some positive $\varepsilon$, but why bother? Note that this also implies $f(x) \le A / x^{2}$.
 
-The functions of moderate decrease have very nice properties under the improper integral. For the rest of this section, let $f, g$ be functions of moderate decrease.
+##### _proposition:_ the improper integral of functions of moderate decrease exists
+
+If $f : \mathbb{R} \to \mathbb{C}$ is of moderate decrease, the improper integral
+$$	
+\int_{-\infty}^\infty f(x) \, dx 
+$$
+exists.
+
+###### _proof:_
+is left for homework, but essentially relies on showing that $I_{n}$ is Cauchy.
+
+The functions of moderate decrease have very nice properties under the improper integral. We only prove one of them. For the rest of this section, let $f, g$ be functions of moderate decrease.
 
 ##### _proposition:_ the improper integral is linear
 
@@ -143,6 +155,27 @@ For every $a \in \mathbb{R}$, then
 $$
 \int_{-\infty}^\infty f(x - a) \, dx = \int_{-\infty}^\infty f(x) \, dx.
 $$
+
+###### _proof:_
+
+We want to show
+$$
+\lim_{ N \to \infty } \int_{-N}^N f(x - a) \, dx = \lim_{N \to \infty } \int_{-N}^N f(x) \, dx.
+$$
+By change of variables, we can write
+$$
+\int_{-N}^N f(x - a) \, dx = \int_{-N + a}^{N + a} f(x) \, dx.
+$$
+Then the difference between the shifted and non-shifted integrals is bounded
+$$
+\left\lvert  \int_{-N}^N f(x - a) - f(x) \, \, dx   \right\rvert = \left\lvert  \int_{-N + a}^{N + a} f(x) \, dx - \int_{-N}^N f(x) \, dx   \right\rvert \le \int_{N}^{N + a} \lvert f(x) \rvert  \, dx + \int_{-N}^{-N + a} \lvert f(x) \rvert \, dx .
+$$
+
+For $N > a$, clearly the integrals occur between $N / 2$ and $N$. Using the moderate decrease condition yields
+$$
+\left\lvert  \int_{-N}^N f(x - a) - f(x) \, \, dx   \right\rvert \le 2 \int_{N / 2}^N \frac{A}{x^{2}} \, dx \le \frac{6A}{N}.
+$$
+Thus, as $N \to \infty$, the difference must vanish.
 
 ##### _proposition:_ the improper integral scales dilated functions
 
