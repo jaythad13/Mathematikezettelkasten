@@ -9,7 +9,7 @@
 \begin{document}
 
 \begin{problem}[S \& S \S 5.5 \#1]
-	Corollary 23 in Chapter 2 leads to the following simplified version of the Fourier inversion formula. Suppose $f$ is a continuous function supported on an interval $[-M, M]$, whose Fourier transform $\hat{f}$ is of moderate decrease.
+	Corollary 2.3 in Chapter 2 leads to the following simplified version of the Fourier inversion formula. Suppose $f$ is a continuous function supported on an interval $[-M, M]$, whose Fourier transform $\hat{f}$ is of moderate decrease.
 	\begin{enumerate}
 		\item Fix $L$ with $L / 2 > M$, and show that $f(x) = \sum a_{n}(L) e^{2 \pi i n x / L}$ where
 			\[
@@ -27,6 +27,25 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item If $\hat{f}$ is of moderate decrease, then we have $\hat{f}(n) = O(1/n^{2})$, and thus, that the series $\sum_{n \in \mathbb{Z}} \lvert a_{n}(L) \rvert$ converges. Then, by corollary 2.3, the Fourier series converges to a unique continuous function. Since $f$ restricted to $[-L/2, L/2]$ can be extended to a continuous $L$-periodic function, we have $f(x) = \sum_{n \in \mathbb{Z}} a_{n}(L) e^{2 \pi i n x/L}$ on $[-L/2, L/2]$.
+		\item Consider the $N$th proper integral and partial sum. We can write the proper integral as the Riemann sum over a partition of $2N/\delta$ evenly spaced subintervals
+			\[
+				\int_{-N}^{N} F(\xi) \, d\xi = \lim_{\delta \to 0^{+}} \sum_{n = -N}^{N} \delta F(\delta n).
+			\]
+			Taking limits as $N \to \infty$ gives us the desired result.
+		\item As $L \to \infty$, we have $\delta = 1/L \to 0$. Thus, the Fourier series approximates the inverse Fourier transform of $\hat{f}$ --- as $\delta \to 0$
+			\[
+				\delta \sum_{n = -\infty}^{\infty} \hat{f}(n \delta) e^{2 \pi i n \delta x} \to \int_{-\infty}^{\infty} \hat{f}(\xi) e^{2 \pi i n x \xi} \, d\xi.
+			\]
+			Since the Fourier series recovers the function at each point, for each $\delta > 0$, we get the desired identity
+			\[
+				f(x) = \int_{-\infty}^{\infty} \hat{f}(\xi) e^{2 \pi i n x \xi} \, d\xi.
+			\]
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[S \& S  \S 5.5 \#2]
@@ -43,6 +62,28 @@
 	\]
 	with the understanding that $\hat{f}(0) = 2$ and $\hat{g}(0) = 1$.
 \end{problem}
+
+\begin{solution}
+	Since $f$ and $g$ only have support in $[-1, 1]$, we only have to integrate them against the character over $[-1, 1]$ to get the Fourier transform.
+
+	$\hat{f}(0)$ is just the integral of $\chi_{[-1, 1]}$, and thus, $\hat{f}(0) = 2$. For $\xi \neq 0$,
+	\begin{align*}
+		\hat{f}(\xi) & = \int_{-1}^{1} 1 e^{-2 \pi i x \xi} \, dx \\
+			     & = \frac{e^{-2 \pi i \xi} - e^{2 \pi i \xi}}{-2 \pi i \xi} \\
+			     & = \frac{2 i \sin{(2 \pi \xi)}}{2 \pi i \xi} \\
+			     & = \frac{\sin{(2 \pi \xi)}}{\pi \xi}.
+	\end{align*}
+
+	Similarly, $\hat{g}(0)$ is just the integral of $g$ over its support $[-1, 1]$. Since the two triangles under $g$ have area that is half the area under $\chi_{[-1, 1]}$, we have $\hat{g}(0) = 1$. For $\xi \neq 0$
+	\begin{align*}
+		\hat{g}(\xi) & = \int_{-1}^{1} (1 - \lvert x \rvert) e^{-2 \pi i x \xi} \, dx \\
+			     & = \int_{-1}^{1} 1 e^{-2 \pi i x \xi} \, dx - \int_{0}^{1} x e^{-2 \pi i x \xi} \, dx + \int_{-1}^{0} x e^{-2 \pi i x \xi} \, dx \\
+			     & = \frac{\sin{(2 \pi \xi)}}{\pi \xi} - \left ( \frac{i e^{-2 \pi i \xi}}{2 \pi \xi} + \frac{e^{2 \pi i \xi} - 1}{(2 \pi \xi)^{2}} \right ) \Big \vert_{0}^{1} + \left ( \frac{i e^{-2 \pi i \xi}}{2 \pi \xi} + \frac{e^{2 \pi i \xi} - 1}{(2 \pi \xi)^{2}} \right ) \Big \vert_{-1}^{0} \\
+			     & = \frac{\sin{(2 \pi \xi)}}{\pi \xi} + \frac{i (e^{2 \pi i \xi} - e^{- 2 \pi i x \xi})}{2 \pi \xi} + \frac{2 - e^{2 \pi i \xi} - e^{-2 \pi i \xi}}{(2 \pi \xi)^{2}} \\
+			     & = \frac{\sin{(2 \pi \xi)}}{\pi \xi} - \frac{\sin{(2 \pi \xi)}}{\pi \xi} + \frac{1 - \cos{(2 \pi \xi)}}{(2 \pi \xi)^{2}} \\
+			     & = \left ( \frac{\sin{2 \pi \xi}}{2 \pi \xi} \right )^{2}.
+	\end{align*}
+\end{solution}
 
 \pagebreak
 
@@ -62,6 +103,31 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item Given the decay condition on $\hat{f}$, we can use the Fourier inversion formula to estimate
+			\begin{align*}
+				\lvert f(x + h) - f(x) \rvert & = \left \lvert \int_{-\infty}^{\infty} \hat{f}(\xi) (e^{2 \pi i (x + h) \xi} - e^{2 \pi i x \xi}) \, d\xi  \right \rvert \\
+							      & = \left \lvert \int_{-\infty}^{\infty} \hat{f}(\xi) e^{2 \pi i x \xi} (e^{2 \pi i h \xi} - 1) \, d\xi  \right \rvert \\
+							      & \le \left \lvert \int_{-\infty}^{\infty} \hat{f}(\xi) (e^{2 \pi i h \xi} - 1) \, d\xi  \right \rvert.
+			\end{align*}
+
+			For $\lvert \xi \rvert \le 1/\lvert h \rvert$, we have bounded integrands integrated over a domain of length $2/\lvert h \rvert$, so the integral grows slowly enough that we can ignore it.
+
+			For $\lvert \xi \rvert \ge 1/\lvert h \rvert$, we can bound $\lvert e^{2 \pi i h \xi} - 1 \rvert < 2$ and get
+			\begin{align*}
+				\left \lvert \int_{\lvert \xi \rvert \ge 1/\lvert h \rvert} \hat{f}(\xi) (e^{2 \pi i h \xi} - 1) \, d\xi \right \rvert & \le M \left \lvert \int_{\lvert \xi \rvert \ge 1/\lvert h \rvert} \frac{1}{\lvert \xi \rvert^{1 + \alpha}} \, d\xi  \right \rvert \\
+				& = \frac{M}{\lvert \xi \rvert^{\alpha}} \Big |_{\xi = 1/\lvert h \rvert}^{\infty} \\
+				& = M \lvert h \rvert^{\alpha}.
+			\end{align*}
+			Note that $M$ does not depend on $h$, only on the product rule specifics of the last integral and the bounds on the other integrands.
+
+		\item We will show that $f$ does not satisfy any H\"older condition of any order $\alpha \in (0, 1)$, and thus, that $\hat{f}$ is not of moderate decrease (nor is $\hat{f}(\xi) = O(1 / \lvert \xi \rvert^{1 + \alpha})$ for any $\alpha$). 
+
+			This volatile behaviour occurs in the neighbourhood of $x = 0$. Specifically, we consider the difference $\lvert f(h) - f(0) \rvert$. As $h \to 0$ exponentially (say $h_{n} = e^{-n}$) we only have $\lvert f(h_{n}) - f(0) \rvert = 1/n$. But clearly, there is no $M$, $\alpha \in (0, 1)$ such that $1/n < M \lvert e^{-n} \rvert^{\alpha}$ for all $n \in \mathbb{N}$. Thus, $f$ does not satisfy any H\"older condition.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[S \& S \S 5.5 \#5]
@@ -71,5 +137,65 @@
 		\item Show that if $\hat{f}(\xi) = 0$ for all $\xi$, then $f$ is identically $0$.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item Suppose $f$ is bounded by $B$. To show that $\hat{f}$ is continuous, we want to show that as $h \to 0$, we have $\lvert \hat{f}(\xi + h) - \hat{f}(\xi) \rvert \to 0$. 
+
+			Consider some $\varepsilon > 0$. Note that
+			\begin{align*}
+				\lvert \hat{f}(\xi + h) - \hat{f}(x) \rvert & = \left \lvert \int_{-\infty}^{\infty} f(x) e^{- 2 \pi i x \xi} - f(x) e^{-2 \pi i x (\xi + h)} \, dx \right \rvert \\
+									    & = \left \lvert \int_{-\infty}^{\infty} f(x) e^{-2 \pi i x \xi} (1 - e^{-2 \pi i x h}) \, dx  \right \rvert.
+			\end{align*}
+
+			Since $f$ is of moderate decrease, there is some interval $[-M, M]$, outside of which the integral of $f$ is sufficiently small ---
+			\[
+				\int_{\lvert x \rvert > M} f(x) \, dx < \frac{\varepsilon}{4}.
+			\]
+			Bounding $\lvert 1 - e^{-2 \pi i x h} \rvert < 2$ by the reverse triangle inequality, we get
+			\[
+				\left \lvert \int_{\lvert x \rvert > M} f(x) e^{-2 \pi i x \xi} (1 - e^{-2 \pi i x h}) \, dx  \right \rvert \le 2 \int_{\lvert x \rvert > M} f(x) \, dx < \frac{\varepsilon}{2}.
+			\]
+
+			Within the compact interval, the pointwise convergence $1 - e^{2 \pi i x h} \to 0$ as $h \to 0$ is actually uniform in $x$. Thus, for sufficiently small $h$, we have $1 - e^{2 \pi i x h} < \varepsilon / 4 B M$ for all $x \in [-M, M]$. Then by the triangle inequality,
+			\[
+				\left \lvert \int_{-M}^{M} f(x) e^{-2 \pi i x \xi} (1 - e^{-2 \pi i x h}) \, dx  \right \rvert \le 2 M B \lvert e^{- 2 \pi i x \xi} \rvert \frac{\varepsilon}{4 B M} = \frac{\varepsilon}{2}.
+			\]
+			Putting the two together, we get $\lvert \hat{f}(x + h) - \hat{f}(x) \rvert < \varepsilon$ for sufficiently small $h$ --- that $\hat{f}$ is continuous.
+
+			To show that $\hat{f}$ satisfies the decay property, we can use the fact that
+			\[
+				\int_{-\infty}^{\infty} f\left ( x - {1}/{2 \xi} \right ) e^{-2 \pi i x \xi} \, dx = \hat{f}(\xi) e^{-2 \pi i (1/2 \xi) \xi} = - \hat{f}(\xi).
+			\]
+			It follows then that
+			\[
+				\hat{f}(\xi) = \frac{1}{2} \int_{-\infty}^{\infty} (f(x) - f(x - 1/2 \xi)) e^{-2 \pi i x \xi} \, dx.
+			\]
+
+			This expression allows us to bound $\hat{f}(\xi)$ for large $\xi$. Note that since $f$ is of moderated decrease and continuous, it is uniformly continuous. Thus, as $\lvert \xi \rvert \to \infty$, the convergence $\lvert f(x) - f(x - 1/2 \xi) \rvert \to 0$ is uniform in $x$ --- given any $\varepsilon > 0$, there is a sufficiently large $\lvert \xi \rvert$ such that
+			\[
+				\lvert \hat{f}(\xi) \rvert \le \frac{1}{2} \lvert e^{-2 \pi i x \xi} \rvert \int_{-\infty}^{\infty} \lvert f(x) - f(x - 1/2\xi)\rvert \, dx
+			\]
+			which goes to zero since the improper integral is ``continuous''.
+
+		\item Note that the multiplication formula
+			\[
+				\int_{-\infty}^{\infty} f(x) \hat{g}(x) \, dx = \int_{-\infty}^{\infty} \hat{f}(x) g(x) \, dx
+			\]
+			holds for $f$ of moderate decrease with Fourier transform $\hat{f}$ also of moderate decrease and $g \in \mathcal{S}(\mathbb{R})$. We can see this by noticing that for $g \in \mathcal{S}(\mathbb{R})$ we must also have $\hat{g} \in \mathcal{S}(\mathbb{R})$. It follows that
+			\begin{align*}
+				\int_{-\infty}^{\infty} f(x) \hat{g}(x) \, dx & = \int_{-\infty}^{\infty} f(x) \int_{-\infty}^{\infty} g(y) e^{-2 \pi i y x} \, dy  \, dx \\
+									      & = \iint_{\mathbb{R}^{2}} f(x) g(y) e^{-2 \pi i y x} \, dy \, dx \\
+									      & = \int_{-\infty}^{\infty} g(y) \int_{-\infty}^{\infty} f(x) e^{-2 \pi i x y} \, dx  \, dy \\
+									      & = \int_{-\infty}^{\infty} g(y) \hat{f}(y) \, dy.
+			\end{align*}
+
+			It follows that the Fourier inversion formula, also holds for $f$ of moderate decrease with $\hat{f}$ also of moderate decrease (with identical proof). Thus, if $\hat{f} = 0$ identically, we have
+			\[
+				f(x) = \int_{-\infty}^{\infty} \hat{f}(\xi) e^{2 \pi i x \xi} \, d\xi = 0
+			\]
+			for each $x \in \mathbb{R}$.
+	\end{enumerate}
+\end{solution}
  
 \end{document}
