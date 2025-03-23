@@ -1,0 +1,43 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 139 --- Fourier Analysis}
+\assignment{Homework \#8}
+\duedate{30th March 2025}
+
+\begin{document}
+
+\begin{problem}[S \& S \S 5.5 \#8]
+	Prove that if $f$ is continuous, of moderate decrease, and $\int_{-\infty}^{\infty} f(y) e^{-y^{2}} e^{2 x y} \, dy = 0$ for all $x \in \mathbb{R}$, then $f = 0$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[S \& S \S 5.5 \#10]
+	Below is an outline of a different proof of the Weierstrass approximation theorem. Define the \emph{Landau kernels} by
+	\[
+		L_{n}(x) = \begin{cases}
+			\frac{(1 - x^{2})^{n}}{c_{n}} & -1 \le x \le 1 \\
+			0 & \lvert x \rvert \ge 
+		\end{cases}
+	\]
+	where $c_{n}$ is chosen so that $\int_{-\infty}^{\infty} L_{n}(x) \, dx = 1$. Prove that $\{ L_{n} \}_{n \ge 0}$ is a family of good kernels as $n \to \infty$. As a result, show that if $f$ is a continuous function supported in $[-1/2, 1/2]$, then $(f * L_{n})(x)$ is a sequence of polynomials on $[-1/2, 1/2]$ which converges uniformly to $f$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[S \& S \S 5.5 \#11]
+	Suppose that $u$ is the solution to the heat equation given by $u = f * \mathcal{H}_{t}$ where $f \in \mathcal{S}(\mathbb{R})$. If we also set $u(x, 0) = f(x)$, prove that $u$ is continuous on the closure of the upper half-plane, and vanishes at infinity, that is,
+	\[
+		u(x, t) \to 0 \quad \text{as} \quad \lvert x \rvert + t \to \infty.
+	\]
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[S \& S \S 5.5 \#13]
+	Prove the following uniqueness theorem for harmonic functions in the strip $\{ (x, y) \mid 0 < y < 1, -\infty < x < \infty \}$ --- if $u$ is harmonic in the strip, continuous on its closure with $u(x, 0) = u(x, 1) = 0$ for all $x \in \mathbb{R}$, and $u$ vanishes at infinity, then $u = 0$.
+\end{problem}
+
+\end{document}
