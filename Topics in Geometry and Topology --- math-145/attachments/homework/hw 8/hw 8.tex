@@ -1,0 +1,67 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+\setlist[enumerate, 1]{label = (\roman*)}
+
+\name{Jayden Thadani}
+\class{MATH 145 --- Topics in Geometry and Topology}
+\assignment{Homework 8}
+\duedate{16th March 2025}
+
+\begin{document}
+
+\begin{problem}[40.]
+	A thief (starting at the yellow square) wanders randomly around a museum. We are interested in the probability that the thief escapes (green circle) before being caught by the guard (red circle).
+	\begin{enumerate}
+		\setcounter{enumi}{0}
+		\item Guess the approximate value of the escape probability, and write down your guess.
+		\item Write down a matrix equation whose solution vector contains the escape probability.
+		\item Calculate the escape probability to $3$ decimal places.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[41.]
+	Let $G = (V, E, B)$ be a graph-with-boundary such that $\mathrm{b}_{0}(G, B) = 0$. Suppose $f : V \to \mathbb{R}$ is the solution to the Dirichlet problem with boundary values $g : B \to \mathbb{R}$. This implicitly defines $f$ as a function of $g$. In this question we investigate the dependence of $f_{\mid I}$ on $g$.
+
+	Suppose the vertices are labelled $x_{1}, \dots, x_{n}$ with the first $k$ vertices being interior vertices and the last $n - k$ vertices being boundary vertices. We showed in class that the Dirichlet problem can be expressed as a linear system. In block-matrix form, this system can be written as
+	\[
+		\text{fill this in}
+	\]
+	where $D_{1} \mid D_{2}$ denotes the first $k$ rows of the Laplacian matrix, split into a $k$-by-$k$ block and a $k$-by-$(n - k)$ block. Let $A$ denote the $n$-by-$n$ square matrix in this equation.
+	\begin{enumerate}
+		\item Find $A^{-1}$ in block form, and use that to find a matrix $L$ such that $f_{\mid I} = L g$.
+		\item Prove that the $(i, j)$th entry of $L$ gives the probability that a random walk on the graph starting at the $i$th interior vertex first reaches the boundary at the $j$th boundary vertex.
+
+		\item Calculate $L$ for the following graph-with-boundary.
+
+			Make sure to label the rows and columns of $L$ to show how they correspond to the vertices of the graph. What is the probability that a random walk starting at the top-left interior vertex first hits the boundary at the lowest boundary vertex.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[42.]
+	Show that the Laplacian $\Delta : \Omega^{0}(G) \to \Omega^{0}(G)$ satisfies
+	\[
+		\left < \Delta f, g \right >_{V} = \left < f, \Delta g \right >_{V} \quad \text{and} \quad \left < \Delta f, f \right >_{V} \ge 0
+	\]
+	for all $f, g \in \Omega^{0}(G)$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[43.]
+	Prove the weighted version of the adjoint theorem:
+	\[
+		\left < f, - \nabla_{C} \cdot \phi \right >_{V, C} = \left < \nabla_{C} f, \delta \right >_{E, C}.
+	\]
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[44.]
+	Consider a resistor network whose nodes are eight vertices of a cube, and whose edges are the twelve edges of the cube. Suppose each edge has resistance $1$. Show that the effective resistance of the network between two adjacent nodes is $7 / 12$.
+\end{problem}
+
+\end{document}
