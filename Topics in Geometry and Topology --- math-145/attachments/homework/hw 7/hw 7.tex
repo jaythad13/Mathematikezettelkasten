@@ -1,0 +1,97 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+\setlist[enumerate, 1]{label = (\roman*)}
+
+\name{Jayden Thadani}
+\class{MATH 145 --- Topics in Geometry and Topology}
+\assignment{Homework 7}
+\duedate{11th March 2025}
+
+\begin{document}
+
+\begin{problem}[34.]
+	Let $G = (V, E)$ be a finite graph.
+	\begin{enumerate}
+		\item Show that
+			\[
+				\sum_{x \in V} \lvert N(x) \rvert \Delta f(x) = 0
+			\]
+			for any scalar field $f \in \mathrm{C}^{0}(G)$.
+
+		\item Suppose the graph is connected. Let $f \in \mathrm{C}^{0}(G)$ be a non-constant scalar field. Show that there exist points $x, y \in V$ such that $\Delta f(x) > 0$ and $\Delta f(y) < 0$.
+
+		\item Show that (ii) fails if the graph isn't connected.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[35.]
+	Consider the Dirichlet problem for the following graph and boundary values:
+	\begin{enumerate}
+		\item Express the Dirichlet problem as a system of five equations in five unknowns.
+		
+		\item Solve the Dirichlet problem.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[36.]
+	Let $G = (V, E, B)$ be a finite graph-with-boundary with $\mathrm{b}_{0}(G, B) = 0$ and let $h : B \to \mathbb{R}$ be a system of boundary values. This gives rise to a Dirichlet problem. Suppose the Dirichlet problem has a \emph{symmetry}. This is a bijection $\alpha : V \to V$ with the following properties:
+	\begin{itemize}
+		\item It preserves the graph structure, meaning that $\alpha(x) \alpha(y) \in E$ if and only if $xy \in E$.
+		\item It preserves the boundary, meaning that $\alpha(x) \in B$ if and only if $x \in B$.
+		\item It preserves the boundary values, meaning that $g(\alpha(x)) = g(x)$ for all $x \in B$.
+	\end{itemize}
+	Let $f : V \to \mathbb{R}$ be a solution to the Dirichlet problem. Give a two-sentence proof that the symmetry preserves $f$, meaning that $f(\alpha(x)) = f(x)$ for all $x \in V$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[37.]
+	Consider the Dirichlet problem for the following graph and boundary values:
+	\begin{enumerate}
+		\item Express the Dirichlet problem as a linear system of eight equations in eight unknowns.
+		\item Express the Dirichlet problem as a linear system of two equations in two unknowns.
+
+		\item Solve the Dirichlet problem.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[38.]
+	Consider the `infinite plane grid' graph whose vertices are the points $(m, n)$ where $m, n \in \mathbb{Z}$, and where the two vertices are connected by an edge if and only if the two points are distance $1$ apart.
+	\begin{enumerate}
+		\item We define six scalar fields
+			\begin{align*}
+				f(m, n) & = 1 & g_{1}(m, n) & = m & g_{2}(m, n) & = n \\
+				h_{1}(m, n) & = m^{2} & h_{2}(m, n) & = mn & h_{3}(m, n) & = n^{2}.
+			\end{align*}
+
+			Calculate $\Delta f$, $\Delta g_{1}$, $\Delta g_{2}$, $\Delta h_{1}$, $\Delta h_{2}$, and $\Delta h_{3}$.
+
+		\item Show that the space of harmonic scalar fields of degree at most $2$ is five-dimensional and give a basis for that space.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[38.]
+	Analogous to the previous question, consider the space of smooth function $\mathbb{R}^{2} \to \mathbb{R}$, and the Laplacian differential operator
+	\[
+		\Delta = - \left ( \frac{\partial^{2}}{\partial x^{2}} + \frac{\partial^{2}}{\partial y^{2}} \right ).
+	\]
+	\begin{enumerate}
+		\item Show that the space of harmonic functions of degree at most $2$ is five-dimensional and give a basis for that space.
+
+		\item Show that the $(m + 1)$-dimensional space of homogeneous polynomials of degree $m$,
+			\[
+				\mathcal{P}_{m} = \{ a_{0} x^{m} + a_{1}^{m - 1} x^{m - 1} y + \dots + a_{m} y^{m} \mid a_{0}, a_{1}, \dots, a_{m} \in \mathbb{R} \}
+			\]
+			contains an at least $2$-dimensional subspace of functions that are harmonic.
+	\end{enumerate}
+\end{problem}
+
+\end{document}
