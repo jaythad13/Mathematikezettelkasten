@@ -1,0 +1,101 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 145 --- Topology}
+\assignment{Homework \#6}
+\duedate{6th March 2025}
+
+\begin{document}
+
+\begin{problem}[4.17]
+	Let $X$ and $Y$ be regular. Then $X \times Y$ is regular.
+\end{problem}
+
+\begin{solution}
+	
+We use the equivalent ``super containment" condition for regularity from theorem 4.8. Note that $\overline{U} \times \overline{V}$ is closed and contains $U \times V$ so $\overline{U \times V} \subseteq \overline{U} \times \overline{V}$.
+
+Given some open $W \subseteq X \times Y$ and a point $p \in W$, there is a basic open set $U \times V$ with $U, V$ open in $X$ and $Y$ respectively, and $p \in U \times V \subseteq W$. From this construction, we must have $\pi_{X}(p) \in U$ and $\pi_{Y}(p) \in V$. Since $X$ is regular, then there is an open subset $U' \subseteq U$ with $\pi_{X}(p) \in U'$ and $\overline{U'} \subseteq U$. Similarly, for $Y$, there is an open $V' \subseteq V$ with $\pi_{Y}(p) \in V'$ and $\overline{V'} \subseteq V$. 
+
+Now we have an open set $U' \times V' \subseteq W$ with $p \in U' \times V'$ and
+\[
+\overline{U' \times V'} \subseteq \overline{U'} \times \overline{V'} \subseteq U \times V \subseteq W.
+\]
+Since the choice of point $p$ and open set $W$ was arbitrary, $X \times Y$ is regular.
+\end{solution}
+
+\pagebreak
+
+\begin{problem}[4.23]
+	Let $A$ be a closed subset of a normal space $X$. Then $A$ is normal when given the relative topology.
+\end{problem}
+
+\begin{solution}
+	Consider any two closed $C, D \subseteq A$ (in the subspace topology on $A$). By theorem 3.28, $C = C' \cap A$ and $D = D' \cap A$ for $C', D' \subseteq X$ closed in $X$. But then since intersections of closed sets are closed, $C, D$ are closed in $X$.
+
+	Since $X$ is normal, there exist disjoint subsets $U, V$ open in $X$ with $C \subseteq U$ and $D \subseteq V$. Since $C, D \subseteq A$, we also have $C \subseteq U \cap A$ and $D \subseteq V \cap A$. $U \cap A$ and $V \cap A$ are still disjoint since they are subsets of the disjoint $U$ and $V$ respectively. By the definition of the subspace topology, they are also open in $A$. Thus, they are two disjoint open sets separating $C$ and $D$ in $A$. This is just what it means for $A$ to be normal.
+\end{solution}
+
+\pagebreak
+
+\begin{problem}[5.6]
+	The space $2^{\mathbb{R}}$ is separable.
+\end{problem}
+
+\begin{solution}
+	Recall that $2^{\mathbb{R}}$ is the product $\prod_{x \in \mathbb{R}} \{ 0, 1 \}$ of $\lvert \mathbb{R} \rvert$-many copies of the two point space with the discrete topology and that we can understand its points as subsets of $\mathbb{R}$.
+
+	Each open subset $U \subseteq \prod_{x \in \mathbb{R}} \{ 0, 1 \}$ contains a basic open set which is a product of finitely many $\{ 0 \}$ and $\{ 1 \}$. In our subsets of $\mathbb{R}$ analogy, this corresponds to the set of all subsets of $\mathbb{R}$ containing some finite $A \subseteq \mathbb{R}$ and contained in $\mathbb{R} \setminus B$ for some finite $B \subseteq \mathbb{R}$.
+
+	Drawing rational intervals around each point of $A$ that do not contain any of the points in $B$, we get that every open subset of $2^{\mathbb{R}}$ contains a finite union of rational intervals.
+
+	The set of all finite unions of rational intervals has cardinality at most that of $(\mathbb{Q} \times \mathbb{Q}) \times \mathbb{N} \times \mathbb{N}$ (there are at most $\lvert \mathbb{Q} \times \mathbb{Q} \rvert$ rational intervals, there are $\lvert \mathbb{N} \rvert$ choices for how many of them to take the union of, and there countably many subsets of $\mathbb{N}$ of size $n$ since they can be injected into $\mathbb{N}^n$).
+
+	Thus, the set of all finite unions of rational intervals is a countable dense subset that makes $2^{\mathbb{R}}$ is separable.
+\end{solution}
+
+\pagebreak
+
+\begin{problem}[5.11]
+	Every uncountable set in a $2$nd countable space has a limit point.
+\end{problem}
+
+\begin{solution}
+	Let $A \subseteq X$ be an uncountable subset of a second countable space $X$.
+
+	Suppose by way of contradiction that $A$ does not have a limit point. Then every point $x \not\in A$ has an open neighbourhood $U_{x}$ not intersecting $A$ and every point $a \in A$ has an open neighbourhood $U_{a}$ that has empty intersection with ${A \setminus a}$. 
+
+Since each open neighbourhood contains at most one point of $A$, any basis of $X$ would need at least uncountably many basic open sets each containing just one of the uncountably many points of $A$. This is a contradiction because $X$ is second countable.
+\end{solution}
+
+\pagebreak
+
+\begin{problem}[6.5]
+	A space $X$ is compact if and only if every collection of closed sets with the finite intersection property has a non-empty intersection.
+\end{problem}
+
+\begin{solution}
+	
+First suppose $X$ is compact. We will show that any collection of closed sets with empty intersection cannot have the finite intersection property. Suppose that $\{ A_{\alpha} \}_{\alpha \in \mathcal{I}}$ has empty intersection. By De Morgan's law, for $U_{\alpha} = {X \setminus A_{\alpha}}$, we have an open cover
+\[
+	\bigcup_{\alpha \in \mathcal{I}} U_{\alpha} = X \setminus \bigcap_{\alpha \in \mathcal{I}} A_{\alpha} = X.
+\]
+
+Since $X$ is compact, it follows that there is a finite subcover $\{ U_{\alpha_{1}}, \dots, U_{\alpha_{n}} \}$. But then if
+\[
+	\bigcup_{i = 1}^n U_{\alpha_{i}} = X \setminus \bigcap_{i = 1}^n A_{\alpha_{i}} = X
+\]
+the intersection $\bigcap_{i = 1}^n A_{\alpha_{i}}$ must be empty. That is, $\{ A_{\alpha} \}_{\alpha \in \mathcal{I}}$ does not have the finite intersection property.
+
+Now suppose that $X$ is not compact. Then there must be an open cover $\{ U_{\alpha} \}_{\alpha \in \mathcal{I}}$ that does not admit a subcover. By the same application of De Morgan's law as previously, the collection of closed sets given by $A_{\alpha} = {X \setminus U_{\alpha}}$ has empty intersection. We claim that this is despite $\{ A_{\alpha} \}_{\alpha \in \mathcal{I}}$ satisfying the finite intersection property. 
+
+By De Morgan's law, for any finite subcollection $\{ A_{\alpha_{1}}, \dots, A_{\alpha_{n}} \}$, we can write
+\[
+	\bigcap_{i = 1}^n A_{\alpha_{i}} = X \setminus \bigcup_{i = 1}^n U_{\alpha_{i}}.
+\]
+Since $\{ U_{\alpha} \}_{\alpha \in \mathcal{I}}$ does not admit any finite subcovers, the finite union of $U_{\alpha_{i}}$ is not the whole space $X$, and thus, the finite subcollection of $A_{\alpha_{i}}$ has non-empty intersection. Since the finite subcollection was arbitrary, $\{ A_{\alpha} \}_{\alpha \in \mathcal{I}}$ has the finite intersection property.
+
+\end{solution}
+
+\end{document}
