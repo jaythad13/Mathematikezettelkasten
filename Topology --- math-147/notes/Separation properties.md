@@ -85,6 +85,8 @@ Clearly separating sets with open sets is pretty hard. However, with some reason
 
 ##### _lemma:_ the normality lemma
 
+Given $A, B \subseteq X$, let $\{ U_{n} \}_{n \in \mathbb{N}}$ and $\{ V_{n} \}_{n \in \mathbb{N}}$ be two collections of open sets covering $A$ and $B$ respectively, such that for each $n \in N$, $\overline{U}_{n} \cap B$ and $\overline{V}_{n} \cap A$ are both empty.
+
 ### Separating products
 
 Do separation properties lift to products of sets with those properties? Sometimes!
@@ -103,9 +105,16 @@ If $X$ and $Y$ are regular, then $X \times Y$ is regular.
 
 ###### _proof sketch:_
 
-We use the equivalent "super containment" condition for regularity. Note that $\overline{U} \times \overline{V}$ is closed and contains $U \times V$ so $\overline{U \times V} \subseteq \overline{U} \times \overline{V}$.
+We use the equivalent "super containment" condition for regularity. Note that $\overline{U} \times \overline{V}$ [[Topology --- math-147/notes/Product spaces#_proposition _ products of closed sets are closed|is closed]] and contains $U \times V$ so $\overline{U \times V} \subseteq \overline{U} \times \overline{V}$.
 
-Given some open $W$ and a point $p \in W$,
+Given some open $W$ and a point $p \in W$, there is some basic open set $U \times V$ with $U, V$ open in $X$ and $Y$ respectively, and $p \in U \times V \subseteq W$. Notice that $\pi_{X}(p) \in U$ and $\pi_{Y}(p) \in V$. Since $X$ is regular, then there is an open subset $U' \subseteq U$ with $\pi_{X}(p) \in U'$ and $\overline{U'} \subseteq U$. Similarly, for $Y$, there is an open $V' \subseteq V$ with $\pi_{Y}(p) \in V'$ and $\overline{V'} \subseteq V$. 
+
+Now we have an open set $U' \times V' \subseteq W$ with $p \in U' \times V'$ and
+$$
+\overline{U' \times V'} \subseteq \overline{U'} \times \overline{V'} \subseteq U \times V \subseteq W.
+$$
+Since the choice of point $p$ and open set $W$ was arbitrary, $X \times Y$ is regular.
+
 
 ### Inheriting separation properties
 
@@ -113,6 +122,14 @@ Separation properties don't always descend to [[Topology --- math-147/notes/Subs
 
 ##### _example:_ normality doesn't always descend to subspaces
 
+The product of [[Topology --- math-147/notes/Subbases#_definition _ order topology|the order topologies]] on $\omega_{0} + 1$ and $\omega_{1} + 1$ is called the Tychonoff plank $(\omega_{0} + 1) \times (\omega_{1} + 1)$. The Tychonoff plank is normal, but the plank without the single point $(\omega_{0}, \omega_{1})$ is not.
+
 ##### _proposition:_ normality descends to closed subspaces
 
 If $Y \subseteq X$ is closed, then the subspace topology on $Y$ is normal.
+
+###### _proof:_
+
+Consider any two closed subsets in $C, D \subseteq Y$ (in the subspace topology on $Y$). [[Topology --- math-147/notes/Subspaces#_proposition _ closed sets in a subspace|By definition]], $C = C' \cap Y$ and $D = D' \cap Y$ for $C', D' \subseteq X$ closed in $X$. But then since intersections of closed sets are closed, $C, D$ are closed in $X$.
+
+By normality, there exist disjoint subsets $U, V$ open in $X$ with $C \subseteq U$ and $D \subseteq V$. Since $C, D \subseteq Y$, we also have $C \subseteq U \cap Y$ and $D \subseteq V \cap Y$. $U \cap Y$ and $V \cap Y$ are still disjoint since they are subsets of the disjoint $U$ and $V$ respectively. By the definition of the subspace topology, they are also open in $Y$. Thus, they are two disjoint open sets separating $C$ and $D$.
