@@ -120,4 +120,3 @@ For any set $A$, we can take the the product of the two point [[Topology --- mat
 ##### _example:_ closures in the power set topology of $\mathbb{R}$
 
 In the product $2^\mathbb{R}$, the set $Z = \{ x : \mathbb{R} \to \{ 0, 1 \} \mid x^\text{img}(\mathbb{Q}) = \{ 0 \} \}$ is the set of all functions that are zero on the rationals, or equivalently, the set of all subsets of the irrational numbers. Each $x : \mathbb{R} \to \{ 0, 1 \}$ with $x(q) = 1$ (that is, each $x \not\in Z$) for some rational $q$, is contained in the basic open set $\pi_{q}^\text{pre}(\{ 1 \})$ — the open set of all $f : \mathbb{R} \to \{ 0, 1 \}$ with $f(q) = 1$. This open set by definition excludes all of $Z$ since the functions in $Z$ have their support contained in the irrationals. Thus, $Z$ has no limit points not in $Z$ and is its own closure.
-
