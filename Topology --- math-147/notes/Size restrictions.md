@@ -1,0 +1,68 @@
+---
+tags:
+- math-147/12
+- math-147/13
+- top
+---
+
+Let $(X, \mathcal{T})$ be a topological space.
+
+In topology, we want to have a notion of our spaces being too large or too small.
+
+### Separable spaces
+
+Even though $\mathbb{R}$ is really big in terms of [[Mathematical Analysis I --- math-131/notes/Countability#_definition _ cardinality|cardinality]], because it has a countable subset $\mathbb{Q}$, which every point can be approximated by, $\mathbb{R}$ is not so large for a topological space. This is the notion that separability is trying to get at.
+
+To make this definition, we need a topological definition of what it means for a set to approximate the whole space.
+
+##### _definition:_ dense
+
+A subset $A \subseteq X$ is dense in $X$ if its [[Topology --- math-147/notes/Limit points and closed sets#_definition _ closure, closed|closure]] is the whole space.
+
+##### _proposition:_ dense sets have non-empty intersection with every open set
+
+$A$ is dense in $X$ if and only if every non-empty open set in $X$ intersects $A$.
+
+###### _proof:_
+
+Suppose $A$ is dense in $X$. Consider a non-empty open set $U$ with $x \in U$. If $x \in A$, we are done. If $x \not\in A$, [[Topology --- math-147/notes/Limit points and closed sets#_proposition _ limit points not in the set|every open neighbourhood of]] $x$ must have non-empty intersection with $A$, and thus, so does $U$.
+
+##### _definition:_ separable
+
+$X$ is separable if it has a countable dense subset.
+
+##### _counterexample:_ separability is not necessarily inherited by subspaces
+
+The [[Topology --- math-147/notes/Bases#_example _ the sticky bubble topology|sticky bubble topology]] is has a countable dense subset $\mathbb{Q} \times \mathbb{Q}_{\ge 0}$ since every bubble, sticky or not, must contain a point with rational coordinates.
+
+However, the real line $\mathbb{R} \times \{ 0 \}$ [[Topology --- math-147/notes/Subspaces#_definition _ subspace topology|inherits]] the [[Topology --- math-147/notes/Topologies#_example _ the discrete and indiscrete topologies|discrete topology]] and is uncountable. Since $\{ x \}$ is an open set for every $x \in \mathbb{R}$, the only dense subset is all of the subspace, and thus, uncountable. That is $\mathbb{R} \times \{ 0 \}$ is not separable.
+
+##### _example:_ $2^\mathbb{R}$ is separable
+
+By definition of the [[Topology --- math-147/notes/Product spaces#_definition _ (finite) product topology|product topology]], each open set in $2^\mathbb{R}$ contains all the subsets of $\mathbb{R}$ between $A$ and ${\mathbb{R} \setminus B}$ in the inclusion poset on the subsets of $\mathbb{R}$ with $A, B$ finite. Drawing rational intervals around each of the finite points in $A$ without including any of the points in $B$ gives a subset between $A$ and $\mathbb{R} \setminus B$ in the poset. Thus, every open set contains some finite union of rational intervals. 
+
+The set of all finite unions of rational intervals has cardinality at most that of $(\mathbb{Q} \times \mathbb{Q}) \times \mathbb{N} \times \mathbb{N}$ (there are at most $\lvert \mathbb{Q} \times \mathbb{Q} \rvert$ rational intervals, there are $\lvert \mathbb{N} \rvert$ choices for how many of them to take the union of, and there countably many subsets of $\mathbb{N}$ of size $n$ since they can be injected into $\mathbb{N}^n$)
+
+### Second countable spaces
+
+A stronger notion of small size is second countability. Here, we don't just require a dense countable set, but a countable basis. We will see that this in fact implies separability.
+
+##### _definition:_ second countable
+
+$X$ is second countable if $X$ has a countable [[Topology --- math-147/notes/Bases#_definition _ basis|basis]].
+
+##### _theorem:_ second countability implies separability
+
+If $X$ is second countable, it is separable.
+
+Much like with the [[Mathematical Analysis I --- math-131/notes/Compactness#_theorem _ Bolzano-Weierstrass theorem|Bolzano-Weierstrass theorem]], if you try to put a lot of points into a sufficiently small space, then they will have to accumulate somewhere.
+
+##### _proposition:_ uncountable sets in a second countable space have limit points
+
+If $X$ is second countable and $A \subseteq X$ is [[Mathematical Analysis I --- math-131/notes/Countability#Uncountable sets|uncountable]], $A$ has a [[Topology --- math-147/notes/Limit points and closed sets#_definition _ limit point|limit point]] in $X$.
+
+###### _proof:_
+
+Suppose by way of contradiction that $A$ does not have a limit point. Then every point $x \not\in A$ has an open neighbourhood $U_{x}$ not intersecting $A$ and every point $a \in A$ has an open neighbourhood $U_{a}$ that has empty intersection with ${A \setminus a}$. 
+
+Since each open neighbourhood contains at most one point of $A$, any basis of $X$ would need at least uncountably many basic open sets each containing just one of the uncountably many points of $A$. This is a contradiction because $X$ is second countable.
