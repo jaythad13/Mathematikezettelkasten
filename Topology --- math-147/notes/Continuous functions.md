@@ -60,3 +60,5 @@ Suppose $X = A \cup B$ where $A, B$ are both closed or both open in $X$. Then if
 ###### _proof sketch:_
 
 Use the closed set definition for the closed version and the open set definition for the open version. We only sketch the open set version.
+
+If $V \subseteq Y$ is open, then its pre-images $U_{A}$ and $U_{B}$ in $A$ and $B$ are both open. Since $A$ and $B$ are open themselves, [[Topology --- math-147/notes/Subspaces#_definition _ subspace topology|by definition of the subspace topology]], $U_{A}, U_{B}$ are open in $X$ as intersection of two open sets. Thus, $U_{A} \cup U_{B} = f^\text{pre}(V)$ is open in $X$.
