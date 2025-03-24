@@ -17,7 +17,7 @@ Here again, the homology group measures the degree of obstruction to $1$-cycles 
 
 ##### _definition:_ first homology group
 
-The first homology group on $U$ over $\mathbb{F}$ is the [[Quotient spaces|quotient vector space]]
+The first homology group on $U$ over $\mathbb{F}$ is the [[Linear algebra done right --- ladr/notes/Quotients and identification spaces|quotient vector space]]
 $$
 \mathrm{H}_{1}(U, \mathbb{F}) = \mathrm{Z}_{1}(U, \mathbb{F}) / \mathrm{B}_{1}(U, \mathbb{F}).
 $$

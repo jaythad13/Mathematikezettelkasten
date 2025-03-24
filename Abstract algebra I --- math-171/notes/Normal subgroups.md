@@ -21,7 +21,7 @@ A subgroup $N \le G$ is normal in $G$ if $ghg^{-1} \in N$ for all $g \in G$ and 
 
 We denote that $N$ is normal in $G$ by $N \trianglelefteq G$.
 
-Basically, if the group was abelian, we could easily avoid all of this struggle just as easily as we did with [[Quotient spaces|quotient spaces]], but because it's not, we have to settle for normality — the next best thing.
+Basically, if the group was abelian, we could easily avoid all of this struggle just as easily as we did with [[Linear algebra done right --- ladr/notes/Quotients spaces|quotient spaces]], but because it's not, we have to settle for normality — the next best thing.
 
 ### Quotient groups
 

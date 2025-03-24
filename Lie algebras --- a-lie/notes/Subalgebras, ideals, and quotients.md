@@ -196,7 +196,7 @@ Of course, the reason we care about ideals of Lie algebras is that, [[Abstract A
 
 ##### _definition:_ quotient algebra
 
-Given a Lie algebra $L$ and a subalgebra $I \subseteq L$, the quotient algebra is the [[Quotient spaces|quotient vector space]] $L / I$ with the bracket $[x + I, y + I] = [x, y] + I$.
+Given a Lie algebra $L$ and a subalgebra $I \subseteq L$, the quotient algebra is the [[Linear algebra done right --- ladr/notes/Quotients spaces|quotient vector space]] $L / I$ with the bracket $[x + I, y + I] = [x, y] + I$.
 
 ##### _theorem:_ quotient Lie algebras are quotients by ideals
 

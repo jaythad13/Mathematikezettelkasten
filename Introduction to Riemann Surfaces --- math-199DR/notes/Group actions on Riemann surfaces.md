@@ -80,7 +80,7 @@ The set of all orbits of $G \circlearrowright X$ is denoted ${G \setminus X}$.
 
 This is a quotient, not a set minus. The slash is reversed to emphasise that $G$ acts on the left, not the right (representation theorists like Prof. Goins really care about this).
 
-There is a natural quotient map $\pi : X \to {G \setminus X}$ that sends each $p \in X$ to its orbit. This also gives a natural [[Quotient spaces|quotient topology]] on ${G \setminus X}$ — the coarsest topology on ${G \setminus X}$ such that $\pi$ is continuous is that where $U \subseteq {G \setminus X}$ is open if and only if $\pi^\text{pre}(U)$ is open in $X$.
+There is a natural quotient map $\pi : X \to {G \setminus X}$ that sends each $p \in X$ to its orbit. This also gives a natural [[Topology --- math-147/notes/Quotient and identification spaces|quotient topology]] on ${G \setminus X}$ — the coarsest topology on ${G \setminus X}$ such that $\pi$ is continuous is that where $U \subseteq {G \setminus X}$ is open if and only if $\pi^\text{pre}(U)$ is open in $X$.
 
 We can also show that $\pi$ is an open map (since our actions are continuous).
 
