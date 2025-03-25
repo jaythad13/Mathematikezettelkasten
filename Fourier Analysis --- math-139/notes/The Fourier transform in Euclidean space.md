@@ -1,7 +1,9 @@
 ---
 tags:
-- math-139/19
-- math-139/20
+- math-139/21
+- math-139/22
+- fourier
+- anal
 ---
 
 ##### _definition:_ radial function
