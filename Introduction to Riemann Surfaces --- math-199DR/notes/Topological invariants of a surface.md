@@ -3,7 +3,6 @@ tags:
 - math-199DR/7
 - math-199DR/10
 - alg-top
-- diff-geo
 ---
 
 There are two fundamental topological invariants of a surface — the Euler characteristic and the genus. The genus is explicitly the number of holes in the surface, but the Euler characteristic is easier to compute, and carries the same information. We will define both and prove this relationship.
@@ -60,9 +59,9 @@ For any surface $X$, any two triangulations $X_{T_{1}}$ and $X_{T_{2}}$ have $\c
 
 Essentially, we use the [[Calculus --- spivak/notes/Integration over closed rectangles#_corollary _ any upper sum is greater than any lower sum|common refinement trick]] just as we did to prove [[Topics in Geometry and Topology --- math-145/notes/Continuous and differentiable winding number#_theorem _ the continuous winding number theorem|the continuous winding number theorem]].
 
-A refinement of a triangulation is a triangulation of the triangulation. By checking manually, one can see that a refinement of any triangle still has the same Euler characteristic. Thus, the refinement of any triangulation of a surface still has the same Euler characteristic.
+A refinement of a triangulation involves a triangulation of each triangle. By checking manually, one can see that any triangulation of a triangle still has the same Euler characteristic. Thus, the refinement of any triangulation of a surface still has the same Euler characteristic.
 
-By overlaying two triangulations one can see that any two triangulations have a common refinement — take the union of their vertices and edges and add vertices where edges cross edges. Since $X_{T_{1}}$ and $X_{T_{2}}$ have the same Euler characteristic as their comon refinement $X_{T}$, they have the same Euler characteristic as each other.
+By overlaying two triangulations one can see that any two triangulations have a common refinement — take the union of their vertices and edges and add vertices where edges cross edges. Since $X_{T_{1}}$ and $X_{T_{2}}$ have the same Euler characteristic as their common refinement $X_{T}$, they have the same Euler characteristic as each other.
 
 ##### _theorem:_ Euler characteristic and genus
 
