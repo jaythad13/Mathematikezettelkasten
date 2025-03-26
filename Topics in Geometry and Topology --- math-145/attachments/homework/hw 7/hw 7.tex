@@ -24,6 +24,26 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item Since
+			 \[
+				\Delta f(x) = \sum_{y \in N(x)} \frac{f(x) - f(y)}{N(x)}
+			\]
+			we can apply the handshake lemma to get
+			\begin{align*}
+				\sum_{x \in V} \lvert N(x) \rvert \Delta f(x) & = \sum_{x \in V} \sum_{y \in N(x)} f(x) - f(y) \\
+									      & = \sum_{x \in V} \operatorname{deg} x \, f(x) - \sum_{y \in V} \deg y \, f(y) \\
+									      & = 0.
+			\end{align*}
+			That is, the second equality follows because every vertex is counted as the neighbour of other vertices as many times as its degree.
+
+		\item We showed in class that if $\Delta f = 0$ everywhere on a connected graph, then $f$ is constant. Thus, if $f$ is non-constant, there must be some point $x$ such that $\Delta f(x) > 0$ or some point $y$ such that $\Delta f(y) < 0$. Suppose without loss of generality that we have $x$ with $\Delta f(x) > 0$.
+
+		\item Any non-constant, locally constant function on a disconnected graph is harmonic everywhere. For example, on the two point graph $G(V) = \{ 1, 2 \}$ with no edges $G(E) = \O$, each vertex has no neighbours. Thus, the sum defining the Laplacian is empty, defined to be $0$.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[35.]
@@ -88,10 +108,30 @@
 
 		\item Show that the $(m + 1)$-dimensional space of homogeneous polynomials of degree $m$,
 			\[
-				\mathcal{P}_{m} = \{ a_{0} x^{m} + a_{1}^{m - 1} x^{m - 1} y + \dots + a_{m} y^{m} \mid a_{0}, a_{1}, \dots, a_{m} \in \mathbb{R} \}
+				\mathcal{HP}_{m} = \{ a_{0} x^{m} + a_{1}^{m - 1} x^{m - 1} y + \dots + a_{m} y^{m} \mid a_{0}, a_{1}, \dots, a_{m} \in \mathbb{R} \}
 			\]
 			contains an at least $2$-dimensional subspace of functions that are harmonic.
 	\end{enumerate}
 \end{problem}
+
+\begin{enumerate}
+	\item The space of harmonic polynomials of degree at most $2$ (which we write as $\ker \Delta$) cannot be a full subspace of $\mathcal{P}_{2}$ (the space of all polynomials in $x$ and $y$ of degree at most $2$) since there are non-harmonic polynomials in $\mathcal{P}_{2}$
+		\[
+			\Delta(-x^{2}) = -1 \neq 0.
+		\]
+		Thus, $\ker \Delta$ is at most $5$-dimensional. We will show that it contains $5$ linearly independent harmonic polynomials, and thus, is exactly $5$-dimensional with those polynomials as a basis.
+
+		The polynomials $1$, $x$, $y$ are clearly harmonic since they are sub-quadratic and vanish on application of any second-order differential operators. They are also linearly independent since they form a basis of the polynomials of degree at most $1$. Further, by computing
+		\[
+			- \Delta(xy) =  \frac{\partial^{2} (xy)}{\partial x^{2}} + \frac{\partial^{2} (xy)}{\partial y^{2}}= 0 + 0 = 0
+		\]
+		we see that $xy$ is also harmonic. The list $1, x, y, xy$ is still linearly independent since it is a sublist of the basis of $\mathcal{P}_{2}$. Finally,
+		\[
+			- \Delta(x^{2} + y^{2}) = \frac{\partial^{2} x^{2}}{\partial x^{2}} - \frac{\partial^{2} y^{2}}{\partial y^{2}} = 1 - 1 = 0.
+		\]
+		so $x^{2} - y^{2}$ is harmonic. The list $1, x, y, xy, x^{2} - y^{2}$ is linearly independent since the list $1, x, y, xy, x^{2}, y^{2}$ is the basis of $\mathcal{P}_{2}$.
+
+	\item Since $\Delta$ is a differential operator of order $2$ and homogeneous (each linear term is of the same), it drops the degree of any polynomial by $2$. Thus, the image of $\mathcal{HP}_{m}$ under $\Delta$ is contained in $\mathcal{HP}_{m - 2}$. This is $2$ dimensions smaller than $\mathcal{HP}_{m}$, so by the rank-nullity theorem, $\Delta$ has a kernel of dimension at least $2$.
+\end{enumerate}
 
 \end{document}
