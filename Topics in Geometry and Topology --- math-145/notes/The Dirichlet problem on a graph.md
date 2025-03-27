@@ -2,6 +2,7 @@
 tags:
 - math-145/7
 - math-145/8
+- math-145/9
 - graph
 ---
 
@@ -64,7 +65,7 @@ $$
 c_{V}(x) = \sum_{y \in N(x)} c_{E}(xy)
 $$the weighted Laplacian, $\Delta_{c} : \Omega^0(G) \to \Omega^0(G)$ given by
 $$
-\Delta_{c} = f(x) - \frac{\sum_{y \in N(x)} f(y) c_{V}(xy)}{c_{E}(x)}
+\Delta_{c} = f(x) - \frac{\sum_{y \in N(x)} f(y) c_{E}(xy)}{c_{V}(x)}
 $$
 and the boundary value $g : B(G) \to \mathbb{R}$.
 
@@ -78,6 +79,7 @@ can be done just as for the regular Dirichlet problem since the maximum principl
 However, this lends itself to defining the same useful tools of differential operators and inner products as we did [[Topics in Geometry and Topology --- math-145/notes/Calculus on a graph#Differential operators on a graph|without weights]].
 
 ##### _definition:_ weighted gradient, weighted divergence, weighted inner products
+
 
 ### Energy minimisation
 
