@@ -51,7 +51,7 @@ The following are equivalent
 2) There is no continuous surjective function $f : X \to \{ 0, 1 \}$ (where $\{ 0, 1 \}$ is given the discrete topology).
 3) $X$ is not the union of two non-empty separated sets.
 4) $X$ is not the union of two disjoint non-empty closed sets.
-5) The only subsets of $X$ that are both closed and open in $X$ are $\text{Ø}$ and $X$.
+5) The only subsets of $X$ that are both closed and open in $X$ are $\text{Ø}$ and $X$. We say such sets are clopen.
 6) For every pair of points $p, q \in X$ and open cover $\{ U_{\alpha} \}_{\alpha \in \mathcal{I}}$ of $X$ there exists a finite chain of open sets $U_{\alpha_{1}}, \dots, U_{\alpha_{n}}$ with $p \in U_{\alpha_{1}}$, $q \in U_{\alpha_{n}}$ and non-empty intersections $U_{\alpha_{i}} \cap U_{\alpha_{i + 1}}$.
 
 ###### _proof:_
@@ -66,9 +66,9 @@ If $X$ were the union of two disjoint non-empty closed sets $A$ and $B$, then si
 
 If $A \subseteq X$ is closed and open, then ${B = X \setminus A}$ is also both closed and open. If $X$ is not the union of two disjoint non-empty closed sets, then one of $A$ and $B$ must be empty and the other, the whole space.  This is (4) $\implies$ (5).
 
-Consider an open cover $\{ U_{\alpha} \}_{\alpha \in \mathcal{I}}$ of $X$ and $\Omega_{p}$ the set of all points $p' \in X$ such that, for every open cover of $X$, there is a finite chain of open sets between them. $\Omega_{p}$ is clearly open since each point has an open neighbourhood. $\Omega_{p}$ is also closed. Every neighbourhood of any limit point $q$ of $\Omega_{p}$ intersects $\Omega_{p}$, and so the $U_{\beta}$ containing $q$ intersects $\Omega_{p}$ at some point $p' \in \Omega_{p}$. Then if $U_{\alpha_{1}}, \dots, U_{\alpha_{n}}$ is the finite chain of open sets from $p$ to $p'$, the chain $U_{\alpha_{1}}, \dots, U_{\alpha_{n}}, U_{\beta}$ connects $p$ and $q$. Thus, any limit point $q \in \Omega_{p}$. This is (the contrapositive of) (5) $\implies$ (6).
+Consider an open cover $\{ U_{\alpha} \}_{\alpha \in \mathcal{I}}$ of $X$. Let $\Omega_{p}$ be the set of all points $p' \in X$ such that, for every open cover of $X$, there is a finite chain of open sets between them. $\Omega_{p}$ is clearly open since each point has an open neighbourhood. $\Omega_{p}$ is also closed. Every neighbourhood of any limit point $q$ of $\Omega_{p}$ intersects $\Omega_{p}$, and so the $U_{\beta}$ containing $q$ intersects $\Omega_{p}$ at some point $p' \in \Omega_{p}$. Then if $U_{\alpha_{1}}, \dots, U_{\alpha_{n}}$ is the finite chain of open sets from $p$ to $p'$, the chain $U_{\alpha_{1}}, \dots, U_{\alpha_{n}}, U_{\beta}$ connects $p$ and $q$. Thus, any limit point $q \in \Omega_{p}$. Then $\Omega_{p}$ is clopen and non-empty, and thus, all of $X$. This is (5) $\implies$ (6).
 
-Suppose $X$ is disconnected with $X = A \cup B$ the union of disjoint open sets. Thus, the cover $A \cup B$ does not admit a finite open set path. This is (6) $\implies$ (1).
+If (6) holds, then any open cover $X = A \cup B$ with $A$ and $B$ non-empty must have $A \cap B$ non-empty. Thus, $X$ is connected. That is, (6) $\implies$ (1).
 
 ##### _proposition:_ continuous functions preserve connectedness
 
