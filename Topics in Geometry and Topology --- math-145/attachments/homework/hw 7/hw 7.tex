@@ -40,7 +40,7 @@
 
 		\item We showed in class that if $\Delta f = 0$ everywhere on a connected graph, then $f$ is constant. Thus, if $f$ is non-constant, there must be some point $x$ such that $\Delta f(x) > 0$ or some point $y$ such that $\Delta f(y) < 0$. Suppose without loss of generality that we have $x$ with $\Delta f(x) > 0$.
 
-		\item Any non-constant, locally constant function on a disconnected graph is harmonic everywhere. For example, on the two point graph $G(V) = \{ 1, 2 \}$ with no edges $G(E) = \O$, each vertex has no neighbours. Thus, the sum defining the Laplacian is empty, defined to be $0$.
+		\item Any non-constant, locally constant function on a disconnected graph is harmonic everywhere. For example, on the two point graph $G(V) = \{ 1, 2 \}$ with no edges $G(E) = \text{\O}$, each vertex has no neighbours. Thus, the sum defining the Laplacian is empty, defined to be $0$.
 	\end{enumerate}
 \end{solution}
 
@@ -48,12 +48,111 @@
 
 \begin{problem}[35.]
 	Consider the Dirichlet problem for the following graph and boundary values:
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width = 0.3 \textwidth]{figures/P35 graph.pdf}
+	\end{figure}
 	\begin{enumerate}
 		\item Express the Dirichlet problem as a system of five equations in five unknowns.
 		
 		\item Solve the Dirichlet problem.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	Labelling the interior vertices and then the boundary vertices clockwise from bottom-left, we have the following matrix representing the linear map $D : f \mapsto (\Delta f_{\mid I}, f_{\mid B})$ ---
+	\[
+		\begin{pmatrix}
+			1 & -1/3 & 0 & 0 & 0 & -1/3 & 0 & 0 & -1/3 \\
+			-1/4 & 1 & -1/4 & 0 & -1/4 & -1/4 & 0 & 0 & 0 \\
+			0 & -1/2 & 1 & -1/2 & 0 & 0 & 0 & 0 & 0 \\
+			0 & 0 & -1/3 & 1 & -1/3 & 0 & -1/3 & 0 & 0 \\
+			0 & -1/4 & 0 & -1/4 & 1 & 0 & 0 & -1/4 & -1/4 \\
+			0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+			0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+			0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+			0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\
+		\end{pmatrix}.
+	\]
+	We want to solve
+	\[
+		\begin{pmatrix}
+			1 & -1/3 & 0 & 0 & 0 & -1/3 & 0 & 0 & -1/3 \\
+			-1/4 & 1 & -1/4 & 0 & -1/4 & -1/4 & 0 & 0 & 0 \\
+			0 & -1/2 & 1 & -1/2 & 0 & 0 & 0 & 0 & 0 \\
+			0 & 0 & -1/3 & 1 & -1/3 & 0 & -1/3 & 0 & 0 \\
+			0 & -1/4 & 0 & -1/4 & 1 & 0 & 0 & -1/4 & -1/4 \\
+			0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+			0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+			0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+			0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\
+		\end{pmatrix} \begin{pmatrix}
+			f(v_{1}) \\
+			\vdots \\
+			f(v_{5}) \\
+			f(v_{6}) \\
+			\vdots \\
+			f(v_{9})
+		\end{pmatrix} = \begin{pmatrix}
+			0 \\
+			\vdots \\
+			0 \\
+			0 \\
+			3 \\
+			1 \\
+			2
+		\end{pmatrix}.
+	\]
+	With the knowledge that $f(v_{6}), \dots, f(v_{9})$ must be $0, 3, 1, 2$ respectively, we can reduce this to the linear system on $\mathbb{R}^{5}$ ---
+	\begin{align*}
+		\begin{pmatrix}
+			1 & -1/3 & 0 & 0 & 0 \\
+			-1/4 & 1 & -1/4 & 0 & -1/4 \\
+			0 & -1/2 & 1 & -1/2 & 0 \\
+			0 & 0 & -1/3 & 1 & -1/3 \\
+			0 & -1/4 & 0 & -1/4 & 1 \\
+		\end{pmatrix} \begin{pmatrix}
+			f(v_{1}) \\
+			\vdots \\
+			f(v_{5})
+			\end{pmatrix} & = - \begin{pmatrix}
+			1/3 & 0 & 0 & -1/3 \\
+			-1/4 & 0 & 0 & 0 \\
+			0 & 0 & 0 & 0 \\
+			0 & -1/3 & 0 & 0 \\
+			0 & 0 & -1/4 & -1/4 \\
+		\end{pmatrix} \begin{pmatrix}
+			0 \\
+			3 \\
+			1 \\
+			2
+		\end{pmatrix} \\
+		& = \begin{pmatrix}
+			-2/3 \\
+			0 \\
+			0 \\
+			-1 \\
+			-3/4
+		\end{pmatrix}
+	\end{align*}
+
+	Solving using an online matrix solver gives
+	\[
+		\begin{pmatrix}
+			f(v_{1}) \\
+			f(v_{2}) \\
+			f(v_{3}) \\
+			f(v_{4}) \\
+			f(v_{5})
+		\end{pmatrix} = \begin{pmatrix}
+			-1 \\
+			-1 \\
+			-3/2 \\
+			-2 \\
+			-3/2
+		\end{pmatrix}.
+	\]
+\end{solution}
 
 \pagebreak
 
@@ -67,10 +166,22 @@
 	Let $f : V \to \mathbb{R}$ be a solution to the Dirichlet problem. Give a two-sentence proof that the symmetry preserves $f$, meaning that $f(\alpha(x)) = f(x)$ for all $x \in V$.
 \end{problem}
 
+\begin{solution}
+	Since $\alpha$ preserves edges, it preserves the Laplacian of any function with $\alpha$-symmetry, specifically including $g$ ---
+	\[
+		\Delta g(\alpha(x)) = \sum_{\alpha(y) \in N(\alpha(x))} \frac{g(\alpha(x)) - g(\alpha(y))}{\lvert N(\alpha(x)) \rvert} = \sum_{y \in N(x)} \frac{g(x) - g(y)}{\lvert N(x) \rvert}.
+	\]
+	But then, if $f' = f \circ \alpha \in \mathrm{C}_{0}(G, B)$ has $\Delta(f') = 0$ on the interior and $f' = g \circ \alpha$ on the boundary, $f$ must be the unique solution to the Dirichlet problem with $\Delta f = 0$ on the interior and $f = g$ on the boundary.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[37.]
 	Consider the Dirichlet problem for the following graph and boundary values:
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width = 0.3 \textwidth]{figures/P37 graph.pdf}
+	\end{figure}
 	\begin{enumerate}
 		\item Express the Dirichlet problem as a linear system of eight equations in eight unknowns.
 		\item Express the Dirichlet problem as a linear system of two equations in two unknowns.
@@ -78,6 +189,77 @@
 		\item Solve the Dirichlet problem.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	We label the vertices anticlockwise from the right
+	\begin{enumerate}
+		\item 
+		\item Notice that the graph has fourfold symmetry --- the natural action of the cyclic group $Z_{4}$ on the graph is symmetric. Thus, we only have to solve the Dirichlet problem in one corner of the graph. We can write the same linear map $D : f \mapsto (\Delta f, f)$ as previously now as
+			\[
+				\begin{pmatrix}
+					1 & -1/3 & -1/3 & 0 & 0 & -1/3 \\
+					-1/3 & 1 & 0 & -1/3 & 0 & -1/3 \\
+					0 & 0 & 1 & 0 & 0 & 0 \\
+					0 & 0 & 0 & 1 & 0 & 0 \\
+					0 & 0 & 0 & 0 & 1 & 0 \\
+					0 & 0 & 0 & 0 & 0 & 1
+				\end{pmatrix}.
+			\]
+			The Dirichlet problem is solving for
+			\[
+				\begin{pmatrix}
+					1 & -1/3 & -1/3 & 0 & 0 & -1/3 \\
+					-1/3 & 1 & 0 & -1/3 & 0 & -1/3 \\
+					0 & 0 & 1 & 0 & 0 & 0 \\
+					0 & 0 & 0 & 1 & 0 & 0 \\
+					0 & 0 & 0 & 0 & 1 & 0 \\
+					0 & 0 & 0 & 0 & 0 & 1
+				\end{pmatrix} \begin{pmatrix}
+					f(v_{1}) \\
+					\vdots \\
+					f(v_{6})
+				\end{pmatrix} = \begin{pmatrix}
+					0 \\
+					0 \\
+					0 \\
+					0 \\
+					0 \\
+					1
+				\end{pmatrix}.
+			\]
+			It reduces to solving
+			\[
+				\begin{pmatrix}
+					1 & -1/3 \\
+					-1/3 & 1
+				\end{pmatrix} \begin{pmatrix}
+					f(v_{1}) \\
+					f(v_{2})
+				\end{pmatrix} = \begin{pmatrix}
+					-1/3 & 0 & 0 & -1/3 \\
+					0 & -1/3 & 0 & -1/3 \\
+				\end{pmatrix} \begin{pmatrix}
+					0 \\
+					0 \\
+					0 \\
+					1
+				\end{pmatrix} = \begin{pmatrix}
+					-1/3 \\
+					-1/3
+				\end{pmatrix}.
+			\]
+			The solution is
+			\[
+				\begin{pmatrix}
+					f(v_{1}) \\
+					f(v_{2})
+				\end{pmatrix} = \begin{pmatrix}
+					-1/2 \\
+					-1/2
+				\end{pmatrix}
+			\]
+\end{enumerate}
+\end{solution}	
 
 \pagebreak
 
@@ -95,6 +277,51 @@
 		\item Show that the space of harmonic scalar fields of degree at most $2$ is five-dimensional and give a basis for that space.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	Note that the neighbours of each point $(m, n) \in \mathbb{Z}^{2}$ are
+	\[
+		N(m, n) = \{ (m + 1, n), (m - 1, n), (m, n + 1), (m, n - 1) \}.
+	\]
+	Also, we use the formula
+	\[
+		\Delta f(m, n) = \frac{\sum_{(x, y) \in N(m, n)} f(m, n) - f(x, y)}{\lvert N(m, n) \rvert}.
+	\]
+	\begin{enumerate}
+		\item Since $f$ is constant, $\Delta f = 0$ everywhere.
+
+			The two linear functions are both harmonic ---
+			\begin{align*}
+				\Delta g_{1}(m, n) & = \frac{(m - (m - 1)) + (m - (m + 1)) + (m - m) + (m - m)}{4} \\
+						   & = \frac{1 - 1 + 0 + 0}{4} \\
+						   & = 0
+			\end{align*}
+			and
+			\begin{align*}
+				\Delta g_{2}(m, n) & = \frac{(n - (n - 1)) + (n - (n + 1)) + (n - n) + (n - n)}{4} \\
+						   & = \frac{1 - 1 + 0 + 0}{4} \\
+						   & = 0.
+			\end{align*}
+			The product $h_{2}$ is harmonic ---
+			\begin{align*}
+				\Delta h_{2}(m, n) & = - \frac{((m + 1) n - mn) + ((m - 1)n - mn) + (m(n + 1) - mn) + (m(n - 1) - mn)}{4} \\
+						   & = - \frac{n - n + m - m}{4} \\
+						   & = 0.
+			\end{align*}
+			However, the square functions are not ---
+			\begin{align*}
+				\Delta h_{1}(m, n) & = - \frac{((m + 1)^{2} - m^{2}) + ((m - 1)^{2} - m^{2}) + (m^{2} - m^{2}) + (m^{2} - m^{2})}{4} \\
+					     & = - \frac{(2m + 1) - (2m - 1)}{4} \\
+					     & = - \frac{1}{2}.
+			\end{align*}
+			and similarly, $\Delta h_{3}(m, n) = -1/2$.
+
+		\item The space of all scalar fields of degree at most $2$ is spanned by the basis vectors $f, g_{1}, g_{2}, h_{1}, h_{2}, h_{3}$. Clearly $\Delta h_{1}(0, 0) \neq 0$ so $h_{1}$ is not harmonic. Thus, the space of harmonic scalar fields is at most $(6 - 1)$-dimensional. We will demonstrate a list of five linearly independent vectors, and thus, show that the space is exactly $5$-dimensional. 
+
+
+			The list $f, g_{1}, g_{2}, h_{2}$ is linearly independent (since they're part of the basis of the space of functions we're considering) and each function is harmonic (by our previous calculations). Further, since $\Delta h_{1} = \Delta h_{3}$, and $\Delta$ is linear, the function $h_{1} - h_{3}$ is harmonic. This is also linearly independent of the other $4$ functions since the linear dependence of $h_{1} - h_{3}$ on $f, g_{1}, g_{2}, h_{2}$ would mean that the basis $f, g_{1}, g_{2}, h_{1}, h_{2}, h_{3}$ is not linearly independent. Thus, $f, g_{1}, g_{2}, h_{1} - h_{3}, h_{2}$ is a list of five linearly independent harmonic functions on $\mathbb{Z}^{2}$. Since we've shown already that the space of harmonic functions is at most $5$-dimensional, this is a basis of the space of harmonic functions.
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
