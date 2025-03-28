@@ -23,7 +23,21 @@ For a function $f : X \to Y$, the following are equivalent
 3) for every limit point $p$ of $A \subseteq X$, the image $f(p)$ belongs to the closure $\overline{f^\text{img}(A)}$.
 4) for every $x$ and open neighbourhood $V$ of $f(x)$, there is an open neighbourhood $U$ of $x$ such that $f^\text{img}(U) \subseteq V$.
 
-This last definition can be made into a local definition, much like the analysis definition of continuity.
+###### _proof:_
+
+Suppose $f$ is continuous. Let $B \subseteq Y$ be closed. Then ${Y \setminus B}$ is open and has open pre-image $U = f^\text{pre}(Y \setminus B)$. But $X \setminus f^\text{pre}(B) = U$ since the the points not in the pre-image of $B$ have to go somewhere in $Y$ and not in $B$. Thus, $f^\text{pre}(B) = X \setminus U$ [[Topology --- math-147/notes/Limit points and closed sets#_theorem _ closed sets are complements of open sets|is closed]]. This is (1) $\implies$ (2).
+
+Suppose $f$ has closed pre-images of closed sets. Let $p$ be a limit point of $A \subseteq X$. The closed set $B = \overline{f^\text{img}(A)}$ has closed pre-image. Further, since $B$ contains the image of $A$ under $f$, its pre-image contains all of $A$. Since $f^\text{pre}(B)$ is a closed set containing $A$, [[Topology --- math-147/notes/Limit points and closed sets#_proposition _ the closure is the smallest closed set|it contains the smallest closed set, the closure]] $\overline{A}$. Then since $p \in \overline{A} \subseteq f^\text{pre}(B)$, we have $f(p) \in B$. This is (2) $\implies$ (3).
+
+Given $x \in X$, consider any open neighbourhood $V$ of $f(x)$. Note that $Y \setminus V$ is closed and $f(x) \notin Y \setminus V = \overline{Y \setminus V}$. By properties of pre-images and images, $f^{\text{img}}(A) \subseteq Y \setminus V$ and by properties of closure (and (3)) $\overline{f^{\text{img}}(\overline{A})} \subseteq \overline{Y \setminus V}$. We have $f(x) \notin \overline{Y \setminus V}$ but if $x$ were a point of $\overline{A}$, (3) would force $f(x) \in \overline{f^{\text{img}}(\overline{A})} \subseteq \overline{Y \setminus V}$. It follows that $x$ is not a limit point nor a point of $A = f^{\text{pre}}(Y \setminus V)$. Since $x$ is not in $\overline{A}$, we must have an open neighbourhood $U$ of $x$ with $U \subseteq X \setminus A$. This neighbourhood is the desired neighbourhood since 
+$$
+f^{\text{img}}(U) \subseteq f^{\text{img}}(X \setminus A) \subseteq Y \setminus f^{\text{img}}(A) = Y \setminus (Y \setminus V) \subseteq V.
+$$
+Here we can exclude $f^{\text{img}}(U)$ from $Y \setminus V$ since $A$ is the complete pre-image of $Y \setminus V$. This is (3) $\implies$ (4).
+
+Suppose (4). Consider an open set $V \subseteq Y$. Each $x \in f^\text{pre}(V) = U$ has open neighbourhood $U_{x} \subseteq U$ with $f^\text{img}(U_{x})$ contained in $V$ since $V$ is an open neighbourhood of $f(x)$. $U$ is then the union of all $U_{x}$. Thus, $U$ is open, giving us that $f$ is continuous.
+
+The last definition can be made into a local definition, much like the [[Mathematical Analysis I --- math-131/notes/Continuity#_definition _ continuity|analysis definition of continuity]].
 
 ##### _definition:_ continuous at a point
 

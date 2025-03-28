@@ -76,6 +76,8 @@ If $X$ is compact and $A \subseteq X$ is closed, then $A$ is compact.
 
 Suppose $\mathcal{O}$ is an open cover of $A$. Then $\mathcal{O} \cup \{ X \setminus A \}$ is an open cover of $X$. It reduces to a finite subcover $\mathcal{O}'$. Since ${X \setminus A}$ has no intersection with $A$, we can remove it from $\mathcal{O}'$ to get a finite subcover of $\mathcal{O}$. That is $A$ is compact.
 
+Our intuition suggests that compact sets should be compact. This is almost true — in all "reasonable" spaces it is literally true.
+
 ##### _proposition:_ compact subsets of Hausdorff spaces are closed
 
 If $X$ is [[Topology --- math-147/notes/Separation properties#_definition _ Hausdorff spaces, $T_{2}$ spaces|Hausdorff]] and $A \subseteq X$ is compact, then $A$ is closed.
@@ -88,10 +90,42 @@ $\mathcal{O} = \{ U_{a} \}_{a \in A}$ is an open cover of $A$ and admits a finit
 
 ##### _example:_ compact subsets need not be closed
 
+Recall the [[Topology --- math-147/notes/Bases#_example _ the double-headed snake|double-headed snake]] $\mathbb{R}_{+00}$. Using [[Mathematical Analysis I --- math-131/notes/Compactness#_theorem _ Heine-Borel theorem|the Heine-Borel theorem]] on the [[Mathematical Analysis I --- math-131/notes/Metric spaces#_definition_ metric space, metric|metric (sub)space]] $\mathbb{R}_{+00} {\setminus \{ 0_{1} \}}$, we can see that $A = \{ 0_{2} \} \cup (0, 1]$ is compact in the subspace, and thus, in the whole double-headed snake as well. However, $0_{1} \not\in A$ is a limit point of $(0, 1]$, and thus, $A$ too. This means $A$ is compact, but not closed.
+
 ##### _theorem:_ compact Hausdorff spaces are normal
 
 If $X$ is compact and Hausdorff, $X$ is [[Topology --- math-147/notes/Separation properties#_definition _ normal spaces, $T_{4}$ spaces|normal]] (and in fact, $T_{4}$, [[Topology --- math-147/notes/Separation properties#_proposition _ hierarchy of separation properties|and thus]], $T_{3}$).
 
 ###### _proof sketch:_
 
-Use a similar trick to above to show $X$ is at least [[Topology --- math-147/notes/Separation properties#_definition _ regular spaces, $T_{3}$ spaces|regular]], then extend to normality.
+Use a similar trick to above to show $X$ is at least [[Topology --- math-147/notes/Separation properties#_definition _ regular spaces, $T_{3}$ spaces|regular]], then extend to normality. See [[Topology --- math-147/attachments/homework/hw 7/hw 7.pdf#page=1|the homework]].
+
+The nicest property of compact spaces is that they are preserved by continuous functions!
+
+##### _proposition:_ compactness is preserved by continuous functions
+
+If $X$ is compact and $f : X \to Y$ is continuous and surjective, then $Y$ is compact.
+
+###### _proof:_
+
+Consider an open cover $\mathcal{O}_{Y} = \{ V_{\alpha} \}_{\alpha \in \mathcal{I}}$ of $Y$. Since every the $x \in X$ has $f(x) \in Y$, and thus, $f(x) \in V_{\alpha}$ for some $\alpha$, this open cover pulls back to an open cover of $X$. That is, each $U_{\alpha} = f^\text{pre}(V_{\alpha})$ is open ([[Topology --- math-147/notes/Continuous functions#_definition _ continuity|by continuity]]), and their union contains every $x \in X$.
+
+By compactness of $X$, we have a finite subcover, $\mathcal{O}'_{X} = \{ U_{\alpha_{1}}, \dots, U_{\alpha_{n}} \}$. We can consider the correspond finite collection of open sets in $Y$ — $\mathcal{O}'_{Y} = \{ V_{\alpha_{1}}, \dots, V_{\alpha_{n}} \}$. Since each $y \in Y$ is $y = f(x)$ for some $x \in X$ and $x \in U_{\alpha_{i}}$ implies $f(x) \in V_{\alpha_{i}}$ (since $U_{\alpha_{i}}$ is defined to be the pre-image of $V_{\alpha_{i}}$), we have each $y \in Y$ in some $V_{\alpha_{i}}$. That is, $\mathcal{O}_{Y}'$ is a cover of $Y$. We can reduce any open cover to a finite subcover like this, so $Y$ must be compact.
+
+Note that this implies even without surjectivity that $f^\text{img}(X)$ is compact.
+
+We don't actually have to check compactness on all open covers. If $X$ has a [[Topology --- math-147/notes/Bases#_definition _ basis|basis]], we can just check those open covers made up of basic open sets.
+
+##### _proposition:_ checking compactness on a basis
+
+Suppose $\mathcal{B}$ is a basis of $X$. $X$ is compact if and only if every cover of $X$ by basic open sets has a finite subcover.
+
+###### _proof:_
+
+It's clear that if $X$ is compact every "basic open cover" has a finite subcover since basic open sets are open sets, and thus basic open covers are open covers, which must admit finite subcovers for a compact set.
+
+Suppose $X$ is a space with basis $\mathcal{B}$ where every basic open cover admits a finite subcover. Consider any cover $\mathcal{O} = \{ U_{\alpha} \}_{\alpha \in \mathcal{I}}$ of $X$. Each $U_{\alpha}$ is the union of basic open sets (by definition of  basis) $\{ B_{\alpha, \beta} \in \mathcal{B} \}_{\beta \in \mathcal{I}_{\alpha}}$. The union of all such sets forms a basic open cover $\mathcal{O}_{\mathcal{B}} = \{ B_{\alpha, \beta} \}$ which admits a finite subcover $\mathcal{O}_{\mathcal{B}}' = \{ B_{\alpha_{i}, \beta_{j}} \mid i \le n, j \le n_{i} \}$. 
+
+By hypothesis, this finite collection of basic open sets has basic open sets corresponding to only finitely many $U_{\alpha}$. Then $\mathcal{O}' = \{ U_{\alpha_{1}}, \dots, U_{\alpha_{n}} \}$ has $U_{\alpha_{i}} \supseteq \bigcup_{j = 1}^{n_{i}} B_{\alpha_{i}, \beta_{j}}$. Thus, $\mathcal{O}'$ is also a cover of $X$.
+
+$\mathcal{O}'$ is a finite subcover of the arbitrary open cover $\mathcal{O}$. Thus, $X$ is compact.
