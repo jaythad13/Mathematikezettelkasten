@@ -12,6 +12,17 @@
 	Prove that if $f$ is continuous, of moderate decrease, and $\int_{-\infty}^{\infty} f(y) e^{-y^{2}} e^{2 x y} \, dy = 0$ for all $x \in \mathbb{R}$, then $f = 0$.
 \end{problem}
 
+\begin{solution}
+	Notice that
+	\[
+		\int_{-\infty}^{\infty} f(y) e^{-y^{2}} e^{2 xy} \, dy = \int_{-\infty}^{\infty} f(y) e^{-(x - y)^{2}} e^{x^{2}} \, dy = e^{x^{2}} (f * e^{-x^{2}})(x).
+	\]
+
+	Since $e^{-x^{2}}$ is non-zero for all $x \in \mathbb{R}$, the hypothesis that the given integral is $0$ for all $x$ forces $f * e^{-x^{2}} = 0$ identically. Thus, $\widehat{f * e^{-x^{2}}}(\xi) = 0$ everywhere. By the duality of convolution and multiplication, $\hat{f}(\xi) \widehat{e^{-x^{2}}}(\xi) = 0$ everywhere.
+
+	$e^{-x^{2}}$ is an eigenfunction of the Fourier transform, so $\widehat{e^{-x^{2}}}$ is non-zero everywhere just like $e^{-x^{2}}$. Thus, $\hat{f} = 0$ everywhere. By Fourier inversion, it follows that $f = 0$ everywhere.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[S \& S \S 5.5 \#10]
@@ -19,12 +30,44 @@
 	\[
 		L_{n}(x) = \begin{cases}
 			\frac{(1 - x^{2})^{n}}{c_{n}} & -1 \le x \le 1 \\
-			0 & \lvert x \rvert \ge 
+			0 & \lvert x \rvert \ge 1.
 		\end{cases}
 	\]
 	where $c_{n}$ is chosen so that $\int_{-\infty}^{\infty} L_{n}(x) \, dx = 1$. Prove that $\{ L_{n} \}_{n \ge 0}$ is a family of good kernels as $n \to \infty$. As a result, show that if $f$ is a continuous function supported in $[-1/2, 1/2]$, then $(f * L_{n})(x)$ is a sequence of polynomials on $[-1/2, 1/2]$ which converges uniformly to $f$.
 \end{problem}
 
+\begin{solution}
+	Since $L_{n}(x) \ge 0$ everywhere and $\int_{-\infty}^{\infty} L_{n}(x) \, dx = 1$ by construction, we also have that $L_{n}$ is $L^{1}$ --- $\int_{-\infty}^{\infty} \lvert L_{n}(x) \rvert \, dx < \infty$. We are only left to show that $L_{n}(x)$ satisfies a concentration of measure property as $n \to \infty$. That is, we need to show that for each $\varepsilon > 0$ and $\delta > 0$, there is some $N \in \mathbb{N}$ such that $\int_{\lvert x \rvert > \delta} L_{n}(x) \, dx < \varepsilon$ for all $n > N$.
+
+	We first put a lower bound on $c_{n}$. We can compute $c_{n}$ using the binomial approximation $(1 - x^{2})^{n} \ge 1 - n x^{2}$ where $1 - n x^{2} > 0$, and $0$ everywhere else. That is,
+	\begin{align*}
+		c_{n} & = \int_{-1}^{1} (1 - x^{2})^{n} \, dx \\
+		      & \ge \int_{-1/\sqrt{n}}^{1/\sqrt{n}} 1 - n x^{2} \, dx \\
+		      & = 2 (x - n x^{3}/3) \Big |_{0}^{1/\sqrt{n}} \\
+		      & = 2 \left ( \frac{1}{\sqrt{n}} - \frac{1}{3 \sqrt{n}} \right ) \\
+		      & = \frac{4}{3 \sqrt{n}} \\
+		      & \ge \frac{2}{n + 1}.
+	\end{align*}
+	The last inequality can be proven as follows. We can see that $2n \ge 3 \sqrt{n}$ for all $n \ge 9/4$, giving $2(n + 1)/4 = (n + 1) / 2 \ge 3 \sqrt{n} / 4$. For $n = 1, 2$ the equality can be checked manually.
+
+	Suppose we are given some $\varepsilon > 0$ and $\delta > 0$. For $\delta > 1$ we have $L_{n}(x) = 0$ for $\lvert x \rvert > \delta$ giving the desired result already. Thus, assume $\delta < 1$ Notice that
+	\[
+		L_{n}'(x) = \frac{n (1 - x^{2})^{n - 1} (-2x)}{c_{n}}.
+	\]
+	Thus, on  $[-1, -\delta]$ we have $L_{n}'(x) \ge 0$ and $L_{n}(x)$ increasing from $L_{n}(1)$ to $L_{n}(\delta)$ and on $[\delta, 1]$ we have $L_{n}'(x) \le 0$ and $L_{n}(x)$ decreasing from $L_{n}(\delta)$ to $L_{n}(1)$. Thus, for $\delta < \lvert x \rvert < 1$ we have $L_{n}(x) < L_{n}(\delta) = L_{n}(-\delta)$. This allows us to bound the integral of the Landau kernel away from the origin.
+	\[
+		\int_{\delta < \lvert x \rvert < 1} L_{n}(x) \, dx \le L_{n}(\delta) (2 (1 - \delta)).
+	\]
+	We can compute $L_{n}(\delta) = (1 - \delta^{2})^{n} / c_{n}$. For any positive, fixed $\delta < 1$ the base in the exponential is bounded $1 - \delta^{2} < 1$ and thus, as $n \to \infty$ it vanishes --- $(1 - \delta^{2})^{n} \to 0$. Further, this vanishing is faster than any linear term in $n$ grows. Thus, using our estimate of $c_{n}$, we get
+	\[
+		L_{n}(\delta) \le \frac{(1 - \delta^{2})^{n} (n + 1)}{2} \to 0.
+	\]
+	It follows that
+	\[
+		\int_{\delta < \lvert x \rvert < 1} L_{n}(x) \, dx \le L_{n}(\delta) (2 (1 - \delta)) \to 0
+	\]
+	which is exactly the desired result.
+\end{solution}
 \pagebreak
 
 \begin{problem}[S \& S \S 5.5 \#11]
@@ -34,10 +77,49 @@
 	\]
 \end{problem}
 
+\begin{solution}
+	In the upper half plane, $u$ is continuous since it is a convolution.
+
+	We will show that $u$ is continuous on the closure of the upper half plane by showing that $u(x, t) \rightrightarrows u(x, 0)$ as $t \to 0$. Consider $\delta = 4 \pi t$. As $t \to 0$, we also have $\delta \to 0$. But then $\mathcal{H}_{t}= K_{\delta}$ where $K_{\delta}$ is the Gaussian kernel which is a good kernel as $\delta \to 0$. Thus, as $t \to 0$,
+	\[
+		u = f * \mathcal{H}_{t} = f * K_{\delta} \rightrightarrows f = u_{| \mathbb{R} \times \{ 0 \}}.
+	\]
+
+	Now we will show that $u(x, t) \to 0$ as $\lvert x \rvert + t \to 0$. Notice that $\lvert x \rvert + t \to \infty$ is equivalent to $\lvert x \rvert \to \infty$ or $t \to \infty$. If $t \to \infty$, it suffices to bound $u$ in terms of $t$.
+
+	Else, we have to bound $u$ in terms of $x$ using the fact that $x \to \infty$.
+	\begin{align*}
+		\lvert u(x, t) \rvert & = \left \lvert (f * \mathcal{H}_{t})(x) \right \rvert \\
+				      & = \left \lvert \int_{-\infty}^{\infty} f(y) \frac{e^{-(x - y)^{2} / 4 \pi t}}{\sqrt{4 \pi t}} \, dy \right \rvert \\
+				      & = \frac{1}{\sqrt{4 \pi t}} \left \lvert \int_{-\infty}^{\infty} f(y) e^{-x^{2} / 4 \pi t} e^{ (2xy - y^{2}) / 4 \pi t} \, dy \right \rvert  \\
+				      & \le \frac{e^{-x^{2} / 4 \pi t}}{\sqrt{4 \pi t}} \left \lvert \int_{y \notin [0, 2x]} f(y) \, dy  \right \rvert + \left \lvert \int_{0}^{2x} f(y) \frac{e^{-(x - y)^{2}/4 \pi t}}{\sqrt{4 \pi t}} \, dy  \right \rvert.
+	\end{align*}
+	The inequality here is the triangle inequality and the fact that $e^{(2xy - y^{2})/4 \pi t} \le 1$ for $y \notin [0, 2x]$.
+
+	For the term on the left, this is exactly the bound we want. Since $f \in \mathcal{S}(\mathbb{R})$, the integral is a finite constant ---
+	\[
+		\frac{e^{-x^{2} / 4 \pi t}}{\sqrt{4 \pi t}} \left \lvert \int_{y \notin [0, 2x]} f(y) \, dy  \right \rvert = {C e^{- c x^{2} / t}}.
+	\]
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[S \& S \S 5.5 \#13]
 	Prove the following uniqueness theorem for harmonic functions in the strip $\{ (x, y) \mid 0 < y < 1, -\infty < x < \infty \}$ --- if $u$ is harmonic in the strip, continuous on its closure with $u(x, 0) = u(x, 1) = 0$ for all $x \in \mathbb{R}$, and $u$ vanishes at infinity, then $u = 0$.
 \end{problem}
+
+\begin{solution}
+	For any $\varepsilon > 0$, choose $[a, b]$ so that $\lvert u(x, y) \rvert < \varepsilon$ on $(0, 1) \times [a, b]$.  On the compact set $[0, 1] \times [a, b]$, the continuous function $\lvert u \rvert$ must achieve a maximum  $M$ at some $(x_{0}, y_{0})$. If $M < \varepsilon$, then we have already shown  $\lvert u(x, y) \rvert < \varepsilon$.
+
+	Else, the mean value property shows that $\lvert u(x_{0}, y_{0}) \rvert$ is the magnitude of the average of $u$ on $\gamma$, a circle centred at $(x_{0}, y_{0})$ and of radius $r$ ---
+	\[
+		\lvert u(x_{0}, y_{0}) \rvert = \frac{1}{2 \pi} \left \lvert \int_{0}^{2 \pi} u(x_{0} + r \cos{\theta}, y_{0} + r \sin{\theta}) \, d\theta \right \rvert.
+	\]
+	Since $\lvert u \rvert$ achieves its maximum at $(x_{0}, y_{0})$, this forces $u(x, y) = M$ everywhere on $\gamma$. 
+
+	We can choose $r$ so that $(x_{0}, y_{0} + r) \in \gamma$ is within distance $\delta$ of the boundary of the strip that is closer to $(x_{0}, y_{0})$. Since $u = 0$ on the boundary, by continuity we must have $M = u(x_{0}, y_{0} + r) < \varepsilon$. Thus, $\lvert u \rvert < \varepsilon$ everywhere. 
+
+	Since $\varepsilon$ can be arbitrarily small we have $u = 0$.
+\end{solution}
 
 \end{document}
