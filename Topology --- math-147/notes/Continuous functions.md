@@ -51,11 +51,17 @@ Constant maps, inclusion maps, and restrictions of continuous maps are continuou
 
 ### Creating continuous functions
 
-We don't always need the complete data of a continuous function to determine a continuous function. For example, we could just use where the points of a dense set go.
+We don't always need the complete data of a continuous function to determine a continuous function. For example, we could just use where the points of a [[Topology --- math-147/notes/Size restrictions#_definition _ dense|dense]] set go.
 
 ##### _proposition:_ (most) continuous functions are determined on dense sets
 
-Suppose $A \subseteq X$ is dense in $X$. If $Y$ is Hausdorff, and $f, g : X \to Y$ are continuous functions agreeing on $A$, then $f = g$ everywhere.
+Suppose $A \subseteq X$ is [[Topology --- math-147/notes/Size restrictions#_definition _ dense|dense]] in $X$. If $Y$ is [[Topology --- math-147/notes/Separation properties#_definition _ Hausdorff spaces, $T_{2}$ spaces|Hausdorff]], and $f, g : X \to Y$ are continuous functions agreeing on $A$, then $f = g$ everywhere.
+
+###### _proof:_
+
+We will show that for any $p \in X$, any two open neighbourhoods $V_{f}$ of $f(p)$ and $V_{g}$ of $g(p)$ in $Y$ intersect. Since all pairs of distinct points in a Hausdorff space have disjoint open neighbourhoods, it follows that $f(p)$ and $g(p)$ are not distinct points — $f(p) = g(p)$.
+
+Let $V_{f}$ and $V_{g}$ be open neighbourhoods of $f(p)$ and $g(p)$ respectively in $Y$. Also let $U_{f} = f^\text{pre}(V_{f})$ and $U_{g} = g^\text{pre}(V_{g})$. By the continuity of $f$ and $g$, these are both open neighbourhoods of $p$ in $X$. Their intersection $U$ is also an open neighbourhood of $p$. [[Topology --- math-147/notes/Size restrictions#_proposition _ dense sets have non-empty intersection with every open set|Since]] $A$ is dense, $U$ contains a point $a \in A$ where $f(a) = g(a)$. But then $V_{f} = f^\text{img}(U_{f})$ and $V_{g} = g^\text{img}(U_{g})$ have a non-empty intersection containing $f(a) = g(a)$. This is exactly what we needed to show.
 
 We can also compose continuous functions to get new continuous functions.
 

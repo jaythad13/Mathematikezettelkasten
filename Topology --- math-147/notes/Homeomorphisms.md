@@ -44,3 +44,14 @@ If $f : X \to Y$ is a continuous bijection, $X$ is [[Topology --- math-147/notes
 ###### _proof sketch:_
 
 Suppose $A \subseteq X$ is closed. Then $A$ [[Topology --- math-147/notes/Compactness#_proposition _ closed subspaces of compact spaces are compact|is compact]]. Then $f^\text{img}(A)$ [[Topology --- math-147/notes/Compactness#_proposition _ compactness is preserved by continuous functions|is compact]]. But then since $Y$ is Hausdorff $f^\text{img}(A)$ [[Topology --- math-147/notes/Compactness#_proposition _ compact subsets of Hausdorff spaces are closed|is closed]].
+
+##### _example:_ proving homeomorphisms using compactness results
+
+It is a result of analysis that the Cantor set $C$ is in fact compact. It is also a fact that [[Topology --- math-147/notes/Separation properties#_proposition _ product of Hausdorff spaces|products of Hausdorff spaces are Hausdorff]]. Thus, we only need to show that the bijection
+$$
+\begin{align}
+f & : C \to \prod_{n = 1}^\infty \{ 0, 2 \} \\
+ & : x\mapsto x_{3}
+\end{align}
+$$
+is continuous, to show that the Cantor set is homeomorphic to the infinite product of the two point discrete set. Here, $x_{3}$ is the ternary expansion of a real number $x$.
