@@ -58,7 +58,9 @@ $\mathcal{O} = \{ U_{a} \}_{a \in A}$ is an open cover of $A$ and admits a finit
 \end{problem}
 
 \begin{solution}
+	We will show that for any $p \in X$, any two open neighbourhoods $V_{f}$ of $f(p)$ and $V_{g}$ of $g(p)$ in $Y$ intersect. Since all pairs of distinct points in a Hausdorff space have disjoint open neighbourhoods, it follows that $f(p)$ and $g(p)$ are not distinct points — $f(p) = g(p)$.
 
+	Let $V_{f}$ and $V_{g}$ be open neighbourhoods of $f(p)$ and $g(p)$ respectively in $Y$. Also let $U_{f} = f^\text{pre}(V_{f})$ and $U_{g} = g^\text{pre}(V_{g})$. By the continuity of $f$ and $g$, these are both open neighbourhoods of $p$ in $X$. Their intersection $U$ is also an open neighbourhood of $p$. Since $A$ is dense, $U$ contains a point $a \in A$ where $f(a) = g(a)$. But then $V_{f} = f^\text{img}(U_{f})$ and $V_{g} = g^\text{img}(U_{g})$ have a non-empty intersection containing $f(a) = g(a)$. This is exactly what we needed to show.
 \end{solution}
 
 \pagebreak
