@@ -85,21 +85,36 @@
 		u = f * \mathcal{H}_{t} = f * K_{\delta} \rightrightarrows f = u_{| \mathbb{R} \times \{ 0 \}}.
 	\]
 
-	Now we will show that $u(x, t) \to 0$ as $\lvert x \rvert + t \to 0$. Notice that $\lvert x \rvert + t \to \infty$ is equivalent to $\lvert x \rvert \to \infty$ or $t \to \infty$. If $t \to \infty$, it suffices to bound $u$ in terms of $t$.
+	Now we will show that $u(x, t) \to 0$ as $\lvert x \rvert + t \to \infty$. Notice that $\lvert x \rvert + t \to \infty$ is equivalent to $\lvert x \rvert \to \infty$ or $t \to \infty$. If $t \to \infty$, it suffices to bound $u$ in terms of $t$. We can do this by just pulling out the $t$ terms in the integral ---
+	\begin{align*}
+		\lvert u(x, t) \rvert & = \lvert (f * \mathcal{H}_{t})(x) \rvert \\
+				      & = \left \lvert \int_{-\infty}^{\infty} f(y) \frac{e^{-(x - y)^{2} / 4 \pi t}}{\sqrt{4 \pi t}} \, dy \right \rvert \\
+				      & = \frac{1}{\sqrt{4 \pi t}} \left \lvert \int_{-\infty}^{\infty} f(y) e^{-(x - y)^{2} / 4 \pi t} \, dy \right \rvert \\
+				      & \le \frac{1}{\sqrt{4 \pi t}} \left \lvert \int_{-\infty}^{\infty} f(y) e^{0} \, dy \right \rvert \\
+				      & \le \frac{C}{4 \pi t}.
+	\end{align*}
+	$C / 4 \pi t \to 0$ as $t \to \infty$.
 
-	Else, we have to bound $u$ in terms of $x$ using the fact that $x \to \infty$.
+	If we don't have $t \to \infty$, we have to bound $u$ in terms of $x$ using the fact that $x \to \infty$.
 	\begin{align*}
 		\lvert u(x, t) \rvert & = \left \lvert (f * \mathcal{H}_{t})(x) \right \rvert \\
 				      & = \left \lvert \int_{-\infty}^{\infty} f(y) \frac{e^{-(x - y)^{2} / 4 \pi t}}{\sqrt{4 \pi t}} \, dy \right \rvert \\
 				      & = \frac{1}{\sqrt{4 \pi t}} \left \lvert \int_{-\infty}^{\infty} f(y) e^{-x^{2} / 4 \pi t} e^{ (2xy - y^{2}) / 4 \pi t} \, dy \right \rvert  \\
-				      & \le \frac{e^{-x^{2} / 4 \pi t}}{\sqrt{4 \pi t}} \left \lvert \int_{y \notin [0, 2x]} f(y) \, dy  \right \rvert + \left \lvert \int_{0}^{2x} f(y) \frac{e^{-(x - y)^{2}/4 \pi t}}{\sqrt{4 \pi t}} \, dy  \right \rvert.
+				      & \le \frac{e^{-x^{2} / 4 \pi t}}{\sqrt{4 \pi t}} \left \lvert \int_{y \notin [0, x/2]} f(y) \, dy  \right \rvert + \left \lvert \int_{0}^{2x} f(y) \frac{e^{-(x - y)^{2}/4 \pi t}}{\sqrt{4 \pi t}} \, dy  \right \rvert.
 	\end{align*}
-	The inequality here is the triangle inequality and the fact that $e^{(2xy - y^{2})/4 \pi t} \le 1$ for $y \notin [0, 2x]$.
+	The inequality here is the triangle inequality and the fact that $e^{(2xy - y^{2})/4 \pi t} \le 1$ for $y \notin [0, x/2]$.
 
-	For the term on the left, this is exactly the bound we want. Since $f \in \mathcal{S}(\mathbb{R})$, the integral is a finite constant ---
+	The term on the left vanishes as $\lvert x \rvert \to 0$. Since $f \in \mathcal{S}(\mathbb{R})$, the integral is a finite constant ---
 	\[
-		\frac{e^{-x^{2} / 4 \pi t}}{\sqrt{4 \pi t}} \left \lvert \int_{y \notin [0, 2x]} f(y) \, dy  \right \rvert = {C e^{- c x^{2} / t}}.
+		\frac{e^{-x^{2} / 4 \pi t}}{\sqrt{4 \pi t}} \left \lvert \int_{y \notin [0, x/2]} f(y) \, dy  \right \rvert = \frac{C e^{- c x^{2} / t}}{\sqrt{t}} \to 0
 	\]
+	as $x \to \infty$. The integral on the right can be estimated by using the fact that $\lvert y \rvert < \lvert x / 2 \rvert$ and $f \in \mathcal{S}(\mathbb{R})$ to get the bound $f(y) < C_{N} / (1 + \lvert x \rvert)^{N}$, and thus
+	\[
+		\left \lvert \int_{0}^{2x} f(y) e^{-(x - y)^{2} / 4 \pi t} \, dy  \right \rvert \le \frac{C_{N}}{(1 + \lvert x \rvert)^{N}} \int_{0}^{2x} \, dy \to 0
+	\]
+	as $\lvert x \rvert \to \infty$.
+	
+	Since both terms go to $0$ as $\lvert x \rvert \to \infty$, we are done.
 \end{solution}
 
 \pagebreak
