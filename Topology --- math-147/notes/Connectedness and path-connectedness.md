@@ -2,6 +2,7 @@
 tags:
 - math-147/16
 - math-147/17
+- math-147/18
 - top
 ---
 
@@ -26,7 +27,7 @@ Connectedness seems to be obvious — if a topological space can't be split up i
 $$
 C = \{ (x, 0) \mid x \in [0, 1] \} \cup \bigcup_{n = 1}^\infty \{ (1/n, y) \mid y \in [0, 1] \}
 $$
-with the fly at the point $(0, 1)$ — again, you can't split into two nice parts, but you can't walk to the fly either.
+with the flea at the point $(0, 1)$ — again, you can't split into two nice parts, but you can't walk to the flea either.
 
 ### Connectedness
 
@@ -99,6 +100,10 @@ If $X$ is path-connected, $X$ is connected.
 
 ###### _proof:_
 
-Suppose $X$ is path-connected. Consider $p, q \in X$ and an open cover $\{ U_{\alpha} \}_{\alpha \in \mathcal{I}}$ of $X$. Since $[0, 1]$ is compact, its image under $f$ is [[Topology --- math-147/notes/Compactness|compact]] and connected. Thus, we have a finite cover $U_{\alpha_{1}}, \dots, U_{\alpha_{n}}$ of $f^\text{img}([0, 1])$, which we choose to order by "left ends" of their pre-images under $f$. Each pair $U_{\alpha_{i}}, U_{\alpha_{i + 1}}$ must have non-empty empty intersection, since the first pair $U_{\alpha_{i}}, U_{\alpha_{i + 1}}$ to be disconnected will disconnect the pre-image $f^\text{pre}(U_{\alpha_{1}} \cup \dots \cup U_{\alpha_{i + 1}}) = [0, a)$. Thus, $X$ is connected.
+Suppose $X$ is path-connected. Consider $p, q \in X$ and an open cover $\{ U_{\alpha} \}_{\alpha \in \mathcal{I}}$ of $X$. Since $[0, 1]$ is compact, its image under $f$ is [[Topology --- math-147/notes/Compactness|compact]] and connected. Thus, we have a finite cover $U_{\alpha_{1}}, \dots, U_{\alpha_{n}}$ of $f^\text{img}([0, 1])$, which we choose to order by "left ends" of their pre-images under $f$. Each pair $U_{\alpha_{i}}, U_{\alpha_{i + 1}}$ must have non-empty empty intersection, since the pre-images of $\{ U_{\alpha_{i}} \}$ is an open cover of $[0, 1]$ which must admit a finite sub-chain with the desired property.
 
 ##### _example:_ the flea and comb space is connected but not path-connected
+
+Note that the comb itself is path-connected. It follows that the comb is connected, and thus, that is closure is connected.
+
+However, the closure of the comb is not path-connected. Consider a path from the flea $p$ to any other point $q$. Since $p$ is in the upper half plane, there is some neighbourhood around
