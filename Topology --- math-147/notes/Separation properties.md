@@ -47,7 +47,7 @@ $X$ is normal if every pair of disjoint closed sets $A, B \subseteq X$ has a pai
 
 ##### _example:_ the [[Topology --- math-147/notes/Bases#_example _ lower limit topology|lower limit topology]] on $\mathbb{R}$ is normal
 
-##### _example:_ any metric space is regular and normal
+##### _example:_ any [[Mathematical Analysis I --- math-131/notes/Metric spaces#_definition_ metric space, metric|metric space]] is regular and normal
 
 Consider any closed sets $A, B$ in a metric space $X$, and a point $p \in X$ not in $A$. For concreteness we could work in $\mathbb{R}^{2}$, but the proof works the same in any metric.
 
@@ -85,11 +85,42 @@ Clearly separating sets with open sets is pretty hard. However, with some reason
 
 ##### _lemma:_ the normality lemma
 
-Given $A, B \subseteq X$, let $\{ U_{n} \}_{n \in \mathbb{N}}$ and $\{ V_{n} \}_{n \in \mathbb{N}}$ be two collections of open sets covering $A$ and $B$ respectively, such that for each $n \in N$, $\overline{U}_{n} \cap B$ and $\overline{V}_{n} \cap A$ are both empty.
+Given $A, B \subseteq X$, let $\{ U_{n} \}_{n \in \mathbb{N}}$ and $\{ V_{n} \}_{n \in \mathbb{N}}$ be two collections of open sets covering $A$ and $B$ respectively, such that for each $n \in N$, $\overline{U}_{n} \cap B$ and $\overline{V}_{n} \cap A$ are both empty. Then there exist disjoint open sets $U$ and $V$ such that $A \subseteq U$ and $B \subseteq V$.
+
+###### _proof:_
+
+Let
+$$
+I_{N} = \left( \bigcup_{n = 1}^{N} \overline{U_{n}} \right) \cap \left( \bigcup_{n =1 }^N \overline{V_{n}} \right).
+$$
+Note that the unions of closures [[Topology --- math-147/notes/Limit points and closed sets#_proposition _ set-theoretic properties of closure|are closed]], and so $I_{N}$ is the closed intersection of two closed sets.
+
+Now let $A_{N} = U_{N} \setminus I_{N}$ and $B_{N} = {V_{N} \setminus I_{N}}$. $A_{N}$ and $B_{N}$ are open sets subtract closed sets and [[Topology --- math-147/notes/Limit points and closed sets#_proposition _ open set minus closed set and closed set minus open set|are thus open]]. Further since $\overline{V_{n}}$ doesn't intersect $A$, the union of all $A_{N}$ covers $A$, and similarly, the union of all $B_{N}$ covers $B$. Finally, each $A_{N}$ has no intersection with all $B_{M}$ since for $N > M$, $A_{N}$ excludes all parts of $B_{M}$, and vice-versa. Thus, $U = \bigcup_{N = 1}^\infty A_{N}$ and $V = \bigcup_{N = 1}^\infty B_{N}$ separate $A$ and $B$.
+
+### Inheriting separation properties
+
+Subspaces of Hausdorff and regular spaces are Hausdorff and regular respectively. However, normality isn't always inherited by [[Topology --- math-147/notes/Subspaces#_definition _ subspace topology|subspaces]].
+
+##### _example:_ normality isn't always inherited by subspaces
+
+The product of [[Topology --- math-147/notes/Subbases#_definition _ order topology|the order topologies]] on $\omega_{0} + 1$ and $\omega_{1} + 1$ is called the Tychonoff plank $(\omega_{0} + 1) \times (\omega_{1} + 1)$. The Tychonoff plank is normal, but the plank without the single point $(\omega_{0}, \omega_{1})$ is not.
+
+Normality is however always inherited by closed subspaces.
+
+##### _proposition:_ normality is inherited by closed subspaces
+
+If $Y \subseteq X$ is closed, then the subspace topology on $Y$ is normal.
+
+###### _proof:_
+
+Consider any two closed subsets in $C, D \subseteq Y$ (in the subspace topology on $Y$). [[Topology --- math-147/notes/Subspaces#_proposition _ closed sets in a subspace|By definition]], $C = C' \cap Y$ and $D = D' \cap Y$ for $C', D' \subseteq X$ closed in $X$. But then since intersections of closed sets are closed, $C, D$ are closed in $X$.
+
+By normality, there exist disjoint subsets $U, V$ open in $X$ with $C \subseteq U$ and $D \subseteq V$. Since $C, D \subseteq Y$, we also have $C \subseteq U \cap Y$ and $D \subseteq V \cap Y$. $U \cap Y$ and $V \cap Y$ are still disjoint since they are subsets of the disjoint $U$ and $V$ respectively. By the definition of the subspace topology, they are also open in $Y$. Thus, they are two disjoint open sets separating $C$ and $D$.
+
 
 ### Separating products
 
-Do separation properties lift to products of sets with those properties? Sometimes!
+Do separation properties lift to products of sets with those properties? Once again, Hausdorffness and regularity do!
 
 ##### _proposition:_ product of Hausdorff spaces
 
@@ -115,21 +146,8 @@ $$
 $$
 Since the choice of point $p$ and open set $W$ was arbitrary, $X \times Y$ is regular.
 
+And once again, normality does not always transfer to products.
 
-### Inheriting separation properties
+##### _example:_ the product of two lower limit lines is not normal
 
-Separation properties don't always descend to [[Topology --- math-147/notes/Subspaces#_definition _ subspace topology|subspaces]] either. However, in nice cases they do.
-
-##### _example:_ normality doesn't always descend to subspaces
-
-The product of [[Topology --- math-147/notes/Subbases#_definition _ order topology|the order topologies]] on $\omega_{0} + 1$ and $\omega_{1} + 1$ is called the Tychonoff plank $(\omega_{0} + 1) \times (\omega_{1} + 1)$. The Tychonoff plank is normal, but the plank without the single point $(\omega_{0}, \omega_{1})$ is not.
-
-##### _proposition:_ normality descends to closed subspaces
-
-If $Y \subseteq X$ is closed, then the subspace topology on $Y$ is normal.
-
-###### _proof:_
-
-Consider any two closed subsets in $C, D \subseteq Y$ (in the subspace topology on $Y$). [[Topology --- math-147/notes/Subspaces#_proposition _ closed sets in a subspace|By definition]], $C = C' \cap Y$ and $D = D' \cap Y$ for $C', D' \subseteq X$ closed in $X$. But then since intersections of closed sets are closed, $C, D$ are closed in $X$.
-
-By normality, there exist disjoint subsets $U, V$ open in $X$ with $C \subseteq U$ and $D \subseteq V$. Since $C, D \subseteq Y$, we also have $C \subseteq U \cap Y$ and $D \subseteq V \cap Y$. $U \cap Y$ and $V \cap Y$ are still disjoint since they are subsets of the disjoint $U$ and $V$ respectively. By the definition of the subspace topology, they are also open in $Y$. Thus, they are two disjoint open sets separating $C$ and $D$.
+Though $\mathbb{R}_{\text{LL}}$ is normal, $\mathbb{R}_{\text{LL}} \times \mathbb{R}_{\text{LL}}$ is not. The basic open sets in $\mathbb{R}_{\text{LL}} \times \mathbb{R}_{\text{LL}}$ are $[a, b) \times [c, d)$. Viewing these rotated by $\pi / 4$, we see that they look like [[Topology --- math-147/notes/Bases#_example _ the sticky bubble topology|sticky bubbles]], but with all of the bottom "sticky". Thus, the diagonal $\{ (x, x) \mid x \in \mathbb{R} \}$ looks like the bottom boundary of the sticky bubble topology. For the same reason as for the sticky bubble topology, we can't separate the diagonals of $\mathbb{Q}$ and $\mathbb{R} \setminus \mathbb{Q}$.
