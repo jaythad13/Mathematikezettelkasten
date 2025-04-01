@@ -1,0 +1,56 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 139 --- Fourier Analysis}
+\assignment{Homework 9}
+\duedate{4th April 2025}
+
+\begin{document}
+
+\begin{problem}[S \& S \S 5.5 \#15.]
+	This exercise provides another example of periodisation.
+	\begin{enumerate}
+		\item Apply the Poisson summation formula to the function $g$ in Exercise 2 to obtain
+			\[
+				\sum_{n = -\infty}^{\infty} \frac{1}{(n + \alpha)^{2}} = \frac{\pi^{2}}{\sin^{2}{(\pi \alpha)}}
+			\]
+			whenever $\alpha$ is real, but not equal to an integer.
+
+		\item Prove as a consequence that
+			\[
+				\sum_{n = -\infty}^{\infty} \frac{1}{n + \alpha} = \frac{\pi}{\tan{(\pi \alpha)}}
+			\]
+			whenever $\alpha$ is real but not equal to an integer.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[S \& S \S 5.5 \#17.]
+	The \emph{gamma function} is defined for $s > 0$ by
+	\[
+		\Gamma(s) = \int_{0}^{\infty} e^{-x} x^{s - 1} \, dx.
+	\]
+	\begin{enumerate}
+		\item Show that for $s > 0$ the above integral makes sense, that is, that the following two limits exist:
+			\[
+				\lim_{\delta \to 0^{+}} \int_{\delta}^{1} e^{-x} x^{s - 1} \, dx \quad \text{and} \quad \lim_{A \to \infty}  \int_{1}^{A} e^{-x} e^{s - 1} \, dx.
+			\]
+
+		\item Prove that $\Gamma(s + 1) = s \Gamma(s)$ whenever $s > 0$, and conclude that for every integer $n \ge 1$ we have $\Gamma(n + 1) = n!$.
+
+		\item Show that
+			\[
+				\Gamma(1 / 2) = \sqrt{\pi} \quad \text{and} \quad \Gamma(3 / 2) = \frac{\sqrt{\pi}}{2}.
+			\]
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[S \& S \S 5.5 \#21.]
+	Suppose that $f$ is continuous on $\mathbb{R}$. Show that $f$ and $\hat{f}$ cannot both be compactly supported unless $f = 0$. This can be viewed in the same spirit as the uncertainty principle.
+\end{problem}
+
+\end{document}
