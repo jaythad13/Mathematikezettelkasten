@@ -1,0 +1,138 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+\setlist[enumerate, 1]{label = (\roman*)}
+
+\name{Jayden Thadani}
+\class{MATH 145 --- Topics in Geometry and Topology}
+\assignment{Homework 9}
+\duedate{2nd April 2025}
+
+\begin{document}
+
+\begin{problem}[45.]
+	In this question, we will shwo that the unweighted random walk on $G = \mathbb{Z}$ is recurrent. Here $\mathbb{Z}$ refers to the  $1$-dimensional grid, with a vertex for each integer and an edge between every pair of adjacent integers. We will use $0$ as the centre vertex.
+	\begin{enumerate}
+		\item The graph $G^{(k)}$ is the restriction of $G$ to the vertex set
+			\[
+				V^{(k)} = \{ -k, \dots, -1, 0, 1, \dots, k \}
+			\]
+			and its frontier is $B^{(k)} = \{ -k, k \}$. Solve the Dirichlet problem for $P$ with
+			\begin{align*}
+				\Delta P(x) & = 0 & 0 < \lvert x \rvert < k \\
+				P(x) & = 0 & \lvert x \rvert = k \\
+				P(0) & = 1.
+			\end{align*}
+
+		\item Calculate the effective resistance $R_{\text{eff}}$ between $0$ and $B^{(k)}$ in two different ways: by using the Dirichlet current, and by using the energy function $\mathcal{E}(P)$. Verify that the answers agree.
+		
+		\item Show that the unweighted random walk on $\mathbb{Z}$ is recurrent.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[46.]
+	Consider the following network:
+	\begin{enumerate}
+		\item By setting up a $5$-by-$5$ linear system, or otherwise, solve the Dirichlet problem where the node in the middle is fixed at $1$ and the twenty-four nodes on the outside are fixed at $0$.
+
+		\item An unweighted random walk begins at the centre node. What is the probability that the walker hits the outer edge before returning to the centre?
+
+		\item What is the effective resistance $R_{\text{eff}}$ of the network from the centre node (the source) to the outer nodes (viewed as a single sink) if each edge has resistance $1$?
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[47.]
+	Consider potential functions $Q(x)$ defined on the graph of question 46 of the following type. $Q = 1$ on the central vertex, $Q = a$ on the eight vertices surrounding the centre, $Q = b$ on the next sixteen vertices, $Q = 0$ on the outer twenty-four vertices.
+	\begin{enumerate}
+		\item Calculate the energy $\mathcal{E}(Q)$ as a function of $a, b$.
+
+		\item Determine the values of $a, b$ that minimise the answer in part (i).
+
+		\item Use (ii) to write down a lower bound for $R_{\text{eff}}$, and compare it with 46 (iii).
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[48.]
+	In this question you'll show that the unweighted random walk on the 2D grid is recurrent. this graph $G = (V, E)$ has $V = \mathbb{Z}^{2}$ and edges between those pairs of vertices that lie exactly distance $1$ apart. We take $0$ to be the starting vertex of the random walk
+	\begin{enumerate}
+		\item Sketch the graph $G^{(k)}$ and its frontier $B^{(k)}$ for $k = 0, 1, 2, 3$.
+
+		\item How many vertices in $B^{(k)}$? How many edges between $B^{(k - 1)}$ and $B^{(k)}$?
+
+		\item We define a potential function $Q$ on $G^{(k)}$ as follows
+			\[
+				Q(x) = \begin{cases}
+					1 & x = 0 \\
+					1 - a_{1} & x \in B^{(1)} \\
+					\vdots \\
+					1 - (a_{1} + \dots + a_{k}) & x \in B^{(k)}
+				\end{cases}
+			\]
+			Here $a_{1}, \dots, a_{k}$ are positive real numbers such that $a_{1} + \dots + a_{k} = 1$. This condition ensures that $Q$ is zero on $B^{(k)}$. Write down a formula for $\mathcal{E}(Q)$ as a function of the $a_{i}$.
+
+		\item The optimisation problem
+			\[
+				\min \{ c_{1} x_{1}^{2} + \dots c_{k} x_{k}^{2} \mid x_{1} + \dots + x_{k} = 1 \}
+			\]
+			can be shown to have the following solution:
+			\[
+				x_{i} = \frac{1 / c_{i}}{1 / c_{1} + \dots + 1 / c_{k}}.
+			\]
+
+			Using this fact, obtain the smallest possible value of $\mathcal{E}(Q)$ from part (ii). Write down the resulting lower bound for the resistance $R^{(k)}_{\text{eff}}$ between $0$ and the boundary set $B^{(k)}$ in the graph $G^{(k)}$.
+
+		\item Show that the unweighted random walk on $\mathbb{Z}^{2}$ is recurrent
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[49.]
+	In this question you'll show that the unweighted random walk on the 3D grid is transient. This graph $G = (V, E)$ has vertex set $\mathbb{Z}^{3}$, and edges between those pairs of vertices that lie exactly distance $1$ apart. We take $0$ to be the starting vertex of the random walk.
+
+	Consider the following current $K$ defined on the edges in the positive octant of the grid. For each vertex $x = (p, q, r)$ with $p, q, r \ge 0$, write $k = p + q + r$. Current will flow from $x$ to the three neighbours in the positive directions as follows:
+
+	\begin{enumerate}
+		\item Show that the net flow out of $(0, 0, 0)$ is $1$.
+		\item Show that the net flow out of every vertex other than the origin is zero.
+		\item How many vertices $(p, q, r)$ in the positive octant satisfy $p + q + r = k$?
+		\item Show that each of the three outflow edges at such a vertex has current at most $2 / (k + 2)^{2}$.
+		\item Show that
+			\[
+				\mathcal{E}'(K) < 6 \sum_{k = 0}^{\infty} \frac{1}{(k + 2)^{2}}
+			\]
+			and deduce that the unweighted random walk on $\mathbb{Z}^{3}$ is transient.
+	\end{enumerate}	
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[50.]
+	Give a quick and easy proof, based on your work in 49 that any locally finite graph that contains $\mathbb{Z}^{3}$ as a subgraph is itself transient
+\end{problem}
+
+\pagebreak
+
+
+\begin{problem}[51.]
+	It is well-known that the \emph{consistently biased} random walk on the 1D grid is transient. This walk is defined by the rule
+	\begin{align*}
+		\mathbb{P}(x_{n + 1} = a + 1 \mid x_{n} = a) & = p \\
+		\mathbb{P}(x_{n + 1} = a - 1 \mid x_{n} = a) & = 1 - p.
+	\end{align*}
+	for some $1 / 2 < p < 1$.
+	\begin{enumerate}
+		\item Find a system of weights $C : E \to \mathbb{R}$ such that the random walk with these weights is the same as the biased random walk described above.
+
+		\item Construct a unit flow from the origin that has finite energy. Thus, the walk is transient.
+
+		\item Verify that the energy of the flow that you constructed is infinite when calculated in the unweighted 1D grid.
+	\end{enumerate}
+\end{problem}	
+
+\end{document}
