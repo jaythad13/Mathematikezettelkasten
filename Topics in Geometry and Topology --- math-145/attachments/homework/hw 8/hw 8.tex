@@ -11,13 +11,57 @@
 
 \begin{problem}[40.]
 	A thief (starting at the yellow square) wanders randomly around a museum. We are interested in the probability that the thief escapes (green circle) before being caught by the guard (red circle).
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width = 0.3 \textwidth]{figures/P40 museum.pdf}
+	\end{figure}
+
 	\begin{enumerate}
-		\setcounter{enumi}{0}
-		\item Guess the approximate value of the escape probability, and write down your guess.
+		\item[()] Guess the approximate value of the escape probability, and write down your guess.
 		\item Write down a matrix equation whose solution vector contains the escape probability.
 		\item Calculate the escape probability to $3$ decimal places.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item[()]
+			\[
+				\boxed{
+					p_{\text{E}} \approx_{\text{guess}} 1 / 3.
+				}
+			\]
+
+			This guess is based on the following heuristic --- the shortest paths to both the green and red nodes are of length $2$. All other paths have length more than double that. Thus, we can compare the ``resistance" only along these paths. Since there are two such paths to the red node but only one to the green node, we can guess that the escape probability is only half of the probability of getting caught. This suggests $p_{\text{E}} \approx 1 / 3$.
+
+		\item
+			\[
+				\boxed{
+					\begin{pmatrix}
+						1 & 0 \\
+						0 & 1
+					\end{pmatrix} \begin{pmatrix}
+						f_{1} \\
+						\vdots \\
+						f_{20}
+					\end{pmatrix} = \begin{pmatrix}
+						0 \\
+						\vdots \\
+						0 \\
+						0 \\
+						1
+					\end{pmatrix}
+				}
+			\]
+
+		\item
+			\[
+				\boxed{
+					p_{\text{E}} \approx
+				}
+			\]
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
@@ -26,7 +70,18 @@
 
 	Suppose the vertices are labelled $x_{1}, \dots, x_{n}$ with the first $k$ vertices being interior vertices and the last $n - k$ vertices being boundary vertices. We showed in class that the Dirichlet problem can be expressed as a linear system. In block-matrix form, this system can be written as
 	\[
-		\text{fill this in}
+		\begin{pmatrix}
+			D_{1} & D_{2} \\
+			0 & I_{n - k}
+		\end{pmatrix} \begin{pmatrix}
+			f_{\mid I} \\
+			f_{\mid B}
+		\end{pmatrix} = \begin{pmatrix}
+			0 \\
+			\vdots \\
+			0 \\
+			g
+		\end{pmatrix}
 	\]
 	where $D_{1} \mid D_{2}$ denotes the first $k$ rows of the Laplacian matrix, split into a $k$-by-$k$ block and a $k$-by-$(n - k)$ block. Let $A$ denote the $n$-by-$n$ square matrix in this equation.
 	\begin{enumerate}
@@ -35,9 +90,65 @@
 
 		\item Calculate $L$ for the following graph-with-boundary.
 
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width = 0.3 \textwidth]{figures/P41iii graph.pdf}
+			\end{figure}
+
 			Make sure to label the rows and columns of $L$ to show how they correspond to the vertices of the graph. What is the probability that a random walk starting at the top-left interior vertex first hits the boundary at the lowest boundary vertex.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item It follows by analogy with the inverse of $2 \times 2$ matrices that the inverse of the block upper-triangular matrix we have is
+			\[
+					\begin{pmatrix}
+			D_{1} & D_{2} \\
+			0 & I_{n - k}
+		\end{pmatrix}^{-1} = \begin{pmatrix}
+					D_{1}^{-1} & -D_{1}^{-1} D_{2} \\
+					0 & I_{n - k}
+				\end{pmatrix}
+			\]
+			since
+			\[
+				\begin{pmatrix}
+					a & b \\
+					0 & 1
+				\end{pmatrix}^{-1} = \frac{1}{a} \begin{pmatrix}
+					1 & -b \\
+					0 & a
+				\end{pmatrix} = \begin{pmatrix}
+					a^{-1} & -a^{-1} b \\
+					0 & 1
+				\end{pmatrix}.
+			\]
+			Thus, from the matrix equation in the question we get
+			\[
+				\begin{pmatrix}
+					f_{\mid I} \\
+					f_{\mid B}
+				\end{pmatrix} =  \begin{pmatrix}
+					D_{1}^{-1} & -D_{1}^{-1} D_{2} \\
+					0 & I_{n - k}
+				\end{pmatrix} \begin{pmatrix}
+					0 \\
+					\vdots \\
+					0 \\
+					g
+				\end{pmatrix} = \begin{pmatrix}
+					-D_{1}^{-1} D_{2} g \\
+					I_{n - k} g
+				\end{pmatrix}.
+			\]
+
+			Finally, this gives $L = -D_{1}^{-1} D_{2}$.
+		\item We've shown that the $f_{\mid I}$ is the expected value of the reward $g(b)$ where $b$ is the first boundary vertex that the random walk reaches. Thus, if we set $g = 0$ for all boundary vertices except the $j$th one, $f_{\mid I}(i)$ is the probability that a random walk starting at the $i$th vertex first reaches the boundary at the $j$th boundary vertex.
+
+			We know that $f_{\mid I}(i)$ is the $i$th entry of the column vector $L g$. But then, for our choice of $g$, $L g$ is just the $j$th column of $L$. Then, the probability that a random walk starting at the $i$th vertex first is the same as $f_{\mid I}(i)$ is the same as the $i$th entry of $Lg$, which ultimately is the same as the $(i, j)$th entry of $L$ as desired.
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
@@ -48,6 +159,21 @@
 	\]
 	for all $f, g \in \Omega^{0}(G)$.
 \end{problem}
+
+\begin{solution}
+	This is a consequence of the fact that the composition of a linear map and its adjoint is a self-adjoint positive map. Recall that $\Delta = - \nabla \cdot \nabla$ where the (negative) divergence $-\nabla \cdot$ and the gradient $\nabla$ are adjoint. Thus,
+	\begin{align*}
+		\left < \Delta f, g \right >_{V} & = \left < - \nabla \cdot \nabla f, g \right >_{V} \\
+						 & = \left < \nabla f, \nabla g \right >_{E} \\
+						 & = \left < f, - \nabla \cdot \nabla g \right >_{V} \\
+						 & = \left < f, \Delta g \right >_{V}.
+	\end{align*}
+
+	The second equality gives us
+	\[
+		\left < \Delta f, f \right >_{V} = \left < \Delta f, \Delta f \right >_{E} = \lVert \Delta f \rVert_{E}^{2} \ge 0.
+	\]
+\end{solution}
 
 \pagebreak
 
