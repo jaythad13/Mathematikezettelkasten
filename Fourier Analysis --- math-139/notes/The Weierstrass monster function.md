@@ -11,7 +11,7 @@ tags:
 
 It's easy to construct a continuous everywhere function that is not differentiable at some particular point — $\lvert x \rvert$ is one such example. One can even get the function not differentiable on a set of [[Calculus --- spivak/notes/Measure#_definition _ measure $0$|measure zero]]. However, for a long time it was suspected that a continuous everywhere function must be differentiable. Weierstrass showed this is not true.
 
-By constructing a "lacunary" Fourier series — where the "lacuna" in the previous wave are filled by the crests of a smaller wave, and so on, Weierstrass constructed a function with fractal structure. This is continuous everywhere, but also has spikes (like those of the absolute value function) everywhere, and thus, is differentiable nowhere.
+By constructing a "lacunary" Fourier series where there are large gaps in frequencies, Weierstrass constructed a function with fractal structure. The function is continuous everywhere, but also has spikes (like those of the absolute value function) everywhere, and thus, is differentiable nowhere.
 
 ##### _theorem:_ the Weierstrass monster function
 

@@ -63,7 +63,7 @@ Since $\mathbf{x}_{\Gamma}$ is an arclength parametrisation,
 $$
 \lVert x' \rVert_{L^{2}} + \lVert y' \rVert _{L^{2}} = \frac{1}{2 \pi} \int_{0}^{2 \pi} (x'(s))^{2} + (y'(s))^{2}  \, ds = \frac{1}{2 \pi} \int_{0}^{2 \pi} \lVert \mathbf{x}_{\Gamma}(s) \rVert  \, ds = \ell = 1.
 $$
-Then by Parseval's identity, the $\ell^{2}$ (this is not $\ell$ as in length) norms of the Fourier coefficients of $x'$ and $y'$ also satisfy the same identity. It's an exercise on the homework to show $\hat{f'}(n) = in \hat{f}(n)$. Thus,
+Then by Parseval's identity, the $\ell^{2}$ (this is not $\ell$ as in length) norms of the Fourier coefficients of $x'$ and $y'$ also satisfy the same identity. It's an exercise on the homework to show $\hat{f'}(n) = -in \hat{f}(n)$. Thus,
 $$
 \sum_{n = -\infty}^\infty n^{2} (\lvert a_{n} \rvert ^{2} + \lvert b_{n} \rvert ^{2}) = 1
 $$
@@ -76,7 +76,7 @@ $$
 and obtaining the same identity for the $\ell^{2}$ [[Fourier Analysis --- math-139/notes/Square convergence of Fourier series#_definition _ the inner product space of $ ell {2}$ sequences|inner products]]. Thus,
 $$
 \begin{align}
-\mathfrak{A} & = \pi \left\lvert  \sum_{n = -\infty}^\infty a_{n} (-i n \overline{b}_{n}) = \sum_{n = - \infty}^\infty b_{n} (-in \overline{a}_{n})  \right\rvert  \\
+\mathfrak{A} & = \pi \left\lvert  \sum_{n = -\infty}^\infty a_{n} (-i n \overline{b}_{n}) - \sum_{n = - \infty}^\infty b_{n} (-in \overline{a}_{n})  \right\rvert  \\
  & \leq \pi \sum_{n = -\infty}^\infty \lvert n \rvert \lvert a_{n} \overline{b}_{n} - b_{n} \overline{a}_{n} \rvert  \\
  & \le \pi \sum_{n = -\infty}^\infty \lvert n \rvert (2 \lvert a_{n} \rvert  \lvert b_{n} \rvert ) \\
  & \le \pi \sum_{n = -\infty}^\infty \lvert n \rvert (\lvert a_{n} \rvert ^{2} + \lvert b_{n} \rvert ^{2}) \\
@@ -84,7 +84,7 @@ $$
  & = \pi
 \end{align}
 $$
-where the second and third inequalities follow from reverse triangle rule and the fact that $(a - b)^{2} \ge 0$. Thus, we've shown the inequality!
+where the second and third inequalities follow from the triangle inequality and the fact that $(a - b)^{2} \ge 0$. Thus, we've shown the inequality!
 
 For equality to hold, all of the inequalities must be equalities. Working backwards, since $\lvert n \rvert^{2} \ge \lvert n \rvert$ for all $n$ with equality exactly when $\lvert n \rvert \leq 1$. Thus, we must have $a_{n} = b_{n} = 0$ when $\lvert n \rvert > 1$. 
 
