@@ -1,6 +1,6 @@
 ---
 tags:
-- math-55A
+- math-55A/2
 - nt
 - alg
 ---
