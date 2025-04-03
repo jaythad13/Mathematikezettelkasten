@@ -1,5 +1,6 @@
 \documentclass[12 pt, letterpaper]{hmcpset}
 \usepackage{hw-preamble}
+\usepackage{pdflscape}
 \setlist[enumerate, 1]{label = (\roman*)}
 
 \name{Jayden Thadani}
@@ -9,7 +10,10 @@
 
 \begin{document}
 
-\begin{problem}[40.]
+The first problem starts on the next page in landscape mode
+
+\begin{landscape}
+	\begin{problem}[40.]
 	A thief (starting at the yellow square) wanders randomly around a museum. We are interested in the probability that the thief escapes (green circle) before being caught by the guard (red circle).
 	\begin{figure}[H]
 		\centering
@@ -34,34 +38,97 @@
 
 			This guess is based on the following heuristic --- the shortest paths to both the green and red nodes are of length $2$. All other paths have length more than double that. Thus, we can compare the ``resistance" only along these paths. Since there are two such paths to the red node but only one to the green node, we can guess that the escape probability is only half of the probability of getting caught. This suggests $p_{\text{E}} \approx 1 / 3$.
 
+		\item \setcounter{MaxMatrixCols}{20}
+			\[
+				\boxed{
+\begin{pmatrix}
+ \\
+   1 & -\frac{1}{2} &    0 &    0 &    0 & -\frac{1}{2} &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 \\
+-\frac{1}{3} &    1 & -\frac{1}{3} &    0 &    0 &    0 & -\frac{1}{3} &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 \\
+   0 & -\frac{1}{3} &    1 & -\frac{1}{3} &    0 &    0 &    0 & -\frac{1}{3} &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 \\
+   0 &    0 & -\frac{1}{3} &    1 & -\frac{1}{3} &    0 &    0 &    0 & -\frac{1}{3} &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 \\
+   0 &    0 &    0 & -\frac{1}{2} &    1 &    0 &    0 &    0 &    0 & -\frac{1}{2} &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0  \\
+-\frac{1}{3} &    0 &    0 &    0 &    0 &    1 & -\frac{1}{3} &    0 &    0 &    0 & -\frac{1}{3} &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0  \\
+   0 &    0 &    0 &    0 &    0 &    0 &    1 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0  \\
+   0 &    0 & -\frac{1}{4} &    0 &    0 &    0 & -\frac{1}{4} &    1 & -\frac{1}{4} &    0 &    0 &    0 & -\frac{1}{4} &    0 &    0 &    0 &    0 &    0 &    0 &    0 \\
+   0 &    0 &    0 & -\frac{1}{4} &    0 &    0 &    0 & -\frac{1}{4} &    1 & -\frac{1}{4} &    0 &    0 &    0 & -\frac{1}{4} &    0 &    0 &    0 &    0 &    0 &    0  \\
+   0 &    0 &    0 &    0 & -\frac{1}{3} &    0 &    0 &    0 & -\frac{1}{3} &    1 &    0 &    0 &    0 &    0 & -\frac{1}{3} &    0 &    0 &    0 &    0 &    0  \\
+   0 &    0 &    0 &    0 &    0 & -\frac{1}{3} &    0 &    0 &    0 &    0 &    1 & -\frac{1}{3} &    0 &    0 &    0 & -\frac{1}{3} &    0 &    0 &    0 &    0 \\
+   0 &    0 &    0 &    0 &    0 &    0 & -\frac{1}{4} &    0 &    0 &    0 & -\frac{1}{4} &    1 & -\frac{1}{4} &    0 &    0 &    0 & -\frac{1}{4} &    0 &    0 &    0 \\
+   0 &    0 &    0 &    0 &    0 &    0 &    0 & -\frac{1}{4} &    0 &    0 &    0 & -\frac{1}{4} &    1 & -\frac{1}{4} &    0 &    0 &    0 & -\frac{1}{4} &    0 &    0  \\
+   0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 & -\frac{1}{4} &    0 &    0 &    0 & -\frac{1}{4} &    1 & -\frac{1}{4} &    0 &    0 &    0 & -\frac{1}{4} &    0 \\
+   0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    1 &    0 &    0 &    0 &    0 &    0  \\
+   0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 & -\frac{1}{2} &    0 &    0 &    0 &    0 &    1 & -\frac{1}{2} &    0 &    0 &    0  \\
+   0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 & -\frac{1}{3} &    0 &    0 &    0 & -\frac{1}{3} &    1 & -\frac{1}{3} &    0 &    0  \\
+   0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 & -\frac{1}{3} &    0 &    0 &    0 & -\frac{1}{3} &    1 & -\frac{1}{3} &    0  \\
+   0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 & -\frac{1}{3} &    0 &    0 &    0 & -\frac{1}{3} &    1 & -\frac{1}{3} \\
+   0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 & -\frac{1}{2} &    0 &    0 &    0 & -\frac{1}{2} &    1 \\
+ 
+\end{pmatrix} \begin{pmatrix}
+	f(v_{1}) \\
+	\vdots \\
+	f(v_{6}) \\
+	g(v_{7}) \\
+	f(v_{8}) \\
+	\vdots \\
+	f(v_{14}) \\
+	g(v_{15}) \\
+	f(v_{16}) \\
+	\vdots \\
+	f(v_{20})
+\end{pmatrix} = \begin{pmatrix}
+	0 \\
+	\vdots \\
+	0 \\
+	g(v_{7}) \\
+	0 \\
+	\vdots \\
+	0 \\
+	g(v_{15}) \\
+	0 \\
+	\vdots \\
+	0
+\end{pmatrix}
+				}
+			\]
+			Note that here, for the sake of the ease of constructing the matrix, I numbered the vertices  $v_{1}$ through $v_{15}$ in the obvious way as a grid so the boundary vertices are $v_{7}$ and $v_{15}$ rather than $v_{19}$ and $v_{20}$ which would be the case if we wanted to explicitly separate $\mathbb{R}^{\lvert V \rvert}$ into $\mathbb{R}^{\lvert I \rvert} \oplus \mathbb{R}^{\lvert B \rvert}$.
 		\item
 			\[
 				\boxed{
-					\begin{pmatrix}
-						1 & 0 \\
-						0 & 1
-					\end{pmatrix} \begin{pmatrix}
-						f_{1} \\
-						\vdots \\
-						f_{20}
-					\end{pmatrix} = \begin{pmatrix}
-						0 \\
-						\vdots \\
-						0 \\
-						0 \\
-						1
-					\end{pmatrix}
+					p_{\text{E}} \approx 0.416.
 				}
 			\]
 
-		\item
+			The linear system has solution
 			\[
-				\boxed{
-					p_{\text{E}} \approx
-				}
+				\begin{pmatrix}
+					110338/849065 \\
+					127051/849065 \\
+					54163/169813 \\
+					828377/1698130 \\
+					1021127/1698130 \\
+					2675/24259 \\
+					0 \\
+					542411/1698130 \\
+					461187/849065 \\
+					173411/242590 \\
+					170537/849065 \\
+					198132/849065 \\
+					70564/169813 \\
+					157833/242590 \\
+					1 \\
+					219854/849065 \\
+					38453/121295 \\
+					389527/849065 \\
+					109318/169813 \\
+					279131/339626 \\
+				\end{pmatrix}
 			\]
+			The thirteenth entry is $p_{E}$. Truncated at 3 decimal places we get the value  $p_{E} \approx 0.416$ (which is actually not far from our estimate).
 	\end{enumerate}
 \end{solution}
+
+\end{landscape}
 
 \pagebreak
 
@@ -147,6 +214,61 @@
 		\item We've shown that the $f_{\mid I}$ is the expected value of the reward $g(b)$ where $b$ is the first boundary vertex that the random walk reaches. Thus, if we set $g = 0$ for all boundary vertices except the $j$th one, $f_{\mid I}(i)$ is the probability that a random walk starting at the $i$th vertex first reaches the boundary at the $j$th boundary vertex.
 
 			We know that $f_{\mid I}(i)$ is the $i$th entry of the column vector $L g$. But then, for our choice of $g$, $L g$ is just the $j$th column of $L$. Then, the probability that a random walk starting at the $i$th vertex first is the same as $f_{\mid I}(i)$ is the same as the $i$th entry of $Lg$, which ultimately is the same as the $(i, j)$th entry of $L$ as desired.
+
+		\item In the previous homework (problem 35) we solved the Dirichlet problem for the same graph
+			\[
+		\begin{pmatrix}
+			1 & -1/3 & 0 & 0 & 0 & -1/3 & 0 & 0 & -1/3 \\
+			-1/4 & 1 & -1/4 & 0 & -1/4 & -1/4 & 0 & 0 & 0 \\
+			0 & -1/2 & 1 & -1/2 & 0 & 0 & 0 & 0 & 0 \\
+			0 & 0 & -1/3 & 1 & -1/3 & 0 & -1/3 & 0 & 0 \\
+			0 & -1/4 & 0 & -1/4 & 1 & 0 & 0 & -1/4 & -1/4 \\
+			0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+			0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+			0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+			0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\
+		\end{pmatrix} \begin{pmatrix}
+			f_{\mid I} \\
+			f_{\mid B}
+		\end{pmatrix} = \begin{pmatrix}
+			0 \\
+			\vdots \\
+			0 \\
+			g
+		\end{pmatrix}.
+			\]
+
+			This gives us
+			\[
+				D_{1} = \begin{pmatrix}
+			1 & -1/3 & 0 & 0 & 0 \\
+			-1/4 & 1 & -1/4 & 0 & -1/4 \\
+			0 & -1/2 & 1 & -1/2 & 0 \\
+			0 & 0 & -1/3 & 1 & -1/3 \\
+			0 & -1/4 & 0 & -1/4 & 1 \\
+		\end{pmatrix} 
+		\]
+		and
+		\[
+			D_{2} = \begin{pmatrix}
+			1/3 & 0 & 0 & -1/3 \\
+			-1/4 & 0 & 0 & 0 \\
+			0 & 0 & 0 & 0 \\
+			0 & -1/3 & 0 & 0 \\
+			0 & 0 & -1/4 & -1/4 \\
+		\end{pmatrix}.
+			\]
+
+		Ultimately this gives us
+		\[
+			L = -D_{1}^{-1} D_{2} = \begin{pmatrix}
+				9/8 & 1/2 & 1/6 & 1/8 & 1/6 \\
+				3/8 & 3/2 & 1/2 & 3/8 & 1/2 \\
+				1/4 & 1	& 14/9 & 11/12 & 5/9 \\
+				1/8 & 1/2 & 11/18 & 35/24 & 11/18 \\
+				1/8 & 1/2 & 5/18 & 11/24 & 23/18
+			\end{pmatrix}.
+		\]
 	\end{enumerate}
 \end{solution}
 
@@ -180,14 +302,83 @@
 \begin{problem}[43.]
 	Prove the weighted version of the adjoint theorem:
 	\[
-		\left < f, - \nabla_{C} \cdot \phi \right >_{V, C} = \left < \nabla_{C} f, \delta \right >_{E, C}.
+		\left < f, - \nabla_{C} \cdot \phi \right >_{V, C} = \left < \nabla_{C} f, \phi \right >_{E, C}.
 	\]
 \end{problem}
+
+\begin{solution}
+	We just compute
+	\begin{align*}
+		\left < f, - \nabla_{C} \cdot \phi \right >_{V, C} & = \sum_{x \in V} C_{x} f(x) (-\nabla_{C} \cdot \phi)(x) \\
+								   & = \sum_{x \in V} - C_{x} f(x) \frac{1}{C_{x}} \sum_{y \in N(x)} \phi(xy) \\
+								   & = \sum_{xy \in E_{\text{ordered}}} - f(x) \phi(x, y) \\
+								   & = \sum_{xy \in E} -f(x) \phi(x, y) - f(y) \phi(y, x) \\
+								   & = \sum_{xy \in E} (f(y) - f(x)) \phi(x, y) \\
+								   & = \sum_{xy \in E} \frac{f(y) - f(x)}{C_{xy}} \phi(x, y) C_{xy} \\
+								   & = \sum_{xy \in E} \nabla_{C} f(x, y) \phi(x, y) C_{xy} \\
+								   & = \left < \nabla_{C} f, \phi \right >_{E, C}
+	\end{align*}
+\end{solution}
 
 \pagebreak
 
 \begin{problem}[44.]
 	Consider a resistor network whose nodes are eight vertices of a cube, and whose edges are the twelve edges of the cube. Suppose each edge has resistance $1$. Show that the effective resistance of the network between two adjacent nodes is $7 / 12$.
 \end{problem}
+
+\begin{solution}
+	Letting $v_{1}$ be the source and $v_{2}$ be the sink, the potentials at each point are given by $f$ solving the Dirichlet problem with boundary condition $f(v_{1}) = 1$ and $f(v_{2}) = 0$. Then $f$ is given by the linear equation
+	\[
+		\begin{pmatrix}
+   1 &    0 &    0 &    0 &    0 &    0 &    0 &    0 & 1 \\
+   0 &    1 &    0 &    0 &    0 &    0 &    0 &    0 & 0 \\
+   0 & -\frac{1}{3} &    1 & -\frac{1}{3} &    0 &    0 & -\frac{1}{3} &    0 & 0 \\
+-\frac{1}{3} &    0 & -\frac{1}{3} &    1 &    0 &    0 &    0 & -\frac{1}{3} & 0 \\
+-\frac{1}{3} &    0 &    0 &    0 &    1 & -\frac{1}{3} &    0 & -\frac{1}{3} & 0 \\
+   0 & -\frac{1}{3} &    0 &    0 & -\frac{1}{3} &    1 & -\frac{1}{3} &    0 & 0 \\
+   0 &    0 & -\frac{1}{3} &    0 &    0 & -\frac{1}{3} &    1 & -\frac{1}{3} & 0 \\
+   0 &    0 &    0 & -\frac{1}{3} &    0 &    0 & -\frac{1}{3} &    1 & 0 \\
+ 
+\end{pmatrix} \begin{pmatrix}
+	f(v_{1}) \\
+	\vdots \\
+	f(v_{8})
+\end{pmatrix} = \begin{pmatrix}
+	1 \\
+	0 \\
+	0 \\
+	\vdots \\
+	0
+\end{pmatrix}.
+	\]
+
+	This has solution
+	\[
+		\begin{pmatrix}
+	f(v_{1}) \\
+	\vdots \\
+	f(v_{8})
+\end{pmatrix} = \begin{pmatrix}
+	1 \\
+	0 \\
+	5 / 14 \\
+	9 / 14 \\
+	9 / 14 \\
+	5 / 14 \\
+	3 / 7 \\
+	4 / 7
+\end{pmatrix}
+	\]
+
+	It follows that the total current outflow from $v_{1}$ is
+	\[
+		3 \Delta f(v_{1}) = (1 - 0) + (1 - 9 / 14) + (1 - 9 / 14) = 24/14 = 12/7.
+	\]
+	The effective resistance is the reciprocal of the current so
+	\[
+		R_{\text{eff}} = 7/12
+	\]
+	as desired.
+\end{solution}
 
 \end{document}
