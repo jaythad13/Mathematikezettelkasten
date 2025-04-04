@@ -20,3 +20,6 @@
 [submodule "Trees and parking functions --- tree-ifr/attachments/documents"]
 	path = Trees and parking functions --- tree-ifr/attachments/documents
 	url = https://git@git.overleaf.com/6784f60c09043868bf87e785
+[submodule "Analysis --- rudin/attachments/documents"]
+	path = Analysis --- rudin/attachments/documents
+	url = https://git@git.overleaf.com/67ef5a754c646d0524ef6e30
