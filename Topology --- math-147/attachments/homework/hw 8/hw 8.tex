@@ -13,11 +13,27 @@
 	If the only subsets of $X$ that are both closed and open in $X$ are the empty set and $X$ itself, then, for every pair of points $p$ and $q$ and every open cover $\{ U_{\alpha} \}_{\alpha \in \lambda}$ of $X$ there exist a finite number of $U_{\alpha}$s, $\{ U_{\alpha_{1}}, \dots, U_{\alpha_{n}} \}$ such that $p \in U_{\alpha_{1}}$, $q \in U_{\alpha_{n}}$, and for each $i < n$, $U_{\alpha_{i}} \cap U_{\alpha_{i + 1}} \neq \text{\O}$.
 \end{problem}
 
+\begin{solution}
+	Suppose (5) --- that the only clopen sets are $X$ and $\text{\O}$.
+
+	Consider an open cover $\{ U_{\alpha} \}_{\alpha \in \mathcal{I}}$ of $X$. Let $\Omega_{p}$ be the set of all points $p' \in X$ such that, for every open cover of $X$, there is a finite chain of open sets between them. 
+
+	$\Omega_{p}$ is open since each point has an open neighbourhood. For each $q \in \Omega_{p}$ we have $q \in U_{\beta}$ where $U_{\beta}$ is at the end of the chain of open sets connecting $p$ to $q$. Every point in $U_{\beta}$ is connected to $p$ by the same chain so $U_{\beta} \subseteq \Omega_{p}$
+
+	$\Omega_{p}$ is also closed. Every neighbourhood of any limit point $q$ of $\Omega_{p}$ intersects $\Omega_{p}$, and so the $U_{\beta}$ containing $q$ intersects $\Omega_{p}$ at some point $p' \in \Omega_{p}$. Then if $U_{\alpha_{1}}, \dots, U_{\alpha_{n}}$ is the finite chain of open sets from $p$ to $p'$, the chain $U_{\alpha_{1}}, \dots, U_{\alpha_{n}}, U_{\beta}$ connects $p$ and $q$. Thus, any limit point $q \in \Omega_{p}$. 
+
+	We have shown $\Omega_{p}$ is clopen and non-empty (certainly $p \in \Omega_{p}$), and thus, all of $X$. This is (5) $\implies$ (6).
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[8.9]
 	Let $f : X \to Y$ be a continuous surjective function. If $X$ is connected, then $Y$ is connected.
 \end{problem}
+
+\begin{solution}
+	If $Y$ is disconnected into disjoint open sets $V_{1} \cup V_{2}$, then their pre-images ($U_{1}$ and $U_{2}$ respectively) are disjoint and open too since $f$ is continuous. $U_{1}$ and $U_{2}$ also cover $X$ (since every point in $x$ is the pre-image of some point in $Y$). Thus, if $Y$ is not connected, $X = U_{1} \sqcup U_{2}$ is also not connected. This is the contrapositive of the desired result, and thus equivalent to it.
+\end{solution}
 
 \pagebreak
 
@@ -36,5 +52,29 @@
 \begin{problem}[12.5]
 	If $\alpha, \alpha', \beta, \beta'$ are paths in a space $X$ such that $\alpha \sim \alpha'$ and $\beta \sim \beta'$, and $\alpha(1) = \beta(0)$, then $\alpha \cdot \beta \sim \alpha' \cdot \beta'$
 \end{problem}
+
+\begin{solution}
+	Let $H_{a} : [0, 1] \times [0, 1] \to X$ be a homotopy giving $\alpha \sim \alpha'$ and $H_{b} : [0, 1] \times [0, 1] \to X$ a homotopy giving $\beta \sim \beta'$.
+
+	Note that $[1, 2] \times [0, 1] \cong [0, 1] \times [0, 1]$ are homeomorphic by the translation $f : (x, y) \mapsto (x - 1, y)$. The pullback $f^{*}H_{b} = H_{b} \circ f : [1, 2] \times [0, 1] \to X$ is then a function with $f^{*} H_{b}(1, t) = \beta(0)$ and $f^{*} H_{b}(2, t) = \beta(1)$ for all $t$. That is, $H_{a}$ and $f^{*} H_{b}$ are continuous functions on closed sets that agree on their intersection $\{ 1 \} \times [0, 1]$ where
+	\[
+		H_{a}(1, t) = \alpha(1) = \beta(0) = f^{*} H_{b}(2, t).
+	\]
+	Thus, by the pasting lemma, we get one continuous function $H : [0, 2] \times [0, 1] \to X$.
+
+	Now we use the homeomorphism $g : [0, 1] \times [0, 1] \to [0, 2] \times [0, 1]$ by $(x, y) \mapsto (2x, y)$. We claim the pullback $g^{*} H = H \circ g : [0, 1] \times [0, 1] \to X$ is the desired homotopy. We can check that $g^{*}H(0, t) = H(0, t) = \alpha(0)$ and $g^{*}H(1, t) = H(2, t) = \beta(1)$ for all $t$. We need to show that $g^{*} H(s, 0) = \alpha \cdot \beta(s)$ and $g^{*}H(s, 1) = \alpha' \cdot \beta'(s)$. We just demonstrate the computation for $g^{*}H(s, 0)$ since the other follows by the exact same steps.
+	\begin{align*}
+		g^{*} H(s, 0) & = H(2s, 0) \\
+			      & = \begin{cases}
+			H_{a}(2s, 0) & s \in [0, 1/2] \\
+			H_{b}(2s - 1, 0) & s \in [1/2, 1]
+		\end{cases} \\
+			      & = \begin{cases}
+				      \alpha(2s, 0) & s \in [0, 1/2] \\
+				      \beta(2s - 1, 0) & s \in [1/2, 1].
+			      \end{cases} \\
+			      & = \alpha \cdot \beta(s).
+	\end{align*}
+\end{solution}
 
 \end{document}
