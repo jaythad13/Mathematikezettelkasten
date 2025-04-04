@@ -29,6 +29,40 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item
+			\[
+				\boxed{
+					P(x) = 1 - \lvert x \rvert / k
+				}
+			\]
+
+			We showed in class that on a graph that looks like a line segment, the solution to the Dirichlet problem with boundary conditions at the endpoints of the line segment must be an arithmetic progression from one endpoint to the other. By gluing two such graphs together at the common endpoint
+
+		\item
+			\[
+				\boxed{
+					R_{\text{eff}} = k/2
+				}
+			\]
+
+			Using the Dirichlet current we see
+			\[
+				\lvert \nabla P(xy) \rvert = \frac{\operatorname{sign}(\lvert y \rvert - \lvert x \rvert)}{k}.
+			\]
+			It follows that the total current flowing from $0$ is $2 / k$. The effective resistance is the reciprocal $-1$.
+
+			The energy of the field is
+			\[
+				\mathcal{E}(P) = \left < \nabla P, \nabla P \right >_{E} = \sum_{xy \in E} \left ( \frac{1}{k} \right )^{2} = \frac{2k}{k^{2}} = \frac{2}{k}.
+			\]
+			$R_{\text{eff}}$ is also the reciprocal of the energy (due to our scaling) so $R_{\text{eff}} = k / 2$.
+
+		\item As $k \to \infty$ we have $R_{\text{eff}} = k / 2 \to \infty$. We showed (theorem 3.11.7 in the notes) that $G$ is recurrent if and only if $\lim_{k \to \infty} R_{\text{eff}} = \infty$. Since the limit condition is satisfied, $G$ is recurrent.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[46.]
@@ -133,6 +167,49 @@
 
 		\item Verify that the energy of the flow that you constructed is infinite when calculated in the unweighted 1D grid.
 	\end{enumerate}
-\end{problem}	
+\end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item 
+			\[
+				\boxed{
+					C_{ab} = \frac{p^{a + 1}}{(1 - p)^{a}} \quad \text{for } a < b = a + 1.
+				}
+			\]
+
+			The weight system above comes from experimenting with the weight so that things work out. It's easy to verify that it does indeed have the desired property.
+			\[
+				\mathbb{P}(x_{n + 1} = a + 1 \mid x_{n} = a) = \frac{C_{ab}}{C_{ab} + C_{da}}
+			\]
+			where $b = a + 1$ and $d = a - 1$. Thus,
+			\begin{align*}
+				\mathbb{P}(x_{n + 1} = a + 1 \mid x_{n} = a) & = \frac{p^{a + 1} / (1 - p)^{a}}{p^{a} / (1 - p)^{a - 1} + p^{a + 1} / (1 - p)^{a}} \\
+									     & = \frac{(1 - p)^{a} p^{a + 1}}{(1 - p)^{a}((1 - p) p^{a} + p^{a + 1})} \\
+									     & = \frac{p^{a + 1}}{p^{a} + p^{a + 1} - p^{a + 1}} \\
+									     & = p.
+			\end{align*}
+		
+		\item 
+			\[
+				\boxed{
+					K(ab) = \frac{1}{C_{ab}} \quad \text{for } a < b.
+				}
+			\]
+
+			Clearly, by the definition of divergence, $\nabla \cdot K = 0$ ---
+			\[
+				\nabla \cdot K(a) = K(a, a - 1) C_{a - 1, a} + K_{a, a + 1} C_{a, a + 1} = - \frac{C_{a - 1, a}}{C_{a - 1, a}} + \frac{C_{a, a + 1}}{C_{a, a + 1}} = 1 - 1 = 0.
+			\]
+			Thus, it is a unit flow (we can scale to have $\nabla \cdot K(0) = 1$ without changing that the divergence is $0$ everywhere else)
+
+			We can write the energy of $K_{xy}$ as an infinite sum as follows
+			\begin{align*}
+				\mathcal{E}(k) & = \sum_{ab \in E} \frac{K(ab)^{2}}{C_{ab}} \\
+					       & = \frac{1}{C_{ab}^{3}}.
+			\end{align*}
+			This is finite because $C_{ab} > 1$ for large $a$.
+	\end{enumerate}
+\end{solution}
 
 \end{document}
