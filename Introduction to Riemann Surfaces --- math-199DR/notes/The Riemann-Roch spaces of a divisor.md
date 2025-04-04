@@ -92,18 +92,6 @@ Of course if $\operatorname{deg} D < 0$, then $\mathcal{L}(D)$ is trivial.
 
 This, like most things to do with divisors, meromorphic functions, and forms on $\mathbb{C}_{\infty}$ is exceptional (which is why the Riemann-Roch theorem is non-trivial). In higher genera this fails.
 
-##### _example:_ function spaces on the torus
-
-On a complex torus $\mathbb{C} / \Lambda$, for any $D \in \operatorname{Div}(\mathbb{C} / \Lambda)$, we have
-$$
-\mathcal{L}(D) = \begin{cases}
-0 & \operatorname{deg} D < 0 \\
-1 & \operatorname{deg} D = 0, D \sim 0 \\
-0 & \deg D = 0, D \not \sim 0 \\
-1 & \deg D > 0.
-\end{cases}
-$$
-
 ### The Riemann-Roch form space of a divisor
 
 We can do the same thing for meromorphic $1$-forms!
@@ -136,3 +124,21 @@ $\mathbb{C}$-linearity and injectivity follow easily. However, we have to prove 
 $$
 	\operatorname{div} f +  D + K = \operatorname{div} \eta - \operatorname{div} \omega  + D + K = \operatorname{div} \eta + D \ge 0. 
 $$
+
+##### _example:_ function spaces on the torus
+
+On a complex torus $\mathbb{C} / \Lambda$, for any $D \in \operatorname{Div}(\mathbb{C} / \Lambda)$, we have
+$$
+\mathcal{L}(D) = \begin{cases}
+0 & \operatorname{deg} D < 0 \\
+1 & \operatorname{deg} D = 0, D \sim 0 \\
+0 & \deg D = 0, D \not \sim 0 \\
+1 & \deg D > 0.
+\end{cases}
+$$
+
+The first case is just true in general.
+
+We can show the second case writing $\mathbb{C} / \Lambda$ as an elliptic curve $y^{2} = x^3 + Ax + B$ and showing that there is a zero canonical divisor $K = \operatorname{div}(dx / y) = 0$. Then $\mathcal{L}(K) = \mathcal{L}(0) = \mathcal{O}_{\mathbb{C} / \Lambda}(\mathbb{C} / \Lambda)$. That is $\dim \mathcal{L}(0) = 1$ (since $\mathbb{C} / \Lambda$ is [[Topology --- math-147/notes/Connectedness and path-connectedness#_definition _ connectedness|connected]]). Then for any, $D \sim 0$, we have $\mathcal{L}(D) \cong \mathcal{L}(0)$ and thus, $\dim \mathcal{L}(D) = 1$.
+
+ Suppose $D \not \sim 0$, but still has degree $0$. If $f \in \mathcal{L}(D)$, then $\operatorname{div} f + D \ge 0$. But the degree of both terms is $0$, so we must have equality $\operatorname{div} f + D = 0$. This forces $D = - \operatorname{div} f \sim 0$ which contradicts our assumption.

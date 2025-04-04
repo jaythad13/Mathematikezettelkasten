@@ -1,6 +1,7 @@
 ---
 tags:
 - math-199DR/17
+- math-199DR/19
 - cx-geo
 - alg-geo
 ---
@@ -79,4 +80,22 @@ in $\mathbb{C} / \Lambda$.
 Suppose $\operatorname{deg} D = 0$ and $\alpha(D) = 0$. Then we pair the points that cancel for degree $0$ as $p_{i} - q_{i}$, lift them to $z_{i} - w_{i}$ in $\mathbb{C} / \Lambda$ so that $\sum z_{i} - w_{i} = 0$ and finally, lift them again to $\mathbb{C}$ so that $\sum z_{i} - w_{i} = 0$ in $\mathbb{C}$. We can use the [[Introduction to Riemann Surfaces --- math-199DR/notes/Functions on Riemann surfaces#_example _ meromorphic functions on the torus|theta function construction]] to get a meromorphic function on $X$ with the prescribed zeroes and poles.
 
 In fact, this generalises! In higher dimensions this is the Abel-Jacobi map that embeds a genus $g$ curve into $\mathbb{C}^g / \Lambda$.
+
+### Complete and general linear systems
+
+Complete linear systems of the divisors naturally contain divisors 
+
+In fact, complete linear systems provide a connection between projective space and divisors! Specifically,
+
+##### _proposition:_ projective space and complete linear system correspondence
+
+There is a bijection between projectivisation of the [[Introduction to Riemann Surfaces --- math-199DR/notes/The Riemann-Roch spaces of a divisor#_definition _ the Riemann-Roch function space of a divisor|the Riemann-Roch space of a divisor]] and its complete linear system.
+
+###### _proof sketch:_
+
+Consider the map $\mathbb{P}(\mathcal{L}(D)) \to \lvert D \rvert$ by $f \mapsto \operatorname{div} f + D$ for $f \in \mathcal{L}(D)$. This is clearly invariant under scaling of $f$ and so well-defined. It is in fact a bijection.
+
+##### _definition:_ general linear system
+
+A general linear system 
 
