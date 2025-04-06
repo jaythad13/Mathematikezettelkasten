@@ -1,6 +1,7 @@
 ---
 tags:
 - math-199DR/18
+- math-199DR/19
 - cx-geo
 - alg-geo
 ---
@@ -14,6 +15,10 @@ Divisors naturally arise from functions — they keep track of their zeroes and
 There is a partial order on $\operatorname{Div} X$ where $D_{1} \ge D_{2}$ if $D_{1}(p) \geq D_{2}(p)$ at every $p \in X$.
 
 $D_{1} > D_{2}$ if $D_{1} \geq D_{2}$ and $D_{1} \neq D_{2}$.
+
+##### _definition:_ effective, positive divisor
+
+A divisor $D \in \operatorname{Div} X$ is said to be effective and positive if $D \geq 0$.
 
 ### The Riemann-Roch space of meromorphic functions
 
@@ -129,11 +134,11 @@ $$
 
 On a complex torus $\mathbb{C} / \Lambda$, for any $D \in \operatorname{Div}(\mathbb{C} / \Lambda)$, we have
 $$
-\mathcal{L}(D) = \begin{cases}
+\dim \mathcal{L}(D) = \begin{cases}
 0 & \operatorname{deg} D < 0 \\
 1 & \operatorname{deg} D = 0, D \sim 0 \\
 0 & \deg D = 0, D \not \sim 0 \\
-1 & \deg D > 0.
+\deg D & \deg D > 0.
 \end{cases}
 $$
 
@@ -141,4 +146,6 @@ The first case is just true in general.
 
 We can show the second case writing $\mathbb{C} / \Lambda$ as an elliptic curve $y^{2} = x^3 + Ax + B$ and showing that there is a zero canonical divisor $K = \operatorname{div}(dx / y) = 0$. Then $\mathcal{L}(K) = \mathcal{L}(0) = \mathcal{O}_{\mathbb{C} / \Lambda}(\mathbb{C} / \Lambda)$. That is $\dim \mathcal{L}(0) = 1$ (since $\mathbb{C} / \Lambda$ is [[Topology --- math-147/notes/Connectedness and path-connectedness#_definition _ connectedness|connected]]). Then for any, $D \sim 0$, we have $\mathcal{L}(D) \cong \mathcal{L}(0)$ and thus, $\dim \mathcal{L}(D) = 1$.
 
- Suppose $D \not \sim 0$, but still has degree $0$. If $f \in \mathcal{L}(D)$, then $\operatorname{div} f + D \ge 0$. But the degree of both terms is $0$, so we must have equality $\operatorname{div} f + D = 0$. This forces $D = - \operatorname{div} f \sim 0$ which contradicts our assumption.
+Suppose $D \not \sim 0$, but still has degree $0$. If $f \in \mathcal{L}(D)$, then $\operatorname{div} f + D \ge 0$. But the degree of both terms is $0$, so we must have equality $\operatorname{div} f + D = 0$. This forces $D = - \operatorname{div} f \sim 0$ which contradicts our assumption.
+
+Note that the third and fourth cases are really the same — if $D \not \sim 0$, then $\dim \mathcal{L}(D) = \operatorname{deg} D$. We can prove this for $\deg D > 0$ by induction.

@@ -81,21 +81,19 @@ Suppose $\operatorname{deg} D = 0$ and $\alpha(D) = 0$. Then we pair the points 
 
 In fact, this generalises! In higher dimensions this is the Abel-Jacobi map that embeds a genus $g$ curve into $\mathbb{C}^g / \Lambda$.
 
-### Complete and general linear systems
+This has some notable consequences — first, and obviously, $D_{1} \sim D_{2}$ if and only if $\operatorname{deg} D_{1} = \operatorname{deg} D_{2}$ and $\alpha(D_{1}) = \alpha(D_{2})$. However, it also gives us an isomorphism between any divisor of positive degree and a specific effective divisor. Moreover, it allows the freedom to exclude a specific point.
 
-Complete linear systems of the divisors naturally contain divisors 
+##### _corollary:_ a positive degree divisor is equivalent to a positive divisor
 
-In fact, complete linear systems provide a connection between projective space and divisors! Specifically,
+For any $D \in \operatorname{Div} \mathbb{C} / \Lambda$ of positive degree and $p \in X$ there is a positive divisor $E \geq 0$ such that $D \sim E$ and if $\deg D > 1$, $E$ can be chosen so that $E(p) = 0$.
 
-##### _proposition:_ projective space and complete linear system correspondence
+###### _proof:_
 
-There is a bijection between projectivisation of the [[Introduction to Riemann Surfaces --- math-199DR/notes/The Riemann-Roch spaces of a divisor#_definition _ the Riemann-Roch function space of a divisor|the Riemann-Roch space of a divisor]] and its complete linear system.
+Write $d = \deg D$.
 
-###### _proof sketch:_
+If $d = 1$, then $D \sim \alpha(D)$ where $\alpha(D)$ is the single point divisor at $\alpha$.
 
-Consider the map $\mathbb{P}(\mathcal{L}(D)) \to \lvert D \rvert$ by $f \mapsto \operatorname{div} f + D$ for $f \in \mathcal{L}(D)$. This is clearly invariant under scaling of $f$ and so well-defined. It is in fact a bijection.
+Suppose $d > 1$. We can choose $q \neq p$ and consider the divisor $F = D - (d - 1) \cdot q$. This is a divisor of degree $1$. Thus, $F \sim \alpha(F)$. We can choose $q \neq p$ so that $\alpha(F) \neq p$. Thus, we have $D - (d - 1) \cdot q \sim \alpha(F)$ from which it follows that $D \sim (d - 1) \cdot q + \alpha(F)$. $E = (d - 1) \cdot q + \alpha(F)$ is the desired positive divisor.
 
-##### _definition:_ general linear system
 
-A general linear system 
 
