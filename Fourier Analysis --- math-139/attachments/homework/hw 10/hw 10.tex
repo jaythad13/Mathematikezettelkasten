@@ -1,0 +1,85 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 139 --- Fourier Analysis}
+\assignment{Homework \#10}
+\duedate{21st April 2025}
+
+\begin{document}
+
+\begin{problem}[S \& S \S 6.6 \#2]
+	Suppose $R : \mathbb{R}^{3} \to \mathbb{R}^{3}$ is a proper rotation.
+	\begin{enumerate}
+		\item Show that $p(t) = \det(R - t I)$ is a polynomial of degree $3$ and prove that there exists $\gamma \in S^{2}$ with $R(\gamma) = \gamma$.
+		\item If $\mathcal{P}$ denotes the plane perpendicular to $\gamma$ and passing through the origin, show that $R : \mathcal{P} \to \mathcal{P}$ and that this linear map is a rotation.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[S \& S \S 6.6 \#4]
+	Let $A_{d}$ and $V_{d}$ denote the area and volume of the unit sphere and unit ball in $\mathbb{R}^{d}$ respectively.
+	\begin{enumerate}
+		\item Prove the formula
+			\[
+				A_{d} = \frac{2 \pi^{d / 2}}{\Gamma(d / 2)}
+			\]
+			so that $A_{2} = 2 \pi$, $A_{3} = 4 \pi$, $A_{4} = 2 \pi^{2}$, and so on. Here $\Gamma$ is the gamma function.
+
+		\item Show that $d V_{d} = A_{d}$, hence
+	\[
+		V_{d} = \frac{\pi^{d / 2}}{\Gamma(d / 2 + 1)}.
+	\]
+	In particular, $V_{2} = \pi$, $V_{3} = 4 \pi / 3$, and so on.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[S \& S  \S 6.6 \#5]
+	Let $A$ be a $d$-by-$d$ positive definite symmetric matrix with real coefficients. Show that
+	\[
+		\int_{\mathbb{R}^{d}} e^{-\pi \left < x, A(x) \right >} \, dx = (\det A)^{-1/2}.
+	\]
+	This generalises the fact that $\int_{\mathbb{R}^{d}} e^{-\pi \lVert x \rVert^{2}} \, dx = 1$, which corresponds to the case where $A$ is the identity.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[S \& S \S 6.6 \#10]
+	Let $u(x, t)$ be a solution of the wave equation, and let $E(t)$ denote the energy of this wave
+	\[
+		E(t) = \int_{\mathbb{R}^{d}} \left \lvert \frac{\partial u}{\partial t}(x, t) \right \rvert + \sum_{j = 1}^{d} \left \lvert \frac{\partial u}{\partial x_{j}} \right \rvert^{2} \, dx.
+	\]
+	We have seen that $E(t)$ is constant using Plancherel's formula. Give an alternate proof of this fact by differentiating the integral with respect to $t$ and showing that $dE / dt = 0$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[S \& S \S 6.6 \#12]
+	Establish the identity about the dual transform given in the text. In other words, prove that
+	\[
+		\int_{\mathbb{R}} \int_{S^{2}} \mathcal{R}f(t, \gamma) \overline{F(t, \gamma)} \, d\sigma(\gamma)  \, dt = \int_{\mathbb{R}^{3}} f(x) \overline{\mathcal{R}^{*}F(x)} \, dx 
+	\]
+	where $f \in \mathcal{S}(\mathbb{R}^{3})$, $F \in \mathcal{S}(\mathbb{R} \times S^{2})$ and
+	\[
+		\mathcal{R}f(t, \gamma) = \int_{\mathcal{P}_{t, \gamma}} f \quad \text{and} \quad \mathcal{R}^{*}F(x) = \int_{S^{2}} F(x \cdot \gamma, \gamma) \, d\sigma(\gamma)
+	\]
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[S \& S 6.6 \#13]
+	For each $(t, \theta)$ with $t \in \mathbb{R}$ and $\lvert \theta \rvert < \pi$, let $L = L_{t, \theta}$ denote the line in the $(x, y)$-plane given by
+	\[
+		x \cos{\theta} + y \sin{\theta} = t
+	\]
+	This is the line perpendicular to the direction $(\cos{\theta}, \sin{\theta})$ at ``distance'' $t$ from the origin (we allow negative $t$). For $f \in \mathcal{S}(\mathbb{R}^{2})$ the X-ray transform or two-dimensional Radon transform of $f$ is defined by
+	\[
+		Xf(t, \theta) = \int_{L_{t, \theta}} f = \int_{-\infty}^{\infty} f(t \cos{\theta} + u \sin{\theta}, \sin{\theta - u \cos{\theta}}) \, du.
+	\]
+	Calculate the X-ray transform of the function $f(x, y) = e^{-\pi(x^{2} + y^{2})}$.
+\end{problem}
+
+\end{document}
