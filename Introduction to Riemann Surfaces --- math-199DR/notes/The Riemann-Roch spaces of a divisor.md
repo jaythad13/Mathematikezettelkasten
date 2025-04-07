@@ -130,6 +130,10 @@ $$
 	\operatorname{div} f +  D + K = \operatorname{div} \eta - \operatorname{div} \omega  + D + K = \operatorname{div} \eta + D \ge 0. 
 $$
 
+### Bounds on dimension of the Riemann-Roch spaces
+
+We've already seen that the Riemann-Roch space on the Riemann sphere is finite dimensional. We can perform a similar computation on the torus.
+
 ##### _example:_ function spaces on the torus
 
 On a complex torus $\mathbb{C} / \Lambda$, for any $D \in \operatorname{Div}(\mathbb{C} / \Lambda)$, we have
@@ -149,3 +153,12 @@ We can show the second case writing $\mathbb{C} / \Lambda$ as an elliptic curve 
 Suppose $D \not \sim 0$, but still has degree $0$. If $f \in \mathcal{L}(D)$, then $\operatorname{div} f + D \ge 0$. But the degree of both terms is $0$, so we must have equality $\operatorname{div} f + D = 0$. This forces $D = - \operatorname{div} f \sim 0$ which contradicts our assumption.
 
 Note that the third and fourth cases are really the same — if $D \not \sim 0$, then $\dim \mathcal{L}(D) = \operatorname{deg} D$. We can prove this for $\deg D > 0$ by induction.
+
+In fact, this last strategy works in general to bound $\dim \mathcal{L}(D)$, and will ultimately be useful to prove [[Introduction to Riemann Surfaces --- math-199DR/notes/Serre duality|Serre duality]].
+
+##### _proposition:_ the Riemann-Roch space is finite dimensional
+
+For any divisor $D = P - Z$ (where $P$ and $Z$ are the effective divisors bounding poles and forcing zeroes respectively), the dimension of the Riemann-Roch space of $D$ is finite-dimensional and bounded
+$$
+\dim \mathcal{L}(D) \le 1 + \deg P.
+$$

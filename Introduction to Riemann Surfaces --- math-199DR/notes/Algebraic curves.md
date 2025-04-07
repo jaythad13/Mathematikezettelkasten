@@ -43,4 +43,82 @@ It turns out that all compact Riemann surfaces separate points and tangents, and
 
 ### Laurent series approximation
 
+Let $X$ be an algebraic curve. It turns out that this condition is sufficient to create [[Introduction to Riemann Surfaces --- math-199DR/notes/Functions on Riemann surfaces#_definition _ meromorphic|meromorphic functions]] with desired behaviour at finitely many points on $X$. Ultimately our goal is to create a meromorphic function with specified behaviour at finitely many points and possibly arbitrary behaviour everywhere else. 
+
+The behaviour we want to specify is the tail of the Laurent series of the function.
+
+##### _definition:_ Laurent tail
+
+A Laurent polynomial $r(z) = \sum_{n = m}^M a_{n} z^n$ ($m \leq M$ integers, possibly negative) is the Laurent tail of a Laurent series $f$ if $f(z) - r(z)$ has all terms of degree (strictly) greater than $M$.
+
+This aligns exactly with our intuition for the "left" "tail" of a series.
+
+Our result follows from a series of lemmas. First we get a meromorphic function of arbitrary order at a point —
+
+##### _lemma:_ functions with specified order at a point
+
+Given a point $p \in X$ and an integer $m$, there is a meromorphic function $f$ on $X$ with $\operatorname{ord}_{p}f = m$.
+
+###### _proof sketch:_
+
+Choose $f = g^m$ where $g$ is the meromorphic function that separates tangents at $p$.
+
+By induction on the number of terms, this allows us to get a meromorphic function with arbitrary Laurent tail at a point.
+
+##### _lemma:_ functions with specified Laurent tail at a point
+
+Given a point $p \in X$, a local coordinate $z$ centred at $p$, and a Laurent polynomial $r$ in $z$, there exists a meromorphic function $f \in \mathcal{M}_{X}(X)$ that has Laurent series with Laurent tail $r$.
+
+###### _proof:_
+
+Note that the meromorphic function that separates tangents at $p$ can be translated to have a zero at $p$ and written as $\lambda z$ in local coordinates. Then for a Laurent tail $a_{m} z^m$ with just one term it suffices to choose the meromorphic function with order $m$.
+
+Suppose $r(z) = \sum_{n = m}^M a_{n} z^n$ has $k + 1$ terms. Then by the case for $k = 1$, there is a meromorphic function $g$ with Laurent tail $a_{m} z^m$. Now $g - r$ has Laurent series $\sum_{n = m + 1}^\infty b_{n} z^n$. Since $s(z) = \sum_{n = m + 1}^M b_{n} z^n$ has $k$ terms, by induction there is some $h$ with Laurent tail $s$. Thus, $g - h - r$ has Laurent series $\sum_{n = M + 1}^\infty c_{n} z^n$. That is, $g - h$ has Laurent tail $r$.
+
+##### _lemma:_ functions with specified zero and pole
+
+Given distinct points $p, q \in X$, there is a meromorphic function $f \in \mathcal{M}_{X}(X)$ with a zero at $p$ and a pole at $q$.
+
+###### _proof sketch:_
+
+Let $g$ be the meromorphic function that separates $p$ and $q$. Choose $f = (g - g(p))/(g - g(q))$ (alter appropriately or use $1 / g$ instead if $g$ has a pole or zero at $p$ or $q$).
+
+We can extend this again by induction to finitely many poles.
+
+##### _lemma:_ functions with specified zero and (finitely many) poles
+
+Given points $p, q_{1}, \dots, q_{n} \in X$ (with $p \neq q_{i}$) there is a meromorphic function $f \in \mathcal{M}_{X}(X)$ with a zero at $p$ and a pole at each $q_{i}$ (with multiplicity).
+
+###### _proof sketch:_
+
+If $g$ has a zero at $p$ and poles at $q_{1}, \dots, q_{n - 1}$ then $f = g/(g - g(q_{n}))$ is the desired meromorphic function.
+
+Finally, we can get a function of order greater 
+
+##### _lemma:_ functions with order bounded below at finitely many points
+
+For points $p, q_{1}, \dots, q_{n} \in X$ and any positive integer $M$, there is a meromorphic function $f \in \mathcal{M}_{X}(X)$ with $\operatorname{ord}_{p}(f - 1) \geq M$ and $\operatorname{ord}_{q_{i}} f \geq M$.
+
+###### _proof:_
+
+Let $g$ be the function with a zero at $p$ and poles at $q_{1}, \dots, q_{n}$. Then $f = 1 / (1 + g^M)$ is the desired function.
+
+Finally, we get the desired result.
+
+##### _proposition:_ Laurent series approximation
+
+For finitely many points $p_{1}, \dots, p_{n} \in X$, corresponding local coordinates $z_{1}, \dots, z_{n}$ at each point, and Laurent polynomials $r_{1}, \dots, r_{n}$ there is a meromorphic function $f \in \mathcal{M}_{X}(X)$ such that $f$ has Laurent tail $r_{i}$ at each $p_{i}$. 
+
+###### _proof:_
+
+Choose a positive integer $M$ such that $\deg r_{i} < M$ for all $r_{i}$ (where degree is just the largest integer exponent). For a function not to interfere with a Laurent tail $r_{i}$ at $p_{i}$ it's sufficient to show the function has order at least $M$ at $p_{i}$.
+
+Let each $g_{i}$ be a meromorphic function with Laurent tail $r_{i}$ at $p_{i}$. Let $m$ be the minimum of the orders $\operatorname{ord}_{p_{i}} r_{i}$. Also let $h_{i}$ be a meromorphic function with $\operatorname{ord}_{p_{i}}(h_{i} - 1) \ge M - m$ and $\operatorname{ord}_{q_{i}}h_{i} \geq M - m$. Then $f = \sum_{i = 1}^n g_{i} h_{i}$ is the desired meromorphic function.
+
+At $p_{i}$, $g_{i} h_{i}$ has $h_{i} = 1$ and so $g_{i} h_{i} - r_{i}$ has order at least $M$. For $j \neq i$, each $g_{j} h_{j}$ has order greater than $M - m + m = M$, and thus, doesn't interfere. So $f$ has Laurent tail $r_{i}$ at $p_{i}$.
+
+##### _corollary:_ meromorphic functions with finitely many specified orders
+
+For finitely many points $p_{1}, \dots, p_{n} \in X$ and corresponding integers $m_{1}, \dots, m_{n}$, there is a meromorphic function $f \in \mathcal{M}_X(X)$ such that $\operatorname{ord}_{p_{i}} = m_{i}$ for each $i$.
+
 ### Function fields as field extensions
