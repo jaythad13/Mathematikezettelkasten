@@ -121,4 +121,83 @@ At $p_{i}$, $g_{i} h_{i}$ has $h_{i} = 1$ and so $g_{i} h_{i} - r_{i}$ has order
 
 For finitely many points $p_{1}, \dots, p_{n} \in X$ and corresponding integers $m_{1}, \dots, m_{n}$, there is a meromorphic function $f \in \mathcal{M}_X(X)$ such that $\operatorname{ord}_{p_{i}} = m_{i}$ for each $i$.
 
-### Function fields as field extensions
+### Meromorphic functions form a function field
+
+Function fields in one variable are "nice" [[Abstract Algebra I --- math-171/notes/Fields#_definition _ fields|fields]]. 
+
+##### _definition:_ function field
+
+A function field (in one variable, over $\mathbb{C}$) is a finite extension of a purely transcendental extension $\mathbb{C}(z)$ of $\mathbb{C}$ of transcendence degree $1$.
+
+Our goal is to show that the field of meromorphic functions is one of them.
+
+##### _theorem:_ the field of meromorphic functions is a function field
+
+The field $\mathcal{M}_{X}(X)$ is an extension of $\mathbb{C}$ of transcendence degree $1$.
+
+###### _proof:_
+
+The fact that $\mathcal{M}_{X}(X)$ has transcendence degree $1$ can be shown immediately, using our [[Introduction to Riemann Surfaces --- math-199DR/notes/The Riemann-Roch spaces of a divisor#_proposition _ the Riemann-Roch space is finite dimensional|our bound on the size of the Riemann-Roch space]]. Suppose $f, g$ are algebraically independent, and thus, linearly independent meromorphic functions. Then choosing $D$ sufficiently large that $f, g \in \mathcal{L}(D)$, we get
+$$
+f^i g^j \in \mathcal{L}(nD)
+$$
+for all $i, j$ with $i + j \le n$.
+
+By [[Superdiscrete --- math-55a/notes/Multisets#_theorem _ the multichoose theorem|stars and bars]], this gives
+$$
+\binom{n + 2}{s} \le \mathcal{L}(n D)
+$$
+but we have
+$$
+\dim \mathcal{L}(D) \le 1 + n \deg D.
+$$
+Since the former is quadratic and the latter is linear, we have a contradiction.
+
+To prove $\mathcal{M}_{X}(X)$ is finitely generated is harder, but in the process we prove some useful lemmas.
+
+##### _lemma:_ polynomials in $f$ have with poles at poles of $f$
+
+Let $D$ be a divisor on $X$ and let $\operatorname{div}_{\infty} f$ be the divisor of poles of $f$. Then there is a positive integer $n$, and a polynomial in $f$, say $g = r \circ f$ such that $D  - \operatorname{div} g \le n \operatorname{div}_{\infty} f$.
+
+###### _proof sketch:_
+
+Choose
+$$
+r(f) = \prod_{D(p) \ge 1, f(p) \in \mathbb{C}} (f - f(p))^{D(p)}.
+$$
+$g$ has zeroes of order $D(p)$ everywhere that $D$ is positive and $f$ doesn't have a pole. If $f$ has a pole them $n \div_{\infty} f+ \operatorname{div} g$ cancels to $0$ for $n = 1$, and by increasing $n$ can be made to be greater than $D$. (Recall that $\operatorname{div}_{\infty} f$ is positive at poles of $f$).
+
+##### _corollary:_ products with poles at poles of $f$
+
+For $f, h$ meromorphic functions on $X$ there is a polynomial such that $(r \circ f) h$ has no poles outside the poles of $f$.
+
+###### _proof sketch:_
+
+Take $D = - \operatorname{div} h$ in the previous theorem. It follows that $g h \in \mathcal{L}(n \operatorname{div}_{\infty} f)$.
+
+##### _corollary:_
+
+Given a meromorphic function $f$ on $X$, there is a constant positive integer $m$ such that for all $n > m$, and any $k \le \deg \mathcal{M}_{X}(X) / \mathbb{C}(f)$
+$$
+\dim \mathcal{L}(n D) \ge (n - m + 1)k.
+$$
+
+###### _proof sketch:_
+
+Choose $k$ linearly independent elements of $\mathcal{M}_{X}(X)/\mathbb{C}(f)$, say $g_{1}, \dots, g_{k}$. Then $h_{i} = (r \circ f) g_{i}$ are linearly independent, have poles only at poles of $f$ and have $h_{i} \in \mathcal{L}(m D)$ for some $n$. 
+
+The functions $f^i h_{j}$ with $i < n - m$ are all linearly independent and in $\mathcal{L}(n D)$.
+
+##### _theorem:_ the degree of the function field
+
+For $f$ a non-constant meromorphic function on $X$, the function field $\mathcal{M}_X(X)$ is an extension $\mathcal{M}_{X}(X) / \mathbb{C}(f)$ of degree $\deg (\operatorname{div}_{\infty} f)$.
+
+###### _proof sketch:_
+
+Suppose by way of contradiction that $\mathcal{M}_{X}(X) \geq 1 + \operatorname{deg} \operatorname{div}_{\infty} f$. Then we would have
+$$
+1 + n \deg (\operatorname{div}_{\infty} f) \ge \mathcal{L}(n \operatorname{div}_{\infty} f) \le (n - m_{0} + 1)(1 + \deg \operatorname{div}_{\infty} f)
+$$
+which is false for large enough $n$. So $\mathcal{M}_{X}(X) \leq \deg (\operatorname{div}_{\infty} f)$.
+
+Using Laurent series approximation choose $g_{ij}$ with $g_{ij}$ having a pole of order $j$ at $p_{i}$. Then the list of all $g_{ij}$ such that $1 \le j \le \operatorname{div}_{\infty }f(p_{i})$. Proving this takes work.
