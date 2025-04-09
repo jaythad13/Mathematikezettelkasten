@@ -110,11 +110,11 @@ measures the dimension of which choices of Laurent series at points can't be glu
 
 Note that this is harder than [[Introduction to Riemann Surfaces --- math-199DR/notes/Algebraic curves#_proposition _ Laurent series approximation|Laurent series approximation]] — Laurent series approximation allowed us to get the desired behaviour at finitely many points, but with no guarantee that there wouldn't be poles at the rest.
 
-The number theoretic answer is that using the relationship between $\Lambda(D) + \mathcal{M}_{X}(X)$ and $\Lambda^\perp(D)$ and the [[Abstract Algebra I --- math-171/notes/Group isomorphism theorems#_theorem _ the second isomorphism theorem|second isomorphism theorem]] we can describe $\mathrm{H}^1(D)$ as
+The number theoretic answer is that using the relationship $\mathbb{A}_{X} = \Lambda(D) \oplus \Lambda^\perp(D)$ we can describe $\mathrm{H}^1(D)$ as
 $$
-\mathrm{H}^1(D) = \mathbb{A}_{X} / \Lambda(D) + \mathcal{M}_{X}(X)
+\mathrm{H}^1(D) = \frac{\mathbb{A}_{X} / \Lambda(D)}{\Lambda^\perp(D) \cap \mathcal{M}_{X}(X)} \cong \frac{\mathbb{A}_{X}}{\Lambda(D) + \mathcal{M}_{X}(X)}.
 $$
-which is actually the (idèle) class group of the function field $\mathcal{M}_{X}(X)$. This is the central object of study in class field theory (one of the central fields of study in algebraic number theory).
+which is actually the (ray?) class group of the function field $\mathcal{M}_{X}(X)$. This is a central object of study in class field theory (one of the central fields of study in algebraic number theory).
 
 Finally the geometric answer is that (as the notation suggests) $\mathrm{H}^1(D)$ is really the cohomology of the invertible sheaf associated to the line bundles associated to $D$, and since $\mathcal{L}(D)$ is really related to the line bundle, it's natural to consider $\mathrm{H}^1(D)$.
 
