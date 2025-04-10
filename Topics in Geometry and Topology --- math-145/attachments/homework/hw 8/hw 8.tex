@@ -215,10 +215,24 @@ The first problem starts on the next page in landscape mode
 
 			We know that $f_{\mid I}(i)$ is the $i$th entry of the column vector $L g$. But then, for our choice of $g$, $L g$ is just the $j$th column of $L$. Then, the probability that a random walk starting at the $i$th vertex first is the same as $f_{\mid I}(i)$ is the same as the $i$th entry of $Lg$, which ultimately is the same as the $(i, j)$th entry of $L$ as desired.
 
-		\item In the previous homework (problem 35) we solved the Dirichlet problem for the same graph
+		\item
+			\[
+				\boxed{
+					L = 
+					\begin{pmatrix}
+						\frac{1}{5} & \frac{ 1}{15} & \frac{ 1}{15} & \frac{ 2}{3} \\
+						\frac{ 2}{5} & \frac{ 2}{15} & \frac{ 2}{15} & \frac{ 1}{3} \\
+						\frac{4}{15} & \frac{14}{45} & \frac{13}{90} & \frac{5}{18} \\
+						\frac{2}{15} & \frac{22}{45} & \frac{ 7}{45} & \frac{ 2}{9} \\
+						\frac{2}{15} & \frac{ 7}{45} & \frac{29}{90} & \frac{7}{18} \\
+
+					\end{pmatrix} \quad \text{and} \quad p = L_{3, 4} = 2 / 9.
+				}
+			\]
+			In the previous homework (problem 35) we solved the Dirichlet problem for the same graph
 			\[
 		\begin{pmatrix}
-			1 & -1/3 & 0 & 0 & 0 & -1/3 & 0 & 0 & -1/3 \\
+			1 & -1/2 & 0 & 0 & 0 & 0 & 0 & 0 & -1/2 \\
 			-1/4 & 1 & -1/4 & 0 & -1/4 & -1/4 & 0 & 0 & 0 \\
 			0 & -1/2 & 1 & -1/2 & 0 & 0 & 0 & 0 & 0 \\
 			0 & 0 & -1/3 & 1 & -1/3 & 0 & -1/3 & 0 & 0 \\
@@ -241,7 +255,7 @@ The first problem starts on the next page in landscape mode
 			This gives us
 			\[
 				D_{1} = \begin{pmatrix}
-			1 & -1/3 & 0 & 0 & 0 \\
+			1 & -1/2 & 0 & 0 & 0 \\
 			-1/4 & 1 & -1/4 & 0 & -1/4 \\
 			0 & -1/2 & 1 & -1/2 & 0 \\
 			0 & 0 & -1/3 & 1 & -1/3 \\
@@ -251,7 +265,7 @@ The first problem starts on the next page in landscape mode
 		and
 		\[
 			D_{2} = \begin{pmatrix}
-			1/3 & 0 & 0 & -1/3 \\
+			0 & 0 & 0 & -1/2 \\
 			-1/4 & 0 & 0 & 0 \\
 			0 & 0 & 0 & 0 \\
 			0 & -1/3 & 0 & 0 \\
@@ -262,14 +276,17 @@ The first problem starts on the next page in landscape mode
 		Ultimately this gives us
 		\[
 			L = -D_{1}^{-1} D_{2} = \begin{pmatrix}
-				9/8 & 1/2 & 1/6 & 1/8 & 1/6 \\
-				3/8 & 3/2 & 1/2 & 3/8 & 1/2 \\
-				1/4 & 1	& 14/9 & 11/12 & 5/9 \\
-				1/8 & 1/2 & 11/18 & 35/24 & 11/18 \\
-				1/8 & 1/2 & 5/18 & 11/24 & 23/18
-			\end{pmatrix}.
+\frac{1}{5} & \frac{ 1}{15} & \frac{ 1}{15} & \frac{ 2}{3} \\
+\frac{ 2}{5} & \frac{ 2}{15} & \frac{ 2}{15} & \frac{ 1}{3} \\
+\frac{4}{15} & \frac{14}{45} & \frac{13}{90} & \frac{5}{18} \\
+\frac{2}{15} & \frac{22}{45} & \frac{ 7}{45} & \frac{ 2}{9} \\
+\frac{2}{15} & \frac{ 7}{45} & \frac{29}{90} & \frac{7}{18} \\
+ 
+\end{pmatrix}.
 		\]
 	\end{enumerate}
+
+	With our labeling, the probability desired is the $(3, 4)$th entry of $L$, which is $2 / 9$.
 \end{solution}
 
 \pagebreak
