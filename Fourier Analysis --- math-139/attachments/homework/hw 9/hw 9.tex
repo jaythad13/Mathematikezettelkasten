@@ -25,6 +25,40 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item From exercise 2 we have $\hat{g}(\xi) = \sin^{2}{(\pi \xi)} / (\pi \xi)^{2}$. Thus, for $h : \mathbb{R} \to \mathbb{C}$ given by $h(x) = e^{2 \pi i \alpha x} g(x)$, we have $\hat{h}(\xi) = \hat{g}(\xi + \alpha)$
+
+			Since $h(n) = 1$ for $n = 0$ and $h(n) = 0$ for all other $n \in \mathbb{Z}$, the Poisson summation formula gives us
+			\[
+				\sum_{n = -\infty}^{\infty} \frac{\sin^{2}{(\pi (n + \alpha))}}{(\pi (n + \alpha))^{2}} = 1
+			\]
+			and thus,
+			\[
+				\sum_{n = -\infty}^{\infty} \frac{1}{(n + \alpha)^{2}} = \frac{\pi^{2}}{\sin^{2}{(\pi n + \pi a)}} = \frac{\pi^{2}}{\sin^{2}(\pi \alpha)}
+			\]
+			for all non-integer $\alpha$.
+
+			For integer $\alpha$, both sides of the Poisson summation formula are just trivially $1$ since the only non-zero Fourier coefficient is $\hat{g}(0) = 1$ and the sum of $g$ at all integers is also just $1$.
+
+		\item We can take the integral with respect to $\alpha$ on either side. On the right hand side this is
+			\[
+				\int \frac{\pi^{2}}{\sin^{2}{(\pi \alpha)}} \, d\alpha = \int_{} \pi^{2} \csc^{2}{(\pi \alpha)} \, d\alpha = \pi \cot{(\pi \alpha)} = - \frac{\pi}{\tan{(\pi \alpha)}}.
+			\]
+
+			Note that for $0 < \alpha < 1$, we can contain $\alpha$ in some compact interval containing an open neighbourhood of $\alpha$. Thus, the convergence of the sum is uniform and absolute so we can exchange the order of integration and summation ---
+			\[
+				\int_{} \sum_{n = - \infty}^{\infty} \frac{1}{(n + \alpha)^{2}} \, d\alpha = \sum_{n = -\infty}^{\infty} \int_{} \frac{1}{(n + \alpha)^{2}} \, d\alpha = \sum_{n = -\infty}^{\infty} \frac{-1}{n + \alpha}.
+			\]
+
+			On the right hand side $\tan{(\pi \alpha)}$ is $1$-periodic. Notice that so is the left hand side $\sum 1 / (n + \alpha)$, since replacing $\alpha$ with $\alpha + 1$ just corresponds to shifting indices by one. Taking limits of $N$th partial sums $N \to \infty$ the difference between functions of $\alpha$ and $\alpha + 1$ vanishes ---
+			\[
+				\sum_{n = - N}^{N} \frac{1}{\alpha + 1 + n} - \frac{1}{\alpha + n} = \frac{1}{\alpha + N + 1} - \frac{1}{\alpha - N} \to 0.
+			\]
+			Thus, our proof in the case that $\alpha \in (0, 1)$ suffices to prove the fact for all $\alpha \in \mathbb{R} \setminus \mathbb{Z}$.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[S \& S \S 5.5 \#17.]
@@ -47,10 +81,80 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item
+
+		\item We can perform integration by parts to get the functional equation ---
+			\begin{align*}
+				\Gamma(s + 1) & = \int_{0}^{\infty} e^{-x} x^{s + 1 - 1} \, dx \\
+					      & = \int_{0}^{\infty} e^{-x} x^{s} \, dx \\
+					      & = (e^{-x} x^{s}) \Big |_{0}^{\infty} - \int_{0}^{\infty} - e^{-x} s x^{s - 1} \, dx \\
+					      & = 0 - 0 + s \int_{0}^{\infty} e^{-x} x^{s} \, dx \\
+					      & = s \Gamma(s).
+			\end{align*}
+
+			We can also see that
+			\[
+				\Gamma(1) = \int_{0}^{\infty} e^{-x} x^{1 - 1} \, dx = (- e^{-x}) \Big |_{0}^{\infty} = 0 - (-1) = 1.
+			\]
+
+			Since the functions $n \mapsto \Gamma(n + 1)$ and $n \mapsto n!$ satisfy the same initial conditions $\Gamma(0 + 1) = 1 = 0!$ and the same recurrence relation --- $\Gamma(n + 1) = n \Gamma(n - 1 + 1)$ and $n! = n (n - 1)!$, by induction, they agree for every positive integer $n$.
+
+		\item Explicitly,
+			\[
+				\Gamma(1 / 2) = \int_{0}^{\infty} \frac{e^{-x}}{\sqrt{x}} \, dx.
+			\]
+			With the change of variables $u = \sqrt{x}$ with $du / dx = 1 / 2 \sqrt{x}$, this reduces to a Gaussian integral ---
+			\begin{align*}
+				\Gamma(1 / 2) & = \int_{0}^{\infty} e^{-u^{2}} 2 \frac{du}{dx} \, dx \\
+					      & = 2 \int_{0}^{\infty} e^{-u^{2}} \, du \\
+					      & = \int_{\infty}^{\infty} e^{-u^{2}} \, du.
+			\end{align*}
+			We've previously computed the Gaussian integral to be $\sqrt{\pi}$ so we get
+			\[
+				\Gamma(1 / 2) = \sqrt{\pi}.
+			\]
+
+			By the functional equation,
+			\[
+				\Gamma(3 / 2) = \Gamma(1 + 1/2) = \frac{1}{2} \Gamma(1/2) = \frac{\sqrt{\pi}}{2}.
+			\]
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[S \& S \S 5.5 \#21.]
 	Suppose that $f$ is continuous on $\mathbb{R}$. Show that $f$ and $\hat{f}$ cannot both be compactly supported unless $f = 0$. This can be viewed in the same spirit as the uncertainty principle.
+\end{problem}
+
+\begin{solution}
+	Suppose without loss of generality that $f$ is supported in an interval $[a, b]$ with $b - a < 1$. Notice that since dilating functions corresponds to contracting and scaling their Fourier transforms, we can actually dilate any compactly supported function so that it is supported in an interval of length less than $1$ while keeping its Fourier transform compactly supported as well. If the dilation of a function is identically zero, then so is the function. Thus, this really is ``without loss of generality'' --- it really does suffice just to consider this case.
+
+	Then, for each, $x \in [a, b]$, the sum of all $f(x + n)$ over integers $n$ is just $f(x)$ itself since $a < x$ gives $x + n \ge x + 1 > b$ for positive integers and similarly for negative integers. Thus, $f(x + n) = 0$ for all integers $n$. Then, by the Poisson summation formula (which applies since $f$ is compactly supported)
+	\[
+		f(x) = \sum_{n = -\infty}^{\infty} f(x + n) = \sum_{n = -\infty}^{\infty} \hat{f}(n) e^{2 \pi i x n}.
+	\]
+
+	That is, $f$ is a trigonometric polynomial, and thus, $1$-periodic. The only $1$-periodic function that is compactly supported is the $0$ function.
+\end{solution}
+
+\pagebreak
+
+\begin{problem}[S \& S \S 5.6 \#1]
+	The equation
+	\[
+		x^{2} \frac{\partial^{2} u}{\partial x^{2}} + a x \frac{\partial u}{\partial x} = \frac{\partial u}{\partial t}
+	\]
+	with $u(x, 0) = f(x)$ for $0 < x < \infty$ and $t > 0$ is a variant of the heat equation that occurs in a number of applications. To solve it, make the change of variables $x = e^{-y}$ so that $-\infty < y < \infty$. Set $U(y, t) = u(e^{-y}, t)$ and $F(y) = f(e^{-y})$. Then the problem reduces to the equation
+	\[
+		\frac{\partial^{2} U}{\partial y^{2}} + (1 - a) \frac{\partial U}{\partial y} = \frac{\partial U}{\partial t}
+	\]
+	with $U(y, 0) = F(y)$. This can be solved like the usual heat equation (the case $a = 1$) by taking the Fourier transform in the $y$ variable. One must then compute the integral.  Show that the solution of the original problem is then given by
+	\[
+		u(x, t) = \frac{1}{\sqrt{4 \pi t}} \int_{0}^{\infty} e^{(- \log(v / x) + (1 - a) t)^{2}} {f(v)} \, \frac{dv}{v}. 
+	\]
 \end{problem}
 
 \end{document}
