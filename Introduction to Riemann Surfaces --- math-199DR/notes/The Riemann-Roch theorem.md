@@ -112,7 +112,7 @@ Note that this is harder than [[Introduction to Riemann Surfaces --- math-199DR/
 
 The number theoretic answer is that using the relationship $\mathbb{A}_{X} = \Lambda(D) \oplus \Lambda^\perp(D)$ we can describe $\mathrm{H}^1(D)$ as
 $$
-\mathrm{H}^1(D) = \frac{\mathbb{A}_{X} / \Lambda(D)}{\Lambda^\perp(D) \cap \mathcal{M}_{X}(X)} \cong \frac{\mathbb{A}_{X}}{\Lambda(D) + \mathcal{M}_{X}(X)}.
+\mathrm{H}^1(D) = \frac{\Lambda^\perp(D)}{\operatorname{img} \alpha_{D}} \cong \frac{\mathbb{A}_{X} / \Lambda(D)}{\Lambda^\perp(D) \cap \mathcal{M}_{X}(X)} \cong \frac{\mathbb{A}_{X}}{\Lambda(D) + \mathcal{M}_{X}(X)}.
 $$
 which is actually the (ray?) class group of the function field $\mathcal{M}_{X}(X)$. This is a central object of study in class field theory (one of the central fields of study in algebraic number theory).
 
@@ -125,15 +125,15 @@ All of this just means that we have a map of short exact sequences (a commutativ
 \usepackage{amsfonts}
 \begin{document}
 	\begin{tikzcd}
-		0 \ar[r] & \mathcal{M}_{X}(X) / \mathcal{L}(D_{1}) \ar[r, "\alpha_{D_{1}}"] \ar[d, two heads] & \Lambda^\perp(D_{2}) \ar[r, two heads] \ar[d, "t"]  & \mathrm{H}^1(D_{1})  \ar[r] \ar[d] & 0 \\
+		0 \ar[r] & \mathcal{M}_{X}(X) / \mathcal{L}(D_{1}) \ar[r, "\alpha_{D_{1}}"] \ar[d, two heads] & \Lambda^\perp(D_{1}) \ar[r, two heads] \ar[d, two heads, "t"]  & \mathrm{H}^1(D_{1})  \ar[r] \ar[d, two heads] & 0 \\
 		0 \ar[r] & \mathcal{M}_{X}(X) / \mathcal{L}(D_{2}) \ar[r, "\alpha_{D_{2}}"] & \Lambda^\perp(D_{2}) \ar[r, two heads] & \mathrm{H}^1(D_{2}) \ar[r] & 0
 	\end{tikzcd}
 \end{document}
 ```
 
-Here the map on the left follows from $\mathcal{L}(D_{1}) \subseteq \mathcal{L}(D_{2})$, $t$ is the suitable truncation, and the map on the right is also a truncation.
+Here the map on the left follows from $\mathcal{L}(D_{1}) \subseteq \mathcal{L}(D_{2})$, $t$ is the suitable truncation, and the map on the right is also a truncation. That is, since the diagram commutes, we have $\operatorname{img} \alpha_{D_{2}} = \operatorname{img} t \circ \alpha_{D_{1}}$, so we can think of $t$ as giving a map of the quotient spaces $\tilde{t} : \Lambda^\perp(D_{1}) / \operatorname{img} \alpha_{D_{1}} \to \Lambda^\perp(D_{2}) / \operatorname{img} \alpha_{D_{2}}$. 
 
-By the snake lemma, we have a short exact sequence of kernels of the vertical maps (since the vertical maps are all surjections, the cokernels are all $0$).
+By the snake lemma, we have a short exact sequence of kernels of the vertical maps (since all the vertical maps are surjections, the cokernels are all $0$).
 
 The kernel of the left vertical map is $\mathcal{L}(D_{2}) / \mathcal{L}(D_{1})$ and we will call the kernel of the right vertical map $\mathrm{H}^1(D_{2} / D_{2})$ (for what I think are reasons motivated by cohomology). The short exact sequence is then
 
@@ -173,7 +173,7 @@ for $D_{1} \le D_{2}$.
 
 Plugging this into the formula we just obtained gives us a formula to compare any two comparable divisors [[Introduction to Riemann Surfaces --- math-199DR/notes/The Riemann-Roch spaces of a divisor#_definition _ ordering on divisors|in the divisor poset]] —
 $$
-\dim \mathcal{L}(D_{1}) - \deg D_{1} - \dim \mathrm{H}_{1}(D_{1}) = \dim L(D_{2}) - \deg D_{2} - \dim \mathrm{H}^1(D_{2}).
+\dim \mathcal{L}(D_{1}) - \deg D_{1} - \dim \mathrm{H}_{1}(D_{1}) = \dim \mathcal{L}(D_{2}) - \deg D_{2} - \dim \mathrm{H}^1(D_{2}).
 $$
 Since any two divisors have a common supremum, this in fact extends to all divisors — the expression
 $$
@@ -187,7 +187,7 @@ For the zero divisor $\dim \mathcal{L}(0) = 1$ and $\deg 0 = 0$, so comparing an
 
 For any $D \in \operatorname{Div} X$ 
 $$
-\dim \mathcal{L}(D) - \mathrm{H}^1(D) = 1 + \deg D + \mathrm{H}^1(0).
+\dim \mathcal{L}(D) - \dim \mathrm{H}^1(D) = 1 + \deg D - \dim \mathrm{H}^1(0).
 $$
 
 This theorem is "weak" in the sense that it doesn't give the full picture of Riemann-Roch. It only trades the computation of $\mathcal{L}(D)$ for the computation of $\mathrm{H}^1(D)$. Really, what we want the Riemann-Roch theorem to say is that the only obstructions to the construction of the algebraic/analytic space/line bundle/invertible sheaf $\mathcal{L}(D)$ are topological.
@@ -198,4 +198,146 @@ The solution to both problems is Serre duality. We've seen already in the adèli
 
 ### Finite dimensionality of the obstruction space
 
-### Riemann-Roch with Serre duality
+Our strategy is to show that $\mathrm{H}^1(D)$ is finite dimensional for specific $D$. Since we've shown that $\mathrm{H}^1(D_{1} / D_{2})$ is finite dimensional for any $D_{1} \leq D_{2}$, if either one is finite dimensional, the other is too. Since any two divisors have a common supremum, it suffices to prove that there exists at least one divisor $D_{0}$ that has finite dimension. Then for any other divisor $D$, their common supremum is finite dimensional, and thus, $D$ is finite dimensional.
+
+First, we use our [[Introduction to Riemann Surfaces --- math-199DR/notes/Algebraic curves#_corollary _ lower bound on the dimension of Riemann–Roch spaces|lemma giving a lower bound]] on $\dim \mathcal{L}(n \operatorname{div}_{\infty} f)$ and the weak Riemann–Roch theorem to bound the dimension of $\mathrm{H}^1(0 / n \operatorname{div}_{\infty} f)$ uniformly, and thus, that as $n \to \infty$ the dimension is eventually constant (not necessarily at the bound of course).
+
+##### _lemma:_ the kernel into obstruction space of multiples of the divisor of poles is eventually constant
+
+For any non-constant $f \in \mathcal{M}_{X}(X)$, then the sequence of $\dim \mathrm{H}^1(0 / n \operatorname{div}_{\infty} f)$ is eventually constant.
+
+###### _proof:_
+
+We will show that the sequence is uniformly bounded and non-decreasing. By weak Riemann–Roch,
+$$
+\dim \mathrm{H}^1(0 / n \operatorname{div}_{\infty} f) = n \operatorname{deg} (\operatorname{div}_{\infty}f) - \mathcal{L}(n \operatorname{div}_{\infty} f) + 1
+$$
+and by our lemma, since $\mathcal{M}_{X}(X) / \mathbb{C}(f)$ is a field extension of degree $\deg(\operatorname{div}_{\infty} f)$. Then using our lemma for the lower bound on $\dim \mathcal{L}(n \operatorname{div}_{\infty} f)$,
+$$
+\dim \mathrm{H}^1(0 / n \operatorname{div}_{\infty} f) \le n \deg (\operatorname{div}_{\infty} f) - (n - m + 1) \deg (\operatorname{div}_{\infty} f) + 1 = 1 + \deg (\operatorname{div}_{\infty} f) (m - 1).
+$$
+This does not depend on $n$ ($m$ does not depend on $n$), so the bound is uniform.
+
+Notice that for $0 \le D_{1} \le D_{2}$, the diagram
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		\mathrm{H}^1(0) \ar[r, "t_{0}^{D_{1}}"] \ar[rr, bend right, "t_{0}^{D_{2}}"]  & \mathrm{H}^1(D_{1}) \ar[r, "t_{D_{1}}^{D_{2}}"] & \mathrm{H}^1(D_{2})
+	\end{tikzcd}
+\end{document}
+```
+commutes, so the kernel of the first map is contained in the composition. That is, $\mathrm{H}^1(0 / D_{1}) \subseteq \mathrm{H}^1(0 / D_{2})$. 
+
+Thus, $\mathrm{H}^1(0 / n \operatorname{div}_{\infty }f) \subseteq \mathrm{H}^1(0 / (n + 1) \operatorname{div}_{\infty} f)$ and the sequence of their dimensions is increasing.
+
+Using weak Riemann–Roch, we see that this is really a bound on $\deg(n \operatorname{div}_{\infty} f) - \dim \mathcal{L}(n \operatorname{div}_{\infty} f)$ — 
+$$
+\operatorname{deg} (n \operatorname{div}_{\infty} f) - \dim \mathcal{L}(n \operatorname{div}_{\infty} f) = \dim \mathrm{H}^1(0 / \operatorname{div}_{\infty} f) - 1 \le M
+$$
+where $M$ is a bound depending only on $f$.
+
+We can generalise this to uniformly bound $\deg D - \dim \mathcal{L}(D)$ for every divisor $D$ using our [[Introduction to Riemann Surfaces --- math-199DR/notes/Algebraic curves#_lemma _ a polynomial in $f$ with poles at poles of $f$|lemma that allows us to get linear equivalence to a divisor less than]] $\operatorname{div}_{\infty} f$ with a polynomial in $f$.
+
+##### _proposition:_ a universal bound for the degree–dimension gap
+
+There is an integer $M$ such that, for any divisor $D \in \operatorname{Div} X$, the difference between the degree of $D$ and the function space of $D$ is bounded by $M$ —
+$$
+\operatorname{deg} D - \dim \mathcal{L}(D) \le M.
+$$
+
+###### _proof:_
+
+Fix a non-constant meromorphic $f \in \mathcal{M}_{X}(X)$. Then there is indeed some $M$ such that
+$$
+\deg (n \operatorname{div}_{\infty} f) - \dim \mathcal{L}(n \operatorname{div}_{\infty} f) \le M
+$$
+for all non-negative $n$.
+
+By our [[Introduction to Riemann Surfaces --- math-199DR/notes/Algebraic curves#_lemma _ a polynomial in $f$ with poles at poles of $f$|lemma]], there is a meromorphic function $g$ (actually a polynomial in $f$) such that $D - \operatorname{div} g \le n \operatorname{div}_{\infty} f$. $D$ is of course linearly equivalent to $D' = D - \operatorname{div} g$. Thus,
+$$
+\begin{align}
+\operatorname{deg} D - \dim \mathcal{L}(D) & = \deg D' - \dim \mathcal{L}(D') \\
+ & = \deg (n \operatorname{div}_{\infty} f) - \dim \mathcal{L}(n \operatorname{div}_{\infty} f) - \dim \mathrm{H}^1(D' / n \operatorname{div}_{\infty} f). \\
+ & \le  \deg (n \operatorname{div}_{\infty} f) - \dim \mathcal{L}(n \operatorname{div}_{\infty} f) \\
+ & \le M.
+\end{align}
+$$
+Here the second equality follows by the precursor to weak Riemann–Roch.
+
+This gives a divisor $D_{0}$ with maximal $\deg D_{0} - \dim \mathcal{L}(D_{0})$.
+
+This divisor has trivial obstruction space $\mathrm{H}^1(D_{0})$.
+
+##### _lemma:_ a divisor with maximal degree–dimension gap
+
+If $D_{0}$ is a divisor on $X$ with $\deg D_{0} - \dim \mathcal{L}(D_{0})$ maximal among all divisors on $X$, then $\mathrm{H}^1(D_{0}) = 0$.
+
+###### _proof:_
+
+Suppose by way of contradiction that there is some non-zero $\zeta \in \mathrm{H}^1(D_{0})$. Then there is some $\zeta \in \Lambda^\perp(D_{0})$ that is not the tail of any meromorphic function $f \in \mathcal{M}_{X}(X)$.
+
+There exists some larger divisor $D$, large enough that under truncation $t_{D_{0}}^D \zeta = 0$. But then, $\zeta \in \mathrm{H}^1(D_{0} / D)$, the kernel of the truncation map is non-trivial. This contradicts the maximality of the degree–dimension gap of $D_{0}$ —
+$$
+1 \le \dim \mathrm{H}^1(D_{0} / D) = (\operatorname{deg} D - \dim \mathcal{L}(D)) - (\deg D_{0} - \dim \mathcal{L}(D_{0}))
+$$
+by the precursor to weak Riemann–Roch.
+
+##### _theorem:_ the obstruction space is finite dimensional
+
+For any $D \in \operatorname{Div} X$, the obstruction space $\mathrm{H}^1(D)$ is finite-dimensional. 
+
+### Riemann–Roch with Serre duality
+
+Serre duality gives us a way to make Riemann–Roch into a genuinely useful theorem — we can express the obstructions to writing a meromorphic function with specific bounded poles as a purely topological invariants.
+
+![[Introduction to Riemann Surfaces --- math-199DR/notes/Serre duality#_theorem _ Serre duality|Serre duality]]
+
+Now we can identify the $\mathrm{H}^1$ terms in "weak Riemann–Roch". 
+
+##### _corollary:_ the equality of genera
+
+The cohomology of the $0$ divisor $\mathrm{H}^1(0)$ (the arithmetic genus) has dimension equal to the (topological) [[Introduction to Riemann Surfaces --- math-199DR/notes/Topological invariants of a surface#_definition _ genus|genus]] $g$ of the algebraic curve $X$, equal to the dimension of $\mathcal{L}^{(1)}(0)$ (the analytic genus) for a canonical divisor $K \in \operatorname{KDiv} X$.
+
+###### _proof:_
+
+By directly applying Serre duality to the zero divisro, we get $\mathrm{H}^1(0) \cong \mathcal{L}^{(1)}(-0) \cong \mathcal{L}(K)$ where the last isomorphism follows from [[Introduction to Riemann Surfaces --- math-199DR/notes/Divisors#_corollary _ canonical divisors form a coset of the principal divisors|canonical divisors forming a coset of the principal divisors]]
+
+[[Introduction to Riemann Surfaces --- math-199DR/notes/Divisors#_theorem _ compact Riemann surfaces have canonical divisors of degree $2g - 2$|Recall that]] we showed, using [[Introduction to Riemann Surfaces --- math-199DR/notes/Divisors#_definition _ pullback of a divisor|pullback of divisors]] and [[Introduction to Riemann Surfaces --- math-199DR/notes/Topological properties of holomorphisms#_theorem _ Hurwitz' formula|Hurwitz' formula]] that a [[Introduction to Riemann Surfaces --- math-199DR/notes/Divisors#_definition _ canonical divisor|canonical divisor]] $K$ on $X$ has degree $2g - 2$. Thus, applying Riemann–Roch to a canonical divisor we get
+$$
+\dim \mathcal{L}(K) - \dim \mathrm{H}^1(K) = \deg K + 1 - \dim \mathrm{H}^1(0)
+$$
+which is
+$$
+\dim \mathrm{H}^1(0) - \dim \mathcal{L}^{(1)}(K) = 2g - 2 + 1 - \dim \mathrm{H}^1(0)
+$$
+which is
+$$
+2 \dim \mathrm{H}^1(0) = 2g - 1 + 1
+$$
+which, finally, is
+$$
+\mathrm{H}^1(0) = g.
+$$
+##### _theorem:_ the Riemann–Roch theorem
+
+For any divisor $D \in \operatorname{Div} X$ and any canonical divisor $K \in \operatorname{KDiv} X$,
+$$
+\dim \mathcal{L}(D) - \dim \mathcal{L}(K - D) = \deg D + 1 - g.
+$$
+
+##### _corollary:_ Riemann's theorem
+
+$$
+\dim \mathcal{L}(D) \leq \deg D + 1 - g.
+$$
+
+Riemann actually proved his theorem first, and then his student Roch proved the error term. Sadly, they both died soon after.
+
+##### _corollary:_ Riemann–Roch for big divisors
+
+For a divisor $D$ of degree at least $2g - 1$ on an algebraic curve $X$, $\mathrm{H}^1(D) = 0$ and
+$$
+\mathcal{L}(D) = \deg D + 1 - g.
+$$

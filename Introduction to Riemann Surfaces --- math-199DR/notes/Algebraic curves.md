@@ -155,7 +155,7 @@ Since the former is quadratic and the latter is linear, we have a contradiction.
 
 To prove $\mathcal{M}_{X}(X)$ is finitely generated is harder, but in the process we prove some useful lemmas.
 
-##### _lemma:_ polynomials in $f$ have with poles at poles of $f$
+##### _lemma:_ a polynomial in $f$ with poles at poles of $f$
 
 Let $D$ be a divisor on $X$ and let $\operatorname{div}_{\infty} f$ be the divisor of poles of $f$. Then there is a positive integer $n$, and a polynomial in $f$, say $g = r \circ f$ such that $D  - \operatorname{div} g \le n \operatorname{div}_{\infty} f$.
 
@@ -175,7 +175,7 @@ For $f, h$ meromorphic functions on $X$ there is a polynomial such that $(r \cir
 
 Take $D = - \operatorname{div} h$ in the previous theorem. It follows that $g h \in \mathcal{L}(n \operatorname{div}_{\infty} f)$.
 
-##### _corollary:_
+##### _corollary:_ lower bound on the dimension of Riemann–Roch spaces
 
 Given a meromorphic function $f$ on $X$, there is a constant positive integer $m$ such that for all $n > m$, and any $k \le \deg \mathcal{M}_{X}(X) / \mathbb{C}(f)$
 $$
