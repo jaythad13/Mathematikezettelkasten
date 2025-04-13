@@ -286,7 +286,7 @@ by the precursor to weak Riemann–Roch.
 
 ##### _theorem:_ the obstruction space is finite dimensional
 
-For any $D \in \operatorname{Div} X$, the obstruction space $\mathrm{H}^1(D)$ is finite-dimensional. 
+For any $D \in \operatorname{Div} X$, the obstruction space $\mathrm{H}^1(D)$ is finite-dimensional.
 
 ### Riemann–Roch with Serre duality
 

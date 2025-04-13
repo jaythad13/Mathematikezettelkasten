@@ -94,6 +94,3 @@ Write $d = \deg D$.
 If $d = 1$, then $D \sim \alpha(D)$ where $\alpha(D)$ is the single point divisor at $\alpha$.
 
 Suppose $d > 1$. We can choose $q \neq p$ and consider the divisor $F = D - (d - 1) \cdot q$. This is a divisor of degree $1$. Thus, $F \sim \alpha(F)$. We can choose $q \neq p$ so that $\alpha(F) \neq p$. Thus, we have $D - (d - 1) \cdot q \sim \alpha(F)$ from which it follows that $D \sim (d - 1) \cdot q + \alpha(F)$. $E = (d - 1) \cdot q + \alpha(F)$ is the desired positive divisor.
-
-
-
