@@ -1,0 +1,57 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 139 --- Fourier Analysis}
+\assignment{Homework \#11}
+\duedate{25th April 2025}
+
+\begin{document}
+
+\begin{problem}[S \& S \S 6.6 \#10]
+	Let $u(x, t)$ be a solution of the wave equation, and let $E(t)$ denote the energy of this wave
+	\[
+		E(t) = \int_{\mathbb{R}^{d}} \left \lvert \frac{\partial u}{\partial t}(x, t) \right \rvert + \sum_{j = 1}^{d} \left \lvert \frac{\partial u}{\partial x_{j}} \right \rvert^{2} \, dx.
+	\]
+	We have seen that $E(t)$ is constant using Plancherel's formula. Give an alternate proof of this fact by differentiating the integral with respect to $t$ and showing that $dE / dt = 0$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[S \& S \S 6.6 \#12]
+	Establish the identity about the dual transform given in the text. In other words, prove that
+	\[
+		\int_{\mathbb{R}} \int_{S^{2}} \mathcal{R}f(t, \gamma) \overline{F(t, \gamma)} \, d\sigma(\gamma)  \, dt = \int_{\mathbb{R}^{3}} f(x) \overline{\mathcal{R}^{*}F(x)} \, dx 
+	\]
+	where $f \in \mathcal{S}(\mathbb{R}^{3})$, $F \in \mathcal{S}(\mathbb{R} \times S^{2})$ and
+	\[
+		\mathcal{R}f(t, \gamma) = \int_{\mathcal{P}_{t, \gamma}} f \quad \text{and} \quad \mathcal{R}^{*}F(x) = \int_{S^{2}} F(x \cdot \gamma, \gamma) \, d\sigma(\gamma)
+	\]
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[S \& S \S 7.3 \#2]
+	If $f$ is a $\mathcal{C}^{1}$ function on the circle, prove that $\lvert a_{N}(n) \rvert \le c \lvert n \rvert$ whenever $0 < \lvert n \rvert < N / 2$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[S \& S \S 7.3 \#4]
+	Let $e$ be a character on $G = \mathbb{Z} / N \mathbb{Z}$, the additive group of integers modulo $N$. Show that there exists a unique $0 \le \ell \le N - 1$ so that
+	\[
+		e(k) = e_{\ell}(k) = e^{2 \pi i \ell k / N}
+	\]
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[S \& S \S 7.3 \#5]
+	Show that all characters on $S^{1}$ are given by
+	\[
+		e_{n} = e^{2 \pi i n x} \quad \text{with } n  \in \mathbb{Z},
+	\]
+	and check that $e_{n} \mapsto n$ defines an isomorphism from $\widehat{S^{1}}$ to $\mathbb{Z}$.
+\end{problem}
+
+\end{document}
