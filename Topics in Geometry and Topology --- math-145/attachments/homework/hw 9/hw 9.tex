@@ -67,6 +67,10 @@
 
 \begin{problem}[46.]
 	Consider the following network:
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width = 0.3 \textwidth]{figures/P46 graph.pdf}
+	\end{figure}
 	\begin{enumerate}
 		\item By setting up a $5$-by-$5$ linear system, or otherwise, solve the Dirichlet problem where the node in the middle is fixed at $1$ and the twenty-four nodes on the outside are fixed at $0$.
 
@@ -75,6 +79,86 @@
 		\item What is the effective resistance $R_{\text{eff}}$ of the network from the centre node (the source) to the outer nodes (viewed as a single sink) if each edge has resistance $1$?
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item
+			\[
+				\boxed{
+					f(v) = \begin{cases}
+						10/23 & v \sim v_{1} \\
+						4/23 & v \sim v_{2} \\
+						13/46 & v \sim v_{3} \\
+						3/23 & v \sim v_{4} \\
+						3/46 & v \sim v_{5}
+					\end{cases}
+				}
+			\]
+
+			Let the Dirichlet problem be to find $f : V \to \mathbb{R}$ with $\Delta f = 0$ on the interior of the graph, and let the boundary conditions at the centre and outer vertices be specified by $g : B \to \mathbb{R}$. We use the $D_{8}$ symmetry of the graph to solve the problem in only in the upper-right eighth of the graph (ignoring the top-right vertex) with vertices labelled as below. We write $v \sim v_{j}$ to indicate that $v$ is in the orbit of $v_{j}$ under the natural action of $D_{8}$.
+
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width = 0.5 \textwidth]{figures/P46 labels}
+				\caption{The interior vertex labels on the graph in red, the boundary vertex labels in purple, the boundary values in green, and the region in which we solve th Dirichlet problem highlighted in yellow}
+			\end{figure}
+
+			This Dirichlet problem gives us matrices
+			\[
+				D_{1} = \begin{pmatrix}
+					1 & -1/4 & -1/2 & 0 & 0 \\
+					-1/4 & 1 & 0 & -1/2 & 0 \\
+					-1/2 & 0 & 1 & -1/2 & 0 \\
+					0 & -1/4 & -1/4 & 1 & -1/4 \\
+					0 & 0 & 0 & -1/2 & 1
+				\end{pmatrix}, D_{2} = \begin{pmatrix}
+					-1/4 & 0 & 0 & 0 \\
+					0 & -1/4 & 0 & 0 \\
+					0 & 0 & 0 & 0 \\
+					0 & 0 & -1/4 & 0 \\
+					0 & 0 & 0 & -1/2
+				\end{pmatrix}.
+			\]
+			The solution is given by
+			\[
+				-D_{1}^{-1} D_{2} \begin{pmatrix}
+					1 \\
+					0 \\
+					0 \\
+					0
+				\end{pmatrix} = \begin{pmatrix}
+					10/23 \\
+					4/23 \\
+					13/46 \\
+					3/23 \\
+					3/46
+				\end{pmatrix}.
+			\]
+		\item
+			\[
+				\boxed{
+					p = 13 / 23.
+				}
+			\]
+
+			The values of $f$ are the probability that a random walk starting at that vertex would hit the centre node before hitting the outer edge. Thus, the probability that a random walk starting at the centre vertex hits the outer edge before returning to the centre is the sum (over all neighbours of the centre) of probabilities that a random walk starting at that neighbour hits the outer edge before hitting the centre weighted by the probability that the neighbour is the second vertex of the random walk.
+
+			Each neighbour has the same probability of being the second vertex, and the same probability of return to the centre ($10 / 23$). Thus, the probability of escape to the outer edge is $13 / 23$.
+
+		\item 
+			\[
+				\boxed{
+					R_{\text{eff}} = 23 / 52 \, \mathrm{ohm}.
+				}
+			\]
+
+			The outflowing current from the centre node to each of its four neighbours is $1 - 10/23 = 13 / 23$ since the conductance along each edge is $1$. Thus, the total outflowing current from the centre node is four times each of the currents --- $I_{\text{out}} = 52 / 23$. By Ohm's law
+			\[
+				R_{\text{eff}} = V_{\text{centre/edge}} / I_{\text{out}} = 23/52 \, \mathrm{ohm}
+			\]
+			since the potential difference between the centre and the outer edges is $1$.
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
@@ -88,6 +172,46 @@
 		\item Use (ii) to write down a lower bound for $R_{\text{eff}}$, and compare it with 46 (iii).
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item 
+			\[
+				\boxed{
+					\mathcal{E}(Q) = 4 + 16 a^{2} + 32 b^{2} - 8a - 24 ab.
+				}
+			\] 
+
+			Along any edges that are between vertices in the same ``square'', there is no difference $Q$, so $\nabla Q = 0$. On the $4$ edges between the central vertex and the inner square $\nabla Q = 1 - a$, on the $12$ edges between the inner and middle squares, $\nabla Q = a - b$, and on the $20$ edges between the middle and outer squares $\nabla Q = b$.
+
+			\begin{align*}
+				\mathcal{E}(Q) & = \lVert \nabla Q \rVert_{E}^{2} \\
+					       & = \sum_{xy \in E} \nabla Q(x, y)^{2} \\
+					       & = 4 (1 - a)^{2} + 12 (a - b)^{2} + 20 b^{2} \\
+					       & = 4 + 16 a^{2} + 32 b^{2} - 8a - 24 ab.
+			\end{align*}
+
+		\item 
+			\[
+				\boxed{
+					\mathcal{E}(Q) \ge 60 / 23 \quad \text{and} \quad \mathcal{E}(Q) = 60/23 \text{ for } a = 8/23, b = 3/23.
+				}
+			\]
+
+			We obtain this minimum from WolframAlpha.
+
+		\item 
+			\[
+				\boxed{
+					R_{\text{eff}} \ge 23/60
+				}
+			\]
+
+			From Corollary 3.9.6 in the notes we have that $R_{\text{eff}} = \max (1 / \mathcal{E}(Q))$. Thus, $R_{\text{eff}} \ge 1 / \mathcal{E}(Q)$ for any $\mathcal{E}(Q)$.
+
+			Notice that $R_{\text{eff}} = 23/52$ which is indeed greater than $23/60$. It is to be expected that  $23 / 60$ is not the actual value of $R_{\text{eff}}$ since the potentials $Q$ are not actually harmonic on the interior.
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
@@ -124,12 +248,94 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item The graphs $G^{(k)}$ are $\pi / 4$-rotated square lattices of side length $\sqrt{2} k$ ---
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width = 0.4 \textwidth]{figures/P48 B0.pdf} \includegraphics[width = 0.4 \textwidth]{figures/P48 B1.pdf}
+				\includegraphics[width = 0.4 \textwidth]{figures/P48 B2.pdf} \includegraphics[width = 0.4 \textwidth]{figures/P48 B3.pdf}
+				\caption{$G^{(k)}$ with $B^{(k)}$ highlighted in yellow for $k = 0, 1, 2, 3$}
+			\end{figure}
+
+		\item 
+			\[
+				\boxed{
+					\begin{split}
+						\# B^{(k)} & = 4 k \\
+						E(B^{(k - 1)}, B^{(k)}) & = 4(2k - 1).
+					\end{split}
+				}
+			\]
+
+			The vertices in $B^{(k)}$ are the vertices at (graph-theoretic/$L^{1}$/taxicab) distance exactly $k$ from $0$. These are exactly the points $(m, n) \in \mathbb{Z}^{2}$ such that $\lvert m \rvert + \lvert n \rvert = k$ --- they can be reached by $\lvert m \rvert$ steps horizontally and $\lvert n \rvert$ steps vertically without any backtracks.
+
+			There are $k + 1$ possible choices for $\lvert m \rvert$ and they completely determine $\lvert n \rvert$. For each $\lvert m \rvert, \lvert n \rvert$ there are $4$ possible $(m, n)$, except if $\lvert m \rvert = k$ or $\lvert m \rvert = 0$, in which case there are only $2$. Thus, there are $4(k - 1) + 2 \times 2 = 4k$ vertices in $B^{(k)}$.
+
+			Each of the vertices $(m, n)$ in $B^{(k - 1)}$ has at least $2$ edges to $B^{(k)}$ in $(m + 1, n)$, $(m, n + 1)$ (for $m, n > 0$) and similarly for other $m, n$. However, if $m = 0$ or $n = 0$ (of the $4(k - 1)$ vertices in $B^{(k - 1)}$, $4$ vertices are of this form) then $(m, n)$ has a third edge to $B^{(k)}$ (for example if $m > 0, n = 0$, then $(m + 1, n), (m, n + 1), (m, n - 1)$ are all neighbours in $B^{(k)}$). We get this characterisation from considering which of $(m \pm 1, n), (m, n \pm 1)$ are at distance greater than $(m, n)$ is from the origin.
+
+			Thus, there are
+			\[
+				2 \times (4 (k - 1) - 4) + 3 \times 4 = 8 k - 8 - 8 + 12 = 8k - 4
+			\]
+			edges from $B^{(k - 1)}$ to $B^{(k)}$.
+
+		\item
+			\[
+				\boxed{
+					\mathcal{E}(Q) = \sum_{j = 1}^{k} 4(2j - 1) a_{j}^{2}.
+				}
+			\]
+
+			From this formula we get
+			\[
+				\nabla Q(xy) = \begin{cases}
+					0 & x, y \in B^{(k)} \\
+					- a_{k} & x \in B^{(k - 1)}, y \in B^{(k)}
+				\end{cases}
+			\]
+
+			Since $\mathcal{E}(Q) = \lVert \nabla Q \rVert_{E}^{2}$, we have
+			\[
+				\mathcal{E}(Q) = \sum_{j = 1}^{k} 4(2j - 1) a_{j}^{2}.
+			\]
+
+		\item
+			\[
+				\boxed{
+					\begin{split}
+						\mathcal{E}(Q) & \ge \frac{1}{4 \sum_{j = 1}^{k} 1/(2j - 1)} \\
+						\mathcal{E}(Q) & = \frac{1}{4 \sum_{j = 1}^{k} 1/(2j - 1)} \quad \text{for} \quad a_{j} = \frac{1/(2j - 1)}{\sum_{i = 1}^{k} 1/(2i - 1)} \\
+						R_{\text{eff}} & \ge {4 \sum_{j = 1}^{k} 1/(2j - 1)}.
+					\end{split}
+				}
+			\]
+
+			Writing $x_{j} = a_{j}$ and $c_{j} = 2j - 1$, we see that minimising $\mathcal{E}(Q)$ is exactly the optimisation problem to which we are given the solution in the question. The minimum of $\mathcal{E}(Q)$ given above follows.
+
+			Since $R_{\text{eff}} = \max_{P} {1}/{\mathcal{E}(P)}$, we have the sharp lower bound $R_{\text{eff}} \ge 1 / \mathcal{E}(Q)$ where $Q$ is the minimising potential given above.
+
+		\item Recall that the sum of the reciprocals of odd numbers diverges. Since
+			\[
+				R_{\text{eff}} \ge 4 \sum_{j = 1}^{k} \frac{1}{2j - 1} \to \infty
+			\]
+			as $k \to \infty$, the don't have finite $R_{\text{eff}}$. Thus, by Theorem 3.11.7 of the notes, $\mathbb{Z}^{2}$ is recurrent.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[49.]
 	In this question you'll show that the unweighted random walk on the 3D grid is transient. This graph $G = (V, E)$ has vertex set $\mathbb{Z}^{3}$, and edges between those pairs of vertices that lie exactly distance $1$ apart. We take $0$ to be the starting vertex of the random walk.
 
 	Consider the following current $K$ defined on the edges in the positive octant of the grid. For each vertex $x = (p, q, r)$ with $p, q, r \ge 0$, write $k = p + q + r$. Current will flow from $x$ to the three neighbours in the positive directions as follows:
+	\[
+		K(xy) = \begin{cases}
+			\frac{2(p + 1)}{(k + 3) (k + 2) (k + 1)} & y = (p + 1, q, r) \\
+			\frac{2(q + 1)}{(k + 3) (k + 2) (k + 1)} & y = (p, q + 1, r) \\
+			\frac{2(r + 1)}{(k + 3) (k + 2) (k + 1)} & y = (p, q, r + 1).
+		\end{cases}
+	\]
 
 	\begin{enumerate}
 		\item Show that the net flow out of $(0, 0, 0)$ is $1$.
@@ -138,17 +344,90 @@
 		\item Show that each of the three outflow edges at such a vertex has current at most $2 / (k + 2)^{2}$.
 		\item Show that
 			\[
-				\mathcal{E}'(K) < 6 \sum_{k = 0}^{\infty} \frac{1}{(k + 2)^{2}}
+				\mathcal{E}(K) < 6 \sum_{k = 0}^{\infty} \frac{1}{(k + 2)^{2}}
 			\]
 			and deduce that the unweighted random walk on $\mathbb{Z}^{3}$ is transient.
 	\end{enumerate}	
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item For $x = (0, 0, 0)$, the corresponding $k = 0$. Thus,
+			 \begin{align*}
+				 \nabla \cdot K(0, 0, 0) & = \frac{2 (0 + 1)}{(0 + 3)(0 + 2)(0 + 1)} + \frac{2 (0 + 1)}{(0 + 3)(0 + 2)(0 + 1)} + \frac{2 (0 + 1)}{(0 + 3)(0 + 2)(0 + 1)} \\
+							 & = \frac{2}{6} + \frac{2}{6} + \frac{2}{6} \\
+							 & = 1.
+			\end{align*}
+
+		\item If $(p, q, r)$ has $p, q, r$ all positive, then, in addition to the outflow to vertices $(p + 1, q, r), (p, q + 1, r), (p, q, r + 1)$, they have inflow from vertices $(p - 1, q, r), (p, q - 1, r), (p, q, r - 1)$. Thus, we get
+			\begin{align*}
+				\nabla \cdot K(p, q, r) & = \frac{2((p + 1) + (q + 1) + (r + 1))}{(k + 3)(k + 2)(k + 1)} - \frac{2(p + q + r)}{(k + 2) (k + 1) (k)} \\
+							& = \frac{2(k + 3)}{(k + 3)(k + 2)(k + 1)} - \frac{2k}{(k + 3)(k + 2)k} \\
+							& = \frac{1 - 1}{(k + 1)(k + 2)} \\
+							& = 0.
+			\end{align*}
+
+			Similarly, if exactly two of $p, q, r$ are positive (without loss of generality, say $r = 0$), then notice that $k = p + q$ and there is no inflow from the $(p, q, r - 1)$ vertex since it's not in $\mathbb{Z}^{3}_{\ge 0}$. Thus,
+			\begin{align*}
+				\nabla \cdot K(p, q, r) & = \frac{2((p + 1) + (q + 1) + (r + 1))}{(k + 3)(k + 2)(k + 1)} - \frac{2(p + q)}{(k + 2) (k + 1) k} \\
+							& = \frac{2(k + 3)}{(k + 3)(k + 2)(k + 1)} - \frac{2k}{(k + 3)(k + 2)k} \\
+							& = 0.
+			\end{align*}
+
+			Finally, if exactly one of $p, q, r$ is positive (without loss of generality, say $p > 0$), then notice that $k = p$ and there is no inflow from $(p, q - 1, r)$ and $(p, q, r - 1)$. Thus,
+			\begin{align*}
+				\nabla \cdot K(p, q, r) & = \frac{2((p + 1) + (q + 1) + (r + 1))}{(k + 3)(k + 2)(k + 1)} - \frac{2 p}{(k + 2) (k + 1) k} \\
+							& = \frac{2(k + 3)}{(k + 3)(k + 2)(k + 1)} - \frac{2k}{(k + 3)(k + 2)k} \\
+							& = 0.
+			\end{align*}
+		\item 
+			\[
+				\boxed{
+					\# \{ (p , q, r) \in \mathbb{Z}^{3}_{\ge 0} \mid p + q + r = k \} = \binom{k + 2}{2}
+				}
+			\]
+
+			The number of $(p, q, r) \in \mathbb{Z}^{3}_{\ge 0}$ with $p + q + r = k$ is just the number of ways to place two bars to divide $k$ stars into $3$ groups. Thus, there are $\binom{k + 2}{2}$ of them.
+
+		\item At each $x = (p, q, r)$ with $p + q + r = k$, we must have $p, q, r \le k$. Without loss of generality, consider the outflow edge $xy = (p, q, r)(p + 1, q, r)$. We have
+			\[
+				K(xy) = \frac{2 (p + 1)}{(k + 3)(k + 2)(k + 1)} \le \frac{2 (k + 1)}{(k + 3)(k + 2)(k + 1)} \le \frac{2}{(k + 2)^{2}}
+			\]
+			as desired.
+
+		\item By definition,
+			\[
+				\mathcal{E}(K) = \lVert K \rVert^{2}_{E} = \sum_{x \in V(\mathbb{Z}^{3})} \sum_{y \in N(x), K(xy) > 0} K(xy)^{2}.
+			\]
+
+			We can divide up the vertices $(p, q, r) \in \mathbb{Z}_{\ge 0}^{3}$ into groups with the same $p + q + r$ and bounding each term by (iv) to bound the energy by a sum over non-negative integers $k$ ---
+			\begin{align*}
+				\mathcal{E}(K) & \le \sum_{k = 0}^{\infty} \binom{k + 2}{2} 3 \left ( \frac{2}{(k + 2)^{2}} \right )^{2} \\
+					       & = \sum_{k = 0}^{\infty} \frac{(k + 2)(k + 1)}{2} \frac{12}{(k + 2)^{4}} \\
+					       & = 6 \sum_{k = 0}^{\infty} \frac{(k + 2)^{2}}{(k + 2)^{4}} \\
+					       & = 6 \sum_{k = 0}^{\infty} \frac{1}{(k + 2)^{2}}.
+			\end{align*}
+
+			Since
+			\begin{align*}
+				6 \sum_{k = 0}^{\infty} \frac{1}{(k + 2)^{2}} & \le 6 \sum_{k = 0}^{\infty} \frac{1}{(k + 1)^{2}} \\
+									      & = 6 \sum_{k = 1}^{\infty} \frac{1}{k^{2}} \\
+									      & = \pi^{2}.
+			\end{align*}
+
+			Since $R_{\text{eff}} = \min_{J} \mathcal{E}(J)$, this gives an upper bound $R_{\text{eff}} \le \pi^{2}$. Since $R_{\text{eff}} < \infty$, $\mathbb{Z}^{3}$ must be transient.
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
 \begin{problem}[50.]
 	Give a quick and easy proof, based on your work in 49 that any locally finite graph that contains $\mathbb{Z}^{3}$ as a subgraph is itself transient
 \end{problem}
+
+\begin{solution}
+	Let $G$ be a locally finite graph with an embedding $\mathbb{Z}^{3} \hookrightarrow G$. Consider $K$, defined as previously, in the positive octant of the embedded $\mathbb{Z}^{3}$ with $K(xy) = 0$ if either $x \notin \mathbb{Z}^{3}$ or $y \notin \mathbb{Z}^{3}$. $K$ is still a unit flow on $G$ and has the same energy properties since these are all defined by sums over edges of $G$. Then $K$ is a unit flow with finite energy, and thus, $G$ is transient. 
+\end{solution}
 
 \pagebreak
 
@@ -193,22 +472,45 @@
 		\item 
 			\[
 				\boxed{
-					K(ab) = \frac{1}{C_{ab}} \quad \text{for } a < b.
+					\begin{gathered}
+						K(ab) = J(ab) / \nabla \cdot J(0) \\ 
+						J(ab) = \begin{cases}
+							\frac{1}{C_{ab}} & 0 \le a < b = a + 1 \\
+							0 & a < 0.
+						\end{cases}
+					\end{gathered}
 				}
 			\]
 
-			Clearly, by the definition of divergence, $\nabla \cdot K = 0$ ---
+			Clearly, where $a < 0$, since $J = 0$ we have $\nabla \cdot J = 0$. Where $a \ge 0$, we can compute ---
 			\[
-				\nabla \cdot K(a) = K(a, a - 1) C_{a - 1, a} + K_{a, a + 1} C_{a, a + 1} = - \frac{C_{a - 1, a}}{C_{a - 1, a}} + \frac{C_{a, a + 1}}{C_{a, a + 1}} = 1 - 1 = 0.
+				\nabla \cdot J(a) = J(a, a - 1) C_{a - 1, a} + J(a, a + 1) C_{a, a + 1} = - \frac{C_{a - 1, a}}{C_{a - 1, a}} + \frac{C_{a, a + 1}}{C_{a, a + 1}} = 1 - 1 = 0.
 			\]
-			Thus, it is a unit flow (we can scale to have $\nabla \cdot K(0) = 1$ without changing that the divergence is $0$ everywhere else)
+			Thus, $K = J / \nabla \cdot J(0)$ is a unit flow (we have defined it to have the desired divergence at $0$, which forces the desired divergence at the boundary).
 
-			We can write the energy of $K_{xy}$ as an infinite sum as follows
+			We can write the energy of $J_{xy}$ as an infinite sum as follows
 			\begin{align*}
-				\mathcal{E}(k) & = \sum_{ab \in E} \frac{K(ab)^{2}}{C_{ab}} \\
-					       & = \frac{1}{C_{ab}^{3}}.
+				\mathcal{E}(J) & = \sum_{ab \in E} \frac{J(ab)^{2}}{C_{ab}} \\
+					       & = \sum_{a \ge 0} \frac{1}{C_{a, a + 1}^{3}} \\
+					       & = \sum_{a \ge 0} \frac{1}{p^{3}} \left ( \frac{1 - p}{p} \right )^{3a}
 			\end{align*}
-			This is finite because $C_{ab} > 1$ for large $a$.
+			This is finite because it is a geometric sum in $(1 - p) / p < 1$ for large $a$. Since energy is just the norm squared of a linear function in $J$, this also gives
+			\[
+				\mathcal{E}(K) = \mathcal{E}(J) / \lvert \nabla \cdot J(0) \rvert^{2} < \infty.
+			\]
+
+		\item On the unweighted grid $\mathbb{Z}$, the divergence of $J$ is non-zero even at vertices in the ``interior''
+			\[
+				\nabla \cdot J(1) = \frac{1 - p}{p^{2}} - \frac{1}{p} = \frac{1 - 2p}{p^{2}} \neq 0
+			\]
+			for $p > 1/2$.
+
+			Thus, $K$ does not even define a unit flow.
+
+			The analogous unit flow given by taking reciprocals of the weights on the non-negative integers, and $0$ everywhere is just $K(ab) = 1$ for all $0 \le a < b = a + 1$. It does not have finite energy on $\mathbb{Z}$ ---
+			\[
+				\mathcal{E}(K) = \sum_{a \ge 0} 1^{2} / 1 \to \infty.
+			\]
 	\end{enumerate}
 \end{solution}
 
