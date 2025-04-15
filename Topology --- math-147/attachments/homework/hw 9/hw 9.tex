@@ -12,11 +12,67 @@
 	Let $\alpha$ be a path from $x_{0}$ to $x_{1}$. Then $e_{x_{0}} \cdot \alpha \sim \alpha$ and $\alpha \cdot e_{x_{1}} \sim \alpha$.
 \end{problem}
 
+\begin{solution}
+	Consider $F_{0} : [0, 1] \times [0, 1] \to X$ with
+	\[
+		F_{0}(s, t) = \begin{cases}
+			e_{x_{0}}((1/2 - t/2)s) & s \in [0, 1/2 - t/2] \\
+			\alpha((1/2 + t/2)s) & s \in [1/2 - t/2, 1].
+		\end{cases}
+	\]
+	We claim this is a homotopy witnessing $e_{x_{0}} \cdot \alpha \sim \alpha$. Similarly, we claim that
+	\[
+		F_{1}(s, t) = \begin{cases}
+			\alpha((1/2 + t/2)s) & s \in [0, 1/2 + t/2] \\
+			e_{x_{1}}((1/2 - t/2) s) & s \in [1/2 + t/2, 1]
+		\end{cases}
+	\]
+	is a homotopy witnessing $\alpha \sim \alpha \cdot e_{x_{1}}$. Notice that they are well-defined when the two intervals in the cases intersect since $e_{x_{0}} = \alpha(0)$ and $\alpha(1) = e_{x_{1}}$.
+
+	Since the arguments are very similar for both, we fully detail the argument for $F_{0}$ pointing out where it may substantially differ for $F_{1}$. Clearly $F_{0}(0, t) = e_{x_{0}} \cdot \alpha$ and $F_{0}(1, t) = \alpha$, and similarly, $F_{1}$ is a function that goes from $\alpha \cdot e_{x_{1}}$ to $\alpha$. Since $F_{0}$ is always $e_{x_{0}}$ at points $(0, t)$ and $\alpha$ at points $(1, t)$
+
+	Note that we can divide the domain into three closed sets --- the triangle $T_{0} = \{ (s, t) \mid 0 \le s \le 1/2, t \le 1 - 2s \}$, the trapezoid that is the closure $Q_{0} = \overline{[0, 1] \times [0, 1] \setminus T_{0}}$, and their intersection along the line $ \{ (s, t) \mid 0 \le s \le 1/2, t = 1 - 2 s \}$. For $F_{1}$, we consider the triangle $T_{1} = \{ (s, t) \mid 1/2 \le s \le 1, t \le 2s - 1 \}$ and the corresponding $Q_{1}$ and intersection instead. By the pasting lemma, it suffices to show that $F_{0}$ is continuous on each of these closed set.
+
+	On the triangle $T_{0}$, $F_{0}(s, t) = e_{x_{0}}(s) = x_{0}$. That is, $F_{0}$ is constant, and thus, continuous. Thus, along the line $T_{0} \cap Q_{0}$, $F_{0}$ is also constant, and thus continuous. Thus, we only need show that $F_{0}$ is continuous on $Q_{0}$. 
+
+	Note that the image of $[0, 1] \times [0, 1]$ under $F_{0}$ is just $\alpha^{\text{img}}([0, 1])$. Thus, it suffices to consider open sets of the image. Any open $U \subseteq \alpha^{\text{img}}([0, 1])$ has open pre-image in $[0, 1]$, and since $s \mapsto (1/2t + t/2)s$ is continuous in $s$, it has an open pre-image under $s \mapsto F_{0}(s, t)$ in $[1/2 - t/2, 1]$ as well. We must show that the union of these pre-images is open. We will write $\alpha^{\text{pre}}(U)$ as the union of basic open intervals, and show that, for each interval, the union of the corresponding intervals in each $[1/2 - t/2, 1]$ is open. Since the union of these open sets is open, we will have that $\alpha^{\text{pre}}(U)$ is open, and $F_{0}$ is continuous on $Q_{0}$, completing the proof.
+
+	In the top interval of $[0, 1] \times [0, 1]$ $(a, b)$ corresponds to $(a, b) \times \{ 1 \}$. In the horizontal interval corresponding to $t$, $(a, b)$ corresponds to $I_{t} = (1/2 - t/2 + (1/2 + t/2) a, 1/2 - t/2 + (1/2 + t/2) b)$ which we abbreviate to $I_{t} = (a_{t}, b_{t})$. Thus, their union is
+	\[
+		I = \{ (s, t) \mid 0 \le t \le 1, s \in I_{t} \}.
+	\]
+	For each $(s, t) \in I$, there is some $(s - \delta, s + \delta) \subsetneq I_{t}$, and thus there is some sufficiently small $\varepsilon > 0$ such that $(s - \delta, s + \delta) \times (t - \varepsilon, t + \varepsilon) \subseteq I$. Specifically, by considering the slopes $m_{a}$ and $m_{b}$ of lines defining $a_{t}$ and $b_{t}$ as functions of $t$, we get
+	\[
+		\varepsilon < \min \{ (a_{t} - (s - \delta)) / m_{a}, (b_{t} - (s + \delta)) / m_{b} \}.
+	\]
+
+	Thus, $I$ is the union of basic open sets and is open.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[12.8]
 	Let $\alpha$ be a path with  $\alpha(0) = x_{0}$. Then $\alpha \cdot \alpha ^{-1} \sim e_{x_{0}}$ where $e_{x_{0}}$ is the constant path at $x_{0}$.
 \end{problem}
+
+\begin{solution}
+	Consider the function
+	\[
+		F(s, t) = \begin{cases}
+			\alpha_{\mid [0, t]}(s) & s \in [0, 1/2 - t/2] \\
+			e_{\alpha(t)} & s \in [1/2 - t/2, 1/2 + t/2] \\
+			\alpha_{\mid [1 - t, 1]} & s \in [1/2 + t/2, 1]
+		\end{cases}
+	\]
+
+	We claim that this is a homotopy witnessing $\alpha \cdot \alpha^{-1} \sim e_{x_{0}}$. Clearly $F$ satisfies the boundary conditions to be the desired homotopy --- $F(s, 1) = e_{x_{0}}$ and $F(s, 0) = \alpha \cdot \alpha^{-1}$, and $F(0, t) = F(1, t) = x_{0}$ for all $t$. Thus, we only need to prove that $F$ is continuous. There are 3 natural closed sets we can divide  $[0, 1] \times [0, 1]$ into, corresponding to the three cases defining $F$. These are the triangles
+	\[
+		T_{1} = \{ (s, t) \mid 0 \le t \le 1, s \le 1/2 - t/2 \} \quad \text{and} \quad T_{2} = \{ (s, t) \mid 0 \le t \le 1, s \ge 1/2 + t/2 \}
+	\]
+	and the closure of their complement, the triangle $T_{3}$.
+
+	We can separately check that $F$ is continuous on each of these triangles. On $T_{3}$, $F$ is constant at $e_{x_{0}}$. On $T_{1}$ the homotopy is the composition of continuous functions --- $F_{\mid T_{1}}(t, s) = \alpha \circ \pi_{s}$. On $T_{2}$ this is is also true --- $F_{\mid T_{2}}(t, s) = \alpha(1 - \pi_{s}(s, t))$. Thus, $F$ is continuous on $T_{1}$ and $T_{2}$ as well. Clearly $F$ is continuous on their intersections since it is constant on each --- each of the intersections is in $T_{3}$ where $F$ is constant. Thus, by the pasting lemma, $F$ is continuous and the desired homotopy.
+\end{solution}
 
 \pagebreak
 
@@ -24,16 +80,70 @@
 	Suppose $X$ is a topological space and there is a path between points $p$ and $q$ in $X$. Then $\pi_{1}(X, p)$ is isomorphic to $\pi_{1}(X, q)$. In particular, if $X$ is path connected then $\pi_{1}(X, p) \cong \pi_{1}(X, q)$ for any points $p, q \in X$.
 \end{problem}
 
+\begin{solution}
+	Let $\alpha$ be a path between $p$ and $q$. Then consider the function
+	\begin{align*}
+		\varphi & : \pi_{1}(X, p) \to \pi_{1}(X, q) \\
+				 & : [\gamma] \to [\alpha]^{-1} \cdot [\gamma] \cdot [\alpha].
+	\end{align*}
+	Note that we avoid having to prove well-definedness by defining $\varphi$ directly as a function on $\pi_{1}(X, p)$, using the fact that $\pi_{1}(X, p)$ is a well-defined group from theorem 12.9. We only need to verify that $\varphi([\gamma])$ starts at $q$ and ends at $q$, which it does because $[\alpha]^{-1}$ starts at $q$ and $[\alpha]$ ends at $q$.
+
+	We can see that $\varphi$ is a homomorphism by writing
+	\begin{align*}
+		\varphi([\gamma_{1}]) \varphi([\gamma_{2}]) & = [\alpha]^{-1} \cdot [\gamma_{1}] \cdot [\alpha] \cdot [\alpha]^{-1} \cdot [\gamma_{2}] \cdot [\alpha] \\
+							    & = [\alpha]^{-1} \cdot [\gamma_{1}] \cdot [e_{\gamma_{1}}(1)] \cdot [\gamma_{2}] \cdot [\alpha] \\
+							    & = [\alpha]^{-1} [\gamma_{1}] \cdot [\gamma_{2}] \cdot [\alpha] \\
+							    & = \varphi([\gamma_{1}] \cdot [\gamma_{2}]).
+	\end{align*}
+
+	We can see that $\varphi$ is injective. Recall that $e_{p} \sim \alpha \cdot \alpha^{-1}$ from theorem 12.8. If $\varphi([\gamma]) = 1 =  e_{q}$, we have
+	\[
+		[\alpha]^{-1} \cdot [\gamma] \cdot [\alpha] = e_{q}
+	\]
+	which can be rewritten
+	\[
+		[\gamma] = [\alpha] \cdot e_{q} \cdot [\alpha]^{-1} = [\alpha] \cdot [\alpha]^{-1} = e_{p}.
+	\]
+
+	Finally, we use theorem 12.7 to show that $\varphi$ is surjective. Recall that this gives $[e_{q}] \cdot [\gamma] = [\gamma] = [\gamma] \cdot [e_{q}]$ for any $[\gamma] \in \pi_{1}(X, q)$. Since $[e_{q}] = [\alpha]^{-1} \cdot [\alpha]$ we can write
+	\[
+		[\gamma] = [\alpha]^{-1} \cdot [\alpha] \cdot [\gamma] \cdot [\alpha]^{-1} [\alpha] = \varphi([\alpha] \cdot [\gamma] \cdot [\alpha]^{-1})
+	\]
+	for any $[\gamma] \in \pi_{1}(X, q)$. Thus, $\varphi$ is an isomorphism.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[12.13 (4)]
 	Show that $\pi_{1}(X) \cong 1$ if $X$ is a cone.
 \end{problem}
 
+\begin{solution}
+	Let $X = Y \times [0, 1] / \{ (y, 0) \}$. We choose to identify the fundamental group with $\pi_{1}(X, *)$ where $* \sim (y, 0)$.
+
+	Notice that there is a continuous ``scaling down'' function $f : X \times [0, 1] \to X$ by $((y, z), t) \mapsto (y, t z)$. Really, $f = \pi \circ g$ where $g : Y \times [0, 1] \times [0, 1]$ by $((y, z), t) \mapsto (y, tz)$ and $*$ is identified with $(y, 0)$ and clearly $g((y, 0), t) = (y, 0) \sim *$. Thus, it suffices to show $g$ is continuous.
+
+	It suffices to check that the pre-images of basic open sets $U \times (a, b) \subseteq Y \times [0, 1]$ where $U$ is an open subset of $Y$. The pre-image of $U \times (a, b)$ under $f$ is $U \times \{ (t_{1}, t_{2}) \mid t_{1} t_{2} \in (a, b) \}$. We write $V = \{ (t_{1}, t_{2}) \mid t_{1} t_{2} \in (a, b) \}$ and claim that it is open.
+
+	Recall that multiplication is continuous. That is, the function $\Pi : (t_{1}, t_{2}) \mapsto t_{1} t_{2}$ is continuous. Thus, for each $\varepsilon > 0$ there is a $\delta > 0$ such that $\Pi^{\text{img}}(B(t_{1}, \delta) \times B(t_{2}, \delta)) \subseteq B(t_{1}t_{2}, \varepsilon)$. Thus by choosing $\varepsilon$ small enough that $B(t_{1} t_{2}, \varepsilon) \subseteq (a, b)$, we can cover $V$ with basic open sets $U \times B(t_{1}, \delta) \times B(t_{2}, \delta)$ and thus, get that $g$ is continuous.
+
+	For any $[\gamma] \in \pi_{1}(X)$, consider the function
+	\[
+		F(s, t) = f(\gamma(s), t).
+	\]
+	We claim that it is a homotopy witnessing $e_{*} \sim \gamma$. Clearly, $F(s, 0) = f(\gamma(s), 0) = 0$ and  $F(s, 1) = f(\gamma(s), 1) = \gamma(s)$ at each $s \in [0, 1]$. Further, $F(s, t) = f(*, t) = *$ for each $t \in [0, 1]$ when $s = 0$ or $s = 1$. Since the function $(s, t) \mapsto (\gamma(s), t)$ is the product of two continuous functions $(s, t) \mapsto \gamma(s)$ and $(s, t) \mapsto t$, it is continuous. Since $f$ is continuous, we have that $F$ is the continuous composition of two continuous functions. Thus, $F$ is indeed the desired homotopy.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[12.17 (1)]
 	Let $\gamma : [0, 1] \to X$ be a path in $X$. Given an open cover $\{ U_{\alpha} \}$ of $X$, show that $[0, 1]$ can be divided into $N$ intervals of the form $I_{i} = [(i - 1) / N, i / N]$, for $i = 1, \dots, N$, such that each $\gamma(I_{i})$ lies completely in one set of the cover.
 \end{problem}
+
+\begin{solution}
+	Given $\{ U_{\alpha} \}$ covering $X$, since $\gamma$ is continuous, we have open pre-images $V_{\alpha} = \gamma^{\text{pre}}(U_{\alpha})$ for each $\alpha$. Since every point in $[0, 1]$ has an image somewhere in $X$, $\{ V_{\alpha} \}$ is an open cover of $[0, 1]$, a compact metric space. Thus, the Lebesgue number lemma applies --- there is some $\delta$ such that, for every point $p \in [0, 1]$, $B(p, \delta)$ is completely contained in some $\alpha$.
+
+	For large enough $N$, each $I_{i}$ is of size less than $\delta$. Thus, choosing $p$ the centre of $I_{i}$, we have $I_{i} \subseteq B(p, \delta) \subseteq V_{\alpha}$ for some $\alpha$. Then since the image of a pre-image of a set is contained in the original set, and images preserve inclusions, we have $\gamma^{\text{img}}(I_{i}) \subseteq \gamma^{\text{img}}(V_{\alpha}) \subseteq U_{\alpha}$ as desired.
+\end{solution}
 
 \end{document}
