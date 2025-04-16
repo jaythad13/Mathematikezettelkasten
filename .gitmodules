@@ -2,9 +2,6 @@
 [submodule "Parking functions --- parking-functions/attachments/research log"]
 	path = Parking functions --- parking-functions/attachments/deprecated
 	url = https://git@git.overleaf.com/6646ba9d3400acaf533eba3a
-[submodule "An Infinitely Large Napkin --- napkin/attachments/documents"]
-	path = An Infinitely Large Napkin --- napkin/attachments/documents
-	url = https://github.com/jaythad13/napkin
 [submodule "Parking functions --- parking-functions/code"]
 	path = Parking functions --- parking-functions/code
 	url = https://github.com/jaythad13/parking-functions-code.git
