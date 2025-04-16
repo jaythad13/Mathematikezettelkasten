@@ -1,0 +1,52 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+\setlist[enumerate, 1]{label = (\arabic*)}
+
+\name{Jayden Thadani}
+\class{MATH 147 --- Topology}
+\assignment{Homework \#10}
+\duedate{17th April 2025}
+
+\begin{document}
+
+\begin{problem}[12.20]
+	Let $(X, x_{0}), (Y, y_{0})$ be path-connected spaces. Then
+	\[
+		\pi_{1}(X \times Y, (x_{0}, y_{0})) \cong \pi_{1}(X, x_{0}) \times \pi_{1}(Y, y_{0})
+	\]
+	via the canonical map that takes a loop $\gamma$ in $X \times Y$ to $p \circ \gamma, q \circ \gamma$, where $p : X \times Y \to X$ and $q : X \times Y \to Y$ are the projection maps.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[12.23]
+	Check that for a continuous function $f : X \to Y$, the induced homomorphism $f_{*}$ is well-defined. Show that it is indeed a group homomorphism.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[12.24]
+	The following are true:
+	\begin{enumerate}
+		\item If $f : (X, x_{0}) \to (Y, y_{0})$ and $g : (Y, y_{0}) \to (Z, z_{0})$ are continuous maps, then $(g \circ f)_{*} = g_{*} \circ f_{*}$.
+		\item If $\operatorname{id} : (X, x_{0}) \to (X, x_{0})$ is the identity map, then $ \operatorname{id}_{*} : \pi_{1}(X, x_{0}) \to \pi_{1}(X, x_{0})$ is the identity homomorphism.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[12.25]
+	If $h : X \to Y$ is a homeomorphism, then
+	\[
+		h_{*} : \pi_{1}(X, x_{0}) \to \pi_{1}(Y, h(x_{0}))
+	\]
+	is a group isomorphism. Thus, homeomorphic path-connected spaces have isomorphic fundamental groups.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}
+	If $f, g : (X, x_{0}) \to (Y, y_{0})$ are continuous functions and $f$ is homotopic to $g$ relative to $x_{0}$, then $f_{*} = g_{*}$.
+\end{problem}
+
+\end{document}
