@@ -57,7 +57,7 @@ The dimension of the $k$th cohomology space is the $k$th dual Betti number $\mat
 
 Cohomology and homology at least appear to count the same things.
 
-##### _example:_ zeroth cohomology counts [[Topics in Geometry and Topology --- math-145/notes/Homology#_definition _ polygonally path-connected, component|polygonally path-connected]] components
+##### _example:_ zeroth cohomology counts [[Topics in Geometry and Topology --- math-145/notes/Homology in the plane#_definition _ polygonally path-connected, component|polygonally path-connected]] components
 
 If $U$ has three polygonally path connected components, then any $0$-cocycle $\varphi$ must be constant on each connected component — given a path $\gamma$ between $\mathbf{a}, \mathbf{b}$, since $\varphi$ sends $\partial_{0}(\gamma) = [\mathbf{b}] - [\mathbf{a}]$ to zero, $\varphi[\mathbf{a}] = \varphi[\mathbf{b}]$. Thus, $\varphi$ is determined by choice on the three components. There are no coboundaries (or only the $0$ function is a coboundary).
 
@@ -65,7 +65,7 @@ If $U$ has three polygonally path connected components, then any $0$-cocycle $\v
 
 If $U$ has two holes, then the winding numbers about points in those holes are linearly independent cocycles (by [[Topology --- math-147/attachments/homework/hw 1/hw 1.pdf#page=2|the distant cycle lemma]])
 
-The fact that homology gives [[Topics in Geometry and Topology --- math-145/notes/Homology#What does homology count?|the same answers]] suggests a duality theorem. 
+The fact that homology gives [[Topics in Geometry and Topology --- math-145/notes/Homology in the plane#What does homology count?|the same answers]] suggests a duality theorem. 
 
 ##### _theorem:_ cohomology is dual to homology 
 
