@@ -23,6 +23,14 @@
 	Check that for a continuous function $f : X \to Y$, the induced homomorphism $f_{*}$ is well-defined. Show that it is indeed a group homomorphism.
 \end{problem}
 
+\begin{solution}
+	Suppose $[\alpha] = [\beta]$ in $\pi_{1}(X, x_{0})$. We want to show that $f_{*}([\alpha]) = f_{*}([\beta])$. That is, we want to show that $[f \circ \alpha]$ and $[f \circ \beta]$ are homotopic. We claim, that for a homotopy $F$ witnessing $\alpha \sim \beta$, then $F_{*} = f \circ F$ is a homotopy witnessing $f \circ \alpha \sim f \circ \beta$.
+
+	$F_{*}$ is continuous since it is the composition of continuous functions. $F_{*}(0, t) = f(x_{0})$ since $F(0, t) = x_{0}$ for all $t$, and similarly, $F_{*}(1, t) = f(x_{0})$. Also for the same reason, $F_{*}(s, 0) = (f \circ \alpha)(s)$ and $F_{*}(s, 1) = (f \circ \beta)(s)$.
+
+	Now we check that $f_{*}$ is a group homomorphism. That is, we want to show that $f_{*}([\alpha] \cdot [\beta]) = f_{*}([\alpha]) \cdot f_{*}([\beta])$.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[12.24]
@@ -43,10 +51,32 @@
 	is a group isomorphism. Thus, homeomorphic path-connected spaces have isomorphic fundamental groups.
 \end{problem}
 
+\begin{solution}
+	This is just a property of functors and we have just proven that $h \to h_{*}$ is a (covariant) functor.
+
+	Since $h$ is a homeomorphism, we also have an inverse continuous map $h^{-1} : Y \to X$ such that $h \circ h^{-1} = \operatorname{id}_{Y}$ and $h^{-1} \circ h = \operatorname{id}_{X}$. The inverse $h^{-1}$ has pushforward $h^{-1}_{*} : \pi_{1}(Y, y_{0}) \to \pi_{1}(X, x_{0})$. We claim that this is the inverse of $h_{*}$. By the previous result (theorem 12.24), we have
+	\[
+			h_{*} \circ h^{-1}_{*} = (h \circ h^{-1})_{*} = (\operatorname{id}_{Y})_{*} = \operatorname{id}_{\pi_{1}(Y, h(x_{0}))}
+	\]
+	and similarly,
+	\[
+			h^{-1}_{*} \circ h_{*} = (h^{-1} \circ h)_{*} = (\operatorname{id}_{X})_{*} = \operatorname{id}_{\pi_{1}(X, x_{0})}.
+	\]
+	Thus, $h_{*}$ and $h_{*}^{-1}$ are inverses, giving an isomorphism $\pi_{1}(X, x_{0}) \cong \pi_{1}(Y, h(x_{0}))$.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}
 	If $f, g : (X, x_{0}) \to (Y, y_{0})$ are continuous functions and $f$ is homotopic to $g$ relative to $x_{0}$, then $f_{*} = g_{*}$.
 \end{problem}
+
+\begin{solution}
+	Let $F$ be a homotopy $X \times [0, 1] \to Y$ witnessing $f \simeq g$. Then we claim that $G : [0, 1] \times [0, 1] \to Y$ given by
+	\[
+		G(s, t) = F(\alpha(s), t)
+	\]
+	is a homotopy witnessing $f_{*}[\alpha] = g_{*}[\alpha]$ for each loop $[\alpha] \in \pi_{1}(X, x_{0})$.
+\end{solution}
 
 \end{document}
