@@ -70,9 +70,9 @@ $$
 $$
 which is meromorphic on the right half plane with a simple pole at $s = 1$.
 
-Now with $\zeta$ defined in the right half plane, we can prove Euler's product!
+Now with $\zeta$ defined in the right half plane, we can prove the Euler product formula!
 
-##### _theorem:_ Euler's product
+##### _theorem:_ the Euler product formula
 
 $$
 \sum_{n = 1}^\infty \frac{1}{n^s} = \prod_{p \text{ prime}} \frac{1}{1 - 1 / p^s}
@@ -80,9 +80,19 @@ $$
 
 ###### _proof sketch:_
 
-Prove this is true for real $s > 0$ by double inequality by comparing finite sums to infinite products and taking limits and vice versa. 
+We will prove this is true for real $s > 0$ by double inequality by comparing finite sums to infinite products and taking limits and vice versa. 
 
-This requires showing that the Euler product does actually define a holomorphic function for all $\operatorname{Re} s > 1$. We can do so by showing that the products have [[Complex Analysis --- math-135/notes/Infinite products#_theorem _ infinite products of holomorphic functions|bounded distance]] from $1$. In particular, on any compact $K \subset \{ s \in \mathbb{C} \mid \operatorname{Re} s > 1 \}$.
+Specifically, for $N \in \mathbb{N}$, and some integer $M > N$, notice that each $n \in \mathbb{N}$ with $n \le N$ [[Superdiscrete --- math-55a/notes/Euclid's algorithm and primes#_theorem _ unique factorisation|has a unique prime factorisation]]. Each prime appears fewer than $M$ times in each factorisation ($p > 1$, so $p^M > M > N$), so
+$$
+\sum_{n = 1}^N \frac{1}{n^s} \le \prod_{p \text{ prime}, p \le N} \left( 1 + \frac{1}{p} + \dots + \frac{1}{p^{Ms}} \right) \le \prod_{p \text{ prime}} \frac{1}{1 - 1/p^s}.
+$$
+Also, for any $M, N \in \mathbb{N}$
+$$
+\prod_{p \text{ prime}, p \le N} \left( 1 + \frac{1}{p} + \dots + \frac{1}{p^{Ms}} \right) \le \sum_{n = 1}^\infty \frac{1}{n^s}.
+$$
+Thus, taking limits for the partial sums/products on the left as $N \to \infty$, we get double inequality and thus, equality.
+
+Note that this requires showing that the Euler product does actually converge (to a holomorphic function) for all $\operatorname{Re} s > 1$. We can do so by showing that the multiplicands have [[Complex Analysis --- math-135/notes/Infinite products#_theorem _ infinite products of holomorphic functions|bounded distance]] from $1$. In particular, on any compact $K \subset \{ s \in \mathbb{C} \mid \operatorname{Re} s > 1 \}$.
 $$
 \frac{1}{1 - p^{-s}} - 1 = \frac{p^{-s}}{1 - p^{-s}}
 $$
