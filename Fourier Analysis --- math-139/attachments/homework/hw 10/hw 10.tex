@@ -11,10 +11,26 @@
 \begin{problem}[S \& S \S 6.6 \#2]
 	Suppose $R : \mathbb{R}^{3} \to \mathbb{R}^{3}$ is a proper rotation.
 	\begin{enumerate}
-		\item Show that $p(t) = \det(R - t I)$ is a polynomial of degree $3$ and prove that there exists $\gamma \in S^{2}$ with $R(\gamma) = \gamma$.
+		\item Show that $p(t) = \det(R - t I)$ is a polynomial of degree $3$ and prove that there exists $\gamma \in S^{2}$ with $R \gamma = \gamma$.
 		\item If $\mathcal{P}$ denotes the plane perpendicular to $\gamma$ and passing through the origin, show that $R : \mathcal{P} \to \mathcal{P}$ and that this linear map is a rotation.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item First we show that $p(t) = \det(R - t I)$ is a cubic polynomial.
+
+			Notice that $p(0) = \det R > 0$. Since $p$ is a cubic polynomial with negative $t^{3}$ coefficient, $p(t) \to -\infty$ as $t \to \infty$. Thus, by the intermediate value theorem, it must have a positive real root $\lambda$. Then, $\det(R - \lambda I) = 0$. But this gives some $\gamma \in S^{2}$ with $R\gamma = \lambda \gamma$. Since $R$ is a proper rotation, we also have  $\lVert \lambda \gamma \rVert = \lVert \gamma \rVert$. Thus $\lvert \lambda \rvert = 1$. Since $\lambda > 0$, we have $R \gamma = \gamma$.
+
+		\item We can write the plane as an orthogonal complement of the space spanned by $\gamma$. That is, $\mathcal{P} = \{ \alpha \gamma \mid \alpha \in \mathbb{R} \}^{\perp}$. Since $R$ preserves inner products, for any $x \in \mathcal{P}$, we have
+			\[
+				\left < Rx, \gamma \right > = \left < Rx, R\gamma \right > = \left < x, \gamma \right > = 0.
+			\]
+			Thus, $Rv \in \{ \alpha \gamma \mid \alpha \in \mathbb{R} \}^{\perp} = \mathcal{P}$. That is, $\mathcal{P}$ is invariant under $R$.
+
+			The inner product on $\mathcal{P}$ is just the same as the inner product it inherits as a subspace of $\mathbb{R}^{3}$. Thus, we have $\left < Rx, Ry \right > = \left < x, y \right >$ automatically.
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
@@ -25,7 +41,7 @@
 			\[
 				A_{d} = \frac{2 \pi^{d / 2}}{\Gamma(d / 2)}
 			\]
-			so that $A_{2} = 2 \pi$, $A_{3} = 4 \pi$, $A_{4} = 2 \pi^{2}$, and so on. Here $\Gamma$ is the gamma function.
+			so that $A_{2} = 2 \pi$, $A_{3} = 4 \pi$, $A_{4} = 2 \pi^{2}$, and so on.
 
 		\item Show that $d V_{d} = A_{d}$, hence
 	\[
@@ -35,15 +51,76 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item Note that the area of the unit $(d - 1)$-sphere (in $\mathbb{R}^{d}$) can be written as an integral in polar coordinates. We can turn an integral of the constant $1$ function on $S^{d - 1}$ into a scaled Gaussian integral.
+
+			First we multiply and divide by $\Gamma(d / 2)$. 
+			\[
+				A_{d} = \int_{S^{d - 1}} \, d\sigma(\gamma) = \frac{\displaystyle \int_{S^{d - 1}} \, d\sigma(\gamma) \int_{0}^{\infty} e^{-u} u^{d/2 - 1} \, du }{\Gamma(d / 2)}.
+			\]
+			We can use the change of variables $u = - \pi r^{2}$ to transform the integral into a Gaussian. Note that this gives
+			\begin{align*}
+				\int_{S^{d - 1}}  \, d\sigma(\gamma) \int_{0}^{\infty} e^{-u} u^{d / 2 - 1} \, du & = \int_{S^{d - 1}} \int_{0}^{\infty} e^{- \pi r^{2}} (\pi r^{2})^{d / 2 - 1} \frac{d x}{d r} \, dr  \, d\sigma(\gamma) \\
+														  & = \int_{S^{d - 1}} \int_{0}^{\infty} e^{-\pi \lVert r \gamma \rVert^{2}} \pi^{d / 2 - 1} r^{d - 2} 2 \pi r \, dr  \, d\sigma(\gamma) \\
+														  & = 2 \pi^{d / 2} \int_{S^{d - 1}} \int_{0}^{\infty} e^{-\pi \lVert r \gamma \rVert^{2}} r^{d - 1} \, dr  \, d\sigma(\gamma) \\
+														  & = 2 \pi^{d / 2} \int_{\mathbb{R}^{d}} e^{-\pi \lVert x \rVert^{2}} \, dx \\
+														  & = 2 \pi^{d / 2}.
+			\end{align*}
+
+			Thus, we have
+			\[
+				A_{d} = \frac{2 \pi^{d / 2}}{\Gamma(d / 2)}
+			\]
+			as desired.
+
+		\item Similarly, the volume of the unit $d$-ball can be written as the integral
+			 \begin{align*}
+				 V_{d} & = \int_{S^{d - 1}} \int_{0}^{1} r^{d - 1}  \, dr  \, d\sigma(\gamma) \\
+				       & = \left ( \frac{r^{d}}{d} \right ) \Big |_{0}^{1} \int_{S^{d - 1}} \, d\sigma(\gamma) \\
+				       & = \frac{A_{d}}{d}.
+			\end{align*}
+			Since we have the functional equation $d \Gamma(d) = \Gamma(d + 1)$, we get the desired equation.
+			\begin{align*}
+				V_{d} & = \frac{2 \pi^{d / 2}}{d \Gamma(d  / 2)} \\
+				      & = \frac{\pi^{d / 2}}{(d / 2) \Gamma(d / 2)} \\
+				      & = \frac{\pi^{d / 2}}{\Gamma(d / 2 + 1)}.
+			\end{align*}
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[S \& S  \S 6.6 \#5]
 	Let $A$ be a $d$-by-$d$ positive definite symmetric matrix with real coefficients. Show that
 	\[
-		\int_{\mathbb{R}^{d}} e^{-\pi \left < x, A(x) \right >} \, dx = (\det A)^{-1/2}.
+		\int_{\mathbb{R}^{d}} e^{-\pi \left < x, Ax \right >} \, dx = (\det A)^{-1/2}.
 	\]
 	This generalises the fact that $\int_{\mathbb{R}^{d}} e^{-\pi \lVert x \rVert^{2}} \, dx = 1$, which corresponds to the case where $A$ is the identity.
 \end{problem}
+
+\begin{solution}
+	By the spectral theorem, we have $A = R D R^{-1}$ where $R$ is a rotation and $D$ is diagonal with diagonal entries corresponding exactly to the eigenvalues of $A$ with multiplicity. Notice that we can effectively choose $R = I$ since
+	\begin{align*}
+		\int_{\mathbb{R}^{d}} e^{-\pi \left < x, A x \right >} \, dx & = \int_{\mathbb{R}^{d}} e^{-\pi \left < x, R D R^{-1} x \right >} \, dx \\
+									     & = \int_{\mathbb{R}^{d}} e^{- \pi \left < R^{-1} x, D R^{-1} x \right >} \, dx \\
+									     & = \int_{\mathbb{R}^{d}} e^{-\pi \left < x, D x \right >} \, dx.
+	\end{align*}
+
+	For $\lambda_{1}, \dots, \lambda_{d}$ the matrix elements on the diagonal (and thus, the eigenvalues of $A$ with each eigenvalue repeated with multiplicity). Then, for $x = (x_{1}, \dots, x_{d})$
+	\[
+		\left < x, Dx \right > = \lambda_{1} x_{1}^{2} + \dots + \lambda_{d} x_{d}^{2}.
+	\]
+
+	Now we can expand the integral in each $x_{1}, \dots, x_{n}$. That is,
+	\begin{align*}
+		\int_{\mathbb{R}^{d}} e^{-\pi \left < x, Dx \right >} \, dx & = \int_{\mathbb{R}^{d}} e^{-\pi \lambda_{1} x_{1}^{2}} \dots e^{-\pi \lambda_{d} x_{d}^{2}} \, dx \\
+									    & = \int_{-\infty}^{\infty} e^{-\pi \lambda_{d} x_{d}^{2}} \cdots \int_{-\infty}^{\infty} e^{-\pi \lambda_{1} x_{1}^{2}} \, dx_{1} \cdots \, dx_{d} \\
+									    & = \left ( \int_{-\infty}^{\infty} e^{-\pi \lambda_{1} x_{1}^{2}} \, dx_{1}  \right ) \dots \left ( \int_{-\infty}^{\infty} e^{-\pi \lambda_{d} x_{d}^{2}} \, dx_{d}  \right ) \\
+									    & = \frac{1}{\sqrt{\lambda_{1}}} \dots \frac{1}{\sqrt{\lambda_{d}}} \\
+									    & = (\det A)^{-1/2}.
+	\end{align*}
+\end{solution}
 
 \pagebreak
 
@@ -54,9 +131,31 @@
 	\]
 	This is the line perpendicular to the direction $(\cos{\theta}, \sin{\theta})$ at ``distance'' $t$ from the origin (we allow negative $t$). For $f \in \mathcal{S}(\mathbb{R}^{2})$ the X-ray transform or two-dimensional Radon transform of $f$ is defined by
 	\[
-		Xf(t, \theta) = \int_{L_{t, \theta}} f = \int_{-\infty}^{\infty} f(t \cos{\theta} + u \sin{\theta}, \sin{\theta - u \cos{\theta}}) \, du.
+		Xf(t, \theta) = \int_{L_{t, \theta}} f = \int_{-\infty}^{\infty} f(t \cos{\theta} + u \sin{\theta}, t \sin{\theta - u \cos{\theta}}) \, du.
 	\]
 	Calculate the X-ray transform of the function $f(x, y) = e^{-\pi(x^{2} + y^{2})}$.
 \end{problem}
+
+\begin{solution}
+	\[
+		\boxed{
+			Xf(t, \theta) = e^{-\pi t^{2}}.
+		}
+	\]
+
+	Since $f$ is the composition of the functions $(x, y) \mapsto x^{2} + y^{2}$ and $x \mapsto e^{-\pi x}$, we calculate $x^{2} + y^{2}$ for $(x, y) \in L_{t, \theta}$ first. That is,
+	\begin{align*}
+		x^{2} + y^{2} & = (t \cos{\theta} + u \sin{\theta})^{2} + (t \sin{\theta} - u \cos{\theta})^{2} \\
+			      & = t^{2} \cos^{2}{\theta} + t^{2} \sin^{2}{\theta} + u^{2} \cos^{2}{\theta} + u^{2} \sin^{2}{\theta} + 2tu \cos{\theta} \sin{\theta} - 2tu \cos{\theta} \sin{\theta} \\
+			      & = t^{2} + u^{2}
+	\end{align*}
+
+	Thus, we have
+	\begin{align*}
+		Xf(t, \theta) & = \int_{-\infty}^{\infty} e^{-\pi(t^{2} + u^{2})} \, du \\
+			      & = e^{-\pi t^{2}} \int_{-\infty}^{\infty} e^{-\pi u^{2}} \, du \\
+			      & = e^{-\pi t^{2}}.
+	\end{align*}
+\end{solution}
 
 \end{document}
