@@ -1,0 +1,63 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 139 --- Fourier Analysis}
+\assignment{Homework \#12}
+\duedate{2nd May 2025}
+
+\begin{document}
+
+\begin{problem}[S \& S \S 8.4 \#1]
+	Prove that there are infinitely many primes by observing that if there were only finitely many,  $p_{1}, \dots, p_{N}$, then
+	\[
+		\prod_{j = 1}^{N} \frac{1}{1 - 1/p_{j}} > \sum_{n = 1}^{\infty} \frac{1}{n}.
+	\]
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[S \& S \S 8.4 \#2]
+	In the text we showed that there are infinitely many primes of the form $4k + 3$ by a modification of Euclid's original argument. Adapt this technique to prove the similar result for primes of the form $3k + 2$, and for those of the form $6k + 5$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[S \& S \S 8.4 \#5]
+	If $n$ is a positive integer, show that
+	\[
+		n = \sum_{d \mid n} \phi(d)
+	\]
+	where $\phi$ is the Euler totient function.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[S \& S \S 8.4 \#6]
+	Write down the characters of the groups $\mathbb{Z} / 3 \mathbb{Z}^{*}$, $\mathbb{Z} / 4 \mathbb{Z}^{*}$, $\mathbb{Z} / 6 \mathbb{Z}^{*}$, and $\mathbb{Z} / 8 \mathbb{Z}^{*}$.
+	\begin{enumerate}
+		\item Which ones are real or complex?
+		\item Which ones are even or odd?
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[S \& S \S 8.4 \#8]
+	Let $\zeta$ denote the zeta function defined for $s > 1$.
+	\begin{enumerate}
+		\item Compare $\zeta(s)$ with $\int_{1}^{\infty} x^{-s} \, dx$ to show that
+			\[
+				\zeta(s) = \frac{1}{s - 1} + O(1)
+			\]
+			as $s \to 1^{+}$.
+
+		\item Prove as a consequence that
+			\[
+				\sum_{p \text{ prime}} \frac{1}{p^{s}} = \log \left ( \frac{1}{s - 1} \right ) + O(1)
+			\]
+			as $s \to 1^{+}$.
+	\end{enumerate}
+\end{problem}
+
+\end{document}
