@@ -1,0 +1,91 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 145 --- Topics in Geometry and Topology}
+\assignment{Homework 11}
+\duedate{23rd April 2025}
+
+\begin{document}
+
+\begin{problem}[59.]
+	Recall that the $n$-orthoplex is defined to be the simplicial complex with $2n$ vertices
+	\[
+		V = \{ \pm 1, \dots, \pm n \}
+	\]
+	whose simplices are the subsets that do not contain any pair $\pm k$. It is a model for the sphere $S^{n - 1}$.
+
+	\begin{enumerate}
+		\item List the vertices, edges, and triangles of the $3$-orthoplexes.
+
+		\item Write down the matrices for the boundary maps $\partial_{0}, \partial_{1}, \partial_{2}$ and determine their ranks.
+
+		\item Obtain the Betti sequence for the $3$-orthoplex.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[60.]
+	Recall that $\partial B^{n}$ is defined to be the simplicial complex with $n + 1$ vertices
+	\[
+		V = \{ 0, 1, \dots, n \}
+	\]
+	whose simplices are the subsets of cardinality at most $n$. It is a model for the sphere $S^{n - 1}$.
+
+	\begin{enumerate}
+		\item List the vertices, edges, and triangles of $\partial B^{4}$.
+
+		\item Write down the matrices for the boundary maps $\partial_{0}, \partial_{1}, \partial_{2}$ and determine their ranks.
+
+		\item Obtain the Betti sequence for $\partial B^{4}$.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[61. (the Morse inequalities)]
+	Prove the following inequality for a finite simplicial complex:
+	\[
+		b_{k} - b_{k - 1} + \dots + (-1)^{k} b_{0} \le c_{k} - c_{k - 1} + \dots + (-1)^{k} c_{0}.
+	\]
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[62.]
+	The torus is a topological space which can be constructed from a closed square by gluing each side to its opposite side. Here is a representation of a torus as a simplicial complex with $9$ vertices, $27$ edges, and $18$ triangles.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width = 0.3 \textwidth]{P62 torus}
+	\end{figure}
+
+	By calculating the ranks of $\partial_{0}, \partial_{1}$, determine the Betti sequence for the torus.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[63.]
+	Let $X = \{ 2, 3, 4, \dots, 16 \}$. Define a simplicial complex $S_{16}$ as follows: a subset $\sigma \subseteq X$ belongs to $S_{16}$ if and only if the elements of $\sigma$ share a common factor greater than $1$.
+	\begin{enumerate}
+		\item Explain why $S_{16}$ is a simplicial complex.
+
+		\item How many vertices and edges in $S_{16}$?
+
+		\item What is the largest-dimensional simplex in $S_{16}$?
+
+		\item How many connected components does $S_{16}$ have?
+
+		\item Find three edges $\{ a, b \}, \{ b, c \}, \{ c, a \}$ in $S_{16}$ such that $\{ a, b, c \} \notin S_{16}$.
+
+		\item What are the \emph{maximal} simplices of $S_{16}$.
+
+		\item Sketch $S_{16}$ and write down your best guess for its Betti sequence.
+
+		\item The maximal simplices form a cover of the set $X$. Determine and sketch the nerve of this cover.
+
+		\item Calculate the Betti sequence of the nerve. Compare it with your guess in (g).
+	\end{enumerate}
+\end{problem}
+
+\end{document}
