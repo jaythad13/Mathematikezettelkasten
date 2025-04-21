@@ -17,6 +17,41 @@
 	via the canonical map that takes a loop $\gamma$ in $X \times Y$ to $p \circ \gamma, q \circ \gamma$, where $p : X \times Y \to X$ and $q : X \times Y \to Y$ are the projection maps.
 \end{problem}
 
+\begin{solution}
+	Note that in this solution we implicitly use the results of 12.23 for the well-definedness of the pushforward of a map of continuous functions and explicitly for the fact that it is homomorphism. Though this comes later in the book, there is no issue of circularity since we don't use the preservation of products to prove 12.23.
+
+	Let $\Pi_{*}$ denote the canonical map $\pi_{1}(X \times Y, (x_{0}, y_{0})) \to \pi_{1}(X, x_{0}) \times \pi_{1}(Y, y_{0})$ by $\Pi_{*} : [\gamma] \mapsto (p_{*} [\gamma], q_{*} [\gamma])$. By 12.23, $\Pi_{*}$ is a homomorphism since it is the product of homomorphisms $p_{*}$ and $q_{*}$.
+
+	First we show that $\Pi_{*}$ is injective. Suppose we have $\Pi_{*}[\gamma] = ([e_{x_{0}}], [e_{y_{0}}])$, (which is the identity on the product of homotopy groups). Then there are homotopies $F_{X}, F_{Y}$ witnessing $p \circ \gamma \simeq e_{x_{0}}$ and $q \circ \gamma \simeq e_{y_{0}}$ respectively. We claim the product of these homotopies gives $\gamma \simeq e_{(x_{0}, y_{0})}$. Notice that since $F_{X}, F_{Y}$ are both continuous, so is their product. Thus, we only have to show that the product satisfies the ``boundary conditions'' to be a homotopy. We have
+	\begin{align*}
+		(F_{X}, F_{Y})(s, 0) & = (F_{X}(s, 0), F_{Y}(s, 0)) \\
+				     & = ((p \circ \gamma)(s), (q \circ \gamma)(s)) \\
+				     & = \gamma(s).
+	\end{align*}
+	and similarly
+	\begin{align*}
+		(F_{X}, F_{Y})(s, 1) & = (F_{X}(s, 1), F_{Y}(s, 1)) \\
+				     & = (e_{x_{0}}(s), e_{y_{0}}(s)) \\
+				     & = (x_{0}, y_{0}) \\
+				     & = e_{(x_{0}, y_{0})}(s).
+	\end{align*}
+	Also, for each $t \in [0, 1]$ we have
+	\begin{align*}
+		(F_{X}, F_{Y})(0, t) & = (F_{X}(0, t), F_{Y}(0, t)) \\
+				     & = (x_{0}, y_{0}) \\
+				     & = (F_{X}(1, t), F_{Y}(1, t)) \\
+				     & = (F_{X}, F_{Y})(1, t).
+	\end{align*}
+
+	Now we show that $\Pi_{*}$ is surjective. Suppose we have $([\alpha], [\beta]) \in \pi_{1}(X, x_{0}) \times \pi_{1}(Y, y_{0})$. Thus, we have functions $\alpha : [0, 1] \to X$ and $\beta : [0, 1] \to Y$ (with endpoints $x_{0}$ and $y_{0}$ respectively). Recall that the product of these functions $[0, 1] \to X \times Y$ by $s \mapsto (\alpha(s), \beta(s))$ is also a continuous function. Thus we have a loop $[(\alpha, \beta)]$ based at $(x_{0}, y_{0})$, with
+	\[
+		p_{*}[(\alpha, \beta)] = [p \circ (\alpha, \beta)] = [\alpha]
+	\]
+	and similarly, $q_{*}[(\alpha, \beta)] = [\beta]$. That is, $\Pi_{*}[(\alpha, \beta)] = ([\alpha], [\beta])$, so $\Pi_{*}$ is surjective.
+
+	Since $\Pi_{*}$ is a surjective, injective homomorphism, $\Pi_{*}$ is an isomorphism of groups.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[12.23]
@@ -24,11 +59,31 @@
 \end{problem}
 
 \begin{solution}
-	Suppose $[\alpha] = [\beta]$ in $\pi_{1}(X, x_{0})$. We want to show that $f_{*}([\alpha]) = f_{*}([\beta])$. That is, we want to show that $[f \circ \alpha]$ and $[f \circ \beta]$ are homotopic. We claim, that for a homotopy $F$ witnessing $\alpha \sim \beta$, then $F_{*} = f \circ F$ is a homotopy witnessing $f \circ \alpha \sim f \circ \beta$.
+	Suppose $[\alpha] = [\beta]$ in $\pi_{1}(X, x_{0})$. We want to show that $f_{*}[\alpha] = f_{*}[\beta]$. That is, we want to show that $[f \circ \alpha]$ and $[f \circ \beta]$ are homotopic. We claim, that for a homotopy $F$ witnessing $\alpha \sim \beta$, then $F_{*} = f \circ F$ is a homotopy witnessing $f \circ \alpha \sim f \circ \beta$.
 
-	$F_{*}$ is continuous since it is the composition of continuous functions. $F_{*}(0, t) = f(x_{0})$ since $F(0, t) = x_{0}$ for all $t$, and similarly, $F_{*}(1, t) = f(x_{0})$. Also for the same reason, $F_{*}(s, 0) = (f \circ \alpha)(s)$ and $F_{*}(s, 1) = (f \circ \beta)(s)$.
+	$F_{*}$ is continuous since it is the composition of continuous functions. $F_{*}(0, t) = f(x_{0})$ since $F(0, t) = x_{0}$ for all $t$, and similarly, $F_{*}(1, t) = f(x_{0})$. Also for the same reason, $F_{*}(s, 0) = (f \circ \alpha)(s)$ and $F_{*}(s, 1) = (f \circ \beta)(s)$. Thus, it is the desired homotopy.
 
-	Now we check that $f_{*}$ is a group homomorphism. That is, we want to show that $f_{*}([\alpha] \cdot [\beta]) = f_{*}([\alpha]) \cdot f_{*}([\beta])$.
+	Now we check that $f_{*}$ is a group homomorphism. That is, we want to show that $f_{*}([\alpha] \cdot [\beta]) = f_{*}[\alpha] \cdot f_{*}[\beta]$. We claim that for explicit representations $\alpha, \beta : [0, 1] \to X$ of the homotopy classes, we have $f \circ (\alpha \cdot \beta) = (f \circ \alpha) \cdot (f \circ \beta)$.
+
+	Since
+	\[
+		(\alpha \cdot \beta)(s) = \begin{cases}
+			\alpha(2s) & s \in [0, 1/2] \\
+			\beta(2s - 1) & s \in [1/2, 1]
+		\end{cases}
+	\]
+	we have
+	\[
+		f \circ (\alpha \cdot \beta) = \begin{cases}
+			(f \circ \alpha)(2s) & s \in [0, 1/2] \\
+			(f \circ \beta)(2s - 1) & s \in [1/2, 1].
+		\end{cases}
+	\]
+	But this is exactly the definition of $(f \circ \alpha) \cdot (f \circ \beta)$. Thus, $f \circ (\alpha \cdot \beta) = (f \circ \alpha) \cdot (f \circ \beta)$. It follows that $[f \circ (\alpha \cdot \beta)] = [(f \circ \alpha) \cdot (f \circ \beta)]$ which is equivalent to
+	\[
+		f_{*}[\alpha \cdot \beta] = f_{*}[\alpha] \cdot f_{*}[\beta].
+	\]
+	That is, $f_{*}$ is a homomorphism.
 \end{solution}
 
 \pagebreak
@@ -40,6 +95,25 @@
 		\item If $\operatorname{id} : (X, x_{0}) \to (X, x_{0})$ is the identity map, then $ \operatorname{id}_{*} : \pi_{1}(X, x_{0}) \to \pi_{1}(X, x_{0})$ is the identity homomorphism.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item This a direct consequence of associativity of composition of functions. We can manipulate the left hand side to look like the right hand side. That is, for each $[\alpha] \in \pi_{1}(X, x_{0})$
+			\begin{align*}
+				(f \circ g)_{*}[\alpha] & = [(f \circ g) \circ \alpha] \\
+							& = [f (g \circ \alpha)] \\
+							& = f_{*} [g \circ \alpha] \\
+							& = f_{*}(g_{*} \alpha).
+			\end{align*}
+
+		\item Again, this follows as a consequence of pushing through the definitions. For each $[\alpha] \in \pi_{1}(X, x_{0})$,
+			\begin{align*}
+				\operatorname{id}_{*} [\alpha] & = [\operatorname{id} \circ \alpha] \\
+							       & = [\alpha] \\
+							       & = \operatorname{id}_{\pi_{1}(X, x_{0})}([\alpha]).
+			\end{align*}
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
@@ -76,7 +150,19 @@
 	\[
 		G(s, t) = F(\alpha(s), t)
 	\]
-	is a homotopy witnessing $f_{*}[\alpha] = g_{*}[\alpha]$ for each loop $[\alpha] \in \pi_{1}(X, x_{0})$.
+	is a homotopy witnessing $f_{*} \alpha \simeq g_{*} \alpha$ and thus $f_{*}[\alpha] = g_{*}[\alpha]$ for each loop $[\alpha] \in \pi_{1}(X, x_{0})$.
+
+	Since $G$ is the composition of continuous functions
+	\[
+		G : (s, t) \mapsto (\alpha(s), t) \mapsto F(\alpha(s), t)
+	\]
+	we have that $G$ is continuous. We are left to show that the ``boundary conditions'' for $G$ to be a homotopy hold.
+
+	Since $F(x, 0) = f(x)$ for each $x \in X$, we have $G(s, 0) = f(\alpha(s))$ and similarly, since $F(x, 1) = g(x)$, we have $G(s, 1) = g(\alpha(s))$. Since $F$ is a homotopy relative to $x_{0}$, we have $F(x_{0}, t) = y_{0}$ for all $t \in [0, 1]$. Thus,
+	\[
+		G(0, t) = F(\alpha(0), t) = F(x_{0}, t) = y_{0} = F(x_{0}, t) = F(\alpha(1), t) = G(1, t).
+	\]
+	That is, $G$ is the desired homotopy giving $f_{*} [\alpha] = g_{*} [\alpha]$.
 \end{solution}
 
 \end{document}
