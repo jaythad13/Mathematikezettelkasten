@@ -48,4 +48,4 @@ By the [[Mathematical Analysis I --- math-131/notes/Continuity#_corollary _ inte
 A continuous map $\overline{B^2} \to \overline{B^2}$ has a fixed point.
 
 ###### _proof:_
-is on the [[Topology --- math-147/attachments/homework/hw 3/hw 3.pdf|homework]].
+is on the [[Topics in Geometry and Topology --- math-145/attachments/homework/hw 3/hw 3.pdf|homework]].
