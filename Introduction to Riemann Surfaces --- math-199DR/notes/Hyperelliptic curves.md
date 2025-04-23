@@ -1,6 +1,7 @@
 ---
 tags:
 - math-199DR/11
+- math-199DR/22
 - cx-geo
 - alg-geo
 ---
@@ -13,23 +14,15 @@ How can we do this formally? And without dealing with projective space?
 
 ##### _definition:_ hyperelliptic curve
 
-Given a polynomial $h$ of degree $2g - 1$ or $2g - 2$ with all distinct roots.
-
-##### _proposition:_ hyperelliptic curves are compact
-
-The hyperelliptic curve $Z$ corresponding to $y^{2} = h(x)$ is compact.
-
-###### _proof sketch:_
-
-We can decompose $Z$ into two compact sets and take their union — consider the solutions with $\lvert x \rvert \le 1$ and the solutions with $\lvert z \rvert \le 1$. When $\lvert x \rvert > 1$, $\lvert z \rvert \le 1$. Thus, these two compact sets cover $Z$.
+A hyperelliptic curve is a compact Riemann surface $X$ with a holomorphism $X \to \mathbb{C}_{\infty}$ of [[Introduction to Riemann Surfaces --- math-199DR/notes/Topological properties of holomorphisms#_definition _ degree of a map|degree]] $2$.
 
 ##### _proposition:_ the genus of a hyperelliptic curves
 
-The hyperelliptic curve $Z$ corresponding to $y^{2} = h(x)$ 
+The hyperelliptic curve $X$ corresponding to $y^{2} = h(x)$ 
 
 ###### _proof sketch:_
 
-Consider $\pi : Z \to \mathbb{C}_{\infty}$ by $(x, y) \mapsto x$ or $(z, w) \mapsto 1 / z$ and anything else sent to $\infty$. We claim this map has degree $2$.
+Consider $\pi : X \to \mathbb{C}_{\infty}$ by $(x, y) \mapsto x$ or $(z, w) \mapsto 1 / z$ and anything else sent to $\infty$. We claim this map has degree $2$.
 
 We want solutions to $y^{2} = h(x)$ where $h$ has degree $2g + 1$ or $2g + 2$. If $h$ has degree $2g + 1$ there's an extra ramification point at infinity. In either case, we have a bunch of [[Introduction to Riemann Surfaces --- math-199DR/notes/Topological properties of holomorphisms#_definition _ ramification point, branch point|ramification points]] of multiplicity $2$ (they can have multiplicity at most $2$ and anything less wouldn't be ramified). Computing the genus $g_{Z}$ from [[Introduction to Riemann Surfaces --- math-199DR/notes/Topological properties of holomorphisms#Hurwitz' formula|Hurwitz' formula]], we get $g_{Z} = g$ as desired.
 

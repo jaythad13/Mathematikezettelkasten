@@ -1,6 +1,7 @@
 ---
 tags:
 - math-199DR/19
+- math-199DR/23
 - cx-geo
 - alg-geo
 ---
@@ -59,8 +60,66 @@ Consider the map $S : \mathbb{P}\mathcal{L}(D) \to \lvert D \rvert$ by $f \mapst
 
 It's clearly injective — $Sf = Sg$ forces $\operatorname{div} f = \operatorname{div} g$ and thus, $f = g$. If $E \in \lvert D \rvert$, then $E = \operatorname{div} f + D$. Further $E \geq 0$ gives $\operatorname{div} f + D \geq 0$, and thus, $f \in \mathcal{L}(D)$.
 
-A general linear system.
+This corresponds to the short exact sequence
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		0 \ar[r] & \mathbb{C}^* \ar[r] & \mathcal{L}(K) \ar[r] & K \ar[r] & 0.
+	\end{tikzcd}
+\end{document}
+```
+
+A general linear system is just an image of the projectivisation of a linear subspace under the correspondence with the complete linear system.
 
 ##### _definition:_ linear system
 
 A linear system in general is the image of $\mathbb{P}V \subseteq \mathbb{P} \mathcal{L}(D)$ (where $V$ is a [[linear subspace]] $V \subseteq \mathcal{L}(D)$) under $S$.
+
+Linear systems of dimensions $1, 2, 3$ are called pencils, nets, and webs.
+
+### Base points
+
+There is exactly one kind of restriction on linear systems — base points.
+
+##### _definition:_ base points
+
+For a linear system $Q$ on $X$, $p \in X$ is a base point of $Q$ if every divisor $E \in Q$ has $E(p) \neq 0$.
+
+Having a base point is equivalent to being a subspace of a smaller subspace
+
+### Linear systems of a projective maps
+
+The linear systems that are of greatest interest are the linear systems of a projective map.
+
+##### _definition:_ linear system of a projective map
+
+Given a holomorphic map $\Phi : X \to \mathbb{P} \mathbb{C}^n$ and a global meromorphic representation $\Phi = (f_{0} : f_{1} : \dots : f_{n})$, the linear system of $\Phi$ is given by the image of the projectivisation $V_{f} = \operatorname{span}(f_{0}, f_{1}, \dots, f_{n})$ in $\mathcal{L}(D)$ where $D$ is the divisor that allows exactly the poles of $f_{i}$ and no more —
+$$
+D(p) = - \min \{ \operatorname{ord}_{p} f_{i} \}.
+$$
+
+The linear system of $\Phi$ is denoted $\lvert \Phi \rvert$.
+
+Note that we need to verify that this doesn't depend on the choice of meromorphic representation which is a not-too-difficult exercise in linear algebra.
+
+Linear systems of projective maps are nice because they are base point free.
+
+##### _proposition:_ the linear system of a projective map is base point free
+
+For $\Phi : X \to \mathbb{P}\mathbb{C}^n$ a holomorphic map into projective space, $\lvert \Phi \rvert$ is base point free.
+
+###### _proof:_
+
+Clearly we can go from a projective map to a linear system. In fact, as long as the linear system doesn't have any obvious obstruction (that is, it is base point free) we have a projective map.
+
+##### _theorem:_ the projective map of a linear system
+
+Let $Q \subseteq \lvert D \rvert$ be a base point free linear system of projective dimension $n$ on $X$. Then there exists a holomorphic map $\Phi : X \to \mathbb{P} \mathbb{C}^n$ such that $\lvert \Phi \rvert = Q$. Further, $\Phi$ is unique upto choice of coordinates on $\mathbb{P} \mathbb{C}^n$.
+
+###### _proof:_
+
+Suppose $Q$ corresponds to a linear subspace $V \subseteq \mathcal{L}(D)$ such that $Q = \{ \operatorname{div} f + D \mid f \in V \}$. Picking a basis of meromorphic functions $f_{0}, f_{1}, \dots, f_{n}$ in $V$. We get $\Phi = (f_{0} : f_{1} : \dots : f_{n})$ is the desired holomorphic map with $\lvert \Phi \rvert = Q$.
+
+Thus, we have a correspondence between base point free linear systems of dimension $n$ on $X$ and holomorphic maps to $\mathbb{P} \mathbb{C}^n$.

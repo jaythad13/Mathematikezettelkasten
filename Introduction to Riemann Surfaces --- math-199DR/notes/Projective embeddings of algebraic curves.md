@@ -54,7 +54,7 @@ $$
 (0 : 1 : 0) & q = p
 \end{cases}
 $$
-We claim that this is [[Introduction to Riemann Surfaces --- math-199DR/notes/Divisors for projective embeddings#_definition _ holomorphic maps to projective space|holomorphic]] and can be written as $(x(q) : y(q) : z(q))$ (which is not so hard to prove but we will not do) and that it is an isomorphism onto the image $C$ in $\mathbb{P} \mathbb{C}^{2}$ since each component of the function is degree $1$.
+We claim that this is [[Introduction to Riemann Surfaces --- math-199DR/notes/Projective maps and linear systems#_definition _ holomorphic maps to projective space|holomorphic]] and can be written as $(x(q) : y(q) : z(q))$ (which is not so hard to prove but we will not do) and that it is an isomorphism onto the image $C$ in $\mathbb{P} \mathbb{C}^{2}$ since each component of the function is degree $1$.
 
 Consider the projection map $\pi_{x} : C \to \mathbb{C}_{\infty}$ by $(x : y : z) \mapsto x / z$ for $z \neq 0$, and $(x : y : 0) \mapsto \infty$ . Since the diagram
 ```tikz
@@ -87,3 +87,7 @@ or
 $$
 y^{2} = x^3 - \frac{1}{4}.
 $$
+
+### Curves of higher genus
+
+##### _theorem:_ classification of genus $2$ curves
