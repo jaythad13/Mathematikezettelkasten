@@ -57,11 +57,11 @@ $$
 
 But then this is a sum of zeroes.
 
-Thus, we get the simplicial chain complex as an [[Abstract Algebra I --- math-171/notes/Exact sequences#_definition _ exact sequence|exact sequence]].
+Thus, we get the simplicial chain complex as a chain complex (a weakening of [[Abstract Algebra I --- math-171/notes/Exact sequences#_definition _ exact sequence|exact sequences]] where the image of a map is only required to be contained in the kernel of the next).
 
 ##### _definition:_ simplicial chain complex
 
-The simplicial chain complex is the exact complex below.
+The simplicial chain complex is the chain complex below.
 ```tikz
 \usepackage{tikz-cd}
 \usepackage{amsfonts}
