@@ -19,7 +19,7 @@ We use our usual style for handwriting notes adapted to some peculiarities of Ob
 
 ##### Page organisation
 
-We write a page for every new big idea. Usually, this is an roughly corresponding to the size of a subsection or a section of [[Linear Algebra Done Right.pdf|Linear Algebra Done Right]] or [[Principles of Mathematical Analysis.pdf|Principles of Mathematical Analysis]].
+We write a page for every new big idea. Usually, this is an roughly corresponding to the size of a subsection or a section of [[Linear Algebra Done Right.pdf|Linear Algebra Done Right]] or [[Analysis --- rudin/attachments/texts/Principles of Mathematical Analysis.pdf|Principles of Mathematical Analysis]].
 
 It should contain its own definition and the definitions of a few objects that it is intrinsically linked with. Perhaps there could be 2-3 such ideas in a typical lecture. (There could be more if, for example, a first lecture on algebra defined monoids, semigroups, groups, rings, fields, and algebras)
 
