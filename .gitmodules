@@ -20,3 +20,6 @@
 [submodule "Analysis --- rudin/attachments/documents"]
 	path = Analysis --- rudin/attachments/documents
 	url = https://git@git.overleaf.com/67ef5a754c646d0524ef6e30
+[submodule "Analysis --- ou/attachments/documents"]
+	path = Analysis --- ou/attachments/documents
+	url = https://git@git.overleaf.com/67ef5a754c646d0524ef6e30
