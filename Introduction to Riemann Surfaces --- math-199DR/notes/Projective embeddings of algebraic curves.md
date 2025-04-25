@@ -1,6 +1,7 @@
 ---
 tags:
 - math-199DR/22
+- math-199DR/23
 - cx-geo
 - alg-geo
 ---
@@ -23,7 +24,7 @@ Choose one point $p$ and consider the divisor $D_{p}$ with $D_{p}(p) = 1$ and $D
 
 Thus, there is a non-constant meromorphic function $f$ with at worst a simple pole at $p$. But then the [[Introduction to Riemann Surfaces --- math-199DR/notes/Holomorphisms of Riemann surfaces#_proposition _ meromorphic functions are maps to the Riemann sphere|corresponding holomorphism to the Riemann sphere]] $\pi_{f}$ has [[Introduction to Riemann Surfaces --- math-199DR/notes/Topological properties of holomorphisms#_definition _ degree at a point|degree]] $1$ at $\infty$, [[Introduction to Riemann Surfaces --- math-199DR/notes/Topological properties of holomorphisms#_theorem _ degree is constant|and thus,]] degree $1$ everywhere. Then, $\pi_{f}$ [[Introduction to Riemann Surfaces --- math-199DR/notes/Topological properties of holomorphisms#_corollary _ isomorphism is determined by degree|is an isomorphism]] $X \to \mathbb{C}_{\infty}$.
 
-Of course, since the Riemann sphere is $\mathbb{P} \mathbb{C}^1$, this is a projective embedding.
+Of course, since the Riemann sphere is $\mathbb{C} \mathbb{P}^1$, this is a projective embedding.
 
 We can use a similar trick to classify curves of genus $1$, but we will need a lot more work. What we want to do is express every genus $1$ curve in Weierstrass form — as the compactification of the complex points of some curve $y^{2} = x^{3} + Ax + B$. 
 
@@ -47,7 +48,7 @@ Y^{2} = X^{3} + AX + B
 $$
 for some meromorphic functions $X, Y$. From now on we relabel these $x, y$ to avoid confusion with the algebraic curve $X$ itself. 
 
-We now have a map $\Phi : X \to \mathbb{P} \mathbb{C}^{2}$ by
+We now have a map $\Phi : X \to \mathbb{C} \mathbb{P}^{2}$ by
 $$
 \Phi(q) = \begin{cases}
 (x(q) : y(q) : 1) & q \neq p \\
