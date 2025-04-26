@@ -11,10 +11,37 @@
 \begin{problem}[S \& S \S 6.6 \#10]
 	Let $u(x, t)$ be a solution of the wave equation, and let $E(t)$ denote the energy of this wave
 	\[
-		E(t) = \int_{\mathbb{R}^{d}} \left \lvert \frac{\partial u}{\partial t}(x, t) \right \rvert + \sum_{j = 1}^{d} \left \lvert \frac{\partial u}{\partial x_{j}} \right \rvert^{2} \, dx.
+		E(t) = \int_{\mathbb{R}^{d}} \left \lvert \frac{\partial u}{\partial t}(x, t) \right \rvert^{2} + \sum_{j = 1}^{d} \int_{\mathbb{R}^{d}} \left \lvert \frac{\partial u}{\partial x_{j}}(x, t) \right \rvert^{2} \, dx.
 	\]
 	We have seen that $E(t)$ is constant using Plancherel's formula. Give an alternate proof of this fact by differentiating the integral with respect to $t$ and showing that $dE / dt = 0$.
 \end{problem}
+
+\begin{solution}
+	Since $u$ is $\mathcal{C}^{2}$, it is sufficiently nice for us to differentiate under the integral sign. Then we can integrate by parts and show that the derivative vanishes using the fact that $\partial^{2} u / \partial t^{2} = \Delta u$.
+
+	First we compute the derivative ---
+	\begin{align*}
+		\frac{d E}{d t}(t) & = \int_{\mathbb{R}^{d}}  \frac{d }{d t} \left \lvert  \frac{\partial u}{\partial t}(x, t) \right \rvert^{2} + \sum_{j = 1}^{d} \int_{\mathbb{R}^{d}} \frac{d }{d t} \left \lvert \frac{\partial u}{\partial x_{j}}(x, t) \right \rvert^{2} \, dx \\
+				   & = \int_{\mathbb{R}^{d}} 2 \frac{\partial u}{\partial t}(x, t) \frac{d }{d t} \frac{\partial u}{\partial t}(x, t) + \sum_{j = 1}^{d} \int_{\mathbb{R}^{d}} 2 \frac{\partial u}{\partial x_{j}}(x, t) \frac{d }{d t} \frac{\partial u}{\partial x_{j}}(x, t) \, dx \\
+				   & = 2 \left ( \int_{\mathbb{R}^{d}} \frac{\partial u}{\partial t}(x, t) \frac{\partial^{2} u}{\partial t^{2}}(x, t) \, dx + \sum_{j = 1}^{d} \int_{\mathbb{R}^{d}} \frac{\partial u}{\partial x_{j}}(x, t) \frac{\partial^{2} u}{\partial x_{j} \partial t}(x, t) \, dx \right ).
+	\end{align*}
+	Note that we interchanged the order of partials in the last step (by Clairaut's theorem).
+
+	For each of the terms in the sum on the right, we can integrate in each $x_{i}$ in any order. We choose to integrate with respect to $x_{j}$ first for each $j$th term. Integrating by parts gives us
+	\begin{align*}
+		\int_{\mathbb{R}^{d}} \frac{\partial u}{\partial x_{j}}(x, t) \frac{\partial^{2} u}{\partial x_{j} \partial t} \, dx & = \int_{\mathbb{R}_{d - 1}} \int_{-\infty}^{\infty} \frac{\partial u}{\partial x_{j}}(x, t) \frac{\partial^{2} u}{\partial x_{j} \partial t} \, dx_{j}  \, dx_{1} \dots \widehat{dx_{j}} dx_{n} \\
+																     & = \int_{\mathbb{R}^{d - 1}} \left ( \frac{\partial u}{\partial t}(x, t) \frac{\partial u}{\partial x_{j}}(x, t) \right ) \Big |_{-\infty}^{\infty} - \int_{-\infty}^{\infty} \frac{\partial u}{\partial t}(x, t) \frac{\partial^{2} u}{\partial x_{j}^{2}}(x, t) \, dx_{j}  \, dx_{1} \dots \widehat{dx_{j}} \dots dx_{n} \\
+																     & = - \int_{\mathbb{R}^{d}} \frac{\partial u}{\partial t}(x, t) \frac{\partial^{2} u}{\partial x_{j}^{2}}(x, t) \, dx.
+	\end{align*}
+	Here, the last step follows by the vanishing of the partials at $\infty$ and applying Fubini's thoerem again.
+
+	It follows that
+	\begin{align*}
+		\frac{d E}{d t}(t) & = 2 \left ( \int_{\mathbb{R}^{d}} \frac{\partial u}{\partial t}(x, t) \frac{\partial^{2} u}{\partial t^{2}} \, dx - \sum_{j = 1}^{d} \int_{\mathbb{R}^{d}} \frac{\partial u}{\partial x_{j}}(x, t) \frac{\partial^{2} u}{\partial x_{j}^{2}}(x, t) \, dx  \right ) \\
+				   & = 2 \int_{\mathbb{R}^{d}} \frac{\partial u}{\partial t}(x, t) \left ( \frac{\partial^{2} u}{\partial t^{2}} - \Delta u(x, t) \right ) \, dx   \\
+				   & = 0.
+	\end{align*}
+\end{solution}
 
 \pagebreak
 
@@ -29,11 +56,54 @@
 	\]
 \end{problem}
 
+\begin{solution}
+	We can just compute and go from the left hand side to the right. Let $e_{1}, e_{2}$ be orthonormal basis vectors of the plane $\mathcal{P}_{0, \gamma}$. Then, for points $x$ in $\mathcal{P}_{t, \gamma}$ we must have $x = t \gamma + u_{1} e_{1} + u_{2} e_{2}$ for some $(u_{1}, u_{2}) \in \mathbb{R}^{2}$. Further,
+	\[
+		\iint_{\mathcal{P}_{t, \gamma}} f(x) \, dx = \iint_{\mathbb{R}^{2}} f(t \gamma + u_{1} e_{1} + u_{2} e_{2}) \, du_{1} du_{2}
+	\]
+	for any sufficiently nice function $f$. Finally, since $\gamma \perp \mathcal{P}_{t, \gamma}$, we have $x \cdot \gamma = t$ for any $x \in \mathcal{P}_{t, \gamma}$.
+
+	\begin{align*}
+		\int_{\mathbb{R}} \int_{S^{2}} \mathcal{R} f(t, \gamma) \overline{F(t, \gamma)} \, d\sigma(\gamma)  \, dt & = \int_{\mathbb{R}} \int_{S^{2}} \iint_{\mathbb{R}^{2}} f(t \gamma + u_{1} e_{2} + u_{2} e_{2}) \overline{F(t, \gamma)} \, du_{1} du_{2}  \, d\sigma(\gamma)  \, dt \\
+															  & = \iint_{\mathbb{R}^{2}} \int_{\mathbb{R}} f(x) \int_{S^{2}}  \overline{F(x \cdot \gamma, \gamma)} \, d\sigma(\gamma)  \, dt  \, du_{1} du_{2} \\
+															  & = \int_{\mathbb{R}^{3}} f(x) \mathcal{R}^{*} F(x) \, dx
+	\end{align*}
+	for $x = t \gamma + u_{1} e_{1} + u_{2} e_{2}$. Note that we use Fubini's theorem to change the order of integration, and using a double integral symbol to keep track of where integration over the plane $\mathcal{P}_{t, \gamma}$ occurs.
+
+	With this identity, we have shown that $\mathcal{R}$ and $\mathcal{R}^{*}$ are really adjoint --- we have $\left < \mathcal{R} f, F \right > = \left < f, \mathcal{R}^{*} F \right >$ for any $f \in \mathcal{S}(\mathbb{R}^{3})$ and $F : \mathbb{R} \times S^{2} \to \mathbb{R}$.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[S \& S \S 7.3 \#2]
-	If $f$ is a $\mathcal{C}^{1}$ function on the circle, prove that $\lvert a_{N}(n) \rvert \le c \lvert n \rvert$ whenever $0 < \lvert n \rvert < N / 2$.
+	If $f$ is a $\mathcal{C}^{1}$ function on the circle, prove that $\lvert a_{N}(n) \rvert \le c / \lvert n \rvert$ whenever $0 < \lvert n \rvert < N / 2$.
 \end{problem}
+
+\begin{solution}
+	By definition
+	\[
+		a_{N}(n) = \frac{1}{N} \sum_{k = 1}^{N} f(e^{2 \pi i k / N}) e^{-2 \pi i k n / N}
+	\]
+	Note that
+	\begin{align*}
+		a_{N}(n) (1 - e^{2 \pi i \ell n / N}) & = \frac{1}{N} \sum_{k = 1}^{N} f(e^{2 \pi i k / N}) e^{- 2 \pi i k / N} (1 - e^{2 \pi i \ell n / N}) \\
+						      & = \frac{1}{N} \sum_{k = 1}^{N} f(e^{2 \pi i k / N}) e^{-2 \pi i k / N} - \frac{1}{N} \sum_{k = 1}^{N} f(e^{2 \pi i k / N}) e^{- 2 \pi i (k - \ell) / N} \\
+						      & = \frac{1}{N} \sum_{k = 1}^{N} f(e^{2 \pi i k / N}) e^{-2 \pi i k / N} - \frac{1}{N} \sum_{k = 1 - \ell}^{N - \ell} f(e^{2 \pi i (k + \ell) / N}) e^{- 2 \pi i k / N} \\
+						      & = \frac{1}{N} \sum_{k = 1}^{N} f(e^{2 \pi i k / N}) e^{-2 \pi i k / N} - \frac{1}{N} \sum_{k = 1}^{N} f(e^{2 \pi i (k + \ell) / N}) e^{- 2 \pi i k / N} \\
+						      & = \frac{1}{N} \sum_{k = 1}^{N} (f(e^{2 \pi i k / N}) - f(e^{2 \pi i (k + \ell) / N})) e^{- 2 \pi i k n / N}.
+	\end{align*}
+	Here, the second-to-last equality follows because $e^{2 \pi i x / N}$ is $N$-periodic in integers $x$, so the sum over any $N$ consecutive integers is the same.
+
+	Since $f'$ is continuous on a compact set, it is bounded --- say $\lvert f' \rvert \le B$. Thus, differences between $f$ at any two points are bounded by $B$ times the distance between them.
+	\begin{align*}
+		\lvert a_{n}(N) \rvert & \le \frac{N}{N} \frac{\lvert f(e^{2 \pi i k / N}) - f(e^{2 \pi i (k + \ell) / N}) \rvert}{\lvert 1 - e^{2 \pi i \ell n / N} \rvert} \lvert e^{-2 \pi i k n / N} \rvert \\
+				       & = \frac{B \lvert e^{2 \pi i k} (1 - e^{2 \pi i \ell / N}) \rvert}{\lvert 1 - e^{2 \pi i \ell n / N} \rvert} \\
+				       & = \frac{B \lvert 1 - e^{2 \pi i \ell / N} \rvert}{\lvert 1 - (e^{2 \pi i \ell / N})^{n} \rvert} \\
+				       & = \frac{B}{\lvert 1 + (e^{2 \pi i \ell / N})^{2} + \dots + (e^{2 \pi i \ell / N})^{n - 1} \rvert} \\
+				       & \le \frac{B}{N} \\
+				       & \le \frac{B}{2N}.
+	\end{align*}
+\end{solution}
 
 \pagebreak
 
@@ -42,16 +112,77 @@
 	\[
 		e(k) = e_{\ell}(k) = e^{2 \pi i \ell k / N}
 	\]
+	Conversely, every function of this type is a character on $\mathbb{Z} / N \mathbb{Z}$. Deduce that $e_{\ell} \mapsto \ell$ defines an isomorphism from $\widehat{G}$ to $G$.
 \end{problem}
+
+\begin{solution}
+	Note that $e(0) = 1$. Since $e(n) = e(n \cdot 1)$ is really $e(n) = e(0) = 1$, we have $e(n \cdot 1) = e(1)^{n} = 1$. That is, $e(1)$ is an $n$th root of unity, say $e^{2 \pi i \ell / N}$ with $0 \le \ell \le N - 1$. Then, for every, $k \in \mathbb{Z} / N \mathbb{Z}$ we have
+	\[
+		e(k) = e(1)^{k} = e^{2 \pi i k \ell / N}.
+	\]
+	as desired. Of course, this choice of $\ell$ less than $N$ is unique since any other $\ell'$ with $e_{\ell} = e_{\ell'}$ would have $\ell' \in \ell + N\mathbb{Z} = \{ \ell + m N \mid m \in \mathbb{Z} \}$.
+
+	Consider $\varphi : \widehat{G} \to G$ by $e_{\ell} \mapsto \ell$. We've shown that $\varphi$ is injective by showing that there is a unique choice of $\ell \in \mathbb{Z} / N \mathbb{Z}$ such that $e_{\ell}(k) = e^{2 \pi i k \ell / N}$. Since $\lvert \widehat{G} \rvert = \lvert G \rvert = N$, we have that $\varphi$ is surjective as well. That is, $\varphi$ is a bijection. We are only left to show that it is a homomorphism.
+
+	Consider $\ell_{1}, \ell_{2} \in \mathbb{Z} / N \mathbb{Z}$. To show that $\varphi$ is a homomorphism, we need to show that $e_{\ell_{1}} e_{\ell_{2}} = e_{\ell}$ where $\ell = \ell_{1} + \ell_{2} \pmod N$. We can do so by reducing the exponents modulo $N$ as below
+	\begin{align*}
+		(e_{\ell_{1}} e_{\ell_{2}})(k) & = e_{\ell_{1}}(k) e_{\ell_{2}}(k) \\
+					       & = e^{2 \pi i k \ell_{1} / N} e^{2 \pi i k \ell_{2} / N} \\
+					       & = e^{2 \pi i k (\ell_{1} + \ell_{2}) / N} \\
+					       & = e^{2 \pi i k m N / N} e^{2 \pi i k \ell / N} \\
+					       & = e^{2 \pi i k \ell / N} \\
+					       & = e_{\ell}(k).
+	\end{align*}
+	Thus,
+	\begin{align*}
+		\varphi(e_{\ell_{1}} e_{\ell_{2}}) & = \varphi(e_{\ell}) \\
+						   & = \ell \\
+				     & = \ell_{1} + \ell_{2} \pmod N \\
+				     & = \varphi(e_{\ell_{1}}) + \varphi(e_{\ell_{2}}) \pmod N.
+	\end{align*}
+	That is, $\varphi$ is an isomorphism of groups.
+\end{solution}
 
 \pagebreak
 
 \begin{problem}[S \& S \S 7.3 \#5]
 	Show that all characters on $S^{1}$ are given by
 	\[
-		e_{n} = e^{2 \pi i n x} \quad \text{with } n  \in \mathbb{Z},
+		e_{n}(x) = e^{2 \pi i n x} \quad \text{with } n  \in \mathbb{Z},
 	\]
 	and check that $e_{n} \mapsto n$ defines an isomorphism from $\widehat{S^{1}}$ to $\mathbb{Z}$.
 \end{problem}
+
+\begin{solution}
+	Suppose $e$ is a character on $S^{1} = \mathbb{R} / 2 \pi \mathbb{Z}$. That is, it is a continuous homomorphism $S^{1} \to \mathbb{C}^{*}$ such that $\lvert e \rvert = 1$. By the lemma in the book, we have, we must have that $e$ is differentiable as well.
+
+	By definition the derivative is
+	\begin{align*}
+		e'(x) & = \lim_{h \to 0} \frac{e(x + h) - e(x)}{h} \\
+		      & = \lim_{h \to 0} e(x) \frac{e(h) - 1}{h} \\
+		      & = e(x) \lim_{h \to 0} \frac{e(h) - 1}{h} \\
+		      & = A e(x).
+	\end{align*}
+	Then $e(x) = e^{A x}$. Since $\lvert e(x) \rvert = 1$ for all $x$, we must have $A$ purely imaginary, and since $e(1) = e(0) = 1$, we must have $A = 2 \pi i n$ for some integer $n$. Thus, $e(x) = e^{2 \pi i n x}$ as desired.
+
+	Consider the function $\varphi : \widehat{S^{1}} \to \mathbb{Z}$ by $e_{n} \mapsto n$. Notice that $e_{n} = e_{m}$ if and only if $n = m$ --- just consider $x = 1 / mn$. Then  $e_{n}(x) = e^{2 \pi i / m}$ and $e_{m}(x) = e^{2 \pi i / n}$ which are not equal since they are different roots of unity (or alternatively, if we know that $e^{2 \pi i x}$ is exactly $1$-periodic, because $1 / m - 1 / n$ is less than $1$). Thus, $\varphi$ is injective.
+
+	For each $n \in \mathbb{Z}$, $e_{n}$ is a continuous homomorphism $\mathbb{R} / 2 \pi \mathbb{Z} \to \mathbb{C}^{*}$ with $\lvert e \rvert = 1$. Thus, $\varphi$ is surjective.
+
+	Finally, we are only left to show $\varphi$ is a homomorphism. This is essentially showing that $e_{m} e_{n} = e_{m + n}$. It follows easily from the properties of exponents --- for any $x \in \mathbb{R} / 2 \pi \mathbb{Z}$
+	\begin{align*}
+		(e_{m} e_{n})(x) & = e_{m}(x) e_{n}(x) \\
+				 & = e^{2 \pi i m x} e^{2 \pi i n x} \\
+				 & = e^{2 \pi i (m + n) x} \\
+				 & = e_{m + n}(x).
+	\end{align*}
+	Thus,
+	\begin{align*}
+		\varphi(e_{m} e_{n}) & = \varphi(e_{m + n}) \\
+				     & = m + n \\
+				     & = \varphi(e_{m}) + \varphi(e_{n}).
+	\end{align*}
+	That is, $\varphi$ is an isomorphism of groups.
+\end{solution}
 
 \end{document}
