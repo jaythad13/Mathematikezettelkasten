@@ -42,7 +42,7 @@ $$
 
 ##### _definition:_ Fibonacci numbers
 
-The Fibonacci numbers are the sequence defined by the [[Recurrence problems#_definition _ recurrence relation|recurrence relation]]
+The Fibonacci numbers are the sequence defined by the [[Concrete mathematics --- con-crete/notes/Recurrence problems#_definition _ recurrence relation|recurrence relation]]
 $$
 \begin{gathered}
 	F_0 = 0 \\

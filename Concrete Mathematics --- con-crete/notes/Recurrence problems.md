@@ -129,17 +129,17 @@ Again, looking at small cases can be fruitful. We can see clearly that zero line
 
 ##### _examples:_ $L_0$, $L_1$, and $L_2$
 
-![[Recurrence_problems_S2_no_lines.jpeg]]
+![[Concrete mathematics --- con-crete/attachments/for notes/Recurrence problems/Recurrence_problems_S2_no_lines.jpeg]]
 $$
 L_0 = 1
 $$
 
-![[Recurrence_problems_S2_one_line.jpeg]]
+![[Concrete mathematics --- con-crete/attachments/for notes/Recurrence problems/Recurrence_problems_S2_one_line.jpeg]]
 $$
 L_1 = 2
 $$
 
-![[Recurrence_problems_S2_two_lines.jpeg]]
+![[Concrete mathematics --- con-crete/attachments/for notes/Recurrence problems/Recurrence_problems_S2_two_lines.jpeg]]
 $$
 L_2 = 4
 $$
@@ -148,7 +148,7 @@ This seems to suggest that $L_n = 2^n$. That would imply that each new line we d
 
 ##### _counterexample:_ $L_3$
 
-![[Recurrence_problems_S2_three_lines.jpeg]]
+![[Concrete mathematics --- con-crete/attachments/for notes/Recurrence problems/Recurrence_problems_S2_three_lines.jpeg]]
 $$L_3 = \text{?}$$
 
 If this is indeed the best we can do, each new line doesn't split every previous region. Since it seems hard to do any better, it's probably a good idea for us to think about what really happens when we add a new line. How many regions does it split? Does it depend on how we choose the line? If so, does that get affected by larger values of $n$. 
@@ -166,11 +166,11 @@ $$
 
 It turns out that we can actually achieve the optimal line that intersects each old line at a point that is not the intersection point of any other lines. By geometry, we know that any non-parallel lines must intersect. Since there are only finitely many (specifically, $n - 1$) previous lines, we can just choose the $n$th line to have a different slope from all of them. 
 
-![[Recurrence_problems_S2_rotate_nth_line.jpeg]]
+![[Concrete mathematics --- con-crete/attachments/for notes/Recurrence problems/Recurrence_problems_S2_rotate_nth_line.jpeg]]
 
 Furthermore, since there are only finitely many intersection points of those lines (each pair of lines can only intersect once so the number of intersection points is less than $\binom{n - 1}{2}$) we can translate the $n$th line until it does not contain any of the previous intersection points.
 
-![[Recurrence_problems_S2_translate_nth_line.jpeg]]
+![[Concrete mathematics --- con-crete/attachments/for notes/Recurrence problems/Recurrence_problems_S2_translate_nth_line.jpeg]]
 
 Thus, we can get the recurrence relation
 $$
