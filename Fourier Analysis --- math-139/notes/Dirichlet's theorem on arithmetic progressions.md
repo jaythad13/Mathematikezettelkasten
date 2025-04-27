@@ -2,6 +2,7 @@
 tags:
 - math-139/29
 - math-139/30
+- math-139/31
 - fourier
 - nt
 - anal
@@ -113,8 +114,94 @@ for every $M$, and thus, diverges. Thus, the $\liminf$ of $\ln \zeta(s)$ diverge
 
 There are infinitely many primes.
 
+### Reducing the theorem
+
 We want to use the same idea to prove Dirichlet's theorem in general. That is, we want to prove that there are infinitely many primes of the form $qk + \ell$ where $\gcd(q, \ell) = 1$ by proving that the sum
 $$
 \sum_{p \text{ prime}, p = kq + \ell} \frac{1}{p}
 $$
 diverges.
+
+At this point, we introduce some notation to make our lives easier.
+
+##### _notation:_ Weierstrass $\wp$ for primes
+
+The set of all primes is denoted $\wp$.
+
+##### _notation:_ modular equivalence
+
+When $q$ is obvious, we write $p \equiv \ell$ to mean $p = \ell \pmod q$.
+
+Our goal is now to reduce this result to something that we can say about [[Fourier Analysis --- math-139/notes/Dirichlet characters and series|Dirichlet characters and series]]. Note that, we can define the characteristic function of $\ell$ modulo $q$ which gives a convenient way to express the infinite sum we want to show diverges, and simultaneously gives a way to utilise the tools of [[Fourier Analysis --- math-139/notes/Finite Fourier analysis|finite Fourier analysis]] and thus, Dirichlet characters and series.
+
+##### _definition:_ the modular characteristic function
+
+The modular characteristic function of $\ell \in \mathbb{Z} / q \mathbb{Z}^*$ is the function
+$$
+\begin{align}
+\delta_{\ell}  & : \mathbb{Z} / q \mathbb{Z}^* \to \mathbb{C} \\
+ & : m \mapsto \begin{cases}
+1 & m = \ell \\
+0 &
+\end{cases}
+\end{align}
+$$
+extended to a function on $\mathbb{Z} / q \mathbb{Z}$, supported on $\mathbb{Z} / q \mathbb{Z}^*$ and extended periodically to $\mathbb{Z}$ (by the canonical surjection $\mathbb{Z} \to \mathbb{Z} / q \mathbb{Z}$).
+
+Note that
+$$
+\sum_{p \in \wp, p \equiv \ell} \frac{1}{p^s} = \sum_{p \in \wp} \frac{\delta_{\ell}(p)}{p^s}
+$$
+for all $s > 1$ (all $s$ where the sum on the left is guaranteed to converge). Using finite Fourier analysis, we can decompose this sum. For convenience, we give it a name.
+
+##### _definition:_ the modular characteristic series
+
+The modular characteristic series of $\ell \in \mathbb{Z} / q \mathbb{Z}^*$ is the sum
+$$
+\sum_{p \in \wp} \frac{\delta_{\ell}(p)}{p^s}.
+$$
+Note that this is not an $L$-[[Fourier Analysis --- math-139/notes/Dirichlet characters and series|series]] proper since $\delta_{\ell}$ is not a [[Fourier Analysis --- math-139/notes/Finite Fourier analysis#_definition _ character, the dual group|character]] on $G$.
+
+##### _lemma:_ Fourier decomposition of the modular characteristic series
+
+For any $\ell \in \mathbb{Z} / q \mathbb{Z}^*$ the modular characteristic series decomposes as
+$$
+\sum_{p \in \wp} \frac{\delta_{\ell}(p)}{p^s} = \frac{1}{\lvert G \rvert } \sum_{\xi \in \widehat{G}} \overline{\chi_{\xi}(\ell)} \sum_{p \in \wp} \frac{\chi_{\xi}(p)}{p^s}.
+$$
+
+###### _proof:_
+
+By [[Fourier Analysis --- math-139/notes/Finite Fourier analysis#_theorem _ Fourier inversion|Fourier inversion]], we have (as functions on $\mathbb{Z} / q \mathbb{Z}^*$)
+$$
+\delta_{\ell} = \sum_{\xi \in \widehat{\mathbb{Z} / q \mathbb{Z}^*}} \hat{\delta}_{\ell}(\xi) \, \xi.
+$$
+
+However, because $\delta_{\ell}$ is so simple, its [[Fourier Analysis --- math-139/notes/Finite Fourier analysis#_definition _ Fourier coefficient|Fourier coefficients]] $\hat{\delta}_{\ell}$ will be simple too. Explicitly,
+$$
+\hat{\delta}_{\ell}(\xi) = \frac{1}{\lvert G \rvert } \sum_{m \in G} \delta_{\ell}(m) \overline{\xi(m)} = \frac{\overline{\xi(\ell)}}{\lvert G \rvert }
+$$
+since $\delta_{\ell}$ is only nonzero when $m = \ell$. Extending this formula to all of $\mathbb{Z}$ and extending the $\xi$ to their [[Fourier Analysis --- math-139/notes/Dirichlet characters and series#_definition _ Dirichlet character|Dirichlet characters]] $\chi_{\xi}$, we get
+$$
+\delta_{\ell}(m) = \frac{1}{\lvert G \rvert } \sum_{\xi \in \widehat{G}} \overline{\chi_{\xi}(\ell)} \chi_{\xi}(m).
+$$
+as functions on $\mathbb{Z}$. Plugging this into the definition of the modular characteristic series gives the desired formula.
+
+##### _lemma:_ the trivial part of the modular characteristic series diverges as $s \to 1^+$
+
+Let $1$ be the trivial character in $\widehat{G}$. Then 
+$$
+\sum_{p \in \wp} \frac{\chi_{1}(p)}{p^s} \to \infty
+$$
+as $s \to 1^+$.
+
+###### _proof:_
+
+$1(p) = 1$ for all $p \in \mathbb{Z} / q \mathbb{Z}^*$. Thus, $\chi_{1}(p) = 0$ only if $\gcd(p, q) \neq 1$. There are only finitely many such $p$ (all primes greater than $q$ are coprime with $q$). Thus,
+$$
+\sum_{p \in \wp} \frac{\chi_{1}(p)}{p^s} = \sum_{p \in \wp} \frac{1}{p^s} - \sum_{p \in \wp, p < q} \frac{1}{p^s}.
+$$
+As $s \to 1^+$ the sum on the left diverges (to $\infty$) and the sum on the right is finite, so their difference diverges (to $\infty$) as well.
+
+##### _theorem:_ reduction of Dirichlet's theorem
+
+If for any non-trivial character $\chi \in \widehat{G}$, its Dirichlet $L$-[[Fourier Analysis --- math-139/notes/Dirichlet characters and series#_definition _ Dirichlet $L$-series|series]] converges as $s \to 1^+$, then Dirichlet's theorem follows.
