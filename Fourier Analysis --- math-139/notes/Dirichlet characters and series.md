@@ -2,6 +2,7 @@
 tags:
 - math-139/30
 - math-139/31
+- math-139/32
 - fourier
 - nt
 - anal
@@ -75,3 +76,60 @@ $$
 L(s, \chi) = \prod_{p \in \wp} \frac{1}{1 - \chi(s) / p^s}.
 $$
 
+###### _proof:_
+
+We consider the difference between the sum and the product by truncating. To show that the truncated differences vanish, we use the multiplicativity of the Dirichlet character. 
+
+For any positive integers $M, N$,
+$$
+\begin{align}
+\left\lvert  \sum_{n = 1}^\infty \frac{\chi(n)}{n^s} - \prod_{p \in \wp} \frac{1}{1 - \chi(p) / p^s}  \right\rvert & \le \left\lvert  \sum_{n = 1}^\infty \frac{\chi(n)}{n^s} - \sum_{n = 1}^N \frac{\chi(n)}{n^s}  \right\rvert  \\
+& + \left\lvert  \sum_{n = 1}^N \frac{\chi(n)}{n^s} - \prod_{p \in \wp} \left( 1 + \frac{\chi(p)}{p^s} + \dots + \frac{\chi(p^M)}{p^{Ms}} \right)  \right\rvert   \\
+& + \left\lvert  \prod_{p \in \wp, p \le N} \left( 1 + \frac{\chi(p)}{p^s} + \dots + \frac{\chi(p^M)}{p^{Ms}} \right) - \prod_{p \in \wp, p \leq N} \frac{1}{1 - \chi(p) / p^s} \right\rvert \\
+  & + \left\lvert  \prod_{p \in \wp, p \le N} \frac{1}{1 - \chi(p) / p^s} - \prod_{p \in \wp} \frac{1}{1 - \chi(p) / p^s}  \right\rvert.
+\end{align}
+$$
+The first and last terms vanish as $N \to \infty$ by the convergence of the product and the convergence of the sum. The third term vanishes by noting that $\chi(p^M) = \chi(p)^M$ and treating the sum inside the product as a geometric series. Finally, the second term vanishes by the same [[Superdiscrete --- math-55a/notes/Euclid's algorithm and primes#_theorem _ unique factorisation|fundamental theorem of arithmetic reason]] as in the [[Complex Analysis --- math-135/notes/The Riemann zeta function#_theorem _ the Euler product formula|the Euler product formula]].
+
+##### _corollary:_ the product formula for the trivial character
+
+Suppose $\chi_{1}$ is the trivial character on $G$. Then if $q = p_{1}^{\alpha_{1}} \dots p_{n}^{\alpha_{n}}$ is the prime factorisation of $q$, then $L(s, \chi_{0}) = \zeta(s) (1 - 1/p_{1}^s) \dots (1 - 1/p_{n}^s)$.
+
+##### _proposition:_ niceness of $L$-series
+
+For a non-trivial character $\chi$ on $G$, the $L$-series converges for all $s > 0$, is continuously differentiable in $s$, and for some positive constants, $c, c'$ we have $L(s, \chi) = 1 + O(e^{- cs})$ and $\frac{d}{ds} L(s, \chi) = O(e^{-c's})$ as $s \to \infty$.
+
+###### _proof:_
+
+To prove that the $L$-series converges for all $s > 0$, we use [[Fourier Analysis --- math-139/attachments/homework/hw 2/hw 2.pdf#page=9|summation by parts]] to write
+$$
+\sum_{n = 1}^N \frac{\chi(n)}{n^s} = \frac{S_{N}}{N^s} + \sum_{k = 1}^N S_{k} \left( \frac{1}{k^s} - \frac{1}{(k + 1)^s} \right)
+$$
+where $S_{k} = \sum_{n = 1}^k \chi(n) / n^s$ are the partial sums of the $L$-series.  It's a simple [[#_lemma _ bounding the sum of the Dirichlet character|lemma]] to show that $\lvert S_{k} \rvert \le q$ and we have
+$$
+\frac{1}{k^s} - \frac{1}{(k + 1)^s} \le \max_{x \in [k, k + 1]} \frac{dx^{}}{dx} = \frac{1}{k^{s + 1}}
+$$
+by the [[Mathematical Analysis I --- math-131/notes/Mean value theorems#_theorem _ mean value theorem|mean value theorem]]. It follows that
+$$
+\left\lvert  \sum_{k = 1}^N S_{k} \left( \frac{1}{k^s} - \frac{1}{(k + 1)^s} \right)  \right\rvert < \sum_{k = 1}^N \left\lvert  \frac{qs}{k^{s + 1}} \right\rvert < \infty.
+$$
+Thus, the $L$-series converges absolutely and uniformly for all $s > \delta > 0$ for each $\delta > 0$. Thus, it is continuous.
+
+Differentiating each term, we can make a similar summation by parts argument to show that the series of derivatives of each term of the $L$-series converges absolutely and uniformly, and thus, that the $L$-series is continuously differentiable in $s$.
+
+Finally, to prove the asymptotic bounds we can write
+$$
+\lvert L(s, \chi) - 1 \rvert = \left\lvert  \sum_{n = 2}^\infty \frac{\chi(n)}{n^s}  \right\rvert \le \max \lvert \chi(n) \rvert \int_{2}^\infty \frac{1}{x^s} \, dx = 2^{-s} O(1).
+$$
+which is of the desired form.  A similar argument gives the asymptotic bound on the derivative $\left\lvert  \frac{d}{ds} L(s, \chi)  \right\rvert$.
+
+##### _lemma:_ bounding the sum of the Dirichlet character
+
+If $\chi$ is a non-trivial character on $G$, then $\lvert \sum_{n = 1}^k \chi(n) \rvert < q$ for any $k$.
+
+###### _proof:_
+
+[[Fourier Analysis --- math-139/notes/Finite Fourier analysis#_lemma _ non-trivial characters sum to zero|Recall that]] $\sum_{n = 1}^q \chi(n) = 0$. Thus, for $k \equiv b \pmod q$ we can write
+$$
+\left\lvert  \sum_{n = 1}^k \chi(n)  \right\rvert = \left\lvert  \sum_{n = 1}^{aq} \chi(n)  \right\rvert + \left\lvert  \sum_{n = a q + 1}^b \chi(n) \right\rvert = 0 + b < q.
+$$
