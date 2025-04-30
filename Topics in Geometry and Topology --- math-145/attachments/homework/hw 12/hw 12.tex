@@ -1,0 +1,90 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+\setlist[enumerate, 1]{label = (\roman*)}
+
+\name{Jayden Thadani}
+\class{MATH 145 --- Topics in Geometry and Topology}
+\assignment{Homework 12}
+\duedate{30th April 2025}
+
+\begin{document}
+
+\begin{problem}[64.]
+	By explicitly writing down chain maps and chain homotopies, and verifying the appropriate relations, show directly that the following two simplicial complexes have the same Betti vector:
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width = 0.2 \textwidth]{figures/P64 triangle} \quad \quad \quad \includegraphics[width = 0.2 \textwidth]{figures/P64 square}
+	\end{figure}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[64.]
+	By explicitly writing down chain maps and chain homotopies, and verifying the appropriate relations, show directly that the following two simplicial complexes have the same Betti vector:
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width = 0.2 \textwidth]{figures/P64 square} \quad \quad \quad \includegraphics[width = 0.2 \textwidth]{figures/P65 squarish}
+	\end{figure}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[66. (Whitehead invariance for relative homology)]
+	Consider the following pair of simplicial complexes
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width = 0.3 \textwidth]{figures/P66 A.pdf} \quad \quad \quad \includegraphics[width = 0.3 \textwidth]{figures/P66 B.pdf}
+		\begin{enumerate}
+			\item Find a much simpler pair of simplicial complexes $(C, D)$ Whitehead equivalent to $(A, B)$. Be sure to demonstrate Whitehead equivalence.
+
+			\item Calculate the relative Betti vector $b(A, B) = b(C, D)$ by hand.
+		\end{enumerate}
+	\end{figure}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[67. (The 5 lemma)]
+	In the following commutative diagram of vector spaces and linear maps
+	\[
+		\begin{tikzcd}
+			A \ar[r, "p"] \ar[d, "a"] & B \ar[r, "q"] \ar[d, "b"] & C \ar[r, "r"] \ar[d, "c"] & D \ar[r, "s"] \ar[d, "d"] & E \ar[d, "e"] \\
+			A' \ar[r, "p'"] & B \ar[r, "q'"] & C \ar[r, "r'"] & D \ar[r, "s'"] & E
+		\end{tikzcd}
+	\]
+	the two rows are exact and the maps $a, b, d, e$ are isomorphisms.
+	\begin{enumerate}
+		\item Show that $c$ is an isomorphism.
+
+		\item In fact, the maps $a, e$ need not be isomorphisms. Identify weaker conditions on $a, e$ (with $b, d$ still isomorphisms) that are sufficient to deduce that $c$ is an isomorphism.
+	\end{enumerate}
+\end{problem}	
+
+\pagebreak
+
+\begin{problem}[68.]
+	Consider the simplicial complexes
+	\begin{align*}
+		B & = \left < 125, 256, 236, 367, 347, 478, 148, 158 \right > & \text{the band} \\
+		M & = \left < 125, 256, 236, 367, 347, 478, 458, 158 \right > & \text{the M\"obius band}
+	\end{align*}
+	and their subcomplexes
+	\begin{align*}
+		B_{\text{top}} & = \left < 12, 23, 34, 41 \right > & \text{top edge of the band} \\
+		B_{\text{both}} & = \left < 12, 23, 34, 41, 56, 67, 78, 85 \right > & \text{both edges of the band} \\
+		M_{\text{edge}} & = \left < 12, 23, 34, 45, 56, 67, 78, 81 \right > & \text{the edge of the M\"obius band}
+	\end{align*}
+
+	\begin{enumerate}
+		\item Sketch the complexes $B$ and $M$, and also the pairs of complexes $(B, B_{\text{top}})$, $(B, B_{\text{both}})$, and $(M, M_{\text{edge}})$. Sketch them as continuous topological objects rather than as simplicial complexes with corners and edges.
+
+		\item Consider the Betti vectors and relative Betti vectors
+			\[
+				b(B), \quad b(M), \quad b(B, B_{\text{top}}), \quad b(B, B_{\text{both}}), \quad b(M, M_{\text{edge}}).
+			\]
+			
+			Calculate all five Betti vectors three times: using coefficients in $\mathbb{F}_{2}$, $\mathbb{F}_{3}$, and $\mathbb{F}_{47}$.
+	\end{enumerate}
+\end{problem}
+
+\end{document}
