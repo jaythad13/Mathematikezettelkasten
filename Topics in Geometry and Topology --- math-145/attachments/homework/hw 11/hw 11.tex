@@ -1,5 +1,6 @@
 \documentclass[12 pt, letterpaper]{hmcpset}
 \usepackage{hw-preamble}
+\usepackage{pdflscape}
 
 \name{Jayden Thadani}
 \class{MATH 145 --- Topics in Geometry and Topology}
@@ -33,7 +34,7 @@
 					\begin{split}
 						X^{(0)} & = \{ \{ \pm 1 \}, \{ \pm 2 \}, \{ \pm 3 \} \} \\
 						X^{(1)} \setminus X^{(0)} & = \{ \{ \pm 1, \pm 2 \}, \{ \pm 2, \pm 3 \}, \{ \pm 3, \pm 1 \} \} \\
-						X^{(2)} \setminus X^{(1)} & = \{ \{ 1, 2, 3 \}, \{ -1, -2, -3 \} \}
+						X^{(2)} \setminus X^{(1)} & = \{ \{ \pm 1, \pm 2, \pm 3 \} \}
 					\end{split}
 				}
 			\]
@@ -41,6 +42,56 @@
 			We can write the $k$-simplices as $X^{(k)} \setminus X^{(k - 1)}$. We get the sets above by considering all subsets of size $k - 1$ that contain no pairs $\pm m$.
 
 		\item
+			\[
+				\boxed{
+					\begin{split}
+						\setcounter{MaxMatrixCols}{20}
+						\partial_{0} & = \begin{pmatrix}
+1 &  0 &  1 &  0 &  0 &  0 &  0 &  0 & -1 & -1 &  0 &  0 \\
+ 0 &  1 &  0 &  1 &  0 &  0 &  0 &  0 &  0 &  0 & -1 & -1 \\
+-1 & -1 &  0 &  0 &  1 &  0 &  1 &  0 &  0 &  0 &  0 &  0 \\
+ 0 &  0 & -1 & -1 &  0 &  1 &  0 &  1 &  0 &  0 &  0 &  0 \\
+ 0 &  0 &  0 &  0 & -1 & -1 &  0 &  0 &  1 &  0 &  1 &  0 \\
+ 0 &  0 &  0 &  0 &  0 &  0 & -1 & -1 &  0 &  1 &  0 &  1 
+\end{pmatrix} \\
+						\operatorname{rank} \partial_{0} & = 5 \\
+						\partial_{1} & = \begin{pmatrix}
+1 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 & 0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 & 1 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 \\
+1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 1 & 0 & 0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 & 0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 0 & 1 & 0 & 0 & 1 \\
+1 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1 & 1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 & 0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 
+\end{pmatrix} \\
+							\operatorname{rank} \partial_{1} & = 7 \\
+							\partial_{2} & = 0 \\
+							\operatorname{rank} \partial_{2} & = 0.
+					\end{split}
+				}
+			\]
+
+			Let the $0$-chains be given by the following basis
+			\[
+				C_{0}(X) = \operatorname{span}([1], [-1], [2], [-2], [3], [-2]),
+			\]
+			the $1$-chains by
+			\[
+				C_{1}(X) = \operatorname{span}([1, 2], [-1, 2], [1, -2], [-1, -2], [2, 3], \dots, [-2, -3],  [3, 1], \dots, [-3, -1]),
+			\]
+			and the $2$-chains by
+			\[
+				C_{2}(X) = \operatorname{span}([1, 2, 3], [-1, 2, 3], [1, -2, 3], [1, 2, -3], [1, -2, -3] [-1, 2, -3], [-1, -2, 3], [-1, -2, -3]).
+			\]
+
+			Then we can compute the matrices using the definition of the boundary map and obtain their ranks using computer tools.
+
+			Note that since $X$ is $2$-dimensional, we have $C_{3}(X) = 0$, and thus, $\partial_{2} : C_{3}(X) \to C_{2}(X)$ is the zero map.
 
 		\item
 			\[
@@ -48,6 +99,31 @@
 					\mathbf{b} = (1, 0, 1, 0, 0, \dots)
 				}
 			\]
+
+			$X$ clearly has one connected component. Recalling that the kernel of $\partial_{-1}$ is all of $C_{0}(X)$, we can also write this as
+			\begin{align*}
+				b_{0} & = \dim \ker \partial_{-1} - \dim \operatorname{img} \partial_{0} \\
+				      & = \dim C_{0}(X) - \operatorname{rank} \partial_{0} \\
+				      & = 6 - 5 \\
+				      & = 1.
+			\end{align*}
+
+			$X$ has no $1$-holes. This is reflected in the fact that
+			\begin{align*}
+				b_{1} & = \dim \ker \partial_{0} - \dim \operatorname{img} \partial_{1} \\
+				      & = (\dim C_{1}(X) - \operatorname{rank} \partial_{0}) - \operatorname{rank} \partial_{1} \\
+				      & = 12 - 5 - 7 \\
+				      & = 0.
+			\end{align*}
+
+			Finally, $X$ has one $2$-hole, given by
+			\begin{align*}
+				b_{2} & = \dim \ker \partial_{1} - \dim \operatorname{img} \partial_{2} \\
+				      & = (\dim C_{2}(X) - \operatorname{rank} \partial_{1}) - 0 \\
+				      & = 8 - 7 \\
+				      & = 1.
+			\end{align*}
+			Note that in the intermediate steps of these computations we use the rank-nullity theorem.
 	\end{enumerate}
 \end{solution}
 
@@ -61,7 +137,7 @@
 	whose simplices are the subsets of cardinality at most $n$. It is a model for the sphere $S^{n - 1}$.
 
 	\begin{enumerate}
-		\item List the vertices, edges, and triangles of $\partial B^{4}$.
+		\item List the vertices, edges, triangles, and tetrahedra of $\partial B^{4}$.
 
 		\item Write down the matrices for the boundary maps $\partial_{0}, \partial_{1}, \partial_{2}$ and determine their ranks.
 
@@ -76,9 +152,10 @@
 			\[
 				\boxed{
 					\begin{split}
-						X^{(0)} & = \{ \{ 0 \},  \{ 1 \}, \{ 2 \}, \{ 3 \} \} \\
-						X^{(1)} \setminus X^{(0)} & = \{ \{ 0, 1 \}, \{ 0, 2 \}, \{ 0, 3 \} \{ 1, 2 \}, \{ 2, 3 \}, \{ 3, 1 \} \} \\
-						X^{(2)} \setminus X^{(1)} & = \{ \{ 0, 1, 2 \}, \{ 1, 2, 3 \}, \{ 0, 2, 3 \},  \{ 0, 1, 3 \} \}
+						X^{(0)} & = \{ \{ 0 \}, \{ 1 \}, \{ 2 \}, \{ 3 \}, \{ 4 \} \} \\
+						X^{(1)} \setminus X^{(0)} & = \{ \{ 0, 1 \}, \{ 0, 2 \}, \{ 0, 3 \}, \{ 0, 4 \}, \{ 1, 2 \}, \{ 1, 3 \}, \{ 1, 4 \}, \{ 2, 3 \}, \{ 2, 4 \}, \{ 3, 4 \} \} \\
+						X^{(2)} \setminus X^{(1)} & = \{ \{ 2, 3, 4 \}, \{ 1, 3, 4 \}, \{ 1, 2, 4 \}, \{ 1, 2, 3 \}, \{ 0, 3, 4 \}, \{ 0, 2, 4 \}, \{ 0, 2, 3 \}, \{ 0, 1, 4 \}, \{ 0, 1, 3 \}, \{ 0, 1, 2 \} \} \\
+						X^{(3)} \setminus X^{(2)} & = \{ \{ 1, 2, 3, 4 \}, \{ 0, 2, 3, 4 \}, \{ 0, 1, 3, 4 \}, \{ 0, 1, 2, 4 \}, \{ 0, 1, 2, 3 \} \}
 					\end{split}
 				}
 			\]
@@ -86,13 +163,96 @@
 			Again, we write the set of all $k$-simplices as the difference of skeletons $X^{(k)} \setminus X^{(k - 1)}$.
 
 		\item
+			\[
+				\boxed{
+					\begin{split}
+						\partial_{0} & = \begin{pmatrix}
+1 &  1 &  1 &  1 &  0 &  0 &  0 &  0 & 0 &  0 \\
+-1 &  0 &  0 &  0 &  1 &  1 &  1 &  0 & 0 &  0 \\
+ 0 & -1 &  0 &  0 & -1 &  0 &  0 &  1 & 1 &  0 \\
+ 0 &  0 & -1 &  0 &  0 & -1 &  0 & -1 & 0 &  1 \\
+ 0 &  0 &  0 & -1 &  0 &  0 & -1 &  0 & -1 & -1 
+\end{pmatrix} \\
+						\operatorname{rank} \partial_{0} & = 4 \\
+						\partial_{1} & = \begin{pmatrix}
+ 0 &  0 &  0 &  0 &  0 &  0 &  0 &  1 &  1 &  1 \\
+ 0 &  0 &  0 &  0 &  0 &  1 &  1 &  0 &  0 & -1 \\
+ 0 &  0 &  0 &  0 &  1 &  0 & -1 &  0 & -1 &  0 \\
+ 0 &  0 &  0 &  0 & -1 & -1 &  0 & -1 &  0 &  0 \\
+ 0 &  0 &  1 &  1 &  0 &  0 &  0 &  0 &  0 &  1 \\
+ 0 &  1 &  0 & -1 &  0 &  0 &  0 &  0 &  1 &  0 \\
+ 0 & -1 & -1 &  0 &  0 &  0 &  0 &  1 &  0 &  0 \\
+ 1 &  0 &  0 &  1 &  0 &  0 &  1 &  0 &  0 &  0 \\
+-1 &  0 &  1 &  0 &  0 &  1 &  0 &  0 &  0 &  0 \\
+ 1 &  1 &  0 &  0 &  1 &  0 &  0 &  0 &  0 &  0 \\
+\end{pmatrix} \\
+						\operatorname{rank} \partial_{1} & = 6 \\
+						\partial_{2} & = \begin{pmatrix}
+1 &  1 &  0 &  0 &  0 \\
+-1 &  0 &  1 &  0 &  0 \\
+ 1 &  0 &  0 &  1 &  0 \\
+-1 &  0 &  0 &  0 &  1 \\
+ 0 & -1 & -1 &  0 &  0 \\
+ 0 &  1 &  0 & -1 &  0 \\
+ 0 & -1 &  0 &  0 & -1 \\
+ 0 &  0 &  1 &  1 &  0 \\
+ 0 &  0 & -1 & 0 &  1 \\
+ 0 &  0 &  0 &  -1 & -1 \\
+\end{pmatrix} \\
+						\operatorname{rank} \partial_{2} & = 5.
+					\end{split}
+				}
+			\]
+
+			Let us have the following bases
+			\begin{align*}
+				C_{0}(X) & = \operatorname{span}([1], \dots, [4]) \\
+				C_{1}(X) & = \operatorname{span}([ 0, 1 ], [ 0, 2 ], [ 0, 3 ], [ 0, 4 ], [ 1, 2 ], [ 1, 3 ], [ 1, 4 ], [ 2, 3 ], [ 2, 4 ], [ 3, 4 ]) \\
+				C_{2}(X) & = \operatorname{span}([ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ], [ 0, 3, 4 ], [ 0, 2, 4 ], [ 0, 2, 3 ], [ 0, 1, 4 ], [ 0, 1, 3 ], [ 0, 1, 2 ]). \\
+				C_{3}(X) & = \operatorname{span}([1, 2, 3, 4], [0, 2, 3, 4], [0, 1, 3, 4], [0, 1, 2, 4], [0, 1, 2, 3])
+			\end{align*}
+			Again, this leads to exactly one way to write down the matrices from the formula for the boundary map. We obtain the matrices above. The ranks are obtained using computer software.
+
+			Similarly to the previous problem, we have $\partial_{3} = 0$ since $\partial B^{4}$ is $3$-dimensional. Thus, it has $C_{4} = 0$ and $\partial_{3} : C_{4} \to C_{3}$ is really $\partial_{3} = 0$.
 
 		\item
 			\[
 				\boxed{
-					\mathbf{b} = (1, 0, 1, 0, 0, \dots)
+					\mathbf{b} = (1, 0, 0, 1, 0, \dots)
 				}
 			\]
+			$X$ clearly has one connected component. Recalling that the kernel of $\partial_{-1}$ is all of $C_{0}(X)$, we can also write this as
+			\begin{align*}
+				b_{0} & = \dim \ker \partial_{-1} - \dim \operatorname{img} \partial_{0} \\
+				      & = \dim C_{0}(X) - \operatorname{rank} \partial_{0} \\
+				      & = 5 - 4 \\
+				      & = 1.
+			\end{align*}
+
+			$X$ has no $1$-holes. This is reflected in the fact that
+			\begin{align*}
+				b_{1} & = \dim \ker \partial_{0} - \dim \operatorname{img} \partial_{1} \\
+				      & = (\dim C_{1}(X) - \operatorname{rank} \partial_{0}) - \operatorname{rank} \partial_{1} \\
+				      & = 10 - 4 - 6 \\
+				      & = 0.
+			\end{align*}
+
+			$X$ also has no $2$-holes. This is reflected in the fact that
+			\begin{align*}
+				b_{3} & = \dim \ker \partial_{1} - \dim \operatorname{img} \partial_{2} \\
+				      & = (\dim C_{2}(X) - \operatorname{rank} \partial_{1}) - \operatorname{rank} \partial_{2} \\
+				      & = 10 - 6 - 4 \\
+				      & = 0.
+			\end{align*}
+
+			Finally, $X$ has one $3$-hole, given by
+			\begin{align*}
+				b_{2} & = \dim \ker \partial_{2} - \dim \operatorname{img} \partial_{3} \\
+				      & = (\dim C_{3}(X) - \operatorname{rank} \partial_{2}) - 0 \\
+				      & = 5 - 4 - 0 \\
+				      & = 1.
+			\end{align*}
+			In the intermediate steps of these computations we use the rank-nullity theorem.
 	\end{enumerate}
 \end{solution}
 
@@ -165,6 +325,45 @@
 			\mathbf{b} = (1, 2, 1, 0, 0, \dots)
 		}
 	\]
+
+	We denote the torus by $\mathbb{T}$.
+
+	We used the bases
+	\begin{align*}
+		C_{0}(X) & = \operatorname{span}([1], [2], \dots, [9]) \\
+		C_{1}(X) & = \operatorname{span}([1, 4], [4, 7], [7, 1], [2, 1], [5, 4], [8, 7], [2, 4], [5, 7], [8, 1], [2, 5], [5, 8], [8, 2], [3, 2] \\
+			 & [6, 5], [9, 8], [3, 5], [6, 8], [9, 2], [3, 6], [6, 9], [9, 3], [1, 3], [4, 6], [7, 9], [1, 6], [4, 9], [7, 3]) \\
+		C_{2}(X) & = \operatorname{span}([2, 1, 4], [5, 4, 7], [8, 7, 1], [2, 5, 4], [5, 8, 7], [8, 2, 1], [3, 2, 5], [6, 5, 8], [9, 8, 2], \\
+			 & [3, 6, 5], [6, 9, 8], [9, 3, 2], [3, 6, 1], [4, 6, 9], [7, 9, 3], [1, 4, 6], [4, 7, 9], [7, 1, 3]).
+	\end{align*}
+
+	Computing the ranks of the matrices obtained by applying the boundary maps to these basis vectors, we get $\operatorname{rank} \partial_{0} = 8$ and $\operatorname{rank} \partial_{1} = 17$. Also, again because $\mathbb{T}$ is $2$-dimensional, we have $\partial_{2} = 0$ and all higher (than $2$) homology vanishes.
+
+	$\mathbb{T}$ clearly has one connected component. Recalling that the kernel of $\partial_{-1}$ is all of $C_{0}(X)$, we can also write this as
+			\begin{align*}
+				b_{0} & = \dim \ker \partial_{-1} - \dim \operatorname{img} \partial_{0} \\
+				      & = \dim C_{0}(X) - \operatorname{rank} \partial_{0} \\
+				      & = 9 - 8 \\
+				      & = 1.
+			\end{align*}
+
+			$\mathbb{T}$ has no $1$-holes. This is reflected in the fact that
+			\begin{align*}
+				b_{1} & = \dim \ker \partial_{0} - \dim \operatorname{img} \partial_{1} \\
+				      & = (\dim C_{1}(X) - \operatorname{rank} \partial_{0}) - \operatorname{rank} \partial_{1} \\
+				      & = 27 - 8 - 17 \\
+				      & = 2.
+			\end{align*}
+
+			Finally, $\mathbb{T}$ has one $2$-hole, given by
+			\begin{align*}
+				b_{2} & = \dim \ker \partial_{1} - \dim \operatorname{img} \partial_{2} \\
+				      & = (\dim C_{2}(X) - \operatorname{rank} \partial_{1}) - 0 \\
+				      & = 18 - 17 \\
+				      & = 1.
+			\end{align*}
+			Again in the intermediate steps of these computations we use the rank-nullity theorem.
+
 \end{solution}
 
 \pagebreak
