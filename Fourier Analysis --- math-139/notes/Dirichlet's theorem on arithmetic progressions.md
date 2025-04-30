@@ -3,6 +3,7 @@ tags:
 - math-139/29
 - math-139/30
 - math-139/31
+- math-139/33
 - fourier
 - nt
 - anal
@@ -204,4 +205,103 @@ As $s \to 1^+$ the sum on the left diverges (to $\infty$) and the sum on the rig
 
 ##### _theorem:_ reduction of Dirichlet's theorem
 
-If for any non-trivial character $\chi \in \widehat{G}$, its Dirichlet $L$-[[Fourier Analysis --- math-139/notes/Dirichlet characters and series#_definition _ Dirichlet $L$-series|series]] converges as $s \to 1^+$, then Dirichlet's theorem follows.
+If for any non-trivial [[Fourier Analysis --- math-139/notes/Dirichlet characters and series#_definition _ Dirichlet character|Dirichlet character]] $\chi$ on $G$, 
+$$
+\sum_{p \in \wp} \frac{\chi(p)}{p^s}
+$$
+converges as $s \to 1^+$, then Dirichlet's theorem follows.
+
+### The logarithm of $L$-series and further reduction
+
+Since the $L$-series [[Fourier Analysis --- math-139/notes/Dirichlet characters and series#_proposition _ niceness of $L$-series|satisfy niceness conditions]], we can define the logarithm of the $L$-series.
+
+##### _definition:_ logarithm of the $L$-series
+
+For $s > 1$ (where we know the $L$-series is non-vanishing) the logarithm of the $L$-series is given by
+$$
+\operatorname{log} L(s, \chi) = \int_{s}^\infty \frac{L'(s, \chi)}{L(s, \chi)} \, ds
+$$
+which converges since the integrand is $O(e^{-c s})$.
+
+###### _proof:_
+
+$\operatorname{Log}$ is just the [[Complex Analysis --- math-135/notes/The complex logarithm#_theorem _ logarithms of functions|complex logarithm of a function]], so it follows by the same proof.
+
+##### _proposition:_ the logarithm of the $L$-series is a genuine logarithm
+
+For $s > 1$ we have
+$$
+e^{\operatorname{log} L(s, \chi)} = L(s, \chi).
+$$
+
+This now gives us addition/multiplication properties of the logarithm, and thus, allows us to prove
+##### _proposition:_ the logarithmic form of the product formula
+
+For $s > 1$, we have
+$$
+\operatorname{log} L(s, \chi) = \sum_{p \in \wp} \log \left( \frac{1}{1 - \chi(p) / p^s} \right).
+$$
+On the left the logarithm is the integral of the logarithmic derivative, and on the right, the logarithm is given by power series.
+
+###### _proof sketch:_
+
+Exponentiate both sides and use product properties. Show that the difference of the exponents is $2 \pi i M(s)$ where $M$ is a continuous function of integers that vanishes as $s \to \infty$, so is just $0$.
+
+Note that for a non-trivial character, the logarithmic product formula can be approximated with bounded error by the logarithm approximation formula we showed earlier —
+$$
+\begin{align}
+\operatorname{log} L(s, \chi) &  = \sum_{p \in \wp} \log \left( \frac{1}{1 - \chi(p) / p^s} \right)  \\
+ & = \sum_{p \in \wp} \frac{\chi(p)}{p^s} + E(1 / p^s) \\
+ & = \sum_{p \in \wp} \frac{\chi(p)}{p^s} + C  \\
+ & = L(s, \chi) + C.
+\end{align}
+$$
+
+If we can show that $L(1, \chi) \neq 0$ for all non-trivial characters, then we have that $\log L(s, \chi)$ is bounded as $s \to 1^+$ (just from its integral definition). This gives
+$$
+\lim_{ s \to 1^+ } \sum_{p \in \wp} \frac{\chi(p)}{p^s} < \infty.
+$$
+
+Thus, we have the reduction
+
+##### _theorem:_ further reduction of Dirichlet's theorem
+
+If, for each non-trivial Dirichlet character $\chi$ on $G$, its $L$-series doesn't vanish at $1$ — that is, $L(1, \chi) \neq 0$, then Dirichlet's theorem follows.
+
+To prove that the $L$-series don't vanish for non-trivial characters, we divide into two different cases — real and complex characters.
+
+### Complex Dirichlet characters
+
+With some reasonable estimates we can show by contradiction that non-trivial complex Dirichlet characters $\chi$ have $L(1, \chi) \neq 0$.
+
+First we show that the product of all $L$-series is bounded below
+
+##### _lemma:_ the product of all Dirichlet $L$-series
+
+For all $s > 1$,
+$$
+\prod_{\chi_{\xi}, \xi \in \widehat{G}} L(s, \chi_{\xi}) \geq 1.
+$$
+In particular, the product is real-valued.
+
+##### _lemma:_ the $L$-series of the conjugate character
+
+For all $s > 1$, if $L(1, \chi) = 0$, then $L(1, \overline{\chi}) = 0$.
+
+##### _lemma:_ upper bound on vanishing non-trivial $L$-series
+
+If $\chi$ is non-trivial and $L(1, \chi) = 0$, then for all $s \in [1, 2]$, $\lvert L(\chi, s)  \rvert < C \lvert s - 1 \rvert$.
+
+##### _lemma:_ upper bound on trivial $L$-series
+
+If $\chi_{1}$ is the trivial character, then for all $s \in [1, 2]$, $\lvert L(\chi, s)  \rvert < C / \lvert s - 1 \rvert$.
+
+##### _theorem:_ non-trivial complex $L$-series don't vanish
+
+If $\chi$ is a non-trivial complex character, then $L(1, \chi) \neq 0$.
+
+###### _proof:_
+
+Suppose by way of contradiction that $L(1, \chi) = 0$. Then we also have $L(1, \overline{\chi}) = 0$. Thus, there are two terms in the product of all characters that vanish like $\lvert s - 1 \rvert$ as $s \to 1^+$.
+
+The trivial character is the only character that grows and it only grows as $O(1 / \lvert s - 1 \rvert)$ as $s \to 1^+$. Thus, considering the three terms we know about, we get that the magnitude of the product behaves roughly like $\lvert s - 1 \rvert$ as $s \to 1^+$. Thus, the product vanishes, but we have shown this is not the case.

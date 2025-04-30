@@ -3,6 +3,7 @@ tags:
 - math-139/30
 - math-139/31
 - math-139/32
+- math-139/33
 - fourier
 - nt
 - anal
@@ -95,6 +96,19 @@ The first and last terms vanish as $N \to \infty$ by the convergence of the prod
 
 Suppose $\chi_{1}$ is the trivial character on $G$. Then if $q = p_{1}^{\alpha_{1}} \dots p_{n}^{\alpha_{n}}$ is the prime factorisation of $q$, then $L(s, \chi_{0}) = \zeta(s) (1 - 1/p_{1}^s) \dots (1 - 1/p_{n}^s)$.
 
+We also want to be able to define the logarithm of the $L$-series, specifically, we want to define it as the integral of the logarithmic derivative of the $L$-series. To do so, we need some niceness conditions on the $L$-series so that it actually converges.
+
+##### _lemma:_ bounding the sum of the Dirichlet character
+
+If $\chi$ is a non-trivial character on $G$, then $\lvert \sum_{n = 1}^k \chi(n) \rvert < q$ for any $k$.
+
+###### _proof:_
+
+[[Fourier Analysis --- math-139/notes/Finite Fourier analysis#_lemma _ non-trivial characters sum to zero|Recall that]] $\sum_{n = 1}^q \chi(n) = 0$. Thus, for $k \equiv b \pmod q$ we can write
+$$
+\left\lvert  \sum_{n = 1}^k \chi(n)  \right\rvert = \left\lvert  \sum_{n = 1}^{aq} \chi(n)  \right\rvert + \left\lvert  \sum_{n = a q + 1}^b \chi(n) \right\rvert = 0 + b < q.
+$$
+
 ##### _proposition:_ niceness of $L$-series
 
 For a non-trivial character $\chi$ on $G$, the $L$-series converges for all $s > 0$, is continuously differentiable in $s$, and for some positive constants, $c, c'$ we have $L(s, \chi) = 1 + O(e^{- cs})$ and $\frac{d}{ds} L(s, \chi) = O(e^{-c's})$ as $s \to \infty$.
@@ -123,13 +137,3 @@ $$
 $$
 which is of the desired form.  A similar argument gives the asymptotic bound on the derivative $\left\lvert  \frac{d}{ds} L(s, \chi)  \right\rvert$.
 
-##### _lemma:_ bounding the sum of the Dirichlet character
-
-If $\chi$ is a non-trivial character on $G$, then $\lvert \sum_{n = 1}^k \chi(n) \rvert < q$ for any $k$.
-
-###### _proof:_
-
-[[Fourier Analysis --- math-139/notes/Finite Fourier analysis#_lemma _ non-trivial characters sum to zero|Recall that]] $\sum_{n = 1}^q \chi(n) = 0$. Thus, for $k \equiv b \pmod q$ we can write
-$$
-\left\lvert  \sum_{n = 1}^k \chi(n)  \right\rvert = \left\lvert  \sum_{n = 1}^{aq} \chi(n)  \right\rvert + \left\lvert  \sum_{n = a q + 1}^b \chi(n) \right\rvert = 0 + b < q.
-$$
