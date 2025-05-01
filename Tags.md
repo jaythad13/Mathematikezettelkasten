@@ -26,3 +26,4 @@ tags:
 | #complex  | complex analysis        |
 | #fourier  | Fourier analysis        |
 | #cx-geo   | complex geometry        |
+| #hom-alg  | homological algebra     |

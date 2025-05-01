@@ -101,7 +101,7 @@ Suppose $X, Y$ are Whitehead equivalent simplicial complexes. Then there is an i
 
 It suffices to show the theorem in the case that $X \searrow Y$. Specifically, suppose $Y = X - \{ \sigma, \tau \}$ where $\sigma = \{ a_{0}, a_{1}, \dots, a_{n} \}$ and $\tau = \{ a_{1}, \dots, a_{n} \}$. Let $\overline{\sigma} = [a_{0}, a_{1}, \dots, a_{n}]$ and $\overline{\tau} = [a_{1}, \dots, a_{n}]$ are the corresponding [[Topics in Geometry and Topology --- math-145/notes/Simplicial homology#_definition _ chains|chains]].
 
-We claim that inclusion $I : \mathrm{C}_{*}(Y) \to \mathrm{C}_{*}(X)$ is a [[Topics in Geometry and Topology --- math-145/notes/Chain complexes#_definition _ chain map|chain map]] since the boundary of a $k$-simplex is the same in $X$ and $Y$. To define a chain map in the opposite direction, there is exactly one sensible choice —
+We claim that inclusion $I : \mathrm{C}_{*}(Y) \to \mathrm{C}_{*}(X)$ is a [[Topics in Geometry and Topology --- math-145/notes/A little homological algebra#_definition _ chain map|chain map]] since the boundary of a $k$-simplex is the same in $X$ and $Y$. To define a chain map in the opposite direction, there is exactly one sensible choice —
 $$
 P(\alpha) = \begin{cases}
 \alpha & \alpha \in \mathrm{C}_{*}(Y) \\
@@ -111,4 +111,4 @@ P(\alpha) = \begin{cases}
 $$
 By dividing into the same cases as above, it's clear that $P$ does commute with the [[Topics in Geometry and Topology --- math-145/notes/Simplicial homology#_definition _ boundary map|boundary map]].
 
-$PI$ is the identity itself since $P$ sends any $\alpha \in \operatorname{img} I$ to itself. We want to define a [[Topics in Geometry and Topology --- math-145/notes/Chain complexes#_definition _ chain homotopy|chain homotopy]] $K : $
+$PI$ is the identity itself since $P$ sends any $\alpha \in \operatorname{img} I$ to itself. We want to define a [[Topics in Geometry and Topology --- math-145/notes/A little homological algebra#_definition _ chain homotopy|chain homotopy]] $K : $
