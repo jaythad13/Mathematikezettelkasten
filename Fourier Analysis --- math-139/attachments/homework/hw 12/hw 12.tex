@@ -11,15 +11,57 @@
 \begin{problem}[S \& S \S 8.4 \#1]
 	Prove that there are infinitely many primes by observing that if there were only finitely many,  $p_{1}, \dots, p_{N}$, then
 	\[
-		\prod_{j = 1}^{N} \frac{1}{1 - 1/p_{j}} > \sum_{n = 1}^{\infty} \frac{1}{n}.
+		\prod_{j = 1}^{N} \frac{1}{1 - 1/p_{j}} \ge \sum_{n = 1}^{\infty} \frac{1}{n}.
 	\]
 \end{problem}
+
+\begin{solution}
+	Suppose, by way of contradiction that there were only finitely many primes. Recall that every positive integer has a unique prime factorisation --- we can write each $n = p_{1}^{\alpha_{1}} \dots p^{\alpha_{N}}$ with $\alpha_{j}$ non-negative integers and the sequence $\alpha_{1}, \dots, \alpha_{N}$ unique to $n$. Writing the terms of the product as a geometric series, and interchanging the order of product and sum, we get the following equality informally.
+	\[
+		\prod_{j = 1}^{N} \frac{1}{1 - 1/p_{j}} = \prod_{j = 1}^{N} \sum_{k = 0}^{\infty} \frac{1}{p_{j}^{k}} = \sum_{k = 0}^{\infty} \sum_{\alpha_{1} + \dots + \alpha_{n} = k} \prod_{j = 1}^{N} \frac{1}{p_{j}^{\alpha_{j}}} = \sum_{n = 1}^{\infty} \frac{1}{n}.
+	\]
+
+	Formally, for positive integer $M$, we have
+	\[
+		\prod_{j = 1}^{N} \frac{1}{1 - 1/p_{j}} \ge \prod_{j = 1}^{N} \sum_{k = 0}^{M} \frac{1}{p_{j}^{k}} \ge \sum_{k = 0}^{M} \sum_{\alpha_{1} + \dots + \alpha_{n} = k} \prod_{j = 1}^{N} \frac{1}{p_{j}^{\alpha_{j}}} = \sum_{n = 1}^{M} \frac{1}{n}.
+	\]
+	Here, the second inequality follows because, for $\alpha_{1} + \dots + \alpha_{N} = M$, we have $p_{1}^{\alpha_{1}} \cdots p_{N}^{\alpha_{N}} \ge 2^{M} \ge M$. Since the inequality is true for each partial sum, we have
+	\[
+		\prod_{j = 1}^{N} \frac{1}{1 - 1/p_{j}} \ge \sum_{n = 1}^{\infty} \frac{1}{n}.
+	\]
+
+	Since the harmonic sum diverges, but the finite product greater than it converges, we have a contradiction.
+\end{solution}
 
 \pagebreak
 
 \begin{problem}[S \& S \S 8.4 \#2]
 	In the text we showed that there are infinitely many primes of the form $4k + 3$ by a modification of Euclid's original argument. Adapt this technique to prove the similar result for primes of the form $3k + 2$, and for those of the form $6k + 5$.
 \end{problem}
+
+\begin{solution}
+	All primes are of the form $3k + 0$ or $3k + 2$. Suppose by way of contradiction that $p_{2}, \dots, p_{n}$ was an enumeration of all primes of the form $3k + 2$, excluding $p_{1} = 2$. Consider $p = 3 p_{2} \cdots p_{n} + 2$.
+
+	$p$ is not divisible by any of the $p_{i}$. This is clear for $i > 1$ since $p$ has residue $2$ modulo each of those $p_{i}$. Further, $p$ is not divisible by $2$ since that would force $3 p_{2} \dots p_{n}$ to be divisible by $2$ which it is not (since $2$ is manifestly not in its prime factorisation).
+
+	Thus, if $p_{2}, \dots, p_{n}$ were all the primes of the form $3k + 2$, $p$ would have to be the product of primes $q_{1}, \dots, q_{m}$ of the form $3k + 0$. But the product of primes of the form $q_{i} = 3k_{i} + 0$ is divisible by $3$, and $p \equiv 2 \pmod 3$ by construction.
+
+	Thus, $p$ must be divisible by a different prime of the form $3k + 2$ contradicting the assumption that $p_{1}, p_{2}, \dots, p_{n}$ contained all such primes.
+\end{solution}
+
+\begin{solution}
+	All odd primes are of the form $6k + 1$ or $6k + 5$. Suppose by way of contradiction that $p_{2}, \dots, p_{n}$ was an enumeration of all primes of the form $6k + 5$, excluding $p_{1} = 5$. Consider $p = 6 p_{2} \cdots p_{n} + 5$.
+
+	$p$ is not divisible by any of the $p_{i}$. This is clear for $i > 1$ since $p$ has residue $5$ modulo each of those $p_{i}$. Further, $p$ is not divisible by $5$ since that would force $6 p_{2} \dots p_{n}$ to be divisible by $5$ which it is not (since $5$ is manifestly not in its prime factorisation). $p$ is also clearly not even.
+
+	Thus, if $p_{2}, \dots, p_{n}$ were all the primes of the form $6k + 5$, $p$ would have to be the product of primes $q_{1}, \dots, q_{m}$ of the form $6k + 1$. But the product of primes of the form $q_{i} = 6k_{i} + 1$ is
+	\[
+		q_{1} q_{2} \dots q_{n} = 6 (k_{1} k_{2} \dots k_{n} + \dots k_{1} + \dots + k_{n}) + 1
+	\]
+	of the form $6k + 1$, which $p$ is not --- $p \equiv 5 \pmod 6$.
+
+	Thus, $p$ must be divisible by a different prime of the form $3k + 2$ contradicting the assumption that $p_{1}, p_{2}, \dots, p_{n}$ contained all such primes.
+\end{solution}
 
 \pagebreak
 
@@ -31,6 +73,18 @@
 	where $\phi$ is the Euler totient function.
 \end{problem}
 
+\begin{solution}
+	Notice that the number of integers $m$ with $1 \le m \le n$ and $\gcd(m, n) = d$ is $\phi(n / d)$. We can see this as follows. 
+
+	Recall that $\phi(n / d) = \lvert \mathbb{Z} / (n / d) \mathbb{Z}^{*} \rvert$. If $m \in \mathbb{Z} / (n / d) \mathbb{Z}^{*}$, then $\gcd(m, n / d) = 1$. Thus, $\gcd(d m, n) = d$. Of course, for each $m$, the $d m$ is unique and since $1 \le m \le n / d$, we have  $1 \le d m \le n$. That is, each $m \in \mathbb{Z} / (n / d) \mathbb{Z}^{*}$ defines a unique $1 \le d m \le n$ with $\gcd(d m, n) = d$. Conversely, each $1 \le m \le n$ with $\gcd (m, n) = d$ gives $1 \le m / d \le n / d$ and $\gcd(m / d, n / d) = 1$. Thus, there are exactly $\varphi(n / d)$ integers $m$ with $1 \le m \le n$ and $\gcd(m, n) = d$.
+
+	Then it follows that
+	\[
+		n = \sum_{\gcd(m, n) = d} 1 = \sum_{d \mid n} \phi(n / d) = \sum_{d \mid n} \phi(d).
+	\]
+	Here the last equality follows by swapping the divisors $d$ and $n / d$.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[S \& S \S 8.4 \#6]
@@ -40,6 +94,50 @@
 		\item Which ones are even or odd?
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	First we analyse the structure of the groups. Since $\phi(3) = \phi(4) = \phi(6) = 2$ and there is only one group of order $2$, we have that all of these first three groups of units are isomorphic to the group $\{ -1, 1 \}$ under multiplication (in fact, explicitly, they are $\{ \overline{-1}, \overline{1} \}$ under multiplication modulo $n$).
+
+	Since (by Lagrange's theorem) the image of a group homomorphism must have order dividing the finite order of the domain, the image of any character on these groups is either $\{ 1 \}$ or $\{ 1, a \}$ where $a^{2} = 1$ and $a \in S^{1}$ since the second element of these groups of units has order $2$. The only distinct choice for $a$ is $a = -1$. This gives us all the characters. 
+
+	For $G = \mathbb{Z} / q \mathbb{Z}^{*}$ with $q \in \{ 3, 4, 6 \}$ there are two characters on $G$ --- the trivial character and the character $\xi_{\text{iso}}$ given by
+	\begin{align*}
+		\xi_{\text{iso}}(\overline{1}) & = 1 \\
+		\xi_{\text{iso}}(\overline{-1}) & = -1.
+	\end{align*}
+
+	$\mathbb{Z} / 8 \mathbb{Z}^{*}$ has more non-trivial characters. We can see that $\mathbb{Z} / 8 \mathbb{Z}^{*} = \{ \overline{1}, \overline{3}, \overline{5}, \overline{7} \}$. Since $\overline{3}^{2} = \overline{5}^{2} = \overline{7}^{2} = \overline{1}$, we have a group of order $4$ with all non-identity elements having order $2$. Further, since $\overline{7} = \overline{3} \, \overline{5}$, it suffices to define homomorphisms on just $\overline{1}, \overline{3}, \overline{5}$. Since $\overline{3}, \overline{5}$ have order $2$, they must be sent to an element of $S^{1}$ of order at most $2$ --- either $-1$ or $1$. Since $\overline{3}$ and $\overline{5}$ are independent, we have characters corresponding to each choice of $\pm 1$ for each of $\overline{3}, \overline{5}$.
+
+	We have the trivial character $\xi_{1}$, the odd characters $\chi_{+, -}$ and $\xi_{-, +}$ given by
+	\[
+		\xi_{+, -}(m) = \begin{cases}
+			1 & m = \overline{1}, \overline{3} \\
+			-1 & m = \overline{5}, \overline{7},
+		\end{cases}
+	\]
+	and
+	\[
+		\xi_{+, -}(m) = \begin{cases}
+			1 & m = \overline{1}, \overline{3} \\
+			-1 & m = \overline{5}, \overline{7}
+		\end{cases}
+	\]
+	and the non-trivial even character $\xi_{-, -}$ given by
+	\[
+		\xi_{-, -}(m) = \begin{cases}
+			1 & m = \overline{1}, \overline{7} \\
+			-1 & m = \overline{3}, \overline{5}.
+		\end{cases}
+	\]
+
+	\begin{enumerate}
+		\item None of the groups have any complex characters.
+
+		\item Each of the first three groups of units (each of order $2$) have one even character (the trivial character) and one odd character $\xi_{\text{iso}}$ (which gives the isomorphism $G \cong \{ -1, 1 \}$).
+
+			For $\mathbb{Z} / 8 \mathbb{Z}^{*}$, the trivial character, and $\xi_{-, -}$ are both even. The ``mixed sign'' characters $\xi_{+, -}$ and $\xi_{-, +}$ are odd.
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
@@ -59,5 +157,37 @@
 			as $s \to 1^{+}$.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item Since $x^{-s}$ is a decreasing function for positive $s$, we can think of $\zeta(s)$ as a coarse left Riemann sum approximation of the integral
+			\[
+				\int_{1}^{\infty} x^{-s} \, dx = \left ( \frac{x^{-s + 1}}{-s + 1} \right )_{1}^{\infty} = \frac{1}{s - 1}.
+			\]
+
+			Thus, it suffices to show that the error
+			\[
+				\left \lvert \zeta(s) - \int_{1}^{\infty} x^{-s} \, dx \right \rvert
+			\]
+			is bounded by a constant as $s \to 1^{+}$. In fact, in chapter 8 (page 248) we are given that
+			\[
+				\zeta(s) \le 1 + \int_{1}^{\infty} x^{-s} \, dx
+			\]
+			by rewriting $\zeta(s)$ as a right Riemann sum. Since $x^{-s}$ is decreasing, any left Riemann sum is greater than its integral. Thus
+			\[
+				\sum_{n = 1}^{\infty} \frac{1}{n^{s}} \ge \int_{1}^{\infty} x^{-s} \, dx 
+			\]
+			and we have that the desired difference is bounded by a constant.
+
+		\item Previously (in showing Euler's analytic proof of the infinitude of the primes) we showed that
+			\[
+				\sum_{p \text{ prime}} \frac{1}{p^{s}} = \log \zeta(s) + O(1).
+			\]
+			Thus, it follows that
+			\[
+				\sum_{p \text{ prime}} \frac{1}{p^{s}} = \log \left ( \frac{1}{s - 1} + O(1) \right ) + O(1) = \log \left ( \frac{1}{s - 1} \right ) + O(1).
+			\]
+	\end{enumerate}
+\end{solution}
 
 \end{document}
