@@ -4,6 +4,7 @@ tags:
 - math-139/30
 - math-139/31
 - math-139/33
+- math-139/34
 - fourier
 - nt
 - anal
@@ -305,3 +306,8 @@ If $\chi$ is a non-trivial complex character, then $L(1, \chi) \neq 0$.
 Suppose by way of contradiction that $L(1, \chi) = 0$. Then we also have $L(1, \overline{\chi}) = 0$. Thus, there are two terms in the product of all characters that vanish like $\lvert s - 1 \rvert$ as $s \to 1^+$.
 
 The trivial character is the only character that grows and it only grows as $O(1 / \lvert s - 1 \rvert)$ as $s \to 1^+$. Thus, considering the three terms we know about, we get that the magnitude of the product behaves roughly like $\lvert s - 1 \rvert$ as $s \to 1^+$. Thus, the product vanishes, but we have shown this is not the case.
+
+### Real characters
+
+The proof is harder because these have some real character. Our big idea is going to be to sum under hyperbolas
+
