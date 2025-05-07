@@ -59,7 +59,7 @@ $$
 E \le c \sum_{j = 1}^k \lvert \tilde{B}_{j} \rvert < c \sum_{i = 1}^k \frac{1}{\alpha} \int_{B_{k}} \lvert f(x) \rvert  \, dx < \frac{1}{\alpha} \lVert f \rVert _{L^1}.
 $$
 
-Now, using the $L^1$ and $L^\infty$ bounds we can interpolate to get $L^p$.
+Now, using the $L^1$ and $L^\infty$ bounds we can use the trick of Marcinkiewicz interpolation to get $L^p$. 
 
 ##### _lemma:_ Vitali covering lemma (or perhaps not)
 
