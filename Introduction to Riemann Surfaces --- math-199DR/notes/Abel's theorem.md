@@ -79,7 +79,7 @@ $$
 \end{align}
 $$
 
-If $m$ divides $n - m + 1$, then each of the $\zeta_{j}^k$ terms is just $1$. If $m$ does not divide $n - m + 1$, then the sum of the $\zeta_{j}^k$ terms is $0$. Thus, only the $n - m + 1$ divisible by $m$ survive
+If $m$ divides $n - m + 1$, then each of the $\zeta_{j}^k$ terms is just $1$. If $m$ does not divide $n - m + 1$, then the sum of the $\zeta_{j}^k$ terms is $0$. Thus, only the $n - m + 1$ divisible by $m$ survive.
 
 But if $n - m + 1 = km$, then we have
 $$
