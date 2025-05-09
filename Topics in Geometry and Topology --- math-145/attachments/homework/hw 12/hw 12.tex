@@ -1,5 +1,6 @@
 \documentclass[12 pt, letterpaper]{hmcpset}
 \usepackage{hw-preamble}
+\usepackage{pdfpages}
 \setlist[enumerate, 1]{label = (\roman*)}
 
 \name{Jayden Thadani}
@@ -16,6 +17,74 @@
 		\includegraphics[width = 0.2 \textwidth]{figures/P64 triangle} \quad \quad \quad \includegraphics[width = 0.2 \textwidth]{figures/P64 square}
 	\end{figure}
 \end{problem}
+
+\begin{solution}
+	The Whitehead sequence below demonstrates the equivalence of the two simplicial complexes.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width = 0.5 \textwidth]{figures/P64 whitehead}
+		\caption{A Whitehead sequence demonstrating equivalence with expansions denoted in colour, and collapses denoted in dotted colour}
+	\end{figure}
+
+	We can write the $0$-chains and $1$-chains of the triangle $X$ as $\left < 1, 2, 3 \right >$ and $\left < 12, 23, 31 \right >$. We can also write the $0$-chains and $1$-chains of the square $Y$ as $\left < 1, 2, 3, 4 \right >$ and $\left < 12, 23, 34, 41 \right >$.
+
+	Consider the chain maps $F_{\bullet} : C(X) \to C(Y)$ and $G_{\bullet} : C(Y) \to C(X)$ by
+	\[
+		\begin{tikzcd}
+			0 & \ar[l] \ar[d, hook, shift right] \left < 1, 2, 3 \right > & \ar[l] \ar[d, hook, "31 \mapsto 34 + 41"', shift right] \left < 12, 23, 31 \right > & \ar[l] 0 \\
+0 & \ar[l] \ar[u, "4 \mapsto 3"', shift right] \left < 1, 2, 3, 4 \right > & \ar[l] \ar[u, shift right, "\substack{34 \mapsto 0 \\ 41 \mapsto 31}"'] \left < 12, 23, 34, 41 \right > & \ar[l] 0.
+		\end{tikzcd}
+	\]
+	In this diagram, unless otherwise specified, a chain $ab$ is sent to $ab$. It can be easily seen that these are indeed chain maps. In fact, these chain maps encapsulate the use of the splitting lemma to give the Whitehead sequence above.
+
+	Note that we just need to prove that the middle square commutes. Thus, to prove that $F_{\bullet}$ is a chain map we just verify that $\partial F_{1} = F_{0} \partial$. Since $F_{1}$ leaves $12, 23$ unchanged, $F_{0}$ leaves $1, 2, 3$ unchanged, we don't need to check anything for $12, 23$. We only need to verify
+	 \[
+		\partial F_{1} (31) = \partial(34 + 41) = 1 - 3 = F_{0}(1 - 3) = F_{0} \partial(3 1)
+	\]
+	Similarly, we only need to check $\partial G_{1} = G_{0} \partial$. Again, $G_{1}$ leaves $12, 23$ unchanged and $G_{0}$ leaves $1, 2, 3$ unchanged. Thus, we only need to verify
+	\[
+		\partial G_{1}(41) = \partial (31) = 1 - 3 = G_{0}(1) - G_{0}(4) = G_{0} \partial(41)
+	\]
+	and
+	\[
+		\partial G_{1}(34) = \partial(0) = 0 = G_{0}(4) - G_{0}(3) = G_{0} (\partial(34)).
+	\]
+
+	This gives us a chain map $T_{\bullet} = F_{\bullet} \circ G_{\bullet} : C(Y) \to C(Y)$. We aim to prove that this is homotopic to the identity map on $C(Y)$, and thus, induces identical homology. Notice that we only have to define one map for the chain homotopy $K : T_{\bullet} \to I_{\bullet}$ since the rest are guaranteed to be zero as they come from or to $0$.
+	\[
+		\begin{tikzcd}
+			0 \ar[rd, "K_{-1} = 0"'] & \ar[l] \ar[d, "T_{0}"', shift right] \ar[d, "I_{0}", shift left] \ar[rd, "K_{0}"] \left < 1, 2, 3, 4 \right > & \ar[l] \ar[d, "T_{1}"', shift right] \ar[d, "I_{1}", shift left] \ar[rd, "K_{1} = 0"] \left < 12, 23, 34, 41 \right > & \ar[l] 0 \\
+			0 & \ar[l] \left < 1, 2, 3, 4 \right > & \ar[l] \left < 12, 23, 34, 41 \right > & \ar[l] 0.
+		\end{tikzcd}
+	\]
+
+	We claim that $K_{0} : C_{0}(X) \to C_{1}(X)$ defined by $K_{0}(4) = 34$ and $K_{0}(1) = K_{0}(2) = K_{0}(3) = 0$ is the desired chain homotopy. We can verify this as follows. 
+
+	First, we characterise the difference of the chain maps. In particular $(I_{0} - T_{0})(4) = 4 - 3$ and is zero on the three other basis vectors $1, 2, 3$. Similarly, $(I_{1} - T_{1})(41) = - 34$ and $(I_{1} - T_{1})(34) = 34$.
+
+	Since only $K_{0}$ is non-zero we need to check that $\partial K_{0} = I_{0} - T_{0}$ and $K_{0} \partial = I_{1} - T_{1}$. We know that $K_{0}$ and $(I_{0} - T_{0})$ are both zero on basis vectors  $1, 2, 3$. Thus, we need only verify
+	\[
+		\partial K_{0}(4) = \partial(34) = 4 - 3 = (I_{0} - T_{0})(4)
+	\]
+	as desired.
+
+	Similarly, since  $\partial(12)$ and $\partial(23)$ lie in  $\operatorname{span}(1, 2, 3)$, we have $K_{0} \partial$ zero on them and $I_{1} - T_{1}$ is zero on them by our calculations. Thus, we need only verify
+	\[
+		K_{0} \partial(41) = K_{0}(1 - 4) = - K_{0}(4) = - 34 = (I_{1} - T_{1})(41)
+	\]
+	and
+	\[
+		K_{0} \partial(34) = K_{0}(4 - 3) = K_{0}(4) = 34 = (I_{1} - T_{1})(34).
+	\]
+
+	Similarly we have a chain map $S_{\bullet} = G_{\bullet} \circ F_{\bullet} : C(X) \to C(X)$. We claim that $S_{\bullet}$ is just the identity on $C(Y)$. This is easy for $0$-chains --- $F_{0}$ and $G_{0}$ both don't change $1, 2, 3$ at all (mapping $1 \mapsto 1$, and so on). Thus $G_{0} F_{0} = I_{0}$. For $1$-chains we still have that $F_{1}$ and $G_{1}$ don't change $12, 23$ at all. Thus, we just have to verify
+	\[
+		G_{1} F_{1}(31) = G_{1}(34 + 41) = 0 + 31 = 31. 
+	\]
+	as desired.
+
+	Since $F_{\bullet}$ and $G_{\bullet}$ have both compositions homotopic to the identity, they induce isomorphisms on homology. It follows that $X$ and $Y$ have the same Betti vector.
+\end{solution}
 
 \pagebreak
 
@@ -42,6 +111,93 @@
 	\end{figure}
 \end{problem}
 
+\begin{enumerate}
+	\item Attached on the next page are images of $(C, D)$ and the Whitehead sequence giving equivalence to $(A, B)$. Whitehead expansions and collapses are denoted in orange, purple, and red and $D$ is denoted in green.
+
+	\item
+		\[
+			\boxed{
+				b = (1, 1, 0, 0, \dots)
+			}
+		\]
+
+		With the bases
+		\begin{align*}
+			C_{0}(C, D) & = \operatorname{span}(1, 2, 3, 4) \\
+			C_{1}(C, D) & = \operatorname{span}(12, 23, 31, 34, 24, 21) \\
+			C_{2}(C, D) & = \operatorname{span}(123, 124)
+		\end{align*}
+		we get
+		\[
+			\partial_{0} = \begin{pmatrix}
+				1 & 0 & -1 & 0 & 0 & -1 \\
+				-1 & 1 & 0 & 0 & 1 & 0 \\
+				0 & -1 & 1 & 1 & 0 & 0 \\
+				0 & 0 & 0 & -1 & -1 & 1
+			\end{pmatrix}
+		\]
+		and
+		\[
+			\partial_{1} = \begin{pmatrix}
+				1 & 1 \\
+				1 & 0 \\
+				1 & 0 \\
+				0 & 0 \\
+				0 & 1 \\
+				0 & 1
+			\end{pmatrix}.
+		\]
+
+		Clearly, $\partial_{1}$ is full rank. That is, $\operatorname{rank} \partial_{1} = 2$ since two of the vectors in its image are linearly independent (since they are not scalar multiples of each other).
+
+		We know that $\partial_{0}$ has rank less than $4$ since single points cannot be the boundary of a $1$-chain and the space of all $0$-chains is  $4$-dimensional. The following $3$ vectors in $\partial_{0}$'s image are linearly independent since each one introduces a new dimension ---
+		\[
+			\begin{pmatrix}
+				1 \\
+				-1 \\
+				0 \\
+				0
+			\end{pmatrix}, \begin{pmatrix}
+				0 \\
+				1 \\
+				-1 \\
+				0
+			\end{pmatrix}, \begin{pmatrix}
+				0 \\
+				0 \\
+				1 \\
+				-1
+			\end{pmatrix}.
+		\]
+		Thus, we have $3 \le \operatorname{rank} \partial_{0} < 4$ giving $\operatorname{rank} \partial_{0} = 3$ exactly.
+
+		With these ranks, we can compute the Betti numbers as
+		\begin{align*}
+			b_{0} & = \dim \ker \partial_{-1} - \dim \operatorname{img} \partial_{0} \\
+			      & = \dim C_{0}(C, D) - \operatorname{rank} \partial_{0} \\
+			      & = 4 - 3 \\
+			      & = 1.
+		\end{align*}
+		Here we use the fact that $\partial_{-1}$ is just the zero map to see that its kernel is all of the $0$-chains.
+
+		Computing $b_{1}$ is straightforward ---
+		\begin{align*}
+			b_{1} & = \dim \ker \partial_{0} - \dim \operatorname{img} \partial_{1} \\
+			      & = (\dim C_{1}(C, D) - \operatorname{rank} \partial_{0}) - \operatorname{rank} \partial_{1} \\
+			      & = (6 - 3) - 2 \\
+			      & = 1.
+		\end{align*}
+		
+		To compute $b_{2}$ we need the fact that $\partial_{2} = 0$ since the space of $3$-chains in $(C, D)$ is just $0$ --- $(C, D)$ is a simplicial complex of dimension $2$.
+		\begin{align*}
+			b_{2} & = \dim \ker \partial_{1} - \dim \operatorname{img} \partial_{2} \\
+			      & = (\dim C_{2}(C, D) - \operatorname{rank} \partial_{1}) - \operatorname{rank} \partial_{2} \\
+			      & = (6 - 3) - 2 \\
+			      & = 1
+		\end{align*}
+		\includepdf[pages=-]{figures/P66 sequence.pdf}
+\end{enumerate}
+
 \pagebreak
 
 \begin{problem}[67. (The 5 lemma)]
@@ -49,7 +205,7 @@
 	\[
 		\begin{tikzcd}
 			A \ar[r, "p"] \ar[d, "a"] & B \ar[r, "q"] \ar[d, "b"] & C \ar[r, "r"] \ar[d, "c"] & D \ar[r, "s"] \ar[d, "d"] & E \ar[d, "e"] \\
-			A' \ar[r, "p'"] & B \ar[r, "q'"] & C \ar[r, "r'"] & D \ar[r, "s'"] & E
+			A' \ar[r, "p'"] & B' \ar[r, "q'"] & C' \ar[r, "r'"] & D' \ar[r, "s'"] & E'
 		\end{tikzcd}
 	\]
 	the two rows are exact and the maps $a, b, d, e$ are isomorphisms.
@@ -58,7 +214,55 @@
 
 		\item In fact, the maps $a, e$ need not be isomorphisms. Identify weaker conditions on $a, e$ (with $b, d$ still isomorphisms) that are sufficient to deduce that $c$ is an isomorphism.
 	\end{enumerate}
-\end{problem}	
+\end{problem}
+
+\begin{solution}
+	Before diagram chasing we introduce some general notation to make the proof clearer. Given a homomorphism $\varphi : A \to B$, we denote the injection $X / \ker \varphi \to Y$ by $\tilde{\varphi}$ and note that it is an isomorphism onto its image, which has well-defined inverse $\tilde{\varphi}^{-1} : \operatorname{img} \varphi \to X / \ker \varphi$.
+
+	We will generally denote an element of $A$ by $\alpha$ and $A'$ by $\alpha'$ and so on.
+
+	\begin{enumerate}
+		\item First we will show $c$ is injective. Suppose $\gamma \in \ker c$. We claim that there is some $\alpha \in A$ such that $p \circ q = \gamma$, and thus, $\gamma = 0$ by the exactness of the upper sequence.
+
+			First, notice that $\gamma \in \ker r$ as well. By the commutativity of the third square, $d \circ r(\gamma) = r' \circ c(\gamma) = 0$. Since $d$ is an isomorphism,  $\gamma$  must be in the kernel of $r$ for $r(\gamma)$ to be in the kernel of $d$. Thus, by exactness of the top sequence, $\gamma \in \operatorname{img} q$. Thus, we can pull back to an element of $B / \ker q$. In particular, choose $\beta + \ker q = \tilde{q}^{-1}(\gamma)$ so that $q(\beta) = \gamma$.
+
+			Now we consider $\beta' = b(\beta)$. By the commutativity of the second square
+			\[
+				q'(\beta') = c \circ q(\beta) = c(\gamma) = 0.
+			\]
+			Again by exactness, we have $\beta' \in \ker q = \operatorname{img} p'$ and we can pull back to an element of $A / \ker p'$ --- say $\tilde{p}^{-1}(\beta') = \alpha' + \ker p'$. Choose  $\alpha = a^{-1}(\alpha')$. We have
+			\begin{align*}
+				p \circ q(\alpha) & = q \circ b^{-1} \circ p' \circ a (\alpha) \\
+						  & = q \circ b^{-1} \circ p'(\alpha') \\
+						  & = q \circ b^{-1}(\beta') \\
+						  & = q(\beta) \\
+						  & = \gamma
+			\end{align*}
+			which we showed earlier gives us $\gamma = 0$ and $c$ injective.
+
+			Now we will show that $c$ is surjective. Given $\gamma' \in C'$ we will find $\gamma \in C$ so that $c(\gamma) = \gamma'$.
+
+			Notice that $s' \circ r' (\gamma') = 0$ by exactness of the bottom sequence. Write $r'(\gamma') = \delta'$ and $d^{-1}(\delta') = \delta$. By the commutativity of the rightmost square
+			\[
+				e \circ s(\delta) = s' \circ d(\delta) = s'(\delta') = 0.
+			\]
+			Since $e$ is injective (as an isomorphism) we must have $\delta \in \ker s$. By exactness, we have $\delta \in \operatorname{img} r$, and thus, we can choose $\gamma_{1} + \ker r = \tilde{r}^{-1}(\delta)$. Now we must have $d \circ r(\gamma_{1}) = r' \circ c(\gamma)$, so we have $\delta' = r' \circ c(\gamma_{1})$.
+
+			Since $r'(\gamma') = \delta$ and $r' \circ c(\gamma_{1})$ are the same, $\gamma'$ and $c(\gamma_{1})$ differ by an element of $\ker r'$ --- say $\gamma_{0}' = \gamma' - c(\gamma_{1})$. We claim that we can find some $\gamma_{0} \in \ker r$ such that $c(\gamma_{0}) = \gamma_{0}'$. Since $\gamma_{0} \in \ker r$, we still have $r(\gamma_{1} - \gamma_{0}) = \delta$ and by choosing $\gamma = \gamma_{1} - \gamma_{0}$ we get
+			 \[
+				c(\gamma) = c(\gamma_{1}) - \gamma_{0}' = c(\gamma_{1}) + \gamma' - c(\gamma_{1}) = \gamma'
+			\]
+			as desired.
+
+			We find this $\gamma_{0}$ by noticing that since $\gamma_{0}' \in \ker r'$ we actually have $\gamma_{0} \in \operatorname{img} q'$ and can choose $\beta' + \ker q' = \tilde{q}^{-1}(\gamma_{0}')$. Choose $\beta = b^{-1}(\beta')$. By exactness we have $q(\beta) \in \ker r$. By the commutativity of the second square of the diagram, we have
+			\[
+				c \circ q(\beta) = q' \circ b (\beta) = q'(\beta') = \gamma_{0}.
+			\]
+			Thus, $q(\beta)$ has all the desired properties of $\gamma_{0}$. We choose $\gamma_{0} = q(\beta)$ and are done.
+
+		\item It suffices for $a$ to be surjective (we just need one $\alpha$ with $a(\alpha) = \alpha'$, not necessarily a unique $\alpha$) and for $e$ to be injective (we just need it to have trivial kernel).
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
@@ -86,5 +290,47 @@
 			Calculate all five Betti vectors three times: using coefficients in $\mathbb{F}_{2}$, $\mathbb{F}_{3}$, and $\mathbb{F}_{47}$.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item The complexes are sketched below. While I knew that $(M, M_{\text{edge}})$ had to look like a cross-cap, I wasn't sure how best to draw it so I looked at the picture in the first chapter of the first volume of Spivak's differential geometry book.
+
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width = 0.5 \textwidth]{figures/P68 band.pdf}
+				\caption{The band $B$}
+			\end{figure}
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width = 0.5 \textwidth]{figures/P68 mobius.pdf}
+				\caption{The M\"obius band $M$}
+			\end{figure}
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width = 0.5 \textwidth]{figures/P68 cone.pdf}
+				\caption{Crushing the top edge of the band $B$ gives a cone $(B, B_{\text{top}})$}
+			\end{figure}
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width = 0.5 \textwidth]{figures/P68 suspension.pdf}
+				\caption{Crushing both edges gives a ``singular torus'' $(B, B_{\text{both}})$ that looks like the double cone above with the two cone points identified}
+			\end{figure}
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width = 0.5 \textwidth]{figures/P68 projective.pdf}
+				\caption{Crushing the edge of the M\"obius band to a point gives a surface $(M, M_{\text{edge}})$ that repeatedly intersects itself in a ``cross-cap'' pattern}
+			\end{figure}
+
+			\begin{enumerate}[label = (\alph*)]
+				\item We can guess that $(B, B_{\text{top}})$ has zero Betti vector (except the $0$th entry) since it is a cone.
+
+				\item We can also guess that $B$ and $M$ have the same Betti vector since they both have one connected component, only one obvious loop in their first homology, and no higher homology.
+
+				\item We should suspect that $(M, M_{\text{edge}})$ will have Betti vector varying with base field since all of the other complexes only have $b_{j} \in \{ 0, 1 \}$ which doesn't change with field. Thus, by elimination we suspect $(M, M_{\text{edge}})$ varies with base field.
+			\end{enumerate}
+
+		\item
+	\end{enumerate}
+\end{solution}
 
 \end{document}
