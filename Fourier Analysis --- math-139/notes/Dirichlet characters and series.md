@@ -85,7 +85,7 @@ For any positive integers $M, N$,
 $$
 \begin{align}
 \left\lvert  \sum_{n = 1}^\infty \frac{\chi(n)}{n^s} - \prod_{p \in \wp} \frac{1}{1 - \chi(p) / p^s}  \right\rvert & \le \left\lvert  \sum_{n = 1}^\infty \frac{\chi(n)}{n^s} - \sum_{n = 1}^N \frac{\chi(n)}{n^s}  \right\rvert  \\
-& + \left\lvert  \sum_{n = 1}^N \frac{\chi(n)}{n^s} - \prod_{p \in \wp} \left( 1 + \frac{\chi(p)}{p^s} + \dots + \frac{\chi(p^M)}{p^{Ms}} \right)  \right\rvert   \\
+& + \left\lvert  \sum_{n = 1}^N \frac{\chi(n)}{n^s} - \prod_{p \in \wp, p \leq N} \left( 1 + \frac{\chi(p)}{p^s} + \dots + \frac{\chi(p^M)}{p^{Ms}} \right)  \right\rvert   \\
 & + \left\lvert  \prod_{p \in \wp, p \le N} \left( 1 + \frac{\chi(p)}{p^s} + \dots + \frac{\chi(p^M)}{p^{Ms}} \right) - \prod_{p \in \wp, p \leq N} \frac{1}{1 - \chi(p) / p^s} \right\rvert \\
   & + \left\lvert  \prod_{p \in \wp, p \le N} \frac{1}{1 - \chi(p) / p^s} - \prod_{p \in \wp} \frac{1}{1 - \chi(p) / p^s}  \right\rvert.
 \end{align}

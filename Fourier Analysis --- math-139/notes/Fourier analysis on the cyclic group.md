@@ -38,7 +38,7 @@ $$
 \begin{align}
 \left< e_{m}, e_{\ell} \right> &  = \frac{1}{n} \sum_{k = 0}^{N - 1} (e^{2 \pi i (m - \ell)/ N})^k \\
  & = \frac{1}{n} \frac{1 - (e^{2 \pi i (m - \ell)/ N})^N}{1 - e^{2 \pi i (m - \ell) / N}} \\
- & = \frac{1}{n} \frac{1 - e^{2 \pi i (m - \ell)}}{1 - e^{2 \pi i (m - \ell)}} \\
+ & = \frac{1}{n} \frac{1 - e^{2 \pi i (m - \ell)}}{1 - e^{2 \pi i (m - \ell)/N}} \\
  & = 0.
 \end{align}
 $$
@@ -72,7 +72,7 @@ The theory of Fourier analysis on $\mathbb{Z} / n \mathbb{Z}$ falls out easily f
 
 ##### _definition:_ $\# \mathrm{FFT}(\mathbb{Z} / n \mathbb{Z})$
 
-For any positive integer $n$, let $\# \mathrm{FFT}(\mathbb{Z} / n \mathbb{Z})$ be the minimum number of operations required to compute the Fourier transform.
+For any positive integer $n$, let $\# \mathrm{FFT}(\mathbb{Z} / n \mathbb{Z})$ be the minimum number of operations required to compute the Fourier transform of a function $f : \mathbb{Z} / n \mathbb{Z} \to \mathbb{C}$.
 
 ##### _lemma:_ the splitting lemma
 
@@ -93,20 +93,23 @@ $$
  & = \frac{1}{2n} \sum_{\ell \in \mathbb{Z} / 2n \mathbb{Z}} f(\ell) (\omega_{2n}^{k})^{\ell} \\
  & = \frac{1}{2n} \sum_{\ell \in \mathbb{Z} / n \mathbb{Z}} f(2 \ell) (\omega_{2n}^{k})^{2 \ell} + \frac{1}{2n} \sum_{\ell \in \mathbb{Z} / n \mathbb{Z}} f(2 \ell + 1) (\omega_{2n}^k)^{2 \ell + 1}  \\
  & = \frac{1}{2 n} \sum_{\ell \in \mathbb{Z} / n \mathbb{Z}} g_{0}(\ell) (\omega_{n}^k)^{\ell} + \frac{\omega_{2n}^k}{2n} \sum_{\ell \in \mathbb{Z} / n \mathbb{Z}} g_{1}(\ell) (\omega_{n}^k)^{\ell} \\
- & = \frac{\hat{g}_{0}(k) + \hat{g}_{1}(k)}{2}.
+ & = \frac{\hat{g}_{0}(k) + \hat{g}_{1}(k) \omega_{2n}^k}{2}.
 \end{align}
 $$
 
 ##### _lemma:_ bounding complexity by the previous
 
-Then
+Given $\omega_{2 n} = e^{-2 \pi i / 2n}$,
 $$
 \# \mathrm{FFT}(\mathbb{Z} / 2n \mathbb{Z}) \le 2 \# \mathrm{FFT}(\mathbb{Z} / n \mathbb{Z}) + 8n.
 $$
 
 ###### _proof:_
 
-To calculate $\omega_{2n}, \dots, \omega_{2n}^{2n}$ takes no more than $2n$ operations. This also calculates all $\omega_{n}^k$.
+To calculate $\omega_{2n}, \dots, \omega_{2n}^{2n}$ takes no more than $2n$ multiplications. This also calculates all $\omega_{n}^k$. Calculating the Fourier transforms of $g_{0}$ and $g_{1}$ takes $2 \# \mathrm{F F T}(\mathbb{Z} / n \mathbb{Z})$ each. Then, for each $k \in \mathbb{Z} / 2n \mathbb{Z}$, we perform three calculations with $\hat{g}_{0}(k)$ and $\hat{g}_{1}(k)$ to get $\hat{f}(k)$. For $2n$ different $k$ this gives $6 n$ operations. Thus,
+$$
+\# \mathrm{FFT}(\mathbb{Z} / 2n \mathbb{Z}) \le 2n + 2 \# \mathrm{ F F T}(\mathbb{Z} / n \mathbb{Z}) + 6 n = 2 \# \mathrm{FFT}(\mathbb{Z} / n \mathbb{Z}) + 8n.
+$$
 
 ##### _theorem:_ the fast Fourier transform
 
