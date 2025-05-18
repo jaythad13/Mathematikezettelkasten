@@ -23,6 +23,58 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item Since the empty set is open in any topological space $X$, we have $\text{\O} \in \mathcal{T}$ and thus, $\text{\O} \in \mathcal{T}'$. Also, since the empty set is finite, and thus compact, $X' = X' \setminus \text{\O} \in \mathcal{T}'$. That is, the first two requirements for $X'$ to be a topological space are satisfied.
+
+			To show the remaining two requirements --- that (arbitrary) unions and finite intersections of open sets are open sets, it suffices to show that the union and intersection of a type 1 open set and a type 2 open set are open, as well as that (arbitrary) unions and finite intersections of type 1 open sets are type 1 open sets and for type 2 open sets, are type 2 open sets. This is sufficient because unions are commutative so we can always reduce any union of open sets into the union of a union of type 1 open sets and a union of type 2 open sets. Similarly, for finite intersections of open sets.
+
+			Suppose we have a type 1 open set $U \in \mathcal{T}$ and a type 2 open set $V = X' \setminus K$ with $K \subseteq X$ compact. Then by basic properties from set theory
+			\[
+				U \cup V = U \cup (X' \setminus K) = X' \setminus (K \setminus U).
+			\]
+			Since $K$ is compact in a Hausdorff space $X$, it is closed (theorem 6.9). Thus, $K \setminus U$ is closed as the set difference of a closed set and an open set (theorem 2.15). That is,  $K \setminus U$ is a closed subset of a compact space $K$ and thus, is itself compact (theorem 6.8). Thus $U \cup V = X' \setminus (K \setminus U)$ is actually a type 2 open set, and thus, open.
+
+			Since type 1 sets are just the open sets in the topology $\mathcal{T}$, they must satisfy closure under unions and finite intersections by definition.
+
+			To show that type 2 sets satisfy the same property we use de Morgan's laws. We also use the fact that finite unions of compact sets are compact (exercise 6.7) and arbitrary intersections of compact sets are compact (in a Hausdorff space) which follows from noticing that these compact sets are closed, that thus, arbitrary intersections of them are a closed (theorem 2.16) subset of a compact set, and thus, compact. It then follows from de Morgan's laws that for a finite collection of type 2 open sets $\{ X' \setminus K_{i} \}_{i = 1}^{n}$, we have
+			\[
+				\bigcap_{i = 1}^{n} X \setminus K_{i} = X \setminus \bigcup_{i = 1}^{n} K_{i} = X \setminus K
+			\]
+			which is a type 2 open set with $K$ compact. For an arbitrary collection of type 2 open sets $\{ X \setminus K_{\alpha} \}_{\alpha \in \mathcal{I}}$ we have
+			\[
+				\bigcup_{\alpha \in \mathcal{I}} X \setminus K_{\alpha} = X \setminus \bigcap_{\alpha \in \mathcal{I}} K_{\alpha} = X \setminus K
+			\]
+			which is also a type 2 open set with $K$ compact.
+
+			Now we have shown that $\mathcal{T}'$ satisfies all properties of a topology, and thus, $X'$ is a topological space.
+			
+		\item First we show that $X'$ is compact. Suppose $\mathcal{O} = \{ U_{\alpha} \}_{\alpha \in \mathcal{I}}$ is an open cover of $X'$. Since each type 1 open set $U_{\alpha} \in \mathcal{T}$ only contains points of $X$, $\mathcal{O}$ must contain at least one type 2 open set $U_{\beta} = X' \setminus K$ containing $p$. Let $\mathcal{O}' = \{ U_{\alpha} \}_{\alpha \neq \beta}$ be all of the sets in the cover excluding $U_{\beta}$. Then since $\mathcal{O}' \cup (\{ X' \setminus K \})$ is a cover of $X'$, the remaining open sets $\mathcal{O}'$ must form a cover of $K$.
+
+			Since $K$ is compact in $X$, it is compact in any superspace of $X$ (note that the subspace topology on $X$ inherited from $X'$ is just the regular topology on $X$). Thus, $\mathcal{O}'$ admits a finite subcover, $\mathcal{O}''$, covering $K$. Then $\mathcal{O}'' \cup \{ X' \setminus K \} = X'$ forms a finite subcover of $\mathcal{O}$, covering $K$ on one side and $X' \setminus K$ on the other. That is, we can reduce any open cover of $X'$ to a finite subcover --- $X'$ is compact.
+
+			Now we show that $X'$ is Hausdorff. Since $X$ is Hausdorff, for any pair of points $x_{1}, x_{2} \in X$ there exists a disjoint pair of open neighbourhoods $U_{1} \ni x_{1}, U_{2} \ni x_{2}$. Thus, we only need to show that we can separate each $x \in X$ from $p$. Since $X$ is locally compact, we have an open neighbourhood $U \ni x$ such that $\overline{U}$ is compact. Then $X \setminus \overline{U}$ is a type 2 open neighbourhood of $p$, $U$ is a type 1 open neighbourhood of $x$, and they are disjoint. Thus $X'$ is Hausdorff.
+
+		\item Let $X' = X \cup \{ p \}$ and $X'' = X \cup \{ q \}$ be topologised as two one-point compactifications of $X$.
+
+			Consider the map $f : X' \to X''$ by $f_{\mid X} = \operatorname{id}_{X}$ and $f(p) = q$. $f$ is a bijection with inverse $f^{-1} : X'' \to X'$ by $f^{-1}_{\mid X} = \operatorname{id}_{X}$ and $f^{-1}(q) = p$. Thus, we are only left to prove that $f$ and $f^{-1}$ are continuous. Since $f^{-1}$ is defined exactly analogously to $f$, it suffices to just prove that $f$ is continuous.
+
+			Suppose $V \subseteq X''$ is open. First suppose $V \in \mathcal{T}$ as well. Then
+			\[
+				f^{\text{pre}}(V) = f^{\text{pre}}_{\mid X}(V) = \operatorname{id}_{X}^{\text{pre}}(V) = V.
+			\]
+			Since $V \in \mathcal{T}$, it is an open subset $V \subseteq X$, and is thus, open in $X'$ as well.
+
+			Now suppose instead $V = X'' \setminus K$ where $K$ is compact in $X$. Then
+			 \[
+				f^{\text{pre}}(X'' \setminus K) = f^{\text{pre}}(X'') \setminus f_{\mid X}^{\text{pre}}(K) = X' \setminus \operatorname{id}_{X}^{\text{pre}}(K) = X' \setminus K = X' \setminus K.
+			\]
+			Here $X'$ is the pre-image of $X''$ since every point in $X'$ goes to some point in $X''$ and commutativity of pre-images and set-minus in the first equality is a basic result of set theory. $K$ is of course still compact in $X$ whether $X \subseteq X'$ or $X \subseteq X''$. Thus, $f^{\text{pre}}(V) = X' \setminus K$ is open in $X'$.
+
+			We've shown that for any open $V \subseteq X''$, $f^{\text{pre}}(V)$ is open. Thus, $f$ is continuous, which (by the symmetry of $f$ and $f^{-1}$ definitions in this case) is sufficient to show that $f$ is a homeomorphism. Thus, $X' \cong X''$.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[Problem 2]
@@ -35,6 +87,32 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item $K \subseteq X$ is compact if and only if it is the disjoint union of finitely many compact sets $K_{i} \subseteq I_{i}$.
+
+			Any compact subset $K_{i} \subseteq I_{i}$ is compact in $X$. This can be seen because the subspace topology on $I_{i}$ as a subspace on $X$ is just, by definition the Euclidean topology on $I_{i}$ --- we chose the open sets of $X$ to be those subsets with open intersection with each $I_{i}$. By the discussion in the book following theorem 6.6, $K_{i}$ is compact in the superspace $X$ as well. Then, the disjoint union of finitely many compact sets $K_{i} \subseteq I_{i}$ is a finite union of compact sets in $X$, and thus, compact (exercise 6.7).
+
+			If $K \subseteq X$ is compact, it can only have non-empty intersection with finitely many intervals. Else we would have the infinite open cover $\{ I_{i} \}_{i = 1}^{\infty}$ that does not admit a finite subcover. 
+
+			We can show that each of the finitely many non-empty intersections is compact. First, note that $X$ is Hausdorff. Two points in the same interval can be separate since each $I_{i}$ is Hausdorff, and two points in different intervals $I_{i}, I_{j}$ can be separated with the disjoint open neighbourhoods $I_{i}$ and $I_{j}$. Thus, each compact $K \subseteq X$ is closed (theorem 6.8). Since each $I_{i}$ can be written as $X \setminus \bigcup_{j \neq i} I_{j}$, each $I_{i}$ is closed in $X$ too. Thus, $K \cap I_{i}$, as the intersection of two closed sets is closed (theorem 2.16), and then as a closed subset of a compact set is compact (theorem 6.8). Thus $K$ is the disjoint union of finitely many compact $K_{i} = K \cap I_{i}$.
+
+		\item The one point compactification of $X$ is the Hawaiian earring.
+
+			Denote the Hawaiian earring by $Y$ and let the Hawaiian earring minus the point at $0$ be $Z = Y \setminus \{ 0 \}$. Note that $Y = \bigcup_{n = 1}^{\infty} S^{1}((1/n, 0), 1/n)$ where $S^{1}(p, r)$ is the circle of radius $r$ centred at $p$ in the real plane $\mathbb{R}^{2}$.
+
+			Since there is a homeomorphism between the interval $(0, 1)$ and the punctured circle $S^{1} \setminus \{ p \}$ we can identify $X$ with  $Z$ by identifying each interval $I_{n}$ with the (punctured) circle of radius $1 / n$. That is, for the homeomorphism $f : (0, 1) \to S^{1} \setminus \{ p \}$, we choose the function $g : X \to Z$ by $g_{\mid I_{n}} = f : I_{n} \to S^{1}((1/n, 0), 1/n) \setminus \{ 0 \}$.
+
+			$g$ is in fact a homeomorphism. Each open set $V \subseteq Z$ is the disjoint union of open sets $V_{n} \subseteq S^{1}((1/n, 0), 1/n) \setminus \{ 0 \}$ in each of the punctured circles. Each of these has an open pre-image $U_{n} \subseteq I_{n}$ with $g^{\text{pre}}(V_{n}) = f^{\text{pre}}(V_{n}) \subseteq I_{n}$. Thus, $V$ has open pre-image $g^{\text{pre}}(V) = \bigcup_{n = 1}^{\infty} U_{n}$. Similarly, each open set $U \subseteq X$ is the disjoint union of open sets $U_{n} \subseteq I_{n}$, and each of which has open image $g^{\text{img}}(U_{n}) = f^{\text{img}}(U_{n}) = V_{n}$. Thus $U$ has open image $g^{\text{img}}(U) = \bigcup_{n = 1}^{\infty} V_{n}$. That is, $g$ is a continuous, open bijection --- a homeomorphism (theorem 7.28).
+
+			Now it suffices to show that the Hawaiian earring $Y$ is the one point compactification of $Z$. $Y = Z \cup \{ 0 \}$ so the Hawaiian earring is at least a one point addition to $Z$. First we demonstrate which open sets of $Y$ are type 1 open sets. $Y$ and $Z$ inherit the subspace topology from $\mathbb{R}^{2}$. Thus each open set in $Y$ that does not contain $0$ is an intersection of an open set in $\mathbb{R}^{2}$ with $Y \setminus \{ 0 \} = Z$, and thus, an open subset of $Z$.
+
+			Now we show that the rest of the open sets are type 2 open sets. The rest of the open sets must are open neighbourhoods of $0$ --- they must contain $0$. Each open neighbourhood $U$ is the intersection of an open set (containing $0$) of $\mathbb{R}^{2}$ with $Y$. By definition of the Euclidean topology it must then contain the intersection of an open ball around $0$ with $Y$. For a ball of radius $r$, its intersection with $Y$ contains all but finitely many circles --- $B(r, 0) \cap Y$ contains all circles $S^{1}((1/n, 0), 1/n)$ with $1/2n < r$. Thus, if we describe $U$ in terms of its complement, we get $U = Y \setminus K$ where $K \subseteq Z$ is closed in $Y$ and thus, closed in $Z$ (as the complement of an open set, by theorem 2.14, and by the definition of the subspace topology) and has non-empty intersection with only finitely many circles (since $U$ contains all but finitely many of them). Since $K$ is clearly bounded within $Y$, it is compact in $\mathbb{R}^{2}$ (by the Heine-Borel theorem), and thus, compact in the subspace $Z$. Thus, $U = Y \setminus K$ for a compact $K \subseteq Z$ --- it is a type 2 open set.
+
+			That is, $Y$ is topologised as and is the unique one point compactification of $Z$. Since $X \cong Z$, we have $X' \cong Y$ --- the one point compactification of $X$ is the Hawaiian earring.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[Problem 3]
@@ -45,6 +123,31 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item Suppose $A$ is a retract of a contractible space $X$ with $r : X \to A$ the retraction map and $H$ the homotopy witnessing the contraction $\operatorname{id}_{X} \simeq f$ where $f : X \to \{ p \}$ is the constant map for some $p \in X$. Thus, $r : X \to A$ has image $A$ and fixes each point of $A$. Also, $H : X \times [0, 1] \to X$ with $H(x, 0) = \operatorname{id}_{X}(x)$ and $H(x, 1) = p$ for all $x \in X$. These all follow directly from the definitions of retraction and contractible.
+
+			We claim that by composing the restriction of $H$ to $A$ with $r$ we get a contraction of $A$ onto $r(p)$. That is, consider $G = r \circ H_{\mid A \times [0, 1]} : A \times [0, 1] \to A$. Since it is the composition of continuous functions, it is a continuous function itself. Its codomain really is $A$ since $r$ has codomain $A$. Finally
+			\begin{align*}
+				r \circ H_{\mid A \times [0, 1]}(a, 0) & = r \circ \operatorname{id}_{X}(a) \\
+								       & = r(a) \\
+								       & = a \\
+								       & = \operatorname{id}_{A}(a).
+			\end{align*}
+			where the last step follows since $r$ fixes each point in $A$. Also,
+			\[
+				r \circ H_{\mid A \times [0, 1]}(a, 1) = r \circ H(a, 1) = r(p).
+			\]
+			Thus, $G$ is a homotopy witnessing $\operatorname{id}_{A} \simeq g$ where $g$ is the constant function $g : A \to \{ r(p) \}$. This makes $A$ contractible as desired.
+
+		\item I assume that the goal for this part is to show that the house with two rooms is a retract of some contractible space but I'm not sure how to do that. Once that is shown, it follows immediately from the previous result that the house with two rooms is contractible.
+
+			The idea that I have for showing that the house with two rooms is indeed a retract of a contractible surface is as follows. Given the house with two rooms, we can ``fill in'' each room, and the tube running out from it onto the outside of the other to form a cube which is homeomorphic to a ball, and thus, contractible. Then we have to retract each of the ``filling ins'' onto the walls of each respective room and we get the house with two room as a retract of a contractible space. However, I don't see how to actually do this without having to rip parts of the filled in box apart.
+	\end{enumerate}
+\end{solution}
+
+\pagebreak
+
 \begin{problem}[Problem 4]
 	Choose one starred problem (from the course website) and present a proof.
 \end{problem}
@@ -54,9 +157,29 @@
 		Let $X \times Y$ be a product space with $Y$ compact. If $U$ is an open set of $X \times Y$ containing the set $x_{0} \times Y$, then there is some open set $W$ in $X$ containing $x_{0}$ such that $U$ contains $W \times Y$ (called a ``tube'' around $x_{0} \times Y$).
 	\end{theorem}
 
+	\begin{proof}
+		Since $U$ is an open set of $X \times Y$, it is the union of basic open sets of $W$ --- rectangles $W_{\alpha} \times V_{\alpha}$ where $W_{\alpha} \subseteq X$ and $V_{\alpha} \subseteq Y$ are open subsets indexed by $\alpha \in \mathcal{I}$. Since $x_{0} \times Y \subseteq U$, if we consider all $\beta \in \mathcal{I}$ such that $W_{\beta}$ contains $x_{0}$, each corresponding $V_{\beta}$ must cover all of $Y$ --- since each $(x_{0}, y) \in U$, there is a basic open neighbourhood $W_{\beta} \times V_{\beta} \ni (x_{0}, y)$ for each $y \in Y$.
+
+		Since the $V_{\beta}$ form an open cover of the compact set $Y$, they admit a finite subcover $\{ V_{\beta_{i}} \}_{i = 1}^{n}$. Correspondingly $\{ W_{\beta_{i}} \times V_{\beta_{i}} \}_{i = 1}^{n}$ forms a finite cover $x_{0} \times Y$, with each open set contained in $U$. Since each $W_{\beta_{i}}$ contains $x_{0}$ by definition, and there are only finitely many of them, their intersection is a non-empty open set $W$. We have
+		\[
+			x_{0} \times Y \subseteq W \times Y \subseteq \bigcup_{i = 1}^{n} W_{\beta_{i}} \times V_{\beta_{i}} \subseteq U
+		\]
+		so $W$ is the desired open set in $X$ giving the tube $W \times Y$ contained in $U$.
+	\end{proof}
+
 	\begin{theorem}[6.19]
 		Let $X$ and $Y$ be compact spaces. Then $X \times Y$ is compact.
 	\end{theorem}
+
+	\begin{proof}
+		By theorem 6.13 it suffices to show that any cover of $X \times Y$ by basic open sets $U \times V$ with $U, V$ open in $X, Y$ respectively, reduces to a finite subcover. Suppose then that we have a cover of $X \times Y$ by basic open sets, say $\mathcal{O} = \{ U_{\alpha} \times V_{\alpha} \}_{\alpha \in \mathcal{I}}$. For each $x \in X$ we can consider all $U_{\alpha, x}$ containing $x$. The $U_{\alpha, x} \times V_{\alpha, x}$ form a cover of $x_{0} \times Y$, and thus, the $V_{\alpha, x}$ form a cover of $Y$ (for the same reasons as in the proof of the tube lemma). By the compactness of $Y$, they can be reduced to a finite subcover $\{ V_{\alpha_{i}, x} \}_{i = 1}^{n}$. Thus, $\bigcup_{i = 1}^{n} U_{\alpha_{i}, x} \times V_{\alpha_{i}, x}$ is an open set of $X \times Y$ containing $x \times Y$.
+
+		By the tube lemma, there exists an open set $W_{x} \subseteq X$ containing $x$ with the finite union $\bigcup_{i = 1}^{n} U_{\alpha_{i}, x} \times V_{\alpha_{i}, x}$ containing $W_{x} \times Y$. Since we can perform this construction for each $x$, we get an open cover of $X$ by  $\{ W_{x} \}_{x \in X}$. By the compactness of $X$ this admits a finite subcover $\{ W_{x_{j}} \}_{j = 1}^{m}$. Then we can write
+		\[
+			X \times Y = \bigcup_{j = 1}^{m} W_{x_{j}} \times Y \subseteq \bigcup_{j = 1}^{m} \bigcup_{i = 1}^{n} U_{\alpha_{i}, x_{j}} \times V_{\alpha_{i}, x_{j}}
+		\]
+		giving us $X \times Y$ covered by a finite subcollection $\{ U_{\alpha_{i}, x_{j}} \times V_{\alpha_{i}, x_{j}} \}_{(i, j) \in [n] \times [m]}$ of the original basic open set cover. That is, $X \times Y$ is compact.
+	\end{proof}
 \end{solution}
 
 \pagebreak
