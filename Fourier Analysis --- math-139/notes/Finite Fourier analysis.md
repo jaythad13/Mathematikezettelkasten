@@ -66,13 +66,24 @@ For any $\xi \in \hat{G}$, $\left< \xi, \xi \right> = 1$, and for any $\xi' \neq
 
 ###### _proof:_
 
+Since characters have magnitude $1$,
+$$
+\left< \xi, \xi \right> = \frac{1}{\lvert G \rvert } \sum_{x \in G} \xi(x) \overline{\xi(x)} = \frac{1}{\lvert G \rvert } \sum_{x \in G} 1 = 1.
+$$
+
+If $\xi \neq \xi'$, then $\xi \bar{\xi'} = \xi \xi'^{-1}$ is a non-trivial character. Then,
+$$
+\sum_{x \in G} \xi(x) \overline{\xi'(x)} = \sum_{x \in G} \xi \xi'^{-1}(x) = 0
+$$
+and thus, $\left< \xi, \xi' \right> = 0$.
+
 ##### _lemma:_ simultaneous diagonalisation
 
 Let $V$ be a finite-dimensional inner product space with a $T_{1},\dots, T_{n}$ a finite list of diagonalisable operators. If all pairs $T_{i}, T_{j}$ commute there is a single basis of eigenvectors with respect to which all of them are diagonalisable.
 
 ###### _proof:_
 
-The base case is the spectral theorem. Suppose the lemma is true for the family $T_{1}, \dots, T_{n - 1}$ of commuting isometries. The definition of diagonalisation is that we can decompose $V$ into the direct sum of eigenspaces of $T_{n}$ —
+The base case is a tautology — a diagonalisable operator is diagonalisable. Suppose the lemma is true for the family $T_{1}, \dots, T_{n - 1}$ of commuting isometries. The definition of diagonalisation is that we can decompose $V$ into the direct sum of eigenspaces of $T_{n}$ —
 $$
 V = V_{\lambda_{1}} \oplus \dots \oplus V_{\lambda_{m}}.
 $$
