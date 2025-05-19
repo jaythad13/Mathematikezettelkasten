@@ -289,6 +289,10 @@ In particular, the product is real-valued.
 
 For all $s > 1$, if $L(1, \chi) = 0$, then $L(1, \overline{\chi}) = 0$.
 
+###### _proof:_
+
+Since the $L$-series is a series with real coefficients, we have $L(1, \bar{\chi}) = \overline{L(1, \chi)}$. The proof follows.
+
 ##### _lemma:_ upper bound on vanishing non-trivial $L$-series
 
 If $\chi$ is non-trivial and $L(1, \chi) = 0$, then for all $s \in [1, 2]$, $\lvert L(\chi, s)  \rvert < C \lvert s - 1 \rvert$.
@@ -307,7 +311,151 @@ Suppose by way of contradiction that $L(1, \chi) = 0$. Then we also have $L(1, \
 
 The trivial character is the only character that grows and it only grows as $O(1 / \lvert s - 1 \rvert)$ as $s \to 1^+$. Thus, considering the three terms we know about, we get that the magnitude of the product behaves roughly like $\lvert s - 1 \rvert$ as $s \to 1^+$. Thus, the product vanishes, but we have shown this is not the case.
 
-### Real characters
+### Real characters and hyperbolic sums
 
-The proof is harder because these have some real character. Our big idea is going to be to sum under hyperbolas
+The proof is harder because these have some real character. 
 
+We will need the existence of the [[Complex Analysis --- math-135/notes/Euler-Mascheroni constant|Euler-Mascheroni constant]] and a similar constant for the sum of square roots. Specifically, we need the following.
+
+##### _proposition:_ Euler-Mascheroni and analogues for other $p$-series
+
+As $N \to \infty$, we have
+$$
+\sum_{n = 1}^N \frac{1}{n} - \log N = O(1) + O(1 / N)
+$$
+and
+$$
+\sum_{n = 1}^N \frac{1}{\sqrt{ n }} - 2 \sqrt{ N } = O(1) + O(1 / \sqrt{N }).
+$$
+
+Our strategy will be to use this proposition to approximate $L(1, \chi)$ by the hyperbolic sum of $\chi(n) / \sqrt{ nm }$ over $(m, n) \in \mathbb{N} \times \mathbb{N}$ with $mn \le N$. Then we will show that the sum grows fast enough that $L(1, \chi) \neq 0$.
+
+To show this, we need some more lemmas. 
+
+##### _lemma:_ the divisor-sum of a real character is non-negative and positive for squares
+
+For any natural number $k$, and non-trivial real Dirichlet character $\chi$ on $G$, we have
+$$
+\sum_{n \mid k} \chi(n) \geq \begin{cases}
+0 \\
+1 & k = \ell^{2} 
+\end{cases}
+$$
+###### _proof:_
+
+We first prove the lemma in the case that $k$ is prime power $p^\alpha$. In this case the value of the sum is completely determined by $\chi(p) \in \{ -1, 0, 1 \}$ — we have
+$$
+\sum_{n \mid k} \chi(n) = \chi(1) + \chi(p) + \dots + \chi(p^\alpha) 
+$$
+We get
+$$
+\sum_{n \mid k} \chi(n) = \begin{cases}
+\alpha + 1 & \chi(p) = 1 \\
+1 & \chi(p) = -1, \alpha \text{ even} \\
+0 & \chi(p) = -1, \alpha \text{ odd} \\
+1 & p \mid q \implies \chi(p) = 0
+\end{cases}
+$$
+Notice that the reason for the reversal of the intuitive places even/odd for $\alpha$ is because we sum an additional $\chi(1) = 1$ first.
+
+Now write $k = p_{1}^{\alpha_{1}} \cdots p_{m}^{\alpha_{m}}$. The divisors of $k$ are $n \in \{ p_{1}^{\beta_{1}} \cdots p_{m}^{\beta_{m}} \mid 0 \le \beta_{j} \le \alpha_{j}  \}$. Then, using a fundamental theorem of arithmetic trick again, we can rewrite
+$$
+\sum_{n \in \{ p_{1}^{\beta_{1}} \cdots p_{m}^{\beta_{m}} \}} \chi(n) = \prod_{j = 1}^m (\chi(p_{j}^0) + \chi(p_{j}) + \dots + \chi(p_{j}^{\alpha_{j}})) = \prod_{j = 1}^m \sum_{n \mid p_{j}^{\alpha_{j}}} \chi(n).
+$$
+The expression for the sum when $k = p^\alpha$ is now an expression for each of the multiplicands. It tells us that the product is always non-negative, and can only be $0$ if one of the $\alpha_{j}$ is odd. Thus, it can only be zero if $\alpha_{j}$ is non-square, and all squares have positive sum.
+
+##### _lemma:_ the asymptotic cancellation lemma
+
+For $a < b \in \mathbb{N}$ and a non-trivial real Dirichlet character $\chi$, we have
+$$
+\sum_{n = a}^b \frac{\chi(n)}{\sqrt{ n }} = O(1 / \sqrt{ a })
+$$
+and
+$$
+\sum_{n = a}^b \frac{\chi(n)}{n} = O(1 / a).
+$$
+
+###### _proof sketch:_
+
+Use the [[Fourier Analysis --- math-139/notes/Dirichlet characters and series#_lemma _ the cancellation lemma|cancellation lemma]]. This is actually a little subtle, but hopefully it's believable even without proof.
+
+##### _definition:_ the hyperbolic character sum
+
+Given a non-trivial real Dirichlet character $\chi$ on $G$, the hyperbolic character sum is
+$$
+S_{N} = \sum_{(m, n) \in A_{N}} \frac{\chi(n)}{\sqrt{ nm }}
+$$
+where $A_{N} = \{ (m, n) \in \mathbb{N} \times \mathbb{N} \mid mn \le N \}$ is the region of the natural number grid under the hyperbola $xy = N$.
+
+##### _proposition:_ the hyperbolic sum grows logarithmically
+
+There exists some constant positive $c$ such that $S_{N} \geq c \log N$.
+
+###### _proof sketch:_
+
+We can rewrite the sum over all $m, n$ with $nm \le N$ as a double sum over all $k \le N$ and all $m, n$ with $nm = k$ 
+$$
+\begin{align}
+S_{N} & = \sum_{(m, n) \in A_{N}} \frac{\chi(n)}{\sqrt{ nm }} \\
+& = \sum_{k = 1}^N \sum_{nm = k} \frac{\chi(n)}{\sqrt{ nm } }\\
+& = \sum_{k = 1}^N \frac{1}{\sqrt{ k }} \sum_{n \mid k} \chi(n).
+\end{align}
+$$
+Using our lemma about the divisor-sum of a character we can bound this sum below by at least the sum over squares. That is,
+$$
+\begin{align}
+S_{N} & = \sum_{k = 1}^N \frac{1}{\sqrt{ k }} \sum_{n \mid k} \chi(n) \\
+& \ge \sum_{k = 1, k = \ell^{2}}^N  \frac{1}{\sqrt{ k }} \\
+& = \sum_{\ell = 1}^\sqrt{ N } \frac{1}{\ell}.
+\end{align}
+$$
+
+Finally, due to the existence of the Euler-Mascheroni constant, this is last sum is just $\log \sqrt{ N } + O(1)$ (which of course is $c \log N + O(1)$ for $c = 1 / 2$).
+
+
+##### _proposition:_ the $L$-series is well approximated by a hyperbolic sum
+
+For positive integers $N$, we have
+$$
+S_{N} = 2 \sqrt{ N } L(1, \chi) + O(1).
+$$
+
+###### _proof:_
+
+We split $S_{N}$ into a sum over three regions. That is, we split $A_{N}$ into three regions — the square $A_{N}^2 = \{ 1 \le m, n \le \sqrt{ N } \}$ and the two curvy triangles $A_{N}^1 = \{ 1 < m < \sqrt{ N }, \sqrt{ N } < n < N / m \}$ and $A_{N}^3 = \{ 1 \le n \le \sqrt{ N }, \sqrt{ N } \le m \le N / m \}$. We call the corresponding sums $S_{N}^1, S_{N}^2, S_{N}^3$ as well.
+
+Splitting $S_{N}^1$ into a double sum, we write
+$$
+S_{N}^1 = \sum_{m = 1}^\sqrt{ N } \frac{1}{\sqrt{ m }} \sum_{n = \sqrt{ N }}^{N / m} \frac{\chi(n)}{\sqrt{ n }}.
+$$
+By asymptotic cancellation lemma, the interior sum is $O(1 / N^{1 / 4})$ which we can factor out. We then evaluate the exterior sum, and using the analogue of the Euler-Mascheroni constant for the $p$-series with $p = 1 / 2$, we get that it is $2N^{1 / 4} + O(1) + O(1 / N^{1 / 4})$. Multiplying everything together, we get
+$$
+S_{N}^1 = O(1 / N^{1 / 4})(2 N^{1 / 4} + O(1) + O(1 / N^{1 / 4}))
+$$
+which is just $S_{N}^1 = O(1)$.
+
+Considering $S_{N}^2 + S_{N}^3$ together, we get
+$$
+\begin{align}
+S_{N}^2 + S_{N}^3 & = \sum_{n = 1}^\sqrt{ N } \frac{\chi(n)}{\sqrt{ n }} \sum_{m = 1}^{N / n} \frac{1}{\sqrt{ m }} \\
+& = \sum_{n = 1}^\sqrt{ N } \frac{\chi(n)}{\sqrt{ n }} \left (2 \sqrt{ N / n }  + c + O(\sqrt{ n / N }) \right ) \\
+& = 2 \sqrt{ N } \sum_{n = 1}^{\sqrt{ N }} \frac{\chi(n)}{n } + c \sum_{1 \le n \le \sqrt{ N }} \frac{\chi(n)}{\sqrt{ n }} + O\left( \frac{1}{\sqrt{ N }} \sum_{1 \le n \le \sqrt{ N }} 1 \right).
+\end{align}
+$$
+
+The last term is clearly $O(1)$. The second term is also $O(1)$ by the asymptotic cancellation lemma. Finally, as $N \to \infty$, since the tail of the $L$-series vanishes —
+$$
+\sum_{n = \sqrt{ N }}^\infty \frac{\chi (n)}{n} = O(1 / \sqrt{ N })
+$$
+by the asymptotic cancellation lemma, we have
+$$
+\begin{align}
+S_{N} & = S_{N}^1 + S_{N}^2 + S_{N}^3  \\
+& =  2 \sqrt{ N } \sum_{n = 1}^\sqrt{ N } \frac{\chi(n)}{n} + O(1) \\
+ & = 2 \sqrt{ N } \left( L(1, \chi) - \sum_{n = \sqrt{ N }}^\infty \frac{\chi(n)}{n} \right) + O(1) \\
+ & = 2 \sqrt{ N } (L(1, \chi) - O(1 / \sqrt{ N }) + O(1) \\
+ & = 2 \sqrt{ N } L(1, \chi) + O(1).
+\end{align}
+$$
+
+It follows that $L(1, \chi) \neq 0$ since that would force $S_{N} = O(1)$ which we proved is too small.

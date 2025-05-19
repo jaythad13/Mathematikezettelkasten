@@ -98,7 +98,7 @@ Suppose $\chi_{1}$ is the trivial character on $G$. Then if $q = p_{1}^{\alpha_{
 
 We also want to be able to define the logarithm of the $L$-series, specifically, we want to define it as the integral of the logarithmic derivative of the $L$-series. To do so, we need some niceness conditions on the $L$-series so that it actually converges.
 
-##### _lemma:_ bounding the sum of the Dirichlet character
+##### _lemma:_ the cancellation lemma
 
 If $\chi$ is a non-trivial character on $G$, then $\lvert \sum_{n = 1}^k \chi(n) \rvert < q$ for any $k$.
 
@@ -115,19 +115,19 @@ For a non-trivial character $\chi$ on $G$, the $L$-series converges for all $s >
 
 ###### _proof:_
 
-To prove that the $L$-series converges for all $s > 0$, we use [[Fourier Analysis --- math-139/attachments/homework/hw 2/hw 2.pdf#page=9|summation by parts]] to write
+To prove that the $L$-series converges for all $s > 0$, we use [[Fourier Analysis --- math-139/attachments/homework/hw 2/hw 2.pdf#page=9|summation by parts]] and some involved algebra to write
 $$
-\sum_{n = 1}^N \frac{\chi(n)}{n^s} = \frac{S_{N}}{N^s} + \sum_{k = 1}^N S_{k} \left( \frac{1}{k^s} - \frac{1}{(k + 1)^s} \right)
+\sum_{n = 1}^N \frac{\chi(n)}{n^s} = \sum_{k = 1}^N \frac{S_{k} - S_{k - 1}}{k^s} = \frac{S_{N}}{N^s} + \sum_{k = 1}^{N - 1} S_{k} \left( \frac{1}{k^s} - \frac{1}{(k + 1)^s} \right)
 $$
-where $S_{k} = \sum_{n = 1}^k \chi(n) / n^s$ are the partial sums of the $L$-series.  It's a simple [[#_lemma _ bounding the sum of the Dirichlet character|lemma]] to show that $\lvert S_{k} \rvert \le q$ and we have
+where $S_{k} = \sum_{n = 1}^k \chi(n) / n^s$ are the partial sums of the $L$-series. It's a simple [[#_lemma _ bounding the sum of the Dirichlet character|lemma]] to show that $\lvert S_{k} \rvert \le q$ and we have
 $$
 \frac{1}{k^s} - \frac{1}{(k + 1)^s} \le \max_{x \in [k, k + 1]} \frac{dx^{}}{dx} = \frac{1}{k^{s + 1}}
 $$
 by the [[Mathematical Analysis I --- math-131/notes/Mean value theorems#_theorem _ mean value theorem|mean value theorem]]. It follows that
 $$
-\left\lvert  \sum_{k = 1}^N S_{k} \left( \frac{1}{k^s} - \frac{1}{(k + 1)^s} \right)  \right\rvert < \sum_{k = 1}^N \left\lvert  \frac{qs}{k^{s + 1}} \right\rvert < \infty.
+L(s, \chi) = \left\lvert  \sum_{k = 1}^\infty S_{k} \left( \frac{1}{k^s} - \frac{1}{(k + 1)^s} \right)  \right\rvert < \sum_{k = 1}^\infty \left\lvert  \frac{qs}{k^{s + 1}} \right\rvert < \infty.
 $$
-Thus, the $L$-series converges absolutely and uniformly for all $s > \delta > 0$ for each $\delta > 0$. Thus, it is continuous.
+Thus, the $L$-series converges absolutely and uniformly for all $s > \delta > 0$ for each $\delta > 0$. This also forces it to be continuous.
 
 Differentiating each term, we can make a similar summation by parts argument to show that the series of derivatives of each term of the $L$-series converges absolutely and uniformly, and thus, that the $L$-series is continuously differentiable in $s$.
 
@@ -136,4 +136,3 @@ $$
 \lvert L(s, \chi) - 1 \rvert = \left\lvert  \sum_{n = 2}^\infty \frac{\chi(n)}{n^s}  \right\rvert \le \max \lvert \chi(n) \rvert \int_{2}^\infty \frac{1}{x^s} \, dx = 2^{-s} O(1).
 $$
 which is of the desired form.  A similar argument gives the asymptotic bound on the derivative $\left\lvert  \frac{d}{ds} L(s, \chi)  \right\rvert$.
-
