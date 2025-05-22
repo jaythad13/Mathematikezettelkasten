@@ -45,3 +45,19 @@ If $X$ is second countable, it has a countable basis. Each open set in the open 
 If $X$ is Lindelöf, every cover of $X$ has a countable subcover. This includes the cover by all balls. Each uncountable set must then include uncountably many points in some open ball. It then includes uncountably many points in the closure of the ball, which is [[Topology --- math-147/notes/Compactness#_definition _ compact|compact]]. By the [[Topology --- math-147/notes/Compactness#_theorem _ the Bolzano-Weierstrass theorem|Bolzano-Weierstrass theorem]], the uncountable set must have a limit point.
 
 The proof that (4) $\implies$ (1) follows from using Zorn's lemma.
+
+Finally, metric spaces satisfy a nice property that allows
+
+##### _lemma:_ the Lebesgue number lemma
+
+Let $\{ U_{\alpha} \}_{\alpha \in \mathcal{I}}$ be an open cover of a compact subset of a metric space $A \subseteq X$. Then there exists a $\delta > 0$ such that for every point $p \in A$, the ball $B(p, \delta) \subseteq U_{\alpha}$.
+
+###### _proof:_
+
+For each point $p \in A$ we can consider the "maximum" radius around it contained in a single open set --- $M(p) = \sup R(p)$ where $R(p) = \{ r > 0 \mid B(p, r) \subseteq U_{\alpha}, \alpha \in \lambda \}$. We claim $M : p \mapsto M(p)$ is a continuous function.
+
+For each $p$, we have a positive $M(p)$. Consider some open neighbourhood of $M(p)$ containing the basic open neighbourhood $V = B(M(p), \varepsilon)$. We claim that $U = B(p, \varepsilon/2)$ is mapped into $V$ by $M$. For every $r < M(p)$, we must have $r \in R(p)$ (see below for more discussion of this). Consider a point $q \in B(p, \varepsilon/2)$. By the triangle inequality, every point in $B(q, r - \varepsilon/2)$ is in $B(p, r)$, and thus, in $U_{\alpha}$. That is, $r - \varepsilon/2 \in R(q)$. Thus, $M(q) \ge M(p) - \varepsilon /2$ and so $M(q) \in B(M(p), \varepsilon)$. That is, $M$ is continuous.
+
+Since $M$ is a continuous function from a compact set to the reals, [[Mathematical Analysis I --- math-131/notes/Continuity#_corollary _ the image of a compact set has a maximum and minimum|it achieves its positive minimum]] at some $p \in A$. We can write $m = \min_{p \in A} M(p)$. Notice that for any point $p \in A$, we have $M(p) \ge m$. Notice also that $r_{1} \in R(p)$ gives $r_{2} \in R(p)$ for all $r_{2} < r_{1}$ since $B(p, r_{2}) \subseteq B(p, r_{1})$, and that $r_{1} \in R(p)$ also implies $r_{3} \in R(p)$ for all $r_{1} < r_{3} < m$ since $r_{3}$ is either less than some other $r_{4} \in R(p)$ or a lesser upper bound on $R(p)$ than $m$. Since $R(p)$ is not empty (because the $U_{\alpha}$ are all open), this gives us that every positive $r < m$ is a member of $R(p)$.
+
+Choose some positive $\delta < m$. For every $p \in A$, the ball $B(p, \delta) \subseteq U_{\alpha}$.
