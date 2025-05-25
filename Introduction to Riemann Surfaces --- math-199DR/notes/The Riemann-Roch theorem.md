@@ -8,7 +8,7 @@ tags:
 
 ### Adèles and Laurent tail divisors
 
-Given [[Introduction to Riemann Surfaces --- math-199DR/notes/Algebraic curves#Meromorphic functions form a function field|the function field nature]] of $\mathcal{M}_{X}(X)$, the Riemann-Roch theorem is really a statement of class field theory. The idea is that $\mathcal{O}_{X}(X)$ is a ring looking something like $\mathbb{C}[[z]]$ that can be turned into a field looking something like $\mathbb{C}((z))$ at each point (not quite because we don't want to allow [[Complex Analysis --- math-135/notes/Laurent series#_theorem _ classifying singularities|essential singularities]] with infinitely many negative degree terms). We don't want to consider the information of all these $\mathbb{C}((z))$ at once because we'd never be able to glue them all together. It's nonsensical to have poles at every point, so we really just want to look at an object whose elements have have finitely many poles but has holomorphic power series everywhere else. This is the ring of adèles.
+Given [[Introduction to Riemann Surfaces --- math-199DR/notes/Algebraic curves#Meromorphic functions form a function field|the function field nature]] of $\mathcal{M}_{X}(X)$, the Riemann–Roch theorem can be proven as a statement about fields. The idea is that $\mathcal{O}_{X}(X)$ is a ring looking mostly like $\mathbb{C}[[z]]$ at most points but also a little bit like $\mathbb{C}((z))$ at some points (that is, $\mathbb{C}[[z]][z^{-1}]$ since we don't want to allow [[Complex Analysis --- math-135/notes/Laurent series#_theorem _ classifying singularities|essential singularities]] with infinitely many negative degree terms). We don't want to consider the information of all these $\mathbb{C}((z))$ at once because we'd never be able to glue them all together. Therefore, we limit by the most basic obstruction — that we can have poles only at finitely many points. We want an object whose elements have have finitely many poles but has holomorphic power series everywhere else. This is the ring of adèles.
 
 ##### _definition:_ ring of adèles of an algebraic curve
 
@@ -133,9 +133,7 @@ All of this just means that we have a map of short exact sequences (a commutativ
 
 Here the map on the left follows from $\mathcal{L}(D_{1}) \subseteq \mathcal{L}(D_{2})$, $t$ is the suitable truncation, and the map on the right is also a truncation. That is, since the diagram commutes, we have $\operatorname{img} \alpha_{D_{2}} = \operatorname{img} t \circ \alpha_{D_{1}}$, so we can think of $t$ as giving a map of the quotient spaces $\tilde{t} : \Lambda^\perp(D_{1}) / \operatorname{img} \alpha_{D_{1}} \to \Lambda^\perp(D_{2}) / \operatorname{img} \alpha_{D_{2}}$. 
 
-By the snake lemma, we have a short exact sequence of kernels of the vertical maps (since all the vertical maps are surjections, the cokernels are all $0$).
-
-The kernel of the left vertical map is $\mathcal{L}(D_{2}) / \mathcal{L}(D_{1})$ and we will call the kernel of the right vertical map $\mathrm{H}^1(D_{2} / D_{2})$ (for what I think are reasons motivated by cohomology). The short exact sequence is then
+By [[Topics in Geometry and Topology --- math-145/notes/A little homological algebra#_lemma _ the snake lemma|the snake lemma]], we have a short exact sequence of kernels of the vertical maps (since all the vertical maps are surjections, the cokernels are all $0$). The kernel of the left vertical map is $\mathcal{L}(D_{2}) / \mathcal{L}(D_{1})$ and we will call the kernel of the right vertical map $\mathrm{H}^1(D_{2} / D_{2})$ (for what I think are reasons motivated by cohomology). The short exact sequence is then
 
 ```tikz
 \usepackage{tikz-cd}
@@ -149,7 +147,7 @@ The kernel of the left vertical map is $\mathcal{L}(D_{2}) / \mathcal{L}(D_{1})$
 
 $\ker t$ is clearly $\deg D_{2} - \deg D_{1}$ dimensional — just look at the basis of $1 / z_{p}^n$ that get sent to zero under truncation at each point to get $\sum_{p \in X} D_{2}(p) - D_{1}(p)$ basis vectors.
 
-It follows that $\mathrm{H}^1(D_{1} / D_{2})$ is finite-dimensional since $\ker t$ surjects onto it. Infact, we have the following fact.
+It follows that $\mathrm{H}^1(D_{1} / D_{2})$ is finite-dimensional since $\ker t$ surjects onto it. In fact, we have the following fact.
 
 ##### _lemma:_ almost Riemann-Roch
 
@@ -161,9 +159,9 @@ $$
 ###### _proof:_
 is an application of the rank-nullity theorem.
 
-Since the Riemann-Roch spaces are finite dimensional, we get (from the rank nullity theorem applied to)
+Since the Riemann-Roch spaces are finite dimensional, we get (from the rank nullity theorem applied to) the quotients, we get bounds on the dimension of $\mathcal{L}(D)$ in terms of the dimension of $\mathrm{H}^1(D)$. We call this weak Riemann–Roch
 
-### The (weak) Riemann-Roch theorem and philosophy
+### The (weak) Riemann–Roch theorem and philosophy
 
 With the assumption that $\dim \mathrm{H}^1(D)$ is finite dimensional, we have essentially proved Riemann-Roch. It allows us to write
 $$
@@ -183,7 +181,7 @@ is the same for any divisor $D \in \operatorname{Div} X$.
 
 For the zero divisor $\dim \mathcal{L}(0) = 1$ and $\deg 0 = 0$, so comparing any divisor to the zero divisor, we get the (weak) Riemann-Roch theorem —
 
-##### _theorem:_ the (weak) Riemann-Roch theorem
+##### _theorem:_ the (weak) Riemann–Roch theorem
 
 For any $D \in \operatorname{Div} X$ 
 $$
