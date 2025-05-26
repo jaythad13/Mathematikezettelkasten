@@ -88,7 +88,7 @@ Path-connectedness is a stronger notion that requires you to be able to walk bet
 
 ##### _definition:_ path
 
-A path from $p$ to $q$ in $X$ is a [[Topology --- math-147/notes/Continuous functions#_definition _ continuity|continuous function]] $f : [0, 1] \to X$ with $f(0) = p$ and $f(1) = q$.
+A path from $p$ to $q$ in $X$ is a [[Topology --- math-147/notes/Continuous functions#_definition _ continuity|continuous function]] $\alpha : [0, 1] \to X$ with $\alpha(0) = p$ and $\alpha(1) = q$.
 
 ##### _definition:_ path-connected
 
