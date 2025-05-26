@@ -152,9 +152,23 @@ We can show the second case writing $\mathbb{C} / \Lambda$ as an elliptic curve 
 
 Suppose $D \not \sim 0$, but still has degree $0$. If $f \in \mathcal{L}(D)$, then $\operatorname{div} f + D \ge 0$. But the degree of both terms is $0$, so we must have equality $\operatorname{div} f + D = 0$. This forces $D = - \operatorname{div} f \sim 0$ which contradicts our assumption.
 
-Note that the third and fourth cases are really the same — if $D \not \sim 0$, then $\dim \mathcal{L}(D) = \operatorname{deg} D$. We can prove this for $\deg D > 0$ by induction.
+Note that the third and fourth cases are really the same — if $D \not \sim 0$, then $\dim \mathcal{L}(D) = \operatorname{deg} D$. We can prove this for $\deg D > 0$ by induction by removing single points from the divisor and claiming that it decreases the dimension of the associated function space by at most $1$.
 
 In fact, this last strategy works in general to bound $\dim \mathcal{L}(D)$, and will ultimately be useful to prove [[Introduction to Riemann Surfaces --- math-199DR/notes/Serre duality|Serre duality]].
+
+##### _lemma:_ the codimension at most $1$ lemma
+
+For a divisor $D \in \operatorname{Div} X$, and $D_{p}$ the divisor supported exactly at $p \in X$, either $\mathcal{L}(D - D_{p}) = \mathcal{L}(D)$ or $\mathcal{L}(D - D_{p})$ has codimension $1$ in $\mathcal{L}(D)$.
+
+###### _proof:_
+
+Consider a local coordinate $z$ centred at $p$. Every function $f \in \mathcal{L}(D)$ has a Laurent series with at worst negative terms of index $-D(p)$. That is,
+$$
+f(z) = \sum_{n = - D(p)}^\infty c_{n} z^n
+$$
+with any $c_{n} = 0$ allowed. In particular, the $f \in \mathcal{L}(D - D_{p}) \subseteq \mathcal{L}(D)$ are exactly those with $c_{-D(p)} = 0$. In other words, $\mathcal{L}(D - D_{p})$ is the kernel of the linear map $\varphi : \mathcal{L}(D) \to \mathbb{C}$ by $f \mapsto c_{n}$.
+
+The dimension of the range of $\varphi$ is at most $1$ (since the codomain is $\mathbb{C}$). Since $\mathcal{L}(D) / \ker \varphi \cong \operatorname{img} \varphi$ we have $\mathcal{L}(D - D_{p}) = \ker \varphi$ of codimension at most $1$ in $\mathcal{L}(D)$.
 
 ##### _proposition:_ the Riemann-Roch space is finite dimensional
 
@@ -162,3 +176,9 @@ For any divisor $D = P - Z$ (where $P$ and $Z$ are the effective divisors boundi
 $$
 \dim \mathcal{L}(D) \le 1 + \deg P.
 $$
+
+###### _proof:_
+
+We can prove the result by induction on the degree of $P$. Notice that for $D = 0$, the Riemann–Roch space $\mathcal{L}(D) \cong \mathbb{C}$ has dimension $1$. Suppose $\deg P = 0$. Then we must have $P = 0$, and thus, $\dim \mathcal{L}(P) = 1 \le 1 + 0$. Since $D \le P$, we have $\mathcal{L}(D) \subseteq \mathcal{L}(P)$, and thus, $\dim \mathcal{L}(D) \le 1$ as well.
+
+Suppose that when $D$ has positive part of degree $n$ we have $\dim \mathcal{L}(D) \le 1 + n$. Now let $\deg P = n + 1$. For $p$ with $P(p) \geq 1$, we have $D - D_{p}$ with positive part of degree $n$. Thus, $\mathcal{L}(D - D_{p})$ has dimension at most $1 + n$ and is of codimension at most $1$ in $\mathcal{L}(D)$. Thus, $\dim \mathcal{L}(D) \le 1 + (n + 1) = 1 + \deg P$ as desired.
