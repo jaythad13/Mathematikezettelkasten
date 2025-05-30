@@ -19,7 +19,7 @@ After Wallis, Brouncker, and Fermat exchanged letters, in 1659 Pell wrote them u
 
 ### Rational solutions
 
-$x^{2} - d y^{2} = 1$ actually looks a lot like the [[Algebraic Geometry --- math-176/notes/Diophantine equations#_definition _ homogenous polynomial|reductions of homogenous polynomials]] we've seen. It's clear that we can get infinitely many rational solutions by the same rational line method we used to solve [[Algebraic Geometry --- math-176/notes/Pythagorean triples and conic sections#_theorem _ the general solution of a quadratic equation|conic sections]] in general. On the other hand, it's clear that not all $d$ give us infinitely many solutions —
+$x^{2} - d y^{2} = 1$ actually looks a lot like the [[Algebraic Geometry --- math-176/notes/Some more Diophantine equations#_definition _ homogenous polynomial|reductions of homogenous polynomials]] we've seen. It's clear that we can get infinitely many rational solutions by the same rational line method we used to solve [[Algebraic Geometry --- math-176/notes/Pythagorean triples and conic sections#_theorem _ the general solution of a quadratic equation|conic sections]] in general. On the other hand, it's clear that not all $d$ give us infinitely many solutions —
 
 ##### _proposition:_ negative $d$ has finitely many solutions
 

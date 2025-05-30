@@ -10,17 +10,17 @@ We've seen how to find [[Algebraic Geometry --- math-176/notes/Pythagorean tripl
 
 A Diophantine equation refers to seeking integers $a, b, c$ with $f(a, b, c) = 0$ for some polynomial $f$ with integer coefficients.
 
-Since we don't really think of the integer point, $(a, b, c)$, but rather the integer points upto scaling, $(a : b : c)$, we want to consider the case where the polynomial doesn't really care about the scaling. That is, we want to focus on homogenous polynomials —
+Since we don't really think of the integer point, $(a, b, c)$, but rather the integer points upto scaling, $(a : b : c)$, we want to consider the case where the polynomial doesn't really care about the scaling. That is, we want to focus on homogenous polynomials.
 
 ##### _definition:_ homogenous polynomial
 
 A homogenous polynomial of degree $e$ ($e \in \mathbb{N}$) is a polynomial $f$ such that $f(\lambda x_{1}, \dots, \lambda x_{n}) = \lambda^e f(x_{1}, \dots, x_{n})$ for any scalar $\lambda$.
 
-Note that these homogenous polynomials obviously preserve roots under scaling. This also formalises what we've been doing by considering rational solutions $(x, y)$ instead of integer solutions $(a, b, c)$ — just choose $\lambda = 1 / c$ for $c \neq 0$. That is, it is sufficient to consider $g(x, y) = f(x, y, 1)$.
+Note that these homogenous polynomials preserve roots under scaling. This also formalises what we've been doing by considering rational solutions $(x, y)$ instead of integer solutions $(a, b, c)$ — just choose $\lambda = 1 / c$ for $c \neq 0$. Then, it is sufficient to consider $g(x, y) = f(x, y, 1)$ along with the special case $f(x, y, 0)$.
 
 ### Heron triangles
 
-One good example for why we might care about Diophantine equations is that of Heron triangles. Heron's formula tells us that we can get the area of a triangle just by knowing the lengths of its sides. Specifically
+One good example of a Diophantine equation is that of Heron triangles. Heron's formula tells us that we can get the area of a triangle just by knowing the lengths of its sides.
 
 ##### _theorem:_ Heron's formula
 
@@ -54,15 +54,15 @@ First suppose $(a, b, c)$ is a Heron triangle with area $A$. Note that $A = \fra
 
 ### Congruent numbers
 
-Which rational numbers $A$ are the area of some right triangle with rational sides $a, b, c$? The congruent numbers!
+Another triangular example of a Diophantine equation answers the following question. Which rational numbers $\mathfrak A$ are the area of some right triangle with rational sides $a, b, c$?
 
 ##### _definition:_ congruent numbers
 
-A congruent number is a rational $A$ that is the area of some right triangle with rational sides $a, b, c$.
+A congruent number is a rational $\mathfrak{A}$ that is the area of some right triangle with rational sides $a, b, c$.
 
 ##### _proposition:_ 
 
-$A$ is congruent if and only if there's a rational point $(x, y)$ on
+$\mathfrak A$ is congruent if and only if there's a rational point $(x, y)$ on
 $$
 y^{2} = x^{3} - A^{2} x
 $$
@@ -70,4 +70,8 @@ satisfying $x > A$.
 
 ###### _proof sketch:_
 
-Check $a = \frac{x^{2} - A ^{2}}{y}$, $b = \frac{2nx}{y}$, $c = \frac{x^{2} + A^{2}}{y}$. Why? We didn't have time.
+Check 
+$$
+a = \frac{x^{2} - \mathfrak A ^{2}}{y} \quad b = \frac{2nx}{y} \quad c = \frac{x^{2} + \mathfrak A^{2}}{y}.
+$$
+Why? We didn't have time to discuss this.

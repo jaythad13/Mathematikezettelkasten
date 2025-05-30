@@ -7,7 +7,7 @@ tags:
 - alg-geo
 ---
 
-When exploring different types of Diophantine equations we saw two interesting propositions — that [[Algebraic Geometry --- math-176/notes/Diophantine equations#_proposition _ Heron triangles are rational points on a quartic|Heron triangles correspond to points on the quartic]] $y^{2} = (1 - x^{2})(1 - k^{2} x^{2})$, and that $A$ is [[Algebraic Geometry --- math-176/notes/Diophantine equations#Congruent numbers|congruent if and only if the curve]] $y^{2} = x^{3} - A^{2} x$ has a rational point.
+When exploring different types of Diophantine equations we saw two interesting propositions — that [[Algebraic Geometry --- math-176/notes/Some more Diophantine equations#_proposition _ Heron triangles are rational points on a quartic|Heron triangles correspond to points on the quartic]] $y^{2} = (1 - x^{2})(1 - k^{2} x^{2})$, and that $A$ is [[Algebraic Geometry --- math-176/notes/Some more Diophantine equations#Congruent numbers|congruent if and only if the curve]] $y^{2} = x^{3} - A^{2} x$ has a rational point.
 
 In fact, these curves have a mysterious relationship with pendulums and ellipses! We've all seen that Galileo showed the period of a simple pendulum of length $l$ to be approximately $2\pi \sqrt{ l / g }$ for small angles and that the perimeter of an ellipse is difficult to compute. Now, using some more of the mysterious substitutions we've seen in this course, we will see that Heron triangles and congruent triangles are related. In fact, they are our first example of birational equivalence!
 

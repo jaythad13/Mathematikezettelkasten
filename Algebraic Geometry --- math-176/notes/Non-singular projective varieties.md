@@ -16,7 +16,7 @@ $$
 V(F) = \{ p \in \mathbb{P}^n(F) \mid f_{1}(p) = \dots = f_m(p) = 0 \}
 $$
 is called a non-singular projective variety of dimension $d$ if the following axioms hold.
-1) Homogeneity: each $f_{k}$ is a [[Algebraic Geometry --- math-176/notes/Diophantine equations#_definition _ homogenous polynomial|homogenous]] polynomial in ,of degree $e_{k}$ in $F[x_{1}, \dots, x_{n}, x_{0}]$.
+1) Homogeneity: each $f_{k}$ is a [[Algebraic Geometry --- math-176/notes/Some more Diophantine equations#_definition _ homogenous polynomial|homogenous]] polynomial in ,of degree $e_{k}$ in $F[x_{1}, \dots, x_{n}, x_{0}]$.
 2) Non-singularity: the $m$-by-$(n + 1)$ Jacobian of the function $f = (f_{1}, \dots, f_{m})$ has rank $m$ for all points $p \in \mathbb{P}^n(\overline{F})$, in the zero set of $f_{1}, \dots, f_{m}$, where $\overline{F}$ is the algebraic closure of $F$. That is, the Jacobian has rank $m$ for all points $p \in V(\overline{F})$.
 3) Irreducibility: if $S(e)$ is the collection of homogenous polynomials of degree $e$ in $F[x_{1}, \dots, x_{n}, x_{0}]$. Then the ideal
 $$
