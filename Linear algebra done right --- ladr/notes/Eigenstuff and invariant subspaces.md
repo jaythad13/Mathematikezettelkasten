@@ -24,7 +24,7 @@ Given $T \in \mathcal{L}(V)$, a linear subspace $U \subseteq V$ is invariant und
 
 For any $T \in \mathcal{L}(V)$, the subspaces $0$, $V$, $\ker T$ and $\operatorname{img} T$ are invariant under $T$ for obvious reasons.
 
-Thus, when $T$ is not invertible, it admits a non-trivial invariant subspace decomposition. However, it isn't immediately clear that this is always true. We will see later that for a complex vector space (more generally, a vector space over a complete field) with $\dim V > 1$, or a real vector space with $\dim V > 2$, there is a always a non-trivial decomposition.
+Thus, when $T$ is not invertible, it admits a non-trivial invariant subspace decomposition. However, it isn't immediately clear that this is always true. [[Linear algebra done right --- ladr/notes/Existence of eigenvalues and invariant subspaces|We will see later]] that for a complex vector space (more generally, a vector space over a complete field) with $\dim V > 1$, or a real vector space with $\dim V > 2$, there is a always a non-trivial decomposition.
 
 The simplest case of invariant subspaces is obviously those of dimension $1$, which we will study most. For a $1$-dimensional invariant subspace of $T \in \mathcal{L}(V)$, there must be some non-zero $v \in V$ with $Tv \in \operatorname{span} v$, implying $Tv = \lambda v$ with $\lambda \in \mathbb{F}$.
 
@@ -93,5 +93,3 @@ The $a_{k} (\lambda_{k} - \lambda_{m})$ are all non-zero since $\lambda_{k} \neq
 ##### _corollary:_ bounding the number of distinct eigenvalues
 
 If $V$ is finite-dimensional, then each operator on $V$ has at most $\dim V$ eigenvalues.
-
-
