@@ -23,3 +23,6 @@
 [submodule "Analysis --- ou/attachments/documents"]
 	path = Analysis --- ou/attachments/documents
 	url = https://git@git.overleaf.com/67ef5a754c646d0524ef6e30
+[submodule "Holomorphicity in loop models --- vsrp-2025/attachments/documents"]
+	path = Holomorphicity in loop models --- vsrp-2025/attachments/documents
+	url = https://git@git.overleaf.com/68459041a9ae06e57b460053
