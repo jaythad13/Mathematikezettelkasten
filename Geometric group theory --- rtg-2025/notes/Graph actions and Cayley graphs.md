@@ -2,6 +2,7 @@
 tags:
 - alg
 - graph
+- ggt
 - rtg-2025
 ---
 
