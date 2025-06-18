@@ -17,7 +17,7 @@ Metric spaces satisfy all separation properties from $T_{1}$ to $T_{4}$ and some
 
 ##### _proposition:_ metric spaces are Hausdorff, regular, and normal
 
-Any metric space $X$ is $T_{1}$, [[Topology --- math-147/notes/Separation properties#_definition _ Hausdorff spaces, $T_{2}$ spaces|Hausdorff]], [[Topology --- math-147/notes/Separation properties#_definition _ regular spaces, $T_{3}$ spaces|regular]], and [[Linear algebra done right --- ladr/notes/Normal operators#_definition _ normal|normal]].
+Any metric space $X$ is $T_{1}$, [[Topology --- math-147/notes/Separation properties#_definition _ Hausdorff spaces, $T_{2}$ spaces|Hausdorff]], [[Topology --- math-147/notes/Separation properties#_definition _ regular spaces, $T_{3}$ spaces|regular]], and [[Topology --- math-147/notes/Separation properties#_definition _ normal spaces, $T_{4}$ spaces|normal]].
 
 ###### _proof:_
 
