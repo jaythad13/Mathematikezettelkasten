@@ -60,7 +60,7 @@ We showed that $\operatorname{range} T = (\operatorname{null} T)^\perp$ in the p
 
 ##### _proposition:_ normal $T$ and $T^*$ have the same eigenvectors
 
-$T - \lambda I$ is normal for every $\lambda \in \mathbb{F}$ and $Tv = \lambda v$ if and only if $T^* v = \overline{\lambda} v$.
+Suppose $T \in \mathcal{L}(V)$ is normal. Then $T - \lambda I$ is normal for every $\lambda \in \mathbb{F}$ and $Tv = \lambda v$ if and only if $T^* v = \overline{\lambda} v$.
 
 ###### _proof:_
 
