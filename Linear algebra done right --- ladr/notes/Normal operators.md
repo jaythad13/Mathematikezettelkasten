@@ -104,7 +104,7 @@ Of course, the result as stated below only makes sense when $V$ is a complex vec
 
 Suppose $V$ is a complex vector space and $T \in \mathcal{L}(V)$. Then $T$ is normal if and only if there exist commuting self-adjoint operators $A$ and $B$ such that $T = A + i B$.
 
-###### _proposition:_
+###### _proof:_
 
 Suppose $T$ is normal. Then we can calculate its real and complex parts like we would for a complex number —  $A = (T + T^*)/2$ and $B = (T - T^*)/2 i$.
 
