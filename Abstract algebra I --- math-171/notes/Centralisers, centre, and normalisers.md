@@ -55,6 +55,6 @@ For any abelian group we have $Z(G) = Z_{G}(A) = N_{G}(A)$ for all $A \subset G$
 
 ##### _example:_ the kernel of conjugation
 
-Let $N_{G}(A)$ act on $A \subset G$ by conjugation — $g \cdot a = g a g^{-1}$. What is the [[Abstract Algebra I --- math-171/notes/Group actions#_definition _ kernel|kernel]]? 
+Let $N_{G}(A)$ act on $A \subset G$ by conjugation — $g \cdot a = g a g^{-1}$. What is the [[Abstract Algebra I --- math-171/notes/Group actions#_definition _ kernel, effective action|kernel]]? 
 
 It's just the centraliser of $A$ under $G$ (recall that $Z_{G}(A) \subset N_{G}(A)$).

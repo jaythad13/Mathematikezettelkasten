@@ -52,17 +52,25 @@ We usually write the set of all fixed points of $g$ as $\operatorname{fix}_{X}(g
 
 It's also notable that a group action induces structure on the group itself. Again, in [[Abstract Algebra I --- math-171/attachments/homework/hw 7/hw 7.pdf#page=1|the homework]] we verify that the subsets below really are [[Abstract Algebra I --- math-171/notes/Subgroups#_definition _ subgroup, $ le$|subgroups]].
 
-##### _definition:_ stabiliser
+##### _definition:_ stabiliser, free
 
 The stabiliser of $x \in X$ under a group action $G \circlearrowright X$ is $\operatorname{stab}_{G} x$, the subgroup of all $g \in G$ that fix $X$ — all $g \in G$ with $g \cdot x = x$.
 
-Note that a stabiliser is sort of "dual" to the notion of the set of fixed points.
+A group action is free if every stabiliser is trivial.
 
-##### _definition:_ kernel
+Note that a stabiliser is sort of "dual" to the notion of the set of fixed points. In particular a group action is free if the set of fixed points of each group element is empty.
 
-The kernel of a group action $G \circlearrowright X$ is $\ker (G \circlearrowright X)$, the set of all $g \in G$ that fix all $x \in X$ — all $g \in G$ such that $g \cdot x = x$ for any $x \in X$.
+##### _definition:_ kernel, effective action
 
-There is an incredibly useful theorem relating the structure on $G$ (stabilisers) and the structure on $X$ (orbits). This allows us to understand the structure of finite groups through [[Abstract Algebra I --- math-171/notes/The class equation#_theorem _ the class equation|the class equation]] and [[Abstract Algebra I --- math-171/notes/Sylow's theorem|the Sylow theorems]], and it gives us a powerful tool to solve combinatorial problems in [[Abstract Algebra I --- math-171/notes/Burnside's lemma]].
+The kernel of a group action $G \circlearrowright X$ is $\ker (G \circlearrowright X)$, the set of all $g \in G$ that fix all $x \in X$ — all $g \in G$ such that $g \cdot x = x$ for any $x \in X$. The kernel is a [[Abstract Algebra I --- math-171/notes/Subgroups#_definition _ subgroup, $ le$|subgroup]].
+
+We say a group action is effective if it has trivial kernel. Note that if $G \circlearrowright X$ has kernel $H$, then the [[Abstract Algebra I --- math-171/notes/Normal subgroups#Quotient groups|quotient]] $G / H \circlearrowright X$ acts on $X$ effectively.
+
+While all free actions are effective, not all effective actions are free. For example, the natural action of $D_{2 n}$ on $\mathbb{R}^{2}$ is effective, but fixes the origin so is not free.
+
+### The orbit-stabiliser theorem
+
+There is an incredibly useful theorem relating the structure on $G$ (stabilisers) and the structure on $X$ (orbits). This allows us to understand the structure of finite groups through [[Abstract Algebra I --- math-171/notes/The class equation#_theorem _ the class equation|the class equation]] and [[Abstract Algebra I --- math-171/notes/Sylow's theorem|the Sylow theorems]], and it gives us a powerful tool to solve combinatorial problems in [[Abstract Algebra I --- math-171/notes/Burnside's lemma|Burnside's lemma]].
 
 ##### _theorem:_ the orbit-stabiliser theorem
 

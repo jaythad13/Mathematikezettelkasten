@@ -16,11 +16,11 @@ Recall the definition of a group action,
 
 its stabiliser
 
-![[Abstract Algebra I --- math-171/notes/Group actions#_definition _ stabiliser|Group actions]]
+![[Abstract Algebra I --- math-171/notes/Group actions#_definition _ stabiliser, free]]
 
 its kernel
 
-![[Abstract Algebra I --- math-171/notes/Group actions#_definition _ kernel|Group actions]]
+![[Abstract Algebra I --- math-171/notes/Group actions#_definition _ kernel, effective action|Group actions]]
 
 and its orbits.
 
@@ -34,7 +34,7 @@ Really we don't want to consider just any arbitrary group action on a Riemann su
 
 A holomorphic group action is a group action such that each function $x \mapsto g \cdot x$ is a [[Introduction to Riemann Surfaces --- math-199DR/notes/Holomorphisms of Riemann surfaces#_definition _ holomorphism|holomorphism]] $X \to X$.
 
-A group action is effective if it has trivial kernel.
+A group action is [[Abstract Algebra I --- math-171/notes/Group actions#_definition _ kernel, effective action|effective]] if it has trivial kernel.
 
 Finally, we don't really want to deal with infinite group actions, so we limit ourselves to the actions of finite groups — from here on, every $G \circlearrowright X$ is the holomorphic, effective action of a finite group on a Riemann surface. These have nice properties! 
 
