@@ -1,5 +1,6 @@
 \documentclass[12 pt, letterpaper]{hmcpset}
 \usepackage{hw-preamble}
+\usepackage{todonotes}
 
 \name{Jayden Thadani}
 \class{Linear algebra done right}
@@ -7,6 +8,8 @@
 \duedate{}
 
 \begin{document}
+
+Standing assumptions: $V$ and $W$ are finite-dimensional vector spaces.
 
 \begin{problem}[1]
 	Suppose $n$ is a positive integer. Define $T \in \mathcal{L}(\mathbb{F}^{n})$ by
@@ -413,8 +416,10 @@
 	\begin{align*}
 		(S + T)^{*} (S + T) - (S + T) (S + T)^{*} & = (S^{*} + T^{*}) (S + T) - (S + T)(S^{*} + T^{*}) \\
 							  & = S^{*} S - S S^{*} + T^{*} T - T T^{*} + T^{*} S + S^{*} T - S T^{*} - T S^{*} \\
-							  & = T^{*} S + S^{*} T - S T^{*} - T S^{*}.
-	\end{align*}
+							  & = T^{*} S + S^{*} T - S T^{*} - T S^{*} \\
+							  & = (T^{*} S - S T^{*}) + (S^{*} T - T S^{*}) \\
+							  & = (T^{*} S - S T^{*}) + (T^{*} S - S T^{*})^{*} \\
+	\end{align*} \todo[inline]{finish proof (find explicit example?)}
 \end{solution}
 
 \pagebreak
@@ -463,17 +468,45 @@
 	\[
 		a_{0} + a_{1} z + a_{2} z^{2} + \dots + a_{m - 1} z^{m - 1} + z^{m}
 	\]
-	is the minimal polynomial of $T$. Prove that the minimal polynomail of $T^{*}$ is
+	is the minimal polynomial of $T$. Prove that the minimal polynomial of $T^{*}$ is
 	\[
 		\overline{a_{0}} + \overline{a_{1}} z + \overline{a_{2}} z^{2} + \dots + \overline{a_{m - 1}} z^{m - 1} + z^{m}.
 	\]
 \end{problem}
+
+\begin{solution}
+	Write $p(z) = a_{0} + a_{1} z + \dots + a_{m} z^{m}$ and $q(z) = \overline{a_{0}} + \overline{a_{1}} z + \dots + \overline{a_{m}} z^{m}$. Then
+	\begin{align*}
+		q(T^{*}) & = \sum_{k = 0}^{n} \overline{a_{k}} \, (T^{*})^{k} \\
+			 & = \sum_{k = 0}^{n} (a_{k} T^{k})^{*} \\
+			 & = \left ( \sum_{k = 0}^{n} a_{k} T^{k} \right )^{*} \\
+			 & = p(T)^{*}.
+	\end{align*}
+
+	However, $p(T) = 0$ and the adjoint of $0$ is just $0$. Thus, $q(T^{*}) = 0$.
+
+	If there were some $q' \in \mathbb{F}[z]$ of smaller degree such that $q'(T) = 0$, then since  $(T^{*})^{*} = T$ and using the proof above we could obtain $p' \in \mathbb{F}[z]$ of smaller degree such that $p'(T) = 0$, contradicting the minimality of $p$. Thus, $q$ must be minimal.
+\end{solution}
 
 \pagebreak
 
 \begin{problem}[25]
 	Suppose $T \in \mathcal{L}(V)$. Prove that $T$ is diagonalisable if and only if $T^{*}$ is diagonalisable.
 \end{problem}
+
+\begin{solution}
+	Suppose $T$ is diagonalisable. Then $T$ has minimal polynomial $p$ with
+	\[
+		p(z) = (z - \lambda_{1}) \cdots (z - \lambda_{m})
+	\]
+	and $\lambda_{1}, \dots, \lambda_{m}$ all distinct. It follows easily from the result above that $T^{*}$ has minimal polynomial
+	\[
+		q(z) = (z - \overline{\lambda_{1}}) \cdots (z - \overline{\lambda_{m}}).
+	\]
+	Since the $\lambda_{j}$ are all distinct, the $\overline{\lambda_{j}}$ are all distinct. Thus, $T^{*}$ is also diagonalisable.
+
+	Since $T \mapsto T^{*}$ is an involution this proof also gives the opposite implication.
+\end{solution}
 
 \pagebreak
 
@@ -484,6 +517,25 @@
 		\item Prove that $T$ is normal if and only if the list $u, x$ is linearly dependent.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item Suppose $V$ is real. If $u$ or $x$ is $0$, then $T$ is the zero map which is already self-adjoint. Thus, assume without loss of generality that $u, x$ are non-zero with $\lambda u = x$. For any $v, w \in V$
+			\begin{align*}
+				\left < Tv, w \right > - \left < v, T w \right > & = \left < \left < v, u \right > x, w \right > - \left < v, \left < w, u \right > x \right > \\
+										 & = \left < x, \left < v, u \right > w - \left < w, u \right > v \right >.
+			\end{align*}
+	\end{enumerate}
+
+	We can express the vector in the second slot as a linear combination of the orthogonal components of $v$ and $w$ with respect to $u$. Specifically,
+	\begin{align*}
+		\left < v, u \right > w - \left < w, u \right > v & = \left < v, u \right > w - \left < v, u \right > \left < w, u \right > u - \left < w, u \right > v + \left < v, u \right > \left < w, u \right > u) \\
+								  & = \left < v, u \right > (w, - \left < w, u \right > u) + \left < w, u \right > (v - \left < v, u \right > u) \\
+								  & \in (\operatorname{span} u)^{\perp}.
+	\end{align*}
+
+	Thus, $\left < Tv, w \right > - \left < v, Tw \right > = 0$ if and only if $x$ is perpendicular to $(\operatorname{span} u)^{\perp}$. Since $V$ is finite-dimensional, this gives us $T$ self-adjoint if and only if $x$ and $u$ are linearly dependent. \todo{second part}
+\end{solution}
 
 \pagebreak
 
