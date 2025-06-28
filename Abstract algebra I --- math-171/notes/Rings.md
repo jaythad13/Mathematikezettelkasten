@@ -34,9 +34,9 @@ A ring $R$ is a set with two binary operations (typically $+$ and $\times$) such
 
 A ring $R$ is commutative if its multiplication $\times$ is [[Abstract Algebra I --- math-171/notes/Groups, and why you should care#_definition _ commutativity|commutative]].
 
-##### _definition:_ ring with identity
+##### _definition:_ ring with identity, unital rings
 
-A ring $R$ is said to have identity if it contains some $1 \in R$ such that $1 \times a = a \times 1 = a$ for all $a \in R$.
+A ring $R$ is said to have identity (or is called unital) if it contains some $1 \in R$ such that $1 \times a = a \times 1 = a$ for all $a \in R$.
 
 ##### _examples:_ rings
 

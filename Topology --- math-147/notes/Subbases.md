@@ -91,7 +91,7 @@ For example, the Euclidean topology on $\mathbb{R}$ is just the order topology o
 
 Each of the (canonical) basis elements of the order topology on $\mathbb{R}$ is open in the Euclidean topology, and the (open interval) basis of the Euclidean topology is open in the order topology. (Or use that we showed this for the ray subbasis of the order topology already).
 
-We can push this further to lexicographical orders on [[Algebraic geometry --- rising-sea/notes/Categories, functors, and natural transformations#_example _ product|products]] —
+We can push this further to lexicographical orders on [[Algebraic geometry --- rising-sea/notes/Universal properties and why categories?#_example _ product|products]] —
 
 ##### _definition:_ lexicographical order
 
