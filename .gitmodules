@@ -26,3 +26,6 @@
 [submodule "Holomorphicity in loop models --- vsrp-2025/attachments/documents"]
 	path = Holomorphicity in loop models --- vsrp-2025/attachments/documents
 	url = https://git@git.overleaf.com/68459041a9ae06e57b460053
+[submodule "Geometric group theory --- rtg-2025/attachments/documents"]
+	path = Geometric group theory --- rtg-2025/attachments/documents
+	url = https://git@git.overleaf.com/685e047abb1754f61a7722af
