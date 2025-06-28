@@ -58,7 +58,7 @@ The stabiliser of $x \in X$ under a group action $G \circlearrowright X$ is $\op
 
 A group action is free if every stabiliser is trivial.
 
-Note that a stabiliser is sort of "dual" to the notion of the set of fixed points. In particular a group action is free if the set of fixed points of each group element is empty.
+Note that a stabiliser is sort of "dual" to the notion of the set of fixed points. In particular a group action is free if the set of fixed points of each (non-trivial) group element is empty.
 
 ##### _definition:_ kernel, effective action
 
