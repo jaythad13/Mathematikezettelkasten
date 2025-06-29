@@ -109,12 +109,12 @@ F_{1}(s, t) = \begin{cases}
 			\alpha((1/2 + t/2)s) & s \in [0, 1/2 + t/2] \\
 			e_{x_{1}}((1/2 - t/2) s) & s \in [1/2 + t/2, 1]
 \end{cases}
-$$	
+$$
 is a homotopy witnessing $\alpha \sim \alpha \cdot e_{x_{1}}$. Notice that they are well-defined when the two intervals in the cases intersect since $e_{x_{0}} = \alpha(0)$ and $\alpha(1) = e_{x_{1}}$.
 
 Since the arguments are very similar for both, we fully detail the argument for $F_{0}$ pointing out where it may substantially differ for $F_{1}$. Clearly $F_{0}(0, t) = e_{x_{0}} \cdot \alpha$ and $F_{0}(1, t) = \alpha$, and similarly, $F_{1}$ is a function that goes from $\alpha \cdot e_{x_{1}}$ to $\alpha$. Since $F_{0}$ is always $e_{x_{0}}$ at points $(0, t)$ and $\alpha$ at points $(1, t)$
 
-Note that we can divide the domain into three closed sets — the triangle $T_{0} = \{ (s, t) \mid 0 \le s \le 1/2, t \le 1 - 2s \}$, the trapezoid that is the closure $Q_{0} = \overline{[0, 1] \times [0, 1] \setminus T_{0}}$, and their intersection along the line $ \{ (s, t) \mid 0 \le s \le 1/2, t = 1 - 2 s \}$. For $F_{1}$, we consider the triangle $T_{1} = \{ (s, t) \mid 1/2 \le s \le 1, t \le 2s - 1 \}$ and the corresponding $Q_{1}$ and intersection instead. By the gluing lemma, it suffices to show that $F_{0}$ is continuous on each of these closed set.
+Note that we can divide the domain into three closed sets — the triangle $T_{0} = \{ (s, t) \mid 0 \le s \le 1/2, t \le 1 - 2s \}$, the trapezoid that is the closure $Q_{0} = \overline{[0, 1] \times [0, 1] \setminus T_{0}}$, and their intersection along the line $\{ (s, t) \mid 0 \le s \le 1/2, t = 1 - 2 s \}$. For $F_{1}$, we consider the triangle $T_{1} = \{ (s, t) \mid 1/2 \le s \le 1, t \le 2s - 1 \}$ and the corresponding $Q_{1}$ and intersection instead. By the gluing lemma, it suffices to show that $F_{0}$ is continuous on each of these closed set.
 
 On the triangle $T_{0}$, $F_{0}(s, t) = e_{x_{0}}(s) = x_{0}$. That is, $F_{0}$ is constant, and thus, continuous. Thus, along the line $T_{0} \cap Q_{0}$, $F_{0}$ is also constant, and thus continuous. Thus, we only need show that $F_{0}$ is continuous on $Q_{0}$. 
 
@@ -124,6 +124,7 @@ In the top interval of $[0, 1] \times [0, 1]$ $(a, b)$ corresponds to $(a, b) \t
 $$
 I = \{ (s, t) \mid 0 \le t \le 1, s \in I_{t} \}.
 $$
+
 For each $(s, t) \in I$, there is some $(s - \delta, s + \delta) \subsetneq I_{t}$, and thus there is some sufficiently small $\varepsilon > 0$ such that $(s - \delta, s + \delta) \times (t - \varepsilon, t + \varepsilon) \subseteq I$. Specifically, by considering the slopes $m_{a}$ and $m_{b}$ of lines defining $a_{t}$ and $b_{t}$ as functions of $t$, we get
 $$
 \varepsilon < \min \{ (a_{t} - (s - \delta)) / m_{a}, (b_{t} - (s + \delta)) / m_{b} \}.
@@ -145,13 +146,13 @@ $$
 F(s, t) = \begin{cases}
 			\alpha_{\mid [0, t]}(s) & s \in [0, 1/2 - t/2] \\
 			e_{\alpha(t)} & s \in [1/2 - t/2, 1/2 + t/2] \\
-			\alpha_{\mid [1 - t, 1]} & s \in [1/2 + t/2, 1]
+			\alpha_{\mid [1 - t, 1]} & s \in [1/2 + t/2, 1].
 		\end{cases}
 $$
 
 We claim that this is a homotopy witnessing $\alpha \cdot \alpha^{-1} \sim e_{x_{0}}$. Clearly $F$ satisfies the boundary conditions to be the desired homotopy — $F(s, 1) = e_{x_{0}}$ and $F(s, 0) = \alpha \cdot \alpha^{-1}$, and $F(0, t) = F(1, t) = x_{0}$ for all $t$. Thus, we only need to prove that $F$ is continuous. There are 3 natural closed sets we can divide  $[0, 1] \times [0, 1]$ into, corresponding to the three cases defining $F$. These are the triangles
 $$
-		T_{1} = \{ (s, t) \mid 0 \le t \le 1, s \le 1/2 - t/2 \} \quad \text{and} \quad T_{2} = \{ (s, t) \mid 0 \le t \le 1, s \ge 1/2 + t/2 \}
+T_{1} = \{ (s, t) \mid 0 \le t \le 1, s \le 1/2 - t/2 \} \quad \text{and} \quad T_{2} = \{ (s, t) \mid 0 \le t \le 1, s \ge 1/2 + t/2 \}
 $$
 and the closure of their complement, the triangle $T_{3}$.
 
