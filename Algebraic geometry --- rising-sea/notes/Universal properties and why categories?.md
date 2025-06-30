@@ -134,14 +134,14 @@ Recall that we still need to show that the localisation of a module exists.
 
 If $M_{1}, \dots, M_{n}$ are $A$-modules, then there is an isomorphism (of $A$-modules and $S^{-1} A$-modules) $S^{-1} (M_{1} \times \dots \times M_{n}) \to S^{-1} M_{1} \times \dots \times S^{-1} M_{n}$.
 
-If $\{ M_{\alpha} \}_{\alpha \in \mathscr{I}}$ is a collection of modules, then there is an isomorphism (of $A$-modules and $S^{-1} A$-modules)
+If $\{ M_{i} \}_{i \in \mathscr{I}}$ is a collection of modules, then there is an isomorphism (of $A$-modules and $S^{-1} A$-modules)
 $$
-S^{-1} \bigoplus_{\alpha \in \mathscr{I}} M_{\alpha} \to \bigoplus_{\alpha \in \mathscr{I}} S^{-1}M_{\alpha}.
+S^{-1} \bigoplus_{i \in \mathscr{I}} M_{i} \to \bigoplus_{i \in \mathscr{I}} S^{-1}M_{i}.
 $$
 
 
 Note that localisation does not necessarily commute with infinite products — in particular the unique
 $$
-S^{-1} \prod_{\alpha \in \mathscr{I}} M_{\alpha} \to \prod_{\alpha \in \mathscr{I}} S^{-1} M_{\alpha}
+S^{-1} \prod_{i \in \mathscr{I}} M_{i} \to \prod_{i \in \mathscr{I}} S^{-1} M_{i}
 $$
 is not necessarily an isomorphism
