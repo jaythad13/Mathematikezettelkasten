@@ -113,7 +113,7 @@ $$
 X_{\left< g \right> } = \{ z \in \mathbb{H}^{2} \mid \operatorname{Re} z > 0 \}.
 $$
 
-r### Fundamental domains of the hyperbolic plane
+### Fundamental domains of the hyperbolic plane
 
 This result is more than just an example application of the ping-pong lemma. It tells us about the nature of the group action of $\mathrm{PSL}_{2}(\mathbb{Z})$. It tells us what happens when we try to quotient by it.
 
