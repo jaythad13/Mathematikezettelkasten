@@ -93,7 +93,7 @@ where the first generator has order $3$ and the second has order $2$. Here $f(z)
 
 Check that as matrices, the elements to their stated orders are $-I$, and thus, equal to the identity in $\mathrm{PSL}_{2}(\mathbb{Z})$.
 
-In fact, $\mathrm{PSL}_{2}(\mathbb{Z})$ is the [[Geometric group theory --- rtg-2025/notes/Free products and amalgamation|free product]] of two finite cyclic groups.
+In fact, $\mathrm{PSL}_{2}(\mathbb{Z})$ is the [[Geometric group theory --- rtg-2025/notes/Free products and amalgamation#_definition _ free product, coproduct of groups|free product]] of two finite cyclic groups.
 
 ##### _theorem:_ $\mathrm{PSL}_{2}(\mathbb{Z})$ is a free product of cyclic groups
 
