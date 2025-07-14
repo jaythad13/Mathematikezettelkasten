@@ -166,7 +166,7 @@ $$
 -1 & 0
 \end{pmatrix}.
 $$
-None of them are in $\mathrm{SL}_{2}(\mathbb{Z})[n]$. We are done!x
+None of them are in $\mathrm{SL}_{2}(\mathbb{Z})[n]$. We are done!
 
 ##### _lemma:_ the Farey graph action is transitive on edges
 
