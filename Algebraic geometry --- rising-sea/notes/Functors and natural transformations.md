@@ -8,9 +8,12 @@ Functors are the "morphisms of [[Algebraic geometry --- rising-sea/notes/Categor
 
 ##### _definition:_ (covariant, contravariant) functors
 
-For categories $\mathscr{A}$ and $\mathscr{B}$, a covariant functor $F : \mathscr{A} \to \mathscr{B}$ is a map $F : \operatorname{obj} \mathscr{A} \to \operatorname{obj} \mathscr{B}$, and for each pair $A_{1}, A_{2} \in \operatorname{obj} \mathscr{A}$, a function $\operatorname{Mor}_{\mathscr{A}}(A_{1}, A_{2}) \to \operatorname{Mor}_{\mathscr{B}}(F(A_{1}), F(A_{2}))$. By abuse of notation, we write the function of morphisms also as $f \mapsto F(f)$.
+For categories $\mathscr{A}$ and $\mathscr{B}$, a covariant functor $F : \mathscr{A} \to \mathscr{B}$ is a map $F : \operatorname{obj} \mathscr{A} \to \operatorname{obj} \mathscr{B}$, and for each pair $A_{1}, A_{2} \in \operatorname{obj} \mathscr{A}$, a function $\operatorname{Mor}_{\mathscr{A}}(A_{1}, A_{2}) \to \operatorname{Mor}_{\mathscr{B}}(F(A_{1}), F(A_{2}))$ such that the following hold. (By abuse of notation, we write the function of morphisms also as $f \mapsto F(f)$.)
 
-A contravariant functor $F : \mathscr{A} \to \mathscr{B}$ is equivalently, a covariant functor $F : \mathscr{A}^\text{opp} \to \mathscr{B}$ (from the [[Algebraic geometry --- rising-sea/notes/Categories#_definition _ opposite (or dual) categories|opposite category]]) or the pair of a map on objects, and a function $\operatorname{Mor}_{\mathscr{A}}(A_{1}, A_{2}) \to \operatorname{Mor}_{\mathscr{B}}(F(A_{2}), F(A_{1}))$.
+- $F(\operatorname{id}_{A}) = \operatorname{id}_{F(A)}$ for each $A \in \mathscr{A}$
+- $F(g \circ f) = F(g) \circ F(f)$ for $f : A_{1} \to A_{2}$ and $g : A_{2} \to A_{3}$.
+
+A contravariant functor $F : \mathscr{A} \to \mathscr{B}$ is a covariant functor $F : \mathscr{A}^\text{opp} \to \mathscr{B}$ (from the [[Algebraic geometry --- rising-sea/notes/Categories#_definition _ opposite (or dual) categories|opposite category]]) or equivalently the pair of a map on objects, and a function $\operatorname{Mor}_{\mathscr{A}}(A_{1}, A_{2}) \to \operatorname{Mor}_{\mathscr{B}}(F(A_{2}), F(A_{1}))$ preserving identities and having $F(g \circ f) = F(f) \circ F(g)$.
 
 Functors compose naturally —
 

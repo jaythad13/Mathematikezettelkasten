@@ -81,7 +81,3 @@ Now suppose $A, A' \in \mathscr{C}$ are both final. Then $A$ and $A'$ have uniqu
 3) The initial object in $\mathsf{Top}$ is the empty set and the final object is the one point space $\{ * \}$, just like in $\mathsf{Set}$.
 
 [[Algebraic geometry --- rising-sea/notes/Localisation, categorically|Localisation of rings and modules]] can both be defined by universal property as can [[Tensor products, categorically|tensor products]]. [[Fibred products]] will be an important construction for geometry, defined by universal property as well. 
-
-
-
-

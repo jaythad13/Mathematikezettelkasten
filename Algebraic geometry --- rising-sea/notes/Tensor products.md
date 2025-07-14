@@ -24,7 +24,7 @@ $F_{A}(M \times N)$ is the free $A$-module over the (set-theoretic) product $M \
 
 We write $m \otimes n$ for the equivalence class of $(m, n)$.
 
-Note that when $A$ is clear, we omit it in the subscript, writing $M \otimes N$.
+Note that when $A$ is clear, we omit it in the subscript, writing $M \otimes N$. Also note that clearly $M \otimes N \cong N \otimes M$. Finally, note that since $M \otimes_{A} N$ is a quotient of the free $A$-module over $M \times N$, to define an $A$-module homomorphism from the tensor product, it suffices to define the value it takes on each $m \otimes n$ and verify that each generator of $U$ is sent to zero.
 
 ##### _example:_ tensor product of quotient rings
 
@@ -47,17 +47,36 @@ While it is sort of clear why we may want to consider the tensor product (a prio
 
 ##### _proposition:_ the universal property of tensor products
 
-Given $A$-modules $M$ and $N$, the tensor product is the $A$-module $M \otimes_{A} N$ with a bilinear map $t : M \times N \to M \otimes_{A} N$ such that every bilinear map from the ($\mathsf{Mod}_{A}$) [[Algebraic geometry --- rising-sea/notes/Universal properties and why categories?#_construction _ products|product]] $M \times N \to P$ factors uniquely through $M \otimes_{A} N$.
+Given $A$-modules $M$ and $N$, the tensor product is the unique $A$-module $M \otimes_{A} N$ with a bilinear map $t : M \times N \to M \otimes_{A} N$ such that every bilinear map from the ($\mathsf{Mod}_{A}$) [[Algebraic geometry --- rising-sea/notes/Universal properties and why categories?#_construction _ products|product]] $M \times N \to V$ factors uniquely through a linear map $M \otimes_{A} N \to V$.
 
-That is, it is initial among bilinear maps from $M \times N$.
+That is, it is [[Algebraic geometry --- rising-sea/notes/Universal properties and why categories?#_example _ initial and final objects in specific categories|initial]] among (modules with) bilinear maps from $M \times N$.
+
+###### _proof:_
+
+First we show that this universal property defines the tensor product up to unique isomorphism. Suppose $T'$ with bilinear map $t' : M \times N \to T'$ also satisfies the universal property of the tensor product. Thus, the bilinear map $t : M \times N \to M \otimes N$ factors uniquely as $M \times N \to T' \to M \otimes N$ and $t' : M \times N \to T$ factors as $M \times N \to M \otimes N \to T'$. 
+
+If we write $\tau'$ for  $T' \to M \otimes N$ and $\tau$ for $M \otimes N \to T'$, then we get $\tau' \circ \tau : M \otimes N \to M \otimes N$ and we claim $t : M \times N \to M \otimes N$ factors through it. This follows since the diagram
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		M \times N \ar[r, "t"] \ar[d, "t"] \ar[rd, "t'"] & M \otimes N \ar[d, "\tau"] \\
+		M \otimes N & T' \ar[l, "\tau'"]
+	\end{tikzcd}
+\end{document}
+```
+commutes. Specifically, we already know $t'$ factors as $\tau \circ t$ and $t$ factors as $\tau' \circ t'$ so $t$ factors as $\tau' \circ \tau \circ t$. However, $t$ already factors through $\operatorname{id} : M \otimes N \to M \otimes N$, so $\tau' \circ \tau = \operatorname{id}_{M \otimes N}$. Similarly, $\tau \circ \tau' = \operatorname{id}_{T'}$ and thus, they are (unique) inverse isomorphisms. 
+
+Now we show that our definition of $M \otimes N$ actually satisfies the universal property. Note that the natural map $t : M \times N \to M \otimes N$ by $(m, n) \mapsto m \otimes n$ is bilinear. Suppose $t' : M \times N \to T'$ is bilinear. Then we claim the map $\tau : M \otimes N \to V$ by $m \otimes n \mapsto t'(m, n)$ is well-defined and linear. Suppose $m_{1} \otimes n_{1} = m_{2} \otimes n_{2}$. Then
 
 ### Tensoring is nice
 
 Tensoring is quite a nice operation, commuting with lots of natural constructions.
 
-For one it is functorial and preserves (right) exact sequences. We will later define the notion of a right-exact functor in appropriate generality
+For one it is functorial and preserves (right) exact sequences. We will later define the notion of a right-exact functor in appropriate generality, but here it can be understood in the classical sense of exactness.
 
-##### _proposition:_ tensoring is right-exact
+##### _proposition:_ tensoring is functorial and right-exact
 
 The map $\mathsf{Mod}_{A} \to \mathsf{Mod}_{A}$ by $M \mapsto M \otimes N$ naturally extends to a covariant [[Algebraic geometry --- rising-sea/notes/Functors and natural transformations#_definition _ (covariant, contravariant) functors|functor]]. Further, this functor is right-exact — if
 $$
@@ -68,3 +87,37 @@ $$
 M_{1} \otimes N \to M_{2} \otimes N \to M_{3} \otimes N \to 0
 $$
 is exact.
+
+###### _proof:_
+
+We claim that $F : \mathsf{Mod}_{A} \to \mathsf{Mod}_{A}$ defined on objects by $M \mapsto M \otimes N$ and on homomorphisms $\varphi : M_{1} \to M_{2}$ by $\varphi \mapsto \varphi_{*}$ where $\varphi_{*}(m \otimes n) = \varphi(m) \otimes n$ is a functor. To do this requires showing that $\varphi_{*}$ is a well-defined $A$-module homomorphism $M_{1} \otimes N \to M_{2} \otimes N$, $\operatorname{id}_{M, *} = \operatorname{id}_{M \otimes N}$ and $(\psi \circ \varphi)_{*} = \psi_{*} \circ \varphi_{*}$ (for some second map $\psi : M_{2} \to M_{3}$).
+
+> [!warning] incomplete
+
+We've seen already that tensoring with a ring on the left can look like allowing scalars in the "left" module. We can formalise this intuition.
+
+##### _proposition:_ tensoring with a ring is a base ring change functor
+
+If $M$ is an $A$-module and $B$ is a ring, given an $A$-module structure by a morphism $A \to B$, then $B \otimes_{A} M$ is also a $B$-module. Further, the map $M \mapsto B \otimes_{A} M$ extends to a functor $\mathsf{Mod}_{A} \to \mathsf{Mod}_{B}$.
+
+##### _proposition:_ tensor product of rings is a ring
+
+If $B$ and $C$ are rings given $A$-module structures by morphisms $A \to B$ and $A \to C$, then $B \otimes_{A} C$ has a natural ring structure.
+
+Tensoring plays nicely with (arbitrary) direct sums and thus, finite products. Specifically, by universal property, tensoring and direct sums commute.
+
+##### _proposition:_ tensoring commutes with direct sums
+
+If $M$ and $\{ N_{i} \}_{i \in \mathscr{I}}$ are all $A$-modules, then there is a natural isomorphism giving
+$$
+M \otimes \left( \bigoplus_{i \in \mathscr{I}} N_{i} \right) \cong \bigoplus_{i \in \mathscr{I}} (M \otimes N_{i}).
+$$
+
+Tensoring also plays nicely with [[Algebraic geometry --- rising-sea/notes/Localisation, categorically#Localisation of modules|localisation]] —
+
+##### _proposition:_ localisation of a module is the tensor product with localisation
+
+If $S$ is a multiplicative subset of $A$ and $M$ is an $A$-module, there are natural isomorphisms as $S^{-1} A$-modules and as $A$-modules giving
+$$
+S^{-1} A \otimes_{A} M \cong S^{-1} M.
+$$
