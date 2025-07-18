@@ -78,4 +78,4 @@ Since $g \cdot \mathcal{O}_{G}(x) = \mathcal{O}_{G}(x)$, the centroid of $g \cdo
 
 This theorem is typical of the results of geometric group theory — we prove a purely algebraic fact about a group using facts about its action on geometric spaces. Another similar fact we will prove is 
 
-![[Geometric group theory --- rtg-2025/notes/Free actions on trees#_theorem _ free actions on trees come from free groups|Free actions on trees]]
+![[Geometric group theory --- rtg-2025/notes/Actions on trees#_theorem _ free actions on trees come from free groups|Free actions on trees]]

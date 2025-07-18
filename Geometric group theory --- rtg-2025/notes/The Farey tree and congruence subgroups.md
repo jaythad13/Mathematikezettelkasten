@@ -7,7 +7,7 @@ tags:
 - rtg-2025
 ---
 
-An important example of group [[Geometric group theory --- rtg-2025/notes/Free actions on trees|actions on trees]] is that of $\mathrm{SL}_{2}(\mathbb{Z})$ on the Farey tree. This gives a non-trivial example where the theorem that [[Geometric group theory --- rtg-2025/notes/Free actions on trees#_theorem _ free actions on trees come from free groups|only free groups act freely on trees]] is useful. $\mathrm{SL}_{2}(\mathbb{Z})$ is clearly not a free group — the $\pi / 2$ rotation matrix has order $4$. However, we will be able to prove that the groups obtained by reducing modulo $m$ are free by their induced action on a special tree.
+An important example of group [[Geometric group theory --- rtg-2025/notes/Actions on trees|actions on trees]] is that of $\mathrm{SL}_{2}(\mathbb{Z})$ on the Farey tree. This gives a non-trivial example where the theorem that [[Geometric group theory --- rtg-2025/notes/Actions on trees#_theorem _ free actions on trees come from free groups|only free groups act freely on trees]] is useful. $\mathrm{SL}_{2}(\mathbb{Z})$ is clearly not a free group — the $\pi / 2$ rotation matrix has order $4$. However, we will be able to prove that the groups obtained by reducing modulo $m$ are free by their induced action on a special tree.
 
 ### Congruence subgroups of $\mathrm{SL}_{2}(\mathbb{Z})$
 
@@ -129,13 +129,13 @@ For $n \geq 3$, the principal congruence subgroup $\mathrm{SL}_{2}(\mathbb{Z})[n
 
 ###### _proof:_
 
-To prove $\mathrm{SL}_{2}(\mathbb{Z})[n]$ is free, [[Geometric group theory --- rtg-2025/notes/Free actions on trees#_theorem _ free actions on trees come from free groups|it suffices to prove that it acts freely]] on the Farey tree. We will show that in fact the [[Abstract Algebra I --- math-171/notes/Group actions#_definition _ stabiliser, free|stabiliser]] of any vertex or edge of $T_{\text{F}}$ is only in $\mathrm{SL}_{2}(\mathbb{Z})[n]$ if it is the identity.
+To prove $\mathrm{SL}_{2}(\mathbb{Z})[n]$ is free, [[Geometric group theory --- rtg-2025/notes/Actions on trees#_theorem _ free actions on trees come from free groups|it suffices to prove that it acts freely]] on the Farey tree. We will show that in fact the [[Abstract Algebra I --- math-171/notes/Group actions#_definition _ stabiliser, free|stabiliser]] of any vertex or edge of $T_{\text{F}}$ is only in $\mathrm{SL}_{2}(\mathbb{Z})[n]$ if it is the identity.
 
 Since $\mathrm{SL}_{2}(\mathbb{Z}) \circlearrowright T_\text{F}$ comes from an action on $\Gamma _\text{F}$ which preserves edges and faces, the action on the Farey tree can't swap vertices corresponding to Farey graph edges with those corresponding to Farey graph faces. Since all edges of the tree are between a vertex corresponding to an edge and another corresponding to a face, this means that the edge between them is fixed if and only if both endpoints are fixed. It suffices then to show that the stabilisers of each vertex (under the $\mathrm{SL}_{2}(\mathbb{Z})$) contain no congruence elements.
 
 By lemmata below, $\mathrm{SL}_{2}(\mathbb{Z}) \circlearrowright \Gamma _\text{F}$ is transitive on edges and on faces (separately). Thus, all vertices corresponding to edges have isomorphic stabilisers, and similarly for vertices corresponding to faces. Since $\mathrm{SL}_{2}(\mathbb{Z})[n]$ is [[Abstract Algebra I --- math-171/notes/Normal subgroups#_definition _ normal subgroups|normal]] (it is a kernel), its intersections with each conjugate stabiliser are also isomorphic. Thus, it suffices just to consider the cases of the vertex $e_{0}$ corresponding to the edge between $(1 : 0)$ and $(0 : 1)$ and the vertex $f_{0}$ corresponding to the face bounded by $(1 : 0)$, $(0 : 1)$, and $(1 : 1)$.
 
-If $A \in \mathrm{SL}_{2}(\mathbb{Z})$ preserves $e_{0}$, then it must preserve the set $\{ (1, 0), (-1, 0), (0, 1), (0, -1) \} \subseteq \mathbb{Z}^{2}$ under matrix multiplication. Thus, the columns of $A$ must be some choice of two vectors in the set. Since $\det A = 1$, not all $\binom{4}{2}$ are valid. In particular, we cannot have a vector and its negative. We are left with $\binom{2}{2} 2^{2} = 4$ matrices
+If $A \in \mathrm{SL}_{2}(\mathbb{Z})$ preserves $e_{0}$, then it must preserve the set $\{ (1, 0), (-1, 0), (0, 1), (0, -1) \} \subseteq \mathbb{Z}^{2}$ under matrix multiplication. Thus, the columns of $A$ must be some ordered choice of two vectors in the set. Since $\det A = 1$, not all $\binom{4}{2} 2!$ are valid. In particular, we cannot have a vector and its negative, and are forced to choose opposing or agreeing signs of the vectors so that they have positive determinant. Finally, we can choose to negate a matrix or not. We are left with $2 \binom{2}{2} 2! = 4$ matrices
 $$
 \begin{pmatrix}
 1 & 0 \\
@@ -151,9 +151,9 @@ $$
 -1 & 0
 \end{pmatrix}
 $$
-which form the cyclic group of $\pi / 2$ rotations. For $n \geq 3$ none of the non-identity matrices are in $\mathrm{SL}_{2}(\mathbb{Z})[n]$. Note that this is sharp since for $n = 2$, we have $1 \equiv -1$ in $\mathbb{Z} / n \mathbb{Z}$ and thus, the negative of the identity is in $\mathrm{SL}_{2}(\mathbb{Z})[n]$.
+which form the cyclic group of $\pi / 2$ rotations isomorphic to $\mathbb{Z} / 4 \mathbb{Z}$. For $n \geq 3$ none of the non-identity matrices are in $\mathrm{SL}_{2}(\mathbb{Z})[n]$. Note that this is sharp since for $n = 2$, we have $1 \equiv -1$ in $\mathbb{Z} / n \mathbb{Z}$ and thus, the negative of the identity is in $\mathrm{SL}_{2}(\mathbb{Z})[n]$.
 
-If $A \in \mathrm{SL}_{2}(\mathbb{Z})$ preserves $e_{0}$, then it must preserve the set $\{ (1, 0), (-1, 0), (0, 1), (0, -1), (1, 1), (-1, -1) \}$. By similar arguments to the previous case, we get $\binom{3}{2} 2^2 = 12$ matrices — the three below and those obtained by negating their columns.
+If $A \in \mathrm{SL}_{2}(\mathbb{Z})$ preserves $f_{0}$, then it must preserve the set $\{ (1, 0), (-1, 0), (0, 1), (0, -1), (1, 1), (-1, -1) \}$. By similar arguments to the previous case, we get $\binom{3}{2} 2! = 6$ matrices
 $$
 \begin{pmatrix}
 1 & 0 \\
@@ -164,9 +164,18 @@ $$
 \end{pmatrix}, \begin{pmatrix}
 -1 & 1 \\
 -1 & 0
-\end{pmatrix}.
+\end{pmatrix}, \begin{pmatrix}
+-1 & 0 \\
+0 & -1
+\end{pmatrix}, \begin{pmatrix}
+0 & -1 \\
+1 & -1
+\end{pmatrix}, \begin{pmatrix}
+1 & -1 \\
+1 & 0
+\end{pmatrix}
 $$
-None of them are in $\mathrm{SL}_{2}(\mathbb{Z})[n]$. We are done!
+which form a group of shears isomorphic $\mathbb{Z} / 6 \mathbb{Z}$. None of them are in $\mathrm{SL}_{2}(\mathbb{Z})[n]$. We are done!
 
 ##### _lemma:_ the Farey graph action is transitive on edges
 
@@ -192,3 +201,19 @@ $$
 (u_{1} + v_{1} : u_{0} + v_{0}), \quad  (u_{1} - v_{1} : u_{0} - v_{0}).
 $$
 The two given choices for $A$ that send $e_{0}$ to the edge between $(u_{1} : u_{0})$ and $(v_{1} : v_{0})$ send $(1 : 1)$ to the two forms above (respectively).
+
+### Presentations for $\mathrm{PSL}_{2}(\mathbb{Z})$ and $\mathrm{SL}_{2}(\mathbb{Z})$
+
+The actions of $\mathrm{SL}_{2}(\mathbb{Z})$ on the Farey graph and tree actually descend to actions of the quotient $\mathrm{PSL}_{2}(\mathbb{Z})$ for obvious reasons. Since the units in $\mathbb{Z}$ are $\{ \pm 1 \}$, we have $\mathrm{PSL}_{2}(\mathbb{Z}) = \mathrm{SL}_{2}(\mathbb{Z}) / \{ \pm I \}$. However, $\{ \pm I \}$ is in the [[Abstract Algebra I --- math-171/notes/Group actions#_definition _ kernel, effective action|kernel]] of the action $\mathrm{SL}_{2}(\mathbb{Z}) \circlearrowright \Gamma_\text{F}$ because we identify vertices $\pm (v_{1} : v_{0})$. This action is the [[Abstract Algebra I --- math-171/notes/Group actions#_definition _ kernel, effective action|effective action]], and for that reason it is easier to give a presentation for $\mathrm{PSL}_{2}(\mathbb{Z})$ than it is for $\mathrm{SL}_{2}(\mathbb{Z})$.
+
+##### _theorem:_ the free product presentation of $\mathrm{PSL}_{2}(\mathbb{Z})$
+
+$$
+\mathrm{PSL}_{2}(\mathbb{Z}) \cong \mathbb{Z} / 2 \mathbb{Z}  * \mathbb{Z} / 3 \mathbb{Z} \cong \left< a, b \mid a^2 = 1, b^3 = 1 \right>
+$$
+
+##### _theorem:_ the amalgamation presentation of $\mathrm{SL}_{2}(\mathbb{Z})$
+
+$$
+\mathrm{SL}_{2}(\mathbb{Z}) \cong \mathbb{Z}  / 4 \mathbb{Z} *_{\mathbb{Z} / 2 \mathbb{Z}} \mathbb{Z} / 6 \mathbb{Z} = \left< a, b \mid a^4 = 1, b^6 = 1, a^{2} b^{-3} = 1 \right> 
+$$
