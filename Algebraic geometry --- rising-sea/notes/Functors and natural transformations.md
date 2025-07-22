@@ -37,7 +37,7 @@ Similarly, each $n$th homology is a covariant functor $\mathsf{Top} \to \mathsf{
 
 ##### _example:_ the functor of points and its opposite
 
-On any category $\mathscr{C}$, the contravariant functor of $A$-points is $h_{A}$ by $B \mapsto \operatorname{Mor}(B, A)$ on objects. On morphisms, for each $f : B \to C$ we have $\operatorname{Mor}(C, A) \to \operatorname{Mor}(B, A)$ by $g \mapsto f \circ g$ (for each $g : C \to A$). It's called the functor of points because, the $Y$-points of a scheme $X$ are just morphisms $X \to Y$.
+On any category $\mathscr{C}$, the contravariant functor of $A$-points is $h_{A}$ by $B \mapsto \operatorname{Mor}(B, A)$ on objects. On morphisms, for each $f : B \to C$ we have $\operatorname{Mor}(C, A) \to \operatorname{Mor}(B, A)$ by $g \mapsto f \circ g$ (for each $g : C \to A$). It's called the functor of points because, the $B$-points of a scheme $A$ are just morphisms $B \to A$.
 
 For example, the functor $\mathsf{Vec}_{k} \to \mathsf{Vec}_{k}$ by taking duals and dual maps in $\mathsf{Vec}_{k}$ is the functor of $k$-points and the pullback of continuous (real) functions on topological spaces is the functor of $\mathbb{R}$-points $\mathsf{Top} \to \mathsf{Ring}$. In these examples, it's also reasonable to call these functors "points" since the continuous real maps on $X$ look like sections of $\mathbb{R}$ varying over $X$.
 
