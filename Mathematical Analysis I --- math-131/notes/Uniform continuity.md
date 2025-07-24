@@ -4,6 +4,7 @@ tags:
 - math-131/19
 - anal
 - top
+- metric
 ---
 
 For this note, let $(X, d_{X})$, $(Y, d_{Y})$, and $(Z, d_{Z})$ be metric spaces.

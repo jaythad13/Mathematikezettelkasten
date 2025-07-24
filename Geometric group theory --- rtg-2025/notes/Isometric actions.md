@@ -3,6 +3,7 @@ tags:
 - rtg-2025
 - ggt
 - top
+- metric
 ---
 
 Let $(X, d_{X}), (Y, d_{Y})$ be metric spaces.

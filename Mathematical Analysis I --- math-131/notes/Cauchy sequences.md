@@ -2,6 +2,7 @@
 tags:
 - math-131/11
 - anal
+- metric
 ---
 
 Till now, we've only been able to show that a [[Mathematical Analysis I --- math-131/notes/Sequences and convergence#_definition _ convergence|sequence converges]] if we have a guess for what it converges to already. Often this guess is obvious, but it would be nice to have a condition on the sequence directly that tells us whether it converges. Cauchy thought so too.

@@ -3,6 +3,7 @@ tags:
 - math-131/10
 - math-131/11
 - math-131/12
+- metric
 - anal
 ---
 

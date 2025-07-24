@@ -3,6 +3,7 @@ tags:
 - math-131/26
 - math-131/27
 - anal
+- metric
 ---
 
 We are working towards a first fundamental result in functional analysis — that the space of real functions on a compact set is a complete metric space.

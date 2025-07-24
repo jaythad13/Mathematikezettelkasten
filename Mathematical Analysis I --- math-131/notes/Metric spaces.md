@@ -3,10 +3,12 @@ tags:
 - math-131/5
 - math-131/6
 - anal
+- metric
 - top
 ---
 
 It's fairly normal for us to think of a notion of distance on a space:
+
 ##### _example:_ notions of distance
 
 1) The real numbers $\bb{R}$ with the distance $d$ between $x, y \in \bb{R}$ given by $d(x, y) = \vert x - y \vert.$
