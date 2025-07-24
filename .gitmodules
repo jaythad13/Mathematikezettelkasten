@@ -5,9 +5,6 @@
 [submodule "Parking functions --- parking-functions/code"]
 	path = Parking functions --- parking-functions/code
 	url = https://github.com/jaythad13/parking-functions-code.git
-[submodule "Complex Analysis --- math-135/attachments/documents"]
-	path = Complex Analysis --- math-135/attachments/documents
-	url = https://git.overleaf.com/66ce1caa60dd4a3f687085f6
 [submodule "Abstract Algebra I --- math-171/attachments/homework/solution sketches"]
 	path = Abstract Algebra I --- math-171/attachments/homework/solution sketches
 	url = https://git@git.overleaf.com/66e4af14548d2e845a1fb49e
@@ -19,9 +16,6 @@
 	url = https://git@git.overleaf.com/6784f60c09043868bf87e785
 [submodule "Analysis --- rudin/attachments/documents"]
 	path = Analysis --- rudin/attachments/documents
-	url = https://git@git.overleaf.com/67ef5a754c646d0524ef6e30
-[submodule "Analysis --- ou/attachments/documents"]
-	path = Analysis --- ou/attachments/documents
 	url = https://git@git.overleaf.com/67ef5a754c646d0524ef6e30
 [submodule "Holomorphicity in loop models --- vsrp-2025/attachments/documents"]
 	path = Holomorphicity in loop models --- vsrp-2025/attachments/documents
