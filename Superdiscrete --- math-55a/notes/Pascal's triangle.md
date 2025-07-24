@@ -5,7 +5,7 @@ tags:
 - comb
 ---
 
-We can use the [[Superdiscrete --- math-55A/notes/Basic combinatorics#_definition _ $ binom{n}{k}$|binomial coefficients]] in interesting ways. Specifically, arranging the binomial coefficients in a triangle shows us some interesting properties.
+We can use the [[Superdiscrete --- math-55a/notes/Sum and product rules#_definition _ binomial coefficients|binomial coefficients]] in interesting ways. Specifically, arranging the binomial coefficients in a triangle shows us some interesting properties.
 
 ##### _definition:_ Pascal's triangle
 
