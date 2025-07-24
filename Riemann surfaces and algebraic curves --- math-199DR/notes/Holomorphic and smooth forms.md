@@ -27,7 +27,7 @@ A $k$-form on a smooth $2$-manifold $X$ is defined for non-negative integers $k 
 - a $1$-form is a function $\omega : X \to \bigcup_{p \in X} \mathrm{T}_{p} X^\vee$ with $\omega(p) \in \mathrm{T}_{p}X^\vee$ 
 - a $2$-form is a function $\omega : X \to \bigcup_{p \in X} \bigwedge^2 \mathrm{T}_{p} X$ with $\omega(p) \in \bigwedge^2 \mathrm{T}_{p} X$.
 
-Essentially, a $k$-form $\omega$ is a function $\omega : X \to \bigcup_{p \in X} \bigwedge^k \mathrm{T}_{p}X$ with $\omega(p) \in \bigwedge^k \mathrm{T}_{p}X$ where $\bigwedge^k V$ is the $k$-[[Differential Geometry --- math-142/notes/Differential forms#Exterior algebra and differential $2$-forms|wedge]].
+Essentially, a $k$-form $\omega$ is a function $\omega : X \to \bigcup_{p \in X} \bigwedge^k \mathrm{T}_{p}X$ with $\omega(p) \in \bigwedge^k \mathrm{T}_{p}X$ where $\bigwedge^k V$ is the $k$-[[Curves and surfaces --- math-142/notes/Differential forms#Exterior algebra and differential $2$-forms|wedge]].
 
 We will define what it means for them to be smooth, holomorphic or anything else, case by case.
 

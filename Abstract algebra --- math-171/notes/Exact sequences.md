@@ -17,7 +17,7 @@ An sequence is exact if the kernel of each arrow (that has a preceding arrow) is
 
 ##### _examples:_ exact sequences
 
-1) The [[The exterior derivative|exterior derivative]] gives rise to the exact sequence
+1) The [[Curves and surfaces --- math-142/notes/The exterior derivative|exterior derivative]] gives rise to the exact sequence
 ```tikz
 \usepackage{tikz-cd}
 \usepackage{amsfonts}

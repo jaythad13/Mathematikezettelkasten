@@ -6,7 +6,7 @@ tags:
 - alg-geo
 ---
 
-Remember [[Algebraic Geometry --- math-176/notes/Elliptic curves#_proposition, definition _ reducing cubics, elliptic curves|elliptic curves]]? They look like complex solution sets of equations $y^{2} = x^3 + Ax + B$ or perhaps $y^{2} = p(x)$ for any cubic in $x$. They generalise to hyperelliptic curves — complex (projective) solution sets of $y^{2} = h(x)$ for $h$ some polynomial in $x$ of degree $2g + 1$ or $2g + 2$ and all distinct roots.
+Remember [[Algebraic varieties --- math-176/notes/Elliptic curves#_proposition, definition _ reducing cubics, elliptic curves|elliptic curves]]? They look like complex solution sets of equations $y^{2} = x^3 + Ax + B$ or perhaps $y^{2} = p(x)$ for any cubic in $x$. They generalise to hyperelliptic curves — complex (projective) solution sets of $y^{2} = h(x)$ for $h$ some polynomial in $x$ of degree $2g + 1$ or $2g + 2$ and all distinct roots.
 
 By considering $h(z)$ on two copies of [[Riemann surfaces and algebraic curves --- math-199DR/notes/Riemann surfaces#_example _ the Riemann sphere and the complex projective line|the Riemann sphere]], puncturing the sphere at the zeroes, and then gluing the spheres along the zeroes, we get the desired Riemann surface — it contains projective solutions at infinity, and has two copies of $y$ for each $h(x)$ except when $h(x) = 0$, where they are glued together.
 

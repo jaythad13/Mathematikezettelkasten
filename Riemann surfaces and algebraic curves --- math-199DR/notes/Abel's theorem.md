@@ -168,7 +168,7 @@ $$
 
 ###### _proof sketch:_
 
-Apply [[Differential geometry --- math-142/notes/Integration on a surface#_theorem _ Stokes' theorem for differential forms|Stokes' theorem]] and the definition of the exterior derivative.
+Apply [[Curves and surfaces --- math-142/notes/Integration on a surface#_theorem _ Stokes' theorem for differential forms|Stokes' theorem]] and the definition of the exterior derivative.
 
 ##### _lemma:_ the integral of a non-zero holomorphic $1$-form
 

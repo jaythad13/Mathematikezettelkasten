@@ -30,7 +30,7 @@ $$
 $$
 
 
-In fields not of [[Algebraic Geometry --- math-176/notes/Abstract algebra review#_definition _ characteristic|characteristic]] $2$, the Lie bracket is really antisymmetric
+In fields not of [[Algebraic varieties --- math-176/notes/Abstract algebra review#_definition _ characteristic|characteristic]] $2$, the Lie bracket is really antisymmetric
 
 ##### _proposition:_ Lie brackets are usually antisymmetric
 

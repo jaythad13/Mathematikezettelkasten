@@ -40,7 +40,7 @@ This means that we actually have a natural metric on $\mathbb{C}_{\infty}$ — i
 
 This is the same thing as the complex projective line $\mathbb{C} \mathbb{P}^1$ which is the surface parameterising all lines through the origin in $\mathbb{C}^{2}$. It can be written $(\mathbb{C}^{2} \setminus \{ 0 \}) / \mathbb{C}^*$ as each line is the data of the ratio of its slope $(z_{1} : z_{0})$, and two ratios correspond to the same line if they are scalar multiples of each other — $(z_{1} : z_{0}) = (\lambda z_{1} : \lambda z_{0})$. To identify this with the Riemann sphere, just identify $(z_{1} : z_{0})$ with $z_{1} / z_{0}$ when $z_{0} \neq 0$ and $\infty$ otherwise.
 
-##### _example:_ [[Algebraic Geometry --- math-176/notes/Elliptic curves#_proposition, definition _ reducing cubics, elliptic curves|elliptic curves]]
+##### _example:_ [[Algebraic varieties --- math-176/notes/Elliptic curves#_proposition, definition _ reducing cubics, elliptic curves|elliptic curves]]
 
 An elliptic curve $E(\mathbb{C})$ is the set of complex points, $(x, y) \in \mathbb{C}^2$ such that $y^{2} = x^3 + A x + B$ for coefficients $A, B \in \mathbb{C}$ with non-zero discriminant $4A^3 + 27 B^{2} = 0$, with an additional "point at infinity" — the one point compactification of the original set. It's really the quotient of the complex plane by some lattice, and thus, is a torus.
 
@@ -54,7 +54,7 @@ Since it is doubly periodic with periods given by $\Lambda$, and its derivative 
 $$
 \wp'_{\Lambda}(z)^{2} = \wp_{\Lambda}(z)^{3} + A \wp_{\Lambda}(z) + B,
 $$
-we have a bijection $\mathbb{C} / \Lambda \to E(\mathbb{C})$ by $z \mapsto (\wp_{\Lambda}(z), \wp_{\Lambda}'(z))$. If we're willing to believe this is actually a homeomorphism (it's actually an analytic group isomorphism with the [[Algebraic Geometry --- math-176/notes/Elliptic curves#The elliptic curve group|elliptic curve group]]) where $E(\mathbb{C})$ is thought of as a [[Analysis --- math-131/notes/Metric subspaces|subspace]], then $E(\mathbb{C})$ must just be the torus.
+we have a bijection $\mathbb{C} / \Lambda \to E(\mathbb{C})$ by $z \mapsto (\wp_{\Lambda}(z), \wp_{\Lambda}'(z))$. If we're willing to believe this is actually a homeomorphism (it's actually an analytic group isomorphism with the [[Algebraic varieties --- math-176/notes/Elliptic curves#The elliptic curve group|elliptic curve group]]) where $E(\mathbb{C})$ is thought of as a [[Analysis --- math-131/notes/Metric subspaces|subspace]], then $E(\mathbb{C})$ must just be the torus.
 
 All elliptic curves are the same as Riemann surfaces, but if you have a finer notion of maps, then you can tell them apart.
 
