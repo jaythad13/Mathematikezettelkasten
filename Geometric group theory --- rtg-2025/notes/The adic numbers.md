@@ -12,7 +12,7 @@ To solve a Diophantine equation, it's often useful to consider its behaviour mod
 
 To approximate a sum in the Euclidean norm on $\mathbb{Q}$ (say we want to approximate $\sum_{n = 1}^N 1 / n^{2}$ within some $\varepsilon > 0$) we use the convergence of the sum in $\mathbb{R}$ (here to $\pi^{2} / 6$) and then bound the error term. However, this doesn't work when the "error" we want to discard is number-theoretic — we can't get equality modulo some $p^e$ by doing analysis on $\mathbb{R}$.
 
-The field of $p$-adic numbers $\mathbb{Q}_{p}$ generalises $\mathbb{Z} / p^e \mathbb{Z}$ by containing the "limit" or "completion" of all of them in the $p$-adic integers $\mathbb{Z}_{p}$. However, $\mathbb{Q}_{p}$ is a field like $\mathbb{R}$. It also generalises $\mathbb{R}$ as the [[Mathematical Analysis I --- math-131/notes/Cauchy sequences#_definition _ completeness|metric completion]] of $\mathbb{Q}$ with respect to a different metric (the $p$-adic valuation). This is more like $\mathbb{Z} / p^e \mathbb{Z}$ because the metric throws away information in a modulo $p^e$ sense by making high powers of $p$ small.
+The field of $p$-adic numbers $\mathbb{Q}_{p}$ generalises $\mathbb{Z} / p^e \mathbb{Z}$ by containing the "limit" or "completion" of all of them in the $p$-adic integers $\mathbb{Z}_{p}$. However, $\mathbb{Q}_{p}$ is a field like $\mathbb{R}$. It also generalises $\mathbb{R}$ as the [[Analysis --- math-131/notes/Cauchy sequences#_definition _ completeness|metric completion]] of $\mathbb{Q}$ with respect to a different metric (the $p$-adic valuation). This is more like $\mathbb{Z} / p^e \mathbb{Z}$ because the metric throws away information in a modulo $p^e$ sense by making high powers of $p$ small.
 
 With these two simultaneous generalisations we will be able to solve problems like the one below.
 
@@ -69,7 +69,7 @@ we get a (compatible) residue sequence $(x_{i})_{i \in \mathbb{N}}$ of partial s
 
 So far, the construction we have works for non-prime base as well. Indeed, there are $n$-adic "integers" for each $n > 1$. However, they differ in their units. In particular, the $n$-adic integers are not, integral domains unless $n$ is a prime. Essentially this is because for $n = p_{1}^{e_{1}} \cdots p_{r}{e^r}$ we have $\mathbb{Z}_{n} \cong \mathbb{Z}_{p_{1}} \times \cdots \mathbb{Z}_{p_{r}}$ and so we have non-trivial ($x \neq 0, 1$) solutions to $x(x - 1) = 0$ by $x = (0, 1, 0, \dots, 0)$.
 
-##### _proposition:_ $\mathbb{Z}_{p}$ is an [[Abstract Algebra I --- math-171/notes/Integral domains#_definition _ integral domain|integral domain]]
+##### _proposition:_ $\mathbb{Z}_{p}$ is an [[Abstract algebra --- math-171/notes/Integral domains#_definition _ integral domain|integral domain]]
 
 ###### _proof:_
 
@@ -79,7 +79,7 @@ In fact, we can characterise all units in $\mathbb{Z}_{p}$. Just as in $\mathbb{
 
 ##### _proposition:_ units in $\mathbb{Z}_{p}$
 
-$x = (x_{j})_{j \in \mathbb{N}} \in \mathbb{Z}_{p}$ is a [[Abstract Algebra I --- math-171/notes/Rings#_definition _ unit|unit]] if and only if $x_{1} \not \equiv 0 \pmod p$.
+$x = (x_{j})_{j \in \mathbb{N}} \in \mathbb{Z}_{p}$ is a [[Abstract algebra --- math-171/notes/Rings#_definition _ unit|unit]] if and only if $x_{1} \not \equiv 0 \pmod p$.
 
 ###### _proof:_
 
@@ -93,7 +93,7 @@ Since $\mathbb{Z}_{p}$ is an integral domain, it has a well-defined fraction fie
 
 The $p$-adic numbers $\mathbb{Q}_{p}$ are the [[Algebraic geometry --- rising-sea/notes/Localisation, categorically#_definition _ localisation of a ring, localisations at a prime, fraction field|fraction field]] $Q(\mathbb{Z}_{p})$ of the $p$-adic integers.
 
-However, just as we don't typically think of [[Complex Analysis --- math-135/notes/Laurent series|Laurent series]] $\mathbb{F}((x))$ as ratios of formal power series in $\mathbb{F}[[x]]$, we don't want to do so for $\mathbb{Q}_{p}$ either. We can instead give a formal Laurent series expansion of elements of $\mathbb{Q}_{p}$.
+However, just as we don't typically think of [[Complex analysis --- math-135/notes/Laurent series|Laurent series]] $\mathbb{F}((x))$ as ratios of formal power series in $\mathbb{F}[[x]]$, we don't want to do so for $\mathbb{Q}_{p}$ either. We can instead give a formal Laurent series expansion of elements of $\mathbb{Q}_{p}$.
 
 ##### _proposition:_ $\mathbb{Q}_{p}$ looks like formal Laurent series
 
@@ -123,7 +123,7 @@ The $p$-adic absolute value is given by $\lvert x \rvert_{p} = p^{- \nu_{p}(x)}$
 
 Note then that $x, y \in \mathbb{Q}_{p}$ are close with $\nu_{p}(x - y)$ big and $\lvert x - y \rvert_{p}$ small when $x - y$ is divisible by a large power of $p$.
 
-While here we defined the valuation and absolute value in their full generality on $\mathbb{Q}_{p}$, they are still natural, even on $\mathbb{Q}$ — they are just the natural absolute value if you value information modulo $p^e$. Further, it is Ostrowski's theorem that the only absolute values on $\mathbb{Q}$ (up to scaling) are the trivial norm, the Euclidean norm, and the $p$-adic absolute value (for each prime $p$). It turns out then that $\mathbb{Q}_{p}$ is the [[Mathematical Analysis I --- math-131/notes/Cauchy sequences#_definition _ completeness|completion]] of $\mathbb{Q}$ with respect to the $p$-adic absolute value.
+While here we defined the valuation and absolute value in their full generality on $\mathbb{Q}_{p}$, they are still natural, even on $\mathbb{Q}$ — they are just the natural absolute value if you value information modulo $p^e$. Further, it is Ostrowski's theorem that the only absolute values on $\mathbb{Q}$ (up to scaling) are the trivial norm, the Euclidean norm, and the $p$-adic absolute value (for each prime $p$). It turns out then that $\mathbb{Q}_{p}$ is the [[Analysis --- math-131/notes/Cauchy sequences#_definition _ completeness|completion]] of $\mathbb{Q}$ with respect to the $p$-adic absolute value.
 
 This absolute value has wonderful properties — not only are addition and multiplication continuous, but also it turns $\mathbb{Q}$ and $\mathbb{Q}_{p}$ into ultrametric spaces satisfying the strong triangle inequality.
 
@@ -274,6 +274,6 @@ $$
 $$
 and $y \in \mathbb{Z}_{p}$.
 
-We show compactness as sequential compactness — that every infinite subset has a limit point (or every sequence has a [[Mathematical Analysis I --- math-131/notes/Sequences and convergence#_theorem, definition _ subsequential limits|subsequential limit]]), [[Mathematical Analysis I --- math-131/attachments/homework/hw 5/hw 5.pdf|implying compactness]]. 
+We show compactness as sequential compactness — that every infinite subset has a limit point (or every sequence has a [[Analysis --- math-131/notes/Sequences and convergence#_theorem, definition _ subsequential limits|subsequential limit]]), [[Analysis --- math-131/attachments/homework/hw 5/hw 5.pdf|implying compactness]]. 
 
 Write $\{ x_{n} \}_{n \in \mathbb{N}}$ for some arbitrary sequence of $x_{n} \in \mathbb{Z}_{p}$. Note that for each exponent $e$, the set of possible residue classes modulo each $p^i$ for $i$ at most $e$ is finite. As a result, there is a $p$-adic integer $u$, given by residue sequence $(u_{i})_{i \in \mathbb{N}}$, with infinitely many $x_{n}$ agreeing under each $\mathbb{Z}_{p} \twoheadrightarrow{} \mathbb{Z} / p^e / \mathbb{Z}$. Choose a subsequence $\{ x_{n_{k}} \}_{k \in \mathbb{N}}$ with $x_{n_{k}}$ agreeing with $u$ under $\mathbb{Z}_{p} \twoheadrightarrow{} \mathbb{Z} / p^k \mathbb{Z}$. Thus, $\lvert x_{n_{k}} - u \rvert_{p} \leq p^{-k} \to 0$ as $k \to \infty$. That is, $x_{n_{k}} \to u$. 

@@ -51,6 +51,6 @@ $$
 
 Note that the Jacobian of $F : (x, y) \mapsto (u(x, y), v(x, y))$, must be a homothety. That is, it must be of the form $r \begin{bmatrix} \cos \theta & - \sin \theta \\ \sin \theta & \cos\theta \end{bmatrix}$ for some $r$ and some $\theta$. The Cauchy-Riemann equations follow.
 
-The Looman-Menchoff theorem is a (partial) converse (it's in [[Complex Analysis --- math-135/attachments/texts/Complex Analysis in One Variable.pdf|Complex Analysis in One Variable|Narasimhan]] and only requires that $f$ be continuous).
+The Looman-Menchoff theorem is a (partial) converse (it's in [[Complex analysis --- math-135/attachments/texts/Complex Analysis in One Variable.pdf|Complex Analysis in One Variable|Narasimhan]] and only requires that $f$ be continuous).
 
 %%all of the crazy new differential operator nonsense%%

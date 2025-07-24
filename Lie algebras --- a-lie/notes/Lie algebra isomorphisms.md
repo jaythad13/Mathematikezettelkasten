@@ -8,13 +8,13 @@ tags:
 ---
 
 
-It turns out that for the same reasons as for [[Abstract Algebra I --- math-171/notes/Group isomorphisms|groups]] and [[Abstract Algebra I --- math-171/notes/Ring homomorphisms#_definition _ ring isomorphisms, isomorphic|rings]], an invertible [[Lie algebras --- a-lie/notes/Morphisms of Lie algebras#_definition _ Lie algebra homomorphism|Lie algebra homomorphism]] has an inverse that is also a homomorphism. 
+It turns out that for the same reasons as for [[Abstract algebra --- math-171/notes/Group isomorphisms|groups]] and [[Abstract algebra --- math-171/notes/Ring homomorphisms#_definition _ ring isomorphisms, isomorphic|rings]], an invertible [[Lie algebras --- a-lie/notes/Morphisms of Lie algebras#_definition _ Lie algebra homomorphism|Lie algebra homomorphism]] has an inverse that is also a homomorphism. 
 
 ##### _definition:_ Lie algebra isomorphism
 
 A Lie algebra isomorphism between Lie algebras $L_{1}$ and $L_{2}$ is an invertible Lie algebra homomorphism $\varphi : L_{1} \to L_{2}$.
 
-Just as with [[Abstract Algebra I --- math-171/notes/Group homomorphisms|groups]] and [[Abstract Algebra I --- math-171/notes/Ring isomorphism theorems|rings]], there are isomorphism theorems for Lie algebras.
+Just as with [[Abstract algebra --- math-171/notes/Group homomorphisms|groups]] and [[Abstract algebra --- math-171/notes/Ring isomorphism theorems|rings]], there are isomorphism theorems for Lie algebras.
 
 ### First isomorphism theorem
 

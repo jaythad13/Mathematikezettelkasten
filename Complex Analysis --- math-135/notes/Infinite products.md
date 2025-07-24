@@ -5,7 +5,7 @@ tags:
 - complex
 ---
 
-We want to show that given any countable collection of zeroes without a limit point, there is an entire function that vanishes at exactly those points — [[Complex Analysis --- math-135/notes/Weierstrass factorisation|the Weierstrass factorisation theorem]]. The obvious way to do this for a finite collection $\{ a_{1}, \dots, a_{n} \}$ is just to consider $f : z \mapsto (z - a_{1}) \dots (z - a_{n})$. To do this for an infinite collection we need a sensible notion of multiplying together infinitely many functions with the roots we want. This is where infinite products come in!
+We want to show that given any countable collection of zeroes without a limit point, there is an entire function that vanishes at exactly those points — [[Complex analysis --- math-135/notes/Weierstrass factorisation|the Weierstrass factorisation theorem]]. The obvious way to do this for a finite collection $\{ a_{1}, \dots, a_{n} \}$ is just to consider $f : z \mapsto (z - a_{1}) \dots (z - a_{n})$. To do this for an infinite collection we need a sensible notion of multiplying together infinitely many functions with the roots we want. This is where infinite products come in!
 
 ##### _definition:_ infinite products
 
@@ -45,7 +45,7 @@ $$
 \prod_{n = 1}^\infty z_{n} = \prod_{n = 1}^\infty (1 + a_{n}).
 $$
 
-We can in fact characterise convergence of the product in terms of [[Mathematical Analysis I --- math-131/notes/Series#_definition, proposition _ absolute convergence, absolute convergence implies convergence.|absolute convergence]] of the series $\sum a_{n}$.
+We can in fact characterise convergence of the product in terms of [[Analysis --- math-131/notes/Series#_definition, proposition _ absolute convergence, absolute convergence implies convergence.|absolute convergence]] of the series $\sum a_{n}$.
 
 ##### _proposition:_ absolute convergence of infinite products
 
@@ -78,5 +78,5 @@ We've already shown that product converges pointwise.
  
 Essentially, the sum in the exponent is bounded by the sum of all $M_{n}$ uniformly.
 
-Since the partial products are all holomorphic, the product is holomorphic since [[Complex Analysis --- math-135/notes/Cauchy integral formula#_proposition _ uniform convergence preserves holomorphicity|uniform convergence preserves holomorphicity]].
+Since the partial products are all holomorphic, the product is holomorphic since [[Complex analysis --- math-135/notes/Cauchy integral formula#_proposition _ uniform convergence preserves holomorphicity|uniform convergence preserves holomorphicity]].
 

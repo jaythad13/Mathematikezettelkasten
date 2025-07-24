@@ -63,7 +63,7 @@ It's easy to show that if some particular "label" is preserved by the morphisms,
 
 ### Graph actions of a group
 
-These automorphisms give a way to represent a [[Abstract Algebra I --- math-171/notes/Groups, and why you should care#_definition _ group, identity, inverse|group]] $G$ by the symmetries of a graph $\Gamma$. We represent $G$ by a pair [[Abstract Algebra I --- math-171/notes/Group actions#_definition _ (left) group action|group actions]] $G \circlearrowright V(\Gamma)$ and $G \circlearrowright E(\Gamma)$ such that the functions  $v \mapsto g \cdot v$ and $e \mapsto g \cdot e$ form a graph (endo)morphism. We can show easily that this is equivalent to the data of a [[Abstract Algebra I --- math-171/notes/Group homomorphisms#_definition _ group homomorphisms|homomorphism]] $G \to \operatorname{Aut} \Gamma$.
+These automorphisms give a way to represent a [[Abstract algebra --- math-171/notes/Groups, and why you should care#_definition _ group, identity, inverse|group]] $G$ by the symmetries of a graph $\Gamma$. We represent $G$ by a pair [[Abstract algebra --- math-171/notes/Group actions#_definition _ (left) group action|group actions]] $G \circlearrowright V(\Gamma)$ and $G \circlearrowright E(\Gamma)$ such that the functions  $v \mapsto g \cdot v$ and $e \mapsto g \cdot e$ form a graph (endo)morphism. We can show easily that this is equivalent to the data of a [[Abstract algebra --- math-171/notes/Group homomorphisms#_definition _ group homomorphisms|homomorphism]] $G \to \operatorname{Aut} \Gamma$.
 
 ##### _definition:_ graph action
 
@@ -90,7 +90,7 @@ Note that the edges of $\Gamma(G, S)$ are determined completely by their endpoin
 
 Given $g \in G = \left< S \mid R \right>$ there is a corresponding automorphism $\Phi_{g} \in \operatorname{Aut} \Gamma(G, S)$ given by left multiplication by $g$. In particular, $\Phi_{g, V}(h) = gh$ for all $h \in V(\Gamma(G, S))$. The edge $(g, gs)$ is mapped to $\Phi_{g, E}(g, gs) = (gh, ghs)$.
 
-This is obviously a graph action $G \circlearrowright \Gamma(G, S)$ (it's easily verified that $\Phi_{gh} = \Phi_{g} \circ \Phi_{h}$). We claim that it gives rise to all the automorphisms of $\Gamma(G, S)$ and thus, the induced homomorphism $G \to \operatorname{Aut} \Gamma(G, S)$ is actually an [[Abstract Algebra I --- math-171/notes/Group isomorphisms#_definition _ group isomorphism, isomorphic|isomorphism]].
+This is obviously a graph action $G \circlearrowright \Gamma(G, S)$ (it's easily verified that $\Phi_{gh} = \Phi_{g} \circ \Phi_{h}$). We claim that it gives rise to all the automorphisms of $\Gamma(G, S)$ and thus, the induced homomorphism $G \to \operatorname{Aut} \Gamma(G, S)$ is actually an [[Abstract algebra --- math-171/notes/Group isomorphisms#_definition _ group isomorphism, isomorphic|isomorphism]].
 
 To prove this we need one new idea.
 

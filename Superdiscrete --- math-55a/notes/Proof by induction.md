@@ -6,7 +6,7 @@ tags:
 
 ### Basic combinatorics by induction
 
-We can use the [[Mathematical Analysis I --- math-131/notes/Before the real numbers#_definition _ the Peano axioms|axiom of induction]] to prove various combinatorial theorems.
+We can use the [[Analysis --- math-131/notes/Before the real numbers#_definition _ the Peano axioms|axiom of induction]] to prove various combinatorial theorems.
 
 ##### _example:_ the sum of the first $n$ natural numbers
 

@@ -6,7 +6,7 @@ tags:
 - self-study
 ---
 
-Integrating over closed rectangles is basically just the same as [[Mathematical Analysis I --- math-131/notes/Riemann integration|integrating over closed intervals]] in $\mathbb{R}$. 
+Integrating over closed rectangles is basically just the same as [[Analysis --- math-131/notes/Riemann integration|integrating over closed intervals]] in $\mathbb{R}$. 
 
 ##### _notation:_ $A$
 
@@ -159,7 +159,7 @@ f(x) = \begin{cases}
 \end{cases}
 $$
 
-Since [[The reals|the rationals are dense in the reals]], every subrectangle $s$ will contain some points in $\mathbb{Q}$ and thus have $M(s) = 1$ and $m(s) = 0$. Thus, for any partition, $P$
+Since [[Analysis --- math-131/notes/The reals|the rationals are dense in the reals]], every subrectangle $s$ will contain some points in $\mathbb{Q}$ and thus have $M(s) = 1$ and $m(s) = 0$. Thus, for any partition, $P$
 $$
 L(f, P) = 0  
 $$

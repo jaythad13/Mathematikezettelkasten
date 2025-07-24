@@ -11,11 +11,11 @@ tags:
 
 Let $G = \mathbb{Z} / q \mathbb{Z}^*$ be the group of units modulo $q$. Let $\bar{\ell}$ be the residue of $\ell \in \mathbb{Z}$ modulo $q$.
 
-Dirichlet characters and series generalise the [[Complex Analysis --- math-135/notes/The Riemann zeta function#_theorem _ the Euler product formula|Euler product formula]] to account for the data of primes modulo $q$.
+Dirichlet characters and series generalise the [[Complex analysis --- math-135/notes/The Riemann zeta function#_theorem _ the Euler product formula|Euler product formula]] to account for the data of primes modulo $q$.
 
 ##### _definition:_ Dirichlet character
 
-Let $\xi \in \widehat{G}$ be a [[Fourier Analysis --- math-139/notes/Finite Fourier analysis#_definition _ character, the dual group|character]] $G \to S^1$, extended to a function $\xi^{\not *} : \mathbb{Z} / q \mathbb{Z} \to S^1$ by
+Let $\xi \in \widehat{G}$ be a [[Fourier analysis --- math-139/notes/Finite Fourier analysis#_definition _ character, the dual group|character]] $G \to S^1$, extended to a function $\xi^{\not *} : \mathbb{Z} / q \mathbb{Z} \to S^1$ by
 $$
 \xi^{\not *}(\ell) = \begin{cases}
 \xi(\ell) & \ell \in G \\
@@ -51,7 +51,7 @@ The proof is similar if $\overline{n} \not\in G$.
 
 ### $L$-series
 
-Dirichlet $L$-series generalise [[Complex Analysis --- math-135/notes/The Riemann zeta function|the Riemann zeta function]] in a way that allows to take account of more subtle modular information.
+Dirichlet $L$-series generalise [[Complex analysis --- math-135/notes/The Riemann zeta function|the Riemann zeta function]] in a way that allows to take account of more subtle modular information.
 
 ##### _definition:_ Dirichlet $L$-series
 
@@ -61,14 +61,14 @@ L(s, \chi) = \sum_{n = 1}^\infty \frac{\chi(n)}{n^s}
 $$
 for $s > 1$.
 
-Note that a Dirichlet $L$-series has a [[Complex Analysis --- math-135/notes/Cauchy integral formula#_theorem _ identity theorem|unique]] [[Complex Analysis --- math-135/notes/Meromorphic functions and singularities#_definition _ meromorphic functions|meromorphic]] continuation to the whole complex plane. This unique analytic continuation is called an $L$-function. We will only need to deal with the $L$-series for the most part.
+Note that a Dirichlet $L$-series has a [[Complex analysis --- math-135/notes/Cauchy integral formula#_theorem _ identity theorem|unique]] [[Complex analysis --- math-135/notes/Meromorphic functions and singularities#_definition _ meromorphic functions|meromorphic]] continuation to the whole complex plane. This unique analytic continuation is called an $L$-function. We will only need to deal with the $L$-series for the most part.
 
-Just as the zeta function has a product formula, so does each $L$-series. This is only possible because Dirichlet characters are mutliplicative. Also, since $L(s, \chi)$ can be complex and our primary method for proving products is by taking logarithms, we need some complex analysis in the form of the [[Complex Analysis --- math-135/notes/The complex logarithm|complex logarithm]] and the power series expansion
+Just as the zeta function has a product formula, so does each $L$-series. This is only possible because Dirichlet characters are mutliplicative. Also, since $L(s, \chi)$ can be complex and our primary method for proving products is by taking logarithms, we need some complex analysis in the form of the [[Complex analysis --- math-135/notes/The complex logarithm|complex logarithm]] and the power series expansion
 $$
 - \log(1- z) = \sum_{n = 1}^\infty \frac{z^n}{n}.
 $$
-Note that the [[Fourier Analysis --- math-139/notes/Dirichlet's theorem on arithmetic progressions#_lemma _ log approximation|logarithm approximation lemma]] used to prove that the sum of the reciprocals of primes diverges still holds here, and for the same reason, for $\lvert z \rvert < 1/2$ we have $\lvert \log(1 - z) \rvert \le 2 \lvert z \rvert$. Finally, we will once again need the sum criterion for convergence of infinite products —
-![[Complex Analysis --- math-135/notes/Infinite products#_proposition _ absolute convergence of infinite products|Infinite products]]
+Note that the [[Fourier analysis --- math-139/notes/Dirichlet's theorem on arithmetic progressions#_lemma _ log approximation|logarithm approximation lemma]] used to prove that the sum of the reciprocals of primes diverges still holds here, and for the same reason, for $\lvert z \rvert < 1/2$ we have $\lvert \log(1 - z) \rvert \le 2 \lvert z \rvert$. Finally, we will once again need the sum criterion for convergence of infinite products —
+![[Complex analysis --- math-135/notes/Infinite products#_proposition _ absolute convergence of infinite products|Infinite products]]
 
 ##### _theorem:_ the product formula for $L$-series
 
@@ -90,7 +90,7 @@ $$
   & + \left\lvert  \prod_{p \in \wp, p \le N} \frac{1}{1 - \chi(p) / p^s} - \prod_{p \in \wp} \frac{1}{1 - \chi(p) / p^s}  \right\rvert.
 \end{align}
 $$
-The first and last terms vanish as $N \to \infty$ by the convergence of the product and the convergence of the sum. The third term vanishes by noting that $\chi(p^M) = \chi(p)^M$ and treating the sum inside the product as a geometric series. Finally, the second term vanishes by the same [[Superdiscrete --- math-55a/notes/Euclid's algorithm and primes#_theorem _ unique factorisation|fundamental theorem of arithmetic reason]] as in the [[Complex Analysis --- math-135/notes/The Riemann zeta function#_theorem _ the Euler product formula|the Euler product formula]].
+The first and last terms vanish as $N \to \infty$ by the convergence of the product and the convergence of the sum. The third term vanishes by noting that $\chi(p^M) = \chi(p)^M$ and treating the sum inside the product as a geometric series. Finally, the second term vanishes by the same [[Superdiscrete --- math-55a/notes/Euclid's algorithm and primes#_theorem _ unique factorisation|fundamental theorem of arithmetic reason]] as in the [[Complex analysis --- math-135/notes/The Riemann zeta function#_theorem _ the Euler product formula|the Euler product formula]].
 
 ##### _corollary:_ the product formula for the trivial character
 
@@ -104,7 +104,7 @@ If $\chi$ is a non-trivial character on $G$, then $\lvert \sum_{n = 1}^k \chi(n)
 
 ###### _proof:_
 
-[[Fourier Analysis --- math-139/notes/Finite Fourier analysis#_lemma _ non-trivial characters sum to zero|Recall that]] $\sum_{n = 1}^q \chi(n) = 0$. Thus, for $k \equiv b \pmod q$ we can write
+[[Fourier analysis --- math-139/notes/Finite Fourier analysis#_lemma _ non-trivial characters sum to zero|Recall that]] $\sum_{n = 1}^q \chi(n) = 0$. Thus, for $k \equiv b \pmod q$ we can write
 $$
 \left\lvert  \sum_{n = 1}^k \chi(n)  \right\rvert = \left\lvert  \sum_{n = 1}^{aq} \chi(n)  \right\rvert + \left\lvert  \sum_{n = a q + 1}^b \chi(n) \right\rvert = 0 + b < q.
 $$
@@ -115,7 +115,7 @@ For a non-trivial character $\chi$ on $G$, the $L$-series converges for all $s >
 
 ###### _proof:_
 
-To prove that the $L$-series converges for all $s > 0$, we use [[Fourier Analysis --- math-139/attachments/homework/hw 2/hw 2.pdf#page=9|summation by parts]] and some involved algebra to write
+To prove that the $L$-series converges for all $s > 0$, we use [[Fourier analysis --- math-139/attachments/homework/hw 2/hw 2.pdf#page=9|summation by parts]] and some involved algebra to write
 $$
 \sum_{n = 1}^N \frac{\chi(n)}{n^s} = \sum_{k = 1}^N \frac{S_{k} - S_{k - 1}}{k^s} = \frac{S_{N}}{N^s} + \sum_{k = 1}^{N - 1} S_{k} \left( \frac{1}{k^s} - \frac{1}{(k + 1)^s} \right)
 $$
@@ -123,7 +123,7 @@ where $S_{k} = \sum_{n = 1}^k \chi(n) / n^s$ are the partial sums of the $L$-ser
 $$
 \frac{1}{k^s} - \frac{1}{(k + 1)^s} \le \max_{x \in [k, k + 1]} \frac{dx^{}}{dx} = \frac{1}{k^{s + 1}}
 $$
-by the [[Mathematical Analysis I --- math-131/notes/Mean value theorems#_theorem _ mean value theorem|mean value theorem]]. It follows that
+by the [[Analysis --- math-131/notes/Mean value theorems#_theorem _ mean value theorem|mean value theorem]]. It follows that
 $$
 L(s, \chi) = \left\lvert  \sum_{k = 1}^\infty S_{k} \left( \frac{1}{k^s} - \frac{1}{(k + 1)^s} \right)  \right\rvert < \sum_{k = 1}^\infty \left\lvert  \frac{qs}{k^{s + 1}} \right\rvert < \infty.
 $$

@@ -8,9 +8,9 @@ tags:
 - fourier
 ---
 
-The Paley-Wiener theorem describes an interesting connection between the support of the Fourier transform of a function and its behaviour in the complex plane in general. In particular, it shows that the support of $\hat{f}$ is bounded in $[-M , M]$ if and only if $f$ has an entire extension to $\mathbb{C}$ that grows slower than an exponential (depending on $M$). Essentially, complex differentiable functions [[Complex Analysis --- math-135/notes/What is complex analysis?|are really nice]] in yet another way, and are uniquely so — they have nicer Fourier transforms.
+The Paley-Wiener theorem describes an interesting connection between the support of the Fourier transform of a function and its behaviour in the complex plane in general. In particular, it shows that the support of $\hat{f}$ is bounded in $[-M , M]$ if and only if $f$ has an entire extension to $\mathbb{C}$ that grows slower than an exponential (depending on $M$). Essentially, complex differentiable functions [[Complex analysis --- math-135/notes/What is complex analysis?|are really nice]] in yet another way, and are uniquely so — they have nicer Fourier transforms.
 
-For some of the theorems in this note, we do not assume that $f$ is holomorphic, but we do assume that [[Complex Analysis --- math-135/notes/Fourier analysis and holomorphic functions#_theorem _ the Fourier inversion formula|the Fourier inversion formula]] holds. Proofs of necessary conditions for this result are not part of this class.
+For some of the theorems in this note, we do not assume that $f$ is holomorphic, but we do assume that [[Complex analysis --- math-135/notes/Fourier analysis and holomorphic functions#_theorem _ the Fourier inversion formula|the Fourier inversion formula]] holds. Proofs of necessary conditions for this result are not part of this class.
 
 ##### _theorem:_ exponential Fourier transforms have holomorphic functions
 
@@ -40,7 +40,7 @@ If $\hat{f}(\xi) = \mathcal{O}(e^{-2 \pi a \lvert \xi \rvert})$, $a > 0$, and $f
 
 ###### _proof sketch:_
 
-This is just a consequence of [[Complex Analysis --- math-135/notes/Cauchy integral formula#_theorem _ identity theorem|the identity theorem]].
+This is just a consequence of [[Complex analysis --- math-135/notes/Cauchy integral formula#_theorem _ identity theorem|the identity theorem]].
 
 ##### _theorem:_ Paley-Wiener theorem
 
@@ -50,7 +50,7 @@ Then $f$ has an entire extension $g : \mathbb{C} \to \mathbb{C}$ with $\lvert g(
 
 ###### _proof:_
 
-Suppose $\operatorname{supp}(\hat{f}) \subset [-M, M]$. Thus, $\hat{f}$ is continuous and of [[Complex Analysis --- math-135/notes/Fourier analysis and holomorphic functions#_definition _ moderate decrease|moderate decrease]] and the Fourier inversion formula holds. That is,
+Suppose $\operatorname{supp}(\hat{f}) \subset [-M, M]$. Thus, $\hat{f}$ is continuous and of [[Complex analysis --- math-135/notes/Fourier analysis and holomorphic functions#_definition _ moderate decrease|moderate decrease]] and the Fourier inversion formula holds. That is,
 $$
 f(x) = \int_{-M}^M \hat{f}(\xi) e^{2 \pi i x \xi} \, d\xi.
 $$
@@ -58,7 +58,7 @@ Thus, we can define the entire extension
 $$
 f(z) = \int_{-M}^M \hat{f}(\xi) e^{2 \pi i z \xi}  \, d\xi.
 $$
-To see that this is entire, write it as a sequence of uniformly convergent Riemann sums and use our result on [[Complex Analysis --- math-135/notes/Cauchy integral formula#_proposition _ uniform convergence preserves holomorphicity|sequences of holomorphic functions]]. We can show that it is bounded as
+To see that this is entire, write it as a sequence of uniformly convergent Riemann sums and use our result on [[Complex analysis --- math-135/notes/Cauchy integral formula#_proposition _ uniform convergence preserves holomorphicity|sequences of holomorphic functions]]. We can show that it is bounded as
 $$
 \begin{split}
 \lvert f(z) \rvert & \le \int_{-M}^M \lvert \hat{f}(\xi) \rvert \lvert e^{2 \pi i(x + i y) \xi} \rvert  \, d\xi \\
@@ -128,7 +128,7 @@ Suppose $f, \hat{f}$ are continuous with moderate decrease. Then $\hat{f}(\xi) =
 
 ###### _proof sketch:_
 
-Bound $f$ using the Fourier inversion formula and the moderate decrease of $\hat{f}$. Show it is holomorphic by truncating the Fourier inversion formula and considering these truncated integrals to be a [[Complex Analysis --- math-135/notes/Cauchy integral formula#_proposition _ uniform convergence preserves holomorphicity|sequence of uniformly convergent holomorphic functions]] converging to $f$. 
+Bound $f$ using the Fourier inversion formula and the moderate decrease of $\hat{f}$. Show it is holomorphic by truncating the Fourier inversion formula and considering these truncated integrals to be a [[Complex analysis --- math-135/notes/Cauchy integral formula#_proposition _ uniform convergence preserves holomorphicity|sequence of uniformly convergent holomorphic functions]] converging to $f$. 
 
 
 ##### _theorem:_ the Phragmén-Lindelöf principle
@@ -154,7 +154,7 @@ where $a$ depends only on the argument of $z$. Thus, as $\lvert z \rvert \to \in
 
 Since $f_{\varepsilon} \to 0$, there is some radius $R$ outside which it is always less than $1$. Thus, we can work in the bounded sector $S_{c} = \{ z \in S \mid \lvert z \rvert < R \}$ (outside which $\lvert f_{\varepsilon} \rvert < 1$).
 
-Let $M$ be the supremum of $f_{\varepsilon}$ on $\overline{S}$ and let $z_{n}$ be a sequence with $\lvert f_{\varepsilon}(z_{n}) \rvert \to M$. Since $f_{\varepsilon} \to 0$ as $\lvert z \rvert \to \infty$, we know that if $z_{n} \to \infty$, $M < 1$. Else, $z_{n}$ converge to some $z$ inside $S_{c}$, at which $f_{\varepsilon}$ achieves a maximum. By the [[Complex Analysis --- math-135/notes/The argument principle and winding number#_theorem _ the maximum modulus principle|maximum modulus principle]], $z$ is on the boundary $\partial S_{c} \subset \partial S$ where we already have that $\lvert f_{\varepsilon}(z) \rvert \le 1$.
+Let $M$ be the supremum of $f_{\varepsilon}$ on $\overline{S}$ and let $z_{n}$ be a sequence with $\lvert f_{\varepsilon}(z_{n}) \rvert \to M$. Since $f_{\varepsilon} \to 0$ as $\lvert z \rvert \to \infty$, we know that if $z_{n} \to \infty$, $M < 1$. Else, $z_{n}$ converge to some $z$ inside $S_{c}$, at which $f_{\varepsilon}$ achieves a maximum. By the [[Complex analysis --- math-135/notes/The argument principle and winding number#_theorem _ the maximum modulus principle|maximum modulus principle]], $z$ is on the boundary $\partial S_{c} \subset \partial S$ where we already have that $\lvert f_{\varepsilon}(z) \rvert \le 1$.
 
 ##### _theorem:_ Lebesgue dominated convergence theorem
 

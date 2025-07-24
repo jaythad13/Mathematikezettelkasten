@@ -6,11 +6,11 @@ tags:
 - fourier
 ---
 
-The $n$th Fourier coefficient of an integrable function is the inner product with the $n$th element of the [[Fourier Analysis --- math-139/notes/Fourier analysis in physics#Superposition of standing waves|orthogonal list]] $e^{2 \pi i n x}$.
+The $n$th Fourier coefficient of an integrable function is the inner product with the $n$th element of the [[Fourier analysis --- math-139/notes/Fourier analysis in physics#Superposition of standing waves|orthogonal list]] $e^{2 \pi i n x}$.
 
 ##### _definition:_ Fourier coefficient
 
-Given an [[Mathematical Analysis I --- math-131/notes/Riemann integration#_definition _ Riemann integrable|integrable]] function $f : [a, b] \to \mathbb{R}$, the $n$th Fourier coefficient of $f$ is
+Given an [[Analysis --- math-131/notes/Riemann integration#_definition _ Riemann integrable|integrable]] function $f : [a, b] \to \mathbb{R}$, the $n$th Fourier coefficient of $f$ is
 $$
 \hat{f}(n) = \frac{1}{L} \int f(x) e^{-2 \pi i n x / L} \, dx
 $$
@@ -85,9 +85,9 @@ For a continuous $f : [-\pi, \pi] \to \mathbb{C}$ with $\sum \lvert \hat{f}(n) \
 
 ###### _proof:_
 
-By [[Complex Analysis --- math-135/notes/Analysis and (metric) topology review#_theorem _ Weierstrass $M$-test|Weierstrass]]' $M$-test the Fourier series converges uniformly. Since each of the function is continuous, they converge uniformly to a continuous function. This function must have the same Fourier series as $f$ so it is just $f$.
+By [[Complex analysis --- math-135/notes/Analysis and (metric) topology review#_theorem _ Weierstrass $M$-test|Weierstrass]]' $M$-test the Fourier series converges uniformly. Since each of the function is continuous, they converge uniformly to a continuous function. This function must have the same Fourier series as $f$ so it is just $f$.
 
-This raises the question of when it is true that $\sum \lvert \hat{f}(n) \rvert < \infty$. One answer is the [[Complex Analysis --- math-135/notes/Fourier analysis and holomorphic functions#_theorem _ the Poisson summation formula|Poisson summation formula]]. However, we can get a more analytic flavour of answer.
+This raises the question of when it is true that $\sum \lvert \hat{f}(n) \rvert < \infty$. One answer is the [[Complex analysis --- math-135/notes/Fourier analysis and holomorphic functions#_theorem _ the Poisson summation formula|Poisson summation formula]]. However, we can get a more analytic flavour of answer.
 
 ##### _proposition:_ $\mathcal{C}^2$ functions have absolutely summable coefficients
 
@@ -95,7 +95,7 @@ If $f : [-\pi, \pi] \to \mathbb{C}$ is twice continuously differentiable, then $
 
 ###### _proof:_
 
-We can use [[Mathematical Analysis I --- math-131/notes/Fundamental theorem of calculus#_corollary _ integration by parts|integration by parts]]. We can write
+We can use [[Analysis --- math-131/notes/Fundamental theorem of calculus#_corollary _ integration by parts|integration by parts]]. We can write
 $$
 \begin{align}
 2 \pi \hat{f}(n) & = \int_{-\pi}^{\pi} f(x) e^{-i n x} \, dx \\

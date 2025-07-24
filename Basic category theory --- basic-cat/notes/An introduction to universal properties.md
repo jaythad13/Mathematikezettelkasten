@@ -27,9 +27,9 @@ One example of a less trivial universal property is the following.
 
 ##### _example:_ $\mathbb{Z}$ is uniquely embedded in every ring
 
-Note that from now on, by [[Abstract Algebra I --- math-171/notes/Rings|ring]], we always mean ring with a multiplicative identity $\mathcal{1}$. With this assumption, we can prove the following universal property.
+Note that from now on, by [[Abstract algebra --- math-171/notes/Rings|ring]], we always mean ring with a multiplicative identity $\mathcal{1}$. With this assumption, we can prove the following universal property.
 
-For all rings $R$, there exists a unique [[Ring homomorphisms|homomorphism]] $\varphi : \mathbb{Z} \to R$.
+For all rings $R$, there exists a unique [[Abstract algebra --- math-171/notes/Ring homomorphisms|homomorphism]] $\varphi : \mathbb{Z} \to R$.
 
 To show existence, just consider
 $$
@@ -155,7 +155,7 @@ Although, we've stayed mainly algebraic, we can also have topological universal 
 
 ##### _example:_ every map from the discrete space is continuous
 
-Let $S$ be a set, and let $\mathcal{D}(S)$ be $S$ endowed with the [[Mathematical Analysis I --- math-131/notes/Metric spaces#_examples _ metric spaces|discrete topology]]. Since every subset is open, any function $F$, from $S$ to a topological space $X$ is defines a unique continuous function $f$ from $\mathcal{D}(S)$ to $X$ that agrees with $F$ everywhere — just set $f(s) = F(s)$. That is, for $i : S \to \mathcal{D}(S)$ by $s \mapsto s$, the following diagram commutes.
+Let $S$ be a set, and let $\mathcal{D}(S)$ be $S$ endowed with the [[Analysis --- math-131/notes/Metric spaces#_examples _ metric spaces|discrete topology]]. Since every subset is open, any function $F$, from $S$ to a topological space $X$ is defines a unique continuous function $f$ from $\mathcal{D}(S)$ to $X$ that agrees with $F$ everywhere — just set $f(s) = F(s)$. That is, for $i : S \to \mathcal{D}(S)$ by $s \mapsto s$, the following diagram commutes.
 
 ```tikz
 \usepackage{tikz-cd}

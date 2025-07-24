@@ -22,7 +22,7 @@ is called a non-singular projective variety of dimension $d$ if the following ax
 $$
 I(V) = \bigoplus_{e \ge 1} \{ f(x_{1}, \dots, x_{n}, x_{0}) \in S(e) \mid f(p) = 0 \text{ for all } p \in V(F) \}
 $$
-is a [[Abstract Algebra I --- math-171/notes/Prime and maximal ideals#_definition _ prime ideals|prime ideal]] in the graded polynomial ring $S = \bigoplus_{e \ge 1} S(e)$. (This condition says that we're using the minimal set of polynomials)
+is a [[Abstract algebra --- math-171/notes/Prime and maximal ideals#_definition _ prime ideals|prime ideal]] in the graded polynomial ring $S = \bigoplus_{e \ge 1} S(e)$. (This condition says that we're using the minimal set of polynomials)
 4) The dimension is $d = n - m$.
 
 Often for $d = 1$ we say $V$ is a surface, for $d = 2$, we say $V$ is a surface, and for $d = 3$, we say $V$ is a $3$-fold.

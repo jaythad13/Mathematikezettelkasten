@@ -13,7 +13,7 @@ Continuous functions are the right morphisms for the category of topological spa
 
 A function $f : X \to Y$ is continuous if, for each open $V \subseteq Y$, we have $f^\text{pre}(V)$ open in $X$.
 
-We've verified [[Mathematical Analysis I --- math-131/notes/Continuity|in analysis]] that this definition of continuity is equivalent to an $\varepsilon$-$\delta$ definition of continuity, and a sequential definition of continuity (which for metric spaces is equivalent to a limit point definition of continuity). There are more equivalent definitions.
+We've verified [[Analysis --- math-131/notes/Continuity|in analysis]] that this definition of continuity is equivalent to an $\varepsilon$-$\delta$ definition of continuity, and a sequential definition of continuity (which for metric spaces is equivalent to a limit point definition of continuity). There are more equivalent definitions.
 
 ##### _proposition:_ equivalent definitions of continuity
 
@@ -37,7 +37,7 @@ Here we can exclude $f^{\text{img}}(U)$ from $Y \setminus V$ since $A$ is the co
 
 Suppose (4). Consider an open set $V \subseteq Y$. Each $x \in f^\text{pre}(V) = U$ has open neighbourhood $U_{x} \subseteq U$ with $f^\text{img}(U_{x})$ contained in $V$ since $V$ is an open neighbourhood of $f(x)$. $U$ is then the union of all $U_{x}$. Thus, $U$ is open, giving us that $f$ is continuous.
 
-The last definition can be made into a local definition, much like the [[Mathematical Analysis I --- math-131/notes/Continuity#_definition _ continuity|analysis definition of continuity]].
+The last definition can be made into a local definition, much like the [[Analysis --- math-131/notes/Continuity#_definition _ continuity|analysis definition of continuity]].
 
 ##### _definition:_ continuous at a point
 

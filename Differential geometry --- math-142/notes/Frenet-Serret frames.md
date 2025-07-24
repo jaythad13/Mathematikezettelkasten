@@ -13,7 +13,7 @@ The basic idea of a Frenet-Serret frame is to have the right frame for a particu
 
 ### Vector fields on a curve
 
-The best way to describe this is with a commutative diagram. Suppose we have a curve parameterised by $\alpha : I \to \mathbb{R}^3$. Then we can map $I$ onto the the [[Exact sequences#_example _ short exact sequence|short exact sequence]] associated with the tangent space in three ways.
+The best way to describe this is with a commutative diagram. Suppose we have a curve parameterised by $\alpha : I \to \mathbb{R}^3$. Then we can map $I$ onto the the [[Abstract algebra --- math-171/notes/Exact sequences#_example _ short exact sequence|short exact sequence]] associated with the tangent space in three ways.
 
 ```tikz
 \usepackage{tikz-cd}

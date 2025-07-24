@@ -24,7 +24,7 @@ Suppose $\Omega$ is a region, and $f : \Omega \to \mathbb{C}$ is holomorphic and
 
 ###### _proof:_
 
-By the contrapositive of the [[Complex Analysis --- math-135/notes/Cauchy integral formula#_theorem _ identity theorem|identity theorem]], we know that there is a punctured neighbourhood $N^*_{r}(z_{0})$ where $f$ does not vanish (otherwise $z_{0}$ would be a limit point of the zeroes of $f$).
+By the contrapositive of the [[Complex analysis --- math-135/notes/Cauchy integral formula#_theorem _ identity theorem|identity theorem]], we know that there is a punctured neighbourhood $N^*_{r}(z_{0})$ where $f$ does not vanish (otherwise $z_{0}$ would be a limit point of the zeroes of $f$).
 
 Consider the power series expansion of $f$ about $z_{0}$ in $N_{r}^*(z_{0})$ —
 $$
@@ -105,11 +105,11 @@ $$
 
 ###### _proof sketch:_
 
-Write out the [[Complex Analysis --- math-135/notes/Meromorphic functions and singularities#_proposition, definition _ principals and residues|principles and residues]] of $f$ —
+Write out the [[Complex analysis --- math-135/notes/Meromorphic functions and singularities#_proposition, definition _ principals and residues|principles and residues]] of $f$ —
 $$
 f(z) = \frac{a_{-n}}{(z - z_{0})^n} + \dots + \frac{a_{-1}}{z - z_{0}} + G(z).
 $$
-Integrate $f$ on the keyhole contour that avoids $z_{0}$. Then the integral reduces to the integral around a circle centred at $z_{0}$. The integrals of the principle part and $G(z)$ go to zero since they are all holomorphic on $\Omega \setminus \{ z_{0} \}$. All that remains is the integral of $\frac{a_{-1}}{z -z_{0}}$ over a circle centred at $z_{0}$. We calculated that this is $2 \pi ia_{-1}$ in the [[Complex Analysis --- math-135/attachments/homework/hw 2/hw 2.pdf#page=6|second homework]].
+Integrate $f$ on the keyhole contour that avoids $z_{0}$. Then the integral reduces to the integral around a circle centred at $z_{0}$. The integrals of the principle part and $G(z)$ go to zero since they are all holomorphic on $\Omega \setminus \{ z_{0} \}$. All that remains is the integral of $\frac{a_{-1}}{z -z_{0}}$ over a circle centred at $z_{0}$. We calculated that this is $2 \pi ia_{-1}$ in the [[Complex analysis --- math-135/attachments/homework/hw 2/hw 2.pdf#page=6|second homework]].
 
 ##### _corollary:_ the residue formula for many poles
 
@@ -169,7 +169,7 @@ Consider $g(z) = \frac{1}{f(z) - w}$ on $D_{r}^*(z_{0})$. Note that $\lvert g(z)
 
 ### Singularities at $\infty$
 
-It turns out to be important to be useful to think of these functions on the [[Complex Analysis --- math-135/notes/The extended complex plane|extended complex plane]] as well.
+It turns out to be important to be useful to think of these functions on the [[Complex analysis --- math-135/notes/The extended complex plane|extended complex plane]] as well.
 
 ##### _definition:_ singularity at $\infty$
 
@@ -189,4 +189,4 @@ Since $f$ is meromorphic on the extended complex plane, $F(z) = f\left( \frac{1}
 
 Write $h$ as $f$ less the principal parts $f_{k}$ of each of the poles $z_{k}$. Thus, near $z_{k}$, where $f(z) = f_{k}(z) + g_{k}(z)$ for some holomorphic $g_{k}$ we only have removable singularities. Thus, $h$ can be extended to an entire function. Similarly, remove the pole at infinity. That means we $F(z) = f\left( \frac{1}{z} \right)$ only has removable singularity at $0$. Thus, $h$ must be bounded everywhere.
 
-Thus, by [[Complex Analysis --- math-135/notes/Cauchy integral formula#_theorem _ Liouville's theorem|Liouville's theorem]], we have that (the extension of $h$, and thus,) $h$ is a constant. But then $f$ is just the sum of principal parts, the pole at infinity and a constant. That is, a rational function.
+Thus, by [[Complex analysis --- math-135/notes/Cauchy integral formula#_theorem _ Liouville's theorem|Liouville's theorem]], we have that (the extension of $h$, and thus,) $h$ is a constant. But then $f$ is just the sum of principal parts, the pole at infinity and a constant. That is, a rational function.

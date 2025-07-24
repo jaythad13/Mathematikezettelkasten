@@ -36,7 +36,7 @@ But how do we turn this into a global condition that we can check all at once?At
 The following are equivalent for a variety $X = Z(I)$ for $I \in \operatorname{Spec} R$ with
 1) $X$ is non-singular at all $M \in \operatorname{mSpec}(\mathcal{O})$.
 2) $\dim (M / M^{2}) = 1$ for all $M \in \operatorname{mSpec}(\mathcal{O})$.
-3) $\mathcal{O}$ is a Dedekind domain — an [[Abstract Algebra I --- math-171/notes/Integral domains|integral domain]] that is [[Abstract Algebra I --- math-171/notes/Factorisation in special rings#_theorem _ Every PID is a UFD|Noetherian]], integrally closed, and has $\dim \mathcal{O} = 1$.
+3) $\mathcal{O}$ is a Dedekind domain — an [[Abstract algebra --- math-171/notes/Integral domains|integral domain]] that is [[Abstract algebra --- math-171/notes/Factorisation in special rings#_theorem _ Every PID is a UFD|Noetherian]], integrally closed, and has $\dim \mathcal{O} = 1$.
 
 This means we can define curves abstractly, by just picking any Dedekind domain!
 
@@ -56,4 +56,4 @@ A more abstract example is
 
 ##### _example:_ $\operatorname{Spec} \mathbb{Z}$
 
-It turns out that all [[Abstract Algebra I --- math-171/notes/Factorisation in special rings#_definition _ principal ideal domain|PIDs]] are Dedekind domains, so $X = \operatorname{Spec} \mathbb{Z}$ is a non-singular curve where all the points are the primes!
+It turns out that all [[Abstract algebra --- math-171/notes/Factorisation in special rings#_definition _ principal ideal domain|PIDs]] are Dedekind domains, so $X = \operatorname{Spec} \mathbb{Z}$ is a non-singular curve where all the points are the primes!

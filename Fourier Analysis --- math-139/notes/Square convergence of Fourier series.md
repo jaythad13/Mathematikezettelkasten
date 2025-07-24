@@ -16,7 +16,7 @@ The nicest inner product space to do analysis in is a Hilbert space
 
 ##### _definition:_ Hilbert space
 
-A Hilbert space is an inner product space that is [[Mathematical Analysis I --- math-131/notes/Cauchy sequences#_definition _ completeness|complete]] with respect to the induced metric.
+A Hilbert space is an inner product space that is [[Analysis --- math-131/notes/Cauchy sequences#_definition _ completeness|complete]] with respect to the induced metric.
 
 For one, the space of $\ell^{2}$ sequences is a Hilbert space! 
 
@@ -30,7 +30,7 @@ for sequences $A = \{ a_{n} \}_{n \in \mathbb{Z}}$ and $B = \{ b_{n} \}_{n \in \
 
 Using the finite dimensional triangle inequality, we can see that this space is indeed closed under addition. The inner product structure is obvious.
 
-While $\ell^{2}$ is really nice, the space of Riemann (square) integrable functions fails to be quite as nice. For one it isn't a proper inner product space — $\lVert f \rVert = 0$ only implies $f = 0$ almost everywhere. However this can be remedied by quotienting out by functions differing only on sets of [[Calculus --- spivak/notes/Measure#_definition _ measure $0$|measure zero]]. What is more serious is that $\mathcal{R}$ isn't complete. For example the sequence $f_{n} : x \mapsto \log (1 / x) \chi_{[1 / n, 2 \pi]}(x)$ is [[Mathematical Analysis I --- math-131/notes/Cauchy sequences#_definition _ Cauchy sequence|Cauchy]] but doesn't converge in $\mathcal{R}$.
+While $\ell^{2}$ is really nice, the space of Riemann (square) integrable functions fails to be quite as nice. For one it isn't a proper inner product space — $\lVert f \rVert = 0$ only implies $f = 0$ almost everywhere. However this can be remedied by quotienting out by functions differing only on sets of [[Calculus --- spivak/notes/Measure#_definition _ measure $0$|measure zero]]. What is more serious is that $\mathcal{R}$ isn't complete. For example the sequence $f_{n} : x \mapsto \log (1 / x) \chi_{[1 / n, 2 \pi]}(x)$ is [[Analysis --- math-131/notes/Cauchy sequences#_definition _ Cauchy sequence|Cauchy]] but doesn't converge in $\mathcal{R}$.
 
 ##### _proposition, definition:_ the $L^2$ inner product, $\mathcal{R}$
 
@@ -80,11 +80,11 @@ That is, $\lVert f - S_{N}f \rVert_{L^2} \to 0$.
 
 ###### _proof sketch:_
 
-For a continuous function $g$, [[Fourier Analysis --- math-139/notes/Kernels#_corollary _ Weierstrass approximation theorem|we know the (trigonometric) Weierstrass approximation theorem is true]]. Note that though the Cesaro means converge to the Fourier series when the Fourier series converges, we aren't guaranteed convergence of the Fourier series.
+For a continuous function $g$, [[Fourier analysis --- math-139/notes/Kernels#_corollary _ Weierstrass approximation theorem|we know the (trigonometric) Weierstrass approximation theorem is true]]. Note that though the Cesaro means converge to the Fourier series when the Fourier series converges, we aren't guaranteed convergence of the Fourier series.
 
-Since the trigonometric polynomials $p_{n} \rightrightarrows f$, they converge to $g$ in $L^\infty$ ([[Mathematical Analysis I --- math-131/notes/The space of continuous functions#_definition, proposition _ the space of continuous functions is a metric space|the supremum norm]]) and thus, they converge in $L^2$ (bound $\lvert p_{n} - g \rvert$ by $2 \pi \varepsilon$ and substitute into the integral). That is, $\lVert p_{n} - g \rVert_{L^2} \to 0$. Since $S_{n}g$ is the best $L^2$ approximation to $g$ by trigonometric polynomials, we must have $\lVert S_{n}g - g \rVert_{L^2} \leq \lVert p_{n} - g \rVert_{L^2} < \varepsilon$ at each point as $n \to \infty$.
+Since the trigonometric polynomials $p_{n} \rightrightarrows f$, they converge to $g$ in $L^\infty$ ([[Analysis --- math-131/notes/The space of continuous functions#_definition, proposition _ the space of continuous functions is a metric space|the supremum norm]]) and thus, they converge in $L^2$ (bound $\lvert p_{n} - g \rvert$ by $2 \pi \varepsilon$ and substitute into the integral). That is, $\lVert p_{n} - g \rVert_{L^2} \to 0$. Since $S_{n}g$ is the best $L^2$ approximation to $g$ by trigonometric polynomials, we must have $\lVert S_{n}g - g \rVert_{L^2} \leq \lVert p_{n} - g \rVert_{L^2} < \varepsilon$ at each point as $n \to \infty$.
 
-Since [[Fourier Analysis --- math-139/notes/Facts about integration and convergence#_lemma _ integrable functions are approximated by continuous functions|integrable functions are approximated by continuous functions]] in $L^1$, for $f$ integrable we can get $\lVert f - g \rVert_{L^1} < \varepsilon^{2} / 2B$ with $g$ continuous. By bounding $\lvert f - g \rvert$ by some $B$ (they are integrable), we can also get $\lVert f - g \rVert_{L^2} = \sqrt{ 2 B \lVert f - g \rVert_{L^1}^{2} }$ and thus $\lVert f - g \rVert_{L^2} < \varepsilon$.
+Since [[Fourier analysis --- math-139/notes/Facts about integration and convergence#_lemma _ integrable functions are approximated by continuous functions|integrable functions are approximated by continuous functions]] in $L^1$, for $f$ integrable we can get $\lVert f - g \rVert_{L^1} < \varepsilon^{2} / 2B$ with $g$ continuous. By bounding $\lvert f - g \rvert$ by some $B$ (they are integrable), we can also get $\lVert f - g \rVert_{L^2} = \sqrt{ 2 B \lVert f - g \rVert_{L^1}^{2} }$ and thus $\lVert f - g \rVert_{L^2} < \varepsilon$.
 
 Since $g$ is approximated by $\{ p_{n} \}_{n \in \mathbb{N}}$ with $\lVert g - p_{n} \rVert_{L^2} < \varepsilon$. By the triangle inequality we get $f$ approximated by $\{ p_{n} \}_{n \in \mathbb{N}}$ — we have $\lVert f - p_{n} \rVert_{L^{2}} < 2 \varepsilon$. Then applying the best approximation lemma again, we get $\lVert S_{n}f - f \rVert_{L^{2}} \le \lVert p_{n} - f \rVert \to 0$.
 

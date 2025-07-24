@@ -6,7 +6,7 @@ tags:
 - complex
 ---
 
-The Riemann zeta function is an important function in analytic number theory. Its importance was first recognised by Euler, who showed that it can be written as an [[Complex Analysis --- math-135/notes/Infinite products|infinite product]] related to the [[Superdiscrete --- math-55A/notes/Euclid's algorithm and primes#Primes|primes]].
+The Riemann zeta function is an important function in analytic number theory. Its importance was first recognised by Euler, who showed that it can be written as an [[Complex analysis --- math-135/notes/Infinite products|infinite product]] related to the [[Superdiscrete --- math-55A/notes/Euclid's algorithm and primes#Primes|primes]].
 
 ##### _definition:_ the Riemann zeta function
 
@@ -92,7 +92,7 @@ $$
 $$
 Thus, taking limits for the partial sums/products on the left as $N \to \infty$, we get double inequality and thus, equality.
 
-Note that this requires showing that the Euler product does actually converge (to a holomorphic function) for all $\operatorname{Re} s > 1$. We can do so by showing that the multiplicands have [[Complex Analysis --- math-135/notes/Infinite products#_theorem _ infinite products of holomorphic functions|bounded distance]] from $1$. In particular, on any compact $K \subset \{ s \in \mathbb{C} \mid \operatorname{Re} s > 1 \}$.
+Note that this requires showing that the Euler product does actually converge (to a holomorphic function) for all $\operatorname{Re} s > 1$. We can do so by showing that the multiplicands have [[Complex analysis --- math-135/notes/Infinite products#_theorem _ infinite products of holomorphic functions|bounded distance]] from $1$. In particular, on any compact $K \subset \{ s \in \mathbb{C} \mid \operatorname{Re} s > 1 \}$.
 $$
 \frac{1}{1 - p^{-s}} - 1 = \frac{p^{-s}}{1 - p^{-s}}
 $$
@@ -122,7 +122,7 @@ $$
 
 ###### _proof sketch:_
 
-Apply the [[Complex Analysis --- math-135/notes/Fourier analysis and holomorphic functions#_theorem _ the Poisson summation formula|Poisson summation formula]] to $g(x) = e^{- \pi t (x + a)^{2}}$.
+Apply the [[Complex analysis --- math-135/notes/Fourier analysis and holomorphic functions#_theorem _ the Poisson summation formula|Poisson summation formula]] to $g(x) = e^{- \pi t (x + a)^{2}}$.
 
 ##### _corollary:_ asymptotics for theta
 
@@ -136,7 +136,7 @@ $$
 $$
 Bounding this sum
 
-We are now going to try to get a functional equation for $\zeta$ in terms of [[Complex Analysis --- math-135/notes/The gamma function#_definition _ the gamma function|the gamma function]].
+We are now going to try to get a functional equation for $\zeta$ in terms of [[Complex analysis --- math-135/notes/The gamma function#_definition _ the gamma function|the gamma function]].
 
 ##### _theorem:_ functional equation for $\zeta$
 

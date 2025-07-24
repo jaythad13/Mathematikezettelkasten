@@ -62,4 +62,4 @@ then for all $1 < p < q$, $T$ is bounded on $L^p$ — that is, $\lVert T f \rVe
 
 ###### _proof sketch:_
 
-The proof follows similarly to the [[Fourier Analysis --- math-139/notes/Hardy-Littlewood maximal functions#_theorem _ the boundedness of the Hardy-Littlewood operator|proof of the boundedness of the maximal operator]]. We first show weak $(1, 1)$-boundedness for $T$. We do Calderón-Zygmund decomposition at height $c \alpha$ to show that
+The proof follows similarly to the [[Fourier analysis --- math-139/notes/Hardy-Littlewood maximal functions#_theorem _ the boundedness of the Hardy-Littlewood operator|proof of the boundedness of the maximal operator]]. We first show weak $(1, 1)$-boundedness for $T$. We do Calderón-Zygmund decomposition at height $c \alpha$ to show that

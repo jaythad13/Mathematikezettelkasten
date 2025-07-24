@@ -8,7 +8,7 @@ tags:
 
 Let $(X, d_{X}), (Y, d_{Y})$ be metric spaces.
 
-The [[Geometric group theory --- rtg-2025/notes/Graph actions and Cayley graphs#_definition _ Cayley graphs|Cayley graph]] of a group $G$ solves the problem of finding a space with symmetries exactly encoding $G$. However, to understand $G$ fully it's useful to consider a larger space on which it acts. A natural extension is to consider groups acting on [[Mathematical Analysis I --- math-131/notes/Metric spaces#_definition_ metric space, metric|metric spaces]]. Since the action of $G$ on its Cayley graph preserves word length (and the group of homeomorphisms) the natural extension is to require $G$ to act by isometries.
+The [[Geometric group theory --- rtg-2025/notes/Graph actions and Cayley graphs#_definition _ Cayley graphs|Cayley graph]] of a group $G$ solves the problem of finding a space with symmetries exactly encoding $G$. However, to understand $G$ fully it's useful to consider a larger space on which it acts. A natural extension is to consider groups acting on [[Analysis --- math-131/notes/Metric spaces#_definition_ metric space, metric|metric spaces]]. Since the action of $G$ on its Cayley graph preserves word length (and the group of homeomorphisms) the natural extension is to require $G$ to act by isometries.
 
 ##### _definition:_ isometry
 
@@ -24,15 +24,15 @@ Note that isometries are topological embeddings ([[Topology --- math-147/notes/H
 
 ##### _definition:_ isometric action
 
-For a group $G$ and metric space $X$, an isometric action $G \circlearrowright X$ is a [[Abstract Algebra I --- math-171/notes/Group homomorphisms#_definition _ group homomorphisms|homomorphism]] $G \to \operatorname{Isom} X$.
+For a group $G$ and metric space $X$, an isometric action $G \circlearrowright X$ is a [[Abstract algebra --- math-171/notes/Group homomorphisms#_definition _ group homomorphisms|homomorphism]] $G \to \operatorname{Isom} X$.
 
 Equivalently, it is a group action $G \circlearrowright X$ so that the function $x \mapsto g \cdot x$ is an isometry for each $g \in G$.
 
 ##### _examples:_ isometric group actions
 
-- The Cayley graph of a group $G$ is a metric space with the [[Mathematical Analysis I --- math-131/notes/Metric spaces#_examples _ metric spaces|graph metric]]. Thus, $G$ itself is a metric space with the [[Geometric group theory --- rtg-2025/notes/Graph actions and Cayley graphs#_definition _ word length|word length]] metric. $G$ acts on both by left multiplication.
-- $\mathbb{Z}^{2}$ acts isometrically on $\mathbb{R}^{2}$ with both, Euclidean and [[Mathematical Analysis I --- math-131/notes/Metric spaces#_example _ notions of distance|taxicab]] metrics.
-- The [[Abstract Algebra I --- math-171/notes/Dihedral groups and generators#_definition _ the dihedral group|dihedral group]] $D_{2n}$ acts on $\mathbb{R}^{2}$ by rotations about $0$ and reflections about the $y$-axis.
+- The Cayley graph of a group $G$ is a metric space with the [[Analysis --- math-131/notes/Metric spaces#_examples _ metric spaces|graph metric]]. Thus, $G$ itself is a metric space with the [[Geometric group theory --- rtg-2025/notes/Graph actions and Cayley graphs#_definition _ word length|word length]] metric. $G$ acts on both by left multiplication.
+- $\mathbb{Z}^{2}$ acts isometrically on $\mathbb{R}^{2}$ with both, Euclidean and [[Analysis --- math-131/notes/Metric spaces#_example _ notions of distance|taxicab]] metrics.
+- The [[Abstract algebra --- math-171/notes/Dihedral groups and generators#_definition _ the dihedral group|dihedral group]] $D_{2n}$ acts on $\mathbb{R}^{2}$ by rotations about $0$ and reflections about the $y$-axis.
 
 ### A deep theorem from elementary facts
 
@@ -69,11 +69,11 @@ Since the set of all $x_{j}$ is finite, and thus, bounded, there is some compact
 
 ##### _theorem:_ free actions on $\mathbb{R}^n$ must be torsion-free
 
-If $G \circlearrowright \mathbb{R}^n$ is a [[Abstract Algebra I --- math-171/notes/Group actions#_definition _ stabiliser, free|free]] isometric action, then $G$ is [[Abstract Algebra I --- math-171/attachments/homework/hw 8/hw 8.pdf#page=1|torsion-free]].
+If $G \circlearrowright \mathbb{R}^n$ is a [[Abstract algebra --- math-171/notes/Group actions#_definition _ stabiliser, free|free]] isometric action, then $G$ is [[Abstract algebra --- math-171/attachments/homework/hw 8/hw 8.pdf#page=1|torsion-free]].
 
 ###### _proof:_
 
-Suppose $g \in G$ is torsion, and thus, any $x \in \mathbb{R}^n$ has finite [[Abstract Algebra I --- math-171/notes/Group actions#_definition _ orbit|orbit]] $\mathcal{O}_{G}(x) = \{ g \cdot x, \dots, g^m \cdot x \}$. Then let $y$ be the centroid of $\mathcal{O}_{G}(x)$ — the unique point minimising the sum of distances from each point in $\mathcal{O}_{G}(x)$.
+Suppose $g \in G$ is torsion, and thus, any $x \in \mathbb{R}^n$ has finite [[Abstract algebra --- math-171/notes/Group actions#_definition _ orbit|orbit]] $\mathcal{O}_{G}(x) = \{ g \cdot x, \dots, g^m \cdot x \}$. Then let $y$ be the centroid of $\mathcal{O}_{G}(x)$ — the unique point minimising the sum of distances from each point in $\mathcal{O}_{G}(x)$.
 
 Since $g \cdot \mathcal{O}_{G}(x) = \mathcal{O}_{G}(x)$, the centroid of $g \cdot \mathcal{O}_{G}(x)$ is $y$. However, since $G \circlearrowright \mathbb{R}^n$ is isometric $g \cdot \mathcal{O}_{G}(x)$ has centroid $g \cdot y$. Thus, $y = g \cdot y$. Since $G \circlearrowright \mathbb{R}^n$ is free, $g$ must be the identity.
 

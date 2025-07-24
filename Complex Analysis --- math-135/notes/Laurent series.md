@@ -5,7 +5,7 @@ tags:
 - complex
 ---
 
-We can get something like a power series for functions even when they're only holomorphic on an annulus! This is another way to think about [[Complex Analysis --- math-135/notes/Meromorphic functions and singularities|meromorphic functions]].
+We can get something like a power series for functions even when they're only holomorphic on an annulus! This is another way to think about [[Complex analysis --- math-135/notes/Meromorphic functions and singularities|meromorphic functions]].
 
 ##### _theorem:_ Laurent expansion
 
@@ -25,7 +25,7 @@ Fix $z \in A$, and let $\rho = \lvert z - z_{0} \rvert$. Also choose $\rho_{1}, 
 $$
 f(z) = \frac{1}{2 \pi i} \int_{C_{\rho_{1}}(z_{0})} \frac{f(\zeta)}{\zeta - z} \, d\zeta - \frac{1}{2 \pi i} \int_{C_{\rho_{2}}(z_{0})} \frac{f(\zeta)}{\zeta - z} \, dz  
 $$
-Using the same trick we used [[Complex Analysis --- math-135/notes/Cauchy integral formula#_corollary _ the derivative form (holomorphic functions are smooth and analytic)|to get a power series from the Cauchy integral formula]], we can write the first integral as a power series —
+Using the same trick we used [[Complex analysis --- math-135/notes/Cauchy integral formula#_corollary _ the derivative form (holomorphic functions are smooth and analytic)|to get a power series from the Cauchy integral formula]], we can write the first integral as a power series —
 $$
 \frac{1}{2 \pi i} \int_{C_{\rho_{1}}} \frac{f(\zeta)}{\zeta - z} \, d\zeta = \sum_{n = 0}^\infty (z - z_{0})^n \frac{1}{2 \pi i} \int_{C_{\rho_{1}}} \frac{f(\zeta)}{(\zeta - z_{0})^{n + 1}} \, d\zeta 
 $$
@@ -58,7 +58,7 @@ $$
 f(z) = \frac{1}{2 \pi i} \int_{C_{\rho_{1}}(z_{0})} \frac{f(\zeta)}{\zeta - z} \, d\zeta - \frac{1}{2 \pi i} \int_{C_{\rho_{2}}(z_{0})} \frac{f(\zeta)}{\zeta - z} \, dz = 
 $$
 
-Once we move the $z$ out of the integrals, we can just deform $C_{\rho_{1}}$ and $C_{\rho_{2}}$ to any circle in the annulus by [[Complex Analysis --- math-135/notes/Homotopy and simply connected domains#_theorem _ deformation theorem|homotopy]].
+Once we move the $z$ out of the integrals, we can just deform $C_{\rho_{1}}$ and $C_{\rho_{2}}$ to any circle in the annulus by [[Complex analysis --- math-135/notes/Homotopy and simply connected domains#_theorem _ deformation theorem|homotopy]].
 
 Note that these coefficients are unique, since
 $$
@@ -80,9 +80,9 @@ Suppose $f : D \to \mathbb{C}$ is holomorphic on some disc $D$ except at an isol
 $$
 f(z) = \sum_{n = - \infty}^\infty a_{n} (z - z_{0})^n
 $$
-1) If $a_{n} = 0$ for all $n < 0$, then $z_{0}$ is a [[Complex Analysis --- math-135/notes/Meromorphic functions and singularities#_definition _ removable singularity|removable singularity]]
-2) If $a_{-N} \neq 0$ but $a_{n} = 0$ for all $n < -N$, $z_{0}$ is a [[Complex Analysis --- math-135/notes/Meromorphic functions and singularities#_definition _ pole|pole]] of order $N$
-3) If $a_{n} \neq 0$ for infinitely many negative integers, $z_{0}$ is an [[Complex Analysis --- math-135/notes/Meromorphic functions and singularities#_definition _ essential singularity|essential singularity]].
+1) If $a_{n} = 0$ for all $n < 0$, then $z_{0}$ is a [[Complex analysis --- math-135/notes/Meromorphic functions and singularities#_definition _ removable singularity|removable singularity]]
+2) If $a_{-N} \neq 0$ but $a_{n} = 0$ for all $n < -N$, $z_{0}$ is a [[Complex analysis --- math-135/notes/Meromorphic functions and singularities#_definition _ pole|pole]] of order $N$
+3) If $a_{n} \neq 0$ for infinitely many negative integers, $z_{0}$ is an [[Complex analysis --- math-135/notes/Meromorphic functions and singularities#_definition _ essential singularity|essential singularity]].
 
 ###### _proof:_
 
@@ -90,7 +90,7 @@ The first follows since if there are no negative indexed coefficients, $f$ has a
 
 The second case follows by the same thing as
 
-We get a useful extension of [[Complex Analysis --- math-135/notes/Cauchy-Goursat theorem#_corollary _ Cauchy's theorem|Cauchy's theorem]]:
+We get a useful extension of [[Complex analysis --- math-135/notes/Cauchy-Goursat theorem#_corollary _ Cauchy's theorem|Cauchy's theorem]]:
 
 ##### _theorem:_
 

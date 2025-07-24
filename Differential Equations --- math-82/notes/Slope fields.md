@@ -19,5 +19,5 @@ We can sample just a few points and determine the behaviour of the graph.
 | $2$   | $-4$ | $-2$ | $0$ | $2$  | $4$  |
 This table of $y'$ at various points $(x, y)$ determines the slope field below.
 
-![[S0_slopeFieldExample.jpeg]]
+![[Differential equations --- math-82/attachments/for notes/Slope fields/S0_slopeFieldExample.jpeg]]
 The orange lines show the slope at various points $(x, y)$ and the green curves show different possible solutions of the differential equation. Since the differential equation is solvable, we can see that the green curves correspond to different $y$-intercepts $y_{0}$ for the curve $y_{0} e^{x^2}$.

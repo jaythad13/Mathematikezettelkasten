@@ -12,7 +12,7 @@ Complex analysis is the study of differentiable functions $f : \mathbb{C} \to \m
 - If $f$ doesn't attain $1$ and $-1$ (or any two complex numbers), it is constant.
 
 Most of these differences are due to a deep "representation" type result that says the information inside a "two-dimensional" region in the complex plane can be represented by its one-dimensional boundary.
-![[Complex Analysis --- math-135/notes/Cauchy integral formula#_theorem _ Cauchy integral formula|Cauchy integral formula]]
+![[Complex analysis --- math-135/notes/Cauchy integral formula#_theorem _ Cauchy integral formula|Cauchy integral formula]]
 
 ### Complex numbers and the complex plane
 
@@ -98,7 +98,7 @@ $$
 \lvert z - w \rvert & \ge \lvert w \rvert - \lvert z \rvert 
 \end{split}
 $$
-Naturally, with the triangle inequality, this magnitude gives us a metric on $\mathbb{C}$ that makes it a [[Complex Analysis --- math-135/notes/Analysis and (metric) topology review|metric/topological space]].
+Naturally, with the triangle inequality, this magnitude gives us a metric on $\mathbb{C}$ that makes it a [[Complex analysis --- math-135/notes/Analysis and (metric) topology review|metric/topological space]].
 
 ### Polar representation
 

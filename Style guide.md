@@ -45,7 +45,7 @@ We organise each project directory as follows. We place markdown notes in the `
 
 Some examples —
 - [[Calculus on Manifolds.pdf|Calculus on Manifolds]] from #spivak is located at `Calculus on manifolds --- spivak/attachments/texts/Calculus on Manifolds.pdf`.
-- [[S2_symmetryExample.jpeg|This picture]] used [[Dihedral groups and generators#_definition _ symmetry of a regular polygon|in these notes on dihedral groups and generators]] to demonstrate some symmetries of a square is located at `Abstract Algebra I --- math-171/attachments/for notes/Dihedral groups and an introduction to generators/S2_symmetryExample.jpeg`
+- [[Abstract algebra --- math-171/attachments/for notes/Dihedral groups and an introduction to generators/S2_symmetryExample.jpeg|This picture]] used [[Abstract algebra --- math-171/notes/Dihedral groups and generators#_definition _ symmetry of a regular polygon|in these notes on dihedral groups and generators]] to demonstrate some symmetries of a square is located at `Abstract Algebra I --- math-171/attachments/for notes/Dihedral groups and an introduction to generators/S2_symmetryExample.jpeg`
 - [[Differential Geometry --- math-142/attachments/homework/hw 8/hw 8.pdf|Homework assignment #8]] from #math-142 is located at `Differential Geometry --- math-142/attachments/homework/hw 8/hw 8.pdf`.
 
 ##### YAML

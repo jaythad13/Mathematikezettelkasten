@@ -6,7 +6,7 @@ tags:
 - rtg-2025/2
 ---
 
-Recall the [[Introduction to Riemann Surfaces --- math-199DR/notes/Riemann surfaces#_example _ the Riemann sphere and the complex projective line|Riemann sphere as complex projective space]] 
+Recall the [[Riemann surfaces and algebraic curves --- math-199DR/notes/Riemann surfaces#_example _ the Riemann sphere and the complex projective line|Riemann sphere as complex projective space]] 
 $$
 \mathbb{C} \mathbb{P}^1 = (\mathbb{C}^{2} \setminus \{ 0 \}) / \mathbb{C}^\times
 $$
@@ -40,9 +40,9 @@ is called the action by Möbius transformations. Note that the action of a matri
 
 Each function $(z : w) \mapsto A \cdot (z : w)$ is called a Möbius transformation and the group of all Möbius transformations is called $\operatorname{Möb} \mathbb{C}\mathbb{P}^1$.
 
-Recall that $\operatorname{Möb} \mathbb{C} \mathbb{P}^1$ [[Introduction to Riemann Surfaces --- math-199DR/notes/Holomorphisms of Riemann surfaces#_examples _ interesting isomorphisms|is exactly the automorphism group]] of the Riemann sphere as a Riemann surface/complex manifold/algebraic curve.
+Recall that $\operatorname{Möb} \mathbb{C} \mathbb{P}^1$ [[Riemann surfaces and algebraic curves --- math-199DR/notes/Holomorphisms of Riemann surfaces#_examples _ interesting isomorphisms|is exactly the automorphism group]] of the Riemann sphere as a Riemann surface/complex manifold/algebraic curve.
 
-Note also that $\mathbb{C}^* \le \mathrm{GL}_{2}(\mathbb{C})$ is part of the [[Abstract Algebra I --- math-171/notes/Group actions#_definition _ kernel, effective action|kernel]] of the group actions, so the action descends to an action of the projective general linear group $\mathrm{PGL}_{2}(\mathbb{C})$ (which incidentally is the same as $\mathrm{PSL}_{2}(\mathbb{C})$).
+Note also that $\mathbb{C}^* \le \mathrm{GL}_{2}(\mathbb{C})$ is part of the [[Abstract algebra --- math-171/notes/Group actions#_definition _ kernel, effective action|kernel]] of the group actions, so the action descends to an action of the projective general linear group $\mathrm{PGL}_{2}(\mathbb{C})$ (which incidentally is the same as $\mathrm{PSL}_{2}(\mathbb{C})$).
 
 This action of $\mathrm{PGL}_{2}(\mathbb{C})$ on $\mathbb{C} \mathbb{P}^1$ has the interesting property that it is (sharply) $3$-transitive.
 
@@ -235,7 +235,7 @@ $$
 $$
 where $\rho(z) = 1 / \operatorname{Im} z$.
 
-The hyperbolic metric is the [[Mathematical Analysis I --- math-131/notes/Metric spaces#_definition_ metric space, metric|metric]] $d_{\mathbb{H}^{2}}$ given by the infimum of lengths of paths between two points —
+The hyperbolic metric is the [[Analysis --- math-131/notes/Metric spaces#_definition_ metric space, metric|metric]] $d_{\mathbb{H}^{2}}$ given by the infimum of lengths of paths between two points —
 $$
 d_{\mathbb{H}^{2}}(z, w) = \inf \{ \operatorname{length} \sigma \mid \sigma(0) = z, \sigma(1) = w \}
 $$

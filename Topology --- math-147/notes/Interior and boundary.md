@@ -6,7 +6,7 @@ tags:
 
 Let $(X, \mathcal{T})$ be a [[Topology --- math-147/notes/Topologies#_definition _ topology, open sets, topological space|topological space]].
 
-Just as with closedness and limit points, we can extend our metric space notions of [[Mathematical Analysis I --- math-131/notes/Metric spaces#_definition _ interior point|interior]] and boundary to arbitrary topological spaces.
+Just as with closedness and limit points, we can extend our metric space notions of [[Analysis --- math-131/notes/Metric spaces#_definition _ interior point|interior]] and boundary to arbitrary topological spaces.
 
 ### Interior
 

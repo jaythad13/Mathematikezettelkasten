@@ -4,7 +4,7 @@ tags:
 - diff-eq
 ---
 
-Often simple differential equations give ways to solve more complicated ones (in the end we try to reduce everything to a separable equation). One example of this is how [[Differential Equations --- math-82/notes/Undetermined coefficients|the solution]] to a [[Differential Equations --- math-82/notes/Classifying ordinary differential equations|second order, homogenous, linear]] differential equation, say
+Often simple differential equations give ways to solve more complicated ones (in the end we try to reduce everything to a separable equation). One example of this is how [[Differential equations --- math-82/notes/Undetermined coefficients|the solution]] to a [[Differential equations --- math-82/notes/Classifying ordinary differential equations|second order, homogenous, linear]] differential equation, say
 $$
 y'' + p_{1}(x) y' + p_{2}(x) y = 0
 $$

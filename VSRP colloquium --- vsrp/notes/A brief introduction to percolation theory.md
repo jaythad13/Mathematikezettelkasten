@@ -23,7 +23,7 @@ Percolation theory is then about looking at how connectivity properties vary on 
 
 ### Connectivity questions
 
-Recall that a connected graph $G$ is naturally a [[Mathematical Analysis I --- math-131/notes/Metric spaces#_definition_ metric space, metric|metric space]] with the shortest path distance between any two vertices. This allows us to use the notation $B(n, x)$ to represent the ball of points of distance less than $n$ from $x \in V(G)$ and $\partial B(n, x)$ to represent the balls at distance exactly $n$.
+Recall that a connected graph $G$ is naturally a [[Analysis --- math-131/notes/Metric spaces#_definition_ metric space, metric|metric space]] with the shortest path distance between any two vertices. This allows us to use the notation $B(n, x)$ to represent the ball of points of distance less than $n$ from $x \in V(G)$ and $\partial B(n, x)$ to represent the balls at distance exactly $n$.
 
 The first idea is to look at the probability that a fixed $x \in V(G)$ is connected to infinity. We approximate this by the one-arm probability. We do this because the measure space is uncountable and so we can't sum over everything directly, and instead we do this summing over the finite ball.
 
@@ -34,7 +34,7 @@ $$
 \theta(n, x, p) = \mathbb{P}(x \leftrightarrow  \partial B(n, x)).
 $$
 
-Note that this is decreasing in $n$ since connectivity to $\partial B(n + 1, x)$ implies connectivity to $\partial B(n, x)$ but not the other way round. Thus, $\theta(n, x, p)$ is a monotone sequence in $n$, bounded below by $0$. [[Mathematical Analysis I --- math-131/notes/Sequences and convergence#_proposition _ monotonic sequences blow up or converge|Thus, it converges]] as $n \to \infty$.  We call the value of the convergent sequence $\theta(\infty, x, p)$. We're interested in whether this is positive, since that tells us whether there is a positive probability of an infinite connected component.
+Note that this is decreasing in $n$ since connectivity to $\partial B(n + 1, x)$ implies connectivity to $\partial B(n, x)$ but not the other way round. Thus, $\theta(n, x, p)$ is a monotone sequence in $n$, bounded below by $0$. [[Analysis --- math-131/notes/Sequences and convergence#_proposition _ monotonic sequences blow up or converge|Thus, it converges]] as $n \to \infty$.  We call the value of the convergent sequence $\theta(\infty, x, p)$. We're interested in whether this is positive, since that tells us whether there is a positive probability of an infinite connected component.
 
 Note that this doesn't depend on the choice of $x$ — since $G$ is connected, there is positive probability that the path between $x$ and any other vertex $y$ is completely open. Thus, we just write $\theta(p)$ for $\theta(\infty, x, p)$.
 

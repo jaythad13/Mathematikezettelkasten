@@ -49,7 +49,7 @@ $X$ is compact if and only if collections of closed sets with the finite interse
 
 ###### _proof:_
 
-First suppose $X$ is compact. We will show that any collection of closed sets with empty intersection cannot have the finite intersection property. Suppose that $\{ A_{\alpha} \}_{\alpha \in \mathcal{I}}$ has empty intersection. By [[Mathematical Analysis I --- math-131/notes/Open and closed sets#_theorem _ De Morgan's law|De Morgan's law]], for $U_{\alpha} = {X \setminus A_{\alpha}}$, we have an open cover
+First suppose $X$ is compact. We will show that any collection of closed sets with empty intersection cannot have the finite intersection property. Suppose that $\{ A_{\alpha} \}_{\alpha \in \mathcal{I}}$ has empty intersection. By [[Analysis --- math-131/notes/Open and closed sets#_theorem _ De Morgan's law|De Morgan's law]], for $U_{\alpha} = {X \setminus A_{\alpha}}$, we have an open cover
 $$
 \bigcup_{\alpha \in \mathcal{I}} U_{\alpha} = X \setminus \bigcap_{\alpha \in \mathcal{I}} A_{\alpha} = X.
 $$
@@ -90,7 +90,7 @@ $\mathcal{O} = \{ U_{a} \}_{a \in A}$ is an open cover of $A$ and admits a finit
 
 ##### _example:_ compact subsets need not be closed
 
-Recall the [[Topology --- math-147/notes/Bases#_example _ the double-headed snake|double-headed snake]] $\mathbb{R}_{+00}$. Using [[Mathematical Analysis I --- math-131/notes/Compactness#_theorem _ Heine-Borel theorem|the Heine-Borel theorem]] on the [[Mathematical Analysis I --- math-131/notes/Metric spaces#_definition_ metric space, metric|metric (sub)space]] $\mathbb{R}_{+00} {\setminus \{ 0_{1} \}}$, we can see that $A = \{ 0_{2} \} \cup (0, 1]$ is compact in the subspace, and thus, in the whole double-headed snake as well. However, $0_{1} \not\in A$ is a limit point of $(0, 1]$, and thus, $A$ too. This means $A$ is compact, but not closed.
+Recall the [[Topology --- math-147/notes/Bases#_example _ the double-headed snake|double-headed snake]] $\mathbb{R}_{+00}$. Using [[Analysis --- math-131/notes/Compactness#_theorem _ Heine-Borel theorem|the Heine-Borel theorem]] on the [[Analysis --- math-131/notes/Metric spaces#_definition_ metric space, metric|metric (sub)space]] $\mathbb{R}_{+00} {\setminus \{ 0_{1} \}}$, we can see that $A = \{ 0_{2} \} \cup (0, 1]$ is compact in the subspace, and thus, in the whole double-headed snake as well. However, $0_{1} \not\in A$ is a limit point of $(0, 1]$, and thus, $A$ too. This means $A$ is compact, but not closed.
 
 ##### _theorem:_ compact Hausdorff spaces are normal
 

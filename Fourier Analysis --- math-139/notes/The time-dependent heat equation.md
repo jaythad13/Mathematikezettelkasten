@@ -16,12 +16,12 @@ We proceed "formally" not worrying about whether things actually work. In partic
 $$
 \frac{ \partial \hat{u} }{ \partial t } (\xi, t) = - 4 \pi^{2} \xi^{2} \hat{u}(\xi, t)
 $$
-(since the Fourier transform in one variable commutes with differentiation in a different variable). Now, solving this as a [[Differential Equations --- math-82/notes/Separable differential equations#_definition _ separable differential equation|separable differential equation]] in $t$, and substituting the initial condition $f$, we get
+(since the Fourier transform in one variable commutes with differentiation in a different variable). Now, solving this as a [[Differential equations --- math-82/notes/Separable differential equations#_definition _ separable differential equation|separable differential equation]] in $t$, and substituting the initial condition $f$, we get
 $$
 \hat{u}(\xi, t) = \hat{f}(\xi) e^{- 4 \pi^{2} \xi^{2} t}
 $$
 
-Thus, $u(x, y) = f(x) * H_{t}(x)$ with $H_{t}$ such that $\hat{H_{t}}(\xi) = e^{-4 \pi^{2} \xi^{2} t}$. But then, this is just a dilate of the [[Fourier Analysis --- math-139/notes/The Gaussian kernel#_definition _ the Gaussian kernel|the Gaussian kernel]]. In particular, $H_{t}(x) = \text{something}$, so it is Schwartz too! In fact, this really does work.
+Thus, $u(x, y) = f(x) * H_{t}(x)$ with $H_{t}$ such that $\hat{H_{t}}(\xi) = e^{-4 \pi^{2} \xi^{2} t}$. But then, this is just a dilate of the [[Fourier analysis --- math-139/notes/The Gaussian kernel#_definition _ the Gaussian kernel|the Gaussian kernel]]. In particular, $H_{t}(x) = \text{something}$, so it is Schwartz too! In fact, this really does work.
 
 ##### _theorem:_ the solution to the time-dependent heat equation
 

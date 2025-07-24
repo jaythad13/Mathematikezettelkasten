@@ -41,7 +41,7 @@ But then $Z$ is a continuous function $f : [0, 1] \to \mathbb{Z}$, and thus, mus
 
 ##### _example:_ an application!
 
-Take some polynomial $p(z) = z^n + a_{n - 1} z^{n - 1} + \dots + a_{0}$. Let $f(z) = z^n$, $g(z) = a_{n - 1} z^{n - 1} + \dots + a_{0}$. Since on a large enough circle $\lvert f \rvert > \lvert g \rvert$, $p = f + g$ must have the same number of zeroes as $f$. $f$ has $n$ zeroes, so now so does $p$! This is an alternative proof of the [[Complex Analysis --- math-135/notes/Cauchy integral formula#_theorem _ the fundamental theorem of algebra|fundamental theorem of algebra]].
+Take some polynomial $p(z) = z^n + a_{n - 1} z^{n - 1} + \dots + a_{0}$. Let $f(z) = z^n$, $g(z) = a_{n - 1} z^{n - 1} + \dots + a_{0}$. Since on a large enough circle $\lvert f \rvert > \lvert g \rvert$, $p = f + g$ must have the same number of zeroes as $f$. $f$ has $n$ zeroes, so now so does $p$! This is an alternative proof of the [[Complex analysis --- math-135/notes/Cauchy integral formula#_theorem _ the fundamental theorem of algebra|fundamental theorem of algebra]].
 
 Another cool, and unexpected application of Rouche's theorem is to the open mapping theorem —
 
@@ -112,7 +112,7 @@ n(\gamma, z_{0}) = \frac{1}{2 \pi i} \int _{\gamma} \frac{dz}{z - z_{0}}
 $$
 Sometimes this is called the index of $z_{0}$ with respect to $\gamma$.
 
-Now we can prove the cutest little generalisation of [[Complex Analysis --- math-135/notes/Cauchy integral formula#_theorem _ Cauchy integral formula|Cauchy's integral formula]] — 
+Now we can prove the cutest little generalisation of [[Complex analysis --- math-135/notes/Cauchy integral formula#_theorem _ Cauchy integral formula|Cauchy's integral formula]] — 
 
 ##### _corollary:_ Cauchy's integral formula with winding number
 

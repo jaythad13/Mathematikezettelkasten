@@ -90,7 +90,7 @@ u(x, t) = \sin(mx) (A \cos (mt) + B \sin(mt))
 $$
 for some $m \in \mathbb{N}$ (getting rid of $B'$ by distributing it onto the other constants).
 
-Any finite linear combination of these solutions is a solution, but also almost any infinite linear combination is a solution too, given reasonable conditions on the convergence of the [[Mathematical Analysis I --- math-131/notes/Series|infinite series]]. Notice that for any $f(x) = u(x, 0)$ if $u$ is an infinite sum of standing waves, we will have
+Any finite linear combination of these solutions is a solution, but also almost any infinite linear combination is a solution too, given reasonable conditions on the convergence of the [[Analysis --- math-131/notes/Series|infinite series]]. Notice that for any $f(x) = u(x, 0)$ if $u$ is an infinite sum of standing waves, we will have
 $$
 f(x) = \sum_{m = 1}^\infty A_{m} \sin(m x).
 $$

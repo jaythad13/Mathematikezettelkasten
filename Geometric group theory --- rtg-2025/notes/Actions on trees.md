@@ -19,15 +19,15 @@ If an action on a tree is free, then the group must be free. This has, as a coro
 
 ##### _theorem:_ free actions on trees come from free groups
 
-If a group $G$ [[Geometric group theory --- rtg-2025/notes/Graph actions and Cayley graphs#_definition _ graph action|acts]] [[Abstract Algebra I --- math-171/notes/Group actions#_definition _ stabiliser, free|freely]] on a [[Superdiscrete --- math-55a/notes/Special graphs#_definition _ tree|tree]], it is a [[Geometric group theory --- rtg-2025/notes/Free groups and presentations#_definition _ free group|free group]].
+If a group $G$ [[Geometric group theory --- rtg-2025/notes/Graph actions and Cayley graphs#_definition _ graph action|acts]] [[Abstract algebra --- math-171/notes/Group actions#_definition _ stabiliser, free|freely]] on a [[Superdiscrete --- math-55a/notes/Special graphs#_definition _ tree|tree]], it is a [[Geometric group theory --- rtg-2025/notes/Free groups and presentations#_definition _ free group|free group]].
 
 ##### _theorem:_ Nielsen-Shreier theorem
 
-Any [[Abstract Algebra I --- math-171/notes/Subgroups#_definition _ subgroup, $ le$|subgroup]] of a free group is a free group.
+Any [[Abstract algebra --- math-171/notes/Subgroups#_definition _ subgroup, $ le$|subgroup]] of a free group is a free group.
 
 ### Non-free actions on trees
 
-We can prove weaker results even when the action of a group is not completely free. In particular, if the action is free on edges, but has some non-trivial [[Abstract Algebra I --- math-171/notes/Group actions#_definition _ stabiliser, free|stabiliser]] for some vertices, we an get an expression for the group as a free product.
+We can prove weaker results even when the action of a group is not completely free. In particular, if the action is free on edges, but has some non-trivial [[Abstract algebra --- math-171/notes/Group actions#_definition _ stabiliser, free|stabiliser]] for some vertices, we an get an expression for the group as a free product.
 
 ##### _theorem:_ edge-free actions on trees come from free products
 

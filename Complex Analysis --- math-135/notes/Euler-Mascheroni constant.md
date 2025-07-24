@@ -4,7 +4,7 @@ tags:
 - anal
 ---
 
-In the [[Complex Analysis --- math-135/notes/The gamma function#The Hadamard factorisation of $ Gamma$|the Hadamard factorisation of the gamma function]] $\Gamma$ we will need to consider another $\gamma$ — the Euler-Mascheroni constant.
+In the [[Complex analysis --- math-135/notes/The gamma function#The Hadamard factorisation of $ Gamma$|the Hadamard factorisation of the gamma function]] $\Gamma$ we will need to consider another $\gamma$ — the Euler-Mascheroni constant.
 
 ##### _definition:_ Euler-Mascheroni constant 
 

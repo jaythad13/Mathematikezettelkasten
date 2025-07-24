@@ -52,7 +52,7 @@ $$
 P_{r}(\theta) = \sum_{n = - \infty}^\infty r^{\lvert n \rvert } e^{i n \theta}.
 $$
 
-Since $\sum_{n} r^{\lvert n \rvert}$ converges as a [[Mathematical Analysis I --- math-131/notes/Series#_example _ the geometric series|geometric series]], the rest converges by [[Complex Analysis --- math-135/notes/Analysis and (metric) topology review#_theorem _ Weierstrass $M$-test|Weierstrass]] $M$-test.
+Since $\sum_{n} r^{\lvert n \rvert}$ converges as a [[Analysis --- math-131/notes/Series#_example _ the geometric series|geometric series]], the rest converges by [[Complex analysis --- math-135/notes/Analysis and (metric) topology review#_theorem _ Weierstrass $M$-test|Weierstrass]] $M$-test.
 
 ##### _lemma:_ the closed form of the Poisson kernel
 
@@ -74,11 +74,11 @@ P_{r}(\theta) & = \sum_{n = 0}^\infty \omega^n + \sum_{n = 1}^\infty \overline{\
 $$
 where the denominator in the last line follows by the law of cosines.
 
-We sort of already proved this in [[Complex Analysis --- math-135/attachments/homework/hw 4/hw 4.pdf|complex analysis]].
+We sort of already proved this in [[Complex analysis --- math-135/attachments/homework/hw 4/hw 4.pdf|complex analysis]].
 
 ### Good kernels — approximations of the identity
 
-What makes a good kernel? As we said, it has big bumps at $0$. The reason we want this is that we want a [[Abstract Algebra I --- math-171/notes/Rings#_definition _ ring with identity|multiplicative identity]] for the [[Fourier Analysis --- math-139/notes/Convolutions#_definition _ convolution|convolution]]. This would be the "Dirac delta function" with mass $0$ every where except for mass $1$ at the identity.
+What makes a good kernel? As we said, it has big bumps at $0$. The reason we want this is that we want a [[Abstract algebra --- math-171/notes/Rings#_definition _ ring with identity|multiplicative identity]] for the [[Fourier analysis --- math-139/notes/Convolutions#_definition _ convolution|convolution]]. This would be the "Dirac delta function" with mass $0$ every where except for mass $1$ at the identity.
 
 ##### _definition:_ good kernel
 
@@ -112,11 +112,11 @@ $$
 $$
 Splitting this integral into the integrals over $\lvert y \rvert < \delta$ and $\lvert y \rvert > \delta$ allows us to use the $L^1$ boundedness of $K_{n}$ and the continuity of $f$ to bound the first integral and the boundedness of $f$ and the vanishing integral of $K_{n}$ as $n \to 0$ to bound the second integral.
 
-If $f$ is continuous on all of $[-\pi, \pi]$, $f$ is [[Mathematical Analysis I --- math-131/notes/Uniform continuity#_definition _ uniform continuity|uniformly continuous]], and thus, $\delta$ small enough for the difference between $f(x_{0} - y)$ and $f(x_{0})$ to be small doesn't depend on $x_{0}$. Since $n$ only depends on $\delta$, we have uniform convergence.
+If $f$ is continuous on all of $[-\pi, \pi]$, $f$ is [[Analysis --- math-131/notes/Uniform continuity#_definition _ uniform continuity|uniformly continuous]], and thus, $\delta$ small enough for the difference between $f(x_{0} - y)$ and $f(x_{0})$ to be small doesn't depend on $x_{0}$. Since $n$ only depends on $\delta$, we have uniform convergence.
 
 ### Cesaro summability and Abel means
 
-Good kernels are nice because even if the Fourier series itself doesn't recover the function, we can recover the function using good kernels (that also emp). The Dirichlet kernel isn't a good kernel because it isn't $L^1$, so the Fourier coefficients may not be [[Fourier Analysis --- math-139/notes/Fourier series#_corollary _ recovering a continuous function from Fourier series|absolutely summable]], but Cesaro summability and Abel means provide a way to get around this.
+Good kernels are nice because even if the Fourier series itself doesn't recover the function, we can recover the function using good kernels (that also emp). The Dirichlet kernel isn't a good kernel because it isn't $L^1$, so the Fourier coefficients may not be [[Fourier analysis --- math-139/notes/Fourier series#_corollary _ recovering a continuous function from Fourier series|absolutely summable]], but Cesaro summability and Abel means provide a way to get around this.
 
 ##### _definition:_ Cesaro mean
 
@@ -164,7 +164,7 @@ Any continuous function on the circle can be uniformly approximated by trigonome
 
 $f * F_{N}$ is a trigonometric polynomial.
 
-Abel means use the convergence of a [[Mathematical Analysis I --- math-131/notes/Power series|power series]] to verify summability. Recall that for a power series with coefficients $a_{n}$ to converge on radius $1$ we only need $\limsup \lvert a_{n} \rvert^{1 / n}$ to be less than $1$.  This is even weaker than Cesaro summability (for example $\sum_{n} (-1)^n (n + 1)$ is Abel summable but not Cesaro summable).
+Abel means use the convergence of a [[Analysis --- math-131/notes/Power series|power series]] to verify summability. Recall that for a power series with coefficients $a_{n}$ to converge on radius $1$ we only need $\limsup \lvert a_{n} \rvert^{1 / n}$ to be less than $1$.  This is even weaker than Cesaro summability (for example $\sum_{n} (-1)^n (n + 1)$ is Abel summable but not Cesaro summable).
 
 ##### _definition:_ Abel mean, Abel summability
 
@@ -192,7 +192,7 @@ $$
 
 ###### _proof sketch:_
 
-They have the same (absolutely summable) Fourier coefficients (the convolution of $f * P_{r}$ has coefficients that are the [[Fourier Analysis --- math-139/notes/Convolutions#_proposition _ the Fourier transform turns convolution into multiplication|product]] $\hat{f}(n) \hat{P_{r}}(n)$). Since they are both continuous, [[Fourier Analysis --- math-139/notes/Fourier series#_corollary _ each Fourier series comes from a unique continuous function|they are the same function]].
+They have the same (absolutely summable) Fourier coefficients (the convolution of $f * P_{r}$ has coefficients that are the [[Fourier analysis --- math-139/notes/Convolutions#_proposition _ the Fourier transform turns convolution into multiplication|product]] $\hat{f}(n) \hat{P_{r}}(n)$). Since they are both continuous, [[Fourier analysis --- math-139/notes/Fourier series#_corollary _ each Fourier series comes from a unique continuous function|they are the same function]].
 
 
 ##### _lemma:_ the Poisson kernel is a good kernel (as $r \to 1^-$)

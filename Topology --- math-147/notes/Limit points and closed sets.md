@@ -10,7 +10,7 @@ For this note, let $X$ be a topological space with topology $\mathcal{T}$.
 
 ### Limit points
 
-Limit points of are points very close to it. With metric spaces, we could [[Mathematical Analysis I --- math-131/notes/Metric spaces#_definition _ limit point|define them]] as having no finite distance from the set. Without the metric, our notion of nearness, is instead "contained in the same small open set".
+Limit points of are points very close to it. With metric spaces, we could [[Analysis --- math-131/notes/Metric spaces#_definition _ limit point|define them]] as having no finite distance from the set. Without the metric, our notion of nearness, is instead "contained in the same small open set".
 
 ##### _definition:_ limit point
 
@@ -87,7 +87,7 @@ In the indiscrete topology, $X$ and $\emptyset$ are closed.
 
 In the finite complement topology, the finite sets are exactly the closed sets — given any infinite set, every point is a limit point of it, and given a finite set, any point is contained in an open set with all of the other points of the finite set poked out. In the countable complement topology, the countable sets are exactly the closed sets for essentially the same reason.
 
-This seems to hint that the closed sets are just the complement of open sets. [[Mathematical Analysis I --- math-131/notes/Open and closed sets#_theorem _ closed sets are complements of open sets|Just as for metric spaces]] this is true.
+This seems to hint that the closed sets are just the complement of open sets. [[Analysis --- math-131/notes/Open and closed sets#_theorem _ closed sets are complements of open sets|Just as for metric spaces]] this is true.
 
 ##### _theorem:_ closed sets are complements of open sets
 
@@ -99,7 +99,7 @@ First suppose $A$ is closed. Since $A$ contains all its limit points, every poin
 
 Suppose $X \setminus A$ is open. Then every point $x \in X \setminus A$ has an open neighbourhood $U_{x} \subseteq X \setminus A$, and thus, has no intersection with $A$. That is, $x$ is not a limit point of $A$. Thus, $A$ contains all its limit points.
 
-Closed and open sets preserve our intuition from [[Mathematical Analysis I --- math-131/notes/Open and closed sets|metric spaces]]. For one, we can remove an open set from a closed set to get a closed set, and vice versa.
+Closed and open sets preserve our intuition from [[Analysis --- math-131/notes/Open and closed sets|metric spaces]]. For one, we can remove an open set from a closed set to get a closed set, and vice versa.
 
 ##### _proposition:_ open set minus closed set and closed set minus open set
 
@@ -111,7 +111,7 @@ $U \setminus A = U \cap (X \setminus A)$ is the intersection of two open sets, a
 
 Similarly, $X \setminus (A \setminus U) = U \cup (X \setminus A)$ is the union of two open sets and thus, is open. Now, by our previous propositions, $A \setminus U$ must be closed.
 
-By using [[Mathematical Analysis I --- math-131/notes/Open and closed sets#_theorem _ De Morgan's law|De Morgan's law]], we can also get the [[Mathematical Analysis I --- math-131/notes/Open and closed sets#_corollary _ finite unions and (potentially infinite) intersections of closed sets are closed|same result about unions and intersections of closed sets]] as in metric spaces. In fact, this is an alternate definition of a topological space.
+By using [[Analysis --- math-131/notes/Open and closed sets#_theorem _ De Morgan's law|De Morgan's law]], we can also get the [[Analysis --- math-131/notes/Open and closed sets#_corollary _ finite unions and (potentially infinite) intersections of closed sets are closed|same result about unions and intersections of closed sets]] as in metric spaces. In fact, this is an alternate definition of a topological space.
 
 ##### _theorem:_ finite unions and arbitrary intersections of closed sets are closed
 
@@ -126,7 +126,7 @@ Suppose $(X, \mathcal{T})$ is a topological space. Then
 Since $\emptyset, X$ are open, their complements $X, \emptyset$ respectively are closed.
 
 Recall De Morgan's law —
-![[Mathematical Analysis I --- math-131/notes/Open and closed sets#_theorem _ De Morgan's law|Open and closed sets]]
+![[Analysis --- math-131/notes/Open and closed sets#_theorem _ De Morgan's law|Open and closed sets]]
 
 Since finite unions of closed sets $A_{i}$ are just finite unions of complements of open sets $U_{i} = X \setminus A_{i}$, their complement is just the finite intersection of open sets $X \setminus \bigcup_{i = 1}^n A_{i} = \bigcap_{i = 1}^n U_{i}$, and is open. Thus, the finite union is closed
 
@@ -135,7 +135,7 @@ Similarly, since intersections of closed sets $A_{\alpha}$ are just intersection
 ##### _example:_ a non-closed (countably) infinite union of closed sets
 
 We can use the "dual" example to the following.
-![[Mathematical Analysis I --- math-131/notes/Open and closed sets#_example _ a non-open (countably) infinite intersection of open sets|Open and closed sets]]
+![[Analysis --- math-131/notes/Open and closed sets#_example _ a non-open (countably) infinite intersection of open sets|Open and closed sets]]
 
 That is, the union of all closed sets $A_{n} = (-\infty, -1 / n] \cup [1 / n, \infty)$ is $\mathbb{R} \setminus \{ 0 \}$ (since every real number other than $0$ has magnitude greater than sum $1 / n$). However, this set is not closed since $0$ is a limit point and not contained in it.
 

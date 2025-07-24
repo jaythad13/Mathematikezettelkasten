@@ -9,7 +9,7 @@ A natural question is what curve (of a given length) encloses the largest area? 
 
 ### Curves and areas
 
-Recall the definition of a [[Complex Analysis --- math-135/notes/Complex integration#_definition _ (oriented) curve, curve parametrisation|curve]] —
+Recall the definition of a [[Complex analysis --- math-135/notes/Complex integration#_definition _ (oriented) curve, curve parametrisation|curve]] —
 
 ##### _definition:_ (simple, closed) curve, parametrisation
 
@@ -25,7 +25,7 @@ We can change parametrisations using bijective maps.
 
 If $s : [c, d] \to [a, b]$
 
-Its [[Complex Analysis --- math-135/notes/Complex integration#_definition _ length|length]] is defined in terms of a certain parametrisation but is independent of the choice of parametrisation.
+Its [[Complex analysis --- math-135/notes/Complex integration#_definition _ length|length]] is defined in terms of a certain parametrisation but is independent of the choice of parametrisation.
 
 ##### _definition:_ length
 
@@ -55,7 +55,7 @@ $$
 
 ###### _proof:_
 
-Our main tool here is [[Fourier Analysis --- math-139/notes/Square convergence of Fourier series#_corollary _ Parseval's identity|Parseval's identity]].
+Our main tool here is [[Fourier analysis --- math-139/notes/Square convergence of Fourier series#_corollary _ Parseval's identity|Parseval's identity]].
 
 We will assume without loss of generality $\Gamma$ has length $2 \pi$ with $\mathbf{x}_{\Gamma} = (x, y) : [0, 2 \pi] \to \mathbb{R}^{2}$ an arclength parametrisation. Thus, we want to show $\mathfrak A \le \pi$.
 
@@ -69,11 +69,11 @@ $$
 $$
 for $\hat{x}(n) = a_{n}$ and $\hat{y}(n) = b_{n}$
 
-We can play a similar trick with the area, viewing it as an [[Fourier Analysis --- math-139/notes/Square convergence of Fourier series#_proposition, definition _ the $L 2$ inner product, $ mathcal{R}$|inner product]]
+We can play a similar trick with the area, viewing it as an [[Fourier analysis --- math-139/notes/Square convergence of Fourier series#_proposition, definition _ the $L 2$ inner product, $ mathcal{R}$|inner product]]
 $$
 \left< x, y' \right>_{L^{2}} - \left< y, x' \right>_{L^{2}} = \frac{1}{2 \pi} \int_{0}^{2 \pi} x(s) y'(s) + y(s) x'(s) \, dx = \mathfrak A
 $$
-and obtaining the same identity for the $\ell^{2}$ [[Fourier Analysis --- math-139/notes/Square convergence of Fourier series#_definition _ the inner product space of $ ell {2}$ sequences|inner products]]. Thus,
+and obtaining the same identity for the $\ell^{2}$ [[Fourier analysis --- math-139/notes/Square convergence of Fourier series#_definition _ the inner product space of $ ell {2}$ sequences|inner products]]. Thus,
 $$
 \begin{align}
 \mathfrak{A} & = \pi \left\lvert  \sum_{n = -\infty}^\infty a_{n} (-i n \overline{b}_{n}) - \sum_{n = - \infty}^\infty b_{n} (-in \overline{a}_{n})  \right\rvert  \\
@@ -88,7 +88,7 @@ where the second and third inequalities follow from the triangle inequality and 
 
 For equality to hold, all of the inequalities must be equalities. Working backwards, since $\lvert n \rvert^{2} \ge \lvert n \rvert$ for all $n$ with equality exactly when $\lvert n \rvert \leq 1$. Thus, we must have $a_{n} = b_{n} = 0$ when $\lvert n \rvert > 1$. 
 
-Further, from [[Fourier Analysis --- math-139/attachments/homework/hw 2/hw 2.pdf|from the homework]] we know that real $x, y$ must have $a_{1} = \overline{a}_{-1}$ and $b_{1} = \overline{b}_{-1}$. By our first formula obtained from Parseval's identity on the length of $\Gamma$, $2 (\lvert a_{1} \rvert^{2} + \lvert b_{1} \rvert^{2}) = 1$ giving $\lvert a_{1} \rvert^{2} + \lvert b_{1} \rvert^{2} = 1 / 2$. Since we have the equality $(\lvert a_{n} \rvert - \lvert b_{n} \rvert)^{2} = 0$ for each $n$, we have $\lvert a_{1} \rvert \lvert b_{1} \rvert = 1 / 4$. Finally, we have $\lvert a_{1} \rvert = \lvert b_{1} \rvert = 1 / 2$. This means we can write $a_{1} = e^{i \alpha} / 2$ and $b_{1} = e^{i \beta} / 2$.
+Further, from [[Fourier analysis --- math-139/attachments/homework/hw 2/hw 2.pdf|from the homework]] we know that real $x, y$ must have $a_{1} = \overline{a}_{-1}$ and $b_{1} = \overline{b}_{-1}$. By our first formula obtained from Parseval's identity on the length of $\Gamma$, $2 (\lvert a_{1} \rvert^{2} + \lvert b_{1} \rvert^{2}) = 1$ giving $\lvert a_{1} \rvert^{2} + \lvert b_{1} \rvert^{2} = 1 / 2$. Since we have the equality $(\lvert a_{n} \rvert - \lvert b_{n} \rvert)^{2} = 0$ for each $n$, we have $\lvert a_{1} \rvert \lvert b_{1} \rvert = 1 / 4$. Finally, we have $\lvert a_{1} \rvert = \lvert b_{1} \rvert = 1 / 2$. This means we can write $a_{1} = e^{i \alpha} / 2$ and $b_{1} = e^{i \beta} / 2$.
 
 Going back one more equality, we get $1 = 2 \lvert a_{1} \overline{b}_{1} - \overline{a}_{1} b_{1} \rvert$ which implies $\lvert \sin (\alpha - \beta) \rvert = 1$ and thus, $\alpha - \beta = \pi (2k + 1) /2$ for some integer $k \in \mathbb{Z}$. We're left with
 $$

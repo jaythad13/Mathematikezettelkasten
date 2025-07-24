@@ -47,7 +47,7 @@ $X$ is normal if every pair of disjoint closed sets $A, B \subseteq X$ has a pai
 
 ##### _example:_ the [[Topology --- math-147/notes/Bases#_example _ lower limit topology|lower limit topology]] on $\mathbb{R}$ is normal
 
-##### _example:_ any [[Mathematical Analysis I --- math-131/notes/Metric spaces#_definition_ metric space, metric|metric space]] is regular and normal
+##### _example:_ any [[Analysis --- math-131/notes/Metric spaces#_definition_ metric space, metric|metric space]] is regular and normal
 
 Consider any closed sets $A, B$ in a metric space $X$, and a point $p \in X$ not in $A$. For concreteness we could work in $\mathbb{R}^{2}$, but the proof works the same in any metric.
 

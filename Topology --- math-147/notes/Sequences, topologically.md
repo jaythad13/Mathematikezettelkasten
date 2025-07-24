@@ -6,7 +6,7 @@ tags:
 
 Let $(X, \mathcal{T})$ be a [[Topology --- math-147/notes/Topologies#_definition _ topology, open sets, topological space|topological space]].
 
-While sequences in general topological spaces don't have many of the nice properties [[Mathematical Analysis I --- math-131/notes/Sequences and convergence|they have in metric spaces]], they can be defined in the same way, and have a well-defined notion of convergence.
+While sequences in general topological spaces don't have many of the nice properties [[Analysis --- math-131/notes/Sequences and convergence|they have in metric spaces]], they can be defined in the same way, and have a well-defined notion of convergence.
 
 ##### _definition:_ sequence
 
@@ -36,7 +36,7 @@ However it is true in metric spaces.
 
 ##### _theorem:_ a limit point is the limit of a sequence in metric spaces
 
-In the [[Mathematical Analysis I --- math-131/notes/Open and closed sets#_examples _ open sets|induced topology]] on a [[Mathematical Analysis I --- math-131/notes/Metric spaces#_definition_ metric space, metric|metric space]], if $x$ is a limit point of $A \subseteq X$, there is a sequence of points in $A$ that converges to $x$.
+In the [[Analysis --- math-131/notes/Open and closed sets#_examples _ open sets|induced topology]] on a [[Analysis --- math-131/notes/Metric spaces#_definition_ metric space, metric|metric space]], if $x$ is a limit point of $A \subseteq X$, there is a sequence of points in $A$ that converges to $x$.
 
 ###### _proof sketch:_
 

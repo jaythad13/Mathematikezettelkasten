@@ -6,7 +6,7 @@ tags:
 - complex
 ---
 
-If we wanted to create a function with zeroes exactly on a finite set, we consider $f(z) = (z - a_{1}) \dots (z - a_{n})$. If we want $f$ to have zeroes exactly on an infinite sequence, even with a [[Complex Analysis --- math-135/notes/Infinite products#_definition _ infinite products|sensible notion of infinite products]] we can't just write $f(z) = \prod (z - a_{n})$ over all $n$ since this might not converge. The Weierstrass elementary functions $E_{p}$ are functions that we can just multiply together like that.
+If we wanted to create a function with zeroes exactly on a finite set, we consider $f(z) = (z - a_{1}) \dots (z - a_{n})$. If we want $f$ to have zeroes exactly on an infinite sequence, even with a [[Complex analysis --- math-135/notes/Infinite products#_definition _ infinite products|sensible notion of infinite products]] we can't just write $f(z) = \prod (z - a_{n})$ over all $n$ since this might not converge. The Weierstrass elementary functions $E_{p}$ are functions that we can just multiply together like that.
 
 ##### _definition:_ Weierstrass elementary factor
 
@@ -75,7 +75,7 @@ $$
 \left\lvert  1 - E_{n}\left( \frac{z}{a_{n}} \right)  \right\rvert < \left\lvert  \frac{z}{a_{n}}  \right\rvert^{n + 1}  \le \left( \frac{1}{2} \right)^n.
 $$
 
-Since the functions have distance from $1$ uniformly bounded by an absolutely convergent series, their infinite product [[Complex Analysis --- math-135/notes/Infinite products#_theorem _ infinite products of holomorphic functions|converges to a holomorphic function]].
+Since the functions have distance from $1$ uniformly bounded by an absolutely convergent series, their infinite product [[Complex analysis --- math-135/notes/Infinite products#_theorem _ infinite products of holomorphic functions|converges to a holomorphic function]].
 
 ##### _lemma:_ the power series expansion of $E_{p}$
 

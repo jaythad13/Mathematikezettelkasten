@@ -51,7 +51,7 @@ Say $f$ is continuous on some region $\Omega$, then the following are equivalent
 
  That (1) implies (2) is just the fundamental theorem of calculus. (2) and (3) are clearly equivalent.
 
-(2) implies (1) is just [[Complex Analysis --- math-135/notes/Cauchy-Goursat theorem#_corollary _ Cauchy's theorem|the existence of primitives]].
+(2) implies (1) is just [[Complex analysis --- math-135/notes/Cauchy-Goursat theorem#_corollary _ Cauchy's theorem|the existence of primitives]].
 
 Now, we have as a corollary — 
 

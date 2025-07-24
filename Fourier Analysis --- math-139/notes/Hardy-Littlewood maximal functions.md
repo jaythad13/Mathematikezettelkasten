@@ -5,7 +5,7 @@ tags:
 - anal
 ---
 
-Given a reasonable function $f : \mathbb{R}^n \to \mathbb{C}$, the Hardy-Littlewood maximal function gives a "maximum moving average" of the function that is useful in determining convergence properties for [[Fourier Analysis --- math-139/notes/The Fourier transform|Fourier transforms]] and other objects in harmonic analysis.
+Given a reasonable function $f : \mathbb{R}^n \to \mathbb{C}$, the Hardy-Littlewood maximal function gives a "maximum moving average" of the function that is useful in determining convergence properties for [[Fourier analysis --- math-139/notes/The Fourier transform|Fourier transforms]] and other objects in harmonic analysis.
 
 ##### _definition:_ Hardy-Littlewood maximal function, maximal operator
 

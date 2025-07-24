@@ -38,11 +38,11 @@ $$
 \mathcal{E}(t) = \dot{q} R + \ddot{q} L + \frac{q}{C}.
 $$
 
-Note that both examples are basically the same thing — a linear combination over $\mathbb{R}$ (it's important that it isn't a linear combination over $\mathcal{C}^d(\mathbb{R})$) of the dependent variable and its first and second derivatives is equal to a function of the independent variable. They are [[Differential Equations --- math-82/notes/Classifying ordinary differential equations#Order|second order]], [[Differential Equations --- math-82/notes/Classifying ordinary differential equations#Linearity|linear]] differential equations with constant coefficients. The first case is just also [[Differential Equations --- math-82/notes/Classifying ordinary differential equations#_definition _ homogenous and non-homogenous linear differential equation|homogenous]]. It turns out that [[Differential Equations --- math-82/notes/Second order linear homogenous constant-coefficient differential equations|we can solve the homogenous case]] pretty easily!
+Note that both examples are basically the same thing — a linear combination over $\mathbb{R}$ (it's important that it isn't a linear combination over $\mathcal{C}^d(\mathbb{R})$) of the dependent variable and its first and second derivatives is equal to a function of the independent variable. They are [[Differential equations --- math-82/notes/Classifying ordinary differential equations#Order|second order]], [[Differential equations --- math-82/notes/Classifying ordinary differential equations#Linearity|linear]] differential equations with constant coefficients. The first case is just also [[Differential equations --- math-82/notes/Classifying ordinary differential equations#_definition _ homogenous and non-homogenous linear differential equation|homogenous]]. It turns out that [[Differential equations --- math-82/notes/Second order linear homogenous constant-coefficient differential equations|we can solve the homogenous case]] pretty easily!
 
 ### Damping
 
-[[Differential Equations --- math-82/notes/Second order linear homogenous constant-coefficient differential equations#_proposition _ the solutions of $ay'' + by' + c = 0$|We've shown]] the following result — 
+[[Differential equations --- math-82/notes/Second order linear homogenous constant-coefficient differential equations#_proposition _ the solutions of $ay'' + by' + c = 0$|We've shown]] the following result — 
 
 Let $az^2 + bz + c$ be the characteristic polynomial of $ay'' + by' + c = 0$. Then the characteristic polynomial has either
 

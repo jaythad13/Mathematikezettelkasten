@@ -7,7 +7,7 @@ tags:
 - fourier
 ---
 
-Notice that for a holomorphic function in a disc $D_{R}(z_{0})$, [[Complex Analysis --- math-135/notes/Cauchy integral formula#_corollary _ the derivative form (holomorphic functions are smooth and analytic)|we have a power series]]
+Notice that for a holomorphic function in a disc $D_{R}(z_{0})$, [[Complex analysis --- math-135/notes/Cauchy integral formula#_corollary _ the derivative form (holomorphic functions are smooth and analytic)|we have a power series]]
 $$
 f(z) = \sum_{n = 0}^\infty a_{n} (z - z_{0})^n
 $$
@@ -15,7 +15,7 @@ with
 $$
 a_{n} = \frac{1}{2 \pi r^n} \int_{0}^{2 \pi} f(z_{0} + r e^{i \theta}) e^{- i n \theta}  \, d\theta 
 $$
-where $r \in (0, R)$. We get this just by parametrising the integral in the proof that [[Complex Analysis --- math-135/notes/Cauchy integral formula#_corollary _ the derivative form (holomorphic functions are smooth and analytic)|holomorphic functions are analytic]]. In some sense, by writing
+where $r \in (0, R)$. We get this just by parametrising the integral in the proof that [[Complex analysis --- math-135/notes/Cauchy integral formula#_corollary _ the derivative form (holomorphic functions are smooth and analytic)|holomorphic functions are analytic]]. In some sense, by writing
 $$
 a_{0} = \frac{1}{2 \pi} \int_{0}^{2 \pi} f(z_{0} + r e^{i \theta}) e^{- i \theta} \, d\theta 
 $$
@@ -96,7 +96,7 @@ $$
 
 ###### _proof sketch:_
 
-We can use the [[Complex Analysis --- math-135/notes/Meromorphic functions and singularities#_theorem _ the residue formula|the residue formula]] by considering the function ${1}/{e^{2 \pi i z} - 1}$ which has simple poles at the integers with residues $1/2 \pi i$. But then
+We can use the [[Complex analysis --- math-135/notes/Meromorphic functions and singularities#_theorem _ the residue formula|the residue formula]] by considering the function ${1}/{e^{2 \pi i z} - 1}$ which has simple poles at the integers with residues $1/2 \pi i$. But then
 $$
 g(z) = \frac{f(z)}{e^{2 \pi i z} - 1}
 $$

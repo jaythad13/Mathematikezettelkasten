@@ -26,13 +26,13 @@ $$
 $$
 Then $(f * g)(x)$ is the average of $g$ on the interval $[x - 1 / 2, x + 1 / 2]$.
 
-##### _example:_ convolving with the [[Fourier Analysis --- math-139/notes/Kernels#_definition _ the Dirichlet kernel|Dirichlet kernel]]
+##### _example:_ convolving with the [[Fourier analysis --- math-139/notes/Kernels#_definition _ the Dirichlet kernel|Dirichlet kernel]]
 
 Check that
 $$
 (f * D_{N})(x) = \sum_{n = -N}^N \hat{f}(n) e^{i n x}
 $$
-the $N$th [[Fourier Analysis --- math-139/notes/Fourier series#_definition _ Fourier series, $N$th partial sum|partial sum]]. Basically, since the Dirichlet kernel looks like the Dirac delta function as $N \to \infty$, the integrals approach the value of the function much like the Fourier series does.
+the $N$th [[Fourier analysis --- math-139/notes/Fourier series#_definition _ Fourier series, $N$th partial sum|partial sum]]. Basically, since the Dirichlet kernel looks like the Dirac delta function as $N \to \infty$, the integrals approach the value of the function much like the Fourier series does.
 
 ### Properties of convolution
 
@@ -44,7 +44,7 @@ For any integrable functions $f, g : \mathbb{R} / 2 \pi \mathbb{Z} \to \mathbb{C
 
 ###### _proof:_
 
-[[Fourier Analysis --- math-139/notes/Facts about integration and convergence#_lemma _ integrable functions are approximated by continuous functions|Recall]] that for $f$ integrable (and thus, bounded by $B$) on $[a, b]$, there exists a sequence $\{ f_{n} \}_{n \in \mathbb{N}}$, such that
+[[Fourier analysis --- math-139/notes/Facts about integration and convergence#_lemma _ integrable functions are approximated by continuous functions|Recall]] that for $f$ integrable (and thus, bounded by $B$) on $[a, b]$, there exists a sequence $\{ f_{n} \}_{n \in \mathbb{N}}$, such that
 $$
 \lim_{ n \to \infty } \int_{a}^b \lvert f(x) - f_{n}(x) \rvert  \, dx.
 $$
@@ -54,7 +54,7 @@ $$
 \frac{1}{2 \pi} \left\lvert  \int_{-\pi}^\pi f(y) g(x_{1} - y) - f(y) g(x_{2} - y)  \, dy   \right\rvert < \varepsilon.
 $$
 
-Since $g$ is continuous on the compact interval $[a, b]$, there is a $\delta > 0$ such that for any $z_{1}, z_{2}$ within $\delta$ of each other, $g(z_{1}), g(z_{2})$ are within $2 \pi \varepsilon / B$ of each other. Now, see that we can choose $z_{i} = x_{i} - y$. Note that (by the [[Mathematical Analysis I --- math-131/notes/Properties of the Riemann integral#_proposition _ the triangle inequality for integrals|triangle inequality for integrals]])
+Since $g$ is continuous on the compact interval $[a, b]$, there is a $\delta > 0$ such that for any $z_{1}, z_{2}$ within $\delta$ of each other, $g(z_{1}), g(z_{2})$ are within $2 \pi \varepsilon / B$ of each other. Now, see that we can choose $z_{i} = x_{i} - y$. Note that (by the [[Analysis --- math-131/notes/Properties of the Riemann integral#_proposition _ the triangle inequality for integrals|triangle inequality for integrals]])
 $$
 \begin{align}
 \frac{1}{2 \pi} \left\lvert  \int_{-\pi}^\pi f(y) g(x_{1} - y) - f(y) g(x_{2} - y)  \, dy   \right\rvert & \le \frac{1}{2 \pi} \int_{-\pi}^\pi \lvert f(y) \rvert \lvert g(x_{1} - y) - g(x_{2} - y) \rvert  \, dy \\
@@ -64,7 +64,7 @@ $$
 \end{align}
 $$
 
-Now, given $f, g$ integrable and continuous sequences $f_{n} \to f$ and $g_{n} \to g$ (in the $L^1$ norm) [[Fourier Analysis --- math-139/notes/Facts about integration and convergence#_proposition _ uniform limit of continuous functions is continuous|it suffices]] to show that $f_{n} * g_{n} \to f * g$ uniformly. That is, given any $\varepsilon > 0$, we want to show that there exists some $N$ such that for all $n > N$
+Now, given $f, g$ integrable and continuous sequences $f_{n} \to f$ and $g_{n} \to g$ (in the $L^1$ norm) [[Fourier analysis --- math-139/notes/Facts about integration and convergence#_proposition _ uniform limit of continuous functions is continuous|it suffices]] to show that $f_{n} * g_{n} \to f * g$ uniformly. That is, given any $\varepsilon > 0$, we want to show that there exists some $N$ such that for all $n > N$
 $$
 \lvert (f_{n} * g_{n})(x) - (f * g)(x) \rvert < \varepsilon
 $$
@@ -93,7 +93,7 @@ $$
  & = \widehat{f * g}(x)
 \end{align}
 $$
-Here we use a change of variables in the third equality (we don't need to change the bounds because of $2 \pi$-periodicity), and [[Fourier Analysis --- math-139/notes/Facts about integration and convergence#_theorem _ Fubini's theorem|Fubini's theorem]] in the fourth equality to switch the order of integration.
+Here we use a change of variables in the third equality (we don't need to change the bounds because of $2 \pi$-periodicity), and [[Fourier analysis --- math-139/notes/Facts about integration and convergence#_theorem _ Fubini's theorem|Fubini's theorem]] in the fourth equality to switch the order of integration.
 
 If $f_{n} \to f$ and $g_{n} \to g$ are continuous sequences converging in the $L^1$ norm, then since $f_{n} * g_{n} \rightrightarrows f * g$ and the Fourier transform is just an integral, we can switch the order of integration and limits to get
 $$

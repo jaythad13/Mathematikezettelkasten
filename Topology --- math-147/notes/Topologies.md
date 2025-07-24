@@ -5,17 +5,17 @@ tags:
  - math-147/2
 ---
 
-> Topology is analysis without the [[Mathematical Analysis I --- math-131/notes/Metric spaces|metric]].
+> Topology is analysis without the [[Analysis --- math-131/notes/Metric spaces|metric]].
 
 \- Francis Su
 
-Topology is about those properties that are preserved by [[Mathematical Analysis I --- math-131/notes/Continuity|continuous maps]] of metric spaces, but metric spaces themselves contain additional information. 
+Topology is about those properties that are preserved by [[Analysis --- math-131/notes/Continuity|continuous maps]] of metric spaces, but metric spaces themselves contain additional information. 
 
 ##### _example:_ continuous maps don't preserve metric properties
 
 With the Euclidean metric on $\mathbb{R}$ we can tell that $(0, 1)$ is bounded and $\mathbb{R}$ is not. However, continuous maps don't care about this information — in the (hypothetical) [[Basic category theory --- basic-cat/notes/Categories#_definition _ category|category]] where continuous maps are the morphisms, $(0, 1)$ and $\mathbb{R}$ are isomorphic. 
 
-The one thing we do know that uniquely characterises continuous maps of metric spaces is that [[Mathematical Analysis I --- math-131/notes/Continuity#_proposition _ $ varepsilon$-$ delta$ continuity is equivalent to topological continuity|open sets pull back to open sets]]. Therefore a topology should contain exactly that information — just the open sets. In fact, we can abstract away the metric, and just deal with open sets that satisfy the [[Mathematical Analysis I --- math-131/notes/Open and closed sets|properties]] of open subsets of metric spaces.
+The one thing we do know that uniquely characterises continuous maps of metric spaces is that [[Analysis --- math-131/notes/Continuity#_proposition _ $ varepsilon$-$ delta$ continuity is equivalent to topological continuity|open sets pull back to open sets]]. Therefore a topology should contain exactly that information — just the open sets. In fact, we can abstract away the metric, and just deal with open sets that satisfy the [[Analysis --- math-131/notes/Open and closed sets|properties]] of open subsets of metric spaces.
 
 ##### _definition:_ topology, open sets, topological space
 
@@ -41,7 +41,7 @@ Proceed by induction — the base case $n = 1$ is true since $U_{1}$ is open (a
 
 Note that this doesn't prove that the infinite intersection of open sets is open (that would require transfinite induction, which requires more things to be true). In fact, there is an example of the opposite —
 
-![[Mathematical Analysis I --- math-131/notes/Open and closed sets#_example _ a non-open (countably) infinite intersection of open sets|Open and closed sets]]
+![[Analysis --- math-131/notes/Open and closed sets#_example _ a non-open (countably) infinite intersection of open sets|Open and closed sets]]
 
 For metric spaces, open sets are defined as those sets which contain an open ball around each of their points, often called a neighbourhood. There is an analogue for topological spaces too.
 
@@ -61,7 +61,7 @@ U = \bigcup_{x \in U} U_{x}
 $$
 is open.
 
-This is the fact that proves that the Euclidean topology on $\mathbb{R}^n$ (and in fact, the topology induced by any metric space) [[Mathematical Analysis I --- math-131/notes/Open and closed sets#_proposition _ (potentially infinite) unions and finite intersections of open sets are open|really is a topology]].
+This is the fact that proves that the Euclidean topology on $\mathbb{R}^n$ (and in fact, the topology induced by any metric space) [[Analysis --- math-131/notes/Open and closed sets#_proposition _ (potentially infinite) unions and finite intersections of open sets are open|really is a topology]].
 
 ##### _example:_ the Euclidean topology on $\mathbb{R}^n$ is a topology
 
@@ -81,7 +81,7 @@ The indiscrete topology on $X$ has (at most) two open sets — $\emptyset$ and 
 
 ##### _example:_ the finite and countable complement topologies
 
-Another pair of important topologies is the finite and countable complement topologies. These are exactly what they say — topologies where open sets are the complements of finite or countable sets respectively. Instead of proving that the arbitrary unions of the complements of finite/countable sets are complements ... and so on, it's easier to prove that these are topologies by using [[Mathematical Analysis I --- math-131/notes/Open and closed sets#_theorem _ De Morgan's law|De Morgan's law]] and proving the complementary facts about finite and countable sets instead.
+Another pair of important topologies is the finite and countable complement topologies. These are exactly what they say — topologies where open sets are the complements of finite or countable sets respectively. Instead of proving that the arbitrary unions of the complements of finite/countable sets are complements ... and so on, it's easier to prove that these are topologies by using [[Analysis --- math-131/notes/Open and closed sets#_theorem _ De Morgan's law|De Morgan's law]] and proving the complementary facts about finite and countable sets instead.
 
 In the case where $X = \mathbb{C}$ or $\mathbb{R}$, the finite complement topology is the [[Algebraic Geometry --- math-176/notes/The Zariski topology|Zariski topology]], which is coarser than the Euclidean topology. However, this is not true of the countable complement topology since points can accumulate. For example, the complement of the countable set $\{ 1 / n \mid n \in \mathbb{N}\}$ is not open in the Euclidean topology.
 

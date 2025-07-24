@@ -32,11 +32,11 @@ Understanding $\mathbb{F}[T]$ will be central to understanding the [[Linear alge
 
 ##### _proposition:_ $\mathbb{F}[T]$ is a quotient of $\mathbb{F}[z]$
 
-We can express $\mathbb{F}[T]$ as a [[Abstract Algebra I --- math-171/notes/Ideals and quotients#_proposition, definition _ quotient rings are rings|quotient]]
+We can express $\mathbb{F}[T]$ as a [[Abstract algebra --- math-171/notes/Ideals and quotients#_proposition, definition _ quotient rings are rings|quotient]]
 $$
 \mathbb{F}[T] = \mathbb{F}[z] / \mathfrak{i}
 $$
-for some [[Abstract Algebra I --- math-171/notes/Ideals and quotients#_definition _ ideal|ideal]] $\mathfrak{i} \subseteq \mathbb{F}[z]$.
+for some [[Abstract algebra --- math-171/notes/Ideals and quotients#_definition _ ideal|ideal]] $\mathfrak{i} \subseteq \mathbb{F}[z]$.
 
 ###### _proof sketch:_
 
@@ -52,7 +52,7 @@ p(T) q(T)  & = \left( \sum_{j = 0}^m a_{j} T^j \right) \left( \sum_{k = 0}^n b_{
 $$
 for $p$ with coefficients $a_{j}$ and $q$ with coefficients $b_{k}$.
 
-Since $\mathbb{F}[T]$ is defined to be $\operatorname{img} \varphi$, it follows that $\mathbb{F}[T] = \mathbb{F}[z] / \ker \varphi$ and that the kernel must be an ideal from the [[Abstract Algebra I --- math-171/notes/Ring isomorphism theorems#_theorem _ the first isomorphism theorem|first isomorphism theorem]].
+Since $\mathbb{F}[T]$ is defined to be $\operatorname{img} \varphi$, it follows that $\mathbb{F}[T] = \mathbb{F}[z] / \ker \varphi$ and that the kernel must be an ideal from the [[Abstract algebra --- math-171/notes/Ring isomorphism theorems#_theorem _ the first isomorphism theorem|first isomorphism theorem]].
 
 ##### _corollary:_ $\mathbb{F}[T]$ is commutative
 
@@ -109,7 +109,7 @@ The kernel of the homomorphism $\varphi : \mathbb{F}[z] \to \mathbb{F}[T]$ by $p
 
 ###### _proof:_
 
-Since there exists an annihilating polynomial, the kernel of $\varphi$ is non-trivial. $\mathbb{F}[z]$ is a [[Abstract Algebra I --- math-171/notes/Factorisation in special rings#Euclidean domains|Euclidean domain]] with norm given by the degree of the polynomial. Since [[Abstract Algebra I --- math-171/notes/Factorisation in special rings#_proposition _ Euclidean domains are principal ideal domains|Euclidean domains are principal]], $\ker \varphi = (q)$ where $q$ is a non-zero element of $\ker \varphi$ of minimal degree. By multiplying by a unit in $\mathbb{F}$, this can be chosen to be monic.
+Since there exists an annihilating polynomial, the kernel of $\varphi$ is non-trivial. $\mathbb{F}[z]$ is a [[Abstract algebra --- math-171/notes/Factorisation in special rings#Euclidean domains|Euclidean domain]] with norm given by the degree of the polynomial. Since [[Abstract algebra --- math-171/notes/Factorisation in special rings#_proposition _ Euclidean domains are principal ideal domains|Euclidean domains are principal]], $\ker \varphi = (q)$ where $q$ is a non-zero element of $\ker \varphi$ of minimal degree. By multiplying by a unit in $\mathbb{F}$, this can be chosen to be monic.
 
 ##### _corollary:_ annihilating polynomials are multiples of the minimal polynomial
 

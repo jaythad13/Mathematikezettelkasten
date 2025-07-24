@@ -5,9 +5,9 @@ tags:
 - math-82/7
 ---
 
-[[Differential Equations --- math-82/notes/Classifying ordinary differential equations#Order|Second order]], [[Differential Equations --- math-82/notes/Classifying ordinary differential equations#Linearity|linear]], [[Differential Equations --- math-82/notes/Classifying ordinary differential equations#_definition _ homogenous and non-homogenous linear differential equation|homogenous]] constant-coefficient differential equations are exactly what you think they are. They're second order linear homogenous differential equations where the coefficients of the dependent variable and its derivatives are all constant factors.
+[[Differential equations --- math-82/notes/Classifying ordinary differential equations#Order|Second order]], [[Differential equations --- math-82/notes/Classifying ordinary differential equations#Linearity|linear]], [[Differential equations --- math-82/notes/Classifying ordinary differential equations#_definition _ homogenous and non-homogenous linear differential equation|homogenous]] constant-coefficient differential equations are exactly what you think they are. They're second order linear homogenous differential equations where the coefficients of the dependent variable and its derivatives are all constant factors.
 Lots of important examples of these are oscillating physical systems.
-![[Differential Equations --- math-82/notes/Oscillating physical systems#_example _ mass-spring systems|Oscillating physical systems]]
+![[Differential equations --- math-82/notes/Oscillating physical systems#_example _ mass-spring systems|Oscillating physical systems]]
 
 
 ### Solving them
@@ -103,7 +103,7 @@ v' = e^{ -2 \lambda x - bx }.
 $$
 But since $\lambda = - b/2$, this is just $v' = 1$ and thus, $v = x$. Thus, $e^{ \lambda x }$ and $x e^{  \lambda x }$ form two linearly independent solutions that span the space of solutions.
 
-Note that this result has a [[Differential Equations --- math-82/notes/Oscillating physical systems#Damping|physical interpretation in terms of damping]]
+Note that this result has a [[Differential equations --- math-82/notes/Oscillating physical systems#Damping|physical interpretation in terms of damping]]
 
 ##### _lemma:_ the solution space of $ay'' + by' + cy = 0$ has dimension $2$
 
@@ -111,8 +111,8 @@ The subset $U$ of all functions into $\mathbb{R}$ such that all $u \in U$ give $
 
 ###### _proof:_
 
-Note that the set of all solutions to the differential equation forms a vector space over $\mathbb{R}$ ([[Differential Equations --- math-82/notes/Existence and uniqueness#_proposition _ solutions of (homogenous) linear differential equations form a vector space|we showed this here]]).
+Note that the set of all solutions to the differential equation forms a vector space over $\mathbb{R}$ ([[Differential equations --- math-82/notes/Existence and uniqueness#_proposition _ solutions of (homogenous) linear differential equations form a vector space|we showed this here]]).
 
-We claim it has dimension $2$. This is due to the [[Differential Equations --- math-82/notes/Existence and uniqueness#_theorem _ existence and uniqueness for second order linear differential equations|second order existence and uniqueness theorem]]. Since every pair of initial conditions $(y(0), y'(0))$ has a unique solution corresponding to it, we have a bijection between $\mathbb{R}^2$ and the space of all solutions. This bijection is linear since evaluating at a point and taking derivatives at a point are both linear maps. That is, $\mathbb{R}^2$ is isomorphic to $U$. Thus, $\dim U = 2$.
+We claim it has dimension $2$. This is due to the [[Differential equations --- math-82/notes/Existence and uniqueness#_theorem _ existence and uniqueness for second order linear differential equations|second order existence and uniqueness theorem]]. Since every pair of initial conditions $(y(0), y'(0))$ has a unique solution corresponding to it, we have a bijection between $\mathbb{R}^2$ and the space of all solutions. This bijection is linear since evaluating at a point and taking derivatives at a point are both linear maps. That is, $\mathbb{R}^2$ is isomorphic to $U$. Thus, $\dim U = 2$.
 
 Note that this proof applies more generally to differential equations $y'' + p_{1}(x) y' + p_{2}(x) y = 0$ with non-constant coefficients as well.

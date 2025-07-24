@@ -8,7 +8,7 @@ tags:
 
 ### Localisation of rings
 
-One very important example of a definition by [[Algebraic geometry --- rising-sea/notes/Universal properties and why categories?|universal property]] is that of localisation (of [[Abstract Algebra I --- math-171/notes/Rings#What's a ring?|(commutative, unital) rings]] and modules). Recall the constructive definition of localisation as follows:
+One very important example of a definition by [[Algebraic geometry --- rising-sea/notes/Universal properties and why categories?|universal property]] is that of localisation (of [[Abstract algebra --- math-171/notes/Rings#What's a ring?|(commutative, unital) rings]] and modules). Recall the constructive definition of localisation as follows:
 
 ##### _definition:_ multiplicative subsets
 
@@ -28,15 +28,15 @@ Consequently zero is (the equivalence class of) $0 / 1$ and the multiplicative i
 
 When $S = \{ 1, f, f^{2}, \dots \}$ for an element $f \in A$, we denote $S^{-1} A$ by $A_{f}$.
 
-When $S = A \setminus \mathfrak p$ for a [[Abstract Algebra I --- math-171/notes/Prime and maximal ideals#_definition _ prime ideals|prime ideal]] $\mathfrak p$, we denote $S^{-1} A$ by $A_{\mathfrak p}$ and call it the localisation at the prime. Note that then if the ideal $(f)$ is prime, $(f)^{-1} A = A_{f} \neq A_{(f)}$.
+When $S = A \setminus \mathfrak p$ for a [[Abstract algebra --- math-171/notes/Prime and maximal ideals#_definition _ prime ideals|prime ideal]] $\mathfrak p$, we denote $S^{-1} A$ by $A_{\mathfrak p}$ and call it the localisation at the prime. Note that then if the ideal $(f)$ is prime, $(f)^{-1} A = A_{f} \neq A_{(f)}$.
 
-Finally if $A$ is an [[Abstract Algebra I --- math-171/notes/Integral domains#_definition _ integral domain|integral domain]] and $S = A \setminus \{ 0 \}$ we call $S^{-1} A$ the fraction field of $A$ and denote it by $K(A)$.
+Finally if $A$ is an [[Abstract algebra --- math-171/notes/Integral domains#_definition _ integral domain|integral domain]] and $S = A \setminus \{ 0 \}$ we call $S^{-1} A$ the fraction field of $A$ and denote it by $K(A)$.
 
 Note that there is a canonical ring map $A \to S^{-1} A$ by $a \mapsto a / 1$, and if $0 \in S$, $S^{-1} A$ is the trivial ring. When $S$ doesn't contain zero divisors, the map is injective. In particular $A \to K(A)$ is injective. However, this is not true otherwise.
 
 ##### _proposition:_ injectivity of the localisation map
 
-For a multiplicative subset $S$ of a ring $A$, the canonical map $A \to S^{-1} A$ by $a \mapsto a / 1$ is injective if and only if $S$ contains no [[Abstract Algebra I --- math-171/notes/Rings#_definition _ zero divisor|zero divisor]].
+For a multiplicative subset $S$ of a ring $A$, the canonical map $A \to S^{-1} A$ by $a \mapsto a / 1$ is injective if and only if $S$ contains no [[Abstract algebra --- math-171/notes/Rings#_definition _ zero divisor|zero divisor]].
 
 ###### _proof:_
 

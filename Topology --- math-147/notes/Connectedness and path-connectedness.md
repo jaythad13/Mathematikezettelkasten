@@ -80,7 +80,7 @@ Suppose $f : X \to Y$ is a continuous surjection. If $X$ is connected, then $Y$ 
 If $Y$ is disconnected into disjoint open sets $V_{1} \cup V_{2}$, then their pre-images are disjoint and open too since $f$ is continuous. They also cover $X$ (since every point in $x$ is the pre-image of some point in $Y$). Thus, if $Y$ is not connected, $X$ is not connected — the contrapositive of the result.
 
 Since subsets of $\mathbb{R}$ are only connected if they contain every $z$ between each pair $x, y$ in the set, we get the intermediate value theorem —
-![[Mathematical Analysis I --- math-131/notes/Continuity#_corollary _ intermediate value theorem|Connectedness]]
+![[Analysis --- math-131/notes/Continuity#_corollary _ intermediate value theorem|Connectedness]]
 
 ### Path-connectedness
 

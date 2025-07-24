@@ -22,7 +22,7 @@ $$
 [x, [y, z]] + [y, [z, x]] + [z, [x, y]] = 0.
 $$
 
-See that the notation $[\cdot, \cdot]$ imitates that of the [[Abstract Algebra I --- math-171/attachments/homework/hw 12/hw 12.pdf|commutator]] in group theory and ring theory.
+See that the notation $[\cdot, \cdot]$ imitates that of the [[Abstract algebra --- math-171/attachments/homework/hw 12/hw 12.pdf|commutator]] in group theory and ring theory.
 
 The Jacobi identity might be best expressed as saying that the operator $[x, \cdot]$ satisfies the Leibniz rule —
 $$

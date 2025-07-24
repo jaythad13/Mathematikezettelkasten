@@ -6,7 +6,7 @@ tags:
 - cat-th
 ---
 
-Let $A$ be a (commutative, unital) [[Abstract Algebra I --- math-171/notes/Rings#What's a ring?|ring]].
+Let $A$ be a (commutative, unital) [[Abstract algebra --- math-171/notes/Rings#What's a ring?|ring]].
 
 Tensor products (like localisation) are an algebraic construction that can be made clearer with a definition by universal property. The tensor product (over $A$) of $A$-modules $M$ and $N$ is usually defined as consisting of all $A$-linear combinations of symbols $m \otimes n$ (with $m \in M$ and $n \in N$) under the equivalence relations that $\otimes$ distributes over addition in both, $M$ and $N$ and $a$. Formally, we could define
 
@@ -82,7 +82,7 @@ The map $\mathsf{Mod}_{A} \to \mathsf{Mod}_{A}$ by $M \mapsto M \otimes N$ natur
 $$
 M_{1} \to M_{2} \to M_{3} \to 0
 $$
-is [[Abstract Algebra I --- math-171/notes/Exact sequences#_definition _ exact sequence|exact]], then
+is [[Abstract algebra --- math-171/notes/Exact sequences#_definition _ exact sequence|exact]], then
 $$
 M_{1} \otimes N \to M_{2} \otimes N \to M_{3} \otimes N \to 0
 $$

@@ -16,7 +16,7 @@ Let $f : \mathbb{R} / 2 \pi \mathbb{Z} \to \mathbb{R}$ be an integrable function
 $$
 u(r, \theta) = f * P_{r}(\theta)
 $$
-is the [[Fourier Analysis --- math-139/notes/Kernels#The Poisson kernel|Poisson integral]] of $f$ and solves the heat equation on the disc. That is, $\Delta u = 0$ on $\mathbb{D}$ and $\lim_{ r \to 1^- } u(r, \theta) = f(\theta)$ so $u$ can be extended to a continuous function that equals $f$ on $\partial \mathbb{D}$. If $f$ is continuous everywhere the convergence is uniform.
+is the [[Fourier analysis --- math-139/notes/Kernels#The Poisson kernel|Poisson integral]] of $f$ and solves the heat equation on the disc. That is, $\Delta u = 0$ on $\mathbb{D}$ and $\lim_{ r \to 1^- } u(r, \theta) = f(\theta)$ so $u$ can be extended to a continuous function that equals $f$ on $\partial \mathbb{D}$. If $f$ is continuous everywhere the convergence is uniform.
 
 Further, if $f$ is continuous $u$ is the unique (twice-differentiable) solution of the heat equation.
 
@@ -24,7 +24,7 @@ Further, if $f$ is continuous $u$ is the unique (twice-differentiable) solution 
 
 Since $f$ is integrable, the Poisson integral of $f$ converges absolutely and uniformly on each disc of radius $r < 1$. In fact, so do the derivatives of the partial sums. Thus, we can interchange the infinite sum and differentiation (with respect to $r$ and $\theta$ both). That is, we can take derivatives term by term.
 
-Recall the [[Fourier Analysis --- math-139/attachments/homework/hw 2/hw 2.pdf#page=1|polar form of the Laplacian]] 
+Recall the [[Fourier analysis --- math-139/attachments/homework/hw 2/hw 2.pdf#page=1|polar form of the Laplacian]] 
 $$
 \begin{align}
 \Delta u & = \frac{ \partial^{2} u }{ \partial r^{2} } + \frac{1}{r} \frac{ \partial u }{ \partial r } + \frac{1}{r^{2}} \frac{ \partial^{2} u }{ \partial \theta^{2} } \\
@@ -34,9 +34,9 @@ $$
 \end{align}
 $$
 
-Since the [[Fourier Analysis --- math-139/notes/Kernels#_lemma _ the Poisson kernel is a good kernel (as $r to 1 -$)|the Poisson kernel is a good kernel]] it's just true that as $r \to 1$, $u(r, \theta) \to f(\theta)$, and if $f$ is continuous $u(r, \theta) \rightrightarrows f(\theta)$.
+Since the [[Fourier analysis --- math-139/notes/Kernels#_lemma _ the Poisson kernel is a good kernel (as $r to 1 -$)|the Poisson kernel is a good kernel]] it's just true that as $r \to 1$, $u(r, \theta) \to f(\theta)$, and if $f$ is continuous $u(r, \theta) \rightrightarrows f(\theta)$.
 
-Suppose $v$ is a different $\mathcal{C}^2$ harmonic function converging to $f$. [[Fourier Analysis --- math-139/notes/Fourier series#_proposition _ $ mathcal{C} 2$ functions have absolutely summable coefficients|Since it is twice differentiable]] it is recovered by its Fourier series on each circle of radius $r$. That is, we can say
+Suppose $v$ is a different $\mathcal{C}^2$ harmonic function converging to $f$. [[Fourier analysis --- math-139/notes/Fourier series#_proposition _ $ mathcal{C} 2$ functions have absolutely summable coefficients|Since it is twice differentiable]] it is recovered by its Fourier series on each circle of radius $r$. That is, we can say
 $$
 v(r, \theta) = \sum_{n = -\infty}^\infty a_{n}(r) e^{i n \theta}
 $$

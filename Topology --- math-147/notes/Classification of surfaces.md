@@ -12,7 +12,7 @@ With our tools, we can now characterise all curves and surfaces topologically. W
 
 An $n$-manifold is a [[Topology --- math-147/notes/Separation properties#_definition _ Hausdorff spaces, $T_{2}$ spaces|Hausdorff]], [[Topology --- math-147/notes/Size restrictions#_definition _ second countable|second countable]] space $X$ that is locally homeomorphic to $\mathbb{R}^n$, or equivalently, an open $n$-ball, or equivalently, an open subset of $\mathbb{R}^n$. That is, every point $p \in X$ has an [[Topology --- math-147/notes/Topologies#_proposition, definition _ checking openness by neighbourhood, neighbourhood|open neighbourhood]] homeomorphic to.
 
-It is equivalent to assume $X$ is [[Topology --- math-147/notes/Size restrictions#_definition _ separable|separable]] and [[Mathematical Analysis I --- math-131/notes/Metric spaces#_definition_ metric space, metric|a metric space]].
+It is equivalent to assume $X$ is [[Topology --- math-147/notes/Size restrictions#_definition _ separable|separable]] and [[Analysis --- math-131/notes/Metric spaces#_definition_ metric space, metric|a metric space]].
 
 ##### _example:_ non-manifolds
 
@@ -32,17 +32,17 @@ A surface is a $2$-manifold.
 
 ### Facts about triangulation
 
-To classify these we need to make them simpler by discretising them. We do this by way of [[Topics in Geometry and Topology --- math-145/notes/Simplicial complexes#_definition _ simplicial complex|simplicial complexes]]. 
+To classify these we need to make them simpler by discretising them. We do this by way of [[Simplicial homology and graph theory --- math-145/notes/Simplicial complexes#_definition _ simplicial complex|simplicial complexes]]. 
 
 ##### _definition:_ triangulation
 
-A triangulation of an $n$-manifold $X$ is a simplicial complex $T$ (with all maximal [[Topics in Geometry and Topology --- math-145/notes/Simplicial complexes#_definition _ face, coface|faces]] have dimension $n$) so that $X$ is [[Topology --- math-147/notes/Homeomorphisms#_definition _ homeomorphism|homeomorphic]] to $T$.
+A triangulation of an $n$-manifold $X$ is a simplicial complex $T$ (with all maximal [[Simplicial homology and graph theory --- math-145/notes/Simplicial complexes#_definition _ face, coface|faces]] have dimension $n$) so that $X$ is [[Topology --- math-147/notes/Homeomorphisms#_definition _ homeomorphism|homeomorphic]] to $T$.
 
 Something that's neat about these triangles is that there is a way to make them smaller.
 
 ##### _definition:_ barycentric division
 
-The barycentric division of a triangulation $T$ is its [[Topics in Geometry and Topology --- math-145/attachments/homework/hw 10/hw 10.pdf#page=12|derived complex]] with the original vertices identified with the corresponding vertices in the derived complex.
+The barycentric division of a triangulation $T$ is its [[Simplicial homology and graph theory --- math-145/attachments/homework/hw 10/hw 10.pdf#page=12|derived complex]] with the original vertices identified with the corresponding vertices in the derived complex.
 
 ##### _theorem:_ triangulation of low-dimensional manifolds (Moise–Bing)
 

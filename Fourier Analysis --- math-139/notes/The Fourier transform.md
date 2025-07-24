@@ -6,13 +6,13 @@ tags:
 - anal
 ---
 
-Until now, we've been converting the data of (nice) functions $f : \mathbb{R} / 2 \pi \mathbb{Z} \to \mathbb{C}$ to the data of equivalent functions — their Fourier coefficients $\hat{f} : \mathbb{Z} \to \mathbb{C}$. Now we want to convert the data of (very nice functions) $f : \mathbb{R} \to \mathbb{C}$ to equivalent functions $\hat{f} : \mathbb{R} \to \mathbb{C}$. These are both special cases of the more general idea of Fourier analysis — to take functions on a [[Abstract Algebra I --- math-171/notes/Groups, and why you should care#_definition _ group, identity, inverse|group]] $f : G \to \mathbb{C}$ and convert into the data of functions on the dual group $\hat{G}$. The dual group of $\mathbb{R} / 2 \pi \mathbb{Z}$ is $\mathbb{Z}$ and the dual group of $\mathbb{R}$ is itself.
+Until now, we've been converting the data of (nice) functions $f : \mathbb{R} / 2 \pi \mathbb{Z} \to \mathbb{C}$ to the data of equivalent functions — their Fourier coefficients $\hat{f} : \mathbb{Z} \to \mathbb{C}$. Now we want to convert the data of (very nice functions) $f : \mathbb{R} \to \mathbb{C}$ to equivalent functions $\hat{f} : \mathbb{R} \to \mathbb{C}$. These are both special cases of the more general idea of Fourier analysis — to take functions on a [[Abstract algebra --- math-171/notes/Groups, and why you should care#_definition _ group, identity, inverse|group]] $f : G \to \mathbb{C}$ and convert into the data of functions on the dual group $\hat{G}$. The dual group of $\mathbb{R} / 2 \pi \mathbb{Z}$ is $\mathbb{Z}$ and the dual group of $\mathbb{R}$ is itself.
 
 The Fourier transform takes a (nice) function and outputs a function that gives the density of each frequency $\xi \in \mathbb{R}$. 
 
 ##### _definition:_ the Fourier transform
 
-Given a function $f : \mathbb{R} \to \mathbb{C}$ of [[Fourier Analysis --- math-139/notes/Facts about integration and convergence#_definition _ functions of moderate decrease|moderate decrease]] the Fourier transform is the function $\hat{f} : \mathbb{R} \to \mathbb{C}$ given by
+Given a function $f : \mathbb{R} \to \mathbb{C}$ of [[Fourier analysis --- math-139/notes/Facts about integration and convergence#_definition _ functions of moderate decrease|moderate decrease]] the Fourier transform is the function $\hat{f} : \mathbb{R} \to \mathbb{C}$ given by
 $$
 \hat{f}(\xi) = \int_{-\infty}^\infty f(x) e^{-2 \pi i x \xi} \, dx.
 $$
@@ -31,7 +31,7 @@ A function $f : \mathbb{R} \to \mathbb{C}$ is rapidly decreasing if, for each $k
 
 ##### _definition:_ Schwartz class, $\mathcal{S}(\mathbb{R})$
 
-If $f : \mathbb{R} \to \mathbb{C}$ has all [[Mathematical Analysis I --- math-131/notes/Differentiability#_definition _ higher-order derivatives|higher order derivatives]] and it, and all its derivatives are rapidly decreasing, then $f$ is in the Schwartz class, denoted $f \in \mathcal{S}(\mathbb{R})$.
+If $f : \mathbb{R} \to \mathbb{C}$ has all [[Analysis --- math-131/notes/Differentiability#_definition _ higher-order derivatives|higher order derivatives]] and it, and all its derivatives are rapidly decreasing, then $f$ is in the Schwartz class, denoted $f \in \mathcal{S}(\mathbb{R})$.
 
 From here on, let $f : \mathbb{R} \to \mathbb{C}$ be Schwartz, $h$ be some real constant, and $\delta > 0$ be some positive real constant. By proving some really nice properties of $f$ we will see that $\mathcal{S}(\mathbb{R})$ is also closed under the Fourier transform.
 
@@ -70,7 +70,7 @@ $$
 $$
 for some positive constant $c$. Here the second inequality follows by the small angle approximation which holds for small enough $h$.
 
-In the compact set $\lvert x \rvert \le N$, we can turn the pointwise convergence of $(e^{-2 \pi i x h} - 1) / h \to - 2 \pi i x$ (from [[Mathematical Analysis I --- math-131/notes/Mean value theorems#_theorem _ L'Hôpital's rule|L'Hôpital's rule]]) into uniform convergence (by the compactness of $[-N, N]$). Thus, for sufficiently small $h$ we have
+In the compact set $\lvert x \rvert \le N$, we can turn the pointwise convergence of $(e^{-2 \pi i x h} - 1) / h \to - 2 \pi i x$ (from [[Analysis --- math-131/notes/Mean value theorems#_theorem _ L'Hôpital's rule|L'Hôpital's rule]]) into uniform convergence (by the compactness of $[-N, N]$). Thus, for sufficiently small $h$ we have
 $$
 \left\lvert  \frac{e^{- 2 \pi i x h} - 1}{h} + 2 \pi i x  \right\rvert \le \frac{\varepsilon}{N}
 $$

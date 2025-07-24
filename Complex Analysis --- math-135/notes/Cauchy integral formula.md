@@ -75,7 +75,7 @@ Note that you could prove this directly by considering the difference between th
 $$
 g(a) = \frac{1}{2 \pi i} \int \frac{f(z)}{z - a} \, dz 
 $$
-for some continuous function $f$, then $f$ is holomorphic. We will need this to prove [[Complex Analysis --- math-135/notes/Meromorphic functions and singularities#_theorem _ Riemann's theorem on removable singularities|Riemann's theorem on removable singularities]].
+for some continuous function $f$, then $f$ is holomorphic. We will need this to prove [[Complex analysis --- math-135/notes/Meromorphic functions and singularities#_theorem _ Riemann's theorem on removable singularities|Riemann's theorem on removable singularities]].
 
 ### Consequences...
 
@@ -114,7 +114,7 @@ $$
 $$
 Thus, $p(z)$ gets arbitrarily close to $a_{n} z^n$ as we increase $\lvert z \rvert$. Then, there is some $R$ such that for all $z$ with $\lvert z \rvert > R$, we have $\lvert p(z) \rvert \ge \lvert a_{n} z^n \rvert/2$. That is, $p$ is bounded from below outside the disc. Since $p$ has no zeroes and is continuous on the compact set that is the closure of the disc we also have $0 < b < p$. That is, $p$ is bounded from below inside the disc as well. That is, $p$ is bounded from below everywhere, and thus, $1/p$ is bounded from above everywhere.
 
-$1/p$ is clearly holomorphic (just use the [[Complex Analysis --- math-135/notes/Holomorphic functions|quotient rule]]). Thus, by applying Liouville's theorem, we get that $1/p$ is constant, and thus, $p$ is constant.
+$1/p$ is clearly holomorphic (just use the [[Complex analysis --- math-135/notes/Holomorphic functions|quotient rule]]). Thus, by applying Liouville's theorem, we get that $1/p$ is constant, and thus, $p$ is constant.
 
 ##### _theorem:_ identity theorem
 
@@ -126,7 +126,7 @@ Let $z_{0} \in \Omega$ be the limit point of $Z$. We know that we have a power s
 
 Then we can pick the first nonzero coefficient $a_{m}$ and write $f(z) = a_{m} (z - z_{0})^m(1 + g(z))$. On a sequence in $Z$, $w_{n} \to z_{0}$ and choose $w_{n} \neq 0$. Then we have $f(w_{n}) = a_{m}(w_{n} - z_{0})^n(1 + g(z))$. $f(w_{n}) = 0$, 
 
-Now we have that $f = 0$ on a disc around $z_{0}$, we can move the disc all the way to any other point $z$. Given the curve $\gamma$ that connects $z_{0}$ to $z$, we know that there is a [[Complex Analysis --- math-135/notes/Analysis and (metric) topology review#_proposition _ distance lemma|finite distance]] $\delta$ between $\gamma$ and $\partial \Omega$. Pick points $z_{0}, z_{1}, \dots, z$ along $\gamma$ such that no consecutive points are more than $\delta / 2$ apart. Then we keep getting $z_{n}$ as limit points and we can move along discs of radius $\delta / 2$ all the way to $z$.
+Now we have that $f = 0$ on a disc around $z_{0}$, we can move the disc all the way to any other point $z$. Given the curve $\gamma$ that connects $z_{0}$ to $z$, we know that there is a [[Complex analysis --- math-135/notes/Analysis and (metric) topology review#_proposition _ distance lemma|finite distance]] $\delta$ between $\gamma$ and $\partial \Omega$. Pick points $z_{0}, z_{1}, \dots, z$ along $\gamma$ such that no consecutive points are more than $\delta / 2$ apart. Then we keep getting $z_{n}$ as limit points and we can move along discs of radius $\delta / 2$ all the way to $z$.
 
 ##### _corollary:_ unique analytic continuation
 
@@ -138,7 +138,7 @@ Let $D$ be an open disk. Suppose $f : D \to \mathbb{C}$ is continuous. If, for a
 
 ###### _proof sketch:_
 
-In the same way as the proof of [[Complex Analysis --- math-135/notes/Cauchy-Goursat theorem#_corollary _ Cauchy's theorem|Cauchy's theorem]], this gives us an antiderivative $F$ with $F' = f$. But then $F$ is indefinitely differentiable, and thus, it's derivative $f$ must be holomorphic.
+In the same way as the proof of [[Complex analysis --- math-135/notes/Cauchy-Goursat theorem#_corollary _ Cauchy's theorem|Cauchy's theorem]], this gives us an antiderivative $F$ with $F' = f$. But then $F$ is indefinitely differentiable, and thus, it's derivative $f$ must be holomorphic.
 
 Morera's theorem allows us to create holomorphic functions out of holomorphic functions by processes that preserve integrals.
 
@@ -180,7 +180,7 @@ $$
  & = 0
 \end{split} 
 $$
-since [[Complex Analysis --- math-135/notes/Cauchy-Goursat theorem#Goursat's theorem|Goursat's theorem]] gives us that the integral of a holomorphic function $F(z, s_{0})$ over a closed triangle is $0$.
+since [[Complex analysis --- math-135/notes/Cauchy-Goursat theorem#Goursat's theorem|Goursat's theorem]] gives us that the integral of a holomorphic function $F(z, s_{0})$ over a closed triangle is $0$.
 
 Since we don't we will show that the Riemann sums
 $$

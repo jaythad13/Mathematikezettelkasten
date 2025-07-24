@@ -8,7 +8,7 @@ tags:
 
 ### Goursat's theorem
 
-The idea of Goursat's theorem is to show that primitives exist for [[Complex Analysis --- math-135/notes/Holomorphic functions|holomorphic function]] on triangles, and use that to build up to the case of simple shapes. From this we get Cauchy's theorem
+The idea of Goursat's theorem is to show that primitives exist for [[Complex analysis --- math-135/notes/Holomorphic functions|holomorphic function]] on triangles, and use that to build up to the case of simple shapes. From this we get Cauchy's theorem
 
 ##### _theorem:_ Goursat's theorem
 
@@ -23,7 +23,7 @@ $$
 \left\lvert   \int_{\partial \Delta_{0}} f(z) \, dz \right  \rvert \le 4^n \left \lvert \int_{\partial \Delta_{n}} f(z) \, dz  \right \rvert 
 $$
 
-Since the triangles are compact sets that get arbitrarily small, [[Complex Analysis --- math-135/notes/Analysis and (metric) topology review#_proposition _ shrinking nested compact sets|their intersection is a single point ]] $z_{0}$.
+Since the triangles are compact sets that get arbitrarily small, [[Complex analysis --- math-135/notes/Analysis and (metric) topology review#_proposition _ shrinking nested compact sets|their intersection is a single point ]] $z_{0}$.
 
 Then linearise $f(z)$ in an appropriately small triangle (where the error is less than $\varepsilon$) —
 $$
@@ -48,7 +48,7 @@ and thus, must go to zero.
 
 ### Consequences
 
-Goursat's theorem is a lot of what underlies the rigidity of complex functions [[Complex Analysis --- math-135/notes/What is complex analysis?|that we talked about in the first lecture]].
+Goursat's theorem is a lot of what underlies the rigidity of complex functions [[Complex analysis --- math-135/notes/What is complex analysis?|that we talked about in the first lecture]].
 
 ##### _theorem:_ primitives in a disc
 
@@ -78,6 +78,6 @@ If $f$ is a holomorphic in an open disc. and $\gamma$ is any closed curve in the
 
 ###### _proof sketch.:_
 
-Apply [[Complex Analysis --- math-135/notes/Complex integration#_theorem _ fundamental theorem of calculus|the fundamental theorem of calculus]].
+Apply [[Complex analysis --- math-135/notes/Complex integration#_theorem _ fundamental theorem of calculus|the fundamental theorem of calculus]].
 
-Most importantly, we can now get [[Complex Analysis --- math-135/notes/Cauchy integral formula|the representation theorem of complex analysis!]]
+Most importantly, we can now get [[Complex analysis --- math-135/notes/Cauchy integral formula|the representation theorem of complex analysis!]]

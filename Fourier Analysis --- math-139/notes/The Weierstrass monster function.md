@@ -19,15 +19,15 @@ For $\alpha \in (0, 1)$
 $$
 f_{\alpha}(x) = \sum_{n = 0}^\infty 2^{-n \alpha} e^{i 2^n x}
 $$
-is continuous everywhere but [[Mathematical Analysis I --- math-131/notes/Differentiability#_definition _ differentiability, the derivative|differentiable]] nowhere.
+is continuous everywhere but [[Analysis --- math-131/notes/Differentiability#_definition _ differentiability, the derivative|differentiable]] nowhere.
 
-It's clear that this is continuous — since the Fourier coefficients $2^{- n \alpha}$ are [[Fourier Analysis --- math-139/notes/Fourier series#_corollary _ absolutely summable Fourier series recover continuous functions|absolutely summable]], they recover a continuous function.
+It's clear that this is continuous — since the Fourier coefficients $2^{- n \alpha}$ are [[Fourier analysis --- math-139/notes/Fourier series#_corollary _ absolutely summable Fourier series recover continuous functions|absolutely summable]], they recover a continuous function.
 
-To prove that this really is not differentiable requires a new [[Fourier Analysis --- math-139/notes/Kernels|kernel]].
+To prove that this really is not differentiable requires a new [[Fourier analysis --- math-139/notes/Kernels|kernel]].
 
 ### Delayed means
 
-The delayed means "delay" the convergence of convolution with [[Fourier Analysis --- math-139/notes/Kernels#_definition _ Fejér kernel|the Fejér kernel]].
+The delayed means "delay" the convergence of convolution with [[Fourier analysis --- math-139/notes/Kernels#_definition _ Fejér kernel|the Fejér kernel]].
 
 ##### _definition:_ delayed means
 
@@ -36,7 +36,7 @@ $$
 \Delta_{N}g = 2 g * F_{2N} - g * F_{N}.
 $$
 
-By the [[Fourier Analysis --- math-139/notes/Kernels#_proposition _ the Fejér kernel is a good kernel|good kernel]] convergence of the (convolution with) the Fejér kernel, $\Delta_{N}$ has the same convergence properties.
+By the [[Fourier analysis --- math-139/notes/Kernels#_proposition _ the Fejér kernel is a good kernel|good kernel]] convergence of the (convolution with) the Fejér kernel, $\Delta_{N}$ has the same convergence properties.
 
 If the Fejér kernel corresponds to multiplying Fourier coefficients by a decreasing slope that gets flatter as $N \to \infty$, the delayed mean corresponds to multiplying by a trapezoid-shaped function that gets longer and flatter as $N \to \infty$.
 
@@ -75,7 +75,7 @@ $$
 
 ###### _proof:_
 
-We can move the differentiability into the integral and use [[Fourier Analysis --- math-139/notes/Convolutions#Properties of convolution|commutativity of convolution]] to get
+We can move the differentiability into the integral and use [[Fourier analysis --- math-139/notes/Convolutions#Properties of convolution|commutativity of convolution]] to get
 $$
 (F_{N} * g)'(x_{0}) = \int_{-\pi}^\pi F_{N}'(x_{0} - t) g(t) \, dt = \int_{-\pi}^\pi F_{N}'(t) g(x_{0} - t) \, dt
 $$

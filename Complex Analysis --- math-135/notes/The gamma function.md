@@ -21,7 +21,7 @@ Let $S_{\delta, M}$ be the strip $\{ s \mid \delta < \operatorname{Re} s < M \}$
 $$
 F_{\varepsilon} = \int_{\varepsilon}^{1/\varepsilon} e^{-t} t^{s - 1}  \, dx 
 $$
-As per, $F_{\varepsilon}$ [[Complex Analysis --- math-135/notes/Cauchy integral formula#_proposition _ holomorphic functions defined by integrals|is holomorphic]], and thus, by proving $F_{\varepsilon} \to F$ in the strip uniformly, we have $F$ holomorphic in the strip.
+As per, $F_{\varepsilon}$ [[Complex analysis --- math-135/notes/Cauchy integral formula#_proposition _ holomorphic functions defined by integrals|is holomorphic]], and thus, by proving $F_{\varepsilon} \to F$ in the strip uniformly, we have $F$ holomorphic in the strip.
 
 The primary reason the gamma function is of interest of course is that it obeys the functional equation $\Gamma(s + 1) = s \Gamma(s)$, and since $\Gamma(1) = 1$, we have $\Gamma(n + 1) = n!$!
 
@@ -34,7 +34,7 @@ $$
 Further, $\Gamma(n + 1) = n!$.
 
 
-Most importantly, the gamma function can be extended to a [[Complex Analysis --- math-135/notes/Meromorphic functions and singularities#_definition _ meromorphic functions|meromorphic function]] on $\mathbb{C}$! 
+Most importantly, the gamma function can be extended to a [[Complex analysis --- math-135/notes/Meromorphic functions and singularities#_definition _ meromorphic functions|meromorphic function]] on $\mathbb{C}$! 
 
 ##### _theorem:_ a meromorphic continuation of the gamma function
 
@@ -55,7 +55,7 @@ $$
 
 ### The Hadamard factorisation of $\Gamma$
 
-We will show now that $\Gamma$ does not vanish anywhere, so $1 / \Gamma$ can be extended to an entire function. Then we will show that $1 / \Gamma$ has finite [[Complex Analysis --- math-135/notes/Hadamard factorisation#_definition _ order of growth|order of growth]], and thus, we will be able to compute its [[Complex Analysis --- math-135/notes/Hadamard factorisation#_theorem _ Hadamard factorisation theorem|Hadamard factorisation]].
+We will show now that $\Gamma$ does not vanish anywhere, so $1 / \Gamma$ can be extended to an entire function. Then we will show that $1 / \Gamma$ has finite [[Complex analysis --- math-135/notes/Hadamard factorisation#_definition _ order of growth|order of growth]], and thus, we will be able to compute its [[Complex analysis --- math-135/notes/Hadamard factorisation#_theorem _ Hadamard factorisation theorem|Hadamard factorisation]].
 
 It turns out that we can 
 
@@ -69,7 +69,7 @@ holds for all $s$.
 
 ###### _proof sketch:_
 
-Prove for $s \in (0, 1)$ using calculus and contour integration, then extend to all $s \in \mathbb{C}$ by [[Complex Analysis --- math-135/notes/Cauchy integral formula#_corollary _ unique analytic continuation|analytic continuation]].
+Prove for $s \in (0, 1)$ using calculus and contour integration, then extend to all $s \in \mathbb{C}$ by [[Complex analysis --- math-135/notes/Cauchy integral formula#_corollary _ unique analytic continuation|analytic continuation]].
 
 This makes it pretty clear that $\Gamma$ should not vanish anywhere and $1 / \Gamma$ should be entire. Precisely, we can say
 
@@ -88,10 +88,10 @@ The reciprocal of the gamma function has Hadamard factorisation
 $$
 \frac{1}{\Gamma(s)} = e^{\gamma s} s \prod_{n = 1}^\infty \left( 1 + \frac{s}{n} \right) e^{-s/n}.
 $$
-where $\gamma$ is the [[Complex Analysis --- math-135/notes/Euler-Mascheroni constant|Euler-Mascheroni constant]].
+where $\gamma$ is the [[Complex analysis --- math-135/notes/Euler-Mascheroni constant|Euler-Mascheroni constant]].
 ###### _proof:_
 
-By [[Complex Analysis --- math-135/notes/Hadamard factorisation#_theorem _ Hadamard factorisation theorem|Hadamard's theorem]], the order of growth of $1 / \Gamma$, and where the zeroes of $1 / \Gamma$ are, we must have
+By [[Complex analysis --- math-135/notes/Hadamard factorisation#_theorem _ Hadamard factorisation theorem|Hadamard's theorem]], the order of growth of $1 / \Gamma$, and where the zeroes of $1 / \Gamma$ are, we must have
 $$
 \frac{1}{\Gamma(s)} = e^{As + B} s \prod_{n = 1}^\infty \left( 1 + \frac{s}{n} \right)^{-s/n}.
 $$

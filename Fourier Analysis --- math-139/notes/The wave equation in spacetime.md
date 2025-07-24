@@ -33,15 +33,15 @@ is the unique solution to the wave equation with $\Delta u = { \partial^{2} u }/
 
 ###### _proof sketch:_
 
-The harmonic property can be verified by differentiating under the integral sign (which is justified for functions in the [[Fourier Analysis --- math-139/notes/The Fourier transform in Euclidean space|Schwartz class]]).
+The harmonic property can be verified by differentiating under the integral sign (which is justified for functions in the [[Fourier analysis --- math-139/notes/The Fourier transform in Euclidean space|Schwartz class]]).
 
-The initial conditions follow by [[Fourier Analysis --- math-139/notes/The Fourier transform in Euclidean space|Fourier inversion]] on $\mathbb{R}^d$ (where differentiating under the integral sign is needed for the second one).
+The initial conditions follow by [[Fourier analysis --- math-139/notes/The Fourier transform in Euclidean space|Fourier inversion]] on $\mathbb{R}^d$ (where differentiating under the integral sign is needed for the second one).
 
 Uniqueness, once again, requires us to use "conservation of energy". That is, we show that the "total energy" defined as
 $$
 E(t) = \int_{\mathbb{R}^d} \left\lvert  \frac{ \partial u }{ \partial t }   \right\rvert ^{2} +  \left\lvert  \frac{ \partial u }{ \partial x_{1} }  \right\rvert^{2} + \dots + \left\lvert  \frac{ \partial u }{ \partial x_{n} }   \right\rvert^{2} \, dx
 $$
-is a constant function in time. It follows by applying [[Fourier Analysis --- math-139/notes/The Fourier transform in Euclidean space|Plancherel's theorem]] to the $t$ and $x_{i}$ parts separately. Then using the fact that
+is a constant function in time. It follows by applying [[Fourier analysis --- math-139/notes/The Fourier transform in Euclidean space|Plancherel's theorem]] to the $t$ and $x_{i}$ parts separately. Then using the fact that
 $$
 \lvert a \cos \alpha + b \sin \alpha \rvert^{2} + \lvert - a\sin\alpha + b \cos \alpha \rvert ^{2} = \lvert a \rvert ^{2} + \lvert b \rvert ^{2}
 $$
@@ -80,12 +80,12 @@ $$
 
 ###### _proof sketch:_
 
-Notice that the left hand side is [[Fourier Analysis --- math-139/notes/The Fourier transform in Euclidean space#_definition _ radial function|radial]]. Thus it suffices to show that the formula holds along a single ray. Choose, $\xi$ such that in polar coordinates $\theta = \phi = 0$. Then
+Notice that the left hand side is [[Fourier analysis --- math-139/notes/The Fourier transform in Euclidean space#_definition _ radial function|radial]]. Thus it suffices to show that the formula holds along a single ray. Choose, $\xi$ such that in polar coordinates $\theta = \phi = 0$. Then
 $$
 \widehat{d \sigma}(\xi) = \int_{0}^{2 \pi} \int_{0}^\pi e^{- 2 \pi i \rho \cos\theta} \, d\theta \, d\phi = \frac{\sin(2 \pi \rho t)}{2 \pi \rho t}.
 $$
 			
-Now use the same [[Fourier Analysis --- math-139/notes/Facts about integration and convergence#_theorem _ Fubini's theorem|Fubini's theorem]] trick that we used to prove [[Fourier Analysis --- math-139/notes/Convolutions#_proposition _ the Fourier transform turns convolution into multiplication|convolution-multiplication duality]]. In some sense, this indicates that the spherical mean is a convolution.
+Now use the same [[Fourier analysis --- math-139/notes/Facts about integration and convergence#_theorem _ Fubini's theorem|Fubini's theorem]] trick that we used to prove [[Fourier analysis --- math-139/notes/Convolutions#_proposition _ the Fourier transform turns convolution into multiplication|convolution-multiplication duality]]. In some sense, this indicates that the spherical mean is a convolution.
 
 ##### _proposition:_ the physical intuition for the wave equation
 
@@ -96,7 +96,7 @@ $$
 
 ###### _proof sketch:_
 
-For the first term, integrate and differentiate with respect to $t$ under the integral sign, and multiply and divide by $t$. For the second term just multiply and divide by $t$. Then use [[Fourier Analysis --- math-139/notes/The Fourier transform in Euclidean space|Fourier inversion]].
+For the first term, integrate and differentiate with respect to $t$ under the integral sign, and multiply and divide by $t$. For the second term just multiply and divide by $t$. Then use [[Fourier analysis --- math-139/notes/The Fourier transform in Euclidean space|Fourier inversion]].
 $$
 \begin{align}
 u(x, t) & = \int_{\mathbb{R}^3} \hat{f}(\xi) \cos(2 \pi \lVert \xi \rVert t) e^{2 \pi i x \cdot \xi} \, d\xi + \int_{\mathbb{R}^{3}}  \hat{g}(\xi) \frac{\sin(2 \pi \lVert \xi \rVert t)}{2 \pi \lVert \xi \rVert } e^{2 \pi i x \cdot \xi} \, d\xi \\

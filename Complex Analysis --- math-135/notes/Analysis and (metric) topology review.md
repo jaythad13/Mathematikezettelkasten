@@ -8,7 +8,7 @@ tags:
 
 ### $\mathbb{C}$ as a metric space
 
-Since the norm $\lvert z \rvert$ of a complex number $z$ is positive definite and satisfies the triangle inequality, $\mathbb{C}$ is a [[Mathematical Analysis I --- math-131/notes/Metric spaces#_definition_ metric space, metric|metric space]] with the metric $d(z, w) = \lvert z - w \rvert$. In a very obvious way $\mathbb{C} \cong \mathbb{R}^2$ (as topological spaces)
+Since the norm $\lvert z \rvert$ of a complex number $z$ is positive definite and satisfies the triangle inequality, $\mathbb{C}$ is a [[Analysis --- math-131/notes/Metric spaces#_definition_ metric space, metric|metric space]] with the metric $d(z, w) = \lvert z - w \rvert$. In a very obvious way $\mathbb{C} \cong \mathbb{R}^2$ (as topological spaces)
 
 ### Open and closed sets
 
@@ -56,9 +56,9 @@ $\Omega \subset \mathbb{C}$ is a region if it is open and connected.
 
 $\Omega \subset \mathbb{C}$ is path-connected if for all $a, b \in \Omega$, there exists a continuous path $\gamma : [0, 1] \to \Omega$ with $\gamma(0) = a$ and $\gamma(1) = b$.
 
-[[Complex Analysis --- math-135/notes/Complex integration#_definition _ (oriented) curve, curve parametrisation|When integrating on curves]] we will see why it's convenient to require a continuously smooth path with non-zero derivative everywhere.
+[[Complex analysis --- math-135/notes/Complex integration#_definition _ (oriented) curve, curve parametrisation|When integrating on curves]] we will see why it's convenient to require a continuously smooth path with non-zero derivative everywhere.
 
-The following is proved as an exercise in [[Complex Analysis --- math-135/attachments/homework/hw 1/hw 1.pdf#page=2|the homework]].
+The following is proved as an exercise in [[Complex analysis --- math-135/attachments/homework/hw 1/hw 1.pdf#page=2|the homework]].
 
 ##### _proposition:_ path-connectedness and connectedness are equivalent on open sets
 
@@ -80,7 +80,7 @@ We say the sequence of functions $(f_{n})$ converges uniformly to $f$ on $A \sub
 
 Suppose each function in the sequence of functions $(f_{n})$ is bounded on $A \subset \mathbb{C}$ by $\lvert f_{n}(a) \rvert \le M_{n}$ for all $a \in A$ and some sequence of real numbers $(M_{n})$. Then $\sum_{n \ge 0} f_{n}$ converges uniformly on $A$ if $\sum_{n \ge 0} M_{n}$ converges. 
 
-![[Mathematical Analysis I --- math-131/notes/Series#_theorem _ the root test|Series]]
+![[Analysis --- math-131/notes/Series#_theorem _ the root test|Series]]
 
 ### Continuity
 

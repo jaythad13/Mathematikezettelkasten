@@ -33,7 +33,7 @@ Loops with non-trivial homotopy class help identify holes in the surface.
 
 ### Constructing the fundamental group
 
-We construct the fundamental group by defining what it means to take the product of paths, showing that it is associative, demonstrating a path that doesn't change the homotopy class of paths on taking products, and demonstrating an inverse path, taking products with which returns the "identity" path. This amounts to proving the [[Abstract Algebra I --- math-171/notes/Groups, and why you should care#_definition _ group, identity, inverse|group axioms]].
+We construct the fundamental group by defining what it means to take the product of paths, showing that it is associative, demonstrating a path that doesn't change the homotopy class of paths on taking products, and demonstrating an inverse path, taking products with which returns the "identity" path. This amounts to proving the [[Abstract algebra --- math-171/notes/Groups, and why you should care#_definition _ group, identity, inverse|group axioms]].
 
 Of course, we only need these notions for loops (with a choice of base point). Further, it doesn't even make sense to have a group of paths since you can only compose paths when the end point of the first is the starting point of the second. However, it will be useful to have the notion of composing paths in general, so we write propositions as generally as possible.
 

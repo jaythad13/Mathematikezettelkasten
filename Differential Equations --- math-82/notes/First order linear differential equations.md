@@ -4,7 +4,7 @@ tags:
 - diff-eq
 ---
 
-Another really nice subclass of [[Classifying ordinary differential equations#Order|first order]] differential equations is that of first order [[Classifying ordinary differential equations#_definition _ linear differential equation|linear differential equations]]. The best way to see this why they are nice is an example.
+Another really nice subclass of [[Differential equations --- math-82/notes/Classifying ordinary differential equations#Order|first order]] differential equations is that of first order [[Differential equations --- math-82/notes/Classifying ordinary differential equations#_definition _ linear differential equation|linear differential equations]]. The best way to see this why they are nice is an example.
 
 ##### _example:_ a clever trick to solve differential equations
 

@@ -27,7 +27,7 @@ Let $S^1$ denote the abelian group $\{ z \in \mathbb{C}, \lvert z \rvert = 1 \}$
 
 ##### _definition:_ character, the dual group
 
-A character on $G$ is a [[Abstract Algebra I --- math-171/notes/Group homomorphisms#_definition _ group homomorphisms|group homomorphism]] $\xi : G \to \mathbb{C}$.
+A character on $G$ is a [[Abstract algebra --- math-171/notes/Group homomorphisms#_definition _ group homomorphisms|group homomorphism]] $\xi : G \to \mathbb{C}$.
 
 Under pointwise complex multiplication the characters on $G$ form the dual group $\hat{G}$.
 
@@ -48,7 +48,7 @@ $$
 
 ###### _proof:_
 
-We use the fact that the [[Abstract Algebra I --- math-171/notes/Group actions#_definition _ (left) group action|group action]] on itself by left multiplication is a bijection. Given, $\xi(y) \neq 1$, this allows us to show that
+We use the fact that the [[Abstract algebra --- math-171/notes/Group actions#_definition _ (left) group action|group action]] on itself by left multiplication is a bijection. Given, $\xi(y) \neq 1$, this allows us to show that
 $$
 \xi(y) \sum_{x \in G} \xi(x) = \sum_{x \in G} \xi(x) \xi(h) = \sum_{x \in G} \xi(xy) = \sum_{g \in G} \xi(x).
 $$
@@ -131,7 +131,7 @@ since we normalised $\xi_{x}$ to be $1$ at the identity of $G$.
 
 ### Fourier analysis
 
-Just as with [[Fourier Analysis --- math-139/notes/Fourier analysis on the cyclic group#_definition _ Fourier coefficient|finite Fourier analysis on cyclic groups]], the fundamental results of Fourier analysis follow immediately from [[Linear algebra done right --- ladr/notes/Orthonormal bases#Orthonormal bases|facts about orthonormal bases]]. 
+Just as with [[Fourier analysis --- math-139/notes/Fourier analysis on the cyclic group#_definition _ Fourier coefficient|finite Fourier analysis on cyclic groups]], the fundamental results of Fourier analysis follow immediately from [[Linear algebra done right --- ladr/notes/Orthonormal bases#Orthonormal bases|facts about orthonormal bases]]. 
 
 ##### _definition:_ Fourier coefficient
 

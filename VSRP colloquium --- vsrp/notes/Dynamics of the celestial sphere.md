@@ -11,7 +11,7 @@ We want to be able to show that the earth revolves around the sun without techno
 
 ##### _definition:_ flow
 
-A flow is an [[Abstract Algebra I --- math-171/notes/Group actions#_definition _ (left) group action|group action]] of $\mathbb{R}$ (the additive reals) on a set $X$.
+A flow is an [[Abstract algebra --- math-171/notes/Group actions#_definition _ (left) group action|group action]] of $\mathbb{R}$ (the additive reals) on a set $X$.
 
 A flow is continuous if $X$ is a [[Topology --- math-147/notes/Topologies#_definition _ topology, open sets, topological space|topological space]] and $\mathbb R \times X \to X$ is continuous, smooth if $X$ is a smooth manifold and the map is smooth, et c.
 
@@ -25,7 +25,7 @@ Given an initial state $x$, let $t \cdot x$ be the resultant state at time $t$, 
 
 This isn't related to what we want to do, but it's nice to note that we can turn second order differential equations on a manifold into first order ODEs on the tangent bundle.
 
-In general, if $M$ is a compact manifold and $(t, x) \to \alpha_{x}(t)$ gives a smooth flow, then $x \to \alpha_{x}'(0)$ is a smooth vector field $M \to \mathrm{T}M$. In fact the correspondence between vector fields and flows is bijective so we can go from a smooth vector field to a smooth flow as well! This is just the [[Differential Equations --- math-82/notes/Existence and uniqueness|existence and uniqueness theorem]] for ODEs.
+In general, if $M$ is a compact manifold and $(t, x) \to \alpha_{x}(t)$ gives a smooth flow, then $x \to \alpha_{x}'(0)$ is a smooth vector field $M \to \mathrm{T}M$. In fact the correspondence between vector fields and flows is bijective so we can go from a smooth vector field to a smooth flow as well! This is just the [[Differential equations --- math-82/notes/Existence and uniqueness|existence and uniqueness theorem]] for ODEs.
 
 ### The direction of a star
 

@@ -16,7 +16,7 @@ If $V$ is real and $\dim V > 2$, then $T$ has a non-trivial invariant subspace.
 
 ### Eigenvalues on complex vector spaces
 
-The existence of eigenvalues of operators on vector spaces over $\mathbb{C}$ is essentially due to the algebraic completeness of $\mathbb{C}$ since it follows directly from [[Complex Analysis --- math-135/notes/Cauchy integral formula#_theorem _ the fundamental theorem of algebra|the fundamental theorem of algebra]]. 
+The existence of eigenvalues of operators on vector spaces over $\mathbb{C}$ is essentially due to the algebraic completeness of $\mathbb{C}$ since it follows directly from [[Complex analysis --- math-135/notes/Cauchy integral formula#_theorem _ the fundamental theorem of algebra|the fundamental theorem of algebra]]. 
 
 ##### _theorem:_ existence of eigenvalues over $\mathbb{C}$
 
@@ -64,7 +64,7 @@ We've already proven the more general result about existence of eigenvalues for 
 
 We prove the existence of eigenvalues by induction. By picking a basis it is clear that if $\dim V = 1$ then $T$ is multiplication by a scalar (possibly $0$), and thus, has an eigenvalue. Now assume that $\dim V \geq 3$ and all operators on vector spaces of odd-dimension less than $3$ have an eigenvalue. 
 
-It's a consequence of the [[Complex Analysis --- math-135/notes/Cauchy integral formula#_theorem _ the fundamental theorem of algebra|fundamental theorem of algebra]] and the fact that complex roots of a polynomial in $\mathbb{R}[x]$ come in conjugate pairs that $p \in \mathbb{R}[x]$, the [[Linear algebra done right --- ladr/notes/Polynomials in an operator#_definition _ minimal polynomial|minimal polynomial]] of $T$ can be factored as 
+It's a consequence of the [[Complex analysis --- math-135/notes/Cauchy integral formula#_theorem _ the fundamental theorem of algebra|fundamental theorem of algebra]] and the fact that complex roots of a polynomial in $\mathbb{R}[x]$ come in conjugate pairs that $p \in \mathbb{R}[x]$, the [[Linear algebra done right --- ladr/notes/Polynomials in an operator#_definition _ minimal polynomial|minimal polynomial]] of $T$ can be factored as 
 $$
 p(x) = (x - \lambda_{1}) \dots (x - \lambda_{m}) (x^{2} + b_{1} x + c_{1}) \dots + (x^{2} + b_{n} x + c_{n})
 $$

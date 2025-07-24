@@ -9,7 +9,7 @@ tags:
 - self-study
 ---
 
-Just like [[Abstract Algebra I --- math-171/notes/Rings#Substructures of rings|rings]] and [[Linear algebra done right --- ladr/notes/Vector spaces|vector spaces]] have substructures, so do Lie algebras.
+Just like [[Abstract algebra --- math-171/notes/Rings#Substructures of rings|rings]] and [[Linear algebra done right --- ladr/notes/Vector spaces|vector spaces]] have substructures, so do Lie algebras.
 
 ### Subalgebras
 
@@ -27,13 +27,13 @@ A Lie subalgebra $K$ of a Lie algebra $L$ is a vector subspace $K \subseteq L$ w
 
 ### Ideals
 
-Just as for [[Abstract Algebra I --- math-171/notes/Ideals and quotients|rings]], there is a sensible notion of an ideal of a Lie algebra.
+Just as for [[Abstract algebra --- math-171/notes/Ideals and quotients|rings]], there is a sensible notion of an ideal of a Lie algebra.
 
 ##### _definition:_ (Lie) ideal 
 
 A (Lie) ideal $I$ of a Lie algebra $L$ is a vector subspace $I \subseteq L$ that has the absorption property $[i, x] \in I$ for all $i \in I$ and $x \in L$.
 
-Note that there is no notion of [[Abstract Algebra I --- math-171/notes/Ideals and quotients#_definition _ (left and right) ideals|left and right ideals]] even though the multiplication isn't commutative this is because the multiplication is anticommutative and bilinear. That is, the absorption property as we have written it is equivalent to $[x, i] \in I$ for all $i \in I$ and $x \in L$.
+Note that there is no notion of [[Abstract algebra --- math-171/notes/Ideals and quotients#_definition _ (left and right) ideals|left and right ideals]] even though the multiplication isn't commutative this is because the multiplication is anticommutative and bilinear. That is, the absorption property as we have written it is equivalent to $[x, i] \in I$ for all $i \in I$ and $x \in L$.
 
 ##### _example:_ $\mathfrak{sl}_{n}(F)$ is an ideal
 
@@ -88,7 +88,7 @@ $$
 $$
 is not upper triangular.
 
-One really important ideal of every Lie algebra is the centre. Again in analogy with [[Abstract Algebra I --- math-171/notes/Centralisers, centre, and normalisers#_definition _ centre, $Z(G)$|groups and rings]], the centre commutes with everything in the algebra. However, because Lie algebras are anti-commutative, we just require the bracket to vanish on the centre —
+One really important ideal of every Lie algebra is the centre. Again in analogy with [[Abstract algebra --- math-171/notes/Centralisers, centre, and normalisers#_definition _ centre, $Z(G)$|groups and rings]], the centre commutes with everything in the algebra. However, because Lie algebras are anti-commutative, we just require the bracket to vanish on the centre —
 
 ##### _definition:_ centre
 
@@ -192,7 +192,7 @@ so the span of all commutators is just the span of $\{ 0, h, 2f, 2e \}$. This is
 
 ### Quotient Lie algebras
 
-Of course, the reason we care about ideals of Lie algebras is that, [[Abstract Algebra I --- math-171/notes/Ideals and quotients#_proposition, definition _ quotient rings are rings|just like with rings]], the corresponding quotients are Lie algebras if and only if the subalgebra we quotient by is an ideal.
+Of course, the reason we care about ideals of Lie algebras is that, [[Abstract algebra --- math-171/notes/Ideals and quotients#_proposition, definition _ quotient rings are rings|just like with rings]], the corresponding quotients are Lie algebras if and only if the subalgebra we quotient by is an ideal.
 
 ##### _definition:_ quotient algebra
 

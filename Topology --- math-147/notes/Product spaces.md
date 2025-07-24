@@ -6,7 +6,7 @@ tags:
 - top
 ---
 
-There's a natural definition of a product of topological spaces — one that generalises the product of $\mathbb{R}$s to $\mathbb{R}^n$, and also the product metrics (that take a $p$-norm metric of the metrics on finitely many [[Mathematical Analysis I --- math-131/notes/Metric spaces#_definition_ metric space, metric|metric spaces]]). The first definition of a product generates its topology from rectangles (much like [[Calculus --- spivak/notes/Topological considerations#_definition _ open set|Spivak does]]).
+There's a natural definition of a product of topological spaces — one that generalises the product of $\mathbb{R}$s to $\mathbb{R}^n$, and also the product metrics (that take a $p$-norm metric of the metrics on finitely many [[Analysis --- math-131/notes/Metric spaces#_definition_ metric space, metric|metric spaces]]). The first definition of a product generates its topology from rectangles (much like [[Calculus --- spivak/notes/Topological considerations#_definition _ open set|Spivak does]]).
 
 ##### _definition:_ (finite) product topology
 
@@ -73,7 +73,7 @@ Suppose we have a topology $\mathcal{T}$ on $X \times Y$ that is coarser than th
 
 Since $(U \times V) \times W = U \times (V \times W)$ we can define the product topology on three, and thus, $n$ sets inductively as $(X \times Y) \times Z$. However, this doesn't get us infinite products.
 
-To think of finite products we usually use the trick of encoding pairs $(x, y)$ as $\{ x, \{ y \} \}$ or something similar. However, this isn't as manageable for infinite products. Typically, we think of an infinite [[Mathematical Analysis I --- math-131/notes/Countability#_definition _ countability, finiteness|countable]] list as a [[Topology --- math-147/notes/Sequences, topologically#_definition _ sequence|sequence]] — a function $\mathbb{N} \to X$. We extend this idea to think of arbitrary infinite set theoretic products.
+To think of finite products we usually use the trick of encoding pairs $(x, y)$ as $\{ x, \{ y \} \}$ or something similar. However, this isn't as manageable for infinite products. Typically, we think of an infinite [[Analysis --- math-131/notes/Countability#_definition _ countability, finiteness|countable]] list as a [[Topology --- math-147/notes/Sequences, topologically#_definition _ sequence|sequence]] — a function $\mathbb{N} \to X$. We extend this idea to think of arbitrary infinite set theoretic products.
 
 ##### _definition:_ (arbitrary, set-theoretic) products
 

@@ -4,7 +4,7 @@ tags:
 - diff-eq
 ---
 
-Separable differential equations are just one small class of differential equations, even among the small class of differential equations we will learn how to solve. In fact, they are a small subset of even [[Classifying ordinary differential equations#Order|first order]] ordinary differential equations. However, they are the easiest to solve and come up naturally in modelling problems fairly often!
+Separable differential equations are just one small class of differential equations, even among the small class of differential equations we will learn how to solve. In fact, they are a small subset of even [[Differential equations --- math-82/notes/Classifying ordinary differential equations#Order|first order]] ordinary differential equations. However, they are the easiest to solve and come up naturally in modelling problems fairly often!
 
 ### What are separable differential equations
 

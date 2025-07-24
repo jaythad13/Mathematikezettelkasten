@@ -13,7 +13,7 @@ Let $X, Y$ be topological spaces with $f : X \to Y$ and $g : Y \to X$ [[Topology
 
 For a continuous map $f : X \to Y$ the mapping cylinder $M_{f}$ is the space $X \times I \sqcup Y / \sim$ where $\sim$ identifies the top of the cylinder $X \times \{ 1 \}$ with the images of the corresponding points under $f$. That is $(x, 1) \sim f(x)$. Then $Y \to M_{f}$ is an inclusion and together with $M_{f} \to Y$ by $(x, t) \mapsto f(x)$ gives a homotopy equivalence (just slide everything down the cylinder). 
 
-Since $Y \subseteq M_{f}$ and the homotopy is [[Topology --- math-147/notes/Homotopy#_definition _ homotopic, homotopy, homotopic relative to|relative to]] $Y$, this is a strong deformation retract. Other examples of strong deformation retract are the contractions of $\mathbb{D}^n$ to a single point, or the right angled triangle to two lines (which has homology invariance given by [[Topics in Geometry and Topology --- math-145/notes/Whitehead equivalence#_definition _ elementary collapse, elementary expansion|elementary collapse]] for simplicial complexes).
+Since $Y \subseteq M_{f}$ and the homotopy is [[Topology --- math-147/notes/Homotopy#_definition _ homotopic, homotopy, homotopic relative to|relative to]] $Y$, this is a strong deformation retract. Other examples of strong deformation retract are the contractions of $\mathbb{D}^n$ to a single point, or the right angled triangle to two lines (which has homology invariance given by [[Simplicial homology and graph theory --- math-145/notes/Whitehead equivalence#_definition _ elementary collapse, elementary expansion|elementary collapse]] for simplicial complexes).
 
 ### CW-complexes and Whitehead equivalence
 

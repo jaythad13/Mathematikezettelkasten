@@ -28,7 +28,7 @@ The basic idea is to use the Chebyshev function that sums the logarithms of the 
 
 ##### _proposition:_ extending convergence 
 
-If $f$ is [[Complex Analysis --- math-135/notes/Holomorphic functions#_definition _ holomorphic, $ mathbb{C}$-differentiable, regular, the derivative, $f'(z_{0})$|holomorphic]] on the right half-plane $\{ s \in \mathbb{C} \mid \operatorname{Re} s > 0 \}$ and
+If $f$ is [[Complex analysis --- math-135/notes/Holomorphic functions#_definition _ holomorphic, $ mathbb{C}$-differentiable, regular, the derivative, $f'(z_{0})$|holomorphic]] on the right half-plane $\{ s \in \mathbb{C} \mid \operatorname{Re} s > 0 \}$ and
 $$
 f(s) = \int_{1}^\infty \frac{\alpha(t)}{t^{s + 1}}\, dt
 $$
@@ -48,7 +48,7 @@ then $S(x) = \rho x$.
 
 ###### _proof:_
 
-We can rewrite the Dirichlet series as a Riemann-Stieltjes integral (a [[Mathematical Analysis I --- math-131/notes/Riemann integration#_definition _ Riemann integrable|Riemann integral]] with weights on the partition) and expand it by [[Mathematical Analysis I --- math-131/notes/Fundamental theorem of calculus#_corollary _ integration by parts|integration by parts]]
+We can rewrite the Dirichlet series as a Riemann-Stieltjes integral (a [[Analysis --- math-131/notes/Riemann integration#_definition _ Riemann integrable|Riemann integral]] with weights on the partition) and expand it by [[Analysis --- math-131/notes/Fundamental theorem of calculus#_corollary _ integration by parts|integration by parts]]
 $$
 D(s) = \int_{1}^\infty \frac{1}{t^s} \, dS(t) = \frac{S(t)}{t^s} \Big |_{1}^\infty + \int_{1}^\infty \frac{s}{t^{s + 1}} S(t) \, dt.
 $$
@@ -61,7 +61,7 @@ $$
 
 ##### _corollary:_ the logarithmic derivative of the zeta function has coefficients of finite order
 
-The logarithmic derivative of the [[Complex Analysis --- math-135/notes/The Riemann zeta function#_definition _ the Riemann zeta function|Riemann zeta function]] is a Dirichlet series
+The logarithmic derivative of the [[Complex analysis --- math-135/notes/The Riemann zeta function#_definition _ the Riemann zeta function|Riemann zeta function]] is a Dirichlet series
 $$
 \sum_{n = 1}^\infty \frac{1}{n^s}
 $$
@@ -72,7 +72,7 @@ $\zeta(s) \neq 0$ for all $s \in \{ s \mid \operatorname{Re} s = 1 \}$.
 
 ###### _proof sketch:_
 
-Consider $D(s) = \zeta(s)^{3} \zeta(s + it)^4 \zeta(s + 2it)$. We will use the logarithmic derivative of $D$ and the [[Complex Analysis --- math-135/notes/The argument principle and winding number#_theorem _ the argument principle|argument principle]] to calculate the order of $D$ as the [[Complex Analysis --- math-135/notes/Meromorphic functions and singularities#_proposition, definition _ principals and residues|residue]] of $D' / D$, and show that $\operatorname{ord}_{1} D \le 0$.
+Consider $D(s) = \zeta(s)^{3} \zeta(s + it)^4 \zeta(s + 2it)$. We will use the logarithmic derivative of $D$ and the [[Complex analysis --- math-135/notes/The argument principle and winding number#_theorem _ the argument principle|argument principle]] to calculate the order of $D$ as the [[Complex analysis --- math-135/notes/Meromorphic functions and singularities#_proposition, definition _ principals and residues|residue]] of $D' / D$, and show that $\operatorname{ord}_{1} D \le 0$.
 
 But then
 $$

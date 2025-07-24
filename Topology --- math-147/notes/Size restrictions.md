@@ -11,7 +11,7 @@ In topology, we want to have a notion of our spaces being too large or too small
 
 ### Separable spaces
 
-Even though $\mathbb{R}$ is really big in terms of [[Mathematical Analysis I --- math-131/notes/Countability#_definition _ cardinality|cardinality]], because it has a countable subset $\mathbb{Q}$, which every point can be approximated by, $\mathbb{R}$ is not so large for a topological space. This is the notion that separability is trying to get at.
+Even though $\mathbb{R}$ is really big in terms of [[Analysis --- math-131/notes/Countability#_definition _ cardinality|cardinality]], because it has a countable subset $\mathbb{Q}$, which every point can be approximated by, $\mathbb{R}$ is not so large for a topological space. This is the notion that separability is trying to get at.
 
 To make this definition, we need a topological definition of what it means for a set to approximate the whole space.
 
@@ -75,7 +75,7 @@ Much like with the [[Topology --- math-147/notes/Compactness#_theorem _ the Bolz
 
 ##### _proposition:_ uncountable sets in a second countable space have limit points
 
-If $X$ is second countable and $A \subseteq X$ is [[Mathematical Analysis I --- math-131/notes/Countability#Uncountable sets|uncountable]], $A$ has a [[Topology --- math-147/notes/Limit points and closed sets#_definition _ limit point|limit point]] in $X$.
+If $X$ is second countable and $A \subseteq X$ is [[Analysis --- math-131/notes/Countability#Uncountable sets|uncountable]], $A$ has a [[Topology --- math-147/notes/Limit points and closed sets#_definition _ limit point|limit point]] in $X$.
 
 ###### _proof:_
 

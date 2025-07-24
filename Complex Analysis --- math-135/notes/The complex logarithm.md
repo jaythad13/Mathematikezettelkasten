@@ -6,7 +6,7 @@ tags:
 - complex
 ---
 
-Recall that [[Complex Analysis --- math-135/notes/What is complex analysis?#Polar representation|we defined]] $e^z = e^x e^{iy}$ for a complex number $z = x + iy$ where $e^{iy} = \cos{y} + i \sin{y}$. Thus, we noted that we could write any $w \in \mathbb{C}$ as $R e^{i \theta}$ for some $R, \theta \in \mathbb{R}$ (in fact there are infinitely many such $\theta \in \mathbb{R}$). We define
+Recall that [[Complex analysis --- math-135/notes/What is complex analysis?#Polar representation|we defined]] $e^z = e^x e^{iy}$ for a complex number $z = x + iy$ where $e^{iy} = \cos{y} + i \sin{y}$. Thus, we noted that we could write any $w \in \mathbb{C}$ as $R e^{i \theta}$ for some $R, \theta \in \mathbb{R}$ (in fact there are infinitely many such $\theta \in \mathbb{R}$). We define
 
 ##### _definition:_ Argument
 
@@ -50,14 +50,14 @@ With all this intuition, we can consider the following equivalent definition of 
 
 ##### _definition:_ logarithm
 
-Let $\Omega$ be [[Complex Analysis --- math-135/notes/Homotopy and simply connected domains#_definition _ simply connected|simply connected]] region containing $1$ but not $0$. We define
+Let $\Omega$ be [[Complex analysis --- math-135/notes/Homotopy and simply connected domains#_definition _ simply connected|simply connected]] region containing $1$ but not $0$. We define
 $$
 \begin{split}
 \log_{\Omega}(z) & : \Omega \to \mathbb{C} \\
  & :z \mapsto \int_{\gamma_{z}} \frac{1}{w} \, dw 
 \end{split}
 $$
-Note that this is well defined by [[Complex Analysis --- math-135/notes/Homotopy and simply connected domains#_theorem _ deformation theorem|the deformation theorem]]. Further, it agrees with the real logarithm on some small interval around $1$, and thus, is a holomorphic extension of it (just choose the straight line path along the real axis).
+Note that this is well defined by [[Complex analysis --- math-135/notes/Homotopy and simply connected domains#_theorem _ deformation theorem|the deformation theorem]]. Further, it agrees with the real logarithm on some small interval around $1$, and thus, is a holomorphic extension of it (just choose the straight line path along the real axis).
 
 Now we can give an alternate definition of the principal branch of the logarithm —
 
@@ -137,4 +137,4 @@ $$
 
 ###### _proof sketch:_
 
-$f/g$ only has [[Complex Analysis --- math-135/notes/Meromorphic functions and singularities#Removable singularities|removable singularities]] and so can be extended to a holomorphic function.
+$f/g$ only has [[Complex analysis --- math-135/notes/Meromorphic functions and singularities#Removable singularities|removable singularities]] and so can be extended to a holomorphic function.

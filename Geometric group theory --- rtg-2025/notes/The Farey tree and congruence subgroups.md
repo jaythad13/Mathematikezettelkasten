@@ -17,7 +17,7 @@ Recall the definition of the special linear group over a ring.
 
 ##### _definition:_ principal congruence subgroup
 
-For each integer $m > 1$, the principal congruence subgroup of level $n$ in $\mathrm{SL}_{2}(\mathbb{Z})$ is $\Gamma(n)$, the kernel of the [[Abstract Algebra I --- math-171/notes/Group homomorphisms#_definition _ group homomorphisms|group homomorphism]] $\pi_{n} : \mathrm{SL}_{2}(\mathbb{Z}) \to \mathrm{SL}_{2}(\mathbb{Z} / n \mathbb{Z})$ given by
+For each integer $m > 1$, the principal congruence subgroup of level $n$ in $\mathrm{SL}_{2}(\mathbb{Z})$ is $\Gamma(n)$, the kernel of the [[Abstract algebra --- math-171/notes/Group homomorphisms#_definition _ group homomorphisms|group homomorphism]] $\pi_{n} : \mathrm{SL}_{2}(\mathbb{Z}) \to \mathrm{SL}_{2}(\mathbb{Z} / n \mathbb{Z})$ given by
 $$
 \begin{pmatrix}
 a & b \\
@@ -29,7 +29,7 @@ c & d
 $$
 where $a \mapsto \overline{a}$ is the canonical homomorphism $\mathbb{Z} \to \mathbb{Z} / n \mathbb{Z}$.
 
-Note then that $\Gamma(n) \trianglelefteq \mathrm{SL}_{2}(\mathbb{Z})$ and is of finite [[Abstract Algebra I --- math-171/notes/Lagrange's theorem#_definition _ index, $ lvert G H rvert$|index]] since $\mathrm{SL}_{2}(\mathbb{Z}) / \Gamma(n) \cong \mathrm{SL}_{2}(\mathbb{Z} / n \mathbb{Z})$ is finite.
+Note then that $\Gamma(n) \trianglelefteq \mathrm{SL}_{2}(\mathbb{Z})$ and is of finite [[Abstract algebra --- math-171/notes/Lagrange's theorem#_definition _ index, $ lvert G H rvert$|index]] since $\mathrm{SL}_{2}(\mathbb{Z}) / \Gamma(n) \cong \mathrm{SL}_{2}(\mathbb{Z} / n \mathbb{Z})$ is finite.
 
 Since we typically denote graphs by $\Gamma$, we will use the notations $\mathrm{SL}_{2}(\mathbb{Z})[n] = \Gamma(n)$ to avoid confusion.
 
@@ -129,11 +129,11 @@ For $n \geq 3$, the principal congruence subgroup $\mathrm{SL}_{2}(\mathbb{Z})[n
 
 ###### _proof:_
 
-To prove $\mathrm{SL}_{2}(\mathbb{Z})[n]$ is free, [[Geometric group theory --- rtg-2025/notes/Actions on trees#_theorem _ free actions on trees come from free groups|it suffices to prove that it acts freely]] on the Farey tree. We will show that in fact the [[Abstract Algebra I --- math-171/notes/Group actions#_definition _ stabiliser, free|stabiliser]] of any vertex or edge of $T_{\text{F}}$ is only in $\mathrm{SL}_{2}(\mathbb{Z})[n]$ if it is the identity.
+To prove $\mathrm{SL}_{2}(\mathbb{Z})[n]$ is free, [[Geometric group theory --- rtg-2025/notes/Actions on trees#_theorem _ free actions on trees come from free groups|it suffices to prove that it acts freely]] on the Farey tree. We will show that in fact the [[Abstract algebra --- math-171/notes/Group actions#_definition _ stabiliser, free|stabiliser]] of any vertex or edge of $T_{\text{F}}$ is only in $\mathrm{SL}_{2}(\mathbb{Z})[n]$ if it is the identity.
 
 Since $\mathrm{SL}_{2}(\mathbb{Z}) \circlearrowright T_\text{F}$ comes from an action on $\Gamma _\text{F}$ which preserves edges and faces, the action on the Farey tree can't swap vertices corresponding to Farey graph edges with those corresponding to Farey graph faces. Since all edges of the tree are between a vertex corresponding to an edge and another corresponding to a face, this means that the edge between them is fixed if and only if both endpoints are fixed. It suffices then to show that the stabilisers of each vertex (under the $\mathrm{SL}_{2}(\mathbb{Z})$) contain no congruence elements.
 
-By lemmata below, $\mathrm{SL}_{2}(\mathbb{Z}) \circlearrowright \Gamma _\text{F}$ is transitive on edges and on faces (separately). Thus, all vertices corresponding to edges have isomorphic stabilisers, and similarly for vertices corresponding to faces. Since $\mathrm{SL}_{2}(\mathbb{Z})[n]$ is [[Abstract Algebra I --- math-171/notes/Normal subgroups#_definition _ normal subgroups|normal]] (it is a kernel), its intersections with each conjugate stabiliser are also isomorphic. Thus, it suffices just to consider the cases of the vertex $e_{0}$ corresponding to the edge between $(1 : 0)$ and $(0 : 1)$ and the vertex $f_{0}$ corresponding to the face bounded by $(1 : 0)$, $(0 : 1)$, and $(1 : 1)$.
+By lemmata below, $\mathrm{SL}_{2}(\mathbb{Z}) \circlearrowright \Gamma _\text{F}$ is transitive on edges and on faces (separately). Thus, all vertices corresponding to edges have isomorphic stabilisers, and similarly for vertices corresponding to faces. Since $\mathrm{SL}_{2}(\mathbb{Z})[n]$ is [[Abstract algebra --- math-171/notes/Normal subgroups#_definition _ normal subgroups|normal]] (it is a kernel), its intersections with each conjugate stabiliser are also isomorphic. Thus, it suffices just to consider the cases of the vertex $e_{0}$ corresponding to the edge between $(1 : 0)$ and $(0 : 1)$ and the vertex $f_{0}$ corresponding to the face bounded by $(1 : 0)$, $(0 : 1)$, and $(1 : 1)$.
 
 If $A \in \mathrm{SL}_{2}(\mathbb{Z})$ preserves $e_{0}$, then it must preserve the set $\{ (1, 0), (-1, 0), (0, 1), (0, -1) \} \subseteq \mathbb{Z}^{2}$ under matrix multiplication. Thus, the columns of $A$ must be some ordered choice of two vectors in the set. Since $\det A = 1$, not all $\binom{4}{2} 2!$ are valid. In particular, we cannot have a vector and its negative, and are forced to choose opposing or agreeing signs of the vectors so that they have positive determinant. Finally, we can choose to negate a matrix or not. We are left with $2 \binom{2}{2} 2! = 4$ matrices
 $$
@@ -204,7 +204,7 @@ The two given choices for $A$ that send $e_{0}$ to the edge between $(u_{1} : u_
 
 ### Presentations for $\mathrm{PSL}_{2}(\mathbb{Z})$ and $\mathrm{SL}_{2}(\mathbb{Z})$
 
-The actions of $\mathrm{SL}_{2}(\mathbb{Z})$ on the Farey graph and tree actually descend to actions of the quotient $\mathrm{PSL}_{2}(\mathbb{Z})$ for obvious reasons. Since the units in $\mathbb{Z}$ are $\{ \pm 1 \}$, we have $\mathrm{PSL}_{2}(\mathbb{Z}) = \mathrm{SL}_{2}(\mathbb{Z}) / \{ \pm I \}$. However, $\{ \pm I \}$ is in the [[Abstract Algebra I --- math-171/notes/Group actions#_definition _ kernel, effective action|kernel]] of the action $\mathrm{SL}_{2}(\mathbb{Z}) \circlearrowright \Gamma_\text{F}$ because we identify vertices $\pm (v_{1} : v_{0})$. This action is the [[Abstract Algebra I --- math-171/notes/Group actions#_definition _ kernel, effective action|effective action]], and for that reason it is easier to give a presentation for $\mathrm{PSL}_{2}(\mathbb{Z})$ than it is for $\mathrm{SL}_{2}(\mathbb{Z})$.
+The actions of $\mathrm{SL}_{2}(\mathbb{Z})$ on the Farey graph and tree actually descend to actions of the quotient $\mathrm{PSL}_{2}(\mathbb{Z})$ for obvious reasons. Since the units in $\mathbb{Z}$ are $\{ \pm 1 \}$, we have $\mathrm{PSL}_{2}(\mathbb{Z}) = \mathrm{SL}_{2}(\mathbb{Z}) / \{ \pm I \}$. However, $\{ \pm I \}$ is in the [[Abstract algebra --- math-171/notes/Group actions#_definition _ kernel, effective action|kernel]] of the action $\mathrm{SL}_{2}(\mathbb{Z}) \circlearrowright \Gamma_\text{F}$ because we identify vertices $\pm (v_{1} : v_{0})$. This action is the [[Abstract algebra --- math-171/notes/Group actions#_definition _ kernel, effective action|effective action]], and for that reason it is easier to give a presentation for $\mathrm{PSL}_{2}(\mathbb{Z})$ than it is for $\mathrm{SL}_{2}(\mathbb{Z})$.
 
 ##### _theorem:_ the free product presentation of $\mathrm{PSL}_{2}(\mathbb{Z})$
 

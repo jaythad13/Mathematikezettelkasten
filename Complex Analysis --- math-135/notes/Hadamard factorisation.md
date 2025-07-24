@@ -7,7 +7,7 @@ tags:
 - math-135/20
 ---
 
-The Hadamard factorisation theorem gives an improvement to [[Complex Analysis --- math-135/notes/Weierstrass factorisation|Weierstrass' result]] if you know something about the growth of a function.
+The Hadamard factorisation theorem gives an improvement to [[Complex analysis --- math-135/notes/Weierstrass factorisation|Weierstrass' result]] if you know something about the growth of a function.
 
 ### Order of growth
 
@@ -25,7 +25,7 @@ The order of growth of $f$ is the infimum of all $\rho$.
 
 ### Hadamard factorisation theorem
 
-The Hadamard factorisation theorem allows us to characterise all functions with suitable order of growth as products of [[Complex Analysis --- math-135/notes/Weierstrass factorisation#_definition _ Weierstrass elementary factor|elementary factors]] of constant degree rather than increasing degree $n \to \infty$, with a polynomial factor.
+The Hadamard factorisation theorem allows us to characterise all functions with suitable order of growth as products of [[Complex analysis --- math-135/notes/Weierstrass factorisation#_definition _ Weierstrass elementary factor|elementary factors]] of constant degree rather than increasing degree $n \to \infty$, with a polynomial factor.
 
 To show this theorem we will need to bound the growth of the number of zeroes of an entire function, and further, show that they are sparse.
 
@@ -53,7 +53,7 @@ $$
  & = \frac{1}{2 \pi} \int_{0}^{2 \pi} \log \lvert f(R e^{i \theta}) \rvert  \, d\theta - \log \lvert f(0) \rvert   
 \end{split}
 $$
-where the last step follows from [[Complex Analysis --- math-135/notes/Jensen's formula#_proposition _ Jensen's difference, geometrically|Jensen's formula]],
+where the last step follows from [[Complex analysis --- math-135/notes/Jensen's formula#_proposition _ Jensen's difference, geometrically|Jensen's formula]],
 
 We can bound the last bit using the order of growth of $f$. We get
 $$
@@ -72,7 +72,7 @@ $$
  & = 2^\rho C \sum_{j = 0}^\infty 2^{(\rho - s)j}.
 \end{split}
 $$
-This converges for all $s > \rho$ (as a [[Mathematical Analysis I --- math-131/notes/Series#_example _ the geometric series|geometric series]]).
+This converges for all $s > \rho$ (as a [[Analysis --- math-131/notes/Series#_example _ the geometric series|geometric series]]).
 
 ##### _theorem:_ Hadamard factorisation theorem
 
@@ -100,9 +100,9 @@ Here, since $K$ is compact, there is a maximum $\lvert z \rvert$, so we can just
 $$
 \sum \frac{1}{\lvert a_{n} \rvert^{k + 1}}
 $$
-converges. Now, $E_{k}(z/a_{n}) - 1$ is bounded by an absolutely convergent series, and thus, [[Complex Analysis --- math-135/notes/Infinite products#_theorem _ infinite products of holomorphic functions|the infinite product converges]].
+converges. Now, $E_{k}(z/a_{n}) - 1$ is bounded by an absolutely convergent series, and thus, [[Complex analysis --- math-135/notes/Infinite products#_theorem _ infinite products of holomorphic functions|the infinite product converges]].
 
-Since the product and $f$ have [[Complex Analysis --- math-135/notes/The complex logarithm#_corollary _ functions with identical zeroes differ by an exponential|identical zeroes]], we have
+Since the product and $f$ have [[Complex analysis --- math-135/notes/The complex logarithm#_corollary _ functions with identical zeroes differ by an exponential|identical zeroes]], we have
 $$
 f(z) = e^{p(z)} z^m \prod_{n = 1}^\infty E_{k}\left( \frac{z}{a_{n}} \right)
 $$
@@ -128,7 +128,7 @@ $$
 $$
 which gives us that $p$ is a polynomial of degree at most $s$ and thus, degree at most $k = \lfloor s \rfloor$.
 
-Thus, we only need to bound the product from below. Given a particular, $z$ we can divide the $a_{n}$ into two cases — $\lvert z / a_{n} \rvert \le 1/2$ and otherwise. If $\lvert z / a_{n} \rvert \le 1 / 2$, then we can just use our [[Complex Analysis --- math-135/notes/Weierstrass factorisation#_proposition _ bounding the growth of Weierstrass factors|bound on the growth of elementary factors]], and otherwise we can bound the exponential parts of the elementary factors from below using the triangle inequality and [[Mathematical Analysis I --- math-131/notes/Series#_example _ the geometric series|geometric series]]. Thus, we are only left to show that
+Thus, we only need to bound the product from below. Given a particular, $z$ we can divide the $a_{n}$ into two cases — $\lvert z / a_{n} \rvert \le 1/2$ and otherwise. If $\lvert z / a_{n} \rvert \le 1 / 2$, then we can just use our [[Complex analysis --- math-135/notes/Weierstrass factorisation#_proposition _ bounding the growth of Weierstrass factors|bound on the growth of elementary factors]], and otherwise we can bound the exponential parts of the elementary factors from below using the triangle inequality and [[Analysis --- math-131/notes/Series#_example _ the geometric series|geometric series]]. Thus, we are only left to show that
 $$
 \prod_{\lvert z / a_{n} \rvert \ge 1 / 2} \left\lvert  1 - \frac{z}{a_{n}}  \right\rvert \ge e^{-c \lvert z \rvert^s}.
 $$

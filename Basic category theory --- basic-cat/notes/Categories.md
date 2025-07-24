@@ -8,7 +8,7 @@ tags:
 ### An intuitive idea of categories, functors, and natural transformations
 
 A category is a bunch of related (mathematical) things (we call them objects) and the relationships between them (we call them arrows, maps, or morphisms). For example, 
-- [[Abstract Algebra I --- math-171/notes/Rings|rings]] and [[Abstract Algebra I --- math-171/notes/Ring homomorphisms|ring homomorphisms]]
+- [[Abstract algebra --- math-171/notes/Rings|rings]] and [[Abstract algebra --- math-171/notes/Ring homomorphisms|ring homomorphisms]]
 - topological spaces and continuous maps
 or for a more complicated example
 - topological spaces with a base point, and homotopy equivalence classes of continuous maps.
@@ -56,7 +56,7 @@ Carrying on with the analogy that arrows are like functions, for $A \xrightarrow
 
 Note that while we did specify them for sets, usually the identity and compositions for a category are obvious and are thus, not specified.
 
-2) $\mathsf{Grp}$ is a category with [[Abstract Algebra I --- math-171/notes/Groups, and why you should care#_definition _ group, identity, inverse|groups]] as objects and [[Abstract Algebra I --- math-171/notes/Group homomorphisms#_definition _ group homomorphisms|group homomorphisms]] as arrows, and similarly, $\mathsf{Ring}$ is a category with rings as objects and ring homomorphisms as arrows, and $\mathsf{Vect}_{k}$ is a category with vector spaces as objects and linear maps as arrows. We can define similarly, $\mathsf{CRing}$ for commutative rings, $\mathsf{Field}$ for fields, and $\mathsf{Mod}_{R}$ for modules over commutative $R$ (or specify with some similar symbol the category of left/right modules over non-commutative $R$)
+2) $\mathsf{Grp}$ is a category with [[Abstract algebra --- math-171/notes/Groups, and why you should care#_definition _ group, identity, inverse|groups]] as objects and [[Abstract algebra --- math-171/notes/Group homomorphisms#_definition _ group homomorphisms|group homomorphisms]] as arrows, and similarly, $\mathsf{Ring}$ is a category with rings as objects and ring homomorphisms as arrows, and $\mathsf{Vect}_{k}$ is a category with vector spaces as objects and linear maps as arrows. We can define similarly, $\mathsf{CRing}$ for commutative rings, $\mathsf{Field}$ for fields, and $\mathsf{Mod}_{R}$ for modules over commutative $R$ (or specify with some similar symbol the category of left/right modules over non-commutative $R$)
 3) $\mathsf{Top}$ is the category with topological spaces as objects and continuous maps as arrows.
 
 Finally, something that clearly all of these have in common, and in fact we can define more generally, is the idea of an isomorphism.

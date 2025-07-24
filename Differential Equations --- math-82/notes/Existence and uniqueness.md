@@ -5,7 +5,7 @@ tags:
 - math-82/5
 ---
 
-While numerical solutions (like [[Euler's method]]) are really valuable, it's always useful to be able to confirm that our approximations really are converging to something. Existence and uniqueness theorems allow us to confirm exactly where the numerical approximation "works". Note that they don't necessarily give us a way to find the solution — they just confirm that one exists.
+While numerical solutions (like [[Differential equations --- math-82/notes/Euler's method]]) are really valuable, it's always useful to be able to confirm that our approximations really are converging to something. Existence and uniqueness theorems allow us to confirm exactly where the numerical approximation "works". Note that they don't necessarily give us a way to find the solution — they just confirm that one exists.
 
 ##### _example:_ a special case of the Ricatti equation
 
@@ -13,7 +13,7 @@ Consider the differential equation $y' = x^2 + y^2$ with $y(0) = 1$. It turns ou
 
 ### First order differential equations
 
-We can avoid this kind of problem for most nice [[Classifying ordinary differential equations#Order|first order]] differential equations with the following two theorems.
+We can avoid this kind of problem for most nice [[Differential equations --- math-82/notes/Classifying ordinary differential equations#Order|first order]] differential equations with the following two theorems.
 
 ##### _theorem:_ existence and uniqueness for first order linear differential equations
 
@@ -60,7 +60,7 @@ Finally, a really nice fact about linear differential equations — their solut
 
 ##### _proposition:_ solutions of (homogenous) linear differential equations form a vector space
 
-If $y_{1}$ and $y_{2}$ satisfy the [[Classifying ordinary differential equations#_definition _ homogenous and non-homogenous linear differential equation|homogenous]] second order linear differential equation $y'' + p_{1}(x)y' + p_{2}(x)y = 0$, then $c_{1} y_{1} + c_{2} y_{2}$ is a solution for any constants $c_{1}, c_{2} \in \mathbb{R}$.
+If $y_{1}$ and $y_{2}$ satisfy the [[Differential equations --- math-82/notes/Classifying ordinary differential equations#_definition _ homogenous and non-homogenous linear differential equation|homogenous]] second order linear differential equation $y'' + p_{1}(x)y' + p_{2}(x)y = 0$, then $c_{1} y_{1} + c_{2} y_{2}$ is a solution for any constants $c_{1}, c_{2} \in \mathbb{R}$.
 
 ###### _proof:_
 

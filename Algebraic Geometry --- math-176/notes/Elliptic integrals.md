@@ -132,7 +132,7 @@ Both of these can be written as incomplete elliptic integrals.
 
 Let $p(x) = a_{4} x^4 + a_{3} x^3 + a_{2} x^{2} + a_{1}x + a_{0}$. Send the four roots $e_{1}, e_{2}, e_{3}, e_{4}$ of $p$ to the four roots of $(1 - x^{2})(1 - k^{2} x^{2})$. That is, send $e_{1}, e_{2}, e_{3}, e_{4}$ to $\pm \frac{1}{k}$ and $\pm 1$.
 
-Specifically, [[Complex Analysis --- math-135/notes/Cauchy integral formula#_theorem _ the fundamental theorem of algebra|factor]] over $\mathbb{C}$ to get
+Specifically, [[Complex analysis --- math-135/notes/Cauchy integral formula#_theorem _ the fundamental theorem of algebra|factor]] over $\mathbb{C}$ to get
 $$
 p(x) = a_{4}(x - e_{1})(x - e_{2})(x - e_{3})(x - e_{4}).
 $$

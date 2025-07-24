@@ -6,7 +6,7 @@ tags:
 
 ### Operators and invariant subspaces
 
-So far with [[Linear maps|linear maps]] we've been concerned with maps between arbitrary vector spaces. However, often, maps of interest are maps from a vector space to itself. These are also of independent interest because they tell us about the vector space, and have nice algebraic properties as a set (they form a [[Abstract Algebra I --- math-171/notes/Rings#_definition _ rings|ring]], and in fact, an algebra).
+So far with [[Linear maps|linear maps]] we've been concerned with maps between arbitrary vector spaces. However, often, maps of interest are maps from a vector space to itself. These are also of independent interest because they tell us about the vector space, and have nice algebraic properties as a set (they form a [[Abstract algebra --- math-171/notes/Rings#_definition _ rings|ring]], and in fact, an algebra).
 
 ##### _definition:_ operator
 

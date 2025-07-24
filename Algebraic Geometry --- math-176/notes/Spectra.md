@@ -44,7 +44,7 @@ The max spectrum of $R$ is the collection of all maximal ideals $M \subset R$.
 
 ##### _example:_ the spectra of $\mathbb{Z}$
 
-Since $\mathbb{Z}$ is a [[Abstract Algebra I --- math-171/notes/Factorisation in special rings#_definition _ principal ideal domain|principal ideal domain]] the prime ideals and maximal ideals are almost exactly identical — $\mathbb{Z} / n \mathbb{Z}$ is an field if and only if $n$ is prime and an integral domain if $n$ is prime. However, $\mathbb{Z} = \mathbb{Z} / 0 \mathbb{Z}$ is also an integral domain. Thus,
+Since $\mathbb{Z}$ is a [[Abstract algebra --- math-171/notes/Factorisation in special rings#_definition _ principal ideal domain|principal ideal domain]] the prime ideals and maximal ideals are almost exactly identical — $\mathbb{Z} / n \mathbb{Z}$ is an field if and only if $n$ is prime and an integral domain if $n$ is prime. However, $\mathbb{Z} = \mathbb{Z} / 0 \mathbb{Z}$ is also an integral domain. Thus,
 $$
 \operatorname{Spec} \mathbb{Z} = \{ (0) \} \cup \{ (2), (3), (5), (7), \dots \} = \{ 0 \} \cup \operatorname{mSpec} \mathbb{Z}.
 $$
@@ -67,7 +67,7 @@ If $F$ is an algebraically closed field, every maximal ideal $M \subset F[x_{1},
 
 ###### _proof:_
 
-Choose a maximal ideal $M$. Then $R/M$ is a field with $F \xhookrightarrow{} R / M$ so $R / M$ is an algebraic extension of $F$. Since $F$ is algebraically closed, we must have $F \cong R/M$. Consider $\varphi : R \to R / M \cong F$ with $\ker \varphi = M$ which exists by the [[Abstract Algebra I --- math-171/notes/Ideals and quotients#_proposition, definition _ quotient rings are rings|converse of the first isomorphism theorem]].
+Choose a maximal ideal $M$. Then $R/M$ is a field with $F \xhookrightarrow{} R / M$ so $R / M$ is an algebraic extension of $F$. Since $F$ is algebraically closed, we must have $F \cong R/M$. Consider $\varphi : R \to R / M \cong F$ with $\ker \varphi = M$ which exists by the [[Abstract algebra --- math-171/notes/Ideals and quotients#_proposition, definition _ quotient rings are rings|converse of the first isomorphism theorem]].
 
 Suppose $\varphi(x_{k}) = a_{k}$. Then $\varphi$ is just evaluating polynomials in $R$ at $(a_{1}, \dots, a_{n})$. Then all $x_{k} - a_{k} \in M$. Consider the ideal $(x_{1} - a_{1}, \dots, x_{n} - a_{n})$. This is exactly the kernel of $\varphi$, so $M = (x_{1} - a_{1}, \dots, x_{n} - a_{n})$ since this is exactly all the polynomials with roots at any of the $a_{k}$.
 
@@ -89,7 +89,7 @@ Suppose $F$ is algebraically closed and $(f_{1}, \dots, f_{n})$ is prime in $R =
 
 We claim that the bijection is given by $(a_{1}, \dots, a_{n}) \mapsto  \overline{M_{p}} = M_{p} / I = (x_{1} - a_{1}, \dots, x_{n} - a_{n}) / I$. 
 
-Note that $M_{p}$ [[Algebraic Geometry --- math-176/notes/Spectra#_proposition _ maximal ideals on algebraically closed $F[x_{1}, dots, x_{n}]$|is maximal]] — in fact, all maximal ideals in $R$ are some $M_{p}$. Since the [[Abstract Algebra I --- math-171/notes/Ring isomorphism theorems#Fourth isomorphism theorem|fourth isomorphism theorem]] is inclusion preserving, we have that $\overline{M_{p}}$ is maximal exactly when $M_{p}$ is. Thus, all maximal ideals in $R / I$ are some $(x_{1} - a_{1}, \dots, x_{n} - a_{n}) / I$. That is, the map is surjective.
+Note that $M_{p}$ [[Algebraic Geometry --- math-176/notes/Spectra#_proposition _ maximal ideals on algebraically closed $F[x_{1}, dots, x_{n}]$|is maximal]] — in fact, all maximal ideals in $R$ are some $M_{p}$. Since the [[Abstract algebra --- math-171/notes/Ring isomorphism theorems#Fourth isomorphism theorem|fourth isomorphism theorem]] is inclusion preserving, we have that $\overline{M_{p}}$ is maximal exactly when $M_{p}$ is. Thus, all maximal ideals in $R / I$ are some $(x_{1} - a_{1}, \dots, x_{n} - a_{n}) / I$. That is, the map is surjective.
 
 However, so far, we've only shown that this is a map $\mathbb{A}^n(F) \to \operatorname{mSpec} R / I$. We need to show that modding out by $R / I$ means that this map is only injective when restricted to $X$. Note that for $M_{p} / I$ to be sensible, we must have $I \subset M_{p}$. But then any $f \in I$ is also in $M$, giving us
 $$

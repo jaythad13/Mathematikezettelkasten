@@ -15,7 +15,7 @@ We should probably give a definition of the special linear group and projective 
 
 The special linear group of rank $n$ over a (commutative, unital) ring $A$ is $\mathrm{SL}_{n}(A)$, the group of all $n$-by-$n$ matrices with entries in $A$, and group operation given by matrix multiplication.
 
-The projective special linear group (of rank $n$, over a field $A$) is $\mathrm{PSL}_{n}(A) = \mathrm{SL}_{n}(A) / A^\times$ where the group of [[Abstract Algebra I --- math-171/notes/Rings#_definition _ unit|units]] $A^\times$ is identified with its embedding as diagonal matrices.
+The projective special linear group (of rank $n$, over a field $A$) is $\mathrm{PSL}_{n}(A) = \mathrm{SL}_{n}(A) / A^\times$ where the group of [[Abstract algebra --- math-171/notes/Rings#_definition _ unit|units]] $A^\times$ is identified with its embedding as diagonal matrices.
 
 Of particular interest to us are $\mathrm{SL}_{2}(\mathbb{Z})$ and $\mathrm{PSL}_{2}(\mathbb{Z})$. They are not free (for example the $\pi / 2$ rotation has order $4$), but have very interesting [[Geometric group theory --- rtg-2025/notes/Free groups and presentations|presentations]], that indicate something about their underlying group structure — they are "almost free".
 

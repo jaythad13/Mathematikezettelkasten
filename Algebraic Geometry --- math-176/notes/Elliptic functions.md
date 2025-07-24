@@ -40,7 +40,7 @@ for any period $\omega$ in the lattice
 $$
 \Lambda_{k} = \{ \omega = m \omega_{1} + n \omega_{2} \mid m, n \in \mathbb{Z} \}.
 $$
-Also, by the [[Abstract Algebra I --- math-171/notes/Group isomorphism theorems#_theorem _ the first isomorphism theorem|first group isomorphism theorem]] there is a [[Abstract Algebra I --- math-171/notes/Group isomorphisms#_definition _ group isomorphism, isomorphic|isomorphism]]
+Also, by the [[Abstract algebra --- math-171/notes/Group isomorphism theorems#_theorem _ the first isomorphism theorem|first group isomorphism theorem]] there is a [[Abstract algebra --- math-171/notes/Group isomorphisms#_definition _ group isomorphism, isomorphic|isomorphism]]
 $\mathbb{C} / \Lambda_{k} \to E_{k}(\mathbb{C})$ induced by the map
 $$
 z \mapsto (\operatorname{sn} z, \operatorname{sn}' z)

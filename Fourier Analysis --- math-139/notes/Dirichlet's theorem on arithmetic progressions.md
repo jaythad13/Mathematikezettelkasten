@@ -58,7 +58,7 @@ where the magnitude of the error term $E(x)$ is bounded — $\lvert E(x) \rvert
 
 ###### _proof:_
 
-Consider the [[Mathematical Analysis I --- math-131/notes/Power series#_definition _ power series|power series expansion]] of the [[Complex Analysis --- math-135/notes/Cauchy integral formula#_corollary _ the derivative form (holomorphic functions are smooth and analytic)|analytic function]]
+Consider the [[Analysis --- math-131/notes/Power series#_definition _ power series|power series expansion]] of the [[Complex analysis --- math-135/notes/Cauchy integral formula#_corollary _ the derivative form (holomorphic functions are smooth and analytic)|analytic function]]
 $$
 \ln(1 + x) =  x - \frac{x^{2}}{2} + \frac{x^{3}}{3} - \frac{x^4}{4} + \cdots.
 $$
@@ -70,7 +70,7 @@ For $\lvert x \rvert < 1 / 2$, the geometric sum is bounded by $2$, and thus, $\
 
 ##### _lemma:_ approximating the Riemann zeta function
 
-[[Complex Analysis --- math-135/notes/The Riemann zeta function#_definition _ the Riemann zeta function|The Riemann zeta function]] $\zeta$ is approximated
+[[Complex analysis --- math-135/notes/The Riemann zeta function#_definition _ the Riemann zeta function|The Riemann zeta function]] $\zeta$ is approximated
 $$
 \sum_{p \text{ prime}} \frac{1}{p^s} = \ln \zeta(s) + C
 $$
@@ -78,7 +78,7 @@ for all real $s > 1$.
 
 ###### _proof:_
 
-We can take logarithms on both sides of the [[Complex Analysis --- math-135/notes/The Riemann zeta function#_theorem _ Euler's product formula|Euler product formula]] to get
+We can take logarithms on both sides of the [[Complex analysis --- math-135/notes/The Riemann zeta function#_theorem _ Euler's product formula|Euler product formula]] to get
 $$
 \ln \zeta(s) = - \sum_{p \text{ prime}} \ln \left( 1 - \frac{1}{p^s} \right).
 $$
@@ -134,7 +134,7 @@ The set of all primes is denoted $\wp$.
 
 When $q$ is obvious, we write $p \equiv \ell$ to mean $p = \ell \pmod q$.
 
-Our goal is now to reduce this result to something that we can say about [[Fourier Analysis --- math-139/notes/Dirichlet characters and series|Dirichlet characters and series]]. Note that, we can define the characteristic function of $\ell$ modulo $q$ which gives a convenient way to express the infinite sum we want to show diverges, and simultaneously gives a way to utilise the tools of [[Fourier Analysis --- math-139/notes/Finite Fourier analysis|finite Fourier analysis]] and thus, Dirichlet characters and series.
+Our goal is now to reduce this result to something that we can say about [[Fourier analysis --- math-139/notes/Dirichlet characters and series|Dirichlet characters and series]]. Note that, we can define the characteristic function of $\ell$ modulo $q$ which gives a convenient way to express the infinite sum we want to show diverges, and simultaneously gives a way to utilise the tools of [[Fourier analysis --- math-139/notes/Finite Fourier analysis|finite Fourier analysis]] and thus, Dirichlet characters and series.
 
 ##### _definition:_ the modular characteristic function
 
@@ -162,7 +162,7 @@ The modular characteristic series of $\ell \in \mathbb{Z} / q \mathbb{Z}^*$ is t
 $$
 \sum_{p \in \wp} \frac{\delta_{\ell}(p)}{p^s}.
 $$
-Note that this is not an $L$-[[Fourier Analysis --- math-139/notes/Dirichlet characters and series|series]] proper since $\delta_{\ell}$ is not a [[Fourier Analysis --- math-139/notes/Finite Fourier analysis#_definition _ character, the dual group|character]] on $G$.
+Note that this is not an $L$-[[Fourier analysis --- math-139/notes/Dirichlet characters and series|series]] proper since $\delta_{\ell}$ is not a [[Fourier analysis --- math-139/notes/Finite Fourier analysis#_definition _ character, the dual group|character]] on $G$.
 
 ##### _lemma:_ Fourier decomposition of the modular characteristic series
 
@@ -173,16 +173,16 @@ $$
 
 ###### _proof:_
 
-By [[Fourier Analysis --- math-139/notes/Finite Fourier analysis#_theorem _ Fourier inversion|Fourier inversion]], we have (as functions on $\mathbb{Z} / q \mathbb{Z}^*$)
+By [[Fourier analysis --- math-139/notes/Finite Fourier analysis#_theorem _ Fourier inversion|Fourier inversion]], we have (as functions on $\mathbb{Z} / q \mathbb{Z}^*$)
 $$
 \delta_{\ell} = \sum_{\xi \in \widehat{\mathbb{Z} / q \mathbb{Z}^*}} \hat{\delta}_{\ell}(\xi) \, \xi.
 $$
 
-However, because $\delta_{\ell}$ is so simple, its [[Fourier Analysis --- math-139/notes/Finite Fourier analysis#_definition _ Fourier coefficient|Fourier coefficients]] $\hat{\delta}_{\ell}$ will be simple too. Explicitly,
+However, because $\delta_{\ell}$ is so simple, its [[Fourier analysis --- math-139/notes/Finite Fourier analysis#_definition _ Fourier coefficient|Fourier coefficients]] $\hat{\delta}_{\ell}$ will be simple too. Explicitly,
 $$
 \hat{\delta}_{\ell}(\xi) = \frac{1}{\lvert G \rvert } \sum_{m \in G} \delta_{\ell}(m) \overline{\xi(m)} = \frac{\overline{\xi(\ell)}}{\lvert G \rvert }
 $$
-since $\delta_{\ell}$ is only nonzero when $m = \ell$. Extending this formula to all of $\mathbb{Z}$ and extending the $\xi$ to their [[Fourier Analysis --- math-139/notes/Dirichlet characters and series#_definition _ Dirichlet character|Dirichlet characters]] $\chi_{\xi}$, we get
+since $\delta_{\ell}$ is only nonzero when $m = \ell$. Extending this formula to all of $\mathbb{Z}$ and extending the $\xi$ to their [[Fourier analysis --- math-139/notes/Dirichlet characters and series#_definition _ Dirichlet character|Dirichlet characters]] $\chi_{\xi}$, we get
 $$
 \delta_{\ell}(m) = \frac{1}{\lvert G \rvert } \sum_{\xi \in \widehat{G}} \overline{\chi_{\xi}(\ell)} \chi_{\xi}(m).
 $$
@@ -206,7 +206,7 @@ As $s \to 1^+$ the sum on the left diverges (to $\infty$) and the sum on the rig
 
 ##### _theorem:_ reduction of Dirichlet's theorem
 
-If for any non-trivial [[Fourier Analysis --- math-139/notes/Dirichlet characters and series#_definition _ Dirichlet character|Dirichlet character]] $\chi$ on $G$, 
+If for any non-trivial [[Fourier analysis --- math-139/notes/Dirichlet characters and series#_definition _ Dirichlet character|Dirichlet character]] $\chi$ on $G$, 
 $$
 \sum_{p \in \wp} \frac{\chi(p)}{p^s}
 $$
@@ -214,7 +214,7 @@ converges as $s \to 1^+$, then Dirichlet's theorem follows.
 
 ### The logarithm of $L$-series and further reduction
 
-Since the $L$-series [[Fourier Analysis --- math-139/notes/Dirichlet characters and series#_proposition _ niceness of $L$-series|satisfy niceness conditions]], we can define the logarithm of the $L$-series.
+Since the $L$-series [[Fourier analysis --- math-139/notes/Dirichlet characters and series#_proposition _ niceness of $L$-series|satisfy niceness conditions]], we can define the logarithm of the $L$-series.
 
 ##### _definition:_ logarithm of the $L$-series
 
@@ -226,7 +226,7 @@ which converges since the integrand is $O(e^{-c s})$.
 
 ###### _proof:_
 
-$\operatorname{Log}$ is just the [[Complex Analysis --- math-135/notes/The complex logarithm#_theorem _ logarithms of functions|complex logarithm of a function]], so it follows by the same proof.
+$\operatorname{Log}$ is just the [[Complex analysis --- math-135/notes/The complex logarithm#_theorem _ logarithms of functions|complex logarithm of a function]], so it follows by the same proof.
 
 ##### _proposition:_ the logarithm of the $L$-series is a genuine logarithm
 
@@ -315,7 +315,7 @@ The trivial character is the only character that grows and it only grows as $O(1
 
 The proof is harder because these have some real character. 
 
-We will need the existence of the [[Complex Analysis --- math-135/notes/Euler-Mascheroni constant|Euler-Mascheroni constant]] and a similar constant for the sum of square roots. Specifically, we need the following.
+We will need the existence of the [[Complex analysis --- math-135/notes/Euler-Mascheroni constant|Euler-Mascheroni constant]] and a similar constant for the sum of square roots. Specifically, we need the following.
 
 ##### _proposition:_ Euler-Mascheroni and analogues for other $p$-series
 
@@ -377,7 +377,7 @@ $$
 
 ###### _proof sketch:_
 
-Use the [[Fourier Analysis --- math-139/notes/Dirichlet characters and series#_lemma _ the cancellation lemma|cancellation lemma]]. This is actually a little subtle, but hopefully it's believable even without proof.
+Use the [[Fourier analysis --- math-139/notes/Dirichlet characters and series#_lemma _ the cancellation lemma|cancellation lemma]]. This is actually a little subtle, but hopefully it's believable even without proof.
 
 ##### _definition:_ the hyperbolic character sum
 

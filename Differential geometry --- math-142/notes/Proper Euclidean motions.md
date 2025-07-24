@@ -15,7 +15,7 @@ d(F(\mathbf{p}), F(\mathbf{q})) = d(\mathbf{p}, \mathbf{q}).
 $$
 The collection of all isometries is $\mathcal{E}_{n}$, the Euclidean group.
 
-##### _proposition:_ the Euclidean group is a [[Abstract Algebra I --- math-171/notes/Groups, and why you should care#_definition _ group, identity, inverse|group]]
+##### _proposition:_ the Euclidean group is a [[Abstract algebra --- math-171/notes/Groups, and why you should care#_definition _ group, identity, inverse|group]]
 
 $\mathcal{E}_{n}$ is a group under function composition. That is
 1) For $F, G \in \mathcal{E}_{n}$, $F \circ G \in \mathcal{E}_{n}$.
@@ -38,7 +38,7 @@ Prof. Goins leaves the second part as an exercise for me.
 
 We want to classify Euclidean motions. We can start by looking at the most basic examples of Euclidean motions
 
-##### _definition, proposition:_ translations, $\mathcal{T}_{n}$, translations are a [[Subgroups#_definition _ subgroup, $ le$|subgroup]] of $\mathcal{E}_{n}$
+##### _definition, proposition:_ translations, $\mathcal{T}_{n}$, translations are a [[Abstract algebra --- math-171/notes/Subgroups#_definition _ subgroup, $ le$|subgroup]] of $\mathcal{E}_{n}$
 
 1) For any fixed $\mathbf{a} \in \mathbb{R}^n$, the map $T : \mathbb{R}^n \to \mathbb{R}^n$ by $\mathbf{p} \mapsto \mathbf{p} + \mathbf{a}$ is a proper Euclidean motion, called a translation. The collection of all translations is $\mathcal{T}_{n}$
 2) For any two translations $S, T \in \mathcal{T}_{n}$ we have $ST^{-1}$, which suffices to show that $\mathcal{T}_{n} \le \mathcal{E}_{n}$.

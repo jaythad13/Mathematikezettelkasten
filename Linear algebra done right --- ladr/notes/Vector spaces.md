@@ -25,7 +25,7 @@ Because, it's only addition and scaling that make up the essence of a vector, fo
 
 ##### _definition:_ vector space
 
-A vector space $V$ is a set with a [[Fields|field]] $\bb{F}$ and the following functions:
+A vector space $V$ is a set with a [[Abstract algebra --- math-171/notes/Fields|field]] $\bb{F}$ and the following functions:
 - A binary operation, addition $a : V \times V \to V$ where $a(u, v)$ is usually written as $u + v$ for $u, v \in V$.
 - Scaling, $s : \bb{F} \times V \to V$ where $s(\lambda, v)$ is usually written as $\lambda v$ for $\lambda \in \bb{F}$ and $v \in V$.
 such that, for all $u, v, w \in V$ and $\alpha, \beta \in \bb{F}$

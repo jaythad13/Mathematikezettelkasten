@@ -39,13 +39,13 @@ The algebraic integers are $\mathbb{Z}[\sqrt{ d }] \cong \mathbb{Z}[x]/(x^{2} - 
 
 ##### _proposition:_ the algebraic integers are a ring
 
-If $d$ is not a square, $\mathbb{Z}[\sqrt{ d }]$ forms an [[Abstract Algebra I --- math-171/notes/Integral domains#_definition _ integral domain|integral domain]].
+If $d$ is not a square, $\mathbb{Z}[\sqrt{ d }]$ forms an [[Abstract algebra --- math-171/notes/Integral domains#_definition _ integral domain|integral domain]].
 
 ###### _proof sketch:_
 
-If you're willing to believe $\mathbb{Z}[\sqrt{ d }] \cong \mathbb{Z}[x]/(x^{2} - d)$, then $\mathbb{Z}[\sqrt{ d }]$ is commutative already. Note that $(x^{2} - d)$ is prime — $x^{2} - d$ doesn't factor unless $d$ is a square. Thus, $\mathbb{Z}[x]/(x^{2} - d)$ [[Abstract Algebra I --- math-171/notes/Prime and maximal ideals#_proposition _ prime ideals have integral domains as quotients|must be an integral domain]].
+If you're willing to believe $\mathbb{Z}[\sqrt{ d }] \cong \mathbb{Z}[x]/(x^{2} - d)$, then $\mathbb{Z}[\sqrt{ d }]$ is commutative already. Note that $(x^{2} - d)$ is prime — $x^{2} - d$ doesn't factor unless $d$ is a square. Thus, $\mathbb{Z}[x]/(x^{2} - d)$ [[Abstract algebra --- math-171/notes/Prime and maximal ideals#_proposition _ prime ideals have integral domains as quotients|must be an integral domain]].
 
-In analogy with the [[Complex Analysis --- math-135/notes/What is complex analysis?#_definition _ complex conjugate, $ overline{z}$|complex numbers]], we define the conjugate of an algebraic integer, and the norm on $\mathbb{Z}[\sqrt{ d }]$ as the product of a number and its norm.
+In analogy with the [[Complex analysis --- math-135/notes/What is complex analysis?#_definition _ complex conjugate, $ overline{z}$|complex numbers]], we define the conjugate of an algebraic integer, and the norm on $\mathbb{Z}[\sqrt{ d }]$ as the product of a number and its norm.
 
 ##### _definition:_ conjugates
 
@@ -56,7 +56,7 @@ The conjugate of an algebraic integer $a = x + y \sqrt{ d }$ is $\overline{a} = 
 The norm of an algebraic integer $a$ is $Na = a \overline{a}$. For $a = x + y \sqrt{ d }$ note that $Na = x^{2} - d y^{2}$.
 
 Note that this satisfies the definition of a norm in a ring.
-![[Abstract Algebra I --- math-171/notes/Factorisation in special rings#_definition _ norm|Factorisation in special rings]]
+![[Abstract algebra --- math-171/notes/Factorisation in special rings#_definition _ norm|Factorisation in special rings]]
 
 It's easy to see that the conjugate and norm are both multiplicative.
 
