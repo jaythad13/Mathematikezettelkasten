@@ -52,7 +52,7 @@ Recall also the notion of a path on a graph —
 
 ![[Superdiscrete --- math-55A/notes/Basic graph theory#_definition _ path|Basic graph theory]]
 
-Note that a $1$-[[Simplicial homology and graph theory --- math-145/notes/Chains revisited#_definition _ $0$, $1$, and $2$-chains|chain]] is just a collection of paths in the graph on $U \subseteq \mathbb{R}^{2}$ with all points vertices, and an edge between two vertices if the line segment between them is contained in $U$.
+Note that a $1$-[[Simplicial homology and random walks --- math-145/notes/Chains revisited#_definition _ $0$, $1$, and $2$-chains|chain]] is just a collection of paths in the graph on $U \subseteq \mathbb{R}^{2}$ with all points vertices, and an edge between two vertices if the line segment between them is contained in $U$.
 
 Notice also that $x \sim y$ if there is a path between $x$ and $y$, is an equivalence relation on the vertices of the graph.
 

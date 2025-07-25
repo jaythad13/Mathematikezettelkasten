@@ -57,7 +57,7 @@ For any surface $X$, any two triangulations $X_{T_{1}}$ and $X_{T_{2}}$ have $\c
 
 ###### _proof sketch:_
 
-Essentially, we use the [[Calculus --- spivak/notes/Integration over closed rectangles#_corollary _ any upper sum is greater than any lower sum|common refinement trick]] just as we did to prove [[Simplicial homology and graph theory --- math-145/notes/Continuous and differentiable winding number#_theorem _ the continuous winding number theorem|the continuous winding number theorem]].
+Essentially, we use the [[Calculus --- spivak/notes/Integration over closed rectangles#_corollary _ any upper sum is greater than any lower sum|common refinement trick]] just as we did to prove [[Simplicial homology and random walks --- math-145/notes/Continuous and differentiable winding number#_theorem _ the continuous winding number theorem|the continuous winding number theorem]].
 
 A refinement of a triangulation involves a triangulation of each triangle. By checking manually, one can see that any triangulation of a triangle still has the same Euler characteristic. Thus, the refinement of any triangulation of a surface still has the same Euler characteristic.
 

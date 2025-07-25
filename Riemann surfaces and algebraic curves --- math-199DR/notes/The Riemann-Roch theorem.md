@@ -133,7 +133,7 @@ All of this just means that we have a map of short exact sequences (a commutativ
 
 Here the map on the left follows from $\mathcal{L}(D_{1}) \subseteq \mathcal{L}(D_{2})$, $t$ is the suitable truncation, and the map on the right is also a truncation. That is, since the diagram commutes, we have $\operatorname{img} \alpha_{D_{2}} = \operatorname{img} t \circ \alpha_{D_{1}}$, so we can think of $t$ as giving a map of the quotient spaces $\tilde{t} : \Lambda^\perp(D_{1}) / \operatorname{img} \alpha_{D_{1}} \to \Lambda^\perp(D_{2}) / \operatorname{img} \alpha_{D_{2}}$. 
 
-By [[Simplicial homology and graph theory --- math-145/notes/A little homological algebra#_lemma _ the snake lemma|the snake lemma]], we have a short exact sequence of kernels of the vertical maps (since all the vertical maps are surjections, the cokernels are all $0$). The kernel of the left vertical map is $\mathcal{L}(D_{2}) / \mathcal{L}(D_{1})$ and we will call the kernel of the right vertical map $\mathrm{H}^1(D_{2} / D_{2})$ (for what I think are reasons motivated by cohomology). The short exact sequence is then
+By [[Simplicial homology and random walks --- math-145/notes/A little homological algebra#_lemma _ the snake lemma|the snake lemma]], we have a short exact sequence of kernels of the vertical maps (since all the vertical maps are surjections, the cokernels are all $0$). The kernel of the left vertical map is $\mathcal{L}(D_{2}) / \mathcal{L}(D_{1})$ and we will call the kernel of the right vertical map $\mathrm{H}^1(D_{2} / D_{2})$ (for what I think are reasons motivated by cohomology). The short exact sequence is then
 
 ```tikz
 \usepackage{tikz-cd}

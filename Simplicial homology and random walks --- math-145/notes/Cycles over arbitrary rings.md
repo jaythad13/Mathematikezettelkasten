@@ -5,7 +5,7 @@ tags:
 - top
 ---
 
-So far we've defined $1$-[[Simplicial homology and graph theory --- math-145/notes/Discrete winding number#_definition _ $1$-chain, $1$-cycle|chains]] (and cycles) in the way that makes sense — there are an integer number of each line segment. Now we will do a rubbishy abstract nonsense thing and define this over any [[Abstract algebra --- math-171/notes/Rings#_definition _ commutative ring|(commutative) ring]].
+So far we've defined $1$-[[Simplicial homology and random walks --- math-145/notes/Discrete winding number#_definition _ $1$-chain, $1$-cycle|chains]] (and cycles) in the way that makes sense — there are an integer number of each line segment. Now we will do a rubbishy abstract nonsense thing and define this over any [[Abstract algebra --- math-171/notes/Rings#_definition _ commutative ring|(commutative) ring]].
 
 ##### _definition:_ $1$-chains, $1$-cycles over $A$
 
@@ -34,11 +34,11 @@ Any orientation (which way to direct the edge) of the [[Superdiscrete --- math-5
 
 Let $\gamma = \sum_{i = 1}^n \overline{\mathbf{a}_{i}, \mathbf{b}_{i}}$ be a $1$-cycle over a commutative ring $A$.
 
-A bad definition of winding number over $A$ is just porting over the [[Simplicial homology and graph theory --- math-145/notes/Discrete winding number#_definition _ winding number (of a $1$-cycle)|original definition]] like so —
+A bad definition of winding number over $A$ is just porting over the [[Simplicial homology and random walks --- math-145/notes/Discrete winding number#_definition _ winding number (of a $1$-cycle)|original definition]] like so —
 $$
 w_{A}(\gamma, 0) = \frac{1}{2 \pi} \sum_{i = 1}^n \lambda_{i} \, \theta(\overline{\mathbf{a}_{i}, \mathbf{b}_{i}}, 0)
 $$
-This is nonsensical because what on earth is the product of $\lambda_{i} \in A$ and the angles in $\mathbb{R}$. Instead, we need to use [[Simplicial homology and graph theory --- math-145/notes/Discrete winding number#_proposition _ the ray escape formula|the equivalent ray escape formula]].
+This is nonsensical because what on earth is the product of $\lambda_{i} \in A$ and the angles in $\mathbb{R}$. Instead, we need to use [[Simplicial homology and random walks --- math-145/notes/Discrete winding number#_proposition _ the ray escape formula|the equivalent ray escape formula]].
 
 ##### _definition:_ winding number
 
@@ -46,7 +46,7 @@ The winding number of $\gamma$ about $0$ is
 $$
 w_{A}(\gamma, 0) = \sum_{i = 1}^n \lambda_{i} \operatorname{X}(\overline{\mathbf{a}_{i}, \mathbf{b}_{i}}, R_{\phi})
 $$
-where $\operatorname{X}$ is the [[Simplicial homology and graph theory --- math-145/notes/Discrete winding number#_proposition _ the ray escape formula|crossing number]], and $R_{\phi}$ is the ray from $0$ at any angle $\phi$.
+where $\operatorname{X}$ is the [[Simplicial homology and random walks --- math-145/notes/Discrete winding number#_proposition _ the ray escape formula|crossing number]], and $R_{\phi}$ is the ray from $0$ at any angle $\phi$.
 
 Notice that this definition is better since $\operatorname{X}$ is one of $1, 0, -1$, all of which exist in $A$. Of course, we need to show that this is well-defined. Thus, until we do, we should call this $w_{A}^\phi$ — the winding number over $A$ with respect to $\phi$.
 

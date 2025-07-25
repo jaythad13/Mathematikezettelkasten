@@ -4,7 +4,7 @@ tags:
 - alg-top
 ---
 
-Relative homology gives a way to quotient a geometric object without the quotient having to be geometric — an algebraic version of the quotient. Given [[Simplicial homology and graph theory --- math-145/notes/Simplicial complexes#_definition _ simplicial complex|simplicial complexes]] $X, Y$ with $Y \subseteq X$, we want to define the relative homology $\mathrm{H}_{*}(X, Y)$. Essentially, we're skipping the step of defining $X / Y$, and just defining the homology of it to be $\mathrm{H}_{*}(X, Y)$.
+Relative homology gives a way to quotient a geometric object without the quotient having to be geometric — an algebraic version of the quotient. Given [[Simplicial homology and random walks --- math-145/notes/Simplicial complexes#_definition _ simplicial complex|simplicial complexes]] $X, Y$ with $Y \subseteq X$, we want to define the relative homology $\mathrm{H}_{*}(X, Y)$. Essentially, we're skipping the step of defining $X / Y$, and just defining the homology of it to be $\mathrm{H}_{*}(X, Y)$.
 
 ### Relative chains, boundaries, and cycles
 

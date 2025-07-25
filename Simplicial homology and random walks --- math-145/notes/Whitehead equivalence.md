@@ -5,7 +5,7 @@ tags:
 - alg-top
 ---
 
-We want a notion of isomorphism for [[Simplicial homology and graph theory --- math-145/notes/Simplicial complexes#_definition _ simplicial complex|simplicial complexes]] that identifies two complexes that are obviously the same — with vertices just relabelled, but also identifies other things that are not so obviously the same. Roughly, we want something that is a homotopy invariant and not much weaker.
+We want a notion of isomorphism for [[Simplicial homology and random walks --- math-145/notes/Simplicial complexes#_definition _ simplicial complex|simplicial complexes]] that identifies two complexes that are obviously the same — with vertices just relabelled, but also identifies other things that are not so obviously the same. Roughly, we want something that is a homotopy invariant and not much weaker.
 
 This is given by elementary modifications and the equivalence relation they generate.
 
@@ -13,7 +13,7 @@ This is given by elementary modifications and the equivalence relation they gene
 
 ##### _definition:_ elementary collapse, elementary expansion
 
-Let $X$ be a simplicial complex, and $\sigma \in X$ a simplex. If $\sigma$ has exactly one [[Simplicial homology and graph theory --- math-145/notes/Simplicial complexes#_definition _ face, coface|coface]] $\tau$, then $Y = X \setminus \{ \sigma, \tau \}$ is a simplicial complex.
+Let $X$ be a simplicial complex, and $\sigma \in X$ a simplex. If $\sigma$ has exactly one [[Simplicial homology and random walks --- math-145/notes/Simplicial complexes#_definition _ face, coface|coface]] $\tau$, then $Y = X \setminus \{ \sigma, \tau \}$ is a simplicial complex.
 
 $Y$ is an elementary collapse of $X$, denoted $X \searrow Y$.
 
@@ -49,7 +49,7 @@ A simplicial complex $X$ is collapsible if it is Whitehead equivalent to the one
 
 ##### _proposition:_ every cone is collapsible
 
-If $X$ is a finite simplicial complex, and $CX$ is [[Simplicial homology and graph theory --- math-145/notes/Simplicial complexes#_example _ cones|its cone]], then $CX$ is collapsible.
+If $X$ is a finite simplicial complex, and $CX$ is [[Simplicial homology and random walks --- math-145/notes/Simplicial complexes#_example _ cones|its cone]], then $CX$ is collapsible.
 
 ###### _proof:_
 
@@ -61,7 +61,7 @@ To tell that two simplicial complexes are equivalent, we construct an equivalenc
 
 ##### _definition:_ Betti zero of a simplicial complex
 
-The zeroth Betti number of a simplicial complex is $\mathrm{b}_{0}(X)$, the number of connected components of the graph given by its $1$-[[Simplicial homology and graph theory --- math-145/notes/Simplicial complexes#_definition _ $k$-skeleton|skeleton]].
+The zeroth Betti number of a simplicial complex is $\mathrm{b}_{0}(X)$, the number of connected components of the graph given by its $1$-[[Simplicial homology and random walks --- math-145/notes/Simplicial complexes#_definition _ $k$-skeleton|skeleton]].
 
 ##### _proposition:_ number of connected components is Whitehead invariant
 
@@ -80,7 +80,7 @@ For $X \searrow Y$ we remove two faces.
 
 ##### _definition:_ the Euler characteristic
 
-The Euler characteristic of a simplicial complex $X$ is the alternating sum of the size of the $k$-[[Simplicial homology and graph theory --- math-145/notes/Simplicial complexes#_definition _ $k$-skeleton|skeletons]].
+The Euler characteristic of a simplicial complex $X$ is the alternating sum of the size of the $k$-[[Simplicial homology and random walks --- math-145/notes/Simplicial complexes#_definition _ $k$-skeleton|skeletons]].
 $$
 \chi(X) = \sum_{k = 0}^{\dim X} (-1)^k \dim C_{k}(X, \mathbb{F}).
 $$
@@ -91,7 +91,7 @@ For $X \searrow Y$, we remove faces of adjacent dimension, and thus, opposite si
 
 ### Whitehead invariance of homology
 
-The most significant Whitehead invariant is that of homology since it gives us invariance of $0$th Betti number [[Simplicial homology and graph theory --- math-145/notes/Euler's formula#_theorem _ Euler's formula for simplicial complexes|and Euler characteristic]] all in one,
+The most significant Whitehead invariant is that of homology since it gives us invariance of $0$th Betti number [[Simplicial homology and random walks --- math-145/notes/Euler's formula#_theorem _ Euler's formula for simplicial complexes|and Euler characteristic]] all in one,
 
 ##### _theorem:_ simplicial homology is Whitehead invariant
 
@@ -99,9 +99,9 @@ Suppose $X, Y$ are Whitehead equivalent simplicial complexes. Then there is an i
 
 ###### _proof:_
 
-It suffices to show the theorem in the case that $X \searrow Y$. Specifically, suppose $Y = X - \{ \sigma, \tau \}$ where $\sigma = \{ a_{0}, a_{1}, \dots, a_{n} \}$ and $\tau = \{ a_{1}, \dots, a_{n} \}$. Let $\overline{\sigma} = [a_{0}, a_{1}, \dots, a_{n}]$ and $\overline{\tau} = [a_{1}, \dots, a_{n}]$ are the corresponding [[Simplicial homology and graph theory --- math-145/notes/Simplicial homology#_definition _ chains|chains]].
+It suffices to show the theorem in the case that $X \searrow Y$. Specifically, suppose $Y = X - \{ \sigma, \tau \}$ where $\sigma = \{ a_{0}, a_{1}, \dots, a_{n} \}$ and $\tau = \{ a_{1}, \dots, a_{n} \}$. Let $\overline{\sigma} = [a_{0}, a_{1}, \dots, a_{n}]$ and $\overline{\tau} = [a_{1}, \dots, a_{n}]$ are the corresponding [[Simplicial homology and random walks --- math-145/notes/Simplicial homology#_definition _ chains|chains]].
 
-We claim that inclusion $I : \mathrm{C}_{*}(Y) \to \mathrm{C}_{*}(X)$ is a [[Simplicial homology and graph theory --- math-145/notes/A little homological algebra#_definition _ chain map|chain map]] since the boundary of a $k$-simplex is the same in $X$ and $Y$. To define a chain map in the opposite direction, there is exactly one sensible choice —
+We claim that inclusion $I : \mathrm{C}_{*}(Y) \to \mathrm{C}_{*}(X)$ is a [[Simplicial homology and random walks --- math-145/notes/A little homological algebra#_definition _ chain map|chain map]] since the boundary of a $k$-simplex is the same in $X$ and $Y$. To define a chain map in the opposite direction, there is exactly one sensible choice —
 $$
 P(\alpha) = \begin{cases}
 \alpha & \alpha \in \mathrm{C}_{*}(Y) \\
@@ -109,6 +109,6 @@ P(\alpha) = \begin{cases}
 \overline{\tau} - \partial \bar{\sigma} & \alpha = \overline{\tau}.
 \end{cases}
 $$
-By dividing into the same cases as above, it's clear that $P$ does commute with the [[Simplicial homology and graph theory --- math-145/notes/Simplicial homology#_definition _ boundary map|boundary map]].
+By dividing into the same cases as above, it's clear that $P$ does commute with the [[Simplicial homology and random walks --- math-145/notes/Simplicial homology#_definition _ boundary map|boundary map]].
 
-$PI$ is the identity itself since $P$ sends any $\alpha \in \operatorname{img} I$ to itself. We want to define a [[Simplicial homology and graph theory --- math-145/notes/A little homological algebra#_definition _ chain homotopy|chain homotopy]] $K : $
+$PI$ is the identity itself since $P$ sends any $\alpha \in \operatorname{img} I$ to itself. We want to define a [[Simplicial homology and random walks --- math-145/notes/A little homological algebra#_definition _ chain homotopy|chain homotopy]] $K : $

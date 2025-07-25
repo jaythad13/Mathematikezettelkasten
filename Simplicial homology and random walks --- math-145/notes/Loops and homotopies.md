@@ -6,7 +6,7 @@ tags:
 - top
 ---
 
-We want a way to extend our definition of the [[Simplicial homology and graph theory --- math-145/notes/Discrete winding number#_definition _ winding number (of a $1$-chain)|discrete winding number]] to loops.
+We want a way to extend our definition of the [[Simplicial homology and random walks --- math-145/notes/Discrete winding number#_definition _ winding number (of a $1$-chain)|discrete winding number]] to loops.
 
 ##### _definition:_ loop, curves
 
@@ -31,7 +31,7 @@ We say $f \simeq g$ to denote that they are homotopic.
 ##### _proposition:_ homotopy is an equivalence relation
 
 ###### _proof:_
-is left to the [[Simplicial homology and graph theory --- math-145/attachments/homework/hw 2/hw 2.pdf|homework]].
+is left to the [[Simplicial homology and random walks --- math-145/attachments/homework/hw 2/hw 2.pdf|homework]].
 
 A very useful result is that continuous maps preserve homotopy.
 
@@ -49,7 +49,7 @@ If $H$ is the homotopy in $D$, then $p \circ H$ is the homotopy in $E$.
 
 ##### _proposition:_ straight line homotopy
 
-If $f, g$ are loops on $D$, and each [[Simplicial homology and graph theory --- math-145/notes/Discrete winding number#_definition _ line segment, support of a line segment|line segment]] $\overline{f(t), g(t)}$ has support in $D$, then $f \simeq g$.
+If $f, g$ are loops on $D$, and each [[Simplicial homology and random walks --- math-145/notes/Discrete winding number#_definition _ line segment, support of a line segment|line segment]] $\overline{f(t), g(t)}$ has support in $D$, then $f \simeq g$.
 
 ###### _proof:_
 

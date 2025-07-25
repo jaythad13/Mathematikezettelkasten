@@ -16,7 +16,7 @@ A loop is a path $\gamma$ with $\gamma(0) = \gamma(1)$.
 
 Two paths $\gamma_{1}, \gamma_{2}$ are homotopic if there's a continuous map $[0, 1] \times [0, 1] \to X$ with $H(0, t) = \gamma_{1}(t)$ and $H(1, t) = \gamma_{2}(t)$, such that $H(s, 0)$ and $H(s, 1)$ are constant. 
 
-This forms an equivalence relation with [[Simplicial homology and graph theory --- math-145/notes/Continuous and differentiable winding number|winding number]] able to tell non-homotopic loops apart.
+This forms an equivalence relation with [[Simplicial homology and random walks --- math-145/notes/Continuous and differentiable winding number|winding number]] able to tell non-homotopic loops apart.
 
 ##### _definition:_ the fundamental group (based ay $x \in X$)
 

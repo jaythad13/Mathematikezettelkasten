@@ -18,7 +18,7 @@ A graph with boundary is a graph with the additional data of $B(G)$, a subset of
 
 The interior of the graph is $I(G) = {V(G) \setminus B(G)}$.
 
-These graphs with boundary have new "relative" notions of [[Simplicial homology and graph theory --- math-145/notes/Calculus on a graph#_definition _ zeroth Betti number on a graph|Betti number]] and [[Simplicial homology and graph theory --- math-145/notes/Calculus on a graph#_definition _ clopen|clopenness]] that treat the boundary differently.
+These graphs with boundary have new "relative" notions of [[Simplicial homology and random walks --- math-145/notes/Calculus on a graph#_definition _ zeroth Betti number on a graph|Betti number]] and [[Simplicial homology and random walks --- math-145/notes/Calculus on a graph#_definition _ clopen|clopenness]] that treat the boundary differently.
 
 ##### _definition:_ relative Betti number
 

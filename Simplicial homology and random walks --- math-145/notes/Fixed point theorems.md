@@ -23,7 +23,7 @@ The Brouwer fixed point theorem says that a continuous map on any closed ball ha
 
 Let $\overline{B^n}$ be the closed unit ball in $\mathbb{R}^n$. If $f : \overline{B^n} \to \overline{B^n}$ is continuous, then there is a fixed point $x \in \overline{B^n}$ such that $f(x) = x$.
 
-The disc must be closed since otherwise you could contract towards a point not included on the boundary, which would. To prove this in general requires a lot of machinery, typically from homology theory, or Sperner's lemma. However, it's actually doable in the case $n \le 2$ (with just the machinery of the [[Simplicial homology and graph theory --- math-145/notes/Continuous and differentiable winding number#_theorem _ the continuous winding number theorem|continuous winding number theorem]]).
+The disc must be closed since otherwise you could contract towards a point not included on the boundary, which would. To prove this in general requires a lot of machinery, typically from homology theory, or Sperner's lemma. However, it's actually doable in the case $n \le 2$ (with just the machinery of the [[Simplicial homology and random walks --- math-145/notes/Continuous and differentiable winding number#_theorem _ the continuous winding number theorem|continuous winding number theorem]]).
 
 ##### _theorem:_ the Brouwer fixed point theorem on a point
 
@@ -48,4 +48,4 @@ By the [[Analysis --- math-131/notes/Continuity#_corollary _ intermediate value 
 A continuous map $\overline{B^2} \to \overline{B^2}$ has a fixed point.
 
 ###### _proof:_
-is on the [[Simplicial homology and graph theory --- math-145/attachments/homework/hw 3/hw 3.pdf|homework]].
+is on the [[Simplicial homology and random walks --- math-145/attachments/homework/hw 3/hw 3.pdf|homework]].

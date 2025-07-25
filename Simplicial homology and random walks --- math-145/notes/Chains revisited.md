@@ -16,7 +16,7 @@ By abuse of notation, we will often write $b$ in place of $\hat{b}$.
 
 ##### _example:_ cycles over fields
 
-The reason we even defined this is that [[Simplicial homology and graph theory --- math-145/notes/Cycles over arbitrary rings#_definition _ $1$-chains, $1$-cycles over $A$|a cycle over a field]] $\mathbb{F}$ (in a subset $U \subseteq \mathbb{R}^{2}$) is just the free vector space $\mathbb{F}^{(B)}$ where $B$ is the set of line segments in the plane. We often write this $\mathrm{C}_{1}(U, \mathbb{F})$.
+The reason we even defined this is that [[Simplicial homology and random walks --- math-145/notes/Cycles over arbitrary rings#_definition _ $1$-chains, $1$-cycles over $A$|a cycle over a field]] $\mathbb{F}$ (in a subset $U \subseteq \mathbb{R}^{2}$) is just the free vector space $\mathbb{F}^{(B)}$ where $B$ is the set of line segments in the plane. We often write this $\mathrm{C}_{1}(U, \mathbb{F})$.
 
 ### Chains in the plane
 
@@ -26,7 +26,7 @@ Chains are built out of basic geometric components.
 
 A point is $[\mathbf{a}]$ for some $\mathbf{a} \in \mathbb{R}^{2}$. It has support $\{ \mathbf{a} \}$.
 
-![[Simplicial homology and graph theory --- math-145/notes/Discrete winding number#_definition _ line segment, support of a line segment|Discrete winding number]]
+![[Simplicial homology and random walks --- math-145/notes/Discrete winding number#_definition _ line segment, support of a line segment|Discrete winding number]]
 
 ##### _definition:_ directed triangles
 
@@ -54,7 +54,7 @@ The boundary map $\partial_{0} : \mathrm{C}_{1} \to \mathrm{C}_{0}$ is the [[Lin
 
 ##### _example:_ boundaries of some chains
 
-Thus, the boundary of a $1$-[[Simplicial homology and graph theory --- math-145/notes/Cycles over arbitrary rings#_definition _ $1$-chains, $1$-cycles over $A$|cycle]] $\sum_{i = 1}^n \lambda_{i} [\mathbf{a}_{i}, \mathbf{b}_{i}]$ is $0$ and the boundary of a $1$-chain is $\sum_{i = 1}^n \lambda_{i} [\mathbf{a}_{i}, \mathbf{b}_{i}]$.
+Thus, the boundary of a $1$-[[Simplicial homology and random walks --- math-145/notes/Cycles over arbitrary rings#_definition _ $1$-chains, $1$-cycles over $A$|cycle]] $\sum_{i = 1}^n \lambda_{i} [\mathbf{a}_{i}, \mathbf{b}_{i}]$ is $0$ and the boundary of a $1$-chain is $\sum_{i = 1}^n \lambda_{i} [\mathbf{a}_{i}, \mathbf{b}_{i}]$.
 
 In fact, being a $1$-cycle is the same thing as being in the kernel of $\partial_{0}$ which is very nice — a natural thing to do with 
 
@@ -92,7 +92,7 @@ $$
 \mathrm{B}_{0}(U, \mathbb{F}) = \operatorname{img} \partial_{0}.
 $$
 
-If you look at enough examples in [[Simplicial homology and graph theory --- math-145/attachments/texts/MATH 145 notes.pdf#page=36|examples in the notes]] we see that this should only possible if in every [[Analysis --- math-131/notes/Connectedness#_definition _ connectedness|connected]] component of $U$ the sums of coefficients is zero. It's not hard to see that this is necessary If you stare longer you will see that it's sufficient too.
+If you look at enough examples in [[Simplicial homology and random walks --- math-145/attachments/texts/MATH 145 notes.pdf#page=36|examples in the notes]] we see that this should only possible if in every [[Analysis --- math-131/notes/Connectedness#_definition _ connectedness|connected]] component of $U$ the sums of coefficients is zero. It's not hard to see that this is necessary If you stare longer you will see that it's sufficient too.
 
 This motivates the definition of a linear map to keep track of this.
 
@@ -112,7 +112,7 @@ Here the restriction of $\alpha$ to $V$ is denoted $\alpha_{|V}$.
 
 Note that $m(\partial_{0}[\mathbf{a}, \mathbf{b}]) = m([\mathbf{b}] - [\mathbf{a}]) = 0$. Thus, we require $m(\alpha) = 0$. Since [[Complex analysis --- math-135/notes/Analysis and (metric) topology review#_proposition _ path-connectedness and connectedness are equivalent on open sets|path-connectedness and connectedness are equivalent]] for a subset of $\mathbb{R}^{2}$, each polygonal path between $[\mathbf{a}]$ and $[\mathbf{b}]$ with boundary $[\mathbf{b}] - [\mathbf{a}]$ must be within a connected component $V$. Thus, we also require $m(\alpha_{|V}) = 0$. 
 
-Proving that $m(\alpha_{|V}) = 0$ is sufficient is [[Simplicial homology and graph theory --- math-145/attachments/homework/hw 4/hw 4.pdf|homework]].
+Proving that $m(\alpha_{|V}) = 0$ is sufficient is [[Simplicial homology and random walks --- math-145/attachments/homework/hw 4/hw 4.pdf|homework]].
 
 ### $2$-chains
 

@@ -10,21 +10,21 @@ Cochains are dual to chains. The following definition is then natural.
 
 ##### _definition:_ cochain
 
-A $k$-cochain is an element of the dual space to the [[Simplicial homology and graph theory --- math-145/notes/Chains revisited#_definition _ $0$, $1$, and $2$-chains|space of chains]] — it is an element of $\mathrm{C}_{k}^\vee(U, \mathbb{F})$. Thus, a $k$-cochain is a linear map $\mathrm{C}_{k}(U, \mathbb{F}) \to \mathbb{F}$.
+A $k$-cochain is an element of the dual space to the [[Simplicial homology and random walks --- math-145/notes/Chains revisited#_definition _ $0$, $1$, and $2$-chains|space of chains]] — it is an element of $\mathrm{C}_{k}^\vee(U, \mathbb{F})$. Thus, a $k$-cochain is a linear map $\mathrm{C}_{k}(U, \mathbb{F}) \to \mathbb{F}$.
 
 The space of $k$-cochains (over $U$, with coefficients in $\mathbb{F}$) is denoted $\mathrm{C}^k(U, \mathbb{F})$.
 
 ##### _example:_ cochains we've seen already
 
-1) The "[[Simplicial homology and graph theory --- math-145/notes/Chains revisited#_definition _ the mass cocycle|mass cocycle]]" is also a $0$-cochain
-2) The "[[Simplicial homology and graph theory --- math-145/notes/Discrete winding number#_definition _ angle cocycle|angle cocycle]]" $\theta$ is also a $1$-cochain.
-3) The [[Simplicial homology and graph theory --- math-145/attachments/homework/hw 1/hw 1.pdf#page=11|area]] of a $2$-cycle, defined to be the area enclosed by its boundary is a $2$-cochain.
+1) The "[[Simplicial homology and random walks --- math-145/notes/Chains revisited#_definition _ the mass cocycle|mass cocycle]]" is also a $0$-cochain
+2) The "[[Simplicial homology and random walks --- math-145/notes/Discrete winding number#_definition _ angle cocycle|angle cocycle]]" $\theta$ is also a $1$-cochain.
+3) The [[Simplicial homology and random walks --- math-145/attachments/homework/hw 1/hw 1.pdf#page=11|area]] of a $2$-cycle, defined to be the area enclosed by its boundary is a $2$-cochain.
 
-The [[Simplicial homology and graph theory --- math-145/notes/Discrete winding number#_theorem _ winding number|winding number]] (defined by [[Simplicial homology and graph theory --- math-145/notes/Discrete winding number#_proposition _ the ray escape formula|the ray escape formula]]) and $\theta / 2 \pi$ are $1$-cochains that agree on $1$-cycles — they are called cohomologous.
+The [[Simplicial homology and random walks --- math-145/notes/Discrete winding number#_theorem _ winding number|winding number]] (defined by [[Simplicial homology and random walks --- math-145/notes/Discrete winding number#_proposition _ the ray escape formula|the ray escape formula]]) and $\theta / 2 \pi$ are $1$-cochains that agree on $1$-cycles — they are called cohomologous.
 
 ### Coboundaries and cocycles
 
-To get a construction like that of homology from these arrows going in the "wrong" direction, we want arrows going from $\mathrm{C}^0 \to \mathrm{C}^1 \to \mathrm{C}^2$ also in the "wrong" direction (as compared to [[Simplicial homology and graph theory --- math-145/notes/Chains revisited#_definition _ boundary of a $1$-chain|boundary maps]]). These are just going to be the dual maps to the boundary maps.
+To get a construction like that of homology from these arrows going in the "wrong" direction, we want arrows going from $\mathrm{C}^0 \to \mathrm{C}^1 \to \mathrm{C}^2$ also in the "wrong" direction (as compared to [[Simplicial homology and random walks --- math-145/notes/Chains revisited#_definition _ boundary of a $1$-chain|boundary maps]]). These are just going to be the dual maps to the boundary maps.
 
 ##### _definition:_ $k$-coboundary map, coboundary of a $k$-cochain, derivative
 
@@ -57,7 +57,7 @@ The dimension of the $k$th cohomology space is the $k$th dual Betti number $\mat
 
 Cohomology and homology at least appear to count the same things.
 
-##### _example:_ zeroth cohomology counts [[Simplicial homology and graph theory --- math-145/notes/Homology in the plane#_definition _ polygonally path-connected, component|polygonally path-connected]] components
+##### _example:_ zeroth cohomology counts [[Simplicial homology and random walks --- math-145/notes/Homology in the plane#_definition _ polygonally path-connected, component|polygonally path-connected]] components
 
 If $U$ has three polygonally path connected components, then any $0$-cocycle $\varphi$ must be constant on each connected component — given a path $\gamma$ between $\mathbf{a}, \mathbf{b}$, since $\varphi$ sends $\partial_{0}(\gamma) = [\mathbf{b}] - [\mathbf{a}]$ to zero, $\varphi[\mathbf{a}] = \varphi[\mathbf{b}]$. Thus, $\varphi$ is determined by choice on the three components. There are no coboundaries (or only the $0$ function is a coboundary).
 
@@ -65,7 +65,7 @@ If $U$ has three polygonally path connected components, then any $0$-cocycle $\v
 
 If $U$ has two holes, then the winding numbers about points in those holes are linearly independent cocycles (by [[Topology --- math-147/attachments/homework/hw 1/hw 1.pdf#page=2|the distant cycle lemma]])
 
-The fact that homology gives [[Simplicial homology and graph theory --- math-145/notes/Homology in the plane#What does homology count?|the same answers]] suggests a duality theorem. 
+The fact that homology gives [[Simplicial homology and random walks --- math-145/notes/Homology in the plane#What does homology count?|the same answers]] suggests a duality theorem. 
 
 ##### _theorem:_ cohomology is dual to homology 
 

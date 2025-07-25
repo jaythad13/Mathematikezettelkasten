@@ -6,7 +6,7 @@ tags:
 - hom-alg
 ---
 
-In order to prove that [[Simplicial homology and graph theory --- math-145/notes/Simplicial homology|simplicial homology]] really is a [[Simplicial homology and graph theory --- math-145/notes/Whitehead equivalence#Whitehead invariants|Whitehead invariant]], we will need some machinery to generally analyse the objects of cohomology that we've been looking at so far. We will need the theory of chain complexes which generalise the boundary maps of chains we've been looking at, and some facts that are true in abelian categories.
+In order to prove that [[Simplicial homology and random walks --- math-145/notes/Simplicial homology|simplicial homology]] really is a [[Simplicial homology and random walks --- math-145/notes/Whitehead equivalence#Whitehead invariants|Whitehead invariant]], we will need some machinery to generally analyse the objects of cohomology that we've been looking at so far. We will need the theory of chain complexes which generalise the boundary maps of chains we've been looking at, and some facts that are true in abelian categories.
 
 ### Chain complexes
 

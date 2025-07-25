@@ -6,7 +6,7 @@ tags:
 - cx-geo
 ---
 
-Differential forms on a Riemann surface give us things to integrate over (over curves and regions of the Riemann surface). Eventually, this will let us get analogues of [[Complex analysis --- math-135/notes/Meromorphic functions and singularities#_theorem _ the residue formula|the residue formula]] and also a notion of [[Simplicial homology and graph theory --- math-145/notes/Cochains, coboundaries, and cohomology#_definition _ cohomology|cohomology]] $\pi_{1}(X) \to \mathbb{C}$ by $\gamma \mapsto \int_{\gamma} \omega$.
+Differential forms on a Riemann surface give us things to integrate over (over curves and regions of the Riemann surface). Eventually, this will let us get analogues of [[Complex analysis --- math-135/notes/Meromorphic functions and singularities#_theorem _ the residue formula|the residue formula]] and also a notion of [[Simplicial homology and random walks --- math-145/notes/Cochains, coboundaries, and cohomology#_definition _ cohomology|cohomology]] $\pi_{1}(X) \to \mathbb{C}$ by $\gamma \mapsto \int_{\gamma} \omega$.
 
 ### Notions from differential topology
 

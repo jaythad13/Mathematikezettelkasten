@@ -32,17 +32,17 @@ A surface is a $2$-manifold.
 
 ### Facts about triangulation
 
-To classify these we need to make them simpler by discretising them. We do this by way of [[Simplicial homology and graph theory --- math-145/notes/Simplicial complexes#_definition _ simplicial complex|simplicial complexes]]. 
+To classify these we need to make them simpler by discretising them. We do this by way of [[Simplicial homology and random walks --- math-145/notes/Simplicial complexes#_definition _ simplicial complex|simplicial complexes]]. 
 
 ##### _definition:_ triangulation
 
-A triangulation of an $n$-manifold $X$ is a simplicial complex $T$ (with all maximal [[Simplicial homology and graph theory --- math-145/notes/Simplicial complexes#_definition _ face, coface|faces]] have dimension $n$) so that $X$ is [[Topology --- math-147/notes/Homeomorphisms#_definition _ homeomorphism|homeomorphic]] to $T$.
+A triangulation of an $n$-manifold $X$ is a simplicial complex $T$ (with all maximal [[Simplicial homology and random walks --- math-145/notes/Simplicial complexes#_definition _ face, coface|faces]] have dimension $n$) so that $X$ is [[Topology --- math-147/notes/Homeomorphisms#_definition _ homeomorphism|homeomorphic]] to $T$.
 
 Something that's neat about these triangles is that there is a way to make them smaller.
 
 ##### _definition:_ barycentric division
 
-The barycentric division of a triangulation $T$ is its [[Simplicial homology and graph theory --- math-145/attachments/homework/hw 10/hw 10.pdf#page=12|derived complex]] with the original vertices identified with the corresponding vertices in the derived complex.
+The barycentric division of a triangulation $T$ is its [[Simplicial homology and random walks --- math-145/attachments/homework/hw 10/hw 10.pdf#page=12|derived complex]] with the original vertices identified with the corresponding vertices in the derived complex.
 
 ##### _theorem:_ triangulation of low-dimensional manifolds (Moise–Bing)
 

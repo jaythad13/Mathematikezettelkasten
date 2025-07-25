@@ -5,13 +5,13 @@ tags:
 - alg-top
 ---
 
-Homology groups measure when [[Simplicial homology and graph theory --- math-145/notes/Chains revisited|cycles]] fail to be boundaries of a higher-dimensional [[Simplicial homology and graph theory --- math-145/notes/Chains revisited|chain]].
+Homology groups measure when [[Simplicial homology and random walks --- math-145/notes/Chains revisited|cycles]] fail to be boundaries of a higher-dimensional [[Simplicial homology and random walks --- math-145/notes/Chains revisited|chain]].
 
 ##### _definition:_ zeroth homology group
 
 The zeroth homology group is $\mathrm{H}_{0}(U, \mathbb{F}) = \mathrm{Z}_{0}(U, \mathbb{F}) / \mathrm{B}_{0}(U, \mathbb{F})$ where $\mathrm{Z}_{0}(U, \mathbb{F}) = \mathrm{C}_{0}(U, \mathbb{F})$ is the vector space of $0$-cycles and equivalently, the space of $0$-chains.
 
-In the case of $1$-chains, as long as $U$ is connected and [[Simplicial homology and graph theory --- math-145/notes/Chains revisited#_definition _ the mass cocycle|the mass cocycle]] is zero, we have that a $0$-cycle (which is just a $0$-chain) is indeed a boundary. Otherwise [[Simplicial homology and graph theory --- math-145/attachments/homework/hw 4/hw 4.pdf|the homework]] shows us that $\mathrm{H}_{0}$ measures the number of connected components.
+In the case of $1$-chains, as long as $U$ is connected and [[Simplicial homology and random walks --- math-145/notes/Chains revisited#_definition _ the mass cocycle|the mass cocycle]] is zero, we have that a $0$-cycle (which is just a $0$-chain) is indeed a boundary. Otherwise [[Simplicial homology and random walks --- math-145/attachments/homework/hw 4/hw 4.pdf|the homework]] shows us that $\mathrm{H}_{0}$ measures the number of connected components.
 
 Here again, the homology group measures the degree of obstruction to $1$-cycles being boundaries of $2$-chains
 
@@ -22,7 +22,7 @@ $$
 \mathrm{H}_{1}(U, \mathbb{F}) = \mathrm{Z}_{1}(U, \mathbb{F}) / \mathrm{B}_{1}(U, \mathbb{F}).
 $$
 
-Specifically, what does the homology measure? Whatever it is, the [[Simplicial homology and graph theory --- math-145/notes/Discrete winding number#_definition _ winding number (of a $1$-cycle)|winding number]] gives a way to measure it too — specifically, if a $1$-cycle is the boundary of a $2$-chain, it has winding number $0$ about every point not in the support of the $2$-chain.
+Specifically, what does the homology measure? Whatever it is, the [[Simplicial homology and random walks --- math-145/notes/Discrete winding number#_definition _ winding number (of a $1$-cycle)|winding number]] gives a way to measure it too — specifically, if a $1$-cycle is the boundary of a $2$-chain, it has winding number $0$ about every point not in the support of the $2$-chain.
 
 ##### _proposition:_ the winding number of the boundary of a chain
 
@@ -30,7 +30,7 @@ Given $x$ not in the support of a $2$-chain $\sigma$, the winding number of $\pa
 
 ###### _proof sketch:_
 
-See by the [[Simplicial homology and graph theory --- math-145/attachments/homework/hw 1/hw 1.pdf#page=2|distant cycle lemma]] that this is true for any $[\mathbf{a}, \mathbf{b}, \mathbf{c}]$. Since $w_{x} : \gamma \mapsto w(\gamma, x)$ is linear, this extends linearly to the zero function.
+See by the [[Simplicial homology and random walks --- math-145/attachments/homework/hw 1/hw 1.pdf#page=2|distant cycle lemma]] that this is true for any $[\mathbf{a}, \mathbf{b}, \mathbf{c}]$. Since $w_{x} : \gamma \mapsto w(\gamma, x)$ is linear, this extends linearly to the zero function.
 
 Most of what we care about from homology we can get from the dimensions of the homology ~~groups~~ vector spaces.
 
@@ -54,7 +54,7 @@ For each $1$-cycle $\gamma = \sum_{i = 1}^n \lambda_{i} [\mathbf{a}_{i}, \mathbf
 $$
 \partial \sigma = \gamma -  \sum_{i = 1}^n [0, \mathbf{b}_{i}] - [0, \mathbf{a}_{i}] = \gamma
 $$
-where the sum disappears by [[Simplicial homology and graph theory --- math-145/notes/Chains revisited#_definition _ $1$-cycles|the cycle definition]].
+where the sum disappears by [[Simplicial homology and random walks --- math-145/notes/Chains revisited#_definition _ $1$-cycles|the cycle definition]].
 
 This, along with our homework suggests that the zeroth Betti number counts connected components. For open subsets of $\mathbb{R}^{2}$ [[Complex analysis --- math-135/notes/Analysis and (metric) topology review#_proposition _ path-connectedness and connectedness are equivalent on open sets|this is essentially true]], however, we will be more careful.
 
@@ -70,7 +70,7 @@ If $U \subseteq \mathbb{R}^{2}$ has $n$ polygonally path-connected components, t
 
 ###### _proof sketch:_
 
-[[Simplicial homology and graph theory --- math-145/attachments/homework/hw 4/hw 4.pdf#page=2|See the homework]].
+[[Simplicial homology and random walks --- math-145/attachments/homework/hw 4/hw 4.pdf#page=2|See the homework]].
 
 ###### _succinct proof:_
 
@@ -84,7 +84,7 @@ Let $\mathbf{x}_{1}, \dots, \mathbf{x}_{m}$ be distinct points $\mathbb{R}^{2}$ 
 
 ###### _proof sketch:_
 
-Where we used mass cocycles for zeroth Betti numbers, we will use [[Simplicial homology and graph theory --- math-145/notes/Discrete winding number#_definition _ winding number (of a $1$-cycle)|winding numbers]] this time. Notice that the linear map $\mathrm{Z}_{1} \to \mathbb{F}$
+Where we used mass cocycles for zeroth Betti numbers, we will use [[Simplicial homology and random walks --- math-145/notes/Discrete winding number#_definition _ winding number (of a $1$-cycle)|winding numbers]] this time. Notice that the linear map $\mathrm{Z}_{1} \to \mathbb{F}$
 $$
 w_{k} : \gamma \mapsto w_{\mathbb{F}}(\gamma, \mathbf{x}_{k})
 $$
@@ -94,8 +94,8 @@ Thus, $w_{k} \partial_{1} = 0$, and putting each of these maps together and quot
 
 We want to show that $\mathrm{B}_{1}$ is all of the kernel (of the lift) and thus, that $w$ is injective. Suppose $w \gamma = 0$. Then we can freely subdivide any edge of $\gamma$ without changing winding whether it is a boundary or not since $[\mathbf{a}, \mathbf{m}, \mathbf{b}]$ with boundary $\partial [\mathbf{a}, \mathbf{m}, \mathbf{b}] = [\mathbf{a}, \mathbf{m}] + [\mathbf{m}, \mathbf{b}] - [\mathbf{a}, \mathbf{b}]$ can just be added to a $2$-chain with $[\mathbf{a}, \mathbf{b}]$ in its boundary.
 
-By subdividing so small it doesn't matter and looking at right angled triangles, we can assume all edges of $\gamma$ to be horizontal or vertical. Further, by [[Simplicial homology and graph theory --- math-145/attachments/homework/hw 4/hw 4.pdf#page=4|the homework]] we can add $2$-chains to reorient our edges so that all horizontal edges go right and vertical edges go up. By dividing fine enough, we have that $\gamma$ consists of edges on a grid.
+By subdividing so small it doesn't matter and looking at right angled triangles, we can assume all edges of $\gamma$ to be horizontal or vertical. Further, by [[Simplicial homology and random walks --- math-145/attachments/homework/hw 4/hw 4.pdf#page=4|the homework]] we can add $2$-chains to reorient our edges so that all horizontal edges go right and vertical edges go up. By dividing fine enough, we have that $\gamma$ consists of edges on a grid.
 
-From here the proof that $w$ is injective is a slow process of pushing $\gamma$ to $0$. [[Simplicial homology and graph theory --- math-145/attachments/texts/MATH 145 notes.pdf#page=49|See notes]].
+From here the proof that $w$ is injective is a slow process of pushing $\gamma$ to $0$. [[Simplicial homology and random walks --- math-145/attachments/texts/MATH 145 notes.pdf#page=49|See notes]].
 
 We can show that this is surjective by picking disjoint discs around each $\mathbf{x}_{k}$ and choosing $\gamma_{k}$ that winds around each $\mathbf{x}_{k}$ once inside the disc. For each $k$th standard basis vector $\mathbf{e}_{k}$, we have $w \gamma_{k} = \mathbf{e}_{k}$.
