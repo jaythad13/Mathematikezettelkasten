@@ -10,7 +10,7 @@ tags:
 - anal
 ---
 
-It's been known since antiquity that there are infinitely many [[Superdiscrete --- math-55a/notes/Euclid's algorithm and primes#_definition _ prime numbers|primes]].
+It's been known since antiquity that there are infinitely many [[Superdiscrete --- math-55A/notes/Euclid's algorithm and primes#_definition _ prime numbers|primes]].
 
 ##### _theorem:_ the infinitude of the primes
 

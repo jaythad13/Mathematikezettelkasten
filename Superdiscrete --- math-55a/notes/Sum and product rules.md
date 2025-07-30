@@ -1,7 +1,6 @@
 ---
 tags:
 - math-55A/1
-- math-55A/2
 - comb
 ---
 
@@ -121,7 +120,7 @@ Thus, we get $3 \times \binom{13}{3} \binom{4}{2}^2 \times 4$ two pairs.
 
 ### The sum rule
 
-The product rule is lovely and simple because we aren't trying to make specific exceptions. When we try to do so, we have to split our sets into disjoint parts, add the parts we want, and subtract the parts we don't want. The sum rule (and later, [[Superdiscrete --- math-55a/notes/Inclusion-exclusion|inclusion-exclusion]]) is a way to get a handle on this. We can return to poker hands to see an example of how this is much more tricky.
+The product rule is lovely and simple because we aren't trying to make specific exceptions. When we try to do so, we have to split our sets into disjoint parts, add the parts we want, and subtract the parts we don't want. The sum rule (and later, [[Superdiscrete --- math-55A/notes/Inclusion-exclusion|inclusion-exclusion]]) is a way to get a handle on this. We can return to poker hands to see an example of how this is much more tricky.
 
 ##### _example:_ poker hands again
 

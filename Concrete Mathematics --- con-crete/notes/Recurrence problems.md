@@ -51,7 +51,7 @@ In order to move $n$ disks from post $A$ to post $C$ (when we have three posts: 
 
 Note that this algorithm references itself. We call this algorithm recursive. It's implied that we know how to move one disk between two empty posts, and that moving no disks involves doing nothing but often, when we define a recursive algorithm, we also have to define some _base case._
 
-Since this algorithm is guaranteed to move the $n$ disks (we can show this by [[Superdiscrete --- math-55A/notes/Proof by induction|induction]]), we know that the least number of steps to move $n$ disks is not more than the number of steps for this algorithm. That is 
+Since this algorithm is guaranteed to move the $n$ disks (we can show this by [[Superdiscrete --- math-55A/notes/Induction and recurrence|induction]]), we know that the least number of steps to move $n$ disks is not more than the number of steps for this algorithm. That is 
 $$
 T_n \le 2 T_{n-1} + 1 \text{ for } n \in \bb{N}.
 $$

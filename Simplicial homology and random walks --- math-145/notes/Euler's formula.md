@@ -4,7 +4,7 @@ tags:
 - alg-top
 ---
 
-Euler's formula for ([[Superdiscrete --- math-55a/notes/Special graphs#_definition _ planar graph|planar]]) graphs gives an invariant for graphs in terms of the number of vertices, edges, and faces. This is in fact a statement about the homology of the graph as a [[Simplicial homology and random walks --- math-145/notes/Simplicial complexes#_definition _ simplicial complex|simplicial complex]]. In fact, this can be generalised to a statement about the homology of any graph!
+Euler's formula for ([[Superdiscrete --- math-55A/notes/Special graphs#_definition _ planar graph|planar]]) graphs gives an invariant for graphs in terms of the number of vertices, edges, and faces. This is in fact a statement about the homology of the graph as a [[Simplicial homology and random walks --- math-145/notes/Simplicial complexes#_definition _ simplicial complex|simplicial complex]]. In fact, this can be generalised to a statement about the homology of any graph!
 
 ##### _theorem:_ Euler's formula for graphs
 

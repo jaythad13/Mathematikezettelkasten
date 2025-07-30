@@ -10,7 +10,7 @@ The Cayley graph of a group encodes it exactly by its symmetries. To define it a
 
 ### Graphs and automorphisms
 
-Typically we work with [[Superdiscrete --- math-55a/notes/Basic graph theory#_definition _ graph|simple graphs]] — with at most one edge between any two vertices and no edges with both endpoints at the same vertex. We will allow these extra edges.
+Typically we work with [[Superdiscrete --- math-55A/notes/Basic graph theory#_definition _ graph|simple graphs]] — with at most one edge between any two vertices and no edges with both endpoints at the same vertex. We will allow these extra edges.
 
 ##### _definitions:_ (directed, multi-)graphs, endpoints
 
@@ -119,6 +119,6 @@ Since all $h \in G$ have finite word length, induction gives us that all $h \in 
 
 ##### _example:_ the Cayley graph of a [[Geometric group theory --- rtg-2025/notes/Free groups and presentations#_definition _ free group|free group]]
 
-The Cayley graph of the free group on $2$ elements (say $a, b$) $F_{2}$ is an infinite tetravalent graph (every vertex has [[Superdiscrete --- math-55a/notes/Basic graph theory#_definition _ degree, $d(v)$|degree]] $4$). If we draw the graph with all edges at a vertex perpendicular, we label all the horizontal edges with $a$ and the vertical edges with $b$.
+The Cayley graph of the free group on $2$ elements (say $a, b$) $F_{2}$ is an infinite tetravalent graph (every vertex has [[Superdiscrete --- math-55A/notes/Basic graph theory#_definition _ degree, $d(v)$|degree]] $4$). If we draw the graph with all edges at a vertex perpendicular, we label all the horizontal edges with $a$ and the vertical edges with $b$.
 
 Because the graph is infinite, are pictures are typically bad and can be misleading. For example, the subgraphs $\Gamma_{a^{-1}}$ and $\Phi_{a}(\Gamma_{a^{-1}})$ are isomorphic even though $\Phi_{b}(\Gamma_{a^{-1}})$ appears to be thrice the size. In general, for any word $g \in F_{2}$, the associated automorphism $\Phi_{g}$ looks like sliding the centre of the graph along to $g$.

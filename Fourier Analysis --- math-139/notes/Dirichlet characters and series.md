@@ -33,7 +33,7 @@ Let $\chi$ be a Dirichlet character $\mathbb{Z} \to \mathbb{C}$. Then $\chi(mn) 
 
 ###### _proof:_
 
-Note that residues modulo $q$ [[Superdiscrete --- math-55a/notes/Modular arithmetic#_proposition _ congruence is preserved by addition and multiplication|are multiplicative]] — $\overline{mn} = \overline{m} \, \overline{n}$. If $\overline{m}, \overline{n} \in G$, then $\overline{m} \, \overline{n} \in G$, and thus,
+Note that residues modulo $q$ [[Superdiscrete --- math-55A/notes/Modular arithmetic#_proposition _ congruence is preserved by addition and multiplication|are multiplicative]] — $\overline{mn} = \overline{m} \, \overline{n}$. If $\overline{m}, \overline{n} \in G$, then $\overline{m} \, \overline{n} \in G$, and thus,
 $$
 \begin{align}
 \chi_{\xi}(mn) & = \xi^{\not *}(\overline{m} \, \overline{n})  \\
@@ -90,7 +90,7 @@ $$
   & + \left\lvert  \prod_{p \in \wp, p \le N} \frac{1}{1 - \chi(p) / p^s} - \prod_{p \in \wp} \frac{1}{1 - \chi(p) / p^s}  \right\rvert.
 \end{align}
 $$
-The first and last terms vanish as $N \to \infty$ by the convergence of the product and the convergence of the sum. The third term vanishes by noting that $\chi(p^M) = \chi(p)^M$ and treating the sum inside the product as a geometric series. Finally, the second term vanishes by the same [[Superdiscrete --- math-55a/notes/Euclid's algorithm and primes#_theorem _ unique factorisation|fundamental theorem of arithmetic reason]] as in the [[Complex analysis --- math-135/notes/The Riemann zeta function#_theorem _ the Euler product formula|the Euler product formula]].
+The first and last terms vanish as $N \to \infty$ by the convergence of the product and the convergence of the sum. The third term vanishes by noting that $\chi(p^M) = \chi(p)^M$ and treating the sum inside the product as a geometric series. Finally, the second term vanishes by the same [[Superdiscrete --- math-55A/notes/Euclid's algorithm and primes#_theorem _ unique factorisation|fundamental theorem of arithmetic reason]] as in the [[Complex analysis --- math-135/notes/The Riemann zeta function#_theorem _ the Euler product formula|the Euler product formula]].
 
 ##### _corollary:_ the product formula for the trivial character
 

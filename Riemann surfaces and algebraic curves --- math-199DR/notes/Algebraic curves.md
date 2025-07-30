@@ -143,7 +143,7 @@ f^i g^j \in \mathcal{L}(nD)
 $$
 for all $i, j$ with $i + j \le n$.
 
-By [[Superdiscrete --- math-55a/notes/Multisets#_theorem _ the multichoose theorem|stars and bars]], this gives
+By [[Superdiscrete --- math-55A/notes/Multisets#_theorem _ the multichoose theorem|stars and bars]], this gives
 $$
 \binom{n + 2}{s} \le \mathcal{L}(n D)
 $$

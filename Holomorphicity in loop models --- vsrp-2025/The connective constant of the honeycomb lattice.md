@@ -9,7 +9,7 @@ The honeycomb lattice is exactly what you think it is. Unfortunately, it's more 
 
 ##### _definition:_ honeycomb lattice
 
-The honeycomb (or hexagonal) lattice $\mathbb{H}$ is the [[Superdiscrete --- math-55a/notes/Basic graph theory#_definition _ graph|graph]] embedded in $\mathbb{C}$ consisting of vertices
+The honeycomb (or hexagonal) lattice $\mathbb{H}$ is the [[Superdiscrete --- math-55A/notes/Basic graph theory#_definition _ graph|graph]] embedded in $\mathbb{C}$ consisting of vertices
 $$
 v = 1 +  \sum_{n  = 0}^6 c_{n} \zeta^n
 $$
@@ -23,7 +23,7 @@ Because of reasons motivated by theoretical physics, it becomes interesting to c
 
 ##### _definition:_ loop configuration, weak loop configuration
 
-A loop configuration on $\mathbb{H}$ is a subgraph $\eta \subseteq \mathbb{H}$ with each vertex having even [[Superdiscrete --- math-55a/notes/Basic graph theory#_definition _ degree, $d(v)$|degree]].
+A loop configuration on $\mathbb{H}$ is a subgraph $\eta \subseteq \mathbb{H}$ with each vertex having even [[Superdiscrete --- math-55A/notes/Basic graph theory#_definition _ degree, $d(v)$|degree]].
 
 A weak loop configuration on $\mathbb{H}$ is a subgraph $\eta \subseteq \mathbb{H}$ with every vertex having even degree, except possibly two vertices of degree $1$.
 
@@ -31,7 +31,7 @@ Since each vertex on $\mathbb{H}$ has degree at most $3$, this forces the degree
 
 ##### _definition:_ self-avoiding walk, number of self-avoiding walks
 
-A self-avoiding walk is a [[Superdiscrete --- math-55a/notes/Basic graph theory#_definition _ walk|walk]] with no repeated vertices — what is sometimes called a [[Superdiscrete --- math-55a/notes/Basic graph theory#_definition _ path|path]].
+A self-avoiding walk is a [[Superdiscrete --- math-55A/notes/Basic graph theory#_definition _ walk|walk]] with no repeated vertices — what is sometimes called a [[Superdiscrete --- math-55A/notes/Basic graph theory#_definition _ path|path]].
 
 We will denote the number of self-avoiding walks (starting from vertex $0$) by $c_{n}$. Note that $c_{n}$ doesn't depend on the choice of starting vertex.
 

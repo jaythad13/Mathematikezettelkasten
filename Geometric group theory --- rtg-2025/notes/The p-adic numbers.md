@@ -85,7 +85,7 @@ $x = (x_{j})_{j \in \mathbb{N}} \in \mathbb{Z}_{p}$ is a [[Abstract algebra --- 
 
 If $x_{1} \equiv 0$, then the product of $x$ with any $y$ will have residue $0$ modulo $p$, and is thus, not $1$.
 
-If $x_{1} \not \equiv 0$, then there is some $y_{1} \in \mathbb{Z} / p \mathbb{Z}$ such that $x_{1} y_{1} \equiv 1$ (since $\mathbb{Z} / p \mathbb{Z}$ [[Superdiscrete --- math-55a/notes/Modular arithmetic#_corollary _ Wilson's theorem|is a field]]). Also, each $x_{i} \equiv x_{1} \not \equiv 0$ modulo $p$, so $(x_{i}, p^i) = 1$, and $x_{i}$ has an inverse $y_{i}$ as well. These $y_{i}$ are compatible since they are all have the same 
+If $x_{1} \not \equiv 0$, then there is some $y_{1} \in \mathbb{Z} / p \mathbb{Z}$ such that $x_{1} y_{1} \equiv 1$ (since $\mathbb{Z} / p \mathbb{Z}$ [[Superdiscrete --- math-55A/notes/Modular arithmetic#_corollary _ Wilson's theorem|is a field]]). Also, each $x_{i} \equiv x_{1} \not \equiv 0$ modulo $p$, so $(x_{i}, p^i) = 1$, and $x_{i}$ has an inverse $y_{i}$ as well. These $y_{i}$ are compatible since they are all have the same 
 
 Since $\mathbb{Z}_{p}$ is an integral domain, it has a well-defined fraction field. Just as $Q(\mathbb{Z}) = \mathbb{Q}$, we define the $p$-adic numbers as the fraction field of $\mathbb{Z}_{p}$. 
 
