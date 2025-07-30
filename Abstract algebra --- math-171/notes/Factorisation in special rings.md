@@ -9,7 +9,7 @@ tags:
 
 ##### _example:_ the integers
 
-In the integers, we can find the $\gcd$ of any two numbers by [[Superdiscrete --- math-55A/notes/Euclid's algorithm and primes#Euclid's algorithm|Euclid's algorithm]]. This works because we have the [[Superdiscrete --- math-55A/notes/Dividing integers - basic number theory#_theorem _ the division algorithm|the division algorithm]], which in turn, needs a notion of an order to work. A norm gives us this, and in turn, we will see, a form of Euclidean algorithm as well.
+In the integers, we can find the $\gcd$ of any two numbers by [[Superdiscrete --- math-55A/notes/Prime numbers#Euclid's algorithm|Euclid's algorithm]]. This works because we have the [[Superdiscrete --- math-55A/notes/Division and Euclid's algorithm#_theorem _ the division algorithm|the division algorithm]], which in turn, needs a notion of an order to work. A norm gives us this, and in turn, we will see, a form of Euclidean algorithm as well.
 
 ##### _definition:_ norm
 
@@ -85,7 +85,7 @@ To get further, again our motivating example is the integers.
 
 ##### _example:_ unique factorisation in $\mathbb{Z}$
 
-We know that we have [[Superdiscrete --- math-55A/notes/Euclid's algorithm and primes#_theorem _ unique factorisation|unique factorisation]] in $\mathbb{Z}$. It would be nice to have it in other rings.
+We know that we have [[Superdiscrete --- math-55A/notes/Prime numbers#_theorem _ unique factorisation|unique factorisation]] in $\mathbb{Z}$. It would be nice to have it in other rings.
 
 We want to get to this. The first step is principal ideal domains.
 
@@ -179,7 +179,7 @@ A unique factorisation domain is an integral domain $R$ such that for any nonzer
 ##### _examples:_ unique factorisation domains
 
 1) Every field is a UFD since because every nonzero element is a unit, so vacuously every element fulfils the property.
-2) $\mathbb{Z}$ is a UFD, since [[Superdiscrete --- math-55A/notes/Euclid's algorithm and primes#_theorem _ unique factorisation|we already have unique factorisation into primes]] and primes are irreducible.
+2) $\mathbb{Z}$ is a UFD, since [[Superdiscrete --- math-55A/notes/Prime numbers#_theorem _ unique factorisation|we already have unique factorisation into primes]] and primes are irreducible.
 
 ##### _non-examples:_
 

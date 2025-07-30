@@ -85,7 +85,7 @@ If $x \in \mathfrak{gl}(V)$ is nilpotent, then $\operatorname{ad}_{x} \in \mathf
 
 ###### _proof:_
 
-We claim that the adjoint representation has a [[Superdiscrete --- math-55A/notes/Somewhat algebraic combinatorics#The binomial theorem|binomial expansion]]
+We claim that the adjoint representation has a [[Superdiscrete --- math-55A/notes/The binomial theorem#The binomial theorem|binomial expansion]]
 $$
 (\operatorname{ad}_{x})^n y = \sum_{k = 0}^n (-1)^k \binom{n}{k} x^{n - k} y x^k.
 $$

@@ -6,7 +6,7 @@ tags:
 - complex
 ---
 
-The Riemann zeta function is an important function in analytic number theory. Its importance was first recognised by Euler, who showed that it can be written as an [[Complex analysis --- math-135/notes/Infinite products|infinite product]] related to the [[Superdiscrete --- math-55A/notes/Euclid's algorithm and primes#Primes|primes]].
+The Riemann zeta function is an important function in analytic number theory. Its importance was first recognised by Euler, who showed that it can be written as an [[Complex analysis --- math-135/notes/Infinite products|infinite product]] related to the [[Superdiscrete --- math-55A/notes/Prime numbers#Primes|primes]].
 
 ##### _definition:_ the Riemann zeta function
 
@@ -82,7 +82,7 @@ $$
 
 We will prove this is true for real $s > 0$ by double inequality by comparing finite sums to infinite products and taking limits and vice versa. 
 
-Specifically, for $N \in \mathbb{N}$, and some integer $M > N$, notice that each $n \in \mathbb{N}$ with $n \le N$ [[Superdiscrete --- math-55A/notes/Euclid's algorithm and primes#_theorem _ unique factorisation|has a unique prime factorisation]]. Each prime appears fewer than $M$ times in each factorisation ($p > 1$, so $p^M > M > N$), so
+Specifically, for $N \in \mathbb{N}$, and some integer $M > N$, notice that each $n \in \mathbb{N}$ with $n \le N$ [[Superdiscrete --- math-55A/notes/Prime numbers#_theorem _ unique factorisation|has a unique prime factorisation]]. Each prime appears fewer than $M$ times in each factorisation ($p > 1$, so $p^M > M > N$), so
 $$
 \sum_{n = 1}^N \frac{1}{n^s} \le \prod_{p \text{ prime}, p \le N} \left( 1 + \frac{1}{p} + \dots + \frac{1}{p^{Ms}} \right) \le \prod_{p \text{ prime}} \frac{1}{1 - 1/p^s}.
 $$

@@ -35,7 +35,7 @@ $$
 
 Note that the generators, give all integer row and column operations.
 
-Suppose $A = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \in \mathrm{SL}_{2}(\mathbb{Z})$, then $ad - bc = 1$, so by [[Superdiscrete --- math-55A/notes/Dividing integers - basic number theory#_theorem _ Bezout's theorem|Bezout's theorem]], $\gcd(a, c) = 1$. Thus, by [[Superdiscrete --- math-55A/notes/Euclid's algorithm and primes#Euclid's algorithm|Euclid's algorithm]], we can reduce the left column by integer row operations and then reduce the whole matrix to the identity —
+Suppose $A = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \in \mathrm{SL}_{2}(\mathbb{Z})$, then $ad - bc = 1$, so by [[Superdiscrete --- math-55A/notes/Division and Euclid's algorithm#_theorem _ Bezout's theorem|Bezout's theorem]], $\gcd(a, c) = 1$. Thus, by [[Superdiscrete --- math-55A/notes/Prime numbers#Euclid's algorithm|Euclid's algorithm]], we can reduce the left column by integer row operations and then reduce the whole matrix to the identity —
 $$
 \begin{pmatrix}
 a & b \\

@@ -12,7 +12,7 @@ We can in fact extend our ideas for the Fourier analysis [[Fourier analysis --- 
 
 ##### _example:_ the group of units in $\mathbb{Z} / n \mathbb{Z}$
 
-Recall also that all integer residues modulo $n$ that are coprime to $n$ are invertible in $\mathbb{Z} / n \mathbb{Z}$ (by [[Superdiscrete --- math-55A/notes/Dividing integers - basic number theory#_theorem _ Bezout's theorem|Bezout's theorem]]). Thus, under multiplication modulo $n$ they form $\mathbb{Z} / n \mathbb{Z}^*$, the abelian group of [[Abstract algebra --- math-171/notes/Rings#_definition _ unit|units]] in $\mathbb{Z} / n \mathbb{Z}$.
+Recall also that all integer residues modulo $n$ that are coprime to $n$ are invertible in $\mathbb{Z} / n \mathbb{Z}$ (by [[Superdiscrete --- math-55A/notes/Division and Euclid's algorithm#_theorem _ Bezout's theorem|Bezout's theorem]]). Thus, under multiplication modulo $n$ they form $\mathbb{Z} / n \mathbb{Z}^*$, the abelian group of [[Abstract algebra --- math-171/notes/Rings#_definition _ unit|units]] in $\mathbb{Z} / n \mathbb{Z}$.
 
 Recall also the definition of a group homomorphism —
 ![[Abstract algebra --- math-171/notes/Group homomorphisms#_definition _ group homomorphisms|Group homomorphisms]]

@@ -11,7 +11,7 @@ A divisor is a way of packaging information about the zeroes and poles of a [[Ri
 
 ##### _example:_ divisors on $\operatorname{Spec} \mathbb{Z}$
 
-By [[Superdiscrete --- math-55A/notes/Euclid's algorithm and primes#_theorem _ unique factorisation|the fundamental theorem of arithmetic]], we can write any $r \in \mathbb{Q}$ as the ratio of primes in least terms —
+By [[Superdiscrete --- math-55A/notes/Prime numbers#_theorem _ unique factorisation|the fundamental theorem of arithmetic]], we can write any $r \in \mathbb{Q}$ as the ratio of primes in least terms —
 $$
 r = \frac{p_{1}^{\alpha_{1}} \dots p_{n}^{\alpha_{n}}}{q_{1}^{\beta_{1}} \dots q_{n}^{\beta_{n}}}.
 $$

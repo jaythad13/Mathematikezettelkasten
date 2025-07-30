@@ -98,7 +98,7 @@ b & - u_{1} \\
 - v_{0} & a
 \end{pmatrix}
 $$
-where $a, b$ are integers such that $a v_{1} + b v_{0} = 1$, guaranteed to exist by [[Superdiscrete --- math-55A/notes/Dividing integers - basic number theory#_theorem _ Bezout's theorem|Bezout's theorem]].
+where $a, b$ are integers such that $a v_{1} + b v_{0} = 1$, guaranteed to exist by [[Superdiscrete --- math-55A/notes/Division and Euclid's algorithm#_theorem _ Bezout's theorem|Bezout's theorem]].
 
 If $(v_{1} : v_{0})$ is adjacent to $(1 : 0)$, then we have
 $$

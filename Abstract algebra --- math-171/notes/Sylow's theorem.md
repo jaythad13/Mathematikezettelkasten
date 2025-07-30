@@ -75,7 +75,7 @@ If $\lvert G \rvert = pqr$ is the product of three distinct primes, then $G$ mus
 
 We use the previous corollary to show that if $n_{p} = n_{q} = n_{r} = 1$ then $G$ would have more than $pqr$ elements. Suppose, without loss of generality, that $p < q < r$ and for contradiction that all $n_{p}, n_{q}, n_{r} > 1$.
 
-$n_{r}$ must divide $pq$. Also, $n_{r} = 1 + k r$ with $k \neq 0$ (by our hypothesis). Since $1 + kr > p, q$ for positive $k$, $n_{r}$ doesn't divide $p$ nor $q$. Thus, [[Superdiscrete --- math-55A/notes/Euclid's algorithm and primes#_theorem _ a divisor must divide something or, the important theorem|it must have non-trivial common divisors with both]]. Since they are primes, this gives us $p \mid n_{r}$ and $q \mid n_{r}$, and thus, $pq \mid n_{r}$. That is, $n_{r} = pq$. Further, we have $n_{p} \geq 1 + p$ and $n_{q} \geq 1 + q$.
+$n_{r}$ must divide $pq$. Also, $n_{r} = 1 + k r$ with $k \neq 0$ (by our hypothesis). Since $1 + kr > p, q$ for positive $k$, $n_{r}$ doesn't divide $p$ nor $q$. Thus, [[Superdiscrete --- math-55A/notes/Prime numbers#_theorem _ a divisor must divide something or, the important theorem|it must have non-trivial common divisors with both]]. Since they are primes, this gives us $p \mid n_{r}$ and $q \mid n_{r}$, and thus, $pq \mid n_{r}$. That is, $n_{r} = pq$. Further, we have $n_{p} \geq 1 + p$ and $n_{q} \geq 1 + q$.
 
 But now, since these Sylow subgroups only have trivial intersection, the total number of distinct elements contained in them is one more than just counting the non-identity elements naively
 $$

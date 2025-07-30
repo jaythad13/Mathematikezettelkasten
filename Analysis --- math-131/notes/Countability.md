@@ -38,7 +38,7 @@ is countable.
 
 ###### _proof sketch:_
 
-We can use the [[Superdiscrete --- math-55A/notes/Euclid's algorithm and primes|primes and unique factorisation]] as an indicator. Let $p_{1}, \dots, p_{n}$ be distinct primes. Since each $A_{i}$ is countable, we have bijections $f_{i} : A_{i} \to \mathbb{N}$. Then consider 
+We can use the [[Superdiscrete --- math-55A/notes/Prime numbers|primes and unique factorisation]] as an indicator. Let $p_{1}, \dots, p_{n}$ be distinct primes. Since each $A_{i}$ is countable, we have bijections $f_{i} : A_{i} \to \mathbb{N}$. Then consider 
 $$
 f : (x_{1}, \dots, x_{n}) \mapsto p_{1}^{f_{1}(x_{1})} \cdots p_{n}^{f_{n}(x_{n})}. 
 $$

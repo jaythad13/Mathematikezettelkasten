@@ -29,7 +29,7 @@ The bank picks two primes $p$ and $q$ and sets $n = pq$.
 
 Then it computes $\phi(n) = \phi(pq) = \phi(p) \phi(q) = (p - 1)(q - 1)$ and picks $d$ such that $\gcd(d, \phi(n)) = 1$ (we can do this by randomly picking $d$ because the probability of coprimality is $\frac{6}{\pi^2}$).
 
-By [[Superdiscrete --- math-55A/notes/Dividing integers - basic number theory#_theorem _ Bezout's theorem|Bezout's theorem]] we have positive $e, f$ such that 
+By [[Superdiscrete --- math-55A/notes/Division and Euclid's algorithm#_theorem _ Bezout's theorem|Bezout's theorem]] we have positive $e, f$ such that 
 $$
 de - \phi(n)f = 1
 $$

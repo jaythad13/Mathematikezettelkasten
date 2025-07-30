@@ -5,8 +5,6 @@ tags:
 - math-55A/2
 ---
 
-### The binomial theorem
-
 ##### _theorem:_ the binomial theorem
 
 $$

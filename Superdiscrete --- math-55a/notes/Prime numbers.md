@@ -4,56 +4,13 @@ tags:
 - nt
 ---
 
-We know lots of theorems about divisibility, and $\gcd$s but what about actual computing them? We need one more theorem.
-
-### Euclid's algorithm
-
-##### _theorem:_ Euclid's theorem
-
-$$
-\gcd(a, b) = \gcd(b, a - bx)
-$$
-for any $x \in \bb{Z}$.
-
-###### _proof sketch:_
-
-The pairs $a, b$ and $b, a - bx$ have all the same common divisors (use the [[Superdiscrete --- math-55A/notes/Dividing integers - basic number theory#_theorem _ integer combination theorem|integer combination theorem]]).
-
-This theorem has some important corollaries.
-
-##### _corollary:_ Euclid's algorithm works
-
-For $a, b$ with $a = bq + r$ with $q, r$ the quotient and remainder given by [[Superdiscrete --- math-55A/notes/Dividing integers - basic number theory#_theorem _ the division algorithm|the division algorithm]], $\gcd{(a, b)} = \gcd{(b, a - bq)} = \gcd{(b, r)}$.
-
-##### _algorithm:_ Euclid's algorithm
-
-For $a, b$, if $b \mid a$ we are done. 
-If not compute $\gcd(b, r)$ recursively, where $r$ is the remainder given by dividing $a$ by $b$.
-
-Note that Euclid's algorithm is ridiculously fast - at worst $5d$ steps for a $d$ digit number $b$. It's worst case is usually adjacent Fibonacci numbers (because at each step the difference is as large as possible).
-
-Also, note that Euclid's algorithm gives us a construction for [[Superdiscrete --- math-55A/notes/Dividing integers - basic number theory#_theorem _ Bezout's theorem|Bezout's theorem]].
-
-##### _example:_ the least integer combination of $847$ and $203$
-
-We can compute $\gcd(847, 203)$ by Euclid's algorithm. Let $a = 847$ and $b = 203$.
-$$
-\begin{gathered}
-	847 = 4 \times 203 + 35 \implies 35 = a - 4b \\
-	203 = 5 \times 35 + 28 \implies 28 = b - 5 \times (a - 4b) = 21b - 5a \\
-	35 = 28 + 7 \implies 7 = (a - 4b) - (21b - 5a) = 6a - 25b\\
-	28 = 4 \times 7
-\end{gathered}
-$$
-That is, $7 = 6a - 25b$, or $7 = 6 \times 847 - 25 \times 203$.
-
 ##### _theorem:_ a divisor must divide something or, the important theorem
 
 If $d \mid ab$ and $\gcd(d,a) = 1$ then $d \mid b$.
 
 ###### _proof:_
 
-If $\gcd(d, a) = 1$, then by [[Superdiscrete --- math-55A/notes/Dividing integers - basic number theory#_theorem _ Bezout's theorem|Bezout's theorem]] we must have some integer combination $ax + dy = 1$. Thus, $abx + dby = b$, and then since $d = q ab$, for some integer $q$, we have $d(qx + by) = b$ and thus, $d \mid b$.
+If $\gcd(d, a) = 1$, then by [[Superdiscrete --- math-55A/notes/Division and Euclid's algorithm#_theorem _ Bezout's theorem|Bezout's theorem]] we must have some integer combination $ax + dy = 1$. Thus, $abx + dby = b$, and then since $d = q ab$, for some integer $q$, we have $d(qx + by) = b$ and thus, $d \mid b$.
 
 ### Primes
 
