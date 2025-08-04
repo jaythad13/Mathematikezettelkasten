@@ -47,7 +47,7 @@ While it is sort of clear why we may want to consider the tensor product (a prio
 
 ##### _proposition:_ the universal property of tensor products
 
-Given $A$-modules $M$ and $N$, the tensor product is the unique $A$-module $M \otimes_{A} N$ with a bilinear map $t : M \times N \to M \otimes_{A} N$ such that every bilinear map from the ($\mathsf{Mod}_{A}$) [[Algebraic geometry --- rising-sea/notes/Universal properties and why categories?#_construction _ products|product]] $M \times N \to V$ factors uniquely through a linear map $M \otimes_{A} N \to V$.
+Given $A$-modules $M$ and $N$, the tensor product is the unique $A$-module $M \otimes_{A} N$ with a bilinear map $t : M \times N \to M \otimes_{A} N$ such that every bilinear map from the ($\mathsf{Mod}_{A}$) [[Algebraic geometry --- rising-sea/notes/Universal properties and why categories?#_construction _ products|product]] $M \times N \to V$ factors as the composition of $t$ and a unique linear map $M \otimes_{A} N \to V$.
 
 That is, it is [[Algebraic geometry --- rising-sea/notes/Universal properties and why categories?#_example _ initial and final objects in specific categories|initial]] among (modules with) bilinear maps from $M \times N$.
 
@@ -68,7 +68,7 @@ If we write $\tau'$ for  $T' \to M \otimes N$ and $\tau$ for $M \otimes N \to T'
 ```
 commutes. Specifically, we already know $t'$ factors as $\tau \circ t$ and $t$ factors as $\tau' \circ t'$ so $t$ factors as $\tau' \circ \tau \circ t$. However, $t$ already factors through $\operatorname{id} : M \otimes N \to M \otimes N$, so $\tau' \circ \tau = \operatorname{id}_{M \otimes N}$. Similarly, $\tau \circ \tau' = \operatorname{id}_{T'}$ and thus, they are (unique) inverse isomorphisms. 
 
-Now we show that our definition of $M \otimes N$ actually satisfies the universal property. Note that the natural map $t : M \times N \to M \otimes N$ by $(m, n) \mapsto m \otimes n$ is bilinear. Suppose $t' : M \times N \to T'$ is bilinear. Then we claim the map $\tau : M \otimes N \to V$ by $m \otimes n \mapsto t'(m, n)$ is well-defined and linear. Suppose $m_{1} \otimes n_{1} = m_{2} \otimes n_{2}$. Then
+Now we show that our definition of $M \otimes N$ actually satisfies the universal property. Note that the natural map $t : M \times N \to M \otimes N$ by $(m, n) \mapsto m \otimes n$ is bilinear. Suppose $\varphi : M \times N \to V$ is bilinear. Then we claim the map $\tau : M \otimes N \to V$ by $m \otimes n \mapsto \varphi(m, n)$ is well-defined and linear. This follows easily by checking that it is well-defined as a map on $F_{A}(M \times N)$ and that its kernel includes $U$ such that $F_{A}(M \times N) / U \cong M \otimes N$. That in turn follows directly from the fact that $\tau$ is bilinear. Clearly, $\varphi = \tau \circ t$, so we are done.
 
 ### Tensoring is nice
 
@@ -78,7 +78,7 @@ For one it is functorial and preserves (right) exact sequences. We will later de
 
 ##### _proposition:_ tensoring is functorial and right-exact
 
-The map $\mathsf{Mod}_{A} \to \mathsf{Mod}_{A}$ by $M \mapsto M \otimes N$ naturally extends to a covariant [[Algebraic geometry --- rising-sea/notes/Functors and natural transformations#_definition _ (covariant, contravariant) functors|functor]]. Further, this functor is right-exact — if
+The map of objects $\mathsf{Mod}_{A} \to \mathsf{Mod}_{A}$ by $M \mapsto M \otimes N$ naturally extends to a covariant [[Algebraic geometry --- rising-sea/notes/Functors and natural transformations#_definition _ (covariant, contravariant) functors|functor]]. Further, this functor is right-exact — if
 $$
 M_{1} \to M_{2} \to M_{3} \to 0
 $$
@@ -92,17 +92,50 @@ is exact.
 
 We claim that $F : \mathsf{Mod}_{A} \to \mathsf{Mod}_{A}$ defined on objects by $M \mapsto M \otimes N$ and on homomorphisms $\varphi : M_{1} \to M_{2}$ by $\varphi \mapsto \varphi_{*}$ where $\varphi_{*}(m \otimes n) = \varphi(m) \otimes n$ is a functor. To do this requires showing that $\varphi_{*}$ is a well-defined $A$-module homomorphism $M_{1} \otimes N \to M_{2} \otimes N$, $\operatorname{id}_{M, *} = \operatorname{id}_{M \otimes N}$ and $(\psi \circ \varphi)_{*} = \psi_{*} \circ \varphi_{*}$ (for some second map $\psi : M_{2} \to M_{3}$).
 
-> [!warning] incomplete
+$\varphi_{*}$ is clearly a well-defined linear map on $F_{A}(M \times N)$ since it is defined by its values on the basis of $F_{A}(M \times N)$. It's easy to show that it vanishes on $U$ such that $F_{A}(M \times N) / U \cong M \otimes N$ —
+$$
+\varphi_{*}(a m \otimes n) = \varphi(am) \otimes n = a(\varphi(m) \otimes n) = \varphi(m) \otimes an = \varphi_{*}(m \otimes an)
+$$
+and
+$$
+\varphi_{*}((m_{1} + m_{2}) \otimes n) = \varphi_{}(m_{1} + m_{2}) \otimes n = \varphi(m_{1}) \otimes n + \varphi(m_{2}) \otimes n = \varphi_{*}(m_{1} \otimes n + m_{2} \otimes n).
+$$
+(the symmetric result in the second factor follows similarly).
 
+It's clear that, for each $m \otimes n \in M \otimes N$ we have $\operatorname{id}_{M, *} = \operatorname{id}_{M \otimes N}$ on every basis vector, and thus, they are equal as maps —
+$$
+\operatorname{id}_{M, *}(m \otimes n) = \operatorname{id}_{M}(m) \otimes n = m \otimes n = \operatorname{id}_{M \otimes N}(m \otimes n).
+$$
+Similarly, $(\psi \circ \varphi)_{*} = \psi_{*} \circ \varphi_{*}$ on every basis vector, and thus, as maps —
+$$
+(\psi \circ \varphi)_{*}(m \otimes n) = \psi \circ \varphi(m) \otimes n = \psi_{*}(\varphi(m) \otimes n) = \psi_{*} \circ \varphi_{*}(m \otimes n).
+$$
+
+Now we show $M \mapsto M \otimes N$ is right exact. If
+$$
+M_{1} \to M_{2} \to M_{3} \to 0
+$$
+is exact with maps $\varphi_{i} : M_{i} \to M_{i + 1}$, then $\varphi_{2} : M_{2} \to M_{3}$ is surjective and $\operatorname{img} \varphi_{1} = \ker \varphi_{2}$. We want to show the same for $\varphi_{i, *}$. Note that $\varphi_{2, *} : M_{2} \otimes N \to M_{3} \otimes N$ is surjective on basis elements — for any $m_{3} \otimes n$ with $\varphi_{2}(m_{2}) = m_{3}$, we have $\varphi_{2, *}(m_{2} \otimes n) = m_{3} \otimes n$. Thus, $\varphi_{2, *}$ is surjective. If $m_{2} \otimes n \in \operatorname{ker} \varphi_{2, *}$ we must have $\varphi_{2}(m_{2}) \otimes n = 0$. If $n = 0$, then $m_{2} \otimes n = 0 \in \operatorname{img} \varphi_{1, *}$. If $n \neq 0$, then $\varphi_{2}(m_{2}) = 0$, and thus, $m_{2}  \in \operatorname{img} \varphi_{1}$. It follows that $m_{2} \otimes n = \varphi_{1, *}(m_{1} \otimes n) \in \operatorname{img} \varphi_{1, *}$. 
+ 
 We've seen already that tensoring with a ring on the left can look like allowing scalars in the "left" module. We can formalise this intuition.
 
-##### _proposition:_ tensoring with a ring is a base ring change functor
+##### _proposition:_ tensoring with a ring is a base-ring change functor
 
 If $M$ is an $A$-module and $B$ is a ring, given an $A$-module structure by a morphism $A \to B$, then $B \otimes_{A} M$ is also a $B$-module. Further, the map $M \mapsto B \otimes_{A} M$ extends to a functor $\mathsf{Mod}_{A} \to \mathsf{Mod}_{B}$.
+
+###### _proof sketch:_
+
+Define the $B$-module structure on $B \otimes_{A} M$ by $b_{1}(b_{2} \otimes m) = (b_{1} b_{2}) \otimes m$. Further, for $\varphi : M \to N$ as $A$-modules, define $\varphi_{*} : B \otimes_{A} M \to B \otimes_{A} N$ by $\varphi_{*}(b \otimes m) = b \otimes \varphi(m)$. Clearly, $(\psi \circ \varphi)_{*} = \psi_{*} \circ \varphi_{*}$.
+
+In fact, this turns the tensor product of two rings into a ring in its own right.
 
 ##### _proposition:_ tensor product of rings is a ring
 
 If $B$ and $C$ are rings given $A$-module structures by morphisms $A \to B$ and $A \to C$, then $B \otimes_{A} C$ has a natural ring structure.
+
+###### _proof sketch:_
+
+Define the ring structure on $B \otimes_{A} C$ by $(b_{1} \otimes c_{1}) (b_{2} \otimes c_{2}) = (b_{1} b_{2} ) \otimes (c_{1} c_{2})$. Later, we will see this is an example of a fibred product.
 
 Tensoring plays nicely with (arbitrary) direct sums and thus, finite products. Specifically, by universal property, tensoring and direct sums commute.
 
@@ -117,7 +150,7 @@ Tensoring also plays nicely with [[Algebraic geometry --- rising-sea/notes/Local
 
 ##### _proposition:_ localisation of a module is the tensor product with localisation
 
-If $S$ is a multiplicative subset of $A$ and $M$ is an $A$-module, there are natural isomorphisms as $S^{-1} A$-modules and as $A$-modules giving
+If $S$ is a multiplicative subset of $A$ and $M$ is an $A$-module, there is a natural isomorphism (each, as $S^{-1} A$-modules and as $A$-modules) giving
 $$
 S^{-1} A \otimes_{A} M \cong S^{-1} M.
 $$
