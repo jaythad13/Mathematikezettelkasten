@@ -17,25 +17,24 @@ There are many types of products — of sets, [[Linear algebra done right --- l
 
 The idea is that there isn't one single product, but rather, any two products have a unique isomorphism between them. Consider, for example, the product of sets. Both $\{ \{ u, \{ v \} \} \mid u \in U, v \in V \}$ and $\{ \{ \{ u \}, v \} \mid u \in U, v \in V \}$ are reasonable definitions of $U \times V$, and there's an obvious sense in which it doesn't matter which one you pick. Similarly, it doesn't matter how you cut up two manifolds into charts, take products and glue them back together — there's some sense in which all these encodings are the same.
 
-A product $M \times N$ of $M$ and $N$ is a set (object) with projection functions (morphisms) $\mu, \nu$ to $M$ and $N$ respectively, such that for any $P$ with projections $\mu', \nu'$ to $M$ and $N$, there is a unique $p : P \to M \times N$ so that $\mu' = \mu \circ p$ and $\nu = \nu \circ p$ as below.
+A product $M \times N$ of $M$ and $N$ is a set (object) with projection functions (morphisms) $pr_{M}, pr_{N}$ to $M$ and $N$ respectively, such that for any $P'$ with projections $pr_{M}', pr_{N}'$ to $M$ and $N$, there is a unique $\Pi = \Pi_{P} : P' \to M \times N$ so that $pr_{M}' = pr_{M} \circ p$ and $pr_{N}' = pr_{N} \circ \Pi$ as below.
 ```tikz
 \usepackage{tikz-cd}
 \usepackage{amsfonts}
 \begin{document}
 	\begin{tikzcd}
-		P \ar[rrd, "\nu'", bend left] \ar[ddr, "\mu'"', bend right] \ar[rd, "\exists ! p", dashed] \\
-		& M \times N \ar[r, "\nu"'] \ar[d, "\mu"] & N \\
+		P' \ar[rrd, "pr_{N}'", bend left] \ar[ddr, "pr_{M}'"', bend right] \ar[rd, "\exists ! \Pi", dashed] \\
+		& M \times N \ar[r, "pr_{N}"'] \ar[d, "pr_{M}"] & N \\
 		& M
 	\end{tikzcd}
 \end{document}
 ```
 
-Now if $M \times_{1} N$ and $M \times_{2} N$ are both products, then there exist $p_{1} : M \times_{1} N \to M \times_{2} N$ and $p_{2} : M \times_{2} N \to M \times_{1} N$ with the projection maps to $M$ factoring as $\mu_{1} = \mu_{2} \circ p_{1}$ and $\mu_{2} = \mu_{1} \circ p_{2}$. Thus, $\mu_{1} = \mu_{1} \circ (p_{2} \circ p_{1})$, and similarly $\nu_{1} = \nu_{1} \circ (p_{2} \circ p_{1})$. 
+Now if $M \times_{1} N$ and $M \times_{2} N$ are both products, then there exist $\Pi_{1} : M \times_{1} N \to M \times_{2} N$ and $\Pi_{2} : M \times_{2} N \to M \times_{1} N$ with the projection maps to $M$ factoring as $pr_{M, 1} = pr_{M, 2} \circ \Pi_{1}$ and $pr_{M, 2} = pr_{M, 1} \circ \Pi_{2}$. Thus, $pr_{M, 1} = pr_{M, 1} \circ (\Pi_{2} \circ \Pi_{1})$, and similarly $pr_{N, 1} = pr_{N, 1} \circ (\Pi_{2} \circ \Pi_{1})$. 
 
-That is, $p_{2} \circ p_{1}$ is a map from $M \times_{1} N$ to itself such that the projection maps factor through it. But $\operatorname{id}_{M \times_{1} N}$ is already such a map and this map is unique. Thus $p_{2} \circ p_{1} = \operatorname{id}_{M \times_{1} N}$ and a similar argument shows $p_{1} \circ p_{2} = \operatorname{id}_{M \times_{2} N}$. That is, $p_{1}$ and $p_{2}$ give the unique bijection (isomorphism) $M \times_{1} N \cong M \times_{2} N$.
+That is, $\Pi_{2} \circ \Pi_{1}$ is a map from $M \times_{1} N$ to itself such that the projection maps factor through it. But $\operatorname{id}_{M \times_{1} N}$ is already such a map and this map is unique. Thus $\Pi_{2} \circ \Pi_{1} = \operatorname{id}_{M \times_{1} N}$ and a similar argument shows $\Pi_{1} \circ \Pi_{2} = \operatorname{id}_{M \times_{2} N}$. That is, $\Pi_{1}$ and $\Pi_{2}$ give the unique bijection (isomorphism) $M \times_{1} N \cong M \times_{2} N$.
 
 Note that the universal property doesn't construct a product of sets, it just uniquely characterises it. This is true of universal properties in general. (Also note that the notion of universal property is not formally defined).
-
 
 With the language of category theory we can characterise constructions like the product in general [[Algebraic geometry --- rising-sea/notes/Categories#_definition _ (locally small) categories, objects, morphisms|categories]]. We will show that these constructions are unique up to unique [[Algebraic geometry --- rising-sea/notes/Categories#_definition _ isomorphisms, inverse morphisms|isomorphism]]. The uniqueness of the isomorphism is important! This is an informal definition of what it means to be defined by universal property. Again, as we noted previously, this doesn't guarantee existence in every category. 
 
@@ -43,24 +42,37 @@ With the language of category theory we can characterise constructions like the 
 
 For the rest of this note let $\mathscr{C}$ be a category. We already showed that products are unique up to unique isomorphism. Just replace set with object, function with morphism, bijection with isomorphism et c. in the example above.
 
-##### _construction:_ products
+##### _definition:_ products
 
-A product $M \times N$ of $M, N \in \mathscr{C}$ is the unique object with projection morphisms $\mu, \nu$ to $M$ and $N$ respectively, such that for any $P$ with morphisms $\mu', \nu'$ to $M$ and $N$, there is a unique $\pi : P \to M \times N$ that each of the morphisms factors through — we have $\mu' = \mu \circ \pi$ and $\nu = \nu \circ \pi$ as below.
+A product $M \times N$ of $M, N \in \mathscr{C}$ is the unique object with projection morphisms $pr_{M}, pr_{N}$ to $M$ and $N$ respectively, such that for any $P'$ with morphisms $pr_{M}', pr_{N}'$ to $M$ and $N$, there is a unique $\Pi = \Pi_{P'} : P' \to M \times N$ that each of the morphisms factors through. That is, we have $pr_{M}' = pr_{M} \circ \Pi$ and $pr_{N}' = pr_{N} \circ \Pi$ so that the diagram below commutes
 ```tikz
 \usepackage{tikz-cd}
 \usepackage{amsfonts}
 \begin{document}
 	\begin{tikzcd}
-		P \ar[rrd, "\nu'", bend left] \ar[ddr, "\mu'"', bend right] \ar[rd, "\exists ! p", dashed] \\
-		& M \times N \ar[r, "\nu"'] \ar[d, "\mu"] & N \\
+		P' \ar[rrd, "pr_{N}'", bend left] \ar[ddr, "pr_{M}'"', bend right] \ar[rd, "\exists ! \Pi", dashed] \\
+		& M \times N \ar[r, "pr_{N}"'] \ar[d, "pr_{M}"] & N \\
 		& M
 	\end{tikzcd}
 \end{document}
 ```
 
-Products of $M_{i} \in \mathscr{C}$ indexed by $i \in \mathscr{I}$ are defined as the unique object $\prod_{i \in \mathscr{I}} M_{i}$ with projection morphisms $\mu_{i}$ to each $M_{i}$ such that the analogous universal property follows for $P$ with morphisms to each $M_{i}$.
 
-##### _construction:_ initial, final, and zero objects
+Products of $M_{i} \in \mathscr{C}$ indexed by $i \in \mathscr{I}$ are defined as the unique object $\prod_{i \in \mathscr{I}} M_{i}$ with projection morphisms $pr_{M}$ to each $M_{i}$ such that the analogous universal property follows for $P$ with morphisms to each $M_{i}$. 
+
+As part of a more general theme where valid statements in category theory can be obtained by reversing all the arrows, we can obtain coproducts by reversing all the arrows in the definition of the product.
+
+##### _definition:_ coproducts, direct sums
+
+The coproduct of $M_{i} \in \mathscr{C}$ indexed by $i \in \mathscr{I}$ is the unique object $\coprod_{i \in \mathscr{I}} M_{i}$ with maps $pr_{i} : M_{i} \to \coprod M_{i}$ such that, for every $P'$ with maps $pr_{i}' : M_{i} \to P'$, there is a unique $\amalg = \amalg_{P'} : \coprod_{i \in \mathscr{I}} M_{i} \to P'$ with $pr_{i}' = \amalg_{P'} \circ pr_{i}$.
+
+In many of the categories that we are concerned with, the coproduct is the direct sum.
+
+##### _example:_ coproducts of sets
+
+are disjoint unions.
+
+##### _definition:_ initial, final, and zero objects
 
 Let $A \in \mathscr{C}$. $A$ is the unique initial object if there is a unique morphism from $A$ to each $B \in \mathscr{C}$.
 

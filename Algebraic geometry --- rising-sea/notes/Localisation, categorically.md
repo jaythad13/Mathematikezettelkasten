@@ -113,25 +113,25 @@ $$
 
 ###### _proof:_
 
-Let the morphisms $\mu_{i} : \prod_{i = 1}^n M_{i} \to M$ define the product structure and let $S^{-1} \mu_{i} : S^{-1} \prod_{i = 1}^n M_{i} \to S^{-1} M_{i}$ be given by $m / s \mapsto \mu_{i}(m) / s$. Suppose $P$ has morphisms $\sigma_{i}': P \to M_{i}$. Then we can define $\Pi : P \to S^{-1} \prod_{i = 1}^n M_{i}$ by
+Let the morphisms $pr_{i} : \prod_{i = 1}^n M_{i} \to M$ define the product structure and let $S^{-1} pr_{i} : S^{-1} \prod_{i = 1}^n M_{i} \to S^{-1} M_{i}$ be given by $m / s \mapsto pr_{i}(m) / s$. Suppose $P'$ has morphisms $\sigma_{i}': P' \to M_{i}$. Then we can define $\Pi : P' \to S^{-1} \prod_{i = 1}^n M_{i}$ by
 $$
 \Pi(p) = (S^{-1}\mu_{1}'(p), \dots, S^{-1}\mu_{n}'(p)) = \frac{(m_{1} \hat{s}_{1}, \dots, m_{n} \hat{s}_{n})}{s}
 $$
-where $\sigma_{i}'(p) = m_{i} / s_{i}$, and we set $s = s_{1} \cdots s_{n}$ and $\hat{s}_{i} = s / s_{i}$. Clearly $S^{-1}\mu_{i} \circ \pi = \sigma_{i}'$ for each $i$. 
+where $\sigma_{i}'(p) = m_{i} / s_{i}$, and we set $s = s_{1} \cdots s_{n}$ and $\hat{s}_{i} = s / s_{i}$. Clearly $S^{-1}pr_{i} \circ \pi = \sigma_{i}'$ for each $i$. 
 
-Suppose $\Pi' : P \to S^{-1} \prod_{i = 1} M_{i}$ has $S^{-1} \mu_{i} \circ \pi' = \sigma_{i}'$ for each $i$. Then for $m' / s' = \Pi'(p)$, we must have $S^{-1}\mu_{i}(m' / s') = m_{i} / s_{i}$. Thus, $\mu_{i}(m') / s = m_{i} / s_{i}$ and finally $\mu_{i}(m') = s m_{i} / s_{i}$ for each $i$. This determines $m' = (s m_{1} / s_1, \dots, s m_{n} / s_{n})$ which finally gives
+Suppose $\Pi' : P' \to S^{-1} \prod_{i = 1} M_{i}$ has $S^{-1} pr_{i} \circ \pi' = \sigma_{i}'$ for each $i$. Then for $m' / s' = \Pi'(p)$, we must have $S^{-1}pr_{i}(m' / s') = m_{i} / s_{i}$. Thus, $pr_{i}(m') / s = m_{i} / s_{i}$ and finally $pr_{i}(m') = s m_{i} / s_{i}$ for each $i$. This determines $m' = (s m_{1} / s_1, \dots, s m_{n} / s_{n})$ which finally gives
 $$
 \Pi'(p) = \frac{m'}{s} = (s m_{1} / s_{1}, \dots, s m_{n} / s_{n}) / s = (m_{1} / s_{1}, \dots, m_{n} / s_{n})  = \Pi(p).
 $$
 That is, $\Pi' = \Pi$, or $\Pi$ is unique. Thus, $S^{-1} \prod_{i = 1}^n M_{i}$ satisfies the universal property of the product $\prod_{i = 1}^n S^{-1} M_{i}$, and is uniquely isomorphic to it. Note that we could have also made an argument by the universal property of localisation.
 
-Note that direct sums of modules are just coproducts. Thus, we can use the [[Algebraic geometry --- rising-sea/notes/Universal properties and why categories?|universal property of coproducts]]. In particular, let $\mu_{i} : M_{i} \to \bigoplus_{i \in \mathscr{I}} M_{i}$ define the coproduct and let $S^{-1} \mu_{i} : S^{-1} M_{i} \to S^{-1} \bigoplus_{i \in \mathscr{I}} M_{i}$ be given by $m_{i} / s \mapsto \mu_{i}(m) / s$. Suppose $P$ has morphisms $\sigma_{i}' : S^{-1}M_{i} \to P$. We claim there is a unique $\amalg : S^{-1} \bigoplus_{i \in \mathscr{I}} M_{i} \to P$ such that $\amalg \circ S^{-1} \mu_{i} = \sigma_{i}'$. We define
+Note that direct sums of modules are just coproducts. Thus, we can use the [[Algebraic geometry --- rising-sea/notes/Universal properties and why categories?|universal property of coproducts]]. In particular, let $pr_{i} : M_{i} \to \bigoplus_{i \in \mathscr{I}} M_{i}$ define the coproduct and let $S^{-1} pr_{i} : S^{-1} M_{i} \to S^{-1} \bigoplus_{i \in \mathscr{I}} M_{i}$ be given by $m_{i} / s \mapsto pr_{i}(m) / s$. Suppose $P'$ has morphisms $\sigma_{i}' : S^{-1}M_{i} \to P'$. We claim there is a unique $\amalg : S^{-1} \bigoplus_{i \in \mathscr{I}} M_{i} \to P'$ such that $\amalg \circ S^{-1} pr_{i} = \sigma_{i}'$. We define
 $$
 \amalg(m_{i} / s) = \sigma_{i}'(m_{i}/s)
 $$
 for each $i$ and extend linearly. Clearly this is the desired map.
 
-Suppose $\amalg' : S^{-1} \bigoplus_{i \in \mathscr{I}} M_{i} \to P$ has $\amalg \circ S^{-1} \mu_{i} = \sigma_{i}'$. Then, for each $i$, we must have exactly the defining property of $\amalg$ —
+Suppose $\amalg' : S^{-1} \bigoplus_{i \in \mathscr{I}} M_{i} \to P'$ has $\amalg \circ S^{-1} pr_{i} = \sigma_{i}'$. Then, for each $i$, we must have exactly the defining property of $\amalg$ —
 $$
 \amalg(m_{i} / s) = \sigma'_{i}(m_{i} / s).
 $$
