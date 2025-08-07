@@ -17,7 +17,7 @@ $$
 \operatorname{Spec} R = \{ P \subset R \mid P \text{ is prime} \}.
 $$
 
-The prime ideals are respected by ring homomorphisms and thus induce an inverse map on the spectra. (This is a contravariant [[Algebraic geometry --- rising-sea/notes/Functors and natural transformations|functor]]!)
+The prime ideals are respected by ring homomorphisms and thus induce an inverse map on the spectra. (This is a contravariant [[Algebraic geometry --- rising-sea/notes/Functors|functor]]!)
 
 ##### _proposition:_ the pullback on spectra
 

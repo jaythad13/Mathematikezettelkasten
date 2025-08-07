@@ -78,7 +78,7 @@ For one it is functorial and preserves (right) exact sequences. We will later de
 
 ##### _proposition:_ tensoring is functorial and right-exact
 
-The map of objects $\mathsf{Mod}_{A} \to \mathsf{Mod}_{A}$ by $M \mapsto M \otimes N$ naturally extends to a covariant [[Algebraic geometry --- rising-sea/notes/Functors and natural transformations#_definition _ (covariant, contravariant) functors|functor]]. Further, this functor is right-exact — if
+The map of objects $\mathsf{Mod}_{A} \to \mathsf{Mod}_{A}$ by $M \mapsto M \otimes N$ naturally extends to a covariant [[Algebraic geometry --- rising-sea/notes/Functors#_definition _ (covariant, contravariant) functors|functor]]. Further, this functor is right-exact — if
 $$
 M_{1} \to M_{2} \to M_{3} \to 0
 $$

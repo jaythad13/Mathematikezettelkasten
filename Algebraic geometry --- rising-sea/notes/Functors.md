@@ -37,11 +37,11 @@ Similarly, each $n$th homology is a covariant functor $\mathsf{Top} \to \mathsf{
 
 ##### _example:_ the functor of points and its opposite
 
-On any category $\mathscr{C}$, the contravariant functor of $A$-points is $h_{A}$ by $B \mapsto \operatorname{Mor}(B, A)$ on objects. On morphisms, for each $f : B \to C$ we have $\operatorname{Mor}(C, A) \to \operatorname{Mor}(B, A)$ by $g \mapsto f \circ g$ (for each $g : C \to A$). It's called the functor of points because, the $B$-points of a scheme $A$ are just morphisms $B \to A$.
+On any category $\mathscr{C}$, the contravariant functor of $A$-points is $h_{A}$ by $B \mapsto \operatorname{Mor}(B, A)$ on objects. On morphisms, for each $f : B \to C$ we have $\operatorname{Mor}(C, A) \to \operatorname{Mor}(B, A)$ by $g \mapsto g \circ f$ (for each $g : C \to A$). It's called the functor of points because, the $B$-points of a scheme $A$ are just morphisms $B \to A$.
 
 For example, the functor $\mathsf{Vec}_{k} \to \mathsf{Vec}_{k}$ by taking duals and dual maps in $\mathsf{Vec}_{k}$ is the functor of $k$-points and the pullback of continuous (real) functions on topological spaces is the functor of $\mathbb{R}$-points $\mathsf{Top} \to \mathsf{Ring}$. In these examples, it's also reasonable to call these functors "points" since the continuous real maps on $X$ look like sections of $\mathbb{R}$ varying over $X$.
 
-There is a similar covariant functor $h^A$ by $B \mapsto \operatorname{Mor}(A, B)$ on objects and sending each $f : B \to C$ to the map $\operatorname{Mor}(A, B) \to \operatorname{Mor}(A, C)$ by $g \mapsto g \circ f$ (for each $g : A \to B$). 
+There is a similar covariant functor $h^A$ by $B \mapsto \operatorname{Mor}(A, B)$ on objects and sending each $f : B \to C$ to the map $\operatorname{Mor}(A, B) \to \operatorname{Mor}(A, C)$ by $g \mapsto f \circ g$ (for each $g : A \to B$). 
 
 ### Faithfulness and fullness
 
@@ -49,7 +49,7 @@ Functors have properties that look a lot like injectivity and surjectivity. Howe
 
 ##### _definition:_ faithful, full, fully faithful
 
-A (covariant) functor $F : \mathscr{A} \to \mathscr{B}$ is faithful/faithful if, for each $A_{1}, A_{2} \in \mathscr{A}$ the map $\operatorname{Mor}_{\mathscr{A}}(A_{1}, A_{2}) \to \operatorname{Mor}_{\mathscr{B}}(F(A_{1}), F(A_{2}))$ is injective/surjective respectively. 
+A (covariant) functor $F : \mathscr{A} \to \mathscr{B}$ is faithful/full if, for each $A_{1}, A_{2} \in \mathscr{A}$ the map $\operatorname{Mor}_{\mathscr{A}}(A_{1}, A_{2}) \to \operatorname{Mor}_{\mathscr{B}}(F(A_{1}), F(A_{2}))$ is injective/surjective respectively. 
 
 $F$ is fully faithful if it is faithful and full.
 

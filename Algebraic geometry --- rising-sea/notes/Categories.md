@@ -40,7 +40,7 @@ A subcategory $\mathscr{A}$ of a (super)category $\mathscr{B}$ is a category wit
 
 We have defined a subcategory so that it really is a category with the same composition as the supercategory it sits in (we could remove the "is a category" from the definition).
 
-The notion of a subcategory is perhaps better explained with the notion of a [[Algebraic geometry --- rising-sea/notes/Functors and natural transformations#_definition _ functor|functor]] (there is an inclusion functor from any subcategory to the supercategory)
+The notion of a subcategory is perhaps better explained with the notion of a [[Algebraic geometry --- rising-sea/notes/Functors#_definition _ functor|functor]] (there is an inclusion functor from any subcategory to the supercategory)
 
 ### Lots of examples
 
