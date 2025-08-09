@@ -114,7 +114,7 @@ Given morphisms $\alpha : Z \to X$ and $\beta : Z \to Y$, the co-(rresponding fi
 
 ##### _example:_ the tensor product of rings is the co-fibred products
 
-The [[Algebraic geometry --- rising-sea/notes/Tensor products#_proposition _ tensor product of rings is a ring|tensor product of rings]] $B \otimes_{A} C$ makes the following diagram co-Cartesian.
+The [[Algebraic geometry --- rising-sea/notes/Tensor products, categorically#_proposition _ tensor product of rings is a ring|tensor product of rings]] $B \otimes_{A} C$ makes the following diagram co-Cartesian.
 ```tikz
 \usepackage{tikz-cd}
 \usepackage{amsfonts}
