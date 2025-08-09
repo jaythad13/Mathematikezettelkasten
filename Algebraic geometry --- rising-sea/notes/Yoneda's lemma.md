@@ -8,7 +8,7 @@ Yoneda's lemma provides a way to understand [[Algebraic geometry --- rising-sea/
 
 ![[Algebraic geometry --- rising-sea/notes/Functors#_example _ the functor of points and its opposite]]
 
-##### _lemma:_ Yoneda's lemma
+##### _lemma:_ Yoneda's lemma (easy mode)
 
 Suppose $A, A', B, C$ are objects in $\mathscr{C}$, and there are maps $i_{C} : \operatorname{Mor}(C, A) \to \operatorname{Mor}(C, A')$  such that the following diagram commutes for each $f :B \to C$.
 ```tikz
@@ -114,7 +114,7 @@ This allows us to make the following definition.
 
 A covariant/contravariant functor $F : \mathscr{C} \to \mathsf{Set}$ is **representable** if there is a natural isomorphism $F \cong h^{A}$ or $F \cong h_{A}$ respectively.
 
-Yoneda's lemma says that the data of a category is equivalent to the data of the corresponding category of representable functors. The fanciest form of this philosophical statement ("tell me who your friends are, and I'll tell you who you are") is the following.
+Yoneda's lemma says that the data of a category is equivalent to the data of the corresponding category of representable functors. The fanciest form of this philosophical statement ("tell me who your friends are, and I'll tell you who you are") is the following. The proof is adding words to the proof above.
 
 ##### _lemma:_ Yoneda's fanciest lemma
 
