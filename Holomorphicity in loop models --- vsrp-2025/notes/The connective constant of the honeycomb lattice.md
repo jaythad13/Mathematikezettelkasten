@@ -112,4 +112,4 @@ Given the connective constant $\mu$, its reciprocal $1 / \mu$ is the radius of c
 
 The [[Analysis --- math-131/notes/Power series#_theorem _ every power series has a radius of convergence (Abel)|definition of radius of convergence]] for a power series $\sum_{n = 1}^\infty c_{n} x^n$ gives $R = 1 / \lim_{ n \to \infty } c_{n}^{1 / n}$, so in this case $R = 1 / \mu$.
 
-By considering a complex analytic twisting of the partition function (the [[Holomorphicity in loop models --- vsrp-2025/The parafermionic observable|parafermionic observable]]), we will be able to show that it really does have the desired radius of convergence.
+By considering a complex analytic twisting of the partition function (the [[Holomorphicity in loop models --- vsrp-2025/notes/The parafermionic observable|parafermionic observable]]), we will be able to show that it really does have the desired radius of convergence.
