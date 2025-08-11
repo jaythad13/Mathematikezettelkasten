@@ -143,8 +143,26 @@ Tensoring plays nicely with (arbitrary) direct sums and thus, finite products. S
 
 If $M$ and $\{ N_{i} \}_{i \in \mathscr{I}}$ are all $A$-modules, then there is a natural isomorphism giving
 $$
-M \otimes \left( \bigoplus_{i \in \mathscr{I}} N_{i} \right) \cong \bigoplus_{i \in \mathscr{I}} (M \otimes N_{i}).
+M \otimes_{A} \left( \bigoplus_{i \in \mathscr{I}} N_{i} \right) \cong \bigoplus_{i \in \mathscr{I}} M \otimes_{A} N_{i}.
 $$
+
+###### _proof:_
+
+We will show that $\bigoplus_{i \in \mathscr{I}} M \otimes N_{i}$ satisfies the universal property of the tensor product $M \otimes \left( \bigoplus_{i \in \mathscr{I}} N_{i} \right)$. Specifically, we claim any bilinear map $\beta : M \times (\bigoplus_{i \in \mathscr{I}} N_{i}) \to N$ factors uniquely as $\psi \circ t$ where $t : M \times (\bigoplus_{i \in \mathscr{I}} N_{i}) \to \bigoplus_{i \in \mathscr{I}} M \otimes N_{i}$ is given by
+$$
+t : (m, n_{i_{1}} \oplus \dots \oplus n_{i_{k}}) \mapsto m \otimes n_{i_{1}} \oplus \dots \oplus m \otimes n_{i_{k}}
+$$
+and $\psi$ is a morphism of $A$-modules.
+
+Notice $\beta$ factors as above with $\psi$ as defined below.
+$$
+\psi(m \otimes n_{i}) = \beta(m, n_{i})
+$$
+This is a well-defined map ($A$-linear map) on each $M \otimes N_{i}$ by the bilinearity of $\beta$. Thus, it is well-defined on their direct sum. Suppose $\beta = \psi' \circ t$ for some $A$-module morphism. But then
+$$
+\psi'(m \otimes n_{i}) = \psi'(t(m, n_{i})) = \beta(m, n_{i})
+$$
+and so $\psi' = \psi$. That is, $\psi$ is unique.
 
 Tensoring also plays nicely with [[Algebraic geometry --- rising-sea/notes/Localisation, categorically#Localisation of modules|localisation]] —
 
@@ -154,3 +172,23 @@ If $S$ is a multiplicative subset of $A$ and $M$ is an $A$-module, there is a na
 $$
 S^{-1} A \otimes_{A} M \cong S^{-1} M.
 $$
+
+###### _proof:_
+
+We show that for a multiplicative $S \subseteq A$  $S^{-1} A \otimes_{A} M$ satisfies [[Algebraic geometry --- rising-sea/notes/Localisation, categorically#_construction _ localisation of a module|the universal property of the localisation of a module]] $S^{-1} M$. Specifically, we claim that if $N$ is an $A$-module with morphism $\varphi : M \to N$ such that the action of $S$ is invertible on $N$, then $\varphi$ factors uniquely as $\psi \circ \alpha$ where $\alpha : M \to S^{-1} A \otimes_{A} M$ is given by $m \mapsto 1 \otimes m$.
+
+One example of $\psi$ so that $\varphi$ factors appropriately is given by
+$$
+\psi(a / s \otimes m) = a s^{-1} \varphi(m)
+$$
+where $s ^{-1}$ is the inverse map to $N \to N$ by $n \mapsto s n$. Suppose $\varphi$ factors as $\psi' \circ \alpha$. Then, for all $m \in M$ we have $\psi'(1 \otimes m) = \varphi(m)$ and so
+$$
+\begin{align}
+\psi'(a / s \otimes m) & = s ^{-1} (s \psi'(a / s \otimes m))  \\
+ & = s ^{-1} (\psi'(1 \otimes am))  \\
+ & = s ^{-1} \varphi(am)  \\
+ & = a s ^{-1} \varphi(m) \\
+ & = \psi(a / s \otimes m).
+\end{align}
+$$
+Thus, $\psi' = \psi$ so $\psi$ is the unique such morphism. Further, by definition, $\psi$ is both $A$-and $S^{-1} A$-linear.
