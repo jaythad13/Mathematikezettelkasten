@@ -52,9 +52,9 @@ We can also talk about whether a linear differential equation is homogenous or n
 
 ##### _definition:_ homogenous and non-homogenous linear differential equation
 
-A homogenous differential linear differential equation involves linear combinations containing constant functions (not as coefficients).
+A non-homogenous (or driven or forced) differential linear differential equation involves linear combinations containing constant functions (not as coefficients).
 
-A non-homogenous linear differential equation is a linear differential equation that is not homogenous.
+A homogenous linear differential equation is a linear differential equation that is not non-homogenous.
 
 ##### _example:_ homogenous differential equations
 
