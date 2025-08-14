@@ -110,6 +110,52 @@ Monomorphisms can also be characterised by their interaction with fibred product
 
 A morphism $\pi : X \to Y$ is a monomorphism if and only if the [[Algebraic geometry --- rising-sea/notes/Fibred products#_definition _ fibred product|fibred product]] $X \times_{Y} X$ exists and the induced diagonal morphism $\delta_{\pi} : X \to X \times_{Y} X$ is an isomorphism.
 
+###### _proof:_
+
+Suppose $\pi$ is a monomorphism. It suffices to show that $X$ satisfies the universal property of the fibred product $X \times_{Y} X$. Suppose $P'$ has morphisms $pr_{1}, pr_{2} : P' \to X$ so that the following diagram commutes
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		P' \ar[r, "pr_{2}"] \ar[d, "pr_{1}"] & X \ar[d, "\pi"] \\
+		X \ar[r, "\pi"] & Y
+	\end{tikzcd}
+\end{document}
+```
+By the definition of a monomorphism, $pr_{1} = pr_{2} = \Pi$, so the projections factor through $X$ as $pr_{i} = \operatorname{id}_{X} \circ \Pi$. This factorisation is unique since the maps $X \to X$ are just the identity.
+
+If $\delta_{\pi} : X \to X \times_{Y} X$ is an isomorphism, then $X$ satisfies the universal property of the fibred product. But that is to say that any $P' \to Y$ factoring through $\pi : X \to Y$ factors uniquely, and thus, that $\pi$ is monic.
+
 ##### _proposition:_ monomorphisms of bases induce isomorphisms of fibre products
 
 If $Y \to Z$ is a monomorphism (and there are morphisms $X_{1}, X_{2} \to Y$, and all relevant fibred products exist), then [[Algebraic geometry --- rising-sea/notes/Fibred products#_lemma _ morphisms of bases induce morphisms of fibred products|the morphism]] $X_{1} \times_{Y} X_{2} \to X_{1} \times_{Z} X_{2}$ is an isomorphism.
+
+###### _proof:_
+
+It suffices to show that $X_{1} \times_{Y} X_{2}$ satisfies the universal property of the fibred product $X_{1} \times_{Z} X_{2}$. Suppose the following diagram commutes.
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		P' \ar[rrd, bend left] \ar[rdd, bend right] \\
+		& X_{1} \times_{Y} X_{2} \ar[r, "pr_{2}"] \ar[d, "pr_{1}"] & X_{2} \ar[d] \\
+		& X_{1} \ar[r] & Z
+	\end{tikzcd}
+\end{document}
+```
+ Since $\pi$ is monic and the maps $P' \to X_{i} \to Y \to Z$ are the same, the maps $P' \to X_{i} \to Y$ are the same. By the universal property of the fibred product, the maps $P \to X_{i}$ must then factor uniquely through $X_{1} \times_{Y} X_{2}$. That is, the following diagram must commute (upto $Y$, and then obviously, including the only map to $Z$ as well).
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		P' \ar[rrd, bend left] \ar[rdd, bend right] \ar[rd, "\Pi"] \\
+		& X_{1} \times_{Y} X_{2} \ar[r, "pr_{2}"] \ar[d, "pr_{1}"] & X_{2} \ar[d] \\
+		& X_{1} \ar[r] & Y \ar[rd] \\
+		& & & Z
+	\end{tikzcd}
+\end{document}
+```
+This shows exactly that $X_{1} \times_{Y} X_{2}$ satisfies the universal property of the fibred product $X_{1} \times_{Z} X_{2}$.
