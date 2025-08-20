@@ -48,9 +48,9 @@ Sometimes we don't quite want the free product of two groups — we want certai
 
 If $i_{G} : K \to G$ and $i_{H} : K \to H$ are injections and $G, H$ have presentations as before, then the resulting amalgamation is $\left< S_{G} \sqcup S_{H} \mid R_{G} \sqcup R_{H} \sqcup \{ i_{G}(k) i_{H}(k)^{-1} \mid k \in K \} \right>$. Again, this is a perfectly good definition, but a better one comes from category theory.
 
-##### _definition:_ free product with amalgamation, cofibred coproduct of groups
+##### _definition:_ free product with amalgamation, co-fibred product of groups
 
-Given groups $G, H$ and a group $K$ with inclusions $i_{G} : K \to G$ and $i_{H} : K \to H$, the free product amalgamated along the inclusions, the corresponding cofibred coproduct, or the co-(rresponding fibred product) is the unique object $G *_{K} H$ with maps $\gamma : G \to G *_{K} H$ and $\eta : H \to G *_{K} H$ such that the following diagram commutes for any $P$ with maps $G \to P$ and $H \to P$. Note that the diagram commuting requires the maps from $G, H$ to the amalgamation and to $P$ to agree on $K$
+Given groups $G, H$ and a group $K$ with inclusions $i_{G} : K \to G$ and $i_{H} : K \to H$, the free product amalgamated along the inclusions, the corresponding [[Algebraic geometry --- rising-sea/notes/Fibred products#_definition _ co-fibred product|co-fibred product]] or co-(rresponding fibred product) is the unique object $G *_{K} H$ with maps $\gamma : G \to G *_{K} H$ and $\eta : H \to G *_{K} H$ such that the following diagram commutes for any $P$ with maps $G \to P$ and $H \to P$. Note that the diagram commuting requires the maps from $G, H$ to the amalgamation and to $P$ to agree on $K$
 ```tikz
 \usepackage{tikz-cd}
 \usepackage{amsfonts}
