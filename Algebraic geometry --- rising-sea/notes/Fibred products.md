@@ -148,7 +148,7 @@ In the notation of the proof below, $\psi$ is the unique morphism making the fol
 
 ##### _theorem:_ the diagonal base-change diagram
 
-Given morphisms $X_{1}, X_{2} \to Y$ and $Y \to Z$, show that the following diagram is Cartesian
+Given morphisms $X_{1}, X_{2} \to Y$ and $Y \to Z$, the following diagram is Cartesian
 ```tikz
 \usepackage{tikz-cd}
 \usepackage{amsfonts}

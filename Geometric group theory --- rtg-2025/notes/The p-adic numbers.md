@@ -34,24 +34,9 @@ The $p$-adic integers are the ring $\mathbb{Z}_{p}$ comprising all sequences $x 
 
 Note that the additive and multiplicative identities have residue sequences $(0, 0, \dots)$ and $(1, 1, \dots )$ respectively.
 
-In fact, this is just a categorical definition as a [[Categorical limits|limit]]. The $p$-adic numbers are the limit of the chain of maps $\mathbb{Z} / (p^j) \to \mathbb{Z} / (p^i)$ where $j > i$.
+In fact, this is just a categorical definition as a [[Algebraic geometry --- rising-sea/notes/Limits and colimits|limit]]. The $p$-adic numbers are the limit of the chain of maps $\mathbb{Z} / (p^j) \to \mathbb{Z} / (p^i)$ where $j > i$.
 
-##### _proposition:_ the $p$-adic integers are an algebraic completion
-
-$\mathbb{Z}_{p}$ and its natural maps to each $\mathbb{Z} / (p^e)$ satisfy the universal property that for any ring $A$ with maps $A \to \mathbb{Z} / (p^e)$ that commute with $\mathbb{Z} / p^j \to \mathbb{Z} / p^i$ for exponents $j > i \in \mathbb{N}$. 
-
-That is, the following diagram of rings commutes for each $j > i$.
-```tikz
-\usepackage{tikz-cd}
-\usepackage{amsfonts}
-\begin{document}
-	\begin{tikzcd}
-		A \ar[rdd] \ar[rrdd, bend left] \ar[rd, dashed, "\exists !"] \\
-		& \mathbb{Z}_{p} \ar[d] \ar[rd] \\
-		& \mathbb{Z} / (p^i) & \mathbb{Z} / (p^j) \ar[l, two heads]
-	\end{tikzcd}
-\end{document}
-```
+![[Algebraic geometry --- rising-sea/notes/Limits and colimits#_example _ $p$-adic numbers|Limits and colimits]]
 
 In particular, $\mathbb{Z}$ and its commuting reduction modulo $p^e$ maps give rise to a map (an injection in fact) $\mathbb{Z} \to \mathbb{Z} _p$.
 
