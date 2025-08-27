@@ -175,21 +175,10 @@
 			\end{align*}
 			Here the last equality follows by the second identity in the question.
 
-		\item We prove for $p \in \mathbb{N}_{0}$ by induction. For $p = 0$ we have
-			\begin{align*}
-				\log_{b}(c^{0}) & = \log_{b} 1 \\
-						& = 0 \\
-						& = p \log_{b} c.
-			\end{align*}
-
-			Now suppose we have $\log_{b} (c^{p}) = p \log_{b} c$ for some particular $p \in \mathbb{N}_{0}$. Then we can use the addition rule to write
-			\begin{align*}
-				\log_{b}(c^{p + 1}) & = \log_{b}(c^{p} c) \\
-						    & = p \log_{b}(c) + \log_{b} c \\
-						    & = (p + 1) \log_{b} c.
-			\end{align*}
-
-			Thus, by induction $\log_{b}(c^{p}) = p \log_{b} c$ for all $p \in \mathbb{N}_{0}$.
+		\item Note that $c = b^{\log_{b} c}$, and thus, $c^{p} = (b^{\log_{b} c})^{p} = b^{p \log_{b} c}$. Thus,
+			\[
+				\log_{b} c^{p} = \log_{b} (b^{p \log_{b} c}) = p  \log_{b} c.
+			\]
 
 		\item By the power rule
 			\begin{align*}
