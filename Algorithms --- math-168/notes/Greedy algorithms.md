@@ -1,10 +1,13 @@
 ---
 tags:
 - math-168/1
+- math-168/2
 - algs
 ---
 
 If an algorithm is a sequence of steps, then a greedy algorithm makes the optimal decision at each step, in the hopes that this is also globally optimal.
+
+The main idea is that we can prove correctness of algorithms by induction. Suppose the algorithm works for input size $n$ (and possibly all smaller input sizes). Then using that hypothesis, show that some optimal solution to the problem includes the greedy choice at the first step of $n + 1$. Finally check that the optimal solution to the problem can be obtained by the optimal solution for input size $n$.
 
 ##### _example:_ the registration problem
 
@@ -23,3 +26,9 @@ Given a set of denominations and a target amount that we want to get by adding c
 We could choose the largest denomination greedily, but this isn't always minimal. For example, if we have the pre-decimal British coins with $6, 12, 24, 30$ coins included, then the greedy algorithm requires $3$ coins to get $48$, but that can clearly be achieved.
 
 What sets of denominations does this work for? Note that it works for denominations $\{ 1, b, b^{2}, \dots, b^k \}$ (this is just base $b$ expansion). Similarly, [[Superdiscrete --- math-55A/notes/Induction and recurrence#_theorem _ Zeckendorf's theorem|Zeckendorf's theorem]] guarantees that this works for Fibonacci denominations $\{ F_{n} \}$.
+
+##### _example:_ the corporate party problem
+
+Suppose we have a tree $T$ with root vertex $r$, defining the hierarchy for the company. How can we find a maximal set of vertices with no immediate parent-child pairs (that is, a maximal set of employees without a boss-employee pair). 
+
+Greedily pick leaves (bottom depth vertices)! Again we can prove this by induction on the number of vertices. Clearly it works for a tree (or rather, forest) with just one vertex. Suppose ([[Superdiscrete --- math-55A/notes/Induction and recurrence#Strong induction|strong induction]]) it works on all forests with at most $n$ vertices. Let $T$ be a forest with $n + 1$ vertices. If a leaf is in a given maximal subset, then we are done. If it is not and its parent is, not we can always replace a parent of a leaf in a maximal subset with its child leaf to get a different maximal subset. If it is not and its parent is not, then the subset is not maximal (because we can definitely add the leaf). Thus, we're done.
