@@ -49,6 +49,16 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}[label = \arabic*.]
+		\item (c) Whichever gives you the best grade.
+		\item (c) Submit a new solution re-written in full.
+		\item (a) Your friend ...
+		\item (b) Despite your best efforts ...
+		\item (d) All of the above!
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[$\star$ Problem 2: Induction warm-up (Quicker than gas!)]
@@ -57,6 +67,27 @@
 		F_{0} + F_{2} + F_{4} + \dots + F_{2i} = F_{2i + 1} - 1.
 	\]
 \end{problem}
+
+\begin{solution}
+	Note that for $i = 0$ we have
+	\begin{align*}
+		F_{0} + \dots + F_{2i} & = F_{0} \\
+				       & = 0 \\
+				       & = F_{1} - 1 \\
+				       & = F_{2 i + 1} - 1.
+	\end{align*}
+
+	Suppose for some particular $i \in \mathbb{N}_{0}$ we have $F_{0} + F_{2} + \dots + F_{2 i} = F_{2i + 1} - 1$. Then 
+	\begin{align*}
+		F_{0} + \dots + F_{2 (i + 1)} & = F_{0} + F_{2} + \dots + F_{2 i} + F_{2 i + 2} \\
+					      & = F_{2 i + 1} - 1 + F_{2 i + 2} \\
+					      & = F_{2 i + 3} - 1 \\
+					      & = F_{2(i + 1) + 1} - 1.
+	\end{align*}
+	Here the third equality follows because $F_{2i + 3} = F_{2i + 2} + F_{2i + 1}$ by the definition of the Fibonacci sequence.
+
+	Thus, by induction, $F_{0} + F_{2} + \dots + F_{2i} = F_{2i + 1} - 1$ for all $i \in \mathbb{N}_{0}$.
+\end{solution}
 
 \pagebreak
 
@@ -89,6 +120,27 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}[label = \arabic*.]
+		\item
+			\begin{enumerate}
+				\item[(a)] $n$
+				\item[(d)] $\sqrt{n}$
+				\item[(e)] $\log_{2}{n}$
+				\item[(f)] $n / 1000$
+				\item[(h)] $(\log_{2} n)^{2}$
+			\end{enumerate}
+
+		\item
+			\begin{enumerate}
+				\item[(a)] $n$ 
+				\item[(b)] $n^{1000}$
+				\item[(e)] $\sqrt{2^{2n}}$
+				\item[(h)] $\log_{2}(n^{n})$
+			\end{enumerate}
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[$\star$ Problem 4: Log identities]
@@ -109,9 +161,60 @@
 
 		\item Log switching rule: $a^{\log_{b} c} = c^{\log_{b} a}$ for $b > 1$ and $a, c > 0$.
 
-		\item Big-$O$ rule: $\log_{b}n = O(\log_{k}(n))$ for any fixed constants $b, k > 1$.
+		\item Big-$O$ rule: $\log_{b}n = O(\log_{k} n)$ for any fixed constants $b, k > 1$.
 	\end{enumerate} 
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item Note that we can write $c = b^{\log_{b} c}$ and $d = b^{\log_{b} d}$. Thus,
+			\begin{align*}
+				\log_{b} cd & = \log_{b} b^{\log_{b} c} b^{\log_{b} d} \\
+					    & = \log_{b} b^{\log_{b} c + \log_{b} d} \\
+					    & = \log_{b} c + \log_{b} d.
+			\end{align*}
+			Here the last equality follows by the second identity in the question.
+
+		\item We prove for $p \in \mathbb{N}_{0}$ by induction. For $p = 0$ we have
+			\begin{align*}
+				\log_{b}(c^{0}) & = \log_{b} 1 \\
+						& = 0 \\
+						& = p \log_{b} c.
+			\end{align*}
+
+			Now suppose we have $\log_{b} (c^{p}) = p \log_{b} c$ for some particular $p \in \mathbb{N}_{0}$. Then we can use the addition rule to write
+			\begin{align*}
+				\log_{b}(c^{p + 1}) & = \log_{b}(c^{p} c) \\
+						    & = p \log_{b}(c) + \log_{b} c \\
+						    & = (p + 1) \log_{b} c.
+			\end{align*}
+
+			Thus, by induction $\log_{b}(c^{p}) = p \log_{b} c$ for all $p \in \mathbb{N}_{0}$.
+
+		\item By the power rule
+			\begin{align*}
+				(\log_{b} a) (\log_{k} b) & = \log_{k} (b^{\log_{b} a}) \\
+							  & = \log_{k} a.
+			\end{align*}
+			Rearranging algebraically gives the desired identity $\log_{b} a = \log_{k} a / \log_{k} b$.
+
+		\item By the change of base rule, we have $\log_{a} c = \log_{b} c / \log_{b} a$, or equivalently, $\log_{a} c \log_{b} a = \log_{b} c$. Equating $a$ to the power of both sides, we get
+			\[
+				a^{\log_{a} c \log_{b} a} = a^{\log_{b} c}.
+			\]
+			However, we can rewrite the left hand side as follows.
+			\begin{align*}
+				a^{\log_{a} c \log_{b} a} & = (a^{\log_{a} c})^{\log_{b} a} \\
+							  & = c^{\log_{b} a}.
+			\end{align*}
+			Here the second equality follows by $c = a^{\log_{a} c}$. Thus, we have the desired equality $c^{\log_{b} a} = a^{\log_{b} c}$.
+
+		\item By the log-switching rule $\log_{b} n = \log_{k} n / \log_{k} b$ for all $n > 0$. Thus, for all $n > 0$ we have
+			\[
+				\log_{b} n \le \frac{\log_{k} n}{\log_{k} b} = O(\log_{k} n).
+			\]
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
