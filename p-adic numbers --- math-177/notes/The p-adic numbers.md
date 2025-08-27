@@ -24,6 +24,12 @@ f_{p}(x) = \sum_{k = 1}^{p - 1} \frac{1}{(px + k)^{2}} \pmod{p^{3}}
 $$
 does not depend on $x$.
 
+We will also be able to give sensible answers to questions like the following.
+
+##### _problem:_ integral square roots of $2$
+
+Find an integer $x$ for which $x^{2} = 2$.
+
 ### $p$-adics are algebraic completions
 
 A $p$-adic integer generalises integers. Where integers have and are determined by an eventually constant sequence of residues modulo each $p^e$, a $p$-adic integer has and is determined by a sequence of residues modulo each $p^e$ that satisfies a compatibility relation — the residues modulo high powers agree with the residues modulo low powers, in the ring modulo low powers.
@@ -36,7 +42,7 @@ Note that the additive and multiplicative identities have residue sequences $(0,
 
 In fact, this is just a categorical definition as a [[Algebraic geometry --- rising-sea/notes/Limits and colimits|limit]]. The $p$-adic numbers are the limit of the chain of maps $\mathbb{Z} / (p^j) \to \mathbb{Z} / (p^i)$ where $j > i$.
 
-![[Algebraic geometry --- rising-sea/notes/Limits and colimits#_example _ $p$-adic numbers|Limits and colimits]]
+![[Algebraic geometry --- rising-sea/notes/Limits and colimits#_example _ $p$-adic numbers are a limit]]
 
 In particular, $\mathbb{Z}$ and its commuting reduction modulo $p^e$ maps give rise to a map (an injection in fact) $\mathbb{Z} \to \mathbb{Z} _p$.
 
@@ -53,6 +59,16 @@ $$
 we get a (compatible) residue sequence $(x_{i})_{i \in \mathbb{N}}$ of partial sums $x_{i} = \sum_{n = 0}^i a_{n} p^n$.
 
 So far, the construction we have works for non-prime base as well. Indeed, there are $n$-adic "integers" for each $n > 1$. However, they differ in their units. In particular, the $n$-adic integers are not, integral domains unless $n$ is a prime. Essentially this is because for $n = p_{1}^{e_{1}} \cdots p_{r}{e^r}$ we have $\mathbb{Z}_{n} \cong \mathbb{Z}_{p_{1}} \times \cdots \mathbb{Z}_{p_{r}}$ and so we have non-trivial ($x \neq 0, 1$) solutions to $x(x - 1) = 0$ by $x = (0, 1, 0, \dots, 0)$.
+
+This allows to find a (somewhat) sensible interpretation for an integral square root of $2$ in $\mathbb{Z}_{7}$.
+
+![[#_problem _ integral square roots of $2$]]
+
+###### _solution:_
+
+$x = 3 + 1 \times 7 + c_{2} \times 7^{2} + \dots$ has square $2$ in $\mathbb{Z}_{p}$.
+
+In some sense, this is a justification for allowing the numbers to go on forever and later, the $7$-adic norm — we know that $\sqrt{ 2 }$ cannot be an integer, and yet, we can always find residues of such an integer. We know that the series for $x$ cannot converge (under the Euclidean metric), yet this seems to give a sensible "number".  To make it converge, we make $\lvert 7 \rvert_{7}$ small.
 
 ##### _proposition:_ $\mathbb{Z}_{p}$ is an [[Abstract algebra --- math-171/notes/Integral domains#_definition _ integral domain|integral domain]]
 
@@ -92,7 +108,7 @@ Write $y = \sum_{n \geq m} a_{n} p^n$ so that $a_{m} \not \equiv 0$. Then $y = a
 $$
 \frac{1}{y} = \frac{z^{-1} a_{m}^{-1}}{p^k}
 $$
-for $k = m$
+for $k = m$.
 
 ### $p$-adics are analytic completions
 

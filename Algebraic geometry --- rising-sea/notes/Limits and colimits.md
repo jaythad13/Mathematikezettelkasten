@@ -4,7 +4,7 @@ tags:
 - cat-th
 ---
 
-Many of the examples of definition by [[Algebraic geometry --- rising-sea/notes/Universal properties and why categories?|universal property]] are special cases of limits and colimits. For example, $p$-[[Geometric group theory --- rtg-2025/notes/The p-adic numbers#_definition _ $p$-adic integers, $ mathbb{Z}_{p}$|adic integers]] and formal power series are examples of limits, while fractions and [[Algebraic geometry --- rising-sea/notes/Localisation, categorically|localisation]] are examples of colimits. The limit and colimit of a diagram are the final and initial objects in the category of "objects with morphisms to or from a commutative diagram" respectively. To make this formal, we make precise what we mean by a diagram
+Many of the examples of definition by [[Algebraic geometry --- rising-sea/notes/Universal properties and why categories?|universal property]] are special cases of limits and colimits. For example, $p$-[[p-adic numbers --- math-177/notes/The p-adic numbers#_definition _ $p$-adic integers, $ mathbb{Z}_{p}$|adic integers]] and formal power series are examples of limits, while fractions and [[Algebraic geometry --- rising-sea/notes/Localisation, categorically|localisation]] are examples of colimits. The limit and colimit of a diagram are the final and initial objects in the category of "objects with morphisms to or from a commutative diagram" respectively. To make this formal, we make precise what we mean by a diagram
 
 ### Diagrams indexed by a category
 
