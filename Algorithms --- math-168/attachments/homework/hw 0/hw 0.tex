@@ -1,0 +1,138 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 168 --- Algorithms}
+\assignment{HW 0}
+\duedate{3rd September 2025}
+
+\begin{document}
+
+\begin{problem}[$\star$ Problem 1: Syllabusiness]
+	\begin{enumerate}[label = \arabic*.]
+		\item Which counts more toward your final grade, the midterm or the final?
+			\begin{enumerate}
+				\item The midterm.
+				\item The final.
+				\item Whichever gives you the best grade.
+			\end{enumerate}
+
+		\item Which is a way to make up missed points on an assignment?
+			\begin{enumerate}
+				\item Email the instructors to ask for a make-up problem.
+				\item Write a hint for your past self that explains how to approach the problem.
+				\item Submit a new solution re-written in full.	
+			\end{enumerate}
+
+		\item Which of the following is \emph{allowed} under the Academic Integrity and Collaboration Policy?
+			\begin{enumerate}
+				\item Your friend discovers a key insight to solving a homework problem while the two of you are working together. Later, you write up a solution based on the discussion and list your friend as a collaborator.
+				\item You recognise that a HW problem is similar but not identical to an existing LeetCode problem, so you look up the solution to the LeetCode problem to see if it contains useful ideas.
+				\item You and several classmates collaborate regularly during office hours. After one such collaboration, you take a photo of the board and send it to a friend who had to miss office hours due to a conflict.
+			\end{enumerate}
+
+		\item Which of the following is \emph{allowed} under the AI policy?
+			\begin{enumerate}
+				\item A homework problem introduces a new data structure not covered in class, so you query an LLM to learn more about how this data structure is typically implemented to help you better understand what the problem is asking.
+
+				\item Despite your best efforts, the in-class explanation of the Ford--Fulkerson algorithm doesn't make sense to you. To prepare for the midterm, you ask an LLM to walk you through an example.
+				\item After writing up your answer to a HW problem, you're not sure if you've gotten your point across. Using the prompt ``Can you reword this proof to make it easier to read?'', you use an LLM to improve your grammar.
+			\end{enumerate}
+
+		\item Which of the below is a good reason to go to a professor's office hours (or a grutoring session)?
+			\begin{enumerate}
+				\item Trouble solving a homework problem.
+				\item Questions about the course logistics.
+				\item Computationally-themed discussions beyond the course.
+				\item All of the above!
+			\end{enumerate}
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[$\star$ Problem 2: Induction warm-up (Quicker than gas!)]
+	The Fibonacci numbers are defined recursively as follows: $F_{0} = 0$, $F_{1} = 1$ and $F_{n} = F_{n - 1} + F_{n - 2}$ for $n \ge 2$. \emph{Prove by induction} that for all integers $i \ge 0$,
+	\[
+		F_{0} + F_{2} + F_{4} + \dots + F_{2i} = F_{2i + 1} - 1.
+	\]
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[$\star$ Problem 3: Asymptotic analysis]
+	Answer the following two questions
+	\begin{enumerate}[label = \arabic*.]
+		\item Which of the following functions are $O(n)$?
+			\begin{enumerate}
+				\item $n$
+				\item $n^{2}$
+				\item $n^{1.1}$ 
+				\item $\sqrt{n}$ 
+				\item $\log_{2} n$ 
+				\item $n / 1000$
+				\item  $2^{\sqrt{n}}$
+				\item  $(\log_{2} n)^{2}$
+			\end{enumerate}
+			
+		\item Which of the following functions are $O(2^{n})$?
+			\begin{enumerate}
+				\item $n$ 
+				\item $n^{1000}$
+				\item $n^{\log_{2} n}$ 
+				\item $3^{n}$ 
+				\item $\sqrt{2^{2n}}$ 
+				\item $n!$ 
+				\item $n 2^{n}$ 
+				\item $\log_{2}(n^{n})$.
+			\end{enumerate}
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[$\star$ Problem 4: Log identities]
+	The logarithm function is the inverse function of exponentiation. By definition
+	\[
+		z^{\log_{z} y} = y \quad \text{and} \quad \log_{z}(z^{y}) = y
+	\]
+	for real numbers $y > 0$ and $z > 1$.
+
+	Prove the following facts about logarithms using only the definition above and statements you've already proved in previous parts of the question.
+
+	\begin{enumerate}
+		\item Addition rule: $\log_{b} c + \log_{b} d = \log_{b} cd$ for $b > 1$ and $c, d > 0$.
+
+		\item Power rule: $\log_{b}(c^{p}) = p \log_{b} c$ for $b > 1, c > 0$.
+
+		\item Change of base rule: $\log_{b} a = \log_{k} a / \log_{k} b$ for $a > 0$ and $b, k > 1$.
+
+		\item Log switching rule: $a^{\log_{b} c} = c^{\log_{b} a}$ for $b > 1$ and $a, c > 0$.
+
+		\item Big-$O$ rule: $\log_{b}n = O(\log_{k}(n))$ for any fixed constants $b, k > 1$.
+	\end{enumerate} 
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[$\star \star$ Problem 1: Bubble team!]
+	You're in charge of supplying refreshments for the 5C Charity Game-a-thon, in which volunteers stream themselves (or AI agents) playing games to raise money for charity.
+	\begin{itemize}
+		\item There are $n$ different gaming sessions over the course of $D$ total hours of the game-a-thon.
+		\item Every session $i$ takes up one or more continuous hour-long blocks, summarised by a \emph{start hour} $s_{i}$ and an \emph {end hour} $e_{i}$. Sessions might overlap.
+
+		\item Your sponsor Bubble Sort Tea has agreed to give each volunteer one free drink of their choice during their stream! During any hour, you can place an order and deliver drinks to any volunteer(s) currently streaming.
+	\end{itemize}
+
+	Given a fixed schedule containing the start and end hours of each stream, your goal is to serve all volunteers in the fewest orders possible. Your output should be a schedule with the smallest set of hours $H$ between $1$ and $D$ such that every stream overlaps with at least one hour in $H$.
+
+	\begin{enumerate}
+		\item Describe a greedy algorithm that, given the start hour $s_{i}$ and end hour $e_{i}$, for each of the $n$ streams, returns a minimal set of hours in the range $1$ to $D$ that covers all streams.
+
+		\item Prove the correctness of your algorithm using mathematical induction and the safe choice method.
+
+		\item What is the big-$O$ running time of your algorithm in terms of $n$, the number of streams? Explain your answer in a few sentences.
+	\end{enumerate}
+\end{problem}
+
+\end{document}
