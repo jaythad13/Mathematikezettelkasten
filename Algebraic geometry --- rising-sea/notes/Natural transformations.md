@@ -26,6 +26,8 @@ A **natural isomorphism** of functors is a natural transformation where each $m_
 
 An **equivalence of categories** is a pair of functors $F : \mathscr{A} \to \mathscr{B}$ and $F' : \mathscr{B} \to \mathscr{A}$ such that $F \circ F'$ and $F' \circ F$ are naturally isomorphic to the identity functor on each category.
 
+Note then that a natural transformation sends objects to morphisms and morphisms to commuting squares.
+
 ##### _example:_ the double dual gives an equivalence of categories
 
 Given $\mathsf{finVec}_{\mathbb{F}}$, the category of finite-dimensional vector spaces over $\mathbb{F}$, the double dual functor $V \mapsto V^{\vee \vee}$ is naturally isomorphic to the identity functor with $m_{V}$ given by the isomorphism $v \mapsto v^{\vee \vee} = \varphi_{v}$ such that $\varphi_{v}(\psi) = \psi(v)$ for all $\psi \in V^{\vee}$. Recall that for $T : V \to W$, we have $T^{\vee \vee} : V^{\vee \vee} \to W^{\vee \vee}$ by $T^{\vee \vee}\varphi_{v} = \varphi_{Tv} = (Tv)^{\vee \vee}$. Thus, the following diagram commutes with the downward arrows isomorphisms.
