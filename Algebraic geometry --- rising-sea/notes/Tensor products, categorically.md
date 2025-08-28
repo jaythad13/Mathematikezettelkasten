@@ -115,7 +115,12 @@ Now we show $M \mapsto M \otimes N$ is right exact. If
 $$
 M_{1} \to M_{2} \to M_{3} \to 0
 $$
-is exact with maps $\varphi_{i} : M_{i} \to M_{i + 1}$, then $\varphi_{2} : M_{2} \to M_{3}$ is surjective and $\operatorname{img} \varphi_{1} = \ker \varphi_{2}$. We want to show the same for $\varphi_{i, *}$. Note that $\varphi_{2, *} : M_{2} \otimes N \to M_{3} \otimes N$ is surjective on basis elements — for any $m_{3} \otimes n$ with $\varphi_{2}(m_{2}) = m_{3}$, we have $\varphi_{2, *}(m_{2} \otimes n) = m_{3} \otimes n$. Thus, $\varphi_{2, *}$ is surjective. If $m_{2} \otimes n \in \operatorname{ker} \varphi_{2, *}$ we must have $\varphi_{2}(m_{2}) \otimes n = 0$. If $n = 0$, then $m_{2} \otimes n = 0 \in \operatorname{img} \varphi_{1, *}$. If $n \neq 0$, then $\varphi_{2}(m_{2}) = 0$, and thus, $m_{2}  \in \operatorname{img} \varphi_{1}$. It follows that $m_{2} \otimes n = \varphi_{1, *}(m_{1} \otimes n) \in \operatorname{img} \varphi_{1, *}$. 
+is exact with maps $\varphi_{i} : M_{i} \to M_{i + 1}$, then $\varphi_{2} : M_{2} \to M_{3}$ is surjective and $\operatorname{img} \varphi_{1} = \ker \varphi_{2}$. We want to show the same for $\varphi_{i, *}$. Note that $\varphi_{2, *} : M_{2} \otimes N \to M_{3} \otimes N$ is surjective on basis elements — for any $m_{3} \otimes n$ with $\varphi_{2}(m_{2}) = m_{3}$, we have $\varphi_{2, *}(m_{2} \otimes n) = m_{3} \otimes n$. Thus, $\varphi_{2, *}$ is surjective. 
+
+If $m_2 \otimes n \in \operatorname{ker} \varphi_{2, *}$ we must have $\varphi_{2}(m_{2}) \otimes n = 0$. If $n = 0$, then $m_{2} \otimes n = 0 \in \operatorname{img} \varphi_{1, *}$. If $n \neq 0$, then $\varphi_{2}(m_{2}) = 0$, and thus, $m_{2}  \in \operatorname{img} \varphi_{1}$. It follows that $m_{2} \otimes n = \varphi_{1, *}(m_{1} \otimes n) \in \operatorname{img} \varphi_{1, *}$. 
+
+> [!missing]
+> This proof only talks about $m_{2} \otimes n$. We need to talk about $\sum_{i} m_{2_{i}} \otimes n_{i}$. Also, this only shows one half of exactness at $M_{2}$.
  
 We've seen already that tensoring with a ring on the left can look like allowing scalars in the "left" module. We can formalise this intuition.
 
