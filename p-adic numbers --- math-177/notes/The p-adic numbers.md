@@ -4,6 +4,8 @@ tags:
 - metric
 - rtg-2025
 - napkin
+- math-177/1
+- math-177/2
 ---
 
 The $p$-adics generalise two notions that we know, each in the direction of the other.
@@ -66,7 +68,7 @@ This allows to find a (somewhat) sensible interpretation for an integral square 
 
 ###### _solution:_
 
-$x = 3 + 1 \times 7 + c_{2} \times 7^{2} + \dots$ has square $2$ in $\mathbb{Z}_{p}$.
+$x = 3 + 1 \times 7 + 2 \times 7^{2} + 6 \times 7^{3} + \cdots$ has square $2$ in $\mathbb{Z}_{p}$ since it has $x^{2} \equiv 2$ modulo $7^n$ for each $n \in \mathbb{N}$.
 
 In some sense, this is a justification for allowing the numbers to go on forever and later, the $7$-adic norm — we know that $\sqrt{ 2 }$ cannot be an integer, and yet, we can always find residues of such an integer. We know that the series for $x$ cannot converge (under the Euclidean metric), yet this seems to give a sensible "number".  To make it converge, we make $\lvert 7 \rvert_{7}$ small.
 
