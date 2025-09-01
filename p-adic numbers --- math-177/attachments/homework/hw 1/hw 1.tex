@@ -1,0 +1,81 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 177 --- $p$-adic numbers}
+\assignment{Problem set 1}
+\duedate{5th September 2025}
+
+\begin{document}
+
+The first four exercises justify the equivalence of norms used in proving Ostrowski's theorem.
+
+\begin{definition}
+	Two norms (on $\mathbb{Q}$) are \emph{equivalent} if whenever a sequence is Cauchy with respect to one of them, it is Cauchy with respect to the other.
+\end{definition}
+
+\begin{problem}[(1) Something to think about, but not turn in]
+	Convince yourself that the above relation is indeed an equivalence relation.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[(2)]
+	Suppose $\lVert \cdot \rVert_{1}$ and $\lVert \cdot \rVert_{2}$ are two norms on $\mathbb{Q}$. Let $\alpha > 0$ be a real number, and assume $\lVert x \rVert_{1} = \lVert x \rVert_{2}^{\alpha}$ for all $x \in \mathbb{Q}$. Show that $\lVert \cdot \rVert_{1}$ and $\lVert \cdot \rVert_{2}$ are equivalent norms.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[(3)]
+	Prove the following lemma. If $\lVert \cdot \rVert$ is any norm on $\mathbb{Q}$ and $x \neq 1$, then $\{ x^{n} \}_{n \in \mathbb{N}}$ is a Cauchy sequence if and only if $\lVert x \rVert < 1$. Conclude that if $\lVert \cdot \rVert_{1}$ and $\lVert \cdot \rVert_{2}$ are two equivalent norms, then $\lVert x \rVert_{1} < 1 \iff \lVert x \rVert_{2} < 1$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[(4)]
+	Suppose $\lVert \cdot \rVert_{1}$ and $\lVert \cdot \rVert_{2}$ are two equivalent norms on $\mathbb{Q}$. Show that there exists a real number $\alpha > 0$ such that $\lVert x \rVert_{1} = \lVert x \rVert_{2}^{\alpha}$ for all $x \in \mathbb{Q}$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[(5)]
+	Suppose $\lVert \cdot \rVert$ is a norm on $\mathbb{Q}$. For $x, y \in \mathbb{Q}$ define $d(x, y) = \lVert x - y \rVert$.
+	\begin{enumerate}
+		\item Prove that $d$ is a metric on $\mathbb{Q}$.
+		\item Prove that $d$ is an ultrametric if and only if $\lVert \cdot \rVert$ is non-archimdean.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[(6)]
+	\begin{enumerate}
+		\item Suppose $d$ is a metric on $\mathbb{Q}$ induced by a norm $\lVert \cdot \rVert$. Show that $d(x + a, y + a) = d(x, y)$ and $d(ax, ay) = \lVert a \rVert d(x, y)$ for all $a, x, y \in \mathbb{Q}$.
+
+		\item Suppose $d$ is a metric on $\mathbb{Q}$ with the property that $d(x + a, y + a) = d(x, y)$ and $d(ax, ay) = d(a, 0) d(x, y)$ for all $a, x, y \in \mathbb{Q}$. Show that $d$ is induced by a norm on $\mathbb{Q}$.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[(7)]
+	Suppose $d$ is a metric on $\mathbb{Q}$ and define $d'(x, y) = 2 d(x, y)$.
+	\begin{enumerate}
+		\item Show that $d'$ is also a metric, and in fact $d'$ is equivalent to $d$.
+
+		\item Show that if $d$ is induced by a norm then $d'$ is not.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[(8)]
+	Suppose $d$ is a perfectly tidy metric on $\mathbb{Q}$. Show that each of the following are also metrics, albeit a bit less tidy.
+	\begin{enumerate}
+		\item $d_{1}(x, y) = \min(d(x, y), 1)$.
+
+		\item $d_{2}(x, y) = d(\sigma(x), \sigma(y))$, $\sigma$ is any bijection of $\mathbb{Q}$ to itself.
+	\end{enumerate}
+\end{problem}
+
+\end{document}
