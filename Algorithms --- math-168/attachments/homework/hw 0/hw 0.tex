@@ -227,4 +227,22 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item Greedily choose an hour $h$ during any given stream $[s_{i}, e_{i}]$ such that during that hour, the number of streams intersecting with $[s_{i}, e_{i}]$ is maximal. Then recurse on the set of all intervals excluding those containing the hour $h$.
+
+		\item We induct on $n$, the number of intervals (streams). 
+
+			Clearly, if there is only $1$ stream, then choosing any hour according to the algorithm above requires choosing an hour during the stream and gives minimal $H$ with $\# H = 1$.
+
+			Suppose that for all numbers of streams $n \le k$, this algorithm gives a minimal set of hours. Consider a minimal set of ordering hours $H'$. Note that each hour $h' \in H'$ corresponds to a set $S_{h'}$ of streaming intervals with non-empty intersection containing hour $h'$. For any greedy choice of stream $[s_{i}, e_{i}]$ and hour $h_{i}$ with maximal intersections, there must be some $h'$ with $h' \in [s_{i}, e_{i}]$. 
+
+			We claim switching $h'$ to $h_{i}$ and $S_{h'}$ to $S_{h_{i}}$ doesn't change the number of hours required. There are two cases. First, suppose $S_{h'} \subseteq S_{h_{i}}$. Then we only add streams to $S_{h_{i}}$ and remove streams from other $S_{h}$ which does not change the number of streams, and thus, does not change the number of hours. If $S_{h'} \not \subseteq S_{h_{i}}$, then there must be one hour $h''$ contained in every interval of $S_{h_{i}} \setminus [s_{i}, e_{i}]$ and so that $S_{h''} \subseteq S_{h_{i}}$. Changing $h''$ to $h_{i}$ and $S_{h''}$ to $S_{h_{i}}$ gives a minimal solution containing the greedy choice.
+
+			Thus, every minimal $H$ contains a greedy choice of hour and interval. That is, our greedy choice is safe, and thus, the algorithm is correct.
+
+		\item Counting the number of streams occurring during each hour is $O(n)$ (actually $O(n) O(D)$). The number of streams is counted again at every recursion. In the worst case ($n$ non-intersecting streams) there are $n$ recursions, and thus, the algorithm has $O(n) + O(n - 1) + \dots + O(1) = O(n^{2})$ time complexity.
+\end{enumerate}
+\end{solution}
+
 \end{document}
