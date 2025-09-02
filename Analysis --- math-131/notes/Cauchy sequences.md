@@ -1,6 +1,7 @@
 ---
 tags:
 - math-131/11
+- math-177/3
 - anal
 - metric
 ---
@@ -10,6 +11,8 @@ Till now, we've only been able to show that a [[Analysis --- math-131/notes/Sequ
 ##### _definition:_ Cauchy sequence
 
 Let $\{ x_{n} \}_{n}$ be a sequence in $X$. $\{ x_{n} \}_{n}$ is a Cauchy sequence if for each $\varepsilon > 0$, there exists $N$ such that $d(x_{n}, x_{m}) < \varepsilon$ for all $n, m \ge N$.
+
+It's easy to show that all convergent sequences are Cauchy — just find $N$ such that all $x_{n}$ with $n > N$ are within $\varepsilon / 2$ of their limit and then use the [[Analysis --- math-131/notes/Metric spaces#_definition_ metric space, metric|triangle inequality]].
 
 ##### _lemma:_ Cauchy sequences are bounded
 
@@ -22,20 +25,11 @@ $$
 
 ### Completeness
 
-This doesn't guarantee convergence right away — points may get close to each other without getting close to any fixed point of the metric space. For example, $1, 1.4, 1.41, \dots$ in the rationals. However, there is an important class of metric spaces where all Cauchy sequences have to converge, and some of them are our favourites!
+This doesn't guarantee convergence right away — points may get close to each other without getting close to any fixed point of the metric space. For example, $1, 1.4, 1.41, 1.414, 1.4142 \dots$ in the rationals (or any other sequence of non-repeating decimal expansions). Similarly, the residue sequence of $\sqrt{ 2 }$ modulo $7$ is Cauchy in $\mathbb{Q}$ with respect to the $7$-[[p-adic numbers --- math-177/notes/The p-adic numbers#_definition _ $p$-adic valuation, absolute value|absolute value]], but does not converge in $\mathbb{Q}$. However, there is an important class of metric spaces where all Cauchy sequences have to converge, and some of them are our favourites!
 
 ##### _definition:_ completeness
 
 A metric space is complete if every Cauchy sequence converges.
-
-##### _lemma:_ Cauchy sequences are bounded
-
-###### _proof:_
-
-Let $\{ x_{n} \}_{n}$ be a Cauchy sequence. Choose $N$ such that for all $n, m \ge N$, $d(x_{m}, x_{n}) < 1$. Thus, for any $k$
-$$
-d(x_{k}, x_{N}) \le \max \{ 1, d(p_{1}, p_{N}, \dots, d(p_{N - 1}, p_{N})) \}.
-$$
 
 ##### _theorem:_ real spaces are complete
 
