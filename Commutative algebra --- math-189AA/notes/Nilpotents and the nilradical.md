@@ -8,7 +8,7 @@ A nilpotent element of a ring is exactly what its name says it is — it powers
 
 ##### _definition:_ nilpotents
 
-An element $x \in A$ is a nilpotent if there is some positive integer $n$ such that $x^n = 0$.
+An element $x \in A$ is a **nilpotent** if there is some positive integer $n$ such that $x^n = 0$.
 
 ##### _example:_ nilpotents modulo $12$
 
@@ -16,7 +16,7 @@ An element $x \in A$ is a nilpotent if there is some positive integer $n$ such t
 
 ##### _definition:_ nilradical
 
-The nilradical $\mathfrak{N}_{A}$ (abbreviated to $\mathfrak{N}$ when the ring is clear) of a ring $A$ is the set of all nilpotent elements of a ring.
+The **nilradical** $\mathfrak{N}_{A}$ (abbreviated to $\mathfrak{N}$ when the ring is clear) of a ring $A$ is the set of all nilpotent elements of a ring.
 
 ##### _proposition:_ the nilradical is an ideal and the intersection of primes
 
