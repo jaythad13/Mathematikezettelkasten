@@ -2,6 +2,7 @@
 tags:
 - math-168/1
 - math-168/2
+- math-168/3
 - algs
 ---
 
@@ -32,3 +33,9 @@ What sets of denominations does this work for? Note that it works for denominati
 Suppose we have a tree $T$ with root vertex $r$, defining the hierarchy for the company. How can we find a maximal set of vertices with no immediate parent-child pairs (that is, a maximal set of employees without a boss-employee pair). 
 
 Greedily pick leaves (bottom depth vertices)! Again we can prove this by induction on the number of vertices. Clearly it works for a tree (or rather, forest) with just one vertex. Suppose ([[Superdiscrete --- math-55A/notes/Induction and recurrence#Strong induction|strong induction]]) it works on all forests with at most $n$ vertices. Let $T$ be a forest with $n + 1$ vertices. If a leaf is in a given maximal subset, then we are done. If it is not and its parent is, not we can always replace a parent of a leaf in a maximal subset with its child leaf to get a different maximal subset. If it is not and its parent is not, then the subset is not maximal (because we can definitely add the leaf). Thus, we're done.
+
+##### _example:_ minimal spanning trees
+
+Given a [[Superdiscrete --- math-55A/notes/Basic graph theory#_definition _ graph|graph]] $G = (V, E)$ we want to find a subgraph that is a [[Superdiscrete --- math-55A/notes/Special graphs#_definition _ tree|tree]] and has the fewest possible edges (or the smallest sum of edge weights, given a weight function $w : E \to \mathbb{R}$). A clever trick is that for any cut (a partition of $V$ into two sets $U_{1}, U_{2}$), the minimum-weight edge $e_{0}$ crossing that cut is in every minimal spanning tree. Any spanning tree that doesn't contain $e_{0}$ must contain a different path between its endpoints, and thus, a different edge that crosses the cut. Add $e_{0}$ to the tree, creating a cycle, and then remove the other edge, leaving a tree.
+
+However, this is not yet an algorithm — how do you pick the cut? One way is to start from just a single vertex versus the rest of the graph and keep adding vertices to the set. Another way is to consider every vertex as its own component, and then always pick the minimum weight edge connecting components.
