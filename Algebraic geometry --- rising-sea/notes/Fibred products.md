@@ -246,9 +246,9 @@ We claim that $\psi' = \psi \circ \Pi$ because both sides are the unique morphis
 	\begin{tikzcd}
 		P' \ar[rd, dashed, "\Pi"] \ar[rrdd, dashed ,bend left, "\psi'"] \ar[rrrdd, bend left, "pr_{2}'"] \ar[rrddd, bend right, "pr_{1}'"] \\
 		& X_{1} \times_{Y} X_{2} \ar[rd, dashed, "\psi"] \\
-		& & X_{1} \times_{Z} X_{2} \ar[r, "pr_{2}"] \ar[d, "pr_{1}"] & X_{2} \ar[d, "\beta"] \\
-		& & X_{1} \ar[r, "\alpha"] & Y \ar[rd] \\
-		& & & & Z
+		& & X_{1} \times_{Z} X_{2} \ar[r, "pr_{2}"] \ar[d, "pr_{1}"] & X_{2} \ar[rd, "\beta"] \\
+		& & X_{1} \ar[rd, "\alpha"] & & Y \ar[d] \\
+		& & & Y \ar[r] & Z
 	\end{tikzcd}
 \end{document}
 ```
