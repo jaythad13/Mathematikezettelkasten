@@ -2,7 +2,7 @@
 \usepackage{hw-preamble}
 \setlist[enumerate, 1]{label = (\roman*)}
 
-\name{Jayden Thadani}
+\name{Elliot Bobrow, Filiana Kostopoulou, Stella Shah, Jayden Thadani}
 \class{MATH 189 --- Commutative algebra}
 \assignment{HW 1}
 \duedate{3rd September 2025}
@@ -44,6 +44,46 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item Suppose $f = \sum a_{n} x^{n}$ is a unit in $A[[x]]$. Then there is some $g = \sum b_{n} x^{n}$ such that $fg = 1$. That is, we have
+			\[
+				\sum_{n = 0}^{\infty} \sum_{k = 0}^{n} a_{k} b_{n - k} x^{n} = 1
+			\]
+			and in particular, $a_{0} b_{0} = 1$. Thus, $a_{0}$ is a unit in $A$.
+
+			Suppose $a_{0}$ is a unit in $A$ and $f$ is any $\sum a_{n} x^{n} \in A[[x]]$. We want to show that there exists some $g = \sum b_{n} x^{n}$ so that $fg = 1$. In particular we want $b_{n}$ such that $a_{0} b_{0} = 1$ and $\sum_{k = 0}^{n} a_{k} b_{n - k} = 0$ for all $n > 0$. We can have $a_{0} b_{0} = 1$ since $a_{0}$ is a unit in $A$. We show that the rest of the coefficients are $0$ by induction. 
+
+			Let $fg = \sum c_{n} ^{n}$. Note that for $b_{1} = - a_{1} b_{0}^{2}$ we get
+			\[
+				c_{1} = a_{0} b_{1} + a_{1} b_{0} = a_{0} b_{0} (-a_{1} b_{0}) + a_{1} b_{0} = 0.
+			\]
+			Suppose that for all $k \le n$ we have $b_{k}$ such that $c_{k} = 0$. Then we can get $b_{n + 1}$ such that $c_{n + 1} = 0$ by choosing
+			\[
+				b_{n + 1} = - a_{0}^{-1} \sum_{k = 1}^{n} a_{k} b_{n - k}.
+			\]
+			It follows then that
+			\[
+				c_{n + 1} = a_{0} b_{n + 1} + \sum_{k = 1}^{n} a_{k} b_{n - k} = 0
+			\]
+			as the sum of additive inverses. By induction, we can get such $b_{n}$ for each $n$, and thus, we get $g = \sum b_{n} x^{n}$ that is the multiplicative inverse of $f$.
+
+		\item Suppose $f = \sum a_{n} x^{n}$ is nilpotent (say $f^{m} = 0$). We show by induction that each $a_{n}$ is nilpotent. 
+
+			Since the $f^{m} \pmod{x} \equiv a_{0}^{m}$, we must have $a_{0}^{m} = 0$.
+
+			Suppose that $a_{n}^{m_{n}} = 0$ for each $n \le N$.
+
+		\item Write $\mathfrak{R}_{A}$ and $\mathfrak{R}_{A[[x]]}$ for the Jacobson radicals of $A$ and $A[[x]]$ respectively. We know that $f = \sum a_{n} x^{n} \in \mathfrak{R}_{A[[x]]}$ if and only if $1 - fg$ is a unit in $A[[x]]$ for all $g = \sum b_{n} x^{n} \in A[[x]]$. We know (by part (i)) that the latter is equivalent to $1 - a_{0} b_{0}$ being a unit in $A$ for all $b_{0} \in A$. This is equivalent to $a_{0} \in \mathfrak{R}_{A}$.
+
+		\item Denote the unique ring homomorphism $A \to A[[x]]$ by $\varphi$. Suppose $\mathfrak{m} \subseteq A[[x]]$ is a maximal ideal.
+
+		\item Again, denote the unique ring homomorphism $A \to A[[x]]$ by $\varphi$. Suppose $\mathfrak{p} \subseteq A$ is a prime ideal. Then its extension $\mathfrak{p}^{\text{e}}$ is all products $a f$ with $a \in \mathfrak{p}$ and $f \in A[[x]]$. 
+
+			We claim $\mathfrak{p}^{\text{e}}$ is prime. Suppose $f g \in \mathfrak{p}^{\text{e}}$.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[A \& M Ch. 1 \#7.]
@@ -65,6 +105,14 @@
 \begin{problem}[A \& M Ch. 1 \#8.]
 	Let $A$ be a ring $\neq 0$. Show that the set of prime ideals of $A$ has minimal elements with respect to inclusion.
 \end{problem}
+
+\begin{solution}
+	We prove this by Zorn's lemma. Specifically, we show that the set of prime ideals is non-empty and every chain of prime ideals has a lower bound. Then by Zorn's lemma (applied to the dual poset of prime ideals ordered by inclusion), the set of prime ideals has minimal elements with respect to inclusion.
+
+	Since $A \neq 0$, it contains a maximal ideal. Since maximal ideals are prime, it contains a prime ideal. That is, the set of prime ideals of $A$ is non-empty.
+
+	Suppose $(\mathfrak{p}_{\alpha})_{\alpha \in \mathcal{I}}$ is a chain of prime ideals (so that either $\mathfrak{p}_{\alpha} \subseteq \mathfrak{p}_{\beta}$ or $\mathfrak{p}_{\beta} \subseteq \mathfrak{p}_{\alpha}$ given any $\alpha, \beta \in \mathcal{I}$). We claim $\bigcap_{\alpha \in \mathcal{I}} \mathfrak{p}_{\alpha}$ is a lower bound (in the poset of prime ideals ordered by inclusion). Clearly $\bigcap_{\alpha \in \mathcal{I}} \mathfrak{p}_{\alpha} \subseteq \mathfrak{p}_{\alpha}$ for each $\alpha \in \mathcal{I}$. It only remains to show that it is a prime ideal. Suppose $ab \in \bigcap_{\alpha \in \mathcal{I}} \mathfrak{p}_{\alpha}$. Then in each $\mathfrak{p}_{\alpha}$ we have $a \in \mathfrak{p}_{\alpha}$ or $b \in \mathfrak{p}_{\alpha}$. Since the $\mathfrak{p}_{\alpha}$ are ordered by inclusion, it follows that at least one of $a$ or $b$ is in all of the $\mathfrak{p}_{\alpha}$, and thus, in their intersection. That is, their intersection is prime.
+\end{solution}
 
 \pagebreak
 
@@ -103,6 +151,8 @@
 		\item Since $A$ is Boolean, we have $(x + 1)^{2} = x + 1$. Thus, $x^{2} + 2x + 1 = x^{2} + 1$. Cancelling $x^{2} + 1$ on both sides, we get $2x = 0$.
 
 		\item By Ch. 1 \#7, we get that in a Boolean ring, $A / \mathfrak{p}$ is a field where every element satisfies $y(y - 1) = 0$. Since $A / \mathfrak{p}$ is an integral domain, this forces $y = 1$ or $y = 0$. Since any field must have distinct $1$ and $0$, $A / \mathfrak{p}$ has exactly those two elements.
+
+		\item Since $(x_{1}, \dots, x_{n}) = (x_{1}, \dots, x_{n - 1}) + (x_{n})$, by induction it suffices to show $(x, y) = (x) + (y)$ is actually a principal ideal $(z)$ for some $z \in A$. In particular, we claim $z = x + y - xy$ has $(z) = (x, y)$. Clearly, $(z) \subseteq (x, y)$ since $z \in (x, y)$. Conversely, it is easy to verify that $xz = x^{2} = x$ and similarly $yz = y$. Thus, $x, y \in (z)$ and $(x, y) \subseteq (z)$. By double containment, $(z) = (x, y)$.
 	\end{enumerate}
 \end{solution}
 
@@ -111,6 +161,14 @@
 \begin{problem}[A \& M Ch. 1 \#12.]
 	A local ring contains no idempotent $\neq 0, 1$.
 \end{problem}
+
+\begin{solution}
+	Suppose $A$ is a local ring with unique maximal ideal $\mathfrak{m}$. Let $x \in A$ be idempotent with $x \mapsto y$ under $A \to A / \mathfrak{m}$. Since homomorphisms preserve equations, we have $y^{2} = y$ in $A / \mathfrak{m}$. Rearranging, we get $y (y - 1) = 0$, and since $A / \mathfrak{m}$ is an field, either $y = 0$ or $y = 1$.
+
+	If $y = 0$, then $x \in \mathfrak{m}$. Since $\mathfrak{m}$ is the only maximal ideal, we also have that $x \in \mathfrak{R}$ (the Jacobson radical of $A$). This implies $1 - x$ is a unit in $A$. Thus, the equation $x(1 - x) = 0$ is equivalent to $x = 0$.
+
+	If $y = 1$, then $x = 1 + a$ for some $a \in \mathfrak{m}$. Since $x^{2} = x$, we must have  $1 + 2a + a^{2} = 1 + a$, and thus, $a^{2} + a = 0$. It follows that $-a \in \mathfrak{m}$ is idempotent. By the same argument as previously, $a = 0$, so $x = 1$.
+\end{solution}
 
 \pagebreak
 
@@ -161,7 +219,7 @@
 
 			Suppose $\mathfrak{p} \in V(\mathfrak{a} \cap \mathfrak{b})$. Recall $\mathfrak{a} \mathfrak{b} \subseteq \mathfrak{a} \cap \mathfrak{b}$ (since all multiples of $a \in \mathfrak{a}, b \in \mathfrak{b}$ are in both $\mathfrak{a}$ and $\mathfrak{b}$). Thus $\mathfrak{a} \mathfrak{b} \subseteq \mathfrak{a} \cap \mathfrak{b} \subseteq \mathfrak{p}$ and $\mathfrak{p} \in V(\mathfrak{a} \mathfrak{b})$.
 
-			Suppose $\mathfrak{p} \in V(\mathfrak{a} \mathfrak{b})$. If all $a \in \mathfrak{a}$ are also in $\mathfrak{p}$, then $\mathfrak{p} \in V(\mathfrak{a}) \subseteq V(\mathfrak{a}) \cup V(\mathfrak{b})$. Else, there exists some $a_{0} \in \mathfrak{a}$ but $a \notin \mathfrak{p}$. We have $a_{0} b \in \mathfrak{ab} \subseteq \mathfrak{p}$ for each $b \in \mathfrak{b}$. Since $\mathfrak{p}$ is prime, this forces that each $b \in \mathfrak{b}$ is also in $\mathfrak{p}$. Thus, $\mathfrak{b} \subseteq \mathfrak{p}$ and $\mathfrak{p} \in V(\mathfrak{b}) \subseteq V(\mathfrak{a}) \cup V(\mathfrak{b})$.
+			Suppose $\mathfrak{p} \in V(\mathfrak{a} \mathfrak{b})$. If all $a \in \mathfrak{a}$ are also in $\mathfrak{p}$, then $\mathfrak{p} \in V(\mathfrak{a}) \subseteq V(\mathfrak{a}) \cup V(\mathfrak{b})$. Else, there exists some $a_{0} \in \mathfrak{a}$ with $a_{0} \notin \mathfrak{p}$. We have $a_{0} b \in \mathfrak{ab} \subseteq \mathfrak{p}$ for each $b \in \mathfrak{b}$. Since $\mathfrak{p}$ is prime, this forces that each $b \in \mathfrak{b}$ is also in $\mathfrak{p}$. Thus, $\mathfrak{b} \subseteq \mathfrak{p}$ and $\mathfrak{p} \in V(\mathfrak{b}) \subseteq V(\mathfrak{a}) \cup V(\mathfrak{b})$.
 
 			Finally, suppose $\mathfrak{p} \in V(\mathfrak{a}) \cup V(\mathfrak{b})$.  Then  $\mathfrak{a} \cap \mathfrak{b} \subseteq \mathfrak{a} \subseteq \mathfrak{p}$ or $\mathfrak{a} \cap \mathfrak{b} \subseteq \mathfrak{b} \subseteq \mathfrak{p}$. In either case $\mathfrak{p} \in V(\mathfrak{a} \cap \mathfrak{b})$.
 	\end{enumerate}
