@@ -23,3 +23,6 @@
 [submodule "Geometric group theory --- rtg-2025/attachments/documents"]
 	path = Geometric group theory --- rtg-2025/attachments/documents
 	url = https://git@git.overleaf.com/685e047abb1754f61a7722af
+[submodule "Commutative algebra --- math-189AA/attachments/homework"]
+	path = Commutative algebra --- math-189AA/attachments/homework
+	url = https://git@git.overleaf.com/68b8ef9a1369d314f48e99bc
