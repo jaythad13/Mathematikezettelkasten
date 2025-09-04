@@ -58,7 +58,7 @@ A sequence of functions $f_{n} : E \to \mathbb{C}$ converges uniformly to $f$ on
 
 ###### _proof sketch:_
 
-Follows by the equivalence of convergence and Cauchy convergence on a [[Analysis --- math-131/notes/Cauchy sequences#_definition _ completeness|complete metric space]].
+Follows by the equivalence of convergence and Cauchy convergence on a [[Analysis --- math-131/notes/Cauchy sequences and completeness#_definition _ completeness|complete metric space]].
 
 ##### _theorem:_ uniform convergence is equivalent to pointwise + (stronger) $L^\infty$ convergence
 
@@ -115,7 +115,7 @@ $$
 $$
 if it exists.
 
-Note that thinking of this as a sequence of integrals $I_{n} = \int_{-N}^N f(x) \, dx$, it is sufficient to show $\{ I_{n} \}_{n \in \mathbb{N}}$ is [[Analysis --- math-131/notes/Cauchy sequences#_theorem _ real spaces are complete|Cauchy]].
+Note that thinking of this as a sequence of integrals $I_{n} = \int_{-N}^N f(x) \, dx$, it is sufficient to show $\{ I_{n} \}_{n \in \mathbb{N}}$ is [[Analysis --- math-131/notes/Cauchy sequences and completeness#_theorem _ real spaces are complete|Cauchy]].
 
 The functions of moderate decrease are a very nice class of functions!
 

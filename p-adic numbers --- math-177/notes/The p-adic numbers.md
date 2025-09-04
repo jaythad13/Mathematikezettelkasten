@@ -6,6 +6,7 @@ tags:
 - napkin
 - math-177/1
 - math-177/2
+- math-177/4
 ---
 
 The $p$-adics generalise two notions that we know, each in the direction of the other.
@@ -14,7 +15,7 @@ To solve a Diophantine equation, it's often useful to consider its behaviour mod
 
 To approximate a sum in the Euclidean norm on $\mathbb{Q}$ (say we want to approximate $\sum_{n = 1}^N 1 / n^{2}$ within some $\varepsilon > 0$) we use the convergence of the sum in $\mathbb{R}$ (here to $\pi^{2} / 6$) and then bound the error term. However, this doesn't work when the "error" we want to discard is number-theoretic — we can't get equality modulo some $p^e$ by doing analysis on $\mathbb{R}$.
 
-The field of $p$-adic numbers $\mathbb{Q}_{p}$ generalises $\mathbb{Z} / p^e \mathbb{Z}$ by containing the "limit" or "completion" of all of them in the $p$-adic integers $\mathbb{Z}_{p}$. However, $\mathbb{Q}_{p}$ is a field like $\mathbb{R}$. It also generalises $\mathbb{R}$ as the [[Analysis --- math-131/notes/Cauchy sequences#_definition _ completeness|metric completion]] of $\mathbb{Q}$ with respect to a different metric (the $p$-adic valuation). This is more like $\mathbb{Z} / p^e \mathbb{Z}$ because the metric throws away information in a modulo $p^e$ sense by making high powers of $p$ small.
+The field of $p$-adic numbers $\mathbb{Q}_{p}$ generalises $\mathbb{Z} / p^e \mathbb{Z}$ by containing the "limit" or "completion" of all of them in the $p$-adic integers $\mathbb{Z}_{p}$. However, $\mathbb{Q}_{p}$ is a field like $\mathbb{R}$. It also generalises $\mathbb{R}$ as the [[Analysis --- math-131/notes/Cauchy sequences and completeness#_definition _ completeness|metric completion]] of $\mathbb{Q}$ with respect to a different metric (the $p$-adic valuation). This is more like $\mathbb{Z} / p^e \mathbb{Z}$ because the metric throws away information in a modulo $p^e$ sense by making high powers of $p$ small.
 
 With these two simultaneous generalisations we will be able to solve problems like the one below.
 
@@ -126,7 +127,7 @@ The $p$-adic absolute value is given by $\lvert x \rvert_{p} = p^{- \nu_{p}(x)}$
 
 Note then that $x, y \in \mathbb{Q}_{p}$ are close with $\nu_{p}(x - y)$ big and $\lvert x - y \rvert_{p}$ small when $x - y$ is divisible by a large power of $p$.
 
-While here we defined the valuation and absolute value in their full generality on $\mathbb{Q}_{p}$, they are still natural, even on $\mathbb{Q}$ — they are just the natural absolute value if you value information modulo $p^e$. Further, it is Ostrowski's theorem that the only absolute values on $\mathbb{Q}$ (up to scaling) are the trivial norm, the Euclidean norm, and the $p$-adic absolute value (for each prime $p$). It turns out then that $\mathbb{Q}_{p}$ is the [[Analysis --- math-131/notes/Cauchy sequences#_definition _ completeness|completion]] of $\mathbb{Q}$ with respect to the $p$-adic absolute value.
+While here we defined the valuation and absolute value in their full generality on $\mathbb{Q}_{p}$, they are still natural, even on $\mathbb{Q}$ — they are just the natural absolute value if you value information modulo $p^e$. Further, it is Ostrowski's theorem that the only absolute values on $\mathbb{Q}$ (up to scaling) are the trivial norm, the Euclidean norm, and the $p$-adic absolute value (for each prime $p$). It turns out then that $\mathbb{Q}_{p}$ is the [[Analysis --- math-131/notes/Cauchy sequences and completeness#_definition _ completeness|completion]] of $\mathbb{Q}$ with respect to the $p$-adic absolute value.
 
 This absolute value has wonderful properties — not only are addition and multiplication continuous, but also it turns $\mathbb{Q}$ and $\mathbb{Q}_{p}$ into ultrametric spaces satisfying the strong triangle inequality.
 
@@ -183,9 +184,11 @@ There exists $x \in \mathbb{Q}_{p}^\times$ such that no integer $n \in \mathbb{Z
 
 Notice that every integer has $p$-adic absolute value at most $1$, since they have $p$-adic valuation at least $0$. Thus, $1 / n$ has $p$-adic absolute value at least $1$. Alternatively, bound $\lvert n \rvert_{p} \leq \lvert 1 \rvert_{p} = 1$ using the strong triangle inequality. Choose $x$ to be any integer divisible by $p$ (and thus, having absolute value less than $1$). There is no $1 / n$ with absolute value less than it.
 
-##### _theorem:_ $\mathbb{Q}_{p}$ is metrically complete
+Now it remains to show that $\mathbb{Q}_{p}$ is indeed an analytic completion. We also want to show that the identification (hopefully isometry) between $\mathbb{Q}_{p}$ and $\overline{\mathbb{Q}}_{\lvert \cdot \rvert_{p}}$ respects the field structures of both of them.
 
-$\mathbb{Q}_{p}$ is the metric completion of $\mathbb{Q}$ with respect to the $p$-adic metric.
+##### _theorem:_ $\mathbb{Q}_{p}$ is a metric completion
+
+$\mathbb{Q}_{p}$ is the [[Analysis --- math-131/notes/Cauchy sequences and completeness#_definition _ completion of a metric space|metric completion]] of $\mathbb{Q}$ with respect to the $p$-adic metric.
 
 We could define $\mathbb{Q}_{p}$ as the completion of $\mathbb{Q}$ with this metric. Then we would define the integers as follows.
 

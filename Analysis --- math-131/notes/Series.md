@@ -13,7 +13,7 @@ We know what it means for a sequence to converge, now what does it mean for a su
 
 Given a sequence of complex numbers $\{ a_{n} \}_{n}$, we say the series $\sum_{n = 1}^\infty a_{n}$ converges to $S$ if the sequences of partial sums $s_{n} = a_{1} + \dots + a_{n} \to S$.
 
-Note that since $\mathbb{C}$ is a [[Analysis --- math-131/notes/Cauchy sequences#_definition _ completeness|complete metric space]], the sum converges if and only if $\{ s_{n} \}_{n}$ is a [[Analysis --- math-131/notes/Cauchy sequences#_definition _ Cauchy sequence|Cauchy sequence]]. Using this, and other results about convergent sequences, we can get conditions for a series to converge —
+Note that since $\mathbb{C}$ is a [[Analysis --- math-131/notes/Cauchy sequences and completeness#_definition _ completeness|complete metric space]], the sum converges if and only if $\{ s_{n} \}_{n}$ is a [[Analysis --- math-131/notes/Cauchy sequences and completeness#_definition _ Cauchy sequence|Cauchy sequence]]. Using this, and other results about convergent sequences, we can get conditions for a series to converge —
 
 ##### _definition, proposition:_ absolute convergence, absolute convergence implies convergence.
 

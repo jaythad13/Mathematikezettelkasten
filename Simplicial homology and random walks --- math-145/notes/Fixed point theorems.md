@@ -9,11 +9,11 @@ Fixed point theorems are really nice! They allow us to say things like "if a map
 
 ##### _theorem:_ contraction mapping theorem
 
-Let $X$ be a [[Analysis --- math-131/notes/Cauchy sequences#Completeness|complete metric space]] and let $f$ be a contraction (a map such that $d(f(x), f(y)) < c \, d(x, y)$ for some positive $c < 1$). Then $f$ has a unique fixed point.
+Let $X$ be a [[Analysis --- math-131/notes/Cauchy sequences and completeness#Completeness|complete metric space]] and let $f$ be a contraction (a map such that $d(f(x), f(y)) < c \, d(x, y)$ for some positive $c < 1$). Then $f$ has a unique fixed point.
 
 ###### _proof sketch:_
 
-Iteratively apply $f$ to $x$, and see that this forms a [[Analysis --- math-131/notes/Cauchy sequences|Cauchy sequence]] by the contraction condition. Since $X$ is complete, it converges to a point in $X$. This point is the fixed point. There can't be another one since the distance between them would have to contract.
+Iteratively apply $f$ to $x$, and see that this forms a [[Analysis --- math-131/notes/Cauchy sequences and completeness|Cauchy sequence]] by the contraction condition. Since $X$ is complete, it converges to a point in $X$. This point is the fixed point. There can't be another one since the distance between them would have to contract.
 
 ### The Brouwer fixed point theorem in low dimensions
 

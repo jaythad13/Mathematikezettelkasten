@@ -35,11 +35,11 @@ Actually, we can say more than just verifying that $\mathcal{C}(K)$ is a metric 
 
 First we will show that $\mathcal{C}(K)$ is complete.
 
-##### _theorem:_ $\mathcal{C}(K)$ is [[Analysis --- math-131/notes/Cauchy sequences#_definition _ completeness|complete]]
+##### _theorem:_ $\mathcal{C}(K)$ is [[Analysis --- math-131/notes/Cauchy sequences and completeness#_definition _ completeness|complete]]
 
 ###### _proof sketch:_
 
-Suppose $(f_{n} )_{n \in \mathbb{N}}$ is a [[Analysis --- math-131/notes/Cauchy sequences#_definition _ Cauchy sequence|Cauchy sequence]] in $\mathcal{C}(K)$. Show that there is a sensible function $f : K \to \mathbb{R}$ defined by $f(x) = \lim_{ n \to \infty } f_{n}(x)$ since [[Analysis --- math-131/notes/Cauchy sequences#_theorem _ real spaces are complete|the reals are complete]]. This follows since the maximum distance between $f_{n}(x)$ and $f_{m}(x)$ being bounded by $\varepsilon$ means this bound holds at each $x \in K$, and thus, each $(f_{n}(x))_{n \in \mathbb{N}}$ is a Cauchy sequence. 
+Suppose $(f_{n} )_{n \in \mathbb{N}}$ is a [[Analysis --- math-131/notes/Cauchy sequences and completeness#_definition _ Cauchy sequence|Cauchy sequence]] in $\mathcal{C}(K)$. Show that there is a sensible function $f : K \to \mathbb{R}$ defined by $f(x) = \lim_{ n \to \infty } f_{n}(x)$ since [[Analysis --- math-131/notes/Cauchy sequences and completeness#_theorem _ real spaces are complete|the reals are complete]]. This follows since the maximum distance between $f_{n}(x)$ and $f_{m}(x)$ being bounded by $\varepsilon$ means this bound holds at each $x \in K$, and thus, each $(f_{n}(x))_{n \in \mathbb{N}}$ is a Cauchy sequence. 
 
 It remains to show that $f$ is continuous. This will follow by the strength of the convergence. It is not generally true that the point-wise limit of uniformly continuous functions is continuous — consider the sequence of all $x^n$ on $[0, 1]$ converging to the discontinuous function $f$ with
 $$

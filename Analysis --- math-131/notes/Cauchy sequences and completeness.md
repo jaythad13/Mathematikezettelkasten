@@ -2,6 +2,7 @@
 tags:
 - math-131/11
 - math-177/3
+- math-177/4
 - anal
 - metric
 ---
@@ -45,3 +46,21 @@ Given $\varepsilon > 0$, choose $I$ such that for all $i > I$, we have $d(x_{n_{
 $$
 d(x_{n}, x) \le d(x_{n}, x_{n_{n}}) + d(x_{n_{n}}, x) < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon.
 $$
+
+### Metric completion
+
+In some sense $\mathbb{R}$ is the smallest complete metric space containing $\mathbb{Q}$. In general, this is the notion of the completion of a metric space. We can complete any metric space by treating Cauchy sequences (appropriately identified) like points of the complete metric space.
+
+##### _definition:_ equivalence in completion (of Cauchy sequences)
+
+Two Cauchy sequences $\{ a_{n} \}_{n \in \mathbb{N}}$ and $\{ b_{n} \}_{n \in \mathbb{N}}$ in $X$, are **equivalent in completion** (denoted $\{ a_{n} \}_{n \in \mathbb{N}} \sim \{ b_{n} \}_{n \in \mathbb{N}}$) if and only if $d(a_{n}, b_{n}) \to 0$ (in the real numbers $\mathbb{R}$ with the Euclidean metric) as $n \to \infty$.
+
+We claim this is an equivalence relation on the set of Cauchy sequences.
+
+We denote the equivalence class of a Cauchy sequence $\{ a_{n} \}_{n \in \mathbb{N}}$ by $[\{ a_{n} \}_{n \in \mathbb{N}}]$.
+
+##### _definition:_ completion of a metric space
+
+The completion $\overline{X}$ of $X$ is the set of all Cauchy sequences in $X$ modulo equivalence in completion.
+
+We claim this is a complete metric space, but we don't prove it here (we don't even show it is a metric space).

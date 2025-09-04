@@ -16,7 +16,7 @@ The nicest inner product space to do analysis in is a Hilbert space
 
 ##### _definition:_ Hilbert space
 
-A Hilbert space is an inner product space that is [[Analysis --- math-131/notes/Cauchy sequences#_definition _ completeness|complete]] with respect to the induced metric.
+A Hilbert space is an inner product space that is [[Analysis --- math-131/notes/Cauchy sequences and completeness#_definition _ completeness|complete]] with respect to the induced metric.
 
 For one, the space of $\ell^{2}$ sequences is a Hilbert space! 
 
@@ -30,7 +30,7 @@ for sequences $A = \{ a_{n} \}_{n \in \mathbb{Z}}$ and $B = \{ b_{n} \}_{n \in \
 
 Using the finite dimensional triangle inequality, we can see that this space is indeed closed under addition. The inner product structure is obvious.
 
-While $\ell^{2}$ is really nice, the space of Riemann (square) integrable functions fails to be quite as nice. For one it isn't a proper inner product space — $\lVert f \rVert = 0$ only implies $f = 0$ almost everywhere. However this can be remedied by quotienting out by functions differing only on sets of [[Calculus --- spivak/notes/Measure#_definition _ measure $0$|measure zero]]. What is more serious is that $\mathcal{R}$ isn't complete. For example the sequence $f_{n} : x \mapsto \log (1 / x) \chi_{[1 / n, 2 \pi]}(x)$ is [[Analysis --- math-131/notes/Cauchy sequences#_definition _ Cauchy sequence|Cauchy]] but doesn't converge in $\mathcal{R}$.
+While $\ell^{2}$ is really nice, the space of Riemann (square) integrable functions fails to be quite as nice. For one it isn't a proper inner product space — $\lVert f \rVert = 0$ only implies $f = 0$ almost everywhere. However this can be remedied by quotienting out by functions differing only on sets of [[Calculus --- spivak/notes/Measure#_definition _ measure $0$|measure zero]]. What is more serious is that $\mathcal{R}$ isn't complete. For example the sequence $f_{n} : x \mapsto \log (1 / x) \chi_{[1 / n, 2 \pi]}(x)$ is [[Analysis --- math-131/notes/Cauchy sequences and completeness#_definition _ Cauchy sequence|Cauchy]] but doesn't converge in $\mathcal{R}$.
 
 ##### _proposition, definition:_ the $L^2$ inner product, $\mathcal{R}$
 
