@@ -1,0 +1,85 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 177 --- $p$-adic numbers}
+\assignment{Problem set 2}
+\duedate{12th September 2025}
+
+\begin{document}
+
+\begin{problem}[(1)]
+	Show that the sequence of partial sums $\sum_{i = 0}^{n} 3^{i}$ is Cauchy with respect to $\lvert \cdot \rvert_{p}$ if and only if $p = 3$. If $p = 3$, show that the sequence converges to a limit in $\mathbb{Q}$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[(2)]
+	Suppose $c_{0}, c_{1}, \dots, c_{k - 1} \in \mathbb{Z}$. Let $r = r(i, k)$ be the remainder upon dividing $i$ by $k$ and let $b_{i} = c_{r}$. For $p$ a fixed prime number, let $a_{n} = \sum_{i = 0}^{n} b_{i} p^{i}$. Show that $\{ a_{n} \}_{n \in \mathbb{N}}$ converges to a limit in $\mathbb{Q}$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[(3)]
+	If $\{ a_{n} \}_{n \in \mathbb{N}}$ and $\{ b_{n} \}_{n \in \mathbb{N}}$ are Cauchy in $\mathbb{Q}$, then so are $\{ a_{n} + b_{n} \}$ and $\{ a_{n} b_{n} \}$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[(4)]
+	The relation $\sim$ is an equivalence relation on Cauchy sequences in $\mathbb{Q}$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[(5)]
+	The definitions of addition and of additive inverse on $\mathbb{Q}_{\lVert \cdot \rVert}$ are well-defined.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[(6)]
+	A sequence $\{ a_{n} \}_{n \in \mathbb{N}}$ converges to a limit $L \in \mathbb{Q}$ if and only if its equivalence class with respect to $\sim$ contains a constant sequence.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[(7)]
+	An equivalence class with respect to $\sim$ contains at most one constant representative.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[(8) Something to think about but not turn in] 
+	\begin{enumerate}
+		\item Convince yourself that addition and multiplication are both associative and commtuative, that multiplication is distributive over addition, that the additive identity $0_{\mathbb{Q}_{\lVert \cdot \rVert}}$ is the equivalence class containing the constant sequence $\{ 0 \}_{n \in \mathbb{N}}$ and the multiplicative identity $1_{\mathbb{Q}_{\lVert \cdot \rVert}}$ is the equivalence class containing the constant sequence $\{ 1 \}_{n \in \mathbb{N}}$.
+
+		\item Suppose $\{ a_{i} \}_{i \in \mathbb{N}} \sim \{ b_{i} \}_{i \in \mathbb{N}}$. Fix a positive integer $k$ and define $c_{i} = a_{i + k}$. Is $\{ c_{i} \} \sim \{ b_{i} \}$? In other words, how important is the indexing of our sequences?
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[(9)]
+	Describe all sequences in $\mathbb{Q}$ that are Cauchy with respect to the trivial norm, proving your description using the definition of Cauchy. COnclude that $\mathbb{Q}$ is complete with respect to the trivial norm.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[(10)]
+	Fix a prime $p$. Exhibit a sequence that is
+	\begin{enumerate}
+		\item Cauchy with respect to the usual absolute value but not the $p$-adic one.
+		\item Cauchy with respect to the $p$-adic absolute value but not the usual one.
+		\item not Cauchy with respect to both, the usual and the $p$-adic absolute values.
+		\item Cauchy with respect to both the usual and the $p$-adic absolute values.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[(12) Something to think about but not turn in]
+	Find a formula for $\lvert p^{k} ! \rvert_{p}$. Generalise it to $\lvert n! \rvert_{p}$.
+\end{problem}
+
+\end{document}
