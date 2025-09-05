@@ -7,7 +7,7 @@ tags:
 
 Universal properties answer the question "why categories?"
 
-We want to know category theory to make precise the sense in which [[Sheaves|sheaves]] of abelian groups and modules as well as [[Schemes|schemes]] behave like abelian groups, modules, and rings (respectively). This is given by the language of category theory. In the first two cases in particular, want categories that have isomorphism theorems, kernels, cokernels, images, subspaces, and quotients — we want the notion of an [[Abelian categories|abelian category]].
+We want to know category theory to make precise the sense in which [[Sheaves|sheaves]] of abelian groups and modules as well as [[Schemes|schemes]] behave like abelian groups, modules, and rings (respectively). This is given by the language of category theory. In the first two cases in particular, want categories that have isomorphism theorems, kernels, cokernels, images, subspaces, and quotients — we want the notion of an [[Algebraic geometry --- rising-sea/notes/A little about abelian categories|abelian category]].
 
 Why do this through category theory? Because it's the cleanest language to do it in, with the best "invariant" definitions of kernels, cokernels, et c given by universal properties. The best elementary example of this is the universal property of the product.
 
