@@ -24,6 +24,12 @@ The first four exercises justify the equivalence of norms used in proving Ostrow
 	Suppose $\lVert \cdot \rVert_{1}$ and $\lVert \cdot \rVert_{2}$ are two norms on $\mathbb{Q}$. Let $\alpha > 0$ be a real number, and assume $\lVert x \rVert_{1} = \lVert x \rVert_{2}^{\alpha}$ for all $x \in \mathbb{Q}$. Show that $\lVert \cdot \rVert_{1}$ and $\lVert \cdot \rVert_{2}$ are equivalent norms.
 \end{problem}
 
+\begin{solution}
+	Suppose $\{ x_{n} \}_{n \in \mathbb{N}}$ is a Cauchy sequence of rational numbers with respect to $\lVert \cdot \rVert_{2}$. Thus, for each real $\varepsilon > 0$, there is some $N \in \mathbb{N}$ such that for all $n, m > N$ we have $\lVert x_{n} - x_{m} \rVert_{2} < \varepsilon^{1 / \alpha}$. It follows that for each $\varepsilon > 0$ the same $N \in \mathbb{N}$ forces $\lVert x_{n} - x_{m} \rVert_{1} = \lVert x_{n} - x_{m} \rVert_{2}^{\alpha} < \varepsilon$ whenever $n, m > N$. That is, $\{ x_{n} \}_{n \in \mathbb{N}}$ is Cauchy with respect to $\lVert \cdot \rVert_{1}$ as well.
+
+	Since we can write $\lVert x \rVert_{2} = \lVert x \rVert_{1}^{\beta}$ with $\beta = 1 / \alpha > 0$, it follows from the proof above that sequences Cauchy with respect to $\lVert \cdot \rVert_{1}$ are also Cauchy with respect to $\lVert \cdot \rVert_{2}$. We have shown equivalence of Cauchy conditions with respect to both norms, and thus, the equivalence of the norms.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[(3)]
@@ -42,9 +48,33 @@ The first four exercises justify the equivalence of norms used in proving Ostrow
 	Suppose $\lVert \cdot \rVert$ is a norm on $\mathbb{Q}$. For $x, y \in \mathbb{Q}$ define $d(x, y) = \lVert x - y \rVert$.
 	\begin{enumerate}
 		\item Prove that $d$ is a metric on $\mathbb{Q}$.
-		\item Prove that $d$ is an ultrametric if and only if $\lVert \cdot \rVert$ is non-archimdean.
+		\item Prove that $d$ is an ultrametric if and only if $\lVert \cdot \rVert$ is non-archimedean.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	Let $x, y, z \in \mathbb{Q}$.
+	\begin{enumerate}
+		\item First we show positive definiteness. If $x \neq y$, then $x - y \neq 0$ so $d(x, y) = \lVert x - y \rVert > 0$. Conversely  $d(x, x) = \lVert x - x \rVert = 0$.
+
+			Symmetry follows by the multiplicativity of the norm (and the fact that $\lVert -1 \rVert = 1$)
+			\[
+				d(x, y) = \lVert x - y \rVert = \lVert -1 \rVert \lVert y - x \rVert = d(y, x).
+			\]
+
+			Finally, the triangle inequality follows as the consequence of the triangle inequality for the norm --- that $\lVert x + y \rVert \le \lVert x \rVert + \lVert y \rVert$. It follows that
+			\begin{align*}
+				d(x, z) & = \lVert x - z \rVert \\
+					& = \lVert x - y - (y - z) \rVert \\
+					& \le \lVert x - y \rVert + \lVert y - z \rVert \\
+					& = d(x, y) + d(y, z).
+			\end{align*}
+
+		\item Suppose $d$ is an ultrametric and thus, satisfies $d(x, z) \le \max (d(x, y), d(y, z))$. Thus, choosing $y = 0$ we have $\lVert x - (-z) \rVert \le \max(\lVert x \rVert, \lVert z \rVert)$.
+
+			By induction we can show that all $n \in \mathbb{N}$ have $\lVert n \rVert \le 1$. Clearly  $\lVert 1 \rVert = 1 \le 1$. If $\lVert n - 1 \rVert \le 1$, then $\lVert n \rVert \le \max(\lVert n - 1 \rVert, \lVert 1 \rVert) = 1$. Thus, the norm is non-archimedean.
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
@@ -55,6 +85,43 @@ The first four exercises justify the equivalence of norms used in proving Ostrow
 		\item Suppose $d$ is a metric on $\mathbb{Q}$ with the property that $d(x + a, y + a) = d(x, y)$ and $d(ax, ay) = d(a, 0) d(x, y)$ for all $a, x, y \in \mathbb{Q}$. Show that $d$ is induced by a norm on $\mathbb{Q}$.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item Since $d$ is induced by a norm we have
+			\begin{align*}
+				d(x + a, y + a) & = \lVert x + a - (y + a) \rVert \\
+						& = \lVert x - y \rVert \\
+						& = d(x, y)
+			\end{align*}
+			and
+			\begin{align*}
+				d(ax, ay) & = \lVert ax - ay \rVert \\
+					  & = \lVert a(x - y) \rVert \\
+					  & = \lVert a \rVert \lVert x - y \rVert \\
+					  & = \lVert a \rVert d(x, y)
+			\end{align*}
+			as desired.
+
+		\item We claim that $x \mapsto d(x, 0)$ satisfies the definition of a norm on $\mathbb{Q}$.
+
+			Clearly the function is positive definite. If $x \neq 0$, $d(x, 0) > 0$ and $d(0, 0) = 0$.
+
+			It is compatible with scaling since $d(ax, 0) = d(a, 0) d(x, 0)$.
+
+			It satisfies the triangle inequality. First we show
+			\begin{align*}
+				d(x + y, 0) & = d(x + y, -y + y) \\
+					    & = d(x, -y) \\
+					    & \le d(x, 0) + d(0, -y) \\
+					    & = d(x, 0) + d(-y, 0) \\
+					    & = d(x, 0) + d(-1, 0) d(y, 0).
+			\end{align*}
+			It only remains to show $d(-1, 0)$. We have $d(1, 0) = d(1, 0) d(1, 0) = d(1, 0)^{2}$. Thus, $d(1, 0)$ must be $1$, the only non-zero idempotent in $\mathbb{Q}$. Since $d(1, 0) = d(-1, 0)^{2}$, we must have $d(-1, 0) = 1$, the only positive square root of $1$ in $\mathbb{Q}$.
+
+			Since $x \mapsto d(x, 0)$ satisfies the definition of a norm and $d(x, y) = d(x - y + y, 0 + y) = d(x - y, 0)$, we have shown that $d$ is induced by a norm.
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
@@ -67,6 +134,24 @@ The first four exercises justify the equivalence of norms used in proving Ostrow
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	Let $x, y, z \in \mathbb{Q}$.
+	\begin{enumerate}
+		\item First we show $d'$ is positive definite. If $x \neq y$, then $d'(x, y) = 2 d(x, y) > 0$. Conversely, $d'(x, x) = 2 d(x, x) = 2 \times 0 = 0$. Symmetry also follows from the symmetry of $d$ ---
+			\[
+				d'(x, y) = 2 d(x, y) = 2 d(y, x) = d'(y, x).
+			\]
+			Finally, the triangle inequality is satisfied since
+			\begin{align*}
+				d'(x, z) & = 2 d(x, z) \\
+					 & \le 2 d(x, y) + 2 d(y, z) \\
+					 & = d'(x, y) + d'(y, z).
+			\end{align*}
+
+		\item Suppose $d$ is induced by a norm $q \mapsto \lVert q \rVert$. Then $d(0, 1) = \lVert 1 \rVert = 1$ by the multiplicativity of the norm. But then  $d'(0, 1) = 2$. Since there is no norm with $\lVert 1 - 0 \rVert' \neq 1$, there is no norm with $d'(x, y) = \lVert y - x \rVert'$.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[(8)]
@@ -77,5 +162,40 @@ The first four exercises justify the equivalence of norms used in proving Ostrow
 		\item $d_{2}(x, y) = d(\sigma(x), \sigma(y))$, $\sigma$ is any bijection of $\mathbb{Q}$ to itself.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	Let $x, y, z \in \mathbb{Q}$.
+	\begin{enumerate}
+		\item First we show $d_{1}$ is positive definite. For $x \neq y$, we have $d(x, y) > 0$, so $d_{1}(x, y) - \min(d(x, y), 1) > 0$. Conversely, $d_{1}(x, x) = \min(d(x, x), 1) = \min(0, 1) = 0$.
+
+			$d_{1}$ is symmetric since $d$ is ---
+			\[
+				d_{1}(x, y) = \min(d(x, y), 1) = \min(d(y, x), 1) = d_{1}(y, x).
+			\]
+
+			Finally, we show that $d_{1}$ satisfies the triangle inequality.
+			\begin{align*}
+				d_{1}(x, z) & = \min(d(x, z), 1) \\
+					    & \le \min(d(x, y) + d(y, z), 1) \\
+					    & \le \min(d(x, y), 1) + \min(d(x, y), 1) \\
+					    & = d_{1}(x, y) + d_{2}(y, z)
+			\end{align*}
+			Here the first inequality follows by the triangle inequality for $d$. The second inequality follows by noticing that $d_{1}(x, y) + d_{2}(y, z)$ is always greater than at least one of $d(x, y) + d(y, z)$ and $1$.
+
+		\item First we show $d_{2}$ is positive definite. For $x \neq y$, we have $\sigma(x) \neq \sigma(y)$ and so $d_{2}(x, y) = d(\sigma(x), \sigma(y)) > 0$. Conversely, $d_{2}(x, x) = d(\sigma(x), \sigma(x)) =  0$.
+
+			Again $d_{2}$ is symmetric since $d$ is ---
+			\[
+				d_{2}(x, y) = d(\sigma(x), \sigma(y)) = d(\sigma(y), \sigma(x)) = d_{2}(y, x).
+			\]
+
+			Finally, we show that $d_{2}$ satisfies the triangle inequality.
+			\begin{align*}
+				d_{2}(x, z) & = d(\sigma(x), \sigma(z)) \\
+					    & \le d(\sigma(x), \sigma(y)) + d(\sigma(y), \sigma(z)) \\
+					    & = d_{2}(x, y) + d_{2}(y, z).
+			\end{align*}
+	\end{enumerate}
+\end{solution}
 
 \end{document}
