@@ -56,7 +56,7 @@ This functor isn't quite faithful — some distinct morphisms of complexes. Howe
 
 Suppose $A^{\bullet}$ and $B^{\bullet}$ are complexes given by $f^i : A^i \to A^{i + 1}$ and $g^{i} : B^{i} \to B^{i + 1}$. 
 
-Two morphisms of complexes $\varphi^{\bullet} : A^{\bullet} \to B^{\bullet}$ and $\psi^{\bullet} : A^{\bullet} \to B^{\bullet}$. are **homotopic** if there is a sequence of maps $\omega^i : A^i \to B^{i - 1}$ such that $\varphi^i - \psi^i = \omega^{i + 1} f^i + g^{i - 1} \omega_{i}$. This is often abbreviated to $\varphi - \psi = \omega f + g \omega$ or even $\varphi - \psi = \omega d - d \omega$ (abusing notation to write $f$ and $g$ as $d$).
+Two morphisms of complexes $\varphi^{\bullet} : A^{\bullet} \to B^{\bullet}$ and $\psi^{\bullet} : A^{\bullet} \to B^{\bullet}$ are **homotopic** if there is a sequence of maps $\omega^i : A^i \to B^{i - 1}$ such that $\varphi^i - \psi^i = \omega^{i + 1} f^i + g^{i - 1} \omega_{i}$. This is often abbreviated to $\varphi - \psi = \omega f + g \omega$ or even $\varphi - \psi = \omega d - d \omega$ (abusing notation to write $f$ and $g$ as $d$).
 
 ##### _proposition:_ homotopic morphisms give the same map on homology
 
