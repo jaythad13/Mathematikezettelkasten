@@ -36,11 +36,72 @@ The first four exercises justify the equivalence of norms used in proving Ostrow
 	Prove the following lemma. If $\lVert \cdot \rVert$ is any norm on $\mathbb{Q}$ and $x \neq 1$, then $\{ x^{n} \}_{n \in \mathbb{N}}$ is a Cauchy sequence if and only if $\lVert x \rVert < 1$. Conclude that if $\lVert \cdot \rVert_{1}$ and $\lVert \cdot \rVert_{2}$ are two equivalent norms, then $\lVert x \rVert_{1} < 1 \iff \lVert x \rVert_{2} < 1$.
 \end{problem}
 
+\begin{solution}
+	Suppose $\lVert x \rVert < 1$. Consider any $\varepsilon > 0$. By choosing $N \in \mathbb{N}$ such that $\lVert x \rVert^{N} < \varepsilon / 2$, we get that $0 \le \lVert x \rVert^{n}, \lVert x \rVert^{m} < \varepsilon$ for any $n, m > N$. Thus, by the multiplicativity of the norm and the triangle inequality we have $\lVert x^{n} - x^{m} \rVert \le \lVert x \rVert^{n} + \lVert x \rVert^{m} < \varepsilon$. That is, $\{ x^{n} \}_{n \in \mathbb{N}}$ is Cauchy.
+
+	Suppose $\lVert x \rVert > 1$. Choose $N$ so that $\lVert x \rVert^{N} > 2$. Then we get that for all $n > m > N$
+	\begin{align*}
+		\lVert x^{n} - x^{m} \rVert & \ge \lVert x \rVert^{n} - \lVert x \rVert^{m} \\
+					    & > \lVert x \rVert^{n - m} (\lVert x \rVert^{m} - 1) \\
+					    & > 1^{n - m} (2 - 1) \\
+					    & > 1.
+	\end{align*}
+	Since $\lVert x^{n} - x^{m} \rVert$ is bounded below for all $n, m > N$, the sequence $\{ x^{n}	 \}_{n \in \mathbb{N}}$ is not Cauchy.
+
+	This gives the following desired chain of equivalences
+	\begin{align*}
+		\lVert x \rVert_{1} < 1 & \iff \{ x^{n} \}_{n \in \mathbb{N}} \text{ is Cauchy under }  \lVert \cdot \rVert_{1} \\
+					& \iff \{ x^{n} \}_{n \in \mathbb{N}} \text{ is Cauchy under } \lVert \cdot \rVert_{2} \\
+					& \iff \lVert x \rVert_{2} < 1.
+	\end{align*}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[(4)]
 	Suppose $\lVert \cdot \rVert_{1}$ and $\lVert \cdot \rVert_{2}$ are two equivalent norms on $\mathbb{Q}$. Show that there exists a real number $\alpha > 0$ such that $\lVert x \rVert_{1} = \lVert x \rVert_{2}^{\alpha}$ for all $x \in \mathbb{Q}$.
 \end{problem}
+
+\begin{solution}
+	We assume the norms are non-trivial.
+
+	Since the norms are multiplicative, it suffices to show that $\lVert n \rVert_{1} = \lVert n \rVert_{2}^{\alpha}$ for all positive integers $n \in \mathbb{N}$.
+
+	Suppose there exist positive integers $n$ with $\lVert n \rVert_{1} > 1$ and equivalently $\lVert n \rVert_{2} > 1$. Let $n_{0}$ be the minimal such positive integer. Choose $\alpha = \ln \lVert n_{0} \rVert_{1} / \ln \lVert n_{0} \rVert_{2}$ so that $\lVert n_{0} \rVert_{1} = \lVert n_{0} \rVert_{2}^{\alpha}$. 
+
+	Write each $n \in \mathbb{N}$ in base $n_{0}$ as $n = c_{0} + c_{1} n_{0} + \dots + c_{k} n_{0}^{k}$. Note that  $n_{0}^{k} \le n < n_{0}^{k + 1}$ and $c_{i} < n_{0}$. For one, this forces $\lVert c_{i} \rVert \le 1$ (by the minimality of $n_{0}$). Thus,
+	\begin{align*}
+		\lVert n \rVert_{1} & = \lVert c_{0} + c_{1} n_{0} + \dots + c_{k} n_{0}^{k} \rVert_{1} \\
+				& = \lVert c_{0} \rVert_{1} + \lVert c_{1} \rVert_{1} \lVert n_{0} \rVert + \dots + \lVert c_{k} \rVert_{1} \lVert n_{0} \rVert_{1}^{k} \\
+				& \le 1 + \lVert n_{0} \rVert_{1} + \dots + \lVert n_{0} \rVert_{1}^{k} \\
+				& = 1 + \lVert n_{0} \rVert_{2}^{\alpha} + \dots + \lVert n_{0} \rVert_{2}^{k \alpha} \\
+				& \le \lVert n_{0}^{k} \rVert^{\alpha} \sum_{i = 0}^{\infty} \frac{1}{\lVert n_{0} \rVert_{2}^{i \alpha}} \\
+				& \le C \lVert n \rVert_{2}^{\alpha}
+	\end{align*}
+	Note here that the constant $C$ does not depend on $n$. Thus, we have $\lVert n^{N} \rVert_{1} \le C \lVert n^{N} \rVert_{2}^{\alpha}$ for each $n, N \in \mathbb{N}$. It follows that $\lVert n \rVert_{1} \le C^{1 / N} \lVert n \rVert_{2}^{\alpha}$ for each (large) $N \in \mathbb{N}$, and thus, we can choose $C = 1$. Similarly, we can write
+	\begin{align*}
+		\lVert n \rVert_{1} & \ge \lVert n_{0}^{k + 1} \rVert_{1} - \lVert n_{0}^{k + 1} - n \rVert_{1} \\
+				    & \ge \lVert n_{0}^{k + 1} \rVert_{2}^{\alpha} - \lVert n_{0}^{k + 1} - n \rVert_{2}^{\alpha} \\
+				    & \ge \lVert n_{0}^{k + 1} \rVert_{2}^{\alpha} - (\lVert n_{0}^{k + 1} \rVert_{2} - \lVert n_{0}^{k} \rVert_{2}^{\alpha}) \\
+				    & = \lVert n_{0}^{k + 1} \rVert^{\alpha} (1 - (1 - 1 / n_{0})^{\alpha}) \\
+				    & > B \lVert n \rVert_{2}^{\alpha}
+	\end{align*}
+	By the same trick as previously, we can substitute $n^{N}$ in place of $n$ to get $\lVert n \rVert_{1} \ge \lVert n \rVert_{2}^{\alpha}$.
+
+	Now suppose $\lVert n \rVert_{1} \leq 1$ for all $n \in \mathbb{Z}$. Since the norm is not trivial, the set $\{ n \in \mathbb{N} \mid \lVert n \rVert_{1} < 1 \}$ is non-empty, and thus, has a least element, say $n_{0}$. We also have $n_{0}$ minimal such that $\lVert n_{0} \rVert_{2} < 1$. 
+
+	By the multiplicativity of the norm, $n_{0}$ must be prime. If $n_{0} = ab$, we would have (without loss of generality) $a < n_{0}$ and $\lVert a \rVert_{1}, \lVert a \rVert_{2} < 1$ contradicting the minimality of $n_{0}$. Choose $p = n_{0}$ and let $\alpha = \ln \lVert p \rVert_{1}  / \ln \lVert p \rVert_{2}$. Thus, $\lVert p \rVert_{1} = \lVert p \rVert_{2}^\alpha$. We want to show $\lVert n \rVert = \lVert n \lVert_{2}^\alpha$ in general. Again, by the multiplicativity of the norm, it suffices to show that $\lVert q \rVert_{1} = \lVert q \rVert_{2}^\alpha = 1$ for all primes $q \neq p$.
+
+Suppose by way of contradiction that there exists a prime $q \neq p$ with $\lVert q \rVert_{1}, \lVert q \rVert_{2} < 1$. Choose $N \in \mathbb{N}$ sufficiently large so that all of $\lVert p \rVert_{1}^{N}, \lVert p \rVert_{2}^{N}, \lVert q \rVert_{1}^{N}, \lVert q \rVert_{2}^{N}$ are less than $1 / 2$. Since $p^N$ and $q^N$ are relatively prime (by Bezout's theorem) we can write $a p^N + b q^N = 1$. However, $\lVert 1 \rVert = 1$ and
+
+\begin{align*}
+\lVert a p^N + b q^N \rVert & \leq \lVert a \rVert  \lVert p^N \rVert  + \lVert b \rVert  \lVert q^N \rVert  \\
+ & \leq \lVert p^N \rVert + \lVert q^N \rVert  \\
+ & < 1.
+\end{align*}
+
+Here we omit subscripts since the inequality holds for both norms. Recall that $\lVert a \rVert \leq 1$ and $\lVert b \rVert \leq 1$ and thus, the second inequality follows. This gives a contradiction, and so our assumption that there exists a prime $q \neq p$ with $\lVert q \rVert < 1$ is false.
+\end{solution}
 
 \pagebreak
 
