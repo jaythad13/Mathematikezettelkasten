@@ -1,0 +1,73 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+\setlist[enumerate, 1]{label = \arabic*.}
+
+\name{Jayden Thadani}
+\class{MATH 168 --- Algorithms}
+\assignment{Homework \#1}
+\duedate{10th September 2025}
+
+\begin{document}
+
+\begin{problem}[Problem 1: Tree stumpers]
+	AFter learning about Prim's and Kruskal's algorithms, your friends have been \emph{pining} for some alternative algorithms for finding minimum spanning trees. So they've designed their own! However, they don't know whether their new algorithms are correct or not. After unsuccessfully \emph{leafing} through algorithms textbooks, they are \emph{stumped}! So they've decided to \emph{branch out} and enlist your help determining whether their algorithms work.
+
+	One friend May B. So, suggests the following recursive algorithm, $\mathtt{MayBTree}(G)$:
+	\begin{enumerate}
+		\item If $G$ has only one vertex, return an empty tree.
+
+		\item Otherwise, arbitrarily split the graph in half, creating two subgraphs $Y$ and $Z$ of $G$ that each contain roughly half the vertices in $V$.
+
+		\item Recurse on each subgraph to get one tree for each,  $S = \mathtt{MayBTree}(Y)$ and $T = \mathtt{MayBTree}(Z)$.
+
+		\item Find the lowest-cost edge $e$ in the original graph such that one endpoint is in $T$ and the other is in $Z$. Return $S + T + \{ e \}$.
+	\end{enumerate}
+	Another friend, Pe'er Haps, suggests the following algorithm, $\mathtt{PeerTree}(G)$:
+	\begin{enumerate}
+		\item As in Kruskal's algorithm, we begin by treating each vertex $v_{i}$ of $G$ as if it occupies its own component $C_{i}$.
+
+		\item Start with an empty set of edges $T = \{  \}$. $\mathtt{PeerTree}$ then proceeds in rounds. Each round proceeds as follows:
+			\begin{enumerate}
+				\item Every component identifies the minimum-weight edge that has one edge in the component and one edge in a different component. (Call this a \emph{least weight outgoing edge}).
+
+				\item Add all the least weight outgoing edges to $T$. Adding edges reduces the number of components as in Kruskal's algorithm.
+
+				\item Repeat until there is only one ocmponent remaining, then return the edge set $T$.
+			\end{enumerate}
+	\end{enumerate}
+
+	For each proposed algorithm either prove that it is correct or provide a graph as a counterexample. If you give a counterexample,
+	\begin{itemize}
+		\item Explain why the algorithm might produce a specific tree that is not minimal give your example as input.
+
+		\item Identify an edge in the produced non-minimal spanning tree that violates the cut property.
+	\end{itemize}
+
+	If you prove the algorithm correct, you should clearly explain why the algorithm always chooses edges satisfying the cut property. You may assume that the graph $G + (V, E, w)$ always has distinct edge weights.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Problem 2: Advanced greed: Fibonacci changemaking]
+	Pasadenna Institute of Technology is considering introducing a new campus-only currency, PFFT ,that uses coin denominations that are Fibonacci numbers. The PFFT currency system comprises coins $F_{2}, \dots, F_{k}$ for some fixed $k$. In this problem, you'll show that the greedy algorithm for making change is optimal in the sense that it uses the least possible number of coins given these denominations.
+
+	\begin{enumerate}
+		\item First, you'll need to make some observations about what an optimal solution looks like. Assume that our coins are $F_{2}, F_{3}, \dots, F_{k}$.
+			\begin{enumerate}
+				\item Prove that no optimal solution uses two consecutive coin types $F_{i}$ and $F_{i + 1}$ for $i + 1 < k$.
+
+				\item Prove that  $2 F_{i} = F_{i + 1} + F_{i - 2}$ for $i \ge 2$.
+
+				\item Prove that there exists some optimal solution that does not use two or more coins with value $F_{i}$ for any $i < k$.
+			\end{enumerate}
+
+		\item Next we'll need some identities that we'll use in our proof. Prove the following identity. For all $i \ge 1$,
+			\[
+				F_{1} + F_{3} + F_{5} + \dots + F_{2i - 1} = F_{2i}.
+			\]
+
+		\item Finally, use the safe choice method to prove that the greedy algorithm always gives an optimal solution for a Fibonacci denomination system with coin values $F_{2}, F_{3}, \dots, F_{k}$ for any fixed constant $k \ge 2$.
+	\end{enumerate}
+\end{problem}
+
+\end{document}
