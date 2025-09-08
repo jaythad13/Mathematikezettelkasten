@@ -47,7 +47,6 @@ A **short exact sequence** is an exact sequence of the form
 4) $0 \to A \to B \to 0$ is exact if and only if $A \to B$ is an isomorphism.
 5) $0 \to A \to B \to C$ is exact if and only if $A \to B$ is the kernel of $B \to C$
 
-
 ### The (abelian) category of complexes
 
 We can define morphisms of complexes, and even add and subtract them. In fact, they form an abelian category.
@@ -69,4 +68,3 @@ A morphism of complexes $\varphi : A^{\bullet}$ and $B^{\bullet}$ (defined by $f
 $\mathsf{Com}_{\mathscr{C}}$, the category of complexes over an abelian category $\mathscr{C}$ is an abelian category.
 
 Note that essentially the same argument proves that the functor category $\mathscr{C}^{\mathscr{I}}$ is an abelian category for $\mathscr{I}$ small and $\mathscr{C}$ abelian.
-

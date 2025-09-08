@@ -47,6 +47,9 @@ Similarly, for each $B$, there is a map $\varepsilon_{B} : FG(B) \to B$ so that 
 
 ###### _proof:_
 
+>[!warning]
+>incomplete
+
 Note that for each $g : F(A) \to B$ the following diagram must commute
 ```tikz
 \usepackage{tikz-cd}
