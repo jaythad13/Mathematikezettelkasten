@@ -7,6 +7,7 @@ tags:
 - math-177/1
 - math-177/2
 - math-177/4
+- math-177/5
 ---
 
 The $p$-adics generalise two notions that we know, each in the direction of the other.
@@ -184,7 +185,37 @@ There exists $x \in \mathbb{Q}_{p}^\times$ such that no integer $n \in \mathbb{Z
 
 Notice that every integer has $p$-adic absolute value at most $1$, since they have $p$-adic valuation at least $0$. Thus, $1 / n$ has $p$-adic absolute value at least $1$. Alternatively, bound $\lvert n \rvert_{p} \leq \lvert 1 \rvert_{p} = 1$ using the strong triangle inequality. Choose $x$ to be any integer divisible by $p$ (and thus, having absolute value less than $1$). There is no $1 / n$ with absolute value less than it.
 
-Now it remains to show that $\mathbb{Q}_{p}$ is indeed an analytic completion. We also want to show that the identification (hopefully isometry) between $\mathbb{Q}_{p}$ and $\overline{\mathbb{Q}}_{\lvert \cdot \rvert_{p}}$ respects the field structures of both of them.
+Now it remains to show that $\mathbb{Q}_{p}$ is indeed a analytic [[Analysis --- math-131/notes/Cauchy sequences and completeness#_definition _ completion of a metric space|(metric) completion]]. We also want to show that the identification (hopefully isometry) between $\mathbb{Q}_{p}$ and $\overline{\mathbb{Q}}_{\lvert \cdot \rvert_{p}}$ respects the field structures of both of them. 
+
+In particular, we define addition in $\overline{\mathbb{Q}}_{\lvert \cdot \rvert_{p}}$ by pointwise addition of sequences. It is shown [[p-adic numbers --- math-177/attachments/homework/hw 2/hw 2.pdf|in the homework]] that this is well-defined — both in that the pointwise sum and product of Cauchy sequences are Cauchy and that it respects [[Analysis --- math-131/notes/Cauchy sequences and completeness#_definition _ equivalence in completion (of Cauchy sequences)|equivalence in completion]]. The additive and multiplicative identities are the equivalence classes of Cauchy sequences converging to $0$ and $1$ respectively. While the additive inverse is just the pointwise additive inverses, we have to be careful about avoiding zeroes in the Cauchy sequence. Specifically, the inverse of a (not-zero) sequence $\{ a_{n} \}_{n \in \mathbb{N}}$ is $\{ b_{n} \}_{n \in \mathbb{N}}$ given by $b_{n} = 1 / a_{n}$ if $a_{n} \neq 0$ and $b_{n} = 0$ if $a_{n} = 0$. It is not immediately obvious that this sequence has to be Cauchy. We show this two different senses of well-definedness for multiplication and multiplicative inverses here, and leave most else to homework and faith.
+
+##### _proposition:_ multiplication is well-defined
+
+If $\{ a_{n} \}_{n \in \mathbb{N}} \sim \{ a_{n}' \}_{n \in \mathbb{N}}$ and $\{ b_{n} \}_{n \in \mathbb{N}} \sim \{ b_{n}' \}_{n \in \mathbb{N}}$ are Cauchy sequences, then $\{ a_{n} b_{n} \}_{n \in \mathbb{N}}$ and $\{ a_{n}' b_{n}' \}_{n \in \mathbb{N}}$ are equivalent Cauchy sequences.
+
+###### _proof sketch:_
+
+Write
+$$
+\lVert a_{n} b_{n} - a_{n}' b_{n}' \rVert = \lVert a_{n} b_{n} - a_{n} b'_{n} + a_{n} b_{n}' + a_{n}' b_{n}' \rVert \le \lVert a_{n} \rVert \lVert b_{n} - b'_{n} \rVert  + \lVert a_{n} - a_{n}' \rVert \lVert b_{n}' \rVert .
+$$
+Since [[Analysis --- math-131/notes/Cauchy sequences and completeness#_lemma _ Cauchy sequences are bounded|Cauchy sequences are bounded]], this goes to zero.
+
+##### _proposition:_ multiplicative inverses are Cauchy
+
+If $\{ a_{n} \}_{n \in \mathbb{N}} \not \sim 0$ is a Cauchy sequence with $a_{n} \neq 0$, then $\{ b_{n} \}_{n \in \mathbb{N}}$ is a Cauchy sequence for $b_{n} = 1 / a_{n}$ when $a_{n} \neq 0$ and else $b_{n} = 0$.
+
+###### _proof:_
+
+Since $\{ a_{n} \}_{n \in \mathbb{N}} \not \sim 0$, we have $a_{n} \not \to 0$. By Cauchy-ness, there is some $\delta > 0$ and some $N \in \mathbb{N}$ such that for all $n > N$ we have $\lVert a_{n} \rVert \geq \delta > 0$ (since the sequence terms come close together, if it keeps breaking convergence to $0$, then eventually all of them break convergence and are bounded away from $0$). Thus, $\lVert b_{n} \rVert$ is bounded above by $1 / \delta$ and there are only finitely many $b_{n} = a_{n} = 0$.
+
+For any $\varepsilon > 0$ there is some $M \in \mathbb{N}$ such that $m, n > M$ forces $\lVert a_{n} - a_{m} \rVert < \delta^{2} \varepsilon$. Thus,
+$$
+\left\lVert  \frac{1}{a_{n}} - \frac{1}{a_{m}}  \right\rVert = \frac{\lVert a_{n} - a_{m} \rVert}{\lVert a_{n} \rVert \lVert a_{m} \rVert } < \frac{ \delta^{2}\varepsilon}{\delta^{2}} = \varepsilon.
+$$
+for all $m, n > \max M, N$ (note that $N > \# \{ b_{n} = 0 \}$).
+
+Clearly $\{ a_{n} b_{n} \}_{n \in \mathbb{N}}$ is eventually constant at $1$, and so is in the equivalence class of the multiplicative identity on $\overline{\mathbb{Q}}_{\lvert \cdot \rvert_{p}}$.
 
 ##### _theorem:_ $\mathbb{Q}_{p}$ is a metric completion
 
@@ -239,47 +270,3 @@ $$
 It follows from induction that the last two sums are divisible by $p$ (or in general, for top index $n$, divisible by $n + 1$) and thus, that the sum does not depend on $x$.
 
 Note what we did here really needed $\mathbb{Q}_{p}$ as an algebraic and as an analytic structure! We used the analytic structure to get convergence of series that don't converge in $\mathbb{R}$ and to throw away all the information apart from modulo $p^{3}$. We also used the algebraic fact that $\mathbb{Z}$ and $\mathbb{Q}$ embed nicely in $\mathbb{Q}_{p}$ to mean that we could do all of the work in $\mathbb{Q}_{p}$ and actually recover values in $\mathbb{Z}$.
-
-### The topology of the $p$-adic numbers
-
-The topology that the $p$-adic norm induces on $\mathbb{Q}_{p}$ and $\mathbb{Z}_{p}$ is terrifying. In particular, $\mathbb{Z}_{p}$ is an open, compact subset of the non-compact set $\mathbb{Q}_{p}$, and both of them are totally disconnected. In fact, all open balls are actually clopen! This is nothing like $\mathbb{Z} \subseteq \mathbb{R}$ where $\mathbb{Z}$ is non-compact and closed and $\mathbb{R}$ has lots of connected sets.
-
-##### _lemma:_ open balls are clopen
-
-For any $x \in \mathbb{Q}_{p}$, the open ball of radius $r$, centred at $x$
-$$
-B(x, r) = \{ y \in \mathbb{Q}_{p} \mid \lvert y - x \rvert _{p} < r \}
-$$
-is also closed.
-
-###### _proof:_
-
-Note of course that by the definition of a metric topology, this ball is open. We just need to show it is closed. We will show (equivalently) that [[Topology --- math-147/notes/Limit points and closed sets#_theorem _ closed sets are complements of open sets|its complement is open]]. 
-
-[[Topology --- math-147/notes/Topologies#_proposition, definition _ checking openness by neighbourhood, neighbourhood|It suffices]] to give a disjoint ball $B(y, \rho) \subseteq \mathbb{Q}_{p} \setminus B(x, r)$ for each point $y$ in the complement of $B(x, r)$. Consider for each $y \in \mathbb{Q}_{p} \setminus B(x,r )$ the points $z \in \mathbb{Q}_{p}$ with $\lvert z - y \rvert_{p} < \lvert x - y \rvert_{p}$. Since $\lvert z - x \rvert_{p} = \lvert (z - y) - (y - x) \rvert_{p} > \lvert x - y \rvert_{p}$, we have $\lvert z - x \rvert_{p} > \lvert x - y \rvert_{p} \geq r$. Thus, choosing any $\rho < \lvert x - y \rvert_{p}$ gives $B(y, \rho) \subseteq \mathbb{Q}_{p} \setminus B(x, r)$.
-
-##### _proposition:_ the $p$-adics are totally disconnected
-
-$\mathbb{Z}_{p}$ and $\mathbb{Q}_{p}$ are totally disconnected — there are no connected subsets of either that are not singletons or the empty set.
-
-###### _proof:_
-
-Suppose $A \subseteq \mathbb{Q}_{p}$ has cardinality $\# A \geq 2$. Let $x, y \in A$ be distinct points. [[Topology --- math-147/notes/Connectedness and path-connectedness#_proposition _ conditions equivalent to connectedness|It suffices]] to show that $A$ has a non-trivial ([[Topology --- math-147/notes/Subspaces#_definition _ subspace topology|relatively]]) clopen subset. For any $r < \lvert x - y \rvert_{p}$, the set $A \cap B(x, r)$ is an example.
-
-##### _proposition:_ topological properties of $\mathbb{Z}_{p}$ in $\mathbb{Q}_{p}$
-
-$\mathbb{Z}_{p} \subseteq \mathbb{Q}_{p}$ is an open compact subset.
-
-###### _proof:_
-
-First we show $\mathbb{Z}_{p}$ is open. Again, it suffices to show each integer is the centre of a metric ball contained in $\mathbb{Z}_{p}$. We claim this is the metric ball of radius $1$.
-
-Recall the characterisation of $x \in \mathbb{Z}_{p}$ as exactly those $x \in \mathbb{Q}_{p}$ with $\lvert x \rvert_{p} \leq 1$. For each $x \in \mathbb{Z}_{p}$ consider the metric ball $B(x, 1)$. If $y \in B(x, 1)$, then $\lvert y - x \rvert_{p} < 1$. Thus,
-$$
-\lvert y \rvert _p = \lvert (y - x) + x \rvert_{p} \leq \max \{ \lvert y - x \rvert_{p}, \lvert x \rvert_{p}  \} \leq 1
-$$
-and $y \in \mathbb{Z}_{p}$.
-
-We show compactness as sequential compactness — that every infinite subset has a limit point (or every sequence has a [[Analysis --- math-131/notes/Sequences and convergence#_theorem, definition _ subsequential limits|subsequential limit]]), [[Analysis --- math-131/attachments/homework/hw 5/hw 5.pdf|implying compactness]]. 
-
-Write $\{ x_{n} \}_{n \in \mathbb{N}}$ for some arbitrary sequence of $x_{n} \in \mathbb{Z}_{p}$. Note that for each exponent $e$, the set of possible residue classes modulo each $p^i$ for $i$ at most $e$ is finite. As a result, there is a $p$-adic integer $u$, given by residue sequence $(u_{i})_{i \in \mathbb{N}}$, with infinitely many $x_{n}$ agreeing under each $\mathbb{Z}_{p} \twoheadrightarrow{} \mathbb{Z} / p^e / \mathbb{Z}$. Choose a subsequence $\{ x_{n_{k}} \}_{k \in \mathbb{N}}$ with $x_{n_{k}}$ agreeing with $u$ under $\mathbb{Z}_{p} \twoheadrightarrow{} \mathbb{Z} / p^k \mathbb{Z}$. Thus, $\lvert x_{n_{k}} - u \rvert_{p} \leq p^{-k} \to 0$ as $k \to \infty$. That is, $x_{n_{k}} \to u$. 
