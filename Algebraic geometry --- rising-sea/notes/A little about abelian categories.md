@@ -83,7 +83,13 @@ In some really nice abelian categories, the last two conditions are saying the f
 
 The **image** of a morphism $f : A \to B$ is $\operatorname{img} f = \ker (\operatorname{coker} f)$.
 
-$f$ factors uniquely through $\operatorname{img} f \to B$ whenever it exists. $A \to \operatorname{img} f$ is an epimorphism and the cokernel of $\ker f \to A$. These are not easy to prove
+##### _proposition:_ facts about images
+
+$f$ factors uniquely through $\operatorname{img} f \to B$ whenever it exists.
+
+$A \to \operatorname{img} f$ is an epimorphism and the cokernel of $\ker f \to A$. 
+
+These are not easy to prove
 
 ##### _definition:_ quotients
 

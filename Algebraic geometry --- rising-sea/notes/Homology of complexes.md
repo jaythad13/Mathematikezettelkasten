@@ -30,6 +30,36 @@ If the complex is indexed in increasing order the indices are written as supersc
 
 We often write the dimensions of $H_{i}$ and $H^i$ as $h_{i}$ and $h^i$ respectively.
 
+This definition naturally means that just as an [[Algebraic geometry --- rising-sea/notes/Complexes and exactness#_proposition _ factoring long exact sequences|exact sequence factors into short exact sequences]], we can factor a complex $A^{\bullet}$ into (pairs of) short exact sequences as below.
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		0 \ar[r] & \ker f^i \ar[r] & A^i \ar[r] & \mathrm{img} \, f^i \ar[r] & 0 \\
+		0 \ar[r] & \mathrm{img} \, f^{i - 1} \ar[r] & \ker f^i \ar[r] & H^i(A^\bullet) \ar[r] & 0
+	\end{tikzcd}
+\end{document}
+```
+
+However, less obvious is that homology can be used to factor a complex into exact sequences involving cokernels instead. This gives a dual definition of homology.
+
+##### _proposition:_ dually factoring complexes into short exact sequences
+
+A complex $A^\bullet$ given by $f^i : A^i \to A^{i + 1}$, is uniquely determined by (pairs of) short exact sequences as below.
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		0 \ar[r] & \mathrm{img} \, f^i \ar[r] & A^{i + 1} \ar[r] & \mathrm{coker} \, f^{i} \ar[r] & 0 \\
+		0 \ar[r] & H^i(A^\bullet) \ar[r] & \mathrm{coker} \, f^{i - 1} \ar[r] & \mathrm{img} f^i \ar[r] & 0
+	\end{tikzcd}
+\end{document}
+```
+
+Thus, homology is a sort of invariant of the complex. Another sense in which the homology is an invariant of the complex is by taking "the [[Simplicial homology and random walks --- math-145/notes/Whitehead equivalence#_definition _ the Euler characteristic|Euler characteristic]]".
+
 ##### _proposition:_ calculating the Euler characteristic of a complex
 
 Suppose $A^{\bullet}$ is
@@ -46,6 +76,11 @@ a complex of finite-dimensional $\mathbb{F}$-vector spaces. Then
 $$
 \sum_{i = 1}^n (-1) \dim A^i = \sum_{i = 1}^n h^i.
 $$
+
+### Abstract nonsense properties of homology
+
+Homology also plays fairly nicely with the structure of complexes. For one, it is functorial.
+
 ##### _proposition:_ homology is functorial
 
 A [[Algebraic geometry --- rising-sea/notes/Complexes and exactness#_definition _ morphisms of complexes|morphism of complexes]] $A^{\bullet} \to B^{\bullet}$ induces a morphism of (co)homology $H^i(A^{\bullet}) \to H^{i}(B^{\bullet})$ (for each $i$) such that $H^i$ is a (covariant) [[Algebraic geometry --- rising-sea/notes/Functors#_definition _ (covariant, contravariant) functors|functor]] $\mathsf{Com}_{\mathscr{C}} \to \mathscr{C}$.
@@ -61,6 +96,8 @@ Two morphisms of complexes $\varphi^{\bullet} : A^{\bullet} \to B^{\bullet}$ and
 ##### _proposition:_ homotopic morphisms give the same map on homology
 
 Two homotopic maps $A^{\bullet} \to B^{\bullet}$ give the same map $H^i(A^{\bullet}) \to H^i(B^{\bullet})$ on homology.
+
+Homology also plays nicely with exactness.
 
 ##### _theorem:_ short to long exact sequence
 
