@@ -32,11 +32,9 @@ When $S = \{ 1, f, f^{2}, \dots \}$ for an element $f \in A$, we denote $S^{-1} 
 
 When $S = A \setminus \mathfrak p$ for a [[Abstract algebra --- math-171/notes/Prime and maximal ideals#_definition _ prime ideals|prime ideal]] $\mathfrak p$, we denote $S^{-1} A$ by $A_{\mathfrak p}$ and call it the localisation at the prime. Note that then if the ideal $(f)$ is prime, $(f)^{-1} A = A_{f} \neq A_{(f)}$.
 
-Finally if $A$ is an [[Abstract algebra --- math-171/notes/Integral domains#_definition _ integral domain|integral domain]] and $S = A \setminus \{ 0 \}$ we call  the fraction field of  and denote it by $K(A)$. 
+If $A$ is any ring and $S$ is the set of non-zero-divisors, then $S^{-1} A$ is called the total quotient ring of $A$ (since $S$ is the maximal multiplicative set such that $S^{-1} A \neq 0$). This is denoted by $Q(A)$. If $A$ is an [[Abstract algebra --- math-171/notes/Integral domains#_definition _ integral domain|integral domain]] then $Q(A)$ is a field called the fraction field of $A$.
 
-In general if $A$ is any ring and $S$ is the set of non-zero-divisors, then $S^{-1} A$ is called the total quotient ring of $A$ (since $S$ is the maximal multiplicative set such that $S^{-1} A \neq 0$). This is denoted by $Q(A)$
-
-Note that there is a canonical ring map $A \to S^{-1} A$ by $a \mapsto a / 1$, and if $0 \in S$, $S^{-1} A$ is the trivial ring. When $S$ doesn't contain zero divisors, the map is injective. In particular $A \to K(A)$ is injective. However, this is not true otherwise.
+Note that there is a canonical ring map $A \to S^{-1} A$ by $a \mapsto a / 1$, and if $0 \in S$, $S^{-1} A$ is the trivial ring. When $S$ doesn't contain zero divisors, the map is injective. In particular $A \to Q(A)$ is injective. However, this is not true otherwise.
 
 ##### _proposition:_ injectivity of the localisation map
 
