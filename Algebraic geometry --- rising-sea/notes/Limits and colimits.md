@@ -118,9 +118,25 @@ Given morphisms $X_{1}, X_{2} \to Y$ and a morphism $Y \to Z$, (assuming they bo
 
 ###### _proof:_
 
-$X_{1} \times_{Y} X_{2}$ is the limit of this diagram by the universal property of the fibred product.
+$X_{1} \times_{Y} X_{2}$ is the limit of this diagram by the definition of the [[Algebraic geometry --- rising-sea/notes/Fibred products#_definition _ fibred product|fibred product]]. Any other $P'$ with a map into the diagram has then maps into $X_{1}$ and $X_{2}$ agreeing on $Y$, and thus, by the definition of the fibred product, a map $P' \to X_{1} \times_{Y} X_{2}$ that the maps to the $X_{i}$ factor through, and thus, that the maps to $Y$ and $Z$ factor through.
 
->[!missing]
+It's not difficult to verify that $Y \times_{Y \times_{Z} Y} (X_{1} \times_{Z} X_{2})$ has map into the diagram. We just show that every map into the diagram factors through this. 
+
+Suppose $P'$ has a map into the diagram. Then it has maps $P' \to X_{i} \to Y$ agreeing on composition to $Z$. Since the map $Y \to Y$ defining $Y \to Y \times_{Z} Y$ is just the identity, we have that $P' \to Y \to Y \times_{Z} Y$ is the unique map $P' \to Y \times_{Z} Y$ that $P' \to Y$ factors through. Since the $P' \to X_{i}$ agree on composition to $Z$, we have a map $P' \to X_{1} \times_{Z} X_{2}$ that they factor through. The map $X_{1} \times_{Z} X_{2} \to Y \times_{Z} Y$ is just the map that the maps $X_{1} \times_{Z} X_{2} \to X_{i} \to Y$ factor through. Thus, $P' \to X_{1} \times_{Z} X_{2} \to Y \times_{Z} Y$ is also the map that $P' \to Y$ factors through. That is, the following square commutes.
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		P' \ar[r] \ar[d] & X_{1} \times_{Z} X_{2} \ar[d] \\
+		Y \ar[r] & Y \times_{Z} Y
+	\end{tikzcd}
+\end{document}
+```
+
+Thus, there is map $P' \to Y \times_{Y \times_{Z} Y} (X_{1} \times_{Z} X_{2})$ and by definition, the maps $P' \to X_{i}$ factor through it.
+
+---
 
 Note of course that the real difference between this and the prior proof of diagonal base change is that we constructed the isomorphism going the other way.
 
