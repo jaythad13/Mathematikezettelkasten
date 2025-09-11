@@ -11,3 +11,5 @@ $$
 \operatorname{Ann}_{A} M = \{ a \in A \mid a M = 0 \}.
 $$
 We omit the subscript when the ring is clear.
+
+---

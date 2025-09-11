@@ -18,6 +18,8 @@ Let $\mathfrak{i} = \varphi^\text{pre}(\mathfrak{p})$. It's not difficult to sho
 
 Note that we have a map $\pi \circ \varphi : A \to B \to B / \mathfrak{p}$. We claim contained is the kernel. Its image is within $\mathfrak{p}$, which is sent to $0$ by $B \to B / \mathfrak{p}$, so it is within the kernel. Conversely, if $a \in \ker \pi \circ \varphi$, then either $\varphi(a) \in \ker \pi = \mathfrak{p}$ or $\varphi(a) = 0 \in \mathfrak{p}$. Either way, $a \in \varphi^\text{pre}(\mathfrak{p})$. By the [[Abstract algebra --- math-171/notes/Ring isomorphism theorems#_theorem _ the first isomorphism theorem|first isomorphism theorem]], $A / \varphi^\text{pre}(\mathfrak{p}) \to B / \mathfrak{p}$ is an isomorphism. [[Abstract algebra --- math-171/notes/Prime and maximal ideals#_proposition _ prime ideals have integral domains as quotients|Since]] $\mathfrak{p}$ is prime, $B / \mathfrak{p}$ is an [[Abstract algebra --- math-171/notes/Integral domains#_definition _ integral domain|integral domain]]. Thus, $A / \varphi^\text{pre}(\mathfrak{p}) \cong B / \mathfrak{p}$ is an integral domain and conversely $\varphi^\text{pre}(\mathfrak{p})$ is prime.
 
+---
+
 This generalises to general ideals — the same proof shows that ideals pull back.
 
 ##### _definition:_ contraction
@@ -25,6 +27,8 @@ This generalises to general ideals — the same proof shows that ideals pull ba
 If $\varphi : A \to B$ is a ring homomorphism and $\mathfrak{i} \subseteq B$ is an ideal, then $\varphi^\text{pre}(\mathfrak{i})$ is an ideal of $A$, called the **contraction** of $\mathfrak{i}$ (under $\varphi$).
 
 The contraction of $\mathfrak{i}$ is sometimes denoted $\mathfrak{i}^\text{c}$.
+
+---
 
 ### Extension
 
@@ -36,4 +40,6 @@ IF $\mathfrak{i} \subseteq A$ is an ideal and $\varphi : A \to B$ a ring homomor
 
 It is sometimes denoted $\mathfrak{i}^\text{e}$.
 
-Even when it does work, it isn't quite so nice. For example, $\mathfrak{m} \subseteq A$ maximal doesn't necessitate $\varphi^\text{img}(\mathfrak{m}) \subseteq B$ maximal — consider $(7) \subseteq \mathbb{Z}$ sent to all of $\mathbb{Z} / (12)$ under the map $\mathbb{Z} \to \mathbb{Z} / (12)$.
+---
+
+Even pushing ideals forward does work, it isn't quite so nice. For example, $\mathfrak{m} \subseteq A$ maximal doesn't necessitate $\varphi^\text{img}(\mathfrak{m}) \subseteq B$ maximal — consider $(7) \subseteq \mathbb{Z}$ sent to all of $\mathbb{Z} / (12)$ under the map $\mathbb{Z} \to \mathbb{Z} / (12)$.

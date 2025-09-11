@@ -10,7 +10,7 @@ tags:
 
 One very important example of a definition by [[Algebraic geometry --- rising-sea/notes/Universal properties and why categories?|universal property]] is that of localisation (of [[Abstract algebra --- math-171/notes/Rings#What's a ring?|(commutative, unital) rings]] and modules). Recall the constructive definition of localisation as follows:
 
-![[Commutative algebra --- math-189AA/notes/Localisation#What is localisation?|Localisation]]
+![[Commutative algebra --- math-189AA/notes/Localisation of a ring#What is localisation?|Localisation]]
 
 ##### _proposition:_ the universal property of localisation
 

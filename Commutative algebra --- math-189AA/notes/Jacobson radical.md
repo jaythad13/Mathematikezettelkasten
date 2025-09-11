@@ -12,8 +12,12 @@ We want a predictable algebraic structure that describes unitness. The Jacobson 
 
 The **Jacobson radical** $\mathfrak{R}_{A}$ of a ring $A$ is the intersection of all [[Abstract algebra --- math-171/notes/Prime and maximal ideals#_definition _ maximal ideal|maximal ideals]] of $A$.
 
+---
+
 ##### _proposition:_ characterising the Jacobson radical
 
 $x \in \mathfrak{R}_{A}$ if and only if $1 - a x$ is a unit in $A$ for every $a \in A$.
 
-Thus, in the situation that the ring has only one maximal ideal (the case of a [[Local rings|local ring]]) we have the nice picture that all the non-units are in the maximal ideal $\mathfrak{m}$ and all the units are in $A \setminus \mathfrak{m}$.
+---
+
+Thus, in the situation that the ring has only one maximal ideal (the case of a [[Local rings|local ring]]) we have the nice picture that all the non-units are in the maximal ideal $\mathfrak{m}$ and all the units are in $A \setminus \mathfrak{m}$. This rests on the fact that $\mathfrak{m} = \mathfrak{R}$. Then any $a \in A \setminus \mathfrak{m}$ has $b \in A \setminus \mathfrak{m}$ such that $ab + \mathfrak{m} = 1 + \mathfrak{m}$ in the quotient field. Thus, $ab = 1 + x$ with $x \in \mathfrak{m}$ and is a unit. Thus, $a$ is a unit.

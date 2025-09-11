@@ -10,7 +10,9 @@ A local ring is the [[Commutative algebra --- math-189AA/notes/Jacobson radical|
 
 A **local ring** is a ring with a unique [[Abstract algebra --- math-171/notes/Prime and maximal ideals#_definition _ maximal ideal|maximal ideal]] ideal.
 
-We sometimes specify this ideal with the ring — we might say $A, \mathfrak{m}$ is a local ring
+We sometimes specify this ideal with the ring — $A, \mathfrak{m}$ is a local ring
+
+---
 
 However, there's a problem — not all rings are local. Local-ity is not even preserved by polynomial extension.
 
