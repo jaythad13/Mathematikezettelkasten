@@ -2,6 +2,7 @@
 tags:
 - math-189AA/4
 - math-189AA/5
+- math-189AA/6
 - comm-alg
 ---
 
@@ -114,11 +115,23 @@ Primes ideals $\mathfrak{q} \subseteq S^{-1} A$ are in bijection with primes in 
 
 ---
 
-We can understand the ideals of $S^{-1} A$ better with [[Commutative algebra --- math-189AA/notes/Annihilators#_definition _ annihilator|annihilators]]. If $\operatorname{Ann}_{A} \mathfrak{i}$ is not a subset of $A \setminus S$, then $S^{-1}\mathfrak{i}$ is annihilated by some unit in $S^{-1} A$, and thus, is just $0$.
+We can understand the ideals of $S^{-1} A$ better with [[Commutative algebra --- math-189AA/notes/Annihilators#_definition _ annihilator|annihilators]]. 
 
-##### _example:_ $(\mathbb{Z} / (6))_{(2)}$
+##### _proposition:_ annihilators in the multiplicative subset annihilate the ideal in localisation
 
+If $\operatorname{Ann}_{A} \mathfrak{i}$ is not a subset of $A \setminus S$, then $S^{-1}\mathfrak{i}$ is just $0$.
 
+###### _proof sketch:_
+
+$S^{-1} \mathfrak{i}$ is annihilated by some unit in $S^{-1} A$, and thus, is just $0$.
+
+---
+
+##### _example:_ $(\mathbb{Z} / (6))_{(2)} = \mathbb{Z} / (2)$
+
+Then since $3 \in \operatorname{Ann}_{A} (2)$ and $3 \not\in (2)$ we have $S^{-1} (2) = 0$. Then $1, 3, 5$ all differ by multiples of $(2)$ so differ by $0$. Thus, everything is ratios of $0$ and $1$ — this is the field with two elements.
+
+---
 
 ### Algebro-geometric intuition for localisation
 
