@@ -10,7 +10,7 @@
 \begin{document}
 
 \begin{problem}[Problem 1: Tree stumpers]
-	AFter learning about Prim's and Kruskal's algorithms, your friends have been \emph{pining} for some alternative algorithms for finding minimum spanning trees. So they've designed their own! However, they don't know whether their new algorithms are correct or not. After unsuccessfully \emph{leafing} through algorithms textbooks, they are \emph{stumped}! So they've decided to \emph{branch out} and enlist your help determining whether their algorithms work.
+	After learning about Prim's and Kruskal's algorithms, your friends have been \emph{pining} for some alternative algorithms for finding minimum spanning trees. So they've designed their own! However, they don't know whether their new algorithms are correct or not. After unsuccessfully \emph{leafing} through algorithms textbooks, they are \emph{stumped}! So they've decided to \emph{branch out} and enlist your help determining whether their algorithms work.
 
 	One friend May B. So, suggests the following recursive algorithm, $\mathtt{MayBTree}(G)$:
 	\begin{enumerate}
@@ -32,7 +32,7 @@
 
 				\item Add all the least weight outgoing edges to $T$. Adding edges reduces the number of components as in Kruskal's algorithm.
 
-				\item Repeat until there is only one ocmponent remaining, then return the edge set $T$.
+				\item Repeat until there is only one component remaining, then return the edge set $T$.
 			\end{enumerate}
 	\end{enumerate}
 
@@ -44,12 +44,37 @@
 	\end{itemize}
 
 	If you prove the algorithm correct, you should clearly explain why the algorithm always chooses edges satisfying the cut property. You may assume that the graph $G + (V, E, w)$ always has distinct edge weights.
+	\begin{enumerate}[label = \alph*.]
+		\item Prove $\mathtt{MayBTree}$ correct or give a counterexample.
+		\item Prove $\mathtt{PeerTree}$ correct or give a counterexample.
+	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}[label = \alph*.]
+		\item $\mathtt{MayBTree}$ does not always work. Consider the counterexample below.
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width = 0.75 \textwidth]{figures/P1 MayB cxeg}
+				\caption{A graph $G$ for which $\mathtt{MayBTree}(G)$ is not a minimal spanning tree. Each bubble indicates a recursive step of the algorithm, with arbitrary splitting into subgraphs indicated in blue, and the minimal edges connecting them indicated in red.}
+			\end{figure}
+
+			Essentially, the algorithm doesn't work because the minimal weight edge in a subgraph $Y \subseteq G$, connecting two complementary subgraphs $Z_{1}, Z_{2}$ of $Y$, is only a minimal weight edge spanning a cut of $Y$ (namely the cut $Z_{1}, Z_{2}$). However, it may not be a minimal weight edge spanning a cut of $G$. In this example, the edge with weight $4$ is the minimal weight edge spanning a cut of the subgraph just containing just the vertices $A$ and $E$, but is not the minimal weight edge spanning any cut of $G$.
+
+		\item $\mathtt{PeerTree}$ is correct. An indirect proof of this is as follows --- every least weight outgoing edge is also the minimum weight edge between the two components it connects. Thus, always choosing the least weight outgoing edge is always a valid choice for an edge in Kruskal's algorithm. Since Kruskal's algorithm is correct, so is $\mathtt{PeerTree}$.
+
+			A more direct proof is as follows.
+
+			We claim $\mathtt{PeerTree}$ always chooses an edge satisfying the cut property. Say $e$ is the least weight outgoing edge and connects component $C_{i}$ and $C_{j}$. Then clearly, $e$ is the minimal weight edge spanning the cut $C_{i}, V \setminus C_{i}$. Any other edge spanning this cut connects $C_{i}$ to a distinct component $C_{k}$, and thus, has greater weight than $e$.
+
+			We prove the algorithm is correct by (strong) induction on the number of vertices $\lvert V \rvert$. In the case that $\lvert V \rvert = 1$, there are no edges to choose, so $\mathtt{PeerTree}$ is correct. Suppose $\mathtt{PeerTree}$ returns a minimal spanning tree for all graphs $\lvert V \rvert \le n$. Then starting at the single vertex component $C_{0} = \{ v_{0} \}$ with the first least weight outgoing edge $e_{0}$, we have $e_{0}$ in the minimal spanning tree since it satisfies the cut property. By the induction hypothesis, $\mathtt{PeerTree}$ returns a minimal spanning tree on the rest of the graph. It follows that $\mathtt{PeerTree}$ returns a minimal spanning tree on this graph with $\lvert V \rvert = n$ as well. Thus, by induction, $\mathtt{PeerTree}$ returns minimal spanning trees on all finite graphs.
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
 \begin{problem}[Problem 2: Advanced greed: Fibonacci changemaking]
-	Pasadenna Institute of Technology is considering introducing a new campus-only currency, PFFT ,that uses coin denominations that are Fibonacci numbers. The PFFT currency system comprises coins $F_{2}, \dots, F_{k}$ for some fixed $k$. In this problem, you'll show that the greedy algorithm for making change is optimal in the sense that it uses the least possible number of coins given these denominations.
+	Pasadenna Institute of Technology is considering introducing a new campus-only currency, PFFT, that uses coin denominations that are Fibonacci numbers. The PFFT currency system comprises coins $F_{2}, \dots, F_{k}$ for some fixed $k$. In this problem, you'll show that the greedy algorithm for making change is optimal in the sense that it uses the least possible number of coins given these denominations.
 
 	\begin{enumerate}
 		\item First, you'll need to make some observations about what an optimal solution looks like. Assume that our coins are $F_{2}, F_{3}, \dots, F_{k}$.
@@ -69,5 +94,57 @@
 		\item Finally, use the safe choice method to prove that the greedy algorithm always gives an optimal solution for a Fibonacci denomination system with coin values $F_{2}, F_{3}, \dots, F_{k}$ for any fixed constant $k \ge 2$.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item \begin{enumerate}
+			\item Suppose we have a solution that uses two consecutive denominations --- say $x = F + F_{i} + F_{i + 1}$ where $i + 1 < k$ and $F$ is as sum of $n$ coins. Then the solution uses $n + 2$ coins. Since $F_{i + 2} = F_{i} + F_{i + 1}$, we have a solution $x = F + F_{i + 2}$ which uses fewer (exactly $n + 1$) coins. Thus, the original solution was not optimal. Thus, any solution using two consecutive denominations is not optimal.
+
+			\item By definition, $F_{i} = F_{i - 1} + F_{i - 2}$ for all $i \ge 2$. Adding $F_{i}$ to both sides of the equation gives $2 F_{i} = F_{i} + F_{i - 1} + F_{i - 2}$. Since $F_{i + 1} = F_{i} + F_{i - 1}$ (for all $i \ge 1$, and thus, for all $i \ge 2$) we have $2 F_{i} = F_{i + 1} + F_{i - 2}$.
+			\item Let $x = a_{2} F_{2} + \dots + a_{k} F_{k}$ (with $a_{i} \in \mathbb{N}_{0}$) be an optimal solution ($\sum a_{i}$ is minimal) that uses the maximal number of $F_{k}$ coins ($a_{k}$ is maximal). If there exist multiple such solutions, choose that which maximises $a_{k}$, and among those maximising $a_{k}$, also maximises $a_{k - 1}$, and so on. We claim this solution has $a_{i} \le 1$ for all $i < k$.
+
+				Suppose $x = b_{2} F_{2} + \dots + b_{k} F_{k}$ is an optimal solution with $b_{j} > 1$ for some $j < k$. Then note that
+				\[
+					x = b_{2} F_{2} + \dots + (b_{k - 2} + 1) F_{j - 2} + (b_{j} - 2) F_{j} + (b_{j + 1} + 1) F_{j + 1} + \dots + b_{k} F_{k}
+				\]
+				is also an optimal solution. Since this new solution uses more $F_{j + 1}$ coins and the same number of all $F_{i}$ coins for all $i > j + 1$, the original solution cannot have been maximal. Thus, any optimal solution with maximal $a_{k}$, maximal $a_{k - 1}$, and so on, cannot use two of any coin.
+		\end{enumerate}
+	
+		\item We prove the identity by induction. Clearly, for $i = 1$, we have $F_{2i} = F_{2} = F_{1}$, since they are both $1$. Suppose that for some $i$ we have
+			\[
+				F_{1} + F_{3} + F_{5} + \dots + F_{2i - 1} = F_{2i}
+			\]
+			Then note that
+			\begin{align*}
+				F_{1} + F_{3} + F_{5} + \dots + F_{2(i + 1) - 1} & = F_{1} + F_{3} + \dots + F_{2i - 1} + F_{2i + 1} \\
+										 & = F_{2i} + F_{2i + 1} \\
+										 & = F_{2i + 2} \\
+										 & = F_{2(i + 1)}.
+			\end{align*}
+			Thus, by induction, the identity holds for all $i \in \mathbb{N}$.
+
+		\item Recall that the greedy algorithm chooses maximal $a_{k}$ such that $a_{k} F_{k} \le n$ and then recurses on $n - a_{k} F_{k} < F_{k}$. This maximal $a_{k}$ is actually $\lfloor n / F_{k} \rfloor$. Denote it by $\overline{a}_{k}$, and similarly, denote all the greedy coefficients by $\overline{a}_{i}$.
+
+			We show that the greedy choice is safe by strong induction. Clearly the base case $n = 0$ works --- the greedy choice is to use no coins, which is optimal. Suppose that for all $m < n$ the greedy algorithm gives an optimal solution.
+
+			Let $n = a_{2} F_{2} + \dots + a_{k} F_{k}$ be an optimal solution such that $a_{i} \le 1$ for all $i < k$. We claim that $a_{k}$ is always the greedy choice $\overline{a}_{k} = \lfloor n / F_{k} \rfloor$. We show in the last paragraph that this implies the existence of a greedy optimal solution.
+
+			Suppose by way of contradiction that $a_{k} \neq \overline{a}_{k}$. Then we must have $a_{k} < \overline{a}_{k}$ (else $n - a_{k} F_{k}$ would be negative). Thus,
+			\begin{align*}
+				(a_{k - 1} - \overline{a}_{k - 1}) F_{k - 1} + \dots + (a_{2} - \overline{a}_{2}) F_{2} & = (\overline{a}_{k} - a_{k}) F_{k} \\
+															& \ge F_{k} \\
+															& \ge \begin{cases}
+																F_{2} + \dots + F_{2 \ell} + 1 & k = 2 \ell + 1 \\											1 + F_{3} + \dots + F_{2 \ell - 1} & k = 2 \ell
+															\end{cases}
+			\end{align*}
+			In either case, since no two consecutive denominations are used in the optimal solution, the denominations must alternate. Without loss of generality, suppose $k = 2 \ell + 1$. Then
+			\[
+				(a_{2} - \overline{a}_{2}) F_{2} + \dots + (a_{2 \ell} - \overline{a}_{2 \ell}) F_{2 \ell} \ge F_{2} + \dots + F_{2 \ell} + 1
+			\]
+			so we must have at least one $(a_{i} - \overline{a}_{i}) > 1$, and thus, at leastone  $a_{i} > 1$, contradicting our assumption.
+
+			If $a_{k} = \overline{a}_{k}$, then recursing on  $m = n - a_{k} F_{k} < F_{k}$ gives a greedy optimal solution $m = \overline{a}_{k - 1} F_{k - 1} + \dots + \overline{a}_{2} F_{2}$. The subsolution of our original solution $m = a_{k - 1} F_{k - 1} + \dots + a_{2} F_{2}$ must also be optimal (else our original solution $n = a_{k} F_{k} + \dots + a_{2} F_{2}$ wouldn't be optimal). Thus, $\overline{a}_{k - 1} + \dots + \overline{a}_{2} = a_{k - 1} + \dots + a_{2}$. It follows that the greedy solution $n = \overline{a}_{k} F_{k} + \overline{a}_{k - 1} F_{k - 1} + \dots + \overline{a}_{2} F_{2}$ has $\overline{a}_{k} + \dots + \overline{a}_{2} = a_{k} + \dots + a_{2}$, and thus, is optimal. That is, the greedy solution is optimal.
+	\end{enumerate}
+\end{solution}
 
 \end{document}
