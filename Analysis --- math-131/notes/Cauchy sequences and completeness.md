@@ -3,6 +3,7 @@ tags:
 - math-131/11
 - math-177/3
 - math-177/4
+- math-177/6
 - anal
 - metric
 ---
@@ -61,6 +62,6 @@ We denote the equivalence class of a Cauchy sequence $\{ a_{n} \}_{n \in \mathbb
 
 ##### _definition:_ completion of a metric space
 
-The completion $\overline{X}$ of $X$ is the set of all Cauchy sequences in $X$ modulo equivalence in completion.
+The completion $\overline{X}$ of $X$ is the set of all Cauchy sequences in $X$ modulo equivalence in completion, endowed with the metric $\overline{d}(\{ a_{n} \}_{n \in \mathbb{N}}, \{ b_{n} \}_{n \in \mathbb{N}}) = \lim_{ n \to \infty } d(a_{n}, b_{n})$.
 
 We claim this is a complete metric space, but we don't prove it here (we don't even show it is a metric space).

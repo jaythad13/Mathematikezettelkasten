@@ -28,11 +28,15 @@ f_{p}(x) = \sum_{k = 1}^{p - 1} \frac{1}{(px + k)^{2}} \pmod{p^{3}}
 $$
 does not depend on $x$.
 
+---
+
 We will also be able to give sensible answers to questions like the following.
 
 ##### _problem:_ integral square roots of $2$
 
 Find an integer $x$ for which $x^{2} = 2$.
+
+---
 
 ### $p$-adics are algebraic completions
 
@@ -44,6 +48,8 @@ The $p$-adic integers are the ring $\mathbb{Z}_{p}$ comprising all sequences $x 
 
 Note that the additive and multiplicative identities have residue sequences $(0, 0, \dots)$ and $(1, 1, \dots )$ respectively.
 
+---
+
 In fact, this is just a categorical definition as a [[Algebraic geometry --- rising-sea/notes/Limits and colimits|limit]]. The $p$-adic numbers are the limit of the chain of maps $\mathbb{Z} / (p^j) \to \mathbb{Z} / (p^i)$ where $j > i$.
 
 ![[Algebraic geometry --- rising-sea/notes/Limits and colimits#_example _ $p$-adic numbers are a limit]]
@@ -52,7 +58,7 @@ In particular, $\mathbb{Z}$ and its commuting reduction modulo $p^e$ maps give r
 
 Residues modulo $p^e$ and expansions in base $p$ are two sides of the same coin. Just as eventually constant (compatible) residue sequences are generalised to arbitrary (compatible) residue sequences, we can generalise eventually $0$ base $p$ expansions to arbitrary base $p$ expansions. 
 
-In particular, we can write every $p$-adic number as a base $p$-expansion and vice-versa. For $x \in \mathbb{Z}_{p}$ given by a sequence of residues $(x_{i})_{i \in \mathbb{N}}$ modulo $p^i$ we can write
+Thus, we can write every $p$-adic number as a base $p$-expansion and vice-versa. For $x \in \mathbb{Z}_{p}$ given by a sequence of residues $(x_{i})_{i \in \mathbb{N}}$ modulo $p^i$ we can write
 $$
 x = x_{1} p^0 + \frac{x_{2} - x_{1}}{p^1} p^1 + \dots + \frac{x_{e + 1} - x_{e}}{p^e} p^e + \dots
 $$
@@ -74,11 +80,15 @@ $x = 3 + 1 \times 7 + 2 \times 7^{2} + 6 \times 7^{3} + \cdots$ has square $2$ i
 
 In some sense, this is a justification for allowing the numbers to go on forever and later, the $7$-adic norm — we know that $\sqrt{ 2 }$ cannot be an integer, and yet, we can always find residues of such an integer. We know that the series for $x$ cannot converge (under the Euclidean metric), yet this seems to give a sensible "number".  To make it converge, we make $\lvert 7 \rvert_{7}$ small.
 
+---
+
 ##### _proposition:_ $\mathbb{Z}_{p}$ is an [[Abstract algebra --- math-171/notes/Integral domains#_definition _ integral domain|integral domain]]
 
 ###### _proof:_
 
 Note that $0 \in \mathbb{Z}_{p}$ has residue sequence $(0, 0, \dots)$. If $x = (x_{i})_{i \in \mathbb{N}}, y = (y_{i})_{i \in \mathbb{N}}$ have $xy = 0$, then for each $i \in \mathbb{N}$ we have $x_{i} y_{i} \equiv 0 \pmod {p^i}$. Let $j$ be the minimal natural number such that $x_{j} \neq 0$ and similarly let $k$ be the minimal natural number such that $y_{k} \neq 0$. Since, for each $i \in \mathbb{N}$ we have $p^i \mid x_{i} y_{i}$ and we also have $p^j \mid x_{i}$ and $p^k \mid y_{i}$, we must have $j + k \geq i$. This forces $\max{j, k} \geq i / 2$. Finally, this forces $\max{j, k}$ greater than all natural numbers, and thus, one of $x$ and $y$ must have all residues equal to $0$.
+
+---
 
 In fact, we can characterise all units in $\mathbb{Z}_{p}$. Just as in $\mathbb{F}[[x]]$ where the units are those not in $(x)$, in $\mathbb{Z}_{p}$ the units are those with non-zero value modulo $p$.
 
@@ -94,9 +104,13 @@ If $x_{1} \not \equiv 0$, then there is some $y_{1} \in \mathbb{Z} / p \mathbb{Z
 
 Since $\mathbb{Z}_{p}$ is an integral domain, it has a well-defined fraction field. Just as $Q(\mathbb{Z}) = \mathbb{Q}$, we define the $p$-adic numbers as the fraction field of $\mathbb{Z}_{p}$. 
 
+---
+
 ##### _definition:_ $p$-adic numbers, $\mathbb{Q}_{p}$
 
 The $p$-adic numbers $\mathbb{Q}_{p}$ are the [[Algebraic geometry --- rising-sea/notes/Localisation, categorically#_definition _ localisation of a ring, localisations at a prime, fraction field|fraction field]] $Q(\mathbb{Z}_{p})$ of the $p$-adic integers.
+
+---
 
 However, just as we don't typically think of [[Complex analysis --- math-135/notes/Laurent series|Laurent series]] $\mathbb{F}((x))$ as ratios of formal power series in $\mathbb{F}[[x]]$, we don't want to do so for $\mathbb{Q}_{p}$ either. We can instead give a formal Laurent series expansion of elements of $\mathbb{Q}_{p}$.
 
@@ -114,6 +128,8 @@ $$
 $$
 for $k = m$.
 
+---
+
 ### $p$-adics are analytic completions
 
 We can also obtain the $p$-adic numbers analytically, by making large $p^e$ very small. 
@@ -125,6 +141,8 @@ The $p$-adic valuation $\nu_{p} : \mathbb{Q}_{p}^\times \to \mathbb{Z}$ is given
 Equivalently, for $x \in \mathbb{Z}_{p} \setminus \{ 0 \}$, $\nu_{p}(x)$ is the largest $i$ such that $x_{i} \equiv 0 \pmod{p^i}$ in the residue sequence $x = (x_{i})_{i \in \mathbb{N}}$, and can be extended to $\mathbb{Q}_{p}^\times$ as a homomorphism satisfying $\nu_{p}(xy) = \nu_{p}(x) + \nu_{p}(y)$.
 
 The $p$-adic absolute value is given by $\lvert x \rvert_{p} = p^{- \nu_{p}(x)}$.
+
+---
 
 Note then that $x, y \in \mathbb{Q}_{p}$ are close with $\nu_{p}(x - y)$ big and $\lvert x - y \rvert_{p}$ small when $x - y$ is divisible by a large power of $p$.
 
@@ -158,6 +176,8 @@ $$
 $$
 for $k = k_{2} - k_{1} \geq 0$.
 
+---
+
 There is a reverse version of the strong triangle inequality —
 
 ##### _corollary:_ the reverse strong triangle inequality
@@ -175,6 +195,8 @@ $$
 $$
 Since $\lvert y \rvert_{p} \not \geq \lvert x \rvert_{p}$, it must be that $\lvert x \rvert_{p} \le \lvert x - y \rvert_{p}$.
 
+---
+
 The strong triangle inequality also implies that the absolute value is not archimedean.
 
 ##### _corollary:_ $\mathbb{Q}_{p}$ is non-archimedean
@@ -184,6 +206,8 @@ There exists $x \in \mathbb{Q}_{p}^\times$ such that no integer $n \in \mathbb{Z
 ###### _proof:_
 
 Notice that every integer has $p$-adic absolute value at most $1$, since they have $p$-adic valuation at least $0$. Thus, $1 / n$ has $p$-adic absolute value at least $1$. Alternatively, bound $\lvert n \rvert_{p} \leq \lvert 1 \rvert_{p} = 1$ using the strong triangle inequality. Choose $x$ to be any integer divisible by $p$ (and thus, having absolute value less than $1$). There is no $1 / n$ with absolute value less than it.
+
+---
 
 Now it remains to show that $\mathbb{Q}_{p}$ is indeed a analytic [[Analysis --- math-131/notes/Cauchy sequences and completeness#_definition _ completion of a metric space|(metric) completion]]. We also want to show that the identification (hopefully isometry) between $\mathbb{Q}_{p}$ and $\overline{\mathbb{Q}}_{\lvert \cdot \rvert_{p}}$ respects the field structures of both of them. 
 
@@ -201,6 +225,8 @@ $$
 $$
 Since [[Analysis --- math-131/notes/Cauchy sequences and completeness#_lemma _ Cauchy sequences are bounded|Cauchy sequences are bounded]], this goes to zero.
 
+---
+
 ##### _proposition:_ multiplicative inverses are Cauchy
 
 If $\{ a_{n} \}_{n \in \mathbb{N}} \not \sim 0$ is a Cauchy sequence with $a_{n} \neq 0$, then $\{ b_{n} \}_{n \in \mathbb{N}}$ is a Cauchy sequence for $b_{n} = 1 / a_{n}$ when $a_{n} \neq 0$ and else $b_{n} = 0$.
@@ -215,7 +241,11 @@ $$
 $$
 for all $m, n > \max M, N$ (note that $N > \# \{ b_{n} = 0 \}$).
 
+---
+
 Clearly $\{ a_{n} b_{n} \}_{n \in \mathbb{N}}$ is eventually constant at $1$, and so is in the equivalence class of the multiplicative identity on $\overline{\mathbb{Q}}_{\lvert \cdot \rvert_{p}}$.
+
+Between this and the rest of the homework and some unrewarded work, we've shown that $\overline{\mathbb{Q}}_{\lvert \cdot \rvert_{p}}$ is a field.
 
 ##### _theorem:_ $\mathbb{Q}_{p}$ is a metric completion
 
@@ -240,6 +270,8 @@ $$
 \frac{1}{1 - x} = \sum_{n = 0}^\infty x^n.
 $$
 For example, $-1 / 2 = 1 + 3 + 3^{2} + \dots$ in $\mathbb{Z}_{3}$.
+
+---
 
 This helps prove the generalised binomial theorem.
 
@@ -268,5 +300,7 @@ $$
 f_{p}(x) \equiv \sum_{k = 1}^{p - 1} \frac{1}{k^{2}} - 2x \left( \sum_{k = 1}^{p - 1} \frac{1}{k^{3}} \right) p + 3 x^{2} \left( \sum_{k = 1}^{p - 1} \frac{1}{k^4} \right) p^{2} \pmod{p^3}.
 $$
 It follows from induction that the last two sums are divisible by $p$ (or in general, for top index $n$, divisible by $n + 1$) and thus, that the sum does not depend on $x$.
+
+---
 
 Note what we did here really needed $\mathbb{Q}_{p}$ as an algebraic and as an analytic structure! We used the analytic structure to get convergence of series that don't converge in $\mathbb{R}$ and to throw away all the information apart from modulo $p^{3}$. We also used the algebraic fact that $\mathbb{Z}$ and $\mathbb{Q}$ embed nicely in $\mathbb{Q}_{p}$ to mean that we could do all of the work in $\mathbb{Q}_{p}$ and actually recover values in $\mathbb{Z}$.
