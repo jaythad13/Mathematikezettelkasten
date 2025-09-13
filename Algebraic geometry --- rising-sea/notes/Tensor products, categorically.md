@@ -24,6 +24,8 @@ $F_{A}(M \times N)$ is the free $A$-module over the (set-theoretic) product $M \
 
 We write $m \otimes n$ for the equivalence class of $(m, n)$.
 
+---
+
 Note that when $A$ is clear, we omit it in the subscript, writing $M \otimes N$. Also note that clearly $M \otimes N \cong N \otimes M$. Finally, note that since $M \otimes_{A} N$ is a quotient of the free $A$-module over $M \times N$, to define an $A$-module homomorphism from the tensor product, it suffices to define the value it takes on each $m \otimes n$ and verify that each generator of $U$ is sent to zero.
 
 ##### _example:_ tensor product of quotient rings
@@ -42,6 +44,8 @@ $$
 (and $1(1 \otimes 1) \neq 0$) in the tensor product, it has kernel $2 \mathbb{Z}$.
 
 In general, we have $\mathbb{Z} / (m) \otimes_{\mathbb{Z}} \mathbb{Z} / (n) \cong \mathbb{Z} / (m, n)$ and in fact, $A / \mathfrak{i} \otimes_{A} A / \mathfrak{j} \cong A / (\mathfrak i + \mathfrak j)$ for the same reason.
+
+---
 
 While it is sort of clear why we may want to consider the tensor product (a priori, and from this definition), the definition doesn't do the best job at this. A better definition shows that $M \otimes N$ satisfies a universal property.
 
@@ -70,6 +74,8 @@ commutes. Specifically, we already know $t'$ factors as $\tau \circ t$ and $t$ f
 
 Now we show that our definition of $M \otimes N$ actually satisfies the universal property. Note that the natural map $t : M \times N \to M \otimes N$ by $(m, n) \mapsto m \otimes n$ is bilinear. Suppose $\varphi : M \times N \to V$ is bilinear. Then we claim the map $\tau : M \otimes N \to V$ by $m \otimes n \mapsto \varphi(m, n)$ is well-defined and linear. This follows easily by checking that it is well-defined as a map on $F_{A}(M \times N)$ and that its kernel includes $U$ such that $F_{A}(M \times N) / U \cong M \otimes N$. That in turn follows directly from the fact that $\tau$ is bilinear. Clearly, $\varphi = \tau \circ t$, so we are done.
 
+---
+
 ### Tensoring is nice
 
 Tensoring is quite a nice operation, commuting with lots of natural constructions.
@@ -79,13 +85,25 @@ For one it is functorial and preserves (right) exact sequences. We will later de
 ##### _proposition:_ tensoring is functorial and right-exact
 
 The map of objects $\mathsf{Mod}_{A} \to \mathsf{Mod}_{A}$ by $M \mapsto M \otimes N$ naturally extends to a covariant [[Algebraic geometry --- rising-sea/notes/Functors#_definition _ (covariant, contravariant) functors|functor]]. Further, this functor is right-exact — if
-$$
-M_{1} \to M_{2} \to M_{3} \to 0
-$$
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		M_{1} \ar[r] & M_{2} \ar[r] & M_{3} \ar[r] & 0
+	\end{tikzcd}
+\end{document}
+```
 is [[Abstract algebra --- math-171/notes/Exact sequences#_definition _ exact sequence|exact]], then
-$$
-M_{1} \otimes N \to M_{2} \otimes N \to M_{3} \otimes N \to 0
-$$
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		M_{1} \otimes N \ar[r] & M_{2} \otimes N \ar[r] & M_{3} \otimes N \ar[r] & 0
+	\end{tikzcd}
+\end{document}
+```
 is exact.
 
 ###### _proof:_
@@ -102,7 +120,7 @@ $$
 $$
 (the symmetric result in the second factor follows similarly).
 
-It's clear that, for each $m \otimes n \in M \otimes N$ we have $\operatorname{id}_{M, *} = \operatorname{id}_{M \otimes N}$ on every basis vector, and thus, they are equal as maps —
+It's clear that we have $\operatorname{id}_{M, *} = \operatorname{id}_{M \otimes N}$ on every basis vector $m \otimes n$, and thus, they are equal as maps —
 $$
 \operatorname{id}_{M, *}(m \otimes n) = \operatorname{id}_{M}(m) \otimes n = m \otimes n = \operatorname{id}_{M \otimes N}(m \otimes n).
 $$
@@ -111,16 +129,33 @@ $$
 (\psi \circ \varphi)_{*}(m \otimes n) = \psi \circ \varphi(m) \otimes n = \psi_{*}(\varphi(m) \otimes n) = \psi_{*} \circ \varphi_{*}(m \otimes n).
 $$
 
-Now we show $M \mapsto M \otimes N$ is right exact. If
-$$
-M_{1} \to M_{2} \to M_{3} \to 0
-$$
-is exact with maps $\varphi_{i} : M_{i} \to M_{i + 1}$, then $\varphi_{2} : M_{2} \to M_{3}$ is surjective and $\operatorname{img} \varphi_{1} = \ker \varphi_{2}$. We want to show the same for $\varphi_{i, *}$. Note that $\varphi_{2, *} : M_{2} \otimes N \to M_{3} \otimes N$ is surjective on basis elements — for any $m_{3} \otimes n$ with $\varphi_{2}(m_{2}) = m_{3}$, we have $\varphi_{2, *}(m_{2} \otimes n) = m_{3} \otimes n$. Thus, $\varphi_{2, *}$ is surjective. 
+Now we show $F$ is right exact. Suppose
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		M_{1} \ar[r] & M_{2} \ar[r] & M_{3} \ar[r] & 0
+	\end{tikzcd}
+\end{document}
+```
+is exact with maps $\varphi_{i} : M_{i} \to M_{i + 1}$. Then $\varphi_{2} : M_{2} \to M_{3}$ is surjective and $\operatorname{img} \varphi_{1} = \ker \varphi_{2}$. We want to show the same for $\varphi_{i, *}$. 
 
-If $m_2 \otimes n \in \operatorname{ker} \varphi_{2, *}$ we must have $\varphi_{2}(m_{2}) \otimes n = 0$. If $n = 0$, then $m_{2} \otimes n = 0 \in \operatorname{img} \varphi_{1, *}$. If $n \neq 0$, then $\varphi_{2}(m_{2}) = 0$, and thus, $m_{2}  \in \operatorname{img} \varphi_{1}$. It follows that $m_{2} \otimes n = \varphi_{1, *}(m_{1} \otimes n) \in \operatorname{img} \varphi_{1, *}$. 
+Note that $\varphi_{2, *} : M_{2} \otimes N \to M_{3} \otimes N$ is surjective on basis elements — for any $m_{3} \otimes n$ with $\varphi_{2}(m_{2}) = m_{3}$, we have $\varphi_{2, *}(m_{2} \otimes n) = m_{3} \otimes n$. Thus, $\varphi_{2, *}$ is surjective. 
 
-> [!missing]
-> This proof only talks about $m_{2} \otimes n$. We need to talk about $\sum_{i} m_{2_{i}} \otimes n_{i}$. Also, this only shows one half of exactness at $M_{2}$.
+Suppose $\sum_{i} m_{2, i} \otimes n_{i} \in \operatorname{img} \varphi_{1, *}$. Thus,
+$$
+\sum_{i} m_{2, i} \otimes n_{i} = \varphi_{1, *}\left( \sum_{j} m_{1, j} \otimes n_{j} \right) = \sum_{j} \varphi_{1}(m_{1, j}) \otimes n_{j}.
+$$
+It follows that
+$$
+\varphi_{2, *}\left( \sum_{i} m_{2, i} \otimes n_{i} \right) = \sum_{j} \varphi_{2}(\varphi_{1}(m_{1}, j)) \otimes n_{j} = 0
+$$
+by exactness of the original sequence ($\varphi_{2} \circ \varphi_{1} = 0$). Thus, $\sum_{i} m_{2, i} \otimes n_{i} \in \ker \varphi_{2, *}$ and $\operatorname{img} \varphi_{1, *} \subseteq \ker \varphi_{2, *}$. The opposite inclusion is more involved.
+
+Since $\operatorname{img} \varphi_{1, *} \subseteq \ker \varphi_{2, *}$ we have a map $M_{2} \otimes N / \operatorname{img} \varphi_{1, *} \to M_{2} \otimes N / \ker \varphi_{2, *} \cong M_{3} \otimes N$. We claim there is an inverse map $M_{3} \otimes N \to M_{2} \otimes N / \operatorname{img} \varphi_{1, *}$. Consider the bilinear map $(m_{3}, n) \mapsto m_{2} \otimes n + \operatorname{img} \varphi_{1, *}$ for some $m_{2}$ with $\varphi_{2}(m_{2}) = m_{3}$. It is well-defined since any two $m_{2}, m_{2}'$ with $\varphi_{2}(m_{2}) = \varphi_{2}(m_{2}')$ differ by an element of $\operatorname{img} \varphi_{1}$ and thus, their tensors differ by an element of $\operatorname{img} \varphi_{1, *}$. It is linear in $m_{3}$ by the linearity of $\varphi_{2}$ and it is linearity in $n$ by the tensor relation $m_{2} \otimes (n + n') = m_{2} \otimes n + m_{2} \otimes n'$. It defines a map $\psi : M_{3} \otimes N \to M_{2} \otimes N / \operatorname{img} \varphi_{1, *}$, and it is clearly inverse to the map in the opposite direction. Thus, $M_{2} \otimes N / \operatorname{img} \varphi_{1, *} \cong M_{2} \otimes N / \ker \varphi_{2, *}$. Exactness follows — $\operatorname{img} \varphi_{1, *} = \operatorname{ker} \varphi_{2, *}$.
+
+---
  
 We've seen already that tensoring with a ring on the left can look like allowing scalars in the "left" module. We can formalise this intuition.
 
@@ -132,6 +167,8 @@ If $M$ is an $A$-module and $B$ is a ring, given an $A$-module structure by a mo
 
 Define the $B$-module structure on $B \otimes_{A} M$ by $b_{1}(b_{2} \otimes m) = (b_{1} b_{2}) \otimes m$. Further, for $\varphi : M \to N$ as $A$-modules, define $\varphi_{*} : B \otimes_{A} M \to B \otimes_{A} N$ by $\varphi_{*}(b \otimes m) = b \otimes \varphi(m)$. Clearly, $(\psi \circ \varphi)_{*} = \psi_{*} \circ \varphi_{*}$.
 
+---
+
 In fact, this turns the tensor product of two rings into a ring in its own right.
 
 ##### _proposition:_ tensor product of rings is a ring
@@ -141,6 +178,8 @@ If $B$ and $C$ are rings given $A$-module structures by morphisms $A \to B$ and 
 ###### _proof sketch:_
 
 Define the ring structure on $B \otimes_{A} C$ by $(b_{1} \otimes c_{1}) (b_{2} \otimes c_{2}) = (b_{1} b_{2} ) \otimes (c_{1} c_{2})$. Later, we will see this is an example of a fibred product.
+
+---
 
 Tensoring plays nicely with (arbitrary) direct sums and thus, finite products. Specifically, by universal property, tensoring and direct sums commute.
 
@@ -168,6 +207,8 @@ $$
 \psi'(m \otimes n_{i}) = \psi'(t(m, n_{i})) = \beta(m, n_{i})
 $$
 and so $\psi' = \psi$. That is, $\psi$ is unique.
+
+---
 
 Tensoring also plays nicely with [[Algebraic geometry --- rising-sea/notes/Localisation, categorically#Localisation of modules|localisation]] —
 
@@ -197,3 +238,5 @@ $$
 \end{align}
 $$
 Thus, $\psi' = \psi$ so $\psi$ is the unique such morphism. Further, by definition, $\psi$ is both $A$-and $S^{-1} A$-linear.
+
+---
