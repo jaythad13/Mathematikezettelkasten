@@ -64,7 +64,6 @@ Notice that this also defines an $S^{-1} A$-module structure by $(a / s) m = am 
 
 Let the localisation map be $\alpha : m \mapsto m / 1$. Then for any $\varphi : M \to N$ such that the action of $S$ is invertible on $N$, we have $\psi : m / s \mapsto \varphi(m) / s$ giving $\psi \circ \alpha = \varphi$. If any other $\psi'$ has $\psi' \circ \alpha = \varphi$, then we must have $\psi'(m / 1) = \varphi(m)$ for all $m$. Since $\psi'(s m / s) = \psi'(m) = \varphi(m)$, by linearity $s \psi'(m / s) = \varphi(m)$ finally giving the $\psi'(m / s) = \varphi(m) / s$. Here $\varphi(m) / s$ is used to denote the inverse of the "multiplication by $s$" map evaluated at $\varphi(m)$.
 
-
 ##### _proposition:_ localisation commutes with finite products and all coproducts
 
 If $M_{1}, \dots, M_{n}$ are $A$-modules, then there is an isomorphism (of $A$-modules and $S^{-1} A$-modules) $S^{-1} (M_{1} \times \dots \times M_{n}) \to S^{-1} M_{1} \times \dots \times S^{-1} M_{n}$.

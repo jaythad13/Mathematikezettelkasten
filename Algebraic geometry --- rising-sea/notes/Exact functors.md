@@ -94,7 +94,29 @@ Localisation is even better — it's exact on the nose!
 
 ##### _example:_ localisation is exact
 
-Suppose $M$ is an $A$-module and $S \subseteq A$ is multiplicative. Then $\mathsf{Mod}_{A} \to \mathsf{Mod}_{S^{-1} A}$ is an exact functor.
+Suppose $M$ is an $A$-module and $S \subseteq A$ is multiplicative. Then $\mathsf{Mod}_{A} \to \mathsf{Mod}_{S^{-1} A}$ is an exact functor. Note that it suffices to show that exactness of
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		M_{1} \ar[r, "\varphi_{1}"] & M_{2} \ar[r, "\varphi_{2}"] \ar[r] & M_{3}
+	\end{tikzcd}
+\end{document}
+```
+implies exactness of
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		S^{-1} M_{1} \ar[r, "\varphi_{1, *}"] & S^{-1} M_{2} \ar[r, "\varphi_{2, *}"] & S^{-1} M_{3}
+	\end{tikzcd}
+\end{document}
+```
+(with no need for the first/last map to be injective/surjective). It's easy to see that $\operatorname{img} \varphi_{1, *} \subseteq \ker \varphi_{2, *}$. We show the opposite inclusion. 
+
+Suppose $\varphi_{2, *}(m_{2} / s_{2}) = 0$. Then $\varphi(m_{2}) / s_{2} = 0$, and so $s \varphi_{2}(m_{2}) = 0 = \varphi_{2}(s m_{2})$ for some $s \in S$. It follows that $\varphi_{1}(m_{1}) = sm_{2}$ for some $m_{1} \in M_{1}$. Thus, $\varphi_{1, *}(m_{1} / s s_{2}) = m_{2} / s_{2}$ as desired.
 
 ---
 
@@ -108,11 +130,37 @@ The covariant functor $h^M : \mathsf{Mod}_{A} \to \mathsf{Mod}_{A}$ by $N \mapst
 
 ##### _example:_ $h_{M}$ is (contravariant) left-exact
 
-The contravariant functor $h_{M} : \mathsf{Mod}_{A} \to \mathsf{Mod}_{A}$ by $N \mapsto \operatorname{Hom}(N, M)$ is left-exact
+The contravariant functor $h_{N} : \mathsf{Mod}_{A} \to \mathsf{Mod}_{A}$ by $M \mapsto \operatorname{Hom}(M, N)$ is left-exact. Note that we want to show that if
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		M_{1} \ar[r, "\varphi_{1}"] & M_{2} \ar[r, "\varphi_{2}"] \ar[r] & M_{3} \ar[r] & 0
+	\end{tikzcd}
+\end{document}
+```
+is exact, then
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		0 \ar[r] & \mathrm{Hom}(M_{3}, N) \ar[r, "\varphi_{2}^*"] & \mathrm{Hom}(M_{2}, N) \ar[r, "\varphi_{1}^*"] & \mathrm{Hom}(M_{1}, N)
+	\end{tikzcd}
+\end{document}
+```
+It's easy to show that $\varphi_{2}^*$ is injective, and that $\operatorname{img} \varphi_{2}^* \subseteq \ker \varphi_{1}^*$ since we have
+$$
+\varphi_{1}^*(\varphi_{2}^*(\psi_{3})) = \psi_{3} \circ \varphi_{2} \circ \varphi_{1} = 0
+$$
+because $\varphi_{2} \circ \varphi_{1} = 0$ by exactness of the original sequence.
+
+The opposite inclusion is, as always, more involved. Suppose $\varphi_{1}^*(\psi_{2}) = \psi_{2} \circ \varphi_{1} = 0$ for some $\psi_{2} \in \operatorname{Hom}(M_{2}, N)$. Thus, $\ker \varphi_{2} = \operatorname{img} \varphi_{1} \subseteq \ker \psi_{2}$. By the surjectivity of $\varphi_{2}$, $M_{2} / \ker \varphi_{2} = M_{3}$. Thus, $\psi_{2}$ descends to a map $\overline{\psi}_{2} : M_{2} / \ker \varphi_{2} = M_{3} \to N$ such that $\psi_{2} = \overline{\psi}_{2} \circ \varphi_{2}$. This is the desired $\psi_{3} \in \operatorname{Hom}(M_{3}, N)$ such that $\psi_{2} = \varphi_{2}^*(\psi_{3})$.
 
 ---
 
-These are useful to prove (say) that $A$-linear morphisms of modules are essentially the same as $S^{-1} A$-linear morphisms of their localisations away from $S$.
+Exact functors are useful to prove (say) that $A$-linear morphisms of modules are essentially the same as $S^{-1} A$-linear morphisms of their localisations away from $S$.
 
 ##### _example:_ localisation commutes with $\operatorname{Hom}$
 
@@ -130,6 +178,9 @@ Then by the left exactness of $h_{M}$, there is an isomorphism
 $$
 S^{-1} \operatorname{Hom}_{A}(M, N) \cong \operatorname{Hom}_{S^{-1} A}(S^{-1} M, S^{-1} N).
 $$
+Specifically, 
+
+This doesn't work without the finitely-presented hypothesis. For $S = \mathbb{Z} \setminus \{ 0 \}$, we have $\operatorname{Hom}_{\mathbb{Z}}(\mathbb{Q}, \mathbb{Z}) = 0$ (a $\mathbb{Z}$-linear $\mathbb{Q} \to \mathbb{Z}$ is equivalent to the [[Commutative algebra --- math-189AA/notes/Modules#_examples and non-examples _ modules|impossibility]] of giving $\mathbb{Z}$ a $\mathbb{Q}$-module structure) and so $S^{-1} \operatorname{Hom}_{\mathbb{Z}}(\mathbb{Q}, \mathbb{Z}) = 0$. Meanwhile $\operatorname{Hom}_{\mathbb{Q}}(\mathbb{Q}, \mathbb{Q}) \cong \mathbb{Q}$.
 
 ---
 
