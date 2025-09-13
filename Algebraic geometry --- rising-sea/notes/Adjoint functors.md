@@ -146,7 +146,7 @@ The adjoint defining bijection $\tau_{SG} : \operatorname{Hom}_{\mathsf{Ab}}(H(S
 
 ### Adjoints and limits
 
-If $F, G$ are an adjoint pair of functors, then the left-adjoint $F$ commutes with colimits and $G$ commutes with limits.
+If $F, G$ are an adjoint pair of functors, then the left-adjoint $F$ commutes with colimits and $G$ commutes with limits. We prove this [[Algebraic geometry --- rising-sea/notes/Exact functors#_proposition _ right adjoints preserve limits|here]].
 
 ### The table of adjoint functors
 

@@ -30,7 +30,7 @@ A number of important facts follow by abstract nonsense and this definition.
 
 ##### _examples:_ additive categories
 
-Clearly $\mathsf{Mod}_{A}$ (and as a special case $\mathsf{Ab}$) are additive categories. However, they satisfy the stricter axioms of an abelian category as well are additive catgegories,. oHowever, they asatisfiy the stroiricter axioms of an aebelian category as well.
+Clearly $\mathsf{Mod}_{A}$ (and as a special case $\mathsf{Ab}$) are additive categories. However, they satisfiy the stricter axioms of an abelian category as well.
 
 ### Abelian categories
 
@@ -38,7 +38,7 @@ Abelian categories preserve some extra jazz — notably kernels and cokernels.
 
 ##### _definition:_ kernels, cokernels
 
-Let $\mathscr{C}$ be a category with a $0$-object (and thus, $0$-morphisms). The **kernel** (unique up to unique isomorphism if it exists) of a morphism $\varphi : A \to B$ is an object $\ker f$ with an (inclusion) morphism $i : \ker f \to A$ such that $\varphi \circ i = 0$ and any $i' : K \to A$ with $f \circ i' = 0$ factors uniquely through $i$.
+Let $\mathscr{C}$ be a category with a $0$-object (and thus, $0$-morphisms). The **kernel** (unique up to unique isomorphism if it exists) of a morphism $f : A \to B$ is an object $\ker f$ with an (inclusion) morphism $i : \ker f \to A$ such that $f \circ i = 0$ and any $i' : K \to A$ with $f \circ i' = 0$ factors uniquely through $i$.
 
 Equivalently, the kernel is the limit of the diagram
 ```tikz
@@ -77,19 +77,11 @@ An abelian category is an additive category satisfying three additional properti
 2) Every monomorphism is the kernel of its cokernel.
 3) Every epimorphism is the cokernel of its kernel.
 
-In some really nice abelian categories, the last two conditions are saying the following. For $f : A \to B$ injective we have $\operatorname{img} f = A$ and for $f$ surjective, $B \cong A / \ker f$ (which is just the [[Abstract algebra --- math-171/notes/Group isomorphism theorems#The first isomorphism theorem|first isomorphism theorem]]). These generalise to definitions of the image and quotient.
+In some really nice abelian categories, the last two conditions are saying the following. For $f : A \to B$ injective we have $\operatorname{img} f \cong A$ and for $f$ surjective, $B \cong A / \ker f$ (which is just the [[Abstract algebra --- math-171/notes/Group isomorphism theorems#The first isomorphism theorem|first isomorphism theorem]]). These generalise to definitions of the image and quotient.
 
 ##### _definition:_ images
 
 The **image** of a morphism $f : A \to B$ is $\operatorname{img} f = \ker (\operatorname{coker} f)$.
-
-##### _proposition:_ facts about images
-
-$f$ factors uniquely through $\operatorname{img} f \to B$ whenever it exists.
-
-$A \to \operatorname{img} f$ is an epimorphism and the cokernel of $\ker f \to A$. 
-
-These are not easy to prove
 
 ##### _definition:_ quotients
 

@@ -74,8 +74,14 @@ Suppose $A^{\bullet}$ is
 ```
 a complex of finite-dimensional $\mathbb{F}$-vector spaces. Then 
 $$
-\sum_{i = 1}^n (-1) \dim A^i = \sum_{i = 1}^n h^i.
+\sum_{i = 1}^n (-1) \dim A^i = \sum_{i = 1}^n (-1)^i h^i.
 $$
+
+###### _proof sketch:_
+
+By basic linear algebra $h^i = \dim \operatorname{img} d^i - \dim \ker d^{i - 1}$ and $A^i = \dim \ker d^i + \dim \operatorname{img} d^i$. Thus, in both sums, $\dim \operatorname{img} d^i$ and $\dim \ker d^{i}$ summed positively for even $i$ and negatively for odd $i$.
+
+---
 
 ### Abstract nonsense properties of homology
 
