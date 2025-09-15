@@ -12,45 +12,146 @@
 	Show that the sequence of partial sums $\sum_{i = 0}^{n} 3^{i}$ is Cauchy with respect to $\lvert \cdot \rvert_{p}$ if and only if $p = 3$. If $p = 3$, show that the sequence converges to a limit in $\mathbb{Q}$.
 \end{problem}
 
+\begin{solution}
+	First we show that if $p \neq 3$, the sequence of partial sums is not Cauchy. Note that if $p \neq 3$, then $p$ never divides any sum $\sum_{i = m + 1}^{n} 3^{i}$. Thus, the sequence of partial sums always has
+	\[
+		\left \lvert \sum_{i = 0}^{n} 3^{i} - \sum_{i = 0}^{m} 3^{i} \right \rvert_{p} = \left \lvert \sum_{i = m + 1}^{n} 3^{i} \right \rvert_{p} = 1
+	\]
+	for any $m, n \in \mathbb{N}$. Thus, for positive $\varepsilon < 1$ there is no $N \in \mathbb{N}$ such that
+	 \[
+		\left \lvert \sum_{i = 0}^{n} 3^{i} - \sum_{i = 0}^{m} 3^{i} \right \rvert < \varepsilon
+	\]
+	for all $m, n > N$. That is, the sequence is not Cauchy.
+
+	Suppose $p = 3$. Given any $\varepsilon > 0$ there is some $N$ such that $3^{-N} < \varepsilon$. Thus, for all $m, n > N$ we have
+	\begin{align*}
+		\left \lvert \sum_{i = 0}^{n} 3^{i} - \sum_{i = 0}^{m} 3^{i} \right \rvert_{p} & = \left \lvert \sum_{i = m + 1}^{n} 3^{i} \right \rvert_{p} \\
+											   & \le \sum_{i = m + 1}^{n} \lvert 3^{i} \rvert_{p} \\
+											   & = \sum_{i = m + 1}^{n} 3^{-i} \\
+											   & < 3^{-N} \\
+											   & < \varepsilon.
+	\end{align*}
+	That is, the sequence of partial sums is Cauchy.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[(2)]
 	Suppose $c_{0}, c_{1}, \dots, c_{k - 1} \in \mathbb{Z}$. Let $r = r(i, k)$ be the remainder upon dividing $i$ by $k$ and let $b_{i} = c_{r}$. For $p$ a fixed prime number, let $a_{n} = \sum_{i = 0}^{n} b_{i} p^{i}$. Show that $\{ a_{n} \}_{n \in \mathbb{N}}$ converges to a limit in $\mathbb{Q}$.
 \end{problem}
 
-\pagebreak
+\begin{solution}
+	If $a_{n} \to z \in \mathbb{Q}$ where $z = x / y$, then we must have $\lvert a_{n} - x / y \rvert_{p} = \lvert y a_{n} - x \rvert_{p} / \lvert y \rvert_{p} \to 0$ as $n \to \infty$. Clearly it suffices to find $x, y$ such that $\lvert y a_{n} - x \rvert_{p} \to 0$ as $n \to \infty$. We claim
+	\[
+		\frac{x}{y} = \frac{c_{0} + c_{1} p + \dots + c_{k - 1} p^{k - 1}}{1 - p^{k}}
+	\]
+	is such a rational number.
 
-\begin{problem}[(3)]
-	If $\{ a_{n} \}_{n \in \mathbb{N}}$ and $\{ b_{n} \}_{n \in \mathbb{N}}$ are Cauchy in $\mathbb{Q}$, then so are $\{ a_{n} + b_{n} \}$ and $\{ a_{n} b_{n} \}$.
-\end{problem}
+	This follows since
+	\begin{align*}
+		\left \lvert y a_{n} - x \right \rvert_{p} & = \lvert (1 - p^{k}) a_{n} - x \rvert \\
+							   & = \lvert x - p^{n} x - x \rvert_{p} \\
+							   & = \lvert p^{n} \rvert_{p} \lvert x \rvert_{p} \\
+							   & = \frac{\lvert x \rvert_{p}}{p^{n}}
+	\end{align*}
+	clearly vanishes as $n \to \infty$.
+\end{solution}
 
 \pagebreak
 
 \begin{problem}[(4)]
-	The relation $\sim$ is an equivalence relation on Cauchy sequences in $\mathbb{Q}$.
+	If $\{ a_{n} \}_{n \in \mathbb{N}}$ and $\{ b_{n} \}_{n \in \mathbb{N}}$ are Cauchy in $\mathbb{Q}$, then so are $\{ a_{n} + b_{n} \}_{n \in \mathbb{N}}$ and $\{ a_{n} b_{n} \}_{n \in \mathbb{N}}$.
 \end{problem}
+
+\begin{solution}
+	Given $\varepsilon > 0$ there are $N_{a}, N_{b} \in \mathbb{N}$ such that for all $m, n > N_{a}$ we have $\lVert a_{n} - a_{m} \rVert < \varepsilon / 2$ and for all $m, n > N_{b}$ we have $\lVert b_{n} - b_{m} \rVert < \varepsilon / 2$. Note also that since the sequences are Cauchy, we have upper bounds $a_{n} < A$ and $b_{n} < B$ for all $n \in \mathbb{N}$. Thus, there are $M_{a}, M_{b} \in \mathbb{N}$ such that for all $m, n > M_{a}$ we have  $\lVert a_{n} - a_{m} \rVert < \varepsilon / 2 B$ and for all $m, n > M_{b}$ we have $\lVert b_{n} - b_{m} \rVert < \varepsilon / 2 A$
+
+	First consider $\{ a_{n} + b_{n} \}_{n \in \mathbb{N}}$. Choose $N = \max \{ N_{a}, N_{b} \}$. Then, for all $m, n > N$ we have $\lVert a_{n} - a_{m} \rVert < \varepsilon / 2$ and $\lVert b_{n} - b_{m} \rVert < \varepsilon / 2$. Thus, for all $m, n < N$ we have
+	\begin{align*}
+		\lVert (a_{n} + b_{n}) - (a_{m} + b_{m}) \rVert & \le \lVert (a_{n} - a_{m}) + (b_{n} - b_{m}) \rVert \\
+								& \le \lVert a_{n} - a_{m} \rVert + \lVert b_{n} - b_{m} \rVert \\
+								& < \varepsilon / 2 + \varepsilon / 2 \\
+								& = \varepsilon.
+	\end{align*}
+	That is, $\{ a_{n} + b_{n} \}_{n \in \mathbb{N}}$ is Cauchy.
+
+	Now consider $\{ a_{n} b_{n} \}_{n \in \mathbb{N}}$. Choose $M = \max \{ M_{a}, M_{b} \}$. Then
+	\begin{align*}
+		\lVert a_{n} b_{n} - a_{m} b_{m} \rVert & = \lVert a_{n} b_{n} - a_{n} b_{m} + a_{n} b_{m} - a_{m} b_{m} \rVert \\
+							& \le a_{n} \lVert b_{n} - b_{m} \rVert + b_{m} \lVert a_{n} - a_{n} \rVert \\
+							& \le A \lVert b_{n} - b_{m} \rVert + B \lVert a_{n} - a_{m} \rVert \\
+							& < A \varepsilon / 2 A + B \varepsilon / 2 B \\
+							& = \varepsilon.
+	\end{align*}
+\end{solution}
 
 \pagebreak
 
 \begin{problem}[(5)]
-	The definitions of addition and of additive inverse on $\mathbb{Q}_{\lVert \cdot \rVert}$ are well-defined.
+	The relation $\sim$ is an equivalence relation on Cauchy sequences in $\mathbb{Q}$.
 \end{problem}
+
+\begin{solution}
+	Suppose $\{ a_{n} \}_{n \in \mathbb{N}}$ is a Cauchy sequence in $\mathbb{Q}$. For any $\varepsilon > 0$, we have $\lVert a_{n} - a_{n} \rVert = 0 < \varepsilon$ for all $n$. Thus, $\{ a_{n} \}_{n \in \mathbb{N}} \sim \{ a_{n} \}_{n \in \mathbb{N}}$.
+
+	Suppose $\{ a_{n} \}_{n \in \mathbb{N}} \sim \{ b_{n} \}_{n \in \mathbb{N}}$ are equivalent Cauchy sequences. Then, for any $\varepsilon > 0$ there exists an $N \in \mathbb{N}$ such that we have $\lVert b_{n} - a_{n} \rVert < \varepsilon$ for all $n > N$. Thus, for any $\varepsilon > 0$ we have $\lVert a_{n} - b_{n} \rVert = \lVert b_{n} - a_{n} \rVert < \varepsilon$ for all $n > N$.
+
+	Suppose $\{ a_{n} \}_{n \in \mathbb{N}}, \{ b_{n} \}_{n \in \mathbb{N}}, \{ c_{n} \}_{n \in \mathbb{N}}$ are Cauchy sequences with $\{ a_{n} \}_{n \in \mathbb{N}} \sim \{ b_{n} \}_{n \in \mathbb{N}}$ and $\{ b_{n} \}_{n \in \mathbb{N}} \sim \{ c_{n} \}_{n \in \mathbb{N}}$. Then, for any $\varepsilon > 0$, there exist $N_{1}, N_{2} \in \mathbb{N}$ with $\lVert a_{n} - b_{n} \rVert < \varepsilon / 2$ for all $n > N_{1}$ and $\lVert b_{n} - c_{n} \rVert < \varepsilon / 2$ for all $n > N_{2}$. Thus,
+	\begin{align*}
+		\lVert a_{n} - c_{n} \rVert & = \lVert a_{n} - b_{n} + b_{n} - c_{n} \rVert \\
+					    & \le \lVert a_{n} - b_{n} \rVert + \lVert b_{n} - c_{n} \rVert \\
+					    & < \varepsilon/2 + \varepsilon/2 \\
+					    & = \varepsilon.
+	\end{align*}
+
+	Since $\sim$ is reflexive, symmetric, and transitive, it is an equivalence relation.
+\end{solution}
 
 \pagebreak
 
 \begin{problem}[(6)]
-	A sequence $\{ a_{n} \}_{n \in \mathbb{N}}$ converges to a limit $L \in \mathbb{Q}$ if and only if its equivalence class with respect to $\sim$ contains a constant sequence.
+	The definitions of addition and of additive inverse on $\mathbb{Q}_{\lVert \cdot \rVert}$ are well-defined.
 \end{problem}
+
+\begin{solution}
+	To show that addition is well-defined, we want to show that if  $\{ a_{n} \}_{n \in \mathbb{N}} \sim \{ a_{n}' \}_{n \in \mathbb{N}}$ and $\{ b_{n} \}_{n \in \mathbb{N}} \sim \{ b_{n}' \}_{n \in \mathbb{N}}$ then $\{ a_{n} + b_{n} \}_{n \in \mathbb{N}} \sim \{ a_{n}' + b_{n}' \}_{n \in \mathbb{N}}$.
+
+	By definition of equivalence, for each $\varepsilon > 0$, there are some $N_{1}, N_{2} \in \mathbb{N}$ such that, for all $n > N_{1}$ we have $\lVert a_{n} - a_{n}' \rVert < \varepsilon / 2$ and for all $n > N_{2}$ we have $\lVert b_{n} - b_{n}' \rVert < \varepsilon/2$. Choose $N = \max \{ N_{1}, N_{2} \}$. Then, for all $n > N$ we have
+	\begin{align*}
+		\lVert (a_{n} + b_{n}) - (a_{n}' + b_{n}') \rVert & \le \lVert a_{n} - a_{n}' \rVert + \lVert b_{n} - b_{n}' \rVert \\
+								  & < \varepsilon/2 + \varepsilon/2 \\
+								  & = \varepsilon.
+	\end{align*}
+	Thus, $\{ a_{n} + b_{n} \}_{n \in \mathbb{N}} \sim \{ a_{n}' + b_{n}' \}_{n \in \mathbb{N}}$.
+
+	To show that additive inverses are well-defined we want to show that if $\{ a_{n} \}_{n \in \mathbb{N}} \sim \{ a_{n}' \}_{n \in \mathbb{N}}$, then $\{ -a_{n} \}_{n \in \mathbb{N}} \sim \{ -a_{n}' \}_{n \in \mathbb{N}}$. By definition of equivalence, for each $\varepsilon > 0$ there is some $N \in \mathbb{N}$ such that for all $n > N$ we have $\lVert a_{n} - a_{n}' \rVert < \varepsilon$. Thus, for the same $N$ for all $n > N$ we have $\lVert (-a_{n}) - (-a_{n}') \rVert = \lVert -1 \rVert \lVert a_{n} - a_{n}' \rVert < \varepsilon$. Thus, $\{ -a_{n} \}_{n \in \mathbb{N}} \sim \{ -a_{n}' \}_{n \in \mathbb{N}}$.
+\end{solution}
 
 \pagebreak
 
 \begin{problem}[(7)]
-	An equivalence class with respect to $\sim$ contains at most one constant representative.
+	A sequence $\{ a_{n} \}_{n \in \mathbb{N}}$ converges to a limit $L \in \mathbb{Q}$ if and only if its equivalence class with respect to $\sim$ contains a constant sequence.
 \end{problem}
+
+\begin{solution}
+	Suppose $a_{n} \to L$. Then, for each $\varepsilon > 0$ there is some $N$ such that, for all $n > N$, we have $\lVert a_{n} - L \rVert < \varepsilon$. Let $b_{n} = L$ be the constant sequence. Then clearly, for the same $N$ and all $n > N$ we have $\lVert a_{n} - b_{n} \rVert$. Thus, $a_{n} \sim b_{n}$ --- the equivalence class of $\{ a_{n} \}_{n \in \mathbb{N}}$ contains a constant sequence.
+\end{solution}
 
 \pagebreak
 
-\begin{problem}[(8) Something to think about but not turn in] 
+\begin{problem}[(8)]
+	An equivalence class with respect to $\sim$ contains at most one constant representative.
+\end{problem}
+
+\begin{solution}
+	We will show that any two distinct constant sequences are not equivalent. Thus, any equivalence class contains at most one constant representative.
+
+	Suppose $a_{n} = a$ and $b_{n} = b$ define two distinct constant sequences. Thus, $a - b \neq 0$. Choose a positive real number $\varepsilon < \lVert a - b \rVert$. Then, for all $n \in \mathbb{N}$ we have $\lVert a_{n} - b_{n} \rVert > \varepsilon$. Thus, there is no $N \in \mathbb{N}$ such that for all $n > N$ we must have $\lVert a_{n} - b_{n} \rVert < \varepsilon$. That is, $a_{n} \not \sim b_{n}$.
+\end{solution}
+
+\pagebreak
+
+\begin{problem}[(9) Something to think about but not turn in] 
 	\begin{enumerate}
 		\item Convince yourself that addition and multiplication are both associative and commtuative, that multiplication is distributive over addition, that the additive identity $0_{\mathbb{Q}_{\lVert \cdot \rVert}}$ is the equivalence class containing the constant sequence $\{ 0 \}_{n \in \mathbb{N}}$ and the multiplicative identity $1_{\mathbb{Q}_{\lVert \cdot \rVert}}$ is the equivalence class containing the constant sequence $\{ 1 \}_{n \in \mathbb{N}}$.
 
@@ -60,13 +161,19 @@
 
 \pagebreak
 
-\begin{problem}[(9)]
-	Describe all sequences in $\mathbb{Q}$ that are Cauchy with respect to the trivial norm, proving your description using the definition of Cauchy. COnclude that $\mathbb{Q}$ is complete with respect to the trivial norm.
+\begin{problem}[(10)]
+	Describe all sequences in $\mathbb{Q}$ that are Cauchy with respect to the trivial norm, proving your description using the definition of Cauchy. Conclude that $\mathbb{Q}$ is complete with respect to the trivial norm.
 \end{problem}
+
+\begin{solution}
+	We claim that all Cauchy sequences with respect to the trivial norm are eventually constant. A sequence eventually constant at $L \in \mathbb{Q}$ converges to $L \in \mathbb{Q}$. Thus, in $\mathbb{Q}$ with respect to the trivial norm, all Cauchy sequences converge --- $\mathbb{Q}$ is metrically complete.
+
+	Suppose a sequence $\{ a_{n} \}_{n \in \mathbb{N}}$ is Cauchy. Then there is some $N$ such that, for all $m, n > N$ we have $\lVert a_{m} - a_{n} \rVert_{\text{triv}} < 1 / 2$. By definition of the trivial norm, this means that $a_{m} = a_{n}$, and thus, that $\{ a_{n} \}_{n \in \mathbb{N}}$ is eventually constant.
+\end{solution}
 
 \pagebreak
 
-\begin{problem}[(10)]
+\begin{problem}[(11)]
 	Fix a prime $p$. Exhibit a sequence that is
 	\begin{enumerate}
 		\item Cauchy with respect to the usual absolute value but not the $p$-adic one.
@@ -75,6 +182,18 @@
 		\item Cauchy with respect to both the usual and the $p$-adic absolute values.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item The sequence $\{ 1 / n \}_{n \in \mathbb{N}}$ is Cauchy with respect to the usual absolute value since it converges. It is not Cauchy with respect to the $p$-adic absolute value because there are arbitrarily large prime powers with very small $p$-adic absolute value, and arbitrarily large numbers not divisible by $p$ with $p$-adic absolute value $1$.
+
+		\item  The sequence  $\{ p^{n} \}_{n \in \mathbb{N}}$ is not Cauchy with respect to the usual absolute value because it is unbounded with respect to that absolute value. It is Cauchy with respect to the $p$-adic absolute value because it converges to zero --- $\lvert p^{n} - 0 \rvert_{p} = 1 / p^{n} \to 0$.
+
+		\item The sequence $\{ n \}_{n \in \mathbb{N}}$ is not Cauchy with respect to the usual absolute value because it is unbounded with respect to the usual absolute value. It is not Cauchy with respect to the $p$-adic absolute value because there are arbitrarily large prime powers with very small $p$-adic absolute value, and arbitrarily large numbers not divisible by $p$ with $p$-adic absolute value $1$.
+
+		\item Any constant sequence converges in both absolute values, and thus, is Cauchy with respect to both absolute values.
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
