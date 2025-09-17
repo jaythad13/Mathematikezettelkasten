@@ -8,6 +8,8 @@ tags:
 - math-177/2
 - math-177/4
 - math-177/5
+- math-177/6
+- math-177/7
 ---
 
 The $p$-adics generalise two notions that we know, each in the direction of the other.
@@ -245,17 +247,88 @@ for all $m, n > \max M, N$ (note that $N > \# \{ b_{n} = 0 \}$).
 
 Clearly $\{ a_{n} b_{n} \}_{n \in \mathbb{N}}$ is eventually constant at $1$, and so is in the equivalence class of the multiplicative identity on $\overline{\mathbb{Q}}_{\lvert \cdot \rvert_{p}}$.
 
-Between this and the rest of the homework and some unrewarded work, we've shown that $\overline{\mathbb{Q}}_{\lvert \cdot \rvert_{p}}$ is a field.
+Between this and the rest of [[p-adic numbers --- math-177/attachments/homework/hw 2/hw 2.pdf#page|the homework]] and some unrewarded work, we've shown that $\overline{\mathbb{Q}}_{\lvert \cdot \rvert_{p}}$ is a field. We begin showing the identification between it and $\mathbb{Q}_{p}$ by characterising $\mathbb{Z}_{p}$.
+
+The lemma below says that with only exponential increase in the size of the number, we can get $p$-adically closer to any rational that is less than $1$.
+
+##### _lemma:_ approximating rationals by rational integers
+
+If $a / b \in \mathbb{Q}$, with $\lvert a / b \rvert_{p} \leq 1$, then for each $n \in \mathbb{N}$ there exists a non-negative integer $r < p^n$ such that $\lvert r - a / b \rvert_{p} \leq 1 / p^n$.
+
+###### _proof:_
+
+Suppose $\gcd (a, b) = 1$. Since $\lvert a / b \rvert_{p} \leq 1$, we must have $p \mid a$ and thus, $p \nmid b$. In fact, then $p^n \nmid b$. Thus, by [[Superdiscrete --- math-55A/notes/Division and Euclid's algorithm#_theorem _ Bezout's theorem|Bezout's theorem]], we have $x, y \in \mathbb{Z}$ such that $p^n y = 1 - bx$. Thus,
+$$
+\begin{align}
+\left\lvert  ax - \frac{a}{b}  \right\rvert _{p}  & = \left\lvert  \frac{- a(1 - bx)}{b}  \right\rvert_{p}  \\
+ & = \left\lvert  -p^n y \frac{a}{b}  \right\rvert _{p} \\
+ & = \frac{1}{p^n} \lvert y \rvert _{p} \lvert a / b \rvert _{p} \\
+ & \leq \frac{1}{p^n}. 
+\end{align}
+$$
+Here the inequality follows by the hypothesis that $\lvert a / b \rvert_{p}$ and the fact that $\lvert y \rvert_{p} \leq 1$ for all $y \in \mathbb{Z}$.
+
+Then choosing $r$ the remainder of $ax$ after dividing by $p^n$, we get $ax = q p^n + r$ with $q \in \mathbb{Z}$. Thus
+$$
+\begin{align}
+\left\lvert  r - \frac{a}{b}  \right\rvert _{p} & = \left\lvert  ax - \frac{a}{b} + q p^n  \right\rvert \\
+ & \leq \max \left\{  \left\lvert  ax - \frac{a}{b}  \right\rvert _{p} , \lvert qp^n \rvert_{p}   \right\} \\
+ & \leq \frac{1}{p^n}.
+\end{align}
+$$
+
+---
+
+This gets us that $\mathbb{Z}_{p}$ (which could be thought of as $z \in \mathbb{Q}_{p}$ with $\lvert z \rvert_{p} \le 1$) as all Cauchy sequences with norm less than $1$, in a way that respects the algebra too!
+
+##### _proposition:_ a metric description of $\mathbb{Z}_{p}$
+
+The $z \in \mathbb{Z}_{p}$ with residue sequences $(z_{n})$ are in bijection with equivalence classes of Cauchy sequences of rationals $x = \{ x_{n} \}_{n \in \mathbb{N}}$ with $\lvert x \rvert_{p} \leq 1$. This bijection is given by $z \mapsto \{ z_{n} \}_{n \in \mathbb{N}}$. In fact, this is a [[Abstract algebra --- math-171/notes/Ring homomorphisms#_definition _ ring isomorphisms, isomorphic|ring isomorphism]].
+
+###### _proof:_
+
+$z \mapsto \{ z_{n} \}_{n \in \mathbb{N}}$ clearly gives a Cauchy sequence since $z_{n + 1} = z_{n} + q p^n$ implies "successively Cauchy" which we show in the homework implies Cauchy (for the $p$-adic absolute value).
+
+Suppose $x = \{ x_{n} \}_{n \in \mathbb{N}}$ is Cauchy and has $\lvert x \rvert_{p} \leq 1$.
+
+For each $k \in \mathbb{N}$ let $N_{k} \in \mathbb{N}$ be an integer such that if $m, n \geq N_{k}$ then $\lvert x_{n} - x_{m} \rvert \leq 1 / p^k$. Choose $N_{j}$ so that the sequence $N_{1}, N_{2}, \dots$ are increasing. For each $k \in \mathbb{N}$, using the lemma and the fact that $\lvert x_{N_{k}} \rvert_{p} \le 1$ choose a non-negative integer $z_{k} < p^k$ with the property that $\lvert z_{k} - x_{N_{k}} \rvert < 1 / p^k$.
+
+Since
+$$
+\begin{align}
+\lvert z_{k + 1} - z_{k} \rvert_{p} & = \lvert z_{k + 1} - x_{N_{k + 1}} + x_{N_{k + 1}} - x_{N_{k}} + x_{N_{j}} - z_{k} \rvert_{p}  \\
+ & \le \max \{ \lvert z_{k + 1} - x_{N_{k + 1}} \rvert_{p}, \lvert x_{N_{k + 1}} - x_{N_{k}} \rvert_{p}, \lvert x_{N_{k}} - z_{k} \rvert  \}  \\
+ & = \max \left\{  \frac{1}{p^{j + 1}}, \frac{1}{p^j}  \right\} \\
+ & \leq \frac{1}{p^j}.
+\end{align}
+$$
+we have $z_{k + 1} - z_{k} = q p^k$ (equivalently, $z_{k + 1} \equiv z_{k} \pmod{p^k}$) and thus, $(z_{k})$ forms a compatible residue sequence defining some $z \in \mathbb{Z}_{p}$.
+
+This is in fact a well-defined function since distinct $y, z \in \mathbb{Z}_{p}$ have $\lvert y - z \rvert_{p} > 0$. In fact this means that there is some $k \in \mathbb{N}$ such that $y_{k} \neq z_{k}$, and thus, for all $n > k$ we have $y_{n} \not \equiv z_{n} \pmod{p^k}$. That is, $\lvert y_{n} - z_{n} \rvert_{p} > 1 / p^k$ and thus, $\{ y_{n} \}_{n \in \mathbb{N}} \not \sim \{ z_{n} \}_{n \in \mathbb{N}}$. 
+
+Now we show that $\{ z_{n} \}_{n \in \mathbb{N}} \sim \{ x_{n} \}_{n \in \mathbb{N}}$. That is, we show that this is inverse to the function $z \mapsto \{ z_{n} \}_{n \in \mathbb{N}}$. Note that
+$$
+\lvert z_{n} - x_{n} \rvert _{p} = \lvert z_{n} - z_{m} + z_{m} - x_{N_{m}} + x_{N_{m}} - x_{n} \rvert_{p} \leq \max \{ \lvert z_{n} - z_{m} \rvert_{p}, \lvert z_{m} - b_{N_{m}} \rvert_{p}, \lvert x_{N_{m}} - x_{n} \rvert   \}
+$$
+By choosing $n > N_{m}$, we have each of the absolute values smaller than $1 / p^m$, and thus, by choosing sufficiently large $n$ we can make $\lvert z_{n} - x_{n} \rvert_{p}$ arbitrarily small. Note that this follows for $\lvert z_{n} - z_{m} \rvert_{p}$ because $n > N_{m} \geq m$ (recall we chose $N_{m}$ increasing) implies $z_{n} \equiv z_{m} \pmod{p^m}$.
+
+Finally, since addition and multiplication are point-wise in both rings, this is a ring homomorphism, and thus, an isomorphism. It's easy to verify that it is also an isometry.
+
+---
+
+From here, it's easy to show that $\mathbb{Q}_{p} \cong \mathbb{Q}_{\lvert \cdot \rvert_{p}}$.
 
 ##### _theorem:_ $\mathbb{Q}_{p}$ is a metric completion
 
 $\mathbb{Q}_{p}$ is the [[Analysis --- math-131/notes/Cauchy sequences and completeness#_definition _ completion of a metric space|metric completion]] of $\mathbb{Q}$ with respect to the $p$-adic metric.
 
-We could define $\mathbb{Q}_{p}$ as the completion of $\mathbb{Q}$ with this metric. Then we would define the integers as follows.
+###### _proof:_
 
-##### _proposition:_ a metric description of $\mathbb{Z}_{p}$
+Suppose $x = \{ x_{n} \}_{n \in \mathbb{N}} \in \mathbb{Q}_{\lvert \cdot \rvert_{p}}$ is a Cauchy sequence with $\lvert x \rvert_{p} > 1$. We must have $\lvert x \rvert_{p} = p^k$ for some $k \in \mathbb{N}$. Thus, we can create a (unique) Cauchy sequence $z = \{ z_{n} \}_{n \in \mathbb{N}}$ with $z_{n} = x_{n} p^{k + 1}$. Clearly $\lvert z \rvert_{p} = \lvert x \rvert_{p} / p^{k + 1} < 1$ so $z$ corresponds to a $p$-adic integer, and $x = z / p^{k + 1}$ corresponds to a $p$-adic number. 
 
-$\mathbb{Z}_{p}$ is exactly those $x \in \mathbb{Q}_{p}$ with $\lvert x \rvert_{p} \leq 1$.
+This gives a ring morphism $\mathbb{Q}_{\lvert \cdot \rvert_{p}} \to \mathbb{Q}_{p}$. It is injective by the injectivity of $\mathbb{Z}_{\lvert \cdot \rvert_{p}} \to \mathbb{Z}_{p}$. It is surjective because every $x \in \mathbb{Q}_{p}$ can be written as $z / p^k$ for some $z \in \mathbb{Z}_{p}$ and each of these is mapped to by some Cauchy sequence given by $x_{n} = z_{n} / p^k$. Thus, $\mathbb{Q}_{\lvert \cdot \rvert_{p}} \to \mathbb{Q}_{p}$ is an isomorphism. Again, it's easy to verify that it is also an isometry.
+
+---
 
 ### Solving the motivating problem
 
