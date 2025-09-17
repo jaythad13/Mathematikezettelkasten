@@ -1,0 +1,60 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 168 --- Algorithms}
+\assignment{Homework 2}
+\duedate{17th September 2025}
+
+\begin{document}
+
+\begin{problem}[Problem 1: $\mathtt{FourSort}$: A faster $\mathtt{MergeSort}$]
+	A press release from Dr. D. Ception's laboratory announces the discovery of a revolutionary new algorithm dubbed $\mathtt{FourSort}$. According to the press release, researchers achieved a new breakthrough by modifying the traditional $\mathtt{MergeSort}$ algorithm. Instead of dividing the input array into \emph{two} arrays of length $n / 2$ in the recursive call, $\mathtt{FourSort}$ divides the input array into \emph{four} arrays of length $n / 4$. It then merges the four sorted lists together using the procedure we saw in class.
+	\begin{enumerate}[label = \alph*.]
+		\item Give the recurrence relation for $\mathtt{FourSort}$.
+
+		\item Compute the closed-form expression for $T(n)$ and the big-$O$ runtime of $\mathtt{FourSort}$. Is $\mathtt{FourSort}$ asymptotically faster than $\mathtt{MergeSort}$?
+
+		\item D. Ception's lab is optimistic that the principle behind FourSort can be taken further to achieve even \emph{faster} sorting algorithms. For instance, consider an algorithm that immediately splits the input list into $n$ lists of length $1$ before merging them back into a single sorted list by repeatedly identifying the list with the smallest remaining element. What is the running time of \emph{this} algorithm? This algorithm already has a name. What is it?
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Problem 2: Bot Finding]
+	You're performing consulting work for Greenearth, an ethically-conscious social media company that is concerned with malicious actors propagating fake information by running botnets on its platform.
+
+	Detecting whether or not a \emph{single} account is fake is very difficult, but the company has developed a program $\mathtt{BotAlike}$ that can compare two accounts' activity and determine whether or not the two accounts are controlled by the same user in $O(1)$ time. 
+
+	Greenearth would like to use this technology to evaluate large \emph{sets} of accounts and figure out whether they are part of a shared botnet. Specifically, they want an algorithm that takes as input a set of $n$ accounts and returns whether \emph{more than half} are controlled by the same user.
+
+	\begin{enumerate}[label = \alph*.]
+		\item Design a divide-and-conquer algorithm that uses $\mathtt{BotAlike}$ as a subroutine to determine whether the majority of $n$ aaccounts are controlled by the same user. If there is a strict majority, the algorithm should return the number of accounts in the majority \emph{and} at least one account from the majority user. If there is no majority, your algorithm should return nothing. Describe how your algorithm works.
+
+		\item Prove that your algorithm is correct using strong induction. Make sure that you both show that it will return the number of accounts controlled by the majority user if there is one and that it won't return anything if there is no majority user.
+
+		\item Give the worst-case recurrence describing the number of calls to $\mathtt{BotAlike}$ that your algorithm makes in the standard $T(n), T(1)$ format. Justify your recurrence in a sentence or two.
+
+		\item Solve the recurrence for the final running time. You may use a work table, or if relevant, cite an existing result from class.
+
+		For full credit, your solution should run in time $O(n \log n)$ with respect to the number of calls to $\mathtt{BotAlike}$.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Problem 3: Geometric divide and conquer: All lined up]
+	Some P.I.T. researchers have spun off their own visual effects lab, Grafix , which specializes in rendering backgrounds for complicated multiverse-related superhero movies. To do that work, they often have to consider many layers of different backgrounds at different angles and figure out which ones they need to render (since rendering a layer that is blocked by something else isn't worth all the computational effort). We'll consider a $2$-dimensional version of their problem.
+
+	\begin{enumerate}[label = \alph*.]
+		\item Suppose you have two lines $L_{i}$ and $L_{j}$, whose slopes satisfy the inequality $m_{i} < m_{j}$. Let $(p, q)$ be the point at which the two lines intersect. Show that $L_{i}$ is visible at $x$-coordinates satisfying $x < p$ and $L_{j}$ is visible at $x$-coordinates satisfying $x > p$.
+
+		\item Now consider a problem with only three lines $L_{1}, L_{2}, L_{3}$, each with its own unique slope $m_{1} < m_{2} < m_{3}$. Describe how you would determine which of these three lines is visible. What is the smallest number of visible lines? The largest?
+
+		\item Using ideas from the previous two parts and a divide-and-conquer strategy, describe an algorithm that, given a set of $n$ lines, compute the visible set. You don't need to write a formal proof of correctness, but you should describe your algorithm in enough detail that a peer could easily understand how and why it works.
+
+		\item Give the recurrence relation that describes the running time the divide and conquer portion of your algorithm in terms of $T(n)$ and $T(1)$. Evaluate the running time of your recurrence and of your algorithm as a whole using big-$O$ notation.
+	\end{enumerate}
+\end{problem}
+
+\end{document}
