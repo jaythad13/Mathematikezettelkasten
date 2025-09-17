@@ -1,0 +1,74 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 177 --- $p$-adic numbers}
+\assignment{Problem set 3}
+\duedate{19th September 2025}
+
+\begin{document}
+
+\begin{problem}[(1)]
+	This exercise explores the added benefits of having a non-archimedean norm when Cauchy-ness and convergence are concerned. Call the sequence $\{ a_{n} \}_{n \in \mathbb{N}}$ \emph{successively Cauchy} with respect to the norm $\lVert \cdot \rVert$ if for each $\varepsilon > 0$ there exists $N > 0$ such that if  $n > N$, then $\lVert a_{n + 1} - a_{n} \rVert < \varepsilon$.
+	\begin{enumerate}
+		\item Show that every Cauchy sequence is successively Cauchy.
+
+		\item Give an example of a successively Cauchy sequence that is not Cauchy.
+
+		\item Show that if $\lVert \cdot \rVert$ is non-archimedean, then every successively Cauchy sequence is Cauchy.
+
+		\item Suppose $\lVert \cdot \rVert$ is non-archimdean. Show that the sequence of partial sums $ \{ \sum_{i = 0}^{n} a_{i} \} _{n \in \mathbb{N}}$ is Cauchy if and only if the sequence $\{ a_{n} \}_{n \in \mathbb{N}}$ converges to $0$.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[(2)]
+	Use induction to prove that for every $n \ge 1$ there exists $a_{n} \in \mathbb{Z}$ such that $a_{n}^{2} \equiv -1 \pmod{5^{n}}$. Show that $\{ a_{n} \}_{n \in \mathbb{N}}$ is Cauchy with respect to $\lvert \cdot \rvert_{5}$. Thus, $\sqrt{-1} \in \mathbb{Q}_{5}$.
+\end{problem}
+
+\pagebreak
+
+So far we've been thinking of $\mathbb{Q}_{p}$ as a set of equivalence classes of Cauchy sequences. We will prove in class that each $p$-adic number $z \in \mathbb{Q}_{p}$ has a unique representative of the form $\{ \sum_{i = -k}^{n} c_{i} p^{i} \}_{n \in \mathbb{N}}$ where $k$ is an integer and $c_{i}$ are chosen from the set $\{ 0, 1, \dots, p - 1 \}$. This equivalence class $z$ can be then thought of as the convergent infinite sum $\sum_{i = -k}^{\infty} c_{i} p^{i}$. We use this notation and the existence of such representatives for the next two exercises.
+
+\begin{problem}[(3)]
+	Show that $\{ \sum_{i = -k}^{n} c_{i} p^{i} \}_{n \in \mathbb{N}}$ is Cauchy with respect to $\lvert \cdot \rvert_{p}$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[(4)]
+	\begin{enumerate}
+		\item By using the definition of the extension of the  $p$-adic value from $\mathbb{Q}$ to $\mathbb{Q}_{p}$, find $\lvert z \rvert_{p}$.
+
+		\item Suppose $m \in \mathbb{Z}$ and $z$ is the equivalence class that contains the constant sequence $\{ m \}_{n \in \mathbb{N}}$. Conclude that $k \le 0$.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+We end by exploring the algebraic structure of $\mathbb{Q}_{p}$ in some more detail. Define the ring of $p$-adic integers $\mathbb{Z}_{p} = \{ z \in \mathbb{Q}_{p} \mid \lvert z \rvert_{p} \le 1 \}$. Solve the last four exercises without resorting to the representation of $p$-adic numbers given above.
+
+\begin{problem}[(5)]
+	Verify that $\mathbb{Z}_{p}$ is indeed a ring by checking that it is closed under addition and multiplication. What is $\mathbb{Q} \cap \mathbb{Z}_{p}$?
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[(6)]
+	Show that the units of $\mathbb{Z}_{p}$ are precisely those elements of absolute value $1$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[(7)]
+	Show that $\mathfrak{m} = \{ z \in \mathbb{Q}_{p} \mid \lvert z \rvert_{p} < 1 \}$ is the unique maximal ideal of $\mathbb{Z}_{p}$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[(8)]
+	Show that $\mathbb{Z}_{p}$ is a PID by proving that every non-trivial ideal is of the form $(p^{n})$ for some $n$. Conclude that, up to associates, $p$ is the only prime element in the ring $\mathbb{Z}_{p}$.
+\end{problem}
+
+\end{document}
