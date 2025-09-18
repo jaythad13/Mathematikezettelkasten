@@ -10,6 +10,7 @@ tags:
 - math-177/5
 - math-177/6
 - math-177/7
+- math-177/8
 ---
 
 The $p$-adics generalise two notions that we know, each in the direction of the other.
@@ -324,11 +325,19 @@ $\mathbb{Q}_{p}$ is the [[Analysis --- math-131/notes/Cauchy sequences and compl
 
 ###### _proof:_
 
-Suppose $x = \{ x_{n} \}_{n \in \mathbb{N}} \in \mathbb{Q}_{\lvert \cdot \rvert_{p}}$ is a Cauchy sequence with $\lvert x \rvert_{p} > 1$. We must have $\lvert x \rvert_{p} = p^k$ for some $k \in \mathbb{N}$. Thus, we can create a (unique) Cauchy sequence $z = \{ z_{n} \}_{n \in \mathbb{N}}$ with $z_{n} = x_{n} p^{k + 1}$. Clearly $\lvert z \rvert_{p} = \lvert x \rvert_{p} / p^{k + 1} < 1$ so $z$ corresponds to a $p$-adic integer, and $x = z / p^{k + 1}$ corresponds to a $p$-adic number. 
+Suppose $x = \{ x_{n} \}_{n \in \mathbb{N}} \in \mathbb{Q}_{\lvert \cdot \rvert_{p}}$ is a Cauchy sequence with $\lvert x \rvert_{p} > 1$. We must have $\lvert x \rvert_{p} = p^k$ for some $k \in \mathbb{N}$. Thus, we can create a (unique) Cauchy sequence $z = \{ z_{n} \}_{n \in \mathbb{N}}$ with $z_{n} = x_{n} p^{k}$. Clearly $\lvert z \rvert_{p} = \lvert x \rvert_{p} / p^{k} \leq 1$ so $z$ corresponds to a $p$-adic integer, and $x = z / p^{k}$ corresponds to a $p$-adic number. 
 
 This gives a ring morphism $\mathbb{Q}_{\lvert \cdot \rvert_{p}} \to \mathbb{Q}_{p}$. It is injective by the injectivity of $\mathbb{Z}_{\lvert \cdot \rvert_{p}} \to \mathbb{Z}_{p}$. It is surjective because every $x \in \mathbb{Q}_{p}$ can be written as $z / p^k$ for some $z \in \mathbb{Z}_{p}$ and each of these is mapped to by some Cauchy sequence given by $x_{n} = z_{n} / p^k$. Thus, $\mathbb{Q}_{\lvert \cdot \rvert_{p}} \to \mathbb{Q}_{p}$ is an isomorphism. Again, it's easy to verify that it is also an isometry.
 
 ---
+
+We can come up with lots of examples of $p$-adic numbers now.
+
+##### _example:_ $p$-adic numbers
+
+1) $z = (p - 1) + (p - 1) p + (p - 1) p^{2} + \dots$ is just $-1 \in \mathbb{Z}_{p}$. We can see this either by calculating that $z + 1 = 0$ or by factoring $z = (p - 1) (1 + p + p^{2} + \cdots) = (p - 1)/(1 - p) = -1$ using the convergence of geometric series. 
+2) In general, $z = \sum_{i} c_{i} p^i \in \mathbb{Z}_{p}$ is the image of a positive integer under $\mathbb{Z} \to \mathbb{Z}_{p}$ if and only if only finitely many $c_{i}$ are non-zero. $z$ is the image of a negative integer if and only if finitely many $c_{i}$ are not $p - 1$.
+3) We proved on the homework that $x = \sum_{i} c_{i} p^i \in \mathbb{Q}_{p}$ is the image of a rational under $\mathbb{Q} \to \mathbb{Q}_{p}$ if and only if the $c_{i}$ repeat eventuallly.
 
 ### Solving the motivating problem
 
@@ -377,3 +386,7 @@ It follows from induction that the last two sums are divisible by $p$ (or in gen
 ---
 
 Note what we did here really needed $\mathbb{Q}_{p}$ as an algebraic and as an analytic structure! We used the analytic structure to get convergence of series that don't converge in $\mathbb{R}$ and to throw away all the information apart from modulo $p^{3}$. We also used the algebraic fact that $\mathbb{Z}$ and $\mathbb{Q}$ embed nicely in $\mathbb{Q}_{p}$ to mean that we could do all of the work in $\mathbb{Q}_{p}$ and actually recover values in $\mathbb{Z}$.
+
+### Residue fields and the ring structure of $\mathbb{Z}_{p}$
+
+On [[p-adic numbers --- math-177/attachments/homework/hw 3/hw 3.pdf|the homework]], we showed that  is a [[Abstract algebra --- math-171/notes/Factorisation in special rings#_definition _ principal ideal domain|principal ideal domain]]. We also showed that it is [[Commutative algebra --- math-189AA/notes/Local rings#_definition _ local rings|local]], with a unique maximal ideal $(p) = p \mathbb{Z}_{p}$. Since $p \mathbb{Z}_{p}$ is just all those $p$-adic integers with residue $0$ modulo $p$, we have that $\mathbb{Z}_{p} / (p) = \mathbb{Z} / (p)$. That is, the residue field of each local ring $\mathbb{Z}_{p}$ is $\mathbb{Z} / (p) = \mathbb{F}_{p}$.
