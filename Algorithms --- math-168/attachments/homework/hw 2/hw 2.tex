@@ -1,5 +1,7 @@
 \documentclass[12 pt, letterpaper]{hmcpset}
 \usepackage{hw-preamble}
+\usepackage{enumitem}
+\setlist[enumerate, 1]{label = \alph*.}
 
 \name{Jayden Thadani}
 \class{MATH 168 --- Algorithms}
@@ -10,7 +12,7 @@
 
 \begin{problem}[Problem 1: $\mathtt{FourSort}$: A faster $\mathtt{MergeSort}$]
 	A press release from Dr. D. Ception's laboratory announces the discovery of a revolutionary new algorithm dubbed $\mathtt{FourSort}$. According to the press release, researchers achieved a new breakthrough by modifying the traditional $\mathtt{MergeSort}$ algorithm. Instead of dividing the input array into \emph{two} arrays of length $n / 2$ in the recursive call, $\mathtt{FourSort}$ divides the input array into \emph{four} arrays of length $n / 4$. It then merges the four sorted lists together using the procedure we saw in class.
-	\begin{enumerate}[label = \alph*.]
+	\begin{enumerate}
 		\item Give the recurrence relation for $\mathtt{FourSort}$.
 
 		\item Compute the closed-form expression for $T(n)$ and the big-$O$ runtime of $\mathtt{FourSort}$. Is $\mathtt{FourSort}$ asymptotically faster than $\mathtt{MergeSort}$?
@@ -18,6 +20,54 @@
 		\item D. Ception's lab is optimistic that the principle behind FourSort can be taken further to achieve even \emph{faster} sorting algorithms. For instance, consider an algorithm that immediately splits the input list into $n$ lists of length $1$ before merging them back into a single sorted list by repeatedly identifying the list with the smallest remaining element. What is the running time of \emph{this} algorithm? This algorithm already has a name. What is it?
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item
+			\[
+				\boxed{
+					\begin{aligned}
+						T(n) & = 4 T(n / 4) + cn \\
+						T(1) & = c'
+					\end{aligned}
+				}
+			\]
+
+			With $\mathtt{FourSort}$, sorting a list of length $n > 1$ involves dividing the list into $4$ smaller lists of length $n / 4$ (in constant time), recursively sorting each list (in $4 T(n / 4)$ time), and then merging the lists (in $4cn / 4 = n$ time). This last time estimate follows from the fact that merging $m$ lists of length $\ell$ is $O(m \ell)$.
+
+			If $n = 1$, sorting the list is constant time since it involves doing nothing.
+
+		\item
+			\[
+				\boxed{
+					\begin{aligned}
+						T(n) & = n \log_{4} n \\
+						T(n) & = O(n \log n) \\
+						     & \text{$\mathtt{FourSort}$ is not asymptotically faster than $\mathtt{MergeSort}$.}
+					\end{aligned}
+				}
+			\]
+
+			Since $4^{k} \le n$ implies $k \le \log_{4} n$, we have at most $\log_{4} n$ levels. Each $k$th levels involves $4^{k - 1}$ merges of $4$ lists of length $n / 4^{k}$. For example, at the first level, we merge $4^{1}$ sorted lists of length $n / 4^{1}$ into $4^{0} = 1$ list. 
+
+			Merging $m$ lists of length $\ell$ each takes $O(m \ell)$ time, each level takes $4^{k - 1} O(4 n / 4) = O(n)$ time. Since there are $\log n$ levels, the total amount of time taken is $O(n) \log n = O(n \log n)$.
+
+		\item
+			\[
+				\boxed{
+					\begin{aligned}
+						T(n) & = O(n^{2}) \\
+						\mathtt{MinSort}
+					\end{aligned}
+				}
+			\]
+
+			Finding the minimum of $n$ elements takes $O(n)$ time. D. Ception's algorithm, which we will call $\mathtt{MinSort}$ requires successively finding the minimum of $n$, $n - 1$, and all the way down to $1$ element. This takes time
+			 \[
+				O(n) + O(n - 1) + \dots + O(1) = O(n (n + 1) / 2) = O(n^{2}).
+			\]
+\end{enumerate}
+\end{solution}
 
 \pagebreak
 
@@ -28,8 +78,8 @@
 
 	Greenearth would like to use this technology to evaluate large \emph{sets} of accounts and figure out whether they are part of a shared botnet. Specifically, they want an algorithm that takes as input a set of $n$ accounts and returns whether \emph{more than half} are controlled by the same user.
 
-	\begin{enumerate}[label = \alph*.]
-		\item Design a divide-and-conquer algorithm that uses $\mathtt{BotAlike}$ as a subroutine to determine whether the majority of $n$ aaccounts are controlled by the same user. If there is a strict majority, the algorithm should return the number of accounts in the majority \emph{and} at least one account from the majority user. If there is no majority, your algorithm should return nothing. Describe how your algorithm works.
+	\begin{enumerate}
+		\item Design a divide-and-conquer algorithm that uses $\mathtt{BotAlike}$ as a subroutine to determine whether the majority of $n$ accounts are controlled by the same user. If there is a strict majority, the algorithm should return the number of accounts in the majority \emph{and} at least one account from the majority user. If there is no majority, your algorithm should return nothing. Describe how your algorithm works.
 
 		\item Prove that your algorithm is correct using strong induction. Make sure that you both show that it will return the number of accounts controlled by the majority user if there is one and that it won't return anything if there is no majority user.
 
@@ -41,12 +91,51 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item We design an algorithm called $\mathtt{BotMajority}$. It takes a size $n$ set $S$ of accounts as input. If there is a majority user, it returns its number of accounts, and one of its account. It returns nothing otherwise.
+
+			If $n > 2$ then $\mathtt{BotMajority}$ calls $\mathtt{BotMajority}$ on two size $n / 2$ subsets $S_{1}$ and $S_{2}$. For each $i \in \{ 1, 2 \}$, if $S_{i}$ has a majority user, then $\mathtt{BotMajority}(S_{i})$ returns the number of accounts $m_{i}$ and one of its accounts $u_{i}$. $\mathtt{BotMajority}$ runs $\mathtt{BotAlike}(u_{i}, v_{j})$ for each $v_{j}$ in the other subset $S_{j}$ ($j \neq i$). If $\mathtt{BotAlike}(u_{i}, v_{j})$ returns $\mathtt{true}$, then $\mathtt{BotMajority}$ increments $m_{i}$. If, after running $\mathtt{BotAlike}(u_{i}, v_{j})$ on each $v_{j} \in S_{j}$, the incremented value of $m_{i}$ is greater than $n / 2$, then $\mathtt{BotMajority}$ returns $m_{i}, u_{i}$. If, after running this step on all the subsets $S_{i}$ with a majority user, $\mathtt{BotMajority}$ still hasn't terminated, then $\mathtt{BotMajority}$ returns $\mathtt{null}$.
+
+			If $n = 1$, then $\mathtt{BotMajority}$ returns the $1, u$ where $u$ is the only object in the set $S$.
+
+		\item Suppose $n = 1$. In this case, $\mathtt{BotMajority}$ clearly returns the number of accounts of the majority user and one of its accounts.
+
+			Suppose that for all sets of size $n < m$, $\mathtt{BotMajority}$ returns the desired output. Suppose a set $S$ of size $n$ is divided into subsets $S_{1}$ and $S_{2}$. Note that in order for a user to comprise a strict majority of the accounts, it must comprise a strict majority of the accounts in at least one of the subsets. Any user with no majority in either subset controls fewer than half of the accounts in each of the subsets, and thus, fewer than half of all of the accounts. Thus, we only need to check if the majority user of each subset is the majority user of $S$.
+
+			If the majority user $u_{i}$ of $S_{i}$ (if it exists) is the majority user of $S$, then the total number of accounts controlled by $u_{i}$ must be greater than $n / 2$. We already have the number of accounts controlled by $u_{i}$, contained in $S_{i}$. Call this number $m_{i}$. Thus, we only need to find the number of accounts controlled by $u_{i}$ in $S_{j}$ where $j \neq i$. This is obtained by incrementing $m_{i}$ by $1$ for each $v_{j} \in S_{j}$ such that $\mathtt{BotAlike}(u_{i}, v_{j})$ returns true. If the incremented value of $m_{i}$ is greater than $n / 2$, then $u_{i}$ is a majority user. Then the desired output is the user $u_{i}$ and the incremented value of $m_{i}$. This is the output of $\mathtt{BotAlike}$.
+
+			If neither of the majority users of $S_{1}$ and $S_{2}$ are majority users of $S$, then there are no majority users of $S$ (by our earlier argument). The desired output is $\mathtt{null}$ and this is the output of $\mathtt{BotAlike}$.
+		\item 
+			\[
+				\boxed{
+					\begin{aligned}
+						T(n) & = 2 T(n / 2) + cn/2 + cn/2 = 2 T(n / 2) + c n \\
+						T(1) & = c'.
+					\end{aligned}
+				}
+			\]
+
+			Finding a possible majority in a set of $n$ accounts first involves recursively finding possible majorities in each of the $2$ smaller, size $n / 2$ sets (in $2 T(n / 2)$ time). Then, in the worst case, there are majority users for each of $S_{1}$ and $S_{2}$, each of which is compared in $O(1)$ time against $n / 2$ users, taking $O(n / 2) + O(n / 2) = O(n)$ time in total.
+
+		\item
+			\[
+				\boxed{
+					T(n) = O(n \log n).
+				}
+			\]
+
+			This is the recurrence relation for merge sort from class. We showed that it is $O(n \log n)$.
+
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[Problem 3: Geometric divide and conquer: All lined up]
 	Some P.I.T. researchers have spun off their own visual effects lab, Grafix , which specializes in rendering backgrounds for complicated multiverse-related superhero movies. To do that work, they often have to consider many layers of different backgrounds at different angles and figure out which ones they need to render (since rendering a layer that is blocked by something else isn't worth all the computational effort). We'll consider a $2$-dimensional version of their problem.
 
-	\begin{enumerate}[label = \alph*.]
+	\begin{enumerate}
 		\item Suppose you have two lines $L_{i}$ and $L_{j}$, whose slopes satisfy the inequality $m_{i} < m_{j}$. Let $(p, q)$ be the point at which the two lines intersect. Show that $L_{i}$ is visible at $x$-coordinates satisfying $x < p$ and $L_{j}$ is visible at $x$-coordinates satisfying $x > p$.
 
 		\item Now consider a problem with only three lines $L_{1}, L_{2}, L_{3}$, each with its own unique slope $m_{1} < m_{2} < m_{3}$. Describe how you would determine which of these three lines is visible. What is the smallest number of visible lines? The largest?
@@ -56,5 +145,69 @@
 		\item Give the recurrence relation that describes the running time the divide and conquer portion of your algorithm in terms of $T(n)$ and $T(1)$. Evaluate the running time of your recurrence and of your algorithm as a whole using big-$O$ notation.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	Note that by a line $L$ being visible at $x$-coordinate $x_{0}$, we mean that it's $y$-coordinate is greater than the $y$-coordinate of all other lines at that point.
+	\begin{enumerate}
+		\item Let $L_{1} = \{ (x, y) \mid y = m_{1} x + c_{1} \}$ and $L_{2} = \{ (x, y) \mid y = m_{2} x + c_{2} \}$. Thus,
+			\[
+				p = \frac{c_{2} - c_{1}}{m_{1} - m_{2}}.
+			\]
+			If $x < p$, then since $m_{1} - m_{2} < 0$
+			\begin{align*}
+				m_{1} x - m_{2} x & > (m_{1} - m_{2}) p \\
+						  & = c_{2} - c_{1}
+			\end{align*}
+			so $m_{1} x + c_{1} > m_{2} x + c_{2}$. If $x > p$, then since $m_{2} - m_{1} > 0$,
+			\begin{align*}
+				m_{2} x - m_{1} x & > (m_{2} - m_{1}) p \\
+						  & = c_{1} - c_{2}
+			\end{align*}
+			which implies $m_{2} x + c_{2} > m_{1} x + c_{1}$.
+
+		\item The minimum number of visible lines is $2$. A configuration of lines $L_{1}, L_{2}, L_{3}$ with only one visible line (say $L_{1}$) would have the $y$-coordinate of $L_{1}$ always greater than or equal to the $y$-coordinates of $L_{2}$ and $L_{3}$. This would require $L_{1}$ to never intersect $L_{2}$ and $L_{3}$ or be the same line as them. This would imply $L_{1}$ parallel to $L_{2}$ and $L_{3}$, and thus, each line could not have it's own slope. Thus, there must be at least $2$ visible lines. A configuration of $3$ lines with only $2$ visible is $L_{1} = \{ (x, y) \mid y = -(x + 1) \}, L_{2} = \{ (x, y) \mid y = - 10 \}, L_{3} = \{ (x, y) \mid y = x - 1 \}$. Since $L_{2}$ is below $L_{1}$ for all non-positive $x$ and below $L_{3}$ for all non-negative $x$, $L_{2}$ is never visible. 
+
+			The maximum number of visible lines is $3$. Clearly there can be no more than $3$ visible lines since there are only $3$ lines in total. A configuration of $3$ visible lines is $L_{1} = \{ (x, y) \mid y = - (x + 1) \}, L_{2} = \{ (x, y) \mid y = 0 \}, L_{3} = \{ (x, y) \mid y = x - 1 \}$. It has $L_{1}$ visible for all $x \le -1$, $L_{2}$ visible for all $x \in [-1, 1]$, and  $L_{3}$ visible for all $x \ge 1$.
+
+		\item Let our algorithm take a set of lines as input and output the set of visible lines $\{ L_{i} \}$, and for each $L_{i}$, the interval $I_{i}$ on which it is visible.
+
+			In the case that the set of lines is one line, return $I_{1} = \mathbb{R}$ and $L_{1}$ is the one line.
+
+			Suppose the set of lines $S$ has size $n > 1$. Sort the lines by slope (from least to greatest). Divide the lines into two subsets --- those with slope greater than the median slope (call this $S_{R}$ for lines on the right) and those with slope at most the median slope (call this $S_{L}$ for lines on the left). Recursively find the intervals on which lines are visible.
+
+			Note that all the lines that are visible in the whole configuration $S$, must be visible in $S_{L}$ and $S_{R}$. Thus, we only need to determine which of the lines are made invisible in combining $S_{L}$ and $S_{R}$. A visible line in $S_{L}$ is made invisible if it intersects a line of $S_{R}$ to the left of the interval where it's visible. Since the slope of the $S_{R}$ line is greater, its $y$-coordinate is greater to the right of the intersection point, and thus, over the whole interval where the $S_{L}$ line is visible. Similarly, a visible line in  $S_{R}$ is made invisible if it intersects a line of $S_{L}$ to the right of the interval where it's visible. Checking every pair of intersections, we can remove all invisible lines, and then update the intersections.
+
+			%Once the intervals for $S_{L}$ and $S_{R}$ are determined, let $I_{R}, L_{R}$ be the leftmost interval and corresponding line in $S_{R}$. That is, $I_{R} = (-\infty, x]$ for some $x_{R} \in \mathbb{R}$. Let $(x_{R}, y_{R})$ be its rightmost (with maximal  $x$-coordinate) intersection, of its $n / 2$ intersections with the lines in $S_{L}$. Similarly, let $I_{L}, L_{L}$ be the rightmost interval and corresponding line in $S_{L}$ and $(x_{L}, y_{L})$ its leftmost intersection with the lines in $S_{R}$.%
+
+		\item \[
+			\boxed{
+				\begin{aligned}
+					T(n) & = 2 T(n / 2) + cn^{2} + c' n \\
+					T(1) & = c'' \\
+					T(n) + O(n \log n) & = O(n^{2})
+				\end{aligned}
+			}
+		\]
+		Note that here $T(n)$ doesn't include the $O(n \log n)$ time required to sort the lines by slope.
+
+		Returning the intervals for a set of $n > 1$ lines involves the following
+		\begin{enumerate}[label = \arabic*.]
+			\item Sorting the lines by slope (note that this can be done just once) in $O(n \log n)$.
+			\item Recursively solving for the intervals on $S_{L}$ and $S_{R}$ (in time $2 T(n / 2)$).
+			\item Checking every intersection of lines in  $S_{L}$ with lines in $S_{R}$ (in time $O(n^{2} / 4)$).
+
+			\item Calculating the new intervals where the lines are visible (in time $O(n)$ since it only requires calculating intersections of lines with neighbouring slopes).
+		\end{enumerate}
+
+		%recursively solving the problem for two subsets of size roughly $n/2$ (in time $2 T(n / 2)$), finding the leftmost interval of the right subset (in time $O(n / 2)$), computing all of its intersections with the $n / 2$ lines (in time $O(n / 2)$), and finding the rightmost of those $n / 2$ intersections (in time $O(n / 2)$) and doing the same thing for the rightmost interval of the left subset. In all this takes time $2 T(n / 2) + cn$. Note that before this, sort the lines by slope in $O(n \log n)$ time. Finally, we compare their intersections with the intervals.%
+
+		As previously there are $\log n$ recursive levels. The work at each $k$th level is $2^{k} (n / 2^{k})^{2} = n^{2} / 2^{k}$ --- checking intersections of $n / 2^{k}$ lines with $n / 2^{k}$ lines for each of the $2^{k}$ different recursive calls on that level. Thus, we have
+		\[
+			T(n) = n^{2} \sum_{k = 1}^{\log n} \frac{1}{2^{k}} = n^{2} = n^{2} \frac{1 - 1/n}{1 - 1 / 2} = n^{2} \frac{2 (n - 1)}{n}.
+		\]
+
+		Thus, we have that $T(n) = O(n^{2})$. Adding the $O(n \log n)$ time to sort the lines gives a total of $O(n^{2})$ time still.
+	\end{enumerate}
+\end{solution}
 
 \end{document}
