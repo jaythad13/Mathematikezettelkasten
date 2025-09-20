@@ -1,0 +1,76 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 168 --- Algorithms}
+\assignment{Homework \#3}
+\duedate{20th September 2025}
+
+\begin{document}
+
+\begin{problem}[Problem 1: With great power comes great responsibility]
+	You are embarking on a new career as a superhero. Under the alias \emph {Algorithmaster}, you will harness the power of algorithms to do good!
+
+	Unfortunately, as a brand new hero, you're not allowed too go on world-saving adventures yet. Instead, you're expected to perform small, regularly scheduled heroic tasks to earn ``hero points''. Specifically, consider the following problem:
+	\begin{itemize}
+		\item \textbf{Input:} an array of hero shifts. Each shift allows opportunities for heroism, so each shift worth a different number hero points.
+
+		\item \textbf{Output:} a set of shifts worth the \emph{maximum total number of hero points}. However, you cannot take any two adjacent shifts! This is because you need time to ride your bike between shift locations.
+	\end{itemize}
+
+	\begin{enumerate}[label = \arabic*.]
+		\item Dr D. Ception proposes the following greedy algorithm: 
+
+			``Choose the shift with minimum profit and remove it --- you can travel between shifts at that time. Assume that this was the $i$th shift in the calendar. Removing this shift from  consideration divides the problem into two separate subproblems. Now we recursively solve each of those two problems using the same greedy approach. Our base cases are when we are left with only zero or one shifts, in which case we choose those.'' Give a counterexample that shows that this approach is not optimal.
+
+		\item Describe a use-or-lose recursive algorithm for this problem. The signature of your recursive function should be of the form $\mathtt{shifts(A[i \dots n])}$., The function should output a number corresponding to the maximum total value of the subproblem comprising shifts $i$ through $n$. So ultimately, when we run your function, we'll run it as $\mathtt{shifts}{A[1 \dots n]}$ since that will give an optimal solution to the problem for shifts $1$ through $n$. Finally notice that here we're just seeking the optimal total value (a number) and not the actual list of shifts used in that solution.
+
+		\item In one or two sentences, explain why the running time of the recursive algorithm is exponential in $n$, the number of shifts.
+
+		\item Turn this recursive algorithm into a corresponding efficient dynamic programming algorithm.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Problem 2: Smart lumber]
+	Several keen explorer-wizards from Unseen University recently made an astounding discovery: a large forest of \emph{sapient pearwood}. Since the discovery, the wizards have begun their own enterprise selling lumber, Pearwood Industries (PI). Being somewhat new to the lumber business, and knowing your algorithmic wizardry, they come to you with a problem.
+
+	Given an $m \times n$ cross section of lumber ($m$ and $n$ are integers, and the units are in centimeters). PI would like to cut the piece of lumber into some number of smaller pieces for sale. Each section will be a rectangle with integer dimensions. The value for any $k \times \ell$ piece can be looked up in constant time and the value is not necessarily related to the area of the piece, as some dimensions are simply in higher demand.
+
+	Your wizarding friends have constructed a special saw that is capable of making a cut --- horizontally or vertically --- across any rectangular section of sapient pearwood. Once a piece of wood is cut into two pieces, each piece may be cut into further pieces independently.
+
+	Design a recursive algorithm that determines the optimal way to subdivide an $m \times n$ piece of lumber to maximise the total value of the resulting pieces. Then use the recursive algorithm as the basis for an efficient (polynomial in $m$ and $n$) dynamic program.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Problem 3: Not throwing away $k$ shots]
+	You and your friends have founded WhitePaper, an algorithmically-powered high-frequency trading firm specialising in obscure cryptocurrencies. Your job is to analyse the past prices of these crpytocurrencies and to develop plans for when to buy and sell them in the future.
+
+	Your friends begin by providing you $n$ days of historical prices for PasadenaCoin, a new crpytocurrency started by students of the Pasadena Institute of Technology. Your friends want to find a \emph{k0shot strategy} for PasadenaCoin; that is, they want a money-making strategy that buys and sells coins at most $k$ times to make money over the period of historical prices. Formally, a $k$-shot strategy consists of $t$ pairs of days $(b_{1}, s_{1}), \dots, (b_{t}, s_{t})$ such that $0 \le t \le k$ and
+	\[
+		1 \le b_{1} < s_{1} < b_{2} < s_{2} \dots < b_{t} < s_{t} \le n.
+	\]
+	To execute the strategy, you buy the coin on each date $b_{i}$ and sell on each date $s_{i}$.
+
+	Specifically, consider the following problem:
+	\begin{itemize}
+		\item \textbf{Input:} An array $p$ containing $n$ days of historical price data for PasadenaCoin. $p(i)$ denotes the price of the coin on day $i$. Also, a positive integer $k$.
+
+		\item \textbf{Output:} A $k$-shot strategy that maximises total return, defined as
+			\[
+				\sum_{i = 1}^{t} p(s_{i}) - p(b_{i}).
+			\]
+	\end{itemize}
+
+	Design a recursive algorithm to find an optimal $k$-shot strategy and then use the recursive algorithm as the basis for an efficient dynamic program. The running time of your dynamic program should be polynomial in $k$ and $n$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Problem 4: Geometric divide and conquer: Flash mob!]
+	You've accepted a summer internship at a startup that's making a new flash mob app. Here's how it works. Given $n$ people in the plane, the app will periodically convene a flash mob of size $k$, where $k$ is some constant. The objective is to find a subset of $k$ of the $n$ people such that the sum of the pairwise distances between those $k$ people is as small as possible. In other words, given a set of $n$ points, we wish to find a subset $P$ of exactly $k$ points that minimises the sum $\sum_{p, q \in P} d(p, q)$. Describe and analyse the run time of a $O(n \log n)$ divide and conquer algorithm that solves the flash mob problem.
+\end{problem}
+
+\end{document}
