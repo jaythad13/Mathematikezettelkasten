@@ -17,15 +17,64 @@
 
 		\item Show that if $\lVert \cdot \rVert$ is non-archimedean, then every successively Cauchy sequence is Cauchy.
 
-		\item Suppose $\lVert \cdot \rVert$ is non-archimdean. Show that the sequence of partial sums $ \{ \sum_{i = 0}^{n} a_{i} \} _{n \in \mathbb{N}}$ is Cauchy if and only if the sequence $\{ a_{n} \}_{n \in \mathbb{N}}$ converges to $0$.
+		\item Suppose $\lVert \cdot \rVert$ is non-archimedean. Show that the sequence of partial sums $ \{ \sum_{i = 0}^{n} a_{i} \} _{n \in \mathbb{N}}$ is Cauchy if and only if the sequence $\{ a_{n} \}_{n \in \mathbb{N}}$ converges to $0$.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item Suppose $\{ a_{n} \}_{n \in \mathbb{N}}$ is Cauchy. Then, for each $\varepsilon > 0$, there is some $N \in \mathbb{N}$ such that, for all $m, n > N$ we have $\lVert a_{n} - a_{m} \rVert < \varepsilon$. For each $n > N$, we have $n + 1, n > N$, and thus,  $\lVert a_{n + 1} - a_{n} \rVert < \varepsilon$. That is, the sequence is successively Cauchy.
+
+		\item Consider $\{ \sum_{i = 1}^{n} 1 / i \}_{n \in \mathbb{N}}$. Each $n$th successive difference is $1 / (n + 1)$. Thus, given $\varepsilon > 0$ choose $N \in \mathbb{N}$ with $1 / N < \varepsilon$. For all $n > 1 / N$ we have that
+			\[
+				\sum_{i = 1}^{n + 1} 1/ i - \sum_{i = 1}^{n} 1 / i = 1 / n + 1 < 1 / N < \varepsilon.
+			\]
+			Thus, the sequence is successively Cauchy.
+
+			The sequence is not Cauchy since it is unbounded (each $k$th collection of $2^{k}$ summands is greater than $1$, so the sequence is eventually greater than any $M \in \mathbb{N}$).
+
+		\item Suppose $\{ a_{n} \}_{n \in \mathbb{N}}$ is successively Cauchy. Then, for each $\varepsilon > 0$, there is some $N \in \mathbb{N}$ such that for all $n > N$ we have $\lVert a_{n + 1} - a_{n} \rVert < \varepsilon$. Thus, for all $n \ge m > N$ we have
+			\begin{align*}
+				\lVert a_{n} - a_{m} \rVert & = \left \lVert \sum_{i = m + 1}^{n} a_{i} - a_{i - 1}  \right \rVert \\
+							    & \le \max \left \{ \lVert a_{n} - a_{n - 1} \rVert, \dots, \lVert a_{m + 1} - a_{m} \rVert \right \} \\
+							    & < \varepsilon.
+			\end{align*}
+			Here the first inequality is the strong triangle inequality and the second equality follows since each difference is $\lVert a_{k + 1} - a_{k} \rVert$ for some $k > N$ and $\{ a_{n} \}_{n \in \mathbb{N}}$ is successively Cauchy.
+
+			From this inequality it follows directly that $\{ a_{n} \}_{n \in \mathbb{N}}$ is Cauchy.
+		\item Suppose $\{ \sum_{i = 0}^{n} a_{i} \}_{n \in \mathbb{N}}$ is Cauchy. Then it is successively Cauchy, and the sequence of $n$th successive differences $\{ a_{n} \}_{n \in \mathbb{N}}$ converges to $0$.
+
+			Suppose $\{ a_{n} \}_{n \in \mathbb{N}}$ converges to $0$. Since $a_{n}$ is the $n$th successive difference (that is, $a_{n} = \sum_{i = 0}^{n} a_{i} - \sum_{i = 0}^{n - 1} a_{i}$), this implies that $\{ \sum_{i = 0}^{n} a_{i} \}_{n \in \mathbb{N}}$ is successively Cauchy, and thus, Cauchy.
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
 \begin{problem}[(2)]
 	Use induction to prove that for every $n \ge 1$ there exists $a_{n} \in \mathbb{Z}$ such that $a_{n}^{2} \equiv -1 \pmod{5^{n}}$. Show that $\{ a_{n} \}_{n \in \mathbb{N}}$ is Cauchy with respect to $\lvert \cdot \rvert_{5}$. Thus, $\sqrt{-1} \in \mathbb{Q}_{5}$.
 \end{problem}
+
+\begin{solution}
+	For $n = 1$, we have $2^{2} \equiv -1 \pmod 5$.
+
+	Suppose that for $n$ we have $a_{n}^{2} \equiv -1 \pmod{5^{n}}$. That is, $a_{n}^{2} = 5^{n} q - 1$. To ensure that $\{ a_{n} \}_{n \in \mathbb{N}}$ is Cauchy, we choose $a_{n + 1} \equiv a_{n} \pmod{5^{n}}$. We must then have  $a_{n + 1} = a_{n} + 5^{n} d$ for some $d \in \mathbb{Z}$. Thus,
+	\begin{align*}
+		a_{n + 1}^{2} & = (a_{n} + 5^{n} d)^{2} \\
+			      & = a_{n}^{2} + 5^{2n} d^{2} + 2 a_{n} 5^{n} d \\
+			      & = 5^{n} q - 1 + 5^{2n} d^{2} + 2 a_{n} 5^{n} d \\
+			      & = 5^{n}(q + 2 a_{n} d + 5^{n} d^{2}) - 1.
+	\end{align*}
+	To ensure that $a_{n + 1}^{2} \equiv -1 \pmod{5^{n + 1}}$ it suffices to have $5$ divide the expression in parentheses. This in turn is equivalent to having $5 \mid (q + 2 a_{n} d)$. Since $2 a_{n} \not \equiv 0 \pmod{5}$, it is a unit in $\mathbb{Z} / (5)$. Thus, we can choose $d$ so that $2 a_{n} d \equiv -q \pmod 5$, finally giving $a_{n + 1} = 5^{n + 1} q' - 1$ and thus, $a_{n + 1} \equiv -1 \pmod{5^{n + 1}}$.
+
+	Note that it suffices to show that $\{ a_{n} \}_{n \in \mathbb{N}}$ is successively Cauchy. Suppose we are given $\varepsilon > 0$. Choose $N \in \mathbb{N}$ such that $1 / 5^{N} < \varepsilon$. Then, for all $n > N$ we have
+	\begin{align*}
+		\lvert a_{n + 1} - a_{n} \rvert_{5} & = \lvert q 5^{n} \rvert_{5} \\
+						    & \le 1 / 5^{n} \\
+						    & < 1 / 5^{N} \\
+						    & < \varepsilon.
+	\end{align*}
+	Thus, $\{ a_{n} \}_{n \in \mathbb{N}}$ is successively Cauchy.
+\end{solution}
 
 \pagebreak
 
@@ -34,6 +83,20 @@ So far we've been thinking of $\mathbb{Q}_{p}$ as a set of equivalence classes o
 \begin{problem}[(3)]
 	Show that $\{ \sum_{i = -k}^{n} c_{i} p^{i} \}_{n \in \mathbb{N}}$ is Cauchy with respect to $\lvert \cdot \rvert_{p}$.
 \end{problem}
+
+\begin{solution}
+	Suppose we are given $\varepsilon > 0$. Choose $N$ such that $1 / p^{N} < \varepsilon$. Then, for all $m, n > N$ we have
+	\begin{align*}
+		\left \lvert \sum_{i = -k}^{n} c_{i} p^{i} - \sum_{i = -k}^{m} c_{i} p^{i} \right \rvert_{p} & = \left \lvert \sum_{i = m + 1}^{n} c_{i} p^{i} \right \rvert \\
+													     & \le \max \{ \lvert c_{m + 1} p^{m + 1} \rvert_{p}, \dots, \lvert c_{n} p^{n} \rvert_{p} \} \\
+													     & = 1 / p^{m + 1} \\
+													     & < 1 / p^{N} \\
+													     & < \varepsilon.
+	\end{align*}
+	Here, we know the maximum of the summands since none of the $c_{i}$ are divisible by $p$.
+
+	This definitionally implies that the sequence of partial sums is Cauchy.
+\end{solution}
 
 \pagebreak
 
@@ -45,6 +108,21 @@ So far we've been thinking of $\mathbb{Q}_{p}$ as a set of equivalence classes o
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item By definition,
+			\begin{align*}
+				\lvert z \rvert_{p} & = \lim_{n \to \infty} \left \lvert \sum_{i = -k}^{n} c_{i} p^{i} \right \rvert_{p} \\
+						    & = \lim_{n \to \infty} \max \{ \lvert c_{-k} p^{-k} \rvert_{p}, \dots, \lvert c_{n} p^{n} \rvert_{p} \} \\
+						    & = \lim_{n \to \infty} \lvert c_{-k} p^{-k} \rvert_{p} \\
+						    & = p^{k}.
+			\end{align*}
+			Here, again, we know the maximum of the summands because none of the $c_{i}$ are divisible by $p$.
+
+		\item For $m \in \mathbb{Z}$ we can write a base-$p$ expansion $m = c_{0} + c_{1} p^{1} + \dots + c_{\ell} p^{\ell}$. Thus, $z \sim \{ m \}_{n \in \mathbb{N}}$ also has $z \sim \{ \sum_{i = 0}^{n} c_{i} p^{i} \}_{n \in \mathbb{N}}$ where $c_{i} = 0$ for all $i > \ell$. Thus, $-k$, the smallest integer such that $c_{-k} \neq 0$ is at least $0$. Since $-k \ge 0$, we have $k \le 0$.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 We end by exploring the algebraic structure of $\mathbb{Q}_{p}$ in some more detail. Define the ring of $p$-adic integers $\mathbb{Z}_{p} = \{ z \in \mathbb{Q}_{p} \mid \lvert z \rvert_{p} \le 1 \}$. Solve the last four exercises without resorting to the representation of $p$-adic numbers given above.
@@ -53,11 +131,21 @@ We end by exploring the algebraic structure of $\mathbb{Q}_{p}$ in some more det
 	Verify that $\mathbb{Z}_{p}$ is indeed a ring by checking that it is closed under addition and multiplication. What is $\mathbb{Q} \cap \mathbb{Z}_{p}$?
 \end{problem}
 
+\begin{solution}
+	Suppose $z_{1}, z_{2} \in \mathbb{Z}_{p}$. Then $\lvert z_{1} + z_{2} \rvert_{p} \le \max \{ \lvert z_{1} \rvert_{p}, \lvert z_{2} \rvert_{p} \} \le 1$ so $z_{1} + z_{2} \in \mathbb{Z}_{p}$. Also $\lvert z_{1} z_{2} \rvert_{p} = \lvert z_{1} \rvert_{p} \lvert z_{2} \rvert_{p} \le 1$ since it is the product of two numbers that are both at most $1$. Thus, $z_{1} z_{2} \in \mathbb{Z}_{p}$.
+
+	Suppose $z \in \mathbb{Q} \cap \mathbb{Z}_{p}$. Write $z = m / n$ in least terms. Thus, at most one of $m$ and $n$ is divisible by $p$. If $n$ were divisible by $p^{k}$, then $\lvert z \rvert_{p} = p^{k} > 1$. Thus, $z = m / n$ with $n$ not divisible by $p$.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[(6)]
 	Show that the units of $\mathbb{Z}_{p}$ are precisely those elements of absolute value $1$.
 \end{problem}
+
+\begin{solution}
+	Suppose $z \in \mathbb{Z}_{p}$ is a unit with $w \in \mathbb{Z}_{p}$ giving $wz = 1$. Then $\lvert w z \rvert_{p} = \lvert 1 \rvert_{p}$. Thus, $\lvert z \rvert_{p} \lvert w \rvert_{p} = 1$. Since $\lvert z \rvert_{p}, \lvert w \rvert_{p} \le 1$, in order for their product to be $1$, we must have $\lvert z \rvert_{p} = \lvert w \rvert_{p} = 1$.
+\end{solution}
 
 \pagebreak
 
@@ -65,10 +153,40 @@ We end by exploring the algebraic structure of $\mathbb{Q}_{p}$ in some more det
 	Show that $\mathfrak{m} = \{ z \in \mathbb{Q}_{p} \mid \lvert z \rvert_{p} < 1 \}$ is the unique maximal ideal of $\mathbb{Z}_{p}$.
 \end{problem}
 
+\begin{solution}
+	First we show that $\mathfrak{m}$ is an ideal of $\mathbb{Z}_{p}$. It suffices to show that for each $w_{1}, w_{2} \in \mathfrak{m}$ and $z \in \mathbb{Z}_{p}$ we always have $w_{1} + z w_{2} \in \mathfrak{m}$. Note that $\lvert w_{1} + z w_{2} \rvert_{p} \le \max \{ \lvert w_{1} \rvert_{p}, \lvert z \rvert \lvert w_{2} \rvert_{p} \}$. Since $\lvert w_{1} \rvert_{p} < 1$ and $\lvert z \rvert \lvert w_{2} \rvert_{p} \le 1 \lvert w_{2} \rvert < 1$, we have $\lvert w_{1} + z w_{2} \rvert < 1$, and thus, $w_{1} + z w_{2} \in \mathfrak{m}$.
+
+	Now we show that every proper ideal of $\mathbb{Z}_{p}$ is contained in $\mathfrak{m}$, making it the unique maximal ideal. Suppose $\mathfrak{i} \subseteq \mathbb{Z}_{p}$ is an ideal not contained in $\mathfrak{m}$. Then $\mathfrak{i}$ contains some $z \in \mathbb{Z}_{p} \setminus \mathfrak{m}$, with $\lvert z \rvert_{p} = 1$. By the previous exercise, $z$ must be a unit, and $\mathfrak{i}$, by containing a unit, must be the whole ring $\mathbb{Z}_{p}$. Thus, no proper ideal contains elements not in $\mathfrak{m}$; equivalently, every proper ideal is contained in $\mathfrak{m}$.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[(8)]
 	Show that $\mathbb{Z}_{p}$ is a PID by proving that every non-trivial ideal is of the form $(p^{n})$ for some $n$. Conclude that, up to associates, $p$ is the only prime element in the ring $\mathbb{Z}_{p}$.
 \end{problem}
+
+\begin{solution}
+	Suppose $\mathfrak{i} \subseteq \mathbb{Z}_{p}$ is an ideal. Note that the set of non-negative integers $k$ such that all  $z \in \mathfrak{i}$ have $\lvert z \rvert_{p} \le 1 / p^{k}$ is non-empty. In particular, $0$ is in the set since all $z \in \mathfrak{i}$ have $\lvert z \rvert_{p} \le 1 / p^{0}$. Let $n$ be the maximal such integer. We claim that $\mathfrak{i} = (p^{n})$.
+
+	First we show that all $z \in \mathbb{Z}_{p}$ with $\lvert z \rvert_{p} \le 1 / p^{n}$ are contained in $(p^{n})$. Suppose $z \in \mathbb{Z}_{p}$ has $\lvert z \rvert_{p} \le 1 / p^{n}$. Then consider $y = z / p^{n} \in \mathbb{Q}_{p}$. We have
+	\begin{align*}
+		\lvert y \rvert_{p} & = \lvert z / p^{n} \rvert_{p} \\
+				    & = \lvert z \rvert_{p} / \lvert p^{n} \rvert_{p} \\
+				    & \le p^{n} / p^{n} \\
+				    & = 1.
+	\end{align*}
+	Thus, $y \in \mathbb{Z}_{p}$. Also, $z = y p^{n}$, meaning that $z \in (p^{n})$. Since all $z \in \mathfrak{i}$ have $\lvert z \rvert_{p} \le 1 / p^{n}$, we have $\mathfrak{i} \subseteq (p^{n})$.
+
+
+	Now we show that $p^{n} \in \mathfrak{i}$ and thus, $(p^{n}) \subseteq \mathfrak{i}$. We claim that since $n$ is maximal, there exists some $z \in \mathfrak{i}$ such that $\lvert z \rvert_{p} = 1 / p^{n}$. If there weren't, then all $z \in \mathfrak{i}$ would have $\lvert z \rvert_{p} < 1 / p^{n}$, and by the discreteness of the $p$-adic absolute value, $\lvert z \rvert_{p} \le 1 / p^{n + 1}$, contradicting the minimality of $n$.
+
+	Suppose $z \in \mathfrak{i}$ has $\lvert z \rvert_{p} = 1 / p^{n}$. Then choose $y = z / p^{n}$. We have $\lvert y \rvert_{p} = 1$, so $y$ is a unit in $\mathbb{Z}_{p}$. Then
+	\[
+		z y^{-1} = p^{n} (z / p^{n}) y^{-1} = p^{n} y y^{-1} = p^{n}.
+	\]
+	Thus, $p^{n} = z y^{-1} \in \mathfrak{i}$. It follows that $(p^{n}) \subseteq \mathfrak{i}$, and then by double containment that $\mathfrak{i} = (p^{n})$.
+
+	Suppose $\mathfrak{p} = (p^{n}) \subseteq \mathbb{Z}_{p}$ is prime. Then since $p^{n} \in \mathfrak{p}$, we must have $p \in \mathfrak{p}$. That is, we have $p = z p^{n}$ for some $z \in \mathbb{Z}_{p}$. Thus, $p(1 - z p^{n - 1}) = 0$, and thus,  $z p^{n - 1} = 1$. Since $\lvert p^{n - 1} \rvert = 1 / p^{n - 1}$, $p^{n - 1}$ is only a unit if $n = 1$. Since $z p^{n - 1} = 1$, $p^{n - 1}$ is a unit, and we have $\mathfrak{p} = (p^{n}) = (p)$. That is, $p$ is the only prime element.
+\end{solution}
 
 \end{document}
