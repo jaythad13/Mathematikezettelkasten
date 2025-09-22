@@ -30,6 +30,8 @@ If the complex is indexed in increasing order the indices are written as supersc
 
 We often write the dimensions of $H_{i}$ and $H^i$ as $h_{i}$ and $h^i$ respectively.
 
+---
+
 This definition naturally means that just as an [[Algebraic geometry --- rising-sea/notes/Complexes and exactness#_proposition _ factoring long exact sequences|exact sequence factors into short exact sequences]], we can factor a complex $A^{\bullet}$ into (pairs of) short exact sequences as below.
 ```tikz
 \usepackage{tikz-cd}
@@ -89,7 +91,11 @@ Homology also plays fairly nicely with the structure of complexes. For one, it i
 
 ##### _proposition:_ homology is functorial
 
-A [[Algebraic geometry --- rising-sea/notes/Complexes and exactness#_definition _ morphisms of complexes|morphism of complexes]] $A^{\bullet} \to B^{\bullet}$ induces a morphism of (co)homology $H^i(A^{\bullet}) \to H^{i}(B^{\bullet})$ (for each $i$) such that $H^i$ is a (covariant) [[Algebraic geometry --- rising-sea/notes/Functors#_definition _ (covariant, contravariant) functors|functor]] $\mathsf{Com}_{\mathscr{C}} \to \mathscr{C}$.
+A [[Algebraic geometry --- rising-sea/notes/Complexes and exactness#_definition _ morphisms of complexes|morphism of complexes]] $\varphi : A^{\bullet} \to B^{\bullet}$ induces a morphism of (co)homology $\varphi^i_{*} : H^i(A^{\bullet}) \to H^{i}(B^{\bullet})$ (for each $i$) such that $H^i$ is a (covariant) [[Algebraic geometry --- rising-sea/notes/Functors#_definition _ (covariant, contravariant) functors|functor]] $\mathsf{Com}_{\mathscr{C}} \to \mathscr{C}$.
+
+###### _proof sketch:_
+
+Let $A^\bullet$ be given by $f^i : A^i \to A^{i + 1}$ and $B^\bullet$ given by $g^i : B^i \to B^{i + 1}$. Then the map $\varphi^i_{*} : a + \operatorname{img} f^{i + 1} \mapsto \varphi(a) + \operatorname{img} g^{i + 1}$ is well-defined by exactness and the commutativity of the diagram.
 
 This functor isn't quite faithful — some distinct morphisms of complexes. However, we can characterise these morphisms
 
