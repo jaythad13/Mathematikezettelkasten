@@ -179,5 +179,7 @@ Given a continuous map $\xi : E \to X$, the **sheaf of sections** of $\xi$ is th
 
 ---
 
+It's relatively easy to show that this forms a sheaf. Since the sections are continuous functions $s_{i} : U_{i} \to Y$, they glue uniquely to a continuous function. Since the property that $\xi \circ s = \operatorname{id}_{U}$ can be checked point-by-point, the glued function also satisfies it.
+
 >[!warning]
 >incomplete
