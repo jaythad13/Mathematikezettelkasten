@@ -44,3 +44,15 @@ $\pi_{*} \mathscr{F}_{q}$ is the colimit of all $\pi_{*} \mathscr{F}(V) = \maths
 The maps sends a germ $s_{q} \in \pi_{*} \mathscr{F}_{q}$ corresponding to some $s \in \pi_{*} \mathscr{F}(V) = \mathscr{F}(U)$  to the equivalence class of $s$ in $\mathscr{F}_{p}$. Note that the equivalence classes in $\mathscr{F}_{p}$ are smaller since there are more conditions imposed by the more $\mathscr{F}(U)$s than $\pi_{*} \mathscr{F}(V)$s.
 
 ---
+
+Since sheaves on $X$ (with values in a particular category) [[Algebraic geometry --- rising-sea/notes/Morphisms of sheaves|form a category of their own]], we can make sense of the fact that pushforward is functorial.
+
+##### _proposition:_ pushforward is functorial
+
+Suppose $\pi : X \to Y$ is continuous. Then pushforward of (pre)sheaves (with value in $\mathscr{C}$) gives a functor $\pi_{*} : \mathscr{C}_{X} \to \mathscr{C}_{Y}$.
+
+###### _proof sketch:_
+
+$\pi_{*}$ is defined on objects by $\mathscr{F} \mapsto \pi_{*} \mathscr{F}$. Suppose $\varphi : \mathscr{F} \to \mathscr{G}$ is a morphism of (pre)sheaves. Then we can define a (pre)sheaf morphism $\pi_{*} \varphi : \pi_{*} \mathscr{F} \to \pi_{*} \mathscr{G}$ by $\pi_{*} \varphi(V) = \varphi(U)$ for $\pi^\text{pre}(V) = U$. For $V_{1} \subseteq V_{2}$ with pre-images $U_{1} \subseteq U_{2}$ the [[Algebraic geometry --- rising-sea/notes/Morphisms of sheaves#_definition _ morphism of sheaves|relevant diagram]] commutes — the two morphisms are the same $\pi_{*} \mathscr{F}(V_{2}) \to \pi_{*}\mathscr{G}(V_{1})$ because they are exactly the two morphism $\mathscr{F}(U_{2}) \to \mathscr{G}(U_{1})$ which agree.
+
+---
