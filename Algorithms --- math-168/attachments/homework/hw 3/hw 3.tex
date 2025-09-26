@@ -23,13 +23,43 @@
 
 			``Choose the shift with minimum profit and remove it --- you can travel between shifts at that time. Assume that this was the $i$th shift in the calendar. Removing this shift from  consideration divides the problem into two separate subproblems. Now we recursively solve each of those two problems using the same greedy approach. Our base cases are when we are left with only zero or one shifts, in which case we choose those.'' Give a counterexample that shows that this approach is not optimal.
 
-		\item Describe a use-or-lose recursive algorithm for this problem. The signature of your recursive function should be of the form $\mathtt{shifts(A[i \dots n])}$., The function should output a number corresponding to the maximum total value of the subproblem comprising shifts $i$ through $n$. So ultimately, when we run your function, we'll run it as $\mathtt{shifts}{A[1 \dots n]}$ since that will give an optimal solution to the problem for shifts $1$ through $n$. Finally notice that here we're just seeking the optimal total value (a number) and not the actual list of shifts used in that solution.
+		\item Describe a use-or-lose recursive algorithm for this problem. The signature of your recursive function should be of the form $\mathtt{shifts}(\mathtt{A[i, \dots, n]})$. The function should output a number corresponding to the maximum total value of the subproblem comprising shifts $i$ through $n$. So ultimately, when we run your function, we'll run it as $\mathtt{shifts}(\mathtt{A[1 \dots n]})$ since that will give an optimal solution to the problem for shifts $1$ through $n$. Finally notice that here we're just seeking the optimal total value (a number) and not the actual list of shifts used in that solution.
 
 		\item In one or two sentences, explain why the running time of the recursive algorithm is exponential in $n$, the number of shifts.
 
 		\item Turn this recursive algorithm into a corresponding efficient dynamic programming algorithm.
+
+		\item Your dynamic programming algorithm now tells you the maximum score you can achieve, but doesn't tell you the schedule which results in that score. Briefly describe how your DP algorithm could be modified to reconstruct an optimal solution rather than just the optimal value.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item Consider the array $\mathtt{[10, 2, 1]}$. The maximum total number of hero points is $11$, achieved by choosing the first and last hero shifts. However, this set of shifts includes the shift worth the minimum number of hero points. Thus, D. Ception's algorithm (which would involve only choosing the first shift) fails here.
+
+		\item Any shift set from $\mathtt{A[i, \dots, n]}$ with maximum point value either uses $\mathtt{A[i]}$ or doesn't. If $\mathtt{A[i, \dots n]}$ has only one element, then the maximum hero point shift set is $\{ \mathtt{A[i]} \}$. If $\mathtt{A[i, \dots, n]}$ is empty then the maximum point set is the empty set. This is the base case for the recursion.
+
+		Suppose $\mathtt{A[i, \dots, n]}$ has more than one element. If the maximum hero point shift set uses $\mathtt{A[i]}$, then the maximum number of hero points $\mathtt{A[i]} + \mathtt{shifts}(\mathtt{A[i + 2, \dots, n]})$ (since the adjacent $\mathtt{A}[i + 1]$ cannot be used). If it doesn't, then it is $\mathtt{shifts}(\mathtt{A[i + 1, \dots, n]})$. The maximum hero point shift set, and thus, the value of $\mathtt{shifts}(\mathtt{A[i, \dots, n]})$ is the maximum of $\mathtt{A[i]} + \mathtt{shifts}(\mathtt{A[i + 2, \dots, n]})$ and $\mathtt{shifts}(\mathtt{A[i + 1, \dots, n])}$.
+
+		\item Each call to $\mathtt{A[i, \dots, n]}$ invokes two calls --- one to $\mathtt{A[i + 1, \dots, n]}$ and one to $\mathtt{A[i + 2, \dots, n]}$. In all, getting down to the base cases involves $2^{n / 2}$ recursive calls. Since each of these calls is at least $O(1)$, we have $O(2^{n / 2}) = O(\sqrt{2}^{n}) = O(2^{n})$ running time for shifts.
+
+		\item We consider a (one-dimensional) length $n$ array for a DP table. Call it $\mathtt{T}$. In $\mathtt{T[i]}$ we store $\mathtt{shifts(A[n - i, \dots, n])}$.
+
+			We start with setting $\mathtt{T[0]} = \mathtt{shifts(A[n, \dots, n])} = 0$ and $\mathtt{T[1]} = \mathtt{A[n - 1]}$ since $\mathtt{A[n, \dots, n]}$ is empty and the maximum hero points from a one element array $\mathtt{A[n - 1, \dots, n]}$ is just the last element $\mathtt{A[n - 1]}$. Then we fill $\mathtt{T[i]}$ recursively.
+
+			Specifically, we set
+			\[
+				\mathtt{T[i]} = \max ( \mathtt{A[n - i]} + \mathtt{T[i - 2]}, \mathtt{T[i - 1]}).
+			\]
+			Since this agrees with our previous recursive algorithm, we have $\mathtt{T[n - 1]} = \mathtt{shifts(A[1, \dots, n])}$ as desired.
+
+			While filling each cell, the necessary previous cells have been filled. Thus, each cell can be filled in constant time. Since there are $n$ cells, the algorithm runs in $O(n)$ time.
+
+		\item In the cell of the DP table $\mathtt{T}$, instead of just storing the maximal score of the table store an object containing the indices of the maximal shift set corresponding to that index, and the size of that set. If $1 + \mathtt{T[i - 2].size} < \mathtt{T[i - 1].size}$, fill $\mathtt{T[i]}$ with the set and size in $\mathtt{T[i - 1]}$. Otherwise, fill $\mathtt{T[i]}$ with $\mathtt{T[i].set} = \{ n - i \} \cup \mathtt{T[i - 2].set}$ and $\mathtt{T[i].size} = 1 + \mathtt{T[i - 2].size}$.
+
+			This doesn't affect the big-$O$ run time since the work of filling each cell of the table is still $O(1)$ --- adding one element to a set is $O(1)$. Thus, the total run time is still $O(n)$.
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
@@ -43,12 +73,39 @@
 	Design a recursive algorithm that determines the optimal way to subdivide an $m \times n$ piece of lumber to maximise the total value of the resulting pieces. Then use the recursive algorithm as the basis for an efficient (polynomial in $m$ and $n$) dynamic program.
 \end{problem}
 
+\begin{solution}
+	Let $f : \mathbb{N}^{2} \to \mathbb{Z}$ be a function with $f(m, n)$ the maximum value of the pieces of an $m \times n$ piece of wood. Let $A$ be the array with $A[i, j]$ the value of each $i \times j$ piece (note that this is not zero-indexed). For each $m \times n$ piece of wood, we can make one of $m - 1$ vertical cuts, one of $n - 1$ horizontal cuts, or no cuts at all. $f(m, n)$ is the maximum of the corresponding values. That is, we can define $f$ recursively by
+	\[
+		f(m, n) = \begin{cases}
+			A[1, 1] & (m, n) = (1, 1) \\
+			\max ( f(m - i, n) + f(i, n), f(m, n - j) + f(m, j), A[m, n])
+		\end{cases}
+	\]
+	where $i$ and $j$ take all possible values $1 \le i < m$ and $1 \le j < n$. 
+
+	To make this more efficient, we replace the algorithm with a dynamic programming table. Again, for convenience, here we do not zero-index the table (so $T[m, n]$ is a valid look up, for example). Let $T$ be an $m \times n$ dynamic programming table with $T[k, \ell] = f(k, \ell)$ for all positive integers $k \le m$ and $\ell \le n$. We can fill $T$ out recursively. First we fill out $T[1, 1] = A[1, 1]$. Then we use the formula
+	\[
+		T[k, \ell] = \max ( T[k - i, \ell] + T[i, \ell], T[k, \ell - j] + T[k, j], A[k, \ell])
+	\]
+	for all $1 \le i < k$ and $1 \le j < \ell$. Note that it is technically possible to choose $i \le k / 2$ and $j \le \ell / 2$ but because of big-$O$ estimates this makes no difference to time complexity.
+
+	Note that $T[k, \ell]$ depends (directly) on all $T(i, j)$ with either $i < k, j = \ell$ or $i = k, j < \ell$. These are all the cells above and to the left of $T[k, \ell]$. We fill out the cells in the following pattern to ensure that when we fill out $T[k, \ell]$ all previous cells are already filled.
+
+	Once $T[1, 1]$ is filled, fill all $T[i, 1]$ and all $T[1, j]$ in increasing order of $i$ and $j$. Then fill all remaining $T[i, 2]$ and $T[2, j]$ in increasing order of $i$ and $j$, and so on until $T[k, \ell]$ is filled. 
+
+	While we fill a cell $T[i, j]$, all previous cells necessary to fill it have already been filled. Then filling $T[i, j]$ involves looking up $i + j$  entries in $T$ and one entry in $A$ and finding their maximum. This takes $2(i + j + 1)$ time. Since $i + j + 1 \le m + n + 1$, and there are $mn$ entries, the whole algorithm takes $O(mn) O(m + n + 1) = O(m^{2} n + m n^{2})$ time.
+
+	To find the cuts, we fill $T$ with not just the values of $f$, but also a pair $(v, h)$ where $v$ is the index of the vertical cut if one is made and zero otherwise and similarly $h$ is the index of the horizontal cut or zero. If $v$ and $h$ are both zero, we know no cut is made. For $T[1, 1]$ the pair is $(0, 0)$. 
+
+	Since the index of a maximal element of a set can be computed without any additional big-$O$ time complexity, this adds no complexity to filling out the table. Reconstructing the sequence of cuts just involves ``following the breadcrumbs'' from the cut specified in $T[m, n]$ until we get to all the dead-ends where no further cut is made. Following each cut takes $O(1)$ time. Since there are at most $mn$ cuts, the total complexity of reconstructing is $O(mn)$. Since the algorithm complexity is $O(m^{2} n + m n^{2})$ this doesn't affect the asymptotic run time.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[Problem 3: Not throwing away $k$ shots]
-	You and your friends have founded WhitePaper, an algorithmically-powered high-frequency trading firm specialising in obscure cryptocurrencies. Your job is to analyse the past prices of these crpytocurrencies and to develop plans for when to buy and sell them in the future.
+	You and your friends have founded WhitePaper, an algorithmically-powered high-frequency trading firm specialising in obscure cryptocurrencies. Your job is to analyse the past prices of these cryptocurrencies and to develop plans for when to buy and sell them in the future.
 
-	Your friends begin by providing you $n$ days of historical prices for PasadenaCoin, a new crpytocurrency started by students of the Pasadena Institute of Technology. Your friends want to find a \emph{k0shot strategy} for PasadenaCoin; that is, they want a money-making strategy that buys and sells coins at most $k$ times to make money over the period of historical prices. Formally, a $k$-shot strategy consists of $t$ pairs of days $(b_{1}, s_{1}), \dots, (b_{t}, s_{t})$ such that $0 \le t \le k$ and
+	Your friends begin by providing you $n$ days of historical prices for PasadenaCoin, a new crpytocurrency started by students of the Pasadena Institute of Technology. Your friends want to find a $k$-\emph{shot strategy} for PasadenaCoin; that is, they want a money-making strategy that buys and sells coins at most $k$ times to make money over the period of historical prices. Formally, a $k$-shot strategy consists of $t$ pairs of days $(b_{1}, s_{1}), \dots, (b_{t}, s_{t})$ such that $0 \le t \le k$ and
 	\[
 		1 \le b_{1} < s_{1} < b_{2} < s_{2} \dots < b_{t} < s_{t} \le n.
 	\]
@@ -66,6 +123,33 @@
 
 	Design a recursive algorithm to find an optimal $k$-shot strategy and then use the recursive algorithm as the basis for an efficient dynamic program. The running time of your dynamic program should be polynomial in $k$ and $n$.
 \end{problem}
+
+\begin{solution}
+	Let $R : \mathbb{N} \times \mathbb{N} \to \mathbb{Z}$ be a function with $R(n, k)$ be the maximum return of a $k$-shot strategy over $n$ days. We can define $R(n, k)$ recursively. Clearly $R(1, 1) = 0$ --- there can be no profit made in one day with any strategy. Otherwise, there are three possibilities. It's possible that the best $k$-shot strategy over $n$ days is actually a $(k - 1)$-shot strategy. It's possible that the best strategy is to use the best $(k - 1)$-shot strategy over $n - 1$ days and use the extra day to make an extra $k$th shot. Finally it's possible that the best $k$-shot strategy over $n$ days involves using the best $k$-shot strategy over $n - 1$ days. If it involves selling on the $n - 1$th day, then possibly extend to sell on the $n$th day.
+
+	\[
+		R(n, k) = \max \begin{cases}
+			R(n, k - 1), \mathtt{false} \\
+			R(n - 1, k - 1) + p(n) - p(n - 1), \mathtt{true} \\
+			R(n - 1, k - 1), \mathtt{false} \\
+			R(n - 1, k) + \begin{cases}
+				0, \mathtt{false} \\
+				\max \begin{cases}
+					p(n) - p(n - 1), \mathtt{true} \\
+					0, \mathtt{false}
+				\end{cases} & s_{k} = n \\
+			\end{cases}
+		\end{cases}
+	\]
+	To make sure that we have the information of whether the last sale occurs on day $n$, we say that $R(n, k)$ also returns a Boolean as indicated above.
+
+
+	Again, we can make this more efficient by defining $T$, a $n \times k$ dynamic programming table (not zero-indexed) such that $T[n, k] = R(n, k)$. As in problem 2, by this recursive formula $T[n, k]$ only depends on values $T[m, \ell]$ with $m \le n$ and $\ell \le k$. Thus, once $T[1, 1] = 0, \mathtt{false}$ is filled out, we can fill out $T$ in the same order as in problem 2. That is, we fill out all $T[i, 1]$ and all $T[1, j]$, then all remaining $T[i, 2]$ and all remaining $T[2, j]$ and so on. This ensures that when we fill out $T[m, \ell]$ all previous cells have already been filled out.
+
+	Filling each  $T[m, \ell]$ requires constant time look ups in $T$ and some constant time comparisons in $p$. Since there are $n k$ entries in $T$, this means that the total run time is $O(n k) O(1) = O(n k)$.
+
+	In order to recover the actual sequence of buys and sells, we can again follow the breadcrumbs, or instead, just store the whole set of intervals in $T$. Note that the sequence of intervals only changes if $p(n) - p(n - 1) > 0$ and it takes $O(1)$ to record the change. Thus, no change in run time.
+\end{solution}
 
 \pagebreak
 
