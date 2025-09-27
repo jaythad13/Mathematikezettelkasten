@@ -1,0 +1,77 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 177 --- $p$-adic numbers}
+\assignment{Problem set 4}
+\duedate{3rd October 2025}
+
+\begin{document}
+
+\begin{problem}[(1)]
+	Suppose $m \in \mathbb{Z}_{p}$. Show that $m$ is a negative integer if and only if all but finitely many of the $c_{i}$ equal $p - 1$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[(2)]
+	\begin{enumerate}
+		\item Suppose the sequence of coefficients $0 \le c_{i} \le p - 1$ eventually repeat. Show that $\sum_{i = -k}^{\infty} c_{i} p^{i}$ is a rational number.
+
+		\item Conversely, show that if $a / b \in \mathbb{Q}$, then the coefficients $0 \le c_{i} \le p - 1$ of its canonical $p$-adic expansion $a / b = \sum_{i = -k}^{\infty} c_{i} p^{i}$ eventually repeat.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[(3)]
+	Consider the $7$-adic numbers $a = 3 \times 7^{-2} + 6 \times 7^{-1} + 1 + 3 \times 7^{2} + \dots$ and $b = 4 \times 7 + 2 \times 7^{3} + 5 \times 7^{4} + 7^{5} + \dots$. Compute the first five digits of $4a$, $ab$, and $b / a$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[(4)]
+	Show that
+	\[
+		\gcd \{ \binom{m}{1}, \binom{m}{2}, \dots, \binom{m}{m - 1} \} = 1
+	\]
+	if and only if $m$ is not a prime $p$. Find the $\gcd$ if $m = p^{k}$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[(5)]
+	The \emph{principal units} of $\mathbb{Z}_{p}$ are given by $1 + p \mathbb{Z}_{p} = \{ z \in \mathbb{Z}_{p} \mid z \equiv 1 \pmod p \}$. Show that $1 + p \mathbb{Z}_{p}$ is a subgroup of $\mathbb{Z}_{p}^{\times}$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[(6)]
+	Suppose $x, y \in 1 + p \mathbb{Z}_{p}$ such that $x \equiv y \pmod{p^{n}}$ for some $n > 0$. Show that $x^{p} \equiv y^{p} \pmod{p^{n + 1}}$. Conclude that if $x$ is a principal unit then $x^{p^{n}}$ is a Cauchy sequence whose limit is $1$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[(7)]
+	Write $z \in \mathbb{Z}_{p}$ as $z = \sum_{i = 0}^{\infty} a_{i} p^{i}$ where $a_{i} \in \{ 0, 1, \dots, p - 1 \}$ and let $z_{n} = \sum_{i = 0}^{n} a_{i} p^{i}$. Suppose $x \in 1 + p \mathbb{Z}_{p}$. Show that $x^{z_{n}}$ is Cauchy. 
+
+	You have just proved that it makes sense to take $\mathbb{Z}_{p}$-powers of principal units.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[(8)]
+	Suppose $p$ is an odd prime. Suppose $x = 1 + a p^{k} \in 1 + p \mathbb{Z}_{p}$ with $a \in \mathbb{Z}_{p}^{\times}$. Show that there exists an integer $z_{0} \in \mathbb{Z}$ for which $(1 + p)^{z_{0}} \equiv x \pmod{p^{k + 1}}$. In other words, show that some power of $1 + p$ matches $x$ non-trivially. Continue by induction to show that for any $n \ge 0$ there exists an integer $z_{n} \in \mathbb{Z}$ such that $(1 + p)^{z_{n}} \equiv x \pmod{p^{k + n + 1}}$. 
+
+	What happens if $p = 2$?
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[(9)]
+	From your construction of the previous exercise, you should be able to conclude that $\{ z_{n} \}_{n \in \mathbb{N}}$ is Cauchy (with respect to $\lvert \cdot \rvert_{p}$). Show that if $z = \lim_{n \to \infty} z_{n}$, then $(1 + p)^{z} = x$.
+
+	You have just proven that $1 + p \mathbb{Z}_{p}$ is essentially cyclic, if we allow $p$-adic exponents
+\end{problem}
+
+\end{document}
