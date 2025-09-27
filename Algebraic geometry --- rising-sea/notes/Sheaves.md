@@ -54,13 +54,15 @@ Note that by the [[Algebraic geometry --- rising-sea/notes/Limits and colimits#_
 
 Also note that it doesn't always make sense to interpret $f_{p}$ as evaluating $f$ at $p$.
 
-A sheaf is then a presheaf that allows sections to pieced together uniquely from very small open sets, and in fact, from stalks.
+A sheaf is then a presheaf that allows sections to pieced together uniquely from very small open sets, and [[Algebraic geometry --- rising-sea/notes/Why stalks?|in fact, from stalks]].
 
-##### _definition:_ sheaf
+##### _definition:_ sheaf, separated presheaf
 
 A presheaf is a **sheaf** if it satisfies two more conditions. Let $U \subseteq X$ be any open set and $\{ U_{i} \}$ any open cover
 1) If $f, g \in \mathscr{F}(U)$ and $f_{\mid U_{i}} = g_{\mid U_{i}}$ for each $i$, then $f = g$.
 2) If there are $f_{i} \in \mathscr{F}(U_{i})$ such that $f_{i \mid U_{i} \cap U_{j}} = f_{j \mid U_{i} \cap U_{j}}$ for each pair $i, j$, then there is a (unique) $f \in \mathscr{F}(U)$ with $f_{\mid U_{i}} = f_{i}$ for each $i$.
+
+A presheaf is **separated** if it satisfies only the first condition.
 
 ---
 
