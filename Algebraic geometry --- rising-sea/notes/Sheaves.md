@@ -183,5 +183,62 @@ Given a continuous map $\xi : E \to X$, the **sheaf of sections** of $\xi$ is th
 
 It's relatively easy to show that this forms a sheaf. Since the sections are continuous functions $s_{i} : U_{i} \to Y$, they glue uniquely to a continuous function. Since the property that $\xi \circ s = \operatorname{id}_{U}$ can be checked point-by-point, the glued function also satisfies it.
 
->[!warning]
->incomplete
+The idea of la espace étalé is that, for any sheaf $\mathscr{E}$, we can construct a topological space $E$ with a map $\xi : E \to X$ such that the sheaf of sections of $X$ is just $\mathscr{E}$ (or more properly isomorphic to $\mathscr{E}$).
+
+##### _definition:_ la espace étalé of a sheaf
+
+Given a sheaf $\mathscr{E}$ on $X$, la **espace étalé** or the **space of sections** of $\mathscr{E}$ is the topological space $E$ with $\xi : E \to X$ as follows.
+
+$E$ is the disjoint union of all stalks $\mathscr{E}_{p}$ (that is, the set of all germs of $\mathscr{E}$) with the weakest topology such that all subsets of germs "coming from a section" $\{ s_{p} \mid s \in \mathscr{F}(U), p \in U \}$ are open. $\xi : E \to X$ is given by $s_{p} \mapsto p$.
+
+---
+
+Note that then the open sets of the space of sections are sets of [[Algebraic geometry --- rising-sea/notes/Why stalks?#Compatible germs|compatible germs]] — an element of (the image of $\mathscr{E}(U)$ in) $\prod_{p \in U} \mathscr{E}_{p}$ seen as a subset of $\coprod_{p \in U} \mathscr{E}_{p}$. 
+
+For the rest of this section let $\mathscr{E}$ be a sheaf on $X$ and $\xi : E \to X$ its space of sections.
+
+Some basic facts topological facts are true about $E$.
+
+##### _proposition:_ generating open sets of the space of sections form a basis
+
+Subsets $\{ s_{p} \mid s \in \mathscr{F}(U), p \in U \} \subseteq E$ can form a [[Topology --- math-147/notes/Bases#_proposition _ equivalent conditions to be a basis of any topology|basis]] of some topology on $E$, and thus, a basis of the topology that they generate on $E$.
+
+###### _proof:_
+
+Call the set of such subsets $\mathscr{B}$. [[Topology --- math-147/notes/Bases#_proposition _ equivalent conditions to be a basis of any topology|It suffices]] to show that every $s_{p} \in E$ is contained in some $U \in \mathscr{B}$ and that the intersection of $U, V \in \mathscr{B}$ is covered by sets in $\mathscr{B}$.
+
+Any $s_{p} \in E$ is the germ of some honest section $s \in \mathscr{F}(W)$, and is contained in $\{ s_{p} \mid s \in \mathscr{F}(W), p \in W \} \in \mathscr{B}$.
+
+Consider $U = \{ s_{p} \mid s \in \mathscr{F}(W_{U}), p \in W_{U} \}$ and $V = \{ t_{p} \mid t \in \mathscr{F}(V), p \in W_{V} \}$. If $U \cap V$ is non-empty, then $W_{U} \cap W_{V} \subseteq X$ is a non-empty open set. If $s_{q} = t_{q} \in U \cap V$, then there is some open neighbourhood $W \ni q$ such that $s_{\mid W} = t_{\mid W}$ and $W \subseteq W_{U} \cap W_{V}$. Thus, for all $p \in W$, the germs $s_{p} = t_{p}$ are part of the intersection $W_{U} \cap W_{V}$. Thus, $\{ s_{p} = t_{p} \mid s_{\mid W} = t_{\mid W} \in \mathscr{F}(W) \}$ contains $s_{q} = t_{q} \in U \cap V$, is a subset of $U \cap V$, and is a distinguished subset in $\mathscr{B}$.
+
+---
+
+##### _proposition:_ the space of sections is a local homeomorphism
+
+For each $s_{p} \in E$ there is an open neighbourhood $V$ of $s_{p}$ and an open neighbourhood $U$ of $\xi(s_{p}) = p$ such that $\xi_{\mid V} : V \to U$ is a [[Topology --- math-147/notes/Homeomorphisms#_definition _ homeomorphism|homeomorphism]].
+
+###### _proof:_
+
+Each germ $s_{p} \in E$ comes from some $s \in \mathscr{F}(U)$ with $p \in U$. Let $V = \{ s_{p} \mid s \in \mathscr{F}(U) \}$. We claim $\xi_{\mid V} : V \to U$ is a homeomorphism. This is because open subsets of $V$ are $\{ s_{p} \mid s_{\mid W} \in \mathscr{F}(W) \}$ for $W \subseteq U$, and these open sets have image $W$ under $\xi_{\mid V}$.
+
+---
+
+##### _proposition:_ sheaf is isomorphic to sheaf of sections of space of sections
+
+$\mathscr{E}$ is isomorphic to the space of sections of $\xi : E \to X$.
+
+###### _proof:_
+
+We don't bother defining a [[Algebraic geometry --- rising-sea/notes/Morphisms of sheaves#_definition _ morphism of sheaves|morphism of sheaves]] — we just note that it suffices to have the same value at each open set $U \subseteq X$ and the same restriction maps.
+
+Consider a section $\sigma : U \to E$. Suppose $\sigma(p) = s^p_{p}$ with $s^p \in \mathscr{E}(U_{p})$ for $p \in U_{p} \subseteq U$. Then, since $\sigma$ is continuous, $\sigma^\text{pre}(\{ s^p_{q} \mid q \in U_{p} \}) = V_{p}$ is a non-empty open set of $X$. Since $\xi \circ \sigma = \operatorname{id}_{X}$ we have $\sigma(q) = s^p_{q}$ for all $q \in V_{p}$. Since [[Algebraic geometry --- rising-sea/notes/Why stalks?#_proposition _ sections are stalk-local|stalks determine sections]] and the stalks of $s^p$ and $s^q$ agree everywhere on $V_{p} \cap V_{q}$, we must have $s^p = s^q$. Thus, we can glue the $s^p \in \mathscr{E}(V_{p})$ to some $s \in \mathscr{E}(U)$. This is the unique $s \in \mathscr{E}(U)$ such that $\sigma(p) = s_{p}$ everywhere on $U$.
+
+On the other hand, given a section $s \in \mathscr{E}(U)$, choosing $\sigma : U \to E$ by $\sigma(p) = s_{p}$ gives a continuous section of $\xi : E \to X$. For $t \in \mathscr{E}(V)$ the set of $p$ such that $s_{p} = t_{p}$ is some open $W \subseteq X$ (since each such $p$ gives an open neighbourhood $U_{p}$ where $s_{\mid U_{p}} = t_{\mid U_{p}}$, take the union of all $U_{p}$). Then the pre-image of any open $\{ t_{p} \mid t \in \mathscr{E}(U) \}$ is that open set $W$ where $t_{p} = s_{p}$.
+
+Restriction is the same as sections $\sigma : X \to E$ or as sections $s \in \mathscr{E}(U)$ — $\sigma_{\mid V}(p) = s_{\mid V, p}$ for all $p \in V$.
+
+---
+
+##### _remark:_ étalé vs. étale
+
+Confusingly, an étale morphism (a notion we meet later) is not quite a sheaf of sections, but rather something that behaves similar to one. Note the difference — étale (flat, slack) versus étalé (spread out). Also confusing is the fact that étalé means something like "étaled" (it's a past participle), so correct grammar would demand saying étale space for espace étalé. Also, Grothendieck said étale space, but he learnt french from germans, so that doesn't count for much ...
