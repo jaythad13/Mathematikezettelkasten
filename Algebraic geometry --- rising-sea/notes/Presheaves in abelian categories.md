@@ -92,6 +92,9 @@ $\mathscr{C}_{X}^\text{pre}$ is an abelian category.
 
 ---
 
+>[!missing]
+> proof
+
 ### Sheaf-iness?
 
 We would hope that the presheaves forming an abelian category would allow us to directly form an abelian category of [[Algebraic geometry --- rising-sea/notes/Sheaves#_definition _ sheaf|sheaves]]. While there is some hope — the kernel presheaf forms a sheaf — the cokernel dashes this hope. We will need [[Sheafification|sheafification]].
