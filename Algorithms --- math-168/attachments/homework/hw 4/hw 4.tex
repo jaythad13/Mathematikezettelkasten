@@ -1,0 +1,83 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 168 --- Algorithms}
+\assignment{Homework \#4}
+\duedate{2nd October 2025}
+
+\begin{document}
+
+\begin{problem}[Problem 1: Weight, weight don't tell me]
+	Dr. Alby Layzie is building a database of radio news programs by recording news programs broadcast on various stations. He has a schedule of
+times when different radio stations play their news, but he can only record one news program at a time.
+He'd like to maximize the total number of complete news programs he can record.
+
+Dr. Layzie's student, Cody, recognizes this problem as an interval scheduling (IS) problem. Cody has already written a program that solves the related problem of \emph{weighted} interval scheduling (WIS) in time $O(n \log n)$. Cody's code requires a list of intervals, each with a start time, end time, and weight. It returns an optimal solution as a list of disjoint intervals.
+
+Dr. Layzie could adapt Cody's code, but  instead he'd like to use the existing code as-is to solve interval scheduling. Following the three-step process described in Handout 3.5, describe a reduction from interval scheduling to weighted interval scheduling that would allow him to do this.
+
+\begin{enumerate}
+    \item {Description of Reduction:}
+
+	\item {Proof of Correctness:} 
+
+	\item {Runtime Analysis:}
+    
+    \item In addition to recording \emph{news} radio programs for his research, Dr. Layzie enjoys many light entertainment radio shows that are also broadcast on a regular schedule. He would like to use his recording system to tape as many of these light entertainment shows as possible, but his research must come first!
+
+    Dr. Layzie now has one set of $n$ intervals corresponding to news programs and a second set of $m$ intervals corresponding to light entertainment shows. He wants to use the Weighted Interval Scheduling program to find a schedule that (1) maximizes the number of news programs recorded and (2) subject to this constraint, maximizes the number of light entertainment shows recorded. Describe a reduction to WIS that would allow him to do this (no need to prove correctness or analyze the runtime here).
+\end{enumerate}
+
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Problem 2: the Euclidean traveling salesperson problem]
+	The Euclidean Traveling Salesperson Problem is the following:  Given $n$ points in the plane (corresponding to cities), find a cycle (or ``tour'') that visits each vertex (city) exactly once and minimizes the total Euclidean distance travelled.
+
+	Unfortunately, there is no known polynomial time algorithm for solving this problem.\footnote{Of course, we could enumerate all $O(n!)$ possible cycles and determine which one is cheapest, but that would take too long for any interesting value of $n$.} Worse yet, the problem is NP-complete (more about that later in the semester). However, a special kind of traveling salesperson tour called an ``East-West'' cycle can be found efficiently.  An ``East-West'' cycle starts at the westernmost point.  It then heads east visiting some number of the cities until it gets to the easternmost point.  It then heads back west visiting the cities that have not yet been visited.  Figure 1(b) shows an optimal East-West cycle for the same 7 points shown in Figure 1(a). Formally, the problem can be written as follows:
+
+\begin{itemize}
+    \item {Input:} $n$ points in the plane such that no two points share an $x$-coordinate. From west to east, we'll call these points $p_1, p_2, \dots, p_n$ (so $p_1$ is the westernmost point and $p_n$ is the easternmost).
+    \item {Output:} The shortest East-West traveling salesperson tour. Every East-West traveling salesperson tour can be represented as a list of points $p_1, \dots, p_n, \dots, p_1$, where the first ``$\dots$'' represents the points visited on the west-to-east part of the tour, in order, and the second ``$\dots$'' represents the points visited on the east-to-west part of the tour, in order. The tour must contain every point exactly once and must minimize total travel distance.
+\end{itemize}
+
+\begin{enumerate}
+    \item We previously observed that there are $O(n!)$ possible cycles that contain each vertex exactly once. (These are called \emph{Hamiltonian Cycles}, by the way.) Of course, only some of these are East-West cycles. How many East-West cycles are possible?
+    
+    \item The number of East-West cycles is still too large for a brute-force algorithm to be efficient. We can simplify the problem with the following function definition: for every positive $i, j \leq n$, let $\texttt{min-EW-path(i,j)}$ denote the length of the shortest ``East-West path'' that begins at $p_i$, travels east to $p_n$, then travels west back to $p_j$. An East-West path visits every point east of \emph{both} of $p_i$ and $p_j$ exactly once.
+
+    Fix a pair of indices $i, j$. We can assume $i \leq j$ without loss of generality: this is because \texttt{min-EW-path(i,j)} is the same as \texttt{min-EW-path(j,i)}, since we can just reverse the direction of travel. Suppose we have previously computed and stored the value of $\texttt{min-EW-path($k$, $\ell$)}$ for every $k \geq i$, $\ell \geq j$ (except $(k, \ell) = (i, j)$). Explain how to compute $\texttt{min-EW-path(i,j)}$ using this information.
+
+    \item Following the process from Handout 3 and using your answer to the previous part as the basis of your recursive function, describe an efficient dynamic programming algorithm for finding an optimal East-West cycle for the Euclidean Traveling Salesperson problem in time polynomial in $n$. \textbf{You may skip} the pseudocode (Step 3), the formal proof by induction (Step 4), and the breadcrumbing description (Step 5e): this means your write-up will describe how the recursive algorithm works (Step 2) before describing how the equivalent DP algorithm works (Step 5).
+\end{enumerate}
+\end{problem}
+
+\begin{problem}[Problem 3: Touchy typesetting]
+	esearchers at the Pasadena Institute of Technology are developing a new typesetting system called PI\TeX.  One of PI\TeX's features is that it formats input so that the text is  left-justified (all lines begin at the same left column) and the right margin is as ``even'' as possible.  Moreover, PI\TeX\ can
+format text for any column width (so that it fits on mobile device screens,
+computer screens, and other displays). They have asked for your help to write a function that fits text to a particular maximum column width without dividing words into pieces or changing the order of the words. Specifically, the function \texttt{format(words[0...n], C, k)} should take as input an array of words, a positive integer \texttt{C} indicating the column limit, and a positive integer ``penalty parameter'' \texttt{k} explained below. It returns the minimum penalty (corresponding to the ``best'' arrangement of text).
+
+To compute the penalty, \texttt{format} calculates a line penalty $s^k$ for each line with $s$ extra spaces between the end of the last word and the column limit, then adds the line penalties together to get the total penalty.
+
+\begin{enumerate}
+    \item Following the write-up structure given in Handout 3, design a recursive function named \texttt{format-rec(words[0...n], C, k)} that takes as input an array \texttt{words[0...n]}, a column limit \texttt{C}, and a penalty parameter \texttt{k} and computes the optimal (smallest) total penalty achieved by any way of splitting the input word sequence into lines. Then describe a dynamic program that solves this problem. You may skip the formal proof by induction (Step 4) and how to modify the DP to construct an actual solution (Step 5e).
+
+    Some details:
+    \begin{itemize}
+        \item Every character (including spaces) takes up one column.
+        \item Every character that isn't a space is part of a word. The first three words in the given example are \texttt{"Call"}, \texttt{"me"}, and \texttt{"Ishmael."}
+        \item Separate each pair of words by one space. You don't need to include an extra space at the beginning or end of a line.
+        \item Don't worry about ``compiling'' your pseudocode: your write-up should make clear what recursive calls are being made and how words are being stored into lines of width at most \texttt{C}, but the result doesn't need to closely track the syntax of any programming language.
+    \end{itemize}
+    
+    \item In addition to the regular DP write-up, convert the pseudocode you've written for $\texttt{format-rec}$ into pseudocode for a \emph{dynamic programming} function \texttt{format(words[0...n], C, k)} that takes as input an array \texttt{words[0...n]}, a column limit \texttt{C}, and a penalty parameter \texttt{k} and implements your DP algorithm. 
+    
+    \emph{Hint: \texttt{format} should not make any recursive calls! Instead, it should be iteratively filling in some sort of DP table.} 
+
+    Explain the key differences between your DP pseudocode and your recursive pseudocode in 1-2 sentences. (No need to entirely re-explain what your pseudocode does - it should work exactly like the DP algorithm you just described in the previous part!)
+\end{enumerate}
+\end{problem}
+
+\end{document}
