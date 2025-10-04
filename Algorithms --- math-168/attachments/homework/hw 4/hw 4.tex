@@ -1,5 +1,7 @@
 \documentclass[12 pt, letterpaper]{hmcpset}
 \usepackage{hw-preamble}
+\usepackage{algpseudocodex}
+\usepackage{algorithm}
 
 \name{Jayden Thadani}
 \class{MATH 168 --- Algorithms}
@@ -18,18 +20,33 @@ Dr. Layzie's student, Cody, recognizes this problem as an interval scheduling (I
 Dr. Layzie could adapt Cody's code, but  instead he'd like to use the existing code as-is to solve interval scheduling. Following the three-step process described in Handout 3.5, describe a reduction from interval scheduling to weighted interval scheduling that would allow him to do this.
 
 \begin{enumerate}
-    \item {Description of Reduction:}
+    \item {Description of reduction}
 
-	\item {Proof of Correctness:} 
+	\item {Proof of correctness} 
 
-	\item {Runtime Analysis:}
+	\item {Runtime analysis}
     
     \item In addition to recording \emph{news} radio programs for his research, Dr. Layzie enjoys many light entertainment radio shows that are also broadcast on a regular schedule. He would like to use his recording system to tape as many of these light entertainment shows as possible, but his research must come first!
 
-    Dr. Layzie now has one set of $n$ intervals corresponding to news programs and a second set of $m$ intervals corresponding to light entertainment shows. He wants to use the Weighted Interval Scheduling program to find a schedule that (1) maximizes the number of news programs recorded and (2) subject to this constraint, maximizes the number of light entertainment shows recorded. Describe a reduction to WIS that would allow him to do this (no need to prove correctness or analyze the runtime here).
+    Dr. Layzie now has one set of $n$ intervals corresponding to news programs and a second set of $m$ intervals corresponding to light entertainment shows. He wants to use the WIS program to find a schedule that (1) maximizes the number of news programs recorded and (2) subject to this constraint, maximizes the number of light entertainment shows recorded. Describe a reduction to WIS that would allow him to do this (no need to prove correctness or analyze the runtime here).
 \end{enumerate}
-
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item We claim an IS problem can be reduced to a WIS problem by running WIS on the list of intervals, start time, end time, and weight $1$ for each interval. (In fact, any constant weight $w$ that is the same for every interval will work).
+
+		\item If every interval is given weight $1$, then the total weight of a set of intervals is exactly the number of intervals in the set. Thus, the set with maximal weight is exactly the set with maximal number of intervals. Thus, solutions to the IS problem are exactly solutions to the WIS problem with constant weight $1$. (If the constant weight is $w$, the total weight of a set is $w$ times the number of intervals, so the same argument still works).
+
+		\item Since we run exactly the same $O(n \log n)$ algorithm for WIS, just with a particular weight function (which can be computed in $O(1)$ since it is constant), the total run time is still $O(n \log n)$.
+
+		\item We claim that this IS problem can be solved by running WIS on the list of intervals with each of the $n$ \emph{research} news radio programs assigned a weight $m + 1 > m$ and each of the $m$ \emph{entertainment} radio programs a weight of $1$. 
+
+			Since each research radio program has weight greater than the sum of weights all $m$ entertainment programs, the maximal number of research radio programs is always chosen. Any interval set with fewer than the maximal number of research programs will have less weight than the set of intervals with just the maximal number of research programs and no entertainment programs. Thus, any interval set with fewer than the maximal number of research programs does not have maximal weight. In order to maximise total weight the algorithm will then add as many entertainment programs as possible, subject to the constraint of the maximal number of research programs.
+
+			It runs in $O((n + m) \log (n + m))$ since WIS runs in $O((n + m) \log (n + m))$ and assigning the weights is at most $O(n + m)$.
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
@@ -44,40 +61,100 @@ Dr. Layzie could adapt Cody's code, but  instead he'd like to use the existing c
 \end{itemize}
 
 \begin{enumerate}
-    \item We previously observed that there are $O(n!)$ possible cycles that contain each vertex exactly once. (These are called \emph{Hamiltonian Cycles}, by the way.) Of course, only some of these are East-West cycles. How many East-West cycles are possible?
+    \item We previously observed that there are $O(n!)$ possible cycles that contain each vertex exactly once. (These are called \emph{Hamiltonian cycles}, by the way.) Of course, only some of these are East-West cycles. How many East-West cycles are possible?
     
-    \item The number of East-West cycles is still too large for a brute-force algorithm to be efficient. We can simplify the problem with the following function definition: for every positive $i, j \leq n$, let $\texttt{min-EW-path(i,j)}$ denote the length of the shortest ``East-West path'' that begins at $p_i$, travels east to $p_n$, then travels west back to $p_j$. An East-West path visits every point east of \emph{both} of $p_i$ and $p_j$ exactly once.
+    \item The number of East-West cycles is still too large for a brute-force algorithm to be efficient. We can simplify the problem with the following function definition: for every positive $i, j \leq n$, let $\mathtt{minEWpath}(i, j)$ denote the length of the shortest ``East-West path'' that begins at $p_i$, travels east to $p_n$, then travels west back to $p_j$. An East-West path visits every point east of \emph{both} of $p_i$ and $p_j$ exactly once.
 
-    Fix a pair of indices $i, j$. We can assume $i \leq j$ without loss of generality: this is because \texttt{min-EW-path(i,j)} is the same as \texttt{min-EW-path(j,i)}, since we can just reverse the direction of travel. Suppose we have previously computed and stored the value of $\texttt{min-EW-path($k$, $\ell$)}$ for every $k \geq i$, $\ell \geq j$ (except $(k, \ell) = (i, j)$). Explain how to compute $\texttt{min-EW-path(i,j)}$ using this information.
+    Fix a pair of indices $i, j$. We can assume $i \leq j$ without loss of generality: this is because $\mathtt{minEWpath}(i, j)$ is the same as $\mathtt{minEWpath}(i, j)$, since we can just reverse the direction of travel. Suppose we have previously computed and stored the value of $\mathtt{minEWpath}(k, \ell)$ for every $k \geq i$, $\ell \geq j$ (except $(k, \ell) = (i, j)$). Explain how to compute $\mathtt{minEWpath}(i, j)$ using this information.
 
     \item Following the process from Handout 3 and using your answer to the previous part as the basis of your recursive function, describe an efficient dynamic programming algorithm for finding an optimal East-West cycle for the Euclidean Traveling Salesperson problem in time polynomial in $n$. \textbf{You may skip} the pseudocode (Step 3), the formal proof by induction (Step 4), and the breadcrumbing description (Step 5e): this means your write-up will describe how the recursive algorithm works (Step 2) before describing how the equivalent DP algorithm works (Step 5).
 \end{enumerate}
 \end{problem}
 
+\begin{solution}
+	Let $d(p_{i}, p_{j})$ be the (Euclidean) distance between points $p_{i}$ and $p_{j}$ in the plane.
+	\begin{enumerate}
+		\item Each east--west cycle corresponds exactly partitions the $n - 2$ non-extremal points into two sets --- one set visited while going east and the other on the westward part. Each partition of the $n - 2$ non-extremal points defines exactly two east--west cycles --- one by travelling the first subset eastward and the other by travelling the second subset eastward. Thus, the east--west cycles of $n$ points are exactly twice as many as the partitions of a set of $n - 2$ points into two subsets.
+
+			There are $2^{n - 2}$ ways to a partition a set of size $n - 2$ into two subsets (just choose one of $2^{n - 2}$ subsets; the other is its complement). Thus, the number of east--west cycles is $2 \times 2^{n - 2} = 2^{n} / 2 = O(2^{n})$.
+
+		\item Every east--west path from $p_{i}$ to $p_{n}$ to $p_{j}$ either hits $p_{i + 1}$ travelling eastward or travelling westward. If it hits $p_{i + 1}$ travelling eastward, then its length is the distance $d(p_{i}, p_{i + 1})$ plus the length of the path from $p_{i + 1}$ to $p_{n}$ to $p_{j}$. The computation is similar for the westward path. Specifically, the length of the minimal length east--west path from $p_{i}$ to $p_{j}$ is
+			\[
+				\mathtt{minEWpath}(i, j) = \min \{ d(p_{i}, p_{i + 1}) + \mathtt{minEWpath}(i + 1, j), \mathtt{minEWpath}(i, i + 1) + d(p_{i + 1}, p_{j}) \}
+			\]
+
+		\item Notice that the recursive algorithm requires knowing $\mathtt{minEWpath}(k, \ell)$ for all $k \ge i$ and $\ell \ge j$ except $(k, \ell) = (i, j)$ in order to compute $\mathtt{minEWpath}(i, j)$. Also notice $\mathtt{minEWpath}(i, j) = \mathtt{minEWpath}(j, i)$.
+
+			We describe how to fill out an $n \times n$ (zero-indexed) dynamic programming table $T$ so that $T[k][\ell] = \mathtt{minEWpath}(n - k, n - \ell)$. Then $T[n - 1][n - 1]$ gives the length of the minimal length east--west path traversing all vertices.
+
+			Set $T[0][0] = 0$ since traveling from $p_{n}$ to $p_{n}$ is east--west and requires zero distance. Then suppose $k \le \ell$. Let $i = n - k$ and $j = n - \ell$. Then filling out the table in rows (all $T[0][\ell]$ in increasing order of $\ell$, then all $T[1][\ell]$, and so on) set
+			\[
+				T[k][\ell] = \min \{ d(p_{i}, p_{i + 1}) + T[k - 1][\ell], T[k][k - 1] + d(p_{i + 1}, p_{j}) \}
+			\]
+			and set $T[\ell][k] = T[k][\ell]$. Since we fill the table out in rows, when we fill $T[k][\ell]$ the table is filled for all $k' \le k$ and $\ell' \le \ell$ except $T[k][\ell]$. In particular, the values of the table that $T[k][\ell]$ depends on are filled out. Since $k - 1 < k$ and  $\ell \le \ell$, $T[k - 1][\ell]$ is filled out. Since $k \le k$ and $k - 1 < k \le \ell$, $T[k][k - 1]$ is filled out.
+
+			Since all the previous cells needed are filled out already, filling out each cell takes $O(1)$ time (constant time to make four look ups for distance and $T$ and one comparison). Since there are $n^{2}$ cells the total time taken is $O(n^{2})$. 
+
+			Technically, since $T[k][\ell] = T[\ell][k]$ (this is mentioned and explained in the problem statement) we can make a saving to $O(n^{2} / 2)$ by setting $T[\ell][k] = T[k][\ell]$ without doing any computations for $\ell > k$. Note that this is still the same asymptotically.
+	\end{enumerate}
+\end{solution}
+
 \begin{problem}[Problem 3: Touchy typesetting]
 	esearchers at the Pasadena Institute of Technology are developing a new typesetting system called PI\TeX.  One of PI\TeX's features is that it formats input so that the text is  left-justified (all lines begin at the same left column) and the right margin is as ``even'' as possible.  Moreover, PI\TeX\ can
 format text for any column width (so that it fits on mobile device screens,
-computer screens, and other displays). They have asked for your help to write a function that fits text to a particular maximum column width without dividing words into pieces or changing the order of the words. Specifically, the function \texttt{format(words[0...n], C, k)} should take as input an array of words, a positive integer \texttt{C} indicating the column limit, and a positive integer ``penalty parameter'' \texttt{k} explained below. It returns the minimum penalty (corresponding to the ``best'' arrangement of text).
+computer screens, and other displays). They have asked for your help to write a function that fits text to a particular maximum column width without dividing words into pieces or changing the order of the words. Specifically, the function $\mathtt{format}(\mathtt{words}[0, \dots, n], C, k)$ should take as input an array of words, a positive integer $C$ indicating the column limit, and a positive integer ``penalty parameter'' $k$ explained below. It returns the minimum penalty (corresponding to the ``best'' arrangement of text).
 
-To compute the penalty, \texttt{format} calculates a line penalty $s^k$ for each line with $s$ extra spaces between the end of the last word and the column limit, then adds the line penalties together to get the total penalty.
+To compute the penalty, $\mathtt{format}$ calculates a line penalty $s^k$ for each line with $s$ extra spaces between the end of the last word and the column limit, then adds the line penalties together to get the total penalty.
 
 \begin{enumerate}
-    \item Following the write-up structure given in Handout 3, design a recursive function named \texttt{format-rec(words[0...n], C, k)} that takes as input an array \texttt{words[0...n]}, a column limit \texttt{C}, and a penalty parameter \texttt{k} and computes the optimal (smallest) total penalty achieved by any way of splitting the input word sequence into lines. Then describe a dynamic program that solves this problem. You may skip the formal proof by induction (Step 4) and how to modify the DP to construct an actual solution (Step 5e).
+    \item Following the write-up structure given in Handout 3, design a recursive function named $\mathtt{formatRec}(\mathtt{words}[0, \dots, n], C, k)$ that takes as input an array $\mathtt{words}[0, \dots, n]$, a column limit $C$, and a penalty parameter $k$ and computes the optimal (smallest) total penalty achieved by any way of splitting the input word sequence into lines. Then describe a dynamic program that solves this problem. You may skip the formal proof by induction (Step 4) and how to modify the DP to construct an actual solution (Step 5e).
 
     Some details:
     \begin{itemize}
         \item Every character (including spaces) takes up one column.
         \item Every character that isn't a space is part of a word. The first three words in the given example are \texttt{"Call"}, \texttt{"me"}, and \texttt{"Ishmael."}
         \item Separate each pair of words by one space. You don't need to include an extra space at the beginning or end of a line.
-        \item Don't worry about ``compiling'' your pseudocode: your write-up should make clear what recursive calls are being made and how words are being stored into lines of width at most \texttt{C}, but the result doesn't need to closely track the syntax of any programming language.
+        \item Don't worry about ``compiling'' your pseudocode: your write-up should make clear what recursive calls are being made and how words are being stored into lines of width at most $C$, but the result doesn't need to closely track the syntax of any programming language.
     \end{itemize}
     
-    \item In addition to the regular DP write-up, convert the pseudocode you've written for $\texttt{format-rec}$ into pseudocode for a \emph{dynamic programming} function \texttt{format(words[0...n], C, k)} that takes as input an array \texttt{words[0...n]}, a column limit \texttt{C}, and a penalty parameter \texttt{k} and implements your DP algorithm. 
+\item In addition to the regular DP write-up, convert the pseudocode you've written for $\mathtt{formatRec}$ into pseudocode for a \emph{dynamic programming} function $\mathtt{format}(\mathtt{words}[0, \dots, n], C, k)$ that takes as input an array $\mathtt{words}[0, \dots, n]$, a column limit $C$, and a penalty parameter ${k}$ and implements your DP algorithm.
     
-    \emph{Hint: \texttt{format} should not make any recursive calls! Instead, it should be iteratively filling in some sort of DP table.} 
+    \emph{Hint: $\mathtt{format}$ should not make any recursive calls! Instead, it should be iteratively filling in some sort of DP table.} 
 
     Explain the key differences between your DP pseudocode and your recursive pseudocode in 1-2 sentences. (No need to entirely re-explain what your pseudocode does - it should work exactly like the DP algorithm you just described in the previous part!)
 \end{enumerate}
 \end{problem}
+
+\begin{solution}
+	I have no clue how to do this. Below is a guess but I'm almost certain it doesn't actually work.
+
+	\begin{enumerate}
+		\item We first describe the recursive function. We format the words from first to last. Notice that when formatting the $j$th word there are two options --- keep it on the same line in which case, we use the minimum penalty for a formatting it so that every other line leaves enough space for the word. Otherwise, we put the word on a new line and add the corresponding penalty.
+
+			We write the pseudocode for this
+
+			\begin{verbatim}
+				formatRec(words[0 ... n], C, k)
+					% input: array of words words[0 ... n], column limit C,
+					% penalty parameter k
+					% output: penalty of min. penalty formatting
+
+			\end{verbatim}
+		\iffalse
+			\begin{verbatim}
+				penalty(line[0, ..., m], C, k)
+					% input: line[0 ... m] an array of m words in a line,
+					% column limit C, the penalty parameter k
+					% output: the penalty for that line
+					sum = 0
+					for i < m
+						sum + = len(words[i])
+					s = C - sum - (m - 1)
+					return s^k
+			\end{verbatim}
+		\fi
+		We can describe this with the following dynamic program.
+	\end{enumerate}
+\end{solution}
 
 \end{document}
