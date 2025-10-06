@@ -32,6 +32,6 @@ The nilradical $\mathfrak{N}$ of a ring $A$ is the intersection of all prime ide
 
 Suppose $\mathfrak{p} \subseteq A$ is a prime ideal and $x \in \mathfrak{N}$. Then $x^n = 0 \in \mathfrak{p}$. Thus, by definition of primeness, $x \in \mathfrak{p}$. Thus, $\mathfrak{N} \subseteq \mathfrak{p}$ for every prime $\mathfrak{p}$, and then $\mathfrak{N} \subseteq \bigcap \mathfrak{p}$.
 
-Suppose $x \not\in \mathfrak{N}$.
+Suppose $x \not\in \mathfrak{N}$. Then $S = \{ 1, x, x^{2}, \dots \}$ does not contain zero. [[Commutative algebra --- math-189AA/notes/Localisation of a ring#_definition _ localisation of a ring, localisations at a prime, fraction field|Thus]], $S^{-1} A$ is not the zero ring. By Zorn's lemma, it contains a maximal, and thus, a prime ideal. But the prime ideals of $S^{-1} A$ [[Commutative algebra --- math-189AA/notes/Localisation of a ring#_proposition _ primes of the localisation are primes that don't meet $S$|are in bijection with]] the prime ideals of $A$ not meeting $S$. Thus, there is a prime in $A$ not containing $x$.
 
 ---
