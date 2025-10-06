@@ -12,15 +12,43 @@
 	Suppose $m \in \mathbb{Z}_{p}$. Show that $m$ is a negative integer if and only if all but finitely many of the $c_{i}$ equal $p - 1$.
 \end{problem}
 
+\begin{solution}
+	Since $m$ is a negative integer, $-m$ is a positive integer. Thus, its representation as a $p$-power series is just its base $p$ expansion. Say $-m = \sum_{i = 0}^{n} a_{i} p^{i}$. Since $m + (-m) = 0$, we must also have that $m + (-m) \equiv 0 \pmod{p^{n + 1}}$ or equivalently,
+	\[
+		\sum_{i = 0}^{n} (a_{i} + c_{i}) p^{i} = q p^{n + 1}
+	\]
+	Since $0 \le a_{i}, c_{i} < p - 1$ we have
+	\[
+		0 \le \sum_{i = 0}^{n} (a_{i} + c_{i}) p^{i} \le p^{n + 1}.
+	\]
+	The lower bound is only achieved if all $a_{i}, c_{i} = 0$. Since $-m$ is positive, $a_{i} > 0$ and this cannot be achieved. Since the sum is a multiple of $p^{n + 1}$, it must be $p^{n + 1}$ itself, achieved for $c_{i} = p - a_{i}$.
+
+	We've shown
+	 \[
+		\sum_{i = 0}^{n} (a_{i} + c_{i}) p^{i} = p^{n + 1}.
+	\]
+	Since $m + (-m) = 0$ we must have $p^{n + 1} + \sum_{i = n + 1}^{\infty} c_{i} p^{i} = 0$. Choosing $c_{i} = p - 1$ for all $i > n + 1$ gives us $m + (-m) = p^{n + 1} + \sum_{i = n + 1}^{\infty} c_{i} p^{i} = 0$.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[(2)]
 	\begin{enumerate}
 		\item Suppose the sequence of coefficients $0 \le c_{i} \le p - 1$ eventually repeat. Show that $\sum_{i = -k}^{\infty} c_{i} p^{i}$ is a rational number.
 
-		\item Conversely, show that if $a / b \in \mathbb{Q}$, then the coefficients $0 \le c_{i} \le p - 1$ of its canonical $p$-adic expansion $a / b = \sum_{i = -k}^{\infty} c_{i} p^{i}$ eventually repeat.
+		\item Extra credit: Conversely, show that if $a / b \in \mathbb{Q}$, then the coefficients $0 \le c_{i} \le p - 1$ of its canonical $p$-adic expansion $a / b = \sum_{i = -k}^{\infty} c_{i} p^{i}$ eventually repeat.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item We showed in problem set 2, question 2 that a series with repeating coefficients is rational. Suppose that for all $i \ge n$ the coefficients $c_{i}$ repeat. Then by problem 2 $\sum_{i = n}^{\infty} c_{i} p^{i - n}$ is rational $q \in \mathbb{Q}$. Thus,
+			\[
+				\sum_{i = -k}^{\infty} c_{i} p^{i} = p^{n} q + \sum_{i = -k}^{n - 1} c_{i} p^{i}
+			\]
+			which is the sum of rationals, and thus, rational.
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
@@ -38,17 +66,57 @@
 	if and only if $m$ is not a prime power $p^{k}$. Find the $\gcd$ if $m = p^{k}$.
 \end{problem}
 
+\begin{solution}
+	Suppose $m$ is not a prime power. In particular, suppose $m = p^{k} q$ for some prime $p$ and some integer $q$ not divisible by $p$. Then we claim $p \nmid \binom{m}{p^{k}}$. We simply write out the binomial coefficient as
+	\[
+		\binom{m}{p^{k}} = \frac{p^{k}(q - 1) + 1}{1} \, \frac{p^{k}(q - 1) + 2}{2} \cdots \frac{p^{k} q - 1}{p^{k} - 1} \frac{p^{k} q}{p^{k}}.
+	\]
+	Notice that only the last multiplicand is divisible by $p$ (in fact $p^{k}$), but it is divided by $p^{k}$. Thus, $p^{k} \nmid \binom{m}{p^{k}}$.
+
+	Since $p \nmid \binom{m}{p^{k}}$ for each prime $p$ dividing $m$, and any prime dividing all $\binom{m}{i}$ must divide $m = \binom{m}{1}$, the $\gcd$ of all $\binom{m}{i}$ has no prime divisors. Thus, it is $1$.
+
+	Suppose $m = p^{k}$. Then we claim that the $\gcd$ of all $\binom{m}{i}$ is $p$. Clearly $p$ divides each  $\binom{m}{i}$ since we have $\binom{m}{i} = \frac{m}{i} \binom{m - 1}{i - 1}$ and $\nu_{p}(m / i) \ge 1$ since $i < m = p^{k}$ forcing $\nu_{p}(i) < k$. 
+
+	We claim that $p^{2}$ does not divide all $\binom{m}{i}$. If it did, then it would have to divide their sum $2^{m} - 2$. Clearly if $p = 2$, then $p^{2}$ does not divide $2(2^{m - 1} - 1)$ since it is the product of $2$ and an odd number. If $p$ is odd, then $p$ must divide $2^{m - 1} - 1$ but this does not happen
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[(5)]
 	The \emph{principal units} of $\mathbb{Z}_{p}$ are given by $1 + p \mathbb{Z}_{p} = \{ z \in \mathbb{Z}_{p} \mid z \equiv 1 \pmod p \}$. Show that $1 + p \mathbb{Z}_{p}$ is a subgroup of $\mathbb{Z}_{p}^{\times}$.
 \end{problem}
 
+\begin{solution}
+	We use the subgroup criterion --- it suffices to show that $1 + p \mathbb{Z}_{p}$ is non-empty, and that for each $x, y \in 1 + p \mathbb{Z}_{p}$, $x y^{-1} \in 1 + p \mathbb{Z}_{p}$.
+
+	$1 \in 1 + p \mathbb{Z}_{p}$ so there is at least one principal unit.
+
+	Suppose $x, y \in 1 + p \mathbb{Z}_{p}$ with  $x = 1 + \sum_{i = 1}^{\infty} a_{i} p^{i}$ and $y = 1 + \sum_{i = 1}^{\infty} b_{i} p^{i}$ their representations as $p$-power series. We claim that $y^{-1} = 1 + \sum_{i = 1}^{\infty} b_{i}' p^{i}$. This follows since $y y^{-1} = 1$, and so by polynomial multiplication we must have $b_{0} b_{0}' = 1$. This forces $1 b_{0}' = 1$ and thus, $b_{0}' = 1$. Let $xy^{-1} = \sum_{i = 0}^{\infty} c_{i} p^{i}$. By polynomial multiplication, we must have $c_{0} = a_{0} b_{0}' = 1 \times 1 = 1$. Thus, $xy = 1 + \sum_{i = 1}^{n} c_{i} p^{i} \in 1 + p \mathbb{Z}_{p}$.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[(6)]
 	Suppose $x, y \in 1 + p \mathbb{Z}_{p}$ such that $x \equiv y \pmod{p^{n}}$ for some $n > 0$. Show that $x^{p} \equiv y^{p} \pmod{p^{n + 1}}$. Conclude that if $x$ is a principal unit then $x^{p^{n}}$ is a Cauchy sequence whose limit is $1$.
 \end{problem}
+
+\begin{solution}
+	Suppose $x - y = q p^{n}$ for some $q \in \mathbb{Z}_{p}$. Then $x^{p} - y^{p} = (x - y)q' = q q'p^{n}$. Here $q = \sum_{i = 0}^{p - 1} x^{i} y^{n - 1 - i}$. 
+
+	Since $q$ is the sum of $p$ principal units with residue $1 \pmod p$ it has residue $0 \pmod p$. That is, $q = p q'' \in p \mathbb{Z}_{p}$. Substituting this into our expression we get
+	\[
+		x^{p} - y^{p} = q q' p^{n} = q'' p q' p^{n} = q'' q p^{n + 1}.
+	\]
+	Thus, $x^{p} \equiv y^{p} \pmod{p^{n + 1}}$.
+
+	If  $x \in 1 + p \mathbb{Z}^{p}$, then $x \equiv 1 \pmod{p}$. By induction on the result above $x^{p^{n}} \equiv 1^{p^{n}} \equiv 1 \pmod{p^{n + 1}}$ for all $n \in \mathbb{N}$. Equivalently, $\lvert x^{p^{n}} - 1 \rvert_{p} \le 1 / p^{n + 1}$ for all $n \in \mathbb{N}$. Then, for each real $\varepsilon > 0$ there is some $N$ such that $1 / p^{N} < \varepsilon$. For all $n > N$ we have
+	 \begin{align*}
+		 \lvert x^{p^{n}} - 1 \rvert_{p} & \le 1 / p^{n + 1} \\
+						 & < 1 / p^{N} \\
+						 & < \varepsilon
+	\end{align*}
+	This means that $x^{p^{n}}$ converges to $1$. Since it converges, it is Cauchy.
+\end{solution}
 
 \pagebreak
 
@@ -58,6 +126,26 @@
 	You have just proved that it makes sense to take $\mathbb{Z}_{p}$-powers of principal units.
 \end{problem}
 
+\begin{solution}
+	Note that
+	\[
+		x^{z_{n}} = x^{\sum_{i = 0}^{n} a_{i} p^{i}} = \prod_{i = 0}^{n} x^{a_{i} p^{i}}.
+	\]
+	Using this expression, we show that $x^{z_{n}}$ is successively Cauchy, and thus, Cauchy. For any $n \in \mathbb{N}$ we have
+	\begin{align*}
+		\lvert x^{z_{n + 1}} - x^{z_{n}} \rvert_{p} & = \left \lvert \prod_{i = 0}^{n + 1} x^{a_{i} p^{i}} - \prod_{i = 0}^{n} x^{a_{i} p^{i}} \right \rvert_{p} \\
+							    & = \left \lvert \prod_{i = 0}^{n} x^{a_{i} p^{i}} \right \rvert_{p} \lvert x^{a_{n} p^{n}} - 1 \rvert_{p}
+	\end{align*}
+
+	Since the principal units form a multiplicative subgroup, $\prod x^{a_{i} p^{i}}$ and $x^{a_{n}}$ are principal units. Thus, $\lvert \prod x^{a_{i} p^{i}} \rvert_{p} = 1$ and $x^{a_{n} p^{n}} \equiv 1 \pmod{p^{n + 1}}$. Then for any $\varepsilon > 0$ we can choose $N$ such that $1 / p^{N} < \varepsilon$, and thus,
+	\begin{align*}
+		\lvert x^{z_{n + 1}} - x^{z_{n}} \rvert_{p} & = 1 \times 1 / p^{n + 1} \\
+							    & < 1 / p^{N} \\
+							    & < \varepsilon.
+	\end{align*}
+	That is, $x^{z_{n}}$ is successively Cauchy and thus, Cauchy.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[(8)]
@@ -66,6 +154,29 @@
 	What happens if $p = 2$?
 \end{problem}
 
+\begin{solution}
+	We claim $z_{0} = b p^{k - 1}$ where $b$ is the residue of $a$ modulo $p$. Notice that
+	\begin{align*}
+		(1 + p)^{b p^{k - 1}} & = 1 + b p^{k - 1} p + \binom{b p^{k - 1}}{2} p^{2} + \dots + \binom{b p^{k - 1}}{b p^{k - 1}} p^{b p^{k - 1}} \\
+				      & = x + \binom{b p^{k - 1}}{2} p^{2} + \dots + \binom{b p^{k - 1}}{b p^{k - 1}} p^{b p^{k - 1}}.
+	\end{align*}
+	To show the desired equivalence, it suffices to show that each term of the binomial sum to the right of $x$ is divisible by $p^{k + 1}$. Note that
+	\[
+		\binom{b p^{k - 1}}{i} p^{i} = \binom{b p^{k - 1} - 1}{i - 1} \frac{b p^{k - 1} p^{i}}{i}
+	\]
+	Thus, it suffices to show that $\nu_{p}(p^{k + i - 1} / i) > k + 1$ or equivalently, $i - 1 > \nu_{p}(i)$. For all $p > 2$ we have $i < p^{i - 1}$ for each integer $i \ge 2$. It follows that $\nu_{p}(i) < \nu_{p}(p^{i - 1}) = i - 1$ as desired.
+
+	Let $\varphi$ denote Euler's totient function. Note that $\varphi(p^{\ell}) = p^{\ell} - p^{\ell - 1}$ since there are $p^{\ell}$ elements of $\mathbb{Z} / (p^{\ell})$ and the non-units are exactly those $p^{\ell - 1}$ multiples of $p$. Also, recall Euler's theorem that $a^{\varphi(p^{\ell})} \equiv 1 \pmod{p^{\ell}}$ for $a$ a unit in $\mathbb{Z} / (p^{\ell})$. Thus, $a^{\varphi(p^{\ell}) + 1} \equiv a$.
+
+	Suppose $(1 + p)^{z_{n}} \equiv x \pmod{p^{k + n + 1}}$. Then, by problem 6, $(1 + p)^{z_{n} p} \equiv x^{p} \pmod{p^{k + n + 2}}$. By applying problem 6 inductively, we get $(1 + p)^{z_{n} p^{m}} \equiv x^{p^{m}} \pmod{p^{k + n + 2}}$ for any $m \in \mathbb{N}$. In fact, they are equivalent modulo $p^{k + 2 + m}$, but equivalences in the larger ring yield equivalences in the smaller ring. 
+
+	Let $\ell = k + n + 2$. By the construction in the previous paragraph $(1 + p)^{z_{n} p^{\ell}} \equiv x^{p^{\ell}}$ and $(1 + p)^{z_{n} p^{\ell - 1}} \equiv x^{p^{\ell - 1}}$ (both modulo $p^{k + n + 2} = p^{\ell}$. Combining these, we get
+	\[
+		(1 + p)^{z_{n} (\varphi(p^{\ell}) + 1)} \equiv x^{\varphi(p^{\ell}) + 1} \equiv x \pmod{p^{\ell}}
+	\]
+	as desired.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[(9)]
@@ -73,5 +184,25 @@
 
 	You have just proven that $1 + p \mathbb{Z}_{p}$ is essentially cyclic, if we allow $p$-adic exponents
 \end{problem}
+
+\begin{solution}
+	We defined $z_{n + 1} = z_{n} (\varphi(p^{\ell}) + 1)$ where $\ell = k + n + 2$. Thus, $z_{n + 1} - z_{n} = z_{n} \varphi(p^{\ell})$. The $p$-adic norm of the totient function is
+	\begin{align*}
+		\lvert \varphi(p^{\ell}) \rvert_{p} & = \lvert p^{\ell} - p^{\ell - 1} \rvert_{p} \\
+						    & = 1 / p^{\ell - 1} \\
+						    & = 1 / p^{k + n + 1}.
+	\end{align*}
+	Given $\varepsilon > 0$, let $1 / p^{N} < \varepsilon$. Then for all $n > N$ we have
+	\begin{align*}
+		\lvert z_{n + 1} - z_{n} \rvert_{p} & = \lvert z_{n} \rvert_{p} \lvert \varphi(p^{\ell}) \rvert_{p} \\
+						    & \le \lvert \varphi(p^{\ell}) \rvert_{p} \\
+						    & < 1/ p^{k + n + 1} \\
+						    & < 1 / p^{N} \\
+						    & < \varepsilon.
+	\end{align*}
+	That is, the sequence $\{ z_{n} \}_{n \in \mathbb{N}}$ is successively Cauchy, and thus, Cauchy.
+
+	We define $(1 + p)^{z} = \lim_{n \to \infty} (1 + p)^{z_{n}}$. Since $(1 + p)^{z_{n}} \equiv x \pmod{p^{k + n + 1}}$, we have $\lvert x - (1 + p)^{z_{n}} \rvert_{p} \le {1}/{p^{k + n + 1}}$ which goes to $0$ as $n \to \infty$. Thus, $(1 + p)^{z_{n}} \to x$, and $(1 + p)^{z} = x$.
+\end{solution}
 
 \end{document}
