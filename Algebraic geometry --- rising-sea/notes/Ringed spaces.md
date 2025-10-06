@@ -7,7 +7,17 @@ tags:
 
 Let $X$ be a topological space.
 
-A ringed space makes even more precise the sense in which geometry is best understood by studying the functions on the geometric space. It is a space with a distinguished sheaf of rings.
+A ringed space makes even more precise the sense in which geometry is best understood by studying the functions on the geometric space. It is a space with a distinguished sheaf of rings. The prime example of a ringed space is a manifold.
+
+##### _example:_ smooth manifolds as (locally) ringed spaces
+
+Let $X$ be a smooth manifold. Then it is a topological space (locally homeomorphic to $\mathbb{R}^n$) with a sheaf of smooth functions $X \to \mathbb{R}$, which we call $\mathscr{O}_{X}$. In fact, we could *define* a smooth manifold as such a ringed space. We only need require that on those $U \subseteq X$ where $U \cong \mathbb{R}^n$, we have $\mathscr{O}_{X \mid U} \cong \mathscr{O}_{\mathbb{R}^n}$. Typically manifolds are also required to be [[Topology --- math-147/notes/Separation properties#_definition _ Hausdorff spaces, $T_{2}$ spaces|Hausdorff]] and [[Topology --- math-147/notes/Size restrictions#_definition _ second countable|second-countable]] — to have "reasonable" topology. Note also that the stalks $\mathscr{O}_{X, p}$ are local with a unique maximal ideal consisting of functions vanishing at $p$.
+
+This manifold analogy carries over to morphisms as well! The smoothness of a morphism $\pi : X \to Y$ can be checked on charts, but can also be checked sheaf-theoretically. Suppose $f \mapsto \pi \circ f$ (on each open set) gives a sheaf map $\mathscr{O}_{Y} \to \pi_{*} \mathscr{O}_{X}$. Since the charts $\psi : V \to \mathbb{R}^m$ on $Y$ are products of functions $f \in \mathscr{O}_{Y}(V)$ (by the [[Calculus --- spivak/notes/Differentiability theorems#_theorem _ the projection principle holds for differentiability|projection principle]]) we have that $\psi \circ \pi : X \to \mathbb{R}^m$ is smooth, and thus, $\psi \circ \pi \circ \varphi ^{-1} : \mathbb{R}^n \to \mathbb{R}^m$ is smooth for any chart $\varphi : U \to \mathbb{R}^n$ on $X$.
+
+The sheaf map in turn gives a stalk map $\mathscr{O}_{Y, q} \to \pi_{*} \mathscr{O}_{X, p} = \mathscr{O}_{X, p}$ by $f_{q} \mapsto (\pi \circ f)_{p}$. $\pi \circ f$ vanishes at $p$ if $f$ vanishes at $q$, we have that the stalk map sends $\mathfrak{m}_{Y, q}$ into $\mathfrak{m}_{X, p}$. Finally, this induces a map on cotangent spaces $\mathfrak{m}_{Y, q} / \mathfrak{m}_{Y, q}^{2} \to \mathscr{m}_{X, p} / \mathfrak{m}_{X, p}^{2}$. With this sheafy picture, the cotangent map is more natural than the dual tangent map since our picture is dual to the geometry.
+
+---
 
 ##### _definition:_ ringed spaces, structure sheaf, functions, global functions
 
