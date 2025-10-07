@@ -26,7 +26,7 @@ Since $x^{2} - 2$ is irreducible in $\mathbb{Q}_{5}[x]$, we can think of $\mathb
 
 We can make this precise with the following definitions.
 
-##### _definition:_ field extension, degree, algebraic field extension
+##### _definition:_ field extension, degree
 
 A **field extension** of $\mathbb{F}$ is a field $\mathbb{K}$ with an (injective) homomorphism $\mathbb{F} \to \mathbb{K}$. The fact that $\mathbb{K}$ is a field extension of $\mathbb{F}$ is denoted $\mathbb{K} / \mathbb{F}$.
 
