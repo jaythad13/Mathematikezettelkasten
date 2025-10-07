@@ -14,10 +14,38 @@ Let $R$ be a commutative ring with unity.
 	Let $I$ and $J$ be ideals in $R$ with $I \subseteq J$. Prove that there is a well-defined ring homomorphism from $R / I$ to $R / J$.
 \end{problem}
 
+\begin{solution}
+	Let $\varphi : R \to R / J$ be the canonical surjection. Then we claim that $\overline{\varphi} : R / I \to R / J$ by $r + I \mapsto \varphi(r) + J$ is a well-defined ring homomorphism from $R / I$ to $R / J$. 
+
+	First we show well-definedness. Suppose $r, s \in R$ and $r + I = s + I$. Then we have $r - s \in I \subseteq J$. Thus, $\varphi(r) - \varphi(s) = \varphi(r - s) = 0$. That is, $\varphi(r) = \varphi(s)$. It follows that
+	\[
+		\overline{\varphi}(r + I) = \varphi(r) + J = \varphi(s) + J = \overline{\varphi}(s + I).
+	\]
+
+	Now we show that $\overline{\varphi}$ is a homomorphism which it essentially inherits from $\varphi$. That is, for any $r, s \in R$ we have
+	\begin{align*}
+		\overline{\varphi}((r + I) + (s + I)) & = \overline{\varphi}((r + s) + I) \\
+						      & = \varphi(r + s) + J \\
+						      & = (\varphi(r) + \varphi(s)) + J \\
+						      & = (\varphi(r) + J) + (\varphi(s) + J) \\
+						      & = \overline{\varphi}(r + I) + \overline{\varphi}(s + I)
+	\end{align*}
+	and
+	\begin{align*}
+		\overline{\varphi}((r + I) (s + I)) & = \overline{\varphi}(rs + I) \\
+						      & = \varphi(rs) + J \\
+						      & = \varphi(r) \varphi(s) + J \\
+						      & = (\varphi(r) + J) (\varphi(s) + J) \\
+						      & = \overline{\varphi}(r + I) \overline{\varphi}(s + I).
+	\end{align*}
+	Thus, $\overline{\varphi}$ is a homomorphism.
+
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[2.]
-	Let $R = k[x_{1}, \dots, x_{n}]$ for some field $k$. Prove or disprove that $R / (x_{1}, x_{2}^{2}, \dots, x_{n}^{2})$ is local.
+	Let $R = k[x_{1}, \dots, x_{n}]$ for some field $k$. Prove or disprove that $R / (x_{1}, x_{2}^{2}, \dots, x_{n}^{n})$ is local.
 \end{problem}
 
 \pagebreak
@@ -34,11 +62,37 @@ Let $R$ be a commutative ring with unity.
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item Note that $I \subseteq \sqrt{I}$ always since every $x \in I$ has $x^{1} \in I$. Thus, to show $I = \sqrt{I}$ it suffices to show $\sqrt{I} \subseteq I$.
+
+			First suppose $I$ is the intersection of prime ideals --- $I = \bigcap_{i \in \mathscr{I}} \mathfrak{p}_{i}$. Suppose $x \in \sqrt{I}$. Then $x^{n} \in I$, and so $x^{n} \in \mathfrak{p}_{i}$ for each $i \in \mathscr{I}$. By primeness, we must have $x \in \mathfrak{p}_{i}$ for each $i \in \mathscr{I}$, and thus, $x \in I$. That is, $x \in \sqrt{I} \implies x \in I$ or $\sqrt{I} \subseteq I$.
+
+			Now suppose $I = \sqrt{I}$. We claim that $\sqrt{I}$ is the intersection of all prime ideals $\mathfrak{p}$ containing $I$ and thus, $I$ is the intersection of prime ideals. In particular we show that $\sqrt{I} \subseteq \mathfrak{p}$ for every prime $\mathfrak{p} \supseteq I$ and $\bigcap_{\mathfrak{p} \supseteq I} \mathfrak{p} \subseteq \sqrt{I}$.
+
+			Suppose $\mathfrak{p}$ is a prime ideal containing $I$. Suppose $x \in \sqrt{I}$ with $x^{n} \in I \subseteq \mathfrak{p}$. By primeness, we must have $x \in \mathfrak{p}$. That is, $\sqrt{I} \subseteq \mathfrak{p}$.
+
+			Suppose $x \in \bigcap_{\mathfrak{p} \supseteq I} \mathfrak{p}$. Recall that there is a bijection between primes of $A$ containing $I$ and primes of $A / I$ given by pre-images and images under $A \to A / I$. Then, writing $A \to A / I$ by $a \mapsto \overline{a}$, we have $\overline{x} \in \mathfrak{N}_{A / I} = \bigcap_{\mathfrak{p} \subseteq A / I} \mathfrak{p}$. It follows that $\overline{x}$ is a nilpotent with $\overline{x}^{n} = 0$ for some $n \in  \mathbb{N}$ and so $x^{n} \in I$. Thus, $x \in \sqrt{I}$.
+
+		\item We show double containment.
+
+			Suppose $x \in \mathfrak{p}$. Then $x^{n} \in \mathfrak{p}^{n}$, and so $x \in \sqrt{\mathfrak{p}^{n}}$.
+
+			Suppose $x \in \sqrt{\mathfrak{p}^{n}}$. Thus, $x^{m} \in \mathfrak{p}^{n}$ for some $m \in \mathbb{N}$. Writing $x^{m}$ as the product of $n$ elements of $\mathfrak{p}$, it follows that some $x^{\ell} \in \mathfrak{p}$. Thus, by primeness, $x \in \mathfrak{p}$.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[4.]
 	A commutative ring is called reduced if its nilradical is the zero ideal. If $N$ is the nilradical of $R$, show that $R / N$ is reduced.
 \end{problem}
+
+\begin{solution}
+	We show that $R / N$ has no non-zero nilpotents, and thus, is reduced.
+
+	Suppose $x \in R / N$ and $x^{n} = 0$. Then $x^{n} \in N$. But since $N$ is the intersection of all prime ideals, we have $x^{n} \in \mathfrak{p}$ for all primes $\mathfrak{p} \subseteq R$. By primeness, this implies $x \in \mathfrak{p}$ for all primes of $R$, and thus, $x \in N$, which is their intersection.
+\end{solution}
 
 \pagebreak
 
@@ -51,18 +105,36 @@ Let $R$ be a commutative ring with unity.
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	Suppose $\mathbb{Z} / n \mathbb{Z}$ is a field. Then $(0)$ is maximal, and thus, prime. Thus, $\mathbb{Z} / n \mathbb{Z}$ is an integral domain.
+
+	Suppose $\mathbb{Z} / n \mathbb{Z}$ is an integral domain. Then for any non-negative integers $a, b < n$ we have $ab \equiv 0$ only if $a = 0$ or $b = 0$. Since any divisors $a, b$ with $ab = n$ would have $ab \equiv 0$ this means that $n$ has no divisors apart from $1$ and itself. That is, $n$ is prime.
+
+	Suppose $n$ is prime. Then, for all $a \not \equiv 0$ (that is all $a \neq n d$) we have $\gcd(a, n) = 1$. Then, by Bezout's theorem, there are some $b, q \in \mathbb{Z}$ such that $ab + nq = 1$. That is, $ab \equiv 1 \pmod{n}$. Thus, each non-zero $\overline{a} \in \mathbb{Z} / n \mathbb{Z}$ is a unit, with inverse $\overline{b}$. (Here we write $\mathbb{Z} \to \mathbb{Z} / n \mathbb{Z}$ by $a \mapsto \overline{a}$).
+
+	We have shown $\text{(a)} \implies \text{(b)} \implies \text{(c)} \implies \text{(a)}$.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[6.]
 	Let $N_{1} \subseteq N_{2} \subseteq \cdots$ be an ascending chain of $R$-submodules of $M$. Show that $\bigcup_{i = 1}^{\infty} N_{i}$ is a submodule of $M$.
 \end{problem}
 
+\begin{solution}
+	We use the submodule criterion --- it suffices to show that $N = \bigcup_{i = 1}^{\infty} N_{i}$ is non-empty and that for each $x, y \in N$ and $r \in R$, we have $x - r y \in N$.
+
+	Since $N_{1}$ is a submodule, it is non-empty. Since $N$ contains a non-empty set $N_{1}$, it is non-empty.
+
+	Suppose $r \in R$, $x \in N_{i} \subseteq N$, and $y \in N_{j} \subseteq N$ and say $i \le j$ (without loss of generality) Then since $N_{i} \subseteq N_{j}$ we have $x, y \in N_{j}$. Since $N_{j}$ is a submodule, it satisfies the submodule criterion and $x - r y \in N_{j}$. Since $N_{j} \subseteq N$ we get $x - r y \in N$.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[7.]
 	Let $R$ be a commutative domain. Show that
 	\[
-	R = \bigcap_{\mathfrak{p} \in \operatorname{Spec} R} R_{\mathfrak{p}}
+		R = \bigcap_{\mathfrak{p} \in \operatorname{Spec} R} R_{\mathfrak{p}}
 	\]
 	via the identification $x = x / 1$.
 \end{problem}
