@@ -61,7 +61,43 @@ It vanishes at $(3)$ (in fact, we want to be able to say that it has a triple ze
 
 ---
 
-### The affine line over non-algebraically closed fields
+### The affine line and affine space in general
+
+In fact, we can define the affine line and affine space over any ring.
+
+##### _definition:_ affine $n$-space
+
+Affine $n$-space over $A$ is the affine scheme $\operatorname{Spec} A[x_{1}, \dots, x_{n}]$.
+
+---
+
+We usually choose $A$ a field. For $\mathbb{C}$ (or any algebraically closed $\overline{\mathbb{F}}$) any affine $n$-space behaves similarly to the affine line, with some scheme-theoretic points (just like $(0) \in \mathbb{A}^1_{\mathbb{C}}$).
+
+##### _example:_ points of $\mathbb{A}^3_{\mathbb{C}}$
+
+The points of $\mathbb{A}^3_{\mathbb{C}}$ are  
+- $(0)$ — the "three-dimensional" generic point
+- all irreducible $(f(x, y, z))$, corresponding to the "two-dimensional" generic point of a hypersurface $\{ (a, b, c) \mid f(a, b, c) = 0 \} \subseteq \mathbb{C}^{3}$
+- lots of "one-dimensional" generic points corresponding to irreducible curves in $\mathbb{C}^{3}$ (for which there is no reasonable classification)
+- finally, the regular points $(x - a, y - b, z - c)$ corresponding to $(a, b, c) \in \mathbb{C}^{3}$.
+
+---
+
+However, over a field that is not algebraically closed, even the closed points (the maximal ideals) can correspond to points that are not there in $\mathbb{F}^n$.
+
+##### _example:_ points of $\mathbb{A}^1_{\mathbb{R}}$
+
+The points of $\mathbb{A}^1_{\mathbb{R}}$ are $(0)$ and all irreducible polynomials. Since $\mathbb{R}[x]$ is [[Abstract algebra --- math-171/notes/Factorisation in special rings|Euclidean]], these are all maximal. The "normal" maximal ideals, corresponding to $a \in \mathbb{R}^1$ are $(x - a) \subseteq \mathbb{R}[x]$. The other maximal ideals are $(x^{2} + bx + c)$ with $b^{2} < c$. These correspond to adjoining roots $\lambda, \overline{\lambda} \in \mathbb{C} \setminus \mathbb{R}$ to $\mathbb{R}$. 
+
+These are all of the other maximal ideals — we can prove that there are no subfields of $\mathbb{C}$ between $\mathbb{R}$ and $\mathbb{C}$. This follows since $\mathbb{R}[\lambda] \cong \mathbb{R}[i]$.
+
+---
+
+This example of maximal ideals corresponding to finite extensions continues and is formalised in [[Algebraic geometry --- rising-sea/notes/Hilbert's Nullstellensatz|Hilbert's Nullstellensatz]]
+
+##### _examples:_ affine spaces over $\mathbb{Q}$
+
+
 
 ### The dual numbers
 
@@ -74,3 +110,26 @@ It will be useful later for understanding tangents, and right now as a source of
 $0, \varepsilon \in \mathbb{F}[\varepsilon] / (\varepsilon^{2})$ both take value $0$ at the only point $(\varepsilon) \in \operatorname{Spec} \mathbb{F}[\varepsilon] / (\varepsilon^{2})$, yet they are not the same.
 
 ---
+
+To understand how they might help understand tangents, we take derivatives using the dual numbers.
+
+##### _proposition:_ taking derivatives in the dual numbers
+
+Suppose $f(x) \in \mathbb{F}[x]$. Then consider its image $f(x, \varepsilon) = f(x) \in \mathbb{F}[x, \varepsilon] / (\varepsilon^{2})$. Then $f(x + \varepsilon) = f(x) + \varepsilon f'(x)$.
+
+###### _proof:_
+
+Suppose $f(x) = a_{0} + a_{1} x + \dots + a_{n} x^n$. Then 
+$$
+\begin{align}
+f(x + \varepsilon) & = a_{0} + a_{1}(x + \varepsilon) + \dots + a_{n} (x + \varepsilon)^n \\
+ & = (a_{0} + a_{1} x + \dots + a_{n}x ^n)+ \varepsilon(a_{1} + 2 a_{2} x + \dots + n a_{n} x^{n - 1}) + \varepsilon^{2} g(x) \\
+ & = f(x) + \varepsilon f'(x).
+\end{align}
+$$
+
+---
+
+### A shred of a smooth curve
+
+All the primes in $\mathbb{F}[x]_{(x)}$ [[Commutative algebra --- math-189AA/notes/Localisation of a ring#_proposition _ primes of the localisation are primes that don't meet $S$|are primes contained in]] $(x)$. All proper ideals contained in $(x)$ are $(f(x))$ such that $f(x) = x g(x)$ — that is non-irreducible polynomials. A non-irreducible polynomial is prime if and only if it is $0$. Thus, $\operatorname{Spec} \mathbb{F}[x]_{(x)}$ consists of two points — $(0)$ and $(x)$. We can think of this as a "shred of a smooth curve" — $(x)$ is the point on $\mathbb{A}^1_{\mathbb{F}}$ at which we are zooming in, and $(0)$ is the generic point of the curve.

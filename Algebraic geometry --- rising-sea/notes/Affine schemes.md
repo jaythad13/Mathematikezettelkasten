@@ -24,6 +24,8 @@ The best example of an affine scheme is the affine line over $\mathbb{C}$ — $
 
 ![[Algebraic geometry --- rising-sea/notes/Examples of affine schemes#_proposition _ the points of the complex affine line]]
 
+In general, we can define $\mathbb{A}^1_{A} = \operatorname{Spec} A[x_{1}, \dots, x_{n}]$ over any ring $A$ (typically $A$ is a field). When $A$ is a non-algebraically closed field, this can behave very differently. For example
+
 ### The functions (or more alliteratively, the sections)
 
 Though we can't define the structure sheaf yet, we can see what the [[Algebraic geometry --- rising-sea/notes/Ringed spaces#_definition _ ringed spaces, structure sheaf, functions, global functions|global functions]] of it are. Essentially, $\mathscr{O}_{\operatorname{Spec} A}(\operatorname{Spec} A) = A$.
