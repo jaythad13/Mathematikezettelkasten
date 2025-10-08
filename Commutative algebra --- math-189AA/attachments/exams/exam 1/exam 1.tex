@@ -48,6 +48,16 @@ Let $R$ be a commutative ring with unity.
 	Let $R = k[x_{1}, \dots, x_{n}]$ for some field $k$. Prove or disprove that $R / (x_{1}, x_{2}^{2}, \dots, x_{n}^{n})$ is local.
 \end{problem}
 
+\begin{solution}
+	We prove that $R / (x_{1}, x_{2}^{2}, \dots, x_{n}^{n})$ is indeed local with unique maximal ideal $(\overline{x}_{1}, \dots, \overline{x}_{n})$. Let $I = (x_{1}, x_{2}^{2}, \dots, x_{n}^{n})$
+
+	Recall that by the fourth isomorphism theorem, the ideals of $R / I$ are exactly $J / I$ for ideals $J \subseteq R$ with $I \subseteq J$. Note that this bijection is inclusion-preserving. Thus, it suffices to show that all ideals $J \subseteq R$ with $I \subseteq J$ are contained in a unique common maximal ideal $M$.
+
+	Suppose $J \subseteq R$ and $I \subseteq J$. Then $J$ is contained in some maximal ideal $M_{J}$. Since $M_{J}$ is maximal, it is prime. Then,  $x_{i}^{i} \in I \subseteq J \subseteq M_{J}$ implies that $x_{i} \in M_{J}$ for each $i$. It follows that $M = (x_{1}, \dots, x_{n}) \subseteq M_{J}$. Since $R / M = k$ is a field, $M$ is maximal, and we have $M_{J} = M$. 
+
+	That is, there is a unique common maximal ideal containing each $J$ containing $I$. $M / I = (\overline{x}_{1}, \dots, \overline{x}_{n})$ is then the unique maximal ideal of $R / I$ (here we write $x \mapsto \overline{x}$ under the canonical surjection $R \to R / I$).
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[3.]
@@ -138,5 +148,29 @@ Let $R$ be a commutative ring with unity.
 	\]
 	via the identification $x = x / 1$.
 \end{problem}
+
+\begin{solution}
+	We consider the intersection of the isomorphic images of $R_{\mathfrak{p}}$ under their inclusion into the field of fractions $Q(R)$.
+
+	Since $R \to R_{\mathfrak{p}}$ by $r \mapsto r / 1$ is an injection for each prime $\mathfrak{p}$, we have $R \subseteq R_{\mathfrak{p}}$ for each prime $\mathfrak{p}$. Thus, $R \subseteq \bigcap_{\mathfrak{p} \in \operatorname{Spec} R} R_{\mathfrak{p}}$.
+
+	To show the converse we claim that the intersection of localisations away from multiplicative sets $R \setminus \mathfrak{p} = S_{\mathfrak{p}}$ is the localisation at the intersection of the multiplicative sets. This is true because $S_{\mathfrak{p}}^{-1} R = \{ r / s \mid r \in R, s \in S_{\mathfrak{p}} \}$ and $S_{\mathfrak{q}}^{-1} R = \{ r / s \mid r \in R, s \in S_{\mathfrak{q}} \}$ both quotiented by the same equivalence relation --- the equivalence relation of $Q(R)$. We remark without proof that this is well-defined since the intersection of multiplicative sets is a multiplicative set.
+
+	Then it follows that
+	\begin{align*}
+		\bigcap_{\mathfrak{p} \in \operatorname{Spec} R} R_{\mathfrak{p}} & = \left ( \bigcap_{\mathfrak{p} \in \operatorname{Spec} R} S_{\mathfrak{p}} \right )^{-1} R \\
+										  & = \left ( \bigcap_{\mathfrak{p} \in \operatorname{Spec} R} R \setminus \mathfrak{p} \right )^{-1} R \\
+										  & = \left ( R \setminus \bigcup_{\mathfrak{p} \in \operatorname{Spec} R} \mathfrak{p} \right )^{-1} R.
+	\end{align*}
+
+	We claim that $\bigcup_{\mathfrak{p} \in \operatorname{Spec} R} \mathfrak{p}$ is exactly the non-units in $R$. Clearly everything in the union of prime ideals is not a unit (else the ideals would be $R$, and thus, not prime). Conversely, every non-unit is contained in a maximal, and thus, prime ideal. Thus,
+	\begin{align*}
+		\bigcap_{\mathfrak{p} \in \operatorname{Spec} R} R_{\mathfrak{p}} & = \left ( R \setminus \bigcup_{\mathfrak{p} \in \operatorname{Spec} R} \mathfrak{p} \right )^{-1} R \\
+										  & = \{ \text{units} \}^{-1} R \\
+										  & = R.
+	\end{align*}
+
+	Here the last equality follows because localising away from the set of units does not change the ring. In particular, for any unit $u \in R$ with inverse $u^{-1} \in R$, we have $1 / u \sim u^{-1}$ since $u(1 /u - u^{-1}) = 1 - 1 = 0$. Thus, the localisation contains no new elements and the injection $R \to \{ \text{units} \}^{-1} R$ is surjective.
+\end{solution}
 
 \end{document}
