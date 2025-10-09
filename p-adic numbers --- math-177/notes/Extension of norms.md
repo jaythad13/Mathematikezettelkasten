@@ -1,6 +1,7 @@
 ---
 tags:
 - math-177/12
+- math-177/13
 - lin-alg
 - galois
 - alg
@@ -10,7 +11,7 @@ When we have a field extension $\mathbb{K} / \mathbb{F}$, we want to extend the 
 
 ##### _lemma:_ characterising equivalent norms on a vector space
 
-Suppose $V$ is a vector space over a field $\mathbb{F}$ with non-archimedean absolute value. Then two norms are equivalent if and only if there exists $c_{1}, c_{2} \in \mathbb{R}$ such that
+Suppose $V$ is a vector space over a field $\mathbb{F}$ with absolute value. Then two norms are equivalent if and only if there exists $c_{1}, c_{2} \in \mathbb{R}$ such that
 $$
 \begin{align}
 \lVert v \rVert_{1}  &< c_{2} \lVert v \rVert _{2} \\
@@ -21,11 +22,9 @@ $$
 
 ##### _theorem:_ all norms on a vector space are equivalent
 
-All norms on a vector space $V$ over a field $\mathbb{F}$ with non-archimedean absolute value are equivalent.
+All norms on a finite-dimensional vector space $V$ over a (metrically) [[Analysis --- math-131/notes/Cauchy sequences and completeness#_definition _ completeness|complete]] field $\mathbb{F}$ are equivalent.
 
 ---
-
-These results still hold when $\mathbb{F}$ is archimedean if $V$ is finite-dimensional.
 
 ##### _theorem:_ characterising extensions of a norm
 
@@ -33,14 +32,20 @@ If $\mathbb{K}$ is a finite degree extension of $\mathbb{F}$ with non-archimedea
 
 ###### _proof:_
 
-Suppose there are two norms on $\mathbb{K}$ and suppose there is some $v \in \mathbb{K}$ for which $\lVert v \rVert_{1} > \lVert v \rVert_{2}$. Since they are equivalent, we have $c_{1}, c_{2} \in \mathbb{R}$ such that $\lVert v \rVert_{1} < c_{2} \lVert v \rVert_{2}$ and $\lVert v \rVert_{2} < c_{1} \lVert v \rVert_{1}$. Then $\lVert v^n \rVert_{1} < c_{2} \lVert v^n \rVert_{2}$ for all $n$. Choosing $n > \ln(c_{2}) / \ln (\lVert v \rVert_{1} / \lVert v \rVert_{2})$ gives a contradiction.
+Suppose there are two norms on $\mathbb{K}$ and suppose there is some $v \in \mathbb{K}$ for which (without loss of generality) $\lVert v \rVert_{1} > \lVert v \rVert_{2}$. Since they are equivalent, we have $c_{1}, c_{2} \in \mathbb{R}$ such that $\lVert v \rVert_{1} < c_{2} \lVert v \rVert_{2}$ and $\lVert v \rVert_{2} < c_{1} \lVert v \rVert_{1}$. Then $\lVert v^n \rVert_{1} < c_{2} \lVert v^n \rVert_{2}$ for all $n$. Choosing $n > \ln(c_{2}) / \ln (\lVert v \rVert_{1} / \lVert v \rVert_{2})$ gives a contradiction.
 
 ---
 
-Note that here we have proved that the norms are *the same*, not just equivalent. Now we construct this unique norm.
+Note that here we have proved that the norms are *the same*, not just equivalent. Now we construct this unique norm. Note that the extension of the norm shouldn't depend on the precise root, but just its minimal polynomial — [[p-adic numbers --- math-177/notes/Algebraic field extensions#_corollary _ minimal polynomials give minimal extensions|we showed ]]that the corresponding field extensions are isomorphic.
 
 ##### _proposition:_ extension of norms
 
-If $\mathbb{K} / \mathbb{F}$ is a field extension and $\alpha \in \mathbb{K}$ is algebraic over $\mathbb{F}$ (a field with non-archimedean norm) with minimal polynomial $p_{\alpha}(x) = a_{0} + a_{1} x + \dots + x^n$, then the unique extension of the norm to $\mathbb{K}$ has $\lvert \alpha \rvert = \lvert a_{0} \rvert^{1 / n}$.
+If $\mathbb{K} / \mathbb{F}$ is an algebraic field extension and $\alpha \in \mathbb{K}$ is algebraic over $\mathbb{F}$ (a field with non-archimedean norm) with minimal polynomial $p_{\alpha}(x) = a_{0} + a_{1} x + \dots + x^n$, then the unique extension of the norm to $\mathbb{K}$ has $\lvert \alpha \rvert = \lvert a_{0} \rvert^{1 / n}$.
+
+###### _proof sketch:_
+
+Work in the [[p-adic numbers --- math-177/notes/Algebraic field extensions#_definition _ splitting field|splitting field]] of $p_{\alpha}$. The extension of the norm to $\mathbb{K}$ should agree with the extension to the splitting field since they are both contained in the algebraic closure of $\mathbb{F}$.
+
+Let all the roots be $\alpha_{i}$. They should all have the same norm, $\lvert \alpha \rvert$. But then since $a_{0} = (-1)^n \prod_{i = 1}^n \alpha_{i}$, we have $\lvert a_{0} \rvert^{1 / n} = \lvert \alpha \rvert$.
 
 ---

@@ -4,6 +4,7 @@ tags:
 - galois
 - math-177/11
 - math-177/12
+- math-177/13
 ---
 
 (Algebraic) field extensions are concerned with finding where the roots of polynomials in $\mathbb{F}[x]$ live. It's most reasonable to focus on the irreducible factors — we can find the roots of any reducible polynomial by finding the roots of its irreducible factors.
@@ -70,8 +71,26 @@ Any subfield of $\mathbb{K}$ containing $\alpha$ and $\mathbb{F}$ must contain a
 
 ---
 
+Note that this means that no matter what root of $f$ we adjoin to , the field we get is isomorphic to $\mathbb{F}[x]/(f)$. That is $\mathbb{F}[\alpha] \cong \mathbb{F}[\beta]$ for any roots $\alpha, \beta$ of the same polynomial $f \in \mathbb{F}[x]$.
+
 In general, this is not true — $\mathbb{Q}[\pi]$ is not a field. We give notation for the minimal field extension in general.
 
 ##### _definition:_ minimal field extension
 
-If $\mathbb{K}$ is a field extension of $\mathbb{F}$ and $\alpha \in \mathbb{K}$, we write $\mathbb{F}(\alpha)$ for the minimal (by inclusion) field extension of $\mathbb{F}$ containing both $\mathbb{F}$ and $\alpha$.
+If $\mathbb{K}$ is a field extension of $\mathbb{F}$ and $\alpha \in \mathbb{K}$, we write $\mathbb{F}(\alpha)$ for **the minimal (by inclusion) field extension of $\mathbb{F}$ containing $\alpha$.**
+
+---
+
+Finally, we make formal the notion of adjoining "all" the roots of a polynomial
+
+##### _definition:_ splitting field
+
+The splitting field of an irreducible polynomial $f \in \mathbb{F}[x]$ is a field extension $\mathbb{K} / \mathbb{F}$ such that the image of $f$ under $\mathbb{F}[x] \to \mathbb{K}[x]$ splits into linear factors such that
+$$
+f(x) = c \prod_{i = 1}^{\deg p} (x - a_i)
+$$
+with $c$ and all $a_{i} \in \mathbb{K}$.
+
+---
+
+Note that the splitting field exists by constructing a chain of fields $\mathbb{K}_{i}$ with $\mathbb{K}_0 = \mathbb{F}$, $f_{0} = f$ and $\mathbb{K}_{i} = \mathbb{K}_{i - 1}[x] / (f_{i})$ where $f_{i}$ is the irreducible non-linear part of $f_{i - 1}$ after factoring in $\mathbb{K}_{i - 1}$. Since $f$ is a polynomial, it can only be factored into finitely many linear polynomials. Each successive field extension adds at least one root, so we are done in finitely many extensions.
