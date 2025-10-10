@@ -11,7 +11,7 @@
 We begin by exploring quadratic extensions of $\mathbb{Q}_{p}$.
 
 \begin{problem}[(1)]
-	Suppose $f(x)$ is a polynomial of degree $2$, and let $\alpha$ be a root of $x$. We denoted the dimension of $\mathbb{Q}_{p}(\alpha)$ as a vector space over $\mathbb{Q}_{p}$ by $[\mathbb{Q}_{p}(\alpha) : \mathbb{Q}_{p}]$ and call it the \emph{degree} of the extension. For $d \in \mathbb{Q}_{p}$, denote by $\sqrt{d}$ a root of the polynomial $x^{2} - d$.
+	Suppose $f(x)$ is a polynomial of degree $2$, and let $\alpha$ be a root of $f(x)$. We denoted the dimension of $\mathbb{Q}_{p}(\alpha)$ as a vector space over $\mathbb{Q}_{p}$ by $[\mathbb{Q}_{p}(\alpha) : \mathbb{Q}_{p}]$ and call it the \emph{degree} of the extension. For $d \in \mathbb{Q}_{p}$, denote by $\sqrt{d}$ a root of the polynomial $x^{2} - d$.
 	\begin{enumerate}
 		\item Show that $[\mathbb{Q}_{p}(\alpha) : \mathbb{Q}_{p}]$ equals $1$ or $2$.
 		\item If $\beta$ is another root of $f(x)$, show that $\beta \in \mathbb{Q}_{p}(\alpha)$.
@@ -20,11 +20,61 @@ We begin by exploring quadratic extensions of $\mathbb{Q}_{p}$.
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item Suppose $\alpha \in \mathbb{Q}_{p}$. Then $\mathbb{Q}_{p}(\alpha) = \mathbb{Q}_{p}$ which is $1$-dimensional over itself.
+
+			Suppose $\alpha \notin \mathbb{Q}_p$. Recall that $\mathbb{Q}_{p}(\alpha) \cong \mathbb{Q}_{p}[x] / (f(x))$ with $\alpha \mapsto x$. Then, since $f$ has degree $2$, by polynomial long division we can write each $\beta \in \mathbb{Q}_{p}(\alpha)$ as an at most linear residue modulo $(f(x))$. That is, each $\beta \in \mathbb{Q}_{p}(\alpha)$ can be written $\beta = a + b \alpha$ and thus, $1, \alpha$ spans $\mathbb{Q}_{p}(\alpha)$.
+
+			$1, \alpha$ is also a linearly independent list over $\mathbb{Q}_{p}$. If $\lambda_{0} + \lambda_{1} \alpha = 0$, then $\lambda_{1} = 0$. Else, we would have $\alpha = - \lambda_{0} / \lambda_{1} \in \mathbb{Q}_{p}$ contradicting our assumption $\alpha \notin \mathbb{Q}_{p}$. Since $\lambda_{1} = 0$ we have $\lambda_{0} + 0 \alpha = 0$, and thus, $\lambda_{0} = 0$ as well. That is, $1, \alpha$ are linearly independent. 
+
+			Since $1, \alpha$ is a linearly independent independent list spanning $\mathbb{Q}_{p}(\alpha)$, it is a basis and $\mathbb{Q}_{p}(\alpha)$ is $2$-dimensional over $\mathbb{Q}_{p}$.
+
+		\item We can work in the splitting field $\mathbb{K}$ of $f$ (which contains $\mathbb{Q}_{p}(\alpha)$). Then $\beta \in \mathbb{K}$ and we can factor $f$ so that
+			\[
+				f(x) = c (x - \alpha) (x - \beta).
+			\]
+			Since $f$ still has coefficients in $\mathbb{Q}_{p}$, this gives $c \alpha \beta = a \in \mathbb{Q}_{p}$. Thus, we can write $\beta = a / (\alpha c) \in \mathbb{Q}_{p}(\alpha)$.
+
+		\item Suppose $f(x) = c(a_{0} + a_{1} x + x^{2})$. Then, completing the square, we can write $d = -(a_{0} - (a_{1} / 2)^{2})$ to get
+			\[
+				f(x) = c((x + a_{1} / 2)^{2} - d).
+			\]
+			This tells us that we have a  ``$\sqrt{d}$'' in $\mathbb{Q}_{p}(\alpha)$. Note that if $\sqrt{d} \in \mathbb{Q}_{p}$, then we have $\alpha \in \mathbb{Q}_{p}$ and vice versa by the identification $\sqrt{d} = \alpha + a_{1} / 2$. Thus, by the discussion in part (a), $\mathbb{Q}_{p}(\alpha)$ and $\mathbb{Q}_{p}(\sqrt{d})$ both have the same dimension over $\mathbb{Q}_{p}$.
+
+			Consider $\varphi : \mathbb{Q}_{p}(\sqrt{d}) \to \mathbb{Q}_{p}(\alpha)$ by $\sqrt{d} \mapsto \alpha + a_{1} / 2$, $1 \mapsto 1$ and extending $\mathbb{Q}_{p}$-linearly. Since $(\alpha + a_{1} / 2)^{2} = d$ and there are no other relations in $\mathbb{Q}_{p}(\sqrt{d})$, this is a field homomorphism. We now show that it is an injection of same-dimensional vector spaces, and thus, an isomorphism. 
+
+			Suppose $\varphi(\lambda_{0} + \lambda_{1} \sqrt{d}) = 0$. That is,
+			\[
+				\lambda_{0} + \lambda_{1} a_{1}/2 + \lambda_{1} \alpha = 0.
+			\]
+			Since $1, \alpha$ are linearly independent, this forces $\lambda_{1} = 0$ and $\lambda_{0} + \lambda_{1} a_{1} / 2 = 0$. Thus, $\lambda_{0} = - \lambda_{1} a_{1} / 2 = 0$ as well. That is, $\varphi(\lambda_{0} + \lambda_{1} \sqrt{d})$ only if $\lambda_{0} = \lambda_{1} = 0$. Thus, $\varphi$ is an injection.
+
+		\item Suppose $\mathbb{Q}_{p}(\sqrt{d_{1}}) \cong \mathbb{Q}_{p}(\sqrt{d_{2}})$. Then under some isomorphism we have $\sqrt{d_{2}} \mapsto a + b \sqrt{d_{1}}$. Since this is an isomorphism of field extensions, it must preserve $\mathbb{Q}_{p}$. Thus, $d_{2} \mapsto d_{2}$. It follows that $(a + b \sqrt{d_{1}})^{2} = d_{2}$ for some $a, b \in \mathbb{Q}_{p}$.
+
+			Expanding this yields $a^{2} + b^{2} d_{1} + 2 a b \sqrt{d_{1}} = d_{2}$. Since $d_{2} \in \mathbb{Q}_{p}$, we must have $2 ab = 0$ and $d_{2} = a^{2} + b^{2} d_{1}$. 
+
+			If $b = 0$, then we have $d_{2} = a^{2}$, and thus $\mathbb{Q}_{p}(\sqrt{d_{1}}) = \mathbb{Q}_{p} = \mathbb{Q}_{p}(\sqrt{d_{2}})$. For this to be true, $d_{1}, d_{2}$ must both be squares in $\mathbb{Q}_{p}$, and thus, so must their ratio be a square. 
+
+			If $b \neq 0$, we must have $a = 0$. Then $b^{2} d_{1} = d_{2}$ and so $d_{1} d_{2}^{-1} = 1 / b^{2}$, which is a square in $\mathbb{Q}_{p}$.
+
+			Now we prove the converse. Suppose $d_{1} d_{2}^{-1} = b^{2}$ for some $b \in \mathbb{Q}_{p}^{\times}$. Then we have $(b \sqrt{d_{2}})^{2} = d_{1}$ in $\mathbb{Q}_{p}(\sqrt{d_{2}})$.
+
+			Consider $\varphi : \mathbb{Q}_{p}(\sqrt{d_{1}}) \to \mathbb{Q}_{p}(\sqrt{d_{2}})$ by $\sqrt{d_{1}} \mapsto b \sqrt{d_{2}}$, $1 \mapsto 1$ and extending $\mathbb{Q}_{p}$-linearly. Again, since it preserves multiplication of $\sqrt{d_{1}}$ and $\mathbb{Q}_{p}$-scalar multiplication, it is a field homomorphism.
+
+			Again, it suffices to show $\varphi$ is injective since $\sqrt{d_{1}} \in \mathbb{Q}_{p} \iff \sqrt{d_{2}} \in \mathbb{Q}_{p}$ and thus, the vector spaces have the same dimension. Suppose $\varphi(\lambda_{0} + \lambda_{1} \sqrt{d_{1}}) = 0$. Then $\lambda_{0} + b \lambda_{1} \sqrt{d_{2}} = 0$. Thus, $\lambda_{0} = 0$ and $b \lambda_{1} = 0$. Since $b \neq 0$, we must have $\lambda_{1} = 0$.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[(2)]
 	Suppose $\mathbb{K}$ is an extension of $\mathbb{Q}_{p}$ of degree $2$. Show that every element of $\mathbb{K}$ is the root of a polynomial in $\mathbb{Q}_{p}[x]$ of degree $1$ or $2$.
 \end{problem}
+
+\begin{solution}
+	Suppose $\alpha \in \mathbb{K}$. Since $\mathbb{K}$ is a degree $2$ extension, any list of three elements of $\mathbb{K}$ is linearly dependent over $\mathbb{Q}_{p}$. In particular, $1, \alpha, \alpha^{2}$ is linearly dependent, so there exist $a_{0}, a_{1}, a_{2} \in \mathbb{Q}_{p}$ not all zero such that $a_{0} + a_{1} \alpha + a_{2} \alpha^{2}$. That is, $\alpha$ is a root of a non-zero, at-most quadratic polynomial in $\mathbb{Q}_{p}[x]$. Since degree $0$ polynomials are all non-zero constants with no roots, $a_{0} + a_{1} x + a_{2} x^{2}$ is degree $1$ or degree $2$.
+\end{solution}
 
 \pagebreak
 
@@ -32,10 +82,112 @@ We begin by exploring quadratic extensions of $\mathbb{Q}_{p}$.
 	Suppose $p > 2$.
 	\begin{enumerate}
 		\item Use Hensel's lemma together with a result from last week's homework to show that every non-zero $p$-adic number can be written as a product of a principal unit, a $(p - 1)$st root of unity, and a power of $p$.
-		\item Let $(\mathbb{Q}_{p})^{\times} = \{ z^{2} \mid z \in \mathbb{Q}_{p} \}$. Pick $d \in \mathbb{Z}_{p}^{\times}$ for which $d \notin (\mathbb{Q}_{p}^{\times})^{2}$. Show that $\mathbb{Q}_{p}^{\times} / (\mathbb{Q}_{p}^{\times})^{2} = \{ \overline{1}, \overline{p}, \overline{d}, \overline{pd} \} \cong \mathbb{Z} / (2) \times \mathbb{Z} / (2)$.
+		\item Let $(\mathbb{Q}_{p}^{\times})^{2} = \{ z^{2} \mid z \in \mathbb{Q}_{p} \}$. Pick $d \in \mathbb{Z}_{p}^{\times}$ for which $d \notin (\mathbb{Q}_{p}^{\times})^{2}$. Show that $\mathbb{Q}_{p}^{\times} / (\mathbb{Q}_{p}^{\times})^{2} = \{ \overline{1}, \overline{p}, \overline{d}, \overline{pd} \} \cong \mathbb{Z} / (2) \times \mathbb{Z} / (2)$.
 		\item Conclude that there are exactly three extensions of $\mathbb{Q}_{p}$ of degree $2$.
 		\item Something to think about but not turn in: How many extensions of $\mathbb{Q}$ of degree $2$ are there? And of $\mathbb{R}$?
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item
+
+		\item 
+
+		\item In (1) we showed that all at-most quadratic extensions of $\mathbb{Q}_{p}$ are $\mathbb{Q}_{p}(\sqrt{d})$ for some $d$, and that $\mathbb{Q}_{p}(\sqrt{d_{1}}) \cong \mathbb{Q}_{p}(\sqrt{d_{2}})$ if and only if $d_{1} d_{2}^{-1} = z^{2}$ for some $z \in \mathbb{Q}_{p}^{\times}$. Thus, the distinct quadratic extensions are exactly the equivalence classes of $d \in \mathbb{Q}_{p}^{\times} / (\mathbb{Q}_{p}^{\times})^{2}$. The trivial extensions of degree $1$ are for $d \in \overline{1}$, and the rest are all the extensions of degree $2$. Thus, there are exactly $4 - 1 = 3$ quadratic extensions of $\mathbb{Q}_{p}$.
+	\end{enumerate}
+\end{solution}
+
+\pagebreak
+
+\begin{problem}[(4)]
+	Suppose $V$ is an $n$-dimensional vector space over $\mathbb{Q}_{p}$. Fix a basis $B = (v_{1}, \dots, v_{n})$.
+	\begin{enumerate}
+		\item Check that the function $\lVert a_{1} v_{1} + \dots + a_{n} v_{n} \rVert := \max \{ \lvert a_{1} \rvert_{p}, \dots, \lvert a_{n} \rvert_{p} \}$ is a vector space norm on $V$.
+		\item Show that $V$ is complete under $\lVert \cdot \rVert$.
+	\end{enumerate}
+\end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item First we show that $\lVert \cdot \rVert$ is positive-definite.
+			Recall that the $p$-adic absolute value is positive-definite.
+
+			Suppose $v = 0$. $v_{1}, \dots, v_{n}$ forms a basis and is linearly independent.
+			Thus, if $0 = v = a_{1} v_{1} + \dots + a_{n} v_{n}$ then all $a_{i} = 0$.
+			Then, $\lVert 0 \rVert = \max \{ \lvert 0 \rvert_{p} \} = 0$.
+
+			Now suppose $v \neq 0$ and write $v = a_{1} v_{1} + \dots + a_{n} v_{n}$.
+			There must be some $a_{i} \neq 0$.
+			Thus,
+			\begin{align*}
+				\lVert v \rVert
+				& = \max \{ \lvert a_{1} \rvert_{p}, \dots, \lvert a_{n} \rvert_{p} \} \\
+				& \ge \lvert a_{i} \rvert_{p} \\
+				& \ge 0.
+			\end{align*}
+
+			The norm clearly respects scaling. Let $v = a_{1} v_{1} + \dots + a_{n} v_{n}$.
+			Then 
+			\begin{align*}
+				\lVert \lambda v \rVert & = \lVert \lambda a_{1} v_{1} + \dots + \lambda a_{n} v_{n} \rVert \\
+							& = \max \{ \lvert \lambda a_{1} \rvert_{p}, \dots, \lvert \lambda a_{n} \rvert_{p} \} \\
+							& = \lvert \lambda \rvert_{p} \max \{ \lvert a_{1} \rvert_{p}, \dots, \lvert a_{n} \rvert_{p} \} \\
+							& = \lvert \lambda \rvert_{p} \lVert v \rVert.
+			\end{align*}
+
+			Finally, we show the norm satisfies the triangle inequality.
+			Recall that $\lvert \cdot \rvert_{p}$ satisfies  the strong triangle inequality.
+			Thus, it certainly satisfies the triangle inequality. 
+			Let $v = a_{1} v_{1} + \dots + a_{n} v_{n}$ 
+			and $w = b_{1} v_{1} + \dots + b_{n} v_{n}$. Then
+			\begin{align*}
+				\lVert v + w \rVert & = \lVert (a_{1} + b_{1}) v_{1} + \dots + (a_{n} + b_{n}) \rVert \\
+						    & = \max \{ \lvert a_{1} + b_{1} \rvert_{p}, \dots, \lvert a_{n} + b_{n} \rvert_{p} \} \\
+						    & \le \max \{ \lvert a_{1} \rvert_{p} + \lvert b_{1} \rvert_{p}, \dots, \lvert a_{n} \rvert_{p} + \lvert b_{n} \rvert_{p} \} \\
+						    & \le \max \{ \lvert a_{1} \rvert, \dots, \lvert a_{n} \rvert \} + \max \{ \lvert b_{1} \rvert_{p}, \dots, \lvert b_{n} \rvert_{p} \} \\
+						    & = \lVert v \rVert + \lVert w \rVert.
+			\end{align*}
+			Here the first inequality follows because
+			each $\lvert a_{i} + b_{i} \rvert_{p} \le \lvert a_{i} \rvert_{p} + \lvert b_{i} \rvert_{p}$. 
+			The second inequality follows because 
+			for any maximum sum $\lvert a_{i} \rvert_{p} + \lvert b_{i} \rvert_{p}$,
+			we have $\lvert a_{i} \rvert_{p} \le \lvert a_{j} \rvert_{p}$ 
+			and $\lvert b_{i} \rvert_{p} \le \lvert b_{k} \rvert_{p}$
+			where $\lvert a_{j} \rvert_{p}$ and $\lvert b_{k} \rvert_{p}$ 
+			are the maximum individual absolute values.
+
+		\item Suppose $\{ v_{k} = a_{1, k} v_{1} + \dots + a_{n, k} v_{n} \}_{k \in \mathbb{N}}$
+			is a Cauchy sequence of vectors in $V$ with basis coefficients as written.
+			We claim that each coefficient sequence $\{ a_{i, k} \}_{k \in \mathbb{N}}$
+			is Cauchy, and thus convergent to some $a_{i}$.
+			Further, we claim $v_{k} \to v = a_{1} v_{1} + \dots + a_{n} v_{n}$.
+
+			First, suppose we are given $\varepsilon > 0$.
+			Then there is some $N$ such that for all $k, m > N$ we have
+			\[
+				\lvert v_{k} - v_{m} \rvert =
+				\max \{ \lvert a_{i, k} - a_{i, m} \rvert_{p} \}_{i = 1}^{n}
+				< \varepsilon
+			\]
+			It follows that for all $k, m > N$ we have 
+			$\lvert a_{i, k} - a_{i, m} \rvert_{p} < \varepsilon$ for each $i \le n$.
+			That is, each $\{ a_{i, k} \}_{k \in \mathbb{N}}$ is Cauchy.
+
+			Let $a_{i, k} \to a_{i}$ for each $i$. 
+			Thus, given $\varepsilon > 0$,
+			for each  $i$ 
+			there is some $N_{i}$
+			such that for $k > N_{i}$ we have $\lvert a_{i} - a_{i, k} \rvert < \varepsilon$.
+			Choose $N = \max \{ N_{i} \}_{i = 1}^{n}$ 
+			and $v = a_{1} v_{1} + \dots + a_{n} v_{n}$.
+			It follows that for each $k > N$ we have
+			$\lVert v - v_{k} \rVert 
+			= \max \{ \lvert a_{i} - a_{i, k} \rvert_p \}_{i = 1}^{n} < \varepsilon$.
+			Thus, $v_{k} \to v$.
+
+			Since every Cauchy sequence in $V$ converges, $V$ is complete.
+	\end{enumerate}
+\end{solution}
 
 \end{document}
