@@ -1,0 +1,247 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 168 --- Algorithms}
+\assignment{Homework \#5}
+\duedate{9th October 2025}
+
+\begin{document}
+
+\begin{problem}[Problem 1: Minqueues!]
+	A Minqueue is an abstract data type (ADT) that supports the following operations:		
+    \begin{description}
+        \item{\textsc{enqueue}($x$):}  Inserts the number $x$ into the Minqueue.
+        \item{\textsc{dequeue}():}  Removes the element that has been in the
+        Minqueue for the longest time.
+        \item{\textsc{find-min}():}   Returns the smallest value in the Minqueue
+        but \emph{does NOT} remove it from the Minqueue.
+    \end{description}
+    Note: the description above describes what a Minqueue does, but doesn't specify how it does it (the implementation details). That's why it's called an ``abstract'' data type!
+    
+    Fortunately, your colleague Dr.~Anna Litik has proposed a specific implementation for the Minqueue ADT. She calls it ``Real Queue + Helper Queue.''
+    Here's how it works:  
+    \begin{enumerate}[label = \arabic*.]
+        \item  \textsc{enqueue}($x$): $x$ is placed at the back of a regular queue (implemented as a doubly linked list). However, $x$ is \emph{also} placed at the back of a special ``helper queue'' (also implemented as doubly linked list).  
+
+        When $x$ is inserted at the back end of the helper queue, it checks to see if it is smaller than the element right in front of it in the helper queue.  If so, it removes the element in front of it in the helper queue and again compares itself to its predecessor.  It repeatedly removes its predecessors until it gets to a point that its predecessor is smaller than it. This means that the helper queue will always contain a subset of the real queue, sorted in increasing order from small elements at the front to large elements at the back. 
+        \item \textsc{dequeue}(): Remove the element at the front of the real queue. We also check to see if it is at the front of the helper queue, in which case we remove it from that queue as well.
+        \item \textsc{find-min}(): To determine which element is the minimum, we simply look at the front of the helper queue.
+    \end{enumerate}
+   
+    Use the \textbf{accounting} method to prove that the total running time of \emph{any} sequence of $n$ operations is $O(n)$ in this implementation. Be careful to account for all of the
+    work performed by this data structure: every constant amount of work should be able to identify a coin that will be used to pay for that work.
+
+    Hint: the first step to analyzing an ADT implementation is understanding how it works. Take a minute to walk through an example sequence of \textsc{enqueue}, \textsc{dequeue}, and \textsc{find-min} operations to get a sense for how this implementation works.
+\end{problem}
+
+\begin{solution}
+	We describe an accounting scheme for each operation such that in any sequence of $n$ operations, each operation is accounted for with constant time. Thus, the total sequence of $n$ operations takes $n O(1) = O(n)$ time.
+
+	We charge $1$ coin for each $\textsc{find-min}$ for each $\textsc{dequeue}$. 
+	For each $\textsc{enqueue}$ we charge $3$ coins. Thus, each $\text{find-min}$ and each $\textsc{dequeue}$ pays for its own constant time cost.
+
+	For each $\textsc{enqueue}(x)$,
+	two coins pay for the cost of adding $x$ to the back of the two queues.
+	The third coin is saved for the possible cost of removing it from the helper queue
+	at some future $\textsc{enqueue}(y)$.
+	Specifically, if $\textsc{enqueue}(y)$ requires removing $x$ from the helper queue,
+	we pay for removing $x$ with the saved coin of $x$.
+
+	Since $\textsc{find-min}$ and $\textsc{dequeue}$ pay for themselves,
+	we only have to show that our saved coins suffice to pay for each for each $\textsc{enqueue}$.
+	We show that each $x$ in the helper queue has $1$ coin associated with it to pay for its removal.
+	Suppose $x$ is in the helper queue.
+	Then at the time of $\textsc{enqueue}(x)$ we saved a coin with $x$.
+	This coin is not spent by any $\textsc{deqeue}()$ nor $\textsc{find-min}()$ calls.
+	If this coin is spent, then it is because some $\textsc{enqueue}(y)$ required removing $x$.
+	Thus, once the coin is spent, $x$ is no longer in the helper queue.
+	Thus, when $x$ needs to pay for being removed, it has the one coin still with it.
+
+	Since every operation can be accounted for using constant time charges for each operation, any sequence of $n$ operations takes $n O(1) = O(n)$ time.
+\end{solution}
+
+\pagebreak
+
+\begin{problem}[Problem 2: Sounds like a duck!]
+A \emph{quack} is an abstract data type (ADT) that is part queue and part stack and supports both queue and stack operations. Specifically, a quack supports the following operations:
+    \begin{description}
+	\item \textsc{Push}$(x)$ takes a value  $x$ and puts it at the ``top'' of the quack;
+	\item \textsc{Pop}$()$ removes and returns the element at the ``top'' of the quack; and
+	\item \textsc{Dequeue}$()$ removes and returns the item at the
+		``bottom'' of the quack (the element that has been in the quack the longest).
+    \end{description}
+	You've been tasked with coming up with a quack implementation that uses  \emph{exactly three stacks}. Moreover, in order to conserve memory, \emph{each item can only appear on one of the three stacks at any given time!} This means you'll have to implement the functionality of the quack by moving items around between the (at most) three underlying stacks.
+	\begin{enumerate}
+		\item Describe an algorithm that implements a quack using three stacks
+		such that \emph{any} sequence of $n$ operations takes a total of $O(n)$
+		time.   Although you are limited to three stacks, you may use  a
+		constant number of additional variables (e.g., counters).  You don't
+		need to do the amortized analysis of runtime in this part, just describe the
+		algorithm.
+		\item Prove that your algorithm takes $O(n)$ time for any sequence of
+        $n$ operations using a \textbf{potential} argument.
+        \item (Optional, 15 extra credit points.) Prove that your algorithm takes $O(n)$ time using an \textbf{accounting} argument. Yes, there may be some similarities to the potential argument!
+	\end{enumerate}
+\end{problem}
+
+\begin{solution}
+	The solution below is obviously wrong but was the best I could think of. While it usually does take $O(n)$ for $n$ operations, you could push $n$ items and then alternately pop and dequeue until empty. This would take $O(n^{2})$.
+	\begin{enumerate}
+		\item We describe an algorithm using two of the stacks. We also describe the actual costs of each operation with the description so that we can use the actual costs in the amortised analysis later.
+
+			We need only use two of the stacks. Call one of the stacks $\mathtt{S}$ (for stack) and the other $\mathtt{Q}$ (for queue). We also need counters for each of them. The counter for a stack is incremented each time something is pushed to it and decremented each time something is popped from it. 
+
+			$\mathtt{push}(x)$ always pushes onto $\mathtt{S}$. This has $O(1)$ actual cost. 
+			If $\mathtt{S}$ is non-empty, $\mathtt{pop}()$ pops from $\mathtt{S}$.
+			This has $O(1)$ actual cost.
+			If $\mathtt{Q}$ is non-empty, $\mathtt{dequeue}()$ pops from $\mathtt{Q}$.
+			This has $O(1)$ actual cost.
+
+			Suppose $\mathtt{Q}$ is empty. 
+			Then $\mathtt{dequeue}()$ pops every element of $\mathtt{S}$ 
+			and pushes them all onto $\mathtt{Q}$. 
+			Then it pops from $\mathtt{Q}$.
+			Notice that doing this as a sequence of calls 
+			like $\mathtt{push_{Q}}(\mathtt{pop}())$ 
+			means that the elements in $\mathtt{Q}$ are arranged 
+			such that the top element of $\mathtt{Q}$ is the bottom element of the quack.
+			Thus, future pops from $\mathtt{Q}$ always dequeue the right element.
+
+			For $\ell$ elements in $\mathtt{S}$ at the time of $\mathtt{dequeue}$,
+			this has $O(\ell) + 1$ actual cost.
+
+		\item Let the potential $\Phi_{i}$ be the number of elements in $\mathtt{S}$ after the $i$th operation. Obviously $\Phi_{0} = 0$ (there are no elements in any stack before operations). Also, since $\Phi_{i}$ is the cardinality of a stack, it is always non-negative. Thus, this is a valid potential.
+
+			We already have the actual costs of each operation. We calculate the potential difference and show that the amortised costs are all $O(1)$.
+
+			$\mathtt{push}(x)$ adds $1$ element to $\mathtt{S}$. Thus, it has a potential difference $1$, and an amortised cost $1 + 1 = O(1)$.
+
+			$\mathtt{pop}()$ removes $1$ element from $\mathtt{S}$. Thus it has a potential difference $-1$ and an amortised cost $1 - 1 = 0 < O(1)$.
+
+			If $\mathtt{Q}$ is not empty, $\mathtt{dequeue}$ does not change $\mathtt{S}$, and thus has a potential difference $0$. Adding to the actual cost gives an amortised cost $1 + 0 = O(1)$.
+
+			If $\mathtt{Q}$ is empty. Then $\mathtt{dequeue}$ removes the $\ell$ elements in $\mathtt{S}$, resulting in a potential difference $\ell$. Adding to the actual cost gives an amortised cost of $\ell + 1 - \ell = O(1)$.
+
+			The sum of all actual costs is less than the sum of all amortised costs which is  $n O(1)$ (since each operation has amortised cost $O(1)$). Thus, the sum of all actual costs is $O(n)$.
+
+		\item We charge $2$ coins for each $\mathtt{push}(x)$.
+			$1$ coin pays for the $O(1)$ cost of the push.
+			$1$ coin is saved for a possible $\mathtt{push_{Q}}(\mathtt{pop}())$
+			when a $\mathtt{dequeue}$ is called.
+
+			We charge $1$ for each $\mathtt{pop}()$.
+			This pays for the $O(1)$ cost of popping from $\mathtt{S}$.
+
+			We charge $1$ for each $\mathtt{dequeue}()$.
+			This pays for the $O(1)$ cost of popping from $\mathtt{Q}$.
+
+			Since each $x \in \mathtt{S}$ has an extra coin allotted to it,
+			(which is only spent on removing it from $\mathtt{S}$ by dequeueing)
+			we can always pay for the rest of the cost of dequeueing from empty $\mathtt{Q}$.
+			We just push-pop the $\ell$ items in $\mathtt{S}$ by spending the $\ell$ associated coins.
+
+			Since every operation is accounted for with a constant charge, the total cost for $n$ operations is $n O(1) = O(n)$.
+	\end{enumerate}
+\end{solution}
+
+\pagebreak
+
+\begin{problem}[Problem 3: Laziness is a virtue!]
+	A \emph{mergeable heap} is an abstract data type (ADT) comprising \emph{multiple separate heaps}. It allows for new heaps to be created and existing heaps to be merged with each other. Specifically, a mergeable heap supports several operations:
+\begin{description}
+    \item \textsc{newHeap}$()$ returns a pointer to a new empty heap.
+    \item \textsc{insert}$(x, h)$ inserts the element $x$ into the heap $h$.
+    \item \textsc{findMin}$(h)$ returns the minimum element in the heap $h$.
+    \item \textsc{union}$(h_1, h_2)$ replaces the heaps $h_1$ and $h_2$ with a new heap that contains the union of the elements from $h_1$ and $h_2$.
+    \item \textsc{deleteMin}$(h)$ deletes the minimum element in the heap $h$.
+\end{description}
+
+\begin{enumerate}
+    \item In a sentence or two, explain why each of the operations \verb+newHeap+, \verb+insert+, \verb+findMin+, and \verb+union+ take $O(1)$ actual time using the implementation above.
+	
+  \item In a sentence or two, explain why a binomial tree of rank $r$ has $2^r$ nodes. 
+	
+  \item In the \verb+deleteMin+ operation, after the minimum element is removed,
+ its binomial tree may become fragmented. In a sentence or two, explain why all of the fragments have sizes that are powers of 2 and can be considered binomial trees
+ themselves.
+	
+  \item Now, let $\ell$ denote the total  number of binomial trees in the linked
+list immediately after the minimum element was removed and the resulting
+fragments were added to the list.  Show that the entire cleanup phase described
+in step 3 of the \verb+deleteMin+ operation can be performed in $O(\ell)$ time.
+Notice that some binomial trees may merge several times while others might just
+get plopped in a location of the array and stay there.  Therefore, your argument
+here will require an amortized analysis.  Prove the $O(\ell)$ time using an amortization argument (accounting, potential, or old-fashioned careful counting).
+	
+  \item In a few sentences, show that the resulting ``cleaned up'' heap contains at most $\log n$ binomial trees in its linked list (where $n$ is the total number of operations performed and thus an upper bound on the number of nodes among all the heaps.)
+
+  \item Now, define an appropriate potential function and show that the
+amortized cost of the entire \verb+deleteMin+ operation is $O(\log n)$. Keep in
+mind here that \textbf{our data structure is a collection of multiple heaps}.  Any
+potential function that you define for this data structure at this point must be
+defined for the entire data structure rather than for the individual heaps.
+(Our potential function method was not designed for use with multiple potential
+functions!)
+	
+  \item Next, show that under this potential function, the amortized costs of
+all of the other operations are still $O(1)$.
+	
+  \item Dr. Ida Noh of ShallowMind doesn't understand why you need to show that
+the \emph{amortized cost} per operation of the operations other than
+\verb+deleteMin+ is $O(1)$ when we already know that the \emph{actual cost} of
+these operations is $O(1)$.  Write a short memo to Dr.~Noh to explain why it
+was it important to analyze the amortized costs of those operations.
+\end{enumerate}
+
+\end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item $\mathtt{newHeap}()$ takes constant time because it just returns a null pointer.
+
+			$\mathtt{insert}(x, h)$ constructs a rank $0$ binomial tree (a single node) in constant time, increments the size of $h$ in constant time. Updating the pointer to the minimum is also constant time (only requires one comparison with the minimum) and updating the tail pointer is also constant time (since $x$ is always added to the tail).
+
+			$\mathtt{union}(h_{1}, h_{2})$ involves linking from the tail of $h_{2}$ to the head of $h_{1}$ in constant time, updating the head to the head of $h_{2}$ in constant time, updating the tail to the tail of $h_{1}$ in constant time, and updating the minimum element to the smaller of the two minimum elements of $h_{1}$ and $h_{2}$ (also in constant time, requiring only one comparison). Thus, it requires only constant time.
+
+		\item By construction each rank $r$ binomial tree has twice as many nodes as a rank $r - 1$ binomial tree. Since a rank $0$ binomial tree has $2^{0} = 1$ node, by induction, a rank $r$ binomial tree has $2 \times 2^{r - 1} = 2^{r}$ nodes.
+
+		\item Suppose a binomial tree has rank $r$ and root $x$. If $r = 0$, then the whole tree is the root and removing the root leaves nothing. Else, by definition, it consists of two rank $r - 1$ binomial trees --- one rooted at $h$ and one not. Apply this process recursively to the tree rooted at $h$ to obtain a collection of trees not rooted at $x$. Since these are all binomial trees of some rank, their sizes are all powers of $2$.
+
+			Applying this to the binomial tree of the minimum element shows that removing the root (the minimum element) returns a collection of binomial trees not rooted at the minimum element.
+
+		\item We describe an accounting scheme for each array insertion such that in any sequence of $\ell$ binomial trees, both insertions and merges are accounted for with constant cost per tree. Thus, for $\ell$  binomial trees the total time cost is $O(\ell)$.
+
+			We charge $2$ coins for each tree insertion. $1$ coin is used to insert the tree into the eventual empty array cell (after all the merging is done). The other coin is saved to pay for any future merges. 
+
+			We always have enough coins to pay for each binomial tree's eventual insertion. This is because every tree already in the array has a coin saved for it. If it is in the array, then a coin was saved for it when it was inserted. This coin is only spent to merge it once some other binomial tree tries to enter the same spot. Then the coin-less tree is removed from the $r$th spot, and eventually when it is inserted, the original coin associated with the binomial tree that tried to take its spot is saved for it.
+
+			Since each binomial tree is accounted for in constant time, the total time is $\ell O(1) = O(\ell)$.
+
+		\item We have that there are at most $n$ nodes in all the heaps. Note that the total number of different ranks of binomial trees is bounded by the largest $k$ such that $1 + 2 + 2^{2} + \dots + 2^{k - 1} \le n$. If $1 + 2 \dots + 2^{k - 1} > n$, then any collection of $k$ binomial trees with all different ranks will have it's $i$th smallest binomial tree of rank at least $i - 1$, and thus, of size at least $2^{i - 1}$. Thus, the collection will have total size greater than $1 + 2 + \dots + 2^{k - 1}$, and thus, size greater than $n$.
+
+			Recall that $1 + 2 + \dots + 2^{k - 1} = 2^{k} - 1$. If $2^{k} - 1 \le n$, then $k \le \log(n + 1)$
+
+		\item Choose the potential function $\Phi$ to be just the number of heaps (that is, the total number of binomial trees). Clearly $\Phi_{0}$, the number of binomial trees before any operations are performed is $0$. Also, clearly $\Phi_{i} \ge 0$ --- the number of binomial trees is always non-negative.
+
+			Let $\ell$ be the number of trees left in the heap after removing the minimum element (in constant time). Then the actual cost of $\mathtt{deleteMin}$ is $c_{\mathtt{deleteMin}} = O(\ell)$. However, $\mathtt{deleteMin}$ deletes all $\ell$ of those trees and replaces them with (at most) $O(\log n)$ trees. This creates a potential difference $\Delta \Phi_{\mathtt{deleteMin}} \le O(\log n) - O(\ell)$. Thus, the amortised cost is
+			\[
+				\hat{c}_{\mathtt{deleteMin}} = c_{\mathtt{deleteMin}} + \Delta \Phi_{\mathtt{deleteMin}} \le O(\ell) - O(\ell) + O(\log n) = O(\log n).
+			\]
+
+
+		\item Since all of the operations have constant time actual costs, it suffices to show that they all also have at most $O(1)$ potential delta.
+
+			$\mathtt{newHeap}()$ adds $1$ heap, so has potential delta $1 = O(1)$.
+
+			$\mathtt{insert}(x, h)$ adds $1$ heap, so has potential delta $1 = O(1)$.
+
+			$\mathtt{findMin}()$ does not add any heaps, so has potential delta $0 < O(1)$.
+
+			$\mathtt{union}(h_{1}, h_{2})$ removes $2$ heaps and replaces them with $1$. Thus, it has potential delta $-1 < O(1)$.
+
+		\item Dear Dr. Ida Noh, even though we know the \emph{actual} cost of each of the other operations is $O(1)$, we obtain the \emph{amortised} cost of $\mathtt{deleteMin}$ by possibly shifting some of its \emph{actual} cost on to the \emph{amortised} cost of the other operations. Thus, the total \emph{actual} cost is less than the sum of \emph{all amortised} costs, but not necessarily less than the sum of some amortised and some actual costs. In order to understand the total \emph{actual} cost, we must understand \emph{each} amortised cost.
+	\end{enumerate}
+\end{solution}
+
+\end{document}
