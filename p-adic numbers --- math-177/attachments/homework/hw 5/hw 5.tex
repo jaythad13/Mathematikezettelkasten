@@ -90,9 +90,21 @@ We begin by exploring quadratic extensions of $\mathbb{Q}_{p}$.
 
 \begin{solution}
 	\begin{enumerate}
-		\item
+		\item Suppose $z \in \mathbb{Q}_{p}$ with $z = \sum_{n = -k}^{\infty} c_{n} p^{n}$ with $c_{-k} \neq 0$ and all $c_{n} \in \mathbb{Z} / (p)$. Write $b_{n} = c_{n - k}$ for each $n$, and write $z = p^{-k} \sum_{n = 0}^{\infty} b_{n} p^{n}$. 
 
-		\item 
+			Since $b_{0} \not \equiv 0 \pmod{p}$, Fermat's little theorem implies $b_{0}^{p - 1} - 1 \equiv 0 \pmod p$. That is, $b_{0}$ is a zero of $x^{p - 1} - 1$ in $\mathbb{Z} / (p)$. By Hensel's lemma there must then be some $\zeta = \sum_{n = 0}^{\infty} a_{n} p^{n} \in \mathbb{Z}_{p}$ with $\zeta^{p - 1} - 1 = 0$ and $a_{0} = b_{0}$.
+
+			Finally, we write  $y = p^{k} z / \zeta$. As showed on the previous homework, the zeroth coefficient of $y$ is the quotient of the zeroth coefficients of $p^{k} z$ and $\zeta$. That is, $y$ has zeroth coefficient $b_{0} / a_{0} = 1$, and so $y \in 1 + p \mathbb{Z}_{p}$ is a principal unit.
+
+			Thus, our final expression is $z = p^{-k} \zeta y$ as the product of a principal unit, a $(p - 1)$st root of unity, and a power of $p$.
+
+		\item Note that the product expression in the previous  is unique. Thus, we have a proof that $\mathbb{Q}_{p}^{\times} \cong \mathbb{Z} \times (\mathbb{Z} / (p))^{\times} \times (1 + p \mathbb{Z}_{p})$ (note that by Hensel's lemma, all $p - 1$st roots of unity are determined by their residue modulo $p$, and Fermat's little theorem gives that each non-zero residue yields a root). Then writing $(\mathbb{Z} / (p))^{\times} \cong \mathbb{Z} / (p - 1)$ additively allows to get that
+			\[
+				\mathbb{Q}_{p}^{\times} / (\mathbb{Q}_{p}^{\times})^{2} \cong \frac{\mathbb{Z}}{(2)} \times \frac{\mathbb{Z} / (p - 1)}{(2)} \times \frac{1 + p \mathbb{Z}_{p}}{(1 + p \mathbb{Z}_{p})^{2}} \cong \mathbb{Z} / (2) \times \mathbb{Z} / (2) \times 1
+			\]
+			The first $\mathbb{Z} / (2)$ corresponds to whether the power of $p$ is even or not. The second $\mathbb{Z} / (2)$ corresponds to whether the $(p - 1)$st root of unity is in the same residue class of $(\mathbb{Z} / (p))^{\times} / (\mathbb{Z} / (p)^{\times})^{2} \cong \mathbb{Z} / (2)$.
+
+			Note that $(1 + p \mathbb{Z}_{p})^{2} = (1 + p \mathbb{Z}_{p})$ because every principal unit is a principal unit squared. Thus, we can write this as $\mathbb{Q}_{p}^{\times} / (\mathbb{Q}_{p}^{\times})^{2} = \{ \overline{1}, \overline{p}, \overline{d}, \overline{p d} \}$.
 
 		\item In (1) we showed that all at-most quadratic extensions of $\mathbb{Q}_{p}$ are $\mathbb{Q}_{p}(\sqrt{d})$ for some $d$, and that $\mathbb{Q}_{p}(\sqrt{d_{1}}) \cong \mathbb{Q}_{p}(\sqrt{d_{2}})$ if and only if $d_{1} d_{2}^{-1} = z^{2}$ for some $z \in \mathbb{Q}_{p}^{\times}$. Thus, the distinct quadratic extensions are exactly the equivalence classes of $d \in \mathbb{Q}_{p}^{\times} / (\mathbb{Q}_{p}^{\times})^{2}$. The trivial extensions of degree $1$ are for $d \in \overline{1}$, and the rest are all the extensions of degree $2$. Thus, there are exactly $4 - 1 = 3$ quadratic extensions of $\mathbb{Q}_{p}$.
 	\end{enumerate}
