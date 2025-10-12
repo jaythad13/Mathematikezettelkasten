@@ -3,6 +3,7 @@ tags:
 - top
 - alg-top
 - alg-geo
+- rising-sea/2/5
 ---
 
 Let $X$ be a topological space and let $\{ B_{i} \}_{i \in \mathscr{I}}$ be a base on it.

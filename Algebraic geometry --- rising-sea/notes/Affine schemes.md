@@ -2,6 +2,7 @@
 tags:
 - alg-geo
 - comm-alg
+- rising-sea/3
 ---
 
 Let $A$ be a ring.

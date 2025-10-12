@@ -3,6 +3,7 @@ tags:
 - rising-sea
 - alg-geo
 - comm-alg
+- rising-sea/3
 ---
 
 Let $A$ be a ring and $\mathbb{F}$ a field.
