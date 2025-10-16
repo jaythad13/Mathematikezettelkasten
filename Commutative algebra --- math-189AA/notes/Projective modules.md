@@ -5,6 +5,7 @@ tags:
 - math-189AA/7
 - math-189AA/11
 - math-189AA/13
+- math-189AA/15
 ---
 
 If $A$ is the best $A$-module, and free modules are second best, then the third best are their direct summands — projective modules.
@@ -223,5 +224,66 @@ splits. Then, since every module is the cokernel of a free module, write $g : A^
 ```
 For this to split is exactly for $P$ to be a direct summand of $A^{\oplus \mathscr{I}}$ and thus, projective.
 
+
+---
+
+### Projectives are useful
+
+Projective modules can be very useful. One example is Schanuel's lemma which allows us to compare exact sequences when the middle term is projective and the right term is the same.
+
+##### _lemma:_ Schanuel's lemma
+
+Suppose
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		0 \ar[r] & K \ar[r] & P \ar[r] & M \ar[r] & 0
+	\end{tikzcd}
+\end{document}
+```
+and
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		0 \ar[r] & K' \ar[r] & P' \ar[r] & M \ar[r] & 0
+	\end{tikzcd}
+\end{document}
+```
+are exact with $P$ and $P'$ projective. Then $P \oplus K' \cong P \oplus K$.
+
+###### _proof:_
+
+We construct $\alpha$ and $\beta$ so that the following diagram commutes.
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		0 \ar[r] & K \ar[r, "i"] \ar[d, dashed, "\alpha"] & P \ar[r, "\pi"] \ar[d, dashed, "\beta"] & M \ar[r] \ar[d, "\mathrm{id}_{M}"] & 0 \\
+		0 \ar[r] & K' \ar[r, "i'"] & P' \ar[r, "\pi'"] & M \ar[r] & 0 \\
+	\end{tikzcd}
+\end{document}
+```
+$\beta$ exists by the universal property of $P$ projective — we are given $\pi' : P' \to M$ surjective and $\pi : P \to M$, so there is a lift $\beta : P \to P'$ such that $\pi' \circ \beta = \pi$, and thus, $\pi' \circ \beta = \operatorname{id}_{M} \circ \pi$. That is, the right square commutes.
+
+To construct $\alpha$, note that exactness means it suffices to show $\operatorname{img} \beta \circ i \subseteq \ker \pi'$. But by commutativity of the right square, we have $\pi' \circ \beta \circ i = \operatorname{id}_{M} \circ \pi \circ i = 0$ (by exactness, $\pi \circ i = 0$). Thus, for each $k \in K$ choose $k \mapsto k'$ uniquely (by injectivity of $i'$) such that $i'(k') = \beta \circ i(k)$. By construction $\alpha$ makes the left square commute.
+
+Consider $\psi : K' \oplus P \to P'$ by $(k', p) \mapsto \beta(p) - i'(k')$. Clearly, if $(k', p) = (\alpha(k), i(k))$, then $\psi(k', p) = 0$ by commutativity of the left square. Conversely, $\ker \psi$ contains all all $(k', p)$ such that $\beta(p) = i'(k')$. But then $\pi'(\beta(p)) = \pi'(i'(k')) = 0$. By commutativity, this means $\operatorname{id}_{M}(\pi(p)) = \pi(p) = 0$. Now, since $p = i(k)$, we have $i'(k') = \beta(p) = \beta(i(k))$. By commutativity of the square, $i'(k') = i'(\alpha(k))$. Since $i'$ is injective, $k' = \alpha(k)$. We have shown $K \cong \ker \psi$ by $k \mapsto (\alpha(k), i(k))$.
+
+This means that we have a short exact sequence
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		0 \ar[r] & K \ar[r] & K' \oplus P \ar[r, "\psi"] & P' \ar[r] & 0.
+	\end{tikzcd}
+\end{document}
+```
+Since $P'$ is projective, it splits and we get $K' \oplus P \cong K \oplus P'$.
 
 ---

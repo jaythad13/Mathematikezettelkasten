@@ -7,9 +7,9 @@ tags:
 
 Projective resolutions help us understand non-projective modules in terms of projective modules. In particular, they help us understand how far a module is from being projective.
 
-##### _definition:_ projective resolution
+##### _definition:_ projective resolution, syzygies
 
-A projective resolution of an $A$-module $M$ is a [[Algebraic geometry --- rising-sea/notes/Complexes and exactness#_definition _ complexes, exactness, short exact sequence|complex]] $P_{\bullet}$ with $P_{i}$ projective and $P_{i} = 0$ for $i < 0$ together with an augmentation map $\varepsilon : P_{0} \to M$ such that the augmented complex
+A **projective resolution** of an $A$-module $M$ is a [[Algebraic geometry --- rising-sea/notes/Complexes and exactness#_definition _ complexes, exactness, short exact sequence|complex]] $P_{\bullet}$ with $P_{i}$ projective and $P_{i} = 0$ for $i < 0$ together with an augmentation map $\varepsilon : P_{0} \to M$ such that the augmented complex
 ```tikz
 \usepackage{tikz-cd}
 \usepackage{amsfonts}
@@ -19,6 +19,15 @@ A projective resolution of an $A$-module $M$ is a [[Algebraic geometry --- risin
 	\end{tikzcd}
 \end{document}
 ```
+is exact.
+
+The kernels $\ker d_{n}$ are called the **syzygies** of $M$, denoted $\Omega^n M$.
+
+---
+
+##### _definition:_ presentation matrix
+
+When $P_{0}, P_{1}$ are finitely generated free modules in a free resolution of an $A$-module $M$, the map $\alpha : P_{1} \to P_{0}$ can be represented as a matrix. This matrix is called the **presentation matrix** of $M$.
 
 ---
 
@@ -101,11 +110,11 @@ Instead, we define new invariants.
 
 ##### _definition:_ projective dimension, minimal projective resolution
 
-An $A$-module $M$ has finite projective dimension if there exists a projective resolution of finite length.
+An $A$-module $M$ has **finite projective dimension** if there exists a projective resolution of finite length.
 
-We denote its projective dimension $\operatorname{proj dim} M = n$ for the least such length $n$ such that $P_{\bullet}$ is a projective resolution with $P_{m} = 0$ for all $m > n$.
+Its **projective dimension** $\operatorname{proj dim} M = n$ is the least such length $n$ such that there exists $P_{\bullet}$ is a projective resolution with $P_{m} = 0$ for all $m > n$.
 
-Such a projective resolution of minimal length is called a minimal
+Such a projective resolution of minimal length is called a **minimal projective resolution**.
 
 If there is no such finite length projective resolution, we say $\operatorname{proj dim} M = \infty$.
 
@@ -150,4 +159,6 @@ The projective resolution obtained by choosing the minimal free module [[#_propo
 
 Consider $(x)$ as a $\mathbb{Q}[x, y, z]$-module. The first surjection is just $\mathbb{Q}[x, y, z] \to (x)$ by $p \mapsto px$. Since $\mathbb{Q}[x, y, z]$ is an [[Abstract algebra --- math-171/notes/Integral domains#_definition _ integral domain|integral domain]], this has kernel $0$.
 
-In general, this follows because every [[Abstract algebra --- math-171/notes/Factorisation in special rings#_definition _ principal ideal domain|principal ideal]] of an integral domain is isomorphic to the ring.
+In general, this follows because every [[Abstract algebra --- math-171/notes/Factorisation in special rings#_definition _ principal ideal domain|principal ideal]] of an integral domain is isomorphic to the ring (as a module over the ring).
+
+---
