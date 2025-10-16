@@ -111,9 +111,21 @@ It's a simple property of extension that $\mathfrak{j}^\text{ce} \subseteq \math
 
 ##### _proposition:_ primes of the localisation are primes that don't meet $S$
 
-Primes ideals $\mathfrak{q} \subseteq S^{-1} A$ are in bijection with primes in $A$ that have no intersection with $S$. Equivalently, $\mathfrak{q} \subseteq \mathfrak{p}$ for $S = A \setminus \mathfrak{p}$.
+Primes ideals $\mathfrak{q} \subseteq S^{-1} A$ are in (inclusion-preserving) bijection with primes in $A$ that have no intersection with $S$.
+
+###### _proof:_
+
+Let $\varphi$ be the canonical map $A \to S^{-1} A$ by $a \mapsto a / 1$.
+
+We first characterise [[Commutative algebra --- math-189AA/notes/Contraction and extension#_definition _ extension|extensions]] of (any ideal) $\mathfrak{p}$ under $\varphi$. The elements of the extension are exactly those $a / s$ with $a \in \mathfrak{p}$. Clearly if $a \in \mathfrak{p}$, then $a / s \in (S^{-1} A) \mathfrak{p}$. Conversely, if $a_{1} / s_{1} + \dots + a_{n} / s_{n} \in (S^{-1} A) \mathfrak{p}$, with $a_{i} \in \mathfrak{p}$ then clearing denominators gives the sum in the desired form. Thus, we write $S^{-1} \mathfrak{p}$ for $(S^{-1} A) \mathfrak{p}$.
+
+Suppose $\mathfrak{p} \subseteq A$ is prime and doesn't meet $S$. We claim the extension $S^{-1} \mathfrak{p}$ this is a prime ideal with [[Commutative algebra --- math-189AA/notes/Contraction and extension#_definition _ contraction|contraction]] $\mathfrak{p}$. This follows since if $(a / s_{1}) (b / s_{2}) \in \mathfrak{p}$, we have $ab / s_{1} s_{2} \in \mathfrak{p}$, and thus, $a$ or $b$ in $\mathfrak{p}$. It follows that $a / s_{1}$ or $b / s_{2}$ is in $S^{-1}\mathfrak{p}$. Thus, extension is an injective map from primes of $A$ not meeting $S$ to primes of $S^{-1} A$ as long as $S$ contains no zero-divisors.
+
+Suppose $\mathfrak{q} \subseteq S^{-1} A$ is prime. Then $\mathfrak{p} = \varphi^\text{pre}(\mathfrak{q})$ [[Algebraic geometry --- rising-sea/notes/Morphisms of affine schemes#_proposition, definition _ ring homomorphisms induce a set morphism of affine shemes|is a prime]]. It doesn't meet $S$ since if it did, we would have $s / s = 1 \in \mathfrak{q}$ implying $\mathfrak{q} = S^{-1} A$. We claim we also have  $S^{-1} \mathfrak{p} = \mathfrak{q}$. This is because $\mathfrak{p}$ is exactly all $a / 1$ for all $a / s \in \mathfrak{q}$, and then $S^{-1} \mathfrak{p} = \mathfrak{q}$. This shows that $\mathfrak{p} \mapsto S^{-1} \mathfrak{p}$ surjects onto primes in $S^{-1} A$.
 
 ---
+
+Note then that when $S = A \setminus \mathfrak{p}$ these are all the primes $\mathfrak{q} \subseteq \mathfrak{p}$ and when $S = \{ 1, f, f^{2}, \dots \}$ these are all the primes not containing $f$.
 
 We can understand the ideals of $S^{-1} A$ better with [[Commutative algebra --- math-189AA/notes/Annihilators#_definition _ annihilator|annihilators]]. 
 
