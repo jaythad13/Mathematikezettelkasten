@@ -4,9 +4,10 @@ tags:
 - galois
 - math-177/13
 - math-177/14
+- math-177/15
 ---
 
-Extensions of the $p$-adics and number fields in general have special properties. For any $\mathbb{K} / \mathbb{Q}_{p}$ we can define a ring of integers $\mathscr{O}_{\mathbb{K}} \subseteq \mathbb{K}$ that behaves like $\mathbb{Z}_{p} \subseteq \mathbb{Q}_{p}$.
+Extensions of the $p$-adics and number fields in general have a nice underlying algebraic structure. For any $\mathbb{K} / \mathbb{Q}_{p}$ we can define a ring of integers $\mathscr{O}_{\mathbb{K}} \subseteq \mathbb{K}$ that behaves like $\mathbb{Z}_{p} \subseteq \mathbb{Q}_{p}$.
 
 ##### _definition:_ ring of integers
 
@@ -86,7 +87,7 @@ Consider $\mathbb{K} = \mathbb{Q}_{5}(\sqrt{ 2 })$. This is a quadratic extensio
 
 In particular, $\lvert a + b \sqrt{ 2 } \rvert_{5} < 1$ if and only if $5 \mid a$ and $5 \mid b$. Then $a_{1} + b_{1} \sqrt{ 2 } \equiv a_{2} +  b_{2} \sqrt{ 2 }$ if and only if $5 \mid (a_{1} + a_{2} )$ and $5 \mid (b_{1} + b_{2})$. Then we have, $\mathbb{F}_{5} \to \mathscr{O}_{\mathbb{K}} / \mathfrak{m}_{\mathbb{K}}$ by $a \mapsto a + 0 \sqrt{ 2 }$. Since $1, \sqrt{ 2 }$ is a maximal linearly independent set over $\mathbb{F}_{5}$, we have that $\mathscr{O}_{\mathbb{K}} / \mathfrak{m}_{\mathbb{K}}$ is degree $2$.
 
-Such an extension (with field extension and residue field extension of same degree), is called an unramified extension.
+Such an extension (with field extension and residue field extension of same degree), is "nice" in a geometric sense. (All points have multiplicity $1$ for the [[Algebraic geometry --- rising-sea/notes/Morphisms of affine schemes|morphism]] $\operatorname{Spec} \mathscr{O}_{\mathbb{K}} \to \operatorname{Spec} \mathbb{Z}_{5}$).
 
 ---
 
@@ -96,15 +97,20 @@ Consider $\mathbb{K} = \mathbb{Q}_{5}(\sqrt{ 5 })$. This is also a quadratic ext
 
 Note that $\lvert a + b\sqrt{ 5 } \rvert_{5}  = \lvert a^{2} - 5 b^{2} \rvert ^{1/2}_{5}$ which is less than one if and only if $5\ \mid a$. In particular, $b \sqrt{ 5 } \in \mathfrak{m}_{\mathbb{K}}$, so $\mathscr{O}_{\mathbb{K}} / \mathfrak{m}_{\mathbb{K}} \cong \mathbb{F}_{5}$ with $\mathbb{F}_{5} \to \mathscr{O}_{\mathbb{K}} / \mathfrak{m}_{\mathbb{K}}$ by $a \to a + 0 \sqrt{ 5 }$.
 
+This is much less nice than the previous extension, in the same geometric sense. In particular, for $\operatorname{Spec} \mathscr{O}_{\mathbb{K}} \to \operatorname{Spec} \mathbb{Z}_{5}$, $5 \mathbb{Z}_{5}$ has only one pre-image where every other point has two.
 
 ---
 
-##### _definition:_ ramified, totally ramified
+Because of this geometric motivation, we classify these phenomena as 
+
+##### _definition:_ unramified, ramified, totally ramified
 
 Suppose $\mathbb{K}$ is a finite extension of $\mathbb{Q}_{p}$.
 
-If $\mathscr{O}_{\mathbb{K}} / \mathfrak{m}_{\mathbb{K}} \cong \mathbb{F}_{p}$, then $\mathbb{K}$ is an **unramified extension** of $\mathbb{Q}_{p}$
+If the degree of $\mathscr{O}_{\mathbb{K}} / \mathfrak{m}_{\mathbb{K}}$ over $\mathbb{F}_{p}$ is the same as the degree of $\mathbb{K}$ over $\mathbb{Q}_{p}$, then $\mathbb{K}$ is an **unramified** extension of $\mathbb{Q}_{p}$.
 
-If the degree of $\mathscr{O}_{\mathbb{K}} / \mathfrak{m}_{\mathbb{K}}$ over $\mathbb{F}_{p}$ is the same as the degree of $\mathbb{K}$ over $\mathbb{Q}_{p}$, then $\mathbb{K}$ is a **totally ramified** extension of $\mathbb{Q}_{p}$.
+If $\mathbb{K} / \mathbb{Q}_{p}$ is not unramified, then it is a **ramified** extension of $\mathbb{Q}_{p}$.
+
+If $\mathscr{O}_{\mathbb{K}} / \mathfrak{m}_{\mathbb{K}} \cong \mathbb{F}_{p}$, then $\mathbb{K}$ is a **totally ramified** extension of $\mathbb{Q}_{p}$
 
 ---

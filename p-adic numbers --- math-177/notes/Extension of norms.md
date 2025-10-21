@@ -49,3 +49,27 @@ Work in the [[p-adic numbers --- math-177/notes/Algebraic field extensions#_defi
 Let all the roots be $\alpha_{i}$. They should all have the same norm, $\lvert \alpha \rvert$. But then since $a_{0} = (-1)^n \prod_{i = 1}^n \alpha_{i}$, we have $\lvert a_{0} \rvert^{1 / n} = \lvert \alpha \rvert$.
 
 ---
+
+An alternate equivalent definition (showing equivalence is non-trivial) is the following. This definition makes showing mutliplicativity and non-archimedeanness easier.
+
+##### _definition:_ extension of norms
+
+Suppose $\mathbb{K}$ is an extension of $\mathbb{Q}_{p}$ of degree $n$. For some non-zero $\alpha \in \mathbb{K}$, let $L_{\alpha} : \mathbb{K} \to \mathbb{K}$ be the $\mathbb{Q}_{p}$-linear map by $a \mapsto \alpha a$. Then define
+$$
+\lvert \alpha \rvert _{p} = \lvert \det L_{\alpha} \rvert _{p}^{1 / n}.
+$$
+
+---
+
+##### _corollary:_ classifying the values of the norm
+
+Suppose $\deg \mathbb{K} / \mathbb{Q}_{p} = n$. Then $\{ \log_{p} (\lvert \alpha \rvert_{p}) \mid \alpha \in \mathbb{K}^\times \}$ is an additive subgroup of $\frac{1}{n} \mathbb{Z}$.
+
+---
+
+Note that this means that an algebraic number over $\mathbb{Q}_{p}$ sitting in a field of degree $n$ cannot have monic irreducible polynomial of degree $d \nmid n$.
+
+
+##### _example:_ extension of norms by determinant
+
+Consider the quadratic extension $\mathbb{Q}_{5}(\sqrt{ 2 }) / \mathbb{Q}_{p}$ and consider $\alpha = 1 - \sqrt{ 2 }$. Then multiplication by $\alpha$ has matrix $\begin{pmatrix} 1 & -2 \\ -1 & 1 \end{pmatrix}$ (with respect to basis $1, \sqrt{ 2 }$). This has determinant $3$, and so $\lvert \alpha \rvert_{p} = \lvert 3 \rvert_{p}^{1 / 2} = \sqrt{ 1 } = 1$.
