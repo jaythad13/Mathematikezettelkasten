@@ -9,7 +9,7 @@ Injectives are defined dually to [[Commutative algebra --- math-189AA/notes/Proj
 
 ##### _definition:_ injective modules
 
-An $A$-module $E$ is injective if for each injection $\rho : N \to M$ and each homomorphism $h : N \to E$ there is a map $\overline{h} : M \to E$ such that $h = \overline{h} \circ \rho$. 
+An $A$-module $E$ is **injective** if for each injection $\rho : N \to M$ and each homomorphism $h : N \to E$ there is a map $\overline{h} : M \to E$ such that $h = \overline{h} \circ \rho$. 
 
 That is, the following diagram commutes
 ```tikz
@@ -17,7 +17,8 @@ That is, the following diagram commutes
 \usepackage{amsfonts}
 \begin{document}
 	\begin{tikzcd}
-		
+		N \ar[r, hook, "\rho"] \ar[rd, "h"] & M \ar[d, dashed, "\overline{h}"] \\
+		& E
 	\end{tikzcd}
 \end{document}
 ```

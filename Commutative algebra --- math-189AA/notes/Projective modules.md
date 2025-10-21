@@ -137,13 +137,13 @@ The complete characterisation of all modules that behave like this is that they 
 
 The following are equivalent for any $A$-module 
 1) $P$ is projective
-2) Given any surjection $\rho : M \to N$ and homomorphism $h : P \to N$ there exists some $\overline{h} : P \to M$ (a lift of $h$) so that $\rho \circ \overline{h} = h$. That is, for the top row exact, the following diagram commutes
+2) Given any surjection $\rho : M \to N$ and homomorphism $h : P \to N$ there exists some $\overline{h} : P \to M$ (a lift of $h$) so that $\rho \circ \overline{h} = h$. That is, the following diagram commutes
 ```tikz
 \usepackage{tikz-cd}
 \usepackage{amsfonts}
 \begin{document}
 	\begin{tikzcd}
-		M \ar[r, "\rho"] & N \ar[r] & 0 \\
+		M \ar[r, "\rho", two heads] & N \\
 		& P \ar[ul, dashed, "\exists \overline{h}"] \ar[u, "h"]
 	\end{tikzcd}
 \end{document}
