@@ -16,7 +16,7 @@ For the rest of this note, let $\varphi : B \to A$ be a ring homomorphism.
 
 ##### _proposition, definition:_ ring homomorphisms induce a set morphism of affine shemes
 
-$\varphi : B \to A$ induces a morphism of sets $\varphi^* : \operatorname{Spec} A \to \operatorname{Spec} B$ with $\varphi^*(\mathfrak{p}) = \varphi^\text{pre}(\mathfrak{p})$.
+$\varphi : B \to A$ induces a morphism of sets $\varphi^* : \operatorname{Spec} A \to \operatorname{Spec} B$ with $\varphi^*(\mathfrak{p}) = \varphi^\text{pre}(\mathfrak{p})$. $A \mapsto \operatorname{Spec} A$ and $\varphi \mapsto \varphi^*$ then defines a [[Algebraic geometry --- rising-sea/notes/Functors#_definition _ (covariant, contravariant) functors|(contravariant) functor]] $\mathsf{Ring} \to \mathsf{Set}$.
 
 This is the **morphism of sets of the affine scheme morphism $\varphi^*$**.  
 
@@ -30,8 +30,10 @@ Let $\mathfrak{q} = \varphi^\mathrm{pre}(\mathfrak{p})$. It's easy to show (usin
 
 ##### _examples:_ inclusions of quotients and localisations
 
-1) Suppose $\mathfrak{i} \subseteq A$ is an ideal. Then $\operatorname{Spec} A / \mathfrak{i} \to \operatorname{Spec} A$, dual to the canonical map $A \to A / \mathfrak{i}$ gives the inclusion $\operatorname{Spec} A / \mathfrak{i} \subseteq \operatorname{Spec} A$. It identifies primes $\mathfrak{p / i} \subseteq A / \mathfrak{i}$ with their pre-images — primes $\mathfrak{p} \subseteq A$. Note that if $\mathfrak{i}$ is composed of [[Commutative algebra --- math-189AA/notes/Nilpotents and the nilradical#_definition _ nilpotents|nilpotents]], the primes of $A$ containing $\mathfrak{i}$ are just all primes, and so $\operatorname{Spec} A / \mathfrak{i} \to \operatorname{Spec} A$ is a bijection.
+1) Suppose $\mathfrak{i} \subseteq A$ is an ideal. Then $\operatorname{Spec} A / \mathfrak{i} \to \operatorname{Spec} A$, dual to the canonical map $A \to A / \mathfrak{i}$ gives the inclusion $\operatorname{Spec} A / \mathfrak{i} \subseteq \operatorname{Spec} A$. It identifies primes $\mathfrak{p / i} \subseteq A / \mathfrak{i}$ with their pre-images — primes $\mathfrak{p} \subseteq A$.
 2) Suppose $S \subseteq A$ is [[Commutative algebra --- math-189AA/notes/Localisation of a ring#_definition _ multiplicative subsets|multiplicative]]. Then the dual to the $A \to S^{-1} A$ gives the inclusion $\operatorname{Spec} S^{-1} A \subseteq \operatorname{Spec} A$. A prime $\mathfrak{q} \subseteq S^{-1} A$ [[Commutative algebra --- math-189AA/notes/Localisation of a ring#_proposition _ primes of the localisation are primes that don't meet $S$|is just]] $S^{-1} A \mathfrak{p}$ for some $\mathfrak{p} \subseteq A \setminus S$ which has pre-image $\mathfrak{p}$ since it includes $1^{-1} \mathfrak{p} \subseteq S^{-1} \mathfrak{p}$.
+
+Note that if $\mathfrak{i}$ is composed of [[Commutative algebra --- math-189AA/notes/Nilpotents and the nilradical#_definition _ nilpotents|nilpotents]], the primes of $A$ containing $\mathfrak{i}$ are just all primes, and so $\operatorname{Spec} A / \mathfrak{i} \to \operatorname{Spec} A$ is a bijection.
 
 ---
 
@@ -102,5 +104,48 @@ In the opposite direction, any prime $\mathfrak{q} \subseteq \mathbb{Z}[x_{1}, \
 ---
 
 ### The morphism of spaces
+
+The morphisms that we get from sets are also topological!
+
+##### _proposition:_ ring homomorphisms induce a continuous map of affine shemes
+
+Given $\varphi : B \to A$, the induced morphism of sets $\pi = \varphi^* : \operatorname{Spec} A \to \operatorname{Spec} B$ is continuous.
+
+###### _proof:_
+
+[[Topology --- math-147/notes/Continuous functions#_proposition _ equivalent definitions of continuity|It suffices]] to show that the pre-image of all closed sets is closed.
+
+Consider some ideal $\mathfrak{i} \subseteq B$ and the corresponding closed subset $V(\mathfrak{i}) \subseteq \operatorname{Spec} B$. Then $\pi^{\text{pre}}(V(\mathfrak{i}))$ is exactly all primes $\mathfrak{p} \subseteq A$ with $\pi(\mathfrak{p}) = \mathfrak{q}$ and $\mathfrak{i} \subseteq \mathfrak{q}$. That is, $\mathfrak{i} \subseteq \mathfrak{p}^{\text{c}} = \mathfrak{q}$. Extending, we get $\mathfrak{i}^\text{e} \subseteq \mathfrak{p}^\text{ce} \subseteq \mathfrak{p}$. Thus, $\mathfrak{p} \in V(\mathfrak{i}^\text{e})$.  Conversely, if $\mathfrak{i}^\text{e} \subseteq \mathfrak{p}$, then contracting gives $\mathfrak{i} \subseteq \mathfrak{i}^\text{ec} \subseteq \mathfrak{p}^\text{c} = \pi(\mathfrak{p})$. That is, $\pi^\text{pre}(V(\mathfrak{i}))$ is exactly the closed set $V(\mathfrak{i}^\text{e})$.
+
+---
+
+This turns the $\operatorname{Spec}$ functor $\mathsf{Ring} \to \mathsf{Set}$ into a functor $\mathsf{Ring} \to \mathsf{Top}$. However, this is not a full functor — there are other continuous maps $\operatorname{Spec} A \to \operatorname{Spec} B$. 
+
+##### _example:_ a non-algebraic continuous map of schemes
+
+There is a continuous map $\mathbb{A}^1_{\mathbb{C}} \to \mathbb{A}^1_{\mathbb{C}}$ just by swapping $(x)$ and $(x - 1)$. This function does not come from a ring homomorphism. 
+
+Suppose a ring homomorphism had $x \mapsto p(x)(x - 1)$. Then we would also have $x - a \mapsto p(x)(x - 1) - a$. By choosing $a = p(b)(b - 1)$, we get $\varphi(x - a) \in (x - b)$. Thus, $\varphi^\text{pre}((x)) = (x - a)$, or equivalently, $\varphi^*((x - b)) = (x - a)$. We can always choose $b \neq 0$, and thus, $\varphi^*$ cannot be the desired homeomorphism.
+
+---
+
+##### _examples:_ inclusions of quotients, topologically
+
+Suppose $\mathfrak{i} \subseteq A$ is an ideal. Then $\operatorname{Spec} A / \mathfrak{i} \to \operatorname{Spec} A$ gives the inclusion (of a closed subset) $\operatorname{Spec} A / \mathfrak{i} \cong V(\mathfrak{i}) \subseteq \operatorname{Spec} A$. The points of the image are $\pi(\mathfrak{p} / \mathfrak{i})$ for primes $\mathfrak{p} / \mathfrak{i} \subseteq A / \mathfrak{i}$. These are exactly the primes $\mathfrak{p} \supseteq \mathfrak{i}$ or $\mathfrak{p} \in V(\mathfrak{i})$. Thus, the image of the map is $V(\mathfrak{i})$.
+
+In fact, the Zariski topology on $\operatorname{Spec} A / \mathfrak{i}$, is the same as the [[Topology --- math-147/notes/Subspaces#_definition _ subspace topology|subspace topology]] on its image. In other words, we show that the map is a homeomorphism onto its image — it is a [[Topology --- math-147/notes/Homeomorphisms#_definition _ open map, closed map|closed map]]. Any closed subset $V(\mathfrak{j} / \mathfrak{i})$ is all primes $\mathfrak{p} / \mathfrak{i}$ containing $\mathfrak{j} / \mathfrak{i}$ (for $\mathfrak{j} / \mathfrak{i}$ an ideal of $A / \mathfrak{i}$). Each of these primes has pre-image $\mathfrak{p}$ containing $\mathfrak{j}$ and $\mathfrak{i}$. Thus, $\pi^\text{img}(V(\mathfrak{j} / \mathfrak{i})) \subseteq V(\mathfrak{j}) \cap V(\mathfrak{i})$. In fact, every $\mathfrak{p} \in V(\mathfrak{j}) \cap V(\mathfrak{i}) \subseteq \operatorname{Spec} A$ is $\pi(\mathfrak{p} / \mathfrak{i})$ for some $\mathfrak{p} / \mathfrak{i} \in V(\mathfrak{j} / \mathfrak{i})$, so we have equality $\pi^\text{img}(V(\mathfrak{j} / \mathfrak{i})) = V(\mathfrak{j}) \cap V(\mathfrak{i})$. This is a closed subset in the subspace topology on $V(\mathfrak{i})$.
+
+Note that if $\mathfrak{i}$ is composed of nilpotents, not only is $\pi : \operatorname{Spec} A / \mathfrak{i} \to \operatorname{Spec} A$ bijective, but it is also a [[Topology --- math-147/notes/Homeomorphisms#_definition _ homeomorphism|homeomorphism]] (so any difference as schemes must come in the structure sheaf). Since we already know $\pi$ is continuous and bijective, [[Topology --- math-147/notes/Homeomorphisms#_proposition _ homeomorphisms, closed bijections, and open bijections|we need only]] show that the map is closed. We have already shown this!
+
+---
+##### _example:_ inclusions of localisations (away from the vanishing of a function), topologically
+
+Suppose $f \in A$. Then $\pi : \operatorname{Spec} A_{f} \to \operatorname{Spec} A$ gives the inclusion (of an open subset) $\operatorname{Spec} A_{f} \subseteq \operatorname{Spec} A$. This is the inclusion of the [[Algebraic geometry --- rising-sea/notes/The base of distinguished open sets|distinguished open set]] $D(f) = \operatorname{Spec} A \setminus V(f)$. The points of $\operatorname{Spec} A_{f}$ are exactly $S^{-1} \mathfrak{p}$ for primes $\mathfrak{p}$ not containing $f$. Since $\pi(S^{-1} \mathfrak{p}) = \mathfrak{p}$, the image under $\pi$ is exactly all primes $\mathfrak{p} \in D(f)$.
+
+Again, this is a homeomorphism onto its image. A closed subset $V(S^{-1} \mathfrak{i}) \subseteq \operatorname{Spec} A_{f}$ consists of all primes $S^{-1} \mathfrak{p}$ containing $S^{-1} \mathfrak{i}$. Each of these primes has $\pi(S^{-1} \mathfrak{p}) = \mathfrak{p}$ with $\mathfrak{p}$ not containing $f$ and containing $\mathfrak{i}$ (since $\mathfrak{i} \subseteq (S^{-1} \mathfrak{i})^\text{c} \subseteq \mathfrak{p} = (S^{-1} \mathfrak{p})^\text{c}$). That is, $\pi^\text{img}(V(S^{-1} \mathfrak{i})) \subseteq D(f) \cap V(\mathfrak{i})$. Conversely, every prime $\mathfrak{p}$ containing $\mathfrak{i}$ and not containing $f$ has prime extension $S^{-1} \mathfrak{p} \subseteq A_{f}$ containing the extension $S^{-1} \mathfrak{i}$. Thus, we have the equality $\pi^\text{img}(V(S^{-1} \mathfrak{i})) = D(f) \cap V(\mathfrak{i})$. These are exactly the closed subsets of $D(f)$ in the subspace topology.
+
+Note that $\operatorname{Spec} S^{-1} A \subseteq \operatorname{Spec} A$ need not be open nor closed in general. For example, $\operatorname{Spec} \mathbb{F}[x]_{(x)} \subseteq \mathbb{A}_{\mathbb{F}}^1$  consists of only the points $(0)$ and $(x)$. This is not open ([[Topology --- math-147/notes/Limit points and closed sets#_proposition _ open set minus closed set and closed set minus open set|subtract the closed set]] $\{ (x) \}$ and $\{ (0) \}$ is not open). It is not closed either — the only closed subset containing $(0)$ is the whole space $\operatorname{Spec} \mathbb{F}[x]$ (which has infinitely many points).
+
+---
 
 ### The morphism of schemes

@@ -62,6 +62,14 @@ It vanishes at $(3)$ (in fact, we want to be able to say that it has a triple ze
 
 ---
 
+The topology of $\operatorname{Spec} \mathbb{Z}$ is nearly the [[Topology --- math-147/notes/Topologies#_example _ the finite and countable complement topologies|cofinite topology]]. Notice that to show this we just need to show that the $V(\mathfrak{i})$ are exactly the finite sets.
+
+For any $\mathfrak{i} = (a)$ ($\mathbb{Z}$ is principal), the chain of ideals containing $\mathfrak{i}$ is finite. The ideals containing $\mathfrak{i}$ are exactly those obtained by picking off one factor at a time from the unique factorisation of $a$. Thus, there are only finitely many primes in $V(\mathfrak{i})$. 
+
+Conversely, each prime $\mathfrak{p} \neq (0)$ is maximal, and thus has $V(\mathfrak{p}) = \{ \mathfrak{p} \}$. This means that every finite point set not including $(0)$ is closed. However, $\{ (0) \}$ itself is not closed since $(0)$ is contained in other prime ideals (so any closed set containing $(0)$ must also contain other points).
+
+In fact, $(0)$ is contained in *every* prime of $\mathbb{Z}$. Thus, the only closed set containing $(0)$ is the whole space $\operatorname{Spec} \mathbb{Z}$. Since open sets are just complements of closed sets, this means that any neighbourhood of any point $\mathfrak{p}$ contains $(0)$. We will later say that this means $(0)$ is the generic point of $\operatorname{Spec} \mathbb{Z}$.
+
 ### The affine line and affine space in general
 
 In fact, we can define the affine line and affine space over any ring.
@@ -85,6 +93,8 @@ Suppose $\mathfrak{p}_{1} = (p_{1}), \dots, \mathfrak{p}_{n} = (p_{n})$ is a fin
 Since $p q \equiv 1$ in each integral domain $\mathbb{F}[x] / \mathfrak{p}_{i}$, we have $p \not\in \mathfrak{p}_{i}$ for each $i$. Since they are both irreducible, this means $(p) \neq (p_{i})$ for each $i$ and $\mathfrak{p} = (p)$ is a new prime ideal not in the finite list.
 
 ---
+
+$\mathbb{A}^1_{\mathbb{F}}$ is also like $\operatorname{Spec} \mathbb{Z}$ in its topology. It also has a "nearly cofinite" topology for the same reason as $\operatorname{Spec} \mathbb{Z}$ — it is principal. Thus, all ideals have only finitely many primes containing them. Conversely, all primes except $(0)$ are maximal, and thus, closed. Again, $(0)$ is near every point.
 
 For $\mathbb{C}$ (or any algebraically closed $\overline{\mathbb{F}}$) any affine $n$-space behaves similarly to the affine line, with some scheme-theoretic points (just like $(0) \in \mathbb{A}^1_{\mathbb{C}}$).
 
@@ -112,6 +122,25 @@ The points of $\mathbb{A}^3_{\mathbb{C}}$ are
 - all irreducible $(f(x, y, z))$ — the "two-dimensional" generic points corresponding to hypersurfaces $\{ (a, b, c) \mid f(a, b, c) = 0 \} \subseteq \mathbb{C}^{3}$
 - lots of "one-dimensional" generic points corresponding to irreducible curves in $\mathbb{C}^{3}$ (for which there is no reasonable classification)
 - finally, the regular points $(x - a, y - b, z - c)$ corresponding to $(a, b, c) \in \mathbb{C}^{3}$.
+
+---
+
+The topology of affine space is also similar to the affine. Instead of just having a nearly cofinite topology for the whole space, each of the embedded curves looks kind of like the affine line. Each curve is a closed set of its own, with a generic point and the points "on the curve". Finite unions of these curves are closed sets.
+
+##### _example:_ the closed sets of $\mathbb{A}^{2}_{\mathbb{C}}$
+
+The closed sets of $\mathbb{A}^{2}_{\mathbb{C}}$ are finite unions of
+- the entire space, which has generic point $(0)$
+- curves $V(f(x, y))$ (for irreducible $f$), containing $(f(x, y))$ and all $(x - a, y - b)$ with $f(a, b) = 0$ (or equivalently, $(f) \subseteq (x - a, y - b)$)
+- closed points $(x - a, y - b)$.
+
+Here we have generated a classification based on the irreducible closed sets of $\mathbb{A}^{2}_{\mathbb{C}}$.
+
+---
+
+##### _example:_ $V(xy, yz) \subseteq \mathbb{A}^3_{\mathbb{C}}$
+
+Similarly, $V(xy, yz)$ is the locus $xy = yz = 0$. This includes the $xz$-plane — all prime ideals $(x - a, y, z - c)$, all the curves $(y, f(x, z))$ (including the $x$-axis — all prime ideals $(x - a, y, z)$ — and the $z$-axis), and the generic point of the plane $(x, z)$. This also includes the $y$-axis — all prime ideals $(x, y - b, z)$
 
 ---
 
@@ -175,4 +204,6 @@ $$
 
 All the primes in $\mathbb{F}[x]_{(x)}$ [[Commutative algebra --- math-189AA/notes/Localisation of a ring#_proposition _ primes of the localisation are primes that don't meet $S$|are primes contained in]] $(x)$. All proper ideals contained in $(x)$ are $(f(x))$ such that $f(x) = x g(x)$ — that is non-irreducible polynomials. A non-irreducible polynomial is prime if and only if it is $0$. Thus, $\operatorname{Spec} \mathbb{F}[x]_{(x)}$ consists of two points — $(0)$ and $(x)$. We can think of this as a "shred of a smooth curve" — $(x)$ is the point on $\mathbb{A}^1_{\mathbb{F}}$ at which we are zooming in, and $(0)$ is the generic point of the curve.
 
-Generalising this, $\mathbb{F}[x, y]_{(x, y)}$ contains shreds of how all the curves in $\mathbb{A}^{2}_{\mathbb{F}}$ look "near the origin". Generalising in a different direction the picture of $\mathbb{F}[x]_{(x)}$ as a shred of a smooth curve is how all discrete valuation rings should be thought of.
+This is one of the smallest examples of a "weird" topological space. It has $\{ (x) \}$ closed, but not $\{ (0) \}$ (since $(0)$ is contained in $(x)$). This two-point space is called the Sierpinski space.
+
+Generalising, $\mathbb{F}[x, y]_{(x, y)}$ contains shreds of how all the curves in $\mathbb{A}^{2}_{\mathbb{F}}$ (and the plane itself) look "near the origin". Generalising in a different direction, the picture of $\mathbb{F}[x]_{(x)}$ as a shred of a smooth curve is how all discrete valuation rings should be thought of.
