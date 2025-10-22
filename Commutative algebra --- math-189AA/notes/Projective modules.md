@@ -158,7 +158,7 @@ The following are equivalent for any $A$-module
 	\end{tikzcd}
 \end{document}
 ```
-commutes
+splits.
 
 ###### _proof:_
 
