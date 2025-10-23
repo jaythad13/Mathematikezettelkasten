@@ -1,6 +1,7 @@
 ---
 tags:
 - math-189AA/16
+- math-189AA/17
 - hom-alg
 - comm-alg
 ---
@@ -45,8 +46,41 @@ This gives $\operatorname{Hom}(P_{\bullet}, M)$ going the other direction with
 
 Multiplying by $x$ in $M = A / (x)$ sends everything to zero. Since all the $x$ in $M$ are already killed, multiplying by $y$ has kernel $(\overline{x}) = 0$. Of course, it has image $(y) \subseteq M$. Thus, we have $\operatorname{Ext}^0_{A}(M, M) = M$, $\operatorname{Ext}_{A}^1(M, M) = 0$ and $\operatorname{Ext}_{A}^i(M, M)$
 
-### Properties of $\operatorname{Ext}$
+---
 
+##### _example:_ $\operatorname{Ext}$ with an injective module
+
+Consider $A = \mathbb{Z}$, $M = \mathbb{Z} / (3)$ and $N = \mathbb{Q}$. What are the $\operatorname{Ext}^i_{\mathbb{Z}}(\mathbb{Z} / (3), \mathbb{Q})$?
+
+Consider the projective resolution
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		0 \ar[r] & \mathbb{Z} \ar[r, "\times 3"] & \mathbb{Z} \ar[r] & 0.
+	\end{tikzcd}
+\end{document}
+```
+This is actually minimal since $\mathbb{Z} / (3)$ is not $\mathbb{Z}$-projective.
+
+This gives rise to the complex
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		0 \ar[r] & \mathrm{Hom}_{\mathbb{Z}}(\mathbb{Z}, \mathbb{Q}) \ar[r, "\times 3"] & \mathrm{Hom}_{\mathbb{Z}}(\mathbb{Z}, \mathbb{Q}) \ar[r] & 0
+	\end{tikzcd}
+\end{document}
+```
+The homology in the first spot is $\operatorname{Hom}_{\mathbb{Z}}(\mathbb{Z}, \mathbb{Q}) / \operatorname{Hom}_{\mathbb{Z}}(\mathbb{Z}, \mathbb{Q}) = 0$ since any map $\varphi : \mathbb{Z} \to \mathbb{Q}$ is mapped to by $\varphi / 3$. The homology in the second spot is $0$ since the "$\times 3$" map is injective. Thus, $\operatorname{Ext}_{\mathbb{Z}}^i(\mathbb{Z} / (3), \mathbb{Q})$ is always $0$.
+
+Notice that $\mathbb{Q}$ is an injective $\mathbb{Z}$-module and the $\operatorname{Ext}$s all vanish. This is because we can equivalently define $\operatorname{Ext}_{A}^i(M, N)$ as the cohomology of the homset complex of an injective resolution of $M$.
+
+---
+
+### Properties of $\operatorname{Ext}$
 
 ##### _proposition:_ $\operatorname{Ext}$ of injectives
 
