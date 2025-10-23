@@ -155,4 +155,6 @@ If $f$ vanishes at all $\mathfrak{p} \in V(\mathfrak{i})$, it is contained in ev
 
 ---
 
+With the identification $\operatorname{Spec} A / \mathfrak{i} \cong V(\mathfrak{i})$ (as a closed subscheme), we can interpret this as follows. $\overline{f} \in A / \mathfrak{i}$ is a function that vanishes everywhere on $\operatorname{Spec} A / \mathfrak{i}$. Thus, it is nilpotent in $A / \mathfrak{i}$, or equivalently, $f \in \sqrt{ \mathfrak{i} }$.
+
 ### The structure sheaf
