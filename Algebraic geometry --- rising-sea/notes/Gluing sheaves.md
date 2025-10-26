@@ -15,6 +15,14 @@ Suppose $X = \bigcup_{i \in \mathscr{I}} U_{i}$ is an open cover of $X$ and ther
 
 Then there is a sheaf $\mathscr{F}$ on $X$ (unique up to unique isomorphism) with isomorphisms $\mathscr{F}_{\mid i} = \mathscr{F}_{i}$.
 
+###### _proof:_
+
+Note that we don't assume $\{ U_{i} \}_{i \in \mathscr{I}}$ is a finite cover.
+
+Consider the base $\{ B_{i_{n}} \subseteq U_{i} \}_{i \in \mathscr{I}}$ of open sets contained in some $U_{i}$. We have a [[Algebraic geometry --- rising-sea/notes/Sheaves on a base#_definition _ sheaves on a base, presheaves on a base|sheaf on this base]] by $\mathscr{F}_{\text{b}}(B_{i_{n}}) = \mathscr{F}_{i}(B_{i_{n}})$. We verify this is really a sheaf on a base below. Choosing $\mathscr{F} = \mathscr{F}_{\text{b}}^\text{sh}$ gives $\mathscr{F}_{\mid i}(B_{i_{n}}) = \mathscr{F}_{i}(B_{i_{n}})$ for every open subset $B_{i_{n}} \subseteq U_{i}$ and thus, $\mathscr{F}_{\mid i} = \mathscr{F}_{i}$. This choice is well-defined by the cocycle condition. In particular, if 
+
+Suppose $B = \bigcup_{j \in \mathscr{J}} B_{j}$. Since $B$ is an open set in the base, it is contained in some $U_{i}$ and so are all the $B_{j}$. Then base identity and gluability are inherited from $\mathscr{F}_{i}$.
+
 ---
 
 This says, in some sense that there is a sheaf of sheaves, but not quite.
