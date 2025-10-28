@@ -94,8 +94,41 @@ Let $\mu_{a} \in \operatorname{End} M$ be given by $m \mapsto am$. Then $h_{N}(a
 
 ---
 
-We want to know if this functor preserves properties of modules, and thus, if it preserves properties of morphisms of modules. 
+We want to know if this functor preserves properties of modules, and thus, if it preserves properties of morphisms of modules. This is captured by the notion of exactness of functors.
+
+![[Algebraic geometry --- rising-sea/notes/Exact functors#_definition _ right-exact, left-exact, exact|Exact functors]]
+
+It turns out that both of these functors are left-exact, but not right-exact.
+
+![[Algebraic geometry --- rising-sea/notes/Exact functors#_example _ $h_{M}$ is (contravariant) left-exact|Exact functors]]
+
+$h_{M}$ is not in general right-exact, but we can characterise the modules $M$ such that it is. They're just the projective modules.
+
+##### _proposition:_ $h^P$ right exact if and only if $P$ projective
+
+The functor $h^{P} : M \mapsto \operatorname{Hom}(P, M)$ is right exact if and only if $P$ is [[Commutative algebra --- math-189AA/notes/Projective modules#_definition _ projective module|projective]].
+
+###### _proof:_
+
+Suppose $g : M \to N$ is surjective. We want to show that $g_{*} : \operatorname{Hom}(P, M) \to \operatorname{Hom}(P, N)$ is surjective as well. But (by [[Commutative algebra --- math-189AA/notes/Projective modules#_theorem _ characterising projective modules|equivalent definition of projectivity]]) for every surjective $g : M \to N$ and map in $f \in \operatorname{Hom}(P, N)$ we have a unique $\overline{f} \in \operatorname{Hom}(P, M)$ such that $f = g \circ \overline{f} = g_{*}(\overline{f})$. That is, $g_{*}$ is exact.
+
+---
+
+
+![[Algebraic geometry --- rising-sea/notes/Exact functors#_example _ $h M$ is (covariant) left-exact|Exact functors]]
 
 ##### _example:_ $h^N$ is not right-exact
 
 Consider the canonical $\mathbb{Z}$-module surjection $\varphi : \mathbb{Q} \to \mathbb{Q} / \mathbb{Z}$. Consider the functor $h^{\mathbb{Z} / (2)}(\varphi)$. It sends $\psi : \mathbb{Z} / (2) \to \mathbb{Q}$ to $\varphi \circ \psi : \mathbb{Z} / (2) \to \mathbb{Q} / \mathbb{Z}$. Since $\mathbb{Z} / (2)$ is torsion and and $\mathbb{Q}$ is not, $\operatorname{Hom}(\mathbb{Z} / (2), \mathbb{Q}) = 0$. Since $\operatorname{Hom}(\mathbb{Z} / (2), \mathbb{Q} / \mathbb{Z})$ contains $\mathbb{Z} / (2) \to \mathbb{Z}$ by $0 \mapsto 0$ and $1 \mapsto 1 / 2$, we have that $h^{\mathbb{Z} / (2)}(\varphi) : \operatorname{Hom}(\mathbb{Z} / (2), \mathbb{Q}) \to \operatorname{Hom}(\mathbb{Z} / (2), \mathbb{Q} / \mathbb{Z})$ is not surjective. That is, $h^{\mathbb{Z} / 2}(\varphi)$ does not preserve surjectivity.
+
+---
+
+Dually, we can characterise the modules such that $h^M$ is right-exact.
+
+##### _proposition:_ $h_{E}$ right exact if and only if $E$ projective
+
+The functor $h_{E} : M \mapsto \operatorname{Hom}(M, E)$ is right exact if and only if $E$ is [[Commutative algebra --- math-189AA/notes/Injective modules#_definition _ injective modules|injective]].
+
+---
+
+This will allow us to understand the derived functor of $\operatorname{Hom}$ — [[Commutative algebra --- math-189AA/notes/Ext-ension functor|the Ext-ension functor]].

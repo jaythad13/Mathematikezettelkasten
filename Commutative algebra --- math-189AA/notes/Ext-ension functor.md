@@ -2,6 +2,7 @@
 tags:
 - math-189AA/16
 - math-189AA/17
+- math-189AA/18
 - hom-alg
 - comm-alg
 ---
@@ -82,6 +83,30 @@ Notice that $\mathbb{Q}$ is an injective $\mathbb{Z}$-module and the $\operatorn
 
 ### Properties of $\operatorname{Ext}$
 
+##### _proposition:_ the zeroth $\operatorname{Ext}$
+
+$\operatorname{Ext}^0_{A}(M, N) = \operatorname{Hom}(M, N)$.
+
+###### _proof:_
+
+Choose a projective resolution and apply $M \mapsto \operatorname{Hom}(M, N)$ recalling that this is left-exact. We get the following complex where the diagonals are exact (notice that the last map is not surjective since $\operatorname{Hom}$ is only left-exact)
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		& & 0 \ar[rd] \\
+		& & & \mathrm{Hom}(\Omega M, N) \ar[rd] \\
+		0 \ar[rr, "f_{0}"] \ar[rd] & & \mathrm{Hom}(P_{0}, N) \ar[rr, "f_{1}"] \ar[ru] & & \mathrm{Hom}(P_{1}, N) \ar[rr] & & \mathrm{Hom}(P_{2}, N) \\
+		& \mathrm{Hom}(M, N) \ar[ru] \\
+		0 \ar[ru]
+	\end{tikzcd}
+\end{document}
+```
+$\operatorname{Ext}^0_{A}(M, N) = H^1(\operatorname{Hom}(P_{\bullet}, N)) = \ker f_{1} / \operatorname{img} f_{0}$. $\operatorname{img} f_{0} = 0$ so we don't have to worry about it. Since $f_{1}$ factors as $\operatorname{Hom}(P_{0}, N) \to \operatorname{Hom}(\Omega M, N) \to \operatorname{Hom}(P_{1}, N)$ and the latter map is an injection, we have that $\ker f_{1}$ is just the kernel of the map $\operatorname{Hom}(P_{0}, N) \to \operatorname{Hom}(\Omega M, N)$. This is just $\operatorname{Hom}(M, N)$ (by the exactness of the first diagonal).
+
+---
+
 ##### _proposition:_ $\operatorname{Ext}$ of injectives
 
 For $E$ [[Commutative algebra --- math-189AA/notes/Injective modules#_definition _ injective modules|injective]], then $\operatorname{Ext}_{A}^i(M, E) = 0$ for all $i > 0$.
@@ -93,5 +118,13 @@ For $E$ [[Commutative algebra --- math-189AA/notes/Injective modules#_definition
 If $\operatorname{proj dim} M \leq n$, then $\operatorname{Ext}_{A}^i(M, N) = 0$ for all $i > n$.
 
 For $P$ [[Commutative algebra --- math-189AA/notes/Projective modules#_definition _ projective module|projective]], then $\operatorname{Ext}_{A}^i(P, N) = 0$ for all $i > 0$.
+
+---
+
+##### _corollary:_ $\operatorname{Ext}^{\operatorname{proj} \dim M}(M, N)$ is right exact
+
+###### _proof:_
+
+Apply the long-exact sequence in cohomology to get.
 
 ---
