@@ -8,6 +8,7 @@ tags:
 - math-177/16
 - math-177/17
 - math-177/18
+- math-177/19
 ---
 
 Extensions of the $p$-adics and number fields in general have a nice underlying algebraic structure. For any $\mathbb{K} / \mathbb{Q}_{p}$ we can define a ring of integers $\mathscr{O}_{\mathbb{K}} \subseteq \mathbb{K}$ that behaves like $\mathbb{Z}_{p} \subseteq \mathbb{Q}_{p}$.
@@ -140,7 +141,11 @@ $n = ef$.
 
 ---
 
-##### _theorem:_ characterising field extensions of give degree
+### Characterising extensions
+
+Using the uniformiser, and some facts about finite fields, we can now completely classify unramified and totally ramified extensions. Since we get all other extensions by joining these together, this gives us all finite extensions of given degree. We state this formally without proof at the end.
+
+##### _theorem:_ characterising unramified field extensions of given degree
 
 For each $n$ there exists a unique unramified extension $\mathbb{K} / \mathbb{Q}_{p}$ of degree $n$.
 
@@ -152,5 +157,54 @@ Suppose $\alpha$ is a root of $f$. Then $\mathbb{Q}_{p}(\alpha) / \mathbb{Q}_{p}
 
 This is unique. If $\mathbb{K} / \mathbb{Q}_{p}$ is unramified of degree $n$, then we have uniquely identified $\mathscr{O}_{\mathbb{K}} / \mathfrak{m}_{\mathbb{K}}$ as the unique degree $n$ extension $\mathbb{F}_{p^n}  / \mathbb{F}_{p}$. Write $\mathbb{F}_{p^n} = \mathbb{F}_{p}(\zeta)$ where $\zeta^{p^k - 1} - 1 = 0$. But then by [[p-adic numbers --- math-177/notes/Hensel's lemma#_theorem _ Hensel's lemma for extensions of $ mathbb{Q}_{p}$|generalised Hensel's lemma]], we obtain a unique $\alpha \in \mathscr{O}_{\mathbb{K}}$ with $z^{p^k - 1} - 1 = 0$ and $z \equiv \zeta$. Since $\mathbb{Q}_{p}(\alpha) / \mathbb{Q}_{p}$ has residue field extension $\mathbb{F}_{p^n} / \mathbb{F}_{p}$. Since $\mathbb{Q}_{p}(\alpha) / \mathbb{Q}_{p}$ has degree at least that of $\mathbb{F}_{p^n} / \mathbb{F}_{p}$, we have that $\mathbb{Q}_{p}(\alpha) = \mathbb{K}$. That is, $\mathbb{K}$ is the splitting field of $x^{p^k - 1} - 1$.
 
+---
+
+To classify totally ramified extensions, we notice that we can always get a totally ramified extension from a polynomial satisfying [[p-adic numbers --- math-177/notes/Irreducible polynomials#_theorem _ Eisenstein's criterion|Eisenstein's criterion]].
+
+##### _proposition:_ Eisenstein polynomials give totally ramified field extensions
+
+Suppose $f(x) = \sum_{i = 0}^n a_{i} x^i$ satisfies Eisenstein's criterion and $\pi$ is a root of $f$. Then $\mathbb{Q}_{p}(\pi)$ is totally ramified.
+
+###### _proof:_
+
+Since $f$ satisfies Eisenstein's criterion, $a_{0} \in p \mathbb{Z}_{p}$ (the unique prime ideal of $\mathbb{Z}_{p}$) but $a_{0} \not\in p^{2} \mathbb{Z}_{p}$. Thus, $\lvert \pi \rvert_{p} = \lvert a_{0} \rvert^{1 / n} = p^{-1 / n}$. Since $\pi \in \mathfrak{m}_{\mathbb{Q}_{p}(\pi)}$ and $1 / \nu_{p}(\pi) \leq e \leq n$, we have $e = n$. Thus, $\mathbb{Q}_{p}(\pi)$ is totally ramified. 
+
+---
+
+Surprisingly, the converse holds.
+
+##### _theorem:_ characterising totally ramified field extensions of a given degree
+
+If $\mathbb{K} / \mathbb{Q}_{p}$ is a totally ramified extension of $\mathbb{Q}_{p}$ of degree $n$, then $\mathbb{K} = \mathbb{Q}_{p}(\pi)$ where $\pi$ is a root of a degree $n$ Eisenstein polynomial.
+
+###### _proof:_
+
+Let $\pi$ be a uniformiser of $\mathfrak{m}_{\mathbb{K}}$. Thus, $\lvert \pi \rvert_{p} = p^{- 1 / n}$. Consider the corresponding minimal polynomial $p_{\pi}(x) = \sum a_{i} x^i$ (say of degree $m$). 
+
+Since $p_{\pi}$ is monic, we have $\lvert a_{n} \rvert_{p} = 1$ as desired.
+
+Since $\lvert \pi \rvert_{p} = \lvert a_{0} \rvert^{1 / m}$, this implies $\lvert a_{0} \rvert = p^{-m / n}$. Since $0 \leq m \leq n$ and $\lvert a_{0} \rvert = p^{k}$ for some integer, the only choice we have is $m = n$. Thus, $\lvert a_{0} \rvert_{p} = 1 / p$, also as desired.
+
+Finally, working in the [[p-adic numbers --- math-177/notes/Algebraic field extensions#_definition _ splitting field|splitting field]] of $p_{\pi}$ we can write
+$$
+\sum_{i = 0}^n a_{i} x^i = \prod_{j = 1}^n (x - \alpha_{j}).
+$$
+Note that $\lvert \alpha_{j} \rvert_{p} = \lvert \pi \rvert_{p} = p^{-1 / n}$ for all $j$. Each $a_{j}$ is the sum of products of $(n - j)$-many $\alpha_{j}$s. This implies $\lvert a_{j} \rvert_{p} \leq p^{(n - j)/n} < 1$ and thus, gives $a_{j} \in p \mathbb{Z}_p$, as desired.
+
+---
+
+##### _theorem:_ characterising all finite extensions
+
+If $\mathbb{K}$ is a finite extension of $\mathbb{Q}_{p}$, then $\mathbb{K} = \mathbb{L}(\pi)$ where $\mathbb{L} / \mathbb{Q}_{p}$ is unramified and $\mathbb{K} / \mathbb{L}$ is totally ramified. Equivalently, $\mathbb{K} / \mathbb{Q}_{p}(\pi)$ is unramified and $\mathbb{Q}_{p}(\pi) / \mathbb{Q}_{p}$ is totally ramified.
+
+---
+
+##### _corollary:_ extensions of every ramification index
+
+Given a degree $n \in \mathbb{N}$, and a divisor $e \mid n$,  there exists a degree $n$ finite extension of $\mathbb{Q}_{p}$ with ramification index $e$.
+
+###### _proof sketch:_
+
+Put together your favourite totally ramified extension of degree $e$ and unramified extension of degree $f = n / e$.
 
 ---

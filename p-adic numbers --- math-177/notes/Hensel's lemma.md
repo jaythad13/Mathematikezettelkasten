@@ -69,7 +69,7 @@ Suppose $f \in \mathbb{Z}[x]$ and there is some $z_{1} \in \mathbb{Z} / (p)$ suc
 
 ---
 
-In fact, Hensel's lemma works for any finite extension $\mathbb{K} / \mathbb{Q}_{p}$. Just replace $p$ with the [[p-adic numbers --- math-177/notes/Rings of integers of field extensions#_proposition, definition _ the maximal ideal is principal, uniformiser|uniformiser]] $\pi$. The proof goes through! That is to say,
+In fact, Hensel's lemma works for any finite extension $\mathbb{K} / \mathbb{Q}_{p}$. Just replace $p$ with the [[p-adic numbers --- math-177/notes/Rings of integers and ramification#_proposition, definition _ the maximal ideal is principal, uniformiser|uniformiser]] $\pi$. The proof goes through! That is to say,
 
 ##### _theorem:_ Hensel's lemma for extensions of $\mathbb{Q}_{p}$
 
