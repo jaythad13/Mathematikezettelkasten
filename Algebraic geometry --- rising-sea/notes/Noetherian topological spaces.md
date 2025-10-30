@@ -19,4 +19,4 @@ That, is for any chain $Z_{1} \supseteq Z_{2} \supseteq \cdots$, there is some $
 
 ##### _proposition:_ Noetherian spaces have (quasi)compact open subsets
 
-If $X$ is Noetherian, every subset $U$ is [[Algebraic geometry --- rising-sea/notes/Topological properties of affine schemes|quasicompact]].--
+If $X$ is Noetherian, every subset $U$ is [[Algebraic geometry --- rising-sea/notes/Topological properties of schemes|quasicompact]].--

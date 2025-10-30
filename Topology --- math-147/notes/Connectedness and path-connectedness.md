@@ -82,6 +82,19 @@ If $Y$ is disconnected into disjoint open sets $V_{1} \cup V_{2}$, then their pr
 Since subsets of $\mathbb{R}$ are only connected if they contain every $z$ between each pair $x, y$ in the set, we get the intermediate value theorem —
 ![[Analysis --- math-131/notes/Continuity#_corollary _ intermediate value theorem|Connectedness]]
 
+##### _lemma:_ unions of connected spaces with non-empty intersection
+
+Suppose $X = Y \cup Z$ is the union of connected subspaces with non-empty intersection. Then $X$ is connected.
+
+###### _proof:_
+
+We prove the contrapositive — suppose $X = Y \cup Z$ is a union of connected subspaces (with possibly empty intersection). Then if $X$ is disconnected, $Y \cap Z$ is empty.
+
+Write a disconnection $X = U \sqcup V$. Then $Y = U_{Y} \sqcup V_{Y}$ and $Z = U_{Z} \sqcup V_{Z}$ (writing $U_{Y}$ for $U \cap Y$ and similarly for the rest). Since $Y$ and $Z$ are connected, one of the disjoint sets composing each must be empty. We cannot have $U_{Y}$ and $U_{Z}$ are empty, or both $V_{Y}$ and $V_{Z}$ are empty, since neither $U$ nor $V$ is empty. Thus, without loss of generality, $U_{Y}$ is empty and $V_{Z}$ is empty. But then $Y = V_{Y}$ and $Z = U_{Z}$ are disjoint (since $U$ and $V$ are disjoint). 
+
+---
+
+
 ### Path-connectedness
 
 Path-connectedness is a stronger notion that requires you to be able to walk between any two points on the space.

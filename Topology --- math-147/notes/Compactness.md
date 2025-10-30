@@ -17,11 +17,36 @@ $\mathcal{O}$ is an open cover if each $U_{\alpha}$ is open.
 
 If $\mathcal{O}' \subseteq \mathcal{O}$ is also a cover of $A$, it is called a subcover of $\mathcal{O}$.
 
+---
+
 ##### _definition:_ compact
 
 A subset $A \subseteq X$ is compact if every open cover of $A$ admits a finite subcover.
 
-It turns out that since the [[Topology --- math-147/notes/Subspaces#_definition _ subspace topology|subspace topology]] plays nicely with compactness (a compact set in a subspace topology is compact in the whole topology, et c.), without loss of generality we can assume our compact set is just the whole space.
+---
+
+It turns out that since the [[Topology --- math-147/notes/Subspaces#_definition _ subspace topology|subspace topology]] plays nicely with compactness (a compact set in a subspace topology is compact in the whole topology, et c.), without loss of generality we can assume our compact set is just the whole space. That is
+
+##### _proposition:_ compactness is invariant of subspace
+
+A subset $A \subseteq Y \subseteq X$ is compact as a subspace of $Y$ (with the subspace topology on $Y$) if and only if it is a compact subset of $X$.
+
+###### _proof sketch:_
+
+Open covers $\{ U_{\alpha} \}$ of $A \subseteq X$ are in bijection with open covers $\{ U_{\alpha} \cap Y \}$ of $A \subseteq Y$. In particular, since $A \subseteq Y$, $\{ U_{\alpha}\}$ covers $A$ if and only if $\{ U_{\alpha} \cap Y \}$ covers $A$. Thus, a cover of $A \subseteq X$ admits a finite subcover if and only if the corresponding cover of $A \subseteq Y$ admits a finite subcover.
+
+---
+
+##### _proposition:_ finite unions of compact sets are compact
+
+If $X = \bigcup_{i = 1}^n A_{i}$ is a finite union of compact subsets $A_{i} \subseteq X$, then $X$ is compact.
+
+###### _proof:_
+
+By induction, it suffices to prove that the union of two compact sets is compact. Let $X = A \cup B$ be a union of two compact subsets. Any open cover of $X$ is an open cover of $A$ and an open cover of $B$. They give rise to a finite subcover of $A$ and finite subcover of $B$. The union of these finite subcovers is still a finite, and covers all of $X$.
+
+
+---
 
 ##### _theorem:_ the Bolzano-Weierstrass theorem
 
@@ -33,11 +58,15 @@ Suppose by way of contradiction that $A$ does not have a limit point. Then every
 
 Since each open neighbourhood contains at most one point of $A$, any finite subset of $\mathcal{O}$ would not cover $X$. This is a contradiction because $X$ is compact.
 
+---
+
 Compactness is also intimately connected with something called the finite intersection property.
 
 ##### _definition:_ finite intersection property
 
 A collection of sets has the finite intersection property if every finite subcollection has non-empty intersection.
+
+---
 
 It is interesting to ask whether checking for the finite intersection property is sufficient to determine whether the collection as a whole has non-empty intersection. This is certainly not always true — in ${[-1, 1] \setminus \{ 0 \} }$, the sets $\{ [-1 / n, 1 / n] \}_{n \in \mathbb{N}}$ have the finite intersection property, but the infinite intersection is empty. 
 
@@ -68,6 +97,8 @@ $$
 $$
 Since $\{ U_{\alpha} \}_{\alpha \in \mathcal{I}}$ does not admit any finite subcovers, the finite union of $U_{\alpha_{i}}$ is not the whole space $X$, and thus, the finite subcollection of $A_{\alpha_{i}}$ has non-empty intersection. Since the finite subcollection was arbitrary, $\{ A_{\alpha} \}_{\alpha \in \mathcal{I}}$ has the finite intersection property.
 
+---
+
 ##### _proposition:_ closed subspaces of compact spaces are compact
 
 If $X$ is compact and $A \subseteq X$ is closed, then $A$ is compact.
@@ -76,7 +107,9 @@ If $X$ is compact and $A \subseteq X$ is closed, then $A$ is compact.
 
 Suppose $\mathcal{O}$ is an open cover of $A$. Then $\mathcal{O} \cup \{ X \setminus A \}$ is an open cover of $X$. It reduces to a finite subcover $\mathcal{O}'$. Since ${X \setminus A}$ has no intersection with $A$, we can remove it from $\mathcal{O}'$ to get a finite subcover of $\mathcal{O}$. That is $A$ is compact.
 
-Our intuition suggests that compact sets should be compact. This is almost true — in all "reasonable" spaces it is literally true.
+---
+
+Our intuition suggests that compact sets should be closed. This is almost true — in all "reasonable" spaces it is literally true.
 
 ##### _proposition:_ compact subsets of Hausdorff spaces are closed
 
@@ -88,9 +121,13 @@ Consider any point $p \in {X \setminus A}$. We will show that it's not a limit p
 
 $\mathcal{O} = \{ U_{a} \}_{a \in A}$ is an open cover of $A$ and admits a finite subcover $\mathcal{O}' = \{ U_{a_{1}}, \dots, U_{a_{n}} \}$. The corresponding $V_{a_{i}}$ have finite intersection $V$ that is disjoint from each $U_{a_{i}}$, and thus, their union. Since $A \subseteq \bigcup_{i = 1}^n U_{a_{i}}$ it too is disjoint from $V$. This non-intersecting open neighbourhood [[Topology --- math-147/notes/Limit points and closed sets#_proposition _ limit points not in the set|is sufficient to show]] that $p \not\in A$ is not a limit point of $A$.
 
+---
+
 ##### _example:_ compact subsets need not be closed
 
 Recall the [[Topology --- math-147/notes/Bases#_example _ the double-headed snake|double-headed snake]] $\mathbb{R}_{+00}$. Using [[Analysis --- math-131/notes/Compactness#_theorem _ Heine-Borel theorem|the Heine-Borel theorem]] on the [[Analysis --- math-131/notes/Metric spaces#_definition_ metric space, metric|metric (sub)space]] $\mathbb{R}_{+00} {\setminus \{ 0_{1} \}}$, we can see that $A = \{ 0_{2} \} \cup (0, 1]$ is compact in the subspace, and thus, in the whole double-headed snake as well. However, $0_{1} \not\in A$ is a limit point of $(0, 1]$, and thus, $A$ too. This means $A$ is compact, but not closed.
+
+---
 
 ##### _theorem:_ compact Hausdorff spaces are normal
 
@@ -99,6 +136,8 @@ If $X$ is compact and Hausdorff, $X$ is [[Topology --- math-147/notes/Separation
 ###### _proof sketch:_
 
 Use a similar trick to above to show $X$ is at least [[Topology --- math-147/notes/Separation properties#_definition _ regular spaces, $T_{3}$ spaces|regular]], then extend to normality. See [[Topology --- math-147/attachments/homework/hw 7/hw 7.pdf#page=1|the homework]].
+
+---
 
 The nicest property of compact spaces is that they are preserved by continuous functions!
 
@@ -111,6 +150,8 @@ If $X$ is compact and $f : X \to Y$ is continuous and surjective, then $Y$ is co
 Consider an open cover $\mathcal{O}_{Y} = \{ V_{\alpha} \}_{\alpha \in \mathcal{I}}$ of $Y$. Since every the $x \in X$ has $f(x) \in Y$, and thus, $f(x) \in V_{\alpha}$ for some $\alpha$, this open cover pulls back to an open cover of $X$. That is, each $U_{\alpha} = f^\text{pre}(V_{\alpha})$ is open ([[Topology --- math-147/notes/Continuous functions#_definition _ continuity|by continuity]]), and their union contains every $x \in X$.
 
 By compactness of $X$, we have a finite subcover, $\mathcal{O}'_{X} = \{ U_{\alpha_{1}}, \dots, U_{\alpha_{n}} \}$. We can consider the correspond finite collection of open sets in $Y$ — $\mathcal{O}'_{Y} = \{ V_{\alpha_{1}}, \dots, V_{\alpha_{n}} \}$. Since each $y \in Y$ is $y = f(x)$ for some $x \in X$ and $x \in U_{\alpha_{i}}$ implies $f(x) \in V_{\alpha_{i}}$ (since $U_{\alpha_{i}}$ is defined to be the pre-image of $V_{\alpha_{i}}$), we have each $y \in Y$ in some $V_{\alpha_{i}}$. That is, $\mathcal{O}_{Y}'$ is a cover of $Y$. We can reduce any open cover to a finite subcover like this, so $Y$ must be compact.
+
+---
 
 Note that this implies even without surjectivity that $f^\text{img}(X)$ is compact.
 
@@ -129,3 +170,5 @@ Suppose $X$ is a space with basis $\mathcal{B}$ where every basic open cover adm
 By hypothesis, this finite collection of basic open sets has basic open sets corresponding to only finitely many $U_{\alpha}$. Then $\mathcal{O}' = \{ U_{\alpha_{1}}, \dots, U_{\alpha_{n}} \}$ has $U_{\alpha_{i}} \supseteq \bigcup_{j = 1}^{n_{i}} B_{\alpha_{i}, \beta_{j}}$. Thus, $\mathcal{O}'$ is also a cover of $X$.
 
 $\mathcal{O}'$ is a finite subcover of the arbitrary open cover $\mathcal{O}$. Thus, $X$ is compact.
+
+---

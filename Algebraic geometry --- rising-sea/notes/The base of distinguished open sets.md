@@ -56,7 +56,7 @@ Suppose $\mathfrak{i} = A$. Consider some $\mathfrak{p} \in \operatorname{Spec} 
 
 ---
 
-This means, for one, that all open covers of an affine scheme restrict to finite subcovers. This is a notion that we will later define as [[Algebraic geometry --- rising-sea/notes/Topological properties of affine schemes|quasicompactness]] (since it is topological compactness, but isn't quite the right notion that we want in algebraic geometry).
+This means, for one, that all open covers of an affine scheme restrict to finite subcovers. This is a notion that we will later define as [[Algebraic geometry --- rising-sea/notes/Topological properties of schemes|quasicompactness]] (since it is topological compactness, but isn't quite the right notion that we want in algebraic geometry).
 
 ##### _corollary:_ every affine scheme is quasicompact
 
