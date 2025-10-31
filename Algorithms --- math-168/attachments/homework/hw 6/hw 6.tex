@@ -1,0 +1,181 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 168 --- Algorithms}
+\assignment{Homework \#6}
+\duedate{30th October 2025}
+
+\begin{document}
+
+\begin{problem}[Problem 1, Part 1: Priorities at Giigle Maps]
+	Recall that a priority queue is an abstract data type (ADT) that supports the following operations. 
+\begin{itemize}
+    \item \verb+insert(item, x)+:  Inserts an item with value \verb+x+ into the priority queue.
+    \item \verb+decreaseKey(item, y)+:  Takes a reference (or a pointer) to an item in the priority queue and a value \verb+y+, checks if the referenced item has value greater than \verb+y+ and, if so, decreases the value of that item to \verb+y+.  
+    \item \verb+deleteMin()+: Takes no argument, removes the item with minimum value, and returns that item.
+\end{itemize}
+
+In class, we defined and analyzed the \emph{binary heap} data structure, which implements each of these operations in time $O(\log_2(n))$. We showed how to implement Dijkstra's algorithm using a binary heap, which gave us an overall running time of $O(n \log(n) + m \log(n))$ for a graph with $n$ vertices and $m$ edges.
+
+A $d$-ary heap is a generalization of a binary heap in which each non-leaf node has at most $d$ children for some value $d \geq 2$.  When $d = 2$, the $d$-ary heap is a binary heap.   At most one non-leaf node may have fewer than $d$ children (just as in a binary heap one non-leaf node may have fewer than 2 children).
+
+In the following questions, let $n$ denote the number of items in the priority queue and write your running times as functions of $n$ and $d$ using big-$O$ notation.
+(Don't drop functions of $d$ from your big-$O$ notation---in Part 2, we'll let $d$ be something other than a constant!)
+
+\begin{enumerate}
+    \item  What is the running time of \verb+insert+ in a $d$-ary heap as a function of $n$ and $d$?  Explain in one sentence.
+    
+    \item What is the running time of  \verb+decreaseKey+ in a $d$-ary heap as a function of $n$ and $d$?  Explain in one sentence.
+                        
+    \item What is the running time of  \verb+deleteMin+  in a $d$-ary heap as a function of $n$ and $d$?  Explain in one sentence.
+\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Problem 1, Part 2: Priorities at Giigle Maps]
+	Giigle Maps is interested in solving single-source shortest path (SSSP) problems as fast as possible. Each map is a directed graph $G$ with $n$ vertices, $m$ edges, and \emph{strictly positive} edge weights. These graphs are always connected and may have cycles.
+		
+Fortunately, all of Giigle Maps's graphs have a convenient property called ``$\epsilon$-density.''  This property states that the number of edges is  $\Theta(n^{1+\epsilon})$\footnote{The notation $\Theta(n^{1+\epsilon})$ refers to the class of functions that are both $O(n^{1+\epsilon})$ and $\Omega(n^{1+\epsilon})$; that is, exactly $n^{1+\epsilon}$ up to constant factors. } for some fixed 
+constant $\epsilon$, $0 < \epsilon \leq1$.  Notice that $\epsilon$ is a measure of the density:  When $\epsilon$ is close to 0, the number of edges is roughly proportional to the number of vertices and when $\epsilon$ is close to 1, the graph is nearly completely connected.
+
+
+\begin{enumerate}
+    \item[(d)] Describe an algorithm for Single-Source Shortest Paths on graphs with positive edge weights that runs in $O(m)$ time, assuming that $m = \Theta(n^{1+\epsilon})$ for some fixed $\epsilon$, $0 < \epsilon \leq 1$. Use the $d$-ary heaps from Part 1 of this problem as your main data structure. In particular, you should consider choosing $d$ as a function of $n$ and $\epsilon$. Remember, $\epsilon$ is a fixed constant but $n$ is a variable.
+    
+    Describe your choice of $d$ and the algorithm you'll use in a few sentences.
+    
+    \emph{Hint:} If you are modifying an existing algorithm that we've seen in class, you don't need to describe that algorithm in detail - you can merely state the name of the algorithm and explain how it can be implemented using $d$-ary heaps. This should allow you to keep your write-up short.
+     
+\item[(e)] Calculate and explain the asymptotic running time of your algorithm. Why does the algorithm run in time $O(m)$ for your choice of $d$?
+\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Problem 2: USPS Routing]
+	You've been called in as a consultant to help the APSP (American Parcel Service Providers) design a route-planning algorithm that they call the USPS (Universal Shortest Path System.) They want to find the best route for shipping a package between any two warehouses in their network.
+
+However, this is more than an ordinary shortest path problem. Suppose a package follows a certain route from a starting warehouse $s$ to a destination warehouse $t$. In addition to time spent en route between warehouses, there is also \emph{processing time} spent at each warehouse along the way. The total time is equal to the sum of travel time and processing time.
+
+The warehouse map is a directed graph $G$ with $n$ warehouses and $m$ edges connecting them. Each edge $(u, v)$ has a corresponding
+non-negative travel time $t(u, v)$, and each node $v$ has a corresponding
+non-negative wait time $w(v)$ for processing.
+
+Below, describe how to find the lengths of the shortest paths between \emph{all pairs} of warehouses including both wait and travel time \emph{using a reduction to All-Pairs Shortest Paths}. This time should include endpoints: for example, the total time for the path $s, a, b, v$ can be computed as
+\[
+    w(s) + t(s, a) + w(a) + t(a, b) + w(b) + t(b, v) + w(v).
+\]
+Recall that \textbf{Handout 3.5} is a guide to writing up reductions!
+
+\begin{enumerate}
+    \item {Description of reduction}
+    
+    \item {Proof of correctness}
+
+    \item {Analysis of runtime}: aim for $O(n^3)$.
+\end{enumerate}
+\end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item Consider the following augmented (directed) graph $\hat{G}$. For each vertex of the original graph $G$. The augmented graph has two vertices, $v_{i}$ and $v_{o}$ for each vertex $v$ of the original graph. The only outgoing edge from $v_{i}$ and the only incoming edge to $v_{o}$ is an edge $(v_{i}, v_{o})$ with travel time equal to the wait time $w(v)$. Else, for vertices $u_{o}, v_{i}$ the edges between them are exactly the edges $(u, v)$, with travel time $t(u_{o}, v_{i}) = t(u, v)$.
+
+			\emph{Because of this notational choice we will index vertices with $j$ and reserve $i$ to denote in. For example, $v_{j, i}$ is the in-vertex corresponding to $v_{j}$.}
+
+			We claim that solving all-pairs shortest paths on $\hat{G}$ (using Floyd--Warshall) gives us the desired solution on $G$. Specifically, for a source warehouse $u$ and a target warehouse $v$ in the original graph $G$, the length of the shortest path between them, including wait times, is the shortest path between $u_{i}$ (the in vertex of $u$) and $v_{o}$ (the out vertex of $v$) in $\hat{G}$.
+
+		\item A solution to our USPS problem gives us, for each pair of vertices $u, v$ the minimum sum
+			\[
+				w(v_{0}) + t(v_{0}, v_{1}) + w(v_{1}) + \dots + t(v_{n - 1}, v_{n}) + w(v_{n})
+			\]
+			such that $v_{0} = u$, $v_{n} = v$, and there is an edge $(v_{j}, v_{j + 1})$ for each $j$. A solution to ASPS on $\hat{G}$ of course returns the minimum length paths between any two vertices. We claim more specifically that a solution to ASPS on $\hat{G}$ returns, for each $u_{i}, v_{o}$, the minimum path such that the. That is, ASPS on $\hat{G}$ returns a minimum sum of the form
+			\[
+				t(v_{0, i}, v_{0, o}) + t(v_{0, o}, v_{1, i}) + t(v_{1, i}, v_{0, i}) \dots + t(v_{n - 1, o}, v_{n, i}) + t(v_{n, i}, v_{n, o})
+			\]
+			such that $v_{0} = u$, $v_{n} = v$, and there is an edge $(v_{j}, v_{j + 1})$ (equivalently, there is an edge $(v_{j, o}, v_{j + 1, i})$) for each $j$. That is, the edges must alternate between those of the type $(v_{i}, v_{o})$ and those of the type $(u_{o}, v_{i})$.
+
+			Recall that $t(v_{i}, v_{o}) = w(v)$ and $t(u_{o}, v_{i}) = t(u, v)$ by construction. Thus, we have the equality.
+			\begin{align*}
+				& t(v_{0, i}, v_{0, o}) + t(v_{0, o}, v_{1, i}) + t(v_{1, i}, v_{0, i}) \dots + t(v_{n - 1, o}, v_{n, i}) + t(v_{n, i}, v_{n, o}) \\
+				& = w(v_{0}) + t(v_{0}, v_{1}) + w(v_{1}) + \dots + t(v_{n - 1}, v_{n}) + w(v_{n})
+			\end{align*}
+			We also claim that the solution to ASPS on $\hat{G}$ minimises the latter sum. But minimising the latter sum is exactly the solution to our USPS problem. Thus, once we prove our two claims, we have proven that a solution to ASPS on $\hat{G}$ gives a solution to USPS on $G$.
+
+			First we show that the ASPS on $\hat{G}$ with source $u_{i}$ and target $v_{o}$ gives a path with edges alternating as desired. By construction, the only edge out of $u_{i}$ is $(u_{i}, u_{o})$ and the only edge into $v_{o}$ is $(v_{i}, v_{o})$. Further, for any $v_{j, i}$ the only edge out is to $(v_{j, i}, v_{j, o})$. Again, by our construction, the only edge out from that $v_{j, o}$ is some edge to the in-vertex of a different indexed vertex $(v_{j, o}, v_{j + 1, i})$. Thus, our ASPS solution for a source in-vertex and a target out-vertex is of the desired form.
+
+			Now we show that the ASPS solution on $\hat{G}$ minimises its equivalent form
+			\[
+				w(v_{0}) + t(v_{0}, v_{1}) + w(v_{1}) + \dots + t(v_{n - 1}, v_{n}) + w(v_{n})
+			\]
+			as well. Suppose not, by way of contradiction. Then there would be a smaller sum
+			\begin{align*}
+				& w(u_{0}) + t(u_{0}, u_{1}) + w(u_{1}) + \dots + t(u_{n - 1}, u_{n}) + w(u_{n}) \\
+				& < w(v_{0}) + t(v_{0}, v_{1}) + w(v_{1}) + \dots + t(v_{n - 1}, v_{n}) + w(v_{n})
+			\end{align*}
+			with $u_{0} = u$, $u_{n} = v$ and all $u_{i}, u_{i + 1}$ adjacent. But then, we could construct a path $u_{0, i} u_{0, o}, u_{1, i}, \dots, u_{n - 1, o}, u_{n, i}, u_{n, o}$ from $u_{i}$ to $v_{o}$. We claim is a shorter path $u_{i} \to v_{o}$, on $\hat{G}$ than the path with $v_{j, i}, v_{j, o}$s.
+
+			Substituting each $w(u_{j}) = t(v_{u, i}, v_{u, o})$ and each $t(u_{j}, u_{j + 1}) = t(u_{j, o}, u_{j + 1, i})$ we get the following.
+			\begin{align*}
+				& t(u_{0, i}, u_{0, o}) + t(u_{0, o}, u_{1, i}) + t(u_{1, i}, u_{0, i}) \dots + t(u_{n - 1, o}, v_{n, i}) + t(u_{n, i}, u_{n, o}) \\
+				& = w(u_{0}) + t(u_{0}, u_{1}) + w(u_{1}) + \dots + t(u_{n - 1}, u_{n}) + w(u_{n}) \\
+				& < w(v_{0}) + t(v_{0}, v_{1}) + w(v_{1}) + \dots + t(v_{n - 1}, v_{n}) + w(v_{n}) \\
+				& = t(v_{0, i}, v_{0, o}) + t(v_{0, o}, v_{1, i}) + t(v_{1, i}, v_{0, i}) \dots + t(v_{n - 1, o}, v_{n, i}) + t(v_{n, i}, v_{n, o}).
+			\end{align*}
+			This contradicts the minimality of the path $v_{0, i}, v_{0, o} \dots, v_{n, i}, v_{n, o}$. Since this is a contradiction, our assumption is false and in fact
+			\[
+				w(v_{0}) + t(v_{0}, v_{1}) + w(v_{1}) + \dots + t(v_{n - 1}, v_{n}) + w(v_{n})
+			\]
+			is minimal.
+
+
+		\item The augmented graph $\hat{G}$ has $2n$ vertices --- there are $2$ vertices for each vertex of the original graph $G$. Thus, running Floyd--Warshall on $\hat{G}$ is $O((2n)^{3}) = O(8 n^{3}) = O(n^{3})$.
+	\end{enumerate}
+\end{solution}
+
+\pagebreak
+
+\begin{problem}[Problem 3: Hurts' on-board navigation system]
+	urts Car Rental has designed a new generation of alternative fuel vehicles. The
+new vehicles use a special fuel comprising a finely minced mixture of algorithms
+slides, chocolate fudge Pop Tarts, Spam, late 90's hip-hop CDs, and boba milk
+tea. Due to this rather unusual fuel requirement, there are only certain cities
+in the country where the vehicles can be refueled. Thus, to get from the start
+city to the destination city, the driver must plan a route that ensures that the
+car can be refueled along the way. 
+
+To use the navigation system, the user will enter the starting city, the destination
+city, and the range of the vehicle on a full tank. (You may assume that
+the starting city and the destination cities, being Hurts rental cities,
+both have filling stations - and that the car starts with a full tank of
+fuel.) The computer will respond with the {\em shortest} route from the
+starting city to the destination city that ensures that the vehicle
+doesn't run out of fuel, or will determine that no such route exists.
+
+\vspace{0.5cm}
+
+Formally, the input to the problem consists of the following:
+\begin{itemize}
+    \item A graph $G = (V, E)$ containing $n$ vertices and $m$ directed, weighted edges. \textbf{The graph has \emph{bounded degree}: there exists a constant $c$ such that every vertex has in-degree and out-degree at most $c$.}
+    \item A starting city $s \in V$ and a destination city $t \in V$. 
+    \item A set $F \subseteq V$ of \emph{fueling cities} (vertices at which the car can refuel). You can assume that $s$ and $t$ are fueling cities.
+    \item A range limit $r$, which is a positive integer.
+\end{itemize}
+
+The output is the \emph{length} of the shortest path in the graph from $s$ to $t$, subject to the requirement that the distance between each fueling city and the next is at most $r$.
+
+\begin{enumerate}
+    \item Describe an an algorithm for solving this problem that uses existing graph algorithms. Don't change the existing algorithms - use them ``off-the-shelf'' so that you can leverage their known proofs of correctness and running times.
+    
+    You have several algorithms for SSSP and/or APSP at your disposal: Dijkstra, Bellman-Ford, Floyd-Warshall, and Johnson's Algorithm. Choose wisely to minimize runtime: some will be faster than others for this problem, so you'll want to choose carefully for full credit.
+
+    \item Prove that your algorithm finds an optimal solution. (This will be much like proving the correctness of a reduction---you need to explain why your new algorithm, which uses existing algorithms as subroutines, comes up with a correct answer. If you haven't changed anything about the existing algorithms, you can assume that they work correctly as described in class.)
+
+    \item Calculate the running time of your algorithm. (Once again, this is similar to a reduction: the total runtime will be the time taken by the existing algorithms you use as subroutines, plus any additional work done by your algorithm.) You may assume that the number of fueling cities is $\Theta(n)$; that is, a constant fraction of the total number of cities in $G$.
+
+    \item Explain how you could modify your algorithm to return the actual path from $s$ to $t$ in addition to the length of that path.
+\end{enumerate}
+\end{problem}
+
+\end{document}
