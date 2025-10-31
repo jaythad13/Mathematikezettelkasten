@@ -59,7 +59,7 @@ Part of the reason we care about Noetherian rings is that their spectra are Noet
 
 ##### _proposition:_ Noetherian rings have Noetherian affine schemes
 
-If $A$ is a Noetherian ring, then $\operatorname{Spec} A$ is a [[Algebraic geometry --- rising-sea/notes/Noetherian topological spaces#_definition _ Noetherian topological spaces|Noetherian topological space]].
+If $A$ is a Noetherian ring, then $\operatorname{Spec} A$ is a [[Algebraic geometry --- rising-sea/notes/Topological properties of schemes#_definition _ Noetherian topological spaces|Noetherian topological space]].
 
 ###### _proof:_
 

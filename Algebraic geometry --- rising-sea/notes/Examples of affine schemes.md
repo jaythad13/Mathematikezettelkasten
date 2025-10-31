@@ -207,3 +207,34 @@ All the primes in $\mathbb{F}[x]_{(x)}$ [[Commutative algebra --- math-189AA/not
 This is one of the smallest examples of a "weird" topological space. It has $\{ (x) \}$ closed, but not $\{ (0) \}$ (since $(0)$ is contained in $(x)$). This two-point space is called the Sierpinski space.
 
 Generalising, $\mathbb{F}[x, y]_{(x, y)}$ contains shreds of how all the curves in $\mathbb{A}^{2}_{\mathbb{F}}$ (and the plane itself) look "near the origin". Generalising in a different direction, the picture of $\mathbb{F}[x]_{(x)}$ as a shred of a smooth curve is how all discrete valuation rings should be thought of.
+
+### Disjoint unions of affine schemes
+
+We can describe finite disjoint unions of affine schemes as 
+
+##### _proposition:_ products of rings are disjoint unions of affine schemes
+
+If $A \cong A_{1} \times A_{2} \times \cdots A_{n}$, then there is an isomorphism of schemes
+$$
+\coprod_{i = 1}^n \operatorname{Spec} A_{i} \to \operatorname{Spec} A.
+$$
+
+###### _proof:_
+
+It suffices to show that $\operatorname{Spec} A_{1} \times A_{2}$ is homeomorphic to $\operatorname{Spec} A_{1} \amalg \operatorname{Spec} A_{2}$. Note that the primes $\mathfrak{p} \in \operatorname{Spec} A$ are all either $\mathfrak{q}_{1} \times A_{2}$ or $A_{1} \times \mathfrak{q}_{2}$. Else the quotient is a product of non-zero rings which always contains non-zero zero divisors.
+
+This coincides with the scheme morphisms dual to $A_{1} \times A_{2} \to A_{i}$ which have $A_{i} \times \mathfrak{q}_{j} \mapsto \mathfrak{q}_{j}$. Thus, each $\operatorname{Spec} A_{i} \to \operatorname{Spec} A_{1} \times A_{2}$ is continuous. By [[Topology --- math-147/notes/Continuous functions#_lemma _ the gluing lemma|gluing]], we get that $\operatorname{Spec} A_{1} \amalg \operatorname{Spec} A_{2} \to \operatorname{Spec} A_{1} \times A_{2}$ is continuous. By our characterisation of the primes of $A_{1} \times A_{2}$, we already have that it is a bijection. Thus, [[Topology --- math-147/notes/Homeomorphisms#_proposition _ homeomorphisms, closed bijections, and open bijections|it suffices]] to show that it is [[Topology --- math-147/notes/Homeomorphisms#_definition _ open map, closed map|closed]].
+
+It suffices to show that each $V(\mathfrak{i}) \subseteq \operatorname{Spec} A_{i}$ has closed image. All primes containing $\mathfrak{i}$ get sent to primes containing $\mathfrak{i} \times A_{j}$, and all primes containing $\mathfrak{i} \times A_{j}$ correspond to primes containing $\mathfrak{i}$. Thus, $V(\mathfrak{i})$ has closed image $V(\mathfrak{i} \times A_{j})$.
+
+Notice that on restriction to each $U_{i} = D(0, \dots, 1, \dots, 0) = \operatorname{Spec} A_{i}$, we have that $\mathscr{O}_{\operatorname{Spec} A  \mid \operatorname{Spec} A_{i}} \cong \mathscr{O}_{\operatorname{Spec} A_{i}}$. This is because $A_{(0, \dots, 1, \dots, 0)} = A_{i}$ since $(0, \dots, 1, \dots, 0)$ kills everything not in $A_{i}$. Thus, this is an isomorphism of ringed spaces, and thus, an isomorphism of schemes.
+
+---
+
+Notice however, that this doesn't hold for infinite disjoint unions.
+
+##### _non-example:_ our "first" non-affine scheme
+
+An infinite disjoint union of (non-empty) affine schemes is not affine. This follows since it is not [[Algebraic geometry --- rising-sea/notes/Topological properties of schemes#Quasicompactness|quasicompact]] (consider the cover of all $\operatorname{Spec} A_{i}$), but [[Algebraic geometry --- rising-sea/notes/The base of distinguished open sets#_corollary _ every affine scheme is quasicompact|all affine schemes are quasicompact]].
+
+---

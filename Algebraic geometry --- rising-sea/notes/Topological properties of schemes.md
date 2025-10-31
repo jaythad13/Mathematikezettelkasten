@@ -13,9 +13,6 @@ Lots of topological notions have interesting applications to schemes (and affine
 
 ### Connectedness
 
->[!missing]
-> proofs of both results
-
 Connectedness of schemes is exactly connectedness as a topological space.
 
 ![[Topology --- math-147/notes/Connectedness and path-connectedness#_definition _ connectedness|Connectedness and path-connectedness]]
@@ -32,27 +29,14 @@ Suppose $A = A_{1} \times A_{2}$ (a product of non-zero rings). Then note that $
 
 Note that if $A_{1} = 0$, then $V(a_{2})$ would be $V(1)$ and thus, empty. Then connectedness would depend on the connectedness of $\operatorname{Spec} A_2$. Thus, we really do need a product of non-empty rings.
 
-Suppose $\operatorname{Spec} A$ is disconnected. In particular, suppose $\operatorname{Spec} A = V(\mathfrak{i}) \sqcup V(\mathfrak{j})$. Then $\mathfrak{i} \mathfrak{j} \subseteq \sqrt{ \mathfrak{i j} } = \mathfrak{N}$ and $\mathfrak{i} + \mathfrak{j} = (1)$. Choose $a_{1} \in \mathfrak{i}$ and $a_{2} \in \mathfrak{j}$ such that $a_{1} + a_{2} = 1$. Since $a_{1} a_{2} \in \mathfrak{N}$, there is some $n$ with $(a_{1} a_{2})^n = 0$. Note that
-$$
-(a_{1}^n + a_{2}^n)^{2} = a_{1}^{2n} + a_{2}^{2n} + 2 (a_{1} a_{2})^n = a_{1}^{2n} + a_{2}^{2n}
-$$
+>[!missing]
+> proof of the opposite direction
 
 ---
 
 This hints at a more precise formulation.
 
-##### _proposition:_ products of rings are disjoint unions of affine schemes
-
-If $A \cong A_{1} \times A_{2} \times \cdots A_{n}$, then there is a homeomorphism
-$$
-\coprod_{i = 1}^n \operatorname{Spec} A_{i} \to \operatorname{Spec} A.
-$$
-
-###### _proof:_
-
-It suffices to show that $\operatorname{Spec} A_{1} \times A_{2}$ is homeomorphic to $\operatorname{Spec} A_{1} \amalg \operatorname{Spec} A_{2}$. For any point $\mathfrak{p} \in \operatorname{Spec} A_{i}$, send $\mathfrak{p}$ to its image under $A_{i} \to A_{1} \times A_{2}$.
-
----
+![[Algebraic geometry --- rising-sea/notes/Examples of affine schemes#_proposition _ products of rings are disjoint unions of affine schemes|Examples of affine schemes]]
 
 Note that we use the symbol $\coprod$ rather than $\bigsqcup$ because the disjoint union is the coproduct in the category of topological spaces (and soon we shall see, in the category of schemes as well).
 
@@ -168,6 +152,96 @@ Suppose $\mathfrak{i} = (wz - xy, wy - x^{2}, xz - y^{2}) \subseteq \mathbb{F}[w
 
 >[!missing]
 >proof
+
+---
+
+We can always decompose a topological space into irreducible pieces in a relatively nice way.
+
+##### _definition:_ irreducible component
+
+An **irreducible component** of $X$ is a maximal irreducible subset.
+
+---
+
+Note that an irreducible component is always closed since the closure of an irreducible subset is irreducible.
+
+##### _proposition:_ every topological space is the union of irreducible components
+
+Every point $p \in X$ is contained in an irreducible component.
+
+###### _proof:_
+
+Consider the poset of irreducible subsets of $X$ and a maximal totally ordered subset. Suppose $\{ Z_{\alpha} \}$ describes the chain of irreducible subsets of $X$ containing some irreducible $Y$. Then we claim $Z = \bigcup_{\alpha} Z_{\alpha}$ is irreducible, and thus, is the maximal irreducible set containing $Y$.
+
+Suppose $Z = Y_{1} \cup Y_{2}$ is the union of closed subsets. Then each $Z_{\alpha}$ is in either $Y_{1}$ or $Y_{2}$. If each $Z_{\alpha}$ is contained in both, then $Z$ is contained in both. Else, there is some $Z_{\beta}$ with $Z_{\alpha} \not \subseteq Y_{1}$ (say). All the $Z_{\alpha}$ contained in $Z_{\beta}$ have $Z_{\alpha} \subseteq Z_{\beta} \subseteq Y_{2}$. All the  containing $Z_{\beta}$ are also not contained in $Y_{1}$, and thus, are all contained in $Y_{2}$. Since the poset is totally ordered, these are all the $Z_{\alpha}$. That is all the $Z_{\alpha}$ and their union $Z$ are contained in $Y_{2}$.
+
+Since every point $p$ is contained in the irreducible set $\{ p \}$, it is contained in the maximal irreducible component containing that set.
+
+---
+
+### Noetherian topological spaces
+
+Noetherian topological spaces are spaces that break up into finitely many irreducible components in a nice way. However, we have to be a little careful because a Noetherian scheme isn't just a scheme that is topologically Noetherian — there's a [[Algebraic geometry --- rising-sea/notes/Noetherian rings and modules#_definition _ Noetherian rings|ring-theoretic notion]] of Noetherianness too.
+
+##### _definition:_ Noetherian topological spaces
+
+$X$ is a **Noetherian topological space** if any descending chain of closed subsets is eventually constant. 
+
+That, is for any chain $Z_{1} \supseteq Z_{2} \supseteq \cdots$, there is some $r$ such that $Z_{r} = Z_{r + i}$ for all $i \in \mathbb{N}$.
+
+---
+
+##### _example:_ Zariski is Noetherian, Euclidean is not
+
+$\mathbb{A}_{\mathbb{C}}^{2}$ is Noetherian since it is $\operatorname{Spec} A$ of a Noetherian ring (by the [[Algebraic geometry --- rising-sea/notes/Noetherian rings and modules#_theorem _ the Hilbert basis theorem|Hilbert basis theorem]]).
+
+In contrast, the analytic space $\mathbb{C}^{2}$ that it models is not Noetherian. For example, consider the descending chain given by taking the whole space, and then cutting out one disjoint ball after another, from the origin all the way to infinity.
+
+---
+
+We now show that Noetherian spaces have the property we want.
+
+##### _proposition:_ Noetherian spaces break up into finitely many irreducible components
+
+Suppose $X$ is Noetherian. Then every non-empty closed subset $Z$ can be expressed uniquely as $Z = Z_{1} \cup \dots \cup Z_{n}$, a finite union of irreducible closed subsets, none contained in any other.
+
+###### _proof:_
+
+We apply what is called **Noetherian induction**.
+
+Consider the collection of non-empty closed subsets that cannot be expressed as a finite union of irreducible closed subsets. Suppose by way of contradiction that it is not empty. Then $Y_{1}$ is one such subset. If it properly contains another one, then let $Y_{2}$ be that one. Construct a descending chain in this manner. This descending chain of closed subsets is eventually constant at and after $Y_{r}$.
+
+$Y_{r}$ cannot be written as desired (and thus, is not itself irreducible), but all of its proper closed subsets can. Thus, write $Y_{r} = Y' \cup Y''$ for two proper closed subsets of $Y_{r}$. Using the decompositions of $Y'$ and $Y''$, we get $Y_{r}$ as the union of finitely many irreducible closed subsets. This is a contradiction to our assumption that the descending chain was non-empty.
+
+We now have each non-empty closed set $Z = Z_{1} \cup \dots \cup Z_{n}$ as a finite union of irreducible closed subsets. If any are contained in any other, we can get rid of them, and thus obtain the desired decomposition. We are only left to show uniqueness.
+
+Suppose $Z_{1} \cup \dots \cup Z_{m} = Y_{1} \cup \dots \cup Y_{n}$ are unions of irreducible closed subsets, none contained in any other. Then by irreducibility, we have $Z_{1} \subseteq Y_{i}$ for some $Y_{i}$. Similarly, $Y_{i} \subseteq Z_{j}$ for some $j$. We can only have $Z_{1} \subseteq Y_{i} \subseteq Z_{j}$ if $j = 1$ (otherwise we would have one closed set contained in some other). Thus, we have $Z_{1} = Y_{i}$ and similarly, each $Y_{i}$ is some $Z_{j}$ and vice versa.
+
+---
+
+The connected components of Noetherian topological spaces are also nicer than is generally true.
+
+##### _proposition:_ Noetherian spaces have open connected components
+
+If $X$ is Noetherian, then any union of connected components of $X$ is both open and closed.
+
+###### _proof:_
+
+Since each irreducible component is connected, there can be at most finitely many connected components. Each of them is closed. Since any union of them is finite, it is closed. 
+
+For each connected component, its complement is a finite union of connected components, and thus, closed. Thus, it is itself open. Thus, any union of them is open.
+
+---
+
+Noetherian rings also satisfy another reasonableness property. Noetherian affine schemes are not just quasicompact — all of their open subsets are.
+
+##### _proposition:_ Noetherian spaces have (quasi)compact open subsets
+
+If $X$ is Noetherian, every open subset $U$ is [[Algebraic geometry --- rising-sea/notes/Topological properties of schemes|quasicompact]].
+
+###### _proof:_
+
+Suppose $\{ U_{i} \}$ is an open cover of $U$. Consider all $K_{i} = X \setminus U_{i}$. Eventually the chain of all $\bigcap_{i = 1}^n K_{i}$ stabilises. That is, there is some finite $N$ such that $\bigcap_{i = 1}^N K_{i} = \bigcap_{i} K_{i} = \text{Ø}$. That is, $X \setminus \bigcup_{i = 1}^N U_{i}$ is empty, and $U_{1}, \dots, U_{N}$ form an open subcover.
 
 ---
 

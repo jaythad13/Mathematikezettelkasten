@@ -157,4 +157,115 @@ If $f$ vanishes at all $\mathfrak{p} \in V(\mathfrak{i})$, it is contained in ev
 
 With the identification $\operatorname{Spec} A / \mathfrak{i} \cong V(\mathfrak{i})$ (as a closed subscheme), we can interpret this as follows. $\overline{f} \in A / \mathfrak{i}$ is a function that vanishes everywhere on $\operatorname{Spec} A / \mathfrak{i}$. Thus, it is nilpotent in $A / \mathfrak{i}$, or equivalently, $f \in \sqrt{ \mathfrak{i} }$.
 
+### Topological properties of points
+
+Let $X$ be a topological space
+
+Since we have scheme like points of "different dimensions", these have interesting topological properties.
+
+The most obvious are the "closed" or "classical" points which we've been talking about
+
+##### _definition:_ closed point
+
+A point $p \in X$ is **closed** if $\{ p \} \subseteq X$ is closed in the topology on $X$.
+
+---
+
+For affine schemes, these are exactly the maximal ideals. Thus, we finally have a formal way to show that the maximal ideals correspond to the traditional, classical points.
+
+##### _proposition:_ closed points of affine schemes are maximal ideals
+
+$\mathfrak{m} \in \operatorname{Spec} A$ is a closed point if and only if $\mathfrak{m}$ is a maximal ideal of $A$.
+
+###### _proof:_
+
+If $\mathfrak{m}$ is maximal, then the only prime ideal containing it is $\mathfrak{m}$ itself. Thus, $\{ \mathfrak{m} \} = V(\mathfrak{m})$ is closed.
+
+Suppose $\mathfrak{m}$ is closed. Any closed set $V(\mathfrak{i})$ containing $\mathfrak{m}$ contains all primes containing $\mathfrak{m}$. Thus, there are no primes (apart from $\mathfrak{m}$) containing . Every ideal is contained in a unique maximal, and thus, prime ideal. Thus, there are also no distinct ideals containing $\mathfrak{m}$. That is, $\mathfrak{m}$ is maximal.
+
+---
+
+Often, it suffices just to think about the closed points. On finite $\mathbb{F}$-algebras, they are dense, and when they are [[#_definition _ reduced (ring)|reduced]] and over an algebraically closed field, they determine functions as well.
+
+##### _proposition:_ closed points are dense on finite-type affine $\mathbb{F}$-schemes
+
+Suppose $\mathbb{F}$ is a field and $A$ is a finitely generated $\mathbb{F}$-algebra. Then the closed points of $\operatorname{Spec} A$ are dense.
+
+###### _proof:_
+
+We hope to show that every open $U \subseteq \operatorname{Spec} A$ contains some maximal ideal $\mathfrak{m}$. We show that every [[Algebraic geometry --- rising-sea/notes/The base of distinguished open sets#_definition _ distinguished open set, doesn't vanish set|distinguished open]] contains some maximal ideal $\mathfrak{m}$.
+
+Consider $D(f) = \operatorname{Spec} A \setminus V(f)$. The maximal ideals in $V(f)$ are exactly those containing $f$. Thus, we want to prove that there exist maximal ideals that do not contain $f$. Choose a maximal ideal $\mathfrak{m}_{f} \subseteq A_{f}$. This determines an ideal $\mathfrak{m} \subseteq A$ (a prime, and maximal among all ideals not containing $f$, but not necessarily a maximal ideal). Since [[Commutative algebra --- math-189AA/notes/Localisation of a ring#_proposition _ localisation commutes with quotients|localisation commutes with quotients]] we have $A_{f} / \mathfrak{m}_{f} \cong (A / \mathfrak{m})_{f}$.
+
+Thus, $(A / \mathfrak{m})_{f}$ is a finite field extension of $\mathbb{F}$. We claim $A / \mathfrak{m}$ is a finite $\mathbb{F}$-algebra and an integral domain. [[Algebraic geometry --- rising-sea/notes/Hilbert's Nullstellensatz#_proposition _ characterising finite $ mathbb{F}$-algebras|Thus]], it is a field. Then $\mathfrak{m}$ is a maximal ideal not containing $f$ and we are done.
+
+>[!warning]
+>this may not be correct
+
+---
+
+Note that this doesn't hold for infinitely-generated $\mathbb{F}$-algebras. For example, consider [[Algebraic geometry --- rising-sea/notes/Examples of affine schemes#A shred of a smooth curve|the shred of a smooth curve]] $X = \operatorname{Spec} \mathbb{F}[x]_{(x)}$. Since $(x)$ is maximal, $X \setminus V(x)$ is open and doesn't contain the only maximal ideal $(x)$.
+
+##### _proposition:_ functions on affine $\overline{\mathbb{F}}$-varieties are determined on closed points
+
+Suppose $\overline{\mathbb{F}}$ is an algebraically closed field and $A$ is a reduced finitely generated $\overline{\mathbb{F}}$-algebra. Then functions on $\operatorname{Spec} A$ are determined by their values on the closed points of $\operatorname{Spec} A$.
+
+###### _proof:_
+
+Suppose $f, g$ are two distinct global functions on $\operatorname{Spec} A$. Thus, $f - g \neq 0$ and $D(f - g) \neq \text{Ø}$ ([[Algebraic geometry --- rising-sea/notes/The base of distinguished open sets#_corollary _ the empty distinguished open|only nilpotents have empty distinguished open]]). This non-empty distinguished open contains a maximal ideal that  doesn't vanish at. That is, distinct global functions differ on some closed point.
+
+We can give an alternate proof from an extrinsic perspective. Note that we can write $A = \overline{\mathbb{F}}[x_{1}, \dots, x_{n}] / \mathfrak{i}$ for some [[Algebraic geometry --- rising-sea/notes/Radicals of ideals#_definition _ radical of an ideal, radical ideal|radical]] ideal $\mathfrak{i}$. Applying the [[Algebraic geometry --- rising-sea/notes/Hilbert's Nullstellensatz#_theorem _ Hilbert's weak Nullstellensatz|weak Nullstellensatz]] gives us that the maximal ideals of $A$ are $\mathfrak{m} / \mathfrak{i}$ for $\mathfrak{m} = (x_{1} - a_{1}, \dots, x_{n} - a_{n})$.
+
+Suppose $f, g$ are global functions on $\operatorname{Spec} A$ with $f(\mathfrak{m / i}) = g(\mathfrak{m / i})$ at every closed point $\mathfrak{m / i} \in \operatorname{Spec} A$. Equivalently, $f - g$ is contained in every maximal ideal $\mathfrak{m / i} \subseteq A$. But the maximal ideals $\mathfrak{m} \subseteq \overline{\mathbb{F}}[x_{1}, \dots, x_{n}]$ have intersection $0$. Thus, so do the $\mathfrak{m} / \mathfrak{i}$.
+
+---
+
+When we define varieties over $\overline{\mathbb{F}}$, this will imply that functions on varieties over algebraically closed fields are determined by their values on closed points.
+
+This discussion of closed points extends to explain our notion of points containing each other. A point can't really contain another point, but its closure certainly can. We will see that the closure of a "curve point" in $\mathbb{A}^2_{\mathbb{C}}$ is the curve and all the closed points on it, and thus, the curve contains all the points on it.
+
+##### _definition:_ specialisation and generisation
+
+Suppose $x, y \in X$ such that $x \in \overline{\{ y \}}$. Then $x$ is a **specialisation** of $y$ and $y$ is a **generisation** of $x$.
+
+---
+
+##### _example:_ specialisation and generisation in $\mathbb{A}^2_{\mathbb{C}}$
+
+Consider the point $(y - x^{2}) = \mathfrak{p} \in \mathbb{A}^{2}_{\mathbb{C}}$. Clearly, $(y - x^{2}) \subseteq (x - 1, y - 1)$ so its closure $V(\mathfrak{p})$ contains $(x - 1, y - 1)$. That is, $(y - x^{2})$ is a generisation of $(x - 1, y - 1)$ and conversely, $(x - 1, y - 1)$ is a specialisation of it.
+
+---
+
+This also allows us to make formal the notion of a generic point.
+
+##### _definition:_ generic point
+
+A point $p \in X$ is a **generic point** of a closed subset $K \subseteq X$ if $\overline{\{ p \}} = K$.
+
+---
+
+Note that generic is different from general — typically general means every point of some dense open subset.
+
+##### _example:_ generic point of a curve in $\mathbb{A}_{\mathbb{C}}^{2}$
+
+The point $(y - x^{2}) = \mathfrak{p} \in \mathbb{A}_{\mathbb{C}}^{2}$ is a generic point of $V(y - x^{2})$. The closure is the smallest closed set containing $(y - x^{2})$. Thus, it is $V(\mathfrak{i})$ for the maximal $\mathfrak{i}$ contained in $\mathfrak{p}$, which is of course $\mathfrak{i} = \mathfrak{p}$.
+
+---
+
+This generic point can be thought of as generic in that it is nowhere in particular on the parabola, as opposed to $(x - 1, y - 1)$ which is a specific point on the parabola.
+
+It also serves as a tester for the whole closed subset. Since it is "near" exactly the points of $K$ in a sense that we will make precise below, we can check statements about points of $K$ by checking then for the generic point. (This is not always true — for example, we can only check reducedness at generic points for reasonable schemes).
+
+##### _proposition:_ generic points are near exactly the points of their closure
+
+Suppose $p$ is a generic point of $K \subseteq X$. Every neighbourhood of each point in $K$ contains $p$. Each point not in $K$ has a neighbourhood not containing $p$.
+
+###### _proof:_
+
+Suppose $q \in K \setminus \{ p \}$. Then $q$ is a [[Topology --- math-147/notes/Limit points and closed sets#_definition _ limit point|limit point]] of $p$. Thus, every neighbourhood of $q$ intersects with $\{ p \}$.
+
+Suppose $q \not\in K$. If every neighbourhood of $q$ contained $p$, then $q$ would be a limit point of $\{ p \}$, and thus, would be contained in $K$.
+
+---
+
 ### The structure sheaf
