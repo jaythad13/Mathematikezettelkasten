@@ -199,8 +199,7 @@ Consider $D(f) = \operatorname{Spec} A \setminus V(f)$. The maximal ideals in $V
 
 Thus, $(A / \mathfrak{m})_{f}$ is a finite field extension of $\mathbb{F}$. We claim $A / \mathfrak{m}$ is a finite $\mathbb{F}$-algebra and an integral domain. [[Algebraic geometry --- rising-sea/notes/Hilbert's Nullstellensatz#_proposition _ characterising finite $ mathbb{F}$-algebras|Thus]], it is a field. Then $\mathfrak{m}$ is a maximal ideal not containing $f$ and we are done.
 
->[!warning]
->this may not be correct
+This follows since a maximal, and thus prime ideal $\mathfrak{m}_{f} \subseteq A_{f}$ pulls back to a prime $\mathfrak{m} \subseteq A$. Thus, $A / \mathfrak{m}$ is an integral domain. Since $f$ is not a zero divisor in the integral domain $A / \mathfrak{m}$, [[Commutative algebra --- math-189AA/notes/Localisation of a ring#_proposition _ injectivity of the localisation map|we have an injection]] $A / \mathfrak{m} \to (A / \mathfrak{m})_{f}$. Since this injection is $A$-linear, it is also $\mathbb{F}$-linear. Since $(A / \mathfrak{m})_{f} \cong A_{f} / \mathfrak{m}_{f}$ is finite-dimensional over $\mathbb{F}$, this gives us $A / \mathfrak{m}$ also finite-dimensional over $\mathbb{F}$.
 
 ---
 
