@@ -8,6 +8,8 @@
 
 \begin{document}
 
+I went to (Friday night) grutoring hours, spoke to Aanya and Sanaya.
+
 \begin{problem}[Problem 1, Part 1: Priorities at Giigle Maps]
 	Recall that a priority queue is an abstract data type (ADT) that supports the following operations. 
 \begin{itemize}
@@ -32,6 +34,35 @@ In the following questions, let $n$ denote the number of items in the priority q
 \end{enumerate}
 \end{problem}
 
+\begin{solution}
+	We repeatedly use the fact that the depth of a $d$-ary tree with $n$ vertices is $\ell = O(\log_{d} n)$.
+	\begin{enumerate}
+		\item 
+			\[
+				\boxed{
+					O(\log_{d} n)
+				}
+			\]
+			Each $\mathtt{insert}(\mathtt{item}, x)$ requires a constant time operation to add it to the bottom of the tree, then at most $\ell$ constant time operations (at each level, with the node above it to figure out where the new element should be inserted), and then at most $\ell$ constant time "swaps" to put $\mathtt{item}$ in the right place. This is $O(1) + 2 O(\ell) O(1) = O(\log_{d} n)$.
+
+		\item
+			\[
+				\boxed{
+					O(\log_{d} n)
+				}
+			\]
+			Each $\mathtt{decreaseKey}(\mathtt{item}, y)$ requires a constant time operation to change the key, then at most $\ell$ constant time comparisons (at each level, with the node above it to figure out where its new location should be), and then at most $\ell$ constant time "swaps" to put $\mathtt{item}$ in its new correct place. This is $O(1) + 2 O(\ell) O(1) = O(\log_{d} n)$.
+
+		\item
+			\[
+				\boxed{
+					O(d \log_{d} n)
+				}
+			\]
+			Each $\mathtt{deleteMin}()$ involves constant time to delete the top of the heap and move the bottom element to the top, followed by checking recursively through the $\ell$ levels, to find the minimum of its $d$ children (in $O(d)$) and then swapping with it (in $O(1)$) if the minimum is smaller. This is $O(1) + O(\ell)(O(d) + O(1)) = O(d \log_{d} n + \log_{d} n) = O(d \log_{d} n)$.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[Problem 1, Part 2: Priorities at Giigle Maps]
@@ -51,6 +82,22 @@ constant $\epsilon$, $0 < \epsilon \leq1$.  Notice that $\epsilon$ is a measure 
 \item[(e)] Calculate and explain the asymptotic running time of your algorithm. Why does the algorithm run in time $O(m)$ for your choice of $d$?
 \end{enumerate}
 \end{problem}
+
+\begin{solution}
+	Note that since $m = \Theta(n^{1 + \epsilon})$, we have $n < m$ eventually, and thus $O(n) \le O(m) = O(n^{1 + \epsilon})$.
+	\begin{enumerate}
+		\item[(d)] Run Dijkstra's algorithm on a $n^{\epsilon}$-ary heap --- use exactly the pseudocode as in lecture 14, but make the insert, delete, and decrease calls to an $n^{\epsilon}$-ary heap instead
+
+		\item[(e)] Dijkstra's algorithm involves $O(n)$ inserts, $O(n)$ deletions, and $O(m)$ decreases. Using our previously calculated complexities, we have total complexity
+			\begin{align*}
+				& O(n) O(\log_{n^{\epsilon}} n) + O(n) O(n^{\epsilon} \log_{n^\epsilon} n) + O(m) O(\log_{n^{\epsilon}} n)  \\
+				& = O(n) O(1 / \epsilon) + O(n) O(n^{\epsilon} / \epsilon) + O(m) O(1 / \epsilon) \\
+				& = O(n) + O(n^{1 + \epsilon}) + O(n) \\
+				& = O(m) + O(m) + O(m) \\
+				& = O(m).
+			\end{align*}
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
@@ -137,7 +184,7 @@ Recall that \textbf{Handout 3.5} is a guide to writing up reductions!
 \pagebreak
 
 \begin{problem}[Problem 3: Hurts' on-board navigation system]
-	urts Car Rental has designed a new generation of alternative fuel vehicles. The
+	Hurts Car Rental has designed a new generation of alternative fuel vehicles. The
 new vehicles use a special fuel comprising a finely minced mixture of algorithms
 slides, chocolate fudge Pop Tarts, Spam, late 90's hip-hop CDs, and boba milk
 tea. Due to this rather unusual fuel requirement, there are only certain cities
@@ -177,5 +224,45 @@ The output is the \emph{length} of the shortest path in the graph from $s$ to $t
     \item Explain how you could modify your algorithm to return the actual path from $s$ to $t$ in addition to the length of that path.
 \end{enumerate}
 \end{problem}
+
+\begin{solution}
+	Note that since there are most $c$ edges at each vertex, there are at most $cn$ edges in total. That is $m = O(n)$. We will use this fact later.
+	\begin{enumerate}
+		\item Run APSP (using repeated Dijkstra) to get all shortest paths between vertices in the graph $G$. Create an augmented graph $\hat{G}$ with only refuelling cities as vertices. Connect any two refuelling cities with an edge if the shortest path between them has length less than the range $r$. Then run Dijkstra's algorithm to find the shortest path between the source city $s$ and the target city $t$ in $\hat{G}$. We claim that the length of this shortest path is the length of the shortest path between $s$ and $t$ that doesn't have length greater than $r$ between any two consecutive refuelling cities along the path.
+
+			\emph{For clarity, we refer to a refuelling city as $v$ when we're thinking of it as a vertex of the original graph $G$, and as $\hat{v}$ when we're thinking about it in the augmented graph $\hat{G}$}.
+
+		\item Call the path found by our algorithm $Q$, and the path it defines on the augmented graph $\hat{Q}$. We will show that a path between $s$ and $t$ that never spends more than range $r$ between refuelling cities, has length greater than $Q$.
+
+			Suppose there is a path $P$ from $s$ to $t$ on $G$ that doesn't have length greater than $r$ between any two refuelling cities. Then the sequence of refuelling cities defines a path $\hat{P}$ on the augmented graph $\hat{G}$. We justify this as follows. The sub-path of $P$ consisting of the vertices between any adjacent refuelling cities $\hat{v}_{i}, \hat{v}_{j} \in \hat{P}$ shows that there is a path of length less than $r$ between $v_{i}$ and $v_{j}$ (in $G$). Thus, there is an edge $(\hat{v}_{i}, \hat{v}_{j}) \in E(\hat{G})$).
+
+			This path $\hat{P}$ has at least the length of $\hat{Q}$ (by the minimality of $\hat{Q}$). But then $P$ must have at least the length of $\hat{P}$. This is because, for each edge $(\hat{v}_{i}, \hat{v}_{i + 1})$ between refuelling cities in $\hat{P}$, $P$ must contain a path between the corresponding refuelling cities $v_{i}$ and $v_{i + 1}$. The shortest such path has length $\ell(\hat{v}_{i}, \hat{v}_{j})$. Thus, the length of $P$ is at least the sum of all  $\ell(\hat{v_{i}}, v_{j})$, which is the length of $\hat{P}$.
+
+			That is,
+			\begin{align*}
+				\ell(P) & \ge \sum_{v_{i} \in \hat{P}} \ell(v_{i}, v_{i + 1}) \\
+					& = \ell(\hat{P}) \\
+					& \ge \ell(\hat{Q}) \\
+					& = \ell(Q).
+			\end{align*}
+			Since $\ell(P) \ge \ell(Q)$, $Q$ is the minimal length path with distance no greater than $r$ between consecutive refuelling cities.
+
+		\item 
+			\[
+				\boxed{
+					O(n^{2} \log n).
+				}
+			\]
+			Running APSP using repeated Dijkstra takes $O(mn \log n + n^{2} \log n) = O(n^{2} \log n)$ (since $O(m) = O(n)$). Then we select only those pairs of vertices where both are refuelling cities and rejecting shortest paths between them longer than $r$ (to form the augmented graph). This requires traversing the $n \times n$ table of shortest paths between vertices, and thus, takes $O(n^{2})$ time. This new augmented graph $\hat{G}$ has $\Theta(n)$ edges (there are $\Theta(n)$ refuelling cities) and thus, $c \Theta(n) = \Theta(n)$ edges. Thus, running Dijktra's algorithm on $\hat{G}$ takes $O(n \log n + n \log n) = O(n \log n)$ time. In total the algorithm takes $O(n^{2} \log n) + O(n^{2}) + O(n \log n) = O(n^{2} \log n)$.
+
+		\item Note that it suffices to modify Dijkstra's to obtain the actual shortest path. Once we have this, running the modified Dijkstra's algorithm on $\hat{G}$ tells us which refuelling cities we need to find shortest paths between. But by running the (repeated) modified Dijkstra's algorithm on the original graph, we already know what each of the shortest paths between these cities is.
+
+			Suppose we run Dijkstra's algorithm on a graph with $n$ vertices, $m$ edges, and source vertex $s$. To recover the path, we keep track of the ``previous" vertex for each vertex. That is, the objects in our binary heap consist of a key for the vertex, it's distance from the shortest vertex, and the ``previous'' vertex. By default, the previous vertex is the source vertex. Each time we add a new vertex to the visited vertices set, if we update the distance to a given vertex, we also update the ``previous vertex'' to the vertex we just visited. Note that this does not change the time complexity of the updating as it is just constant time.
+
+			Then, to recover an $s$-to-$t$ path on a graph, start from $t$ and recursively look at the previous vertex until you get to $s$. The sequence of vertices defines the shortest $s$-to-$t$ path.
+
+			Since out modified Dijkstra's still runs in $O(m \log n + n \log n)$, our whole algorithm still has the same run time.
+	\end{enumerate}
+\end{solution}
 
 \end{document}
