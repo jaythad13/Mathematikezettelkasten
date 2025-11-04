@@ -3,6 +3,7 @@ tags:
 - math-189AA/16
 - math-189AA/17
 - math-189AA/18
+- math-189AA/20
 - hom-alg
 - comm-alg
 ---
@@ -104,6 +105,36 @@ Choose a projective resolution and apply $M \mapsto \operatorname{Hom}(M, N)$ re
 \end{document}
 ```
 $\operatorname{Ext}^0_{A}(M, N) = H^1(\operatorname{Hom}(P_{\bullet}, N)) = \ker f_{1} / \operatorname{img} f_{0}$. $\operatorname{img} f_{0} = 0$ so we don't have to worry about it. Since $f_{1}$ factors as $\operatorname{Hom}(P_{0}, N) \to \operatorname{Hom}(\Omega M, N) \to \operatorname{Hom}(P_{1}, N)$ and the latter map is an injection, we have that $\ker f_{1}$ is just the kernel of the map $\operatorname{Hom}(P_{0}, N) \to \operatorname{Hom}(\Omega M, N)$. This is just $\operatorname{Hom}(M, N)$ (by the exactness of the first diagonal).
+
+---
+
+##### _proposition:_ the long exact sequence of $\operatorname{Ext}$s
+
+For any short exact sequence
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		0 \ar[r] & M' \ar[r] & M \ar[r] & M'' \ar[r] & 0
+	\end{tikzcd}
+\end{document}
+```
+there is a long exact sequence of $\operatorname{Ext}$s in cohomology by
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		0 \ar[r] & \mathrm{Ext}^0(M', N) \ar[r] & \mathrm{Ext}^0(M, N) \ar[r] & \mathrm{Ext}^0(M'', N) \ar[r] & \, \\
+		\mathrm{Ext}^1(M', N) \ar[r] & \mathrm{Ext}^1(M, N) \ar[r] & \mathrm{Ext}^1(M'', N) \ar[r] & \cdots
+	\end{tikzcd}
+\end{document}
+```
+
+###### _proof sketch:_
+
+Apply the [[Commutative algebra --- math-189AA/notes/Projective resolutions#_lemma _ the horseshoe lemma, or the simultaneous resolution lemma|horseshoe lemma]] to get an exact sequence of projective resolutions of each of the modules. Then take $\operatorname{Hom}(-, N)$ to get the sequence of complexes. $\operatorname{Hom}$ is always exact on split short exact sequences (which our projective resolutions form by definition, and also by projectivity). Thus, $\operatorname{Hom}$ preserves all right-exactness except the very last $M'' \to 0$. Thus, we can apply the [[Algebraic geometry --- rising-sea/notes/Homology of complexes#_theorem _ short to long exact sequence|long exact sequence in cohomology]] to get the long exact sequence of $\operatorname{Ext}$s.
 
 ---
 

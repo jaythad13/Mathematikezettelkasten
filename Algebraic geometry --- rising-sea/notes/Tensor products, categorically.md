@@ -1,6 +1,7 @@
 ---
 tags:
 - rising-sea/1/2
+- math-189AA/20
 - comm-alg
 - alg
 - cat-th
@@ -78,9 +79,20 @@ Now we show that our definition of $M \otimes N$ actually satisfies the universa
 
 ### Tensoring is nice
 
-Tensoring is quite a nice operation, commuting with lots of natural constructions.
+Tensoring is really nice!
 
-For one it is functorial and preserves (right) exact sequences. We will later define the notion of a right-exact functor in appropriate generality, but here it can be understood in the classical sense of exactness.
+##### _proposition:_ some nice isomorphisms of tensor products
+
+For $A$-modules $L, M, N$ we have
+1) $A \otimes A \cong A$ by $a \otimes b \mapsto ab$
+2) $M \otimes N \cong N \otimes M$ by $m \otimes n \mapsto n \otimes m$
+3) $(M \otimes N) \otimes L \cong M \otimes (N \otimes L)$ by $(m \otimes n) \otimes \ell \mapsto m \otimes (n \otimes \ell)$
+4) $A \otimes M \cong M$ by $a \otimes m \mapsto am$
+5) $A / \mathfrak{i} \otimes M \cong M / \mathfrak{i} M$ by $\overline{a} \otimes m \mapsto \overline{a} m$.
+
+---
+
+It is also nice in a more abstract nonsense sense — commuting with lots of natural functors. For one it is functorial and preserves (right) exact sequences. We will later define the notion of a right-exact functor in appropriate generality, but here it can be understood in the classical sense of exactness.
 
 ##### _proposition:_ tensoring is functorial and right-exact
 
@@ -159,7 +171,7 @@ Since $\operatorname{img} \varphi_{1, *} \subseteq \ker \varphi_{2, *}$ we have 
  
 We've seen already that tensoring with a ring on the left can look like allowing scalars in the "left" module. We can formalise this intuition.
 
-##### _proposition:_ tensoring with a ring is a base-ring change functor
+##### _proposition:_ tensoring with a ring as extension of scalars
 
 If $M$ is an $A$-module and $B$ is a ring, given an $A$-module structure by a morphism $A \to B$, then $B \otimes_{A} M$ is also a $B$-module. Further, the map $M \mapsto B \otimes_{A} M$ extends to a functor $\mathsf{Mod}_{A} \to \mathsf{Mod}_{B}$.
 
@@ -210,6 +222,15 @@ and so $\psi' = \psi$. That is, $\psi$ is unique.
 
 ---
 
+##### _example:_ the tensor product of (finitely generated) free modules
+
+For non-negative integers $m, n$ we can write
+$$
+A^{\oplus n} \otimes A^{\oplus m} \cong \bigoplus_{i = 1}^n A \otimes A^{\oplus m} \cong \bigoplus_{i = 1}^n A^{\oplus m} \cong A^{\oplus m n}.
+$$
+
+---
+
 Tensoring also plays nicely with [[Algebraic geometry --- rising-sea/notes/Localisation, categorically#Localisation of modules|localisation]] —
 
 ##### _proposition:_ localisation of a module is the tensor product with localisation
@@ -238,5 +259,11 @@ $$
 \end{align}
 $$
 Thus, $\psi' = \psi$ so $\psi$ is the unique such morphism. Further, by definition, $\psi$ is both $A$-and $S^{-1} A$-linear.
+
+---
+
+##### _example:_ computing tensors with localisation
+
+Consider $\mathbb{Z} / (2) \otimes_{\mathbb{Z}} \mathbb{Q}$. Since tensors commute with localisation and we can think of $\mathbb{Q}$ as $\mathbb{Z}_{(0)}$, we have $\mathbb{Z} / (2) \otimes_{\mathbb{Z}} \mathbb{Q} \cong (\mathbb{Z} / (2)))_{((0))}$ where we are thinking of the localisation as a $\mathbb{Z}$ (away from the prime $(0) \subseteq \mathbb{Z}$, not away from $(0) \subseteq \mathbb{Z} / (2)$). Since $\mathbb{Z} / (2)$ is annihilated by $2 \in \mathbb{Z} \setminus (0)$, we have $(\mathbb{Z} / (2))_{(0)} = 0$.
 
 ---

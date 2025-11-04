@@ -37,6 +37,8 @@ That is, $A \mapsto \tau_{AB}$ is a [[Algebraic geometry --- rising-sea/notes/Na
 
 We say $(F, G)$ are an **adjoint pair** with $F$ the **left adjoint** and $G$ the **right adjoint**.
 
+---
+
 The adjoint-defining bijection can be obtained by factoring through the composition of the functors.
 
 ##### _proposition:_ adjoint-defining maps factor through composition of functors
@@ -61,6 +63,8 @@ Note that for each $g : F(A) \to B$ the following diagram must commute
 	\end{tikzcd}
 \end{document}
 ```
+
+---
 
 ##### _example:_ tensor-Hom adjunction
 
@@ -95,9 +99,11 @@ Similarly,
 ```
 commutes since $\alpha \in \operatorname{Hom}_{A}(M \otimes_{A} N, P)$ gives $m : n \mapsto \psi(\alpha(m \otimes n))$ either way.
 
-##### _example:_ module base ring change adjunction
+---
 
-Suppose $\varphi :B \to A$ is a ring homomorphism. If $M$ is an $A$-module, it can now be considered as a $B$-module $M_{B}$ with $b m = \varphi(b) m$. This gives a functor $\mathsf{Mod}_{A} \to \mathsf{Mod}_{B}$ by $M \mapsto M_{B}$. This functor is right adjoint to [[Algebraic geometry --- rising-sea/notes/Tensor products, categorically#_proposition _ tensoring with a ring is a base-ring change functor|the functor]] $N \mapsto N \otimes_{B} A$. Specifically, there is a bijection
+##### _example:_ extension–restriction of scalars adjunction
+
+Suppose $\varphi :B \to A$ is a ring homomorphism. If $M$ is an $A$-module, it can now be considered as a $B$-module $M_{B}$ with $b m = \varphi(b) m$. This gives a functor $\mathsf{Mod}_{A} \to \mathsf{Mod}_{B}$ by $M \mapsto M_{B}$. This functor is right adjoint to [[Algebraic geometry --- rising-sea/notes/Tensor products, categorically#_proposition _ tensoring with a ring as extension of scalars|the functor]] $N \mapsto N \otimes_{B} A$. Specifically, there is a bijection
 $$
 \operatorname{Hom}_{A}(N \otimes_{B} A, M) \to \operatorname{Hom}_{B}(N, M_{B})
 $$
@@ -125,6 +131,8 @@ Thus, some $\alpha' : n' \otimes \varphi(b) \mapsto \beta'(b n') = m$ is sent to
 	\end{tikzcd}
 \end{document}
 ```
+
+---
 
 ### Left adjoints of forgetful functors
 
@@ -155,7 +163,7 @@ It's useful to know the adjointness of the following functors
 | Name                                                          | $\mathscr{A}$        | $\mathscr{B}$       | Left adjoint $\mathscr{A} \to \mathscr{A}$ | Right adjoint $\mathscr{B} \to \mathscr{A}$ |
 | ------------------------------------------------------------- | -------------------- | ------------------- | ------------------------------------------ | ------------------------------------------- |
 | tensor-Hom adjunction                                         | $\mathsf{Mod}_{A}$   | $\mathsf{Mod}_{A}$  | $M \mapsto M \otimes N$                    | $M \mapsto \operatorname{Hom}(N, M)$        |
-| base-ring change adjunction with $B \to A$                    | $\mathsf{Mod}_{B}$   | $\mathsf{Mod}_{A}$  | $N \mapsto N \otimes_{B} A$                | $M \mapsto M_{B}$ (restriction of scalars)  |
+| extension–restriction of scalars adjunction $B \to A$         | $\mathsf{Mod}_{B}$   | $\mathsf{Mod}_{A}$  | $N \mapsto N \otimes_{B} A$                | $M \mapsto M_{B}$ (restriction of scalars)  |
 | sheafification on a topological space $X$                     | presheaves on $X$    | sheaves on $X$      | sheafification                             | forgetful                                   |
 | (abelian) groupification                                      | (abelian) semigroups | (abelian) groups    | groupification                             | forgetful                                   |
 | transfer of sheaves by open embeddings $\pi : U \to Y$        | sheaves on $U$       | sheaves on $Y$      | $\pi_{!}$                                  | $\pi ^{-1}$                                 |
