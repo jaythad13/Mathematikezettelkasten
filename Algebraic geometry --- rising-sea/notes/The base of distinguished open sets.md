@@ -94,7 +94,7 @@ $D(f) \subseteq D(g)$ if and only if $f \in \sqrt{ (g) }$.
 
 ###### _proof:_
 
-Since $D(f) = \operatorname{Spec} A \setminus V(f)$, $D(f) \subseteq D(g)$ is equivalent to $V(g) \subseteq V(f)$. This is equivalent to  vanishing at all points of $V(g)$. [[Algebraic geometry --- rising-sea/notes/Affine schemes#_proposition _ functions vanishing on a vanishing set|This is equivalent to]] $f \in \sqrt{ (g) }$.
+Since $D(f) = \operatorname{Spec} A \setminus V(f)$, $D(f) \subseteq D(g)$ is equivalent to $V(g) \subseteq V(f)$. This is equivalent to $f$ vanishing at all points of $V(g)$. [[Algebraic geometry --- rising-sea/notes/Affine schemes#_proposition _ functions vanishing on a vanishing set|This is equivalent to]] $f \in \sqrt{ (g) }$.
 
 ---
 
