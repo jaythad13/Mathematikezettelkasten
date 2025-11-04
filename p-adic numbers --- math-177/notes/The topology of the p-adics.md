@@ -6,6 +6,7 @@ tags:
 - napkin
 - rtg-2025
 - math-177/8
+- math-177/20
 ---
 
 The topology that the $p$-[[p-adic numbers --- math-177/notes/The p-adic numbers#_definition _ $p$-adic valuation, absolute value|adic absolute value]] induces on $\mathbb{Q}_{p}$ and $\mathbb{Z}_{p}$ is terrifying. In particular, $\mathbb{Z}_{p}$ is an open, compact subset of the non-compact set $\mathbb{Q}_{p}$, and both of them are totally disconnected. In fact, all open balls are actually clopen! This is nothing like $\mathbb{Z} \subseteq \mathbb{R}$ where $\mathbb{Z}$ is non-compact and closed and $\mathbb{R}$ has lots of connected sets.
@@ -22,7 +23,13 @@ Suppose $z \in \overline{B}(y, r)$. Notice that $\lvert z - x \rvert_{p} \leq \m
 
 ---
 
-A similar trick shows that any triangle is isosceles.
+A similar trick shows that any triangle is isosceles. This works in any non-archimedean field. That is,
+
+##### _proposition:_ every triangle is isosceles
+
+For any $x, y \in \mathbb{K}$ with $\lVert x \rVert > \lVert y \rVert$ where $\mathbb{K}$ is a non-archimedean field, $\lVert x + y \rVert = \lVert x \rVert$.
+
+---
 
 ##### _lemma:_ open balls are clopen
 
