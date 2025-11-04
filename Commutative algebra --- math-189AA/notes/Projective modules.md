@@ -6,6 +6,7 @@ tags:
 - math-189AA/11
 - math-189AA/13
 - math-189AA/15
+- math-189AA/19
 ---
 
 If $A$ is the best $A$-module, and free modules are second best, then the third best are their direct summands — projective modules.

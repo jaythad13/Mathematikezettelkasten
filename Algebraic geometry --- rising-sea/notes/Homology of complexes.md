@@ -1,6 +1,7 @@
 ---
 tags:
 - rising-sea/1/5/6
+- math-189AA/19
 - hom-alg
 ---
 
@@ -123,15 +124,68 @@ A short exact sequence of complexes
 	\end{tikzcd}
 \end{document}
 ```
-induces the following long exact sequence in (co)homology.
+induces the following long exact sequence in cohomology.
 ```tikz
 \usepackage{tikz-cd}
 \usepackage{amsfonts}
 \begin{document}
 	\begin{tikzcd}
-		& \cdots \ar[r] & H^{i - 1}(C^{\bullet}) \ar[r] & \, \\
-		 H^{i}(A^{\bullet}) \ar[r] & H^{i}(B^{\bullet}) \ar[r] & H^{i}(C^{\bullet}) \ar[r] & \, \\
-		  H^{i + 1}(A^{\bullet}) \ar[r] & \cdots
+		& \cdots \ar[r] & H^{n - 1}(C^{\bullet}) \ar[r] & \, \\
+		 H^{n}(A^{\bullet}) \ar[r] & H^{n}(B^{\bullet}) \ar[r] & H^{n}(C^{\bullet}) \ar[r] & \, \\
+		  H^{n + 1}(A^{\bullet}) \ar[r] & \cdots
 	\end{tikzcd}
 \end{document}
 ```
+
+###### _proof sketchw:_
+
+Write $K^n = \ker d^{n}$, $I^{n} = \operatorname{img} d^{n}$, and $CK^{n} = \operatorname{coker} d^{n}$. Then, applying the [[Algebraic geometry --- rising-sea/notes/Lemmas in a general abelian category#_lemma _ the snake lemma|snake lemma]] to
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		& K^{n}_{A} \ar[d] & K^{n}_{B} \ar[d] & K^n_{C} \ar[d] \\
+		0 \ar[r] & A_{n} \ar[r] \ar[d] & B_{n} \ar[r] \ar[d] & C_{n} \ar[r] \ar[d] & 0 \\
+		0 \ar[r] & A_{n + 1} \ar[r] \ar[d] & B_{n + 1} \ar[r] \ar[d] & C_{n + 1} \ar[r] \ar[d] & 0 \\
+		& A^{n + 1} / I_{A}^{n + 1} & B^{n + 1} / I_{B}^{n + 1} & C^{n + 1} / I_{C}^{n + 1}
+	\end{tikzcd}
+\end{document}
+```
+we have the exact sequence below.
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		K_{A}^n \ar[r] & K_{B}^n \ar[r] & K^n_{C} \ar[r] & CK^{n + 1}_{A} \ar[r] & CK^{n + 1}_{B} \ar[r] & CK^{n + 1}_{C}
+	\end{tikzcd}
+\end{document}
+```
+
+Since we have $I_{n} \subseteq K_{n + 1}$, the maps $d_{n + 1}$ descend to maps $CK_{n + 1} \to I_{n + 1} \subseteq K_{n + 2}$. In fact these maps are such that the squares in the diagram below commute. That is, we can now apply the snake to the following diagram.
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		& K^{n + 1}_{A} / I^n_{A} \ar[d] & K^{n + 1}_{B} / I^n_{B} \ar[d] & K^{n + 1}_{C} / I^n_{C} \ar[d] \\
+		0 \ar[r] & A_{n + 1} / I_{n} \ar[r] \ar[d] & B_{n + 1} / I_{n} \ar[r] \ar[d] & C_{n + 1} / I_{n} \ar[r] \ar[d] & 0 \\
+		0 \ar[r] & K^{n + 2}_{A} \ar[r] \ar[d] & K^{n + 2}_{B} \ar[r] \ar[d] & K^{n + 2}_{C} \ar[r] \ar[d] & 0 \\
+		& K^{n + 2}_{A} / I^{n + 1}_{A} \ar[r] & K^{n + 2}_{B} / I^{n + 1}_{B} \ar[r] & K^{n + 2}_{C} / I^{n + 1}_{C}
+	\end{tikzcd}
+\end{document}
+```
+But this gives a long exact sequence
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		H^{n + 1}(A^\bullet) \ar[r] & H^{n + 1}(B^\bullet) \ar[r] & H^{n + 1}(C^\bullet) \ar[r] & \, \\
+		H^{n + 2}(A^\bullet) \ar[r] & H^{n + 2}(B^\bullet) \ar[r] & H^{n + 2}(C^\bullet)
+	\end{tikzcd}
+\end{document}
+```
+
+---
