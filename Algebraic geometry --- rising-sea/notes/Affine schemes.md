@@ -268,3 +268,70 @@ Suppose $q \not\in K$. If every neighbourhood of $q$ contained $p$, then $q$ wou
 ---
 
 ### The structure sheaf
+
+Now we define the structure sheaf on an affine scheme, making it into a [[Algebraic geometry --- rising-sea/notes/Ringed spaces#_definition _ ringed spaces, structure sheaf, functions, global functions|ringed space]]. We want to define sections of the sheaf to be algebraic functions. For example, $\frac{y}{(x - y^{2}) x}$ should be a section of the structure sheaf of $\mathbb{A}^{2}_{\mathbb{C}}$ over the complement of $V(x - y^{2}) \cup V(x)$.
+
+We define the structure sheaf as a [[Algebraic geometry --- rising-sea/notes/Sheaves on a base#_definition _ sheaves on a base, presheaves on a base|sheaf on a base]] — on the base of [[Algebraic geometry --- rising-sea/notes/The base of distinguished open sets#_definition _ distinguished open set, doesn't vanish set|distinguished opens]] of $\operatorname{Spec} A$. We will of course need to show that it is such a sheaf.
+
+##### _definition:_ the structure sheaf on (distinguished opens of) an affine scheme
+
+The **structure sheaf of an affine scheme** $\operatorname{Spec} A$ is defined by
+$$
+\mathscr{O}_{\operatorname{Spec} A}(D(f)) = A_{f}.
+$$
+
+---
+
+Note that this really is what we want — $A_{f}$ isn't just inverting $f$, but all functions that vanish outside $V(f)$.
+
+##### _lemma:_ all functions not vanishing on $V(f)$ have $f$ in denominator
+
+Let $S$ be the multiplicative set of all functions $g$ that do not vanish outside of $V(f)$ (that have $V(g) \subseteq V(f)$). Then $A_{f} \to S^{-1} A$ is an isomorphism.
+
+###### _proof:_
+
+Since $\{ f, f^{2}, \dots \} \subseteq S$, we have $A_{f} \to S^{-1} A$ injective. We claim it is also surjective. Suppose $g \in S$. Then $g$ has $V(g) \subseteq V(f)$. [[#_proposition _ functions vanishing on a vanishing set|This is equivalent to]] $f \in \sqrt{ (g) }$. Thus, we have $f^n = g h$ for some $n$. Thus, for each $a / g \in S^{-1} A$ we have some $a h / f^n \mapsto ah / gh = a / g$.
+
+---
+
+We can finally define what an affine scheme is now!
+
+##### _definition:_ affine scheme
+
+An **affine scheme** is a [[Algebraic geometry --- rising-sea/notes/Ringed spaces#_definition _ ringed spaces, structure sheaf, functions, global functions|ringed space]] $\operatorname{Spec} A, \mathscr{O}_{\operatorname{Spec} A}$ consisting of $\operatorname{Spec} A$ with the Zariski topology, and the structure sheaf $\mathscr{O}_{\operatorname{Spec} A}$.
+
+---
+
+We do not completely show why the structure sheaf is a sheaf here, nor do we prove our characterisation of its stalks. Rather, we reduce these to facts about quasicoherent sheaves on an affine scheme.
+
+##### _theorem:_ the structure sheaf on an affine scheme forms a sheaf
+
+The assignment $\mathscr{O}_{\operatorname{Spec} A}(D(f)) = A_{f}$ satisfies [[Algebraic geometry --- rising-sea/notes/Sheaves on a base#_definition _ sheaves on a base, presheaves on a base|base identity and gluability]], so forms a sheaf.
+
+###### _proof:_
+
+[[Algebraic geometry --- rising-sea/notes/Quasicoherent sheaves#_proposition _ twiddlification really forms a sheaf|We've shown]] that the assignment $\widetilde{M}(D(f)) = M_{f}$ forms a sheaf on a base, and thus, a sheaf. Apply this to $M = A$. 
+
+---
+
+##### _proposition:_ stalks are localisations at primes
+
+The stalk of the affine scheme $\operatorname{Spec} A$ at the point $\mathfrak{p}$ is $\mathscr{O}_{\operatorname{Spec} A, \mathfrak{p}} = A_{\mathfrak{p}}$.
+
+###### _proof:_
+
+Again, see [[Algebraic geometry --- rising-sea/notes/Quasicoherent sheaves|Quasicoherent sheaves]]
+
+---
+
+Note that while this may suggest that $\mathscr{O}_{\operatorname{Spec} A}(U)$ is the localisation of $A$ away from the set of functions that do not vanish at any point of $U$, this is not true.
+
+##### _example:_ $\mathscr{O}_{\operatorname{Spec} A}(U) \neq S^{-1} A$
+
+Consider $A = \mathbb{F}[w, x, y, z] / (wy, wz, xy, xz)$. Then $\operatorname{Spec} A$ is the union of two copies of $\mathbb{A}_{\mathbb{F}}^{2}$ glued together at their origins. Let $U$ be the complement of the origin. Then consider the function which is $1$ on the first copy of $\mathbb{A}_{\mathbb{F}}^{2} \setminus \{ (0, 0) \}$ and $0$ on the second copy. 
+
+There is no way to write this as $f / s$ for some $f \in A$ and some $s$ not vanishing on $U$. If we could, then $f$ is either vanishes or doesn't at the origin of the affine plane. But then this either gives a function that vanishes everywhere except the origin or a function that only vanishes at the origin. We claim $\sqrt{ (f) } \neq (x, y)$. Thus, $f$ doesn't vanish exactly at the origin. Since everything except the origin is open and the vanishing locus $V(f)$ is closed, we can't have that $f$ vanishes at exactly everything except the origin either.
+
+Note that this wouldn't work for two copies of $\mathbb{A}_{\mathbb{F}}^1$ — you could pick $f(x) = x$ on one of them, $f(x) = 0$ on the other, and $s(x) = x$.
+
+---

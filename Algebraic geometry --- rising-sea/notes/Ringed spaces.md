@@ -19,9 +19,11 @@ The sheaf map in turn gives a stalk map $\mathscr{O}_{Y, q} \to \pi_{*} \mathscr
 
 ---
 
-##### _definition:_ ringed spaces, structure sheaf, functions, global functions
+##### _definition:_ ringed spaces, structure sheaf, isomorphism of ringed spaces, functions, global functions
 
 Suppose $\mathscr{O}_{X}$ is a [[Algebraic geometry --- rising-sea/notes/Sheaves#_definition _ sheaf|sheaf of rings]] on $X$. Then the pair, $X, \mathscr{O}_{X}$, sometimes abbreviated to just $X$ is a **ringed space**, with $\mathscr{O}_{X}$ the **structure sheaf** on it.
+
+An isomorphism of ringed spaces $X \to Y$ is a [[Topology --- math-147/notes/Homeomorphisms#_definition _ homeomorphism|homeomorphism]] $\pi : X \to Y$ as well as an [[Algebraic geometry --- rising-sea/notes/Morphisms of sheaves#_definition _ morphism of sheaves|isomorphism of sheaves]] $\pi_{*} \mathscr{O}_{X} \to \mathscr{O}_{Y}$ on $Y$.
 
 [[Algebraic geometry --- rising-sea/notes/Sheaves#_definition _ presheaves, sections, restriction maps|Sections]] of $\mathscr{O}_{X}$ are called **functions** and global sections of $\mathscr{O}_{X}$ are called global functions.
 
