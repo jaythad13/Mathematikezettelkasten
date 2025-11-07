@@ -210,7 +210,7 @@ Generalising, $\mathbb{F}[x, y]_{(x, y)}$ contains shreds of how all the curves 
 
 ### Disjoint unions of affine schemes
 
-We can describe finite disjoint unions of affine schemes as 
+We can describe finite disjoint unions of affine schemes as products of rings.
 
 ##### _proposition:_ products of rings are disjoint unions of affine schemes
 
@@ -233,8 +233,4 @@ Notice that on restriction to each $U_{i} = D(0, \dots, 1, \dots, 0) = \operator
 
 Notice however, that this doesn't hold for infinite disjoint unions.
 
-##### _non-example:_ our "first" non-affine scheme
-
-An infinite disjoint union of (non-empty) affine schemes is not affine. This follows since it is not [[Algebraic geometry --- rising-sea/notes/Topological properties of schemes#Quasicompactness|quasicompact]] (consider the cover of all $\operatorname{Spec} A_{i}$), but [[Algebraic geometry --- rising-sea/notes/The base of distinguished open sets#_corollary _ every affine scheme is quasicompact|all affine schemes are quasicompact]].
-
----
+![[Algebraic geometry --- rising-sea/notes/Examples of schemes#_example _ infinite disjoint unions are not affine — our first non-affine scheme|Examples of schemes]]]

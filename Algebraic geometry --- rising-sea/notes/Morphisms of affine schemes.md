@@ -148,4 +148,31 @@ Note that $\operatorname{Spec} S^{-1} A \subseteq \operatorname{Spec} A$ need no
 
 ---
 
-### The morphism of schemes
+### The morphism of affine schemes
+
+In general we will want our morphisms of affine schemes to be exactly those maps $\operatorname{Spec} A \to \operatorname{Spec} B$ coming from ring homomorphisms $B \to A$. However, since morphisms of schemes are difficult to define and isomorphisms are easier, we first define isomorphisms of affine schemes.
+
+##### _proposition:_ isomorphisms of affine schemes are isomorphisms of rings
+
+The [[Algebraic geometry --- rising-sea/notes/Schemes#_definition _ scheme, Zariski topology, isomorphism of schemes|isomorphisms of schemes]] $\operatorname{Spec} A \to \operatorname{Spec} B$ are in bijection with the ring isomorphisms $B \to A$.
+
+###### _proof:_
+
+First suppose we have an isomorphism $\varphi : B \to A$ with inverse $\psi : A \to B$. Since $\varphi^* : \operatorname{Spec} A \to \operatorname{Spec} B$ is continuous and has inverse $\psi^* : \operatorname{Spec} B \to \operatorname{Spec} A$, it is a homeomorphism. 
+
+---
+
+Our classical example of the inclusion $\operatorname{Spec} A_{f} \to \operatorname{Spec} A$ is easy to characterise for schemes.
+
+##### _example:_ inclusions of distinguished opens as schemes
+
+Suppose $f \in A$. Then there is an isomorphism of schemes $D(f), \mathscr{O}_{\operatorname{Spec} A \mid D(f)} \cong \operatorname{Spec} A_{f}$. We already have a homeomorphism $\pi$ of topological spaces, so it suffices to check that $\pi_{*} \mathscr{O}_{\operatorname{Spec} A_{f}}(D(g)) = \mathscr{O}_{\operatorname{Spec}A \mid D(f)}(D(g))$ for $D(g) \subseteq D(f)$. 
+
+On one hand we have $\mathscr{O}_{\operatorname{Spec} A \mid D(f)}(D(g)) = A_{g}$. $\pi^\text{pre}(D(g))$ is all primes $\mathfrak{p}_{f} \subseteq A_{f}$ such that $\mathfrak{p}$ doesn't contain $g$. These are exactly the primes $\mathfrak{p}_{f}$ themselves not containing $g$. Since $D(g) \subseteq D(f)$ we have $g^k = b f$. Thus, $(A_{f})_{g} \cong A_{g}$ by $(a / f^m) / g^n \mapsto a b^m / g^{n + km}$. That is,
+$$
+\pi_{*} \mathscr{O}_{\operatorname{Spec} A_{f}}(D(g)) = \mathscr{O}_{\operatorname{Spec} A_{f}}(D(g)) = (A_{f})_{g} \cong A_{g} = \mathscr{O}_{\operatorname{Spec} A \mid D(f)}(D(g)).
+$$
+
+---
+
+Understanding closed subsets as schemes is more difficult, particularly since a given closed subset can be endowed with many scheme structures. It suffices to note briefly that $\operatorname{Spec} A / \mathfrak{i}$ endows $V(\mathfrak{i}) \subseteq \operatorname{Spec} A$ with a scheme structure, but so does any $\operatorname{Spec} A / \mathfrak{j}$ with $\sqrt{ \mathfrak{j} } = \sqrt{ \mathfrak{i} }$.
