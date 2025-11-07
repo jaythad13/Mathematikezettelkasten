@@ -86,10 +86,7 @@ Let $\mathfrak{j} = (x^{2} + y^{2} - 1, y - 1) \subseteq \mathbb{C}[x, y]$. Noti
 
 Consider $I(V(\mathfrak{j})) = \sqrt{ \mathfrak{j} }$. Since $x^{2} \in \mathfrak{j}$, we have $x \in \sqrt{ \mathfrak{j} }$.
 
-We claim $x \not\in \mathfrak{j}$.
-
->[!missing]
->proof
+We claim $x \not\in \mathfrak{j}$. Note that $\mathfrak{j} = (x^{2}, y - 1)$. If $x = p(x, y) x^{2} + q(x, y) (y - 1) \in \mathfrak{j}$, we must have $q(x, y) = -x$ in order to have any pure $x$ term of degree $1$. But then we can't have $p(x, y) x^{2} - xy = 0$ since $p$ only adds to the $x$-degree.
 
 ---
 
