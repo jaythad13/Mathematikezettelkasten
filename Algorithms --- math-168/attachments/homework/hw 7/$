@@ -1,0 +1,194 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 168 --- Algorithms}
+\assignment{Homework \#7}
+\duedate{6th November 2025}
+
+\begin{document}
+
+\begin{problem}[Problem 1: Network flow with Ida Noh]
+	Dr. Deception's esteemed colleague, Dr. Ida Noh, is not a fan of Ford-Fulkerson. ``Why do we need to maintain \emph{two} graphs?'' she asks. ``This algorithm is unnecessarily complicated, and I can't even tell if it's guaranteed to terminate!'' 
+
+See if you can resolve her concerns. Each answer should be at most a few sentences.
+
+\begin{enumerate}
+    \item Dr. Noh's first issue is with the construction of the residual graph. ``If we've assigned $k$ units of flow to an edge $(u, v)$ in $G$ with capacity $c$,'' she says, ``I understand why we'd create an edge $(u, v)$ of weight $c - k$ in the residual graph. It represents the leftover capacity that we could use later. But why do we create an edge $(v, u)$ in the residual graph of weight $k$? How is that helpful?''
+
+    \item ``And you do this over and over, right? How we know when we're finished?'' How \emph{do} we know when we're finished? And how do we know the algorithm is guaranteed to terminate?
+    
+    \item Suppose you've finished running Ford-Fulkerson. You're left with a graph $G$ containing the maximum flow and a final residual graph $R$ in which there are no more augmenting paths. How do you recover the minimum cut? (Here, just explain how to find the cut. You don't need to re-prove that the cut is actually minimal.)
+
+    \item In class, we solved the \emph{bipartite matching} problem by reducing it to Network Flow. We turned an instance of bipartite matching into a flow graph by giving existing edges capacity 1 and directing them from $V_1$ towards $V_2$, creating a source node $s$ with an outgoing edge of capacity 1 connecting it to each vertex in $V_1$, and creating a sink node $t$ with an incoming edge of capacity 1 connecting it to each vertex in $V_2$.
+
+    Dr. Noh wants to find a tight bound on the runtime of Ford-Fulkerson on the resulting graph. ``Well,'' she says, ``the Edmonds-Karp runtime bound of $O(m^2 n)$ is always faster than our pseudopolynomial $O(m |f^*|)$ time bound. So the runtime of Ford-Fulkerson on our graph is 
+    \[
+        O(m^2 n) = O( (|V|+|E|)^2 \cdot |V|) = O(|V|^3 + |V||E|^2 + |V|^2|E|).
+    \]
+    Is this a tight runtime analysis? If not, can we get a tighter bound in terms of $|V|$ and $|E|$?
+\end{enumerate}
+\end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item The $(v, u)$ edge of weight $k$ represents the possibility that the optimum flow may not push $k$ units of flow along $(u, v)$ (for example, $v$ could have outdegree less than $k$ but some other edge $(u, w)$ can take some of those $k$ units of flow). Since we could ``unpush'' all of the $k$ units of flow we originally assigned to $(u, v)$, we assign $k$ units to $(v, u)$, representing the possible difference in flow from $v$ to $u$.
+
+		\item Since the sum of edge weights going out from the source is finite and the maximum flow of the graph is bounded by it, the maximum flow is finite. Each successive iteration of the Ford--Fulkerson algorithm increases the flow through the graph, by augmenting according a path found in the residual graph, and thus, eventually an iteration reaches the finite maximum flow. At this point, there is no augmented path in the residual graph since any augmented path allows increasing the flow without exceeding the capacities of the edges. Thus, the algorithm terminates.
+
+		\item The minimal cut is the cut defined by reachability from $s$ in the residual graph. That is, the minimal cut is $S \sqcup T$ for $S$ all the vertices reachable from $s$ and $T$ all those vertices not reachable from $s$ in the residual graph $G_{f}$. This set can be recovered by running breadth-first search on the residual graph to find all the vertices connected to $s$.
+
+		\item Edmonds--Karp is not always a tighter bound than $O(m \lvert f^{*} \rvert)$. In particular, in this case, we can get a tighter bound on the max-flow value $\lvert f^{*} \rvert$ than $O(m n)$. Since the sum of outdegrees of edges starting at the source is $\lvert V_{1} \rvert$ and the sum of indegrees of vertices going into the target is $\lvert V_{2} \rvert$, the flow is bounded by $\min \{ \lvert V_{1} \rvert, \lvert V_{2} \rvert \} = O(\lvert V \rvert)$. Thus, we can get a tighter bound
+			\[
+				O(m \lvert f^{*} \rvert) = O((\lvert V \rvert + \lvert E \rvert) \lvert V \rvert) = O(\lvert V \rvert^{2} + \lvert E \rvert \lvert V \rvert).
+			\]
+	\end{enumerate}
+\end{solution}
+
+\pagebreak
+
+\begin{problem}[Problem 2: PASTA problems]
+	    For their next flight, PASTA is considering a set $E = \{ E_{1}, E_{2}, \ldots, E_{m} \}$ of experiments. For each experiment $E_{j}$, let $p_j$ denote the price the client is willing to pay to run that experiment. Each experiment requires PASTA to bring along a subset of their instruments, denoted by $I = \{I_{1}, I_{2}, \ldots, I_{n}\}$, on the space flight. For each instrument $I_{j}$, let $c_j$ denote the cost of bringing that instrument on the spaceflight.
+
+    Your job is to determine which experiments should be performed and which instruments should be taken along to maximize revenue for PASTA. Amazingly, this problem can be solved by a reduction to \textbf{Network Flow}!
+    
+    \begin{enumerate}
+        \item For starters, let's build some intuition. Consider the following instance of the PASTA problem:
+        \begin{itemize}
+            \item The set of experiments is $E = \{E_1, E_2, E_3\}$, and these experiments will pay $\$200$ million, $\$120$ million, and $\$120$ million, respectively.
+            \item The set of instruments is $I = \{I_1, I_2, I_3, I_4\}$ and these instruments cost $\$60$ million, $\$40$ million, $\$100$ million, and $\$140$ million to bring on the spaceflight, respectively.
+            \item $E_{1}$ requires instruments $I_{1}$ and $I_{2}$, $E_{2}$ requires instruments $I_{1}$ and $I_{3}$, and $E_{3}$ requires instruments $I_{3}$ and $I_{4}$.
+        \end{itemize}
+        Using brute-force, enumerate all seven possible combinations of experiments that could be taken and determine which combination is the most profitable.  What is this combination, and what is the net revenue?
+
+        \item Given an instance of the PASTA problem, we'll build a corresponding network flow instance as follows:
+        \begin{itemize}
+            \item The vertices of our flow network include a source vertex $s$, a sink vertex $t$, and vertices $I_{1}, I_{2}, \ldots, I_{n}$,  $E_{1}, E_{2}, \ldots, E_{m}$ for every instrument and experiment.
+            \item For each instrument $I_j$ we create a directed edge from $s$ to $I_j$ with capacity $c_k$, the cost of the instrument.
+            \item For each experiment $E_k$, there is an edge from $E_k$ to $t$ with capacity $p_k$, the payment for the experiment.
+            \item Finally, for each instrument $I_j$ required for each experiment $E_k$, create a directed edge with \textbf{infinite} capacity from $I_j$ to $E_k$.
+        \end{itemize}
+	Find the maximum flow in the network (draw residual graphs at each step) and then find the corresponding cut whose capacity is equal to this flow.
+
+       	\item Let $S$ denote the vertices that are on the same side of the above cut as vertex $s$ and let $T$ denote the vertices that are on the same side of the cut as $t$. In a sentence or two, what's the relationship between the cut and your answer to part (a)?
+
+        \item Now, let $\tau$ be the sum of the payments that PASTA would receive for taking \emph{all} of the possible experiments.  In this case, $\tau = 200 + 120 + 120 = \$440$ million.  From $\tau$, subtract the capacity of the cut you found above. In a sentence or two, what is this number and how does is it relate to your answer from part (a)?
+\end{enumerate}
+\end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item The following table describes all the experiments and their 
+			\begin{center}
+				\begin{tabular}{c | c | c | c | c}
+					experiments & instruments & revenue & cost & profit \\
+					$E_{1}$ & $ I_{1}, I_{2} $ & $200$ &  $100$ &  $100$ \\
+					$E_{2}$ & $ I_{1}, I_{3} $ & $120$ & $160$ & $-40$ \\
+					$E_{3}$ & $ I_{3}, I_{4}$ & $120$ & $240$ & $-120$ \\
+					$E_{1}, E_{2}$ & $I_{1}, I_{2}, I_{3}$ & $320$ & $200$ & $120$ \\
+					$E_{2}, E_{3}$ & $I_{1}, I_{3}, I_{4}$ & $240$ & $300$ & $-60$ \\
+					$E_{3}, E_{1}$ & $I_{1}, I_{2}, I_{3}, I_{4}$ & $320$ & $340$ & $-20$ \\
+					$E_{1}, E_{2}, E_{3}$ & $I_{1}, I_{2}, I_{3}, I_{4}$ & $440$ & $340$ & $100$
+				\end{tabular}
+			\end{center}
+			Reading off the table, we see that performing experiments $E_{1}, E_{2}$ is most profitable.
+
+		\item
+
+		\item The vertices in $T$ are $t$, all the experiments used in the max-profitable set of experiments, and all the instruments necessary for those experiments. That is, $T = \{ t, E_{1}, E_{2}, I_{1}, I_{2}, I_{3} \}$. $S$ is all of the rest of the vertices. That is, $S = \{ s, I_{4}, E_{3} \}$.
+
+		\item
+			\[
+				\tau - \text{cut value} = 440 - (60 + 40 + 100) - 120 = 120.
+			\]
+			This is the max profit from part (a).
+	\end{enumerate}
+\end{solution}
+
+\pagebreak
+
+\begin{problem}[Problem 2: PASTA problems]
+	\begin{enumerate}
+		\item[(d)] Consider an arbitrary instance of PASTA with experiment set $E$ and instrument set $I$, and consider the corresponding network flow problem. Prove in a few sentences that for any cut with \emph{finite} total capacity, if an experiment $E_{j}$ is in $T$, then \emph{all} of the instruments used in this experiment must also be in $T$.
+ 
+		\item[(e)] Next, prove in a paragraph or two that the maximum profit that can be achieved is the total sum $\tau$ of the payments that would be received for taking \emph{all} of the experiments minus the capacity of the minimum cut.
+
+		\item[(f)] Finally, summarize all of the previous work by describing the reduction from PASTA to Network Flow that allows you to maximize profit, and give a careful derivation of the worst-case running time of the algorithm (in terms of $m$, the number of experiments, and $n$, the number of instruments). The running time may also depend on the instrument costs and experiment payment values.
+	\end{enumerate}
+\end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item[(e)] Suppose $S \sqcup T$ is a cut with $s \in S$, $t \in T$, and finite total capacity. Then every edge from $u \in S$ to $v \in T$ must have finite capacity. If $I_{k}$ is a necessary experiment for $E_{j}$, then $(I_{k}, E_{j})$ is an edge of infinite capacity. Thus, $(I_{k}, T_{j})$ cannot go from $S$ to $T$. Since $E_{j} \in T$, we must have $I_{k} \in T$ also (else $I_{k} \in S$, and $(I_{k}, T_{j})$ spans the cut).
+
+		\item[(f)]
+
+		\item[(g)] Given a PASTA problem, construct the network flow instance as described in part (b). Then solve for the max flow on the network. Recover the minimum cut $S \sqcup T$ (with $s \in S$ and  $t \in T$) from the final residual graph. Then the experiments to be performed are all the experiments in the $T$ part of the cut and the instruments required are all the instruments required to perform them.
+
+			The network has $\lvert V \rvert = m + n + 2$ vertices (each of the experiments, and each of the instruments, the source and target). The graph also has $\lvert E \rvert = mn + m + n$ edges ($m$ from the experiments to the targets, $n$ from the source to the instruments, and at most $mn$ between the vertices and experiments if every experiment needs every instrument). Thus, using Edmondson--Karp, we have total run time
+			\[
+				O(\lvert E \rvert^{2} \lvert V \rvert) = O((mn + m + n)^{2}(m + n + 2)) = O((mn)^{2}(m + n))
+			\]
+			Note that we take $O(\lvert E \rvert)$ to reconstruct the cut, but this is dominated by the run time above.
+	\end{enumerate}
+\end{solution}
+
+\pagebreak
+
+Many puzzles can be solved by reducing them to network
+flow problems. That's what you'll do here! PITGames, the Pasadena Institute of
+Technology's provider of popular online games, has contracted you to algorithmically solve several of its puzzle games to ensure the solutions are
+correct.
+
+For each puzzle game (as usual for a reduction) you'll need to:
+\begin{itemize}
+    \item \emph{Explain your reduction:} how do we reduce an arbitrary instance of this problem to Max Flow? Remember to specify all of the components of a flow network: source, sink, (directed) edges, and capacities.
+    \item \emph{Prove correctness:} explain why a max flow (or min cut) of a certain value exists if and only if the puzzle can be solved.
+    \item \emph{Analyze runtime:} i.e. the time taken to convert the problem to Max Flow, to solve the Max Flow instance, and to recover the solution. This should be stated in terms of $n$ \emph{as specified in the puzzle input}. (Note that depending on your reduction, the number of vertices in the constructed flow network might not be $n$!)
+\end{itemize}
+
+\begin{problem}[Problem 3: Pasadoku]
+	The first PITGames game, Pasadoku, works like this:  We're given an $n \times n$ board of cells. Some cells are white (you're given a list of white cell coordinates) and the rest are gray. The goal is to place $n$ tokens on white cells such that every row contains exactly one token and every column contains exactly one token.  Tokens may \emph{not} be placed on the gray cells.
+\end{problem}
+
+\begin{solution}
+	First we describe a reduction to a max-flow instance. Let $G$ be a directed graph with a source vertex $s$, a target vertex $t$, a vertex for each row of the $n \times n$ board, and a vertex for each column of the $n \times n$ board. It has edges of weight $1$ from $s$ to every row, edges of weight $1$ from every column to $t$
+\end{solution}
+
+\begin{problem}[Problem 3: Defective chess boards]
+	DCB (Defective Chess Boards) works as follows: We're given an $n \times n$ board in which some cells are missing.  The goal is to tile the board with dominoes, each of which covers \emph{exactly two adjacent cells}, or determine that no such tiling exists.
+
+	You should assume that the input defective chess board is given to us as an $n \times n$ matrix where each entry in the matrix indicates if the corresponding cell in the board is black, white, or missing.
+\end{problem}
+
+\begin{problem}[Problem 3: Round.ly]
+	PITGames is proud of their newest offering for the more
+mathematically minded, ``Round.ly''. We're given an $n \times n $ matrix of
+non-negative real numbers each of which is between $0$ and some constant $C$.
+We wish to know if we can round each number $x$ in the matrix to $\lfloor x
+\rfloor$ or $\lceil x \rceil$ such that the sum of the entries in each row and
+the sum of the entries in each column is unchanged.  (Recall that $\lfloor x
+\rfloor$ is the largest integer less than or equal to $x$ and $\lceil x \rceil$
+is the smallest integer greater than or equal to $x$).  Note that some numbers
+may be rounded up and others may be rounded down.  For example the matrix
+$\dots$
+\[ A =
+\begin{bmatrix}
+1.2 & 3.4 & 2.4 \\
+3.9 & 4.0 & 2.1 \\
+7.9 & 1.6 & 0.5 \\
+\end{bmatrix}
+\] $\dots$ can be transformed into the integer matrix:
+\[
+B = 
+\begin{bmatrix}
+1 & 4 & 2 \\
+4 & 4 & 2 \\
+8 & 1 & 1
+\end{bmatrix}
+\]
+
+You may assume that a single arithmetic operation (e.g. $x + y$, or rounding a real number) takes constant time. (\emph{Hint:} even though this problem has floating point numbers in it, it can be solved using only integer edge capacities!)
+\end{problem}
+
+\end{document}
