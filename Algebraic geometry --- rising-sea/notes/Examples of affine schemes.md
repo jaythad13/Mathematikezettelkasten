@@ -169,6 +169,14 @@ This description can be extended to non-closed points of $\mathbb{A}^{2}_{\mathb
 
 ---
 
+##### _example:_ infinite-dimensional affine space is non-Noetherian
+
+We can get non-Noetherian $\operatorname{Spec} A$ from our favourite non-Noetherian ring — $\mathbb{F}[x_{1}, x_{2}, \dots]$. The closed subsets $V(x_{1}) \supseteq V(x_{1}, x_{2}) \supseteq \cdots$ form an infinite strictly descending chain (the codimension $1$ plane $V(x_{1})$ contains the codimension $2$ plane $V(x_{1}, x_{2})$ and so on). That is, $\mathbb{A}^\infty_{\mathbb{F}}$ is non-Noetherian.
+
+We can also see that $\mathbb{A}_{\mathbb{F}}^\infty$ is non-Noetherian [[Algebraic geometry --- rising-sea/notes/Topological properties of schemes#_proposition _ Noetherian spaces have (quasi)compact open subsets|because]] it has an open subset that is not quasicompact. $\mathbb{A}_{\mathbb{F}}^\infty \setminus (x_{1}, x_{2}, \dots)$ is covered by all $D(x_{i})$, but no finite combination of them. For example, the point $(x_{j} - a_{j}, x_{i_{k}})_{j, k}$ is contained in our open subset, but not in the finite cover of all $D(x_{i_{k}})$.
+
+---
+
 ### The dual numbers
 
 The dual numbers are the ring $\mathbb{F}[\varepsilon] / (\varepsilon^{2})$ (think of this as some adjoining some error $\varepsilon$ that we want to keep track of to the first order, but can ignore in higher orders). It has just one point $(\varepsilon)$ (by the [[Abstract algebra --- math-171/notes/Ring isomorphism theorems#_theorem _ the fourth isomorphism theorem|fourth isomorphism theorem]], since $(\varepsilon)$ is the only prime ideal of $\mathbb{F}[\varepsilon]$ containing $(\varepsilon^{2})$).

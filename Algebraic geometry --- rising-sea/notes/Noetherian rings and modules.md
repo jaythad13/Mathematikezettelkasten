@@ -67,13 +67,11 @@ Let $V(\mathfrak{i}_{1}) \supseteq V(\mathfrak{i}_{2}) \supseteq \cdots$ be a de
 
 ---
 
-##### _example:_ non-Noetherian and Noetherian affine schemes
+Not all affine schemes are Noetherian. An easy way to find one is to look at $\operatorname{Spec} A$ of non-Noetherian $A$.
 
-We can get non-Noetherian $\operatorname{Spec} A$ from our favourite non-Noetherian ring — $\mathbb{F}[x_{1}, x_{2}, \dots]$. The closed subsets $V(x_{1}) \supseteq V(x_{1}, x_{2}) \supseteq \cdots$ form an infinite strictly descending chain (the codimension $1$ plane $V(x_{1})$ contains the codimension $2$ plane $V(x_{1}, x_{2})$ and so on). That is, $\mathbb{A}^\infty_{\mathbb{F}}$ is non-Noetherian.
+![[Algebraic geometry --- rising-sea/notes/Examples of affine schemes#_example _ infinite-dimensional affine space is non-Noetherian]]
 
-However, $A$ need not be Noetherian for $\operatorname{Spec} A$ to be Noetherian. For example, $\mathbb{F}[x_{1}, x_{2}, \dots] / (x_{1}, x_{2}^{2}, \dots)$ is just the (closed) point $(x_{1}, x_{2}, \dots)$ and thus, is Noetherian. However, $(x_{1}) \subseteq (x_{1}, x_{2}) \subseteq \cdots$ is still an infinite strictly ascending chain of ideals. The relevant point here is that an infinite strictly ascending chain of ideals only gives an infinite strictly descending chain of closed sets if the chain of radicals is still strictly ascending.
-
----
+However, this doesn't always work — $A$ need not be Noetherian for $\operatorname{Spec} A$ to be Noetherian. For example, $\mathbb{F}[x_{1}, x_{2}, \dots] / (x_{1}, x_{2}^{2}, \dots)$ is just the (closed) point $(x_{1}, x_{2}, \dots)$ and thus, is Noetherian. However, $(x_{1}) \subseteq (x_{1}, x_{2}) \subseteq \cdots$ is still an infinite strictly ascending chain of ideals. The relevant point here is that an infinite strictly ascending chain of ideals only gives an infinite strictly descending chain of closed sets if the chain of radicals is still strictly ascending.
 
 ### Why care about Noetherianness?
 

@@ -5,9 +5,10 @@ tags:
 - comm-alg
 - top
 - rising-sea/3/6
+- rising-sea/5/1
 ---
 
-Let $X$ be a topological space, and $A$ a ring.
+Let $X$ be a topological space (and sometimes a scheme), and $A$ a ring.
 
 Lots of topological notions have interesting applications to schemes (and affine schemes in particular).
 
@@ -155,6 +156,10 @@ Suppose $\mathfrak{i} = (wz - xy, wy - x^{2}, xz - y^{2}) \subseteq \mathbb{F}[w
 
 ---
 
+This idea also characterises all the Zariski closed subsets of $\operatorname{Spec} A$. This is a little easier to express in the language of the [[Algebraic geometry --- rising-sea/notes/The ideal of vanishing functions|ideal of vanishing functions]] but follows directly from our ideas. Specifically,
+
+![[Algebraic geometry --- rising-sea/notes/The ideal of vanishing functions#_proposition _ irreducible Zariski closed sets are in bijection with prime ideals]]
+
 We can always decompose a topological space into irreducible pieces in a relatively nice way.
 
 ##### _definition:_ irreducible component
@@ -245,6 +250,18 @@ Suppose $\{ U_{i} \}$ is an open cover of $U$. Consider all $K_{i} = X \setminus
 
 ---
 
+Noetherian spaces are also preserved by finite unions. This means that it is reasonable to call schemes with finite covers by spectra of [[Algebraic geometry --- rising-sea/notes/Noetherian rings and modules#_definition _ Noetherian rings|Noetherian rings]] Noetherian schemes, (which we will do soon).
+
+##### _proposition:_ Noetherianness is preserved by finite covers
+
+Suppose $X = \bigcup_{i = 1}^n X_{i}$ where each $X_{i}$ is a Noetherian topological space. Then $X$ is Noetherian.
+
+###### _proof:_
+
+Suppose $Z_{1} \supseteq Z_{2} \supseteq \cdots$ is a descending chain of closed subsets of $X$. Then each $Z_{1} \cap X_{i} \supseteq Z_{2} \cap X_{i} \supseteq \cdots$ is a descending chain of closed subsets of $X_{i}$, and is eventually constant. Since there are only finitely many $X_i$, eventually all of them are constant together. Since $Z_{j} = \bigcup_{i = 1}^n X_{i} \cap Z_{j}$, we have that the chain of $Z_{j}$s must also be eventually constant. 
+
+---
+
 ### Quasicompactness
 
 **Quasicompactness** is just topological compactness —
@@ -262,3 +279,113 @@ For this reason we recall some properties of quasicompact spaces.
 ![[Topology --- math-147/notes/Compactness#_proposition _ finite unions of compact sets are compact|Compactness]]
 
 ![[Topology --- math-147/notes/Compactness#_proposition _ closed subspaces of compact spaces are compact|Compactness]]
+
+![[Topology --- math-147/notes/Compactness#_proposition _ checking compactness on a basis]]
+
+By applying quasicompactness to (the canonical cover by) [[Algebraic geometry --- rising-sea/notes/Schemes#_proposition, definition _ open subschemes, affine open subscheme|affine opens]], we have the following characterisation of quasicompact schemes.
+
+##### _proposition:_ characterising quasicompact schemes
+
+A scheme $X$ is quasicompact if and only if it has a finite cover by affine opens.
+
+---
+
+This implies, that any scheme obtained by gluing together finitely many affine schemes is quasicompact. For example, $\mathbb{P}_{A}^n$ is quasicompact.
+
+Quasicompactness tells us a lot! For example, it guarantees the existence of closed points, (there are non-empty schemes with no closed points).
+
+##### _proposition:_ quasicompact schemes have closed points
+
+If $X$ is a quasicompact scheme, then every point has a [[Algebraic geometry --- rising-sea/notes/Affine schemes#_definition _ closed point|closed point]] in its closure.
+
+Equivalently, every non-empty closed subset of $X$ contains a closed point.
+
+###### _proof:_
+
+Since $X$ is quasicompact, it has a finite cover by affine opens $X = \bigcup_{i = 1}^n \operatorname{Spec} A_{i}$. In each $\operatorname{Spec} A_{i}$ consider $p = \mathfrak{p}_{i}$. Let $\overline{\{ p \}}$ be its closure in $X$. Then for $p = \mathfrak{p}_{i}$ in $\operatorname{Spec} A_{i}$, the subspace closure $V(\mathfrak{p}_{i}) = \overline{\{ p \}} \cap \operatorname{Spec} A_{i}$ must include a point $\mathfrak{m}_{i}$ (a maximal ideal containing $\mathfrak{p}_{i}$) closed in the Zariski topology on $\operatorname{Spec} A_{i}$.
+
+Start from $\mathfrak{p}_{1} \in \operatorname{Spec} A_{1}$. We get a closed point $\mathfrak{m}_{1}$ in the closure of $p$. If $\mathfrak{m}_{1}$ is closed in all $\operatorname{Spec} A_{i}$ that contain it, then it is a closed point in $X$. If $\mathfrak{m}_{1}$ is not closed in $\operatorname{Spec} A_{i}$, then $\mathfrak{m}_{1}$ is not closed in $X$. Choose the smallest such $i$. There must be some other closed point $\mathfrak{m}_{i} \in \overline{\{ \mathfrak{m}_{1} \}} \subseteq \operatorname{Spec} A_{i}$.
+
+Our new point $\mathfrak{m}_{i} \not\in \operatorname{Spec} A_{j}$ for all $j < i$ since that would make $\mathfrak{m}_{1}$ not closed in $\operatorname{Spec} A_{j}$, contradicting the minimality of $i$. Now we can repeat this same process until we find a point $\mathfrak{m}_{i} \in \operatorname{Spec} A_{i}$ closed in all the $\operatorname{Spec} A_{j}$ with $j \geq i$. Since it is not contained in the other $\operatorname{Spec} A_{j}$, $\mathfrak{m}_{i}$ is closed in all the affine opens that contain it. Thus, it is a closed point.
+
+---
+
+This useful for checking "open properties" of points of a scheme. Suppose $p \in X$ having property $P$ implies that all $q$ in some neighbourhood $U \ni p$ have property $P$. If $X$ is quasicompact, then it suffices to check only the closed points. The non-closed points all contain a closed point in their closure, and thus, every open neighbourhood of the closed point contains the non-closed point.
+
+### Quasiseparatedness
+
+Quasiseparatedness will later be realised as a property of morphisms. Most reasonable schemes are quasiseparated, but understanding it may be useful.
+
+##### _definition:_ quasiseparated
+
+A topological space is **quasiseparated** if the intersection of any two quasicompact open subsets is quasicompact.
+
+---
+
+Note that this generalises [[Topology --- math-147/notes/Separation properties#_definition _ Hausdorff spaces, $T_{2}$ spaces|Hausdorffness]] (if $X$ is Hausdorff, the intersection of quasicompacts is the intersection of closed sets, so is closed, so is a closed subset of a compact set, so is compact). This is one step towards the scheme-theoretic analogue of Hausdorffness.
+
+For schemes, this has a nice interpretation in terms of affine opens.
+
+##### _proposition:_ characterising quasiseparated schemes
+
+A scheme is quasiseparated if and only if the intersection of any two affine opens is a finite union of affine opens.
+
+###### _proof:_
+
+Suppose $X$ is quasiseparated. Then the intersection of any two affine opens is quasicompact since it is the intersection of two quasicompact subsets. Since [[Algebraic geometry --- rising-sea/notes/Schemes#_proposition _ affine opens form a base|the affine opens form a base]] of the Zariski topology on $X$, this gives a cover of the intersection by finitely many affine opens.
+
+Suppose the intersection of any two affine opens in $X$ is a finite union of affine opens. Let $U, V \subseteq X$ be two quasicompact subsets. Cover each of them with finitely many affine opens (again, using quasicompactness and the base of affine opens). $U \cap V$ is then the intersection of finitely many affine opens, so the union of finitely many quasicompact spaces, so is itself quasicompact. 
+
+---
+
+For one, this allows us to prove affine schemes are quasiseparated ...
+
+##### _proposition:_ affine schemes are quasiseparated
+
+$\operatorname{Spec} A$ is quasiseparated.
+
+###### _proof:_
+
+Suppose $U, V \subseteq \operatorname{Spec} A$ are two affine opens. Cover them with finitely many distinguished opens (by quasicompactness). Then $U \cap V$ is the union of finitely many distinguished opens. But this is a finite union of affine opens.
+
+---
+
+... which allows us to refine our characterisation of quasiseparated schemes.
+
+##### _proposition:_ another characterisation of quasiseparated schemes
+
+A scheme $X$ is quasiseparated if and only if there exists a cover of $X$ by affine opens, any pair of which have intersection covered by a finitely many affine opens.
+
+###### _proof:_
+
+If $X$ is quasiseparated, then the canonical cover by affine opens satisfies this property.
+
+Suppose $X$ has such a cover by affine opens. Suppose $U, V \subseteq X$ are quasicompact subsets. Cover them each with finitely many of the nice affine opens (the ones satisfying the property). Then $U \cap V$ is the finite union of the pairwise intersections of these nice affine opens, and is thus covered by finitely many affine opens. As the union of finitely many quasicompact subsets, $U \cap V$ is quasicompact.
+
+---
+
+##### _non-example:_ a non-quasiseparated scheme
+
+$\mathbb{A}_{\mathbb{F}}^\infty$ with doubled origin, defined similarly to the [[Algebraic geometry --- rising-sea/notes/Examples of schemes#The affine line with doubled origin|affine line with doubled origin]] is not quasiseparated. Each copy of $\mathbb{A}_{\mathbb{F}}^\infty$ is quasicompact, but their intersection $\mathbb{A}_{\mathbb{F}}^\infty \setminus (x_{1}, x_{2} \dots)$ [[Algebraic geometry --- rising-sea/notes/Examples of affine schemes#_example _ infinite-dimensional affine space is non-Noetherian|is not quasicompact]].
+
+---
+
+### Qcqs
+
+Quasicompact and quasiseparated is so useful as a hypothesis that we came up with an abbreviation for it — **qcqs**. This is because quasicompact and quasiseparated implies something really non-trivial in terms of affine opens.
+
+##### _proposition:_ characterising qcqs schemes
+
+A scheme is qcqs if and only if it can be covered by a finite number of affine opens, such that each pair has intersection covered by a finite number of affine opens.
+
+###### _proof sketch:_
+
+If the cover exists, then our characterisations of quasicompactness and quasiseparatedness imply $X$ is qcqs. If $X$ is qcqs, apply the characterisation of quasiseparatedness to obtain a (possibly infinite) affine cover with the desired properties, then use quasicompactness to reduce to a finite subcover.
+
+---
+
+##### _example:_ projective schemes are qcqs
+
+>[!missing]
+
+---
