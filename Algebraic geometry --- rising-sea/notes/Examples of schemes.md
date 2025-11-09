@@ -25,3 +25,30 @@ Recall that finite disjoint unions of affine schemes [[Algebraic geometry --- ri
 An infinite disjoint union of (non-empty) affine schemes is not affine. This follows since it is not [[Algebraic geometry --- rising-sea/notes/Topological properties of schemes#Quasicompactness|quasicompact]] (consider the cover of all $\operatorname{Spec} A_{i}$), but [[Algebraic geometry --- rising-sea/notes/The base of distinguished open sets#_corollary _ every affine scheme is quasicompact|all affine schemes are quasicompact]].
 
 ---
+
+### The punctured plane
+
+The punctured plane (over $\mathbb{F}$) is the [[Algebraic geometry --- rising-sea/notes/Schemes#_proposition, definition _ open subschemes, affine open subscheme|open subscheme]] $U, \mathscr{O}_{\mathbb{A}_{\mathbb{F}}^{2} \mid U}$ of $\mathbb{A}^{2}_{\mathbb{F}}$ given by $U = \mathbb{A}_{\mathbb{F}}^{2} \setminus \{ (x, y) \}$ or "$\mathbb{F}^{2} \setminus \{ (0, 0) \}$". To this end, let $A = \mathbb{F}[x, y]$ and thus, $\operatorname{Spec} A = \mathbb{A}_{\mathbb{F}}^{2}$. 
+
+We claim that the punctured plain is in fact not affine. We first compute its global sections to check what scheme it would be if it were affine.
+
+##### _example:_ the global sections over the punctured plane
+
+It turns out we cannot write $U$ as a distinguished open, but we can write it as the union of distinguished opens — $U = D(x) \cup D(y)$. The functions on $U$ are functions on $D(x)$ and $D(y)$ that agree on the intersection $D(xy)$. These are functions in $A_{x}$ and $A_{y}$ that agree on $A_{xy}$, or in other words, the intersection $A_{x} \cap A_{y} \subseteq Q(A)$. But the intersection of $\{ 1, x, x^{2}, \dots \}$ and $\{ 1, y, y^{2}, \dots \}$ is just $1$, so the intersection is $A_{1} = A$. Thus, the global sections on $U$ are
+$$
+\mathscr{O}_{\mathbb{A}^{2}_{\mathbb{F}}}(U) = \mathbb{F}[x, y].
+$$
+
+---
+
+Surprisingly, we found that the functions on $U$ are just $\mathbb{F}[x, y]$. In some sense this is because the point we removed is of codimension too great, and thus, there are no rational functions that only have a pole at that one point. This is a special case of the algebraic analogue of Hartog's lemma (originally from complex geometry). It says that functions extend over points of codimension at least $2$, as long as they are (what we will call) normal.
+
+##### _example:_ the punctured plane is not affine
+
+Since the global sections of $U$ are just $\mathbb{F}[x, y]$, if $U$ were affine, we would have $U \cong \mathbb{A}_{\mathbb{F}}^{2}$. While in the usual topology on $\mathbb{C}^{2}$ we could make some (higher) fundamental group argument about the difference between $\mathbb{C}^{2}$ and $\mathbb{C}^{2} \setminus \{ (0, 0) \}$. This would tell us that they are not homeomorphic, and thus, not isomorphic as schemes. We can't make such an argument in the Zariski topology easily (possibly because $U$ is homeomorphic to $X$). However, the structure sheaf isomorphism allows us to recover more data.
+
+Since we have an isomorphism of structure sheaves, we have an isomorphism of stalks, and thus, if we have points where all functions in a certain ideal $\mathfrak{i} \subseteq A$ vanish on $\operatorname{\mathbb{A}}_{\mathbb{F}}^{2}$ we must have points where all functions $\mathfrak{i} \subseteq A$ vanish on $U$. But $(x, y) \subseteq A$ vanishes at $V(x, y) = \{ (x, y) \}$ on $\mathbb{A}_{\mathbb{F}}^{2}$ and there is no point where all functions in $(x, y)$ vanish on $U$. Thus, $U \cong \operatorname{Spec} A$, and thus, is not affine.
+
+---
+
+### The affine line with doubled origin
