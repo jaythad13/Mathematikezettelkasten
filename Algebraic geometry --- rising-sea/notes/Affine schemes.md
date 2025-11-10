@@ -63,7 +63,7 @@ Thus, any two functions that take the same value at every point differ by a nilp
 
 ##### _definition:_ reduced (ring)
 
-(A ring) $A$ is **reduced** if it has no non-zero nilpotents. Equivalently its nilardical is $\mathfrak{N} = (0)$.
+(A ring) $A$ is **reduced** if it has no non-zero nilpotents. Equivalently its nilradical is $\mathfrak{N} = (0)$.
 
 ---
 
