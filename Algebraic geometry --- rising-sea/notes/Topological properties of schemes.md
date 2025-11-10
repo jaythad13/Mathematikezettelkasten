@@ -93,15 +93,25 @@ Each $V(x + y)$ and $V(x - y)$ is irreducible (each is homeomorphic to $\mathbb{
 
 ---
 
-Some other basic properties hold.
+The open set characterisation also allows us to prove some other useful propositions.
 
-##### _proposition:_ open sets of an irreducible topological space
+##### _proposition:_ open sets of an irreducible space are dense
 
 Any non-empty open subset of an irreducible topological space is [[Topology --- math-147/notes/Size restrictions#_definition _ dense|dense]].
 
 ###### _proof:_
 
 Any non-empty open set of an irreducible topological space intersects every non-empty open set, and thus, every non-empty open neighbourhood. Thus, it is dense.
+
+---
+
+##### _proposition:_ open sets of an irreducible space are irreducible
+
+Suppose $Z$ is irreducible and $U \subseteq Z$ is open and non-empty. Then $U$ is irreducible.
+
+###### _proof:_
+
+Suppose $U_{1}, U_{2}$ are non-empty open subsets of $U$, coming from non-empty open subsets $V_{1}, V_{2} \subseteq Z$. $V_{1}$ and $V_{2}$ have non-empty intersection $V_{1} \cap V_{2}$. But then $U$ has non-empty intersection with $V_{1} \cap V_{2}$, and thus, $U_{1} \cap U_{2}$ is non-empty in $U$. Since any two non-empty open subsets of $U$ intersect, $U$ is irreducible.
 
 ---
 
@@ -156,9 +166,27 @@ Suppose $\mathfrak{i} = (wz - xy, wy - x^{2}, xz - y^{2}) \subseteq \mathbb{F}[w
 
 ---
 
-This idea also characterises all the Zariski closed subsets of $\operatorname{Spec} A$. This is a little easier to express in the language of the [[Algebraic geometry --- rising-sea/notes/The ideal of vanishing functions|ideal of vanishing functions]] but follows directly from our ideas. Specifically,
+This idea also characterises all the irreducible Zariski closed subsets of $\operatorname{Spec} A$. This is a little easier to express in the language of the [[Algebraic geometry --- rising-sea/notes/The ideal of vanishing functions|ideal of vanishing functions]] but follows directly from our ideas. Specifically,
 
 ![[Algebraic geometry --- rising-sea/notes/The ideal of vanishing functions#_proposition _ irreducible Zariski closed sets are in bijection with prime ideals]]
+
+This allows us to think of irreducible Zariski closed sets as the closed sets corresponding to generic points. This continues to be true for schemes in general.
+
+##### _proposition:_ irreducible closed sets are in bijection with points
+
+Every irreducible closed set of a scheme $X$ is $\overline{\{ p \}}$, the closure of a point $p \in X$.
+
+###### _proof:_
+
+Let $X = \bigcup_{i \in \mathscr{I}} \operatorname{Spec} A_{i}$ be an affine open cover of $X$. Suppose $Z \subseteq X$ is an irreducible closed subset. 
+
+Each $Z_{i} = Z \cap \operatorname{Spec} A_{i}$ is irreducible. Further, $Z_{i} \subseteq Z$ is open and $Z_{i} \subseteq \operatorname{Spec} A_{i}$ is closed. Thus, each $Z_{i} = \overline{\{ \mathfrak{p}_{i} \}}$ for some $\mathfrak{p}_{i} \in \operatorname{Spec} A_{i}$. 
+
+Suppose $Z_{i}$ and $Z_{j}$ are both non-empty. They are both non-empty open subsets of $Z$, so they have non-empty (open) intersection. Since $Z_{i} \cap Z_{j}$ is an open subset of $Z$, and thus, of $Z_{i}$ and $Z_{j}$, [[Algebraic geometry --- rising-sea/notes/Affine schemes#_proposition _ generic points are near exactly the points of their closure|it contains]] their respective generic points $\mathfrak{p}_{i}$ and $\mathfrak{p}_{j}$. Since $Z_{i} \cap Z_{j}$ is closed, in $\operatorname{Spec} A_{i}$ and $\operatorname{Spec} A_{j}$, it contains the whole closure of the generic points in the affine schemes. That is, $\overline{\{ \mathfrak{p}_{i} \}} = Z_{i} = Z_{i} \cap Z_{j} = Z_{j} = \overline{\{ \mathfrak{p}_{j} \}}$. Since generic points of closed subsets of affine schemes [[Algebraic geometry --- rising-sea/notes/The ideal of vanishing functions#_corollary _ irreducible closed sets have unique generic points|are unique]], we have $\mathfrak{p}_{i} = \mathfrak{p}_{j}$. Write $\mathfrak{p} = \mathfrak{p}_{i}$ for all $i$.
+
+Since $Z_{i} = \overline{\{ \mathfrak{p} \}} \subseteq \operatorname{Spec} A_{i}$ for all $i$, we have $Z = \overline{\{ \mathfrak{p} \}} = X$ (if there were a smaller closed set containing $\mathfrak{p}$, there would be a smaller closed set containing $\mathfrak{p}_{i}$ in some $\operatorname{Spec} A_{i}$). 
+
+---
 
 We can always decompose a topological space into irreducible pieces in a relatively nice way.
 
