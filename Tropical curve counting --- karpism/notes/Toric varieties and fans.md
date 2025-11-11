@@ -3,6 +3,7 @@ tags:
 - alg-geo
 - cx-geo
 - karpism/1
+- karpism/2
 ---
 
  Here, we identify $\mathbb{A}^n_{\mathbb{C}}$ with $\mathbb{C}^n$ and $\operatorname{Spec} \mathbb{C}[x, x ^{-1}]$ with $\mathbb{C}^\times$.
@@ -84,4 +85,4 @@ Then adding $\left< v_{1} + v_{2} \right>$ to subdivide the maximal cone corresp
 
 ---
 
-##### _homework:_ the toric variety of the cone of the blowup of $\mathbb{C}\mathbb{P}^2$ is just the blowup of $\mathbb{C} \mathbb{P}^2$
+##### _homework:_ the toric variety of the fan of the blowup of $\mathbb{C}\mathbb{P}^2$ is just the blowup of $\mathbb{C} \mathbb{P}^2$
