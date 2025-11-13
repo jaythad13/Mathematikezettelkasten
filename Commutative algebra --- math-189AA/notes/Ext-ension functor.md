@@ -126,8 +126,8 @@ there is a long exact sequence of $\operatorname{Ext}$s in cohomology by
 \usepackage{amsfonts}
 \begin{document}
 	\begin{tikzcd}
-		0 \ar[r] & \mathrm{Ext}^0(M', N) \ar[r] & \mathrm{Ext}^0(M, N) \ar[r] & \mathrm{Ext}^0(M'', N) \ar[r] & \, \\
-		\mathrm{Ext}^1(M', N) \ar[r] & \mathrm{Ext}^1(M, N) \ar[r] & \mathrm{Ext}^1(M'', N) \ar[r] & \cdots
+		0 \ar[r] & \mathrm{Hom}(M', N) \ar[r] & \mathrm{Hom}(M, N) \ar[r] & \mathrm{Hom}(M'', N) \\
+		\ar[r] & \mathrm{Ext}^1(M', N) \ar[r] & \mathrm{Ext}^1(M, N) \ar[r] & \mathrm{Ext}^1(M'', N) \ar[r] & \cdots
 	\end{tikzcd}
 \end{document}
 ```
