@@ -1,0 +1,244 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+\newcommand{\NP}{\textsf{NP}}
+\usepackage[dvipsnames]{xcolor}
+\newcommand{\red}[1]{{{\color{red} #1}}}
+
+\name{Jayden Thadani}
+\class{MATH 168 --- Algorithms}
+\assignment{Homework \#8}
+\duedate{13th November 2025}
+
+\begin{document}
+
+I went to Aanya and Shreya's grutoring hours.
+
+\begin{problem}[Problem 1: Interrogating \textsc{Vertex Cover}]
+Dr. D. Ception's esteemed colleague, Dr. Ida Noh, has a hard time following all of this business about \NP-Completeness. ``Too many complicated reductions!'', she says. ``How do I know you're not making all of this up?''
+
+She's prepared a list of questions and objections to our proof that {\sc Vertex Cover} is \NP-Complete. Can you put her doubts to rest?
+
+\begin{enumerate}
+    \item Dr. Noh's skepticism starts with {\sc Vertex Cover} itself. ``If I remember correctly,'' she says, ``a vertex cover for a graph is any set of vertices such that every edge is adjacent to some vertex in the cover. So why is this problem such a big deal? The set of \emph{all} vertices is always a vertex cover, so it should always be trivial to find a vertex cover!''
+
+    She's missing a key fact about the {\sc Vertex Cover} problem. In at most 3 sentences, what is it?
+
+    \item The length of the proof is also off-putting to Dr. Noh. ``Why do we need to re-invent the wheel if Cook and Levin already did the work for us? They showed that \emph{any} problem in \NP~admits a polynomial reduction to {\sc 3SAT}, after all.''
+
+    Dr. Noh is right about the Cook-Levin Theorem: it shows any problem in \NP~can be reduced to  {\sc 3SAT} in polynomial time. In at most 3 sentences, why do we need another reduction?
+
+    \item We've just explained to Dr. Noh why {\sc Vertex Cover} is in the complexity class \NP: any solution (a vertex cover of size $k$) can be efficiently verified by checking to make sure all the edges are covered. ``Wait,'' she asks us, ``why don't we use the verifier to solve {\sc Vertex Cover} in polynomial time? We just take the solution it gives us and make sure it's a satisfying cover!''
+
+    In at most 3 sentences, why can't we do this?
+
+    \item Dr. Noh isn't confident in our reduction. ``What about creating a vertex cover of size $2n$ by choosing \emph{all} vertices in our variable gadgets? Now every edge connecting a variable gadget to a clause gadget is covered! If $2m > n$, this cover will have size at most $n + 2m$ and work even if our original formula \emph{doesn't} have a satisfying assignment. If that can happen, our reduction doesn't work!''
+
+    Dr. Noh is right that if we could find a solution to our constructed instance of {\sc Vertex Cover} when there was no satisfying assignment in the original {\sc 3SAT} instance, that would invalidate the reduction. In 1-2 sentences, why doesn't this proposed cover break the reduction?
+    
+    \item We've convinced Dr. Noh that our reduction works - she's just not sure it can be done in polynomial time. ``I've got a great idea for a Boolean formula,'' she says. ``I'll use $n$ variables, but I'll add lots and lots of clauses, making duplicates if I have to. My formula will have $m = 2^n$ clauses! Now it'll take time exponential in $n$ to build our Vertex Cover instance. Clearly, this reduction isn't always polynomial time.''
+
+    In at most 3 sentences, why doesn't this example contradict our claim that the reduction is polynomial?
+\end{enumerate}
+\end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item While there always is a trivial vertex cover of a graph, the decision problem we want to solve is whether there exists a vertex cover of the graph, using fewer than $k$ vertices. Whether there is a trivial vertex cover is not relevant to this problem unless $k$ is greater than the number of vertices.
+
+		\item We don't want to show that \textsc{Vertex Cover} is $\mathsf{NP}$; we want to show it is $\mathsf{NP}$-complete. That is, we want to show that it is in $\mathsf{NP}$ and at least as hard as any problem in $\mathsf{NP}$. One easy way to do this is to show that it is at least as hard as \textsc{3SAT} (by reducing from \textsc{3SAT} to \textsc{Vertex Cover}) which is at least as hard as every other $\mathsf{NP}$ problem (by Cook--Levin).
+
+		\item The polynomial time verification only checks whether a given subset forms a vertex cover. To conclude that there is no vertex cover of size at most $k$ we would have to check all possible subsets of size $k$. Brute forcing all possible solutions (all possible subsets of $k$ vertices) would take $O(\binom{n}{k} \times \text{verification})$ runtime, which is not polynomial in $n$ and $k$.
+
+		\item Any vertex cover must also cover the edges in the clause gadgets. This requires at least $2$ vertices per clause, making $2m$ vertices in total. This means that Dr. Noh's cover has a total of $2n + 2m > 2n + m$ vertices. Thus, it doesn't disprove the reduction.
+
+		\item Our reduction needs to be polynomial in the input size. Since our input includes \emph{both} $m$ and $n$, it's okay if $m$ is exponential in $n$, as long as the total expression is polynomial in both $m$ and $n$.
+	\end{enumerate}
+\end{solution}
+
+\pagebreak
+
+\begin{problem}[Problem 2: Clique is $\mathsf{NP}$-complete!]
+	\emph{Note:} The reduction here is pretty simple, once you figure it out! Use this as a chance to make sure you understand the logic of \NP-Completeness and to write an elegant proof.
+
+In class, we proved that the following problem was \NP-Complete by reduction from $k$-\textsc{Vertex Cover}:
+
+\textsc{Independent Set}:
+
+\begin{itemize}
+    \item \textbf{Input. } A graph $G$ and a natural number $k$. 
+    \item \textbf{Output. } \emph{Yes} if there exists an independent set of size $k$: a set $I$ containing $k$ vertices, none of which are adjacent to any other vertex in the set. \emph{No} otherwise.
+\end{itemize}
+
+We'd like to show that the following problem is \NP-complete by reduction \emph{from} $k$-\textsc{Independent Set}.
+
+\textsc{Clique}:
+
+\begin{itemize}
+    \item \textbf{Input. } A graph $H$ and a natural number $\ell$.
+    \item \textbf{Output. } \emph{Yes} if there exists a clique of size $\ell$: a set $C$ containing $\ell$ vertices, each of which is adjacent to \emph{all} other vertices in the set. \emph{No} otherwise.
+\end{itemize}
+
+\begin{enumerate}
+    \item In 1-2 sentences, explain why {\sc Clique} is a member of the class \NP.
+    
+    \item In at most 3 sentences, give a polynomial-time reduction: explain how to transform an arbitrary instance of {\sc Independent Set} into a new instance of {\sc Clique} such that there exists a satisfying independent set in your input graph if and only if there exists a satisfying clique in your new graph. (Just explain how to transform the {\sc Independent Set} instance; no need to prove correctness yet.)
+
+    \item Explain in at most 3 sentences why your reduction takes time polynomial in the size of the input (the {\sc Independent Set} instance).
+
+    \item In a few sentences, prove your reduction correct: that is, prove that there exists a satisfying independent set in your input graph if and only if there exists a satisfying clique in your new graph.
+
+    \item Explain in at most 3 sentences how, if you had a polynomial time algorithm for {\sc Clique}, you could use your reduction to solve {\sc Independent Set} in polynomial time.
+
+    \item Explain in at most 3 sentences how, if you had a polynomial time algorithm for {\sc Clique}, you could use your reduction to solve \emph{any} problem in \NP~in polynomial time.
+\end{enumerate}
+\end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item Given a graph $H$, natural number $\ell$, and a subset of vertices $C \subseteq V(H)$, we can check whether $C$ is a clique by enumerating every pair of vertices in it (there are $O(\binom{\ell}{2}) = O(\ell^{2})$ of them) and checking whether each pair is adjacent (in $O(1)$ for each pair). This takes $O(\ell^{2}) O(1) = O(\ell^{2}) = O(\# V(H)^{2})$ time in total --- polynomial time in the size of the input graph.
+
+		\item Construct a new graph $H'$ with all the same vertices as $H$, and an edge between any two $v_{1}, v_{2} \in V(H')$ exactly when $\{v_{1}, v_{2}\}$ is \emph{not} an edge in the original graph $H'$. Run \textsc{Clique} on $(H', k)$. We claim $H'$ has a clique of size $k$ exactly when $H$ has an independent set of size $k$.
+
+		\item Suppose $H$ has $n$ vertices and $m$ edges. To construct $H'$ takes $O(n)$ to construct the $n$ vertices plus $O(\binom{n}{2}) = O(n^{2})$ to check every pair of vertices and assign them an edge exactly when they do not form an edge in the original graph $H$. This has total time $O(n^{2})$ to construct the reduction to \textsc{Clique}.
+
+		\item We show that $H$ has an independent set of size $k$ if and only if $H'$ has a clique of size $k$. 
+
+			Suppose $\{ v_{1}, \dots, v_{k} \} \subseteq V(H)$ is an independent set of size $k$ in $H$. Then $\{ v_{i}, v_{j} \} \notin E(H)$ for each $i, j$. Then, by definition of $H'$, for all $1 \le i < j \le k$ we have $\{ v_{1}, v_{j} \} \in E(H')$. That is, we have a subset $\{ v_{1}, \dots, v_{k} \} \subseteq V(H')$ so that every pair of vertices has an edge between them --- $\{ v_{1}, \dots, v_{k} \} \subseteq V(H')$ forms a clique of size $k$.
+
+			Suppose $\{ v_{1}, \dots, v_{k} \} \subseteq V(H')$ is a clique of size $k$ in $H'$. Then $\{ v_{i}, v_{j} \} \in E(H')$ for each $i, j$. Then, by definition of $H'$, for all $1 \le i < j \le k$ we have $\{ v_{1}, v_{j} \} \notin E(H)$. That is, we have a subset $\{ v_{1}, \dots, v_{k} \} \subseteq V(H)$ so that every pair of vertices is not adjacent --- $\{ v_{1}, \dots, v_{k} \} \subseteq V(H)$ forms an independent set of size $k$.
+
+		\item Reduce the \textsc{Independent Set} instance to a \textsc{Clique} instance in polynomial time (using the reduction described in part (b)). Solve that \textsc{Clique} instance in polynomial time. Since the reduction is correct (by part (d)), this is also the yes/no answer to the \textsc{Independent Set} problem.
+
+		\item Since \textsc{Independent Set} is $\mathsf{NP}$-complete, any $\mathsf{NP}$ problem can be reduced to \textsc{Independent Set} in polynomial time. Then solve that \textsc{Independent Set} problem in polynomial time using the reduction to \textsc{Clique} as in part (e). (Or, since we've shown \textsc{Clique} is $\mathsf{NP}$-complete, reduce to \textsc{Clique} in polynomial time directly, then solve in polynomial time).
+	\end{enumerate}
+\end{solution}
+
+\pagebreak
+
+\begin{problem}[Problem 3: 3SAT is $\mathsf{NP}$-complete]
+The traditional proof of the Cook-Levin theorem provides a reduction from any problem in \NP\, to SAT. To complete the proof that 3SAT is \NP-complete, we need to show a polynomial reduction from SAT to 3SAT: that is, we want to prove
+\[
+    \text{SAT} \leq_p \text{3SAT}
+\]
+In this problem, you'll provide that proof by completing the polynomial reduction from SAT to 3SAT! 
+
+\begin{enumerate}[label = (\arabic*)]
+\item Your first task is figuring how to rewrite clauses with an arbitrary number of literals as expressions made out of clauses that use \textbf{exactly 3 literals}. For each of the following clauses, write an equivalent expression in 3-CNF: as the AND ($\wedge$) of $\vee$-clauses with three distinct literals each. \textbf{We've done two of the five parts for you.}
+
+\begin{enumerate}[label = (\roman*)]
+	\item  
+
+    \item Write a 3-CNF expression equivalent to the clause $(\ell_1 \vee \ell_2)$, which contains two literals. This can be done with two clauses and one dummy variable. Then, explain in 1-2 sentences why the new expression can be satisfied if and only if $(\ell_1 \vee \ell_2) = \mathtt{true}$.
+
+    \item
+    \item Write an expression equivalent to the clause $(\ell_1 \vee \ell_2 \vee \ell_3 \vee \ell_4 \vee \ell_5)$.  This can be done with \emph{three} clauses and \emph{two} dummy variables.
+    
+    Then, explain in 1-2 sentences why the new expression can be satisfied if and only if $(\ell_1 \vee \ell_2 \vee \ell_3 \vee \ell_4 \vee \ell_5) = \mathtt{true}$.
+
+    \item Are we going to do this all day? No. Finally, given a clause
+    \[
+        C_k = (\ell_1 \vee \ell_2 \vee \dots \vee \ell_k)
+    \]
+    for some integer $k \geq 5$, explain how you could write an equivalent expression that contains $k-3$ dummy variables and $k-2$ clauses. Then, explain in a few sentences why the new expression can be satisfied if and only if $C_k = \mathtt{true}$. 
+    
+    \emph{Hint:} when $k=5$, your formula should simplify to your expression from the previous part!
+
+    \end{enumerate}
+    
+    \item Putting all the parts of the previous section together, prove that $\text{3SAT}$ is \NP-complete! That is:
+    \begin{itemize}
+        \item In a sentence, explain why $\text{3SAT}$ is in \NP.
+        \item In a few sentences, give a polynomial reduction and prove it correct: explain how, given a SAT formula $\phi$, you can create a 3SAT formula $\phi'$ that is satisfiable if and only if $\phi$ is satisfiable. 
+        \item In a few sentences, explain why your reduction takes time polynomial in the size of the input. That is, show that if $\phi$ has $n$ variables and $m$ clauses, your new formula $\phi'$ has a number of variables and clauses polynomial in $n$ and $m$. Any polynomial upper bound on the size of $\phi'$ is fine. \emph{Hint:} It may help to start thinking about the maximum number of literals in any clause of the SAT formula $\phi$.
+    \end{itemize} 
+\end{enumerate}
+\end{problem}
+
+\begin{solution}
+	\begin{enumerate}[label = (\arabic*)]
+		\item
+			\begin{enumerate}[label = (\roman*)]
+				\item done in question
+
+				\item Choose a dummy variable $z$. Then we claim $(\ell_{1} \vee \ell_{2})$ is equivalent to $(\ell_{1} \vee \ell_{2} \vee z) \wedge (\ell_{1} \vee \ell_{2} \vee \overline{z})$. We show this by boolean algebra. Notice that
+					\begin{align*}
+						(\ell_{1} + \ell_{2} + z)(\ell_{1} + \ell_{2} + \overline{z}) & = (\ell_{1} + \ell_{2})(\ell_{1} + \ell_{2}) + (z + \overline{z})(\ell_{1} + \ell_{2}) + z \overline{z} \\
+													      & = (\ell_{1} + \ell_{2}) + 1(\ell_{1} + \ell_{2}) + 0 \\
+													      & = (\ell_{1} + \ell_{2}).
+					\end{align*}
+					Thus, $(\ell_{1} \vee \ell_{2})$ is satisfiable, if and only if $(\ell_{1} \vee \ell_{2} \vee z) \wedge (\ell_{1} \vee \ell_{2} \vee \overline{z})$ is.
+
+				\item done in question
+
+				\item Choose dummy variables $z_{1}, z_{2}$. Then we claim $(\ell_{1} \vee \ell_{2} \vee \ell_{3} \vee \ell_{4} \vee \ell_{5})$ is equivalent to $(\ell_{1} \vee \ell_{2} \vee z_{1}) \wedge (\ell_{3} \vee \ell_{4} \vee {z_{2}}) \wedge (\ell_{5} \vee \overline{z_{1}} \vee \overline{z_{2}})$. Both expressions are satisfiable if and only if one of the $\ell_{i}$ is true.
+
+					Clearly $(\ell_{1} \vee \ell_{2} \vee \ell_{3} \vee \ell_{4} \vee \ell_{5})$ is true if and only if one of the $\ell_{i}$ is true. Thus it is satisfiable if and only if one of the $\ell_{i}$ is true.
+
+					Suppose all $\ell_{i}$ are false. Then the expression is equivalent to $z_{1} \wedge {z_{2}} \wedge (\overline{z_{1}} \vee \overline{z_{2}})$. This is not satisfiable --- for the last term to be true, one of the $z_{i}$ must be false, making one of the first two terms false, and thus, the whole expression false.
+
+					Suppose one of the $\ell_{i}$ is true. If it's $\ell_{5}$, we can choose $z_{1}, z_{2}$ to be true so that the whole expression is true. If it's $\ell_{3}$ or $\ell_{4}$, choose $z_{1}$ true and $z_{2}$ false. If it's $\ell_{1}$ or $\ell_{2}$, we can choose $z_{1}$ false and $z_{2}$ true.
+
+					Thus, our 3-CNF expression is satisfiable if and only if the original expression is satisfiable.
+
+				\item We claim that $C_{k}$ with $k \ge 5$ is satisfiable if and only if the 3-CNF
+					\[
+						(\ell_{1} \vee \ell_{2} \vee {z_{1}}) \wedge (\ell_{3} \vee \ell_{4} \vee z_{2}) \wedge (\ell_{5} \vee {z_{1}} \vee \overline{z_{2}}) \wedge (\ell_{6} \vee z_{2} \vee \overline{z_{6}}) \wedge (\ell_{7} \vee z_{6} \vee \overline{z_{7}}) \dots \wedge (\ell_{k} \vee z_{k - 1} \vee \overline{z_{k}})
+					\]
+					is satisfiable. This is because they are both satisfiable if and only if at least one of the $\ell_{i}$ is true.
+
+					This is clearly true for $C_{k}$.
+
+					If all $\ell_{i}$ are false then we are left with an unsatisfiable expression. If one of the $\ell_{i}$ is true then we can set $z_{i - 1}$ to whatever we want to make all the previous conjunctives true and $z_{i}$ also to whatever we want to make all the following conjunctives true.
+
+					Thus, the 3-CNF is satisfiable if and only if $C_{k}$ is.
+			\end{enumerate}
+
+		\item
+			\begin{itemize}
+				\item First we show 3SAT is in $\mathsf{NP}$. Suppose we are given a 3SAT certificate comprising a 3-CNF expression with $n$ variables and $m$ clauses and a choice of $\mathtt{true}$ or $\mathtt{false}$ assignments for each variable. Then we can evaluate each clause of length $3$ in $O(1)$, and then check that all of them are true in $O(m)$. Thus, we can check a solution to 3SAT in $O(m)$, which is polynomial in the size of the input expression. That is, 3SAT is in $\mathsf{NP}$.
+
+				\item Given a SAT formula $\phi$, we can reduce each conjunctive term to 3-CNF using the algorithm in part (1)(v). ANDing all of these 3CNFs gives a 3SAT formula $\phi'$. We claim that $\phi$ is satisfiable if and only if $\phi'$ is satisfiable. This follows by the chain of equivalence described below.
+
+					$\phi$ is satisfiable if and only if each of the conjunctive terms is satisfiable if and only if each of their equivalent 3-CNF reductions is satisfiable if and only if ANDing all the 3CNFs together is satisfiable if and only if the reduction $\phi'$ is satisfiable.
+
+				\item Suppose the SAT formula $\phi$ has $n$ variables and $m$ clauses. Each clause contains at most $2n$ literals. Thus the reduced formula contains at most $(2n - 2) m$ clauses with at most $(2n - 3) m$ dummy variables, and thus, $(2n - 3) m + n$ variables total. These bounds come from our formula for a conjunctive clause with $k$ literals. This is polynomial in $m, n$.
+			\end{itemize}
+	\end{enumerate}
+\end{solution}
+
+\pagebreak
+
+\begin{problem}[Problem 4: Sorting in parallel]
+	In class, we saw a parallel sorting algorithm that used $n^2$ processors to sort $n$ elements in time $O(\log(n))$ in the Concurrent Read, Exclusive Write (CREW) model. In brief, this algorithm worked as follows:
+\begin{enumerate}[label = (\arabic*)]
+    \item We assigned one processor to every possible \emph{pair} of elements $(i, j)$. Each processor read its two assigned elements in parallel and returned a single bit ($0$ or $1$) determined by whether $i < j$.
+    \item For each \emph{individual} element $j$, the $n$ processors that tested whether $k < j$ for some other number $k$ added up their bits in time $O(\log(n))$ to determine the total number of elements \emph{smaller} than $j$.
+    \item Each element $j$ was written to the appropriate index of the output array based on the number of smaller elements.
+\end{enumerate}
+
+This algorithm is extremely fast, but takes $O(n^2 \log(n))$ \emph{work} (number of processors $\times$ running time). Using fewer processors, can we save work while keeping the running time small?
+
+\begin{enumerate}
+    \item Recall that Mergesort works by dividing an array into two halves, recursively sorting each half, and then efficiently merging the two sorted sub-arrays.
+    
+    Describe a parallel implementation of Mergesort that uses $n$ processors to sort $n$ elements in time $O(\log(n)^2)$ using the CREW memory model. You may assume all elements are distinct and that a processor can read, write, and add in time $O(1)$.
+
+    \emph{Hint:} Mergesort has $O(\log n)$ ``levels" of recursion, each of which merges $n/k$ sorted arrays of length $k$. Can you implement each ``level" efficiently in parallel?
+    
+    \item Briefly explain the running time and total work done by your algorithm. Why does the algorithm take $O(\log(n)^2)$ time? What is the total work?
+\end{enumerate}
+\end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item We describe $\mathtt{parallelMerge}$, an algorithm to merge two sorted arrays of length $\ell / 2$ into one sorted array of length $\ell$ using $\ell$-processors in CREW parallel. Our parallel Mergesort runs Mergesort as usual, except using $\mathtt{parallelMerge}$ for all merge steps. Note that at any step, we can run all merges in parallel since we have $n$ processors and we are running $2^{k}$ merges of arrays of length $n / 2^{k}$, requiring $2^{k} (n / 2^{k}) = n$ processors in total.
+
+			Suppose we are given two lists $L_{1}$ and $L_{2}$, both of length $\ell / 2$. For each element of $L_{2}$, run ``binary search'' in $O(\log \ell / 2)$ to find all the elements of $L_{1}$ that are less than it. Since we know how many elements are less than it in $L_{1}$ and how many elements are less than it in $L_{2}$ (because we know its index in the sorted list $L_{2}$), so we know how many elements are less than it in $L_{1} \cup L_{2}$, and thus we know its index in the sorted merged list. Specifically, if there are $j$ elements of $L_{1}$ that are smaller than it, and the element sits in index $k$ in $L_{2}$, then insert in index $j + k$ in the merged list $L$. Then do the same thing to find the new position of every element of $L_{1}$.
+
+		\item Our parallelised Mergesort involves splitting and merging the array $\log n$ times. The splitting is constant time, and each $k$th merge step involves $2^{k}$ parallel merges of arrays of length  $n / 2^{k}$. These parallel merges run in $O(\log(n / 2^{k - 1})) = O(\log n)$ time. Thus, the total run time is  $O(\log n) O(\log n) = O((\log n)^{2})$. 
+
+			The total work done by the algorithm is the product of the number of processors and the run time. Since the run time is $O((\log n)^{2})$, the work is $O(n (\log n)^{2})$.
+	\end{enumerate}
+\end{solution}
+
+\end{document}
