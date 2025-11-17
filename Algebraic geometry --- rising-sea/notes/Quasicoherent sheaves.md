@@ -126,5 +126,158 @@ $\varphi_{fg}(m) = \varphi_{f}(m)$ for all $m$ in $M_{f}$ and $N_{f} \to N_{fg}$
 
 By the functoriality of localisation, the maps commute with composition on each distinguished open, and thus, also as morphisms of sheaves. That is, $(\varphi \circ \psi)_{f} = \varphi_{f} \circ \psi_{f}$, so we also have $\widetilde{\varphi \circ \psi} = \widetilde{\varphi} \circ \widetilde{\psi}$.
 
+Any morphism of sheaves $\widetilde{\varphi} : \widetilde{M} \to \widetilde{N}$ has the following diagram commute (writing $M_{f}$ for $\widetilde{M}(D(f))$ and $\varphi$ for $\widetilde{\varphi}(\operatorname{Spec} A)$)
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		M \ar[r, "\varphi"] \ar[d] & N \ar[d] \\
+		M_{f} \ar[r, "\widetilde{\varphi}(D(f))"] & N_{f}
+	\end{tikzcd}
+\end{document}
+```
+We want to show that $\widetilde{\varphi}(D(f)) = \varphi_{f}$. By the [[Algebraic geometry --- rising-sea/notes/Localisation, categorically#_proposition _ the universal property of localisation|universal property of localisation]], $\widetilde{\varphi}(D(f))$ is the unique map that $M \to N \to N_{f}$ factors through. $\varphi_{f}$ is also this map, so they are the same map.
+
+We have shown that every sheaf morphism $\widetilde{M} \to \widetilde{N}$ comes from a module morphism $M \to N$, so the functor $\mathsf{Mod}_{A} \to \mathsf{Mod}_{\mathscr{O}_{\operatorname{Spec} A}}$ is full.
+
 ---
 
+### Quasicoherent sheaves
+
+Quasicoherent sheaves are then the obvious globalisation of these $\widetilde{M}$. In fact, we can define the whole category of quasicoherent sheaves in one go.
+
+##### _definition:_ quasicoherent sheaves, $\mathsf{QCoh}_{X}$
+
+A **quasicoherent sheaf** on $X$ is an $\mathscr{O}_{X}$[[Algebraic geometry --- rising-sea/notes/Ringed spaces#_definition _ $ mathscr{O}_{X}$-modules|-module]] $\mathscr{F}$ such that, for each affine open $\operatorname{Spec} A \subseteq X$, we have $\mathscr{F}_{\mid \operatorname{Spec} A} \cong \widetilde{M}$, for some $A$-module $M$.
+
+The **category of quasicoherent sheaves on $X$** is $\mathsf{QCoh}_{X}$, consisting of all quasicoherent sheaves as objects and all [[Algebraic geometry --- rising-sea/notes/Morphisms of sheaves#_definition _ morphism of sheaves|sheaf morphisms]] between them as morphisms.
+
+---
+
+##### _example:_ silly but important example
+
+$\mathscr{O}_{X}$ is a quasicoherent sheaf on $X$ since $\mathscr{O}_{X \mid \operatorname{Spec} A} \cong \mathscr{O}_{\operatorname{Spec} A} \cong \widetilde{A}$ for each affine open $\operatorname{Spec} A \subseteq X$.
+
+---
+
+Note that there are non-quasicoherent $\mathscr{O}_{X}$-modules!
+
+##### _example:_ a non-quasicoherent sheaf
+
+Let $X = \operatorname{Spec} \mathbb{F}[x]$. Let $\mathscr{F}$ be the [[Algebraic geometry --- rising-sea/notes/Sheaves#_example _ skyscraper sheaves|skyscraper sheaf]] supported at the origin $(x)$, taking value $\mathbb{F}(x)$ with the usual $\mathbb{F}[x]$-module structure. Since $0$ is an $A$-module for every ring, $\mathscr{F}(U)$ is an $\mathscr{O}_{X}(U)$-module for every $U$ not containing $(x)$. 
+
+The open $U$ containing $(x)$ are all $X \setminus \{ p_{1}, \dots, p_{m} \}$ for some finite set $S = \{ p_{1}, \dots, p_{m} \}$ not containing $(x)$ and not containing the generic point. Writing $p_{i} = (x - a_{i})$, these can be thought of as $D\left( \prod_{i = 1}^m (x_{i} - a_{i}) \right)$. Thus, they have $\mathscr{O}_{X}(U) = \mathbb{F}[x]_{f}$, and $\mathbb{F}(x)$ is an $\mathbb{F}[x]_{f}$-module.
+
+---
+
+However, if we alter this to be a skyscraper sheaf at a generic point, it works fine.
+
+##### _example:_ a quasicoherent skyscraper sheaf
+
+Still with $X = \operatorname{Spec} \mathbb{F}[x]$, now choose the skyscraper sheaf supported at the generic point $(0)$, taking value $\mathbb{F}(x)$. This is the same as the constant sheaf $\underline{\mathbb{F}(x)}$ ([[Algebraic geometry --- rising-sea/notes/Affine schemes#_proposition _ generic points are near exactly the points of their closure|every non-empty open contains the generic point]]). This in turn is the same as the $\mathscr{O}_{X}$-module $\widetilde{\mathbb{F}(x)}$ — a quasicoherent sheaf. This is because $\mathbb{F}(x)$ is the [[Commutative algebra --- math-189AA/notes/Localisation of a ring#_definition _ localisation of a ring, localisations at a prime, fraction field|fraction field]] of $\mathbb{F}[x]$, so localising to distinguished opens doesn't change $\mathbb{F}(x)$ at all. That is, $\widetilde{\mathbb{F}(x)}(D(f)) = \mathbb{F}(x)_{f} = \mathbb{F}(x)$.
+
+---
+
+As usual, when we don't want to have to check quasicoherence on every affine open, we hope that quasicoherence is [[Algebraic geometry --- rising-sea/notes/Affine-locality and affine communication#_lemma, definition _ affine communication lemma, affine-local|affine-local]]. It is!
+
+##### _proposition:_ quasicoherence is affine-local
+
+Quasicoherence is an affine-local property. Specifically, for $f_{1}, \dots, f_{n}$ generating $A$ and an $\mathscr{O}_{\operatorname{Spec} A}$-module $\mathscr{F}$ the following implications hold.
+1) If $\mathscr{F} \cong \widetilde{M}$ for some $A$-module $M$, then $\mathscr{F}_{\mid D(f_{i})} = \widetilde{M_{f_{i}}}$.
+2) If each $\mathscr{F}_{\mid D(f_{i})} \cong \widetilde{M_{i}}$ for $A_{f_{i}}$-modules $M_{i}$, then $\mathscr{F} = \widetilde{M}$ for some $A$-module $M$.
+
+###### _proof:_
+
+The first hypothesis follows almost by definition — note that the distinguished opens of $D(f) = \operatorname{Spec} A_{f}$ are also distinguished in $\operatorname{Spec} A$. That is, for $g = g' / f^m \in A_{f}$ we have
+$$
+\begin{align}
+\widetilde{M_{f_{}}}(D_{A_{f}}(g)) & = (M_{f_{}})_{g}  \\
+& = M_{f_{} g'}  \\
+& = \widetilde{M}(D_{ }(f_{} g))  \\
+& = \widetilde{M}(D_{A}(f_{}) \cap D_{A}(g'))  \\
+& = \widetilde{M}_{\mid D_{A}(f)}(D_{A_{f}}(g'))  \\
+& = \widetilde{M}_{\mid D_{A}(f)}(D_{A_{f}}(g)).
+\end{align}
+$$
+
+Now suppose we have $\mathscr{F}_{\mid D(f_{i})} \cong \widetilde{M_{i}}$ with $M_{i}$ an $A_{f_{i}}$-module. Since we have isomorphisms $\widetilde{M_{i}}_{\mid D(f_{i}) \cap D(f_{j})} \cong \widetilde{M_{j}}_{\mid D(f_{i}) \cap D(f_{j})}$  satisfying the cocycle condition, we have isomorphisms $\varphi_{ij} : (M_{i})_{f_{j}} \to (M_{j})_{f_{i}}$ (we will call this module $M_{ij}$) also satisfying the cocycle condition.
+
+We claim that for $M = \mathscr{F}(\operatorname{Spec} A)$, we have $\mathscr{F} \cong \widetilde{M}$. By definition of $M$ the sequence
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		0 \ar[r] & M \ar[r] & \prod_{i} M_{i} \ar[r, "\gamma"] & \prod_{i \neq j} M_{ij}
+	\end{tikzcd}
+\end{document}
+```
+is exact (with $\gamma$ on $M_{i} \to M_{ij}$ given by $m \mapsto m$ and on $M_{j} \to M_{ij}$ given by $m \mapsto -m$). But then since localisation is exact, we have
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		0 \ar[r] & M_{f_{1}} \ar[r] & \prod_{i} (M_{i})_{f_{1}} \ar[r, "\gamma_{f_{1}}"] & \prod_{i \neq j} (M_{ij})_{f_{1}}
+	\end{tikzcd}
+\end{document}
+```
+exact. That is, $M_{f_{1}}$ is the kernel of $\gamma_{f_{1}}$. We claim that $M_{1}$ is also the kernel of $\gamma_{f_{1}}$, giving an isomorphism $M_{f_{1}} \cong M_{1}$. This follows because we can rewrite each $(M_{i})_{f_{1}}$ as $(M_{1})_{f_{i}}$ and get an exact sequence
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		0 \ar[r] & M_{1} \ar[r] & \prod_{i} (M_{1})_{f_{i}} \ar[r, "\gamma_{f_{1}}"] & \prod_{i \neq j} (M_{1})_{f_{i} f_{j}}
+	\end{tikzcd}
+\end{document}
+```
+by the sheafiness of $\widetilde{M_{1}}$.
+
+Note that to get $\widetilde{M} \cong \mathscr{F}$ it suffices to show isomorphisms $\widetilde{M}_{\mid D(f_{i})} \cong \mathscr{F}_{\mid D(f_{i})}$ on a cover of $\operatorname{Spec} A$ (now all values of the sheaf on open sets $U$ can be given by limits of other open sets already shown to be equal). However, it is nice to have the cocycle condition. That is, we want the diagram below to commute.
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		& M_{f_{i} f_{j}} \ar[rd, "\beta"] \ar[ld, "\alpha"'] \\
+		(M_{i})_{f_{j}} \ar[rr, "\varphi_{ij}"] & & (M_{j})_{f_{i}}
+	\end{tikzcd}
+\end{document}
+```
+
+$\beta$ is the unique isomorphism expressing $M_{f_{i} f_{j}}$ as the kernel of the exact sequence
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		0 \ar[r] & (M_{j})_{f_{i}} \ar[r] & (\prod_{k} (M_{j})_{f_{k}})_{f_{i}} \ar[r, "\gamma_{f_{j}}"] & (\prod_{k \neq \ell} (M_{j})_{f_{k} f_{\ell}})_{f_{i}}
+	\end{tikzcd}
+\end{document}
+```
+But then, we can bring all the localisations away from $f_{i}$ into the $M_{j}$ to get a commutative diagram as below.
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		0 \ar[r] & (M_{i})_{f_{j}} \ar[r] \ar[d, "\varphi_{ij}"] & (\prod_{k} (M_{i})_{f_{k}})_{f_{j}} \ar[r, "\gamma_{f_{i}}"] \ar[d, "\varphi_{ij}"] & (\prod_{k \neq \ell} (M_{i})_{f_{k} f_{\ell}})_{f_{j}} \ar[d, "\varphi_{ij}"] \\
+		0 \ar[r] & (M_{j})_{f_{i}} \ar[r] & (\prod_{k} (M_{j})_{f_{k}})_{f_{i}} \ar[r, "\gamma_{f_{j}}"] & (\prod_{k \neq \ell} (M_{j})_{f_{k} f_{\ell}})_{f_{i}}
+	\end{tikzcd}
+\end{document}
+```
+This tells us that $\varphi_{ij}$ expresses $(M_{i})_{f_{j}}$ as the kernel of the $(M_{j})_{f_{i}}$ sequence and thus, that $\varphi_{ij} \circ \alpha$ expresses $M_{f_{i} f_{j}}$ as the kernel of the $(M_{j})_{f_{i}}$ sequence. This implies $\varphi_{ij} \circ \alpha = \beta$ as desired.
+
+---
+
+Recall the definitions of torsion free modules and the torsion submodule of a module $M$ over a ring $A$. Recall that over an integral domain $A$, $M$ is torsion if and only if $M \otimes_{A} Q(A) = 0$. Quasicoherent sheaves allow us to extend this notion to sheaves.
+
+##### _definition:_ torsion-free, torsion 
+
+An $\mathscr{O}_{X}$-module $\mathscr{F}$ is **torsion-free** if $\mathscr{F}_{p}$ is a torsion-free $\mathscr{O}_{X, p}$-module for each $p \in X$.
+
+A quasicoherent sheaf on a [[Algebraic geometry --- rising-sea/notes/Reduced and integral schemes#_definition _ reduced (schemes)|reduced scheme]] is **torsion** if its stalk at the generic point of every irreducible component is $0$.
+
+---
