@@ -1,0 +1,76 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 189AA --- Commutative Algebra}
+\assignment{Exam 2}
+\duedate{25th November 2025}
+
+\begin{document}
+
+\begin{problem}[1.]
+	Consider the ideal $I = (x, z)$ in the ring
+	\[
+		R = \mathbb{Q}[x, y, z] / (y^{2} - xz, x^{2} y - z^{2}, x^{3} - yz).
+	\]
+	\begin{enumerate}
+		\item Use Macaulay2 to calculate a free resolution $P_{\bullet}$ of $I$ over $R$. Find the modules $P_{0}, P_{1}, P_{2}$ and the matrices representing the homomorphisms between them. Write your solution in the form
+			\[
+				\begin{tikzcd}
+					\cdots \ar[r] & P_{2} \ar[r, "\text{matrix}"] & P_{1} \ar[r, "\text{matrix}"] & P_{0} \ar[r, "\text{matrix}"] & (x, z) \ar[r] & 0
+				\end{tikzcd}
+			\]
+
+		\item Print your Macaulay2 session and hand it in with your exam.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[2.]
+	The diagram below is a commutative diagram of $R$-modules with exact rows:
+	\[
+		\begin{tikzcd}
+			A \ar[r, "f_{1}"] \ar[d] & B \ar[r, "f_{2}"] \ar[d] & C \ar[r, "f_{3}"] \ar[r] \ar[d] & D \ar[r, "f_{4}"] \ar[d] & E \ar[d] \\
+			A' \ar[r, "f_{1}"] & B' \ar[r, "f_{2}"] & C' \ar[r, "f_{3}"] \ar[r] & D' \ar[r, "f_{4}"] & E'
+		\end{tikzcd}
+	\]
+	Establish the following claims directly, by diagram chase:
+	\begin{enumerate}
+		\item If $\alpha$ is surjective and $\beta$ and $\delta$ are both injective, then $\gamma$ is injective.
+
+		\item If $\varepsilon$ is injective and $\beta$ and $\delta$ are both surjective, then $\gamma$ is surjective.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[3.]
+	If $P$ is a finitely generated projective $R$-module, show that $\operatorname{Hom}_{R}(P, R)$ is also a projective $R$-module.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[4.]
+	Let
+	\[
+		\begin{tikzcd}
+			0 \ar[r] & L \ar[r] & M \ar[r] & N \ar[r] & 0
+		\end{tikzcd}
+	\]
+	be a short exact sequence of $R$-modules. If $M$ and $N$ are projective, prove that $L$ is also projective.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}
+	Suppose $M$ is a finitely presented $R$-module and let
+	\[
+		\begin{tikzcd}
+			0 \ar[r] & K \ar[r] & N \ar[r] & M \ar[r] & 0
+		\end{tikzcd}
+	\]
+	be a short exact sequence where $N$ is finitely generated. Prove that $K$ is also finitely generated.
+\end{problem}
+
+\end{document}
