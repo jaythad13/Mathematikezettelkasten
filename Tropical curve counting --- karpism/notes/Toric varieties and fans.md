@@ -35,7 +35,7 @@ $$
 
 Here $n$ is the size of the $1$-skeleton of $\Sigma$ — $n = \# \Sigma(1)$. Thus to each copy of $\mathbb{C}$ we associate some $\rho \in \Sigma(1)$.
 
-$Z(\Sigma)$ is the union of all $V(S)$ as $S \subseteq \Sigma(1)$. $V(S)$ is the linear subspace where all $x_{\rho} = 0$ for $\rho \in S$.
+$Z(\Sigma)$ is the union of all $V(S)$ for $S \subseteq \Sigma(1)$ with $S$ not spanning a cone. $V(S)$ is the linear subspace where all $x_{\rho} = 0$ for $\rho \in S$.
 
 Let $M$ is the lattice $\mathbb{Z}^d \subseteq \mathbb{R}^d$ for $\Sigma \subseteq \mathbb{R}^d$. Consider $\varphi : \operatorname{Mor}_{\mathsf{Set}}(\Sigma(1), \mathbb{C}^\times) \to \operatorname{Hom}_{\mathsf{Ab}}(M, \mathbb{C}^\times)$ given as follows. Send a map $f : \Sigma(1) \to \mathbb{C}^\times$ to a map $M \to \mathbb{C}^\times$ by $m \mapsto \prod_{v \in \Sigma(1)} f(v)^{\left< m, v \right>}$. In particular, we can think of $\varphi$ as $(\mathbb{C}^\times)^n \to (\mathbb{C}^\times)^r$ by $(t_{1}, \dots, t_{n}) \mapsto \left( \prod_{j = 1}^n t_{j}^{v_{j}^1}, \dots, \prod_{j = 1}^n t_{j}^{v_{j}^n} \right)$ (here write $v_{j}^i$ for the $i$th component of $v_{j}$). 
 
