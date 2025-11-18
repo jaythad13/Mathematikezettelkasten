@@ -236,3 +236,15 @@ $$
 Then, by our induction hypothesis, (the list on the left is of length $k$), since there is unique factorisation $u q_{2}, \cdots q_{m}$ is just a reordering/associates of $p_{2} \cdots p_{k + 1}$, and since $q_{1}$ is an associate of $p_{1}$, this is true for the full factorisation of $r$.
 
 ##### _corollary:_ $\mathbb{Z}$ is a UFD
+
+---
+
+##### _proposition:_ UFDs are preserved by localisation
+
+Suppose $A$ is a UFD. Then any non-zero [[Commutative algebra --- math-189AA/notes/Localisation of a ring#_definition _ localisation of a ring, localisations at a prime, fraction field|localisation]] $S^{-1} A$ is also a UFD.
+
+###### _proof:_
+
+>[!missing]
+
+---

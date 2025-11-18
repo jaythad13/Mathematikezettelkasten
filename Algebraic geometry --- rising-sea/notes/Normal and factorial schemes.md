@@ -71,7 +71,7 @@ Each non-zero localisation $A_{i, \mathfrak{p}}$ is a UFD. Thus, each stalk $\ma
 
 ---
 
-Note however, that the opposite does not hold — there are factorial schemes covered by non-UFD rings. The easiest example is of course affine.
+Note however, that the opposite does not hold — there are factorial schemes covered by non-UFD rings. The easiest example is of course affine and comes from projective geometry.
 
 ##### _example:_ factorial affine schemes from non-UFD ring
 
@@ -79,11 +79,16 @@ Let $A$ be the degree zero portion of the graded ring $S_{\bullet} = \mathbb{Q}[
 $$
 \left( \frac{xy}{x^{2} + y^{2}} \right)^{2} = \left( \frac{x^{2}}{x^{2} + y^{2}} \right)\left( \frac{y^{2}}{x^{2} + y^{2}} \right)
 $$
-Each of the factors is irreducible because its numerator is of minimal degree
+Each of the factors is irreducible. We show for example that $xy / (x^{2} + y^{2})$ is irreducible. Suppose $xy / (x^{2} + y^{2}) = f(x, y) g(x, y) / (x^{2} + y^{2})^{m + n}$ where $f$ is of pure degree $2m$ and $g$ is of pure degree $2n$. Then we must have
+$$
+xy (x^{2} + y^{2})^{m + n - 1} = f(x, y) g(x,y)
+$$
+in $\mathbb{Q}[x, y]$. However, $\operatorname{Spec} A$ is an affine open covering $\mathbb{P}^1_{\mathbb{Q}}$ which is factorial. Thus, $\operatorname{Spec} A$ is factorial (each $A_{\mathfrak{p}}$ is a UFD). 
 
-The distinguished open sets $D(x^{2} / (x^{2} + y^{2}))$ and $D(y^{2} / (x^{2} + y^{2}))$ cover $A$ [[Algebraic geometry --- rising-sea/notes/The base of distinguished open sets#_proposition _ distinguished covers generate the whole ring|since]] the sum of the functions that don't vanish on them is $1$.
+Even worse, we can cover $\operatorname{Spec} A$ with distinguished affines opens that are factorial. Specifically, the distinguished open sets $D(x^{2} / (x^{2} + y^{2}))$ and $D(y^{2} / (x^{2} + y^{2}))$ cover $A$ [[Algebraic geometry --- rising-sea/notes/The base of distinguished open sets#_proposition _ distinguished covers generate the whole ring|since]] the sum of the functions that don't vanish on them is $1$. We claim $B = A_{x^{2} / (x^{2} + y^{2})} \cong A_{y^{2} / (x^{2} + y^{2})}$ is isomorphic to $\mathbb{Q}[t]_{t^{2} + 1}$ and thus, is a UFD. 
 
-$B = A_{x^{2} / (x^{2} + y^{2})}$ then consists of 
+>[!missing]
+>proof
 
 A second example we will not explain in detail is that $\mathbb{Z}[\sqrt{ -5 }]$ is not a unique factorisation domain (factor $6$ two ways), but can be covered by $D(2)$ and $D(3)$ which are spectra of $\mathbb{Z}[\sqrt{ -5 }]_{2}$ and $\mathbb{Z}[\sqrt{ -5 }]_{3}$ , both UFDs.
 
