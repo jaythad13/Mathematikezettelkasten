@@ -169,6 +169,8 @@ Let $X = \operatorname{Spec} \mathbb{F}[x]$. Let $\mathscr{F}$ be the [[Algebrai
 
 The open $U$ containing $(x)$ are all $X \setminus \{ p_{1}, \dots, p_{m} \}$ for some finite set $S = \{ p_{1}, \dots, p_{m} \}$ not containing $(x)$ and not containing the generic point. Writing $p_{i} = (x - a_{i})$, these can be thought of as $D\left( \prod_{i = 1}^m (x_{i} - a_{i}) \right)$. Thus, they have $\mathscr{O}_{X}(U) = \mathbb{F}[x]_{f}$, and $\mathbb{F}(x)$ is an $\mathbb{F}[x]_{f}$-module.
 
+However, $0$ is not the localisation of $\mathbb{F}(x)$ away from $x$ — that is $\mathscr{F}(D(x)) = 0 \neq \mathbb{F}(x)_{x}$, and so $\mathscr{F}$ is not quasicoherent.
+
 ---
 
 However, if we alter this to be a skyscraper sheaf at a generic point, it works fine.
