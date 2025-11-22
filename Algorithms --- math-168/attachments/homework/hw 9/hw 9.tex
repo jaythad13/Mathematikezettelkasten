@@ -1,0 +1,180 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+\newcommand{\NP}{$\mathsf{NP}$}
+\renewcommand{\P}{$\mathsf{P}$}
+
+\name{Jayden Thadani}
+\class{MATH 168 --- Algorithms}
+\assignment{Homework \#9}
+\duedate{21st November 2025}
+
+\begin{document}
+
+\begin{problem}[Problem 1: The PIT committee problem!]
+	At the Pasadena Institute of Technology (PIT), every professor serves on one or more committees. Let $S$ denote the set of professors and let $C$ denote the set of committees, where each committee is itself a subset of the professors. (In other words, $C$ is a subset of the power set of $S$.) The dean would like to choose a smallest subset $S'$ of professors such that every committee in $C$ has at least one professor in $S'$.  That is, $S'$ can be viewed as a smallest set of professors that represent all committees.  We call such a set a \emph{representative set}.  
+
+\textsc{PITCoP}:
+\begin{itemize}
+    \item \textbf{Input. } A set $S$ of professors, a collection $C$ of subsets of $S$, and a positive integer $k$.
+    \item \textbf{Output. } \emph{Yes} if there exists a representative set of size at most $k$: a set $S' \subseteq S$ of cardinality $|S'| \leq k$ such that every committee in $C$ has at least one professor in $S'$. \emph{No} otherwise.
+\end{itemize}
+
+Prove that the \textsc{PitCOP} decision problem is \NP-complete by reducing from \textsc{Vertex Cover}.  
+
+Your proof should include all four of the following parts: (1) explanation of why \textsc{PITCoP} is in \NP, (2) description of reduction from \textsc{Vertex Cover} to \textsc{PITCoP}, (3) explanation of why the reduction takes polynomial time and (4) if-and-only-if proof of correctness. Please label them in a way that makes them easy to identify. (Think of your hard-working grutors!) 
+
+The four parts should range in length from 1-2 sentences to 1-2 paragraphs. In general, parts (1) and (3) are usually short but parts (2) and (4) may be longer.
+\end{problem}
+
+\begin{solution}
+	\emph{\textsc{PITCoP} is \NP:} Suppose we are given a set of of professors $S$, set of committees $C$, and a claimed representative subset $S' \subseteq S$ of size $k$. Then in polynomial time in $k$ and the number of committees $\# C$, we can check that for each committee, one of the members serving on it is in $S'$. Since we can verify solutions in polynomial time, it is in \NP.
+
+	\emph{Description of reduction:} First we describe a reduction from \textsc{Vertex Cover} to \textsc{PITCoP}. Suppose we have a graph $G$ and we want to determine whether there is a vertex cover of size $k$. Create the following instance of \textsc{PITCoP}. Let $S = V(G)$ be the set of vertices of $G$. Let $C$ be the set of edges of $G$, with a professor serving on a committee if the corresponding vertex is an endpoint of the corresponding edge. We claim that there is a vertex cover of size $k$ if and only if there is a representative set of size $k$.
+
+	\emph{Run time of reduction:} We claim this is a polynomial reduction. For our inputs $G, k$ we create an instance of \textsc{PITCoP} with as many professors as there were vertices and as many committees as there were edges. Since these are polynomial in the size of the input, the reduction is polynomial.
+
+	\emph{Proof of correctness:} We claim that there is a vertex cover of size $k$ if and only if there is a representative set of size $k$. Suppose there is a vertex cover of size $k$. Then there is a set of vertices of size $k$ such that every edge has one of these vertices as an endpoint. The corresponding set of professors is also of size $k$, and every committee has one of these professors serving on it. Thus, there is a representative set of size $k$.
+
+	Suppose conversely that there is a representative set of size $k$. Then there is a set of professors of size $k$ with every committee having one of those professors serving on it. By our construction, the corresponding set of vertices $V'$ of the graph is also of size $k$, and for each edge (corresponding to a committee), there is some vertex in the subset $V'$ that is an endpoint of that edge. That is, $V'$ is a vertex cover of size $k$.
+\end{solution}
+
+\pagebreak
+
+\begin{problem}[Problem 2: PITACHIP problems]
+	When asked to design an algorithm for a new problem, you generally don't know in advance whether a polynomial time algorithm exists or if the problem is \NP-hard (or possibly even harder!).  This problem is intended to give you a sense of the uncertainty faced by algorithm designers, system architects, and software developers when they consider a new problem!
+
+You've been hired by the PIT Algorithms Council of Hard and Interesting Problems (PITACHIP) to study two problems of interest:
+
+\begin{itemize}
+    \item \textbf{PIT Spanning Trees.}  Pasadena Telecom is interested in using minimum spanning trees to construct their phone and data networks. 
+    \begin{itemize}
+        \item \textbf{Input. } An undirected, weighted graph $G$ and two positive integers $k$ and $t$. 
+        \item \textbf{Output. } \emph{Yes} if there exists a spanning tree \emph{in which every node has degree at most $k$} that has total weight at most $t$. (Note that the degree constraint applies to the spanning tree, not the original graph.) \emph{No} otherwise.
+    \end{itemize}
+
+    \item \textbf{Independent Vertex Cover.} 
+    \begin{itemize}
+        \item \textbf{Input. } An undirected, connected graph $G$ and a positive integer $k$. 
+        \item \textbf{Output. } \emph{Yes} if there exists a subset of exactly $k$ vertices that is \emph{both} a vertex cover \emph{and} an independent set. \emph{No} otherwise.
+    \end{itemize}
+\end{itemize}
+
+\begin{enumerate}
+    \item One of the two decision problems above can be solved in polynomial time (it is in the class \P)! Figure out which one, describe a polynomial-time algorithm that solves the problem, briefly prove the correctness of your algorithm (2-3 sentences suffice) and analyze the runtime. 
+
+    \item (15 \textbf{extra credit} points.) The \emph{other} problem is \NP-complete. Prove this by showing a polynomial-time reduction from one of the problems in the list of ``known \NP-complete problems'' on Handout 5. (You should be able to do this with 1-2 sentences for each of the proof of membership in \NP, reduction description, correctness, and runtime.)
+\end{enumerate}
+\end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item Independent vertex cover is in $\mathsf{P}$.
+
+			We claim a graph $G$ has an independent vertex cover of size $k$ if and only if it is bipartite, with one of the sets of size $k$ (we prove this in the paragraph below). Then, since two-colourability is equivalent to being bipartite, and two-colourability can be checked in polynomial time (we proved this in class), we are done.
+
+			Suppose $G$ has an independent vertex cover $S$ of size $k$. Since the complement of an independent set is a vertex cover and vice-versa, $V(G) \setminus S$ is also an independent vertex cover. Thus, there are no edges within $S$ and no edges within $V(G) \setminus S$, and all the edges are between them. But this is exactly what it means for $G$ to be bipartite with $S$ and $V(G) \setminus S$ the two bipartite parts of the graph. That is, $G$ is a bipartite graph with one of the bipartite subsets of size $k$.
+
+			Suppose $G$ is bipartite, and $S$ is one of the bipartite subsets of vertices of size greater than $k$. Since $G$ is bipartite, all of the edges are between $S$ and $V(G) \setminus S$. That is, every edge has one endpoint in $S$, so $S$ is an independent set. Since $G$ is bipartite, there are also no edges within $S$. That is, $S$ is an independent set.
+
+		\item We show that PIT spanning trees is $\mathsf{NP}$-complete.
+
+			First we show that it is in $\mathsf{NP}$. Given a subgraph of $G$, we can check if it is a spanning tree by checking that every vertex is contained in it in $O(\#V)$, that it has  $\#V - 1$ edges, and thus, is a tree in $O(1)$, and checking that it has
+
+			Now we show that we can reduce Hamiltonian paths to PIT spanning trees. Note that a path is just a tree with each node having degree at most $2$. Thus, a Hamiltonian path is just a spanning tree with each node having degree at most $2$. That is, $G$ has a Hamiltonian path if and only if it has a PIT spanning tree with each node having degree at most $k = 2$, and total weight at most $t = \infty$ (or equivalently we can choose $t$ greater than the sum of all edge weights).
+
+			This reduction is polynomial since the graph is the same size and $k$ and $t$ are constant values.
+	\end{enumerate}
+\end{solution}
+
+\pagebreak
+
+\begin{problem}[Problem 3: \NP-complete number problems]
+In this problem, you'll prove the that two number problems are \NP-complete.
+
+\begin{enumerate}
+    \item The \textsc{Partition} problem is defined as follows. 
+    \begin{itemize}
+        \item \textbf{Input. } A multiset\footnote{A multiset is a set that's allowed to have multiple copies of the same element.} $S = \{a_1, \ldots a_n\}$ containing $n$ positive integers.
+        \item \textbf{Output. } \emph{Yes} if $S$ can be partitioned into two subsets $A$ and $B$ such that the sums of elements in $A$ and $B$ are the same:
+        \[
+            \sum_{a_i \in A} a_i = \sum_{a_j \in B} a_j.
+        \]
+        \emph{No} otherwise.
+    \end{itemize}
+
+    Show that \textsc{Partition} is \NP-complete by reduction from one of the ``known \NP-complete problems'' on Handout 5.
+
+\item The \textsc{Bin Packing} problem is defined as follows. 
+    \begin{itemize}
+        \item \textbf{Input. } A multiset $S = \{a_1, a_2, \dots, a_n\}$, which we interpret as a list of positive integer ``sizes'' of $n$ objects, plus an integer ``bin capacity'' $C \geq \max_{a_i \in S} a_i$ and a target integer $t$.
+        \item \textbf{Output. } \emph{Yes} if it is possible to pack all of the objects in $S$ into $t$ bins in such a way that the total size of the items in each bin is at most $C$. \emph{No} otherwise.
+    \end{itemize}
+
+    Prove that \textsc{Bin Packing} is NP-Complete by reduction from \textsc{Partition}. (This can be done in just a few sentences, total.)
+ \end{enumerate}
+\end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item \emph{\textsc{Partition} is in $\mathsf{NP}$:} Given two subsets of $S$, we can easily check in polynomial time (polynomial in the size of $S$) if their sums are the same --- calculate both sums in $O(n)$ and check if they are the same.
+
+			\emph{Description:} We show a reduction from subset sum to \textsc{Partition}. Suppose we have a set $S = \{ a_{1}, \dots, a_{n} \}$ of $n$ integers and we want to find a subset $S' \subseteq S$ of them that sum to $W$. If $W > \sum a_{i}$ return no. Else, construct the multiset $T = S \cup \{ a_{0} \}$ where $a_{0} = \lvert (\sum a_{i}) - 2 W \rvert$. We claim that $T$ can be partitioned if and only if $S$ has a subset summing to $W$.
+
+			Note that from here on we use $\Sigma(S)$ to mean the sum of all elements in a set $\#S$ and so on, \emph{not} the cardinality of the set.
+
+			\emph{Proof of correctness:} Suppose $S$ has a subset $S'$ summing to $W$ and thus, $S'' = S \setminus S'$ sums to $\Sigma(S) - W$. Notice then that $a_{0} = \lvert \Sigma(S') - \Sigma(S'') \rvert$. Thus, by adding to $a_{0}$ to the lesser of $\Sigma(S')$ and $\Sigma(S'')$, we get a partition into two subsets of $T$, summing to the same amount. That is, if $\Sigma(S') < \Sigma(S'')$, choose $T' = S' \cup \{ a_{0} \}$ and $T'' = S''$, and if  $\Sigma(S') > \Sigma(S'')$, choose $T' = S'$ and $T'' = S'' \cup \{ a_{0} \}$. Then $T = T' \cup T''$ forms a partition.
+
+			Suppose $T$ has a partition into sets $T'$ and $T''$ (both of size $\Sigma(T) / 2 = \Sigma(S) - W$). One of the sets contains $a_{0}$, say it is $T'$ without loss of generality. If $2W \le \Sigma(S)$, removing $a_{0} = \sum a_{i} - 2W$ from $T'$ gives a set $S'$ of size $\Sigma(S) - W - a_{0} = W$ as desired. If $2 W > \sum a_{i}$, then removing $a_{0} = 2W - \sum a_{i}$ gives us
+			\[
+				\Sigma(S') = \Sigma(S) - W - a_{0} = 2(\Sigma(S) - W) - W = \Sigma(T) - W
+			\]
+			Since $\Sigma(T) = \Sigma(S) + a_{0} = 2W$, we have $\Sigma(S') = W$ as desired.
+
+			\emph{Runtime analysis:} Let $S$ have size $n$. Then the instance of \textsc{Partition} created has size $n + 1$, and the additional element is computed in polynomial time $O(n)$ (summing $n$ integers and subtracting a constant). Thus, the reduction is polynomial in the size of the input.
+
+		\item Suppose we have an instance of \textsc{Partition} given by a set $S$. We claim that we can partition $S$ if and only if we can bin-pack $S$ into $t = 2$ bins of size $C = (\sum_{a_{i} \in S} a_{i}) / 2$. 
+
+			If we can partition $S$, then the two partitions form two bins of equal size $C$. If we can pack $S$ into two bins of size $C$, then we claim that both of those bins are full, and thus, form a partition. We know that the two bins must be full since the total capacity of the two bins together is the same as the sum of all of the elements of $S$, so there is no room for unused space.
+
+			Since the instance of \textsc{Bin Packing} has the same size of $S$, constant size  $t = 2$ and constant maximum capacity $C \le \# S \max a_{i}$, this is a polynomial reduction.
+	\end{enumerate}
+\end{solution}
+
+\pagebreak
+
+\begin{problem}[Problem 4: The \textsc{Fire Station} problem]
+
+The Republic of Graphitania is made up of many small towns connected by roads. Since it's expensive to place a fire station in every town, the Graphitanian parliament has decided to ensure that each town either \emph{has} a fire station itself or \emph{is connected by an uninterrupted road} to a neighboring town that has a fire station. In other words, we have the following decision problem. 
+
+{\sc Fire Station}:
+\begin{itemize}
+    \item \textbf{Input. } An undirected graph $G=(V,E)$ and a positive integer $\ell$.
+    \item \textbf{Output. } \emph{Yes} if there exists a subset $S \subseteq V$ of cardinality $|S| \leq \ell$ vertices such that every vertex in $V$ is either \emph{contained in} $S$ or is \emph{connected by an edge} to some vertex in $S$. \emph{No} otherwise.
+\end{itemize}
+
+Prove that {\sc Fire Station} is \NP-complete by reducing from {\sc 3SAT}.
+
+\emph{Hint:} First, take a close look at this problem to make sure that you understand how it differs from \textsc{Vertex Cover}. There are similarities, but the two problems are not the same. A good way to get begin is to try exactly the same reduction that we used in class from \textsc{3SAT} to \textsc{Vertex Cover}.  As you go through the proof of correctness, you'll see that the reduction breaks at some point.  Can you then modify the reduction so that it works? You might need to do some experimentation until you find gadgets that work.
+\end{problem}
+
+\begin{solution}
+	\emph{\textsc{Fire Station} is $\mathsf{NP}$:} First we show \textsc{Fire Station} is $\mathsf{NP}$. If we are given a subset of fire stations on a graph, we can check in $O(\lvert V \rvert + \lvert E \rvert)$ whether for each vertex, there is some edge that connects it to a fire station. Since we can verify a \textsc{Fire Station} solution in polynomial time, \textsc{Fire Station} is in $\mathsf{NP}$.
+
+	\emph{Description of reduction:} Now we show \textsc{Fire Station} is $\mathsf{NP}$-complete by reducing from the $\mathsf{NP}$-hard problem 3SAT to \textsc{Fire Station}. Specifically, we claim that a 3CNF expression with $n$ variables and $m$ clauses is satisfiable if and only if the graph $G$ generated with variable gadgets and clause gadgets connected as below has a fire station subset of size at most $m + n$.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width = 0.6 \textwidth]{figures/P4 gadgets.pdf}
+		\caption{The clause and variable gadgets for $G$ (ignore the fuzz, that's just cancelled out)}
+	\end{figure}
+	Note that this exactly the graph set up for the reduction of 3SAT to \textsc{Vertex Cover} except with different gadgets. Specifically, both the variable and clause gadgets have an additional dummy vertex $d$. Note also that there is no edge between $x_{2}$ and $x_{3}$ (that's just the ruled paper).
+
+	\emph{Proof of correctness:} First, suppose that a 3CNF expression is satisfiable. Then the following subset is a fire station subset of $G$. For each variable gadget, choose the assignment for that variable. Notice that now that all the vertices in the variable gadget have an adjacent fire station. Since, in each clause gadget, at least one literal has an adjacent fire station (every clause has at least one literal that is true), only one more fire station is required to connect every literal in the clause gadget to a fire station (any two vertices of the cyclic graph on $4$ vertices form a fire station subset). Thus, any satisfiable expression gives a fire station subset.
+
+	Now we show that a 3CNF expression that is not satisfiable cannot give rise to a fire station subset. If $\varphi$ is an expression that is not satisfiable, then any assignment of variables has some clause in it where none of the literals are true. Without loss of generality, assume that $x_{1}, x_{2}, x_{3}$ are all assigned false and the clause is $(x_{1} + x_{2} + x_{3})$ (as in the picture below). 
+
+	We claim we need a fire station of this clause--variable gadget with only one more fire station (making four in total), and that is impossible. This is because a fire station subset of $G$ must include at least one of the vertices in each variable gadget so that the dummy vertex is safe, and at least one in the clause gadget, again so that the dummy vertex is safe. Thus, $n - 3 + m - 1$ of the fire stations are needed elsewhere. Three of the remaining four are covering the wrong literals in the variable gadgets. Thus, we are left with only one fire station to cover the clause gadget. Since the clause gadget is the cyclic graph on $4$ vertices, at least $2$ fire stations are necessary. Thus, a 3CNF expression that is not satisfiable cannot lead to a graph with a fire station subset of size at most $n + m$.
+
+	\emph{Runtime of reduction:} Since the graph we create has $3n + 4m$ vertices and $3n + 7m$ edges (which is polynomial in the size of the 3SAT input), the reduction is polynomial.
+\end{solution}
+
+\end{document}
