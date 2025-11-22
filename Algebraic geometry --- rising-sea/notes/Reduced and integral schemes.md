@@ -130,7 +130,9 @@ This allows us to prove that, despite how nice integrality is, it is not stalk-l
 
 ##### _example:_ integrality is not stalk-local
 
-Integrality is not stalk local. For example, the disjoint union of two integral schemes is not integral, but has every stalk integral. It turns out that requiring connectedness is enough to recover integrality from integral stalks — integrality is locally stalk local.
+Integrality is not stalk local. For example, the disjoint union of two integral schemes is not integral, but has every stalk integral. It turns out that requiring connectedness is enough to recover integrality from integral stalks — integrality is locally stalk local. That is, integral stalks does not imply integral scheme.
+
+However, integral scheme does imply integral stalks — each $\operatorname{Spec} A \subseteq X$ is integral, so each stalk $\mathscr{O}_{X, p} = A_{\mathfrak{p}}$ is integral. 
 
 ---
 
