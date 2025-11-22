@@ -49,6 +49,22 @@
 	If $P$ is a finitely generated projective $R$-module, show that $\operatorname{Hom}_{R}(P, R)$ is also a projective $R$-module.
 \end{problem}
 
+\begin{solution}
+	Since $P$ is projective, we can find some $R$-module $N$ such that $P \oplus N \cong F$ is free. Thus,
+	\[
+		\operatorname{Hom}_{R}(F, R) \cong \operatorname{Hom}_{R}(P, R) \times \operatorname{Hom}_{R}(N, R) \cong \operatorname{Hom}_{R}(P, R) \oplus \operatorname{Hom}_{R}(N, R).
+	\]
+	Further, since $P$ is finitely generated, we can choose $F$ to be free. We claim that this makes $\operatorname{Hom}_{R}(F, R)$ free. Then, since we have written $\operatorname{Hom}_{R}(P, R)$ as a direct summand of a free module, we have shown that it is projective.
+
+	The freeness of $\operatorname{Hom}_{R}(F, R)$ follows by the chain of isomorphisms below.
+	\begin{align*}
+		\operatorname{Hom}_{R}(F, R) & \cong \operatorname{Hom}_{R}(R^{\oplus n}, R) \\
+					     & = \bigoplus_{i = 1}^{n} \operatorname{Hom}_{R}(R, R) \\
+					     & = R^{\oplus n}.
+	\end{align*}
+	The last equality follows because $\operatorname{Hom}_{R}(R, M) \cong M$.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[4.]
@@ -61,9 +77,13 @@
 	be a short exact sequence of $R$-modules. If $M$ and $N$ are projective, prove that $L$ is also projective.
 \end{problem}
 
+\begin{solution}
+	Since $N$ is projective, the exact sequence splits. Thus, we have $M \cong L \oplus N$. Since $M$ is projective, it is a direct summand of some free module $F$. But then, as a direct summand of $M$, $L$ also becomes a direct summand of $F$ (if $M \oplus Q \cong F$, then $L \oplus (N \oplus Q) \cong F$). That is, $L$ is projective.
+\end{solution}
+
 \pagebreak
 
-\begin{problem}
+\begin{problem}[5.]
 	Suppose $M$ is a finitely presented $R$-module and let
 	\[
 		\begin{tikzcd}
@@ -72,5 +92,8 @@
 	\]
 	be a short exact sequence where $N$ is finitely generated. Prove that $K$ is also finitely generated.
 \end{problem}
+
+\begin{solution}
+\end{solution}
 
 \end{document}
