@@ -1,5 +1,6 @@
 \documentclass[12 pt, letterpaper]{hmcpset}
 \usepackage{hw-preamble}
+\usepackage{pdfpages}
 
 \name{Jayden Thadani}
 \class{MATH 189AA --- Commutative Algebra}
@@ -25,13 +26,44 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item $P_{0} = R^{\oplus 2}$, $P_{1} = R^{\oplus 3}$, and $P_{2} = R^{\oplus 6}$. The morphism $P_{0} \to I$ is given by
+			\[
+				\begin{pmatrix}
+					x & 0 \\
+					0 & y
+				\end{pmatrix}
+			\]
+			The morphism $P_{1} \to P_{0}$ is given by the matrix
+			\[
+				\begin{pmatrix}
+					-z & - y & x^{2} \\
+					y & x & -z
+				\end{pmatrix}.
+			\]
+			The morphism $P_{2} \to P_{1}$ is given by
+			\[
+				\begin{pmatrix}
+					y & -x & x^{2} & z & -z & 0 \\
+					-z & y & 0 & 0 & x^{2} & z \\
+					0 & 0 & z & y & 0 & x
+				\end{pmatrix}
+			\]
+
+		\item My Macaulay2 session is included in the two pages below.
+	\end{enumerate}
+\end{solution}
+
+\includepdf[pages = {1, 2}]{figures/P1 macaulay.pdf}
+
 \pagebreak
 
 \begin{problem}[2.]
 	The diagram below is a commutative diagram of $R$-modules with exact rows:
 	\[
 		\begin{tikzcd}
-			A \ar[r, "f_{1}"] \ar[d] & B \ar[r, "f_{2}"] \ar[d] & C \ar[r, "f_{3}"] \ar[r] \ar[d] & D \ar[r, "f_{4}"] \ar[d] & E \ar[d] \\
+			A \ar[r, "f_{1}"] \ar[d, "\alpha"] & B \ar[r, "f_{2}"] \ar[d, "\beta"] & C \ar[r, "f_{3}"] \ar[d, "\gamma"] & D \ar[r, "f_{4}"] \ar[d, "\delta"] & E \ar[d, "\varepsilon"] \\
 			A' \ar[r, "f_{1}"] & B' \ar[r, "f_{2}"] & C' \ar[r, "f_{3}"] \ar[r] & D' \ar[r, "f_{4}"] & E'
 		\end{tikzcd}
 	\]
@@ -94,6 +126,43 @@
 \end{problem}
 
 \begin{solution}
+	Denote the map $N \to M$ by $\varphi$. Notice that then $K = \ker \varphi$.
+
+	Since $M$ is finitely presented, there is an exact sequence
+	\[
+		\begin{tikzcd}
+			R^{\oplus n} \ar[r, "\theta"] & R^{\oplus m} \ar[r, "\psi"] & M \ar[r] & 0.
+		\end{tikzcd}
+	\]
+	We claim that we can construct maps $\alpha$ and $\beta$ so that the following diagram commutes.
+	\[
+		\begin{tikzcd}
+			& R^{\oplus n} \ar[r, "\theta"] \ar[d, dashed, "\alpha"] & R^{\oplus m} \ar[r, "\psi"] \ar[d, dashed, "\beta"] & M \ar[r] \ar[d, "\operatorname{id}_{M}"] & 0 \\
+			0 \ar[r] & K \ar[r, "i"] & N \ar[r, "\varphi"] & M \ar[r] & 0
+		\end{tikzcd}
+	\]
+	$\beta$ exists by the projectivity of $R^{\oplus m}$ --- it is the lift of $\psi : R^{\oplus m} \to M$ to a map $R^{\oplus m} \to N$ (using the surjectivity of $\varphi : N \to M$). Note that this property makes the right square commute.
+
+	To show the existence of $\alpha$ we use the universal property of the kernel of $\varphi : M \to N$. That is, any map $\pi : L \to N$ such that $\varphi \circ \pi : L \to N \to M$ is the zero map must factor through the kernel map $i : K \to N$.
+
+	We claim that $\beta \circ \theta$ is such a map. Specifically,
+	\begin{align*}
+		\varphi \circ (\beta \circ \theta) & = (\varphi \circ \beta) \circ \theta \\
+						   & = \operatorname{id}_{M} \circ \psi \circ \theta \\
+						   & = \operatorname{id}_{M} \circ 0 \\
+						   & = 0.
+	\end{align*}
+	Here, the second equality follows by the commutativity of the right square. Thus, by the universal property of the kernel, there is a unique $\alpha : R^{\oplus m} \to K$ such that $i \circ \alpha = (\beta \circ \theta)$. This is exactly a map $\alpha$ so that the left square commutes.
+
+	Then applying the snake lemma, we get an exact sequence
+	\[
+		\begin{tikzcd}
+			\ker \operatorname{id}_{M} = 0 \ar[r] & \operatorname{coker} \alpha \ar[r] & \operatorname{coker} \beta \ar[r] & 0 = \operatorname{coker} \operatorname{id}_{M}
+		\end{tikzcd}
+	\]
+	That is, $\operatorname{coker} \alpha \cong \operatorname{coker} \beta$. Since the finitely generated module $N$ surjects onto $\operatorname{coker} \beta$, it and $\operatorname{coker} \alpha$ are finitely generated.
+
+	Finally, we have $K / \operatorname{img} \alpha \cong \operatorname{coker} \alpha$. Note that $\operatorname{img} \alpha$ is finitely generated since $R^{\oplus m}$ surjects onto it. Thus, the quotient of $K$ by a finitely generated submodule is finitely generated. This implies $K$ is finitely generated.
 \end{solution}
 
 \end{document}
