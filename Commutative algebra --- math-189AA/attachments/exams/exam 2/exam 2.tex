@@ -64,7 +64,7 @@
 	\[
 		\begin{tikzcd}
 			A \ar[r, "f_{1}"] \ar[d, "\alpha"] & B \ar[r, "f_{2}"] \ar[d, "\beta"] & C \ar[r, "f_{3}"] \ar[d, "\gamma"] & D \ar[r, "f_{4}"] \ar[d, "\delta"] & E \ar[d, "\varepsilon"] \\
-			A' \ar[r, "f_{1}"] & B' \ar[r, "f_{2}"] & C' \ar[r, "f_{3}"] \ar[r] & D' \ar[r, "f_{4}"] & E'
+			A' \ar[r, "f_{1}'"] & B' \ar[r, "f_{2}'"] & C' \ar[r, "f_{3}'"] \ar[r] & D' \ar[r, "f_{4}'"] & E'
 		\end{tikzcd}
 	\]
 	Establish the following claims directly, by diagram chase:
@@ -74,6 +74,21 @@
 		\item If $\varepsilon$ is injective and $\beta$ and $\delta$ are both surjective, then $\gamma$ is surjective.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item Suppose $c \in C$ has $\gamma(c) = 0$. Since the middle-right square commutes, $(\delta \circ f_{3})(c) = (f_{3}' \circ \gamma)(c) = 0$. Since $\delta$ is injective, in fact we must have $f_{3}(c) = 0$. Since the top row is exact, there is some $b \in B$ such that $f_{2}(b) = c$. We claim that in fact, there is some $a \in A$ such that $f_{1}(a) = b$. This gives us $c = (f_{2} \circ f_{1})(a) = 0$, and thus, that $\gamma$ is injective.
+
+			Since the mid-left square commutes, $(f_{2}' \circ \beta)(b) = (\gamma \circ f_{2})(b) = 0$. Write $b' = \beta(b)$. Since $f_{2}'(b) = 0$ we have some $a' \in A$ with $f_{1}'(a') = b'$. Further, since $\alpha$ is surjective, there is some $a \in A$ with $\alpha(a) = a'$. Then by commutativity of the left square, $(\beta \circ f_{1})(a) = (f_{1}' \circ \alpha)(a) = f_{1}'(a') = b'$. But then since $\beta(f_{1}(a)) = b'$ we must have $f_{1}(a) = b$. Thus, $c = (f_{2} \circ f_{1})(a) = 0$ as desired.
+		\item Suppose $c' \in C'$. Then let $d' = f_{3}'(c') \in D$. By exactness of the bottom row $f_{4}'(d) = 0$. By surjectivity of $\delta$, there is some $d \in D$ such that $\delta(d) = d'$. Then by the commutativity of the right square and the injectivity of $\varepsilon$, we have that $(\varepsilon \circ f_{4})(d) = (f_{4}' \circ \delta)(d) = 0$ and thus, $f_{4}(d) = 0$. Then, by exactness of the top row at $D$, we get some $c_{0} \in C$ such that $f_{3}(c_{0}) = d$.
+
+			Since the mid-right square commutes, $(f_{3}' \circ \gamma)(c_{0}) = (\delta \circ f_{3})(c_{0}) = \delta(d) = d$. Write $\gamma(c_{0}) = c_{0}'$. Since $f_{3}'(c_{0}') = d = f_{3}(c')$, we have that $f_{3}(c' - c_{0}') = 0$. By exactness of the bottom row at $C'$, this implies the existence of $b' \in B'$ with $f_{2}'(b') = c' - c_{0}'$. In turn, the surjectivity of $\beta$ implies the existence of $b \in B$ with $\beta(b) = b'$. Finally, the commutativity of the mid-left square implies that $(\gamma \circ f_{2})(b) = (f_{2}' \circ \beta)(b) = c' - c_{0}'$. Choosing $c = f_{2}(b) + c_{0}$ gives us
+			\[
+				\gamma(c) = \gamma(f_{2}(b)) + \gamma(c_{0}) = c' - c_{0}' + c_{0}' = c'.
+			\]
+			That is, $\gamma$ is surjective, as desired.
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
