@@ -105,3 +105,15 @@ Its value at $\mathfrak{q} = (y)$, the [[Algebraic geometry --- rising-sea/notes
 This is one reason to care about fields that aren't algebraically closed — even though $\mathbb{C}$ is, residue fields (of schemes over it) like $\mathbb{C}(x)$ are not.
 
 ---
+
+### Gluing schemes
+
+Using [[Topology --- math-147/notes/Quotient and identification spaces#_definition _ identification space|identification spaces]] from topology, we can glue together affine schemes into a topological space locally homeomorphic to affine schemes. Then by [[Algebraic geometry --- rising-sea/notes/Gluing sheaves#_proposition, definition _ sheaves glue, cocycle condition|gluing structure sheaves]] we get a scheme.
+
+##### _proposition:_ gluing schemes
+
+Given a collection of schemes $\{ X_{i} \}_{i \in \mathscr{I}}$, open subschemes $X_{ij} \subseteq X_{i}$ with $X_{ii} = X_{i}$, isomorphisms $f_{ij} : X_{ij} \to X_{ji}$ with $f_{ii}$ the identity obeying the cocycle condition. Let $\sim$ denote the equivalence relation on $\bigsqcup X_{i}$ by $x_{i} \sim x_{j}$ if $f_{ij}(x_{i}) = x_{j}$. Then there is a scheme $X$ with [[Topology --- math-147/notes/Quotient and identification spaces#_definition _ quotient topology, quotient space, quotient map|the topology of]] $\bigsqcup X_{i} / \sim$ and each $X_{i}$ an open subscheme.
+
+---
+
+Note that the cocycle condition is necessary for $\sim$ to define an equivalence relation on the disjoint union of topological spaces.

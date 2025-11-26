@@ -37,7 +37,7 @@ Note that if $A_{1} = 0$, then $V(a_{2})$ would be $V(1)$ and thus, empty. Then 
 
 This hints at a more precise formulation.
 
-![[Algebraic geometry --- rising-sea/notes/Examples of affine schemes#_proposition _ products of rings are disjoint unions of affine schemes|Examples of affine schemes]]
+![[Algebraic geometry --- rising-sea/notes/Examples of schemes#_proposition _ products of rings are disjoint unions of affine schemes|Examples of affine schemes]]
 
 Note that we use the symbol $\coprod$ rather than $\bigsqcup$ because the disjoint union is the coproduct in the category of topological spaces (and soon we shall see, in the category of schemes as well).
 
@@ -394,7 +394,7 @@ Suppose $X$ has such a cover by affine opens. Suppose $U, V \subseteq X$ are qua
 
 ##### _non-example:_ a non-quasiseparated scheme
 
-$\mathbb{A}_{\mathbb{F}}^\infty$ with doubled origin, defined similarly to the [[Algebraic geometry --- rising-sea/notes/Examples of schemes#The affine line with doubled origin|affine line with doubled origin]] is not quasiseparated. Each copy of $\mathbb{A}_{\mathbb{F}}^\infty$ is quasicompact, but their intersection $\mathbb{A}_{\mathbb{F}}^\infty \setminus (x_{1}, x_{2} \dots)$ [[Algebraic geometry --- rising-sea/notes/Examples of affine schemes#_example _ infinite-dimensional affine space is non-Noetherian|is not quasicompact]].
+$\mathbb{A}_{\mathbb{F}}^\infty$ with doubled origin, defined similarly to the [[Algebraic geometry --- rising-sea/notes/Examples of schemes#The affine line with doubled origin|affine line with doubled origin]] is not quasiseparated. Each copy of $\mathbb{A}_{\mathbb{F}}^\infty$ is quasicompact, but their intersection $\mathbb{A}_{\mathbb{F}}^\infty \setminus (x_{1}, x_{2} \dots)$ [[Algebraic geometry --- rising-sea/notes/Examples of schemes#_example _ infinite-dimensional affine space is non-Noetherian|is not quasicompact]].
 
 ---
 
