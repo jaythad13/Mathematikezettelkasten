@@ -178,7 +178,9 @@ Then by the left exactness of $h_{M}$, there is an isomorphism
 $$
 S^{-1} \operatorname{Hom}_{A}(M, N) \cong \operatorname{Hom}_{S^{-1} A}(S^{-1} M, S^{-1} N).
 $$
-Specifically, 
+Specifically,
+>[!missing]
+>what specifically?
 
 This doesn't work without the finitely-presented hypothesis. For $S = \mathbb{Z} \setminus \{ 0 \}$, we have $\operatorname{Hom}_{\mathbb{Z}}(\mathbb{Q}, \mathbb{Z}) = 0$ (a $\mathbb{Z}$-linear $\mathbb{Q} \to \mathbb{Z}$ is equivalent to the [[Commutative algebra --- math-189AA/notes/Modules#_examples and non-examples _ modules|impossibility]] of giving $\mathbb{Z}$ a $\mathbb{Q}$-module structure) and so $S^{-1} \operatorname{Hom}_{\mathbb{Z}}(\mathbb{Q}, \mathbb{Z}) = 0$. Meanwhile $\operatorname{Hom}_{\mathbb{Q}}(\mathbb{Q}, \mathbb{Q}) \cong \mathbb{Q}$.
 
