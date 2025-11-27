@@ -26,3 +26,6 @@
 [submodule "Commutative algebra --- math-189AA/attachments/homework"]
 	path = Commutative algebra --- math-189AA/attachments/homework
 	url = https://git@git.overleaf.com/68b8ef9a1369d314f48e99bc
+[submodule "Commutative algebra --- math-189AA/attachments/project"]
+	path = Commutative algebra --- math-189AA/attachments/project
+	url = https://git@git.overleaf.com/69277f8c672cf1f9585fc492
