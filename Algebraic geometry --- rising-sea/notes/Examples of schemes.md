@@ -390,7 +390,7 @@ This is also injective, even after quotienting out by the action of $\mathbb{F}^
 
 ---
 
-While this all gives a correct definition of projective space, it is not one that is "choice free". Projective space has many more affine opens, equally natural, that just aren't represented in this definition. A more compelling but still "wrong" definition comes from the $\operatorname{Proj}$ [[Algebraic geometry --- rising-sea/notes/Projective schemes and graded rings|construction on graded rings]]. This will allow us to define not just $\mathbb{P}^n$, but also the "projective schemes" cut out in it.
+While this all gives a correct definition of projective space, it is not one that is "choice free". Projective space has many more affine opens, equally natural, that just aren't represented in this definition. A more compelling but still "wrong" definition comes from the $\operatorname{Proj}$ [[Algebraic geometry --- rising-sea/notes/Projective schemes|construction on graded rings]]. This will allow us to define not just $\mathbb{P}^n$, but also the "projective schemes" cut out in it.
 
 ### A cone over a smooth quadric surface
 
