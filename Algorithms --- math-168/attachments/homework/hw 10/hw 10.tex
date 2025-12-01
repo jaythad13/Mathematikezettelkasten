@@ -1,0 +1,144 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 168 --- Algorithms}
+\assignment{Homework \#10}
+\duedate{2nd December 2025}
+
+\begin{document}
+
+\begin{problem}[Problem 1: Subset some?]
+	Consider the optimization version of the Subset Sum problem: 
+\begin{itemize}
+    \item \textbf{Input:} A set $S$ of $n$ positive integers $\{v_1, \dots v_n\}$ and a target value $W$.
+    \item \textbf{Output:} A subset $T \subset S$ with the largest possible sum not exceeding $W$.
+\end{itemize}
+For instance, if I had the set $S = \{2, 5, 11, 9\}$ and my target was $W = 15$, then the subset I
+would choose is $T = \{5, 9\}$ with a sum of 14. (For this problem, feel free to
+assume that $S$ won't contain any elements larger than $W$, as those would be easy
+to identify and remove in linear time.)
+
+\begin{enumerate}
+    \item First, consider the following greedy algorithm proposed by Dr. D.
+    Ception: 
+    \begin{enumerate}[label = (\arabic*)]
+        \item Let $T$ be an empty set.
+        \item For $i = 1, 2, \dots, n$:
+        \begin{itemize}
+            \item Add $v_i$ to $T$ if this won't cause $T$ to exceed the target value $W$.
+        \end{itemize}
+        \item Return $T$.
+    \end{enumerate}
+    Dr. D. Ception claims this algorithm is (1/2)-optimal, i.e. that the value of the sum of $T$ found by the algorithm is at least half the optimal value
+    one could achieve. 
+    
+    In a sentence or two, give a counterexample to the claim that the algorithm is (1/2)-optimal: that is, specify an instance on which the algorithm might fail to achieve a (1/2)-approximation of the optimal solution and explain how the algorithm could fail.
+    
+    \item In fact, the algorithm doesn't achieve any constant approximation factor! Explain how, for any integer constant $c$, you can modify your counterexample to get an instance on which the algorithm might fail to achieve a $(1/c)$-approximation. Briefly explain why the algorithm fails. (Please stick to positive integers.)
+
+    \item Dr. D. Ception's algorithm can be modified to produce a (1/2)-optimal solution---it works \emph{if} the elements $v_1, v_2, \dots, v_n$ are considered in a certain order! Please
+    \begin{itemize}
+        \item identify the ordering of elements that will make D. Ception's algorithm return a (1/2)-approximation,
+        \item \emph{prove} that an algorithm that begins by sorting the elements in this particular order and then using D. Ception's procedure is (1/2)-optimal, and
+        \item state the runtime of the new algorithm.
+    \end{itemize}
+\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Problem 2: Madcap map mark-up]
+As a budding fantasy author, you've recently submitted the final manuscript of your soon-to-be-printed debut novel to your publisher. All that remains is to work out the practical details for the hardback version. You've drafted a beautiful black-and-white sketch of the world map that will be printed inside the front cover. (Every good fantasy novel should have a map at the front.) 
+
+The printers will handle the map coloring for you using a default palette containing 4 colors. Unfortunately, they've never heard of the four-color theorem! Instead, they color every region on the map by choosing a color at random. This is unfortunate for your map, but how bad are things likely to look?
+
+\vspace{0.5cm}
+
+Your map consists of a set $R$ of regions in the plane. Some regions border each other. You may assume all borders have positive length (that is, don't worry about the situation in which many regions meet at a single point).
+
+\begin{enumerate}
+    \item We say that a border between two regions $r_i$ and $r_j$ is \emph{satisfied} if the two regions are different colors. Over the entire graph $G$, what is the expected fraction of satisfied borders when regions are colored uniformly at random?
+    
+    \item  Prove that, for \emph{any} map, randomly coloring the regions with 4 colors will satisfy \emph{at least} $1/2$ of the edges with probability \emph{at least} $1/2$.
+
+    \emph{Hint:} This question requires a standard kind of probabilistic argument using the expected value calculation from the previous part. If that's something you haven't seen before and you find this difficult to prove, wait until we've had our lecture on randomized algorithms.
+    
+    \item The citizens of your fantasy world are enthusiasts of geometrical structure (aren't we all?) and as such have chosen to tile the landscape with hexagonal provinces. This results in a hexagonal lattice in which every province has 6 neighbors. (See figure for an example hexagonal lattice.)
+    
+    We say that a province is \emph{satisfied} if \emph{all} adjacent borders are satisfied. What is the chance that a random assignment of 4 colors satisfies a province with 6 neighbors? 
+    
+        \item After several frustrating conversations with the printers, you're considering paying them to use additional colors (they'll still assign these additional colors at random).
+
+    What is the minimum number of colors required such that a province with 6 neighbors is satisfied with probability at least 50\%?
+
+    \item That's more colors than you can afford! In despair, you turn to your longtime frenemy Dr. D. Ception, who is always quick to come up with a greedy algorithm. He recommends the following greedy coloring algorithm, which is simple enough that the printers should be able to follow it:
+    \begin{enumerate}[label = (\arabic*)]
+        \item Pick \emph{any} uncolored province.
+        \item Color that vertex \emph{any} previously used color not already taken by one of its neighbors. If the vertex is adjacent to \emph{all} previously used colors, color it using a new color.
+        \item Repeat until all vertices are colored.
+    \item You've had enough of these shenanigans from the printers---you'll just color the map yourself. What is the smallest number $k$ of colors required to $k$-color an infinite lattice of hexagonal provinces? (Feel free to ``prove" your answer by drawing a picture.)
+    \end{enumerate}
+\end{enumerate}
+\end{problem}
+
+\begin{problem}[Problem 2 : Madcap map markup]
+	How many colors will this algorithm use to color a lattice of hexagonal provinces, in the worst case?
+\begin{enumerate}
+	\item[(f)] You've had enough of these shenanigans from the printers---you'll just color the map yourself. What is the smallest number $k$ of colors required to $k$-color an infinite lattice of hexagonal provinces? (Feel free to ``prove" your answer by drawing a picture.)
+
+	\item[(g)] (10/40 points; a bit harder.) As it turns out, $4$-coloring is in $\mathsf{P}$. However, just for fun, you've decided to try out a variant of the exponential-time algorithm for 3-SAT we saw in our lecture on randomized algorithms. Given a planar map with $n$ regions, your algorithm does the following:
+
+    \begin{enumerate}[label = (\arabic*)]
+        \item Begin with a random coloring: assign each region one of the four ``colors'' $\{0, 1, 2, 3\}$ independently and uniformly at random.
+        \item If all borders are satisfied, halt and return the coloring. If not, choose any border that is not satisfied; i.e., the regions on each side have the same coloring. Call these regions $r_i$ and $r_j$.
+        \item Pick one of $r_i$ and $r_j$ at random, then assign it a \emph{new} color by choosing uniformly at random from the three available possibilities.
+        \item Repeat steps (2) and (3) $3n/4$ times. If we don't find a valid coloring during that time, return FAIL.
+    \end{enumerate}
+
+    You also have a \emph{reference coloring} $C: \{0, 1, 2, ... n-1\} \rightarrow \{0, 1, 2, 3\}$ that assigns every region a color from the set $\{0, 1, 2, 3\}$ and satisfies all borders (thus creating a valid 4-coloring). After running step (1) of your algorithm, you observe that the initial random coloring matches $C$ on exactly $n/4$ regions. 
+
+    Using the number of regions that match $C$ as a helpful reference metric, prove an (exponential) lower bound on the probability that the algorithm returns a valid 4-coloring. Write your result in the form $\alpha^{-n}$, where $\alpha$ should be a constant greater than $1$. How could you use this bound to create a (very slow) randomized algorithm for 4-coloring? Would this beat the naive $4^n$ brute-force algorithm?
+
+    \emph{Hint:} No need to do fancy calculations here (although you can try if you want). It suffices to use the method we used for 3SAT to lower-bound the chance that we guess a coloring ``perfectly''.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}[Problem 3: The greediest algorithm]
+	Welcome to the world-famous game show \emph{Cash Grab}! In this game, the contestant is presented with an $n \times n$ game board. Every square on the game board is associated with some non-negative amount of money, and no two squares have the same amount. The game proceeds as follows:
+\begin{enumerate}
+    \item The contestant selects a square $s$ on the game board and receives the amount of money associated with that square.
+    \item All squares that share an edge with $s$ have their money \emph{removed} from the game. The contestant can no longer choose these squares or receive money from them. (If the square has already been emptied, nothing happens to it.) 
+\end{enumerate}
+Play continues until there's no more cash left on the board. 
+
+\vspace{0.5cm}
+
+One popular greedy strategy is to repeatedly choose the most valuable square remaining until there is no money left. In this question, you'll analyze: how good is this strategy?
+\begin{enumerate}
+    \item A set of game board squares is \emph{valid} if no two squares share an edge (this implies that a contestant can choose all of them). Let $OPT$ be any valid set of squares that maximizes total winnings, and let $GREEDY$ be the valid set of squares chosen by a contestant who follows the greedy strategy. 
+    
+    In a few sentences, show that for every square $s \in OPT$, either (1) $s \in GREEDY$ or (2) $s$ is adjacent to a square $t \in GREEDY$ such that $t$ has a \emph{higher} value than $s$.
+    
+    \item Show that a contestant following the greedy algorithm always receives at least 1/4 of the optimal amount that they could possibly get. That is, prove that the greedy algorithm is $(1/4)$-optimal.
+
+    \item In fact, there is a very simple $O(n^2)$-time strategy that achieves a (1/2)-approximation. What is it? Justify your answer.
+\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Problem 4: Multicommodity flow is $\mathsf{NP}$-hard!]
+	We know how to solve the network flow problem in polynomial time.  A generalization of
+		network flow is called \emph{multicommodity network flow} and it goes like this:
+		We are given a flow network except now there are multiple source/sink pairs in the network.
+		That is, there are some number $k$ of sources $s_1, \dots, s_k$ and the same number of sinks $t_1, \dots, t_k$.
+		Each source $s_i$ pushes a different kind of ``fluid'' or ``commodity'' to its corresponding sink $t_i$.  However, the edges of the network are shared by these flows and each edge still has a single
+		integer capacity.  For example, an edge with capacity 5 might accommodate 2 units of flow from $s_1$ to $t_1$ and 3 units of flow from $s_2$ to $t_2$.  Now we are interested in finding a set of flows, one for each source/destination pair.  Of course, we are still subject to capacity constraints and conservation of flow (i.e. for any given commodity, the amount of flow for that commodity entering a given vertex is equal to the amount of flow for that commodity leaving that vertex).  In addition, we require the flow of each commodity on an edge to be an integer.  Amazingly, this generalization of the network flow problem is NP-hard!
+		 
+	   In particular, the decision problem that we will consider here is this:  Given is a flow network with $k$ commodities and $k$ source/sink pairs, $(s_i, t_i)$ (one for each commodity), and a demand $d_i$ for each sink $t_i$.  The question is:  ``Does there exist a valid set of flows, one for each commodity, such that each sink receives $d_i$ of commodity $i$?''
+		
+		Prove this problem is NP-complete by reduction from 3SAT.
+\end{problem}
+
+\end{document}
