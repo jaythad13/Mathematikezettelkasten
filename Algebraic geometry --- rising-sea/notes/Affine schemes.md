@@ -88,7 +88,7 @@ We should think of $V(f_{1}, \dots, f_{n})$ as solving for the locus $f_{1} = \c
 
 ##### _definition, proposition:_ the Zariski topology (is a topology)
 
-The **Zariski topology** on the affine scheme $\operatorname{Spec} A$ is the topology.
+The **Zariski topology** with closed sets defined to be exactly the $V(\mathfrak{i})$ is a topology on the affine scheme $\operatorname{Spec} A$.
 
 Specifically,
 1) $V(0) = \operatorname{Spec} A$,
