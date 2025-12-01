@@ -176,3 +176,55 @@ $$
 ---
 
 Understanding closed subsets as schemes is more difficult, particularly since a given closed subset can be endowed with many scheme structures. It suffices to note briefly that $\operatorname{Spec} A / \mathfrak{i}$ endows $V(\mathfrak{i}) \subseteq \operatorname{Spec} A$ with a scheme structure, but so does any $\operatorname{Spec} A / \mathfrak{j}$ with $\sqrt{ \mathfrak{j} } = \sqrt{ \mathfrak{i} }$.
+
+To define morphisms of affine schemes in general, we first show how a morphism of rings $B \to A$ defines a morphism of ringed spaces $\operatorname{Spec} A \to \operatorname{Spec} B$.
+
+##### _definition:_ the induced morphism of ringed spaces of affine schemes
+
+Suppose $\pi^\sharp : B \to A$ is a morphism of rings and let $\pi : \operatorname{Spec} A \to \operatorname{Spec} B$ be the induced morphism of topological spaces. Then $\pi$ is the **induced morphism of ringed spaces of affine schemes** with $\mathscr{O}_{\operatorname{Spec} B} \to \pi_{*} \mathscr{O}_{\operatorname{Spec} A}$ by $B_{g} \to A_{\pi^\sharp(g)}$ on each distinguished open $D(g) \subseteq B$.
+
+---
+
+It takes some serious work to show that this is well-defined — we need to show that $\pi^\text{pre}(D(g)) = D(\pi^\sharp(g))$, that the definition $B_{g} \to A_{\pi^\sharp(g)}$ is independent of $g$, and then that the morphisms commute with restriction so that they form a morphism of sheaves.
+
+This notion of morphisms of ringed spaces still isn't enough — not all morphisms of ringed spaces of affine schemes come from ring homomorphisms. Essentially we could have a morphism of ringed spaces where functions vanishing at a point pull back to functions that do not vanish at the same point.
+
+##### _example:_ a non-scheme morphism of ringed spaces of affine schemes
+
+Consider $\operatorname{Spec} \mathbb{F}(x) \to \operatorname{Spec} \mathbb{F}[y]_{(y)}$ with $\pi : (0) \mapsto (y)$ at the level of points, $\pi^\sharp(\operatorname{Spec} \mathbb{F}[y]_{(y)}) : y \mapsto x$ and $\pi^\sharp(D(y)) : \mathbb{F}(y) \to 0$. Since $0$ is [[Algebraic geometry --- rising-sea/notes/Universal properties and why categories?#_definition _ initial, final, and zero objects|final]] in $\mathsf{Ring}$,
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		\mathbb{F}[y]_{(y)} \ar[r] \ar[d] & \mathbb{F}(x) \ar[d] \\
+		\mathbb{F}(y) \ar[r] & 0
+	\end{tikzcd}
+\end{document}
+```
+commutes, $\pi^\sharp$ is a morphism $\mathscr{O}_{\operatorname{Spec} \mathbb{F}[y]_{(y)}} \to \pi_{*} \mathscr{O}_{\operatorname{Spec} \mathbb{F}(x)}$, and $\pi, \pi^\sharp$ is a morphism of ringed spaces. However, $\pi^\sharp$ is not induced by a ring homomorphism. $\pi^\sharp(\operatorname{Spec} \mathbb{F}[y]_{(y)}) : \mathbb{F}[y]_{(y)} \to \mathbb{F}(x)$ induces a map of points $\operatorname{Spec} \mathbb{F}(x) \to \operatorname{Spec} \mathbb{F}[y]_{(y)}$ by $(0) \mapsto (0)$. When we send $y \mapsto x$, we don't send $(y)$ into $(0)$.
+
+---
+
+We will see that by requiring functions that vanish at a point to pull back to vanishing functions, we can ensure that the morphisms are exactly those induced by ring homomorphisms.
+
+##### _proposition:_ morphisms of local ringed spaces are morphisms of affine schemes
+
+If $\pi : \operatorname{Spec} A \to \operatorname{Spec} B$ is a morphism of local ringed spaces, then it is the morphism induced by the map 
+$$
+\pi^\sharp(\operatorname{Spec} B) : \mathscr{O}_{\operatorname{Spec} B}(\operatorname{Spec B}) = B \to A = \mathscr{O}_{\operatorname{Spec} A}(\operatorname{Spec} A) = \pi_{*}\mathscr{O}_{\operatorname{Spec} A}(\operatorname{Spec} B).
+$$
+
+---
+
+##### _definition:_ morphism of affine schemes
+
+A morphism of affine schemes $\operatorname{Spec} A \to \operatorname{Spec} B$ is a morphism of local ringed spaces. Equivalently, it is a morphism of ringed spaces induced by a ring homomorphism $B \to A$.
+
+---
+
+##### _corollary:_ affine schemes are the opposite category of rings
+
+The category of affine schemes $\mathsf{AffSch}$ is equivalent to the [[Algebraic geometry --- rising-sea/notes/Categories#_definition _ opposite (or dual) categories|opposite category]] of $\mathsf{Ring}$.
+
+---
