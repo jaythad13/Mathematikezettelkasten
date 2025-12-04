@@ -46,6 +46,24 @@ to identify and remove in linear time.)
 \end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item Let $S = \{ 1, W \}$ (in that order) for target value $W > 2$. Then D. Ception's algorithm gives subset $T = \{ 1 \}$ which has sum $1$. The actual optimal sum is $W$ by choosing $T = \{ W \}$. Thus, D. Ception's algorithm achieves only a $1 / W$ approximation with $1 / W < 1 / 2$. That is, it is not $1 / 2$-optimal.
+
+		\item By choosing $W > c$ in the example above we get an algorithm that can only achieve a $1 / W$ approximation. Since $1 / W < 1 / c$, it is not even $1 / c$-optimal.
+
+		\item Sort $v_{1}, \dots, v_{n}$ in descending order. That is, sort them so that $v_{i} \ge v_{i + 1}$ for each $i$. Then run D. Ception's algorithm on this sorted list.
+
+			We will show that running D. Ception's algorithm on the sorted $S$ cannot give a set $T$ with $\Sigma(T) < W / 2$ unless $T$ itself is optimal. Since any optimal $U$ must have $\Sigma(U) \le W$, this gives $\Sigma(T) \ge \Sigma(U) / 2$, and thus, the greedy algorithm is $1/2$-optimal.
+
+			Suppose $S$ contains an element $s \ge W / 2$. Then since $S$ contains no elements greater than $W$, the first element in $T$ is at least $W / 2$. Thus, $\Sigma(T) \ge W / 2 \ge \Sigma(U) / 2$.
+
+			Now suppose $S$ contains only elements less than $W / 2$. Suppose some $T' \subseteq S$ has $\Sigma(T') < W / 2$. If $T'$ is not optimal, then there is some $s \notin T'$. Since $\Sigma(T') < W / 2$ and $s < W / 2$ we have $\Sigma(T \cup \{ s \}) \le W$. Thus, $T'$ cannot come from D. Ception's greedy algorithm --- adding any element of $S$ to $T$ obtained from the greedy algorithm would increase the sum beyond $W$. Thus, if $T$ comes from the greedy algorithm, either $\Sigma(T)$ is optimal, or $\Sigma(T) \ge W / 2$. In either case, for optimal $U$, $\Sigma(T) \ge \Sigma(U) / 2$.
+
+Sorting $S$ by mergesort runs in $O(n \log n)$. Then running D. Ception's algorithm would involve $n$-many $O(1)$ checks (with possible inserts), and thus would run in $O(n)$. In total, this makes for $O(n \log n) + O(n) = O(n \log n)$ runtime.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[Problem 2: Madcap map mark-up]
@@ -77,10 +95,58 @@ Your map consists of a set $R$ of regions in the plane. Some regions border each
         \item Pick \emph{any} uncolored province.
         \item Color that vertex \emph{any} previously used color not already taken by one of its neighbors. If the vertex is adjacent to \emph{all} previously used colors, color it using a new color.
         \item Repeat until all vertices are colored.
-    \item You've had enough of these shenanigans from the printers---you'll just color the map yourself. What is the smallest number $k$ of colors required to $k$-color an infinite lattice of hexagonal provinces? (Feel free to ``prove" your answer by drawing a picture.)
     \end{enumerate}
+    How many colors will this algorithm use to color a lattice of hexagonal province, in the worst case?
 \end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item First we calculate the expectation of the indicator $1_{e}$ function that indicates whether a particular edge $e$ is satisfied or not. $e$ is satisfied if the two regions that it borders are coloured differently. Among the $16$ $4$-colouring possibilities for the two regions, $4$ of them have the two regions coloured the same. In these cases, the value of $1_{e}$ is $0$. In the remaining, the value of $1_{e}$ is $1$. Thus,
+			\[
+				\mathbb{E}(1_{e}) = 1 \times 12 / 16 + 0 \times 4 / 12 = 3/4.
+			\]
+
+			The expected fraction of satisfied borders is the expected value of the sum of all $1_{e}$ for all edges $e \in E(G)$. By linearity of expectation this is
+			\[
+				\mathbb{E}(X) = \sum_{e \in E(G)} \mathbb{E}(1_{e}) = (3 / 4) \# E(G).
+			\]
+			where $X = \#\text{satisfied edges}$. That is, we can expect $3 / 4$th of the edges to be satisfied.
+
+		\item Let $X$ be the number of satisfied edges and let $m$ be the total number of edges. Then by the definition of expected value
+			\begin{align*}
+				3m/4 & = \sum_{i = 1}^{m} \mathbb{P}(X = i) i \\
+				     & \le \sum_{i = 1}^{m / 2 - 1} \mathbb{P}(X = i) i + \sum_{i = m / 2}^{m} \mathbb{P}(X = i) i \\
+				     & \le m/2 \sum_{i = 1}^{m / 2 - 1} \mathbb{P}(X = i) + m \sum_{i = m / 2}^{m} \mathbb{P}(X = i).
+			\end{align*}
+			Note that $\mathbb{P}(X \ge m / 2) = \sum_{i = m / 2}^{m} \mathbb{P}(X = i)$. Call this probability $p$. Then we can write
+			\[
+				3m / 4 \le (1 - p) m / 2 + pm = (1 + p)m/2.
+			\]
+			Then
+			\[
+				\frac{3m}{4} \frac{2}{m} \le 1 + p
+			\]
+			and finally
+			\[
+				1 / 2 \le p.
+			\]
+
+		\item This is the probability that the province itself is not coloured the same as any of its six neighbours. For this, each of the $6$ neighbours must be coloured one of the other $3$ colours, which happens independently for each with probability $3 / 4$. That is, the probability is $(3 / 4)^{6}$.
+
+		\item By our previous answer, we want the minimal $k$ such that $(\frac{k - 1}{k})^{6} > 1/ 2$. Since $(8 / 9)^{6} < 1/2$ and $(9 / 10)^{6} > 1/2$, the minimal $k$ is $k = 10$.
+
+		\item Since a hexagon in a hexagonal lattice has at most $6$ bordering hexagons, the maximum number of colours is bounded above by $7$. That is, if there are $7$ colours used, then any province borders at most $6$ provinces, and thus, there is always a previously used colour that the province is not adjacent to.
+
+			Choosing a bad order of provinces to apply the greedy algorithm can actually force us to use $7$ colours. Essentially, we colour hexagons so that each hexagon surrounding a central ``capital'' hexagon must have a different colour. Then the capital must be coloured a distinct $7$th colour. This can be achieved by the colouring scheme below.
+
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width = 0.5 \textwidth]{figures/P2 e colouring.pdf}
+				\caption{Colour the hexagons one of $1, \dots, 7$, in the order indicated by the pencil, starting from the circle, and ending at the hexagon coloured $7$}.
+			\end{figure}
+	\end{enumerate}
+\end{solution}
 
 \begin{problem}[Problem 2 : Madcap map markup]
 	How many colors will this algorithm use to color a lattice of hexagonal provinces, in the worst case?
@@ -104,6 +170,21 @@ Your map consists of a set $R$ of regions in the plane. Some regions border each
 \end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item[(f)] Since the hexagonal lattice contains $K_{3}$ --- there are triples of provinces, each adjacent to all others --- the lattice cannot be $2$-colourable. We show that it is in fact $3$-colourable, and thus, the minimal $k$ is $k = 3$. The $3$-colouring is obtained by $3$-colouring each set of $7$ hexagons in the manner below.
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width = 0.5 \textwidth]{figures/P2 f 3-colouring.pdf}
+				\caption{A $3$-colouring of the hexagonal lattice}
+			\end{figure}
+
+		\item[(g)] Our random colouring agrees with a correct colouring $C$ in $t = n/4$ regions. If  $r_{i}, r_{j}$ is a pair of bordering regions coloured wrong, then at least one of them disagrees with $C$. By randomly picking one and then randomly changing its colour to one of the other $3$ colours, we have a $1 / 6$th chance of changing the correct one to the correct thing. That is, at each step $t$ increases to $t + 1$ with probability at least $1 / 6$. In order to get to $t = n$ from $t = n / 4$ we need to make $3n / 4$ correct guesses in a row with probability $(1 / 6)^{3n/4} = (6^{3/4})^{-n} \ge 3.833^{-n}$.
+
+			Thus, trying our procedure $O(3.9^{n})$ times, we expect to get an exact $4$-colouring. Since our procedure is sub-exponential the total runtime of this algorithm is better than the bruteforce $O(4^{n})$ algorithm.
+	\end{enumerate}
+\end{solution}
+
 \begin{problem}[Problem 3: The greediest algorithm]
 	Welcome to the world-famous game show \emph{Cash Grab}! In this game, the contestant is presented with an $n \times n$ game board. Every square on the game board is associated with some non-negative amount of money, and no two squares have the same amount. The game proceeds as follows:
 \begin{enumerate}
@@ -125,6 +206,27 @@ One popular greedy strategy is to repeatedly choose the most valuable square rem
     \item In fact, there is a very simple $O(n^2)$-time strategy that achieves a (1/2)-approximation. What is it? Justify your answer.
 \end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item If $s \in GREEDY$, we are done. Suppose $s \notin GREEDY$. If $s$ has greater value than all of its neighbours, then none of its neighbours would be picked over it, leaving it with positive value until it is picked over its neighbours. Then $s$ would be picked in $GREEDY$. Thus, $s \notin GREEDY$ must have some neighbour $t$ with greater value than it.
+
+		\item Let $OPT$ give the set $S$ and $GREEDY$ give the set $T$. Then $\Sigma(S) - \Sigma(T) = \Sigma(S \setminus T) - \Sigma(T \setminus S)$. That is, the difference is the difference between the values chosen in only one of them since the values of the squares chosen in both just cancel out. For every $s \in S \setminus T$, there is some $t \in T$ adjacent to $s$ and with greater value. In fact, since $s$ is adjacent to $t$, $t$ is not in $OPT$ and so  $t \in T \setminus S$. Since each square on the grid has at most four neighbours, each $t$ is adjacent to at most four $s \in S \setminus T$ (all with value less than it). Then $\Sigma(S \setminus T) \le 4 \Sigma(T \setminus S)$. Thus,
+			\begin{align*}
+				\Sigma(S) - \Sigma(T) & = \Sigma(S \setminus T) - \Sigma(T \setminus S) \\
+						      & \le 4\Sigma(T \setminus S) - \Sigma(T \setminus S) \\
+						      & =  3 \Sigma(T \setminus S) \\
+						      & \le 3 \Sigma(T).
+			\end{align*}
+			Then it is easy to see that $\Sigma(S) - \Sigma(T) \le 3 \Sigma(T)$ implies $\Sigma(S) \le 4 \Sigma(T)$ and thus, $\Sigma(T) \ge \Sigma(S) / 4$ --- the greedy algorithm is at least $1 / 4$-optimal.
+
+		\item We first describe this algorithm. Colour the grid black and white like a chessboard. Note that since no two squares of the same colour share an edge, the set of all black squares $B$ and the set of all white squares $W$ are both valid. We claim that choosing the larger of the two sums is $1 / 2$-optimal.
+
+			We prove $1/2$-optimality as follows. Since every square is black or white, $\Sigma(B) + \Sigma(W)$ is the sum of the values of all squares. Since the optimal value is certainly bounded by the sum of values of all squares, we have $\Sigma(B) + \Sigma(W) \ge \Sigma(OPT)$. Suppose without loss of generality that $\Sigma(B) \ge \Sigma(W)$. Then clearly $2 \Sigma(B) \ge \Sigma(B) + \Sigma(W) \ge \Sigma(OPT)$. That is, $\Sigma(B) \ge \Sigma(OPT) / 2$. Thus, choosing $\max \{ \Sigma(B), \Sigma(W) \}$ is $1 / 2$-optimal.
+
+			To compute the sum of all black squares involves $n^{2} / 2 = O(n^{2})$ summations and so does the sum of all white squares. Comparing the two sums can be done in constant time so the algorithm runs in $O(n^{2} + 1) = O(n^{2})$ time.
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
