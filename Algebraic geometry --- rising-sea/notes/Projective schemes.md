@@ -43,11 +43,11 @@ $$
 V(T) = \{ \mathfrak{p}_{\bullet} \subseteq S_{\bullet} \mid T \subseteq \mathfrak{p}_{\bullet}, S_{+} \not\subseteq \mathfrak{p}_{\bullet} \}.
 $$
 
-If $\mathfrak{i}_{\bullet} \subseteq S_{\bullet}$, we define the vanishing set of $\mathfrak{i}_{\bullet}$ the same way. 
+If $\mathfrak{i}_{\bullet} \subseteq S_{\bullet}$, we define the vanishing set of $\mathfrak{i}_{\bullet}$ the same way. Note that if $T$ generates $\mathfrak{i}_{\bullet}$, then $V(T) = V(\mathfrak{i}_{\bullet})$.
 
-If $f$ is a homogeneous element of positive degree, we define $V(f) = V(\{ f \})$.
+If $f$ is a homogeneous element of positive degree, we define $V(f) = V(\{ f \})$. We will later give this the structure of a closed subscheme.
 
-The **projective distinguished open** corresponding to $f$ (homogeneous, of positive degree) is $D_{+}(f) = \operatorname{Proj} S_{\bullet} \setminus V(f)$.
+The **projective distinguished open** corresponding to $f$ (homogeneous, of positive degree) is $D_{+}(f) = \operatorname{Proj} S_{\bullet} \setminus V(f)$. We will give this the structure of an (affine) open subscheme.
 
 ---
 
@@ -66,6 +66,8 @@ Specifically,
 ###### _proof:_
 follows exactly as in the [[Algebraic geometry --- rising-sea/notes/Affine schemes#_definition, proposition _ the Zariski topology (is a topology)|affine case]] (because we only use properties of primeness, requiring homogeneity changes nothing in the proofs).
 
+Another proof follows from the fact that this is the [[Topology --- math-147/notes/Subspaces#_definition _ subspace topology|subspace topology]] induced by viewing $\operatorname{Proj} S_{\bullet}$ as a subspace of $\operatorname{Spec} S$ with its [[Algebraic geometry --- rising-sea/notes/Affine schemes#The space (the Zariski topology)|Zariski topology]].
+
 ---
 
 ... and the distinguished opens form a basis.
@@ -73,6 +75,22 @@ follows exactly as in the [[Algebraic geometry --- rising-sea/notes/Affine schem
 ##### _proposition:_ the projective distinguished opens form a basis
 
 The projective distinguished opens $D_{+}(f)$ form a [[Topology --- math-147/notes/Bases#_definition _ basis|basis]] of the Zariski topology on $\operatorname{Proj} S_{\bullet}$.
+
+###### _proof:_
+
+Clearly each $D_{+}(f)$ is open.
+
+Suppose $U = \operatorname{Proj} S_{\bullet} \setminus V(\mathfrak{i}_{\bullet})$ is an open subset. We can write $U$ as a union of $D_{+}(f)$ as below.
+
+We first look at all the (relevant) homogeneous primes that don't contain an element of $\mathfrak{i}_{\bullet}$ of positive degree.
+$$
+V = \bigcup_{f \in \mathfrak{i}_{+}} D_{+}(f) = \operatorname{Proj} S_{\bullet} \setminus \bigcap_{f \in \mathfrak{i}_{+}} V(f) = \operatorname{Proj} S_{\bullet} \setminus \{ \mathfrak{p}_{\bullet} \mid \mathfrak{i}_{+} \subseteq \mathfrak{p}_{\bullet}, S_{+} \not \subseteq  \mathfrak{p}_{\bullet} \}.
+$$
+Note that this is almost all of $U$ — this excludes all homogeneous primes that contain $\mathfrak{i}_{+}$. However we only want to exclude homogeneous primes that contain both $\mathfrak{i}_{+}$ and $\mathfrak{i}_{0}$ and thus, all of $\mathfrak{i}_{\bullet}$. Thus, it suffices to write $W = \operatorname{Proj} S_{\bullet} \setminus \{ \mathfrak{p}_{\bullet} \mid \mathfrak{i}_{0} \subseteq \mathfrak{p}_{\bullet}, S_{+} \not \subseteq \mathfrak{p}_{\bullet} \}$ as a union of projective distinguished opens. Then $U = V \cup W$ is a union of projective distinguished opens. 
+
+For $f_{0} \in S_{0}$, we have that the set of homogeneous primes not containing $f_{0}$ is just $W_{f_{0}} = \bigcup_{\deg g \geq 1} D_{+}(f_{0} g)$ since any homogeneous prime containing $f_{0}$ must contain some pure positive degree $f_{0} g$ (as long as the ring contains elements of non-zero degree). Thus, we can write $W = \bigcup_{f_{0} \in \mathfrak{i}_{0}} W_{f_{0}}$ and we are done.
+
+Note that it may be easier to prove this is a basis indirectly — showing that every open neighbourhood of a point has a basic open sub-neighbourhood. [[Topology --- math-147/notes/Bases#_proposition _ equivalent conditions to be a basis of a specific topology|This suffices]]!
 
 ---
 
@@ -82,27 +100,71 @@ We can prove analogues of the facts we know about the [[Algebraic geometry --- r
 
 Suppose $\mathfrak{i}_{\bullet}, \mathfrak{j}_{\bullet} \subseteq S_{\bullet}$ are homogeneous ideals contained in $S_{+}$. Then $V({ \mathfrak{i}_{\bullet} }) = V(\mathfrak{j}_{\bullet})$ if and only if $\sqrt{ \mathfrak{i}_{\bullet} } = \sqrt{ \mathfrak{j}_{\bullet} }$.
 
+###### _proof:_
+follows exactly as in the [[Algebraic geometry --- rising-sea/notes/Affine schemes#_proposition _ vanishing sets uniquely identify only radical ideals|affine case]].
+
 ---
 
 ##### _corollary:_ containment of projective distinguished opens
 
-If $f, g \in S_{\bullet}$ are homogeneous and of positive degree. Then $f^n \in (g)$.
+Suppose $f, g \in S_{\bullet}$ are homogeneous and of positive degree. Then $D_{+}(f) \subseteq D_{+}(g)$ if and only if $f \in \sqrt{ (g) }$.
+
+###### _proof:_
+follows exactly as in the [[Algebraic geometry --- rising-sea/notes/The base of distinguished open sets#_proposition _ containment of distinguished opens|affine case]].
+
+---
+
+##### _proposition:_ intersections of projective distinguished opens are distinguished
+
+Suppose $f, g \in S_{\bullet}$ are homogeneous and of positive degree. Then the intersection of their projective distinguished opens is $D_{+}(f) \cap D_{+}(g) = D_{+}(fg)$.
+
+###### _proof:_
+follows exactly as in the [[Algebraic geometry --- rising-sea/notes/The base of distinguished open sets#_proposition _ intersections of distinguished opens are distinguished|affine case]].
 
 ---
 
 We can also define an ideal of vanishing functions.
 
-##### _definition:_ the ideal of vanishing functions
+##### _definition:_ projective ideal of vanishing functions
+
+Given $Z \subseteq \operatorname{Proj} S_{\bullet}$, the **(projective) ideal of vanishing functions** on $Z$ is the set of all functions in $S_{\bullet}$ with $Z \subseteq V(f)$. It is denoted $I(Z)$ and is given by
+$$
+I(Z) = \bigcap_{\mathfrak{p}_{\bullet} \in Z} \mathfrak{p}_{\bullet} \subseteq S_{\bullet}.
+$$
 
 ---
 
+Note this latter definition makes clear that $I(Z)$ is an ideal and is homogeneous.
+
 ##### _proposition:_ vanishing functions on unions
 
-For any two subsets $Z_{1}, Z_{2} \subseteq \operatorname{Proj} S_{\bullet}$, we have $I(Z_{1} \cup Z_{2}) = I(Z_{1} \cap Z_{2})$.
+For any two subsets $Z_{1}, Z_{2} \subseteq \operatorname{Proj} S_{\bullet}$, we have $I(Z_{1} \cup Z_{2}) = I(Z_{1}) \cap I(Z_{2})$.
+
+###### _proof:_
+
+$$
+\begin{align}
+I(Z_{1} \cup Z_{2}) & = \bigcap_{\mathfrak{p}_{\bullet} \in Z_{1} \cup Z_{2}} \mathfrak{p}_{\bullet} \subseteq S_{\bullet} \\ \\
+& = \bigcap_{\mathfrak{p}_{\bullet} \in Z_{1}} \mathfrak{p_{\bullet}} \cap \bigcap_{\mathfrak{p}_{\bullet} \in Z_{2}} \mathfrak{p}_{\bullet} \\
+& = I(Z_{1}) \cap I(Z_{2}).
+\end{align}
+$$
+
+---
 
 ##### _proposition:_ Zariski closures
 
 For any $Z \subseteq \operatorname{Proj} S_{\bullet}$, we have $V(I(Z)) = \bar{Z}$.
+
+###### _proof:_
+
+Suppose $\mathfrak{q}_{\bullet} \in V(I(Z))$. Then $\mathfrak{q}_{\bullet} \supseteq \bigcap_{\mathfrak{p}_{\bullet} \in Z} \mathfrak{p}_{\bullet}$. For any closed set $V(\mathfrak{i}_{\bullet}) \supseteq Z$, we have $\mathfrak{i}_{\bullet} \subseteq \mathfrak{p}_{\bullet}$ for all $\mathfrak{p}_{\bullet} \in Z$. That is,
+$$
+\mathfrak{i}_{\bullet} \subseteq \bigcap_{\mathfrak{p}_{\bullet} \in Z} \mathfrak{p}_{\bullet} \subseteq \mathfrak{q}_{\bullet}.
+$$
+and thus, $\mathfrak{q}_{\bullet} \in V(\mathfrak{i}_{\bullet})$. That is, $\mathfrak{q}_{\bullet}$ is in every closed set containing $Z$, and thus in the closure of $Z$.
+
+Since $I(Z) \subseteq \mathfrak{p}_{\bullet}$ for each prime $\mathfrak{p}_{\bullet}$ in $Z$, we have $Z \subseteq V(I(Z))$ and thus, $\bar{Z} \subseteq V(I(Z))$ as well.
 
 ---
 
@@ -110,8 +172,16 @@ For any $Z \subseteq \operatorname{Proj} S_{\bullet}$, we have $V(I(Z)) = \bar{Z
 
 For any homogeneous ideal $\mathfrak{i}_{\bullet} \subseteq S_{\bullet}$. Then the following are equivalent
 1) $V(\mathfrak{i}_{\bullet})= \text{Ø}$
-2) For any homogeneous generating set $\mathfrak{i}_{\bullet} = (f_{j})_{j \in \mathscr{J}}$, we have $\bigcup_{j \in \mathscr{J}} D_{+}(f_{j}) = \operatorname{Proj} S_{\bullet}$
+2) For any homogeneous generating set $\mathfrak{i}_{\bullet} = (f_{j})_{j \in \mathscr{J}}$, we have $\bigcup_{\deg f_{j} \geq 1} D_{+}(f_{j}) = \operatorname{Proj} S_{\bullet}$
 3) $S_{+} \subseteq \sqrt{ \mathfrak{i}_{\bullet} }$
+
+###### _proof:_
+
+Suppose $V(\mathfrak{i}_{\bullet}) = \text{Ø}$. Then every homogeneous prime must exclude some homogeneous positive degree element of $\mathfrak{i}_{\bullet}$. Thus, $\bigcup_{\deg f_{j} \geq 1} D_{+}(f_{j}) = \operatorname{Proj} S_{\bullet}$. (Some technical details about homogeneous generators in degree $0$ are missing here).
+
+Suppose that for any homogeneous generating set $\mathfrak{i}_{\bullet} = (f_{j})_{j \in \mathscr{J}}$, we have $\bigcup_{\deg f_{j} \geq 1} D_{+}(f_{j}) = \operatorname{Proj} S_{\bullet}$. Thus, every relevant homogeneous prime excludes one of the $f_{j}$. Equivalently, all homogeneous primes containing $\mathfrak{i}_{\bullet}$ contain $S_{+}$. By our proof that [[Algebraic geometry --- rising-sea/notes/Graded rings#_corollary _ homogeneity is closed under sum, product, intersection, radical|radicals of homogeneous ideals are homogeneous]], this is the same as requiring that all primes containing $\mathfrak{i}_{\bullet}$ contain $S_{+}$ or equivalently $S_{+} \subseteq \sqrt{ \mathfrak{i}_{\bullet} }$.
+
+Suppose $S_{+} \subseteq \sqrt{ \mathfrak{i}_{\bullet} }$. Since any homogeneous prime ideal containing $\mathfrak{i}_{\bullet}$ contains $\sqrt{ \mathfrak{i}_{\bullet} }$ this tells us that there are no relevant prime ideals containing $\mathfrak{i}_{\bullet}$. That is, $V(\mathfrak{i}_{\bullet}) = \text{Ø}$.
 
 ---
 
