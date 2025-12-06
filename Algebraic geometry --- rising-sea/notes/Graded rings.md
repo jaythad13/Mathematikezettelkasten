@@ -95,7 +95,7 @@ If $\mathfrak{p}_{\bullet}$ is prime, primeness on products of homogeneous eleme
 
 Suppose $\mathfrak{p}_{\bullet}$ satisfies the primeness condition for homogeneous elements. Let $fg \in \mathfrak{p}_{\bullet}$. Write $f = f_{0} + \dots + f_{m}$ and $g = g_{0} + \dots + g_{n}$ with each $f_{i}$ and $g_{i}$ of pure degree $i$. Then $fg$ has degree $0$ part $f_{0} g_{0}$, degree $1$ part $f_{0} g_{1} + f_{1} g_{0}$ and so on. Since $fg \in \mathfrak{p}_{\bullet}$ then $\mathfrak{p}_{\bullet}$ contains all of these pure degree parts. 
 
-If $f \in \mathfrak{p}_{\bullet}$, we are done. Suppose $f \not\in \mathfrak{p}_{\bullet}$. Then, there is some least $i$ such that $f_{i} \not\in \mathfrak{p}_{\bullet}$. Since, for all $j < i$ we have $f_{j} \in \mathfrak{p}_{\bullet}$, in the degree $i$ piece we have $f_{j} g_{i - j} \in \mathfrak{p}_{\bullet}$. The only part of the sum left is then $f_{i} g_{0}$. Since $f_{i} \not\in \mathfrak{p}_{\bullet}$ we have $g_{0} \in \mathfrak{p}_{\bullet}$ by the primeness on homogeneous elements. 
+If $f \in \mathfrak{p}_{\bullet}$, we are done. Suppose $f \not\in \mathfrak{p}_{\bullet}$. Then, there is some least $i$ such that $f_{i} \not\in \mathfrak{p}_{\bullet}$. Since, for all $j < i$ we have $f_{j} \in \mathfrak{p}_{\bullet}$, in the degree $i$ piece we have $f_{j} g_{i - j} \in \mathfrak{p}_{\bullet}$. The only part of the sum left is then $f_{i} g_{0}$. Since $f_{i} \not\in \mathfrak{p}_{\bullet}$ we have $g_{0} \in \mathfrak{p}_{\bullet}$ by the primeness on homogeneous elements.
 
 We can induct up to get all the homogeneous parts of $g$. Suppose all $g_{k} \in \mathfrak{p}_{\bullet}$ for $k < \ell$. Consider the degree $i + \ell$ part of $fg$
 $$
