@@ -290,13 +290,18 @@ Note that $\operatorname{Proj} A[X_{0}] \cong \operatorname{Spec} A$. This is be
 
 ##### _example:_ projective space as $\operatorname{Proj} A[x_{0}, \dots, x_{n}]$
 
-[[Algebraic geometry --- rising-sea/notes/Examples of schemes#_definition _ projective $n$-space over a ring|Projective space over a ring]] $\mathbb{P}^n_{A}$ is the projective scheme $\operatorname{Proj} A[x_{0}, \dots, x_{n}]$. The variables $x_{0}, \dots, x_{n}$ are called **projective coordinates** on $\mathbb{P}^n_{A}$. To verify this is as simple as checking that the $D_{+}(x_{i})$ cover $\operatorname{Proj} A[x_{0}, \dots, x_{n}]$ since they are isomorphic to $\operatorname{Spec} \mathbb{F}[x_{0} / x_{i}, \dots, x_{n} / x_{i}] = \operatorname{Spec} \mathbb{F}[x_{0 / i}, \dots, x_{n / i}]$. They do in fact cover $\mathbb{P}_{A}^n$ — if a homogeneous prime ideal contains all of $x_{0}, \dots, x_{n}$ then it contains the irrelevant ideal — it is not a point.
+[[Algebraic geometry --- rising-sea/notes/Examples of schemes#_definition _ projective $n$-space over a ring|Projective space over a ring]] $\mathbb{P}^n_{A}$ is the projective scheme $\operatorname{Proj} A[x_{0}, \dots, x_{n}]$. The variables $x_{0}, \dots, x_{n}$ are called **projective coordinates** on $\mathbb{P}^n_{A}$. 
 
----
+To verify this is as simple as checking that the $D_{+}(x_{i})$ cover $\operatorname{Proj} A[x_{0}, \dots, x_{n}]$ since they are isomorphic to $\operatorname{Spec} \mathbb{F}[x_{0} / x_{i}, \dots, x_{n} / x_{i}] = \operatorname{Spec} \mathbb{F}[x_{0 / i}, \dots, x_{n / i}]$. They do in fact cover $\mathbb{P}_{A}^n$ — if a homogeneous prime ideal contains all of $x_{0}, \dots, x_{n}$ then it contains the irrelevant ideal — it is not a point.
 
-Note that this means that a closed point $(a_{0} : \dots : a_{n})$ in $\mathbb{P}_{\mathbb{F}}^n$ (for algebraically closed $\mathbb{F}$) corresponds to a homogeneous prime ideal $(x - a_{0}, \dots, x - a_{n})$ in $\operatorname{Proj} \mathbb{F}[x_{0}, \dots, x_{n}]$. 
+Note that this means that a [[Algebraic geometry --- rising-sea/notes/Examples of schemes#_proposition _ homogeneous coordinates for projective space|closed point in homogeneous coordinates]] $(a_{0} : \dots : a_{n}) \in \mathbb{P}_{\mathbb{F}}^n$ (for algebraically closed $\mathbb{F}$) corresponds to a homogeneous prime $(x_{0} - a_{0}, \dots, x_{n} - a_{n})$ in $\operatorname{Proj} \mathbb{F}[x_{0}, \dots, x_{n}]$. If it's in $D_{+}(x_{0})$ for example, it corresponds to the prime $(x_{1 / 0}  - a_{1} / a_{0}, \dots, x_{n / 0} - a_{n} / a_{0}) \subseteq \mathbb{F}[x_{1 / 0}, \dots, x_{n / 0}]$. The homogeneous prime $(x_{0} - a_{0}, \dots, x_{n} - a_{n})$ localises to a prime $(x_{0} - a_{0}, \dots, x_{n} - a_{n})_{x_{0}}$ in $D_{+}(x_{0})$ which in turn has zeroth degree part we wrote above.
+
+>[!missing]
+>some more justification
 
 With our old definition of projective space it would have been difficult to show that the complement of a plane conic $D_{+}(x^{2} + y^{2} - z^{2}) \subseteq \mathbb{P}^2_{\mathbb{F}}$ is affine. Here it is clear that it is $\operatorname{Spec} A$ where $A$ is the degree $0$ part of $\mathbb{F}[x, y, z]_{x^{2} + y^{2} - z^{2}}$.
+
+---
 
 ##### _example:_ the projectivisation of a vector space
 

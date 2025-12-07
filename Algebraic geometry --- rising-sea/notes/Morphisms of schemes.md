@@ -52,3 +52,13 @@ If $\pi_{\mid \operatorname{Spec} A}$ is a morphism of affine schemes for every 
 Since the morphisms $\pi_{\mid \operatorname{Spec} A_{i}}$ extend to codomain all of $Y$ and then [[Algebraic geometry --- rising-sea/notes/Morphisms of ringed spaces#_proposition _ morphisms of ringed spaces glue|glue to a unique morphism of ringed spaces]] $X \to Y$, $\pi$ must agree with the construction of that gluing. But in that construction, for small enough $V$ (that is, for $V \subseteq \operatorname{Spec} A_{i}$) the morphisms $\pi^\sharp(V)$ are just the morphisms $\pi_{\mid \operatorname{Spec} A_{i}}^\sharp(V)$. Thus, the stalk maps $\pi^\sharp_{q} : \mathscr{O}_{Y, q} \to \mathscr{O}_{X, p}$ are just the same as the stalk maps $(\pi^\sharp_{\mid \operatorname{Spec} A_{i}})_{q}$ which are local ring morphisms. Thus, $\pi, \pi^\sharp$ is a morphism of local ringed spaces.
 
 ---
+
+One enlightening example of how morphisms of schemes are obtained by gluing together morphisms of affine schemes is the following.
+
+##### _example:_ affine $(n + 1)$-space covers projective $n$-space
+
+Just as there is a "quotient map" of manifolds $\mathbb{C}^{n + 1} \setminus \{ 0 \} \to \mathbb{C} \mathbb{P}^n$, there should be a map $\mathbb{A}_{\mathbb{F}}^{n + 1} \setminus \{ 0 \} \to \mathbb{P}^n_{\mathbb{F}}$ given in affine and homogeneous coordinates by $x_{i} \mapsto x_{i}$ (and on closed points by $(a_{0}, a_{1}, \dots, a_{n}) \mapsto (a_{0} : a_{1} : \dots : a_{n})$ for algebraically closed $\mathbb{F}$)
+
+Write $\mathbb{A}_{\mathbb{F}}^{n + 1} \setminus \{ 0 \}$ as the union of all the distinguished opens $D(x_{i}) \cong \operatorname{Spec} \mathbb{F}[x_{0}, x_{1}, \dots, x_{n}]_{x_{i}}$. We want to map these to [[Algebraic geometry --- rising-sea/notes/Projective schemes#_definition _ homogeneous vanishing sets, projective distinguished open|projective distinguished opens]] $D_{+}(x_{i}) = \operatorname{Spec} (\mathbb{F}[x_{0}, x_{1}, \dots, x_{n}]_{x_{i}})_{0}$. There's an obvious map here — just the inclusion of the degree $0$ part into the whole ring. They agree on intersections — on $D(x_{i} x_{j}) \to D_{+}(x_{i} x_{j})$ they both restrict to the map induced by the inclusion $(\mathbb{F}[x_{0}, x_{1}, \dots, x_{n}]_{x_{i} x_{j}})_{0} \to \mathbb{F}[x_{0}, x_{1}, \dots, x_{n}]_{x_{i} x_{j}}$. Thus, they glue to give a scheme map.
+
+---

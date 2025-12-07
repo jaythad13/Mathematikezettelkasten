@@ -252,3 +252,11 @@ Equivalently, it is a morphism of ringed spaces induced by a ring homomorphism $
 The category of affine schemes $\mathsf{AffSch}$ is equivalent to the [[Algebraic geometry --- rising-sea/notes/Categories#_definition _ opposite (or dual) categories|opposite category]] of $\mathsf{Ring}$.
 
 ---
+
+Note that this means that there may be more than one morphism between two one-point spaces! In particular, the functor $\mathsf{AffSch}$ is not faithful. This also means that injections of the underlying sets of affine schemes may not be monic as maps of affine schemes.
+
+##### _example:_ two maps between one point spaces, or injections of sets are not monomorphisms of affine schemes
+
+The canonical map $\operatorname{Spec} \mathbb{Q}[i] \to \operatorname{Spec} \mathbb{Q}$ is an injection of sets (sending $(0)$ to $(0)$), but both automorphisms in $\operatorname{Gal}(\mathbb{Q}[i] / \mathbb{Q})$ give automorphisms $\operatorname{Spec} \mathbb{Q}[i] \to \operatorname{Spec} \mathbb{Q}[i]$ which compose to the same map $\operatorname{Spec} \mathbb{Q}[i] \to \operatorname{Spec} \mathbb{Q}[i] \to \operatorname{Spec} \mathbb{Q}$.
+
+---
