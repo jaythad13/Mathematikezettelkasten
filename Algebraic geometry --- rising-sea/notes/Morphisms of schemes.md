@@ -38,4 +38,17 @@ A **morphism of schemes** $\pi : X \to Y$ is a [[Algebraic geometry --- rising-s
 
 ##### _proposition:_ the two definitions of morphisms of schemes are equivalent
 
-Suppose $\pi : X \to Y$ is a morphims of local ringed spaces. Then, for every affine open $\operatorname{Spec} A \subseteq X$ with $\pi^\text{img}(\operatorname{Spec} A) \subseteq \operatorname{Spec} B$, the morphism $\pi_{\mid \operatorname{Spec} A} : \operatorname{Spec} A \to \operatorname{Spec} B$ is a [[Algebraic geometry --- rising-sea/notes/Morphisms of affine schemes#The morphism of affine schemes|morphism of affine schemes]] (induced by a ring homomorphism $B \to A$).
+Let $\pi : X \to Y$ be a morphism of ringed spaces. Let $X = \bigcup_{i \in I} \operatorname{Spec} A_{i}$ and $Y = \bigcup_{i \in I} \operatorname{Spec} B_{i}$, be [[Algebraic geometry --- rising-sea/notes/Schemes#_proposition, definition _ open subschemes, affine open subscheme|affine open]] covers with $\pi^\text{img}(\operatorname{Spec} A_{i}) \subseteq \operatorname{Spec} B_{i}$. The following are equivalent.
+1) $\pi$ is a morphism of local ringed spaces. 
+2) For every affine open $\operatorname{Spec} A \subseteq X$ with $\pi^\text{img}(\operatorname{Spec} A) \subseteq \operatorname{Spec} B$, the morphism $\pi_{\mid \operatorname{Spec} A} : \operatorname{Spec} A \to \operatorname{Spec} B$ is a [[Algebraic geometry --- rising-sea/notes/Morphisms of affine schemes#The morphism of affine schemes|morphism of affine schemes]] (induced by a ring homomorphism $B \to A$).
+3) For every $\operatorname{Spec} A_{i}$, $\pi_{\mid \operatorname{Spec} A_{i}} : \operatorname{Spec} A_{i} \to \operatorname{Spec} B_{i}$ is a morphism of schemes.
+
+###### _proof:_
+
+Suppose $\pi$ is a morphism of local ringed spaces. Let $\operatorname{Spec} A \subseteq X$ have $\pi^\text{img}(\operatorname{Spec} A) \subseteq \operatorname{Spec} B$. Write $\rho$ for the restricted map $\operatorname{Spec} A \to \operatorname{Spec} B$. Since $\rho^\sharp(V) = \pi^\sharp_{\mid \operatorname{Spec} A}(V)$ for all opens, $\rho^\sharp_{q} = \pi^\sharp_{\mid \operatorname{Spec} A, q} : \mathscr{O}_{\operatorname{Spec} B, q} \to \mathscr{O}_{\operatorname{Spec} A, p}$. In turn, $\pi^\sharp_{\mid \operatorname{Spec} A}$ is the composition of $\pi^\sharp$ which preserves the maximal ideals of stalks and $\pi_{*} \mathscr{O}_{X} \to (\pi_{\mid U})_{*} \mathscr{O}_{X}$ which gives an isomorphism of stalks by some colimit argument that isn't worth writing out. Thus, $\rho : \operatorname{Spec} A \to \operatorname{Spec} B$ is a map of local ringed spaces, [[Algebraic geometry --- rising-sea/notes/Morphisms of affine schemes#_proposition _ morphisms of local ringed spaces are morphisms of affine schemes|and thus]], a morphism of affine schemes.
+
+If $\pi_{\mid \operatorname{Spec} A}$ is a morphism of affine schemes for every affine open, it's certainly true on an affine cover.
+
+Since the morphisms $\pi_{\mid \operatorname{Spec} A_{i}}$ extend to codomain all of $Y$ and then [[Algebraic geometry --- rising-sea/notes/Morphisms of ringed spaces#_proposition _ morphisms of ringed spaces glue|glue to a unique morphism of ringed spaces]] $X \to Y$, $\pi$ must agree with the construction of that gluing. But in that construction, for small enough $V$ (that is, for $V \subseteq \operatorname{Spec} A_{i}$) the morphisms $\pi^\sharp(V)$ are just the morphisms $\pi_{\mid \operatorname{Spec} A_{i}}^\sharp(V)$. Thus, the stalk maps $\pi^\sharp_{q} : \mathscr{O}_{Y, q} \to \mathscr{O}_{X, p}$ are just the same as the stalk maps $(\pi^\sharp_{\mid \operatorname{Spec} A_{i}})_{q}$ which are local ring morphisms. Thus, $\pi, \pi^\sharp$ is a morphism of local ringed spaces.
+
+---

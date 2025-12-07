@@ -210,16 +210,40 @@ We will see that by requiring functions that vanish at a point to pull back to v
 
 ##### _proposition:_ morphisms of local ringed spaces are morphisms of affine schemes
 
-If $\pi : \operatorname{Spec} A \to \operatorname{Spec} B$ is a morphism of local ringed spaces, then it is the morphism induced by the map 
+If $\pi : \operatorname{Spec} A \to \operatorname{Spec} B$ is a morphism of local ringed spaces, then it is the morphism induced by the ring map $\pi^\sharp(\operatorname{Spec} B) : B \to A$ on global sections —
 $$
 \pi^\sharp(\operatorname{Spec} B) : \mathscr{O}_{\operatorname{Spec} B}(\operatorname{Spec B}) = B \to A = \mathscr{O}_{\operatorname{Spec} A}(\operatorname{Spec} A) = \pi_{*}\mathscr{O}_{\operatorname{Spec} A}(\operatorname{Spec} B).
 $$
+
+###### _proof:_
+
+First suppose $\pi, \pi^\sharp : \operatorname{Spec} A \to \operatorname{Spec} B$ is induced by the global sections morphism $\pi^\sharp : B \to A$. Then for any $\mathfrak{p} \in \operatorname{Spec} A$ mapped to $\mathfrak{q} \in \operatorname{Spec} B$ we have $\pi^\sharp_{\mathfrak{q}} : B_{\mathfrak{q}} \to A_{\mathfrak{p}}$. This is the unique map of $B$-algebras induced by the fact that $B \setminus \mathfrak{q}$ is invertible in $A_{\mathfrak{p}}$ — note that $b \in B \setminus \mathfrak{q}$ acts by multiplication by $\pi^\sharp(b)$ and $\pi^{\sharp, \text{img}}(B \setminus \mathfrak{q}) \subseteq A \setminus \mathfrak{p}$. This map has $b / s \mapsto \pi^\sharp(b) / \pi^\sharp(s)$. Since $\pi^{\sharp, \text{img}}(\mathfrak{q}) \subseteq \mathfrak{p}$, this gives $\pi^{\sharp, \text{img}}_{\mathfrak{q}}(B_{\mathfrak{q}} \mathfrak{q}) \subseteq A_{\mathfrak{p}} \mathfrak{p}$. That is, $\pi^\sharp_{\mathfrak{q}}$ is a morphism of local rings and any "morphism of affine schemes" is a morphism of local ringed spaces.
+
+Now suppose $\pi, \pi^\sharp : \operatorname{Spec} A \to \operatorname{Spec} B$ is a morphism of local ringed spaces. By abuse of notation, let $\pi^\sharp$ denote $\pi^\sharp(\operatorname{Spec} B) : B \to A$. We want to show that a point $p \in \operatorname{Spec} A$ with prime ideal of vanishing functions $\mathfrak{q}$ is sent to $q \in \operatorname{Spec} B$ with prime ideal of vanishing functions $\mathfrak{q} = \pi^{\sharp, \text{pre}}(\mathfrak{p}) \in \operatorname{Spec} B$. 
+
+Suppose $p \mapsto q$ with corresponding primes of vanishing functions $\mathfrak{p}$ and $\mathfrak{q}$ respectively. Then since $\mathfrak{p} \subseteq A$ is the prime ideal of functions vanishing at the point $\mathfrak{p}$, and by the [[Algebraic geometry --- rising-sea/notes/Limits and colimits#_proposition _ localisation is a colimit|colimit characterisation of localisation]], we get a stalk morphism equal to the morphism of localisations $\pi^\sharp_{q} = \pi^\sharp_{\mathfrak{q}} : B_{\mathfrak{q}} \to A_{\mathfrak{p}}$. It is a morphism of local rings — $\pi^{\sharp, \text{img}}_{\mathfrak{q}}(B_{\mathfrak{q}} \mathfrak{q}) \subseteq A_{\mathfrak{p}} \mathfrak{p}$ and so $B_{\mathfrak{q}} \mathfrak{q} \subseteq \pi^{\sharp, \text{pre}}_{\mathfrak{q}}(A_{\mathfrak{p}} \mathfrak{p})$. Since $B_{\mathfrak{q}} \mathfrak{q}$ is maximal, it must be the whole pre-image of the maximal ideal of $A_{\mathfrak{p}}$. Since $\pi^\sharp_{\mathfrak{q}} = \pi^\sharp$ on elements of $B$, we get that $\pi^{\sharp, \text{img}}(\mathfrak{q}) \subseteq \mathfrak{p}$ implying $\mathfrak{q} \subseteq \pi^{\sharp, \text{pre}}(\mathfrak{p})$ (this is actually a little technical, but if $s \pi^\sharp(b) \in \mathfrak{p}$, then since $s \not\in \mathfrak{p}$ we must have $\pi^\sharp(b) \in \mathfrak{p}$). Conversely, if $\pi^{\sharp}(b) \in \mathfrak{p}$, then we must have $\pi^\sharp_{\mathfrak{q}}(b) \in A_{\mathfrak{p}} \mathfrak{p}$, and thus, $b \in B_{\mathfrak{q}} \mathfrak{q}$. By a similar argument, this too forces $b \in \mathfrak{q}$. That is, $\mathfrak{q} \supseteq \pi^{\sharp, \text{pre}}(\mathfrak{p})$. This completes the double inclusion we wanted.
+
+Now that we know that $\pi$ is induced by $\pi^\sharp$ at the level of sets, we get that $D(g) \subseteq \operatorname{Spec} B$ has pre-image $D(\pi^\sharp(g))$. By the definition of a morphism of sheaves the following diagram commutes.
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		\mathcal{O}_{\mathrm{Spec} B}(\mathrm{Spec} B) \ar[r, "\pi^\sharp"] \ar[d, "\otimes B_{g}"] & \pi_{*}\mathcal{O}_{\mathrm{Spec} A}(\mathrm{Spec} B) \ar[d, "\otimes B_{g}"] \\
+		\mathcal{O}_{\mathrm{Spec} B}(D(g)) \ar[r, "\pi^\sharp(D(g))"] & \pi_{*} \mathcal{O}_{\mathrm{Spec} A}(D(g))
+	\end{tikzcd}
+\end{document}
+```
+
+Since the vertical restriction maps are just localisation by the action of $g$ (that is, tensoring with $B_{g}$, to make clear that we invert $\pi^\sharp(g)$ on $A$), the map $\pi^\sharp(D(g))$ is determined by $\pi^\sharp(\operatorname{Spec} B)$ and the universal property of localisation. Thus, $\pi^\sharp$ is the sheaf map induced by $\pi^\sharp(\operatorname{Spec} B)$.
 
 ---
 
 ##### _definition:_ morphism of affine schemes
 
-A morphism of affine schemes $\operatorname{Spec} A \to \operatorname{Spec} B$ is a morphism of local ringed spaces. Equivalently, it is a morphism of ringed spaces induced by a ring homomorphism $B \to A$.
+A **morphism of affine schemes** $\operatorname{Spec} A \to \operatorname{Spec} B$ is a morphism of local ringed spaces. 
+
+Equivalently, it is a morphism of ringed spaces induced by a ring homomorphism $B \to A$.
 
 ---
 
