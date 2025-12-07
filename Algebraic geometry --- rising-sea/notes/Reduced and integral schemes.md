@@ -32,6 +32,12 @@ Suppose $A$ is not reduced with non-zero $x$ having $x^n = 0$. Then consider $\m
 
 ---
 
+##### _example:_ reduced schemes 
+
+This result will allow us to check reducedness on affine covers — for example, $\mathbb{A}^n_{\mathbb{F}}$ is reduced, and since $\mathbb{P}^n_{\mathbb{F}}$ [[Algebraic geometry --- rising-sea/notes/Examples of schemes#_definition _ projective $n$-space over a ring|is covered by]] $n + 1$ copies of $\mathbb{A}^n_{\mathbb{F}}$, we can just check the stalks on these affine opens, and deduce that $\mathbb{P}^n_{\mathbb{F}}$ is reduced.
+
+---
+
 ##### _example:_ non-reduced affine scheme, and a reduced subscheme
 
 $X = \operatorname{Spec} \mathbb{F}[x, y] / (y^{2}, xy)$ is non-reduced — it is the intersection of the fuzzy $x$-axis $V(y^{2})$ with the union $V(x) \cup V(y)$ of $x$ and $y$-axes. Thus, it looks like the affine line with some vertical fuzz around the origin. In particular, we have $y \neq 0$ but $y^{2} = 0$.
@@ -44,10 +50,7 @@ Note however that a reduced ring of global sections $\mathscr{O}_{X}(X)$ is not 
 
 ##### _example:_ non-reduced scheme with reduced global sections
 
-The scheme cut out by $x^{2} = 0$ in $\mathbb{P}_{\mathbb{F}}^{2}$ is non-reduced, but has ring of global sections $\mathbb{F}$, which is reduced.
-
->[!missing]
->proof
+The [[Algebraic geometry --- rising-sea/notes/Projective schemes#_definition _ vanishing subschemes of projective schemes|vanishing subscheme]] $V(x^{2})$ in $\mathbb{P}_{\mathbb{F}}^{2} = \operatorname{Proj} \mathbb{F}[x, y, z]$ is non-reduced, but has ring of global sections $\mathbb{F}$, which is reduced. This is not so difficult to show. We notice that $\operatorname{Proj} \mathbb{F}[x, y, z] / (x^{2})$ has projective distinguished open $D_{+}(z)$ where the structure sheaf has nilpotent $x$. However, $\mathbb{F}$ is clearly included in the ring of global functions, and by a [[Algebraic geometry --- rising-sea/notes/Examples of schemes#_proposition _ global functions on projective space|similar argument]] about sections on $D_{+}(y) \cap D_{+}(z)$, these constants are the only global functions.
 
 ---
 
