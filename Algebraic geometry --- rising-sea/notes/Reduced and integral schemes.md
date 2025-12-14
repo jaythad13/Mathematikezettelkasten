@@ -34,7 +34,7 @@ Suppose $A$ is not reduced with non-zero $x$ having $x^n = 0$. Then consider $\m
 
 ##### _example:_ reduced schemes 
 
-This result will allow us to check reducedness on affine covers — for example, $\mathbb{A}^n_{\mathbb{F}}$ is reduced, and since $\mathbb{P}^n_{\mathbb{F}}$ [[Algebraic geometry --- rising-sea/notes/Examples of schemes#_definition _ projective $n$-space over a ring|is covered by]] $n + 1$ copies of $\mathbb{A}^n_{\mathbb{F}}$, we can just check the stalks on these affine opens, and deduce that $\mathbb{P}^n_{\mathbb{F}}$ is reduced.
+This result will allow us to check reducedness on affine covers. For example, $\mathbb{A}^n_{\mathbb{F}}$ is reduced, and since $\mathbb{P}^n_{\mathbb{F}}$ [[Algebraic geometry --- rising-sea/notes/Examples of schemes#_definition _ projective $n$-space over a ring|is covered by]] $n + 1$ copies of $\mathbb{A}^n_{\mathbb{F}}$, we can just check the stalks on these affine opens, and deduce that $\mathbb{P}^n_{\mathbb{F}}$ is reduced.
 
 ---
 

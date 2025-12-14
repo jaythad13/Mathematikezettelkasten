@@ -48,6 +48,19 @@ Equivalently, if $X$ is a locally Noetherian scheme, then each $\mathscr{O}_{X, 
 
 The converse is not true in general.
 
+The affine locality of Noetherianness implies for example that all projective schemes over a Noetherian ring are Noetherian schemes.
+
+##### _example:_ quasiprojective schemes over a Noetherian base are Noetherian schemes
+
+If $A$ is Noetherian, then any projective $A$-scheme $X = \operatorname{Proj} S_{\bullet}$ [[Algebraic geometry --- rising-sea/notes/Graded rings#_corollary _ Noetherian graded rings have Noetherian base ring|must have]] $S_{\bullet}$ Noetherian. By the argument above, each localisation $(S_{\bullet})_{f}$ is also Noetherian. Then, again we [[Algebraic geometry --- rising-sea/notes/Graded rings#_corollary _ Noetherian graded rings have Noetherian base ring|must have]] each $((S_{\bullet})_{f})_{0}$ Noetherian. Thus, $X$ is covered by a base of affine Noetherian schemes $D_{+}(f)$. Note that $X$ is [[Algebraic geometry --- rising-sea/notes/Topological properties of schemes#_example _ projective schemes are qcqs|quasicompact]] since all projective schemes are. Thus, $X$ is Noetherian.
+
+We can run exactly this argument for any quasiprojective $U \subseteq X$ as well.
+
+>[!warning]
+> Our proof that $S_{\bullet}$ Noetherian implies $(S_{\bullet})_{0}$ Noetherian only works if $S_{\bullet}$ has no units of positive degree, which is not the case for $(S_{\bullet})_{f}$. There is some manual fix available by assuming that $S_{\bullet}$ is generated in degree $1$ and then looking at things that look like the standard affine charts on $\mathbb{P}^n$
+
+---
+
 Noetherian schemes are really nice, especially topologically!
 
 ##### _proposition:_ Noetherian schemes are Noetherian topological spaces
