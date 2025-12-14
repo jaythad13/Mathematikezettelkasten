@@ -165,7 +165,7 @@ One important example of sheaves is pushforwards.
 
 The most important example of a sheaf for us will be ringed spaces $X, \mathscr{O}_{X}$ and its $\mathscr{O}_{X}$-modules.
 
-![[Algebraic geometry --- rising-sea/notes/Ringed spaces#_definition _ ringed spaces, structure sheaf, functions, global functions|Ringed spaces]]
+![[Algebraic geometry --- rising-sea/notes/Ringed spaces#_definition _ ringed spaces, structure sheaf, isomorphism of ringed spaces, functions, global functions|Ringed spaces]]
 
 ![[Algebraic geometry --- rising-sea/notes/Ringed spaces#_definition _ $ mathscr{O}_{X}$-modules|Ringed spaces]]
 
