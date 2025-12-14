@@ -53,6 +53,8 @@ Since the morphisms $\pi_{\mid \operatorname{Spec} A_{i}}$ extend to codomain al
 
 ---
 
+Clearly, this gives a category of schemes. We have shown already that [[Algebraic geometry --- rising-sea/notes/Morphisms of ringed spaces#_definition _ the category of ringed spaces|morphisms of ringed spaces compose]]. It's clear that the composition of a morphism of local rings is still a morphism of local rings. Since the stalk morphisms of the composition are just compositions of the stalk morphisms with some extra $\pi_{*} \mathscr{O}_{X, p} \to \mathscr{O}_{X, p}$ bits in between this means that morphisms of local ringed spaces, and thus, morphisms of schemes compose too.
+
 One enlightening example of how morphisms of schemes are obtained by gluing together morphisms of affine schemes is the following.
 
 ##### _example:_ affine $(n + 1)$-space covers projective $n$-space
