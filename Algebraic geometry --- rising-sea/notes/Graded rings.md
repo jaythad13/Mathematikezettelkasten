@@ -144,7 +144,9 @@ A graded ring $S_{\bullet}$ over $A$ is [[Algebraic geometry --- rising-sea/note
 
 ###### _proof sketch:_
 
-Then $S_{\bullet}$ is a finitely generated $A$-algebra and the [[Algebraic geometry --- rising-sea/notes/Noetherian rings and modules#_theorem _ the Hilbert basis theorem|Hilbert basis theorem]] applies.
+If $S_{\bullet}$ is Noetherian, then $A = S_{\bullet} / S_{+}$ is Noetherian and $S_{+}$ is finitely generated.
+
+If $A$ is Noetherian and $S_{+}$ is finitely generated, then $S_{\bullet}$ is a finitely generated $A$-algebra and the [[Algebraic geometry --- rising-sea/notes/Noetherian rings and modules#_theorem _ the Hilbert basis theorem|Hilbert basis theorem]] applies.
 
 ---
 
