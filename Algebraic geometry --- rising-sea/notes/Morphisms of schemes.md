@@ -53,8 +53,6 @@ Since the morphisms $\pi_{\mid \operatorname{Spec} A_{i}}$ extend to codomain al
 
 ---
 
-Clearly, this gives a category of schemes. We have shown already that [[Algebraic geometry --- rising-sea/notes/Morphisms of ringed spaces#_definition _ the category of ringed spaces|morphisms of ringed spaces compose]]. It's clear that the composition of a morphism of local rings is still a morphism of local rings. Since the stalk morphisms of the composition are just compositions of the stalk morphisms with some extra $\pi_{*} \mathscr{O}_{X, p} \to \mathscr{O}_{X, p}$ bits in between this means that morphisms of local ringed spaces, and thus, morphisms of schemes compose too.
-
 One enlightening example of how morphisms of schemes are obtained by gluing together morphisms of affine schemes is the following.
 
 ##### _example:_ affine $(n + 1)$-space covers projective $n$-space
@@ -64,3 +62,5 @@ Just as there is a "quotient map" of manifolds $\mathbb{C}^{n + 1} \setminus \{ 
 Write $\mathbb{A}_{\mathbb{F}}^{n + 1} \setminus \{ 0 \}$ as the union of all the distinguished opens $D(x_{i}) \cong \operatorname{Spec} \mathbb{F}[x_{0}, x_{1}, \dots, x_{n}]_{x_{i}}$. We want to map these to [[Algebraic geometry --- rising-sea/notes/Projective schemes#_definition _ homogeneous vanishing sets, projective distinguished open|projective distinguished opens]] $D_{+}(x_{i}) = \operatorname{Spec} (\mathbb{F}[x_{0}, x_{1}, \dots, x_{n}]_{x_{i}})_{0}$. There's an obvious map here — just the inclusion of the degree $0$ part into the whole ring. They agree on intersections — on $D(x_{i} x_{j}) \to D_{+}(x_{i} x_{j})$ they both restrict to the map induced by the inclusion $(\mathbb{F}[x_{0}, x_{1}, \dots, x_{n}]_{x_{i} x_{j}})_{0} \to \mathbb{F}[x_{0}, x_{1}, \dots, x_{n}]_{x_{i} x_{j}}$. Thus, they glue to give a scheme map.
 
 ---
+
+We have shown already that [[Algebraic geometry --- rising-sea/notes/Morphisms of ringed spaces#_definition _ the category of ringed spaces|morphisms of ringed spaces compose]]. It's clear that the composition of a morphism of local rings is still a morphism of local rings. Since the stalk morphisms of the composition are just compositions of the stalk morphisms with some extra $\pi_{*} \mathscr{O}_{X, p} \to \mathscr{O}_{X, p}$ bits in between this means that morphisms of local ringed spaces, and thus, morphisms of schemes compose too. Clearly this gives a category of schemes. We denote this category by $\mathsf{Sch}$.
