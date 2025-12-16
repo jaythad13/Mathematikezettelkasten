@@ -45,13 +45,3 @@ One example of a semisimple Lie algebra is just any Lie algebra mod its radical.
 We never stated a fourth isomorphism theorem [[Lie algebras --- a-lie/notes/Lie algebra isomorphisms|for Lie algebras]], but there exists one that is the same as the fourth isomorphism theorem [[Abstract algebra --- math-171/notes/Ring isomorphism theorems#_theorem _ the fourth isomorphism theorem|for rings]]. Here, we see that the ideals in $L / \operatorname{rad} L$ are exactly $J / \operatorname{rad} L$ for ideals $J \supset \operatorname{rad }L$.
 
 If $J / \operatorname{rad} L$ were soluble, then since $\operatorname{rad} L$ is also soluble, we would have to have $J$ soluble. Thus, $J \subset \operatorname{rad} L$, giving us $J = \operatorname{rad} L$ by double inclusion. Thus, $J / \operatorname{rad} L = 0$ — any soluble ideal is trivial.
-
-
-
-
-
-
-
-
-
-
