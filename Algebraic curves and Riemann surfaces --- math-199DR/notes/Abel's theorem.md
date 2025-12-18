@@ -7,11 +7,11 @@ tags:
 
 Let $X$ be a compact, connected Riemann surface.
 
-Abel's theorem characterises [[Riemann surfaces and algebraic curves --- math-199DR/notes/Divisors#_definition _ principal divisor|principal divisors]] —
+Abel's theorem characterises [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Divisors#_definition _ principal divisor|principal divisors]] —
 
 ##### _theorem:_ Abel's theorem
 
-If $D$ is a divisor of degree $0$ on $X$, then $D$ is the divisor of a meromorphic function if and only if it is in the kernel of the [[Riemann surfaces and algebraic curves --- math-199DR/notes/Periods and the Jacobian#_definition _ Abel-Jacobi map|Abel-Jacobi map]].
+If $D$ is a divisor of degree $0$ on $X$, then $D$ is the divisor of a meromorphic function if and only if it is in the kernel of the [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Periods and the Jacobian#_definition _ Abel-Jacobi map|Abel-Jacobi map]].
 
 Essentially, what we want to prove is that the Abel-Jacobi map gives us a way to show that the missing piece in both of the [[Abstract algebra --- math-171/notes/Exact sequences#_definition _ exact sequence|exact sequences]] below is the Jacobian.
 
@@ -28,7 +28,7 @@ Essentially, what we want to prove is that the Abel-Jacobi map gives us a way to
 
 ### Traces and necessity in Abel's theorem
 
-Suppose $f$ or $\omega$ is a [[Riemann surfaces and algebraic curves --- math-199DR/notes/Functions on Riemann surfaces#_definition _ holomorphic functions|function]] or [[Riemann surfaces and algebraic curves --- math-199DR/notes/Holomorphic and smooth forms|form]] on $Y$ and $\pi : X \to Y$ is a [[Riemann surfaces and algebraic curves --- math-199DR/notes/Holomorphisms of Riemann surfaces#_definition _ holomorphism|holomorphism]]. Then there is a sensible notion of the pullback of the function $\pi^* f = f \circ \pi$ and the [[Riemann surfaces and algebraic curves --- math-199DR/notes/Holomorphic and smooth forms#_definition _ pullback of forms|pullback of the form]] $\pi^* \omega$. We can also have a "pushforward" called the trace of the function.
+Suppose $f$ or $\omega$ is a [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Functions on Riemann surfaces#_definition _ holomorphic functions|function]] or [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Holomorphic and smooth forms|form]] on $Y$ and $\pi : X \to Y$ is a [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Holomorphisms of Riemann surfaces#_definition _ holomorphism|holomorphism]]. Then there is a sensible notion of the pullback of the function $\pi^* f = f \circ \pi$ and the [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Holomorphic and smooth forms#_definition _ pullback of forms|pullback of the form]] $\pi^* \omega$. We can also have a "pushforward" called the trace of the function.
 
 Let $\pi : X \to Y$ be a holomorphism of degree $d$ and $f$ meromorphic on $X$, the trace of $f$ is the function on $Y$ that sends a point $q \in Y$ to the sum of $f(p)$ for all pre-images $p$ of $q$, with multiplicity. To construct this formally is actually a little more complicated since we have to avoid ramification points.
 
@@ -38,7 +38,7 @@ The trace of $f$ on $X$ under $\pi : X \to Y$ is $\operatorname{tr}_{\pi} f$ on 
 $$
 \operatorname{tr}_{\pi} f(q) = \sum_{n = 1}^d f(p_{n})
 $$
-where the $p_{n}$ are the $d$ pre-images of $q$ under $\pi$. $\lvert B_{\pi} \rvert$ is the support of the [[Riemann surfaces and algebraic curves --- math-199DR/notes/Divisors#_definition _ ramification and branch divisors|branch divisor]] — the set of branch points of $\pi$.
+where the $p_{n}$ are the $d$ pre-images of $q$ under $\pi$. $\lvert B_{\pi} \rvert$ is the support of the [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Divisors#_definition _ ramification and branch divisors|branch divisor]] — the set of branch points of $\pi$.
 
 ##### _proposition:_ the trace of a meromorphic function is meromorphic
 
@@ -65,7 +65,7 @@ Given a meromorphic $1$-form $\omega$ on $X$, its trace under a holomorphism $\p
 
 The idea here is to use a roots of unity filter to get a power series for $\operatorname{tr}_{\pi} \omega$ in terms of a local coordinate on $Y$. The desired result follows.
 
-Let $q$ be a branch point, and $p$ a pre-image of $q$ under $\pi$, with [[Riemann surfaces and algebraic curves --- math-199DR/notes/Topological properties of holomorphisms#_definition _ multiplicity|multiplicity]] $m$. That is, in [[Riemann surfaces and algebraic curves --- math-199DR/notes/Topological properties of holomorphisms#_proposition _ local normal form|local normal form]], we have local coordinates $w$ and $z$ centred at $p$ and $q$ such that $z = w^m$. For non-zero $z$, we have $m$ pre-images $\zeta^{j} w$ for $\zeta = e^{2 \pi i / m}$.
+Let $q$ be a branch point, and $p$ a pre-image of $q$ under $\pi$, with [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Topological properties of holomorphisms#_definition _ multiplicity|multiplicity]] $m$. That is, in [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Topological properties of holomorphisms#_proposition _ local normal form|local normal form]], we have local coordinates $w$ and $z$ centred at $p$ and $q$ such that $z = w^m$. For non-zero $z$, we have $m$ pre-images $\zeta^{j} w$ for $\zeta = e^{2 \pi i / m}$.
 
 Note then that $dz = m w^{m - 1} \, d w$. Thus, for $\omega = f(w) dw$ and
 $$
@@ -99,7 +99,7 @@ $$
 $$
 where $\gamma_{1}, \dots, \gamma_{d}$ are the $d$ distinct paths obtained by pulling back $\gamma$ at non-branch points.
 
-We can ignore issues of [[Riemann surfaces and algebraic curves --- math-199DR/notes/Topological properties of holomorphisms#_definition _ ramification point, branch point|ramification and branching]] since they occur at finitely many points. We're only pulling back this path to integrate, and integration doesn't care about finite point sets.
+We can ignore issues of [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Topological properties of holomorphisms#_definition _ ramification point, branch point|ramification and branching]] since they occur at finitely many points. We're only pulling back this path to integrate, and integration doesn't care about finite point sets.
 
 ##### _lemma:_ integral of the trace is the integral of the form on pullback chain
 
@@ -121,7 +121,7 @@ If $f$ is a meromorphic function on $X$ then $A_{0}(\operatorname{div} f) = 0$.
 
 ###### _proof:_
 
-For $f$, let $\pi_{f} : X \to \mathbb{C}_{\infty}$ be the [[Riemann surfaces and algebraic curves --- math-199DR/notes/Holomorphisms of Riemann surfaces#_proposition _ meromorphic functions are maps to the Riemann sphere|corresponding holomorphism to the Riemann sphere]] of [[Riemann surfaces and algebraic curves --- math-199DR/notes/Topological properties of holomorphisms#_definition _ degree of a map|degree]] $d$. Write
+For $f$, let $\pi_{f} : X \to \mathbb{C}_{\infty}$ be the [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Holomorphisms of Riemann surfaces#_proposition _ meromorphic functions are maps to the Riemann sphere|corresponding holomorphism to the Riemann sphere]] of [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Topological properties of holomorphisms#_definition _ degree of a map|degree]] $d$. Write
 $$
 \operatorname{div} f(q) = \begin{cases}
 1 & q = z_{j} \\
@@ -150,7 +150,7 @@ Locally, $\omega$ looks like $D(p) / z + g(z) \, dz$.
 
 In order for this to be well-defined (this is the extra niceness, and also the cause for the lemmata) we need that for any loop $\gamma$, we have $\int_{\gamma} \omega = 2 \pi i m$.
 
-By the proof of [[Riemann surfaces and algebraic curves --- math-199DR/notes/Serre duality|Serre duality]], we know that as long as a [[Riemann surfaces and algebraic curves --- math-199DR/notes/Algebraic curves#_definition _ Laurent tail|Laurent tail]] has residues satisfying [[Riemann surfaces and algebraic curves --- math-199DR/notes/The residue theorem#_theorem _ the residue theorem|the residue theorem]]. Thus, we have $\omega$ with all poles simple, and the desired residues. In fact, since each of the values of $D(p)$ is an integer, we have that on each $1$-[[Simplicial homology and random walks --- math-145/notes/Simplicial homology#_definition _ boundaries|boundary]] loop $\gamma$, the integral is indeed an integer multiple of $2 \pi i m$.
+By the proof of [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Serre duality|Serre duality]], we know that as long as a [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Algebraic curves#_definition _ Laurent tail|Laurent tail]] has residues satisfying [[Algebraic curves and Riemann surfaces --- math-199DR/notes/The residue theorem#_theorem _ the residue theorem|the residue theorem]]. Thus, we have $\omega$ with all poles simple, and the desired residues. In fact, since each of the values of $D(p)$ is an integer, we have that on each $1$-[[Simplicial homology and random walks --- math-145/notes/Simplicial homology#_definition _ boundaries|boundary]] loop $\gamma$, the integral is indeed an integer multiple of $2 \pi i m$.
 
 ##### _definition:_ meromorphic function given by a form
 
@@ -239,15 +239,15 @@ is the desired meromorphic function with $D = \operatorname{div} f$.
 
 From Abel's theorem, lots of useful facts follow. 
 
-For one, the Abel-Jacobi map gives a way to embed a Riemann surface into its [[Riemann surfaces and algebraic curves --- math-199DR/notes/Periods and the Jacobian#_definition _ the Jacobian|Jacobian]]. We of course haven't described the complex manifold structure on the Jacobian, nor what it really means to be an embedding, so we will just describe why the Abel-Jacobi maps is an inclusion
+For one, the Abel-Jacobi map gives a way to embed a Riemann surface into its [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Periods and the Jacobian#_definition _ the Jacobian|Jacobian]]. We of course haven't described the complex manifold structure on the Jacobian, nor what it really means to be an embedding, so we will just describe why the Abel-Jacobi maps is an inclusion
 
 ##### _proposition:_ the Abel-Jacobi map is an embedding
 
 Let $X$ be a compact Riemann surface of genus $g \geq 1$. Then the general Abel-Jacobi map $A : X \to \operatorname{Jac}(X)$ (with a choice of base point $p_{0}$) is injective.
 
-We can also show ([[Riemann surfaces and algebraic curves --- math-199DR/notes/Linear equivalence of divisors#_theorem _ Abel's theorem for elliptic curves|yet again]]) that every genus $1$ curve is a complex torus $\mathbb{C} / \Lambda$ and gives us that it is an abelian variety — we get the group law of an elliptic curve.
+We can also show ([[Algebraic curves and Riemann surfaces --- math-199DR/notes/Linear equivalence of divisors#_theorem _ Abel's theorem for elliptic curves|yet again]]) that every genus $1$ curve is a complex torus $\mathbb{C} / \Lambda$ and gives us that it is an abelian variety — we get the group law of an elliptic curve.
 
 ##### _theorem:_ classification of genus $1$ curves
 
-Suppose $X$ is an algebraic curve of genus $1$. Then $\operatorname{Jac} X$ is a complex torus $\mathbb{C} / \Lambda$ of dimension $1$, and the Abel-Jacobi map is an [[Riemann surfaces and algebraic curves --- math-199DR/notes/Holomorphisms of Riemann surfaces#_definition _ biholomorphism/isomorphism, automorphism|isomorphism]] of Riemann surfaces.
+Suppose $X$ is an algebraic curve of genus $1$. Then $\operatorname{Jac} X$ is a complex torus $\mathbb{C} / \Lambda$ of dimension $1$, and the Abel-Jacobi map is an [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Holomorphisms of Riemann surfaces#_definition _ biholomorphism/isomorphism, automorphism|isomorphism]] of Riemann surfaces.
 

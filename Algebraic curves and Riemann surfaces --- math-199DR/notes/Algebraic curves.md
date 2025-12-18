@@ -15,13 +15,13 @@ Typically, we would define algebraic curves to be these compactifications of zer
 
 A subset of $\mathcal{M}_{X}(X)$ is said to separate points if for every pair of points $p, q$ it contains a meromorphic function $f$ with $f(p) \neq f(q)$.
 
-It is said to separate tangents if for each point $p \in X$ there is a meromorphic function with ([[Riemann surfaces and algebraic curves --- math-199DR/notes/Holomorphisms of Riemann surfaces#_proposition _ meromorphic functions are maps to the Riemann sphere|associated map to the Riemann sphere having]]) [[Riemann surfaces and algebraic curves --- math-199DR/notes/Topological properties of holomorphisms#_definition _ multiplicity|multiplicity]] $1$ at $p$.
+It is said to separate tangents if for each point $p \in X$ there is a meromorphic function with ([[Algebraic curves and Riemann surfaces --- math-199DR/notes/Holomorphisms of Riemann surfaces#_proposition _ meromorphic functions are maps to the Riemann sphere|associated map to the Riemann sphere having]]) [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Topological properties of holomorphisms#_definition _ multiplicity|multiplicity]] $1$ at $p$.
 
-It's obvious what separating points means, but separating tangents is more subtle. Separating tangents can be thought of as either having a map to the Riemann sphere that induces an isomorphism of tangent/cotangent spaces, or (when $f$ isn't a pole) having a [[Riemann surfaces and algebraic curves --- math-199DR/notes/Topological properties of holomorphisms#_example _ charts have multiplicity $1$|chart]] at $p$ that extends to a meromorphic function on all of $X$.
+It's obvious what separating points means, but separating tangents is more subtle. Separating tangents can be thought of as either having a map to the Riemann sphere that induces an isomorphism of tangent/cotangent spaces, or (when $f$ isn't a pole) having a [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Topological properties of holomorphisms#_example _ charts have multiplicity $1$|chart]] at $p$ that extends to a meromorphic function on all of $X$.
 
 It's easy to see that an "algebraically defined curve" $X$ has $\mathcal{M}_{X}(X)$ separating points and tangents — for any pair of points $p, q \in X$ there is an open neighbourhood containing both of them where $X$ looks like the zero set of some $r \in \mathbb{C}[x_{1}, \dots, x_{n}]$ (to be exact, this is true for quasi-projective schemes of finite type over some field). If $p = (p_{1}, \dots, p_{n})$ and $q = (q_{1}, \dots, q_{n})$ differ in the first coordinate choose $f(x_{1}, \dots, x_{n}) = x_{1} - p_{1}$. This separates $p$ and $q$ and has multiplicity $1$ at $p$.
 
-It's harder to show that if a Riemann surface has $\mathcal{M}_{X}(X)$ separating points and tangents that it is then defined by a polynomial, but it can be done. From $z$, a meromorphic function of [[Riemann surfaces and algebraic curves --- math-199DR/notes/Topological properties of holomorphisms#_definition _ degree of a map|degree]] $n$, and another meromorphic function $f$ on $X$ we can create functions in $z$ that look like symmetric functions of $f$ applied to the $n$ pre-images of each (non-[[Riemann surfaces and algebraic curves --- math-199DR/notes/Topological properties of holomorphisms#_definition _ ramification point, branch point|branched]] points) of $\mathbb{C}_{\infty}$. That is,
+It's harder to show that if a Riemann surface has $\mathcal{M}_{X}(X)$ separating points and tangents that it is then defined by a polynomial, but it can be done. From $z$, a meromorphic function of [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Topological properties of holomorphisms#_definition _ degree of a map|degree]] $n$, and another meromorphic function $f$ on $X$ we can create functions in $z$ that look like symmetric functions of $f$ applied to the $n$ pre-images of each (non-[[Algebraic curves and Riemann surfaces --- math-199DR/notes/Topological properties of holomorphisms#_definition _ ramification point, branch point|branched]] points) of $\mathbb{C}_{\infty}$. That is,
 $$
 \begin{align}
 r_{k}(z) = (-1)^n \sum_{n_{1} < \dots < n_{k}}^n f(p_{n_{1}}) \cdots f(p_{n_{k}})
@@ -43,7 +43,7 @@ It turns out that all compact Riemann surfaces separate points and tangents, and
 
 ### Laurent series approximation
 
-Let $X$ be an algebraic curve. It turns out that this condition is sufficient to create [[Riemann surfaces and algebraic curves --- math-199DR/notes/Functions on Riemann surfaces#_definition _ meromorphic|meromorphic functions]] with desired behaviour at finitely many points on $X$. Ultimately our goal is to create a meromorphic function with specified behaviour at finitely many points and possibly arbitrary behaviour everywhere else. 
+Let $X$ be an algebraic curve. It turns out that this condition is sufficient to create [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Functions on Riemann surfaces#_definition _ meromorphic|meromorphic functions]] with desired behaviour at finitely many points on $X$. Ultimately our goal is to create a meromorphic function with specified behaviour at finitely many points and possibly arbitrary behaviour everywhere else. 
 
 The behaviour we want to specify is the tail of the Laurent series of the function.
 
@@ -137,7 +137,7 @@ The field $\mathcal{M}_{X}(X)$ is an extension of $\mathbb{C}$ of transcendence 
 
 ###### _proof:_
 
-The fact that $\mathcal{M}_{X}(X)$ has transcendence degree $1$ can be shown immediately, using our [[Riemann surfaces and algebraic curves --- math-199DR/notes/The Riemann-Roch spaces of a divisor#_proposition _ the Riemann-Roch space is finite dimensional|our bound on the size of the Riemann-Roch space]]. Suppose $f, g$ are algebraically independent, and thus, linearly independent meromorphic functions. Then choosing $D$ sufficiently large that $f, g \in \mathcal{L}(D)$, we get
+The fact that $\mathcal{M}_{X}(X)$ has transcendence degree $1$ can be shown immediately, using our [[Algebraic curves and Riemann surfaces --- math-199DR/notes/The Riemann-Roch spaces of a divisor#_proposition _ the Riemann-Roch space is finite dimensional|our bound on the size of the Riemann-Roch space]]. Suppose $f, g$ are algebraically independent, and thus, linearly independent meromorphic functions. Then choosing $D$ sufficiently large that $f, g \in \mathcal{L}(D)$, we get
 $$
 f^i g^j \in \mathcal{L}(nD)
 $$

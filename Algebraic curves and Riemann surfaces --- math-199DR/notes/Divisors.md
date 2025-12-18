@@ -7,7 +7,7 @@ tags:
 
 Let $X, Y$ be compact, connected Riemann surfaces.
 
-A divisor is a way of packaging information about the zeroes and poles of a [[Riemann surfaces and algebraic curves --- math-199DR/notes/Functions on Riemann surfaces#_definition _ meromorphic|meromorphic function]], but it's even more useful than that. By considering divisors abstractly, we can understand the meromorphic functions that they do and don't represent, and thus, the Riemann surface!
+A divisor is a way of packaging information about the zeroes and poles of a [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Functions on Riemann surfaces#_definition _ meromorphic|meromorphic function]], but it's even more useful than that. By considering divisors abstractly, we can understand the meromorphic functions that they do and don't represent, and thus, the Riemann surface!
 
 ##### _example:_ divisors on $\operatorname{Spec} \mathbb{Z}$
 
@@ -44,7 +44,7 @@ The principal divisors allow us to achieve our original goal of keeping track of
 
 ##### _definition:_ principal divisor
 
-A divisor $D$ on $X$ is principal if it tracks the [[Riemann surfaces and algebraic curves --- math-199DR/notes/Functions on Riemann surfaces#_definition _ order|order]] of a meromorphic function — $D(p) = \operatorname{ord}_{p} f$ for some non-zero meromorphic function $f$ on $X$.
+A divisor $D$ on $X$ is principal if it tracks the [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Functions on Riemann surfaces#_definition _ order|order]] of a meromorphic function — $D(p) = \operatorname{ord}_{p} f$ for some non-zero meromorphic function $f$ on $X$.
 
 We write such a divisor as $\operatorname{div} f$.
 
@@ -63,7 +63,7 @@ It follows that the principal divisors are
 Since $X$ is compact, any principal divisor $\operatorname{div} f$ has $\operatorname{deg} (\operatorname{div} f) = 0$.
 
 ###### _proof_
-follows immediately from the fact that the [[Riemann surfaces and algebraic curves --- math-199DR/notes/Topological properties of holomorphisms#_theorem _ the sum of orders of a meromorphic function|sum of orders of a meromorphic function on a compact Riemann surface]] is $0$.
+follows immediately from the fact that the [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Topological properties of holomorphisms#_theorem _ the sum of orders of a meromorphic function|sum of orders of a meromorphic function on a compact Riemann surface]] is $0$.
 
 Thus, $\operatorname{PDiv} X \le \operatorname{Div}_{0} X$ for a compact Riemann surface $X$. Since everything is abelian, we have a well-defined abelian group $\operatorname{Jac} X = \operatorname{Div}_{0} X / \operatorname{PDiv} X$, and in fact, an exact sequence
 
@@ -93,7 +93,7 @@ Canonical divisors are like principal divisors, just keeping track of $1$-forms 
 
 ##### _definition:_ canonical divisor
 
-A divisor $D$ on $X$ is canonical if it tracks the [[Riemann surfaces and algebraic curves --- math-199DR/notes/Functions on Riemann surfaces#_definition _ order|order]] of a meromorphic $1$-[[Riemann surfaces and algebraic curves --- math-199DR/notes/Holomorphic and smooth forms|form]] — $D(p) = \operatorname{ord}_{p} \omega$ for some non-zero meromorphic function $\omega$ on $X$.
+A divisor $D$ on $X$ is canonical if it tracks the [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Functions on Riemann surfaces#_definition _ order|order]] of a meromorphic $1$-[[Algebraic curves and Riemann surfaces --- math-199DR/notes/Holomorphic and smooth forms|form]] — $D(p) = \operatorname{ord}_{p} \omega$ for some non-zero meromorphic function $\omega$ on $X$.
 
 We write the canonical divisor corresponding to $\omega$ as $\operatorname{div} \omega$.
 
@@ -126,11 +126,11 @@ This fact allows us to get a canonical divisors on a Riemann surface from just t
 
 ##### _theorem:_ compact Riemann surfaces have canonical divisors of degree $2g - 2$
 
-If $X$ is a compact Riemann surface of [[Riemann surfaces and algebraic curves --- math-199DR/notes/Topological invariants of a surface#_definition _ genus|genus]] $g$ with a non-constant meromorphic function, then there is a canonical divisor $\operatorname{div} \eta \in \operatorname{KDiv} X$ with $\operatorname{deg} (\operatorname{div} \eta) = 2g - 2$.
+If $X$ is a compact Riemann surface of [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Topological invariants of a surface#_definition _ genus|genus]] $g$ with a non-constant meromorphic function, then there is a canonical divisor $\operatorname{div} \eta \in \operatorname{KDiv} X$ with $\operatorname{deg} (\operatorname{div} \eta) = 2g - 2$.
 
 ###### _proof:_
 
-For the meromorphic function, let $\pi : X \to \mathbb{C}_{\infty}$ be the [[Riemann surfaces and algebraic curves --- math-199DR/notes/Holomorphisms of Riemann surfaces#_proposition _ meromorphic functions are maps to the Riemann sphere|corresponding holomorphism to the Riemann sphere]]. Consider the [[Riemann surfaces and algebraic curves --- math-199DR/notes/Holomorphic and smooth forms#_definition _ pullback of forms|pullback]] of $\omega = dz$ on $\mathbb{C}$, call it $\eta = \pi^* \omega$. Using [[Riemann surfaces and algebraic curves --- math-199DR/notes/Topological properties of holomorphisms#Hurwitz' formula|Hurwitz' formula]] and the formula for the [[Riemann surfaces and algebraic curves --- math-199DR/notes/Holomorphic and smooth forms#_proposition _ the order of the pullback of a form|order of the pullback of a form]], it follows that $\operatorname{div} \eta$ has degree $2g - 2$.
+For the meromorphic function, let $\pi : X \to \mathbb{C}_{\infty}$ be the [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Holomorphisms of Riemann surfaces#_proposition _ meromorphic functions are maps to the Riemann sphere|corresponding holomorphism to the Riemann sphere]]. Consider the [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Holomorphic and smooth forms#_definition _ pullback of forms|pullback]] of $\omega = dz$ on $\mathbb{C}$, call it $\eta = \pi^* \omega$. Using [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Topological properties of holomorphisms#Hurwitz' formula|Hurwitz' formula]] and the formula for the [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Holomorphic and smooth forms#_proposition _ the order of the pullback of a form|order of the pullback of a form]], it follows that $\operatorname{div} \eta$ has degree $2g - 2$.
  Specifically, recalling that $\operatorname{div} \omega = -2 \cdot \infty$,
  $$
 \begin{align}
@@ -172,7 +172,7 @@ where $q = \pi(p)$.
 
 ##### _proposition:_ algebraic properties of pullback of divisors
 
-Given a non-constant [[Riemann surfaces and algebraic curves --- math-199DR/notes/Holomorphisms of Riemann surfaces#_definition _ holomorphism|holomorphism]] $\pi : X \to Y$, a meromorphic function $f$ on $Y$, and a meromorphic form $\omega$ on $Y$
+Given a non-constant [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Holomorphisms of Riemann surfaces#_definition _ holomorphism|holomorphism]] $\pi : X \to Y$, a meromorphic function $f$ on $Y$, and a meromorphic form $\omega$ on $Y$
 - $\pi^* : \operatorname{Div} Y \to \operatorname{Div} X$ by $D \mapsto \pi^* D$ is a [[Abstract algebra --- math-171/notes/Group homomorphisms#_definition _ group homomorphisms|group homomorphism]].
 - the homomorphism restricts to a homomorphism $\operatorname{PDiv} Y \to \operatorname{PDiv} X$ since the pullback of a principal divisor is principal with $\operatorname{div} (\pi^*f) = \pi^*(\operatorname{div} f)$
 - (for $X, Y$ compact) the homomorphism also restricts to a homomorphism $\operatorname{Div}_{0} Y \to \operatorname{Div}_{0} X$ — specifically, $\operatorname{deg} \pi^* D = \operatorname{deg} \pi \operatorname{deg} D$.
@@ -204,7 +204,7 @@ $$
 \end{align}
 $$
 
-To get similar results for canonical divisors, we need to introduce divisors that keep track of [[Riemann surfaces and algebraic curves --- math-199DR/notes/Topological properties of holomorphisms#_definition _ ramification point, branch point|ramification and branching]] — the formula for the pullback of a divisor requires more subtle "Hurwitzing".
+To get similar results for canonical divisors, we need to introduce divisors that keep track of [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Topological properties of holomorphisms#_definition _ ramification point, branch point|ramification and branching]] — the formula for the pullback of a divisor requires more subtle "Hurwitzing".
 
 ##### _definition:_ ramification and branch divisors
 
@@ -212,7 +212,7 @@ The ramification divisor of $\pi$ is a divisor on $X$ defined by $R_{\pi}(p) = \
 
 The branch divisor of $\pi$ is a divisor on $Y$ defined by $B_{\pi}(p) =$
 
-The ramification and branch divisors have the same degree which is the error term in [[Riemann surfaces and algebraic curves --- math-199DR/notes/Topological properties of holomorphisms#_theorem _ Hurwitz' formula|Hurwitz' formula]]. Thus, it can be rewritten as
+The ramification and branch divisors have the same degree which is the error term in [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Topological properties of holomorphisms#_theorem _ Hurwitz' formula|Hurwitz' formula]]. Thus, it can be rewritten as
 $$
 2 g_{X} - 2 = \operatorname{deg} \pi (2 g_{Y} - 2) + \operatorname{deg} R_{\pi}.
 $$

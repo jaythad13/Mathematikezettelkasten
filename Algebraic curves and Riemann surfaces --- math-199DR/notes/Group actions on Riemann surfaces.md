@@ -4,9 +4,9 @@ tags:
 - cx-geo
 ---
 
-Given a Riemann surface $X$, what does $\operatorname{Aut} X$ look like? What are its finite subgroups? By understanding their action on the Riemann surface, we can get better answers to these questions. These in turn, allow us to [[Riemann surfaces and algebraic curves --- math-199DR/notes/Topological properties of holomorphisms#_example _ meromorphic functions on non-isomorphic elliptic curves|distinguish Riemann surfaces]].
+Given a Riemann surface $X$, what does $\operatorname{Aut} X$ look like? What are its finite subgroups? By understanding their action on the Riemann surface, we can get better answers to these questions. These in turn, allow us to [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Topological properties of holomorphisms#_example _ meromorphic functions on non-isomorphic elliptic curves|distinguish Riemann surfaces]].
 
-Further, by squishing these automorphism groups to nothing by quotienting out by these actions we can get new Riemann surfaces. The reverse problem — that of which Riemann surfaces give rise to to all (compact, connected) Riemann surfaces by quotients is exactly [[Riemann surfaces and algebraic curves --- math-199DR/notes/Riemann surfaces#_theorem _ the uniformisation theorem|the uniformisation theorem]]!
+Further, by squishing these automorphism groups to nothing by quotienting out by these actions we can get new Riemann surfaces. The reverse problem — that of which Riemann surfaces give rise to to all (compact, connected) Riemann surfaces by quotients is exactly [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Riemann surfaces#_theorem _ the uniformisation theorem|the uniformisation theorem]]!
 
 ### Reviewing group actions
 
@@ -32,7 +32,7 @@ Really we don't want to consider just any arbitrary group action on a Riemann su
 
 ##### _definition:_ effective, holomorphic group action
 
-A holomorphic group action is a group action such that each function $x \mapsto g \cdot x$ is a [[Riemann surfaces and algebraic curves --- math-199DR/notes/Holomorphisms of Riemann surfaces#_definition _ holomorphism|holomorphism]] $X \to X$.
+A holomorphic group action is a group action such that each function $x \mapsto g \cdot x$ is a [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Holomorphisms of Riemann surfaces#_definition _ holomorphism|holomorphism]] $X \to X$.
 
 A group action is [[Abstract algebra --- math-171/notes/Group actions#_definition _ kernel, effective action|effective]] if it has trivial kernel.
 
@@ -67,7 +67,7 @@ Given $G \circlearrowright X$, the points $p \in X$ with non-trivial stabiliser 
 
 ###### _proof sketch:_
 
-Suppose there is a sequence of $x_{n} \in X$ converging to $x$ with $g_{n} \in G$ such that $g_{n} \cdot x_{n} = x_{n}$. Since $G$ is finite, there is some $g$ that is chosen infinitely many times. Choose the corresponding subsequence. $g \cdot x_{n_{k}} = x_{n_{k}}$. By compactness, $x_{n_{k}}$ also converges to the same thing, so $g$ [[Riemann surfaces and algebraic curves --- math-199DR/notes/Holomorphisms of Riemann surfaces#_theorem _ identity theorem|must act by identity]]. Since $G$ acts effectively, $g$ is the identity. Thus, the stabilisers are eventually trivial, just containing $g = 1_{G}$.
+Suppose there is a sequence of $x_{n} \in X$ converging to $x$ with $g_{n} \in G$ such that $g_{n} \cdot x_{n} = x_{n}$. Since $G$ is finite, there is some $g$ that is chosen infinitely many times. Choose the corresponding subsequence. $g \cdot x_{n_{k}} = x_{n_{k}}$. By compactness, $x_{n_{k}}$ also converges to the same thing, so $g$ [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Holomorphisms of Riemann surfaces#_theorem _ identity theorem|must act by identity]]. Since $G$ acts effectively, $g$ is the identity. Thus, the stabilisers are eventually trivial, just containing $g = 1_{G}$.
 
 ### Quotient Riemann surfaces
 
@@ -91,7 +91,7 @@ For $G \circlearrowright X$, the quotient map $\pi : X \to {G \setminus X}$ is o
 
  We want to show $\pi^\text{img}(U)$ is open for each open $U \subseteq X$. Since ${G \setminus X}$ is given the quotient topology, this is equivalent to showing $\pi^\text{pre}(\pi^\text{img}(U))$ is open. This pre-image is in fact just the union of all $G$-translates $g \cdot U = \{ g \cdot x \mid x \in U \}$.
  
-We can show that $g \cdot U = \{ g \cdot x \mid x \in U \}$ is open. Since each function $x \mapsto g \cdot x$ is an automorphism, by [[Riemann surfaces and algebraic curves --- math-199DR/notes/Holomorphisms of Riemann surfaces#_theorem _ open mapping theorem|the open mapping theorem]], they are open functions. Thus, each $g \cdot U$ is open.
+We can show that $g \cdot U = \{ g \cdot x \mid x \in U \}$ is open. Since each function $x \mapsto g \cdot x$ is an automorphism, by [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Holomorphisms of Riemann surfaces#_theorem _ open mapping theorem|the open mapping theorem]], they are open functions. Thus, each $g \cdot U$ is open.
 
 Our goal is to construct on this quotient topology a quotient Riemann surface on ${G \setminus X}$ so that the projection $\pi$ is a holomorphism. We will try to build the complex structure by considering small enough neighbourhoods around each $p \in X$ that don't "cross the folds" of the quotient map. Here, the quotient map is a local homeomorphism allowing us to pull back charts onto ${G \setminus X}$ through the inverse homeomorphism.
 
@@ -107,7 +107,7 @@ Given $G \circlearrowright X$, and a fixed $p \in X$, there is an open neighbour
 
 ###### _proof:_
 
-We can write the elements not fixing $G$ as ${G \setminus \operatorname{stab}_{p}G} = \{ g_{1}, \dots, g_{n} \}$. Since $X$ is [[Topology --- math-147/notes/Separation properties#_definition _ Hausdorff spaces, $T_{2}$ spaces|Hausdorff]] we can find disjoint open neighbourhoods $V_{i} \ni p$ and $W_{i} \ni g_{i} \cdot p$ for each $g_{i}$. Then $g_{i}^{-1} \cdot W_{i}$ must be an open neighbourhood of $p$ (by [[Riemann surfaces and algebraic curves --- math-199DR/notes/Holomorphisms of Riemann surfaces#_theorem _ open mapping theorem|open mapping]], or just by continuity of $g_{i}$). Let
+We can write the elements not fixing $G$ as ${G \setminus \operatorname{stab}_{p}G} = \{ g_{1}, \dots, g_{n} \}$. Since $X$ is [[Topology --- math-147/notes/Separation properties#_definition _ Hausdorff spaces, $T_{2}$ spaces|Hausdorff]] we can find disjoint open neighbourhoods $V_{i} \ni p$ and $W_{i} \ni g_{i} \cdot p$ for each $g_{i}$. Then $g_{i}^{-1} \cdot W_{i}$ must be an open neighbourhood of $p$ (by [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Holomorphisms of Riemann surfaces#_theorem _ open mapping theorem|open mapping]], or just by continuity of $g_{i}$). Let
 $$
 U_{0} = \bigcap_{i = 1}^n V_{i} \cap g^{-1}_{i} \cdot W_{i}
 $$
@@ -166,11 +166,11 @@ We also have to consider the case of a chart $(\psi_{1}, W_{1})$ constructed aro
 
 Thus, ${G \setminus X}$ is a Riemann surface. Notably, since $G$ is finite and $X$ is Hausdorff, $G \setminus X$ is also Hausdorff (all the orbits are finite, and thus closed). Further, since $X$ is connected, and $\pi$ is surjective, ${G \setminus X}$ [[Topology --- math-147/notes/Connectedness and path-connectedness#_proposition _ continuous functions preserve connectedness|is connected]].
 
-It suffices to prove the universal property in the case that $Y = \mathbb{C}$. That is, $f : {G \setminus X } \to \mathbb{C}$ is holomorphic, if and only if $f \circ \pi : X \to \mathbb{C}$ is holomorphic. Clearly if $f$ is holomorphic, [[Riemann surfaces and algebraic curves --- math-199DR/notes/Holomorphisms of Riemann surfaces#_proposition _ Riemann surfaces form a (concrete) category|the composition of holomorphic functions]] $f \circ \pi$ is holomorphic.
+It suffices to prove the universal property in the case that $Y = \mathbb{C}$. That is, $f : {G \setminus X } \to \mathbb{C}$ is holomorphic, if and only if $f \circ \pi : X \to \mathbb{C}$ is holomorphic. Clearly if $f$ is holomorphic, [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Holomorphisms of Riemann surfaces#_proposition _ Riemann surfaces form a (concrete) category|the composition of holomorphic functions]] $f \circ \pi$ is holomorphic.
 
 Now suppose $f \circ \pi$ is holomorphic. Let $\overline{p} \in {G \setminus X}$, with $\pi(p) = \overline{p}$ and a chart $(\phi, U)$ around $p$. We have $f \circ \pi \circ \phi ^{-1}$ holomorphic. If $\overline{p}$ has trivial stabiliser, then we are done since there is a chart $(\psi, W)$ around it given by $\psi = \phi \circ \pi_{U}^{-1}$, so we have just shown $f \circ \psi ^{-1}$ holomorphic. Suppose $p$ has non-trivial stabiliser. The points near $p$ must have trivial stabiliser. Thus, $\overline{p}$ is contained in one of the charts on which we proved $f$ is holomorphic.
 
-A nice result is that with a complex structure on ${G \setminus X}$, we can apply [[Riemann surfaces and algebraic curves --- math-199DR/notes/Topological properties of holomorphisms#_proposition _ local normal form|local normal form]] to make the isomorphism between $\operatorname{stab}_{p} G$ and a finite subgroup of $\mathbb{C}^*$ concrete.
+A nice result is that with a complex structure on ${G \setminus X}$, we can apply [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Topological properties of holomorphisms#_proposition _ local normal form|local normal form]] to make the isomorphism between $\operatorname{stab}_{p} G$ and a finite subgroup of $\mathbb{C}^*$ concrete.
 
 ##### _corollary:_ linearisation of the action
 
@@ -182,7 +182,7 @@ Choose local coordinate $w$ on $G \setminus X$, centred at $\overline{p}$. Then 
 
 ### Ramifications from Hurwitz' formula
 
-Now we have a nice projection holomorphism $\pi : X \to G \setminus X$. It also shouldn't be surprising that $\pi$ has [[Riemann surfaces and algebraic curves --- math-199DR/notes/Topological properties of holomorphisms#_definition _ degree of a map|degree]] $\lvert G \rvert$ but we need to prove it. From this we can understand the topology of ${G \setminus X}$ using [[Riemann surfaces and algebraic curves --- math-199DR/notes/Topological properties of holomorphisms#_theorem _ Hurwitz' formula|Hurwitz' formula]]. This in turn offers insight into the structure of $G$ and thus, $\operatorname{Aut} X$.
+Now we have a nice projection holomorphism $\pi : X \to G \setminus X$. It also shouldn't be surprising that $\pi$ has [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Topological properties of holomorphisms#_definition _ degree of a map|degree]] $\lvert G \rvert$ but we need to prove it. From this we can understand the topology of ${G \setminus X}$ using [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Topological properties of holomorphisms#_theorem _ Hurwitz' formula|Hurwitz' formula]]. This in turn offers insight into the structure of $G$ and thus, $\operatorname{Aut} X$.
 
 ##### _lemma:_ the degree of a quotient holomorphism
 
@@ -194,11 +194,11 @@ At all the infinitely many points $p \in X$ with trivial stabiliser, $\pi$ has m
 
 Suppose $q$ is a branch point with pre-images $p_{1}, \dots, p_{n}$. All the $p_{j}$ are in the same orbit, so have conjugate, and thus, equal size stabilisers. Let $r = \lvert \operatorname{stab}_{p_{j} G} \rvert$. Then $\pi$ has multiplicity $r$ at each of the points. Thus, there are $\deg \pi / r = \lvert G \rvert / r$ of the points.
 
-Since topological invariants have sanity checks (for example, genus must be a non-negative number) we can also use [[Riemann surfaces and algebraic curves --- math-199DR/notes/Topological properties of holomorphisms#_theorem _ Hurwitz' formula|Hurwitz' formula]] to impose restrictions on what $G$ can be. This restricts $\operatorname{Aut} X$!
+Since topological invariants have sanity checks (for example, genus must be a non-negative number) we can also use [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Topological properties of holomorphisms#_theorem _ Hurwitz' formula|Hurwitz' formula]] to impose restrictions on what $G$ can be. This restricts $\operatorname{Aut} X$!
 
 ##### _theorem:_ Hurwitz' theorem
 
-If $G$ is a finite subgroup of $\operatorname{Aut} X$, and $X$ has [[Riemann surfaces and algebraic curves --- math-199DR/notes/Topological invariants of a surface#_definition _ genus|genus]] $g_{X} \ge 2$, then
+If $G$ is a finite subgroup of $\operatorname{Aut} X$, and $X$ has [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Topological invariants of a surface#_definition _ genus|genus]] $g_{X} \ge 2$, then
 $$
 \lvert G \rvert \le 84 (g_{X} - 1).
 $$
@@ -239,7 +239,7 @@ If equality is achieved (as is for the Klein quartic $x^{3} y + y^{3} z + z^{3} 
 
 ### Infinite groups
 
-Clearly the same constructions work for sufficiently discrete infinite groups — we've seen already that $\mathbb{Z} \times \mathbb{Z} \setminus \mathbb{C}$ is a [[Riemann surfaces and algebraic curves --- math-199DR/notes/Riemann surfaces#_example _ Algebraic Geometry --- math-176/notes/Elliptic curves _proposition, definition _ reducing cubics, elliptic curves elliptic curves|torus/elliptic curve]]. The exact condition we need is for the quotient to be Hausdorff and this happens when $G$ acts properly discontinuously.
+Clearly the same constructions work for sufficiently discrete infinite groups — we've seen already that $\mathbb{Z} \times \mathbb{Z} \setminus \mathbb{C}$ is a [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Riemann surfaces#_example _ Algebraic Geometry --- math-176/notes/Elliptic curves _proposition, definition _ reducing cubics, elliptic curves elliptic curves|torus/elliptic curve]]. The exact condition we need is for the quotient to be Hausdorff and this happens when $G$ acts properly discontinuously.
 
 ##### _definition:_ properly discontinuous action
 

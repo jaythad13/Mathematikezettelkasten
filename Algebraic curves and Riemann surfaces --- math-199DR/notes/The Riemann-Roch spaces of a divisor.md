@@ -91,7 +91,7 @@ This gives us a nice way to compute the entire space of functions associated to 
 
 ##### _example:_ function spaces on the Riemann sphere
 
-Using the notion of equivalence of divisors, we can formalise the intuition of our specific example. For any positive degree $D \in \operatorname{Div} \mathbb{C}_{\infty}$, we have $\mathcal{L}(D) \cong \mathcal{L}(\operatorname{deg} D \cdot \infty)$ — on $\mathbb{C}_{\infty}$, [[Riemann surfaces and algebraic curves --- math-199DR/notes/Linear equivalence of divisors#_example _ linear equivalence on the Riemann sphere|divisors of same degree are linearly equivalent]]. But then we know from complex analysis that $\mathcal{L}(\operatorname{deg} D \cdot \infty)$ is just the space of polynomials of degree at most $\operatorname{deg} D$. Thus, we have $\operatorname{dim} \mathcal{L}(D) = \operatorname{deg} D + 1$.
+Using the notion of equivalence of divisors, we can formalise the intuition of our specific example. For any positive degree $D \in \operatorname{Div} \mathbb{C}_{\infty}$, we have $\mathcal{L}(D) \cong \mathcal{L}(\operatorname{deg} D \cdot \infty)$ — on $\mathbb{C}_{\infty}$, [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Linear equivalence of divisors#_example _ linear equivalence on the Riemann sphere|divisors of same degree are linearly equivalent]]. But then we know from complex analysis that $\mathcal{L}(\operatorname{deg} D \cdot \infty)$ is just the space of polynomials of degree at most $\operatorname{deg} D$. Thus, we have $\operatorname{dim} \mathcal{L}(D) = \operatorname{deg} D + 1$.
 
 Of course if $\operatorname{deg} D < 0$, then $\mathcal{L}(D)$ is trivial.
 
@@ -114,7 +114,7 @@ In fact, divisors give us a way to identify $1$-forms with meromorphic functions
 
 ##### _proposition:_ isomorphism between function and form spaces
 
-For a [[Riemann surfaces and algebraic curves --- math-199DR/notes/Divisors#_definition _ canonical divisor|canonical divisor]] $K$ there is an isomorphism $\mathcal{L}(D + K) \cong \mathcal{L}^{(1)}(D)$.
+For a [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Divisors#_definition _ canonical divisor|canonical divisor]] $K$ there is an isomorphism $\mathcal{L}(D + K) \cong \mathcal{L}^{(1)}(D)$.
 
 ###### _proof sketch:_
 
@@ -125,7 +125,7 @@ $$
  & : f \mapsto f \omega.
 \end{align}
 $$
-$\mathbb{C}$-linearity and injectivity follow easily. However, we have to prove surjectivity separately. [[Riemann surfaces and algebraic curves --- math-199DR/notes/Divisors#_proposition _ the difference of divisors of meromorphic $1$-forms|Recall]] that any $\eta \in \mathcal{L}^{(1)}(D)$ has $\eta = f \omega$ for some meromorphic $f$. Using the bounds on $\operatorname{div} \omega$ and $\operatorname{div} \eta$, we get the bounds on $\operatorname{div} f$ —
+$\mathbb{C}$-linearity and injectivity follow easily. However, we have to prove surjectivity separately. [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Divisors#_proposition _ the difference of divisors of meromorphic $1$-forms|Recall]] that any $\eta \in \mathcal{L}^{(1)}(D)$ has $\eta = f \omega$ for some meromorphic $f$. Using the bounds on $\operatorname{div} \omega$ and $\operatorname{div} \eta$, we get the bounds on $\operatorname{div} f$ —
 $$
 	\operatorname{div} f +  D + K = \operatorname{div} \eta - \operatorname{div} \omega  + D + K = \operatorname{div} \eta + D \ge 0. 
 $$
@@ -154,7 +154,7 @@ Suppose $D \not \sim 0$, but still has degree $0$. If $f \in \mathcal{L}(D)$, th
 
 Note that the third and fourth cases are really the same — if $D \not \sim 0$, then $\dim \mathcal{L}(D) = \operatorname{deg} D$. We can prove this for $\deg D > 0$ by induction by removing single points from the divisor and claiming that it decreases the dimension of the associated function space by at most $1$.
 
-In fact, this last strategy works in general to bound $\dim \mathcal{L}(D)$, and will ultimately be useful to prove [[Riemann surfaces and algebraic curves --- math-199DR/notes/Serre duality|Serre duality]].
+In fact, this last strategy works in general to bound $\dim \mathcal{L}(D)$, and will ultimately be useful to prove [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Serre duality|Serre duality]].
 
 ##### _lemma:_ the codimension at most $1$ lemma
 

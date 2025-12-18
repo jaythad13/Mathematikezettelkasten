@@ -8,7 +8,7 @@ tags:
 
 Let $X, Y$ be [[Analysis --- math-131/notes/Compactness#_definition _ compact|compact]], [[Analysis --- math-131/notes/Connectedness#_definition _ connectedness|connected]] Riemann surfaces with (maximal) holomorphic atlases $(\phi_{\alpha}, U_{\alpha})$ and $(\psi_{\beta}, V_{\beta})$ indexed by $\alpha \in \mathcal{I}$ and $\beta \in \mathcal{ J}$ respectively. Some of the set up doesn't require the compactness hypothesis but all of the serious results do.
 
-Holomorphisms have very nice behaviour locally. Just as the nice behaviour of holomorphic functions on the plane translates to nice topological properties like [[Complex analysis --- math-135/notes/The argument principle and winding number#_theorem _ open mapping theorem|open mapping]], [[Complex analysis --- math-135/notes/The argument principle and winding number#_definition _ winding number|winding number]], and [[Complex analysis --- math-135/notes/The argument principle and winding number#_lemma _ the "$n$-to-one" lemma|non-injectivity theorems]] like the $n$-to-one lemma, so does the behaviour of holomorphisms (we've seen some of this nice behaviour [[Riemann surfaces and algebraic curves --- math-199DR/notes/Holomorphisms of Riemann surfaces#Theorems from complex analysis|already]]). Here, we will see that holomorphisms preserve [[Riemann surfaces and algebraic curves --- math-199DR/notes/Topological invariants of a surface|topological invariants of a surface]]. We often call this kind of behaviour "global".
+Holomorphisms have very nice behaviour locally. Just as the nice behaviour of holomorphic functions on the plane translates to nice topological properties like [[Complex analysis --- math-135/notes/The argument principle and winding number#_theorem _ open mapping theorem|open mapping]], [[Complex analysis --- math-135/notes/The argument principle and winding number#_definition _ winding number|winding number]], and [[Complex analysis --- math-135/notes/The argument principle and winding number#_lemma _ the "$n$-to-one" lemma|non-injectivity theorems]] like the $n$-to-one lemma, so does the behaviour of holomorphisms (we've seen some of this nice behaviour [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Holomorphisms of Riemann surfaces#Theorems from complex analysis|already]]). Here, we will see that holomorphisms preserve [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Topological invariants of a surface|topological invariants of a surface]]. We often call this kind of behaviour "global".
 
 ### Multiplicity
 
@@ -18,7 +18,7 @@ The local normal form allows us to write every holomorphism as locally a power m
 
 ##### _proposition:_ local normal form
 
-Let $\pi : X \to Y$ be a non-constant function [[Riemann surfaces and algebraic curves --- math-199DR/notes/Holomorphisms of Riemann surfaces#_definition _ holomorphism|holomorphic]] near $p \in X$. Then there exists a unique positive integer $m$ such that for each chart on $Y$, $\psi : V \to \mathbb{C}$ centred at $\pi(p)$, there exists a chart on $X$, $\phi : U \to \mathbb{C}$ centred at $p$ such that $\psi \circ \pi \circ \phi ^{-1}(z) = z^m$.
+Let $\pi : X \to Y$ be a non-constant function [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Holomorphisms of Riemann surfaces#_definition _ holomorphism|holomorphic]] near $p \in X$. Then there exists a unique positive integer $m$ such that for each chart on $Y$, $\psi : V \to \mathbb{C}$ centred at $\pi(p)$, there exists a chart on $X$, $\phi : U \to \mathbb{C}$ centred at $p$ such that $\psi \circ \pi \circ \phi ^{-1}(z) = z^m$.
 
 ###### _proof sketch:_
 
@@ -47,7 +47,7 @@ $m$ is unique since it forces $\psi \circ \pi \circ \phi ^{-1}$ to be $m$-[[Comp
 
 Given $\pi : X \to Y$ (non-constant, holomorphic near $p \in X$) the unique $m$ of the local normal form, is called the multiplicty of $\pi$ at $p$, denoted $\operatorname{mult}_{p}\pi$.
 
-Multiplicity has an interpretation in terms of stalks. [[Riemann surfaces and algebraic curves --- math-199DR/notes/Holomorphisms of Riemann surfaces#The sheaf-theoretic view|Recall]] that a holomorphism $\pi$ induces a map on stalks
+Multiplicity has an interpretation in terms of stalks. [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Holomorphisms of Riemann surfaces#The sheaf-theoretic view|Recall]] that a holomorphism $\pi$ induces a map on stalks
 $$
 \pi^* : \mathcal{O}_{Y, \pi(p)} \to \mathcal{O}_{X, p}
 $$
@@ -55,7 +55,7 @@ by
 $$
 \pi^* : f \mapsto \pi^*f = f \circ \pi
 $$
-that is a $\mathbb{C}$-algebra homorphism and a local ring homomorphism sending the unique maximal ideal of [[Riemann surfaces and algebraic curves --- math-199DR/notes/Functions on Riemann surfaces#_definition _ holomorphic functions|holomorphic functions]] vanishing at $\pi(p)$, $\mathfrak{m}_{Y, \pi(p)}$ into $\mathfrak{m}_{X, p}$. In fact, the image of $\mathfrak m_{Y, \pi(p)}$ is exactly $\mathfrak m_{X, p}^m$.
+that is a $\mathbb{C}$-algebra homorphism and a local ring homomorphism sending the unique maximal ideal of [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Functions on Riemann surfaces#_definition _ holomorphic functions|holomorphic functions]] vanishing at $\pi(p)$, $\mathfrak{m}_{Y, \pi(p)}$ into $\mathfrak{m}_{X, p}$. In fact, the image of $\mathfrak m_{Y, \pi(p)}$ is exactly $\mathfrak m_{X, p}^m$.
 
 ##### _proposition:_ the map on stalks has image $\mathfrak{m}_{X, p}^m$
 
@@ -63,11 +63,11 @@ For $\pi : X \to Y$ having multiplicity $m$ at $p$, the induced map on stalks $\
 
 ###### _proof sketch:_
 
-Is almost exactly the same as the proof for the regular local normal form — a [[Riemann surfaces and algebraic curves --- math-199DR/notes/Functions on Riemann surfaces#_definition _ holomorphic functions|holomorphic function]] of degree $1$ is just a chart and from our proof its obvious that $\psi \circ \pi$ gets pulled back to a function in $\mathfrak m_{X, p}^m$.
+Is almost exactly the same as the proof for the regular local normal form — a [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Functions on Riemann surfaces#_definition _ holomorphic functions|holomorphic function]] of degree $1$ is just a chart and from our proof its obvious that $\psi \circ \pi$ gets pulled back to a function in $\mathfrak m_{X, p}^m$.
 
 ##### _example:_ charts have multiplicity $1$
 
-Since [[Riemann surfaces and algebraic curves --- math-199DR/notes/Holomorphisms of Riemann surfaces#_examples _ dumb examples of holomorphisms|they are holomorphisms]] to $\mathbb{C}$ and are injective, charts have multiplicity $1$ at each point. Otherwise the $n$-to-one lemma [[Complex analysis --- math-135/notes/The argument principle and winding number#_lemma _ the "$n$-to-one" lemma|from complex analysis]] would force them 
+Since [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Holomorphisms of Riemann surfaces#_examples _ dumb examples of holomorphisms|they are holomorphisms]] to $\mathbb{C}$ and are injective, charts have multiplicity $1$ at each point. Otherwise the $n$-to-one lemma [[Complex analysis --- math-135/notes/The argument principle and winding number#_lemma _ the "$n$-to-one" lemma|from complex analysis]] would force them 
 
 While all of this theory is a nice way to define multiplicity and make sure it is chart invariant, there is a much cruder but useful way to calculate multiplicity — it doesn't even require charts to be centred at the requisite points! It follows from the observation that $\operatorname{mult}_{p} \pi$ is always at least $1$, and the remaining behaviour is determined by the derivative of the local normal form ($m z^{m - 1}$).
 
@@ -146,15 +146,15 @@ The degree of a (non-constant) holomorphism $\pi : X \to Y$ is $\deg \pi = d_{y}
 
 ##### _corollary:_ isomorphism is determined by degree
 
-If (non-constant) $\pi  : X \to Y$ has $\operatorname{deg} \pi = 1$, then $\pi$ is an [[Riemann surfaces and algebraic curves --- math-199DR/notes/Holomorphisms of Riemann surfaces#_definition _ biholomorphism/isomorphism, automorphism|isomorphism]].
+If (non-constant) $\pi  : X \to Y$ has $\operatorname{deg} \pi = 1$, then $\pi$ is an [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Holomorphisms of Riemann surfaces#_definition _ biholomorphism/isomorphism, automorphism|isomorphism]].
 
 ###### _proof:_
 
-If $\pi$ has degree $1$ there can't be any branch points, so it is injective. [[Riemann surfaces and algebraic curves --- math-199DR/notes/Holomorphisms of Riemann surfaces#_proposition _ maps from compact Riemann surfaces are surjective|We've shown]] that it is surjective (since $X, Y$ are compact). [[Riemann surfaces and algebraic curves --- math-199DR/notes/Holomorphisms of Riemann surfaces#_theorem _ inverse holomorphism theorem|Injective holomorphisms]] are isomorphisms onto their image. We're done!
+If $\pi$ has degree $1$ there can't be any branch points, so it is injective. [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Holomorphisms of Riemann surfaces#_proposition _ maps from compact Riemann surfaces are surjective|We've shown]] that it is surjective (since $X, Y$ are compact). [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Holomorphisms of Riemann surfaces#_theorem _ inverse holomorphism theorem|Injective holomorphisms]] are isomorphisms onto their image. We're done!
 
 ### Ramifications for meromorphic functions
 
-All of this theory has huge *ramifications* for [[Riemann surfaces and algebraic curves --- math-199DR/notes/Functions on Riemann surfaces#_definition _ meromorphic|meromorphic functions]] $f : X \to \mathbb{C}$ since [[Riemann surfaces and algebraic curves --- math-199DR/notes/Holomorphisms of Riemann surfaces#_proposition _ meromorphic functions are maps to the Riemann sphere|they correspond to holomorphisms to the Riemann sphere]] $\pi_{f} : X \to \mathbb{C}_{\infty}$.
+All of this theory has huge *ramifications* for [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Functions on Riemann surfaces#_definition _ meromorphic|meromorphic functions]] $f : X \to \mathbb{C}$ since [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Holomorphisms of Riemann surfaces#_proposition _ meromorphic functions are maps to the Riemann sphere|they correspond to holomorphisms to the Riemann sphere]] $\pi_{f} : X \to \mathbb{C}_{\infty}$.
 
 ##### _example:_ surfaces with single simple poles are the Riemann sphere
 
@@ -170,7 +170,7 @@ Given $f : X \to \mathbb{C}$ meromorphic and $\pi_{f} : X \to \mathbb{C}_{\infty
 ###### _proof:_
 is kind of obvious.
 
-This allows us to prove what we already know to be true in the special cases of [[Riemann surfaces and algebraic curves --- math-199DR/notes/Functions on Riemann surfaces#_example _ meromorphic functions on the Riemann sphere and projective line|the Riemann sphere]] and [[Riemann surfaces and algebraic curves --- math-199DR/notes/Holomorphisms of Riemann surfaces#_proposition _ meromorphic functions on a torus $ mathbb{C} / Lambda$ have zero total order|complex tori]].
+This allows us to prove what we already know to be true in the special cases of [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Functions on Riemann surfaces#_example _ meromorphic functions on the Riemann sphere and projective line|the Riemann sphere]] and [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Holomorphisms of Riemann surfaces#_proposition _ meromorphic functions on a torus $ mathbb{C} / Lambda$ have zero total order|complex tori]].
 
 ##### _theorem:_ the sum of orders of a meromorphic function
 
@@ -211,11 +211,11 @@ $$
 V_{X} = \sum_{p, \pi(p) \text{ is a vertex}} 1 = (\deg \pi) V_{Y} + \sum_{p} (1 - \operatorname{mult}_{p} \pi).
 $$
 
-Since $2g - 2$ [[Riemann surfaces and algebraic curves --- math-199DR/notes/Topological invariants of a surface#_theorem _ Euler characteristic and genus|is the negation of the Euler characteristic]], the sign inside the sum is flipped and we get our desired formula.
+Since $2g - 2$ [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Topological invariants of a surface#_theorem _ Euler characteristic and genus|is the negation of the Euler characteristic]], the sign inside the sum is flipped and we get our desired formula.
 
 ##### _example:_ meromorphic functions on the Riemann sphere
 
-Meromorphic functions on the [[Riemann surfaces and algebraic curves --- math-199DR/notes/Riemann surfaces#_example _ the Riemann sphere and the complex projective line|Riemann sphere/complex projective plane]] have really nice behaviour. We've seen earlier that [[Riemann surfaces and algebraic curves --- math-199DR/notes/Functions on Riemann surfaces#_example _ meromorphic functions on the Riemann sphere and projective line|they are just rational functions]]. For a rational function that looks like
+Meromorphic functions on the [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Riemann surfaces#_example _ the Riemann sphere and the complex projective line|Riemann sphere/complex projective plane]] have really nice behaviour. We've seen earlier that [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Functions on Riemann surfaces#_example _ meromorphic functions on the Riemann sphere and projective line|they are just rational functions]]. For a rational function that looks like
 $$
 \pi(z) = \frac{\prod_{i = 1}^n(z - z_{i})^{\alpha_{i}}}{\prod_{j = 1}^m (z - p_{j})^{\beta_{j}}}.
 $$

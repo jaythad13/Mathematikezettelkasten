@@ -8,7 +8,7 @@ tags:
 
 ### Adèles and Laurent tail divisors
 
-Given [[Riemann surfaces and algebraic curves --- math-199DR/notes/Algebraic curves#Meromorphic functions form a function field|the function field nature]] of $\mathcal{M}_{X}(X)$, the Riemann–Roch theorem can be proven as a statement about fields. The idea is that $\mathcal{O}_{X}(X)$ is a ring looking mostly like $\mathbb{C}[[z]]$ at most points but also a little bit like $\mathbb{C}((z))$ at some points (that is, $\mathbb{C}[[z]][z^{-1}]$ since we don't want to allow [[Complex analysis --- math-135/notes/Laurent series#_theorem _ classifying singularities|essential singularities]] with infinitely many negative degree terms). We don't want to consider the information of all these $\mathbb{C}((z))$ at once because we'd never be able to glue them all together. Therefore, we limit by the most basic obstruction — that we can have poles only at finitely many points. We want an object whose elements have have finitely many poles but has holomorphic power series everywhere else. This is the ring of adèles.
+Given [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Algebraic curves#Meromorphic functions form a function field|the function field nature]] of $\mathcal{M}_{X}(X)$, the Riemann–Roch theorem can be proven as a statement about fields. The idea is that $\mathcal{O}_{X}(X)$ is a ring looking mostly like $\mathbb{C}[[z]]$ at most points but also a little bit like $\mathbb{C}((z))$ at some points (that is, $\mathbb{C}[[z]][z^{-1}]$ since we don't want to allow [[Complex analysis --- math-135/notes/Laurent series#_theorem _ classifying singularities|essential singularities]] with infinitely many negative degree terms). We don't want to consider the information of all these $\mathbb{C}((z))$ at once because we'd never be able to glue them all together. Therefore, we limit by the most basic obstruction — that we can have poles only at finitely many points. We want an object whose elements have have finitely many poles but has holomorphic power series everywhere else. This is the ring of adèles.
 
 ##### _definition:_ ring of adèles of an algebraic curve
 
@@ -29,7 +29,7 @@ Given a divisor $D \in \operatorname{Div} X$ the corresponding parallelotope $\L
 
 The corresponding coparallelotope $\Lambda^\perp(D)$ is $\mathbb{A}_{X} / \Lambda(D)$ and the additive subgroup of all adèles such that the top term of each $f_{p} < -D(p)$.
 
-Notice then that [[Riemann surfaces and algebraic curves --- math-199DR/notes/The Riemann-Roch spaces of a divisor#_definition _ the Riemann-Roch function space of a divisor|the Riemann-Roch space]] $\mathcal{L}(D)$ is just the intersection $\Lambda(D) \cap \operatorname{img} \alpha$. We can also get a characterisation in terms of $\Lambda^\perp(D)$.
+Notice then that [[Algebraic curves and Riemann surfaces --- math-199DR/notes/The Riemann-Roch spaces of a divisor#_definition _ the Riemann-Roch function space of a divisor|the Riemann-Roch space]] $\mathcal{L}(D)$ is just the intersection $\Lambda(D) \cap \operatorname{img} \alpha$. We can also get a characterisation in terms of $\Lambda^\perp(D)$.
 
 ##### _definition:_ truncation maps, truncation of a meromorphic function
 
@@ -68,7 +68,7 @@ commutes, and thus, so does
 
 Now we see the nice characterisation of the functions bounded by $D$ that we wanted — we get $\mathcal{L}(D) = \operatorname{ker} \alpha_{D}$. The truncations will let us compare $\mathcal{L}(D)$ for different divisors.
 
-Later, in the proof of [[Riemann surfaces and algebraic curves --- math-199DR/notes/Serre duality|Serre duality]] it will be important to also know that these coparallelotopes behave nicely under linear equivalence.
+Later, in the proof of [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Serre duality|Serre duality]] it will be important to also know that these coparallelotopes behave nicely under linear equivalence.
 
 ##### _definition:_ multiplication maps
 
@@ -108,7 +108,7 @@ $$
 $$
 measures the dimension of which choices of Laurent series at points can't be glued together to a meromorphic function with precisely those tails.
 
-Note that this is harder than [[Riemann surfaces and algebraic curves --- math-199DR/notes/Algebraic curves#_proposition _ Laurent series approximation|Laurent series approximation]] — Laurent series approximation allowed us to get the desired behaviour at finitely many points, but with no guarantee that there wouldn't be poles at the rest.
+Note that this is harder than [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Algebraic curves#_proposition _ Laurent series approximation|Laurent series approximation]] — Laurent series approximation allowed us to get the desired behaviour at finitely many points, but with no guarantee that there wouldn't be poles at the rest.
 
 The number theoretic answer is that using the relationship $\mathbb{A}_{X} = \Lambda(D) \oplus \Lambda^\perp(D)$ we can describe $\mathrm{H}^1(D)$ as
 $$
@@ -169,7 +169,7 @@ $$
 $$
 for $D_{1} \le D_{2}$.
 
-Plugging this into the formula we just obtained gives us a formula to compare any two comparable divisors [[Riemann surfaces and algebraic curves --- math-199DR/notes/The Riemann-Roch spaces of a divisor#_definition _ ordering on divisors|in the divisor poset]] —
+Plugging this into the formula we just obtained gives us a formula to compare any two comparable divisors [[Algebraic curves and Riemann surfaces --- math-199DR/notes/The Riemann-Roch spaces of a divisor#_definition _ ordering on divisors|in the divisor poset]] —
 $$
 \dim \mathcal{L}(D_{1}) - \deg D_{1} - \dim \mathrm{H}_{1}(D_{1}) = \dim \mathcal{L}(D_{2}) - \deg D_{2} - \dim \mathrm{H}^1(D_{2}).
 $$
@@ -198,7 +198,7 @@ The solution to both problems is Serre duality. We've seen already in the adèli
 
 Our strategy is to show that $\mathrm{H}^1(D)$ is finite dimensional for specific $D$. Since we've shown that $\mathrm{H}^1(D_{1} / D_{2})$ is finite dimensional for any $D_{1} \leq D_{2}$, if either one is finite dimensional, the other is too. Since any two divisors have a common supremum, it suffices to prove that there exists at least one divisor $D_{0}$ that has finite dimension. Then for any other divisor $D$, their common supremum is finite dimensional, and thus, $D$ is finite dimensional.
 
-First, we use our [[Riemann surfaces and algebraic curves --- math-199DR/notes/Algebraic curves#_corollary _ lower bound on the dimension of Riemann–Roch spaces|lemma giving a lower bound]] on $\dim \mathcal{L}(n \operatorname{div}_{\infty} f)$ and the weak Riemann–Roch theorem to bound the dimension of $\mathrm{H}^1(0 / n \operatorname{div}_{\infty} f)$ uniformly, and thus, that as $n \to \infty$ the dimension is eventually constant (not necessarily at the bound of course).
+First, we use our [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Algebraic curves#_corollary _ lower bound on the dimension of Riemann–Roch spaces|lemma giving a lower bound]] on $\dim \mathcal{L}(n \operatorname{div}_{\infty} f)$ and the weak Riemann–Roch theorem to bound the dimension of $\mathrm{H}^1(0 / n \operatorname{div}_{\infty} f)$ uniformly, and thus, that as $n \to \infty$ the dimension is eventually constant (not necessarily at the bound of course).
 
 ##### _lemma:_ the kernel into obstruction space of multiples of the divisor of poles is eventually constant
 
@@ -236,7 +236,7 @@ $$
 $$
 where $M$ is a bound depending only on $f$.
 
-We can generalise this to uniformly bound $\deg D - \dim \mathcal{L}(D)$ for every divisor $D$ using our [[Riemann surfaces and algebraic curves --- math-199DR/notes/Algebraic curves#_lemma _ a polynomial in $f$ with poles at poles of $f$|lemma that allows us to get linear equivalence to a divisor less than]] $\operatorname{div}_{\infty} f$ with a polynomial in $f$.
+We can generalise this to uniformly bound $\deg D - \dim \mathcal{L}(D)$ for every divisor $D$ using our [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Algebraic curves#_lemma _ a polynomial in $f$ with poles at poles of $f$|lemma that allows us to get linear equivalence to a divisor less than]] $\operatorname{div}_{\infty} f$ with a polynomial in $f$.
 
 ##### _proposition:_ a universal bound for the degree–dimension gap
 
@@ -253,7 +253,7 @@ $$
 $$
 for all non-negative $n$.
 
-By our [[Riemann surfaces and algebraic curves --- math-199DR/notes/Algebraic curves#_lemma _ a polynomial in $f$ with poles at poles of $f$|lemma]], there is a meromorphic function $g$ (actually a polynomial in $f$) such that $D - \operatorname{div} g \le n \operatorname{div}_{\infty} f$. $D$ is of course linearly equivalent to $D' = D - \operatorname{div} g$. Thus,
+By our [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Algebraic curves#_lemma _ a polynomial in $f$ with poles at poles of $f$|lemma]], there is a meromorphic function $g$ (actually a polynomial in $f$) such that $D - \operatorname{div} g \le n \operatorname{div}_{\infty} f$. $D$ is of course linearly equivalent to $D' = D - \operatorname{div} g$. Thus,
 $$
 \begin{align}
 \operatorname{deg} D - \dim \mathcal{L}(D) & = \deg D' - \dim \mathcal{L}(D') \\
@@ -290,19 +290,19 @@ For any $D \in \operatorname{Div} X$, the obstruction space $\mathrm{H}^1(D)$ is
 
 Serre duality gives us a way to make Riemann–Roch into a genuinely useful theorem — we can express the obstructions to writing a meromorphic function with specific bounded poles as a purely topological invariants.
 
-![[Riemann surfaces and algebraic curves --- math-199DR/notes/Serre duality#_theorem _ Serre duality|Serre duality]]
+![[Algebraic curves and Riemann surfaces --- math-199DR/notes/Serre duality#_theorem _ Serre duality|Serre duality]]
 
 Now we can identify the $\mathrm{H}^1$ terms in "weak Riemann–Roch". 
 
 ##### _corollary:_ the equality of genera
 
-The cohomology of the $0$ divisor $\mathrm{H}^1(0)$ (the arithmetic genus) has dimension equal to the (topological) [[Riemann surfaces and algebraic curves --- math-199DR/notes/Topological invariants of a surface#_definition _ genus|genus]] $g$ of the algebraic curve $X$, equal to the dimension of $\mathcal{L}^{(1)}(0)$ (the analytic genus) for a canonical divisor $K \in \operatorname{KDiv} X$.
+The cohomology of the $0$ divisor $\mathrm{H}^1(0)$ (the arithmetic genus) has dimension equal to the (topological) [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Topological invariants of a surface#_definition _ genus|genus]] $g$ of the algebraic curve $X$, equal to the dimension of $\mathcal{L}^{(1)}(0)$ (the analytic genus) for a canonical divisor $K \in \operatorname{KDiv} X$.
 
 ###### _proof:_
 
-By directly applying Serre duality to the zero divisro, we get $\mathrm{H}^1(0) \cong \mathcal{L}^{(1)}(-0) \cong \mathcal{L}(K)$ where the last isomorphism follows from [[Riemann surfaces and algebraic curves --- math-199DR/notes/Divisors#_corollary _ canonical divisors form a coset of the principal divisors|canonical divisors forming a coset of the principal divisors]]
+By directly applying Serre duality to the zero divisro, we get $\mathrm{H}^1(0) \cong \mathcal{L}^{(1)}(-0) \cong \mathcal{L}(K)$ where the last isomorphism follows from [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Divisors#_corollary _ canonical divisors form a coset of the principal divisors|canonical divisors forming a coset of the principal divisors]]
 
-[[Riemann surfaces and algebraic curves --- math-199DR/notes/Divisors#_theorem _ compact Riemann surfaces have canonical divisors of degree $2g - 2$|Recall that]] we showed, using [[Riemann surfaces and algebraic curves --- math-199DR/notes/Divisors#_definition _ pullback of a divisor|pullback of divisors]] and [[Riemann surfaces and algebraic curves --- math-199DR/notes/Topological properties of holomorphisms#_theorem _ Hurwitz' formula|Hurwitz' formula]] that a [[Riemann surfaces and algebraic curves --- math-199DR/notes/Divisors#_definition _ canonical divisor|canonical divisor]] $K$ on $X$ has degree $2g - 2$. Thus, applying Riemann–Roch to a canonical divisor we get
+[[Algebraic curves and Riemann surfaces --- math-199DR/notes/Divisors#_theorem _ compact Riemann surfaces have canonical divisors of degree $2g - 2$|Recall that]] we showed, using [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Divisors#_definition _ pullback of a divisor|pullback of divisors]] and [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Topological properties of holomorphisms#_theorem _ Hurwitz' formula|Hurwitz' formula]] that a [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Divisors#_definition _ canonical divisor|canonical divisor]] $K$ on $X$ has degree $2g - 2$. Thus, applying Riemann–Roch to a canonical divisor we get
 $$
 \dim \mathcal{L}(K) - \dim \mathrm{H}^1(K) = \deg K + 1 - \dim \mathrm{H}^1(0)
 $$

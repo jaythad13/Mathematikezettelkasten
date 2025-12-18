@@ -10,7 +10,7 @@ It's a fact of topology that [[Topology --- math-147/notes/Classification of sur
 
 Typically, for a genus $g$ curve — a $g$-holed torus, the homology looks like $\mathbb{Z}^{2g}$ (recall that the torus $S^1 \times S^1$ has abelian fundamental group $\mathbb{Z} \times \mathbb{Z}$).
 
-The primary thing we do with homology is de Rham cohomology by [[Riemann surfaces and algebraic curves --- math-199DR/notes/Integrating forms|integrating over it]]. That is, since, by Stokes' theorem we don't have to care about integrating over anything that is a boundary, we have a homomorphism $\mathrm{H}_{1}(X) \to \Omega^1(X)^\vee$ by "integrating over".
+The primary thing we do with homology is de Rham cohomology by [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Integrating forms|integrating over it]]. That is, since, by Stokes' theorem we don't have to care about integrating over anything that is a boundary, we have a homomorphism $\mathrm{H}_{1}(X) \to \Omega^1(X)^\vee$ by "integrating over".
 
 ##### _definition:_ periods
 
@@ -27,7 +27,7 @@ The Jacobian of $X$ is the complex manifold $\operatorname{Jac} X = \Omega^1(X)^
 
 ##### _example:_ the Jacobian of the torus
 
-We've seen that a torus $\mathbb{C} / \Lambda$ [[Riemann surfaces and algebraic curves --- math-199DR/notes/Linear equivalence of divisors#_theorem _ Abel's theorem for elliptic curves|is isomorphic to its Jacobian]]. (This is confusing notation but we mean a torus defined by a lattice $\Lambda$).
+We've seen that a torus $\mathbb{C} / \Lambda$ [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Linear equivalence of divisors#_theorem _ Abel's theorem for elliptic curves|is isomorphic to its Jacobian]]. (This is confusing notation but we mean a torus defined by a lattice $\Lambda$).
 
 Unfortunately, we don't in general have that Riemann surfaces are isomorphic to their Jacobians — for one, the Jacobian tends to look like a dimension $g$ complex manifold $(\mathbb{C} / \mathbb{Z}^{2})^g$ while Riemann surfaces are of course (complex) dimension $1$.
 
@@ -50,4 +50,4 @@ A_{0}(D) : \omega \mapsto \sum_{j = 1}^n \int_{q_{j}}^{p_{j}} \omega
 $$
 where $D(p_{j}) = 1$ and $D(q_{j}) = -1$ for all $j$ (and $D$ is supported nowhere else on $X$).
 
-Abel's theorem will be to investigate the kernel of $A_{0}$. We want to show that it is just the [[Riemann surfaces and algebraic curves --- math-199DR/notes/Divisors#_definition _ principal divisor|principle divisors]] $\operatorname{PDiv} X$.
+Abel's theorem will be to investigate the kernel of $A_{0}$. We want to show that it is just the [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Divisors#_definition _ principal divisor|principle divisors]] $\operatorname{PDiv} X$.

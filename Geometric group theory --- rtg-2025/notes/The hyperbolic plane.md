@@ -6,7 +6,7 @@ tags:
 - rtg-2025/2
 ---
 
-Recall the [[Riemann surfaces and algebraic curves --- math-199DR/notes/Riemann surfaces#_example _ the Riemann sphere and the complex projective line|Riemann sphere as complex projective space]] 
+Recall the [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Riemann surfaces#_example _ the Riemann sphere and the complex projective line|Riemann sphere as complex projective space]] 
 $$
 \mathbb{C} \mathbb{P}^1 = (\mathbb{C}^{2} \setminus \{ 0 \}) / \mathbb{C}^\times
 $$
@@ -40,7 +40,7 @@ is called the action by Möbius transformations. Note that the action of a matri
 
 Each function $(z : w) \mapsto A \cdot (z : w)$ is called a Möbius transformation and the group of all Möbius transformations is called $\operatorname{Möb} \mathbb{C}\mathbb{P}^1$.
 
-Recall that $\operatorname{Möb} \mathbb{C} \mathbb{P}^1$ [[Riemann surfaces and algebraic curves --- math-199DR/notes/Holomorphisms of Riemann surfaces#_examples _ interesting isomorphisms|is exactly the automorphism group]] of the Riemann sphere as a Riemann surface/complex manifold/algebraic curve.
+Recall that $\operatorname{Möb} \mathbb{C} \mathbb{P}^1$ [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Holomorphisms of Riemann surfaces#_examples _ interesting isomorphisms|is exactly the automorphism group]] of the Riemann sphere as a Riemann surface/complex manifold/algebraic curve.
 
 Note also that $\mathbb{C}^* \le \mathrm{GL}_{2}(\mathbb{C})$ is part of the [[Abstract algebra --- math-171/notes/Group actions#_definition _ kernel, effective action|kernel]] of the group actions, so the action descends to an action of the projective general linear group $\mathrm{PGL}_{2}(\mathbb{C})$ (which incidentally is the same as $\mathrm{PSL}_{2}(\mathbb{C})$).
 

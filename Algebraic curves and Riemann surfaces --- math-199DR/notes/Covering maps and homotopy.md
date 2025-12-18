@@ -54,7 +54,7 @@ Notice that this induces a group action of $\pi_{1}(Y, q)$ on a covering space $
 
 ##### _theorem:_ the universal cover
 
-For any real manifold $X$ (satisfying some technical condition that all [[Riemann surfaces and algebraic curves --- math-199DR/notes/Riemann surfaces#_definition _ (compact, connected) Riemann surface, (holomorphic) atlas, chart|Riemann surfaces]] satisfy), there exists a unique (up to cover isomorphism) cover $f_{0} : U_{0} \to X$ such that the following diagram commutes
+For any real manifold $X$ (satisfying some technical condition that all [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Riemann surfaces#_definition _ (compact, connected) Riemann surface, (holomorphic) atlas, chart|Riemann surfaces]] satisfy), there exists a unique (up to cover isomorphism) cover $f_{0} : U_{0} \to X$ such that the following diagram commutes
 ```tikz
 \usepackage{tikz-cd}
 \usepackage{amsfonts}

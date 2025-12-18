@@ -11,7 +11,7 @@ Here let $X$ be a Riemann surface with a maximal atlas $\mathcal{A}$ consisting 
 
 ### Holomorphic functions
 
-The raison d'etre for the complicated definition of a [[Riemann surfaces and algebraic curves --- math-199DR/notes/Riemann surfaces#_definition _ (compact, connected) Riemann surface, (holomorphic) atlas|holomorphic atlas]] is that we want to define holomorphic functions on (open sets) of a Riemann surface. In particular, we push everything to the complex numbers and since all charts are holomorphically equivalent, we're okay. Here we're going to show that this really works
+The raison d'etre for the complicated definition of a [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Riemann surfaces#_definition _ (compact, connected) Riemann surface, (holomorphic) atlas|holomorphic atlas]] is that we want to define holomorphic functions on (open sets) of a Riemann surface. In particular, we push everything to the complex numbers and since all charts are holomorphically equivalent, we're okay. Here we're going to show that this really works
 
 Let $W$ be an open subset of $X$, and $f$ be a function $W \to \mathbb{C}$ (till [[#_examples _ dumb examples of holomorphic functions|we talk about examples of holomorphic functions]]).
 
@@ -219,7 +219,7 @@ and thus, $f$'s behaviour at infinity is just $f$'s behaviour at $w = 0$.
 
 ##### _example:_ meromorphic functions on the torus
 
-Recall that the complex torus $\mathbb{C} / \Lambda$ [[Riemann surfaces and algebraic curves --- math-199DR/notes/Riemann surfaces#_example _ Algebraic Geometry --- math-176/notes/Elliptic curves _proposition, definition _ reducing cubics, elliptic curves elliptic curves|is a Riemann surface]]. Note that defining meromorphic functions $f$ on $\mathbb{C} / \Lambda$ is the same as defining $\Lambda$-periodic ($f(z + \omega) = f(z)$ for all $\omega \in \Lambda$) meromorphic function on $\mathbb{C}$. We build these out of the Jacobi $\Theta$ function
+Recall that the complex torus $\mathbb{C} / \Lambda$ [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Riemann surfaces#_example _ Algebraic Geometry --- math-176/notes/Elliptic curves _proposition, definition _ reducing cubics, elliptic curves elliptic curves|is a Riemann surface]]. Note that defining meromorphic functions $f$ on $\mathbb{C} / \Lambda$ is the same as defining $\Lambda$-periodic ($f(z + \omega) = f(z)$ for all $\omega \in \Lambda$) meromorphic function on $\mathbb{C}$. We build these out of the Jacobi $\Theta$ function
 $$
 \Theta_{\tau}(z) = \sum_{n = - \infty}^\infty e^{\pi i(n^{2} \tau + 2 n z)}.
 $$

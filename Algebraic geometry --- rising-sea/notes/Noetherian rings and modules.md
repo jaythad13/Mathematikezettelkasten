@@ -75,7 +75,7 @@ However, this doesn't always work — $A$ need not be Noetherian for $\operatorn
 
 ### Why care about Noetherianness?
 
-Because, not everything is Noetherian, but the nicest things are. For example, [[Algebraic geometry --- rising-sea/notes/Fibred products#_definition _ fibred product|fibred products]] of Noetherian schemes over Noetherian schemes are not always Noetherian. Also, some important rings (like [[Riemann surfaces and algebraic curves --- math-199DR/notes/The Riemann-Roch theorem#_definition _ ring of adèles of an algebraic curve|adèles]]) are often non-Noetherian.
+Because, not everything is Noetherian, but the nicest things are. For example, [[Algebraic geometry --- rising-sea/notes/Fibred products#_definition _ fibred product|fibred products]] of Noetherian schemes over Noetherian schemes are not always Noetherian. Also, some important rings (like [[Algebraic curves and Riemann surfaces --- math-199DR/notes/The Riemann-Roch theorem#_definition _ ring of adèles of an algebraic curve|adèles]]) are often non-Noetherian.
 
 ### Noetherian modules
 

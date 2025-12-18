@@ -65,7 +65,7 @@ By overlaying two triangulations one can see that any two triangulations have a 
 
 ##### _theorem:_ Euler characteristic and genus
 
-For $X$ a compact orientable $2$-manifold without boundary (for our purposes, [[Riemann surfaces and algebraic curves --- math-199DR/notes/Riemann surfaces|a Riemann surface]]), of genus $g$,
+For $X$ a compact orientable $2$-manifold without boundary (for our purposes, [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Riemann surfaces|a Riemann surface]]), of genus $g$,
 $$
 \chi(X) = 2 - 2 g.
 $$

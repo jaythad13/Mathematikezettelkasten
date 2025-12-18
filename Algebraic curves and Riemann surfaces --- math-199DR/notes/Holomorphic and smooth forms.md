@@ -14,7 +14,7 @@ To define differential forms in a way that is meaningful, we need some notions f
 
 ##### _definition:_ tangent space
 
-For $X$ a smooth $2$-manifold embedded in $\mathbb{R}^N$, and a point $p \in X$, a chart $(\phi, U)$ centred at $p$, is a smooth function $\mathbb{R}^{2} \to \mathbb{R}^N$ (for the same reason [[Riemann surfaces and algebraic curves --- math-199DR/notes/Holomorphisms of Riemann surfaces#_examples _ dumb examples of holomorphisms|charts are holomorphic]]). The tangent space at $p$ is $\mathrm{T}_{p}X = D \phi^{-1} \Big |_{0}^\text{img}(\mathbb{R}^{2})$.
+For $X$ a smooth $2$-manifold embedded in $\mathbb{R}^N$, and a point $p \in X$, a chart $(\phi, U)$ centred at $p$, is a smooth function $\mathbb{R}^{2} \to \mathbb{R}^N$ (for the same reason [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Holomorphisms of Riemann surfaces#_examples _ dumb examples of holomorphisms|charts are holomorphic]]). The tangent space at $p$ is $\mathrm{T}_{p}X = D \phi^{-1} \Big |_{0}^\text{img}(\mathbb{R}^{2})$.
 
 ##### _definition:_ derivatives
 
@@ -35,13 +35,13 @@ We will define what it means for them to be smooth, holomorphic or anything else
 
 ##### _non-example:_ there are no non-zero holomorphic $1$-forms on $\mathbb{C}_{\infty}$
 
-The $1$-forms must be constant for the same reason that there cannot be any [[Riemann surfaces and algebraic curves --- math-199DR/notes/Functions on Riemann surfaces#_theorem _ global holomorphic functions are constant|non-constant globally holomorphic functions on a compact Riemann surface]]. Say away from $0$, $\omega = g(w) \, dw$ and away from $\infty$ $\omega = f(z) \, dz$. Then to transform the $1$-form between the two charts with $w = 1 / z$ and thus, $w' = - 1 / z^{2}$ we have $(g \circ T)(0) = -z^{2} f(z)$ as $z \to 0$. Thus, $g(T(0)) = g()$ 
+The $1$-forms must be constant for the same reason that there cannot be any [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Functions on Riemann surfaces#_theorem _ global holomorphic functions are constant|non-constant globally holomorphic functions on a compact Riemann surface]]. Say away from $0$, $\omega = g(w) \, dw$ and away from $\infty$ $\omega = f(z) \, dz$. Then to transform the $1$-form between the two charts with $w = 1 / z$ and thus, $w' = - 1 / z^{2}$ we have $(g \circ T)(0) = -z^{2} f(z)$ as $z \to 0$. Thus, $g(T(0)) = g()$ 
 
 ### Smooth forms
 
 ### Pulling back forms
 
-Given a [[Riemann surfaces and algebraic curves --- math-199DR/notes/Holomorphisms of Riemann surfaces#_definition _ holomorphism|holomorphism]] $\pi : X \to Y$ we might hope that we can pull back forms on $Y$ to forms on $X$ through the function. We can! 
+Given a [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Holomorphisms of Riemann surfaces#_definition _ holomorphism|holomorphism]] $\pi : X \to Y$ we might hope that we can pull back forms on $Y$ to forms on $X$ through the function. We can! 
 
 ##### _definition:_ pullback of forms
 

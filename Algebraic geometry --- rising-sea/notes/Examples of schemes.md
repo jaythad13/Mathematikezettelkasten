@@ -329,7 +329,7 @@ The global sections of $\mathscr{O}_{\mathbb{P}_{\mathbb{F}}^1}$ are functions i
 
 ---
 
-Our computation $\mathscr{O}_{\mathbb{P}_{\mathbb{F}}^1}(\mathbb{P}_{{\mathbb{F}}}^1)$ is the algebraic analogue of the theorem that global holomorphic functions on $\mathbb{C} \mathbb{P}^1$ [[Riemann surfaces and algebraic curves --- math-199DR/notes/Functions on Riemann surfaces#_theorem _ global holomorphic functions are constant|are constant]].
+Our computation $\mathscr{O}_{\mathbb{P}_{\mathbb{F}}^1}(\mathbb{P}_{{\mathbb{F}}}^1)$ is the algebraic analogue of the theorem that global holomorphic functions on $\mathbb{C} \mathbb{P}^1$ [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Functions on Riemann surfaces#_theorem _ global holomorphic functions are constant|are constant]].
 
 We can generalise all of this to higher dimensions.
 

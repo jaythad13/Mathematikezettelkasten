@@ -6,11 +6,11 @@ tags:
 - alg-geo
 ---
 
-One thing that we might be interested in as we think of Riemann surfaces, say $X$, more algebraically, is embedding them in projective space. This requires extending our definition of a [[Riemann surfaces and algebraic curves --- math-199DR/notes/Holomorphisms of Riemann surfaces#_definition _ holomorphism|holomorphism]] from just $1$-dimensional complex manifolds to $n$-manifolds.
+One thing that we might be interested in as we think of Riemann surfaces, say $X$, more algebraically, is embedding them in projective space. This requires extending our definition of a [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Holomorphisms of Riemann surfaces#_definition _ holomorphism|holomorphism]] from just $1$-dimensional complex manifolds to $n$-manifolds.
 
 ##### _definition:_ holomorphic maps to projective space
 
-A map $\Phi : X \to \mathbb{C} \mathbb{P}^n$ is holomorphic at $p \in X$ if there are [[Riemann surfaces and algebraic curves --- math-199DR/notes/Functions on Riemann surfaces#_definition _ holomorphic functions|holomorphic functions]] $g_{0}, g_{1}, \dots, g_{n}$ with $\Phi = (g_{0} : g_{1} : \dots : g_{n})$ in some neighbourhood of $p$.
+A map $\Phi : X \to \mathbb{C} \mathbb{P}^n$ is holomorphic at $p \in X$ if there are [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Functions on Riemann surfaces#_definition _ holomorphic functions|holomorphic functions]] $g_{0}, g_{1}, \dots, g_{n}$ with $\Phi = (g_{0} : g_{1} : \dots : g_{n})$ in some neighbourhood of $p$.
 
 $\Phi$ is holomorphic if it is holomorphic at every $p \in X$.
 
@@ -18,7 +18,7 @@ Note that this is a special case of the general definition of a morphism of comp
 
 ##### _proposition:_ non-constant holomorphic maps to projective space
 
-Given [[Riemann surfaces and algebraic curves --- math-199DR/notes/Functions on Riemann surfaces#_definition _ meromorphic|meromorphic functions]] $f_{0}, \dots, f_{n} \in \mathcal{M}_{X}(X)$ not all identically zero, there is a holomorphic map to projective space $\Phi : X \to \mathbb{C}\mathbb{P}^n$ given by
+Given [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Functions on Riemann surfaces#_definition _ meromorphic|meromorphic functions]] $f_{0}, \dots, f_{n} \in \mathcal{M}_{X}(X)$ not all identically zero, there is a holomorphic map to projective space $\Phi : X \to \mathbb{C}\mathbb{P}^n$ given by
 $$
 \Phi(p) = (f_{0}(p) : \dots : f_{n}(p))
 $$
@@ -38,7 +38,7 @@ In fact every holomorphic map $\Phi$ to projective space can be given uniquely u
 
 ### Complete and general linear systems
 
-Complete linear systems of divisors contain all of the [[Riemann surfaces and algebraic curves --- math-199DR/notes/The Riemann-Roch spaces of a divisor#_definition _ effective, positive divisor|effective]] divisors that are [[Riemann surfaces and algebraic curves --- math-199DR/notes/Linear equivalence of divisors#_definition _ linear equivalence|equivalent]] to a given divisor. They allow us to turn the information of how a divisor bounds poles and forces zeroes into just the bounds on poles. More importantly, we will see that they keep track of important information about projective maps.
+Complete linear systems of divisors contain all of the [[Algebraic curves and Riemann surfaces --- math-199DR/notes/The Riemann-Roch spaces of a divisor#_definition _ effective, positive divisor|effective]] divisors that are [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Linear equivalence of divisors#_definition _ linear equivalence|equivalent]] to a given divisor. They allow us to turn the information of how a divisor bounds poles and forces zeroes into just the bounds on poles. More importantly, we will see that they keep track of important information about projective maps.
 
 ##### _definition:_ complete linear system
 
@@ -52,7 +52,7 @@ In fact, complete linear systems provide a connection between projective space a
 
 ##### _proposition:_ projective space and complete linear system correspondence
 
-There is a bijection between projectivisation of the [[Riemann surfaces and algebraic curves --- math-199DR/notes/The Riemann-Roch spaces of a divisor#_definition _ the Riemann-Roch function space of a divisor|the Riemann-Roch space of a divisor]] and its complete linear system.
+There is a bijection between projectivisation of the [[Algebraic curves and Riemann surfaces --- math-199DR/notes/The Riemann-Roch spaces of a divisor#_definition _ the Riemann-Roch function space of a divisor|the Riemann-Roch space of a divisor]] and its complete linear system.
 
 ###### _proof:_
 

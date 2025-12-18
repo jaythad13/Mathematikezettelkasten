@@ -6,7 +6,7 @@ tags:
 - alg-geo
 ---
 
-Let $X$ be an [[Riemann surfaces and algebraic curves --- math-199DR/notes/Algebraic curves#_definition _ algebraic curve|algebraic curve]].
+Let $X$ be an [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Algebraic curves#_definition _ algebraic curve|algebraic curve]].
 
 The Riemann–Roch theorem allows us to embed curves into projective space.
 
@@ -16,13 +16,13 @@ We can show fairly easily that curves of low genus have projective embeddings. F
 
 ##### _theorem:_ classification of genus $0$ curves
 
-If $X$ has [[Riemann surfaces and algebraic curves --- math-199DR/notes/Topological invariants of a surface#_definition _ genus|genus]] $0$, then $X \cong \mathbb{C}_{\infty}$.
+If $X$ has [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Topological invariants of a surface#_definition _ genus|genus]] $0$, then $X \cong \mathbb{C}_{\infty}$.
 
 ###### _proof:_
 
-Choose one point $p$ and consider the divisor $D_{p}$ with $D_{p}(p) = 1$ and $D = 0$ for all other points. By [[Riemann surfaces and algebraic curves --- math-199DR/notes/The Riemann-Roch theorem#_corollary _ Riemann–Roch for big divisors|the Riemann-Roch theorem for big divisors]], since $\deg D_{p} = 1 \geq 2g_{X} - 1$, we have $\dim \mathcal{L}(D_{p}) = 2$.
+Choose one point $p$ and consider the divisor $D_{p}$ with $D_{p}(p) = 1$ and $D = 0$ for all other points. By [[Algebraic curves and Riemann surfaces --- math-199DR/notes/The Riemann-Roch theorem#_corollary _ Riemann–Roch for big divisors|the Riemann-Roch theorem for big divisors]], since $\deg D_{p} = 1 \geq 2g_{X} - 1$, we have $\dim \mathcal{L}(D_{p}) = 2$.
 
-Thus, there is a non-constant meromorphic function $f$ with at worst a simple pole at $p$. But then the [[Riemann surfaces and algebraic curves --- math-199DR/notes/Holomorphisms of Riemann surfaces#_proposition _ meromorphic functions are maps to the Riemann sphere|corresponding holomorphism to the Riemann sphere]] $\pi_{f}$ has [[Riemann surfaces and algebraic curves --- math-199DR/notes/Topological properties of holomorphisms#_definition _ degree at a point|degree]] $1$ at $\infty$, [[Riemann surfaces and algebraic curves --- math-199DR/notes/Topological properties of holomorphisms#_theorem _ degree is constant|and thus,]] degree $1$ everywhere. Then, $\pi_{f}$ [[Riemann surfaces and algebraic curves --- math-199DR/notes/Topological properties of holomorphisms#_corollary _ isomorphism is determined by degree|is an isomorphism]] $X \to \mathbb{C}_{\infty}$.
+Thus, there is a non-constant meromorphic function $f$ with at worst a simple pole at $p$. But then the [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Holomorphisms of Riemann surfaces#_proposition _ meromorphic functions are maps to the Riemann sphere|corresponding holomorphism to the Riemann sphere]] $\pi_{f}$ has [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Topological properties of holomorphisms#_definition _ degree at a point|degree]] $1$ at $\infty$, [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Topological properties of holomorphisms#_theorem _ degree is constant|and thus,]] degree $1$ everywhere. Then, $\pi_{f}$ [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Topological properties of holomorphisms#_corollary _ isomorphism is determined by degree|is an isomorphism]] $X \to \mathbb{C}_{\infty}$.
 
 Of course, since the Riemann sphere is $\mathbb{C} \mathbb{P}^1$, this is a projective embedding.
 
@@ -55,7 +55,7 @@ $$
 (0 : 1 : 0) & q = p
 \end{cases}
 $$
-We claim that this is [[Riemann surfaces and algebraic curves --- math-199DR/notes/Projective maps and linear systems#_definition _ holomorphic maps to projective space|holomorphic]] and can be written as $(x(q) : y(q) : z(q))$ (which is not so hard to prove but we will not do) and that it is an isomorphism onto the image $C$ in $\mathbb{P} \mathbb{C}^{2}$ since each component of the function is degree $1$.
+We claim that this is [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Projective maps and linear systems#_definition _ holomorphic maps to projective space|holomorphic]] and can be written as $(x(q) : y(q) : z(q))$ (which is not so hard to prove but we will not do) and that it is an isomorphism onto the image $C$ in $\mathbb{P} \mathbb{C}^{2}$ since each component of the function is degree $1$.
 
 Consider the projection map $\pi_{x} : C \to \mathbb{C}_{\infty}$ by $(x : y : z) \mapsto x / z$ for $z \neq 0$, and $(x : y : 0) \mapsto \infty$ . Since the diagram
 ```tikz

@@ -7,15 +7,15 @@ tags:
 
 Let $X, Y$ be Riemann surfaces with (maximal) holomorphic atlases $(\phi_{\alpha}, U_{\alpha})$ and $(\psi_{\beta}, V_{\beta})$ indexed by $\alpha \in \mathcal{I}$ and $\beta \in \mathcal{ J}$ respectively. Many of the results obviously only hold when $X$ and $Y$ are connected.
 
-Now that we have the objects of our category — [[Riemann surfaces and algebraic curves --- math-199DR/notes/Riemann surfaces#_definition _ (compact, connected) Riemann surface, (holomorphic) atlas, chart|Riemann surfaces]], we should try to find the right morphisms for the category. It's useful to consider what kind of properties we want the morphisms to have.
+Now that we have the objects of our category — [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Riemann surfaces#_definition _ (compact, connected) Riemann surface, (holomorphic) atlas, chart|Riemann surfaces]], we should try to find the right morphisms for the category. It's useful to consider what kind of properties we want the morphisms to have.
 
 ##### _desiderata:_ morphisms of Riemann surfaces
 
 - We want the class of all Riemann surfaces to be a [[Basic category theory --- basic-cat/notes/Categories#_definition _ category|category]] — that is, each Riemann surface should have an identity morphism and the morphisms should compose associatively.
 - In fact, we don't just want it to be a category — morphisms of Riemann surfaces should be functions — morphisms of the underlying sets. Categorically, we want our category to be a "concrete category".
 - In fact, morphisms of Riemann surfaces, should also be [[Analysis --- math-131/notes/Continuity#_proposition _ $ varepsilon$-$ delta$ continuity is equivalent to topological continuity|continuous maps]] — morphisms of the underlying [[Topology --- math-147/notes/Topologies#_definition _ topology, open sets, topological space|topological spaces]]. Categorically, we want a "forgetful functor" to $\mathsf{\mathbb{R}^{2}Man^0}$ or $\mathsf{Top}$ (depending on whether you require a left adjoint).
-- The notion of a [[Riemann surfaces and algebraic curves --- math-199DR/notes/Functions on Riemann surfaces#_definition _ holomorphic functions|holomorphic function on a Riemann surface]] $X$ should agree with notion of a morphism of Riemann surfaces given by $X \to \mathbb{C}$.
-- The notion of a [[Riemann surfaces and algebraic curves --- math-199DR/notes/Functions on Riemann surfaces#_definition _ meromorphic|meromorphic function on a Riemann surface]] $X$ should agree with the notion of a morphism of Riemann surfaces $X \to \mathbb{C}_{\infty}$. We will see that this is really useful.
+- The notion of a [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Functions on Riemann surfaces#_definition _ holomorphic functions|holomorphic function on a Riemann surface]] $X$ should agree with notion of a morphism of Riemann surfaces given by $X \to \mathbb{C}$.
+- The notion of a [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Functions on Riemann surfaces#_definition _ meromorphic|meromorphic function on a Riemann surface]] $X$ should agree with the notion of a morphism of Riemann surfaces $X \to \mathbb{C}_{\infty}$. We will see that this is really useful.
 - Generally, we want morphisms $X \to Y$ to preserve the complex structures on $X$ and $Y$.
 - In particular, theorems from complex analysis should have analogues for morphisms of Riemann surfaces
 - Perhaps this should mean something about the structure sheaves $\mathcal{O}_{X}$ and $\mathcal{O}_{Y}$?
@@ -42,7 +42,7 @@ If $\pi$ is holomorphic on all of $X$, we say it is a holomorphism.
 
 ##### _examples:_ dumb examples of holomorphisms
 
-1) Every [[Riemann surfaces and algebraic curves --- math-199DR/notes/Functions on Riemann surfaces#_definition _ holomorphic functions|holomorphic function]] on $X$ is a holomorphism $X \to \mathbb{C}$ (this is exercise II.3 A).
+1) Every [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Functions on Riemann surfaces#_definition _ holomorphic functions|holomorphic function]] on $X$ is a holomorphism $X \to \mathbb{C}$ (this is exercise II.3 A).
 2) Every constant function $X \to Y$ is a holomorphism.
 3) The identity function on $X$ is a holomorphism. In fact, since it is its own inverse, it's also our first example of an isomorphism.
 
@@ -150,7 +150,7 @@ Really the right way to understand meromorphic functions on $X$ is to see them a
 
 ##### _proposition:_ meromorphic functions are maps to the Riemann sphere
 
-Given a [[Riemann surfaces and algebraic curves --- math-199DR/notes/Functions on Riemann surfaces#_definition _ meromorphic|meromorphic function]] $f : X \to \mathbb{C}$, and the stereographic projection $\phi_{0} : \mathbb{C}_{\infty} \setminus \{ \infty \} \to \mathbb{C}$, the derived map
+Given a [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Functions on Riemann surfaces#_definition _ meromorphic|meromorphic function]] $f : X \to \mathbb{C}$, and the stereographic projection $\phi_{0} : \mathbb{C}_{\infty} \setminus \{ \infty \} \to \mathbb{C}$, the derived map
 $$
 \pi(p) = \begin{cases}
 \phi_{0}^{-1}(f(p)) \in \mathbb{C} & p \text{ is not a pole} \\
@@ -178,13 +178,13 @@ $$
 
 ###### _proof:_
 
-Suppose for contradiction that $f$ doesn't satisfy this. Without loss of generality (by considering $1 / f$) $f$ has more poles $p_{1}, \dots, p_{m}$ than zeroes $z_{1}, \dots, z_{n}$. The shifted $\Theta$ function construction [[Riemann surfaces and algebraic curves --- math-199DR/notes/Functions on Riemann surfaces#_example _ meromorphic functions on the torus|earlier]] allows us to add zeroes $z_{n + 1}, \dots, z_{m}$ to the list (as long as they satisfy some quotient sum condition in $\mathbb{C} / \Lambda$) and create a meromorphic function $g$ with poles $p_{1}, \dots, p_{m}$ and zeroes $z_{1}, \dots, z_{m}$.
+Suppose for contradiction that $f$ doesn't satisfy this. Without loss of generality (by considering $1 / f$) $f$ has more poles $p_{1}, \dots, p_{m}$ than zeroes $z_{1}, \dots, z_{n}$. The shifted $\Theta$ function construction [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Functions on Riemann surfaces#_example _ meromorphic functions on the torus|earlier]] allows us to add zeroes $z_{n + 1}, \dots, z_{m}$ to the list (as long as they satisfy some quotient sum condition in $\mathbb{C} / \Lambda$) and create a meromorphic function $g$ with poles $p_{1}, \dots, p_{m}$ and zeroes $z_{1}, \dots, z_{m}$.
 
 Consider $g / f$. It has no poles and only zeroes. Thus, $g / f$ is a holomorphic function on a compact Riemann surface. That is, $g / f$ is constant and identically zero. But $g$ is not identically zero, so this is a contradiction.
 
 ### The sheaf-theoretic view
 
-Notice that each holomorphism $\pi : X \to Y$ induces a map going in the other direction on each open set of the [[Riemann surfaces and algebraic curves --- math-199DR/notes/Functions on Riemann surfaces#_definition _ structure sheaf|structure sheaves]]. In particular, for each open $W \subseteq Y$ we have a $\mathbb{C}$-algebra homomorphism (a [[Abstract algebra --- math-171/notes/Ring homomorphisms#_definition _ ring homomorphisms|ring homomorphism]] and a [[Linear maps|linear map]])
+Notice that each holomorphism $\pi : X \to Y$ induces a map going in the other direction on each open set of the [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Functions on Riemann surfaces#_definition _ structure sheaf|structure sheaves]]. In particular, for each open $W \subseteq Y$ we have a $\mathbb{C}$-algebra homomorphism (a [[Abstract algebra --- math-171/notes/Ring homomorphisms#_definition _ ring homomorphisms|ring homomorphism]] and a [[Linear maps|linear map]])
 $$
 \pi^* : \mathcal{O}_{Y}(W) \to \mathcal{O}_{X}(\pi^\text{pre}(W))
 $$
@@ -196,7 +196,7 @@ A continuous map $\pi : X \to Y$ is a holomorphism if sending $f \mapsto f \circ
 
 ###### _proof sketch:_
 
-Consider $p \in X$, we will show $\pi$ is holomorphic at $p$. Choose $V$ containing $\pi(p)$ to be one of the open sets in the atlas on $Y$ (so that we have the atlas $(V, \psi)$). $\psi$ [[Riemann surfaces and algebraic curves --- math-199DR/notes/Functions on Riemann surfaces#_examples _ dumb examples of holomorphic functions|is a holomorphic function]] on $Y$, and thus, $\psi \circ \pi$ is a holomorphic function in $\mathcal{O}_{X}(\pi^\text{pre}(V))$, and thus, at $p$. By definition, this means, that for any chart $(U, \phi)$, we have $\psi \circ \pi \circ \phi ^{-1}$ holomorphic at $p$ — that is, $\pi$ is holomorphic at $p$.
+Consider $p \in X$, we will show $\pi$ is holomorphic at $p$. Choose $V$ containing $\pi(p)$ to be one of the open sets in the atlas on $Y$ (so that we have the atlas $(V, \psi)$). $\psi$ [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Functions on Riemann surfaces#_examples _ dumb examples of holomorphic functions|is a holomorphic function]] on $Y$, and thus, $\psi \circ \pi$ is a holomorphic function in $\mathcal{O}_{X}(\pi^\text{pre}(V))$, and thus, at $p$. By definition, this means, that for any chart $(U, \phi)$, we have $\psi \circ \pi \circ \phi ^{-1}$ holomorphic at $p$ — that is, $\pi$ is holomorphic at $p$.
 
 We don't even have to give the explicit construction to say that $\pi$ pulls back functions. It's enough to show some "algebraic" conditions hold! 
 
