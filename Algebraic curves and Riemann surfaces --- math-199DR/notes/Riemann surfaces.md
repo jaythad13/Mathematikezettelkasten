@@ -11,11 +11,13 @@ tags:
 
 ##### _definition:_ (compact, connected) Riemann surface, (holomorphic) atlas, chart
 
-A (compact, connected) Riemann surface is a pair of a ([[Analysis --- math-131/notes/Compactness#_definition _ compact|compact]], [[Topology --- math-147/notes/Connectedness and path-connectedness#_definition _ connectedness|connected]]) second  countable, [[Topology --- math-147/notes/Separation properties#_definition _ Hausdorff spaces, $T_{2}$ spaces|Hausdorff]] topological space $X$ and a holomorphic atlas $\mathcal{A}$. 
+A **(compact, connected) Riemann surface** is a pair of a ([[Analysis --- math-131/notes/Compactness#_definition _ compact|compact]], [[Topology --- math-147/notes/Connectedness and path-connectedness#_definition _ connectedness|connected]]) second  countable, [[Topology --- math-147/notes/Separation properties#_definition _ Hausdorff spaces, $T_{2}$ spaces|Hausdorff]] topological space $X$ and a holomorphic atlas $\mathcal{A}$. 
 
-That is, $\mathcal{A}$ is an open cover $\{ U_{\alpha} \}$ such that each $U_{\alpha}$ is homeomorphic (with the homeomorphism being $\phi_{\alpha}$) to an open, connected subset of $\mathbb{C}$. Further, each "transition map" $\phi_{\beta} \circ \phi_{\alpha} ^{-1}$ is a [[Complex analysis --- math-135/notes/Holomorphic functions#_definition _ holomorphic, $ mathbb{C}$-differentiable, regular, the derivative, $f'(z_{0})$|holomorphic]] function $\phi_{\alpha}(U_{\alpha} \cap U_{\beta}) \to \phi_{\beta}(U_{\alpha} \cap U_{\beta})$.
+A **holomorphic atlas** $\mathcal{A}$ is an open cover $\{ U_{\alpha} \}$ such that each $U_{\alpha}$ is homeomorphic (with homeomorphism $\phi_{\alpha} : U_{\alpha} \to \mathbb{C}$) to an open, connected subset of $\mathbb{C}$. Further, each "transition map" $\phi_{\beta} \circ \phi_{\alpha} ^{-1}$ is a [[Complex analysis --- math-135/notes/Holomorphic functions#_definition _ holomorphic, $ mathbb{C}$-differentiable, regular, the derivative, $f'(z_{0})$|holomorphic]] function $\phi_{\alpha}(U_{\alpha} \cap U_{\beta}) \to \phi_{\beta}(U_{\alpha} \cap U_{\beta})$.
 
-Each pair $(\phi_{\alpha},U_{\alpha})$ is called a chart.
+Each pair $(\phi_{\alpha},U_{\alpha})$ is called a **chart**. 
+
+---
 
 The Hausdorff condition is a reasonability condition on topological spaces — for any two distinct points in the topological space, the topology can tell them apart. Without this condition, nice classification theorems just aren't possible.
 
@@ -23,12 +25,14 @@ The main theorem that we want to learn is that compact connected Riemann surface
 
 ##### _theorem:_ the uniformisation theorem
 
-A compact connected Riemann surface $X$ is one of three things
-1) the Riemann sphere $\mathbb{C}_{\infty }$ (the one-point compactification of $\mathbb{C}$) with genus $0$
+A compact connected Riemann surface $X$ is one of the following
+1) the Riemann sphere $\mathbb{C}_{\infty }$/the projective line $\mathbb{C} \mathbb{P}^1$ (the one-point compactification of $\mathbb{C}$) with genus $0$
 2) Euclidean — a torus $\mathbb{C} / \Lambda$ for some lattice $\Lambda$ with genus $1$
-3) hyperbolic — $X$ is the right cosets of the (compactified) upper half plane $\mathbb{H}^*$ modulo some group $\Gamma$ with genus $g \ge 2$.
+3) hyperbolic — $X$ is the compactified quotient space $\mathbb{H}^{2} / \Gamma$ with genus $g \ge 2$.
 
-When we say "is", we mean something specific, but we will not specify what that is that we mean.
+---
+
+When we say "is" we mean [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Holomorphisms of Riemann surfaces#_definition _ biholomorphism/isomorphism, automorphism|isomorphic to]]. Note that not all $\mathbb{C} / \Lambda$ or $\mathbb{H}^{2} / \Gamma$ are the same — different $\Lambda$ and different $\Gamma$ can give different Riemann surfaces.
 
 ##### _example:_ the Riemann sphere and the complex projective line
 
@@ -38,7 +42,9 @@ The transition map is $z \mapsto 1/z$ which is indeed holomorphic on $\mathbb{C}
 
 This means that we actually have a natural metric on $\mathbb{C}_{\infty}$ — it's just the metric inherited by the $2$-sphere $S^2$ sitting in $\mathbb{R}^3$.
 
-This is the same thing as the complex projective line $\mathbb{C} \mathbb{P}^1$ which is the surface parameterising all lines through the origin in $\mathbb{C}^{2}$. It can be written $(\mathbb{C}^{2} \setminus \{ 0 \}) / \mathbb{C}^*$ as each line is the data of the ratio of its slope $(z_{1} : z_{0})$, and two ratios correspond to the same line if they are scalar multiples of each other — $(z_{1} : z_{0}) = (\lambda z_{1} : \lambda z_{0})$. To identify this with the Riemann sphere, just identify $(z_{1} : z_{0})$ with $z_{1} / z_{0}$ when $z_{0} \neq 0$ and $\infty$ otherwise.
+This is the same thing as the complex projective line $\mathbb{C} \mathbb{P}^1$ which is the surface parameterising all lines through the origin in $\mathbb{C}^{2}$. It can be written $(\mathbb{C}^{2} \setminus \{ 0 \}) / \mathbb{C}^*$ as each line is the data of the ratio of its slope $(z_{0} : z_{1})$, and two ratios correspond to the same line if they are scalar multiples of each other — $(z_{0} : z_{1}) = (\lambda z_{0} : \lambda z_{1})$. To identify this with the Riemann sphere, just identify $(z_{0} : z_{1})$ with $z_{1} / z_{0}$ when $z_{0} \neq 0$ and $\infty$ otherwise.
+
+---
 
 ##### _example:_ [[Algebraic varieties --- math-176/notes/Elliptic curves#_proposition, definition _ reducing cubics, elliptic curves|elliptic curves]]
 
@@ -56,7 +62,9 @@ $$
 $$
 we have a bijection $\mathbb{C} / \Lambda \to E(\mathbb{C})$ by $z \mapsto (\wp_{\Lambda}(z), \wp_{\Lambda}'(z))$. If we're willing to believe this is actually a homeomorphism (it's actually an analytic group isomorphism with the [[Algebraic varieties --- math-176/notes/Elliptic curves#The elliptic curve group|elliptic curve group]]) where $E(\mathbb{C})$ is thought of as a [[Analysis --- math-131/notes/Metric subspaces|subspace]], then $E(\mathbb{C})$ must just be the torus.
 
-All elliptic curves are the same as Riemann surfaces, but if you have a finer notion of maps, then you can tell them apart.
+All elliptic curves are the same as topological spaces, but can be different as Riemann surfaces if their lattices are not defined by
+
+---
 
 ##### _example:_ the non-compact Poincaré models
 
@@ -68,9 +76,11 @@ In fact, if we think of the real projective line $\mathbb{R} \mathbb{P}$ as the 
 
 The disc $\mathbb{D}$ has a bijection to the hyperboloid $S^+ = \{ (x, y, z) \mid x^{2} + y^{2} - z^{2} = - 1 \}$  that looks like stereographic projection. (This is called the Minkowski model and parametrise points in $2 + 1$ relativistic physics).
 
+---
+
 ##### _exercise:_ the left action that induces higher genus Riemann surfaces
 
-Choose a subgroup $\Gamma \le \operatorname{PSL}_{2}(\mathbb{R}) = \operatorname{SL}_{2}(\mathbb{R}) / \{ \pm I \}$. Show that $\Gamma$ [[Abstract algebra --- math-171/notes/Group actions#_definition _ (left) group action|acts]] on the (compactified) upper half plane $\mathbb{H}^* = \mathbb{H} \cup \{ i \infty \}$ on the left by
+Choose a subgroup $\Gamma \le \operatorname{PSL}_{2}(\mathbb{R}) = \operatorname{SL}_{2}(\mathbb{R}) / \{ \pm I \}$. Show that $\Gamma$ [[Abstract algebra --- math-171/notes/Group actions#_definition _ (left) group action|acts]] on the (compactified) upper half plane $\overline{\mathbb{H}}^{2} = \mathbb{H}^{2} \cup \{ i \infty \}$ on the left by
 $$
 \begin{pmatrix}
 a & b \\
@@ -80,10 +90,12 @@ $$
 
 Note that $\operatorname{PSL}_{2}(\mathbb{R})$ isn't just a group, but also a [[Topology --- math-147/notes/Topologies#_definition _ topology, open sets, topological space|topological space]]. One can see this by noticing that the adjoint representation of $\operatorname{PSL}_{2}(\mathbb{R})$ is an irreducible $3$-dimensional representation that has an injective [[Abstract algebra --- math-171/notes/Group homomorphisms#_definition _ group homomorphisms|homomorphism]] into in $\operatorname{SL}_{3}(\mathbb{R})$. Of course, $\operatorname{SL}_{3}(\mathbb{R})$ is a submanifold of $\mathbb{R}^9$. Pulling back topologies (or [[Analysis --- math-131/notes/Metric spaces#_definition_ metric space, metric|metrics]]) we get the topology on $\operatorname{PSL}_{2}(\mathbb{R})$.
 
-If we consider $X = \Gamma \setminus \mathbb{H}$ to be the set of all [[Abstract algebra --- math-171/notes/Group actions#_definition _ orbit|orbits]] $[\tau]$ of $\tau \in \mathbb{H}$, we can make it a topological space with the quotient topology ($U \subseteq X$ is open if and only if $\pi ^{\text{pre}}(U)$ is open, for the projection $\pi : \tau \mapsto [\tau]$). 
+If we consider $X = \mathbb{H}^{2}/ \Gamma$ to be the set of all [[Abstract algebra --- math-171/notes/Group actions#_definition _ orbit|orbits]] $[\tau]$ of $\tau \in \mathbb{H}$, we can make it a topological space with the quotient topology ($U \subseteq X$ is open if and only if $\pi ^{\text{pre}}(U)$ is open, for the projection $\pi : \tau \mapsto [\tau]$). 
 
 $X$ is connected because $\pi$ it is the image of a continuous map from the connected space $\mathbb{H}$. It's second countable, again because $\mathbb{H}$ is. We compactify it later. It only remains to show $X$ is Hausdorff.
 
 For $X$ to be Hausdorff, we need each of the orbits to be closed in $\mathbb{H}$. This happens exactly when $\Gamma$ acts properly dicontinuously — points in different orbits have open neighbourhoods that never intersect, even after action by $\Gamma$. Equivalently, $\Gamma$ is discrete — it has the [[Topology --- math-147/notes/Topologies#_example _ the discrete and indiscrete topologies|discrete topology]] as a [[Analysis --- math-131/notes/Metric subspaces#_theorem _ the subspace topology|subspace]]. We call such subgroups of $\operatorname{PSL}_{2}(\mathbb{R})$ Fuchsian. For example $\operatorname{PSL}_{2}(\mathbb{Z})$ is Fuchsian.
 
-The atlas is [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Group actions on Riemann surfaces#$X$ and its quotient|the one inherited]] from $\mathbb{H}$ (pushforward sheaf?).
+The atlas is [[Algebraic curves and Riemann surfaces --- math-199DR/notes/Group actions on Riemann surfaces#$X$ and its quotient|the one inherited]] from $\mathbb{H}$.
+
+---
