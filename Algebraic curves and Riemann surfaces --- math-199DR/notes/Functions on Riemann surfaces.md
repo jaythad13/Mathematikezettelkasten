@@ -147,7 +147,7 @@ For meromorphic functions $f, g$ and $p \in X$,
 
 ---
 
-These properties follow easily from the corresponding properties for meromorphic functions on $\mathbb{C}$.
+These properties follow easily from the corresponding properties for meromorphic functions on $\mathbb{C}$. 
 
 ### Theorems from complex analysis
 
@@ -201,7 +201,7 @@ Since $f$ is holomorphic, it is [[Analysis --- math-131/notes/Continuity#_defini
 
 ---
 
-### Riemann surfaces as ringed spaces
+### Riemann surfaces as local ringed spaces
 
 Notice that each for each open $W \subseteq X$, the $\mathscr{O}_{X}(W)$ is a [[Abstract algebra --- math-171/notes/Rings#_definition _ commutative ring|commutative ring]] (in fact, it is a $\mathbb{C}$-algebra — its ring structure is compatible with its [[Linear algebra done right --- ladr/notes/Vector spaces|vector space]] structure over $\mathbb{C}$). It's not necessarily an [[Abstract algebra --- math-171/notes/Integral domains#_definition _ integral domain|integral domain]] since $W$ may not be connected and then we can have [[Abstract algebra --- math-171/notes/Rings#_definition _ zero divisor|zero divisors]].
 
@@ -211,7 +211,7 @@ That is, $\mathscr{O}_{X}$ forms a [[Algebraic geometry --- rising-sea/notes/She
 
 We will show that this data suffices to morphisms of Riemann surfaces too, but we will not do much more with it.
 
-### Nice function fields
+### Examples — meromorphic functions on $\mathbb{C} \mathbb{P}^1$ and $\mathbb{C} / \Lambda$
 
 In cases when the $X$ is nice, we can classify all the global meromorphic functions on it!
 
@@ -245,7 +245,23 @@ Recall that the complex torus $\mathbb{C} / \Lambda$ [[Algebraic curves and Riem
 $$
 \Theta_{\tau}(z) = \sum_{n = - \infty}^\infty e^{\pi i(n^{2} \tau + 2 n z)}.
 $$
-
 Since the zeroes of $\Theta$ lie at $1 /2 + \tau / 2 + \Lambda$, by shifting the Jacobi theta function around and taking rational functions of it, we get meromorphic functions with prescribed zeroes and poles.
+
+---
+
+[[Algebraic curves and Riemann surfaces --- math-199DR/notes/Topological properties of holomorphisms#_theorem _ the sum of orders of a meromorphic function|We will see]] that meromorphic functions on compact Riemann surfaces in general have orders summing to $0$ (as many zeroes as poles). This characterisation allows us to prove it in the special case of elliptic curves.
+
+##### _proposition:_ meromorphic functions on a torus $\mathbb{C} / \Lambda$ have zero total order
+
+Any non-constant meromorphic function $f : \mathbb{C} / \Lambda \to \mathbb{C}$ has
+$$
+\sum_{p \in \mathbb{C} / \Lambda} \operatorname{ord}_{p} f = 0.
+$$
+
+###### _proof:_
+
+Suppose for contradiction that $f$ doesn't satisfy this. Without loss of generality (by considering $1 / f$) $f$ has more poles $p_{1}, \dots, p_{m}$ than zeroes $z_{1}, \dots, z_{n}$. The shifted  $\Theta$ function allows us to add zeroes $z_{n + 1}, \dots, z_{m}$ to the list (as long as they satisfy some quotient sum condition in $\mathbb{C} / \Lambda$) and create a meromorphic function $g$ with poles $p_{1}, \dots, p_{m}$ and zeroes $z_{1}, \dots, z_{m}$.
+
+Consider $g / f$. It has no poles and only zeroes. Thus, $g / f$ is a holomorphic function on a compact Riemann surface. That is, $g / f$ is constant and identically zero. But $g$ is not identically zero, so this is a contradiction.
 
 ---
