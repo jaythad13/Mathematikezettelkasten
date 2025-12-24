@@ -84,14 +84,13 @@ If $f \in \mathbb{C}[x, y, z]$ is a homogeneous polynomial defining a projective
 
 ###### _proof:_
 
-Suppose $f$ is singular at $(x_{0} : y_{0} : z_{0}) \in \mathbb{C} \mathbb{P}^{2}$ and (without loss of generality) that $x_{0} \neq 0$. Consider $U_{x} \cap X = \{ (y, z) \mid g(y, z) = 0 \} \subseteq \mathbb{C}^{2}$ for $g(y, z) = f(1, y, z)$. Note that $\frac{ \partial g }{ \partial y } (x_{0} : y_{0} : z_{0}) = \frac{ \partial f }{ \partial y }(y_{0}, z_{0})$ and similarly for the $\partial z$. Thus, $g$ is singular at $(y_{0}, z_{0})$.
+Suppose $f$ is singular at $(x_{0} : y_{0} : z_{0}) \in \mathbb{C} \mathbb{P}^{2}$ and (without loss of generality) that $x_{0} \neq 0$. Consider $U_{x} \cap X = \{ (y, z) \mid g(y, z) = 0 \} \subseteq \mathbb{C}^{2}$ for $g(y, z) = f(1, y, z)$. Note that $\frac{ \partial f }{ \partial y } (x_{0} : y_{0} : z_{0}) = \frac{ \partial g }{ \partial y }(y_{0}, z_{0})$ and similarly for the $\partial z$. Thus, $g$ is singular at $(y_{0}, z_{0})$.
 
 Suppose $f$ is non-singular. Consider $(y_{0}, z_{0}) \in U_{x} \cap X$. Note that then $f(1 : y_{0} : z_{0}) = 0$. Since $f(1 : y_{0} : z_{0}) = 0$, and by Euler's formula, we have
 $$
 0 =  \frac{ \partial f }{ \partial x }(1 : y_{0} : z_{0}) + y_{0} \frac{ \partial f }{ \partial y } (1 : y_{0} : z_{0}) + z_{0} \frac{ \partial f }{ \partial z } (1 : y_{0} : z_{0}).
 $$
 Since $f$ is non-singular, not all three partials are zero. Then, for the equation to be satisfied, at least two must be non-zero. Thus, at least one of the partials of $g(y, z) = f(1 : y : z)$ is non-zero.
-
 
 ---
 
