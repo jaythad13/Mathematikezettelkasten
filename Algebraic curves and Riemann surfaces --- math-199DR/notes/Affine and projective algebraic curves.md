@@ -27,7 +27,7 @@ Using the [[Calculus --- spivak/notes/Inverse and implicit functions#_theorem _ 
 
 ##### _definition:_ non-singular polynomials
 
-A polynomial $f \in \mathbb{C}[x, y]$ is **non-singular at a point** $p$ with $f(p) = 0$ if the total derivative $Df = \left( \frac{ \partial f }{ \partial x }, \frac{ \partial f }{ \partial y } \right)$ is non-zero at $p$.
+A polynomial $f \in \mathbb{C}[x_{1}, \dots, x_{n}]$ is **non-singular at a point** $p$ with $f(p) = 0$ if the total derivative $Df = \left( \frac{ \partial f }{ \partial x_{1} }, \dots, \frac{ \partial f }{ \partial x_{n} } \right)$ is non-zero at $p$.
 
 $f$ is **non-singular** if it is non-singular at each $p \in \mathbb{C}^{2}$ that has $f(p) = 0$.
 
@@ -51,7 +51,7 @@ It is a difficult result that if $f$ is irreducible, then the affine plane curve
 
 ##### _example:_ a connected Riemann surface
 
-Let $g \in \mathbb{C}[x]$ be non-square polynomial. Then $f(x, y) = y^{2} - h(x)$ is an irreducible polynomial. Let $X$ be its zero locus.
+Let $h \in \mathbb{C}[x]$ be non-square polynomial. Then $f(x, y) = y^{2} - h(x)$ is an irreducible polynomial. Let $X$ be its zero locus.
 
 Note that $\partial f / \partial y = 2y$ and so is only $0$ when $y$ is. If $h$ has distinct roots, then there are no points on $X$ where $h(x) = 0$ and $h'(x) = 0$. Thus, there are no points on $X$ where $\partial f / \partial y = \partial f / \partial x = 0$. That is, if $h$ has distinct roots, $f$ defines a (connected) Riemann surface.
 
@@ -84,11 +84,11 @@ If $f \in \mathbb{C}[x, y, z]$ is a homogeneous polynomial defining a projective
 
 ###### _proof:_
 
-Suppose $f$ is singular at $(x_{0} : y_{0} : z_{0}) \in \mathbb{C} \mathbb{P}^{2}$ and (without loss of generality) that $x_{0} \neq 0$. Consider $U_{x} \cap X = \{ (y, z) \mid g(y, z) = 0 \} \subseteq \mathbb{C}^{2}$ for $g(y, z) = f(1, y, z)$. Note that $\frac{ \partial f }{ \partial y } (x_{0} : y_{0} : z_{0}) = \frac{ \partial g }{ \partial y }(y_{0}, z_{0})$ and similarly for the $\partial z$. Thus, $g$ is singular at $(y_{0}, z_{0})$.
+Suppose $f$ is singular at $(x_{0} : y_{0} : z_{0}) \in \mathbb{C} \mathbb{P}^{2}$ and (without loss of generality) that $x_{0} \neq 0$. Consider $U_{x} \cap X = \{ (y, z) \mid g(y, z) = 0 \} \subseteq \mathbb{C}^{2}$ for $g(y, z) = f(1, y, z)$. Note that $\frac{ \partial f }{ \partial x }$ is homogeneous (taking partials drops the degree of all terms containing $x$ by $1$ and kills all terms that don't contain $x$). Thus, $f$ is also singular at the equivalent point $(1 : y_{0} / x_{0} : z_{0} / x_{0})$. Then since $\frac{ \partial f }{ \partial y } (1, y_{0}, z_{0}) = \frac{ \partial g }{ \partial y }(y_{0}, z_{0})$ and similarly for the $\partial z$, $g$ is singular at $(y_{0}, z_{0})$.
 
 Suppose $f$ is non-singular. Consider $(y_{0}, z_{0}) \in U_{x} \cap X$. Note that then $f(1 : y_{0} : z_{0}) = 0$. Since $f(1 : y_{0} : z_{0}) = 0$, and by Euler's formula, we have
 $$
-0 =  \frac{ \partial f }{ \partial x }(1 : y_{0} : z_{0}) + y_{0} \frac{ \partial f }{ \partial y } (1 : y_{0} : z_{0}) + z_{0} \frac{ \partial f }{ \partial z } (1 : y_{0} : z_{0}).
+0 =  \frac{ \partial f }{ \partial x }(1 : y_{0} : z_{0}) + \frac{y_{0}}{x_{0}} \frac{ \partial f }{ \partial y } (1 : y_{0} : z_{0}) + \frac{z_{0}}{x_{0}} \frac{ \partial f }{ \partial z } (1 : y_{0} : z_{0}).
 $$
 Since $f$ is non-singular, not all three partials are zero. Then, for the equation to be satisfied, at least two must be non-zero. Thus, at least one of the partials of $g(y, z) = f(1 : y : z)$ is non-zero.
 
