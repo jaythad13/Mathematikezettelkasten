@@ -10,11 +10,13 @@ Separable differential equations are just one small class of differential equati
 
 ##### _definition:_ separable differential equation
 
-A differential equation in $y$, a function of $x$, is separable if it can be written as
+A differential equation in $y$, a function of $x$, is **separable** if it can be written as
 $$
 \frac{dy}{dx} = f(x) g(y)
 $$
 for some functions $f$ and $y$.
+
+---
 
 Note that this equation could be non-linear but have greater order than first order.
 
@@ -26,9 +28,13 @@ Note that this equation could be non-linear but have greater order than first or
 4) $dP/dt = rP(1 - P/k)$
 are all separable. Notice that in the fourth example, there isn't a unique way to separate out functions of $t$ and $P$ — we could choose $r$ as a constant function of $t$ or $1$ as a constant function of $t$. In general, constant terms behave like this. We will see why this doesn't matter when we solve the differential equations.
 
+---
+
 ##### _non-example:_ separable differential equation
 
 ${dx}/{dt} = x + t$ is simple example of a non-separable differential equation.
+
+---
 
 ### Solving a separable differential equation
 
@@ -36,32 +42,47 @@ We can solve a separable differential equation by "treating the derivative like 
 
 ##### _proposition:_ the solution of a separable differential equation
 
-Given a differential equation,
+A function $y$ satisfies
 $$
 \frac{dy}{dx} = f(x)g(y)
 $$
-any solution, $y(x_{0})$ must satisfy
+if and only if
 $$
-\int_{y(a)}^{y(x_{0})} \frac{1}{g(y)} \, dy = \int_{a}^{x_{0}} g(x) \, dx 
+\int_{y(a)}^{y(b)} \frac{1}{g(y)} \, dy = \int_{a}^{x_{0}} f(x) \, dx 
 $$
-for any $a \in \mathbb{R}$.
+for any $a, b \in U \subseteq \mathbb{R}$ (and $g$ does not vanish on $U$).
 
 ###### _proof:_
 
-This just follows from the change of variables formula for integrals. We already have
+Suppose $y$ is a solution. Then,
 $$
 \frac{1}{g(y)} \frac{dy}{dx} = f(x).
 $$
-Then, integrating with respect to $x$, on $[a, x_{0}]$ we have
+Then, integrating with respect to $x$ on $[a, b]$ we get
 $$
-\int_{a}^{x_{0}} \frac{1}{g(y)} \frac{dy}{dx} \, dx = \int_{a}^{x_{0}} f(x) \, dx 
+\int_{a}^{b} \frac{1}{g(y)} \frac{dy}{dx} \, dx = \int_{a}^b f(x) \, dx 
 $$
 which, by change of variables is equivalent to
 $$
-\int_{y(a)}^{y(x_{0})} \frac{1}{g(y)}  \, dy = \int_{a}^{x_{0}} f(x) \, dx.
+\int_{y(a)}^{y(b)} \frac{1}{g(y)}  \, dy = \int_{a}^b f(x) \, dx.
 $$
 
-Notice that then, given a boundary value $y(a) = c$, (and a nice enough derivative for $g$), we can solve this for $y$.
+Conversely, suppose
+$$
+\int_{y(a)}^{y(z)} \frac{1}{g(y)} \, dy = \int_{a}^z f(x) \, dx
+$$
+holds for all $a, z \in \mathbb{R}$. Differentiating with respect to $z$ on both sides we get
+$$
+\frac{d}{dz} \int_{a}^{z} \frac{1}{g(y)} \frac{dy}{dx} \, dx = \frac{d}{dz} \int_{a}^z f(x) \, dx 
+$$
+which implies exactly the original differential equation, by the [[Analysis --- math-131/notes/Fundamental theorem of calculus#_theorem _ the (converse of) fundamental theorem of calculus|fundamental theorem of calculus]]:
+$$
+\frac{1}{g(y)} \frac{dy}{dx} f(x)
+$$
+
+Notice that then, given a boundary value $y(a) = c$, (and a nice enough derivative for $g$), we can solve this for a specific $y$ satisfying these boundary value conditions.
+
+---
 
 ##### _example:_ a boundary value problem for a separable differential equation
 
@@ -87,15 +108,19 @@ $$
 
 Finally, we have
 $$
-y(x)^2 + x^2 = 1
+y(x)^2 + x^2 = 1.
 $$
-This could be solved by either branch of $y(x) = \pm \sqrt{ 1 - x^2 }$, but only the positive branch satisfies $y(0) = 1$. Thus, we have $y(x) = \sqrt{ 1 - x^{2} }$ as a solution.
+This could be satisfied by either one of $y(x) = \pm \sqrt{ 1 - x^2 }$, but only the positive branch satisfies $y(0) = 1$. Thus, we have $y(x) = \sqrt{ 1 - x^{2} }$ as a solution.
+
+---
 
 Note that here a solution only exists for $\lvert x \rvert \le 1$. Often the solution of a differential equation is restricted like this. This motivates the following definition.
 
 ##### _definition:_ domain of existence
 
-The domain of existence of a solution to a differential equation is the maximal domain over which the solution is defined and satisfies the differential equation.
+The **domain of existence** of a solution to a differential equation is the maximal domain over which the solution is defined and satisfies the differential equation.
+
+---
 
 ### Separable differential equation models
 
@@ -118,3 +143,5 @@ This can be solved by the same method to get (for initial condition $x(0) = x_{0
 $$
 x(t) = \frac{1}{kt + {1}/{x_{0}}}.
 $$
+
+---

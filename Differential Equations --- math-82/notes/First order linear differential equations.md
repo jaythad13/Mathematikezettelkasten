@@ -27,11 +27,13 @@ for any constant $C \in \mathbb{R}$.
 
 Thus, $y(x) = x^3/3 + C/x$ is a solution for all $x \in \mathbb{R}\setminus \{ 0 \}$.
 
-That is, we used the product rule to rewrite the left side of differential equation as one derivative. Can we generalise this trick? Yes we can!
+---
+
+Here we used the product rule to rewrite the left side of differential equation as one derivative. Can we generalise this trick?
 
 ### Solving first order linear differential equations
 
-We won't always linear differential equations as nice as the first example — it won't always be obvious how to write the $y'$ and $y$ linear combination as the derivative of something else.
+We won't always have linear differential equations as nice as the first example — it won't always be obvious how to write the $y'$ and $y$ linear combination as the derivative of something else.
 
 ##### _example:_ a trickier equation
 
@@ -45,49 +47,31 @@ $$
 $$
 and thus, can be solved by the same method.
 
+---
+
 What this is really doing?
 
 To generalise this trick, we need a way to find the function of $x$ to multiply by. Luckily this isn't too hard to find.
 
 ##### _proposition, definition:_ solving linear differential equations, the integrating factor
 
-Given a linear differential equation $y' + p(x) y = q(x)$, the function $\mu$ defined by $\mu(x) = \operatorname{\exp}\left( \int p(x) \, dx \right)$ gives us
+ Consider the linear differential equation $y' + p(x) y = q(x)$. Let $\mu$ be the function defined by $\mu(x) = \operatorname{\exp}\left( \int p(x) \, dx \right)$. Then $y$ satisfies the equation if and only if
 $$
-\frac{d(\mu(x) y)}{dx} = \mu(x) q(x)
-$$
-and thus,
-$$
-y(x) = \frac{1}{\mu(x)} \int \mu(x) q(x) \, dx .
+y = \frac{1}{\mu(x)} \int \mu(x) q(x) \, dx.
 $$
 
-$\mu$ is called the integrating factor of the differential equation.
+$\mu$ is called the **integrating factor** of the differential equation.
 
 ###### _proof:_
 
-Any function $\mu$ that satisfies
+Suppose a function $\mu$ satisfies
 $$
-\frac{d(\mu(x) y)}{dx} = \mu(x) y' + \mu (x) p(x) y
+\frac{d(\mu(x) y)}{dx} = \mu(x) y' + \mu (x) p(x) y.
 $$
-is the desired function. By the product rule, we know that the equation is satisfied if $\mu'(x) = \mu(x) p(x)$. 
+Then for $y \mu(x) = \int \mu(x) q(x) \, dx$, we can differentiate both sides to get $\mu(x) y' = \mu(x) p(x) y = \mu(x) q(x)$ which is exactly the differential equation.
 
-This is a separable differential equation in $\mu$ and $x$. Specifically, we get
-$$
-\int \frac{1}{\mu(x)} \mu'(x) \, dx = \int p(x) \, dx 
-$$
-implying that
-$$
-\ln(\mu(x)) = \int p(x) \, dx
-$$
-and finally, that
+The condition on $\mu$ is a [[Differential equations --- math-82/notes/Separable differential equations#_definition _ separable differential equation|separable differential equation]] in $\mu$ and $x$. [[Differential equations --- math-82/notes/Separable differential equations#_proposition _ the solution of a separable differential equation|We know how to solve them]].
 $$
 \mu(x) = \exp\left( \int p(x) \, dx  \right).
 $$
-
-To check that this $\mu$ has our desired properties, we evaluate $\mu'(x)$. We see that $\mu$ really is the function we want — 
-$$
-\begin{split}
-\mu'(x) & = \exp\left( \int p(x) \, dx  \right) \frac{d\left( \int p(x) \, dx  \right)}{dx} \\
- & = \exp\left( \int p(x) \, dx  \right) p(x) \\
- & = \mu(x) p(x).
-\end{split}
-$$
+---

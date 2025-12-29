@@ -17,11 +17,15 @@ We can avoid this kind of problem for most nice [[Differential equations --- mat
 
 ##### _theorem:_ existence and uniqueness for first order linear differential equations
 
-If $p$ and $q$ are continuous on the open interval $(a, b)$ containing $x_{0}$, then there exists a unique solution of the differential equation $y' + p(x) y = q(x)$ with $y(x_{0}) = y_{0}$ for all $x \in (a, b)$
+If $p$ and $q$ are continuous on the open interval $(a, b)$ containing $x_{0}$, then there exists a unique solution of the differential equation $y' + p(x) y = q(x)$ with $y(x_{0}) = y_{0}$ for all $x \in (a, b)$.
+
+---
 
 ##### _theorem:_ existence and uniqueness for first order differential equations
 
-If $f$ and $\frac{ \partial f }{ \partial y }$ are continuous on the open intervals $(a, b)$ and $(c, d)$ with $(x_{0}, y_{0}) \in (a, b) \times (c, d)$, then there exists a unique solution of the differential equation $y'(x) = f(x, y)$ with $y(x_{0}) = y_{0}$. on some interval $(x_{0} - h, x_{0} + h)$ for some $h > 0$.
+Suppose $f$ and $\frac{ \partial f }{ \partial y }$ are continuous on the open intervals $(a, b)$ and $(c, d)$, with $(x_{0}, y_{0}) \in (a, b) \times (c, d)$. Then, on some interval $(x_{0} - h, x_{0} + h)$, there exists a unique solution $y$ to the differential equation $y'(x) = f(x, y)$, satisfying the initial condition $y(x_{0}) = y_{0}$.
+
+---
 
 This has a nice corollary —
 
@@ -33,7 +37,9 @@ If $f$ and $\frac{ \partial f }{ \partial y }$ are continuous on the open interv
 
 Since the solution is unique in some small neighbourhood around $x_{0}$, the solution curves will have to be equal in the whole neighbourhood.
 
-Note that both theorems are not if and only if theorems — their hypotheses are sufficient for the existence of solutions, but are not necessary. Also note that both of these theorems are *hard*, with proofs that require techniques from analysis.
+---
+
+Note that both theorems are not if and only if theorems — their hypotheses are sufficient for the existence of solutions, but are not necessary. These theorems are *hard*, with proofs that require techniques from analysis.
 
 ##### _examples:_ the strongest existence statement is...
 
@@ -41,6 +47,8 @@ Note that both theorems are not if and only if theorems — their hypotheses ar
 2) $y' + \sqrt{ x + 1 } \, y = (x - 2)^{-2}$ with $y(1) = 1$ has a unique solution for all $x \in (-1, 2)$.
 3) $\sin (t) \, x' + \cos (t) \, x = 1$ with $x(\pi/2) = 2$ has a unique solution for all $t \in (0, \pi)$.
 4) $y' = \frac{y + \sqrt{ x^2 + y^{2} }}{x}$ with $y(0) = \alpha$ is not guaranteed any solution by these theorems since the function $\frac{y + \sqrt{ x^2 + y^{2} }}{x}$ is not continuous at $x_{0}$.
+
+---
 
 ### Higher order linear differential equations
 
@@ -50,9 +58,13 @@ We also have some as-nice-as-we-could-wish-for theorems for higher order linear 
 
 If $p_{1}$, $p_{2}$ and $q$ are continuous on the open interval $(a, b)$, then there exists a unique solution of the differential equation $y'' + p_{1}(x) y' + p_{2}(x) y = q(x)$ with $y(x_{0}) = y_{0}$ and $y'(x_{0}) = y_{0}'$, for all $x \in (a, b)$.
 
+---
+
 ##### _theorem:_ existence and uniqueness for third order linear differential equations
 
 If $p_{1}$, $p_{2}$, $p_3$ and $q$ are continuous on the open interval $(a, b)$, then there exists a unique solution of the differential equation $y'' + p_{1}(x) y' + p_{2}(x) y = q(x)$ with $y(x_{0}) = y_{0}$ and $y'(x_{0}) = y_{0}'$, for all $x \in (a, b)$.
+
+---
 
 In fact an analogous theorem holds true for $n$th order linear differential equations.
 
@@ -60,10 +72,12 @@ Finally, a really nice fact about linear differential equations — their solut
 
 ##### _proposition:_ solutions of (homogenous) linear differential equations form a vector space
 
-If $y_{1}$ and $y_{2}$ satisfy the [[Differential equations --- math-82/notes/Classifying ordinary differential equations#_definition _ homogenous and non-homogenous linear differential equation|homogenous]] second order linear differential equation $y'' + p_{1}(x)y' + p_{2}(x)y = 0$, then $c_{1} y_{1} + c_{2} y_{2}$ is a solution for any constants $c_{1}, c_{2} \in \mathbb{R}$.
+If $y_{1}$ and $y_{2}$ satisfy a [[Differential equations --- math-82/notes/Classifying ordinary differential equations#_definition _ homogenous and non-homogenous linear differential equation|homogenous]] linear differential equation then $c_{1} y_{1} + c_{2} y_{2}$ is a solution for any constants $c_{1}, c_{2} \in \mathbb{R}$.
 
 ###### _proof:_
 
-Follows easily from the linearity of the derivative and multiplication by "coefficients" in the ring of functions on $\mathbb{R}$.
+Solutions to a homogeneous linear equation are just elements of the null space on some linear operator on the $\mathbb{R}$-vector space of $C^r$ real functions. Null spaces are just vector subspaces and so closed under scaling and addition.
 
-This generalises easily to $n$th order linear differential equations.
+---
+
+This to $n$th order linear differential equations.

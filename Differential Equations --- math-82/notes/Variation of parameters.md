@@ -15,7 +15,7 @@ $$
 
 This method is called variation of parameters. 
 
-The idea behind variation of parameters is to guess that if linear combinations over $\mathbb{R}$ of solutions to the homogenous case are still solutions to the homogenous case, then its reasonable to assume the solution to the non-homogenous case is a linear combinations with coefficients in $\mathcal{C}(\mathbb{R})$. That is, assume $y = u_{1}(x) y_{1} + u_{2}(x) y_{2}$. Using an additional assumption about the linear combination, we solve this as just a linear system.
+The idea behind variation of parameters is to guess that if linear combinations over $\mathbb{R}$ of solutions to the homogenous case are still solutions to the homogenous case, then we can guess that the non-homogeneous equation is solved by using "varying coefficients" from $C^r(\mathbb{R})$ rather than constants from $\mathbb{R}$. That is, assume $y = u_{1}(x) y_{1} + u_{2}(x) y_{2}$. Using an additional assumption about the linear combination, we solve this as a linear system.
 
 ##### _theorem:_ variation of parameters
 
@@ -31,21 +31,23 @@ is
 $$
 y = -y_{1} \int \frac{y_{2} f(x)}{W(x)} \, dx + y_{2} \int \frac{y_{1} f(x)}{W(x)} \, dx
 $$
-where $W(x)$ is the Wronskian of $y_{1}$ and $y_{2}$.
+where $W(x) = \det \begin{pmatrix} y_{1} & y_{2} \\ y_{1}' & y_{2}' \end{pmatrix}$ is the **Wronskian** of $y_{1}$ and $y_{2}$.
 
 ###### _proof sketch:_
 
 Plug $y$ back in — it works!
+
+---
 
 ##### _example:_ solving $\ddot{y} + 4y = 4 \sin(t)$ by variation of parameters
 
 The homogenous equation $\ddot{y} + 4y = 0$ obviously has linearly independent solutions $\cos(2t)$ and $\sin(2t)$. Thus, their Wronskian is
 $$
 \begin{split}
-W(x) & = \begin{vmatrix}
+W(x) & = \det\begin{pmatrix}
 \cos(2t) & \sin(2t) \\
 - 2 \sin(2t) & 2 \cos(2t)
-\end{vmatrix} \\
+\end{pmatrix} \\
  & = 2 (\cos^2(t) + \sin ^{2}(t)) \\
  & = 2.
 \end{split}
@@ -73,3 +75,4 @@ y'' + 4y  & = - \frac{4}{3} \sin(t) + \frac{16}{3} \sin(t) \\
  & = 4 \sin(t).
 \end{split}
 $$
+---

@@ -14,6 +14,8 @@ $$
 m \ddot{y} = - k y - c \dot{y}.
 $$
 
+---
+
 ##### _example:_ RLC circuits
 
 Imagine a circuit with a resistor, inductor, and capacitor connected in series to a voltage source.
@@ -37,20 +39,10 @@ Using Kirchoff's voltage law, we know that the current passing through each of t
 $$
 \mathcal{E}(t) = \dot{q} R + \ddot{q} L + \frac{q}{C}.
 $$
+---
 
-Note that both examples are basically the same thing — a linear combination over $\mathbb{R}$ (it's important that it isn't a linear combination over $\mathcal{C}^d(\mathbb{R})$) of the dependent variable and its first and second derivatives is equal to a function of the independent variable. They are [[Differential equations --- math-82/notes/Classifying ordinary differential equations#Order|second order]], [[Differential equations --- math-82/notes/Classifying ordinary differential equations#Linearity|linear]] differential equations with constant coefficients. The first case is just also [[Differential equations --- math-82/notes/Classifying ordinary differential equations#_definition _ homogenous and non-homogenous linear differential equation|homogenous]]. It turns out that [[Differential equations --- math-82/notes/Second order linear homogenous constant-coefficient differential equations|we can solve the homogenous case]] pretty easily!
+Note that both examples are basically the same thing — a linear combination over $\mathbb{R}$ (it's important that it isn't a linear combination over $C^d(\mathbb{R})$) of the dependent variable and its first and second derivatives is equal to a function of the independent variable. They are [[Differential equations --- math-82/notes/Classifying ordinary differential equations#Order|second order]], [[Differential equations --- math-82/notes/Classifying ordinary differential equations#Linearity|linear]] differential equations with constant coefficients. The first case is just also [[Differential equations --- math-82/notes/Classifying ordinary differential equations#_definition _ homogenous and non-homogenous linear differential equation|homogenous]]. It turns out that [[Differential equations --- math-82/notes/Second order linear homogenous constant-coefficient differential equations|we can solve the homogenous case]] pretty easily!
 
 ### Damping
 
-[[Differential equations --- math-82/notes/Second order linear homogenous constant-coefficient differential equations#_proposition _ the solutions of $ay'' + by' + c = 0$|We've shown]] the following result — 
-
-Let $az^2 + bz + c$ be the characteristic polynomial of $ay'' + by' + c = 0$. Then the characteristic polynomial has either
-
-- two distinct real roots $\lambda_{1}, \lambda_{2}$, in which case any solution of the differential equation must satisfy $y(x) = c_{1} e^{ \lambda_{1} x } + c_{2} e^{ \lambda_{2} x }$ for constants $c_{1}, c_{2} \in \mathbb{R}$,
-- two distinct (non-real) complex roots $\lambda_{1}, \lambda_{2}$. in which case any solution of the differential equation must satisfy $y(x) = e^{ \sigma x }(c_{1} \cos(\omega x) + c_{2} \sin(\omega x))$ for constants $c_{1}, c_{2} \in \mathbb{R}$, where $\lambda_{1} = \sigma + \omega i$,
-or
-- one real root $\lambda$, in which case any solution of the differential equation must satisfy $y(x) = c_{1}e^{ \lambda x } + c_{2} x e^{ \lambda x }$ for constants $c_{1}, c_{2} \in \mathbb{R}$.
-
-Note how in both of our physical examples, the $y'$ term corresponds to a damping term. For example, if we have $c = 0$ for a mass on a spring, then $my'' + ky = 0$. Thus, $\pm i \sqrt{ k/m }$ are the roots of the characteristic polynomial, and the solutions of the differential equation are linear combinations of $\sin \omega t$ and $\cos \omega t$ for $\omega = \sqrt{ k/m }$. That is, $c = 0$, corresponds to undamped waves.
-
-In fact, in general, when the characteristic polynomial has complex roots, the behaviour of the solution is underdamped — it oscillates around the initial value. When there's only one real root $\lambda$, the solution is critically damped — it goes straight to the initial value (it can't become less because of the exponentials). When there are two real roots, the solution is overdamped and thus, goes to zero slowly.
+We showed a trichotomy

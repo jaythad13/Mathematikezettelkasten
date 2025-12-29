@@ -18,3 +18,5 @@ This becomes our motivating example to define equilibrium.
 ##### _definition:_ equilibrium
 
 We say a differential equation in $y$ is in equilibrium at $x_{0}$ if $y'(x_{0}) = 0$.
+
+---
