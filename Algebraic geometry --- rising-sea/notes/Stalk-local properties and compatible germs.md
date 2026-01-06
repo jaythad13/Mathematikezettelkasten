@@ -33,13 +33,13 @@ Morphisms are also determined by stalks. Proving this uses something that's wort
 
 ##### _lemma:_ the sheaf morphism to stalk morphism diagram commutes
 
-Let $\mathscr{F}$ be a presheaf, $\mathscr{G}$ a sheaf, and $\varphi : \mathscr{F} \to \mathscr{G}$ a presheaf morphism. Then the following diagram commutes
+Let $\mathscr{F}, \mathscr{G}$ be presheaves and $\varphi : \mathscr{F} \to \mathscr{G}$ a presheaf morphism. Then the following diagram commutes
 ```tikz
 \usepackage{tikz-cd}
 \usepackage{amsfonts}
 \begin{document}
 	\begin{tikzcd}
-		\mathcal{F}(U) \ar[r, "\varphi(U)"] \ar[d] & \mathcal{G}(U) \ar[d, hook] \\
+		\mathcal{F}(U) \ar[r, "\varphi(U)"] \ar[d] & \mathcal{G}(U) \ar[d] \\
 		\prod_{p \in U} \mathcal{F}_{p} \ar[ r, "\prod_{p} \varphi_{p}" ] & \prod_{p \in U } \mathcal{G}_{p}
 	\end{tikzcd}
 \end{document}
@@ -122,7 +122,55 @@ commutes, $\varphi(U_{p})(s^p)_{q} = t_{q}$ for all $q \in U_{p}$, and so $\varp
 
 ---
 
-Continuing the trend, this is not true for general (or even separated presheaves). For example, let $\mathscr{F}$ be (the presheaf of) [[Complex analysis --- math-135/notes/Holomorphic functions#_definition _ holomorphic, $ mathbb{C}$-differentiable, regular, the derivative, $f'(z_{0})$|holomorphic functions]] on $\mathbb{C}$ admitting a [[Complex analysis --- math-135/notes/The complex logarithm#_definition _ logarithm, the logarithm|holomorphic logarithm]] and $\mathscr{O}_{\mathbb{C}}^*$ invertible holomorphic functions. Then $\mathscr{F}(U) \subseteq \mathscr{O}_{\mathbb{C}}^*(U)$ gives a presheaf morphism $\varphi$. Since $\varphi_{p}$ is given by $\mathscr{F}_{p} \subseteq \mathscr{O}_{\mathbb{C}, p}^*$ but $\mathscr{F}_{p} = \mathscr{O}_{\mathbb{C}, p}^*$ each $\varphi_{p}$ is an isomorphism. Yet $\mathscr{F} \to \mathscr{O}_{\mathbb{C}, p}^*$ is not an isomorphism — check sections over $\mathbb{C} \setminus \{ 0 \}$.
+This is also true for monomorphisms and epimorphisms.
+
+##### _proposition:_ monomorphisms are stalk-local
+
+Suppose $\varphi : \mathscr{F} \to \mathscr{G}$ is a morphism of sheaves. The following are equivalent.
+1) $\varphi$ is a [[Algebraic geometry --- rising-sea/notes/Universal properties and why categories?#_definition _ monomorphisms, epimorphisms|monomorphism]].
+2) $\varphi_{p} : \mathscr{F}_{p} \to \mathscr{G}_{p}$ is monic at each point $p$.
+3) $\varphi(U) : \mathscr{F}(U) \to \mathscr{G}(U)$ is monic at each open set $U \subseteq X$.
+
+###### _proof:_
+
+> [!warning]
+> as is, the proof is only valid for $\mathscr{F}, \mathscr{G} \in \mathsf{Set}_{X}$
+
+Suppose $\varphi$ is monic and consider some $p \in X$. Suppose two morphisms $S \to \mathscr{F}_{p}$ agree on composition to $\mathscr{G}_{p}$.
+
+Suppose $\varphi_{p}$ is monic for each $p \in X$. Then $\prod_{p \in X} \varphi_{p}$ is also monic. Suppose there is a pair of morphisms $S \to \mathscr{F}(U)$ that agree on composition to $\mathscr{G}(U)$. Then the pair of morphisms $S \to \mathscr{F}(U) \to \prod_{p \in X} \mathscr{F}_{p}$ agree on composition to $\prod_{p \in X} \mathscr{G}_{p}$. Since $\prod_{p \in X} \varphi_{p}$ is monic, the pair of morphisms $S \to \mathscr{F}(U) \to \prod_{p \in X} \mathscr{F}_{p}$ agree. But then, since $\mathscr{F}(U) \to \prod_{p \in X} \mathscr{F}_{p}$ is monic, the two maps $S \to \mathscr{F}(U)$ must be the same. That is, $\varphi(U)$ is monic.
+
+Suppose $\varphi(U)$ is monic for each $U \subseteq X$. Suppose $\psi, \theta : \mathscr{K} \to \mathscr{F}$ are two morphisms that agree on composition to $\mathscr{G}$. That is, $\varphi(U) \circ \psi(U) = \varphi(U) \circ \theta(U)$ for each $U$. Since $\varphi(U)$ is monic, this implies $\psi(U) = \theta(U)$ for each $U$, and thus, $\psi = \theta$.
+
+We could have directly shown that all $\varphi_{p}$ monic implies $\varphi$ monic. If each stalk morphism were monic, then whenever $\varphi \circ \psi = \varphi \circ \theta$, we have $\varphi_{p} \circ \psi_{p} = \varphi_{p} \circ \theta_{p}$ and thus, $\psi_{p} = \theta_{p}$ at each $p$. Since morphisms are determined by stalks, $\psi = \theta$.
+
+When $\mathscr{F}, \mathscr{G}$ are sheaves, of sets, the following argument with the "indicator sheaf" is useful. Suppose $\varphi$ is monic. Let $1_{U}$ be the sheaf taking value $\{ 1 \}$ on open subsets of $U$ and $\text{Ø}$ everywhere else. Sheaf morphisms $1_{U} \to \mathscr{F}$ are defined exactly by $\{ 1 \} \to \mathscr{F}(U)$. Thus, any pair of morphisms $\{ 1 \} \to \mathscr{F}(U)$ that agree on composition to $\mathscr{G}(U)$ define two morphisms $1_{U}\to \mathscr{F}$ that agree on composition to $\mathscr{G}$. Since $\varphi$ is monic, the two morphisms $1_{U} \to \mathscr{F}$ and thus, the two morphisms $\{ 1 \} \to \mathscr{F}(U)$ are the same. That is, $\varphi(U)$ is injective.
+
+---
+
+##### _proposition:_ epimorphisms are stalk-local
+
+Suppose $\varphi : \mathscr{F} \to \mathscr{G}$ is a morphism of sheaves. The following are equivalent.
+1) $\varphi$ is an [[Algebraic geometry --- rising-sea/notes/Universal properties and why categories?#_definition _ monomorphisms, epimorphisms|epimorphism]].
+2) $\varphi_{p} : \mathscr{F}_{p} \to \mathscr{G}_{p}$ is epic at each point $p$.
+
+###### _proof:_
+
+Suppose $\varphi$ is not epic. Then choose distinct $\psi, \theta : \mathscr{G} \to \mathscr{H}$ such that $\psi \circ \varphi = \theta \circ \varphi$. Since sheaf morphisms are determined by stalks, there must be some point $p \in X$ where $\psi_{p}$ and $\theta_{p}$ are distinct stalk morphisms. At this point, $\varphi_{p}$ is not epic.
+
+Suppose there is some $p \in X$ where $\varphi_{p}$ is not epic. Thus, there are two different morphisms $\mathscr{G}_{p} \to S$ such that the two compositions $\mathscr{F}_{p} \to \mathscr{G}_{p} \to S$ are the same. This defines two different morphisms $\mathscr{G} \to i_{p, *}\underline{S}$ to the skyscraper at $p$, each by $\mathscr{G}(U) \to \mathscr{G}_{p} \to S$ for $U \subseteq X$ containing $p$. However, the two compositions $\mathscr{F} \to \mathscr{G} \to i_{p, *} \underline{S}$ are the same since they are the same morphism $\mathscr{F}_{p} \to \mathscr{G}_{p} \to S$ at the level of stalks.
+
+---
+
+Note that this stalk-local characterisation is not true for general (or even separated presheaves). Also note that (unlike monomorphisms) epimorphisms are not determined on open sets.
+
+##### _example:_ hinting at the [[Algebraic geometry --- rising-sea/notes/Presheaves in abelian categories#_example _ presheaf cokernel is not (always) a sheaf — the (presheaf) exponential exact sequence|exponential exact sequence]]
+
+Let $\mathscr{F}$ be the (presheaf of) [[Complex analysis --- math-135/notes/Holomorphic functions#_definition _ holomorphic, $ mathbb{C}$-differentiable, regular, the derivative, $f'(z_{0})$|holomorphic functions]] on $\mathbb{C}$ admitting a [[Complex analysis --- math-135/notes/The complex logarithm#_definition _ logarithm, the logarithm|holomorphic logarithm]] and $\mathscr{O}_{\mathbb{C}}^*$ the invertible holomorphic functions. Then $\mathscr{F}(U) \subseteq \mathscr{O}_{\mathbb{C}}^*(U)$ gives a presheaf morphism $\varphi$. Since $\varphi_{p}$ is given by $\mathscr{F}_{p} \subseteq \mathscr{O}_{\mathbb{C}, p}^*$ and $\mathscr{F}_{p} = \mathscr{O}_{\mathbb{C}, p}^*$ each $\varphi_{p}$ is an isomorphism. Yet $\mathscr{F} \to \mathscr{O}_{\mathbb{C}, p}^*$ is not an isomorphism — check sections over $\mathbb{C} \setminus \{ 0 \}$. Thus, as presheaves, $\mathscr{O}_{\mathbb{C}}^*$ is not the cokernel of the map of $2 \pi i \underline{\mathbb{Z}} \to \mathscr{O}_{\mathbb{C}}$.
+
+However, for sheaves, the morphism $\exp : \mathscr{O}_{X} \to \mathscr{O}_{X}^*$ given by exponentiating on each open set is epic — each holomorphic function invertible near $p$ has a logarithm near $p$, so $\exp_{p} : \mathscr{O}_{X, p} \to \mathscr{O}_{X, p}^*$ is surjective. Note that it is not surjective on open sets — the identity function on $\mathbb{C} \setminus \{ 0 \}$ is invertible but does not have a logarithm.
+
+---
 
 ### Compatible germs
 
@@ -130,7 +178,7 @@ The injectivity of $\mathscr{F}(U) \to \prod_{p \in U} \mathscr{F}_{p}$ raises a
 
 ##### _definition:_ compatible germs
 
-An tuple $(s_{p})_{p \in U} \in \prod_{p \in U} \mathscr{F}_{p}$ consists of **compatible germs** such that for each $p \in U$, there is some representative $t^p \in \mathscr{F}(U_{p})$ (for some open neighbourhood $U_{p} \ni p$) with germ $t^p_{q} = s_{q}$ for all $q \in U_{p}$.
+An tuple $(s_{p})_{p \in U} \in \prod_{p \in U} \mathscr{F}_{p}$ consists of **compatible germs** if, for each $p \in U$, there is some representative $t^p \in \mathscr{F}(U_{p})$ (for some open neighbourhood $U_{p} \ni p$) with germ $t^p_{q} = s_{q}$ for all $q \in U_{p}$.
 
 ---
 

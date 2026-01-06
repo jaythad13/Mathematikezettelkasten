@@ -68,7 +68,7 @@ $X$ is a reduced scheme if and only if it has a cover by reduced affine opens.
 
 Suppose $\mathscr{O}_{X}(U)$ is reduced. Then each $\operatorname{Spec} A$ is a reduced scheme, so each stalk $\mathscr{O}_{X, p} = A_{\mathfrak{p}}$ is a reduced ring. That is, $X$ is reduced.
 
-Suppose $X$ is reduced and $f^n = 0$ in $\mathscr{O}_{X}(U)$. Then its germ $f_{\mid p}$ is nilpotent, and thus, $0$ in each reduced stalk $\mathscr{O}_{X, p}$. Since $\mathscr{O}_{X}(U) \to \prod_{p \in U} \mathscr{O}_{X, p}$ [[Algebraic geometry --- rising-sea/notes/Stalk-locality and compatible germs#_proposition _ sections are stalk-local|is injective]] and $f \mapsto (0)_{p \in U}$ we must have $f = 0$ in $\mathscr{O}_{X}(U)$. That is, $\mathscr{O}_{X}(U)$ is reduced.
+Suppose $X$ is reduced and $f^n = 0$ in $\mathscr{O}_{X}(U)$. Then its germ $f_{\mid p}$ is nilpotent, and thus, $0$ in each reduced stalk $\mathscr{O}_{X, p}$. Since $\mathscr{O}_{X}(U) \to \prod_{p \in U} \mathscr{O}_{X, p}$ [[Algebraic geometry --- rising-sea/notes/Stalk-local properties and compatible germs#_proposition _ sections are stalk-local|is injective]] and $f \mapsto (0)_{p \in U}$ we must have $f = 0$ in $\mathscr{O}_{X}(U)$. That is, $\mathscr{O}_{X}(U)$ is reduced.
 
 Since we only needed each $\operatorname{Spec} A$ to be reduced, we can just check the affine opens. In fact, even if we just have an open cover by reduced affine opens, we still get $\mathscr{O}_{X, p} = A_{\mathfrak{p}}$ at each $p \in X$, and thus, that $X$ is reduced.
 

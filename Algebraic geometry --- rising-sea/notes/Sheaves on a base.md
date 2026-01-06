@@ -22,7 +22,7 @@ Consider open subsets $V \subseteq U \subseteq X$. Suppose that $U = \bigcup_{i 
 $$
 \mathscr{F}(U) = \lim_{i \in \mathscr{I}} \mathscr{F}(B_{i}) = \lim_{i \in \mathscr{I}} \mathscr{G}(B_{i}) = \mathscr{G}(U).
 $$
-Similarly, $\mathscr{F}(V) = \mathscr{G}(V)$.
+Here $\mathscr{I}$ includes not only all the $B_{i}$ covering $U$ but also the data of the basic opens covering their intersections, and the data of the basic opens covering intersections of those basic opens and so on. Similarly, $\mathscr{F}(V) = \mathscr{G}(V)$.
 
 Choosing open covers $U = \bigcup_{i \in \mathscr{I}} B_{i}$ and $V = \bigcup_{j \in \mathscr{J}} B_{j}$ and considering all $\operatorname{res}_{i, j} : \mathscr{F}(B_{i}) \to \mathscr{F}(B_{j})$, we get a unique map of their limits $\mathscr{F}(U) \to \mathscr{F}(V)$ so that
 ```tikz
@@ -113,7 +113,7 @@ The fancy statement of what we've proven is that there's an [[Algebraic geometry
 
 ### Stalks on a base and stalk-local properties are base-local
 
-We did everything above by limit arguments, but there's a different way to do this which tells us that all stalk-local properties of a sheaf are in fact base-local. In other words, the data of a sheaf on a base allows us to recover stalks, germs, and which germs are compatible. 
+We did everything above by limit arguments, but these are a little bit sketchy because we're taking limits over diagrams that could be ridiculously large (still sets, but certainly uncountable). In practice, because the [[Algebraic geometry --- rising-sea/notes/The base of distinguished open sets|typical basis]] for the Zariski topology on a scheme is closed under intersections, these arguments will work without having to worry about set-theoretic considerations. However, there's a different way to do this — all stalk-local properties of a sheaf are in fact base-local, and thus we can determine stalks and [[Algebraic geometry --- rising-sea/notes/Stalk-local properties and compatible germs#_definition _ compatible germs|compatibility of germs]] on a basis. This allows us to recover all sections of a sheaf from its values on a basis and a whole sheaf from values on a basis satisfying base identity and gluability as above.
 
 >[!incomplete]
 

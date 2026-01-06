@@ -54,7 +54,7 @@ Note that by the [[Algebraic geometry --- rising-sea/notes/Limits and colimits#_
 
 Also note that it doesn't always make sense to interpret $f_{p}$ as evaluating $f$ at $p$.
 
-A sheaf is then a presheaf that allows sections to pieced together uniquely from very small open sets, and [[Algebraic geometry --- rising-sea/notes/Stalk-locality and compatible germs|in fact, from stalks]].
+A sheaf is then a presheaf that allows sections to pieced together uniquely from very small open sets, and [[Algebraic geometry --- rising-sea/notes/Stalk-local properties and compatible germs|in fact, from stalks]].
 
 ##### _definition:_ sheaf, separated presheaf
 
@@ -193,7 +193,7 @@ $E$ is the disjoint union of all stalks $\mathscr{E}_{p}$ (that is, the set of a
 
 ---
 
-Note that then the open sets of the space of sections are sets of [[Algebraic geometry --- rising-sea/notes/Stalk-locality and compatible germs#Compatible germs|compatible germs]] — an element of (the image of $\mathscr{E}(U)$ in) $\prod_{p \in U} \mathscr{E}_{p}$ seen as a subset of $\coprod_{p \in U} \mathscr{E}_{p}$. 
+Note that then the open sets of the space of sections are sets of [[Algebraic geometry --- rising-sea/notes/Stalk-local properties and compatible germs#Compatible germs|compatible germs]] — an element of (the image of $\mathscr{E}(U)$ in) $\prod_{p \in U} \mathscr{E}_{p}$ seen as a subset of $\coprod_{p \in U} \mathscr{E}_{p}$. 
 
 For the rest of this section let $\mathscr{E}$ be a sheaf on $X$ and $\xi : E \to X$ its space of sections.
 
@@ -231,7 +231,7 @@ $\mathscr{E}$ is isomorphic to the space of sections of $\xi : E \to X$.
 
 We don't bother defining a [[Algebraic geometry --- rising-sea/notes/Morphisms of sheaves#_definition _ morphism of sheaves|morphism of sheaves]] — we just note that it suffices to have the same value at each open set $U \subseteq X$ and the same restriction maps.
 
-Consider a section $\sigma : U \to E$. Suppose $\sigma(p) = s^p_{p}$ with $s^p \in \mathscr{E}(U_{p})$ for $p \in U_{p} \subseteq U$. Then, since $\sigma$ is continuous, $\sigma^\text{pre}(\{ s^p_{q} \mid q \in U_{p} \}) = V_{p}$ is a non-empty open set of $X$. Since $\xi \circ \sigma = \operatorname{id}_{X}$ we have $\sigma(q) = s^p_{q}$ for all $q \in V_{p}$. Since [[Algebraic geometry --- rising-sea/notes/Stalk-locality and compatible germs#_proposition _ sections are stalk-local|stalks determine sections]] and the stalks of $s^p$ and $s^q$ agree everywhere on $V_{p} \cap V_{q}$, we must have $s^p = s^q$. Thus, we can glue the $s^p \in \mathscr{E}(V_{p})$ to some $s \in \mathscr{E}(U)$. This is the unique $s \in \mathscr{E}(U)$ such that $\sigma(p) = s_{p}$ everywhere on $U$.
+Consider a section $\sigma : U \to E$. Suppose $\sigma(p) = s^p_{p}$ with $s^p \in \mathscr{E}(U_{p})$ for $p \in U_{p} \subseteq U$. Then, since $\sigma$ is continuous, $\sigma^\text{pre}(\{ s^p_{q} \mid q \in U_{p} \}) = V_{p}$ is a non-empty open set of $X$. Since $\xi \circ \sigma = \operatorname{id}_{X}$ we have $\sigma(q) = s^p_{q}$ for all $q \in V_{p}$. Since [[Algebraic geometry --- rising-sea/notes/Stalk-local properties and compatible germs#_proposition _ sections are stalk-local|stalks determine sections]] and the stalks of $s^p$ and $s^q$ agree everywhere on $V_{p} \cap V_{q}$, we must have $s^p = s^q$. Thus, we can glue the $s^p \in \mathscr{E}(V_{p})$ to some $s \in \mathscr{E}(U)$. This is the unique $s \in \mathscr{E}(U)$ such that $\sigma(p) = s_{p}$ everywhere on $U$.
 
 On the other hand, given a section $s \in \mathscr{E}(U)$, choosing $\sigma : U \to E$ by $\sigma(p) = s_{p}$ gives a continuous section of $\xi : E \to X$. For $t \in \mathscr{E}(V)$ the set of $p$ such that $s_{p} = t_{p}$ is some open $W \subseteq X$ (since each such $p$ gives an open neighbourhood $U_{p}$ where $s_{\mid U_{p}} = t_{\mid U_{p}}$, take the union of all $U_{p}$). Then the pre-image of any open $\{ t_{p} \mid t \in \mathscr{E}(V) \}$ is that open set $W$ where $t_{p} = s_{p}$.
 

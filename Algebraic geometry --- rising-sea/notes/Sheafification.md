@@ -82,7 +82,7 @@ This can be really useful. For example, it gives an abstract nonsense proof of t
 
 ### Constructing the sheafification
 
-The sections of the sheafification just comprise the [[Algebraic geometry --- rising-sea/notes/Stalk-locality and compatible germs#_definition _ compatible germs|tuples of compatible germs]].
+The sections of the sheafification just comprise the [[Algebraic geometry --- rising-sea/notes/Stalk-local properties and compatible germs#_definition _ compatible germs|tuples of compatible germs]].
 
 ##### _proposition:_ constructing the sheafification
 
@@ -98,7 +98,7 @@ It requires verification that $\mathscr{F}^\mathrm{sh}$ forms a sheaf. This can 
 
 Consider $\mathrm{sh} : \mathscr{F} \to \mathscr{F}^\mathrm{sh}$ with $\mathscr{F}(U) \to \mathscr{F}^\mathrm{sh}(U)$ by $s \mapsto (s_{p})_{p \in U}$. Since taking stalks commutes with restriction, this defines a genuine [[Algebraic geometry --- rising-sea/notes/Morphisms of sheaves#_definition _ morphism of sheaves|presheaf morphism]]. 
 
-Suppose $\mathscr{G}$ is a sheaf and $\varphi : \mathscr{F} \to \mathscr{G}$ is a (pre)sheaf morphism. Consider then $\varphi^\mathrm{sh} : \mathscr{F}^\mathrm{sh} \to \mathscr{G}$ with $\varphi ^\mathrm{sh}(U)(s_{p})_{p \in U}$ defined by gluing all $\varphi^\mathrm{sh}(U)(s^p)$ where $(s_{p})_{p \in U_{p}} = (s^p_{p})_{p \in U_{p}}$ in some neighbourhood $U_{p} \ni p$. Since the stalks of $\mathscr{F}$ and $\mathscr{F}^\mathrm{sh}$ are the same, $\varphi^\mathrm{sh}$ is [[Algebraic geometry --- rising-sea/notes/Stalk-locality and compatible germs#_proposition _ sheaf morphisms are stalk-local|determined uniquely by the maps of stalks]] $\varphi^\mathrm{sh}_{p} = \varphi_{p}$.
+Suppose $\mathscr{G}$ is a sheaf and $\varphi : \mathscr{F} \to \mathscr{G}$ is a (pre)sheaf morphism. Consider then $\varphi^\mathrm{sh} : \mathscr{F}^\mathrm{sh} \to \mathscr{G}$ with $\varphi ^\mathrm{sh}(U)(s_{p})_{p \in U}$ defined by gluing all $\varphi^\mathrm{sh}(U)(s^p)$ where $(s_{p})_{p \in U_{p}} = (s^p_{p})_{p \in U_{p}}$ in some neighbourhood $U_{p} \ni p$. Since the stalks of $\mathscr{F}$ and $\mathscr{F}^\mathrm{sh}$ are the same, $\varphi^\mathrm{sh}$ is [[Algebraic geometry --- rising-sea/notes/Stalk-local properties and compatible germs#_proposition _ sheaf morphisms are stalk-local|determined uniquely by the maps of stalks]] $\varphi^\mathrm{sh}_{p} = \varphi_{p}$.
 
 ---
 
