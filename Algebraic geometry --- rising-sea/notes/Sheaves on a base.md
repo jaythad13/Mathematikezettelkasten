@@ -111,12 +111,16 @@ Uniqueness follows since we showed sheaf morphisms are base-local.
 
 The fancy statement of what we've proven is that there's an [[Algebraic geometry --- rising-sea/notes/Natural transformations#_definition _ natural transformations, natural isomorphism, equivalence of categories|equivalence of categories]] between sheaves on $X$ and sheaves on a base on $X$. We note without proof that this equivalence holds for "$\mathscr{O}_{X}$[[Algebraic geometry --- rising-sea/notes/Ringed spaces#_definition _ $ mathscr{O}_{X}$-modules|-modules]] on a base" as well.
 
-### Stalks on a base and stalk-local properties are base-local
+##### _proposition:_ epic morphisms on a base implies epic sheaf morphisms
 
-We did everything above by limit arguments, but these are a little bit sketchy because we're taking limits over diagrams that could be ridiculously large (still sets, but certainly uncountable). In practice, because the [[Algebraic geometry --- rising-sea/notes/The base of distinguished open sets|typical basis]] for the Zariski topology on a scheme is closed under intersections, these arguments will work without having to worry about set-theoretic considerations. However, there's a different way to do this — all stalk-local properties of a sheaf are in fact base-local, and thus we can determine stalks and [[Algebraic geometry --- rising-sea/notes/Stalk-local properties and compatible germs#_definition _ compatible germs|compatibility of germs]] on a basis. This allows us to recover all sections of a sheaf from its values on a basis and a whole sheaf from values on a basis satisfying base identity and gluability as above.
+Suppose $\varphi : \mathscr{F} \to \mathscr{G}$ has each $\varphi(B_{i})$ epic.Then then the corresponding $\varphi$ is an [[Algebraic geometry --- rising-sea/notes/Universal properties and why categories?#_definition _ monomorphisms, epimorphisms|epimorphism]].
 
->[!incomplete]
+###### _proof:_
 
-##### _proposition:_ epimorphisms of sheaves are base-local
+Suppose $\psi, \theta : \mathscr{G} \to \mathscr{H}$ are two morphisms such that the compositions $\mathscr{F} \to \mathscr{G} \to \mathscr{H}$ agree. Then $\psi(B_{i}) \circ \varphi(B_{i}) = \theta(B_{i}) \circ \varphi(B_{i})$ for each basic $B_{i}$. Since $\varphi(B_{i})$ is epic, $\psi(B_{i}) = \theta(B_{i})$ for each $B_{i}$, and since sheaf morphisms are base local, we have $\psi = \theta$.
 
-Suppose $\varphi_{\text{b}} : \mathscr{F}_{\text{b}} \to \mathscr{G}_{\text{b}}$ with each $\varphi_{\text{b}}(B_{i})$ surjective, then the corresponding $\varphi_{\text{b}}^\text{sh}$ is an [[Algebraic geometry --- rising-sea/notes/Universal properties and why categories?#_definition _ monomorphisms, epimorphisms|epimorphism]].
+---
+
+### Stalks are base-local
+
+We did everything above by limit arguments, but these are a little bit sketchy because we're taking limits over diagrams that could be ridiculously large (still sets, but certainly uncountable). In practice, because the [[Algebraic geometry --- rising-sea/notes/The base of distinguished open sets|typical basis]] for the Zariski topology on a scheme is closed under intersections, these arguments will work without having to worry even a little. However, there's a different way to do this — all stalk-local properties of a sheaf are in fact base-local, and thus we can determine stalks and [[Algebraic geometry --- rising-sea/notes/Stalk-local properties and compatible germs#_definition _ compatible germs|compatibility of germs]] on a basis. This allows us to recover all sections of a sheaf from its values on a basis and a whole sheaf from values on a basis satisfying base identity and gluability as above.
