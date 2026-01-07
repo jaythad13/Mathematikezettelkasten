@@ -47,29 +47,29 @@ This is also functorial by the universal property of the colimit — the morphis
 
 ---
 
-### Sheaf $\operatorname{\mathit{Hom}}$
+### Sheaf $\operatorname{\mathcal{Hom}}$
 
-The notion of sheaf morphisms allows us to define a sheaf of sheaf morphisms, called sheaf $\operatorname{\mathit{Hom}}$. (Sheaves don't always form an additive category, but sheaf $\operatorname{\mathit{Mor}}$ sounds worse).
+The notion of sheaf morphisms allows us to define a sheaf of sheaf morphisms, called sheaf $\operatorname{\mathcal{Hom}}$. (Sheaves don't always form an additive category, but sheaf $\operatorname{\mathcal{Mor}}$ sounds worse).
 
-##### _definition:_ sheaf $\operatorname{\mathit{Hom}}$
+##### _definition:_ sheaf $\operatorname{\mathcal{Hom}}$
 
-Suppose $\mathscr{F}$ and $\mathscr{G}$ are (pre)sheaves on $X$ taking values in the category $\mathscr{C}$. Then their **sheaf $\operatorname{\mathit{Hom}}$** is $\operatorname{\mathit{Hom}}_{\mathscr{C}_{X}}(\mathscr{F}, \mathscr{G})$, the sheaf (of sets) defined by
+Suppose $\mathscr{F}$ and $\mathscr{G}$ are (pre)sheaves on $X$ taking values in the category $\mathscr{C}$. Then their **sheaf $\operatorname{\mathit{Hom}}$** is $\operatorname{\mathcal{Hom}}_{\mathscr{C}_{X}}(\mathscr{F}, \mathscr{G})$, the sheaf (of sets) defined by
 $$
-\operatorname{\mathit{Hom}}_{\mathscr{C}_{X}}(\mathscr{F}, \mathscr{G})(U) = \operatorname{Mor}_{\mathscr{C}_{X}}(\mathscr{F}_{\mid U}, \mathscr{G}_{\mid U}).
+\operatorname{\mathcal{Hom}}_{\mathscr{C}_{X}}(\mathscr{F}, \mathscr{G})(U) = \operatorname{Mor}_{\mathscr{C}_{U}}(\mathscr{F}_{\mid U}, \mathscr{G}_{\mid U}).
 $$
 We drop the subscript when $\mathscr{C}_{X}$ is clear.
 
 ---
 
-It needs verifying that when $\mathscr{F}, \mathscr{G}$ are sheaves that $\operatorname{\mathit{Hom}}(\mathscr{F}, \mathscr{G})$ is a sheaf. Morphisms of presheaves restrict to morphisms of restricted presheaves, so $\operatorname{\mathit{Hom}}(\mathscr{F}, \mathscr{G})$ is at least a presheaf with restriction $\varphi_{\mid U} \mapsto \varphi_{\mid V}$ by $\varphi_{\mid V}(W) = \varphi_{\mid U}(W)$. 
+It needs verifying that when $\mathscr{F}, \mathscr{G}$ are sheaves that $\operatorname{\mathcal{Hom}}(\mathscr{F}, \mathscr{G})$ is a sheaf. Morphisms of presheaves restrict to morphisms of restricted presheaves, so $\operatorname{\mathcal{Hom}}(\mathscr{F}, \mathscr{G})$ is at least a presheaf with restriction $\varphi_{\mid U} \mapsto \varphi_{\mid V}$ by $\varphi_{\mid V}(W) = \varphi_{\mid U}(W)$. 
 
 If $\varphi_{i} : \mathscr{F}_{\mid U_{i}} \to \mathscr{G}_{\mid U_{i}}$ are sheaf morphisms that agree on restriction to each $U_{i} \cap U_{j}$, we can glue them to get $\varphi : \mathscr{F}_{\mid U} \to \mathscr{G}_{\mid U}$ by $(\varphi(U) s)_{\mid U_{i}} = \varphi(U_{i}) s_{\mid U_{i}}$ for $s \in \mathscr{F}(U_{i})$. These sections glue to a unique $\varphi(U) s \in \mathscr{G}(U)$ since $\mathscr{G}$ is a sheaf.
 
-Note that $\operatorname{\mathit{Hom}}$/$\operatorname{Hom}$ does not commute with taking stalks. That is, $\operatorname{\mathit{Hom}}(\mathscr{F}, \mathscr{G})_{p} \not \cong \operatorname{Hom}(\mathscr{F}_{p}, \mathscr{G}_{p})$.
+Note that $\operatorname{\mathcal{Hom}}$/$\operatorname{Hom}$ does not commute with taking stalks. That is, $\operatorname{\mathcal{Hom}}(\mathscr{F}, \mathscr{G})_{p} \not \cong \operatorname{Hom}(\mathscr{F}_{p}, \mathscr{G}_{p})$.
 
-##### _examples:_ sheaf $\operatorname{\mathit{Hom}}$
+##### _examples:_ sheaf $\operatorname{\mathcal{Hom}}$
 
-1) If $\mathscr{F}$ is a sheaf of sets on $X$, then $\operatorname{\mathit{Hom}}_{\mathsf{Sets}_{X}}(\underline{\{ e \}}, \mathscr{F}) \cong \mathscr{F}$. This is because $\operatorname{Mor}(\{ e \}, \mathscr{F}(U))$ is canonically isomorphic to $\mathscr{F}(U)$ (since $\{ e \}$ only has one element, we have $\underline{\{ e \}}(U) \cong \{ e \}$ canonically as well).
-2) If $\mathscr{F}$ is an $\mathscr{O}_{X}$[[Algebraic geometry --- rising-sea/notes/Ringed spaces#_definition _ $ mathscr{O}_{X}$-modules|-module]], then $\operatorname{\mathit{Hom}}_{\mathsf{Mod}_{\mathscr{O}_{X}}}(\mathscr{O}_{X}, \mathscr{F}) \cong \mathscr{F}$. Again, this is because $\operatorname{Hom}(\mathscr{O}_{X}(U), \mathscr{F}(U)) \cong \mathscr{F}(U)$. When $\mathscr{F}$ is just a sheaf of abelian groups, [[Algebraic geometry --- rising-sea/notes/Ringed spaces#_example _ sheaves of abelian groups are $ mathscr{O}_{X}$-modules|and thus]], a $\underline{\mathbb{Z}}$-module, we have $\operatorname{\mathit{Hom}}(\underline{\mathbb{Z}}, \mathscr{F}) \cong \mathscr{F}$.
+1) If $\mathscr{F}$ is a sheaf of sets on $X$, then $\operatorname{\mathcal{Hom}}_{\mathsf{Sets}_{X}}(\underline{\{ e \}}, \mathscr{F}) \cong \mathscr{F}$. This is because $\operatorname{Mor}(\{ e \}, \mathscr{F}(U))$ is canonically isomorphic to $\mathscr{F}(U)$ (since $\{ e \}$ only has one element, we have $\underline{\{ e \}}(U) \cong \{ e \}$ canonically as well).
+2) If $\mathscr{F}$ is an $\mathscr{O}_{X}$[[Algebraic geometry --- rising-sea/notes/Ringed spaces#_definition _ $ mathscr{O}_{X}$-modules|-module]], then $\operatorname{\mathcal{Hom}}_{\mathsf{Mod}_{\mathscr{O}_{X}}}(\mathscr{O}_{X}, \mathscr{F}) \cong \mathscr{F}$. Again, this is because $\operatorname{Hom}(\mathscr{O}_{X}(U), \mathscr{F}(U)) \cong \mathscr{F}(U)$. When $\mathscr{F}$ is just a sheaf of abelian groups, [[Algebraic geometry --- rising-sea/notes/Ringed spaces#_example _ sheaves of abelian groups are $ mathscr{O}_{X}$-modules|and thus]], a $\underline{\mathbb{Z}}$-module, we have $\operatorname{\mathcal{Hom}}(\underline{\mathbb{Z}}, \mathscr{F}) \cong \mathscr{F}$.
 
 ---
