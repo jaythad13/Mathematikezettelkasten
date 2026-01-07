@@ -242,3 +242,5 @@ Restriction is the same as sections $\sigma : X \to E$ or as sections $s \in \ma
 ##### _remark:_ étalé vs. étale
 
 Confusingly, an étale morphism (a notion we meet later) is not quite a sheaf of sections, but rather something that behaves similar to one. Note the difference — étale (flat, slack) versus étalé (spread out). Also confusing is the fact that étalé means something like "étaled" (it's a past participle), so correct grammar would demand saying étale space for espace étalé. Also, Grothendieck said étale space, but he learnt french from germans, so that doesn't count for much ...
+
+---
