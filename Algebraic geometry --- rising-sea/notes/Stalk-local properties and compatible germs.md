@@ -162,7 +162,9 @@ Suppose there is some $p \in X$ where $\varphi_{p}$ is not epic. Thus, there are
 
 ---
 
-Note that this stalk-local characterisation is not true for general (or even separated presheaves). Also note that (unlike monomorphisms) epimorphisms are not determined on open sets.
+Note that this stalk-local characterisation is not true for general (or even separated presheaves). All of these can be seen to break with the two-section sheaf on the two-point discrete space (or any disconnected space) that we used earlier.
+
+Also, note that epic sheaf morphisms are not necessarily epic on open sets.
 
 ##### _example:_ hinting at the [[Algebraic geometry --- rising-sea/notes/Presheaves in abelian categories#_example _ presheaf cokernel is not (always) a sheaf — the (presheaf) exponential exact sequence|exponential exact sequence]]
 
@@ -171,6 +173,8 @@ Let $\mathscr{F}$ be the (presheaf of) [[Complex analysis --- math-135/notes/Hol
 However, for sheaves, the morphism $\exp : \mathscr{O}_{X} \to \mathscr{O}_{X}^*$ given by exponentiating on each open set is epic — each holomorphic function invertible near $p$ has a logarithm near $p$, so $\exp_{p} : \mathscr{O}_{X, p} \to \mathscr{O}_{X, p}^*$ is surjective. Note that it is not surjective on open sets — the identity function on $\mathbb{C} \setminus \{ 0 \}$ is invertible but does not have a logarithm.
 
 ---
+
+However, we will see that [[Algebraic geometry --- rising-sea/notes/Sheaves on a base#_proposition _ epic morphisms on a base implies epic sheaf morphisms|the converse is true]] — sheaf morphisms that are epic on every open set (or even just enough to form a basis) are epic.
 
 ### Compatible germs
 
