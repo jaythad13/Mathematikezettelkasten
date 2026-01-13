@@ -124,3 +124,43 @@ Suppose $\psi, \theta : \mathscr{G} \to \mathscr{H}$ are two morphisms such that
 ### Stalks are base-local
 
 We did everything above by limit arguments, but these are a little bit sketchy because we're taking limits over diagrams that could be ridiculously large (still sets, but certainly uncountable). In practice, because the [[Algebraic geometry --- rising-sea/notes/The base of distinguished open sets|typical basis]] for the Zariski topology on a scheme is closed under intersections, these arguments will work without having to worry even a little. However, there's a different way to do this — all stalk-local properties of a sheaf are in fact base-local, and thus we can determine stalks and [[Algebraic geometry --- rising-sea/notes/Stalk-local properties and compatible germs#_definition _ compatible germs|compatibility of germs]] on a basis. This allows us to recover all sections of a sheaf from its values on a basis and a whole sheaf from values on a basis satisfying base identity and gluability as above.
+
+The essence of this argument is the following proposition. 
+
+##### _proposition:_ stalks are base-local
+
+Suppose $\mathscr{F}$ is a sheaf of sets. Define the **stalk on a base at $p \in X$** of $\mathscr{F}$ as $\mathscr{F}_{\text{b}, p} = \operatorname{colim}_{B \ni p} \mathscr{F}(B)$ (where $B$ is a basic open set). Then there is a unique isomorphism $\mathscr{F}_{\text{b}, p} \to \mathscr{F}_{p}$ such that the following diagram commutes for any $B \ni p$.
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		\mathcal{F}(B) \ar[rd] \ar[d] \\
+		\mathcal{F}_{\mathrm{b}, p} \ar[r] & \mathcal{F}_{p}
+	\end{tikzcd}
+\end{document}
+```
+
+###### _proof sketch:_
+
+Any base-germ in $\mathscr{F}_{\text{b}, p}$ comes from some choice of section in a basic set $B \ni p$. Send each base-germ to the actual germ of that section in $\mathscr{F}_{p}$. 
+
+This map is well-defined — if two sections have the same base-germ, then they agree on some basic set containing $p$, and thus, have the same germ at $p$. Thus, the map doesn't depend on the choice of section in $\mathscr{F}(B)$ nor the choice of $B \ni p$. 
+
+This map is injective — if two sections never agree on a basic open set, then they never agree on any open set (since every open set is covered by basic opens), and thus, they are sent to different germs in $\mathscr{F}_{p}$. 
+
+Finally the map is surjective. Any germ in $\mathscr{F}_{p}$ comes from a section which in turn defines a base-germ. This base-germ maps to the actual germ.
+
+---
+
+##### _corollary:_ compatible germs are base-local
+
+A tuple $(s_{p})_{p \in U} \in \prod_{p \in U} \mathscr{F}_{p}$ consists of [[Algebraic geometry --- rising-sea/notes/Stalk-local properties and compatible germs#_definition _ compatible germs|compatible germs]] if and only if, for each $p \in U$, there is a representative $t^p \in \mathscr{F}(B_{p})$ with base-germ $t^p_{q} = s_{q}$ for each $q \in B_{p}$.
+
+###### _proof sketch:_
+
+Equality of the germs as base-germs or actual-germs is the same thing by the proposition above.
+
+If the base representatives exist, then the tuple clearly consists of compatible germs. If the tuple consists of compatible germs, then restricting to basic open subsets on which the representatives live gives the base representatives.
+
+---
