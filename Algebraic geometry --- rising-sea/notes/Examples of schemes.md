@@ -394,10 +394,18 @@ While this all gives a correct definition of projective space, it is not one tha
 
 ### A cone over a smooth quadric surface
 
-$X = \operatorname{Spec} \mathbb{F}[w, x, y, z] / (wz - xy)$ is a hypersurface in $\mathbb{A}^4_{\mathbb{F}}$ and a cone over a smooth quadric surface in $\mathbb{P}^3_{\mathbb{F}}$. It will be a source of many counterexamples for us.
+Let $A = \mathbb{F}[w, x, y, z] / (wz - xy)$. Then $X = \operatorname{Spec} A$ is a hypersurface in $\mathbb{A}^4_{\mathbb{F}}$ and a cone over a smooth quadric surface in $\mathbb{P}^3_{\mathbb{F}}$. It will be a source of many counterexamples for us.
 
-##### _example:_ a function with no unique expression
+##### _example:_ a function on an affine scheme with no single expression
 
-Since the functions $z / y$ on $D(y)$ and $x / w$ on $D(w)$ agree on the intersection $D(y) \cap D(w)$, they glue together to give a section on $D(y) \cup D(w)$. However, there is no single expression $h(w, x, y, z) = f(w, x, y, z) / g(w, x, y, z)$ for the function on all of $X$. If there were, then $g$ would have to vanish exactly on $V(y) \cap V(w)$ since $h$ is not defined exactly on the complement of $D(y) \cup D(w)$. But it turns out that $V(y) \cap V(w)$ is a line that is not cut out (even set-theoretically) by ay single equation. Thus, $g$ cannot vanish exactly on $V(y) \cap V(w)$.
+Since the functions $z / y$ on $D(y)$ and $x / w$ on $D(w)$ agree on the intersection $D(y) \cap D(w)$, they glue together to give a section on $D(y) \cup D(w)$. However, there is no single expression $h(w, x, y, z) = f(w, x, y, z) / g(w, x, y, z)$ for the function on all of $X$.
+
+If there were, then $g$ would have to vanish exactly on $V(y) \cap V(w)$ since $h$ is not defined exactly on the complement of $D(y) \cup D(w)$. But it turns out that $V(y) \cap V(w)$ is a line that is not cut out (even set-theoretically) by any single equation. Thus, $g$ cannot vanish exactly on $V(y) \cap V(w)$.
+
+---
+
+##### _example:_ an integrally closed ring that is not a UFD
+
+$A$ is integrally closed [[Algebraic geometry --- rising-sea/notes/Normal and factorial schemes#_examples _ cones are normal|because]] $wz - xy$ is a quadratic form. However, unique factorisation clearly fails in $A$ — $wz = xy$. We do need to show that $w, z, x, y$ are irreducible. This follows because if $w = w_{0} w_{1}$ then the $w_{i}$ must be homogeneous for their product to be homogeneous. By additivity of degree, we must have $w_{0}$ of degree $0$ and $w_{1}$ of degree $1$. But then any non-zero $w_{0}$ of degree $0$ is a unit.
 
 ---

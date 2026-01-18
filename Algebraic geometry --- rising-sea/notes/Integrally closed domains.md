@@ -70,3 +70,51 @@ More generally, this proof works in any [[Abstract algebra --- math-171/notes/Fa
 If $A$ is a unique factorisation domain, it is integrally closed.
 
 ---
+
+We can also generalise the example of $\mathbb{Z}$ to the integral closure of $\mathbb{Z}$ in any algebraic extension of $\mathbb{Q}$. These are not necessarily unique factorisation domains.
+
+##### _example:_ quadratic integer rings
+
+Suppose $d$ is a square free integer with $d \equiv 2, 3$ modulo $4$. Then we write $A = \mathbb{Z}[\sqrt{ d }]$ for $\mathbb{Z}[x] / (x^{2} - d)$. Note that $K(\mathbb{Z}[\sqrt{ d }]) = \mathbb{Q}(\sqrt{ d }) = \mathbb{Q}[\sqrt{ d }]$. If $f(x) = x^n + a_{n - 1} x^{n - 1} + \dots + a_{0} \in A[x]$ has a root in $\mathbb{Q}(\sqrt{ d })$, then the root is some $\alpha = {a + b \sqrt{ d }}$ with $a, b \in \mathbb{Q}$. By Galois theory, whenever $\alpha$ is a root of a polynomial, $\overline{\alpha} = {a - b \sqrt{ d }}$ is a root of the same polynomial. Thus, $\alpha + \overline{\alpha} = 2a$ and $\alpha \overline{\alpha} = a^{2} - b^{2} d$ are both in $\mathbb{Z}[\sqrt{ d }]$. In fact, since they contain no $\sqrt{ d }$ term, they are in $\mathbb{Z}$.
+
+If $a \in \mathbb{Z}$, then $b^{2} d \in \mathbb{Z}$. Since $d$ is square free, it cannot cancel out any non-trivial squared part of the denominator of $b^{2}$. Thus, there is none and $b \in \mathbb{Z}$. That is, if $a \in \mathbb{Z}$, then $b \in \mathbb{Z}$ and $\alpha \in \mathbb{Z}[\sqrt{ d }]$.
+
+Suppose $a = n / 2$ for some odd $n$. Thus, $n^{2} / 4 - d b^{2}$ is an integer. Thus, in reduced form $d b^{2}$ has denominator $4$, and again, since $d$ is square free, we get $b = m / 2$ for some odd $m$. Further, $d$ is odd — else $d b^{2}$ would have denominator $2$. Thus, if $d \equiv 2$ we already have $\mathbb{Z}[\sqrt{ d }]$ integrally closed. Else, we can write
+$$
+\alpha = \frac{1 + \sqrt{ d }}{2} + \frac{n - 1}{2} + \frac{m - 1}{2} \sqrt{ d } \in \frac{1 + \sqrt{ d }}{2} + \mathbb{Z}[\sqrt{ d }].
+$$
+$(1 + \sqrt{ d })/2$ has trace $1$ and norm $(1 - d) / 4$. Thus, if $\alpha$ is integral over $\mathbb{Z}[\sqrt{ d }]$ with $a = n / 2$, we must have $(1 - d) / 4 \in \mathbb{Z}$ and equivalently, $d \equiv 1$. This also suffices, since $x^{2} - x + (1 - d) / 4 \in \mathbb{Z}[x] \subseteq A[x]$ has $(1 + \sqrt{ d }) / 2$ as a root. Since $\mathbb{Z}\left[ \frac{1 + \sqrt{ d }}{2} \right]$ includes $\mathbb{Z}[\sqrt{ d }]$, any root $\alpha$ must be in $\mathbb{Z}\left[ \frac{1 + \sqrt{ d }}{2} \right]$.
+
+Else, $a \neq n / 2$ and the roots are all contained in $\mathbb{Z}[\sqrt{ d }]$.
+
+---
+
+##### _examples:_ integrally closed rings need not be UFDs
+
+Since $\mathbb{Z}[\sqrt{ -5 }]$ does not have unique factorisation $2 \times 3 = (1 + \sqrt{ -5 })(1 - \sqrt{ -5 })$, this gives an example of an integrally closed domain that doesn't have unique factorisation. 
+
+Our favourite [[Algebraic geometry --- rising-sea/notes/Examples of schemes#_example _ an integrally closed ring that is not a UFD|cone over a smooth quadric surface]] gives us another example.
+
+They are different in that $\operatorname{Spec} \mathbb{Z}[-\sqrt{ 5 }]$ is still factorial but the cone is not.
+
+---
+
+There is also a very specific useful class of examples of integrally closed domains that is very similar.
+
+##### _examples:_ adjoining square roots in UFDs
+
+Suppose $A$ is a [[Abstract algebra --- math-171/notes/Factorisation in special rings#_definition _ unique factorisation domains|unique factorisation domain]] with $2$ invertible, $x \in A$, and $y^{2} - x$ is irreducible in $A[y]$. If $x \in A$ has no repeated prime factors, then $B = A[y] / (y^{2} - x)$ is integrally closed. 
+
+If $x \in A$ has repeated prime factors, then $B$ is not integrally closed. Suppose in particular that $x = p^{2} d$ for some prime $p$. Then 
+
+---
+
+Finally, the following result is useful in extending proving integral closure.
+
+##### _proposition:_ integral closure cannot come from extensions
+
+Suppose $A$ is an $\mathbb{F}$-algebra and $\mathbb{K} / \mathbb{F}$ is field extension. If $A \otimes_{\mathbb{F}} \mathbb{K}$ is integrally clsoed, then so is $A$.
+
+---
+
+Note that the analogous result is not true for UFDs — we will see an $\mathbb{R}$-algebra that becomes a UFD after extension to $\mathbb{C}$.

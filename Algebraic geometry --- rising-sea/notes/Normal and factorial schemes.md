@@ -26,9 +26,17 @@ Suppose $X = \bigcup_{i \in \mathscr{I}} \operatorname{Spec} A_{i}$ and each $A_
 
 ---
 
-##### _example:_ $\operatorname{Spec} \mathbb{Z}$ is normal
+##### _example:_ $\operatorname{Spec} \mathbb{Z}$ and quadratic integer rings
 
-$\mathbb{Z}$ is [[Algebraic geometry --- rising-sea/notes/Integrally closed domains#_definition _ integrally closed domain|integrally closed]], so $\operatorname{Spec} \mathbb{Z}$ is normal.
+$\mathbb{Z}$ is [[Algebraic geometry --- rising-sea/notes/Integrally closed domains#_definition _ integrally closed domain|integrally closed]], so $\operatorname{Spec} \mathbb{Z}$ is normal. The [[Algebraic geometry --- rising-sea/notes/Integrally closed domains#_example _ quadratic integer rings|ring of integers in any quadratic field]] ( $\mathbb{Z}[\sqrt{ d }]$ or $\mathbb{Z}\left[ \frac{1 + \sqrt{ d }}{2} \right]$ depending on the residue of $d$ modulo $4$) is also integrally closed. Thus, the corresponding affine schemes are also normal.
+
+---
+
+##### _examples:_ cones are normal
+
+For $\operatorname{char} \mathbb{F} \neq 2$ and $n \geq m \geq 3$, $\operatorname{Spec} \mathbb{F}[x_{1}, \dots, x_{n}] / (x_{1}^{2} + \dots + x_{m}^{2})$ is normal.
+
+Since quadratic forms can be diagonalised, this implies that [[Algebraic geometry --- rising-sea/notes/Examples of schemes#A cone over a smooth quadric surface|our old friend]] $\operatorname{Spec} \mathbb{F}[w, x, y , z] / (wz - xy)$ is also normal. However, the corresponding ring is not a UFD, and the affine scheme is not factorial.
 
 ---
 
@@ -53,9 +61,9 @@ This yields lots of examples of normal schemes.
 
 ##### _examples:_ factorial and normal schemes
 
-- $\operatorname{Spec} \mathbb{Z}$ is factorial since $\mathbb{Z}$ is a UFD
-- $\mathbb{F}[x_{1}, \dots, x_{n}]$ is also a UFD, so $\mathbb{A}_{\mathbb{F}}^n$ is factorial
-- Using the result below, this implies $\mathbb{P}_{\mathbb{F}}^n$ is factorial
+- $\operatorname{Spec} \mathbb{Z}$ is factorial since $\mathbb{Z}$ is a UFD.
+- $\mathbb{F}[x_{1}, \dots, x_{n}]$ is also a UFD, so $\mathbb{A}_{\mathbb{F}}^n$ is factorial.
+- Using the result below, this implies $\mathbb{P}_{\mathbb{F}}^n$ is factorial.
 
 ---
 
@@ -93,3 +101,5 @@ Even worse, we can cover $\operatorname{Spec} A$ with distinguished affines open
 A second example we will not explain in detail is that $\mathbb{Z}[\sqrt{ -5 }]$ is not a unique factorisation domain (factor $6$ two ways), but can be covered by $D(2)$ and $D(3)$ which are spectra of $\mathbb{Z}[\sqrt{ -5 }]_{2}$ and $\mathbb{Z}[\sqrt{ -5 }]_{3}$ , both UFDs.
 
 ---
+
+There are many more useful examples that come from this.
