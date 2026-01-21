@@ -64,3 +64,38 @@ Write $\mathbb{A}_{\mathbb{F}}^{n + 1} \setminus \{ 0 \}$ as the union of all th
 ---
 
 We have shown already that [[Algebraic geometry --- rising-sea/notes/Morphisms of ringed spaces#_definition _ the category of ringed spaces|morphisms of ringed spaces compose]]. It's clear that the composition of a morphism of local rings is still a morphism of local rings. Since the stalk morphisms of the composition are just compositions of the stalk morphisms with some extra $\pi_{*} \mathscr{O}_{X, p} \to \mathscr{O}_{X, p}$ bits in between this means that morphisms of local ringed spaces, and thus, morphisms of schemes compose too. Clearly this gives a category of schemes. We denote this category by $\mathsf{Sch}$.
+
+### Morphisms to affine schemes
+
+Even when the source is not affine, morphisms to affine schemes have a nice interpretation in terms of morphisms of rings.
+
+##### _proposition:_ morphisms to affine schemes
+
+Morphisms of schemes $X \to \operatorname{Spec} A$ are in natural bijection with ring homomorphisms $A \to \mathscr{O}_{X}(X)$. That is, the [[Algebraic geometry --- rising-sea/notes/Functors#_example _ the functor of points and its opposite|functor of points]] $h_{\operatorname{Spec} A}$ is [[Algebraic geometry --- rising-sea/notes/Natural transformations#_definition _ natural transformations, natural isomorphism, equivalence of categories|naturally isomorphic]] to the functor $X \to \operatorname{Hom}_{\mathsf{Ring}}(A, \mathscr{O}_{X}(X))$.
+
+###### _proof:_
+
+We first describe the bijection between $\operatorname{Mor}_{\mathsf{Sch}}(X, \operatorname{Spec} A)$ and $\operatorname{Hom}_{\mathsf{Ring}}(A, \mathscr{O}_{X}(X))$. [[Algebraic geometry --- rising-sea/notes/Morphisms of affine schemes#_definition _ morphism of affine schemes|We have already shown]] the bijection when $X$ is affine.
+
+For general $X$, a morphism of schemes $X \to \operatorname{Spec} A$ gives a ring homomorphism of global sections $A \to \mathscr{O}_{X}(X)$. 
+
+Conversely, a ring homomorphism of global sections $A \to \mathscr{O}_{X}(X)$ extends to a homomorphism $A \to \mathscr{O}_{X}(X) \to \mathscr{O}_{X}(\operatorname{Spec} B)$, and thus, a morphism of schemes $\operatorname{Spec} B \to \operatorname{Spec} A$ for any affine open $\operatorname{Spec} B \subseteq X$. Choose some affine cover $X = \bigcup_{i \in I} \operatorname{Spec} B_{i}$. Since the ring homomorphisms agree on intersections of the affine opens, so do the scheme morphisms $\operatorname{Spec} B_{i} \to \operatorname{Spec} A$. Thus, they glue to a morphism of schemes $X \to \operatorname{Spec} A$. Note that $\mathscr{O}_{X}(X)$ is the limit of all the $\mathscr{O}_{X}(\operatorname{Spec} B_{i})$ and their intersections. Since the ring maps $A \to B_{i}$ factor through the original morphism $A \to \mathscr{O}_{X}(X)$, the original morphism satisfies the universal property of the limit of the maps $A \to B_{i}$. Thus, [[Algebraic geometry --- rising-sea/notes/Morphisms of ringed spaces#_proposition _ morphisms of ringed spaces glue|by definition]] the morphism of schemes recovers the original ring morphism as the morphism of global sections.
+
+Finally, we show naturality. Suppose there is a scheme morphism $\pi : X \to Y$. This induces the map $\operatorname{Mor}_{\mathsf{Sch}}(Y, \operatorname{Spec} A) \to \operatorname{Mor}_{\mathsf{Sch}}(X, \operatorname{Spec} A)$ by precomposing with $\pi$. This also gives a morphism of global sections $\pi^\sharp : \mathscr{O}_{Y}(Y) \to \mathscr{O}_{X}(X)$ that induces a map $\operatorname{Hom}_{\mathsf{Ring}}(A, \mathscr{O}_{Y}(Y)) \to \operatorname{Hom}_{\mathsf{Ring}}(A, \mathscr{O}_{X}(X))$ by precomposing with $\pi^\sharp$. But the diagram
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		\mathrm{Mor}(Y, \mathrm{Spec} \, A) \ar[r] \ar[d] & \mathrm{Mor}(X, \mathrm{Spec} \, A) \ar[d] \\
+		\mathrm{Hom}(A, \mathcal{O}_{Y}(Y)) \ar[r] & \mathrm{Hom}(A, \mathcal{O}_{X}(X))
+	\end{tikzcd}
+\end{document}
+```
+commutes because in either case, a scheme morphism $\rho : Y \to \operatorname{Spec} A$ is taken to $\rho^\sharp \circ \pi^\sharp$.
+
+---
+
+For example, this gives a natural "structure morphism" $\operatorname{Proj} S_{\bullet} \to \operatorname{Spec} A$ for any [[Algebraic geometry --- rising-sea/notes/Projective schemes#_definition _ projective $A$-schemes, quasiprojective $A$-schemes|projective]] $A$-scheme (given by the inclusion $A \to S_{\bullet}$), and a natural morphism $X \to \operatorname{Spec} \mathscr{O}_{X}(X)$ for any scheme $X$.
+
+In general, this expresses the global sections functor and the $\operatorname{Spec}$ functor as [[Algebraic geometry --- rising-sea/notes/Adjoint functors#_definition _ adjoint functors, left adjoint, right adjoint, adjoint pair|adjoints]].
