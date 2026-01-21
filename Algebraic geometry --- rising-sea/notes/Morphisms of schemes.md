@@ -99,3 +99,13 @@ commutes because in either case, a scheme morphism $\rho : Y \to \operatorname{S
 For example, this gives a natural "structure morphism" $\operatorname{Proj} S_{\bullet} \to \operatorname{Spec} A$ for any [[Algebraic geometry --- rising-sea/notes/Projective schemes#_definition _ projective $A$-schemes, quasiprojective $A$-schemes|projective]] $A$-scheme (given by the inclusion $A \to S_{\bullet}$), and a natural morphism $X \to \operatorname{Spec} \mathscr{O}_{X}(X)$ for any scheme $X$.
 
 In general, this expresses the global sections functor and the $\operatorname{Spec}$ functor as [[Algebraic geometry --- rising-sea/notes/Adjoint functors#_definition _ adjoint functors, left adjoint, right adjoint, adjoint pair|adjoints]].
+
+It also gives a universal description of $\operatorname{Spec} \mathbb{Z}$, and a way to more generally describe the notion of a [[Algebraic geometry --- rising-sea/notes/Schemes over a ring#... categorically|scheme over a ring]].
+
+##### _corollary:_  $\operatorname{Spec} \mathbb{Z}$ is the [[Algebraic geometry --- rising-sea/notes/Universal properties and why categories?#_definition _ initial, final, and zero objects|final object]] of $\mathsf{Sch}$
+
+---
+
+Using the fact that tensor products of rings are [[Algebraic geometry --- rising-sea/notes/Fibred products#_example _ the tensor product of rings is the co-fibred products|co-fibred products]], a [[Algebraic geometry --- rising-sea/notes/Yoneda's lemma#_lemma _ Yoneda's lemma|Yoneda]]-style argument gives that $\operatorname{Spec} A \times \operatorname{Spec} B = \operatorname{Spec} (A \otimes_{\mathbb{Z}} B)$ and more generally, $\operatorname{Spec} A \times_{\operatorname{Spec} C} \operatorname{Spec B} = \operatorname{Spec} (A \otimes_{C} B)$.
+
+### Morphisms from affine schemes and scheme-valued points

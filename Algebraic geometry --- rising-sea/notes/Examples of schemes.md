@@ -266,6 +266,18 @@ The **disjoint union of schemes** $\{ X_{i} \}_{i \in \mathscr{I}}$ is the set $
 
 Recall that finite disjoint unions of affine schemes [[Algebraic geometry --- rising-sea/notes/Examples of schemes#_proposition _ products of rings are disjoint unions of affine schemes|are actually affine]]. This doesn't hold for infinite disjoint unions, and thus, gives our first example of a non-affine scheme!
 
+With the understanding of [[Algebraic geometry --- rising-sea/notes/Morphisms of schemes#_definition _ morphism of schemes|morphisms of schemes]] we can justify the use of the symbol $\coprod$ and prove that these really are coproducts of schemes.
+
+##### _proposition:_ the disjoint union is the coproduct of schemes
+
+###### _proof:_
+
+Let $X_{i}$ be a collection of schemes indexed by a set $I$ (we don't need a category for coproducts). Then by construction of the disjoint union $P = \coprod_{i \in I} X_{i}$, there is a topological open embedding $X_{i} \to P$ for each $i$ and $\mathscr{O}_{P \mid X_{i}} = \mathscr{O}_{X_{i}}$ which makes this an [[Algebraic geometry --- rising-sea/notes/Morphisms of ringed spaces#_definition _ open embeddings|open embedding]] of schemes. We name these $pr_{i} : X_{i} \to P$.
+
+Suppose $P'$ has morphisms $pr_{i}' : X_{i} \to P'$ from each $X_{i}$. Then consider $\amalg : P \to P'$ defined by $\amalg_{\mid X_{i}} = pr_{i}'$. This is well-defined since the $X_{i}$ are disjoint. Thus the morphisms glue to one $\amalg : P \to P'$ which clearly has $\amalg \circ pr_{i} = pr_{i}'$.
+
+---
+
 ### The punctured plane
 
 The **punctured plane** (over $\mathbb{F}$) is the [[Algebraic geometry --- rising-sea/notes/Schemes#_proposition, definition _ open subschemes, affine open subscheme|open subscheme]] $U, \mathscr{O}_{\mathbb{A}_{\mathbb{F}}^{2} \mid U}$ of $\mathbb{A}^{2}_{\mathbb{F}}$ given by $U = \mathbb{A}_{\mathbb{F}}^{2} \setminus \{ (x, y) \}$ or "$\mathbb{F}^{2} \setminus \{ (0, 0) \}$". To this end, let $A = \mathbb{F}[x, y]$ and thus, $\operatorname{Spec} A = \mathbb{A}_{\mathbb{F}}^{2}$. 

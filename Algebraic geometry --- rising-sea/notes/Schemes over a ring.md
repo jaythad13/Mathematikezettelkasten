@@ -96,3 +96,30 @@ The **degree of a closed point** $p \in X$ is the degree of the field extension 
 For example, the point $(x^{2} + 1) \in \mathbb{A}_{\mathbb{R}}^1$ has degree $2$ since $\mathbb{C} / \mathbb{R}$ is a degree $2$ extension, while $(x^{3} + 2) \in \mathbb{A}_{\mathbb{Q}}^1$ has degree $3$ since $\mathbb{Q}(\sqrt[3]{ 2 }) / \mathbb{Q}$ is degree $3$.
 
 ### ... categorically
+
+We can describe this notion more generally for any base scheme $S$.
+
+##### _definition:_ $S$-schemes, $\mathsf{Sch}_{S}$, structure morphisms, $S$-morphisms
+
+The **category of $S$-schemes, $\mathsf{Sch}_{S}$** consists of [[Algebraic geometry --- rising-sea/notes/Morphisms of schemes#_definition _ morphism of schemes|scheme morphisms]] $X \to S$ (called **structure morphisms**) as objects and commutative diagrams
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		X \ar[rr] \ar[rd] & & Y \ar[ld] \\
+		& S
+	\end{tikzcd}
+\end{document}
+```
+as morphisms (called **$S$-morphisms**).
+
+Often the structure map is implicit. (For example, when we say $S$ in the category of $S$-schemes, we obviously mean $\operatorname{id}_{S} : S \to S$).
+
+If $S = \operatorname{Spec} A$ we call this the category of $A$-schemes, write $\mathsf{Sch}_{A}$, et c.
+
+---
+
+Note that if $S = \operatorname{Spec} A$, then $X \to S$ [[Algebraic geometry --- rising-sea/notes/Morphisms of schemes#_proposition _ morphisms to affine schemes|is given by a choice of ring homomorphism]] $A \to \mathscr{O}_{X}(X)$. The compositions with restriction maps $A \to \mathscr{O}_{X}(X) \to \mathscr{O}_{X}(U)$ give each $\mathscr{O}_{X}(U)$ the structure of an $A$-algebra. The definition of the structure maps $A \to \mathscr{O}_{X}(U)$ as factoring through $\mathscr{O}_{X}(X)$ and any larger $\mathscr{O}_{X}(V)$ gives the restriction maps the structure of $A$-algebra maps. Thus, this definition of an $A$-scheme gives $\mathscr{O}_{X}$ the structure of a sheaf of $A$-algebras, agreeing with our previous definition.
+
+Since $\operatorname{Spec} \mathbb{Z}$ [[Algebraic geometry --- rising-sea/notes/Morphisms of schemes#_corollary _ $ operatorname{Spec} mathbb{Z}$ is the Algebraic geometry --- rising-sea/notes/Universal properties and why categories? _definition _ initial, final, and zero objects final object of $ mathsf{Sch}$|the final scheme]], all schemes are $\mathbb{Z}$-schemes. Obviously, $S$ is the final object in the category of $S$-schemes.
