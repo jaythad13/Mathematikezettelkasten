@@ -2,6 +2,7 @@
 tags:
 - nt
 - math-195/1
+- math-195/2
 ---
 
 What is transcendental number theory?
@@ -20,9 +21,9 @@ For $x$, the **distance to the closest integer** is $\lVert x \rVert = \min \{ \
 
 ---
 
-These functions are useful — for example, they give a quick proof that $\mathbb{Q}$ is dense in $\mathbb{R}$ using the archimedean property of $\mathbb{R}$. It gives easily that $(\beta - \alpha) n > 1$ and then $\alpha n \leq \lfloor \alpha  n \rfloor + 1 < \beta n$. Then dividing through gives a rational between any two reals $\beta$ and $\alpha$. 
+These functions are useful — for example, they give a quick proof that $\mathbb{Q}$ is dense in $\mathbb{R}$ using the archimedean property of $\mathbb{R}$. It gives easily that $(\beta - \alpha) n > 1$ and then $\alpha n \leq \lfloor \alpha  n \rfloor + 1 < \beta n$. Then dividing through gives a rational between any two reals $\beta$ and $\alpha$. In the same way, given an irrational number, we can squeeze an irrational between any two rationals.
 
-In the same way, given an irrational number, we can squeeze an irrational between any two rationals. We give the classic example, but with a new "better" proof. The usual proof generalises to show that the square root of any prime is irrational, but doesn't help to prove a number is irrational without any known algebraicity conditions.
+We give the classic example, but with a new "better" proof. The usual proof generalises to show that the square root of any prime is irrational, but doesn't help to prove a number is irrational without any known algebraicity conditions.
 
 ##### _theorem:_ $\sqrt{ 2 }$ is irrational
 
@@ -42,7 +43,21 @@ Since $\varepsilon^n$ is positive, $c_{n}$ must be a positive integer, and at le
 
 ---
 
-The crucial idea of having an upper bound that goes to zero and a lower bound that is fixed is generalisable! For example, we can prove $e$ is irrational. We should probably decide on a definition of $e$ first.
+We get a silly corollary from this.
+
+##### _corollary:_ irrational power of an irrational can be rational
+
+There exist irrational numbers $a, b \in \mathbb{R} \setminus \mathbb{Q}$ such that $a^b$ is rational.
+
+###### _proof:_
+
+Either $\sqrt{ 2 }^{\sqrt{ 2 }}$ is rational or $(\sqrt{ 2 }^{\sqrt{ 2 }})^{\sqrt{ 2 }} = \sqrt{ 2 }^2 = 2$ is the $\sqrt{ 2 }$th power of an irrational number.
+
+---
+
+This is a little unsatisfactory because we don't know which is irrational. Kuzmin proved that $\sqrt{ 2 }^\sqrt{ 2 }$ is irrational in 1930, but this is very difficult. This is a special case of of the Gelfond–Schneider theorem.
+
+Returning to irrationality results, the crucial idea of having an upper bound that goes to zero and a lower bound that is fixed is generalisable! For example, we can prove $e$ is irrational. We should probably decide on a definition of $e$ first.
 
 ##### _definition:_ $e$
 
@@ -137,5 +152,24 @@ I_{n}(\pi / 2) & = \int_{-1}^1 (1 - z^{2})^n \cos(\pi z) \, dz \\
 $$
 Also, since the integrand is positive, so is the integral. This implies that $p_{n}(\pi / 2)$ must also always be positive. Since $b^{2n + 1}$ is greater than any denominator in $p_{n}(\pi / 2)$ (it has integer coefficients and degree at most $n$) then $p_{n}(\pi / 2)$ is bounded below by $1$. But the other side $I_{n}(\pi / 2) a^{2n + 1} / n! \to 0$ as $n \to \infty$ so we have a contradiction. 
 
+---
+
+However, we don't just want irrationality results. We also want to know how well these irrationals can be approximated by rationals. For example, we can get a baby version of Dirichlet's theorem for $\sqrt{ 2 }$. It tells us that in order to get better rational approximations to $\sqrt{ 2 }$, the rational approximations must have larger and larger denominators.
+
+##### _theorem:_ Dirichlet's theorem for $\sqrt{ 2 }$
+
+For any $a, b \in \mathbb{N}$ we must have $\lvert \sqrt{ 2 } - a / b \rvert \geq 3 b^{2}$.
+
+###### _proof:_
+
+Since $\sqrt{ 2 }$ is not rational, we must have $2b^{2} \neq a^{2}$ and so $\lvert 2b^{2} - a^{2} \rvert \geq 1$. Factoring we get
+$$
+\lvert \sqrt{ 2 } - a / b \rvert \geq \frac{1}{(\sqrt{ 2 } b + a) b} = \frac{1}{b^{2} (\sqrt{ 2 } + a / b)}.
+$$
+If $\sqrt{ 2 } + a / b \leq 3$ we are done. 
+
+Suppose $b = 1$ (that is, $a / b$ is an integer). Then $\lvert \sqrt{ 2 } - a \rvert > \sqrt{ 2 } - 1 > 1 / 3$. Thus, if $b = 1$ we have $\lvert \sqrt{ 2 } - a / b \rvert \geq 1 / 3 b^{2} = 1 / 3$.
+
+Suppose $b \geq 2$. If $\sqrt{ 2 } + a / b > 3$ then $a / b > 3 - \sqrt{ 2 } > 3 / 2$. Then $\lvert a / b - \sqrt{ 2 } \rvert > 3 - 2 \sqrt{ 2 } > 1 / 12$. But then $b \geq 2$ implies $1 / 12 \geq 1 / 3b^{2}$ so we have the desired inequality.
 
 ---
