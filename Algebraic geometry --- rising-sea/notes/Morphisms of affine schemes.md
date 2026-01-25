@@ -68,7 +68,7 @@ This generalises to affine $n$-space and $m$-space over a field.
 
 ##### _example:_ coordinates for an affine scheme morphism
 
-Consider an $\mathbb{F}$-algebra morphism $\varphi : \mathbb{F}[y_{1}, \dots, y_{n}] \to \mathbb{F}[x_{1}, \dots, x_{m}]$ by $y_{i} \mapsto f_{i}$ (where $f_{i} \in \mathbb{F}[y_{1}, \dots, y_{n}]$). Write this as $\varphi : A \to B$ for convenience. Suppose $g  = q_{1} (y_{1} - f_{1}(a_{1}, \dots, a_{n})) + \dots  + q_{n} (y_{n} - f_{n}(a_{1}, \dots, a_{n}))$ (where $q_{i} \in A$). Then
+Consider an $\mathbb{F}$-algebra morphism $\varphi : \mathbb{F}[y_{1}, \dots, y_{n}] \to \mathbb{F}[x_{1}, \dots, x_{m}]$ by $y_{i} \mapsto f_{i}$ (where $f_{i} \in \mathbb{F}[x_{1}, \dots, x_{m}]$). Write this as $\varphi : A \to B$ for convenience. Suppose $g  = q_{1} (y_{1} - f_{1}(a_{1}, \dots, a_{n})) + \dots  + q_{n} (y_{n} - f_{n}(a_{1}, \dots, a_{n}))$ (where $q_{i} \in A$). Then
 $$
 \begin{align}
 \varphi(g) & = \varphi(q_{1}) (f_{1} - f_{1}(a_{1}, \dots, a_{m})) + \dots + \varphi(q_{n}) (f_{n} - f_{n}(a_{1}, \dots, a_{m})) \\
@@ -245,6 +245,12 @@ A **morphism of affine schemes** $\operatorname{Spec} A \to \operatorname{Spec} 
 
 Equivalently, it is a morphism of ringed spaces induced by a ring homomorphism $B \to A$.
 
+---
+
+##### _example:_ maps from the dual numbers
+
+Recall that the [[Algebraic geometry --- rising-sea/notes/Examples of schemes#The dual numbers|dual numbers]] $\mathbb{C}[\varepsilon] / (\varepsilon^{2})$ look like a point with fuzz. Now consider the map $\mathbb{C}[x] \to \mathbb{C}[\varepsilon] / (\varepsilon^{2})$ by $x \mapsto a \varepsilon$ for some $a \in \mathbb{C}$. For non-zero $a$, this gives a map $\operatorname{Spec} \mathbb{C}[\varepsilon] / (\varepsilon^{2}) \to \mathbb{A}_{\mathbb{C}}^1$ that sends $(\varepsilon) \mapsto (x)$ and $(0) \mapsto (x^{2})$. That is, image of the map looks like a point with fuzz around it. The pull back of functions looks like pulling back functions to their linear parts, scaled by $a$. For $a = 0$, the $(0) \mapsto (x)$ as well, so the fuzz collapses.
+ 
 ---
 
 ##### _corollary:_ affine schemes are the opposite category of rings

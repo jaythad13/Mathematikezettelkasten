@@ -63,7 +63,7 @@ Write $\mathbb{A}_{\mathbb{F}}^{n + 1} \setminus \{ 0 \}$ as the union of all th
 
 ---
 
-We have shown already that [[Algebraic geometry --- rising-sea/notes/Morphisms of ringed spaces#_definition _ the category of ringed spaces|morphisms of ringed spaces compose]]. It's clear that the composition of a morphism of local rings is still a morphism of local rings. Since the stalk morphisms of the composition are just compositions of the stalk morphisms with some extra $\pi_{*} \mathscr{O}_{X, p} \to \mathscr{O}_{X, p}$ bits in between this means that morphisms of local ringed spaces, and thus, morphisms of schemes compose too. Clearly this gives a category of schemes. We denote this category by $\mathsf{Sch}$.
+We have shown already that [[Algebraic geometry --- rising-sea/notes/Morphisms of ringed spaces#_definition _ the category of ringed spaces|morphisms of ringed spaces compose]]. It's clear that the composition of local ring homomorphisms is still a local ring homomorphism. Since the stalk morphisms of the composition are just compositions of the stalk morphisms with some extra $\pi_{*} \mathscr{O}_{X, p} \to \mathscr{O}_{X, p}$ bits in between this means that morphisms of local ringed spaces, and thus, morphisms of schemes compose too. Clearly this gives a category of schemes. We denote this category by $\mathsf{Sch}$.
 
 ### Morphisms to affine schemes
 
@@ -79,7 +79,9 @@ We first describe the bijection between $\operatorname{Mor}_{\mathsf{Sch}}(X, \o
 
 For general $X$, a morphism of schemes $X \to \operatorname{Spec} A$ gives a ring homomorphism of global sections $A \to \mathscr{O}_{X}(X)$. 
 
-Conversely, a ring homomorphism of global sections $A \to \mathscr{O}_{X}(X)$ extends to a homomorphism $A \to \mathscr{O}_{X}(X) \to \mathscr{O}_{X}(\operatorname{Spec} B)$, and thus, a morphism of schemes $\operatorname{Spec} B \to \operatorname{Spec} A$ for any affine open $\operatorname{Spec} B \subseteq X$. Choose some affine cover $X = \bigcup_{i \in I} \operatorname{Spec} B_{i}$. Since the ring homomorphisms agree on intersections of the affine opens, so do the scheme morphisms $\operatorname{Spec} B_{i} \to \operatorname{Spec} A$. Thus, they glue to a morphism of schemes $X \to \operatorname{Spec} A$. Note that $\mathscr{O}_{X}(X)$ is the limit of all the $\mathscr{O}_{X}(\operatorname{Spec} B_{i})$ and their intersections. Since the ring maps $A \to B_{i}$ factor through the original morphism $A \to \mathscr{O}_{X}(X)$, the original morphism satisfies the universal property of the limit of the maps $A \to B_{i}$. Thus, [[Algebraic geometry --- rising-sea/notes/Morphisms of ringed spaces#_proposition _ morphisms of ringed spaces glue|by definition]] the morphism of schemes recovers the original ring morphism as the morphism of global sections.
+Conversely, a ring homomorphism of global sections $A \to \mathscr{O}_{X}(X)$ extends to a homomorphism $A \to \mathscr{O}_{X}(X) \to \mathscr{O}_{X}(\operatorname{Spec} B)$, and thus, a morphism of schemes $\operatorname{Spec} B \to \operatorname{Spec} A$ for any affine open $\operatorname{Spec} B \subseteq X$. Choose some affine cover $X = \bigcup_{i \in I} \operatorname{Spec} B_{i}$. Since the ring homomorphisms agree on intersections of the affine opens, so do the scheme morphisms $\operatorname{Spec} B_{i} \to \operatorname{Spec} A$. Thus, they glue to a morphism of schemes $X \to \operatorname{Spec} A$. 
+
+Note that $\mathscr{O}_{X}(X)$ is the limit of all the $\mathscr{O}_{X}(\operatorname{Spec} B_{i})$ and their intersections. Since the ring maps $A \to B_{i}$ factor through the original morphism $A \to \mathscr{O}_{X}(X)$, the original morphism satisfies the universal property of the limit of the maps $A \to B_{i}$. Thus, [[Algebraic geometry --- rising-sea/notes/Morphisms of ringed spaces#_proposition _ morphisms of ringed spaces glue|by definition]] the morphism of schemes recovers the original ring morphism as the morphism of global sections.
 
 Finally, we show naturality. Suppose there is a scheme morphism $\pi : X \to Y$. This induces the map $\operatorname{Mor}_{\mathsf{Sch}}(Y, \operatorname{Spec} A) \to \operatorname{Mor}_{\mathsf{Sch}}(X, \operatorname{Spec} A)$ by precomposing with $\pi$. This also gives a morphism of global sections $\pi^\sharp : \mathscr{O}_{Y}(Y) \to \mathscr{O}_{X}(X)$ that induces a map $\operatorname{Hom}_{\mathsf{Ring}}(A, \mathscr{O}_{Y}(Y)) \to \operatorname{Hom}_{\mathsf{Ring}}(A, \mathscr{O}_{X}(X))$ by precomposing with $\pi^\sharp$. But the diagram
 ```tikz
@@ -106,6 +108,80 @@ It also gives a universal description of $\operatorname{Spec} \mathbb{Z}$, and a
 
 ---
 
-Using the fact that tensor products of rings are [[Algebraic geometry --- rising-sea/notes/Fibred products#_example _ the tensor product of rings is the co-fibred products|co-fibred products]], a [[Algebraic geometry --- rising-sea/notes/Yoneda's lemma#_lemma _ Yoneda's lemma|Yoneda]]-style argument gives that $\operatorname{Spec} A \times \operatorname{Spec} B = \operatorname{Spec} (A \otimes_{\mathbb{Z}} B)$ and more generally, $\operatorname{Spec} A \times_{\operatorname{Spec} C} \operatorname{Spec B} = \operatorname{Spec} (A \otimes_{C} B)$.
+Using the fact that tensor products of rings are [[Algebraic geometry --- rising-sea/notes/Fibred products#_example _ the tensor product of rings is the co-fibred products|co-fibred products]], a [[Algebraic geometry --- rising-sea/notes/Yoneda's lemma#_lemma _ Yoneda's lemma|Yoneda]]-style argument gives that $\operatorname{Spec} A \times \operatorname{Spec} B = \operatorname{Spec} (A \otimes_{\mathbb{Z}} B)$ and more generally, $\operatorname{Spec} A \times_{\operatorname{Spec} C} \operatorname{Spec B} = \operatorname{Spec} (A \otimes_{C} B)$, in $\mathsf{Sch}$ not just $\mathsf{AffSch}$.
+
+Finally, the notion of schemes over a ring allows us to generalise our example of the map $\mathbb{A}^{n + 1} \to \mathbb{P}^n$.
+
+##### _example:_ some maps to projective space
+
+In the category of $B$-schemes, any choice of $n + 1$ functions on $X$ with no common zeroes gives a morphism $X \to \mathbb{P}_{B}^n$, with homogeneous coordinates $(f_{0} : \dots : f_{n})$. If $g \in X$ is nowhere vanishing, then the functions $f_{0}, \dots, f_{n}$ and $g f_{0}, \dots, g f_{n}$ define the same morphism.
+
+This is because, on each affine open $\operatorname{Spec} A \subseteq X$, there is some (restriction of) $f_{i}$ not vanishing. In fact, since $\mathscr{O}_{X}$ is [[Algebraic geometry --- rising-sea/notes/Quasicoherent sheaves#_definition _ affine quasicoherent sheaf, twiddlification|quasicoherent]], $f_{i}$ is invertible on $X_{f_{i}}$ (the locus where $\operatorname{Spec} A$ doesn't vanish), and thus, is invertible on $\operatorname{Spec} A$. Then, let $X \to \mathbb{P}^n_{B}$ restrict to $\operatorname{Spec} A \to \operatorname{Spec} B[x_{0}, \dots, x_{n}]_{x_{i}}$ given by $B[x_{0}, \dots, x_{n}]_{x_{i}} \to A$ with $x_{k} \mapsto f_{k}$. On intersections within $X_{f_{i}}$ the morphisms obviously agree. On the intersections $U = \operatorname{Spec} A_{i} \cap \operatorname{Spec} A_{j} \subseteq X_{f_{i}} \cap X_{f_{j}}$ the morphisms restrict the same morphism $B[x_{0}, \dots, x_{n}]_{x_{i} x_{j}} \to \mathscr{O}_{X}(U)$ with $x_{k} \mapsto f_{k} \mapsto \operatorname{res} f_{k}$ since the two restrictions $X \to X_{f_{i}} \to X_{f_{i}} \cap X_{f_{j}}$ and $X \to X_{f_{j}} \to X_{f_{i}} \cap X_{f_{j}}$ are the same.
+
+Note that not all morphisms are given this way. For example, $\operatorname{id} : \mathbb{P}_{\mathbb{F}}^1 \to \mathbb{P}_{\mathbb{F}}^1$ isn't of this form since the only non-vanishing function (up to scaling) gives the constant map. The right generalisation is that morphisms $X \to \mathbb{P}^n$ are in bijection with $n + 1$ sections of a line bundle with no common zeroes, which we will see soon.
+
+--- 
 
 ### Morphisms from affine schemes and scheme-valued points
+
+Morphisms from affine schemes are more difficult to describe, but involve some important cases. In particular, inclusions of points are essentially as maps from $\operatorname{Spec}$s of fields.
+
+##### _proposition:_ inclusions of points are given by morphisms from fields
+
+For any point $p \in X$ there is a canonical morphism $\operatorname{Spec} \mathscr{O}_{X, p} \to X$, and thus, a canonical morphism $\operatorname{Spec} \kappa(p) \to X$.
+
+###### _proof:_
+
+For every affine open neighbourhood of $p$, $\operatorname{Spec} A \subseteq X$, we have a morphism $\mathscr{O}_{X}(\operatorname{Spec} A) \to \mathscr{O}_{X, p}$. By definition of the sheaf, they agree on intersections. Thus, these suffice to give a morphism of schemes $\mathscr{O}_{X, p} \to \operatorname{Spec} A \to X$ that factors through the open embeddings $\operatorname{Spec} A \to X$.
+
+The canonical homomorphism $\mathscr{O}_{X, p} \to \kappa(p)$ then gives the canonical scheme morphism $\operatorname{Spec} \kappa(p) \to \operatorname{Spec} \mathscr{O}_{X, p} \to X$.
+
+---
+
+##### _proposition:_ morphisms from local rings
+
+Let $A, \mathfrak{m}$ be a local ring. If $\pi : \operatorname{Spec} A \to X$ sends $\mathfrak{m}$ to $p \in X$, then any open set containing $p$ contains the (set-theoretic) image of $\pi$.
+
+Further, there is a bijection between $\operatorname{Mor}_{\mathsf{Sch}}(\operatorname{Spec} A, X)$ and pairs consisting of a point $p \in X$ and a local ring homomorphism $\mathscr{O}_{X, p} \to A$.
+
+Finally, this gives a bijection between $\operatorname{Mor}_{\mathsf{Sch}}(\operatorname{Spec} \mathbb{F}, X)$ and choices of $p \in X$ and a homomorphism $\kappa(p) \to \kappa$.
+
+###### _proof:_
+
+Suppose $\pi(\mathfrak{m}) = p$ and $U \subseteq X$ is an open neighbourhood of $p$. Let $W$ be the open set $\pi^\text{pre}(U) \subseteq \operatorname{Spec} A$ containing $\mathfrak{m}$. Write $W = \operatorname{Spec} A \setminus V(\mathfrak{i})$ for some ideal $\mathfrak{i} \subseteq A$. Since $\mathfrak{m}$ is maximal and not contained in $V(\mathfrak{i})$, we have $\mathfrak{i} \not \subseteq \mathfrak{m}$. Since $A$ is local, this forces $\mathfrak{i} = A$ and $W = \operatorname{Spec} A$.
+
+Since any open set containing $p$ contains the image of $\pi$, it suffices to prove the rest of the results in the case that the image of $\pi$ is contained in an affine open $\operatorname{Spec} B \subseteq X$ with $p \in X$ represented by $\mathfrak{p} \subseteq B$.
+
+Suppose $\pi : \operatorname{Spec} A \to X$ maps $\mathfrak{m}$ to $p$. Any $D(f) \subseteq \operatorname{Spec} B$ then gives a map $\mathscr{O}_{X}(D(f)) = B_{f} \to A$. By the universal property of localisation/colimits, all these maps and $\pi^\sharp$ in particular must then factor uniquely as $B \to B_{\mathfrak{p}} \to A$. Note that by standard set theory $\pi^{\sharp, \text{img}}(\mathfrak{p}) \subseteq \pi^{\sharp, \text{img}}(\pi^{\sharp, \text{pre}})(\mathfrak{m}) \subseteq \mathfrak{m}$, so $B_{\mathfrak{p}} \to A$ is a local ring homomorphism.
+
+Conversely, a choice of $p \in X$ and local ring homomorphism $\pi^\sharp_{p} : \mathscr{O}_{X, p} = B_{\mathfrak{p}} \to A$ gives rise to a morphism $B \to B_{\mathfrak{p}} \to A$. This factors uniquely through $\pi^\sharp_{p}$, recovering the original local ring homomorphism.
+
+$\mathbb{F}$ is a local ring with maximal ideal $0$. Thus, $\pi : \operatorname{Spec} \mathbb{F} \to X$ has $\pi^{\sharp, \text{img}}(\mathfrak{p}) \subset 0$. Then $\pi^\sharp_{p} : B_{\mathfrak{p}} \to \kappa$ descends to a map $\kappa(p) \to \mathbb{F}$.
+
+---
+
+The idea that morphisms from $\operatorname{Spec}$s of fields pick out points gives rise to the notion of $\mathbb{F}$-valued points as morphisms $\operatorname{Spec} \mathbb{F} \to X$ and in general, scheme-valued points.
+
+##### _definition:_ scheme-valued points of a scheme
+
+For any scheme $Z$, the **$Z$-valued points** or **$Z$-points** of $X$ are the morphisms $Z \to X$.
+
+The set of all $Z$-valued points is denoted $X(Z)$ to suggest the identification of $X$ with the [[Algebraic geometry --- rising-sea/notes/Functors#_example _ the functor of points and its opposite|functor of points]] $h_{X} : Z \to \operatorname{Mor}_{\mathsf{Sch}}(Z, X)$.
+
+In the category of $S$[[Algebraic geometry --- rising-sea/notes/Schemes over a ring#_definition _ $S$-schemes, $ mathsf{Sch}_{S}$, structure morphisms, $S$-morphisms|-schemes]], the **$Z$-points of $X$ over $S$** are the $S$-morphisms $Z \to X$.
+
+An $\mathbb{F}$-point of an $\mathbb{F}$-scheme is sometimes called an **$\mathbb{F}$-rational point**.
+
+---
+
+As usual, when $Z = \operatorname{Spec} A$, this is abbreviated to $A$-valued points and $X(A)$.
+
+Note that a morphism of schemes $X \to Y$ induces a map of $Z$-valued points $X(Z) \to Y(Z)$ and the morphism of schemes is determined by the data of all induced maps of $Z$-valued points (over all schemes $Z$). These are both simple consequences of [[Algebraic geometry --- rising-sea/notes/Yoneda's lemma#_lemma _ Yoneda's lemma (easy mode)|Yoneda's lemma]].
+
+##### _example:_ $A$-points are solutions
+
+One importance of $A$-points is that they pick out solutions in $A$ to equations. In the most basic case, consider $A$-points of an affine scheme $\operatorname{Spec} \mathbb{Z}[x_{1}, \dots, x_{n}] / (f_{1}, \dots, f_{m})$. These are determined by morphisms $\mathbb{Z}[x_{1}, \dots, x_{n}]/(f_{1}, \dots, f_{m}) \to A$ which are just determined by the choices of $x_{i} \mapsto a_{i}$. The only constraint is that each $f_{i} \to 0$. But then this is just picking $(a_{1}, \dots, a_{n}) \in A^n$ such that $f(a_{1}, \dots, a_{n}) = 0$ — this is just picking out the roots (in $A$) to all the $f_{i}$.
+
+For example, the $\mathbb{Q}$-points of $\mathbb{Z}[x, y] / (x^{2} + y^{2} - 1)$ are exactly the points on the unit circle with rational coordinates.
+
+---
