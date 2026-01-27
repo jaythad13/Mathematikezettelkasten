@@ -1,0 +1,52 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 181 --- Dynamical systems}
+\assignment{Short essay \#1}
+\duedate{25th January 2026}
+
+\begin{document}
+
+In \cite{period-three}, Li and Yorke are interested in the dynamics of iterating a continuous function $f$ on an interval $I \subseteq \mathbb{R}$. They are interested in whether these simple dynamical systems can still display complex (chaotic) behaviour. 
+
+Let $f : I \to I$ be a continuous function. Let $f^{n}(x)$ denote $\underbrace{f \circ \dots \circ f}_{n \text{ times}}(x)$. 
+
+One way to investigate the behaviour is to investigate points $x \in I$ so that the sequence $\{ f^{n}(x) \}_{n \in \mathbb{N}}$ is periodic or eventually periodic. These are called \emph{periodic points} or \emph{eventually periodic points} of $f$, and are said to have the same \emph{period} as the period of the corresponding sequence.
+
+Li and Yorke, prove the following theorem.
+
+\begin{theorem}
+	Let $I \subseteq \mathbb{R}$ be an interval and let $f : I \to I$ be a continuous function. Suppose there is a point $a \in I$ such that the points $b = f(a)$, $c = f^{2}(a)$, and $d = f^{3}(a)$ satisfy $d \le a < b < c$ (or $d \ge a > b > c$). Then, for each $p \in \mathbb{N}$, there is a periodic point in $I$ having period $p$.
+\end{theorem}
+
+They also prove, under the same hypothesis, that there is an uncountable set $S \subseteq I$ containing no periodic points and satisfying certain technical conditions. However, we focus on the result above, which implies in the case that $d = a$ that ``period $3$ implies chaos'' --- if there is a periodic point of period $3$, then there are periodic points of every positive integer period.
+
+\begin{proof}[Proof sketch]
+The key idea is to use the $p$-periodic sequence of intervals
+\[
+	\{ I_{n} \}_{n \in \mathbb{N} \cup \{ 0 \}} = \underbrace{[b, c], \dots, [b, c], [a, b]}_{I_{0} \text{ through } I_{p - 1}}, [b, c], \dots
+\]
+Since $I_{n} \subseteq f(I_{n})$, one can induct to find a nested intervals $Q_{n} \subseteq Q_{n - 1} \subseteq \dots \subseteq I_{0}$ such that $f^{n}(Q_{n}) = I_{n}$. In particular, note that $Q_{p} \subseteq I_{0} = [b, c]$ and $f^{p}(Q_{p}) = I_{p} = I_{0} = [b, c]$. That is, $Q_{p} \subseteq f^{p}(Q_{p})$. Applying the intermediate value theorem shows that $f^{p}$ must have a fixed point in $Q_{p}$. Call this fixed point $x_{p}$.
+
+By our construction $x_{p} \in Q_{p} \subseteq \dots \subseteq Q_{0}$, and thus, $f^{i}(x_{p}) \in I_{i}$ for each $i < p$. In particular, this means $f^{i}(x_{p}) \in [b, c]$ for $i = 0, \dots, p - 2$ and $f^{i}(x_{p}) \in [a, b]$ for $i = p - 1$. Thus, $x_{p}$ cannot have any period less than $p$.
+
+\end{proof}
+
+This paper led me to two further questions.
+
+In the first appendix the authors prove that though the existence of points of period $3$ implies the existence of points of period $5$, the converse does not hold. I thought it would be interesting to understand the implications between the existence of points of various periods. For example, does the existence of points of period $19$ imply the existence of points of period $54$? I looked this up and found that the answer is yes, with a complete answer given in what is now known as {\v S}arkovski{\u i}'s theorem \cite{sharkovskii}, and its converse \cite{converse}.
+
+In the second appendix, the authors prove that for the uncountable set $S \subseteq I$ containing no periodic points, any two $x, y \in S$ have $\limsup_{n \to \infty} \lvert f^{n}(p) - f^{n}(q) \rvert > 0$. It would be interesting to know if there are any good lower bounds on this quantity. What about upper bounds, and bounds on $\lvert f^{n}(p) - f^{n}(q) \rvert$ itself?
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width = 0.5 \textwidth]{figures/period points.png}
+	\caption{For $f(x) = 4x(1 - x)$, in red, there are fixed points of $f^{3}$ (roots of $f^{3}(x) - x$ in purple) that are not fixed points of $f(x)$ ($f(x) - x$ in blue) nor of $f^{2}(x)$ ($f^{2}(x) - x$ in green). Thus, $f(x)$ has points of period $3$ and points of all periods.}
+\end{figure}
+
+
+\bibliographystyle{alpha}
+\bibliography{references}
+
+\end{document}
