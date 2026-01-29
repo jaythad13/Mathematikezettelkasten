@@ -274,6 +274,81 @@ This tells us that $\varphi_{ij}$ expresses $(M_{i})_{f_{j}}$ as the kernel of t
 
 ---
 
+There are various ways to characterise quasicoherent sheaves by restricting attention to some open subsets of $X$.
+
+##### _proposition:_ quasicoherence in terms of distinguished inclusions
+
+Suppose $\mathscr{F}$ is an $\mathscr{O}_{X}$-module. Then $\mathscr{F}$ is quasicoherent if and only if, for each distinguished inclusion $\operatorname{Spec} A_{f} \subseteq \operatorname{Spec} A$ into an affine open of $X$, the factorisation
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		\mathcal{F}(\mathrm{Spec} \, A) \ar[rr, "\mathrm{res}"] \ar[rd] && \mathcal{F}(\mathrm{Spec} \, A_{f}) \\
+		& \mathcal{F}(\mathrm{Spec} \, A)_{f} \ar[ru, "\alpha"]
+	\end{tikzcd}
+\end{document}
+```
+given by the universal property of localisation is given by an isomorphism $\alpha$.
+
+###### _proof:_
+
+Suppose $\mathscr{F}$ is quasicoherent. Then this follows from the definition.
+
+Suppose $\mathscr{F}$ has $\alpha$ an isomorphism in the diagram above. Then each restriction $\mathscr{F}_{\mid \operatorname{Spec} A}$ agrees with some $\widetilde{M}$ on the [[Algebraic geometry --- rising-sea/notes/The base of distinguished open sets|the base of distinguished open sets]] of $\operatorname{Spec} A$. But then that's the definition of quasicoherence.
+
+---
+
+##### _example:_ the ideal sheaf of nilpotents
+
+For any $f \in A$, there is an isomorphism of $A$-modules and $A_{f}$-modules $(\mathfrak{N}_{A})_{f} \cong \mathfrak{N}_{A_{f}}$. If $a^n = 0$ in $A$, then $a^n = 0$ in $A_{f}$ as well. That is, $a \in \mathfrak{N}_{A}$ implies $a / f \in \mathfrak{N}_{A_{f}}$. If $(a / f)^n = 0$ in $A_{f}$, then $f^m a^n = 0$ in $A$ and so $a f \in \mathfrak{N}_{A}$. We can write $a / f = af / f^{2} \in \mathfrak{N}_{A_{f}}$. 
+
+Then, to define the quasicoherent **ideal sheaf of nilpotents** by $\mathfrak{N}_{X}(\operatorname{Spec} A) = \mathfrak{N}_{A}$ on any scheme $X$, we just need to check that this is compatible under gluing. This is just an application of [[Algebraic geometry --- rising-sea/notes/Affine-locality and affine communication#_lemma _ Nike's lemma|Nike's lemma]].
+
+---
+
+##### _example:_ the quasicoherent tensor product
+
+Suppose $\mathscr{F}, \mathscr{G}$ are quasicoherent sheaves. The assignment $\mathscr{F} \otimes \mathscr{G}(U) = \mathscr{F}(U) \otimes \mathscr{G}(U)$ is not a sheaf. However, there is a unique quasicoherent sheaf defined by $\mathscr{F} \otimes \mathscr{G}(\operatorname{Spec} A) = \mathscr{F}(\operatorname{Spec} A) \otimes \mathscr{G}(\operatorname{Spec} A)$ and by the restrictions $\mathscr{F} \otimes \mathscr{G}(\operatorname{Spec} A) \to \mathscr{F} \otimes \mathscr{G}(D_{A}(f))$ given by localisation.
+
+This satisfies the universal property of the tensor product, not only in $\mathsf{QCoh}_{X}$, but also in $\mathsf{Mod}_{\mathscr{O}_{X}}$. 
+
+---
+
+##### _lemma:_ the qcqs lemma
+
+Suppose $X$ is a [[Algebraic geometry --- rising-sea/notes/Topological properties of schemes#Qcqs|qcqs]] scheme, $\mathscr{F}$ is a quasicoherent sheaf on $X$ and $f \in \mathscr{O}_{X}(X)$ is a global function. Let $X_{f}$ be the locus where $f$ doesn't vanish. Then the restriction map $\operatorname{res}_{X_{f} \subseteq X}  : \mathscr{F}(X) \to \mathscr{F}(X_{f})$ is exactly localisation.
+
+###### _proof:_
+
+[[Algebraic geometry --- rising-sea/notes/Topological properties of schemes#_proposition _ characterising qcqs schemes|Since]] $X$ is qcqs, there exists a finite cover of $X$ by affine opens $U_{i} = \operatorname{Spec} A_{i}$ such that all pairwise intersections $U_{ij}$ are covered by finitely many affine opens $U_{ijk} = \operatorname{Spec} A_{ijk}$. Since there are finitely many of each affine cover, we can turn the products in the [[Algebraic geometry --- rising-sea/notes/Sheaves#_definition _ sheaf, separated presheaf|sheaf exact sequence]] into direct sums. That is,
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		0 \ar[r] & \mathcal{F}(X) \ar[r] & \bigoplus_{i} \mathcal{F}(U_{i}) \ar[r] & \bigoplus_{i, j, k} \mathcal{F}(U_{ijk})
+	\end{tikzcd}
+\end{document}
+```
+is exact. Since localisation [[Algebraic geometry --- rising-sea/notes/Exact functors#_example _ localisation is exact|is exact]] and [[Algebraic geometry --- rising-sea/notes/Localisation, categorically#_proposition _ localisation commutes with finite products and all coproducts|commutes with direct sums]], we see that
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		0 \ar[r] & \mathcal{F}(X)_{f} \ar[r] & \bigoplus_{i} \mathcal{F}(U_{i})_{f} \ar[r] & \bigoplus_{i, j, k} \mathcal{F}(U_{ijk})_{f}
+	\end{tikzcd}
+\end{document}
+```
+is exact. But then, since the $U_{i}$ and the $U_{ijk}$ are affine, by definition $\mathscr{F}(D_{U_{i}}(f)) = \mathscr{F}(U_{i})_{f}$. Also, these $D_{U_{i}}(f)$ are just the locus of $U_{i}$ where $f$ doesn't vanish, and thus, form a cover of $X_{f}$. The $D_{U_{ijk}}(f)$ also clearly form a cover of their pairwise intersections. But that means $\mathscr{F}(X)_{f}$ and $\mathscr{F}(X_{f})$ are both the kernel of the map $\bigoplus_{i} \mathscr{F}(U_{i})_{f} \to \bigoplus_{i, j, k} \mathscr{F}(U_{ijk})_{f}$. Thus, $\mathscr{F}(X)_{f} \cong \mathscr{F}(X_{f})$.
+
+By the [[Algebraic geometry --- rising-sea/notes/Sheaves#_proposition _ identity and gluability axioms as a limit|limit property of sheaves]], the restriction is $\mathscr{F}(X) \to \mathscr{F}(X_{f})$ is the unique map that all the restriction maps $\mathscr{F}(X) \to \mathscr{F}(D_{U_{i}}(f))$ factor through. Since $f$ is invertible on these, they already factor through the localisation map. Thus, the restriction is exactly the localisation map.
+
+---
+
+### Torsion
+
 Recall the definitions of torsion free modules and the torsion submodule of a module $M$ over a ring $A$. Recall that over an integral domain $A$, $M$ is torsion if and only if $M \otimes_{A} Q(A) = 0$. Quasicoherent sheaves allow us to extend this notion to sheaves.
 
 ##### _definition:_ torsion-free, torsion 
