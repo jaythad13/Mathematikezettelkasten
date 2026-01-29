@@ -299,19 +299,9 @@ Suppose $\mathscr{F}$ has $\alpha$ an isomorphism in the diagram above. Then eac
 
 ---
 
-##### _example:_ the ideal sheaf of nilpotents
+##### _example:_ the ideal sheaf of nilpotents and the tensor product are quasicoherent
 
-For any $f \in A$, there is an isomorphism of $A$-modules and $A_{f}$-modules $(\mathfrak{N}_{A})_{f} \cong \mathfrak{N}_{A_{f}}$. If $a^n = 0$ in $A$, then $a^n = 0$ in $A_{f}$ as well. That is, $a \in \mathfrak{N}_{A}$ implies $a / f \in \mathfrak{N}_{A_{f}}$. If $(a / f)^n = 0$ in $A_{f}$, then $f^m a^n = 0$ in $A$ and so $a f \in \mathfrak{N}_{A}$. We can write $a / f = af / f^{2} \in \mathfrak{N}_{A_{f}}$. 
-
-Then, to define the quasicoherent **ideal sheaf of nilpotents** by $\mathfrak{N}_{X}(\operatorname{Spec} A) = \mathfrak{N}_{A}$ on any scheme $X$, we just need to check that this is compatible under gluing. This is just an application of [[Algebraic geometry --- rising-sea/notes/Affine-locality and affine communication#_lemma _ Nike's lemma|Nike's lemma]].
-
----
-
-##### _example:_ the quasicoherent tensor product
-
-Suppose $\mathscr{F}, \mathscr{G}$ are quasicoherent sheaves. The assignment $\mathscr{F} \otimes \mathscr{G}(U) = \mathscr{F}(U) \otimes \mathscr{G}(U)$ is not a sheaf. However, there is a unique quasicoherent sheaf defined by $\mathscr{F} \otimes \mathscr{G}(\operatorname{Spec} A) = \mathscr{F}(\operatorname{Spec} A) \otimes \mathscr{G}(\operatorname{Spec} A)$ and by the restrictions $\mathscr{F} \otimes \mathscr{G}(\operatorname{Spec} A) \to \mathscr{F} \otimes \mathscr{G}(D_{A}(f))$ given by localisation.
-
-This satisfies the universal property of the tensor product, not only in $\mathsf{QCoh}_{X}$, but also in $\mathsf{Mod}_{\mathscr{O}_{X}}$. 
+Because [[Algebraic geometry --- rising-sea/notes/Grothendieck topologies#_example _ the ideal sheaf of nilpotents|they are defined]] to have restrictions $\operatorname{res} : \mathfrak{N}_{X}(\operatorname{Spec} A) \to \mathfrak{N}_{X}(\operatorname{Spec} A_{f})$ and $\operatorname{res} : \mathscr{F} \otimes \mathscr{G}(\operatorname{Spec} A) \to \mathscr{F} \otimes \mathscr{G}(\operatorname{Spec} A_{f})$ be localisation maps.
 
 ---
 
