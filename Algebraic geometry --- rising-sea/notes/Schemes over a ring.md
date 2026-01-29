@@ -67,9 +67,9 @@ The notion of finite type schemes also allows us to define varieties (or a large
 
 ##### _definition:_ affine, projective, and quasiprojective varieties
 
-An **affine $\mathbb{F}$-variety** is a [[Algebraic geometry --- rising-sea/notes/Reduced and integral schemes#_definition _ reduced (schemes)|reduced]] [[Algebraic geometry --- rising-sea/notes/Affine schemes#_definition _ affine scheme|affine]] finite type $\mathbb{F}$.
+An **affine $\mathbb{F}$-variety** is a [[Algebraic geometry --- rising-sea/notes/Reduced and integral schemes#_definition _ reduced (schemes)|reduced]], [[Algebraic geometry --- rising-sea/notes/Affine schemes#_definition _ affine scheme|affine]], finite type $\mathbb{F}$-scheme.
 
-A **(quasi)projective $\mathbb{F}$-variety** is a reduced (quasi)projective finite type $\mathbb{F}$-scheme
+A **(quasi)projective $\mathbb{F}$-variety** is a reduced, (quasi)projective, finite type $\mathbb{F}$-scheme
 
 ---
 
@@ -122,4 +122,4 @@ If $S = \operatorname{Spec} A$ we call this the category of $A$-schemes, write $
 
 Note that if $S = \operatorname{Spec} A$, then $X \to S$ [[Algebraic geometry --- rising-sea/notes/Morphisms of schemes#_proposition _ morphisms to affine schemes|is given by a choice of ring homomorphism]] $A \to \mathscr{O}_{X}(X)$. The compositions with restriction maps $A \to \mathscr{O}_{X}(X) \to \mathscr{O}_{X}(U)$ give each $\mathscr{O}_{X}(U)$ the structure of an $A$-algebra. The definition of the structure maps $A \to \mathscr{O}_{X}(U)$ as factoring through $\mathscr{O}_{X}(X)$ and any larger $\mathscr{O}_{X}(V)$ gives the restriction maps the structure of $A$-algebra maps. Thus, this definition of an $A$-scheme gives $\mathscr{O}_{X}$ the structure of a sheaf of $A$-algebras, agreeing with our previous definition.
 
-Since $\operatorname{Spec} \mathbb{Z}$ [[Algebraic geometry --- rising-sea/notes/Morphisms of schemes#_corollary _ $ operatorname{Spec} mathbb{Z}$ is the Algebraic geometry --- rising-sea/notes/Universal properties and why categories? _definition _ initial, final, and zero objects final object of $ mathsf{Sch}$|the final scheme]], all schemes are $\mathbb{Z}$-schemes. Obviously, $S$ is the final object in the category of $S$-schemes.
+Since $\operatorname{Spec} \mathbb{Z}$ is [[Algebraic geometry --- rising-sea/notes/Morphisms of schemes#_corollary _ $ operatorname{Spec} mathbb{Z}$ is the Algebraic geometry --- rising-sea/notes/Universal properties and why categories? _definition _ initial, final, and zero objects final object of $ mathsf{Sch}$|the final scheme]], all schemes are $\mathbb{Z}$-schemes. Obviously, $S$ is the final object in the category of $S$-schemes.
