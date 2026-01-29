@@ -2,6 +2,7 @@
 tags:
 - math-181/1
 - math-181/2
+- math-181/3
 - dynamics
 ---
 
@@ -49,7 +50,7 @@ We want to understand when these equilibrium points are stable or unstable.
 
 ##### _definition:_ stable, unstable, asymptotically stable equilibria
 
-Let $x_{*}$ be an equilibrium point of the differential equation $\dot{x} = f(x)$. Let $x$ be a solution satisfying $x(t_{0}) = x_{0}$
+Let $x_{*}$ be an equilibrium point of the differential equation $\dot{x} = f(x)$. Let $x$ be a solution satisfying $x(t_{0}) = x_{0}$.
 
 $x_{*}$ is **stable** if for each $\varepsilon > 0$ there exists a $\delta > 0$ such that $\lVert x_{0} - x_{*} \rVert < \delta$ implies any solution with $x(t_{0}) = x_{0}$ satisfies $\lVert x(t) - x_{*} \rVert < \varepsilon$ for all $t > t_{0}$.
 
@@ -59,4 +60,28 @@ $x_{*}$ is **asymptotically stable** if there exists $\delta > 0$ such that $\lV
 
 ---
 
-Looking at an example should give a conjecture — if $f'(x_{*}) < 0$ then $x_{*}$ is a stable equilibrium.
+Looking at examples of first order $1$-dimensional systems makes a certain conjecture obvious — if $f'(x_{*}) < 0$ then $x_{*}$ is a stable equilibrium. But what does this mean when $f'(x_{*})$ is (in general) a matrix. This is our first result in linear stability analysis.
+
+##### _theorem:_ linear stability analysis
+
+Let $x_{*}$ be an equilibrium point of the differential equation $\dot{x} = f(x)$. Let $x$ be a solution satisfying $x(t_{0}) = x_{0}$. If $f'(x_{*}) > 0$, then $x_{*}$ is unstable and if $f'(x_{*}) < 0$, then $x_{*}$ is stable.
+
+###### _proof sketch:_
+
+Let $u(t) = x(t) - x_{*}$. Then $\dot{u}(t) = \dot{x}(t) = f(u(t) + x_{*})$. Now we use Taylor approximations to write
+$$
+\dot{u}(t) \approx f(x_{*}) + f'(x_{*})u(t) + \dots = 0 + f'(x_{*}) u(t) + \dots
+$$
+Thus, $u(t) \approx \exp(f'(x_{*}) t) u(0)$. In the one-dimensional case this confirms our intuition about the relationship between $f'(x_{*})$ and stability.
+
+---
+
+Note that if $f'(x_{*}) = 0$ we can say nothing (consider $f(x) = x^{2}$, $f(x) = x^{3}$ and $f(x) = - x^{3}$ as examples having unstable, unstable, and stable equilibria at $x = 0$).
+
+##### _definition:_ hyperbolic and non-hyperbolic equilibria
+
+Let $x_{*}$ be an equilibrium point of the differential equation $\dot{x} = f(x)$.
+
+$x_{*}$ is **hyperbolic** if $f'(x_{*}) \neq 0$. Else, it is **non-hyperbolic**.
+
+---
