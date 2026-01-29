@@ -1,6 +1,7 @@
 ---
 tags:
 - rising-sea/2/3
+- rising-sea/2/6
 - alg-top
 - alg-geo
 - hom-alg
@@ -9,7 +10,11 @@ tags:
 
 Let $X$ be a topological space and $\mathscr{C}$ an arbitrary [[Algebraic geometry --- rising-sea/notes/A little about abelian categories#_definition _ abelian categories|abelian category]] (unless otherwise specified). 
 
-We will show that [[Algebraic geometry --- rising-sea/notes/Sheaves#_definition _ presheaves, sections, restriction maps|presheaves]] on $X$ taking values in $\mathscr{C}$, with their [[Algebraic geometry --- rising-sea/notes/Morphisms of sheaves#_definition _ morphism of sheaves|presheaf morphisms]] form an abelian category, essentially open set by open set. It's easy to see (and we state without verification) that they form an additive category.
+We will show that [[Algebraic geometry --- rising-sea/notes/Sheaves#_definition _ presheaves, sections, restriction maps|presheaves]] on $X$ taking values in $\mathscr{C}$, with their [[Algebraic geometry --- rising-sea/notes/Morphisms of sheaves#_definition _ morphism of sheaves|presheaf morphisms]] form an abelian category, essentially open set by open set. This follows because (as we will see) the presheaf kernel and cokernel are just defined by taking the kernel and cokernel on each open set. This does not work for sheaves in general (you have to [[Algebraic geometry --- rising-sea/notes/Sheafification#_definition _ sheafification|sheafify]]). However, the analogous result does hold at the level of stalks. This 
+
+### Presheaves valued in abelian categories
+
+It's easy to see (and we state without verification) that they form an additive category.
 
 ##### _proposition:_ presheaves of additive categories form an additive category
 
@@ -95,7 +100,7 @@ $\mathscr{C}_{X}^\text{pre}$ is an abelian category.
 >[!missing]
 > proof
 
-### Sheaf-iness?
+### Sheaves valued in abelian categories
 
 We would hope that the presheaves forming an abelian category would allow us to directly form an abelian category of [[Algebraic geometry --- rising-sea/notes/Sheaves#_definition _ sheaf|sheaves]]. While there is some hope — the kernel presheaf forms a sheaf — the cokernel dashes this hope. We will need [[Sheafification|sheafification]].
 

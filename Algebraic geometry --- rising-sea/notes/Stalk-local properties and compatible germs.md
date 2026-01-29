@@ -166,7 +166,7 @@ Note that this stalk-local characterisation is not true for general (or even sep
 
 Also, note that epic sheaf morphisms are not necessarily epic on open sets.
 
-##### _example:_ hinting at the [[Algebraic geometry --- rising-sea/notes/Presheaves in abelian categories#_example _ presheaf cokernel is not (always) a sheaf — the (presheaf) exponential exact sequence|exponential exact sequence]]
+##### _example:_ hinting at the [[Algebraic geometry --- rising-sea/notes/Presheaves and sheaves valued in abelian categories#_example _ presheaf cokernel is not (always) a sheaf — the (presheaf) exponential exact sequence|exponential exact sequence]]
 
 Let $\mathscr{F}$ be the (presheaf of) [[Complex analysis --- math-135/notes/Holomorphic functions#_definition _ holomorphic, $ mathbb{C}$-differentiable, regular, the derivative, $f'(z_{0})$|holomorphic functions]] on $\mathbb{C}$ admitting a [[Complex analysis --- math-135/notes/The complex logarithm#_definition _ logarithm, the logarithm|holomorphic logarithm]] and $\mathscr{O}_{\mathbb{C}}^*$ the invertible holomorphic functions. Then $\mathscr{F}(U) \subseteq \mathscr{O}_{\mathbb{C}}^*(U)$ gives a presheaf morphism $\varphi$. Since $\varphi_{p}$ is given by $\mathscr{F}_{p} \subseteq \mathscr{O}_{\mathbb{C}, p}^*$ and $\mathscr{F}_{p} = \mathscr{O}_{\mathbb{C}, p}^*$ each $\varphi_{p}$ is an isomorphism. Yet $\mathscr{F} \to \mathscr{O}_{\mathbb{C}, p}^*$ is not an isomorphism — check sections over $\mathbb{C} \setminus \{ 0 \}$. Thus, as presheaves, $\mathscr{O}_{\mathbb{C}}^*$ is not the cokernel of the map of $2 \pi i \underline{\mathbb{Z}} \to \mathscr{O}_{\mathbb{C}}$.
 
