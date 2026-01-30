@@ -85,20 +85,61 @@ $$
 $$
 on each open set $U \subseteq X$. 
 
-For $\varphi : \mathscr{F} \to \mathscr{G}$ and $\psi : \mathscr{G} \to \mathscr{H}$, exactness at $\mathscr{G}$ is $\ker_{\text{pre}} \psi = \operatorname{img}_{\text{pre}} \varphi$. This is equivalent to $\ker \psi(U) = \operatorname{img} \varphi(U)$ for each $U$. This is just exactness of $\mathscr{F}(U) \to \mathscr{G}(U) \to \mathscr{H}(U)$.
+For $\varphi : \mathscr{F} \to \mathscr{G}$ and $\psi : \mathscr{G} \to \mathscr{H}$, exactness at $\mathscr{G}$ is $\ker_{\text{pre}} \psi = \operatorname{img}_{\text{pre}} \varphi$. This is equivalent to $\ker \psi(U) = \operatorname{img} \varphi(U)$ for each $U$. This is exactly the definition of exactness of each $\mathscr{F}(U) \to \mathscr{G}(U) \to \mathscr{H}(U)$.
 
 ---
 
-This idea of defining images open set-by-open set extends to [[Algebraic geometry --- rising-sea/notes/A little about abelian categories#_definition _ subobjects, quotient objects|subobjects and quotients]]. In fact, open set-by-open set, presheaves in any abelian category form an abelian category of their own. This similar to showing that [[Algebraic geometry --- rising-sea/notes/Complexes and exactness#_proposition _ complexes form an abelian category|complexes in an abelian category form an abelian category]]. In general, this follows from the fact that the functor category $\mathscr{C}^\mathscr{I}$ is abelian for abelian $\mathscr{C}$ and [[Algebraic geometry --- rising-sea/notes/Limits and colimits#_definition _ small category|small]] $\mathscr{I}$.
+This idea of defining images open set-by-open set extends to [[Algebraic geometry --- rising-sea/notes/A little about abelian categories#_definition _ subobjects, quotient objects|subobjects and quotients]].
 
-##### _proposition:_ presheaves in an abelian category form an abelian category
+##### _proposition:_ monomorphisms are determined on open sets
+
+$\varphi : \mathscr{F} \to \mathscr{G}$ is monic if and only if each $\varphi(U) : \mathscr{F}(U) \to \mathscr{G}(U)$ is monic.
+
+###### _proof:_
+
+Suppose $\varphi : \mathscr{F} \to \mathscr{G}$ is monic. Suppose that there are two morphisms $\psi(U), \theta(U) : K \to \mathscr{F}(U)$ such that $\varphi(U) \circ \psi(U) = \varphi(U) \circ \theta(U)$. 
+
+We construct a presheaf $\mathscr{K}$ such that $\psi(U), \theta(U)$ extend to morphisms $\psi, \theta : \mathscr{K} \to \mathscr{F}$. Choose $\mathscr{K}(V) = K$ for any $V \subseteq U$ and $\mathscr{K}(V) = 0$ otherwise. Let the restrictions $K \to K$ be given by the identity. The restrictions $0 \to K$ and $0 \to 0$ are each uniquely determined. There are only a few cases to check that this forms a presheaf. Suppose $V_{1} \subseteq V_{2} \subseteq V_{3}$. If $\mathscr{K}(V_{3}) = 0$ then the functoriality of restrictions follows from the uniqueness of maps from $0$. Else, $V_{1} \subseteq V_{2} \subseteq V_{3} \subseteq U$ and $\mathscr{K}(V_{i}) = K$ so all the restrictions are just $\operatorname{id}_{K}$.
+
+Further, we can define morphisms $\psi, \theta : \mathscr{K} \to \mathscr{F}$ by choosing $\psi(V) = \operatorname{res}_{\mathscr{F} \mid V \subseteq U} \circ \psi(U) \circ \operatorname{id}_{K}^{-1}$ for $V \subseteq U$ and $\psi(V) = 0$ otherwise. The naturality of $\psi$ follows from checking only a few cases. Suppose $V_{1} \subseteq V_{2}$. If $\mathscr{K}(V_{2}) = 0$ then naturality follows from the uniqueness of maps from $0$. Else, $V_{1} \subseteq V_{2} \subseteq U$ and $\mathscr{K}(V_{i}) = K$. The map is defined exactly so that it is natural in this case.
+
+Since $\varphi(U) \circ \psi(U) = \varphi(U) \circ \theta(U)$, we have $\varphi \circ \psi = \varphi \circ \theta$, and since $\varphi$ is monic, $\psi = \theta$. Thus, $\psi(U) = \theta(U)$. That is, $\varphi(U)$ is monic.
+
+[[Algebraic geometry --- rising-sea/notes/Stalk-local properties and compatible germs#_proposition _ monomorphisms are stalk-local|The converse is easy]].
+
+---
+
+##### _proposition:_ epimorphisms are determined on open sets
+
+$\varphi : \mathscr{F} \to \mathscr{G}$ is epic if and only if each $\varphi(U) : \mathscr{F}(U) \to \mathscr{G}(U)$ is epic.
+
+###### _proof:_
+
+Suppose $\varphi : \mathscr{F} \to \mathscr{G}$ is epic. Suppose further that there are two morphisms $\psi(U), \theta(U) : \mathscr{G}(U) \to H$ such that $\psi(U) \circ \varphi(U) = \theta(U) \circ \varphi(U)$. 
+
+We can construct a sheaf $\mathscr{H}$ dual to how we did $\mathscr{K}$ before — we choose $\mathscr{H}(V) = H$ for $V \supseteq U$ and $\mathscr{H}(V) = 0$ otherwise. The restrictions $H \to H$ are the identity and the restrictions $H \to 0$ and $0 \to 0$ are determined uniquely. We can also define morphisms $\psi, \theta : \mathscr{G} \to \mathscr{H}$ dually. We choose $\psi(V) = \psi(U) \circ \operatorname{res}_{U \subseteq V}$ for $V$ containing $U$ and $\psi(V) = 0$ otherwise. Again, the naturality of $\psi$ follows from checking only a few cases.
+
+Since $\psi(U) \circ \varphi(U) = \theta(U) \circ \varphi(U)$, we have $\psi \circ \varphi = \theta \circ \varphi$, and since $\varphi$ is epic, $\psi = \theta$. Thus, $\psi(U) = \theta(U)$. That is, $\varphi(U)$ is epic.
+
+[[Algebraic geometry --- rising-sea/notes/Sheaves on a base#_proposition _ epic morphisms on a base implies epic sheaf morphisms|The converse is easy]].
+
+---
+
+All of this means that presheaves in any abelian category form an abelian category of their own. This similar to showing that [[Algebraic geometry --- rising-sea/notes/Complexes and exactness#_proposition _ complexes form an abelian category|complexes in an abelian category form an abelian category]]. In general, this follows from the fact that the functor category $\mathscr{C}^\mathscr{I}$ is abelian for abelian $\mathscr{C}$ and [[Algebraic geometry --- rising-sea/notes/Limits and colimits#_definition _ small category|small]] $\mathscr{I}$. The proof below easily generalises to functors valued in $\mathscr{C}$ on any small category $\mathscr{I}$.
+
+##### _proposition:_ presheaves valued in an abelian category form an abelian category
 
 $\mathscr{C}_{X}^\text{pre}$ is an abelian category.
 
----
+###### _proof:_
 
->[!missing]
-> proof
+We know that monomorphisms, epimorphisms, kernels, and cokernels are all determined at the level of open sets. We have also shown that kernels and cokernels exist for every map.
+
+Suppose $\varphi : \mathscr{F} \to \mathscr{G}$ is a monomorphism. Let $\psi : \mathscr{G} \to \operatorname{coker}_{\text{pre}} \varphi$ be the cokernel morphism. Each $\varphi(U) : \mathscr{F}(U) \to \mathscr{G}(U)$ is monic. Since $\mathscr{C}$ is abelian, each $\varphi(U)$ is the kernel of each $\psi(U) : \mathscr{G}(U) \to \operatorname{coker} \varphi(U)$. Thus, $\ker_{\text{pre}} \psi = \varphi$. That is, $\varphi$ is the kernel of its cokernel.
+
+Suppose $\varphi : \mathscr{F} \to \mathscr{G}$ is epic. Let $\psi : \ker_{\text{pre}} \varphi \to \mathscr{F}$ be the kernel morphism. Each $\varphi(U) : \mathscr{F}(U) \to \mathscr{G}(U)$ is epic. Since $\mathscr{C}$ is abelian, each $\varphi(U)$ is the cokernel of each $\psi(U) : \ker_{\text{pre}} \varphi(U) \to \mathscr{F}(U)$. Thus, $\operatorname{coker}_{\text{pre}} \psi = \varphi$. That is, $\varphi$ is the cokernel of its kernel.
+
+---
 
 ### Sheaves valued in abelian categories
 

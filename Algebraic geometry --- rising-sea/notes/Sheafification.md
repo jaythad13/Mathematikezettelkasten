@@ -78,7 +78,7 @@ In the first diagram, a morphism $\mathscr{F}^\mathrm{sh} \to \mathscr{G}$ goes 
 
 ---
 
-This can be really useful. For example, it gives an abstract nonsense proof of the fact that the [[Algebraic geometry --- rising-sea/notes/Presheaves and sheaves valued in abelian categories#_proposition _ presheaf kernel is a sheaf and a kernel|presheaf kernel is also the sheaf kernel]]. Since forgetting is right adjoint to sheafification, forgetting [[Algebraic geometry --- rising-sea/notes/Exact functors#_proposition _ right adjoints preserve limits|preserves limits]]. The [[Algebraic geometry --- rising-sea/notes/A little about abelian categories#_definition _ kernels, cokernels|kernel is a limit]], so the sheaf kernel is the presheaf kernel.
+This can be really useful. For example, it gives an abstract nonsense proof of the fact that the [[Algebraic geometry --- rising-sea/notes/Sheaves valued in abelian categories#_proposition _ presheaf kernel is a sheaf and a kernel|presheaf kernel is also the sheaf kernel]]. Since forgetting is right adjoint to sheafification, forgetting [[Algebraic geometry --- rising-sea/notes/Exact functors#_proposition _ right adjoints preserve limits|preserves limits]]. The [[Algebraic geometry --- rising-sea/notes/A little about abelian categories#_definition _ kernels, cokernels|kernel is a limit]], so the sheaf kernel is the presheaf kernel.
 
 ### Constructing the sheafification
 

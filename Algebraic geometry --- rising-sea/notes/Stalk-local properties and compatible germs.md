@@ -134,9 +134,7 @@ Suppose $\varphi : \mathscr{F} \to \mathscr{G}$ is a morphism of sheaves. The fo
 ###### _proof:_
 
 > [!warning]
-> as is, the proof is only valid for $\mathscr{F}, \mathscr{G} \in \mathsf{Set}_{X}$
-
-Suppose $\varphi$ is monic and consider some $p \in X$. Suppose two morphisms $S \to \mathscr{F}_{p}$ agree on composition to $\mathscr{G}_{p}$.
+> as is, this has no proof that something implies $\varphi_{p}$ is monic at each $p$
 
 Suppose $\varphi_{p}$ is monic for each $p \in X$. Then $\prod_{p \in X} \varphi_{p}$ is also monic. Suppose there is a pair of morphisms $S \to \mathscr{F}(U)$ that agree on composition to $\mathscr{G}(U)$. Then the pair of morphisms $S \to \mathscr{F}(U) \to \prod_{p \in X} \mathscr{F}_{p}$ agree on composition to $\prod_{p \in X} \mathscr{G}_{p}$. Since $\prod_{p \in X} \varphi_{p}$ is monic, the pair of morphisms $S \to \mathscr{F}(U) \to \prod_{p \in X} \mathscr{F}_{p}$ agree. But then, since $\mathscr{F}(U) \to \prod_{p \in X} \mathscr{F}_{p}$ is monic, the two maps $S \to \mathscr{F}(U)$ must be the same. That is, $\varphi(U)$ is monic.
 
@@ -144,7 +142,7 @@ Suppose $\varphi(U)$ is monic for each $U \subseteq X$. Suppose $\psi, \theta : 
 
 We could have directly shown that all $\varphi_{p}$ monic implies $\varphi$ monic. If each stalk morphism were monic, then whenever $\varphi \circ \psi = \varphi \circ \theta$, we have $\varphi_{p} \circ \psi_{p} = \varphi_{p} \circ \theta_{p}$ and thus, $\psi_{p} = \theta_{p}$ at each $p$. Since morphisms are determined by stalks, $\psi = \theta$.
 
-When $\mathscr{F}, \mathscr{G}$ are sheaves, of sets, the following argument with the "indicator sheaf" is useful. Suppose $\varphi$ is monic. Let $1_{U}$ be the sheaf taking value $\{ 1 \}$ on open subsets of $U$ and $\text{Ø}$ everywhere else. Sheaf morphisms $1_{U} \to \mathscr{F}$ are defined exactly by $\{ 1 \} \to \mathscr{F}(U)$. Thus, any pair of morphisms $\{ 1 \} \to \mathscr{F}(U)$ that agree on composition to $\mathscr{G}(U)$ define two morphisms $1_{U}\to \mathscr{F}$ that agree on composition to $\mathscr{G}$. Since $\varphi$ is monic, the two morphisms $1_{U} \to \mathscr{F}$ and thus, the two morphisms $\{ 1 \} \to \mathscr{F}(U)$ are the same. That is, $\varphi(U)$ is injective.
+When $\mathscr{F}, \mathscr{G}$ are sheaves of sets, the following argument with the "indicator sheaf" is useful. Suppose $\varphi$ is monic. Let $1_{U}$ be the sheaf taking value $\{ 1 \}$ on open subsets of $U$ and $\text{Ø}$ everywhere else. Sheaf morphisms $1_{U} \to \mathscr{F}$ are defined exactly by $\{ 1 \} \to \mathscr{F}(U)$. Thus, any pair of morphisms $\{ 1 \} \to \mathscr{F}(U)$ that agree on composition to $\mathscr{G}(U)$ define two morphisms $1_{U}\to \mathscr{F}$ that agree on composition to $\mathscr{G}$. Since $\varphi$ is monic, the two morphisms $1_{U} \to \mathscr{F}$ and thus, the two morphisms $\{ 1 \} \to \mathscr{F}(U)$ are the same. That is, $\varphi(U)$ is injective.
 
 ---
 
@@ -166,7 +164,7 @@ Note that this stalk-local characterisation is not true for general (or even sep
 
 Also, note that epic sheaf morphisms are not necessarily epic on open sets.
 
-##### _example:_ hinting at the [[Algebraic geometry --- rising-sea/notes/Presheaves and sheaves valued in abelian categories#_example _ presheaf cokernel is not (always) a sheaf — the (presheaf) exponential exact sequence|exponential exact sequence]]
+##### _example:_ hinting at the [[Algebraic geometry --- rising-sea/notes/Sheaves valued in abelian categories#_example _ presheaf cokernel is not (always) a sheaf — the (presheaf) exponential exact sequence|exponential exact sequence]]
 
 Let $\mathscr{F}$ be the (presheaf of) [[Complex analysis --- math-135/notes/Holomorphic functions#_definition _ holomorphic, $ mathbb{C}$-differentiable, regular, the derivative, $f'(z_{0})$|holomorphic functions]] on $\mathbb{C}$ admitting a [[Complex analysis --- math-135/notes/The complex logarithm#_definition _ logarithm, the logarithm|holomorphic logarithm]] and $\mathscr{O}_{\mathbb{C}}^*$ the invertible holomorphic functions. Then $\mathscr{F}(U) \subseteq \mathscr{O}_{\mathbb{C}}^*(U)$ gives a presheaf morphism $\varphi$. Since $\varphi_{p}$ is given by $\mathscr{F}_{p} \subseteq \mathscr{O}_{\mathbb{C}, p}^*$ and $\mathscr{F}_{p} = \mathscr{O}_{\mathbb{C}, p}^*$ each $\varphi_{p}$ is an isomorphism. Yet $\mathscr{F} \to \mathscr{O}_{\mathbb{C}, p}^*$ is not an isomorphism — check sections over $\mathbb{C} \setminus \{ 0 \}$. Thus, as presheaves, $\mathscr{O}_{\mathbb{C}}^*$ is not the cokernel of the map of $2 \pi i \underline{\mathbb{Z}} \to \mathscr{O}_{\mathbb{C}}$.
 
