@@ -1,0 +1,84 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 181 --- Dynamical Systems}
+\assignment{Homework 1}
+\duedate{1st February 2026}
+
+\begin{document}
+
+\begin{problem}[Strogatz 2.2.7]
+	Analyse the following equation graphically. Sketch the vector field on the real line, find all the fixed points, classify their stability, and sketch the graph of $x(t)$ for different initial conditions. Then try for a few minutes to obtain the analytical solution for $x(t)$.
+	\[
+		\dot{x} = e^{x} - \cos{x}.
+	\]
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Strogatz 2.2.8]
+	Given an equation $\dot{x} = f(x)$, we know how to sketch the corresponding flow on the real line. Here you are asked to solve the opposite problem: for the phase portrait shown, find an equation that is consistent with it.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Strogatz 2.2.10]
+	For each of (a)--(e), find an equation $\dot{x} = f(x)$ with the stated properties, or if there are no examples, explain why not. In all cases, assume that $f(x)$ is a smooth function.
+	\begin{enumerate}
+		\item Every real number is a fixed point.
+		\item Every integer is a fixed point and there are no others.
+		\item There are precisely three fixed points and all of them are stable.
+		\item There are no fixed points.
+		\item There are precisely $100$ fixed points.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Strogatz 2.3.4]
+	For certain species of organisms, the effective growth rate $\dot{N} / N$ is highest at intermediate $N$. This is called the Allee effect. For example, imagine that it is too hard to find mates when $N$ is very small, and there is too much competition for food and other resources when $N$ is large.
+	\begin{enumerate}
+		\item Show that $\dot{N} / N = r - a(N - b)^{2}$ provides an example of the Allee effect, if $r$, $a$, and $b$ satisfy certain constraints, to be determined.
+
+		\item Find all fixed points of the system and classify their stability.
+
+		\item Sketch the solutions $N(t)$ for different initial conditions.
+
+		\item Compare the solutions $N(t)$ for those found for the logistic equation. What are the qualitative differences, if any?
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+Use linear stability analysis to classify the fixed points of the following system. If linear stability analysis fails because $f'(x_{*}) = 0$, use a graphical argument to decide the stability.
+
+\begin{problem}[Strogatz 2.4.4]
+	\[
+		\dot{x} = x^{2}(6 - x)
+	\]
+\end{problem}
+
+\begin{problem}[Strogatz 2.4.7]
+\[
+	\dot{x} = ax - x^{3}
+\]
+where $a$ can be positive, negative, or zero. Discuss all three cases.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Strogatz 2.5.2]
+	Show that the solution to $\dot{x} = 1 + x^{10}$ escapes to $+\infty$ in a finite time, starting from any initial condition.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Strogatz 2.6.2]
+	Here's an analytic proof sketch that periodic solutions are impossible for a vector field on a line. Suppose, on the contrary, that $x(t)$ is a non-trivial periodic solution, for some $T > 0$, and $x(t) \neq x(t + s)$ for all $0 < s < T$. Derive a contradiction by considering
+	\[
+		\int_{t}^{t + T} f(x) \frac{d x}{d t} \, dt.
+	\]
+\end{problem}
+
+\end{document}
