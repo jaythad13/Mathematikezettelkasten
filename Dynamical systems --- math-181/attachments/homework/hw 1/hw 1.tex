@@ -15,11 +15,34 @@
 	\]
 \end{problem}
 
+\begin{solution}
+	Write $f(x) = e^{x} - \cos{x}$.
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width = 0.5 \textwidth]{figures/P2-2-7 field.pdf}
+		\caption{The vector field of $\dot{x} = f(x)$}
+	\end{figure}
+
+	The fixed points of this system are $0$ and approximately all the odd multiples of $\pi / 2$. We have $f'(0) > 0$ and then, for all $k \pi / 2$ with odd $k$, $f'(k \pi / 2)$ is positive if $k \equiv 3$ modulo $4$ and negative if $k \equiv 1$. Thus, the stable fixed points are $k \pi / 2$ where $k \equiv 1$ and the unstable fixed points are $0$ and $k \pi / 2$ where $k \equiv 3$.
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width = 0.45 \textwidth]{figures/P2-3-4 sketch 1.pdf}
+		\includegraphics[width = 0.45 \textwidth]{figures/P2-2-7 sketch 2.pdf}
+		\caption{Some sketches of solutions to the system}
+	\end{figure}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[Strogatz 2.2.8]
 	Given an equation $\dot{x} = f(x)$, we know how to sketch the corresponding flow on the real line. Here you are asked to solve the opposite problem: for the phase portrait shown, find an equation that is consistent with it.
 \end{problem}
+
+\begin{solution}
+	Consider $f(x) = (x + 1)^{2}x(x - 2)$. For $x < -1$ and also for $-1 < x < 0$ we have $f(x) > 0$ (the sign of $f$ doesn't change around the double root at $-1$). For $0 < x < 2$ the sign changes and $f(x) < 0$. Again for $x > 2$ the sign changes and $f(x) > 0$.
+\end{solution}
 
 \pagebreak
 
@@ -33,6 +56,22 @@
 		\item There are precisely $100$ fixed points.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item $f(x) = 0$ has every real number as a fixed point.
+
+		\item The zeroes of $f(x) = \sin(\pi x)$ are exactly the integers, and thus, the fixed points of $\dot{x} = \sin{(\pi x)}$ are exactly the integers as well.
+
+		\item There is no such smooth $f$. Specifically, we will show that between any two stable fixed points of a smooth $f$, there must be an unstable fixed point.
+
+			Suppose $x_{1} < x_{2}$ are two stable fixed points of the system. Then in each sufficiently small neighbourhood around each $x_{i}$, for all $x < x_{i}$ we have $f(x) > 0$ and for all  $x > x_{i}$ we have $f(x) < 0$. In particular, this means that there are two points $x_{1} < a < b < x_{2}$ such that $f(a) < 0$ and $f(b) > 0$. But then, by the intermediate value theorem, there must be some $c \in (a, b)$ with $f(c) = 0$. At the first such $c$, we have $f(x) < 0$ for all $x < c$. This means that $c$ is an unstable fixed point.
+
+		\item $f(x) = 1$ has no fixed points.
+
+		\item  $f(x) = \prod_{n = 1}^{100} (x - n)$ has exactly $100$ fixed points since it has exactly $100$ roots.
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
@@ -49,6 +88,33 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate} 
+		\item As long as $a > 0$, our expression for  $\dot{N} / N$ tells us that it is a concave-down parabola. This means that it is maximal at intermediate $N$. 
+
+			If $r$ is too small, then the effective growth rate could still be always negative, and if $b$ is too big, then the effective growth rate could be negative for small positive $N$. However, as long as $a > 0$, the graph of $\dot{N} / N$ will be a concave-down parabola.
+
+		\item We write $\dot{N} = f(N) = N(r - a(N - b)^{2})$. We also compute the derivative
+			\[
+				f'(N) = (r - a(N - b)^{2}) -2 a N(N - b)
+			\]
+			$f$ has roots $N = 0$ and $N = b \pm \sqrt{r / a}$ (if $r / a > 0$). $f'(0) = r - a b^{2}$, so $0$ is a stable fixed point if $r / a < b^{2}$. 
+
+			Since the signs of the derivative of a polynomial must alternate (unless it is a square with $r = 0$), we have $f'(b - \sqrt{r / a}) > 0$ and $f'(b + \sqrt{r / a}) < 0$ when both are positive.
+
+		\item Some sketches of solutions are below.
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width = 0.5 \textwidth]{figures/P2-3-4 c sketches.pdf}
+				\caption{The three general types of solutions to this system}
+			\end{figure}
+
+		\item For the logistic equation, $\dot{N}$ is always positive in some small neighbourhood of $0$. Also, the fixed point at $0$ is never stable. Thus, under the logistic equation, either the population stays fixed at $0$, or approaches the carrying capacity.
+
+			For the given equation $\dot{N}$ could be negative in a neighbourhood of $0$. Thus, it is possible to start with a small population that eventually dies out. There is also a possible intermediate, unstable, fixed point (between $0$ and the carrying capacity).
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 Use linear stability analysis to classify the fixed points of the following system. If linear stability analysis fails because $f'(x_{*}) = 0$, use a graphical argument to decide the stability.
@@ -59,6 +125,14 @@ Use linear stability analysis to classify the fixed points of the following syst
 	\]
 \end{problem}
 
+\begin{solution}
+	Write $f(x) = - x^{2} (x - 6)$ so we have $\dot{x} = f(x)$. The fixed points of this system are $0$ and $6$. Note also that $f'(x) = - 2x(x - 6) - x^{2} = -x(3x - 12)$
+
+	At $0$, we have $f'(0) = 0$ so linear stability analysis tells us nothing. However, we can see from the form of $f$ that in a small neighbourhood of $0$, $f$ is positive on either side. That is, the flow is to the right on both sides of $0$. This means that for $x_{0} > 0$, solutions with $x(0) = x_{0}$ can be very far from $0$. That is, $0$ is unstable.
+
+	At $6$, we have $f'(6) = -6(18 - 12) = -36$. Since $f'(6) < 0$, the fixed point $6$ must be stable.
+\end{solution}
+
 \begin{problem}[Strogatz 2.4.7]
 \[
 	\dot{x} = ax - x^{3}
@@ -66,11 +140,41 @@ Use linear stability analysis to classify the fixed points of the following syst
 where $a$ can be positive, negative, or zero. Discuss all three cases.
 \end{problem}
 
+\begin{solution}
+	Write $f(x) = ax - x^{3}$.
+
+	First suppose $a = 0$. Then $f(x) = - x^{3}$. This has one fixed point, $0$. Linear stability analysis is inconclusive since $f'(0) = 0$. However, it's clear that the function is always decreasing, and so, for $x < 0$, $f(x) > 0$ and conversely, $x > 0$ implies $f(x) < 0$. That is, the flow is always in towards the fixed point and we conclude $0$ is a stable fixed point.
+	
+	If $a \neq 0$, then factor $f(x) = -x(x^{2} - a)$. Also, write $f'(x) = - (x^{2} - a) - x(2x) = -3x^{2} + a$.
+
+	First suppose $a < 0$. Then $x^{2} - a > -a > 0$ always, and so the only root of $f$ is given by $f(0) = 0$. At the fixed point $0$, we have $f'(0) = a < 0$. Thus, by linear stability analysis, the only fixed point is stable.
+
+	Now suppose $a > 0$. Then $f(x)$ factors further as $-x(x - \sqrt{a})(x + \sqrt{a})$. This has three fixed points --- $-\sqrt{a}$, $0$, and $\sqrt{a}$. At $\pm \sqrt{a}$ we have $f'(\pm \sqrt{a}) = - 3a + a = -2 a < 0$. Thus, the fixed points $\pm \sqrt{a}$ are stable. However, $f'(0) = a > 0$, so the fixed point $0$ is unstable.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[Strogatz 2.5.2]
 	Show that the solution to $\dot{x} = 1 + x^{10}$ escapes to $+\infty$ in a finite time, starting from any initial condition.
 \end{problem}
+
+\begin{solution}
+	Let $f(x) = 1 + x^{10}$ and $g(x) = (1 + x^{2}) / 2$. Note that for all $x$, $f(x) > g(x)$. Suppose, $x_{1}$ satisfies $\dot{x_{1}} = f(x)$ and $x_{2}$ satisfies $\dot{x_{2}} = g(x)$ with $x_{1}(0) = x_{2}(0)$. Then since $x_{1}(0) \ge x_{2}(0)$ and $\dot{x_{1}}(t) > \dot{x_{2}}(t)$ for all $t$, we also have $x_{1}(t) \ge x_{2}(t)$ for all $t$. Thus, to prove that $x_{1}$ blows up in finite time, it suffices to show that $x_{2}$ blows up in finite time. We show this below.
+
+Let $x = x_{2}$ be a solution to $\dot{x} = g(x)$. We can obtain $x$ explicitly by separation of variables. Specifically,
+\[
+	\frac{d x}{d t} \frac{1}{1 + x^{2}} = 2
+\]
+so integrating with respect to $t$ on both sides gives
+\[
+	\int_{0}^{s} \frac{1}{1 + x^{2}} \frac{d x}{d t}  \, dt = \int_{0}^{s} 2 \, dt.
+\]
+That is,
+\[
+	(\arctan{x}) \Big |_{x(0)}^{x(s)} = 2s
+\]
+and finally, $x(t) = \tan{(2t - \arctan{x_{0}})}$. This function clearly does blow up in finite time --- it blows up as $2t - \arctan x_{0} \to \pi / 2$, or equivalently, as $t \to (2 \arctan{x_{0}} + \pi) / 4$.
+\end{solution}
 
 \pagebreak
 
@@ -80,5 +184,19 @@ where $a$ can be positive, negative, or zero. Discuss all three cases.
 		\int_{t}^{t + T} f(x) \frac{d x}{d t} \, dt.
 	\]
 \end{problem}
+
+\begin{solution}
+	We use slightly different notation to avoid confusion between the two $t$s. Specifically, we assume $x$ satisfies $\dot{x} = f(x)$ and also is periodic --- there is some fixed minimal period $T > 0$ with $x(s) = x(s + T)$ for each $s$, such that  $x(s) \neq x(t)$ for any $t \in (s, s + T)$.
+
+	Under the given hypotheses,
+	\[
+		\int_{s}^{s + T} f(x) \frac{d x}{d t} \, dt = \int_{x(s)}^{x(s + T)} f(x) \, dx = \int_{x(s)}^{x(s)} f(x) \, dx  = 0.
+	\]
+	However, we also have
+	\[
+		\int_{s}^{s + T} f(x) \frac{d x}{d t} \, dt = \int_{s}^{s + T} f(x(t))^{2} \, dt
+	\]
+	because $\dot{x} = f(x)$. Since $\int_{s}^{s + T} f(x(t))^{2} \, dt = 0$, we must have $f(x(t)) = 0$ for each $t \in [s, s + T]$. This implies $\dot{x}(t) = 0$ on $[s, s + T]$, and thus, implies $x$ constant on $[s, s + T]$. This directly contradicts the non-triviality of the periodic solution (we assumed that $x(s) \neq x(t)$ for any $t \in (s, T)$).
+\end{solution}
 
 \end{document}
