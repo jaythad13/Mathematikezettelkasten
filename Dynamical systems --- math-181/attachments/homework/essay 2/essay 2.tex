@@ -1,0 +1,43 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 181 --- Dynamical systems}
+\assignment{Short essay \#2}
+\duedate{8th February 2026}
+
+\begin{document}
+
+In the preprint \cite{rahman-2026}, the authors first use an elementary model for mosquito population dynamics as a starting point to develop more complicated models. We analyse the behaviour of this simpler model. It describes both the adult population of mosquitoes $A$ and also the egg, larval, and pupal populations, grouped as one variable $L$. (We will refer to them all as larval). They are modelled by
+\begin{align*}
+	\frac{d L}{d t} & = rb A (1 - L / K) - (\nu_{L} + \mu_{L}) L \\
+	\frac{d A}{d t}	& = \nu_{L} L - \mu_{A} A.
+\end{align*}
+Here $r$ represents the ratio of female mosquitoes, $b$ is the egg-laying rate of a female mosquito, $\nu_{L}$ is the rate of transition from larval to adult mosquitoes, and $\mu_{L}, \mu_{A}$ are the death rates of the larval and adult mosquitoes respectively. $K$ is the carrying capacity, determined by the availability of mosquito breeding sites.
+
+Some reasonable values the authors use for numerical simulations are $r = 0.5$, $\nu_{L} = 0.067 \, \text{days}^{-1}$, $\mu_{L} = 0.62 \, \text{days}^{-1}$, and $\mu_{A} = 0.04 \, \text{days}^{-1}$. They consider $K$ ranging over $[1 \times 10^{6}, 2 \times 10^{6}]$ and $b$ ranging over $[1, 15]$ over a time span of $100$ days. They start from initial populations $L_{0} = 20000, A_{0} = 20000$. We choose $b = 7$ and $K = 1.5 \times 10^{6}$ to compare initial conditions $L_{0}, A_{0}$ and $L_{0}' = 0, A_{0}' = 20000$. We also compare varying the parameter $K$ from $10^{6}$ to $2 \times 10^{6}$ while keeping initial conditions $L_{0}, A_{0}$ the same.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width = 0.6 \textwidth]{figures/sol.png} \\
+	\includegraphics[width = 0.6 \textwidth]{figures/sol2.png}
+	\caption{Numerical solutions for initial conditions $L_{0}, A_{0}$ and $L_{0}', A_{0}'$ (above and below respectively)}
+\end{figure}
+
+There is almost no difference between the solutions for the two initial conditions considered. Even though the latter solution starts with no larval population, the $20000$ adult mosquitoes are sufficiently fecund to produce the same initial spike in the larval population, which eventually settles to the carrying capacity. The asymptotic behaviour of the adult population is also the same. In both cases, the adult population grows logarithmically, and at this scale any differences are imperceptible.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width = 0.6  \textwidth]{figures/sol3.png} \\
+	\includegraphics[width = 0.6 \textwidth]{figures/sol4.png}
+	\caption{Numerical solutions for carrying capacities $1 \times 10^{6}$ and $2 \times 10^{6}$ (above and below respectively)}
+\end{figure}
+
+As $K$ varies in the interval $[10^{6}, 2 \times 10^{6}]$, the general behaviour of the solution also remains the same, just scaled with $K$. For both values of $K$ considered, the larval population experiences a spike before decreasing towards the carrying capacity and the adult population appears to increase logarithmically (with no asymptotic stability apparent on the time scale $[0, 100]$).
+
+Perhaps most significantly, our numerical simulations tell us that due to the massive carrying capacities considered in this paper, is relatively uninteresting unless we vary other parameters. It is also interesting that the larval population experiences such an extreme spike before settling down. In a one-variable autonomous system this wouldn't be possible, but somehow, at larger values of $A$ and the same values of $L$, $dL / dt$ goes to $0$.
+
+\bibliographystyle{alpha}
+\bibliography{references}
+
+\end{document}

@@ -1,0 +1,251 @@
+(.venv) jayden@Jaydens-Macbook essay 2 % cd code 
+(.venv) jayden@Jaydens-Macbook code % ls
+(.venv) jayden@Jaydens-Macbook code % clear
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(.venv) jayden@Jaydens-Macbook code % python
+Python 3.12.4 (main, Jun  6 2024, 18:26:44) [Clang 15.0.0 (clang-1500.3.9.4)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> r = 0.5
+>>> n_L = 0.067
+>>> m_L = 0.62
+>>> m_A = 0.04
+>>> b = 7
+>>> L0 = 20000
+>>> A0 = 20000
+>>> L1 = 0
+>>> A1 = A0
+>>> K0 = 10**6
+>>> K1 = 2*(10**6)
+>>> import scipy
+>>> def f(t, x):
+...     L = y[0]
+...     A = y[1]
+...     return [r*b*A*(1 - L / K) - (n_L - m_L)*L, n_L*L - m_A*A]
+... 
+>>> from scipy.integrate import solve_ivp
+
+>>> 
+>>> K = 1.5*10**6
+>>> K
+1500000.0
+>>> sol = solve(f, [0, 100], [L0, A0])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'solve' is not defined
+>>> sol = solve_ivp(f, [0, 100], [L0, A0])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/Users/jayden/.venv/lib/python3.12/site-packages/scipy/integrate/_ivp/ivp.py", line 623, in solve_ivp
+    solver = method(fun, t0, y0, tf, vectorized=vectorized, **options)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jayden/.venv/lib/python3.12/site-packages/scipy/integrate/_ivp/rk.py", line 94, in __init__
+    self.f = self.fun(self.t, self.y)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jayden/.venv/lib/python3.12/site-packages/scipy/integrate/_ivp/base.py", line 158, in fun
+    return self.fun_single(t, y)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jayden/.venv/lib/python3.12/site-packages/scipy/integrate/_ivp/base.py", line 24, in fun_wrapped
+    return np.asarray(fun(t, y), dtype=dtype)
+                      ^^^^^^^^^
+  File "<stdin>", line 2, in f
+NameError: name 'y' is not defined
+>>> def f(t, x):
+... ...     L = y[0]
+  File "<stdin>", line 2
+    ...     L = y[0]
+    ^
+IndentationError: expected an indented block after function definition on line 1
+>>> ...     A = y[1]
+  File "<stdin>", line 1
+    ...     A = y[1]
+            ^
+SyntaxError: invalid syntax
+>>> def f(t, x):
+... ...     L = y[0]
+  File "<stdin>", line 2
+    ...     L = y[0]
+    ^
+IndentationError: expected an indented block after function definition on line 1
+>>> ...     A = y[1]
+  File "<stdin>", line 1
+    ...     A = y[1]
+            ^
+SyntaxError: invalid syntax
+>>> def f(t, y):
+...     L = y[0]
+...     A = y[1]
+...     return [r*b*A*(1 - L / K) - (n_L - m_L)*L, n_L*L - m_A*A]
+... 
+>>> sol = solve_ivp(f, [0, 100], [L0, A0])
+>>> sol2 = solve_ivp(f, [0, 100], [L1, A1])
+>>> K = K0
+>>> sol3 = solve_ivp(f, [0, 100], [L0, A0])
+>>> K = K1
+>>> sol4 = solve_ivp(f, [0, 100], [L0, A0])
+>>> import numpy
+>>> import numpy as np
+>>> import matplotlib.pyplot as plt
+>>> t = np.linspace(0, 100, 300)
+>>> z = sol.sol(t)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'NoneType' object is not callable
+>>> z = sol.y
+>>> plt.plot(t, z[t])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+IndexError: arrays used as indices must be of integer (or boolean) type
+>>> plt.plot(t, z.T)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/Users/jayden/.venv/lib/python3.12/site-packages/matplotlib/pyplot.py", line 3829, in plot
+    return gca().plot(
+           ^^^^^^^^^^^
+  File "/Users/jayden/.venv/lib/python3.12/site-packages/matplotlib/axes/_axes.py", line 1777, in plot
+    lines = [*self._get_lines(self, *args, data=data, **kwargs)]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jayden/.venv/lib/python3.12/site-packages/matplotlib/axes/_base.py", line 297, in __call__
+    yield from self._plot_args(
+               ^^^^^^^^^^^^^^^^
+  File "/Users/jayden/.venv/lib/python3.12/site-packages/matplotlib/axes/_base.py", line 494, in _plot_args
+    raise ValueError(f"x and y must have same first dimension, but "
+ValueError: x and y must have same first dimension, but have shapes (300,) and (143, 2)
+>>> t = np.linspace(0, 100, 143)
+>>> plt.plot(t, z[0])
+[<matplotlib.lines.Line2D object at 0x123d94470>]
+>>> plt.show()
+>>> plt.plot(t, z)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/Users/jayden/.venv/lib/python3.12/site-packages/matplotlib/pyplot.py", line 3829, in plot
+    return gca().plot(
+           ^^^^^^^^^^^
+  File "/Users/jayden/.venv/lib/python3.12/site-packages/matplotlib/axes/_axes.py", line 1777, in plot
+    lines = [*self._get_lines(self, *args, data=data, **kwargs)]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jayden/.venv/lib/python3.12/site-packages/matplotlib/axes/_base.py", line 297, in __call__
+    yield from self._plot_args(
+               ^^^^^^^^^^^^^^^^
+  File "/Users/jayden/.venv/lib/python3.12/site-packages/matplotlib/axes/_base.py", line 494, in _plot_args
+    raise ValueError(f"x and y must have same first dimension, but "
+ValueError: x and y must have same first dimension, but have shapes (143,) and (2, 143)
+>>> plt.plot[t, z[0], z[1]]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'function' object is not subscriptable
+>>> plt.plot(t, z[0], z[1])
+[<matplotlib.lines.Line2D object at 0x129a081a0>, <matplotlib.lines.Line2D object at 0x129a08980>]
+>>> plt.show()
+>>> plt.legend([L, A])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'L' is not defined. Did you mean: 'L0'?
+>>> plt.legend(['L', 'A'])
+<matplotlib.legend.Legend object at 0x129a0a750>
+>>> plt.show()
+>>> plt.plot(t, z[0], z[1])
+[<matplotlib.lines.Line2D object at 0x129aa7170>, <matplotlib.lines.Line2D object at 0x129aa71a0>]
+>>> plt.show()
+>>> plt.legend(['L', 'A'])
+<matplotlib.legend.Legend object at 0x12910b320>
+>>> plt.show()
+>>> plt.plot(t, z[0], z[1])
+[<matplotlib.lines.Line2D object at 0x123da7020>, <matplotlib.lines.Line2D object at 0x123da47a0>]
+>>> plt.show()
+>>> plt.plot
+<function plot at 0x123d2e480>
+>>> plt.plot(t, z[0], z[1])
+[<matplotlib.lines.Line2D object at 0x1296158b0>, <matplotlib.lines.Line2D object at 0x1296158e0>]
+>>> plt.legend(['L', 'A'])
+<matplotlib.legend.Legend object at 0x1294fbd40>
+>>> plt.plot()
+[]
+>>> plt.plot(t, z[0], z[1])
+[<matplotlib.lines.Line2D object at 0x129638560>, <matplotlib.lines.Line2D object at 0x12963b2c0>]
+>>> plt.legend(['L', 'A'])
+<matplotlib.legend.Legend object at 0x12964d610>
+>>> plt.show()
+>>> plt.plot(t, z[0], z[1])
+[<matplotlib.lines.Line2D object at 0x129f345f0>, <matplotlib.lines.Line2D object at 0x129f34620>]
+>>> plt.xlabel('t')
+Text(0.5, 47.04444444444444, 't')
+>>> plt.legend(['L', 'A'])
+<matplotlib.legend.Legend object at 0x1295f3d40>
+>>> plt.show()
+>>> z = sol2.y
+>>> plt.plot(t, z[0], z[1])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/Users/jayden/.venv/lib/python3.12/site-packages/matplotlib/pyplot.py", line 3829, in plot
+    return gca().plot(
+           ^^^^^^^^^^^
+  File "/Users/jayden/.venv/lib/python3.12/site-packages/matplotlib/axes/_axes.py", line 1777, in plot
+    lines = [*self._get_lines(self, *args, data=data, **kwargs)]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jayden/.venv/lib/python3.12/site-packages/matplotlib/axes/_base.py", line 297, in __call__
+    yield from self._plot_args(
+               ^^^^^^^^^^^^^^^^
+  File "/Users/jayden/.venv/lib/python3.12/site-packages/matplotlib/axes/_base.py", line 494, in _plot_args
+    raise ValueError(f"x and y must have same first dimension, but "
+ValueError: x and y must have same first dimension, but have shapes (143,) and (150,)
+>>> t = np.linspace(0, 100, 150)
+>>> plt.plot(t, z[0], z[1])
+[<matplotlib.lines.Line2D object at 0x129f34380>, <matplotlib.lines.Line2D object at 0x12964ee70>]
+>>> plt.xlabel('t')
+Text(0.5, 47.04444444444444, 't')
+>>>  plt.legend(['L', 'A'])
+  File "<stdin>", line 1
+    plt.legend(['L', 'A'])
+IndentationError: unexpected indent
+>>>  plt.legend(['L', 'A'])
+  File "<stdin>", line 1
+    plt.legend(['L', 'A'])
+IndentationError: unexpected indent
+>>> plt.legend(['L', 'A'])
+<matplotlib.legend.Legend object at 0x129fbe150>
+>>> plt.show()
+>>> z = sol3.y
+>>> z[0].len
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'numpy.ndarray' object has no attribute 'len'
+>>> len(z[0])
+144
+>>> t = np.linspace(0, 100, 144)
+>>> plt.plot(t, z[0], z[1])
+[<matplotlib.lines.Line2D object at 0x12a17f410>, <matplotlib.lines.Line2D object at 0x12a17f440>]
+>>> plt.xlabel('t')
+Text(0.5, 47.04444444444444, 't')
+>>> plt.legend(['L', 'A'])
+<matplotlib.legend.Legend object at 0x12a171b80>
+>>> plt.show()
+>>> z = sol4.y
+>>> t = np.linspace(0, 100, len(z[0]))
+>>> plt.plot(t, z[0], z[1])
+[<matplotlib.lines.Line2D object at 0x12a228e90>, <matplotlib.lines.Line2D object at 0x12a228ec0>]
+>>> plt.xlabel('t')
+Text(0.5, 47.04444444444444, 't')
+>>> plt.legend(['L', 'A'])
+<matplotlib.legend.Legend object at 0x12a1b9b80>
+>>> plt.show()
+>>> 
