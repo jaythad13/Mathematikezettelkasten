@@ -126,23 +126,24 @@ This is also true for monomorphisms and epimorphisms.
 
 ##### _proposition:_ monomorphisms are stalk-local
 
-Suppose $\varphi : \mathscr{F} \to \mathscr{G}$ is a morphism of sheaves. The following are equivalent.
+Suppose $\varphi : \mathscr{F} \to \mathscr{G}$ is a morphism of sheaves valued in a category with an [[Algebraic geometry --- rising-sea/notes/Universal properties and why categories?#_example _ initial and final objects in specific categories|initial object]] and commutativity of filtered colimits and finite limits (locally finitely presentable suffices). The following are equivalent.
 1) $\varphi$ is a [[Algebraic geometry --- rising-sea/notes/Universal properties and why categories?#_definition _ monomorphisms, epimorphisms|monomorphism]].
 2) $\varphi_{p} : \mathscr{F}_{p} \to \mathscr{G}_{p}$ is monic at each point $p$.
 3) $\varphi(U) : \mathscr{F}(U) \to \mathscr{G}(U)$ is monic at each open set $U \subseteq X$.
 
 ###### _proof:_
 
-> [!warning]
-> as is, this has no proof that something implies $\varphi_{p}$ is monic at each $p$
+Suppose $\varphi$ is monic and $U \subseteq X$ is open. Then suppose there are two morphisms $\psi(U), \theta(U) : K \to \mathscr{F}(U)$ such that $\varphi(U) \circ \psi(U) = \varphi(U) \circ \theta(U)$. We can extend this to a morphism of sheaves. In particular, choose $\mathscr{K}$ to be the extension by zero of the constant presheaf $\underline{K}_{\text{pre}}$. That is, let $\mathscr{K}$ be the sheafification of the presheaf with $\mathscr{K}_{\text{pre}}(V) = K$ for $V \subseteq U$ and $\mathscr{K}_{\text{pre}}(V) = \text{Ø}$ (let $\text{Ø}$ denote the initial object). [[Algebraic geometry --- rising-sea/notes/Sheaves valued in abelian categories#_proposition _ monomorphisms are determined on open sets|We showed]] already that $\mathscr{K}_{\text{pre}}$ is a presheaf and that the two maps $K \to \mathscr{F}(U)$ define two presheaf morphisms $\psi_{\text{pre}}, \theta_{\text{pre}}: \mathscr{K}_{\text{pre}} \to \mathscr{F}$ that agree on composition with $\varphi$. Sheafifying gives us two morphisms $\psi, \theta : \mathscr{K} \to \mathscr{F}$ that agree on composition with $\varphi$. Since $\varphi$ is monic, this implies $\psi = \theta$. Since $\psi_{\text{pre}} = \mathrm{sh} \circ \psi$ and similarly for $\theta$, we have $\psi_{\text{pre}} = \theta_{\text{pre}}$.
 
-Suppose $\varphi_{p}$ is monic for each $p \in X$. Then $\prod_{p \in X} \varphi_{p}$ is also monic. Suppose there is a pair of morphisms $S \to \mathscr{F}(U)$ that agree on composition to $\mathscr{G}(U)$. Then the pair of morphisms $S \to \mathscr{F}(U) \to \prod_{p \in X} \mathscr{F}_{p}$ agree on composition to $\prod_{p \in X} \mathscr{G}_{p}$. Since $\prod_{p \in X} \varphi_{p}$ is monic, the pair of morphisms $S \to \mathscr{F}(U) \to \prod_{p \in X} \mathscr{F}_{p}$ agree. But then, since $\mathscr{F}(U) \to \prod_{p \in X} \mathscr{F}_{p}$ is monic, the two maps $S \to \mathscr{F}(U)$ must be the same. That is, $\varphi(U)$ is monic.
+Suppose each $\varphi(U)$ is monic. Equivalently, diagonals $\delta(U) : \mathscr{F}(U) \to \mathscr{F}(U) \times_{\mathscr{G}(U)} \mathscr{F}(U)$ [[Algebraic geometry --- rising-sea/notes/Universal properties and why categories?#_proposition _ monomorphisms induce diagonal isomorphisms|are isomorphisms]]. Since filtered colimits and finite limits commute in $\mathscr{C}$ (by hypothesis), each $\delta_{p} : \mathscr{F}_{p} \to \mathscr{F}_{p} \times_{\mathscr{G}_{p}} \mathscr{F}_{p}$ is an isomorphism. This is equivalent to monic $\varphi_{p} : \mathscr{F}_{p} \to \mathscr{G}_{p}$.
 
-Suppose $\varphi(U)$ is monic for each $U \subseteq X$. Suppose $\psi, \theta : \mathscr{K} \to \mathscr{F}$ are two morphisms that agree on composition to $\mathscr{G}$. That is, $\varphi(U) \circ \psi(U) = \varphi(U) \circ \theta(U)$ for each $U$. Since $\varphi(U)$ is monic, this implies $\psi(U) = \theta(U)$ for each $U$, and thus, $\psi = \theta$.
-
-We could have directly shown that all $\varphi_{p}$ monic implies $\varphi$ monic. If each stalk morphism were monic, then whenever $\varphi \circ \psi = \varphi \circ \theta$, we have $\varphi_{p} \circ \psi_{p} = \varphi_{p} \circ \theta_{p}$ and thus, $\psi_{p} = \theta_{p}$ at each $p$. Since morphisms are determined by stalks, $\psi = \theta$.
+Suppose each $\varphi_{p}$ is monic. Then whenever $\varphi \circ \psi = \varphi \circ \theta$, we have $\varphi_{p} \circ \psi_{p} = \varphi_{p} \circ \theta_{p}$ and thus, $\psi_{p} = \theta_{p}$ at each $p$. Since morphisms are determined by stalks, $\psi = \theta$.
 
 When $\mathscr{F}, \mathscr{G}$ are sheaves of sets, the following argument with the "indicator sheaf" is useful. Suppose $\varphi$ is monic. Let $1_{U}$ be the sheaf taking value $\{ 1 \}$ on open subsets of $U$ and $\text{Ø}$ everywhere else. Sheaf morphisms $1_{U} \to \mathscr{F}$ are defined exactly by $\{ 1 \} \to \mathscr{F}(U)$. Thus, any pair of morphisms $\{ 1 \} \to \mathscr{F}(U)$ that agree on composition to $\mathscr{G}(U)$ define two morphisms $1_{U}\to \mathscr{F}$ that agree on composition to $\mathscr{G}$. Since $\varphi$ is monic, the two morphisms $1_{U} \to \mathscr{F}$ and thus, the two morphisms $\{ 1 \} \to \mathscr{F}(U)$ are the same. That is, $\varphi(U)$ is injective.
+
+It is easy to show directly that if $\varphi(U)$ is monic for each $U \subseteq X$, then $\varphi$ is monic. Suppose $\psi, \theta : \mathscr{K} \to \mathscr{F}$ are two morphisms that agree on composition to $\mathscr{G}$. That is, $\varphi(U) \circ \psi(U) = \varphi(U) \circ \theta(U)$ for each $U$. Since $\varphi(U)$ is monic, this implies $\psi(U) = \theta(U)$ for each $U$, and thus, $\psi = \theta$. 
+
+Suppose $\varphi_{p}$ is monic for each $p \in X$. Then $\prod_{p \in X} \varphi_{p}$ is also monic. Suppose there is a pair of morphisms $S \to \mathscr{F}(U)$ that agree on composition to $\mathscr{G}(U)$. Then the pair of morphisms $S \to \mathscr{F}(U) \to \prod_{p \in X} \mathscr{F}_{p}$ agree on composition to $\prod_{p \in X} \mathscr{G}_{p}$. Since $\prod_{p \in X} \varphi_{p}$ is monic, the pair of morphisms $S \to \mathscr{F}(U) \to \prod_{p \in X} \mathscr{F}_{p}$ agree. But then, since $\mathscr{F}(U) \to \prod_{p \in X} \mathscr{F}_{p}$ is monic, the two maps $S \to \mathscr{F}(U)$ must be the same. That is, $\varphi(U)$ is monic.
 
 ---
 
