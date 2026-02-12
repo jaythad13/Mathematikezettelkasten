@@ -8,7 +8,7 @@ tags:
 - cat-th
 ---
 
-Let $X$ be a topological space and $\mathscr{C}$ an arbitrary [[Algebraic geometry --- rising-sea/notes/A little about abelian categories#_definition _ abelian categories|abelian category]] (unless otherwise specified). 
+Let $X$ be a topological space and $\mathscr{C}$ an arbitrary [[Algebraic geometry --- rising-sea/notes/A little about abelian categories#_definition _ abelian categories|abelian category]]. All sheaves are valued in $\mathscr{C}$ (unless otherwise specified). 
 
 We will show that [[Algebraic geometry --- rising-sea/notes/Sheaves#_definition _ presheaves, sections, restriction maps|presheaves]] on $X$ taking values in $\mathscr{C}$, with their [[Algebraic geometry --- rising-sea/notes/Morphisms of sheaves#_definition _ morphism of sheaves|presheaf morphisms]] form an abelian category, essentially open set by open set. This follows because (as we will see) the presheaf kernel and cokernel are just defined by taking the kernel and cokernel on each open set. This does not work for sheaves in general (you have to [[Algebraic geometry --- rising-sea/notes/Sheafification#_definition _ sheafification|sheafify]]). However, the analogous result does hold at the level of stalks. This 
 
@@ -163,7 +163,7 @@ Since morphisms of sheaves are exactly morphisms of presheaves, the argument use
 
 ##### _example:_ presheaf cokernel is not (always) a sheaf — the (presheaf) exponential exact sequence
 
-Consider $\mathbb{C}$ with the Euclidean topology, let $\underline{\mathbb{Z}}$ be the [[Algebraic geometry --- rising-sea/notes/Sheaves#_example _ constant presheaves and constant sheaves|(locally) constant sheaf]] with values in $\mathbb{Z}$, $\mathscr{O}_{\mathbb{C}}$ be the sheaf of holomorphic functions, and let $\mathscr{F}$ be the presheaf of functions admitting a [[Complex analysis --- math-135/notes/The complex logarithm#_definition _ logarithm, the logarithm|holomorphic logarithm]]. Then the following sequence is exact
+Consider $\mathbb{C}$ with the Euclidean topology, let $\underline{\mathbb{Z}}$ be the [[Algebraic geometry --- rising-sea/notes/Sheaves#_example _ constant presheaves and constant sheaves|(locally) constant sheaf]] with values in $\mathbb{Z}$, $\mathscr{O}_{\mathbb{C}}$ be the sheaf of holomorphic functions, and let $\mathscr{F}$ be the presheaf of functions admitting a [[Complex analysis --- math-135/notes/The complex logarithm#_definition _ logarithm, the logarithm|holomorphic logarithm]]. Then the following sequence of presheaves is exact
 ```tikz
 \usepackage{tikz-cd}
 \usepackage{amsfonts}
@@ -173,7 +173,7 @@ Consider $\mathbb{C}$ with the Euclidean topology, let $\underline{\mathbb{Z}}$ 
 	\end{tikzcd}
 \end{document}
 ```
-with $\mathscr{O}_{\mathbb{C}} \to \mathscr{F}$ given by $g \mapsto \operatorname{exp}(2 \pi i g)$
+with $\mathscr{O}_{\mathbb{C}} \to \mathscr{F}$ given by $g \mapsto \operatorname{exp}(2 \pi i g)$.
 
 This follows because, on each open set $U \subseteq \mathbb{C}$, the sequence below is exact.
 ```tikz
@@ -185,8 +185,123 @@ This follows because, on each open set $U \subseteq \mathbb{C}$, the sequence be
 	\end{tikzcd}
 \end{document}
 ```
-Locally constant functions on $U \to \mathbb{Z}$ are holomorphic so they include into $\mathscr{O}_{\mathbb{C}}(U)$, and all $f : U \to \mathbb{C}$ admitting a holomorphic logarithm $g$ have $f = \operatorname{\exp}( 2 \pi i g / 2 \pi i)$, and thus, $\mathscr{O}(U)$ surjects onto $\mathscr{F}(U)$. Finally, $\operatorname{\exp} g = 0$ if and only if $g$ takes only integer values. Since $\mathbb{Z}$ is discrete, this forces $g$ to be locally constant.
+Locally constant functions on $U \to \mathbb{Z}$ are holomorphic so they include into $\mathscr{O}_{\mathbb{C}}(U)$. All $f : U \to \mathbb{C}$ admitting a holomorphic logarithm $g$ have $f = \operatorname{\exp}( 2 \pi i (g / 2 \pi i))$, and thus, $\mathscr{O}(U)$ surjects onto $\mathscr{F}(U)$. Finally, $\operatorname{\exp} 2 \pi i g = 0$ if and only if $g$ takes only integer values. Since $\mathbb{Z}$ is discrete, this forces $g$ to be locally constant.
 
-Since the sequence is exact, $\mathscr{O}_{\mathbb{C}} \to \mathscr{F}$ is the cokernel of $\underline{\mathbb{Z}} \to \mathscr{O}_{\mathbb{C}}$. However, $\mathscr{F}$ is not a sheaf because we cannot glue the function $z \mapsto z$ on simply connected $U, V \subseteq \mathbb{C} \setminus \{ 0 \}$ to $z \mapsto z$ on $U \cup V = \mathbb{C} \setminus \{ 0 \}$.
+Since the sequence is exact, $\mathscr{O}_{\mathbb{C}} \to \mathscr{F}$ is the presheaf cokernel of $\underline{\mathbb{Z}} \to \mathscr{O}_{\mathbb{C}}$. However, $\mathscr{F}$ is not a sheaf because we cannot glue the function $z \mapsto z$ on simply connected $U, V \subseteq \mathbb{C} \setminus \{ 0 \}$ to $z \mapsto z$ on $U \cup V = \mathbb{C} \setminus \{ 0 \}$.
+
+---
+
+For this reason, we need to sheafify the presheaf cokernel.
+
+##### _proposition:_ sheafification of the presheaf cokernel is the cokernel
+
+Let $\varphi : \mathscr{F} \to \mathscr{G}$ be a morphism of sheaves. Let $\mathscr{H}_{\text{pre}} = \operatorname{coker}_{\text{pre}} \varphi$ and let $\mathscr{H} = \mathscr{H}_{\text{pre}}^\text{sh}$ be its [[Algebraic geometry --- rising-sea/notes/Sheafification#_definition _ sheafification|sheafification]]. Then $\mathscr{H}$ satisfies the [[Algebraic geometry --- rising-sea/notes/A little about abelian categories#_definition _ kernels, cokernels|universal property of the cokernel]] of $\varphi$.
+
+###### _proof:_
+
+Since  $\mathscr{H}_{\text{pre}}$ is the presheaf cokernel of $\varphi$, it has a presheaf morphism $\psi_{\text{pre}} : \mathscr{G} \to \mathscr{H}_{\text{pre}}$. It also has a sheafification morphism $\text{sh} : \mathscr{H}_{\text{pre}} \to \mathscr{H}$. Thus, we can define a sheaf morphism $\psi = \text{sh} \circ \psi_{\text{pre}}$. We claim $\psi : \mathscr{G} \to \mathscr{H}$ satisfies the universal property of the cokernel.
+
+Suppose $\mathscr{H}'$ is a sheaf with $\psi' : \mathscr{G} \to \mathscr{H}'$ such that $\psi' \circ \varphi = 0$. Then as a morphism of presheaves, $\psi'$ factors uniquely through $\psi_{\text{pre}}$. That is, $\psi'$ factors as $\mathscr{G} \to \mathscr{H}_{\text{pre}} \to \mathscr{H}'$ uniquely. But then by the universal property of sheafification, $\mathscr{H}_{\text{pre}} \to \mathscr{H}'$ factors uniquely as $\mathscr{H}_{\text{pre}} \to \mathscr{H}_{\text{pre}}^\text{sh} \to \mathscr{H}'$ which means that $\psi'$ factors uniquely as $\mathscr{G} \to \mathscr{H} \to \mathscr{H}'$. (It requires a little thinking to show that the factorisation is unique).
+
+---
+
+Now we can actually state the result that essentially proves that sheaves valued in an abelian category form an abelian category.
+
+##### _proposition:_ kernels and cokernels are [[Algebraic geometry --- rising-sea/notes/Stalk-local properties and compatible germs#Stalk-local properties|stalk-local]]
+
+Let $\varphi : \mathscr{F} \to \mathscr{G}$ be a morphism of sheaves. Then the stalk at $p$ of the (co)kernel sheaf is the (co)kernel of the stalk morphism at $p$. 
+
+That is, there are isomorphisms $(\ker \varphi)_{p} \to \ker \varphi_{p}$ and $(\operatorname{coker} \varphi)_{p} \to \operatorname{coker} \varphi_{p}$ that are natural in that the following diagram commutes
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		 (\ker \varphi)_{p} \ar[r] \ar[d] & \mathcal{F}_{p} \ar[r] & \mathcal{G}_{p} \ar[r] \ar[rd] & (\mathrm{coker} \, \varphi)_{p} \ar[d] \\
+		 \ker \varphi_{p} \ar[ru] & & & \mathrm{coker} \, \varphi_{p}
+	\end{tikzcd}
+\end{document}
+```
+or equivalently, in that the stalk of the sheaf (co)kernel satisfies the universal property of (co)kernel of the sheaf morphism.
+
+---
+
+##### _theorem:_ sheaves valued in abelian categories form an abelian category
+
+$\mathscr{C}_{X}$ is an abelian category.
+
+---
+
+In fact, again, we can show that images, and thus, exactness is also determined stalk-locally.
+
+##### _proposition:_ exactness is stalk local
+
+Suppose $\varphi : \mathscr{F} \to \mathscr{G}$ and $\psi : \mathscr{G} \to \mathscr{H}$ are two morphisms of sheaves. Then
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		\mathcal{F} \ar[r, "\varphi"] & \mathcal{G} \ar[r, "\psi"] & \mathcal{H}
+	\end{tikzcd}
+\end{document}
+```
+is exact if and only if, for each $p \in X$
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		\mathcal{F}_{p} \ar[r, "\varphi_{p}"] & \mathcal{G}_{p} \ar[r, "\psi_{p}"] & \mathcal{H}_{p}
+	\end{tikzcd}
+\end{document}
+```
+is exact.
+
+---
+
+Since taking sections over $U$ still preserves kernels, it is almost exact.
+
+##### _proposition:_ taking sections is left exact
+
+The functor $\Gamma(U, -) : \mathscr{C}_{X} \to \mathscr{C}$ given by $\mathscr{F} \mapsto \mathscr{F}(U)$ on objects and $\varphi \mapsto \varphi(U)$ on morphisms is [[Algebraic geometry --- rising-sea/notes/Exact functors#_definition _ right-exact, left-exact, exact|left-exact]].
+
+---
+
+This is in fact a special case of the left exactness of the pushforward.
+
+![[Algebraic geometry --- rising-sea/notes/Pushforward sheaves#_proposition _ pushforward is left-exact|Pushforward sheaves]]
+
+Finally, taking sheaf $\mathscr{F} \mapsto \mathcal{Hom}(\mathscr{F}, \mathscr{G})$ and $\mathscr{G} \mapsto \mathcal{Hom}(\mathscr{F}, \mathscr{G})$ are both left-exact, just as taking $\operatorname{Hom}$ is in any abelian category $\mathscr{C}$.
+
+##### _proposition:_ sheaf $\mathcal{Hom}$ is left-exact
+
+---
+
+### $\mathscr{O}_{X}$-modules
+
+It turns out that all of these ideas work even in the category of $\mathscr{O}_{X}$[[Algebraic geometry --- rising-sea/notes/Ringed spaces#_example _ sheaves of abelian groups are $ mathscr{O}_{X}$-modules|-modules]]. Specifically, they also form an abelian category.
+
+##### _theorem:_ $\mathscr{O}_{X}$ modules form an abelian category
+
+---
+
+Specifically, kernels are the presheaf kernels, cokernels are the sheafification of presheaf kernels, exactness is talk local, taking sections over an open set is left-exact, pushforwards are left-exact, and so are $\mathscr{F} \mapsto \mathcal{Hom}(\mathscr{F}, \mathscr{G})$ and $\mathscr{G} \mapsto \mathcal{Hom}(\mathscr{F}, \mathscr{G})$.
+
+More importantly, our arguments here will allow us to define the tensor product. Suppose $\mathscr{F}, \mathscr{G}$ are $\mathscr{O}_{X}$-modules.
+
+##### _definition:_ bilinear maps of $\mathscr{O}_{X}$-modules, tensor products of $\mathscr{O}_{X}$-modules
+
+---
+
+##### _proposition:_ tensor product is the sheafification of the presheaf tensor product
+
+Let $\mathscr{T}_{\text{pre}}$ be the presheaf defined by $\mathscr{T}_{\text{pre}}(U) = \mathscr{F}(U) \otimes_{\mathscr{O}_{X}(U)} \mathscr{G}(U)$ and with restrictions given by $\operatorname{res}_{\mathscr{F}} \otimes \operatorname{res}_{\mathscr{G}}$. Then its sheafification $\mathscr{T}_{\text{pre}}^\text{sh}$ satisfies the universal property of $\mathscr{F} \otimes \mathscr{G}$.
+
+---
+
+##### _proposition:_ tensor products are stalk local
+
+There is an isomorphism $(\mathscr{F} \otimes_{\mathscr{O}_{X}} \mathscr{G})_{p} \to \mathscr{F}_{p} \otimes_{\mathscr{O}_{X, p}} \mathscr{G}_{p}$ such that the former satisfies the tensor product universal property of the latter.
 
 ---

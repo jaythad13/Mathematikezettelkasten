@@ -56,3 +56,35 @@ Suppose $\pi : X \to Y$ is continuous. Then pushforward of (pre)sheaves (with va
 $\pi_{*}$ is defined on objects by $\mathscr{F} \mapsto \pi_{*} \mathscr{F}$. Suppose $\varphi : \mathscr{F} \to \mathscr{G}$ is a morphism of (pre)sheaves. Then we can define a (pre)sheaf morphism $\pi_{*} \varphi : \pi_{*} \mathscr{F} \to \pi_{*} \mathscr{G}$ by $\pi_{*} \varphi(V) = \varphi(U)$ for $\pi^\text{pre}(V) = U$. For $V_{1} \subseteq V_{2}$ with pre-images $U_{1} \subseteq U_{2}$ the [[Algebraic geometry --- rising-sea/notes/Morphisms of sheaves#_definition _ morphism of sheaves|relevant diagram]] commutes — the two morphisms are the same $\pi_{*} \mathscr{F}(V_{2}) \to \pi_{*}\mathscr{G}(V_{1})$ because they are exactly the two morphism $\mathscr{F}(U_{2}) \to \mathscr{G}(U_{1})$ which agree.
 
 ---
+
+In fact, when the sheaves are valued in an abelian category $\mathscr{C}$, this functoriality is fairly nice.
+
+##### _proposition:_ pushforward is left-exact
+
+Suppose $\pi : X \to Y$ is a continuous map. Then $\pi_{*}$ is a [[Algebraic geometry --- rising-sea/notes/Exact functors#_definition _ right-exact, left-exact, exact|left-exact]] functor $\mathscr{C}_{X} \to \mathscr{C}_{Y}$.
+
+###### _proof:_
+
+Suppose
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		0 \ar[r] & \mathcal{F} \ar[r, "\varphi"] & \mathcal{G} \ar[r, "\psi"] & \mathcal{H}
+	\end{tikzcd}
+\end{document}
+```
+is an exact sequence in $\mathscr{C}_{X}$. We want to show
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		0 \ar[r] & \pi_{*}\mathcal{F} \ar[r, "\pi_{*}\varphi"] & \pi_{*}\mathcal{G} \ar[r, "\pi_{*}\psi"] & \pi_{*}\mathcal{H}
+	\end{tikzcd}
+\end{document}
+```
+is an exact sequence in $\mathscr{C}_{Y}$
+
+---
