@@ -3,8 +3,7 @@ tags:
 - alg-geo
 - cx-geo
 - trop-geo
-- karpism/1
-- karpism/2
+- karpism
 ---
 
 Here we work over $\mathbb{C}$, but we could work over any algebraically closed field $\mathbb{F}$.
@@ -41,7 +40,7 @@ A **(strongly convex, rational) fan** is a set of (strongly convex, rational) co
 
 ---
 
-In general, to get the toric variety back from a cone $\sigma$, we pick out a submonoid $S_{\sigma} \subseteq M^\vee$ and then get a toric variety $U_{\sigma} = \operatorname{Spec} \mathbb{C}[S_{\sigma}]$. Taking the dual allows us to get an inclusion preserving bijection between faces and $\mathbb{T}$-invariant [[Algebraic geometry --- rising-sea/notes/The base of distinguished open sets#_definition _ distinguished open set, doesn't vanish set|distinguished opens]]. Then, for a fan $\Sigma$, we can get a toric variety $X$ by gluing the affine varieties $U_{\sigma}$ and $U_{\tau}$ along the distinguished open $U_{\sigma \cap \tau}$.
+In general, to get the toric variety back from a cone $\sigma$, we pick out a submonoid $S_{\sigma}^\vee \subseteq M^\vee$ and then get a toric variety $U_{\sigma} = \operatorname{Spec} \mathbb{C}[S_{\sigma}^\vee]$. Taking the dual allows us to get an inclusion preserving bijection between faces and $\mathbb{T}$-invariant [[Algebraic geometry --- rising-sea/notes/The base of distinguished open sets#_definition _ distinguished open set, doesn't vanish set|distinguished opens]]. Then, for a fan $\Sigma$, we can get a toric variety $X$ by gluing the affine varieties $U_{\sigma}$ and $U_{\tau}$ along the distinguished open $U_{\sigma \cap \tau}$.
 
 ##### _definition:_ dual cone, dual submonoid
 
@@ -55,7 +54,7 @@ It requires some work to prove that the dual cone really is a cone in $M_{\mathb
 
 ##### _definition:_ toric variety of a cone
 
-Given a cone $\sigma \subseteq M_{\mathbb{R}}$, the corresponding **toric variety of the cone** is $U_{\sigma} = \operatorname{Spec} \mathbb{C}[S_{\sigma}]$.
+Given a cone $\sigma \subseteq M_{\mathbb{R}}$, the corresponding **toric variety of the cone** is $U_{\sigma} = \operatorname{Spec} \mathbb{C}[S_{\sigma}^\vee]$.
 
 ---
 
@@ -67,9 +66,9 @@ If $\tau \subseteq \sigma$ is a face, then the map $U_{\tau} \to U_{\sigma}$ is 
 
 ###### _proof sketch:_
 
-Let $\tau \subseteq \sigma$ be given by the intersection of $\sigma$ and the kernel of $\varphi \in M_{\mathbb{R}}^\vee$. In fact, since $\sigma^\vee$ is a rational cone, we can choose $\varphi \in M^\vee$. Also note that $\varphi$ is positive on $\sigma \setminus \tau$. It suffices to show that $S_{\tau} = S_{\sigma} + \mathbb{N}_{0}(- \varphi)$ since this gives $\mathbb{C}[S_{\tau}] = \mathbb{C}[S_{\sigma}]_{x^\varphi}$.
+Let $\tau \subseteq \sigma$ be given by the intersection of $\sigma$ and the kernel of $\varphi \in M_{\mathbb{R}}^\vee$. In fact, since $\sigma^\vee$ is a rational cone, we can choose $\varphi \in M^\vee$. Also note that $\varphi$ is positive on $\sigma \setminus \tau$. It suffices to show that $S_{\tau}^\vee = S_{\sigma}^\vee + \mathbb{N}_{0}(- \varphi)$ since this gives $\mathbb{C}[S_{\tau}^\vee] = \mathbb{C}[S_{\sigma}^\vee]_{x^\varphi}$.
 
-Since $\tau \subseteq \sigma$, we already have $S_{\sigma} \subseteq S_{\tau}$, and since $\varphi$ vanishes on $\tau$, we also have $\mathbb{N}_{0}(-\varphi) \subseteq S_{\tau}$. Thus, we have $S_{\sigma} + \mathbb{N}_{0}(-\varphi) \subseteq S_{\tau}$. Conversely, for any $\psi \in S_{\tau}$ we can choose a large enough positive integer $n$ such that $\psi + n \varphi$ is non-negative on $\sigma$. But then $\psi \in S_{\sigma} + n (-\varphi)$.
+Since $\tau \subseteq \sigma$, we already have $S_{\sigma}^\vee \subseteq S_{\tau}^\vee$, and since $\varphi$ vanishes on $\tau$, we also have $\mathbb{N}_{0}(-\varphi) \subseteq S_{\tau}$. Thus, we have $S_{\sigma}^\vee + \mathbb{N}_{0}(-\varphi) \subseteq S_{\tau}^\vee$. Conversely, for any $\psi \in S_{\tau}^\vee$ we can choose a large enough positive integer $n$ such that $\psi + n \varphi$ is non-negative on $\sigma$. But then $\psi \in S_{\sigma}^\vee + n (-\varphi)$.
 
 ---
 
@@ -82,8 +81,6 @@ The **toric variety of a fan** $\Sigma \subseteq M_{\mathbb{R}}$ is $X_{\Sigma}$
 ---
 
 To show that this is actually a variety is a technical lemma that the diagonal embedding $U_{\sigma \cap \tau} \to U_{\sigma} \times U_{\tau}$ is closed, which is equivalent to showing that $\mathbb{C}[S_{\tau}] \otimes \mathbb{C}[S_{\sigma}] \to \mathbb{C}[S_{\sigma \cap \tau}]$ is surjective, which follows from the fact that $S_{\sigma \cap \tau} = S_{\sigma} + S_{\tau}$.
-
-
 
 %%%
 

@@ -2,7 +2,7 @@
 tags:
 - alg-geo
 - cx-geo
-- karpism/3
+- karpism
 ---
 
 We can read off the cohomology of a toric variety just from its fan.
