@@ -87,3 +87,13 @@ It then suffices to prove the $A_{n}, B_{n}, C_{n}$ are bounded. It would then f
 We can get a bound $\lvert A_{n} \rvert < 2 \lvert a \alpha \rvert + \lvert a \rvert + \lvert b \rvert$. This also bounds $C_{n} = A_{n}$. Since the discriminants are equal, we have a bound on $B_{n}$ as well.
 
 ---
+
+##### _proposition:_ continued fractions are given by Farey neighbours
+
+For each $\alpha \in \mathbb{R}$, its continued fraction convergents $p_{n - 1} / q_{n - 1}$ and $p_{n} / q_{n}$ are Farey neighbours of order $q_{n}$.
+
+###### _proof:_
+
+We have already shown that $1 \leq q_{n - 1} \leq q_{n}$.
+
+---
