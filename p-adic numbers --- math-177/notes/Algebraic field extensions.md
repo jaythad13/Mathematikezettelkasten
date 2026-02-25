@@ -1,19 +1,19 @@
 ---
 tags:
+- alg-nt
 - alg
-- galois
 - math-177/11
 - math-177/12
 - math-177/13
 ---
 
-(Algebraic) field extensions are concerned with finding where the roots of polynomials in $\mathbb{F}[x]$ live. It's most reasonable to focus on the irreducible factors — we can find the roots of any reducible polynomial by finding the roots of its irreducible factors.
+Algebraic field extensions are concerned with finding where the roots of polynomials in $\mathbb{F}[x]$ live. It's most reasonable to focus on the irreducible factors — we can find the roots of any reducible polynomial by finding the roots of its irreducible factors.
 
-It's not hard to show that if $\mathbb{F}$ is a [[Abstract algebra --- math-171/notes/Fields#_definition _ fields|field]], then $\mathbb{F}[x]$ is a [[Abstract algebra --- math-171/notes/Factorisation in special rings#_definition _ Euclidean domain|Euclidean domain]] (by polynomial long division). Thus, if $f \in \mathbb{F}[x]$ is irreducible (that is $f = g h$ implies $g$ or $h$ is a [[Abstract algebra --- math-171/notes/Rings#_definition _ unit|unit]]). Then $(f)$ is [[Abstract algebra --- math-171/notes/Prime and maximal ideals#_definition _ prime ideals|prime]] and since [[Abstract algebra --- math-171/notes/Factorisation in special rings#_proposition _ Euclidean domains are principal ideal domains|a Euclidean domain is a]] [[Abstract algebra --- math-171/notes/Factorisation in special rings#_definition _ principal ideal domain|principal ideal domain]], it is in fact [[Abstract algebra --- math-171/notes/Prime and maximal ideals#_definition _ maximal ideal|maximal]] (any $(g)$ containing $(f)$ would have $f = g h$, so ...).
+It's not hard to show that if $\mathbb{F}$ is a [[Abstract algebra --- math-171/notes/Fields#_definition _ fields|field]], then $\mathbb{F}[x]$ is a [[Abstract algebra --- math-171/notes/Factorisation in special rings#_definition _ Euclidean domain|Euclidean domain]] (by polynomial long division). Thus, if $f \in \mathbb{F}[x]$ is irreducible (that is $f = g h$ implies $g$ or $h$ is a [[Abstract algebra --- math-171/notes/Rings#_definition _ unit|unit]]), then $(f)$ is [[Abstract algebra --- math-171/notes/Prime and maximal ideals#_definition _ prime ideals|prime]] and since [[Abstract algebra --- math-171/notes/Factorisation in special rings#_proposition _ Euclidean domains are principal ideal domains|a Euclidean domain is a]] [[Abstract algebra --- math-171/notes/Factorisation in special rings#_definition _ principal ideal domain|principal ideal domain]], it is in fact [[Abstract algebra --- math-171/notes/Prime and maximal ideals#_definition _ maximal ideal|maximal]] (any $(g)$ containing $(f)$ would have $f = g h$, so ...).
 
 Thus, $\mathbb{K} = \mathbb{F}[x] / (f)$ is a field. It's elements look like cosets $a_{0} + a_{1} x + \dots + a_{n - 1} x^{n - 1} + (f)$ with $a_{i} \in \mathbb{F}$. We can understand this as an $n$-dimensional [[Linear algebra done right --- ladr/notes/Vector spaces#_definition _ vector space|vector space]] (and actually, an [[Commutative algebra --- math-189AA/notes/Conventions for commutative algebra#_definition _ algebras|algebra]]) over $\mathbb{F}$. In this, we can reasonably look for roots of $f$. 
 
-We have an injection $\mathbb{F} \to \mathbb{K}$ since we have $\mathbb{F} \to \mathbb{F}[x] \to \mathbb{K}$ and the kernel of $\mathbb{F}[x] \to \mathbb{K}$ has $0$ intersection with $\mathbb{F}$. Thus, we also have an injection $\mathbb{F}[y] \to \mathbb{K}[y]$. Note this is not the map $\mathbb{F}[y] \cong \mathbb{F}[x] \to \mathbb{K}$ (which is not an injection). Then the image of $f$ under $\mathbb{F}[y] \to \mathbb{F}[x][y] \to \mathbb{K}[y]$, evaluated at $x + (f)$ (evaluation at a specific value of $y$ as a morphism $\mathbb{F}[x][y] \to \mathbb{F}[x]$) is just $f(x) + (f) = (f) \in \mathbb{F}[x]$, and thus, $0$ in $\mathbb{K}$. That is, we have a root of $f$ in $\mathbb{K}$. 
+We have an injection $\mathbb{F} \to \mathbb{K}$ since we have $\mathbb{F} \to \mathbb{F}[x] \to \mathbb{K}$ and the kernel of $\mathbb{F}[x] \to \mathbb{K}$ has $0$ intersection with $\mathbb{F}$. Thus, we also have an injection $\mathbb{F}[y] \to \mathbb{K}[y]$. Note this is not the map $\mathbb{F}[y] \cong \mathbb{F}[x] \to \mathbb{K}$ (which is not an injection). Instead it is the map $\mathbb{F}[y] \to \mathbb{F}[x][y] \to \mathbb{K}[y]$. The image of $f$ under $\mathbb{F}[y] \to \mathbb{F}[x][y] \to \mathbb{K}[y]$, evaluated at $x + (f) \in \mathbb{K}$ is just $f(x) + (f) = (f) \in \mathbb{F}[x]$, and thus, $0$ in $\mathbb{K}$. Thus, $x$ is a root of $f$ in $\mathbb{F}[x] / (f)$ and we have a root of $f$ in $\mathbb{K}$. 
 
 Write $f(y) = (y - x) g(y)$ to indicate that $x$ is a root. Reduce $g$ to irreducibles in $\mathbb{K}[y]$, and then if they are not all linear, repeat to get all their roots.
 
@@ -31,13 +31,13 @@ We can make this precise with the following definitions.
 
 A **field extension** of $\mathbb{F}$ is a field $\mathbb{K}$ with an (injective) homomorphism $\mathbb{F} \to \mathbb{K}$. The fact that $\mathbb{K}$ is a field extension of $\mathbb{F}$ is denoted $\mathbb{K} / \mathbb{F}$.
 
-The **degree** $\mathbb{K} : \mathbb{F}$ of the field extension $\mathbb{K} / \mathbb{F}$ is the dimension of $\mathbb{K}$ as an $\mathbb{F}$-vector space.
+The **degree** $\deg \mathbb{K}/\mathbb{F}$ of the field extension $\mathbb{K} / \mathbb{F}$ is the dimension of $\mathbb{K}$ as an $\mathbb{F}$-vector space.
 
 ---
 
-##### _definition:_ algebraic, algebraic field extension
+Unless otherwise, let $\mathbb{K} / \mathbb{F}$ be a field extension for the rest of this note.
 
-Let $\mathbb{K} / \mathbb{F}$ be a field extension.
+##### _definition:_ algebraic, algebraic field extension, $\mathbb{F}[\alpha]$, $\mathbb{F}(\alpha)$
 
 $\alpha \in \mathbb K$ is **algebraic over $\mathbb{F}$** if there is some polynomial $p \in \mathbb{F}[x] \subseteq \mathbb{K}[x]$ with $p(\alpha) = 0$.
 
@@ -45,9 +45,17 @@ $\mathbb{K} / \mathbb{F}$ is **algebraic** if every $\alpha \in \mathbb{K}$ is a
 
 ---
 
+##### _definition:_ adjoining, $\mathbb{F}[\alpha]$, $\mathbb{F}(\alpha)$
+
+For $\alpha \in \mathbb{K}$ we define $\mathbb{F}[\alpha] \subseteq \mathbb{K}$ (read **$\mathbb{F}$-adjoin-$\alpha$**) to be the smallest $\mathbb{F}$-subalgebra of $\mathbb{K}$ containing $\alpha$.
+
+We define $\mathbb{F}(\alpha)$ (also read **$\mathbb{F}$-adjoin-$\alpha$**) to be the smallest subfield of $\mathbb{K}$ containing $\alpha$ and $\mathbb{F}$.
+
+---
+
 ##### _proposition, definition:_ the minimal polynomial
 
-Suppose $\mathbb{K} / \mathbb{F}$ is a field extension and $\alpha \in \mathbb{K}$ is algebraic over $\mathbb{F}$. Then there exists a unique monic irreducible polynomial $p_{\alpha} \in \mathbb{F}[x]$ such that $\mathbb{F}[\alpha] \cong \mathbb{F}[x] / (p_{\alpha})$.
+Suppose $\mathbb{K} / \mathbb{F}$ is a field extension and $\alpha \in \mathbb{K}$ is algebraic over $\mathbb{F}$. Then there exists a unique monic irreducible polynomial $p_{\alpha} \in \mathbb{F}[x]$ such that $\mathbb{F}[x] / (p_{\alpha}) \cong \mathbb{F}[\alpha]$.
 
 This unique monic irreducible polynomial is called the **minimal polynomial** of $\alpha$ over $\mathbb{F}$.
 
@@ -63,15 +71,15 @@ If some other monic $q$ has $(q) = (p_{\alpha})$, then $q \mid p_{\alpha}$ and b
 
 ##### _corollary:_ minimal polynomials give minimal extensions
 
-Suppose $\mathbb{K} / \mathbb{F}$ is a field extension and $\alpha \in \mathbb{K}$ is algebraic over $\mathbb{F}$. Then $\mathbb{F}[\alpha] \cong \mathbb{F}[x]  / (p_{\alpha})$ is the smallest subfield of $\mathbb{K}$ containing $\alpha$ and $\mathbb{F}$.
+Suppose $\mathbb{K} / \mathbb{F}$ is a field extension and $\alpha \in \mathbb{K}$ is algebraic over $\mathbb{F}$. Then $\mathbb{F}[\alpha] \cong \mathbb{F}(\alpha)$.
 
 ###### _proof:_
 
-Any subfield of $\mathbb{K}$ containing $\alpha$ and $\mathbb{F}$ must contain all $a_{0} + a_{1} \alpha + \dots + a_{n} \alpha^n$. Thus, it must contain $\mathbb{F}[\alpha]$. We need only show $\mathbb{F}[\alpha]$ is a field. In a Euclidean domain, irreducible elements generate maximal ideals. Thus, $\mathbb{F}[\alpha] \cong \mathbb{F}[x] / (p_{\alpha})$ is a subfield of $\mathbb{K}$.
+Any subfield of $\mathbb{K}$ containing $\alpha$ and $\mathbb{F}$ must contain all $a_{0} + a_{1} \alpha + \dots + a_{n - 1} \alpha^{n - 1}$. Thus, $\mathbb{F}[\alpha] \subseteq \mathbb{F}(\alpha)$. Thus, it suffices to show $\mathbb{F}[\alpha]$ is a field. But $\mathbb{F}[\alpha] \cong \mathbb{F}[x] / (p_{\alpha})$ which is a field (non-zero primes in a PID are maximal). Alternatively, $\mathbb{F}[\alpha]$ is an integral domain (it is an $\mathbb{F}$-subalgebra of a field $\mathbb{K}$) and finite $\mathbb{F}$-dimensional ($1, \alpha, \dots, \alpha^{n - 1}$ forms a basis, by polynomial division). [[Algebraic geometry --- rising-sea/notes/Hilbert's Nullstellensatz#_proposition _ characterising finite $ mathbb{F}$-algebras|Thus]], it is a field.  
 
 ---
 
-Note that this means that no matter what root of $f$ we adjoin to , the field we get is isomorphic to $\mathbb{F}[x]/(f)$. That is $\mathbb{F}[\alpha] \cong \mathbb{F}[\beta]$ for any roots $\alpha, \beta$ of the same polynomial $f \in \mathbb{F}[x]$.
+Note that this means that no matter what root of $f$ we adjoin to $\mathbb{F}$, the field we get is isomorphic to $\mathbb{F}[x]/(f)$. That is $\mathbb{F}[\alpha] \cong \mathbb{F}[\beta]$ for any roots $\alpha, \beta$ of the same polynomial $f \in \mathbb{F}[x]$.
 
 In general, this is not true — $\mathbb{Q}[\pi]$ is not a field. We give notation for the minimal field extension in general.
 
