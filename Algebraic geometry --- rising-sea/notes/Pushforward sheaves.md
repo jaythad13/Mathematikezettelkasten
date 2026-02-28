@@ -85,6 +85,8 @@ is an exact sequence in $\mathscr{C}_{X}$. We want to show
 	\end{tikzcd}
 \end{document}
 ```
-is an exact sequence in $\mathscr{C}_{Y}$
+is an exact sequence in $\mathscr{C}_{Y}$.
+
+Suppose $V \subseteq Y$ has preimage $U$ under $\pi$. Then $\pi_{*}\varphi(V) = \varphi(U)$ and $\pi_{*}\psi(V) = \psi(U)$. But $\varphi(U) : \mathscr{F}(U) \to \mathscr{G}(U)$ is exactly the kernel of $\psi(U)$. Equivalently, $\pi_{*} \varphi(V)$ is the kernel of $\pi_{*} \psi(V)$, [[Algebraic geometry --- rising-sea/notes/Sheaves valued in abelian categories#_proposition _ presheaf kernel is a sheaf and a kernel|so]] $\pi_{*} \varphi$ is the kernel of $\pi_{*} \psi$.
 
 ---

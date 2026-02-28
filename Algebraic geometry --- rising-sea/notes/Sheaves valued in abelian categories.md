@@ -145,8 +145,10 @@ Suppose $\varphi : \mathscr{F} \to \mathscr{G}$ is epic. Let $\psi : \ker_{\text
 
 We would hope that the presheaves forming an abelian category would allow us to directly form an abelian category of [[Algebraic geometry --- rising-sea/notes/Sheaves#_definition _ sheaf|sheaves]]. While there is some hope — the kernel presheaf forms a sheaf — the cokernel dashes this hope. We will need [[Sheafification|sheafification]].
 
-##### _proposition:_ presheaf kernel is a sheaf and a kernel
+Further, to prove some of these results, we will have to restrict from the case of a general abelian category to that of a sufficiently nice one. Specifically, we will need filtered colimits and finite limits to commute. This is certainly true for algebraic categories over set, for example. In particular, the results will hold for sheaves valued in $\mathsf{Ab}$ and $\mathsf{Mod}_{A}$. For the rest of this note, assume $\mathscr{C}$ is such a "nice" abelian category.
 
+##### _proposition:_ presheaf kernel is a sheaf and a kernel
+ 
 If $\varphi : \mathscr{F} \to \mathscr{G}$ is a morphism of sheaves, then $\ker_{\text{pre}} \varphi$ is a sheaf with $\ker_{\text{pre}} \varphi \to \mathscr{F}$ satisfying the universal property of a kernel of sheaves.
 
 ###### _proof:_
@@ -209,22 +211,23 @@ Now we can actually state the result that essentially proves that sheaves valued
 
 ##### _proposition:_ kernels and cokernels are [[Algebraic geometry --- rising-sea/notes/Stalk-local properties and compatible germs#Stalk-local properties|stalk-local]]
 
-Let $\varphi : \mathscr{F} \to \mathscr{G}$ be a morphism of sheaves. Then the stalk at $p$ of the (co)kernel sheaf is the (co)kernel of the stalk morphism at $p$. 
+Let $\varphi : \mathscr{F} \to \mathscr{G}$ be a morphism of sheaves. Then the stalk at $p$ of the (co)kernel sheaf is the (co)kernel of the stalk morphism at $p$.
 
-That is, there are isomorphisms $(\ker \varphi)_{p} \to \ker \varphi_{p}$ and $(\operatorname{coker} \varphi)_{p} \to \operatorname{coker} \varphi_{p}$ that are natural in that the following diagram commutes
-```tikz
-\usepackage{tikz-cd}
-\usepackage{amsfonts}
-\begin{document}
-	\begin{tikzcd}
-		 (\ker \varphi)_{p} \ar[r] \ar[d] & \mathcal{F}_{p} \ar[r] & \mathcal{G}_{p} \ar[r] \ar[rd] & (\mathrm{coker} \, \varphi)_{p} \ar[d] \\
-		 \ker \varphi_{p} \ar[ru] & & & \mathrm{coker} \, \varphi_{p}
-	\end{tikzcd}
-\end{document}
-```
-or equivalently, in that the stalk of the sheaf (co)kernel satisfies the universal property of (co)kernel of the sheaf morphism.
+###### _proof:_
+
+This follows easily from abstract nonsense. By hypothesis, filtered colimits commute with limits, so stalks commute with kernels, and [[Algebraic geometry --- rising-sea/notes/Exact functors#_proposition _ limits commute with limits (and colimits commute with colimits)|colimits commute with colimits]], so stalks commute with cokernels. We also give more enlightening proofs, by using some explicit forgetful functor $\mathscr{C} \to \mathsf{Set}$ for kernels, and by spelling out the argument for commutativity of stalks and cokernels in arbitrary $\mathscr{C}$.
+
+Write $\mathscr{K} = \ker \varphi$ with $\psi : \mathscr{K} \to \mathscr{F}$ and write $K = \ker \varphi_{p}$. Similarly, write $\mathscr{H} = \operatorname{coker} \varphi$ with $\theta : \mathscr{G} \to \mathscr{H}$ the cokernel morphism and write $H = \operatorname{coker} \varphi_{p}$. 
+
+$\psi_{p} \circ \varphi_{p} : \mathscr{K}_{p} \to \mathscr{F}_{p} \to \mathscr{G}_{p}$ composes to zero, so $\psi_{p}$ factors through some $\Pi_{p} : \mathscr{K}_{p} \to K$. In fact, since $\psi$ is monic, so is $\psi_{p}$, and thus, so is $\Pi_{p} : \mathscr{K}_{p} \to K$. As subsets of $\mathscr{F}_{p}$, this is $\mathscr{K}_{p} \subseteq K$. Suppose conversely, that some $f_{p} \in K \subseteq \mathscr{F}_{p}$. Choose, some $f^p \in \mathscr{F}(U)$ with $f^p_{p} = f_{p}$. Then, since $\varphi_{p}(f_{p}) = 0$, we have $\varphi(U)(f^p)_{p} = 0$. But then $\varphi(U)(f^p)_{\mid V} = 0$ for some $V \subseteq U$. It follows that $f^p_{\mid V} \in \mathscr{K}(V) = \operatorname{img} \psi(V) \subseteq \mathscr{F}(V)$. Taking stalks, this gives us $f^p_{p} \in \mathscr{K}_{p} = \operatorname{img} \psi_{p} \subseteq \mathscr{F}_{p}$.
+
+Now we show that $\theta_{p} : \mathscr{G}_{p} \to \mathscr{H}_{p}$ satisfies the universal property of $H$. Suppose that the composition $\theta_{p}' \circ \varphi_{p} : \mathscr{F}_{p} \to \mathscr{G}_{p} \to H'$ is zero for some $\theta_{p}' : \mathscr{G}_{p} \to H'$. Let $\mathscr{H}'$ be the [[Algebraic geometry --- rising-sea/notes/Sheaves#_example _ skyscraper sheaves|skyscraper sheaf]] $i_{p, *} \underline{H'}$ at $p$. Note that $\mathscr{H}'_{p} = H'$. This gives a morphism $\theta' : \mathscr{G} \to \mathscr{H}'$ such that $\theta' \circ \varphi = 0$. Specifically, choose $\theta'(U) : \mathscr{G}(U) \to \mathscr{H}'(U)$ to factor as $\mathscr{G}(U) \to \mathscr{G}_{p} \to H' = \mathscr{H}'(U)$ for $p \in U$, and choose the $0$ map otherwise.
+
+By the universal property of the cokernel, $\theta'$ factors uniquely through $\theta$ as $\amalg \circ \theta$. Thus, $\theta'_{p}$ factors as $\amalg_{p} \circ \theta_{p}$. In fact, this factorisation is unique. Suppose $\theta'_{p} = \amalg_{p}' \circ \theta_{p}$. Then since $\amalg_{p}'$ is a map $\mathscr{H}_{p} \to \mathscr{H}_{p}'$, it defines a map $\amalg' = \mathscr{H} \to \mathscr{H}'$ defined by $\amalg(U) = 0$ if $p \not\in U$ and $\amalg'(U) : \mathscr{H}(U) \to \mathscr{H}_{p} \to H' = \mathscr{H}'(U)$ otherwise. This means that $(\amalg' \circ \theta)_{q} = \theta_{q}'$ at every point $q$ (they agree at $p$ by definition of $\amalg'$ and are both $0$ everywhere else). But then, $\amalg' \circ \theta = \theta'$, implying $\amalg' = \amalg$, and finally, $\amalg' = \amalg$.
 
 ---
+
+Combined with the [[Algebraic geometry --- rising-sea/notes/Stalk-local properties and compatible germs#_proposition _ monomorphisms are stalk-local|stalk-locality]] of monomorphisms and epimorphisms, this is sufficient to prove that $\mathscr{C}_{X}$ is an abelian category, using the argument [[#_proposition _ presheaves valued in an abelian category form an abelian category|for presheaves]].
 
 ##### _theorem:_ sheaves valued in abelian categories form an abelian category
 
@@ -232,7 +235,7 @@ $\mathscr{C}_{X}$ is an abelian category.
 
 ---
 
-In fact, again, we can show that images, and thus, exactness is also determined stalk-locally.
+In fact, it follows again exactly from these arguments that images, and thus, exactness is also determined stalk-locally.
 
 ##### _proposition:_ exactness is stalk local
 
@@ -266,15 +269,41 @@ Since taking sections over $U$ still preserves kernels, it is almost exact.
 
 The functor $\Gamma(U, -) : \mathscr{C}_{X} \to \mathscr{C}$ given by $\mathscr{F} \mapsto \mathscr{F}(U)$ on objects and $\varphi \mapsto \varphi(U)$ on morphisms is [[Algebraic geometry --- rising-sea/notes/Exact functors#_definition _ right-exact, left-exact, exact|left-exact]].
 
+###### _proof:_
+
+Suppose
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		0 \ar[r] & \mathcal{F} \ar[r, "\varphi"] & \mathcal{G} \ar[r, "\psi"] & \mathcal{H}
+	\end{tikzcd}
+\end{document}
+```
+is exact. Then $\varphi : \mathscr{F} \to \mathscr{G}$ is exactly the kernel of $\psi$. But $(\ker \psi)(U) = \ker \psi(U)$ so $\mathscr{F}(U) = \ker \psi(U)$ with kernel map $\varphi(U) : \mathscr{F}(U) \to \mathscr{G}(U)$. That is,
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		0 \ar[r] & \mathcal{F}(U) \ar[r, "\varphi(U)"] & \mathcal{G}(U) \ar[r, "\psi(U)"] & \mathcal{H}(U)
+	\end{tikzcd}
+\end{document}
+```
+is exact.
+
 ---
 
 This is in fact a special case of the left exactness of the pushforward.
 
 ![[Algebraic geometry --- rising-sea/notes/Pushforward sheaves#_proposition _ pushforward is left-exact|Pushforward sheaves]]
 
-Finally, taking sheaf $\mathscr{F} \mapsto \mathcal{Hom}(\mathscr{F}, \mathscr{G})$ and $\mathscr{G} \mapsto \mathcal{Hom}(\mathscr{F}, \mathscr{G})$ are both left-exact, just as taking $\operatorname{Hom}$ is in any abelian category $\mathscr{C}$.
+Finally, we have a sheafy analogue of the fact that taking $\operatorname{Hom}$ in any abelian category $\mathscr{C}$ [[Algebraic geometry --- rising-sea/notes/Exact functors#_example _ $h M$ is (covariant) left-exact|is left exact]]. This is of course also true for $\mathscr{C}_{X}$, but not only we do we get a version for $\operatorname{Hom}_{\mathscr{C}_{X}}(\mathscr{F}, \mathscr{G}) \in \mathsf{Ab}$, but also for $\mathcal{Hom}_{\mathscr{C}_{X}}(\mathscr{F}, \mathscr{G}) \in \mathscr{C}_{X}$.
 
 ##### _proposition:_ sheaf $\mathcal{Hom}$ is left-exact
+
+The functors $\mathscr{C}_{X} \to \mathscr{C}_{X}$ by $\mathscr{F} \mapsto \mathcal{Hom}(\mathscr{F}, \mathscr{G})$ and $\mathscr{G} \mapsto \mathcal{Hom}(\mathscr{F}, \mathscr{G})$ are both left-exact.
 
 ---
 
@@ -292,16 +321,61 @@ More importantly, our arguments here will allow us to define the tensor product.
 
 ##### _definition:_ bilinear maps of $\mathscr{O}_{X}$-modules, tensor products of $\mathscr{O}_{X}$-modules
 
+Suppose $\mathscr{F}, \mathscr{G}, \mathscr{H}$ are $\mathscr{O}_{X}$-modules. A **bilinear map** $\beta : \mathscr{F} \times \mathscr{G} \to \mathscr{H}$ is a collection of bilinear maps $\beta(U) : \mathscr{F}(U) \times \mathscr{G}(U) \to \mathscr{H}(U)$ such that for each $U \subseteq V$, the diagram below commutes.
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		\mathcal{F}(V) \times \mathcal{G}(V) \ar[r, "\beta(V)"] \ar[d, "\mathrm{res}"] & \mathcal{H}(V) \ar[d, "\mathrm{res}"] \\
+		\mathcal{F}(U) \times \mathcal{G}(U) \ar[r, "\beta(U)"] & \mathcal{H}(U) \\
+	\end{tikzcd}
+\end{document}
+```
+
+The **tensor product** of $\mathscr{F}, \mathscr{G}$ is a sheaf $\mathscr{F} \otimes_{\mathscr{O}_{X}} \mathscr{G}$ (often denoted without the subscript) equipped with a bilinear map $\tau : \mathscr{F} \times \mathscr{G} \to \mathscr{F} \otimes \mathscr{G}$ such that each bilinear map $\mathscr{F} \times \mathscr{G} \to \mathscr{H}$ factors uniquely as $\varphi \circ \tau$ for some linear map $\mathscr{F} \otimes \mathscr{G} \to \mathscr{H}$.
+
 ---
+
+This definition, and the rest of this section uses the fact that the sheaf product is $(\mathscr{F} \times \mathscr{G})(U) = \mathscr{F}(U) \times \mathscr{G}(U)$ on open sets and $(\mathscr{F} \times \mathscr{G})_{p} = \mathscr{F}_{p} \times \mathscr{G}_{p}$ without any special mention.
 
 ##### _proposition:_ tensor product is the sheafification of the presheaf tensor product
 
-Let $\mathscr{T}_{\text{pre}}$ be the presheaf defined by $\mathscr{T}_{\text{pre}}(U) = \mathscr{F}(U) \otimes_{\mathscr{O}_{X}(U)} \mathscr{G}(U)$ and with restrictions given by $\operatorname{res}_{\mathscr{F}} \otimes \operatorname{res}_{\mathscr{G}}$. Then its sheafification $\mathscr{T}_{\text{pre}}^\text{sh}$ satisfies the universal property of $\mathscr{F} \otimes \mathscr{G}$.
+Let $\mathscr{T}_{\text{pre}}$ be the presheaf defined by $\mathscr{T}_{\text{pre}}(U) = \mathscr{F}(U) \otimes_{\mathscr{O}_{X}(U)} \mathscr{G}(U)$ and with restrictions given by $\operatorname{res}_{\mathscr{F}} \otimes \operatorname{res}_{\mathscr{G}}$. Then its sheafification $\mathscr{T}_{\text{pre}}^\text{sh}$ satisfies the universal property of $\mathscr{F} \otimes_{\mathscr{O}_{X}} \mathscr{G}$.
+
+###### _proof sketch:_
+
+Define $\tau_{\text{pre}} : \mathscr{F} \times \mathscr{G} \to \mathscr{T}_{\text{pre}}$ by universal maps $\tau_{\text{pre}}(U) : (\mathscr{F} \times \mathscr{G})(U) \to \mathscr{F}(U) \otimes \mathscr{G}(U)$. Suppose $\tau_{\text{pre}}$ satisfies the universal property of the tensor product in the category of $\mathscr{O}_{X}$-presheaf modules. This should be easy to show by doing things at the level of open sets.
+
+Assuming this, we claim $\tau = \mathrm{sh} \circ \tau_{\text{pre}} : \mathscr{F} \times \mathscr{G} \to \mathscr{T}$ satisfies the universal property of the sheaf tensor product. Suppose $\beta : \mathscr{F} \times \mathscr{G} \to \mathscr{H}$ is a bilinear map. Then the following diagram commutes
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		\mathcal{F} \times \mathcal{G} \ar[r, "\tau_{\mathrm{pre}}"] \ar[rd, "\beta"] & \mathcal{T}_{\mathrm{pre}} \ar[r, "\mathrm{sh}"] \ar[d, "\varphi_{\mathrm{pre}}"] & \mathcal{T} \ar[ld, "\varphi"] \\
+		& \mathcal{H}
+	\end{tikzcd}
+\end{document}
+```
+That is, $\beta$ factors through $\tau$ as $\varphi \circ \tau$.
+
+We claim this factorisation is unique. Suppose $\beta = \varphi' \circ \tau$ is a factorisation (in the category of sheaves). Then $\beta = \varphi' \circ \mathrm{sh} \circ \tau_{\text{pre}}$ is a factorisation in the category of presheaves. Since the factorisation in the category of presheaves is unique, this gives $\varphi' \circ \mathrm{sh} = \varphi_{\text{pre}}$. But by the universal property of sheafification, there is a unique sheaf morphism $\varphi$ with $\varphi \circ \mathrm{sh} = \varphi_{\text{pre}}$. Thus, $\varphi' = \varphi$.
 
 ---
 
+It isn't immediately clear now, but we will see that sheafification really is necessary by considering line bundles on $\mathbb{P}^1$.
+
 ##### _proposition:_ tensor products are stalk local
 
-There is an isomorphism $(\mathscr{F} \otimes_{\mathscr{O}_{X}} \mathscr{G})_{p} \to \mathscr{F}_{p} \otimes_{\mathscr{O}_{X, p}} \mathscr{G}_{p}$ such that the former satisfies the tensor product universal property of the latter.
+There is an isomorphism $\tau_{p} : \mathscr{F}_{p} \times \mathscr{G}_{p} \to (\mathscr{F} \otimes_{\mathscr{O}_{X}} \mathscr{G})_{p}$ satisfies the universal property of $\mathscr{F}_{p} \otimes_{\mathscr{O}_{X, p}} \mathscr{G}_{p}$.
+
+###### _proof sketch:_
+
+This is a colimits commute with colimits thing
+
+Write $\mathscr{T} = \mathscr{F} \otimes \mathscr{G}$ and write $T = \mathscr{F}_{p} \otimes \mathscr{G}_{p}$. Suppose $\beta_{p} : \mathscr{F}_{p} \times \mathscr{G}_{p} \to T'$ is a bilinear map. Let $\mathscr{T}' = i_{p, *} \underline{T'}$. Clearly $\mathscr{T}'_{p} = T'$. We can define a bilinear map $\beta : \mathscr{F} \times \mathscr{G} \to \mathscr{T}'$ by factoring through stalks for $U \ni p$ and $0$ otherwise. Then $\beta$ factors through $\tau : \mathscr{F} \times \mathscr{G} \to \mathscr{T}$, and so $\beta_{p}$ factors through $\tau_{p}$, say as $\beta_{p} = \varphi_{p} \circ \tau_{p}$. 
+
+This factorisation is unique — we can upgrade any different factorisation $\beta_{p} = \varphi_{p}' \circ \tau_{p}$ to a factorisation $\beta = \varphi \circ \tau$, obtain $\varphi' = \varphi$ by uniqueness of the universal map, and then get $\varphi_{p}' = \varphi_{p}$.
 
 ---

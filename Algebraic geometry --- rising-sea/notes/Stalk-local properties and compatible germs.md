@@ -126,7 +126,7 @@ This is also true for monomorphisms and epimorphisms.
 
 ##### _proposition:_ monomorphisms are stalk-local
 
-Suppose $\varphi : \mathscr{F} \to \mathscr{G}$ is a morphism of sheaves valued in a category with an [[Algebraic geometry --- rising-sea/notes/Universal properties and why categories?#_example _ initial and final objects in specific categories|initial object]] and commutativity of filtered colimits and finite limits (locally finitely presentable suffices). The following are equivalent.
+Suppose $\mathscr{F}, \mathscr{G}$ are sheaves valued in $\mathscr{C}$ where $\mathscr{C}$ has [[Algebraic geometry --- rising-sea/notes/Universal properties and why categories?#_example _ initial and final objects in specific categories|initial object]] and [[Algebraic geometry --- rising-sea/notes/Limits and colimits#_definition _ filtered poset, filtered category|filtered colimits]] commute with finite limits. Suppose $\varphi : \mathscr{F} \to \mathscr{G}$ is a morphism of sheaves. Then the following are equivalent.
 1) $\varphi$ is a [[Algebraic geometry --- rising-sea/notes/Universal properties and why categories?#_definition _ monomorphisms, epimorphisms|monomorphism]].
 2) $\varphi_{p} : \mathscr{F}_{p} \to \mathscr{G}_{p}$ is monic at each point $p$.
 3) $\varphi(U) : \mathscr{F}(U) \to \mathscr{G}(U)$ is monic at each open set $U \subseteq X$.
