@@ -12,7 +12,7 @@ Toric varieties are a special class of varieties that admit a very faithful desc
 
 ##### _definition:_ toric varieties, algebraic torus
 
-A **toric variety** $X$ is a [[Algebraic geometry --- rising-sea/notes/Normal and factorial schemes#_definition _ normal schemes|normal]] variety $X$ with an dense [[Algebraic geometry --- rising-sea/notes/Morphisms of ringed spaces#_definition _ open embeddings|open embedding]] of the **algebraic torus** $\mathbb{T}^n = (\operatorname{Spec} \mathbb{C}[x^{\pm 1}])^n \subseteq X$ and an algebraic group [[Abstract algebra --- math-171/notes/Group actions#_definition _ (left) group action|action]] $\mathbb{T}^n \circlearrowright X$ that restricts to the standard torus action on the embedding of $\mathbb{T}^n$.
+A **toric variety** $X$ is a [[Algebraic geometry --- rising-sea/notes/Normal and factorial schemes#_definition _ normal schemes|normal]] variety $X$ with a [[Topology --- math-147/notes/Size restrictions#_definition _ dense|dense]] [[Algebraic geometry --- rising-sea/notes/Morphisms of ringed spaces#_definition _ open embeddings|open embedding]] of the **algebraic torus** $\mathbb{T}^n = (\operatorname{Spec} \mathbb{C}[x^{\pm 1}])^n \subseteq X$ and an algebraic group [[Abstract algebra --- math-171/notes/Group actions#_definition _ (left) group action|action]] $\mathbb{T}^n \circlearrowright X$ that restricts to the standard torus action on the embedding of $\mathbb{T}^n$.
 
 ---
 
@@ -52,9 +52,9 @@ The corresponding **dual submonoid** is $S_{\sigma}^\vee = \sigma^\vee \cap M^\v
 
 It requires some work to prove that the dual cone really is a cone in $M_{\mathbb{R}}^\vee$ and that it's intersection with the lattice $M^\vee$ is really a finitely generated monoid, but we just accept these results.
 
-##### _definition:_ toric variety of a cone
+##### _definition:_ (affine) toric variety of a cone
 
-Given a cone $\sigma \subseteq M_{\mathbb{R}}$, the corresponding **toric variety of the cone** is $U_{\sigma} = \operatorname{Spec} \mathbb{C}[S_{\sigma}^\vee]$.
+Given a cone $\sigma \subseteq M_{\mathbb{R}}$, the corresponding **[[Algebraic geometry --- rising-sea/notes/Affine schemes#_definition _ affine scheme|affine]] toric variety of the cone** is $U_{\sigma} = \operatorname{Spec} \mathbb{C}[S_{\sigma}^\vee]$.
 
 ---
 
@@ -76,36 +76,61 @@ This allows us to define the toric variety of a fan.
 
 ##### _definition:_ toric variety of a fan
 
-The **toric variety of a fan** $\Sigma \subseteq M_{\mathbb{R}}$ is $X_{\Sigma}$, obtained by [[Algebraic geometry --- rising-sea/notes/Schemes#_proposition _ gluing schemes|gluing]] the varieties $U_{\sigma}$ along the distinguished inclusions $U_{\tau \cap \sigma} \subseteq U_{\sigma}$ for all $\tau, \sigma \in \Sigma$.
+The **toric variety of a fan** $\Sigma \subseteq M_{\mathbb{R}}$ is $X_{\Sigma}$, obtained by [[Algebraic geometry --- rising-sea/notes/Schemes#_proposition _ gluing schemes|gluing]] the affine varieties $U_{\sigma}$ along the distinguished inclusions $U_{\tau \cap \sigma} \subseteq U_{\sigma}$ for all $\tau, \sigma \in \Sigma$. That is,
+$$
+X_{\Sigma} = \operatorname{colim}_{\sigma \in \Sigma} U_{\sigma}.
+$$
 
 ---
 
 To show that this is actually a variety is a technical lemma that the diagonal embedding $U_{\sigma \cap \tau} \to U_{\sigma} \times U_{\tau}$ is closed, which is equivalent to showing that $\mathbb{C}[S_{\tau}] \otimes \mathbb{C}[S_{\sigma}] \to \mathbb{C}[S_{\sigma \cap \tau}]$ is surjective, which follows from the fact that $S_{\sigma \cap \tau} = S_{\sigma} + S_{\tau}$.
 
-%%%
+##### _examples:_ some fans of toric varieties sitting in $\mathbb{R}^{2}$
 
-### As complex manifolds
-
-##### _definition:_ the toric variety of a fan
-
-Given a fan $\Sigma$, the corresponding **toric variety of the fan** is the quotient variety
-$$
-X_{\Sigma} = (\mathbb{C}^n \setminus Z(\Sigma)) / G.
-$$
-
-Here $n$ is the size of the $1$-skeleton of $\Sigma$ — $n = \# \Sigma(1)$. Thus to each copy of $\mathbb{C}$ we associate some $\rho \in \Sigma(1)$.
-
-$Z(\Sigma)$ is the union of all $V(S)$ for $S \subseteq \Sigma(1)$ with $S$ not spanning a cone. $V(S)$ is the linear subspace where all $x_{\rho} = 0$ for $\rho \in S$.
-
-Let $M$ is the lattice $\mathbb{Z}^d \subseteq \mathbb{R}^d$ for $\Sigma \subseteq \mathbb{R}^d$. Think of $\operatorname{Mor}_{\mathsf{Set}}(\Sigma(1), \mathbb{C}^\times)$ as a group and consider the homomorphism $\varphi : \operatorname{Mor}_{\mathsf{Set}}(\Sigma(1), \mathbb{C}^\times) \to \operatorname{Hom}_{\mathsf{Ab}}(M, \mathbb{C}^\times)$ given as follows. Send a map $f : \Sigma(1) \to \mathbb{C}^\times$ to a map $M \to \mathbb{C}^\times$ by $m \mapsto \prod_{v \in \Sigma(1)} f(v)^{\left< m, v \right>}$. In particular, we can think of $\varphi$ as $(\mathbb{C}^\times)^n \to (\mathbb{C}^\times)^r$ by $(t_{1}, \dots, t_{n}) \mapsto \left( \prod_{j = 1}^n t_{j}^{v_{j}^1}, \dots, \prod_{j = 1}^n t_{j}^{v_{j}^n} \right)$ (here write $v_{j}^i$ for the $i$th component of $v_{j}$). Then define $G = \ker \varphi$.
+1) The fan $\Sigma \subseteq \mathbb{R}^{2}$ generated by all $2$-cones $\left< (\pm 1, 0), (0, \pm 1) \right>$ is complete, containing all of $\mathbb{R}^{2}$. It corresponds to $X_{\Sigma} = \mathbb{P}^{1} \times \mathbb{P}^1$.
+2) Any of the fans $\Sigma \subseteq \mathbb{R}^{2}$ generated by any two of the cones above corresponds to $X_{\Sigma} = \mathbb{P}^1 \times \mathbb{P}^1 \setminus \{ p_{1}, p_{2} \}$ where $p_{1}, p_{2}$ are two $\mathbb{T}$-invariant fixed points.
+3) The fan $\Sigma \subseteq \mathbb{R}^{2}$ generated by the two $1$-cones $\left< (1, 0) \right>$ and $\left< (0, 1) \right>$ corresponds to $X_{\Sigma} = \mathbb{A}^{2}$.
+4) The fan $\Sigma \subseteq \mathbb{R}^{2}$ generated by the three $1$-cones $\left< (1, 0) \right>$, $\left< (0, 1) \right>$, and $\left< (-1, -1) \right>$ corresponds to $X_{\Sigma} = \mathbb{P}^{2}$. In fact this can be generalised. Suppose $v_{0}, v_{1}, \dots, v_{n}$ generate a rank $n$ lattice $M$ and $v_{0} + v_{1} + \dots + v_{n} = 0$. Then $X_{\Sigma} = \mathbb{P}^n$.
 
 ---
 
-##### _example:_ the complex projective plane is a triangle
+We can also get a fan back from a toric variety.
 
-Consider $\Sigma \subseteq \mathbb{R}^2$ with $v_{0} = (-1, -1)$, $v_{1} = (1, 0)$, and $v_{2} = (0, 1)$ and consider the cones $\Sigma = \{ 0, \left< v_{0} \right>, \left< v_{1} \right>, \left< v_{2} \right>, \left< v_{1}, v_{2} \right>, \left< v_{0}, v_{1} \right>, \left< v_{0}, v_{2} \right > \}$. This gives the map $\varphi$ with $(t_{0}, t_{1}, t_{2}) \mapsto (t_{0}^{-1} t_{1} t_{2}^0, t_{0}^{-1}, t_{1}^0 t_{2}) = (t_{0}^{-1} t_{1}, t_{0}^{-1} t_{2})$. This has kernel the subgroup $G = \{ (t, t, t) \} \subseteq (\mathbb{C}^\times)^3$. Then $(\mathbb{C}^\times)^3 / G \cong \mathbb{C} \mathbb{P}^2$.
+##### _definition:_ the fan of a toric variety
 
-By taking the dual of $\Sigma$ we get a triangle, so $\mathbb{C} \mathbb{P}^2$ is a triangle.
+Suppose $\mathbb{T}^n \circlearrowright X$ is a toric variety. Let $N$ be the lattice of algebraic homomorphisms $\mathbb{T}^1 \to \mathbb{T}^n$, abstractly identified with $\mathbb{Z}^n$. That is, let each $v \in N$ correspond to $\varphi_{v} : \mathbb{T}^1 \to \mathbb{T}^n$ by $\lambda \mapsto (\lambda^{v_{1}}, \dots, \lambda^{v_{n}})$. 
+
+Then the **fan of the toric variety** is the fan $\Sigma \subseteq N$ 
+
+---
+
+It is a difficult fact that every toric variety $X$ comes from the toric variety of its fan — that is, $X \cong X_{\Sigma_{X}}$.
+
+### Toric varieties as GIT quotients
+
+Toric varieties can also be seen as the quotient of a certain open subvariety of $\mathbb{A}^n$ by a group $G$. This definition makes it clearer why $X_{\Sigma_{X}}$ should just be $X$.
+
+##### _theorem:_ the toric variety of a fan is a GIT quotient
+
+Let $M$ be a rank $d$ lattice. Suppose $\Sigma \subseteq M$ is a fan with $1$-skeleton $\# \Sigma^1 = \{ \rho_{1}, \dots, \rho_{n} \}$ of size $n$. 
+
+Write $\mathbb{A}^n = \operatorname{Spec} \mathbb{C}[x_{1}, \dots, x_{n}]$. Let $Z$ be the union of all $V( (x_{i})_{i \in S})$ for $S \subseteq \{ 1, \dots, n \}$ such that the cone $\left< \rho_{i} \right >_{i \in S}$ is not contained in $\Sigma$.
+
+Note that $\operatorname{Mor}_{\mathsf{Set}}(\Sigma^1, \mathbb{T})$ has the abelian group structure of $\mathbb{T}^n$. Consider the homomorphism $\varphi : \operatorname{Mor}_{\mathsf{Set}}(\Sigma^1, \mathbb{T}) \to \operatorname{Hom}_{\mathsf{Ab}}(M^\vee, \mathbb{T})$ given as follows. For $f : \Sigma^1 \to \mathbb{T}$, choose $\varphi : f \mapsto g$ where $g : M^\vee \to \mathbb{T}$ is given by $m \mapsto \prod_{v \in \Sigma(1)} f(v)^{m(v)}$.
+
+Write $G = \ker \varphi$. Note that $\operatorname{Mor}_{\mathsf{Set}}(\Sigma^1, \mathbb{T}) \cong \mathbb{T}^n$ acts on $\mathbb{A}^n$ naturally. Let $p = (p_{1}, \dots, p_{n}) \in \mathbb{A}^n$. Then $p \in Z \subseteq \mathbb{A}^n$ if and only if $p_{s} = 0$ for all $s \in S$ where $S$ is some set as above. Since $\mathbb{T}^n \circlearrowright \mathbb{A}^n$ does not change the zeroes of $p$, neither does $G \subseteq \mathbb{T}^n$, and thus $G$ acts on $\mathbb{A}^n \setminus Z$.
+
+Then, $X_{\Sigma} \cong (\mathbb{A}^n \setminus Z) / G$.
+
+---
+
+We can think of $\varphi$ as $(\mathbb{C}^\times)^n \to (\mathbb{C}^\times)^r$ by $(t_{1}, \dots, t_{n}) \mapsto \left( \prod_{j = 1}^n t_{j}^{v_{j}^1}, \dots, \prod_{j = 1}^n t_{j}^{v_{j}^n} \right)$ where $\Sigma(1) = \{ v_{1}, \dots, v_{n} \}$ and we write $v_{j}^i$ for the $i$th component of $v_{j}$. 
+
+##### _example:_ the projective plane is a triangle
+
+Consider $\Sigma \subseteq \mathbb{R}^2$ with $v_{0} = (-1, -1)$, $v_{1} = (1, 0)$, and $v_{2} = (0, 1)$ and consider the cones $\Sigma = \{ 0, \left< v_{0} \right>, \left< v_{1} \right>, \left< v_{2} \right>, \left< v_{1}, v_{2} \right>, \left< v_{0}, v_{1} \right>, \left< v_{0}, v_{2} \right > \}$. This gives the map $\varphi$ with $(t_{0}, t_{1}, t_{2}) \mapsto (t_{0}^{-1} t_{1} t_{2}^0, t_{0}^{-1}, t_{1}^0 t_{2}) = (t_{0}^{-1} t_{1}, t_{0}^{-1} t_{2})$. This has kernel the subgroup $G = \{ (t, t, t) \} \subseteq \mathbb{T}^3$. Then $\mathbb{T}^3 / G \cong \mathbb{P}^2$.
+
+By taking the dual of $\Sigma$ we get a triangle, so $\mathbb{P}^2$ is a triangle.
 
 ---
 
