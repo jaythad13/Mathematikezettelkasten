@@ -1,0 +1,102 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 195 --- Transcendental Number Theory}
+\assignment{Midterm}
+\duedate{12th March 2026}
+
+\begin{document}
+
+\begin{problem}[Problem 1.]
+	Let $\alpha, \beta \in \mathbb{C}$ and $\alpha$ transcendental. Prove that at least one of the numbers $\alpha + \beta$ and $\alpha \beta$ must be transcendental.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Problem 2.]
+	Let $\mathbb{K} = \mathbb{Q}(\sqrt{2}, \sqrt{3}, \sqrt{5})$. Find a primitive element for $\mathbb{K}$. Prove your answer.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Problem 3.]
+	A subset $S \subseteq \mathbb{R}$ is called \emph{discrete} if there exists real $\varepsilon > 0$ such that for every two distinct elements $\alpha, \beta \in S$ $\lvert \alpha - \beta \rvert \ge \varepsilon$.
+
+	Let us say that $S$ is \emph{near-discrete} if for every $\alpha \in S$ there exists a real $\varepsilon = \varepsilon(\alpha) > 0$ such that $\lvert \alpha - \beta \rvert \ge \varepsilon$ for every $\beta \in S$ distinct from $\alpha$.
+	\begin{enumerate}
+		\item Prove that every discrete subset of $\mathbb{R}$ is countable.
+		\item Prove that every near-discrete subset of $\mathbb{R}$ is countable.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Problem 4.]
+	Let $\mu > 0$. We say that $p / q \in \mathbb{Q}$ is a \emph{$\mu$-approximation} to the real number $\alpha$ if $\left \lvert \alpha - p/q \right \rvert \le 1 / q^{\mu}.$ 
+
+	Let $S \subseteq \mathbb{R}$ be a set with the following properties:
+	\begin{enumerate}[label = (\arabic*)]
+		\item Every element of $S$ has infinitely many rational $3$-approximations
+		\item If a rational number $p / q$ is $3$-approximation for some $\alpha \in S$, then it is not a $3$-approximation for any other element of $S$.
+	\end{enumerate}
+
+	\begin{enumerate}
+		\item Prove that $S$ is countable.
+		\item Prove that every $\alpha \in S$ is transcendental.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Problem 5.]
+	Let $\mathbb{K}$ be a subfield of $\mathbb{C}$. An embedding of $\mathbb{K}$ into $\mathbb{C}$ is an injective field homomorphism $\tau : \mathbb{K} \to \mathbb{C}$.
+	\begin{enumerate}
+		\item Suppose that $\tau : \mathbb{K} \to \mathbb{C}$ is a field homomorphism such that for some $a \in \mathbb{K}$, $\tau(a) \neq 0$. Prove that $\tau$ is an embedding.
+
+		\item Let $\mathbb{K} = \mathbb{Q}(\alpha)$ for some $\alpha \in \mathbb{C}$. Prove that $\alpha$ is transcendental if and only if there exist infinitely many distinct embeddings of $\mathbb{K}$ into $\mathbb{C}$.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Problem 6.]
+	Let $\alpha, \beta \in \mathbb{C}$, both non-zero, let $\gamma = \alpha / \beta$ and suppose $\mathbb{Q}(\alpha) \cong \mathbb{Q}(\beta)$.
+	\begin{enumerate}
+		\item Give necessary and sufficient conditions on $\alpha$ and $\beta$ so that $\deg \mathbb{Q}(\gamma) / \mathbb{Q} < \infty$. Prove your answer.
+
+		\item Suppose $\alpha$ and $\beta$ are algebraic and $\gamma \in \mathbb{Q}$. Let
+			\[
+				f(x) = \sum_{k = 0}^{n} a_{k} x^{k}
+			\]
+			be the minimal polynomial of $\alpha$. Determine the minimal polynomial $g(x)$ of $\beta$.
+
+		\item Suppose $\alpha$ and $\beta$ are algebraic and $f(x) = g(x)$. Is it true that $\gamma \in \mathbb{Q}$? Prove or give a counterexample.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Problem 7.]
+	Let $\{ n_{j} \}_{j = 1}^{\infty}$ be a sequence of natural numbers such that
+	\[
+		\lim_{j \to \infty} \frac{n_{j + 1}}{n_{j}} = \infty.
+	\]
+	Define
+	\[
+		f(x) = \sum_{j = 1}^{\infty} x^{n_{j}},
+	\]
+	and let $\alpha$ be a rational numbers such that $0 < \alpha < 1$. Prove that $f(\alpha)$ is transcendental.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Problem 8.]
+	Let $\alpha_{1}, \dots, \alpha_{n}$ be algebraic integers. Give necessary and sufficient conditions on these numbers for the polynomial
+	\[
+		f(x) = (x - \alpha_{1}) \cdots (x - \alpha_{n})
+	\]
+	to have rational integer coefficients. Prove your answer.
+\end{problem}
+
+\end{document}
