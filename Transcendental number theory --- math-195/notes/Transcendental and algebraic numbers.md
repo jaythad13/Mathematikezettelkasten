@@ -105,3 +105,41 @@ The **transcendence degree** of $\alpha_{1}, \dots, \alpha_{n} \in \mathbb{C}$ i
 ---
 
 This gives us much more interesting questions. For example, it is known (and we will see) that $e$ and $\pi$ are each transcendental, but whether $\operatorname{tr \deg} \mathbb{Q}(e, \pi) / \mathbb{Q}$ is $1$ or $2$ is still an open question.
+
+This notion also really is equivalent to the notion of algebraic independence we want.
+
+##### _proposition:_ algebraic independence really is algebraic independece
+
+$\alpha_{1}, \dots, \alpha_{n} \in \mathbb{C}$ are algebraically independent over $\mathbb{Q}$ if and only if there is no $p(x_{1}, \dots, x_{n}) \in \mathbb{Q}[x_{1}, \dots, x_{n}]$ such that $p(\alpha_{1}, \dots, \alpha_{k}) = 0$.
+
+###### _proof:_
+
+Suppose $\alpha_{1}, \dots, \alpha_{n} \in \mathbb{C}$ and $p(\alpha_{1}, \dots, \alpha_{k}) = 0$ for $p \in \mathbb{Q}[x_{1}, \dots, x_{n}]$. Then $f \in \mathbb{Q}(\alpha_{1}, \dots, \alpha_{n - 1})[x]$ defined by $f(x) = p(\alpha_{1}, \dots, \alpha_{n - 1}, x)$ has $f(\alpha_{k}) = 0$. But then $\mathbb{Q}(\alpha_{1}, \dots, \alpha_{n}) / \mathbb{Q}(\alpha_{1}, \dots, \alpha_{n - 1})$ is not an infinite extension. Thus, $\alpha_{1}, \dots, \alpha_{n}$ are not algebraically independent.
+
+Conversely, suppose $\alpha_{1}, \dots, \alpha_{n}$ are not algebraically independent. Without loss of generality, suppose $f(\alpha_{n}) = 0$ for some $f \in \mathbb{Q}(\alpha_{1}, \dots, \alpha_{n - 1})[x]$. Write $f(x) = \sum_{i = 0}^d a_{i} x^i$. Then there exist $p_{i}, q_{i} \in \mathbb{Q}[x_{1}, \dots, x_{n - 1}]$ such that $a_{i} = p_{i}(\alpha_{1}, \dots, \alpha_{n - 1}) / q_{i}(\alpha_{1}, \dots, \alpha_{k - 1})$. But then, clearing denominators, we get
+$$
+\sum_{i = 0}^d p_{i}(\alpha_{1}, \dots, \alpha_{n}) \left( \prod_{j = 1, j \neq i}^{j = d} q_{j}(\alpha)  \right) \alpha_{n}^i = 0
+$$
+That is, we have a polynomial in $\mathbb{Q}[x_{1}, \dots, x_{n}]$ that evaluates to $0$ at $\alpha_{1}, \dots, \alpha_{n}$.
+
+---
+
+There is yet another way to understand this.
+
+##### _proposition:_ algebraic independence and maps from function fields
+
+Let $\alpha$ denote the $n$-tuple of $\alpha_{1}, \dots, \alpha_{n} \in \mathbb{C}$.
+
+The following are equivalent
+1) $\varphi_{\alpha} : \mathbb{Q}(x_{1}, \dots, x_{n}) \to \mathbb{Q}(\alpha_{1}, \dots, \alpha_{n})$ by $p / q \mapsto p(\alpha_{1}, \dots, \alpha_{n}) / q(\alpha_{1}, \dots, \alpha_{n})$ is a field isomorphism
+2) $\alpha_{1}, \dots, \alpha_{n}$ are algebraically independent.
+
+###### _proof:_
+
+Suppose $\varphi_{\alpha}$ is a field isomorphism. For it to be well defined, we must never have $q(\alpha) = 0$ for any $q \in \mathbb{Q}[x_{1}, \dots, x_{n}]$. Thus, $\alpha_{1}, \dots, \alpha_{n}$ are algebraically independent.
+
+Suppose $\alpha_{1}, \dots, \alpha_{n}$ are algebraically independent. Then $\varphi_{\alpha}$ is well-defined for each $p / q \in \mathbb{Q}(x_{1}, \dots, x_{n})$ since we never have $q(\alpha) = 0$. In particular, this is not the trivial rng homomorphism. $\varphi_{\alpha}$ is clearly surjective, and field homomorphisms [[Abstract algebra --- math-171/notes/Ideals and quotients#_corollary _ fields map out injectively|are always injective]], so $\varphi_{\alpha}$ is an isomorphism.
+
+---
+
+That is, $\alpha_{1}, \dots, \alpha_{n}$ are algebraically independent if and only if $\mathbb{Q}(\alpha_{1}, \dots, \alpha_{n})$ is isomorphic to the field of [[Transcendental number theory --- math-195/notes/Function fields and transcendence degree#_definition _ field of rational functions|field of rational functions]] $\mathbb{Q}(x_{1}, \dots, x_{n})$

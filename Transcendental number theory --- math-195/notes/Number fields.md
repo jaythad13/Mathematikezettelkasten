@@ -2,6 +2,7 @@
 tags:
 - math-195/11
 - math-195/12
+- math-195/14
 - nt
 - alg-nt
 ---
@@ -61,3 +62,26 @@ Consider $\mathbb{Q}(\sqrt{ 2 }, \sqrt{ 3 }) = \mathbb{Q}(\sqrt{ 2 } + \sqrt{ 3 
 ---
 
 This gives us a different way to think of primitive elements. $\alpha$ is a primitive element of some $\mathbb{K} / \mathbb{Q}$ of degree $d$, if and only if, for $p(x_{1}, \dots, x_{d}) = \prod_{i \neq j} (x_{i} - x_{j})$ we have $p(\sigma_{1}(\alpha), \dots, \sigma_{d}(\alpha)) \neq 0$.
+
+### Rings of integers
+
+
+##### _lemma:_ scale field extensions by rational integers to get algebraic integers
+
+Suppose $\alpha \in \mathbb{K}$. Then there is some $n \in \mathbb{Z}$ such that $n \alpha \in \mathscr{O}_{\mathbb{K}}$. Specifically, choosing $n$ to be the largest denominator of the minimal polynomial $m_{\alpha} \in \mathbb{Q}[x]$ suffices.
+
+###### _proof:_
+
+Suppose $m_{\alpha}(x) = \sum_{i = 0}^d a_{i} x^i$. Choose $p(x) = n^{d} m_{\alpha}(x) = \sum_{i = 0}^d n^d a_{i} x^i$, and then choose $q(x) = \sum_{i = 0}^d n^{d - i} a_{i} x^i$ so that $q(n x) = p(x)$. Thus, 
+$$
+q(n \alpha) = p(\alpha) = n^{d}m_{\alpha}(\alpha) = 0.
+$$
+But $q$ is a monic polynomial in $\mathbb{Z}[x]$ — the $d$th coefficient is $n^{d - d} a_{d} = a_{d} = 1$, and the others are all $n^k a_{i} \in \mathbb{Z}$ since $k > 0$. Thus, $n \alpha$ is an algebraic integer in $\mathscr{O}_{\mathbb{K}}$.
+
+---
+
+##### _corollary:_ number fields are fraction fields of rings of integers
+
+For $\mathbb{K}$ a number field, we have $\mathbb{K} = Q(\mathscr{O}_{\mathbb{K}})$.
+
+---
