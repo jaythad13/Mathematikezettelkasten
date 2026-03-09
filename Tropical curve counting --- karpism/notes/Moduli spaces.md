@@ -1,0 +1,5 @@
+---
+tags:
+- alg-geo
+- karpism
+---
