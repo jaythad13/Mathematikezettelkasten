@@ -12,11 +12,31 @@
 	Let $\alpha, \beta \in \mathbb{C}$ and $\alpha$ transcendental. Prove that at least one of the numbers $\alpha + \beta$ and $\alpha \beta$ must be transcendental.
 \end{problem}
 
+\begin{solution}
+	Note that it suffices to show this when $\beta$ is transcendental. Else, if $\beta \in \overline{\mathbb{Q}}$, since the algebraic numbers $\overline{\mathbb{Q}}$ are closed under addition, $\alpha + \beta \in \overline{\mathbb{Q}}$ implies $\alpha = (\alpha + \beta) - \beta \in \overline{\mathbb{Q}}$. Thus, if $\alpha \in \mathbb{C} \setminus \overline{\mathbb{Q}}$ and $\beta \in \overline{\mathbb{Q}}$, then $\alpha + \beta \in \mathbb{C} \setminus \overline{\mathbb{Q}}$.
+
+	Suppose $\beta$ is transcendental. If $\alpha + \beta \in \overline{\mathbb{Q}}$ we are done. Else, write $\alpha + \beta = \gamma \in \overline{\mathbb{Q}}$. This gives $\alpha \beta = \alpha \gamma - \alpha^{2}$. If $\alpha \gamma - \alpha^{2} = \delta \in \overline{\mathbb{Q}}$ were algebraic, then we have $\alpha$ as a root of the polynomial $x^{2} - \gamma x + \delta \in \mathbb{Q}(\gamma, \delta)[x]$. We claim this implies that $\alpha$ is algebraic over $\mathbb{Q}$. This contradicts our hypothesis that $\alpha$ is transcendental, and thus, our assumption that both $\alpha + \beta$ and $\alpha \beta$ are algebraic must be false.
+
+	First, $f(\alpha) = 0$ directly implies that $\mathbb{Q}(\alpha, \gamma, \delta) / \mathbb{Q}(\gamma, \delta)$ is a finite degree extension. Since $\mathbb{Q}(\gamma, \delta) / \mathbb{Q}$ is a finite degree extension (by choosing finite degree minimal polynomials of $\gamma, \delta$ over $\mathbb{Q}$) it follows that $\mathbb{Q}(\alpha, \gamma, \delta) / \mathbb{Q}$ is a finite degree extension, and finally, that $\mathbb{Q}(\alpha) / \mathbb{Q}$ is a finite degree extension. Thus, $\alpha$ is algebraic over $\mathbb{Q}$ (all transcendental extensions are infinite degree).
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[Problem 2.]
 	Let $\mathbb{K} = \mathbb{Q}(\sqrt{2}, \sqrt{3}, \sqrt{5})$. Find a primitive element for $\mathbb{K}$. Prove your answer.
 \end{problem}
+
+\begin{solution}
+	We claim $\mathbb{K} = \mathbb{Q}(\sqrt{2} + \sqrt{3} + \sqrt{5})$.
+
+	Suppose $\alpha_{1}, \alpha_{2}$ are degree $d$ and $e$ algebraic numbers. Let $\alpha_{1, 1}, \dots, \alpha_{1, d}$ and $\alpha_{2, 1}, \dots, \alpha_{2, e}$ be all of their conjugates respectively. By the proof of the primitive root theorem, $\mathbb{Q}(\alpha_{1}, \alpha_{2}) = \mathbb{Q}(\alpha_{1} + c \alpha_{2})$ for some $c \in \mathbb{Q}^{\times}$ such that $\alpha_{1, i} + c \alpha_{1, j} = \alpha_{1, 1} + c \alpha_{2, 1}$ if and only if $i = j = 1$.
+
+	We claim that $\mathbb{Q}(\sqrt{2}, \sqrt{3}) \cong \mathbb{Q}(\sqrt{2} + \sqrt{3})$ by choosing $c = 1$. Specifically, notice that
+	\[
+		(\pm \sqrt{2}) + (\pm \sqrt{3}) = \sqrt{2} + \sqrt{3}
+	\]
+	if and only if we choose the positive sign for both roots on the left hand side. Then $\sqrt{2} +\sqrt{3}$ is a quartic algebraic number with four conjugates given by the four $\pm \sqrt{2} \pm \sqrt{3}$. Now we claim that $\mathbb{Q}(\sqrt{2} + \sqrt{3}, \sqrt{5}) \cong \mathbb{Q}(\sqrt{2} + \sqrt{3} + \sqrt{5})$, again by choosing $c = 1$. w
+\end{solution}
 
 \pagebreak
 
@@ -58,6 +78,16 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item Since $\mathbb{K}$ is a field and  $\ker \tau \subseteq \mathbb{K}$ is an ideal, we must have $\ker \tau = 0$ or $\ker \tau = \mathbb{K}$ (every field has only those two ideals). Since there exists some $a \in \mathbb{K}$ with $\tau(a) \neq 0$ we have $\ker \tau \neq \mathbb{K}$. Thus, $\tau$ has trivial kernel and is injective. That is, it is an embedding $\mathbb{K} \to \mathbb{C}$.
+
+		\item Suppose $\alpha$ is transcendental. We claim any function $\tau : \mathbb{K} \to \mathbb{C}$ fixing $\mathbb{Q}$ and with $\tau(\alpha) \in \mathbb{Q}^{\times} \alpha$ (that is, $\tau(\alpha) = \lambda \alpha$ for some $\lambda \in \mathbb{Q}^\times$), is a ring homomorphism, and thus, an embedding of $\mathbb{K}$. Since $\mathbb{Q}$ is infinite, there are at least infinitely many embeddings $\tau$.
+
+			Suppose $\alpha$ is not transcendental, and instead is algebraic of degree $d$. Then we have shown in class that there are exactly $d$ embeddings $\mathbb{K} \to \mathbb{C}$. (Embeddings of $\mathbb{Q}(\alpha)$ are determined by the image of $\alpha$, embeddings preserve the minimal polynomial of $\alpha$ so $\alpha$ can only be sent to another root of $m_{\alpha}$, of which there are exactly $d$).
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[Problem 6.]
@@ -86,7 +116,7 @@
 	\[
 		f(x) = \sum_{j = 1}^{\infty} x^{n_{j}},
 	\]
-	and let $\alpha$ be a rational numbers such that $0 < \alpha < 1$. Prove that $f(\alpha)$ is transcendental.
+	and let $\alpha$ be a rational number such that $0 < \alpha < 1$. Prove that $f(\alpha)$ is transcendental.
 \end{problem}
 
 \pagebreak
@@ -98,5 +128,9 @@
 	\]
 	to have rational integer coefficients. Prove your answer.
 \end{problem}
+
+\begin{solution}
+	$f$ has rational integer coefficients if and only if the set $\{ \alpha_{1}, \dots, \alpha_{n} \}$ can be partitioned such that the complete set 
+\end{solution}
 
 \end{document}
