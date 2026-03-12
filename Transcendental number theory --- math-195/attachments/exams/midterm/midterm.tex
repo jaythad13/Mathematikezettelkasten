@@ -35,7 +35,13 @@
 	\[
 		(\pm \sqrt{2}) + (\pm \sqrt{3}) = \sqrt{2} + \sqrt{3}
 	\]
-	if and only if we choose the positive sign for both roots on the left hand side. Then $\sqrt{2} +\sqrt{3}$ is a quartic algebraic number with four conjugates given by the four $\pm \sqrt{2} \pm \sqrt{3}$. Now we claim that $\mathbb{Q}(\sqrt{2} + \sqrt{3}, \sqrt{5}) \cong \mathbb{Q}(\sqrt{2} + \sqrt{3} + \sqrt{5})$, again by choosing $c = 1$. w
+	if and only if we choose the positive sign for both roots on the left hand side --- if any of the signs are negative, then the left hand side cannot be sufficiently large. Then $\sqrt{2} +\sqrt{3}$ is a quartic algebraic number with four conjugates given by the four $\pm \sqrt{2} \pm \sqrt{3}$. 
+
+	Now we claim that $\mathbb{Q}(\sqrt{2} + \sqrt{3}, \sqrt{5}) \cong \mathbb{Q}(\sqrt{2} + \sqrt{3} + \sqrt{5})$, again by choosing $c = 1$. Specifically,
+	\[
+		(\pm \sqrt{2}) + (\pm \sqrt{3}) + (\pm \sqrt{5}) = \sqrt{2} + \sqrt{3} + \sqrt{5}.
+	\]
+	if and only if all the signs are positive. Again, if any of the signs are negative, then the left hand side cannot be sufficiently large to equal the right hand side.
 \end{solution}
 
 \pagebreak
@@ -49,6 +55,22 @@
 		\item Prove that every near-discrete subset of $\mathbb{R}$ is countable.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item Let $S \subseteq \mathbb{R}$ be a discrete set so that any two points are at least $\varepsilon$ apart.
+
+			For each $n \in \mathbb{Z}$ let $U_{n} = ((n - 1) \varepsilon / 2, (n + 1) \varepsilon / 2) \subseteq \mathbb{R}$. Each $U_{n}$ is an interval of width $\varepsilon$, and so contains at most one element of $S$. The $U_{n}$ form a countable cover $\mathbb{R} = \bigcup_{n \in \mathbb{Z}} U_{n}$. Thus, there are at most countably many $\alpha \in \mathbb{R}$ that are contained in $S$. That is, any discrete set $S$ is a countable set.
+
+		\item Suppose $S \subseteq \mathbb{R}$ is an uncountable set. We will show that it cannot be near-discrete. Define $U_{n} = [n, n + 1]$ for each $n \in \mathbb{Z}$.
+
+			Since there are countably many $U_{n}$ there is some specific $m \in \mathbb{N}$ such that $S \cap U_{m}$ is uncountable. For each $\alpha$, write $\varepsilon(\alpha)$ for the infimum of distances $\lvert \alpha - \beta \rvert$ for distinct $\beta \in S$. Since the intervals $(\alpha - \varepsilon(\alpha), \alpha + \varepsilon(\alpha))$ are disjoint, we have that
+			\[
+				\sum_{\alpha \in S \cap [0, 1]} 2 \varepsilon(\alpha) \le m + 1 - m = 1.
+			\]
+			A sum of uncountably many positive reals must diverge. Thus, there must be some non-positive $\varepsilon(\alpha) = 0$ and $S$ is not near-discrete.
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
@@ -66,6 +88,16 @@
 		\item Prove that every $\alpha \in S$ is transcendental.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item Suppose $\alpha \in S$ and let $p / q$ be a $3$-approximation to $S$. Then $p / q$ is not a $3$-approximation to any other $\beta \in S$. Let $U$ be the interval $((p - 1) / q, (p + 1) / q)$. Then, equivalently $S \cap U  = \{ \alpha \}$. Since $U$ is an open interval and $\alpha \in U$, there is some $\varepsilon(\alpha) > 0$ such that $(\alpha - \varepsilon(\alpha), \alpha + \varepsilon(\alpha)) \subseteq U$ and since there are no other $\beta \in U \cap S$, we have $\lvert \alpha - \beta \rvert > \varepsilon(\alpha)$ for all other $\beta \in S$.
+
+			Then $S$ is near-discrete, and by the previous problem, countable.
+
+		\item By Roth's theorem, each algebraic number has at most finitely many $3$-approximations. Thus, each $\alpha \in S$ is transcendental.
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
@@ -105,6 +137,30 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item Note that $\alpha, \beta$ are either both algebraic or both transcendental since $\mathbb{Q}(\alpha) \cong \mathbb{Q}(\beta)$ is either a finite degree or infinite degree extension (respectively).
+
+			Suppose $\alpha, \beta$ are both algebraic. Since $\alpha, \beta$ are both non-zero algebraic, so is $\gamma = \alpha / \beta$, and thus $\deg \mathbb{Q}(\gamma) / \mathbb{Q} < \infty$. Thus, we only need to give necessary and sufficient conditions for $\mathbb{Q}(\alpha) \cong \mathbb{Q}(\beta)$. We claim that it is necessary and sufficient that their monic polynomials be equal.
+
+			Let $m_{\alpha}, m_{\beta}$ be their respective minimal polynomials. If $\mathbb{Q}(\alpha) \cong \mathbb{Q}(\beta)$, then $\mathbb{Q}[x] / (m_{\alpha}(x)) \cong \mathbb{Q}[x] / (m_{\beta}(x))$ and so $m_{\alpha}(x) = m_{\beta}(x)$. (Equality of the principal ideals implies equality up to scaling and minimality implies the scaling is just $1$). Conversely, if $m_{\alpha}(x) = m_{\beta}(x)$, then $\mathbb{Q}(\alpha) = \mathbb{Q}[x]/(m_{\alpha}(x)) \cong \mathbb{Q}[x]/(m_{\beta}(x)) \cong \mathbb{Q}(\beta)$.
+
+			Suppose $\alpha, \beta$ are both transcendental. Then, regardless of the choice of $\alpha, \beta \in \mathbb{C}$, we have that $\mathbb{Q}(\alpha) \cong \mathbb{Q}(\beta) \cong \mathbb{Q}(x)$ where $\mathbb{Q}(x)$ is the function field in one variable. Thus, we only need to give necessary and sufficient conditions for $\mathbb{Q}(\gamma) / \mathbb{Q}$ to be finite degree. 
+
+			We claim $\deg \mathbb{Q}(\gamma) / \mathbb{Q} < \infty$ if and only if $\gamma = \alpha / \beta$ is algebraic. Equivalently, it is necessary and sufficient that $\alpha, \beta$ are in the same coset of $\mathbb{C}^{\times} / \overline{\mathbb{Q}}^{\times}$. If $\deg \mathbb{Q}(\gamma) / \mathbb{Q} < \infty$, then $\gamma$ is algebraic since all transcendental extensions are infinite degree. Conversely, if $\gamma$ is algebraic, there is a minimal polynomial $m_{\gamma}(x)$ of degree $d$ such that $\mathbb{Q}(\gamma) \cong \mathbb{Q}[x] / (m_{\gamma}(x))$. Then, $\deg \mathbb{Q}(\gamma) / \mathbb{Q} = d < \infty$.
+
+		\item By definition, $f(\alpha) = 0$, which we can write as $f(\gamma \beta) = 0$. Writing $f_{\gamma}$ for the polynomial with $x \mapsto f(\gamma x)$, we have that $f_{\gamma}(\beta) = 0$ $g$ divides $f_{\gamma}$ (in both, $\mathbb{Z}[x]$ and $\mathbb{Q}[x]$). Similarly, we have that $g(\alpha / \gamma) = 0$, so $g_{1 / \gamma}$ defined by $x \mapsto g(x / \gamma)$ has $g_{1 / \gamma}(\alpha) = 0$, and finally, $g_{1 / \gamma}$ must divide $f$.
+
+			Notice that $\deg f_{\gamma} = \deg f$ and $\deg g_{1 / \gamma} = \deg g$. The polynomial divisions we argued for above imply that $\deg f = \deg f_{\gamma} \le \deg g$ and $\deg g = \deg g_{1 / \gamma} \le \deg f$. Thus, $\deg f = \deg f_{\gamma} = \deg g$. Since $f_{\gamma}$ is a rational polynomial of degree $\deg g$ dividing $g$, we must have $g(x) = \lambda f_{\gamma}(x)$ for some $\lambda \in \mathbb{Q}^{\times}$. In particular, $\lambda$ clears all the denominators in $f_{\gamma}$ so that it has integer coefficients with no common factors. That is,
+			\[
+				g(x) = \lambda \sum_{k = 0}^{n} a_{k} \gamma^{k} x^{k}
+			\]
+			where $\lambda = q^{n}$ for $\gamma = p / q$ in least terms.
+
+		\item This is false. Consider the three cube roots of unity $1, \omega, \omega^{2}$. The two non-rational roots $\omega$ and $\omega^{2}$ share the minimal polynomial $x^{2} + x + 1$. However, $\omega^{2} / \omega = \omega \notin \mathbb{Q}$.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[Problem 7.]
@@ -119,6 +175,29 @@
 	and let $\alpha$ be a rational number such that $0 < \alpha < 1$. Prove that $f(\alpha)$ is transcendental.
 \end{problem}
 
+\begin{solution}
+	We show that $f(\alpha)$ is too well approximated by rational numbers to be a rational number or an algebraic number of degree $d \ge 2$. It follows that $f(\alpha)$ is transcendental.
+
+	Define $f_{N}(x) = \sum_{j = 1}^{N} x^{n_{j}}$ to be the $N$th partial sum of the series $f(x)$ for each $N \in \mathbb{N}$. Consider the approximations $f_{N}(\alpha)$ to $f(\alpha)$. Since $n_{j + 1} / n_{j} \to \infty$, eventually we must have $n_{j + 1} / n_{j} > 2$ for all sufficiently large $j$. In fact, this limit also ensures that $n_{j}$ must eventually be greater than $2^{j}$. We choose $N$ such that for all $j \ge N$ we have $n_{j + 1} / n_{j} > 2$ and $n_{j} > 2^{j}$. From this, we get the following chain of inequalities:
+	\[
+		f(\alpha) - f_{N}(\alpha) \le \sum_{j = N + 1}^{\infty} \alpha^{n_{j}} \le \sum_{j = 1}^{\infty} \alpha^{2^{j} n _{N}} \le \sum_{j = 1}^{\infty} \alpha^{2 j n_{N}} \le \sum_{j = 1}^{\infty} (\alpha^{2 n_{N}})^{j}.
+	\]
+
+	Writing $m = 2 n_{N}$, we get
+	\[
+		f(\alpha) - f_{N}(\alpha) \le \frac{\alpha^{m}}{1 - \alpha^{m}}
+	\]
+	For $\alpha = p / q$, we have that $f_{N}(\alpha)$ has denominator $q^{N}$ and
+	\[
+		f(\alpha) - f_{N}(\alpha) \le \frac{p^{m}}{(q^{m} - p^{m})}.
+	\]
+	Since $q^{m}$ dominates $p^{m}$, for sufficiently large $N$ we must have $q^{m} - p^{m} > q^{k}$ for any $k < m$. In particular, we can choose any $k < 2^{N}$. By choosing sufficiently large $N$ this includes arbitrarily many $\ell N$. Thus, we have infinitely many approximations $f_{N}(\alpha)$ such that
+	\[
+		f(\alpha) - f_{N}(\alpha) \le \frac{c}{q^{\ell N}} = \frac{c}{(q^{N})^{\ell}}
+	\]
+	for each $\ell$. Thus, $f(\alpha)$ is neither rational, nor an algebraic number of any degree $\ell$.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[Problem 8.]
@@ -130,7 +209,28 @@
 \end{problem}
 
 \begin{solution}
-	$f$ has rational integer coefficients if and only if the set $\{ \alpha_{1}, \dots, \alpha_{n} \}$ can be partitioned such that the complete set 
+	$f$ has rational integer coefficients if and only if the set $\{ \alpha_{1}, \dots, \alpha_{n} \}$ can be partitioned into a union of complete sets algebraic conjugates. That is, $f$ has integer coefficients if and only if
+	\[
+		\{ \alpha_{1}, \dots, \alpha_{n} \} = \bigcup_{i = 1}^{m} S_{i}
+	\]
+	where $S_{i} = \{ \beta_{1_{i}}, \dots, \beta_{d_{i}} \}$ such that the $\beta_{j}$ are all $d_{i}$ algebraic conjugates of a degree $d_{i}$ algebraic number $d_{i}$.
+
+	We use the fact that over $\mathbb{C}$, the minimal polynomial of $\beta_{1_{i}}$ (algebraic of degree $d_{i}$) splits as
+	\[
+		m_{\beta_{i}}(x) = (x - \beta_{1_{i}}) \cdots (x - \beta_{d_{i}})
+	\]
+	where $\{ \beta_{1_{i}}, \dots, \beta_{d_{i}} \}$ is the set of all algebraic conjugates of $\beta_{1_{i}}$. This follows since each $\beta_{j_{i}}$ is a root of $f$, so each $(x - \beta_{j_{i}})$ is a factor, and $f$ is monic, so the leading coefficient is $1$.
+
+	Suppose $f$ has integer coefficients. Then $f$ is a monic polynomial in $\mathbb{Z}[x]$ with zeroes at each $\alpha_{i}$. Thus, each minimal polynomial $m_{\alpha_{i}}$ divides $f(x)$. But these account for at least $n$-many linear factors dividing $f$. Since $f$ is degree $n$, $f$ must be the product of these minimal polynomials. Over $\mathbb{C}$ they split into the form specified above, so 
+	\[
+		\prod_{i = 1}^{n} (x - \alpha_{i}) = \prod_{i = 1}^{m} \prod_{j = 1}^{d_{i}} (x - \beta_{j_{i}}).
+	\]
+	This gives the desired equality of sets
+	\[
+		\{ \alpha_{1}, \dots, \alpha_{n} \} = \bigcup_{i = 1}^{m} S_{i}.
+	\]
+
+	Conversely, suppose $\{ \alpha_{1}, \dots, \alpha_{n} \}$ is the union of sets as specified. Thus, $f(x)$ is a product of corresponding minimal polynomials $m_{\beta_{i}}(x) \in \mathbb{Z}[x]$ of algebraic integers $\beta_{i}$. Thus, $f$ has rational integer coefficients.
 \end{solution}
 
 \end{document}
