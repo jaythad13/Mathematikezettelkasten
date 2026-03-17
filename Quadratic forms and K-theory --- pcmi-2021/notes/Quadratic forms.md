@@ -48,7 +48,7 @@ $$
 $$
 Here we use the fact that $2 \in \mathbb{F}^\times$. Thus, this allows us to denote the corresponding quasi-inner product for a quadratic space by $\beta_{q}$ or just $\beta$ when it's clear from context.
 
-Finally, note that quasi-inner products over $\mathbb{R}$ are not the same as inner products over $\mathbb{R}$ (consider the quadratic form $v \mapsto - \lVert v \rVert$). We will see that this is the only possible difference (up to isomorphism).
+Finally, note that quasi-inner products over $\mathbb{R}$ are not the same as inner products over $\mathbb{R}$ (consider the quadratic form $v \mapsto - \lVert v \rVert$). We will see that this is the only possible difference (up to isomorphism) — for inner products over $\mathbb{R}$ we require $\left< v, v \right> > 0$ rather than just $\left< v, v \right> \neq 0$ for some $v \in V$. They are not the same as inner products over $\mathbb{C}$ which are sesquilinear rather than bilinear.
 
 We are interested in when two quadratic forms over the same vector space are isomorphic, and when there is a some non-zero $v \in V$ such that $q(v) = 0$. More generally, we are interested in which elements of $\mathbb{F}$ appear as $q(v)$ for some $v \in V$.
 
@@ -132,7 +132,7 @@ Equivalently, any symmetric matrix is [[diagonalisable]].
 
 ---
 
-Note that this diagonalisation is not unique. For example, for any $u_{1}, \dots, u_{n} \in \mathbb{F}^\times$, we have $\left< a_{1}, \dots, a_{n} \right> \cong \left< a_{1} u_{1}^{2}, \dots, a_{n} u_{n}^{2} \right>$.
+Note that this diagonalisation is not unique. For example, for any $u_{1}, \dots, u_{n} \in \mathbb{F}^\times$, we have $\left< a_{1}, \dots, a_{n} \right> \cong \left< a_{1} u_{1}^{2}, \dots, a_{n} u_{n}^{2} \right>$ by rescaling each $e_{i}$ by $u_{i}$.
 
 ##### _corollary:_ diagonalising quadratic forms over $\overline{\mathbb{F}}$ and $\mathbb{R}$
 
@@ -142,7 +142,7 @@ If $\mathbb{F} = \mathbb{R}$, then any quadratic form is isomorphic to $\left< 1
 
 ---
 
-A result of Sylvester shows that over $\mathbb{R}$, this choice of $r, s$ is unique. It is called the **signature** of the quadratic form.
+A result of Sylvester shows that the choice of $r, s$ for a quadratic form over $\mathbb{R}$ is unique. It is called the **signature** of the quadratic form.
 
 ### The orthogonal group
 
@@ -160,7 +160,7 @@ There is a particular nice subgroup of the orthogonal group. In particular, for 
 
 For non-zero $u \in V$, the **reflection across $u$** is the quadratic linear isomorphism $R_{u} : V \to V$ given by
 $$
-R_{u}(v) = v - \frac{2 \beta(u, v)}{q(v)} v.
+R_{u}(v) = v - \frac{2 \beta(u, v)}{q(u)} u.
 $$
 
 ---
