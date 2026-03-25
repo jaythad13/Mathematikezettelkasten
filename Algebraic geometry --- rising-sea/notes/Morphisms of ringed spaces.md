@@ -1,7 +1,6 @@
 ---
 tags:
 - alg-geo
-- alg-top
 - rising-sea/7/2
 ---
 
