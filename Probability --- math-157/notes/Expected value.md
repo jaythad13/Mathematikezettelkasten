@@ -11,7 +11,7 @@ The expected value tells us something like what we expect the sample average of 
 
 ##### _definition:_ expected value
 
-The **expected value** of a [[Probability --- math-157/notes/Discrete probability#_definition _ discrete random variable|discrete random variable]] $X$ is
+The **expected value** (or **expectation**) of a [[Probability --- math-157/notes/Discrete probability#_definition _ discrete random variable|discrete random variable]] $X$ is
 $$
 \mathbb{E}(X) = \sum_{x \in \mathbb{R}} x \mathbb{P}(X = x)
 $$
