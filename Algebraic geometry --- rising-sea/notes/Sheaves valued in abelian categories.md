@@ -305,9 +305,12 @@ Finally, we have a sheafy analogue of the fact that taking $\operatorname{Hom}$ 
 
 The functors $\mathscr{C}_{X} \to \mathscr{C}_{X}$ by $\mathscr{F} \mapsto \mathcal{Hom}(\mathscr{F}, \mathscr{G})$ and $\mathscr{G} \mapsto \mathcal{Hom}(\mathscr{F}, \mathscr{G})$ are both left-exact.
 
+> [!missing]
+> proof
+
 ---
 
-### $\mathscr{O}_{X}$-modules
+### $\mathscr{O}_{X}$-modules and tensor products
 
 It turns out that all of these ideas work even in the category of $\mathscr{O}_{X}$[[Algebraic geometry --- rising-sea/notes/Ringed spaces#_example _ sheaves of abelian groups are $ mathscr{O}_{X}$-modules|-modules]]. Specifically, they also form an abelian category.
 
@@ -364,7 +367,7 @@ We claim this factorisation is unique. Suppose $\beta = \varphi' \circ \tau$ is 
 
 ---
 
-It isn't immediately clear now, but we will see that sheafification really is necessary by considering line bundles on $\mathbb{P}^1$.
+It isn't clear immediately, but we will later see that sheafification is necessary by considering line bundles on $\mathbb{P}^1$.
 
 ##### _proposition:_ tensor products are stalk local
 
