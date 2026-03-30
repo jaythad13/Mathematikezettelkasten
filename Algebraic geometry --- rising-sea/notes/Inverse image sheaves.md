@@ -97,4 +97,31 @@ Suppose $\mathscr{C}$ is a (sufficiently nice) [[Algebraic geometry --- rising-s
 
 ---
 
+Finally, inverse images give us a good notion of restricting a sheaf to a closed subset of a space.
+
+##### _proposition:_ inverse images under closed embeddings
+
+Suppose $\mathscr{F}$ is a sheaf on $X$ with [[Algebraic geometry --- rising-sea/notes/Sheaves valued in abelian categories#_definition _ support of a sheaf|support]] $\operatorname{supp} \mathscr{F} \subseteq Z$ contained in some closed subset $i : Z \subseteq X$. Then $\mathscr{F} \to i_{*}i^{-1}\mathscr{F}$ is an isomorphism of sheaves.
+
+---
+
 ### The push-pull map
+
+Suppose the following diagram of topological spaces commutes.
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		W \ar[r, "\beta'"] \ar[d, "\alpha'"] & X \ar[d, "\alpha"] \\
+		Y \ar[r, "\beta"] & Z
+	\end{tikzcd}
+\end{document}
+```
+Then, for each sheaf $\mathscr{F}$ on $X$ we can get a good comparison between the two sheaves on $Y$ obtained by push-pull and pull-push.
+
+The **push-pull map** $\beta ^{-1} \alpha_{*} \mathscr{F} \to \alpha'_{*} (\beta')^{-1} \mathscr{F}$ is a morphism of sheaves on $Y$ defined as follows. Consider $\operatorname{id} : (\beta')^{-1} \mathscr{F} \to (\beta')^{-1} \mathscr{F}$. By adjointness, this gives a unique map $\mathscr{F} \to \beta_{*}' (\beta')^{-1} \mathscr{F}$. Pushing forward along $\alpha$ gives a map $\alpha_{*} \mathscr{F} \to \alpha_{*} \beta'_{*} (\beta')^{-1} \mathscr{F}$. [[Algebraic geometry --- rising-sea/notes/Pushforward sheaves#_proposition _ pushforward is functorial|Functoriality]] means we can rewrite this as $\alpha_{*} \mathscr{F} \to (\alpha \circ \beta')_{*} (\beta') ^{-1} \mathscr{F}$ and commutativity of the diagram means $(\alpha \circ \beta')_{*} = (\beta \circ \alpha')_{*}$.  Thus, we have $\alpha_{*} \mathscr{F} \to \beta_{*} \circ \alpha'_{*} (\beta')_{^{-1}} \mathscr{F}$ which gives a unique map $\beta ^{-1} \alpha_{*} \mathscr{F} \to \alpha'_{*}(\beta')^{-1} \mathscr{F}$ by adjointness.
+
+Note that this construction is natural in $\mathscr{F}$ — a morphism $\mathscr{F} \to \mathscr{G}$ yields the corresponding commutative diagram. That is, we have a [[Algebraic geometry --- rising-sea/notes/Natural transformations#_definition _ natural transformations, natural isomorphism, equivalence of categories|natural transformation]] of functors $\beta ^{-1} \alpha_{*}$ and $\alpha_{*}' (\beta')^{-1}$. We will see that this still holds when specialising these functors to $\mathscr{O}_{X}$-modules, quasicoherent sheaves, and even cohomology.
+
+It is a very difficult fact that starting from the identity $\alpha_{*} \mathscr{F} \to \alpha_{*} \mathscr{F}$ gives the same result.

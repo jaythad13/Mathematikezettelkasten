@@ -2,6 +2,7 @@
 tags:
 - rising-sea/2/3
 - rising-sea/2/6
+- rising-sea/2/7
 - alg-top
 - alg-geo
 - hom-alg
@@ -380,5 +381,39 @@ This is a colimits commute with colimits thing
 Write $\mathscr{T} = \mathscr{F} \otimes \mathscr{G}$ and write $T = \mathscr{F}_{p} \otimes \mathscr{G}_{p}$. Suppose $\beta_{p} : \mathscr{F}_{p} \times \mathscr{G}_{p} \to T'$ is a bilinear map. Let $\mathscr{T}' = i_{p, *} \underline{T'}$. Clearly $\mathscr{T}'_{p} = T'$. We can define a bilinear map $\beta : \mathscr{F} \times \mathscr{G} \to \mathscr{T}'$ by factoring through stalks for $U \ni p$ and $0$ otherwise. Then $\beta$ factors through $\tau : \mathscr{F} \times \mathscr{G} \to \mathscr{T}$, and so $\beta_{p}$ factors through $\tau_{p}$, say as $\beta_{p} = \varphi_{p} \circ \tau_{p}$. 
 
 This factorisation is unique — we can upgrade any different factorisation $\beta_{p} = \varphi_{p}' \circ \tau_{p}$ to a factorisation $\beta = \varphi \circ \tau$, obtain $\varphi' = \varphi$ by uniqueness of the universal map, and then get $\varphi_{p}' = \varphi_{p}$.
+
+---
+
+### Support of sheaves
+
+When we have a good notion of sections ($\mathscr{C}$ admits a forgetful functor to $\mathsf{Set}$) and zeroes of them (it makes sense to ask whether $s \in \mathscr{F}(U) \in \mathscr{C}$ has $s = 0$ or not), we want to see where $s \neq 0$. This is the notion of support. 
+
+For the rest of this section, let $\mathscr{C}$ be such a nice abelian category, and let $\mathscr{F}$ be a sheaf on it.
+
+##### _definition:_ support of a section
+
+The **support of a section** $s \in \mathscr{F}(X)$ is $\operatorname{supp} s = \{ p \mid s_{p} \neq 0 \in \mathscr{F}_{p} \}$.
+
+---
+
+Like in analysis (where we define the support to be the closure of the set where the function has non-zero value), the support is closed.
+
+##### _proposition:_ support is closed
+
+For each $s \in \mathscr{F}(X)$, its support $\operatorname{supp} s \subseteq X$ is closed.
+
+###### _proof:_
+
+We show its complement, $U = X \setminus \operatorname{supp} s$, the set where $s_{p} = 0$, is open. For each $p \in U$ we have some neighbourhood $U_{p}$ where $s_{\mid U_{p}} = 0$. Thus, $U = \bigcup_{p \in U} U_{p}$ is open.
+
+---
+
+Note that this is the locus where the stalk is non-zero. On the other hand, the locus where the *value* of the section is non-zero is [[Algebraic geometry --- rising-sea/notes/Ringed spaces#_proposition _ vanishing loci are closed|open]].
+
+##### _definition:_ support of a sheaf
+
+The **support of a sheaf** $\mathscr{F}$ is $\operatorname{supp} \mathscr{F} = \{ p \in X \mid \mathscr{F}_{p} \neq 0 \}$.
+
+Equivalently, $\operatorname{supp} \mathscr{F} = \bigcup_{s \in \mathscr{F}(X)} \operatorname{supp} s$.
 
 ---
