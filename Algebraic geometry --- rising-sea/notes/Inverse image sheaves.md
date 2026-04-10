@@ -7,7 +7,7 @@ tags:
 
 For this note, let $\pi : X \to Y$ be a continuous map of topological spaces. All sheaves are valued in a (nice) category $\mathscr{C}$ unless otherwise specified.
 
-Suppose $\mathscr{E}$ is a [[Algebraic geometry --- rising-sea/notes/Sheaves#_definition _ sheaf, separated presheaf|sheaf]] on $Y$. Then using the [[Algebraic geometry --- rising-sea/notes/Sheaves#_definition _ la espace étalé of a sheaf|espace étalé]] interpretation of $\mathscr{E}$ as a continuous map $\xi : E \to Y$ we can define pulled back sections of $\mathscr{E}$ on $U \subseteq X$ as continuous maps $\sigma : U \to E$ such that $\xi \circ \sigma = \pi_{\mid U}$. We will see that this is functorial and [[Algebraic geometry --- rising-sea/notes/Adjoint functors#_definition _ adjoint functors, left adjoint, right adjoint, adjoint pair|left adjoint]] to the [[Algebraic geometry --- rising-sea/notes/Pushforward sheaves#_definition _ pushforward/direct image presheaves and sheaves|pushforward]]. We will also give an alternate definition in terms of sections locally. This definition will be harder than that of the pushforward, but we will use it to understand sheaves on schemes. 
+Suppose $\mathscr{E}$ is a [[Algebraic geometry --- rising-sea/notes/Sheaves#_definition _ sheaf, separated presheaf|sheaf]] on $Y$ corresponding to [[Algebraic geometry --- rising-sea/notes/Sheaves#_definition _ la espace étalé of a sheaf|espace étalé]] $\xi : E \to Y$. We can define the section of the inverse image sheaf $\pi ^{-1}\mathscr{E}$ on $U \subseteq X$ to be continuous maps $\sigma : U \to E$ such that $\xi \circ \sigma = \pi_{\mid U}$. Equivalently, sections of the projection $E \times_{Y} X \to X$. This is functorial and [[Algebraic geometry --- rising-sea/notes/Adjoint functors#_definition _ adjoint functors, left adjoint, right adjoint, adjoint pair|left adjoint]] to the [[Algebraic geometry --- rising-sea/notes/Pushforward sheaves#_definition _ pushforward/direct image presheaves and sheaves|pushforward]]. We will also give an alternate definition in terms of sections locally. This definition will be harder than that of the pushforward, but we will use it to understand sheaves on schemes.
 
 We will denote this by $\pi ^{-1}$ and call it the inverse image sheaf, not $\pi^*$ and the pullback sheaf. We reserve the pullback name for the left adjoint to the pushforward as a functor $\mathsf{Mod}_{\mathscr{O}_{X}} \to \mathsf{Mod}_{\mathscr{O}_{Y}}$ rather than just sheaves in a general category.
 
@@ -55,13 +55,15 @@ Now we can turn this into a functor between categories of sheaves by [[Algebraic
 
 ##### _proposition:_ sheafification of inverse image presheaf is inverse image sheaf
 
-Let $F = (\pi^{-1}_{\text{pre}})^\text{sh}$ be the functor $\mathscr{C}_{Y} \to \mathscr{C}_{X}$ given by $\mathscr{F} \mapsto (\pi ^{-1}_{\text{pre}} \mathscr{F})^\text{sh}$ on objects and by $\varphi \mapsto (\pi ^{-1}_{\text{pre}} \varphi)^\text{sh}$ on morphisms. Then $F$ is left adjoint to the pushforward functor $\pi_{*}$.
+For this proposition, let $\pi ^{-1} = (\pi^{-1}_{\text{pre}})^\text{sh}$ denote the functor $\mathscr{C}_{Y} \to \mathscr{C}_{X}$ given by $\mathscr{F} \mapsto (\pi ^{-1}_{\text{pre}} \mathscr{F})^\text{sh}$ on objects and by $\varphi \mapsto (\pi ^{-1}_{\text{pre}} \varphi)^\text{sh}$ on morphisms.
+
+$\pi^{-1}$ is left adjoint to the pushforward functor $\pi_{*}$.
 
 ---
 
-##### _proposition:_ inverse image sheaf has the right espace étalé
+##### _proposition:_ the espace étalé of the inverse image sheaf is the fibre product
 
-
+Suppose $\mathscr{E}$ is a sheaf on $Y$ with espace étalé $\xi : E \to Y$. Then $\pi ^{-1} \mathscr{E}$ has the [[Algebraic geometry --- rising-sea/notes/Fibred products#_definition _ fibred product|fibred product]] [[Topology --- math-147/notes/Product spaces#_definition _ (finite) product topology|of topological spaces]] with the natural projection $\xi_{X} : E \times_{Y} X \to X$ as its espace étalé.
 
 ---
 
@@ -77,9 +79,80 @@ If $i : \{ p \} \to Y$ is the inclusion of a point, then $\pi ^{-1} \mathscr{F}$
 
 A less obvious fact is that the inverse image sheaf has the same stalks.
 
-##### _proposition:_ inverse image sheaves have the same stalks
+##### _proposition:_ inverse image sheaves have the same stalks and the same stalk morphisms
 
-For $q = \pi(p)$, there is a natural isomorphism $\mathscr{F}_{q} \to \pi ^{-1} \mathscr{F}_{p}$.
+Let $\mathscr{F}$ be a sheaf on $Y$. For $q = \pi(p)$, there is a natural isomorphism $\mathscr{F}_{q} \to \pi ^{-1} \mathscr{F}_{p}$. If $\varphi : \mathscr{F} \to \mathscr{G}$ is a morphism of sheaves on $Y$, then the stalk morphisms $\varphi_{q} : \mathscr{F}_{q} \to \mathscr{G}_{q}$ and $\pi ^{-1} \varphi_{q} : \mathscr{F}_{p} \to \mathscr{G}_{p}$ are the same morphism. 
+
+###### _proof sketch:_
+
+[[Algebraic geometry --- rising-sea/notes/Sheafification#_proposition _ sections and tuples of compatible germs have the same stalks|There is a natural isomorphism]] $\pi ^{-1}_{\text{pre}}\mathscr{F}_{p} \to \pi ^{-1} \mathscr{F}_{p}$. Let $U$s be open subsets of $X$ and $V$s be open subsets of $Y$. Then
+$$
+\begin{align}
+\pi ^{-1}_{\text{pre}} \mathscr{F}_{p} & = \operatorname{colim}_{U \ni p} \pi^{-1}_{\text{pre}}\mathscr{F}(U) \\
+ & = \operatorname{colim}_{U \ni p} \operatorname{colim}_{V \supseteq \pi^\text{img}(U)} \mathscr{F}(V) \\
+ & = \operatorname{colim}_{V \ni q} \mathscr{F}(V) \\
+ & = \mathscr{F}_{q}.
+\end{align}
+$$
+Note that the second-to-last equality requires some statement about [[Algebraic geometry --- rising-sea/notes/Exact functors#_proposition _ limits commute with limits (and colimits commute with colimits)|colimits commuting with colimits]], but can be easily seen to be true. Thus, we have isomorphisms $\mathscr{F}_{q} \cong \pi ^{-1}_{\text{pre}} \mathscr{F}_{p} \cong \pi ^{-1} \mathscr{F}_{p}$.
+
+Using a similar commutativity of colimits argument, we can show that the stalk morphisms are the same. In particular, $\varphi_{q} : \mathscr{F}_{q} \to \mathscr{G}_{q}$ is the colimit of all the morphisms $\mathscr{F}(V) \to \mathscr{G}(V) \to \mathscr{G}_{q}$ over all $V \ni q$. Similarly, $\pi ^{-1} \varphi_{p} : \pi ^{-1}\mathscr{F}_{p} \to \pi ^{-1} \mathscr{G}_{p}$ is the colimit of morphisms $\pi ^{-1} \mathscr{F}(U) \to \pi ^{-1} \mathscr{G}(U) \to \pi ^{-1} \mathscr{G}_{p}$ over all $U \ni p$. However, the morphism $\pi ^{-1}\varphi(U) : \pi ^{-1} \mathscr{F}(U) \to \pi ^{-1} \mathscr{G}(U)$ is the colimit $\mathscr{F}(V) \to \mathscr{G}(V) \to \pi ^{-1} \mathscr{G}(U)$ over all $V \supseteq \pi ^{\text{img}}(U)$. Thus, we can write $\pi ^{-1} \varphi_{p}$ as the colimit of
+$$
+\mathscr{F}(V) \to \mathscr{G}(V) \to \pi ^{-1} \mathscr{G}(U) \to \pi ^{-1} \mathscr{G}_{p} = \mathscr{G}_{q}
+$$
+over all $V \ni q$. This is exactly the same as the colimit expression of $\varphi_{q}$.
+
+---
+
+Using this nice interaction with stalks, we can show that taking inverse images is exact. Note that right-exactness could also [[Algebraic geometry --- rising-sea/notes/Exact functors#_proposition _ right adjoints preserve limits|from left-adjointness]].
+
+##### _proposition:_ the inverse image functor is exact
+
+Suppose $\mathscr{C}$ is a (sufficiently nice) [[Algebraic geometry --- rising-sea/notes/A little about abelian categories#_definition _ abelian categories|abelian category]]. Then $\pi ^{-1} : \mathscr{C}_{Y} \to \mathscr{C}_{X}$ is an exact functor.
+
+###### _proof:_
+
+Suppose
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		\mathcal{F} \ar[r, "\varphi"] & \mathcal{G} \ar[r, "\psi"] & \mathcal{H}
+	\end{tikzcd}
+\end{document}
+```
+is an exact sequence of sheaves on $Y$. [[Algebraic geometry --- rising-sea/notes/Sheaves valued in abelian categories#_proposition _ exactness is stalk local|Then]], for each $q \in Y$, the corresponding sequence of stalks
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		\mathcal{F}_{q} \ar[r, "\varphi_{q}"] & \mathcal{G}_{q} \ar[r, "\psi_{q}"] & \mathcal{H}_{q}
+	\end{tikzcd}
+\end{document}
+```
+is an exact sequence in $\mathscr{C}$. But [[#_proposition _ inverse image sheaves have the same stalks and the same stalk morphisms|this is the exact same sequence]] as
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		\pi ^{-1} \mathcal{F}_{p} \ar[r, "\pi ^{-1} \varphi_{p}"] & \pi ^{-1}\mathcal{G} \ar[r, "\pi ^{-1}\psi_{p}"] & \pi ^{-1}\mathcal{H}_{p}.
+	\end{tikzcd}
+\end{document}
+```
+Thus, the sequence above is exact for each $p$. [[Algebraic geometry --- rising-sea/notes/Sheaves valued in abelian categories#_proposition _ exactness is stalk local|Thus]],
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		\pi ^{-1} \mathcal{F} \ar[r, "\pi ^{-1} \varphi"] & \pi ^{-1} \mathcal{G} \ar[r, "\pi ^{-1} \psi"] & \pi ^{-1} \mathcal{H}
+	\end{tikzcd}
+\end{document}
+```
+is exact — *exactly* what we wanted to show.
 
 ---
 
@@ -87,13 +160,62 @@ For $q = \pi(p)$, there is a natural isomorphism $\mathscr{F}_{q} \to \pi ^{-1} 
 
 Suppose $i : U \to Y$ gives the inclusion $U \subseteq Y$. Then $i^{-1} \mathscr{F}$ is naturally isomorphic to $\mathscr{F}_{\mid U}$.
 
----
+###### _proof:_
 
-Using this niceness, we can show that taking inverse images is exact.
+We show that the functor $\mathscr{F} \mapsto \mathscr{F}_{\mid U}$ is left adjoint to the functor $\mathscr{G} \to i_{*} \mathscr{G}$. 
 
-##### _proposition:_ the inverse image functor is exact
+Suppose we have a morphism of sheaves on $U$, $\varphi : \mathscr{F}_{\mid U} \to \mathscr{G}$. Then, for each $W \subseteq U$ we have a morphism $\varphi(W) : \mathscr{F}(W) \to \mathscr{G}(W)$. For each $V \subseteq Y$, $i_{*}\mathscr{G}(V) = \mathscr{G}(U \cap V)$. Thus, we can define $\psi(V) = \varphi(U \cap V) \circ \operatorname{res}_{\mathscr{F} \mid U \cap V \subseteq V} : \mathscr{F}(V) \to i_{*} \mathscr{G}(V)$. The collection of all $\psi(V)$ forms a sheaf morphism. For $V_{1} \subseteq V_{2}$ the appropriate diagram commutes because
+$$
+\begin{align}
+\operatorname{res}_{\mathscr{G} \mid W_{1} \subseteq W_{2}} \circ \psi(V_{2}) & = \operatorname{res}_{\mathscr{G} \mid W_{1} \subseteq W_{2}} \circ \varphi(W_{2}) \circ \operatorname{res}_{\mathscr{F} \mid W_{2} \subseteq V_{2}} \\
+ & = \varphi(W_{1}) \circ \operatorname{res}_{\mathscr{F} \mid W_{1} \subseteq W_{2}} \circ \operatorname{res}_{\mathscr{F} \mid W_{2} \subseteq V_{2}} \\
+ & = \psi(V_{1}) \circ \operatorname{res}_{\mathscr{F} \mid W_{1} \subseteq V_{1}} \circ \operatorname{res}_{\mathscr{F} \mid V_{1} \subseteq V_{2}} \\
+ & = \psi(V_{1}) \circ \operatorname{res}_{\mathscr{F} \mid V_{1} \subseteq V_{2}}.
+\end{align}
+$$
+We write $\psi = i_{*} \varphi$.
 
-Suppose $\mathscr{C}$ is a (sufficiently nice) [[Algebraic geometry --- rising-sea/notes/A little about abelian categories#_definition _ abelian categories|abelian category]]. Then $\pi ^{-1} : \mathscr{C}_{Y} \to \mathscr{C}_{X}$ is an exact functor.
+Conversely, suppose we have a morphism of sheaves on $Y$, $\psi : \mathscr{F} \to i_{*} \mathscr{G}$. It's clear that $i_{*} \mathscr{G}_{\mid U} = \mathscr{G}$. Restricting gives a morphism $\varphi = \psi_{\mid U} : \mathscr{F}_{\mid U} \to \mathscr{G}$ with $\psi_{\mid U}(W) = \psi(W)$ for $W \subseteq U$. 
+
+We claim these constructions are inverses. It's clear that $(i_{*} \varphi)_{\mid U} = \varphi$ since the restriction corresponding to $U \cap W \subseteq W$ is the identity when $W \subseteq U$. Conversely, suppose $\psi : \mathscr{F} \to i_{*} \mathscr{G}$ is a sheaf morphism. Then $\psi_{\mid U}(W) = \psi(W)$ for each $W \subseteq U$. Suppose $V \subseteq Y$ and write $W = U \cap V$. Note that $\operatorname{res} : i_{*} \mathscr{G}(V) \to i_{*} \mathscr{G}(W) = \mathscr{G}(W)$ is the identity. Thus, $\operatorname{res}_{\mathscr{G} \mid W \subseteq V} \circ \psi(V) = \psi(V)$. By commutativity of the sheaf morphism diagram, we have $\operatorname{res}_{\mathscr{G} \mid W \subseteq V} \circ \psi(V) = \psi(W) \circ \operatorname{res}_{\mathscr{F} \mid W \subseteq V}$. Thus,
+$$
+\begin{align}
+i_{*}(\psi_{\mid U})(V) & = \psi(W) \circ \operatorname{res}_{\mathscr{F} \mid W \subseteq V} \\
+ & = \operatorname{res}_{\mathscr{G} \mid W \subseteq V} \circ \psi(V) \\
+ & = \psi(V).
+\end{align}
+$$
+That is, $i_{*}(\psi_{\mid U}) = \psi$ and our construction is a bijection.
+
+Finally, [[Algebraic geometry --- rising-sea/notes/Adjoint functors#_definition _ adjoint functors, left adjoint, right adjoint, adjoint pair|we need to show]] that the following diagrams commute.
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		\mathrm{Mor}(\mathcal{F}'_{\mid U}, \mathcal{G}) \ar[r] \ar[d] & \mathrm{Mor}(\mathcal{F}_{\mid U}, \mathcal{G}) \ar[d] \\
+		\mathrm{Mor}(\mathcal{F}', i_{*} \mathcal{G}) \ar[r] & \mathrm{Mor}(\mathcal{F}, i_{*} \mathcal{G})
+	\end{tikzcd}
+	\begin{tikzcd}
+		\mathrm{Mor}(\mathcal{F}_{\mid U}, \mathcal{G}) \ar[r] \ar[d] & \mathrm{Mor}(\mathcal{F}_{\mid U}, \mathcal{G}') \ar[d] \\
+		\mathrm{Mor}(\mathcal{F}, i_{*} \mathcal{G}) \ar[r] & \mathrm{Mor}(\mathcal{F}, i_{*} \mathcal{G}')
+	\end{tikzcd}
+\end{document}
+```
+
+Let $f : \mathscr{F} \to \mathscr{F}'$ be a morphism of sheaves and choose $\varphi' \in \operatorname{Mor}(\mathscr{F}_{\mid U}', \mathscr{G})$. Going clockwise around the commutative diagram we get $\varphi = \varphi' \circ f_{\mid U}$ and then $\psi : \mathscr{F} \to i_{*} \mathscr{G}$ with $\psi(V) = \varphi(U \cap V) \circ \operatorname{res}_{\mathscr{F} \mid U \cap V \subseteq V}$. Going counterclockwise, we first get $\psi' : \mathscr{F}' \to i_{*} \mathscr{G}$ with $\psi'(V) = \varphi'(U \cap V) \circ \operatorname{res}_{\mathscr{F}' \mid U \cap V \subseteq V}$ and then $\psi' \circ f$ which has
+$$
+\begin{align}
+(\psi' \circ f)(V) & = \varphi'(U \cap V) \circ \operatorname{res}_{\mathscr{F}' \mid U \cap V \subseteq V} \circ f(V) \\
+ & = \varphi'(U \cap V) \circ f(U \cap V) \circ\operatorname{res}_{\mathscr{F} \mid U \cap V \subseteq V} \\
+ & = \varphi'(U \cap V) \circ f_{\mid U}(U \cap V) \circ \operatorname{res}_{\mathscr{F} \mid U \cap V \subseteq V} \\
+ & = (\varphi \circ f_{\mid U})(U \cap V) \circ \operatorname{res}_{\mathscr{F} \mid U \cap V \subseteq V} \\
+ & = \psi(V)
+\end{align}
+$$
+as desired.
+
+The case of naturality in some $g : \mathscr{G} \to \mathscr{G}'$ follows similarly.
 
 ---
 
@@ -101,7 +223,17 @@ Finally, inverse images give us a good notion of restricting a sheaf to a closed
 
 ##### _proposition:_ inverse images under closed embeddings
 
-Suppose $\mathscr{F}$ is a sheaf on $X$ with [[Algebraic geometry --- rising-sea/notes/Sheaves valued in abelian categories#_definition _ support of a sheaf|support]] $\operatorname{supp} \mathscr{F} \subseteq Z$ contained in some closed subset $i : Z \subseteq X$. Then $\mathscr{F} \to i_{*}i^{-1}\mathscr{F}$ is an isomorphism of sheaves.
+Suppose $\mathscr{F}$ is a sheaf on $Y$ with [[Algebraic geometry --- rising-sea/notes/Sheaves valued in abelian categories#_definition _ support of a sheaf|support]] contained in some closed subset $i : Z \subseteq Y$. Then the natural map $\mathscr{F} \to i_{*}i^{-1}\mathscr{F}$ is an isomorphism of sheaves.
+
+###### _proof sketch:_
+
+For this proposition, we let $i^{-1} \mathscr{F}$ denote presheaf inverse image instead of its sheafification. We use the fact that we can just sheafify at the end to recover the desired result without proof — this requires sheafification to commute with a bunch of stuff.
+
+We already have a natural isomorphism $\mathscr{F}_{p} \to i^{-1} \mathscr{F}_{p}$. For pushforwards its not hard to see that we have an isomorphism $\mathscr{G}_{p} \cong i_{*}\mathscr{G}_{p}$ when $p \in Z$ and $i_{*} \mathscr{G}_{p} = 0$ otherwise. Thus, for $\operatorname{supp} \mathscr{F} \subseteq Z$ we always have a canonical isomorphism $\mathscr{F}_{p} \to i_{*} i^{-1} \mathscr{F}_{p}$.
+
+If $p \not\in Z$, then $\varphi_{p}$ is a map $0 \to 0$ and thus must be an isomorphism. Assume $p \in Z$. The map $\varphi : \mathscr{F} \to i_{*} i^{-1} \mathscr{F}$ is $\tau(i^{-1} \operatorname{id}_{\mathscr{F}})$. Here $\tau : \operatorname{Mor}(i^{-1} \mathscr{F}, i^{-1} \mathscr{F}) \to \operatorname{Mor}(\mathscr{F}, i_{*} i^{-1} \mathscr{F})$ is the bijection giving adjointness of inverse image and pushforward functors. For each open set $U \ni p$, we have $\varphi(U) : \mathscr{F}(U) \to i_{*}i^{-1} \mathscr{F}(U) = i^{-1}\mathscr{F}(Z \cap U)$, and thus, a map $\mathscr{F}(U) \to i^{-1} \mathscr{F}(Z \cap U) \to i_{*} i^{-1}\mathscr{F}_{p}$. By the colimit definition of $i^{-1} \mathscr{F}(Z \cap U)$ these factor through $\mathscr{F}(V)$ for each $V \supseteq Z \cap U$. Since all of the $\mathscr{F}(V) \to i_{*} i^{-1} \mathscr{F}_{p}$ factor uniquely through the canonical isomorphism, so does $\mathscr{F}(U) \to i_{*}i^{-1} \mathscr{F}_{p}$.
+
+The corresponding stalk morphism $\varphi_{p} : \mathscr{F}_{p} \to i_{*}i^{-1} \mathscr{F}_{p}$ is given as follows. The $\mathscr{F}(U) \to i_{*}i^{-1}\mathscr{F}_{p}$ factor uniquely through the colimit $\mathscr{F}(U) \to \mathscr{F}_{p} \to i_{*}i^{-1}\mathscr{F}_{p}$. We just showed that this unique factorisation is through the canonical isomorphism. [[Algebraic geometry --- rising-sea/notes/Stalk-local properties and compatible germs#_proposition _ sheaf isomorphisms are stalk-local (if the morphism exists)|Isomorphisms are stalk local]], so $\varphi$ is an isomorphism.
 
 ---
 
