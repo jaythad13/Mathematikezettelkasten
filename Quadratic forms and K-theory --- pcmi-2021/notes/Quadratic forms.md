@@ -128,7 +128,7 @@ Equivalently, any symmetric matrix is [[diagonalisable]].
 
 ###### _proof sketch:_
 
- Choose some $v \in V$ such that $q(v) \neq 0$ (it's easy to see that there must be one by non-degeneracy). Write $U$ for $\operatorname{span} v$. $q$ restricts to an quadratic form on $U$ so $V \cong U \oplus U^\perp$. Clearly $U, q_{\mid U} \cong \left< a \right>$. The result follows by induction on the dimension of $V$.
+Choose some $v \in V$ such that $q(v) \neq 0$ (it's easy to see that there must be one by non-degeneracy). Write $U$ for $\operatorname{span} v$. $q$ restricts to an quadratic form on $U$ so $V \cong U \oplus U^\perp$. Clearly $U, q_{\mid U} \cong \left< a \right>$. The result follows by induction on the dimension of $V$.
 
 ---
 
