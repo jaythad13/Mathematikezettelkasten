@@ -12,13 +12,13 @@ Smoothness is a tricky notion, but we can get something that sort of approximate
 
 ##### _definition:_ normal schemes
 
-$X$ is a **normal scheme** if each stalk $\mathscr{O}_{X, p}$ is [[Algebraic geometry --- rising-sea/notes/Integrally closed domains#_definition _ integrally closed domain|integrally closed]].
+$X$ is a **normal scheme** if each stalk $\mathscr{O}_{X, p}$ is [[Algebraic geometry --- rising-sea/notes/Integral dependence and integral homomorphisms#_definition _ integrally closed domain|integrally closed]].
 
 ---
 
 Note again that since [[Algebraic geometry --- rising-sea/notes/Reduced and integral schemes#_example _ integrality is not stalk-local|integrality is not stalk-local]], normal schemes are not necessarily [[Algebraic geometry --- rising-sea/notes/Reduced and integral schemes#_definition _ integral scheme|integral]].
 
-Since integral closure [[Algebraic geometry --- rising-sea/notes/Integrally closed domains#_proposition _ integral closure is (maximal) stalk-local|is stalk-local]], we can check the normality on any affine cover of a scheme.
+Since integral closure [[Algebraic geometry --- rising-sea/notes/Integral dependence and integral homomorphisms#_proposition _ integral closure is (maximal) stalk-local|is stalk-local]], we can check the normality on any affine cover of a scheme.
 
 ##### _corollary:_ normality is affine-local
 
@@ -28,7 +28,7 @@ Suppose $X = \bigcup_{i \in \mathscr{I}} \operatorname{Spec} A_{i}$ and each $A_
 
 ##### _example:_ $\operatorname{Spec} \mathbb{Z}$ and quadratic integer rings
 
-$\mathbb{Z}$ is [[Algebraic geometry --- rising-sea/notes/Integrally closed domains#_definition _ integrally closed domain|integrally closed]], so $\operatorname{Spec} \mathbb{Z}$ is normal. The [[Algebraic geometry --- rising-sea/notes/Integrally closed domains#_example _ quadratic integer rings|ring of integers in any quadratic field]] ( $\mathbb{Z}[\sqrt{ d }]$ or $\mathbb{Z}\left[ \frac{1 + \sqrt{ d }}{2} \right]$ depending on the residue of $d$ modulo $4$) is also integrally closed. Thus, the corresponding affine schemes are also normal.
+$\mathbb{Z}$ is [[Algebraic geometry --- rising-sea/notes/Integral dependence and integral homomorphisms#_definition _ integrally closed domain|integrally closed]], so $\operatorname{Spec} \mathbb{Z}$ is normal. The [[Algebraic geometry --- rising-sea/notes/Integral dependence and integral homomorphisms#_example _ quadratic integer rings|ring of integers in any quadratic field]] ( $\mathbb{Z}[\sqrt{ d }]$ or $\mathbb{Z}\left[ \frac{1 + \sqrt{ d }}{2} \right]$ depending on the residue of $d$ modulo $4$) is also integrally closed. Thus, the corresponding affine schemes are also normal.
 
 ---
 
@@ -48,7 +48,7 @@ $X$ is a **factorial scheme** if each stalk $\mathscr{O}_{X, p}$ is a [[Abstract
 
 ---
 
-Since [[Algebraic geometry --- rising-sea/notes/Integrally closed domains#_proposition _ UFDs are integrally closed|unique factorisation domains are integrally closed]], factorial schemes are normal.
+Since [[Algebraic geometry --- rising-sea/notes/Integral dependence and integral homomorphisms#_proposition _ UFDs are integrally closed|unique factorisation domains are integrally closed]], factorial schemes are normal.
 
 ##### _proposition:_ factorial schemes are normal
 

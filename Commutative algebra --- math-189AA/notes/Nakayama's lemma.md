@@ -7,11 +7,17 @@ tags:
 
 Let $A$ be a ring.
 
-Nakayama's lemma tells us how scaling by certain elements behaves on 
+Nakayama's lemma tells us how scaling by certain elements behaves on
+
+##### _lemma:_ zero polynomials of endomorphisms with coefficients in an ideal, or the Nakayama determinant trick
+
+Suppose $M$ is a finitely generated $A$-module. Let $\mathfrak{i} \subseteq A$ be an ideal and let $\varphi : M \to M$ be an $A$-module endomorphism such that $\operatorname{img} \varphi \subseteq \mathfrak{i} M$. Then there is a monic polynomial $p(x) \in \mathfrak{i}[x] \subseteq A[x]$ such that $p(\varphi) = 0$.
+
+---
 
 ##### _lemma:_ Nakayama's lemma, version 1
 
-Suppose $M$ is a [[Commutative algebra --- math-189AA/notes/Finite generation and finite presentation#_definition _ finitely generated|finitely generated]] $A$-module and $\mathfrak{i} \subseteq A$ is contained in the [[Commutative algebra --- math-189AA/notes/Jacobson radical#_definition _ Jacobson radical|Jacobson radical]] of $A$. If $\mathfrak{i} M = M$, then $M = 0$.
+Suppose $M$ is a [[Commutative algebra --- math-189AA/notes/Finite generation and finite presentation#_definition _ finitely generated|finitely generated]] $A$-module and $\mathfrak{i} \subseteq A$ is contained in the [[Commutative algebra --- math-189AA/notes/Jacobson radical#_definition _ Jacobson radical|Jacobson radical]] $\mathfrak{R} \subseteq A$. If $\mathfrak{i} M = M$, then $M = 0$.
 
 ###### _proof:_
 
