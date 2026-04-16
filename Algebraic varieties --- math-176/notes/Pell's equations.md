@@ -56,7 +56,7 @@ The conjugate of an algebraic integer $a = x + y \sqrt{ d }$ is $\overline{a} = 
 The norm of an algebraic integer $a$ is $Na = a \overline{a}$. For $a = x + y \sqrt{ d }$ note that $Na = x^{2} - d y^{2}$.
 
 Note that this satisfies the definition of a norm in a ring.
-![[Abstract algebra --- math-171/notes/Factorisation in special rings#_definition _ norm|Factorisation in special rings]]
+![[Abstract algebra --- math-171/notes/Unique factorisation#_definition _ norm|Factorisation in special rings]]
 
 It's easy to see that the conjugate and norm are both multiplicative.
 

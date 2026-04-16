@@ -153,7 +153,7 @@ $$
 $$
 for $a > 0$.
 
-Since $\ker \varphi$ is an ideal inside a [[Abstract algebra --- math-171/notes/Factorisation in special rings#_example _ the integers|Euclidean domain]], $\mathbb{Z}$, we have $\ker \varphi = m \mathbb{Z}$ for some $m$. We say the characteristic of $F$ is $\operatorname{char}(F) = m$.
+Since $\ker \varphi$ is an ideal inside a [[Abstract algebra --- math-171/notes/Unique factorisation#_example _ the integers|Euclidean domain]], $\mathbb{Z}$, we have $\ker \varphi = m \mathbb{Z}$ for some $m$. We say the characteristic of $F$ is $\operatorname{char}(F) = m$.
 
 This $m$ is the first $m$ such that $\varphi(m) = 0$, and tells us whether the integer can "sit inside" a field, or they need to wrap around after some $m$. 
 

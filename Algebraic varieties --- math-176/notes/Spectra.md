@@ -44,7 +44,7 @@ The max spectrum of $R$ is the collection of all maximal ideals $M \subset R$.
 
 ##### _example:_ the spectra of $\mathbb{Z}$
 
-Since $\mathbb{Z}$ is a [[Abstract algebra --- math-171/notes/Factorisation in special rings#_definition _ principal ideal domain|principal ideal domain]] the prime ideals and maximal ideals are almost exactly identical — $\mathbb{Z} / n \mathbb{Z}$ is an field if and only if $n$ is prime and an integral domain if $n$ is prime. However, $\mathbb{Z} = \mathbb{Z} / 0 \mathbb{Z}$ is also an integral domain. Thus,
+Since $\mathbb{Z}$ is a [[Abstract algebra --- math-171/notes/Unique factorisation#_definition _ principal ideal domain|principal ideal domain]] the prime ideals and maximal ideals are almost exactly identical — $\mathbb{Z} / n \mathbb{Z}$ is an field if and only if $n$ is prime and an integral domain if $n$ is prime. However, $\mathbb{Z} = \mathbb{Z} / 0 \mathbb{Z}$ is also an integral domain. Thus,
 $$
 \operatorname{Spec} \mathbb{Z} = \{ (0) \} \cup \{ (2), (3), (5), (7), \dots \} = \{ 0 \} \cup \operatorname{mSpec} \mathbb{Z}.
 $$

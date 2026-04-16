@@ -185,7 +185,7 @@ Since the numerator is divisible by $p$ and the denominator isn't, we have $a_{k
 
 ---
 
-More generally, this proof works in any [[Abstract algebra --- math-171/notes/Factorisation in special rings#_definition _ unique factorisation domains|unique factorisation domain]] —
+More generally, this proof works in any [[Abstract algebra --- math-171/notes/Unique factorisation#_definition _ unique factorisation domains|unique factorisation domain]] —
 
 ##### _proposition:_ UFDs are integrally closed
 
@@ -225,7 +225,7 @@ There is also a very specific useful class of examples of integrally closed doma
 
 ##### _examples:_ adjoining square roots in UFDs
 
-Suppose $A$ is a [[Abstract algebra --- math-171/notes/Factorisation in special rings#_definition _ unique factorisation domains|unique factorisation domain]] with $2$ invertible, $x \in A$, and $y^{2} - x$ is irreducible in $A[y]$. If $x \in A$ has no repeated prime factors, then $B = A[y] / (y^{2} - x)$ is integrally closed. 
+Suppose $A$ is a [[Abstract algebra --- math-171/notes/Unique factorisation#_definition _ unique factorisation domains|unique factorisation domain]] with $2$ invertible, $x \in A$, and $y^{2} - x$ is irreducible in $A[y]$. If $x \in A$ has no repeated prime factors, then $B = A[y] / (y^{2} - x)$ is integrally closed. 
 
 If $x \in A$ has repeated prime factors, then $B$ is not integrally closed. Suppose in particular that $x = p^{2} d$ for some prime $p$. Then 
 

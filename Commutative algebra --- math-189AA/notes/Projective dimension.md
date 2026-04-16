@@ -77,6 +77,6 @@ The projective resolution obtained by choosing the minimal free module [[#_propo
 
 Consider $(x)$ as a $\mathbb{Q}[x, y, z]$-module. The first surjection is just $\mathbb{Q}[x, y, z] \to (x)$ by $p \mapsto px$. Since $\mathbb{Q}[x, y, z]$ is an [[Abstract algebra --- math-171/notes/Integral domains#_definition _ integral domain|integral domain]], this has kernel $0$.
 
-In general, this follows because every [[Abstract algebra --- math-171/notes/Factorisation in special rings#_definition _ principal ideal domain|principal ideal]] of an integral domain is isomorphic to the ring (as a module over the ring).
+In general, this follows because every [[Abstract algebra --- math-171/notes/Unique factorisation#_definition _ principal ideal domain|principal ideal]] of an integral domain is isomorphic to the ring (as a module over the ring).
 
 ---

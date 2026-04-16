@@ -127,7 +127,7 @@ We should check that this is reasonable in reasonable circumstances (say over a 
 
 ##### _example:_ minimal prime ideals of finite $\mathbb{F}$-algebras or irreducible components of affine varieties
 
-Let $A = \mathbb{F}[x_{1}, \dots, x_{n}]$ and $f \in A$. The subset $\operatorname{Spec} A / (f) \cong V(f) \subseteq \operatorname{Spec} A$ has irreducible components corresponding to the irreducible factors of $f$. This is essentially because $A$ is a [[Abstract algebra --- math-171/notes/Factorisation in special rings#_definition _ unique factorisation domains|unique factorisation domain]]. In such a ring irreducibles are [[Abstract algebra --- math-171/notes/Factorisation in special rings#_examples _ irreducible and prime elements|prime elements]]. 
+Let $A = \mathbb{F}[x_{1}, \dots, x_{n}]$ and $f \in A$. The subset $\operatorname{Spec} A / (f) \cong V(f) \subseteq \operatorname{Spec} A$ has irreducible components corresponding to the irreducible factors of $f$. This is essentially because $A$ is a [[Abstract algebra --- math-171/notes/Unique factorisation#_definition _ unique factorisation domains|unique factorisation domain]]. In such a ring irreducibles are [[Abstract algebra --- math-171/notes/Unique factorisation#_examples _ irreducible and prime elements|prime elements]]. 
 
 Suppose $f = g_{1} \cdots g_{n}$. Write $f = g_{i} h_{i}$. Then $(f) \subseteq (g_{i})$ for each $i$. If we had $(f) \subseteq \mathfrak{g} \subseteq (g_{i})$, we would have $f = g h$ and $g = g_{i} h'_{i}$, a factorisation $f = g_{i} h_{i}' h$ as opposed to $f = g_{i} h_{i}$. Thus, $h_{i}' h$ differs from $h_{i}$ by a unit. A little work shows that either $(f) = (g)$ or $(g) = (g_{i})$. Either way, $(g_{i})$ is a minimal prime containing 
 

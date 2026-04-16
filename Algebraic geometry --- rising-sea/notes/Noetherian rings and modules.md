@@ -7,7 +7,7 @@ tags:
 
 Let $A$ be a ring.
 
-It turns out that almost every example of an affine scheme we have seen so far is the spectrum of a Noetherian ring. Noetherian rings generalise [[Abstract algebra --- math-171/notes/Factorisation in special rings#_definition _ principal ideal domain|principal ideal domains]] in the following sense — in a PID any increasing chain of ideals stabilises (see the [[Abstract algebra --- math-171/notes/Factorisation in special rings#_theorem _ Every PID is a UFD|proof that PIDs are UFDs]]). Noetherian rings just have this property.
+It turns out that almost every example of an affine scheme we have seen so far is the spectrum of a Noetherian ring. Noetherian rings generalise [[Abstract algebra --- math-171/notes/Unique factorisation#_definition _ principal ideal domain|principal ideal domains]] in the following sense — in a PID any increasing chain of ideals stabilises (see the [[Abstract algebra --- math-171/notes/Unique factorisation#_theorem _ Every PID is a UFD|proof that PIDs are UFDs]]). Noetherian rings just have this property.
 
 ##### _definition:_ Noetherian rings
 

@@ -109,7 +109,7 @@ The kernel of the homomorphism $\varphi : \mathbb{F}[z] \to \mathbb{F}[T]$ by $p
 
 ###### _proof:_
 
-Since there exists an annihilating polynomial, the kernel of $\varphi$ is non-trivial. $\mathbb{F}[z]$ is a [[Abstract algebra --- math-171/notes/Factorisation in special rings#Euclidean domains|Euclidean domain]] with norm given by the degree of the polynomial. Since [[Abstract algebra --- math-171/notes/Factorisation in special rings#_proposition _ Euclidean domains are principal ideal domains|Euclidean domains are principal]], $\ker \varphi = (q)$ where $q$ is a non-zero element of $\ker \varphi$ of minimal degree. By multiplying by a unit in $\mathbb{F}$, this can be chosen to be monic.
+Since there exists an annihilating polynomial, the kernel of $\varphi$ is non-trivial. $\mathbb{F}[z]$ is a [[Abstract algebra --- math-171/notes/Unique factorisation#Euclidean domains|Euclidean domain]] with norm given by the degree of the polynomial. Since [[Abstract algebra --- math-171/notes/Unique factorisation#_proposition _ Euclidean domains are principal ideal domains|Euclidean domains are principal]], $\ker \varphi = (q)$ where $q$ is a non-zero element of $\ker \varphi$ of minimal degree. By multiplying by a unit in $\mathbb{F}$, this can be chosen to be monic.
 
 ##### _corollary:_ annihilating polynomials are multiples of the minimal polynomial
 

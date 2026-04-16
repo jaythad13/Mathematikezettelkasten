@@ -44,7 +44,7 @@ Since quadratic forms can be diagonalised, this implies that [[Algebraic geometr
 
 ##### _definition:_ factorial schemes
 
-$X$ is a **factorial scheme** if each stalk $\mathscr{O}_{X, p}$ is a [[Abstract algebra --- math-171/notes/Factorisation in special rings#_definition _ unique factorisation domains|unique factorisation domain]].
+$X$ is a **factorial scheme** if each stalk $\mathscr{O}_{X, p}$ is a [[Abstract algebra --- math-171/notes/Unique factorisation#_definition _ unique factorisation domains|unique factorisation domain]].
 
 ---
 
