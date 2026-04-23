@@ -104,7 +104,7 @@ If $f$ has degree $d$, $X$ is said to be a curve of degree $d$.
 
 ---
 
-Note that projective plane curves are compact — they are closed subsets (since zero loci are closed) of the compact manifold $\mathbb{C} \mathbb{P}^{2}$, and [[Topology --- math-147/notes/Compactness#_proposition _ closed subspaces of compact spaces are compact|thus]], compact
+Note that projective plane curves are compact — they are closed subsets (since zero loci are closed) of the compact manifold $\mathbb{C} \mathbb{P}^{2}$, and [[Topology --- math-147/notes/Compactness#_proposition _ closed subspaces of compact spaces are compact|thus]], compact.
 
 ### Projective curves and complete intersections
 
@@ -118,13 +118,13 @@ It has the structure of a compact Riemann surface, with local coordinates $x_{i}
 
 ---
 
-However, complete intersections are not the only 
+However, complete intersections are not the only curves in projective space.
 
 ##### _example:_ the twisted cubic
 
 The twisted cubic is the image of $H : \mathbb{C} \mathbb{P}^1 \to \mathbb{C} \mathbb{P}^3$ by $(x : y) \mapsto (x^{3} : x^{2} y : xy^{2} : y^{3})$. This curve is the zero locus of three polynomials (and cannot be written as the zero locus of two) — $f_{1}(x_{0} : x_{1} : x_{2} : x_{3}) = x_{0} x_{3} - x_{1} x_{2}$, $f_{2}(x_{0} : x_{1} : x_{2} : x_{3}) = x_{0} x_{2} - x_{1}^{2}$ and $f(x_{0} : x_{1} : x_{2} : x_{3}) = x_{1} x_{3} - x^{2}$.
 
-However, near any point on the curve, only two of the three equations are necessary, so it really is a Riemann surface in $\mathbb{C} \mathbb{P}^3$.
+However, near any point on the curve, only two of the three equations are necessary, so it is locally isomorphic to a complete intersection curve, and thus, a Riemann surface in $\mathbb{C}\mathbb{P}^3$.
 
 ---
 
@@ -132,7 +132,7 @@ This motivates the definition of a local complete intersection.
 
 ##### _definition:_ local complete intersection curve
 
-A **(smooth) local complete intersection curve** $X$ in $\mathbb{C} \mathbb{P}^n$ is the zero locus of a set of homogeneous polynomials, such that near each point $p \in X$, the curve is described by $n - 1$ of the polynomials, and the derivative of the $n - 1$ polynomials has maximal rank $n - 1$ at $p$.
+A **(smooth) local complete intersection curve** $X$ in $\mathbb{C} \mathbb{P}^n$ is the zero locus of a set of homogeneous polynomials, such that near each point $p \in X$, the curve is isomorphic to the zero locus of some $n - 1$ of the polynomials, and the derivative of the $n - 1$ polynomials has maximal rank $n - 1$ at $p$.
 
 Again, it has the structure of a compact Riemann surface with local coordinates $x_{i} / x_{j}$ near every point.
 
