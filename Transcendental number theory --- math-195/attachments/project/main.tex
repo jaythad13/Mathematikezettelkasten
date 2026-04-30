@@ -1,0 +1,175 @@
+\documentclass[12 pt, letterpaper]{amsart}
+\usepackage{personal-preamble}
+
+\title{Ap\'ery's theorem and algebraic geometry}
+
+\author{Jayden Thadani}
+
+\begin{document}
+
+\maketitle
+
+\section{What is Ap\'ery's theorem?}
+
+\begin{theorem}[Ap\'ery's theorem as on his gravestone]
+	\[
+		1 + \frac{1}{8} + \frac{1}{27} + \frac{1}{64} + \cdots \neq \frac{p}{q}
+	\]
+	(for any $p, q \in \mathbb{Z}$).
+\end{theorem}
+
+More specifically, Ap\'ery's theorem is proving irrationality of the special value $\zeta(3)$ where $\zeta$ is the Riemann zeta function.
+
+\begin{definition}
+	The Riemann zeta function is the unique meromorphic function $\zeta : \mathbb{C} \setminus \{ 1 \} \to \mathbb{C}$ with
+	\[
+		\zeta(s) = \sum_{n = 1}^{\infty} \frac{1}{n^{s}}
+	\]
+	for all $s$ with $\operatorname{Re} s > 1$.
+\end{definition}
+
+Most people were sceptical of Ap\'ery's announced talk ``Sur l'irrationalit\'e de $\zeta(3)$''. Euler had shown that
+\[
+	\zeta(2k) = (-1)^{k - 1} \frac{(2 \pi)^{2k}}{2 (2k)!} B_{2k}
+\]
+for all $k \in \mathbb{N}$, and thus, $\zeta(2k)$ is irrational. (Here $B_{2k}$ are the rational Bernoulli numbers). However, the problem of the arithmetic nature of $\zeta(2k + 1)$ had been open since Euler and there were (and still are) no known useful closed forms for $\zeta(2k + 1)$. The closest there is to an analogue of Euler's formula is a formula of Ramanujan that can be used to show that $\zeta(2n + 1)$ is the sum of a rational multiple of $\pi^{2n + 1}$ and two rapidly convergent series.
+
+\section{How he did it}
+
+People were generally unconvinced even after Ap\'ery gave his lecture --- mostly because he only gave the following brief sketch with very few proofs. Even after it was proved, someone commented ``A victory for the French peasant,'' to which Nick Katz retorted, ``No! This is marvellous! It is something Euler could have done.'' The sketch below is from van der Pooten's report \cite{euler-missed-1979}.
+
+Ap\'ery used Dirichlet's criterion for irrationality.
+
+\begin{theorem}[Dirichlet]
+	Let $\alpha \in \mathbb{R}$. If there is a $\delta > 0$ and infinitely many rational approximations $p / q$ such that $0 < \lvert \alpha - p / q \rvert < q^{1 + \delta}$, then $\alpha$ is irrational.
+\end{theorem}
+
+First Ap\'ery noted the following alternate expression for $\zeta(3)$.
+
+\begin{proposition}
+	\[
+		\zeta(3) = \sum_{n = 1}^{\infty} \frac{1}{n^{3}} = \frac{5}{2} \sum_{n = 1}^{\infty} \frac{(-1)^{n - 1}}{n^{3} \binom{2n}{n}}
+	\]
+\end{proposition}
+
+This formula was well known and follows by series manipulations with some standard identities. The essential point is the following convergence. The error term on the right is the difference of partial sums in the equality above.
+
+\begin{proposition}
+	For positive integers $k \le n$, let
+	\[
+		c_{n, k} = \sum_{m = 1}^{n} \frac{1}{m^{3}} + \sum_{m = 1}^{k} \frac{(-1)^{m - 1}}{2m^{3} \binom{n}{m} \binom{n + m}{m}}.
+	\]
+	As $n \to \infty$, we have $c_{n, k} \to \zeta(3)$, uniformly in $k$.
+\end{proposition}
+
+The $c_{n, k}$ don't quite converge fast enough relative to its denominator to use Dirichlet's criterion. However, we have some control on how bad they are.
+
+\begin{lemma}
+	\[
+		2 \binom{n + k}{k} c_{n, k} \in \mathbb{Z} \oplus \mathbb{Z}[2^{-3}] \oplus \cdots \oplus \mathbb{Z}[n^{-3}] \cong \mathbb{Z}[L(n)^{-3}].
+	\]
+	Here $\mathbb{Z}[1/q]$ denotes the subgroup of (the additive group) $\mathbb{Q}$ consisting of (non-reduced) rationals with denominator $q$. We write $L(n)$ for $\operatorname{lcm}(1, \dots, n)$.
+\end{lemma}
+
+\begin{proof}[Proof sketch]
+	This follows by some standard binomial identities and the fact that
+\[
+	\operatorname{ord}_{p} \binom{n}{m} \le \operatorname{ord}_{p} L(n) - \operatorname{ord}_{p}m.
+\]
+Applying this, we see that each prime divides the denominator at most $\operatorname{ord}_{p} m + \operatorname{ord}_{p} L(k) + \operatorname{ord}_{p} L(n) \le \operatorname{ord}_{p} L(n)^{3}$ times.
+\end{proof}
+
+The idea is to accelerate the convergence $c_{n, k} \to 0$ by modifying the two series $a_{n, k} = c_{n, k} \binom{n + k}{k}$ and $b_{n, k} = \binom{n + k}{k}$. Specifically, we write
+\begin{align*}
+	a_{n, k}' & = a_{n, n - k} \\
+	a_{n, k}'' & = \binom{n}{k} a_{n, k}' \\
+	a_{n, k}''' & = \sum_{j = 0}^{k} \binom{k}{j} a_{n, j}'' \\
+	a_{n, k}'''' & = \binom{n}{k} a_{n, k}''' \\
+	a_{n, k}''''' & = \sum_{j = 0}^{k} \binom{k}{j} a_{n, j}''''.
+\end{align*}
+and we do the same thing to get $b_{n, k}'''''$. 
+
+As $n \to 0$ we still have $a_{n, k}''''' / b_{n, k}''''' \to \zeta(3)$ (each successive step preserves the limiting ratio). Also, since our transforms were all integer linear combinations, we still have the same upper bound on how bad the denominator of $a_{n, k}'''''$ can be. We now choose $a_{n} = a_{n, n}'''''$ and $b_{n} = b_{n, n}'''''$.
+
+Ap\'ery then made the astonishing claim that $a_{n}$ and $b_{n}$ satisfy the recurrence relation
+\[
+	n^{3} u_{n} = (34 n^{3} - 51 n^{2} + 27 n - 5) u_{n - 1} + (n - 1)^{3} u_{n - 2} \quad \text{for} \quad n \ge 2
+\]
+with initial conditions $a_{0} = 0, a_{1} = 6$ and $b_{0} = 1, b_{1} = 5$ respectively. This is surprising for many reasons, mostly because we would expect $u_{n}$ not to have all integral solutions starting from integral initial conditions. No one could figure out how to prove this at the conference where it was announced --- it took until two months later when Don Zagier saw it. 
+
+Thankfully we don't need the whole identity to prove irrationality. (We will use it later to understand where these coefficients come from though). Ap\'ery just uses this property to show the following identity
+\[
+	a_{n} b_{n - 1} - a_{n - 1} b_{n} = \frac{(n - 1)^3}{n^{3}} (a_{n - 1} b_{n - 2} - a_{n - 2} b_{n - 1}).
+\]
+From the initial conditions, we get $a_{n} b_{n - 1} - a_{n - 1} b_{n} = 6 / n^{3}$ and ``inducting from infinity'' we see that
+\[
+	\lvert \zeta(3) - a_{n} / b_{n} \rvert = \sum_{k = n + 1}^{\infty} \frac{6}{k^{3} b_{k} b_{k - 1}} \le \frac{6 \zeta(3)}{b_{n}^{2}}.
+\]
+Now all we have to do is fix the fact that the $a_{n}$ are not integral. Note that from the recursion we have $b_{n} \in O(\alpha^{n})$ for some $\alpha \in \mathbb{R}$. Specifically, $\alpha = (1 + \sqrt{2})^{4} > e^{3}$. 
+
+Write $p_{n} = 2 L(n)^{3} a_{n}$ and $q_{n} = 2 L(n)^{3} b_{n}$. Now we have $q_{n} \in O(\alpha^{n} e^{3n}) \subseteq O(\alpha^{2n - \varepsilon})$ and finally
+\[
+	\lvert \zeta(3) - p_{n} / q_{n} \rvert \in O(1 / \alpha^{2n}) \in O(1 / q_{n}^{1 + \delta}).
+\]
+
+\section{What are these mysterious constants? Or, the geometry}
+
+When Ap\'ery's was asked where these formulae came from, he said that they grew in his garden. Some papers of Beukers' offer more intuition. The idea is that the generating functions of the $a_{n}$ and $b_{n}$ are actually solutions of a Picard--Fuchs differential equation. This differential equation controls the variation of algebraic differential forms on a family of surfaces $\{ X_{t} \}_{t \in \mathbb{P}^{1}}$ as $t$ varies.
+
+These surfaces are not just any surfaces --- they are a nice family of nice (K3) surfaces. Each $X_{t}$ is basically (birationally equivalent to) a double cover of $\mathbb{P}^{2}$ with branching at some elliptic curve $C_{t} \subseteq \mathbb{P}^{2}$. This is all proved in \cite{k3-surfaces-1984}.
+
+Conjecturally, all periods can be obtained by integrating algebraic differential forms over algebraic cycles on (nice) varieties. This is one explanation for why we might see $\zeta(3)$ coming out from all this geometry.
+
+I will sketch more details in broad strokes. Let $A(t) = \sum a_{n} t^{n}$ and $B(t) = \sum b_{n} t^{n}$ be generating functions.
+
+Since the denominators $b_{n} = \sum \binom{n}{k}^{2} \binom{n + k}{k}^{2}$, then we can write
+\[
+	b_{n} = \frac{1}{2 \pi i} \int_{\lvert x \rvert} p_{n}(x) p_{n}(1 / x) \, dx 
+\]
+for some Laurent polynomial with $-k$th coefficient $\binom{n}{k} \binom{n + k}{k}$. Then by some integration tricks and substitutions found in \cite{beukers-1979} we can write
+\[
+	B(t) = \left (\frac{1}{2 \pi i} \right )^{3} \int_{S} \frac{dx \, dy \, dz}{1 - (1 - xy)z - txyz(1 - x)(1 - y)(1 - z)}.
+\]
+where $S \subseteq \mathbb{C}^{3}$ is a closed of complex dimension $3$. Let $\Omega_{t}$ be the differential form above.
+
+For each specific $t$, the vanishing locus
+\[
+	\{ (x, y, z) \mid 1 - (1 - xy)z - txyz(1 - x)(1 - y)(1 - z) = 0 \} \subseteq \mathbb{C}^{3}
+\]
+is an algebraic surface, which defines a projective algebraic surface $X_{t} \subseteq \mathbb{C} \mathbb{P}^{3}$. Note that $X_{t}$ is exactly the pole locus of $\Omega_{t}$. 
+
+By some magic of Griffiths \cite{griffiths-1969} we can get a holomorphic $2$-form $\omega_{t}$ exactly on this pole locus, and a $2$-cycle $\gamma$ in the zero locus such that
+\[
+	A(t) = \int_{S} \Omega_{t} = \int_{\gamma} \omega_{t}.
+\]
+
+In fact, since the $X_{t}$ are nice (K3) there is only one holomorphic $2$-form on them (up to scalars), so $\omega_{t}$ is it.
+
+Since the $X_{t}$ vary nicely as $t$ varies over $\mathbb{P}^{1}$, the periods of the $\omega_{t}$ satisfy the Picard--Fuchs equation as a function in $t$. In fact, the set of all periods of $\omega_{t}$ spans the set of all solutions to the Picard--Fuchs equation.
+
+Specifically, let $D$ be the differential operator with
+\[
+	Df(t) = (t^{4} - 34t + t^{2}) \frac{df^{3}}{dt^{3}} + (6t^{3} - 153t^{2} + 3t)\frac{df^{2}}{dt^{2}} + (7t^{2} + 112t + 1) \frac{d f}{d t} + (t - 5)f.
+\]
+We have $DA(t) = 5$, $DB(t) = 0$, and thus, $D(B(t) - \zeta(3)A(t)) = - 5$. This tells us that the $a_{n}$ and $b_{n}$ satisfy the desired recurrences! (I'm lying a little here, in practice we prove the recurrences and use them to verify the Picard--Fuchs equation).
+
+This raises an important question --- can we go the other way? Can we start from a nice family of surfaces, compute solutions to their Picard--Fuchs equation, and then find approximants to special values?
+
+\section{Ap\'ery's constant in physics}
+
+$\zeta(3)$ shows up a lot in physics, particularly in statistical mechanics.
+
+Random edge-weighted graphs are used as a model for percolation. That is, we consider a graph $\Gamma$ and a weight function $w : E(\Gamma) \to \mathbb{R}$ where each $w(e)$ is drawn from some cumulative distribution $F$. Physicists are interested in the expected value of $\ell$, the weighted length of the minimal spanning tree of the graph.
+
+\begin{theorem}[\cite{frieze-1985}]
+	Suppose $\Gamma$ is the complete graph $K_{n}$. Consider $w, F, \ell$ as above. If $F$ is continuous with $F'(0) > 0$, then $\lim_{n \to \infty} \mathbb{E}(\ell) = \zeta(3) / D$.
+\end{theorem}
+
+For example, if the weights are chosen from a uniform distribution on the interval, then the cumulative distribution function is given by $F(x) = x$. Thus, $F'(0)$ and $\mathbb{E}(\ell) = \zeta(3) \approx 1.202$. The proof is non-trivial.
+
+In a similar sense, $\zeta(3)$ comes up in counting interactions in quantum electrodynamics.
+
+\bibliographystyle{halpha}
+\bibliography{references}
+
+\end{document}
