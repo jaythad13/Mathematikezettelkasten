@@ -10,7 +10,7 @@ Suppose $\mathbb{F}$ is a finite field. Recall the notion of characteristic
 
 ##### _definition:_ characteristic
 
-The characteristic of a ring $A$ is $\operatorname{char} A = \min \{ n \mid \underbrace{1 + \dots + 1}_{n \text{ times}} = 0 \}$.
+The **characteristic** of a ring $A$ is the positive integer $n$ such that $\varphi : \mathbb{Z} \to A$ has $\ker \varphi = (n)$.
 
 ---
 
