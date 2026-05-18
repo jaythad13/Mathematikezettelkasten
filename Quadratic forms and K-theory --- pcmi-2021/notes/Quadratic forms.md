@@ -44,7 +44,7 @@ A **homomorphism of quadratic spaces** or a **quadratic linear map** $T : V, q_{
 
 Choose a basis $e_{1}, \dots, e_{n}$ of $V$. Note that the following pieces of information are equivalent — a non-degenerate symmetric bilinear form, the (symmetric) matrix $A$ with $A_{i,j} = \beta(e_{i}, e_{j})$, and the corresponding quadratic form $q_{\beta}$. It's easy to see that the first two are equivalent (by bilinearity) and they determine the third. The quadratic form determines the bilinear form by
 $$
-\beta(v, w) = \frac{q(v + w) - q(x) - q(y)}{2}.
+\beta(v, w) = \frac{q(v + w) - q(v) - q(w)}{2}.
 $$
 Here we use the fact that $2 \in \mathbb{F}^\times$. Thus, this allows us to denote the corresponding quasi-inner product for a quadratic space by $\beta_{q}$ or just $\beta$ when it's clear from context.
 
@@ -52,11 +52,11 @@ Finally, note that quasi-inner products over $\mathbb{R}$ are not the same as in
 
 We are interested in when two quadratic forms over the same vector space are isomorphic, and when there is a some non-zero $v \in V$ such that $q(v) = 0$. More generally, we are interested in which elements of $\mathbb{F}$ appear as $q(v)$ for some $v \in V$.
 
-##### _definition:_ isotropic, represents
+##### _definition:_ isotropic, isotropic vector,ll represents
 
-A quadratic space $V, q$ is **isotropic** if there is some non-zero $v \in V$ such that $q(v) = 0$.
+A quadratic space $V, q$ is **isotropic** if there is some non-zero $v \in V$ such that $q(v) = 0$. Such a $v$ is called an **isotropic vector**.
 
-More generally, $V, q$ **represents $a \in \mathbb{F}$** if there is some non-zero $v \in V$ such that $q(v) = a$.
+Generally, $V, q$ **represents $a \in \mathbb{F}$** if there is some non-zero $v \in V$ such that $q(v) = a$.
 
 ---
 
