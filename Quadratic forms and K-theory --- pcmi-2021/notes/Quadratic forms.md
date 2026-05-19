@@ -52,7 +52,7 @@ Finally, note that quasi-inner products over $\mathbb{R}$ are not the same as in
 
 We are interested in when two quadratic forms over the same vector space are isomorphic, and when there is a some non-zero $v \in V$ such that $q(v) = 0$. More generally, we are interested in which elements of $\mathbb{F}$ appear as $q(v)$ for some $v \in V$.
 
-##### _definition:_ isotropic, isotropic vector,ll represents
+##### _definition:_ isotropic, isotropic vector, anisotropic, represents
 
 A quadratic space $V, q$ is **isotropic** if there is some non-zero $v \in V$ such that $q(v) = 0$. Such a $v$ is called an **isotropic vector**.
 

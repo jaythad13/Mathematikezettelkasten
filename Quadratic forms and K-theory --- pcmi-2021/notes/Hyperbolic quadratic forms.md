@@ -36,7 +36,3 @@ Any quadratic form $V, q$ decomposes uniquely into $H^{\oplus r} \oplus U$, wher
 ---
 
 This reduces the work of classifying quadratic forms to classifying anisotropic quadratic forms. In fact, we can classify anisotropic quadratic forms using this too. To understand if two anisotropic quadratic spaces $V, W$ are isomorphic, we note that $V$ represents $a$ if and only if $W$ does too. Choose $a = q(v)$. Then $V \oplus \left< -a \right>$ is isotropic and $V \cong W$ only if $W \oplus \left< -a \right>$ is isotropic too. If $W \oplus \left< -a \right>$ is anisotropic, then $V \not \cong W$. Else, split off hyperbolic planes from $V \oplus \left< -a \right>$ and $W \oplus \left< -a \right>$ to get two smaller-dimensional dimensional quadratic spaces $V', W'$. $V \cong W$ if and only if $V \oplus \left< -a \right> \cong W \oplus \left< -a \right>$ if and only if $V' \cong W'$.
-
-This is easiest to see in an example.
-
-### Classifying quadratic forms over a finite field
