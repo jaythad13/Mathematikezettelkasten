@@ -1,0 +1,148 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{PCMI USS 2021}
+\assignment{Exercises 2}
+\duedate
+
+\begin{document}
+
+\problemlist{General exercises}
+
+Let $\mathbb{F}$ be a field of characteristic not $2$.
+
+\begin{problem}[(1)]
+	Let $\mathbb{E}$ be a (not necessarily finite) extension of $\mathbb{F}$. Given a quadratic space $V, q$ over $\mathbb{F}$, construct the quadratic space $V_{\mathbb{E}}, q_{\mathbb{E}}$ where $V_{\mathbb{E}} = V \otimes_{\mathbb{F}} \mathbb{E}$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[(2)]
+	Let $d \in \mathbb{F}^{\times} \setminus \mathbb{F}^{\times 2}$ and form the quadratic extension $\mathbb{F}(\sqrt{d})$. Let $V, q$ be a quadratic space over $\mathbb{F}$ which is anisotropic but such that $V_{\mathbb{F}(\sqrt{d})}, q_{\mathbb{F}(\sqrt{d})}$ is isotropic. Then show that $V$ contains $\left < a, -ad \right >$ as a summand for some $a \in \mathbb{F}^{\times}$ (and conversely).
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[(3)]
+	Let $V, q$ be any two-dimensional quadratic space. Show that $V$ is hyperbolic if and only if $\operatorname{disc}(V, q) = -1 \in \mathbb{F}^{\times} / \mathbb{F}^{\times 2}$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[(4)]
+	Let $V, q$ and $V', q'$ be two-dimensional quadratic spaces. Show that $V, q \cong V', q'$ if and only if they have the same discriminant and they both represent a common element of $\mathbb{F}$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[(5)]
+	Let $V, q$ be a quadratic space and let $a \in \mathbb{F}^{\times}$. Show that $V, q$ represents $a$ if and only if  $V \oplus \left < -a \right >$ is isotropic.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[(6)]
+	Suppose the $u$-invariant of $\mathbb{F}$ is $n$. Show that, for any $n$-dimensional quadratic space $V, q$ over $\mathbb{F}$ and any $a \in \mathbb{F}^{\times}$, there exists $v \in V$ such that $q(v) = a$.
+\end{problem}
+
+\pagebreak
+
+\problemlist{Exercises on $C_{1}$ fields}
+
+\begin{problem}[(1)]
+	Let $\mathbb{F}_{q}$ be a finite field. Let $p(x_{1}, \dots, x_{n})$ be a homogeneous polynomial of degree $d$ in $n$ variables. Suppose $n > d$. Then there exists a non-trivial solution of $p(x_{1}, \dots, x_{n}) = 0$ over $\mathbb{F}_{q}$. The number of solutions, including the trivial solution is  divisible by $p$ (Chevalley--Warning) where $p$ is the prime that $q$ is a power of. 
+
+	Prove this as follows:
+	\begin{enumerate}
+		\item For $a \in \mathbb{F}_{q}^{\times}$, we have $a^{q - 1} = 1$.
+		\item The number of zeroes of $p(x_{1}, \dots, x_{n})$ is congruent modulo $p$ to $-\sum_{a_{1}, \dots, a_{n}} p(a_{1}, \dots, a_{n})^{q - 1}$.
+		\item For $i < q - 1$, we have $\sum_{a \in \mathbb{F}_{q}} a^{i} = 0$ in $\mathbb{F}_{q}$.
+		\item Expand out the sum above. Each monomial is of the form $c x_{1}^{r_{1}} \cdots x_{n}^{r_{n}}$ with $\sum_{i = 1}^{n} r_{i} = d (q - 1)$. In particular, one of the $r_{i}$ satisfies $r_{i} < q - 1$. Deduce that the sum vanishes in $\mathbb{F}_{q}$.
+		\item Deduce the claim
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[(2)]
+	Let $p(x_{1}, \dots, x_{n})$ be a homogeneous polynomial of degree $d$ in $n$ variables over the function field $\mathbb{C}(t)$. If $d < n$, then $p(x_{1}, \dots, x_{n}) = 0$ has a solution (special case of Tsen's theorem). In particular, any three-dimensional quadratic form over $\mathbb{C}(t)$ is isotropic.
+	\begin{enumerate}
+		\item Without loss of generality, suppose the coefficients of $p$ are polynomials in $\mathbb{C}[t]$ 
+
+		\item Take $x_{i} = \sum_{j = 0}^{m} a_{ij} t^{j}$ for some coefficients $a_{ij} \in \mathbb{C}$ and some $m \gg 0$. In this case, the equation $p(x_{1}, \dots, x_{n}) = 0$ can be regarded as a system of homogeneous polynomial equations over $\mathbb{C}$ in  $n(m + 1)$ variables. However, the number of equations needed is given by the number of degree $md + O(1)$. For $m \gg 0$, show that there are more variables than equations.
+
+		\item Here we use the following basic fact: given $r$ homogeneous polynomial equations in $\mathbb{C}^{\times}$, if $r < s$, they have a non-trivial common root. Conclude the proof of the result.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+	
+\problemlist{The $u$-invariant}
+
+\begin{problem}[(1)]
+	Let $\mathbb{C}((t))$ be the Laurent series field of $\mathbb{C}$. Show that any three dimensional quadratic space over $\mathbb{C}((t))$ is isotropic.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[(2)]
+	More generally, show that the  $u$-invariant of the Laurent series field $\mathbb{F}((t))$ is twice the $u$-invariant of $\mathbb{F}$ (for any field $\mathbb{F}$, of characteristic not $2$). You will use the fact that any element in $1 + t \mathbb{F}[[t]]$ has a square root.
+\end{problem}
+
+\pagebreak
+
+\problemlist{The Cartan--Dieudonn\'e theorem}
+
+Let $V, q$ be a quadratic space over $\mathbb{F}$. In this sequence of exercises we will prove the Cartan--Dieudonn\'e theorem: any element of $\mathrm{O}(V, q)$ is a product of at most $\dim V$ reflections.
+
+\begin{problem}[(1)]
+	Prove the weaker assertion that any element $T \in \mathrm{O}(V, q)$ is a product of some number of reflections.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[(2)]
+	The argument in (1) does not quite manage to prove that any $T$ is a product of at most $n$ reflections. The issue is that given anisotropic vectors $v, w \in V$ with $q(v) = q(w)$, there need not exist a reflection $R$ such that $Rv = w$. Such a reflection does exist if $v - w$ is anisotropic. Conclude that if $V$ itself is anisotropic, then the argument of part (1) does suffice to prove the Cartan--Dieudonn\'e theorem.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[(3)]
+	By induction, assume the result for all quadratic spaces of dimension less than  $n$. The arguments above then show that $T$ can be written as a product of at most $n + 1$ reflections.
+
+	Show that if there exists an isotropic vector $v \in V$ with $v - Tv$ either zero or anisotropic, then we can conclude the result for $T$ by induction.
+\end{problem}
+
+\pagebreak
+
+Assume that that for every anisotropic $v \in V$, the vector $v - Tv$ is isotropic, but non-zero.
+
+\begin{problem}[(4)]
+	In general, any vector in any quadratic space is a ``limit'' of anisotropic vectors. (Work over $\mathbb{F} = \mathbb{C}$ where this is literally true, or form some algebraic analogue). Therefore, for any vector $v \in V$, $v - Tv$ is isotropic.. Let $S : V \to V$ be the transformation $\operatorname{id}_{V} - T$. Show that:
+	\begin{enumerate}
+		\item For any $v, w \in V$, we have $\beta(Sv, Sw) = 0$.
+		\item Furthermore, $\ker S$ is a subspace consisting of isotropic vectors, and thus, $\ker S \subseteq (\ker S)^{\perp}$.
+		\item Show also that $\ker S = (\operatorname{img} S)^{\perp}$. Conclude that $S^{2} = 0$.
+	\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[(5)]
+	Use the inclusions above and basic linear algebra to show that $\dim \operatorname{img} S = \dim \ker S = n / 2$ (in particular, $n$ is even) and these inequalities are even.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[(6)]
+	Using $S^{2} = 0$, conclude that $T$ has determinant $1$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[(7)]
+	Using the inductive hypothesis on $n$, we saw that $T$ isa product of at most $n + 1$ reflections. Write $T$ as such a product. Show that there cannot be exactly $n + 1$ reflections in the product since $\det f = 1$.
+\end{problem}
+
+\end{document}
