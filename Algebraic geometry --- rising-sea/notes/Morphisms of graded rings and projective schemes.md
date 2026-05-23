@@ -81,3 +81,21 @@ Also consider the map $x, y, z \mapsto u, v, 0$. [[Algebraic geometry --- rising
 This also gives an isomorphism $\operatorname{Proj} S_{\bullet} \to \mathbb P^1_{\mathbb{F}} = \operatorname{Proj} \mathbb{F}[u, v]$.
 
 ---
+
+Not only can different graded ring morphisms give the same scheme morphism, but also not all morphisms $\operatorname{Proj} R_{\bullet} \to \operatorname{Proj} S_{\bullet}$ come from graded ring morphisms $S_{\bullet} \to R_{\bullet}$.
+
+### Veronese subrings
+
+One useful example of the non-faithfulness of $\operatorname{Proj}$ is that of Veronese subrings.
+
+##### _definition:_ Veronese subrings
+
+The **$n$th Veronese subring** of $S_{\bullet}$ is $S_{n \bullet} = \bigoplus_{i = 0}^\infty S_{ni} \subseteq S_{\bullet}$.
+
+---
+
+##### _proposition:_ Veronese subrings give isomorphisms of schemes
+
+Let $\varphi : S_{n \bullet} \to S_{\bullet}$ be the natural inclusion. Then $\operatorname{Proj} \varphi$ is an isomorphism $\operatorname{Proj} S_{\bullet} \to S_{n \bullet}$
+
+---
