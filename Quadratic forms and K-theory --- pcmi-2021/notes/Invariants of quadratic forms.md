@@ -8,7 +8,7 @@ tags:
 
 Recall that the theory of hyperbolic quadratic forms reduces the work of classifying of all quadratic forms to classifying anisotropic forms.
 
-Thus, in classification of quadratic forms, the following idea is useful.
+Thus, in classification of quadratic forms, the following invariants are useful.
 
 ##### _definition:_ $u$-invariant
 
@@ -82,7 +82,7 @@ $\mathbb{F}_{q}^\times / \mathbb{F}_{q}^{\times_{2}} \cong \mathbb{Z} / (2)$
 
 ###### _proof:_
 
-By the proof above, $\# \mathbb{F}_{q}^{\times 2} \geq (q - 1) / 2$. Thus, $\# (\mathbb{F}_{q}^\times / \mathbb{F}_{q}^{\times 2}) \leq 2$. Not every element of $\mathbb{F}_{q}^\times$ is a square — in odd characteristic there are always  squares $a^{2}$ that have two square roots $\pm a$ and there are only $q - 1$ possible square roots to go around.
+By the proof above, $\# \mathbb{F}_{q}^{\times 2} \geq (q - 1) / 2$. Thus, $\# (\mathbb{F}_{q}^\times / \mathbb{F}_{q}^{\times 2}) \leq 2$. Not every element of $\mathbb{F}_{q}^\times$ is a square — in odd characteristic there are always  squares $a^{2}$ that have two distinct square roots $\pm a$ and there are only $q - 1$ possible square roots to go around.
 
 ---
 
