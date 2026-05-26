@@ -70,7 +70,7 @@ There is a particular nice subgroup of the orthogonal group. For every $v \in V$
 
 ##### _definition:_ reflections
 
-Suppose $0 \neq u \in V$. The **reflection through $u$** is the quadratic linear isomorphism $R_{u} : V \to V$ given by
+Suppose $u \in V$ has $q(u) \neq 0$. The **reflection through $u$** is the quadratic linear isomorphism $R_{u} : V \to V$ given by
 $$
 R_{u}v = v - \frac{2 \beta(u, v)}{q(u)} u.
 $$
@@ -81,7 +81,7 @@ We will find the following lemma very useful.
 
 ##### _lemma:_ reflections act transitively on spheres
 
-For any $v, w \in V$ with $q(v) = q(w)$, there is a reflection $R_{u}$ such that $R_{u} v = w$.
+For any $v, w \in V$ with $q(v) = q(w)$, there is a reflection $R_{u}$ such that either $R_{u} v = w$ or $R_{u}v = -w$.
 
 ###### _proof:_
 is in [[Quadratic forms and K-theory --- pcmi-2021/attachments/exercises/ex 1/ex 1.pdf|the exercises]].

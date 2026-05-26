@@ -13,7 +13,7 @@ In the study of isotropic quadratic spaces, most important one is the hyperbolic
 
 The **hyperbolic plane** $H$ is the quadratic space $\left< 1, -1 \right>$.
 
-Equivalently, $H$ is a quadratic space with a basis of two [[Quadratic forms and K-theory --- pcmi-2021/notes/Quadratic forms#_definition _ isotropic, isotropic vector, represents|isotropic vectors]] $e_{1}, e_{2}$ that have non-zero $\beta_{H}(e_{1}, e_{2})$.
+Equivalently, $H$ is a quadratic space with a basis of two [[Quadratic forms and K-theory --- pcmi-2021/notes/Quadratic forms#_definition _ isotropic, isotropic vector, represents|isotropic vectors]] $e_{1}, e_{2}$ that have non-zero $b = \beta_{H}(e_{1}, e_{2})$. The diagonalisation is given by $f_{1} = e_{1} + e_{2} / 2b, f_{2} = e_{1} - e_{2} / 2b$.
 
 ---
 
