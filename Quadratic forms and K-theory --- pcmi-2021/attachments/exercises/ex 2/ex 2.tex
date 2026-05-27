@@ -51,12 +51,12 @@ Let $\mathbb{F}$ be a field of characteristic not $2$.
 \problemlist{Exercises on $C_{1}$ fields}
 
 \begin{problem}[(1)]
-	Let $\mathbb{F}_{q}$ be a finite field. Let $p(x_{1}, \dots, x_{n})$ be a homogeneous polynomial of degree $d$ in $n$ variables. Suppose $n > d$. Then there exists a non-trivial solution of $p(x_{1}, \dots, x_{n}) = 0$ over $\mathbb{F}_{q}$. The number of solutions, including the trivial solution is  divisible by $p$ (Chevalley--Warning) where $p$ is the prime that $q$ is a power of. 
+	Let $\mathbb{F}_{q}$ be a finite field. Let $f(x_{1}, \dots, x_{n})$ be a homogeneous polynomial of degree $d$ in $n$ variables. Suppose $n > d$. Then there exists a non-trivial solution of $f(x_{1}, \dots, x_{n}) = 0$ over $\mathbb{F}_{q}$. The number of solutions, including the trivial solution is  divisible by $p$ (Chevalley--Warning) where $p$ is the prime that $q$ is a power of. 
 
 	Prove this as follows:
 	\begin{enumerate}
 		\item For $a \in \mathbb{F}_{q}^{\times}$, we have $a^{q - 1} = 1$.
-		\item The number of zeroes of $p(x_{1}, \dots, x_{n})$ is congruent modulo $p$ to $-\sum_{a_{1}, \dots, a_{n}} p(a_{1}, \dots, a_{n})^{q - 1}$.
+		\item The number of zeroes of $f$ is congruent modulo $p$ to $-\sum_{a_{1}, \dots, a_{n}} f(a_{1}, \dots, a_{n})^{q - 1}$.
 		\item For $i < q - 1$, we have $\sum_{a \in \mathbb{F}_{q}} a^{i} = 0$ in $\mathbb{F}_{q}$.
 		\item Expand out the sum above. Each monomial is of the form $c x_{1}^{r_{1}} \cdots x_{n}^{r_{n}}$ with $\sum_{i = 1}^{n} r_{i} = d (q - 1)$. In particular, one of the $r_{i}$ satisfies $r_{i} < q - 1$. Deduce that the sum vanishes in $\mathbb{F}_{q}$.
 		\item Deduce the claim
@@ -66,11 +66,11 @@ Let $\mathbb{F}$ be a field of characteristic not $2$.
 \pagebreak
 
 \begin{problem}[(2)]
-	Let $p(x_{1}, \dots, x_{n})$ be a homogeneous polynomial of degree $d$ in $n$ variables over the function field $\mathbb{C}(t)$. If $d < n$, then $p(x_{1}, \dots, x_{n}) = 0$ has a solution (special case of Tsen's theorem). In particular, any three-dimensional quadratic form over $\mathbb{C}(t)$ is isotropic.
+	Let $f(x_{1}, \dots, x_{n})$ be a homogeneous polynomial of degree $d$ in $n$ variables over the function field $\mathbb{C}(t)$. If $d < n$, then $f(x_{1}, \dots, x_{n}) = 0$ has a solution (special case of Tsen's theorem). In particular, any three-dimensional quadratic form over $\mathbb{C}(t)$ is isotropic.
 	\begin{enumerate}
-		\item Without loss of generality, suppose the coefficients of $p$ are polynomials in $\mathbb{C}[t]$ 
+		\item Without loss of generality, suppose the coefficients of $f$ are polynomials in $\mathbb{C}[t]$ 
 
-		\item Take $x_{i} = \sum_{j = 0}^{m} a_{ij} t^{j}$ for some coefficients $a_{ij} \in \mathbb{C}$ and some $m \gg 0$. In this case, the equation $p(x_{1}, \dots, x_{n}) = 0$ can be regarded as a system of homogeneous polynomial equations over $\mathbb{C}$ in  $n(m + 1)$ variables. However, the number of equations needed is given by the number of degree $md + O(1)$. For $m \gg 0$, show that there are more variables than equations.
+		\item Take $x_{i} = \sum_{j = 0}^{m} a_{ij} t^{j}$ for some coefficients $a_{ij} \in \mathbb{C}$ and some $m \gg 0$. In this case, the equation $f(x_{1}, \dots, x_{n}) = 0$ can be regarded as a system of homogeneous polynomial equations over $\mathbb{C}$ in  $n(m + 1)$ variables. However, the number of equations needed is given by the number of degree $md + O(1)$. For $m \gg 0$, show that there are more variables than equations.
 
 		\item Here we use the following basic fact: given $r$ homogeneous polynomial equations in $\mathbb{C}^{\times}$, if $r < s$, they have a non-trivial common root. Conclude the proof of the result.
 	\end{enumerate}
