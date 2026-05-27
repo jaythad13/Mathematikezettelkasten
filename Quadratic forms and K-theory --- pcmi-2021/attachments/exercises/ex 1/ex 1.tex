@@ -54,11 +54,49 @@
 	Let $\alpha, \beta \in \mathbb{F}^{\times}$ with $\alpha^{2} + \beta^{2} \neq 0$. Show that the quadratic form $V, q \cong \left < 1, -(\alpha^{2} + \beta^{2}) \right >$ has the property that the direct sum $(V, q) \oplus (V, q)$ is hyperbolic. Further, show that $V$ is hyperbolic if and only if $\alpha^{2} + \beta^{2}$ is a square in $\mathbb{F}$.
 \end{problem}
 
+\begin{solution}
+	Let $e_{1}, e_{2}, e_{3}, e_{4}$ be the basis corresponding to the diagonalisation
+	\[
+		(V, q) \oplus (V, q) \cong \left < 1, 1, -(\alpha^{2} + \beta^{2}), -(\alpha^{2} + \beta^{2}) \right >.
+	\]
+	For convenience, write $d = \alpha^{2} + \beta^{2}$.
+
+	Consider $v_{1} = \alpha e_{1} + \beta e_{2} + e_{3}, v_{2} = \alpha e_{1} + \beta e_{2} + e_{4}$. They are both isotropic vectors with non-zero inner product $\beta_{q}(v_{1}, v_{2}) = \alpha^{2} + \beta^{2}$. Thus, $U = \operatorname{span}(v_{1}, v_{2})$ is hyperbolic.
+
+	Now let $e_{1}, e_{2}$ be the basis of $V$ corresponding to the diagonalisation $V, q \cong \left < 1, -d \right >$. If $d = \gamma^{2} \in \mathbb{F}^{\times}$, then there is a quadratic isomorphism $V, q \to \left < 1, -1 \right >$ by $e_{1} \to e_{1}$ and $e_{2} \to \gamma e_{2}$. That is, if $\alpha^{2} + \beta^{2}$ is a square, then $V, q$ is hyperbolic. Since $q$ restricts to a quadratic form on $U$, we have $(V, q)^{\oplus 2} \cong (U, q_{\mid U}) \oplus (U^{\perp}, q_{\mid U^{\perp}})$. 
+
+	To show $U^{\perp} \cong H$ also, it suffices to prove $U^{\perp}$ is isotropic (since every isotropic quadratic space contains $H$, every $2$-dimensional isotropic quadratic space is $H$). Consider $v \in V$, written in the basis $e_{1}, e_{2}, e_{3}, e_{4}$ as $(x, y, z, w)$. The $v \in U^{\perp}$ are exactly those satisfying the equations $\beta(v, v_{1}) = \beta(v, v_{2}) = 0$, or equivalently,
+	\[
+		w = z = \frac{\alpha x + \beta y}{d}.
+	\]
+	The isotropic $v$ are exactly those satisfying $x^{2} + y^{2} - d(z^{2} + w^{2}) = 0$. Substituting the expressions for $z, w$ in terms of $x, y$ from above, this equation is
+	\[
+		(\alpha^{2} - \beta^{2}) x^{2} + 4 \alpha \beta xy + (\beta^{2} - \alpha^{2}) y^{2} = 0.
+	\]
+	It suffices to provide a non-trivial solution to this equation. Choose $y = 1$. Then resulting quadratic polynomial in $x$ has discriminant
+	\begin{align*}
+		\Delta & = 16 \alpha^{2} \beta^{2} - 4 (\alpha^{2} - \beta^{2})(\beta^{2} - \alpha^{2}) \\
+		       & = 4 (\alpha^{2} - \beta^{2})^{2} + 16 \alpha^{2} \beta^{2} \\
+		       & = 4(\alpha^{2} + \beta^{2}).
+	\end{align*}
+	Since $\Delta$ is a square, the resulting quadratic equation in $x$ has a root in $\mathbb{F}$, which suffices to prove that $(V, q)^{\oplus 2} \cong (U, q_{\mid U}) \oplus (U^{\perp}, q_{\mid U^{\perp}}) \cong H^{\oplus 2}$.
+
+	Conversely, if $\left < 1, -d \right >$ is hyperbolic, then it is isotropic. That is, there is a non-trivial solution $x^{2} - d y^{2} = 0$. Then $d = (x / y)^{2}$ is a square. That is, if $V, q$ is hyperbolic, then $-(\alpha^{2} + \beta^{2})$ is a square.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[(5)]
 	Suppose $d \in \mathbb{F}^{\times}$. Show that the collection of non-zero elements represented by the quadratic form $\left < 1, d \right >$ forms a subgroup of $\mathbb{F}^{\times}$.
 \end{problem}
+
+\begin{solution}
+	Let $G = \{ q(v) \neq 0 \mid v \in V \} \subseteq \mathbb{F}^{\times}$. We want to show $G \le \mathbb{F}^{\times}$.
+
+	$1 \in G$ since $1 = 1^{2} + d 0^{2}$. 
+
+	Suppose $x, y, z, w \in \mathbb{F}$ with $x^{2} + d y^{2}, z^{2} + d w^{2} \in \mathbb{F}^{\times}$. Then it's easy to verify that $(x^{2} + d y^{2})(z^{2} + d w^{2}) = (xz - dyw)^{2} + d (xw + yz)^{2}$ (it follows by the same trick as Diophantus' product of sum of squares identity. That is, $G$ is closed under products. This also allows us to show that $G$ is closed under taking inverses --- it leads us to try and solve the system $xz - dyw = 1, xw + yz = 0$. It is easy to verify that for $z = x / (x^{2} + d y^{2})$ and $w = y / (x^{2} + d y^{2})$ we have $(x^{2} + d y^{2}) (z^{2} + d w^{2}) = 1$.
+\end{solution}
 
 \pagebreak
 

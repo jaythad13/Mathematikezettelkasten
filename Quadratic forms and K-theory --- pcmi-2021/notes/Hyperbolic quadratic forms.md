@@ -23,7 +23,7 @@ Suppose $V, q$ is an [[Quadratic forms and K-theory --- pcmi-2021/notes/Quadrati
 
 ###### _proof:_
 
-Since $V$ is isotropic, there is some $v \in V$ with $q(v) = 0$. Let $w \in V$ have $\beta(v, w) \neq 0$. Such a $w$ exists by [[Quadratic forms and K-theory --- pcmi-2021/notes/Quadratic forms#_definition _ (non-degenerate, symmetric) bilinear forms, quadratic forms, quadratic spaces, homomorphisms of quadratic spaces, quadratic linear map|definition]]. Consider $\beta(w - \lambda v, w - \lambda v) = q(w) - 2 \lambda \beta(v, w)$. There is some $\lambda \in \mathbb{F}$ such that $\beta(w - \lambda v) = 0$. Thus, $v, w$ span $H$.
+Since $V$ is isotropic, there is some non-zero $v \in V$ with $q(v) = 0$. Choose $w \in V$ with $\beta(v, w) \neq 0$. Such a $w$ exists by [[Quadratic forms and K-theory --- pcmi-2021/notes/Quadratic forms#_definition _ (non-degenerate, symmetric) bilinear forms, quadratic forms, quadratic spaces, homomorphisms of quadratic spaces, quadratic linear map|definition]]. Then consider $w - \lambda v$ and vary $\lambda \in \mathbb{F}$. We have $q(w - \lambda v) = q(w) - 2 \lambda \beta(v, w)$. Choose $\lambda = \beta(v, w) / q(w)$ so that $q(w - \lambda v) = 0$. Also, $\beta(w - \lambda v, v) = -\lambda \neq 0$. Thus, $\operatorname{span}(v, w) \cong H$.
 
 By [[Quadratic forms and K-theory --- pcmi-2021/notes/Direct sums of quadratic spaces#_theorem _ Witt cancellation theorem or the cancellation theorem|the Witt cancellation theorem]], the smaller $U$ is determined up to isomorphism.
 
