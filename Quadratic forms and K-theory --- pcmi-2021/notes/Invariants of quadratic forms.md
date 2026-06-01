@@ -4,6 +4,7 @@ tags:
 - alg
 - nt
 - pcmi-2021/2
+- pcmi-2021/3
 ---
 
 Recall that the theory of hyperbolic quadratic forms reduces the work of classifying of all quadratic forms to classifying anisotropic forms.
@@ -26,13 +27,13 @@ $u(\mathbb{R}) = \infty$ since $\left< 1, \dots, 1 \right>$ is always anisotropi
 
 Another useful invariant is the discriminant.
 
-##### _definition:_ discriminant of a quadratic space
+##### _definition:_ determinant of a quadratic space
 
-Suppose $V, q$ is a quadratic space. Choose a basis $e_{1}, \dots, e_{n}$ of $V$, let $a \mapsto \overline{a}$ denote the map $\mathbb{F}_{q} \to \mathbb{F}_{q}^\times / \mathbb{F}_{q}^{\times 2}$, and let $A$ be the matrix with $A_{ij} = \beta(e_{i}, e_{j})$. Then the **discriminant** of $V, q$ is $\operatorname{disc}(V, q) = \overline{\det A}$.
+Suppose $V, q$ is a quadratic space. Choose a basis $e_{1}, \dots, e_{n}$ of $V$, let $a \mapsto \overline{a}$ denote the map $\mathbb{F}_{q} \to \mathbb{F}_{q}^\times / \mathbb{F}_{q}^{\times 2}$, and let $A$ be the matrix with $A_{ij} = \beta(e_{i}, e_{j})$. Then the **determinant** of $V, q$ is $\det (V, q) = \overline{\det A}$.
 
 ---
 
-Note that $\operatorname{disc}(\left< a_{1}, \dots, a_{n} \right>)$ is just $\overline{\prod a_{i}}$ then. It is invariant of the choice of basis — any change of basis changes the symmetric matrix as follows $A \mapsto B^\top A B$. Thus, $\det (B^\top A B) = \det A (\det B)^{2}$ and so $\overline{\det (B^\top A B)}$
+Note that $\det (\left< a_{1}, \dots, a_{n} \right>)$ is just $\overline{\prod a_{i}}$ then. It is invariant of the choice of basis — any change of basis changes the symmetric matrix as follows $A \mapsto B^\top A B$. Thus, $\det (B^\top A B) = \det A (\det B)^{2}$ and so $\overline{\det (B^\top A B)}$
 
 ### Quadratic forms over a finite field.
 
@@ -56,19 +57,19 @@ In dimension $1$, any $\left< a \right>$ is anisotropic. Suppose $a \in \mathbb{
 
 ---
 
-We can classify the quadratic forms of dimensions $1$ and $2$ by their discriminant (and dimension), and thus all quadratic forms. 
+We can classify the quadratic forms of dimensions $1$ and $2$ by their determinant (and dimension), and thus all quadratic forms. 
 
 ##### _theorem:_ classification of quadratic forms over a finite field
 
-Suppose $V, q_{V}$ and $W, q_{W}$ are two quadratic spaces. $V, q_{V} \cong W, q_{W}$ if and only if $\dim V = \dim W$ and $\operatorname{disc}(V, q_{V}) = \operatorname{disc}(W, q_{W})$.
+Suppose $V, q_{V}$ and $W, q_{W}$ are two quadratic spaces. $V, q_{V} \cong W, q_{W}$ if and only if $\dim V = \dim W$ and $\operatorname{det}(V, q_{V}) = \operatorname{det}(W, q_{W})$.
 
 ###### _proof:_
 
 Clearly, if $V, q_{V} \cong W, q_{W}$, then the dimension and discriminant are equal.
 
-Suppose $\dim V = \dim W = 1$. Then giving an isomorphism $V, q_{V} \cong W, q_{W}$ is equivalent to giving an isomorphism $\left< a \right> \cong \left< b \right>$. Since $\mathrm{GL}(\mathbb{F}_{q}^1) = \mathbb{F}_{q}^\times$, the isomorphism must be given by $v \mapsto uv$. Then $a = q_{V}(v) = q_{W}(uv) = u^{2} q_W(v) = u^{2} b$. That is, $\overline{a} = \overline{b}$ (as elements of $\mathbb{F}_{q}^\times / \mathbb{F}_{q}^{\times 2}$).
+Suppose $\dim V = \dim W = 1$ and $\det (V, q_{V}) = \det (W, q_{V})$. Then, for diagonalisations $\left< a \right>, \left < b \right>$ we have $\overline{a} = \overline{b}$ in $\mathbb{F}_{q}^\times / \mathbb{F}_{q}^{\times 2}$, and thus, $a = b u^{2}$. There is then an isomorphism given by $v \mapsto v / u$.
 
-Suppose $\dim V = 2$ and $\operatorname{disc}(V, q_{V}) = \overline{d}$. Since $u(\mathbb{F}_{q}) = 2$, $V \oplus \left< -1 \right>$ is isotropic. That is, there is some $(x, y, z) \in \mathbb{F}_{q}^3$ such that $q_{V}(x, y) - z^{2} = 0$. Since $V$ is anisotropic, $z$ must be non-zero. Thus, without loss of generality we can choose $z = 1$. That is, we have $v = (x, y) \in V$ with $q_{V}(x, y) = 1$. Choose $w \in \operatorname{span} (x, y)^\perp$. Then $v, w$ diagonalise $V, q_{V}$ as $\left< 1, a \right>$. This gives $\overline{1} \overline{a} = \operatorname{disc}(V, q) = \overline{d}$, and thus, $V, q_{V} \cong \left< 1, d \right>$.
+Suppose $\dim V = 2$ and $\operatorname{disc}(V, q_{V}) = \overline{d}$. Since $u(\mathbb{F}_{q}) = 2$, the $3$-dimensional form $V \oplus \left< -1 \right>$ is isotropic. That is, there is some $(x, y, z) \in \mathbb{F}_{q}^3$ such that $q_{V}(x, y) - z^{2} = 0$. Since $V$ is anisotropic, $z$ must be non-zero. Scaling, we have $q(x / z, y / z) - 1 = 0$. That is, we have $v = (x / z, y / z) \in V$ with $q_{V}(v) = 1$. Choose $w \in \operatorname{span} (v)^\perp$ with $q(w) = a \in \mathbb{F}^\times$. (Such an anisotropic vector exists since $q$ is non-degenerate on $\operatorname{span} v$, and [[Quadratic forms and K-theory --- pcmi-2021/notes/Orthogonality for quadratic forms#_proposition _ direct sum decomposition of quadratic spaces|thus]] also on $\operatorname{span}(v)^\perp$). Then $v, w$ diagonalise $V, q_{V}$ as $\left< 1, a \right>$. This gives $\overline{1} \overline{a} = \det (V, q) = \overline{d}$. In other words, $a = d u^{2}$ and thus, $V, q_{V} \cong \left< 1, d \right>$.
 
 If $\dim V = n > 2$ then $V, q_{V} \cong (U, q_{U}) \oplus H^m$ where $\dim U \leq 2$. We have $\operatorname{disc}(V, q_{V}) = \overline{(-1)^m} \operatorname{disc}(U, q_{U})$. The parity of the dimension determines $\dim U$ and $m$, dividing $\operatorname{disc}(V, q_{V})$ by $\overline{(-1)^m}$ then determines $U$.
 
@@ -87,3 +88,30 @@ By the proof above, $\# \mathbb{F}_{q}^{\times 2} \geq (q - 1) / 2$. Thus, $\# (
 ---
 
 This means that in every dimension, there are exactly two quadratic forms over $\mathbb{F}_{q}$.
+
+### Witt's chain equivalence theorem
+
+Since we can diagonalise any quadratic space, it helps us to understand
+
+##### _theorem:_ Witt's chain equivalence theorem
+
+The isomorphism classes of quadratic forms are the equivalence classes determined by the equivalence relation generated by the following isomorphisms (as well as $\left< a_{1}, \dots, a_{n} \right> \cong \left< a_{1} \right> \oplus \dots \oplus \left< a_{n} \right>$).
+1) $\left< a \right> \cong \left< a u^{2} \right>$
+2) $\left< a_{1}, a_{2} \right> \cong \left< a_{2}, a_{1} \right>$
+3) $\left< a_{1}, a_{2} \right> \cong \left< a_{1} + a_{2}, \frac{a_{1} a_{2}}{a_{1} + a_{2}} \right>$.
+
+###### _proof:_
+
+We note that the three relations above are in fact isomorphisms of one and two-dimensional quadratic forms. The first two are clear. The isomorphism $\left< a_{1} + a_{2}, \frac{a_{1}a_{2}}{a_{1} + a_{2}} \right> \to \left< a_{1}, a_{2} \right>$ is given by the map with $e_{1} \mapsto e_{1} + e_{2}$ and $e_{2} \mapsto (a_{2} e_{1} - a_{1} e_{2}) / (a_{1} + a_{2})$.
+
+Say $\left< a_{1}, \dots, a_{n} \right> \sim \left< b_{1}, \dots, b_{n} \right>$ if they are in the same equivalence class generated by the fundamental isomorphism (1) through (3).
+
+We want to show that if $\left< a_{1}, \dots, a_{n} \right> \cong \left< b_{1}, \dots, b_{n} \right>$ then $\left< a_{1}, \dots, a_{n} \right> \sim \left< b_{1}, \dots, b_{n} \right>$. By the [[Quadratic forms and K-theory --- pcmi-2021/notes/Direct sums of quadratic spaces#_theorem _ Witt cancellation theorem or the cancellation theorem|Witt cancellation theorem]] and induction on the dimension of the form, it suffices to show that $\left< a_{1}, \dots, a_{n} \right> \sim \left< b_{1}, b_{2}', \dots, b_{n}' \right>$. 
+
+ Suppose we have some isomorphism $\left < b_{1}, \dots, b_{n} \right> \to \left< a_{1}, \dots, a_{n} \right>$. Thus, we can solve the equation $b_{1} = \sum_{i = 1}^n a_{i} x_{i}^{2}$ (just let $(x_{1}, \dots, x_{n})$ be the image of $e_{1}$). We can use the equivalences $\left< a_{i}' \right> = \left< a_{i} x_{i}^{2} \right> \sim \left< a_{i} \right>$ when $x_{i} \neq 0$ and $\left< a_{i}' \right> = \left< a_{i} \right>$ otherwise, to give us a solution $b_{1} = \sum_{i = 1}^r a_{i}'$. Here we sort the $a_{i}'$ so that the first $r$ of the $x_{i}$ are non-zero and the rest are zero. We can recursively reduce the size of the sum to one as follows. If $a_{r - 1}' + a_{r}' = 0$, then $b_{1} = \sum_{i = 1}^{r - 2} a_{i}'$. Else, using equivalence $\left< a_{r - 1}'', a_{r}'' \right> \sim \left< a_{r - 1}' + a_{r}', \dots, a_{r - 1}' a_{r}'/ (a_{r - 1} + a_{r}') \right>$ we obtain $b_{1} = \sum_{i = 1}^r a_{i}''$. Thus, we obtain some equivalence $\left< a_{1}, \dots, a_{n} \right> \sim \left< a_{1}^{(m)}, \dots, a_{n}^{(m)} \right >$ with $a_{1}^{(m)} = b_{1}$ as desired.
+
+---
+
+This gives something like $O(n^{2})$ equivalences (not counting sorting) to get any isomorphism $\left< a_{1}, \dots, a_{n} \right> \cong \left< b_{1}, \dots, b_{n} \right>$.
+
+This is very useful to define isomorphism invariants — just choose a function on $(\mathbb{F}^\times)^n$ that is invariant under the isomorphisms above.

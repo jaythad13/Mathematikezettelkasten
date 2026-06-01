@@ -9,9 +9,23 @@ We can do more than just combine vector spaces with direct sums — we can comb
 
 ##### _definition:_ direct sum of quadratic spaces
 
-The **direct sum of quadratic spaces** $V_{1}, q_{1}$ and $V_{2}, q_{2}$ is the quadratic space $(V_{1}, q_{1}) \oplus (V_{2}, q_{2}) = V_{1} \oplus V_{2}, q_{1} + q_{2}$ where $(q_{1} + q_{2})(v_{1} \oplus v_{2}) = q_{1}(v_{1}) + q_{2}(v_{2})$. We may abbreviate the direct sum to $V_{1} \oplus V_{2}$ when there is no ambiguity about the forms.
+The **direct sum of quadratic spaces** $V, q_{V}$ and $W, q_{W}$ is the quadratic space $(V, q_{V}) \oplus (W, q_{W}) = V \oplus W, q_{V} + q_{W}$ where $(q_{V} + q_{W})(v \oplus w) = q_{V}(v) + q_{W}(w)$. We may abbreviate the direct sum to $V_{1} \oplus V_{2}$ when there is no ambiguity about the forms.
 
-Equivalently, $q_{1} + q_{2}$ restricts to $q_{i}$ on the corresponding $V_{i}$ and $V_{1} \oplus V_{2}$ contains the two as orthogonal subspaces.
+Equivalently, $q_{V} + q_{W}$ restricts to $q_{V}$ on $V$ and $q_{W}$ on $W$, and $V \oplus W$ contains the two as orthogonal subspaces.
+
+---
+
+This construction really does deserve the name direct sum.
+
+##### _proposition:_ the universal property of the quadratic direct sum
+
+$V \oplus W, q_{V} + q_{W}$ with the obvious maps $i_{V} : V \to V \oplus W$ and $i_{W} : W \to V \oplus W$ is the [[Algebraic geometry --- rising-sea/notes/Universal properties and why categories?#_definition _ coproducts, direct sums|coproduct]] of  $V, q_{V}$ and $W, q_{W}$.
+
+###### _proof sketch:_
+
+Suppose $Z, q_{Z}$ has quadratic linear maps $i_{V}' : V \to Z$ and $i_{W}' : W \to Z$. Then consider $\amalg : V \oplus W \to Z$ by $v \oplus w \mapsto i_{V}'(v) + i'_{W}(w)$. It's easy to check that this is a quadratic linear map. This factors $i_{V}'$ as $i_{V}' = \amalg \circ i_{V}$ and similarly for $W$.
+
+$\amalg$ is unique since it is the unique factorisation for the universal property of the direct sum in the category of vector spaces.
 
 ---
 
@@ -35,4 +49,4 @@ Then $V \cong W$ follows from the cases of $1$ and $(n - 1)$-dimensional $Z$.
 
 ---
 
-This is remarkable! Typically **stable isomorphism classes** ($V \sim W$ if there exists some isomorphism $V \oplus Z \cong V \oplus Z$) identify many more objects than isomorphism classes but are easier to deal with because we can localise/group-complete. This turns the stable isomorphism classes into an algebraic object. For example, the equivalence condition for [[Commutative algebra --- math-189AA/notes/Localisation of a ring#_definition _ localisation of a ring, localisations at a prime, fraction field|localisation]]. Here, we still get the abstract goodness of group-completion and we also lose no information!
+This is incredible! Typically **stable isomorphism classes** ($V \sim W$ if there exists some isomorphism $V \oplus Z \cong V \oplus Z$) identify many more objects than isomorphism classes. They are useful because we can localise/group-complete. This turns the stable isomorphism classes into an algebraic object. For example, the equivalence condition for [[Commutative algebra --- math-189AA/notes/Localisation of a ring#_definition _ localisation of a ring, localisations at a prime, fraction field|localisation]]. Here, we still get the abstract goodness of group-completion and we also lose no information!
