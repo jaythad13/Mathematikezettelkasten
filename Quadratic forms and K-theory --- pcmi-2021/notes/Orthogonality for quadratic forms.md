@@ -77,7 +77,34 @@ $$
 
 ---
 
-We will find the following lemma very useful.
+We will find the following lemmas useful, especially the fact that reflections act (almost) transitively on spheres.
+
+##### _lemma:_ reflections are scaling invariant
+
+Suppose $u \in V$ has $q(u) \neq 0$. Then $R_{\lambda u} = R_{u}$ for any $\lambda \in \mathbb{F}^\times$.
+
+###### _proof:_
+
+$$
+\begin{align}
+R_{u} v & = v - \frac{2 \beta(u, v)}{q(u)} u  \\
+ & = v - \frac{\lambda^{2} \beta(u, v)}{\lambda^{2} q(u)} u \\
+ & = v - \frac{\beta(\lambda u, v)}{q(\lambda u)} (\lambda u) \\
+ & = R_{\lambda u} v.
+\end{align}
+$$
+
+---
+
+##### _lemma:_ determinant of a reflection
+
+$\det R_{u} = -1$ for any reflection $R_{u}$ on $V, q$.
+
+###### _proof:_
+
+Write $U = \operatorname{span} u$. Decompose the quadratic space $V, q$ as $U \oplus U^\perp$. $R_{u \mid U^\perp} = \operatorname{id}$ and $R_{u} u = -u$. Thus, we can choose a basis $e_{1}, \dots, e_{n - 1}$ of $U^\perp$ with $R_{u} e_{i} = e_{i}$ for each $i$. Extend this to a basis of $V$ by adding $u$. This is in fact an eigenbasis. Thus, $\det R_{u} e_{i} = (-1)(1)^n = -1$.
+
+---
 
 ##### _lemma:_ reflections act transitively on spheres
 

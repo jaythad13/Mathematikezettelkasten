@@ -14,11 +14,34 @@
 	What is the Witt ring of a finite field? How many isomorphism classes of anisotropic forms are there?
 \end{problem}
 
+\begin{solution} 
+	There are always exactly $3$ isomorphism classes of anisotropic forms over $\mathbb{F}_{q}$ --- $\left < 1 \right >$, $\left < a \right >$ where $a$ is not a square, and $\left < 1, b \right >$ where $b$ is not in the square class of $-1$.
+
+	Suppose $-1$ is not a square in $\mathbb{F}_{q}$. Then $W(\mathbb{F}_{q}) \cong \mathbb{Z} / (4)$ with the isomorphism given by $\left < 1 \right > \mapsto 1$, $\left < -1 \right > \to 3$, and $\left < 1, 1 \right > \mapsto 2$.
+
+	Suppose $-1$ is a square in $\mathbb{F}_{q}$. Then $W(\mathbb{F}_{q}) \cong \mathbb{F}_{2}[x] / (1 + x^{2})$ with the isomorphism given by $\left < 1 \right > \mapsto 1$ and $\left < a \right > \mapsto x$ where $a$ is not a square. Equivalently, we have $W(\mathbb{F}_{q}) \cong \mathbb{F}_{2}[x] / (x^{2})$ with $\left < 1 \right > \mapsto 1$ and $\left < 1, a \right > \mapsto x$. 
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[(2)]
 	Let $\mathbb{E} / \mathbb{F}$ be a finite extension and let $\ell : \mathbb{E} \to \mathbb{F}$ be a non-zero $\mathbb{F}$-linear map. Show that the quadratic form $V, \ell \circ q$ over $\mathbb{F}$ induces a map of Grothendieck--Witt groups (not rings) $GW(\mathbb{E}) \to GW(\mathbb{F})$ and Witt groups  $W(\mathbb{E}) \to W(\mathbb{F})$.
 \end{problem}
+
+\begin{solution} 
+	Let $\ell_{*} : GW(\mathbb{E}) \to GW(\mathbb{F})$ be the map given by $(V/\mathbb{E}, q) \mapsto (V/\mathbb{F}, \ell \circ q)$ and extended linearly for additive inverses. Then
+	\begin{align*}
+		\ell_{*}((V, q_{V}) \oplus (W, q_{W})) & = \ell_{*}((V \oplus W)/\mathbb{E}, q_{V} + q_{W}) \\
+						       & = (V \oplus W)/\mathbb{F}, \ell \circ (q_{V} + q_{W}) \\
+						       & = (V/\mathbb{F}, \ell \circ q_{V}) \oplus (W/\mathbb{F}, \ell \circ q_{W}) \\
+						       & = \ell_{*}(V, q_{V}) \oplus \ell_{*}(W, q_{W}).
+	\end{align*}
+	Thus, $\ell_{*}$ is a group homomorphism.
+
+	Consider $H / \mathbb{E}$. Let $v_{1}, v_{2}$ be the $\mathbb{E}$-basis corresponding to the diagonalisation $\left < 1, -1 \right >$ and let $e_{1}, \dots, e_{n}$ be the $\mathbb{F}$-basis of $\mathbb{E} / \mathbb{F}$. Then, $H / \mathbb{F}$ has a diagonalisation given by the basis $v_{i} \otimes e_{j}$ with $q(v_{i} \otimes e_{j}) = q(v_{i}) \ell(e_{j})$. Each subspace $\operatorname{span}(v_{1} \otimes e_{j}, v_{2} \otimes e_{j})$ is then just $\left < \ell(e_{j}), -\ell(e_{j}) \right > \cong \left < 1, -1 \right >$. Thus, $H / \mathbb{F}$ is a direct sum of hyperbolic planes.
+
+	All of this is to say that the kernel of $GW(\mathbb{E}) \to W(\mathbb{E})$ is mapped into the kernel of $GW(\mathbb{F}) \to W(\mathbb{F})$. Thus, $\ell_{*} : GW(\mathbb{E}) \to GW(\mathbb{F})$ descends to a map $\ell_{*} : W(\mathbb{E}) \to W(\mathbb{F})$.
+\end{solution}
 
 \pagebreak
 
@@ -60,7 +83,7 @@
 \pagebreak
 
 \begin{problem}[(3)]
-	Show that t2he Witt ring $W(\mathbb{F})$ is torsion if and only if $-1$ is a sum of squares in $\mathbb{F}$.
+	Show that the Witt ring $W(\mathbb{F})$ is torsion if and only if $-1$ is a sum of squares in $\mathbb{F}$.
 \end{problem}
 
 \pagebreak

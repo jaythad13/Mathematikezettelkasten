@@ -13,8 +13,12 @@
 Let $\mathbb{F}$ be a field of characteristic not $2$.
 
 \begin{problem}[(1)]
-	Let $\mathbb{E}$ be a (not necessarily finite) extension of $\mathbb{F}$. Given a quadratic space $V, q$ over $\mathbb{F}$, construct the quadratic space $V_{\mathbb{E}}, q_{\mathbb{E}}$ where $V_{\mathbb{E}} = V \otimes_{\mathbb{F}} \mathbb{E}$.
+	Let $\mathbb{E}$ be a (not necessarily finite) extension of $\mathbb{F}$. Given a quadratic space $V, q$ over $\mathbb{F}$, construct the quadratic space $V_{\mathbb{E}}, q_{\mathbb{E}}$ over $\mathbb{E}$ where $V_{\mathbb{E}} = V \otimes_{\mathbb{F}} \mathbb{E}$.
 \end{problem}
+
+\begin{solution}
+	$q_{\mathbb{E}} : V \to \mathbb{E}$ is given by $q_{\mathbb{E}}(v \otimes e) = q(v) e^{2}$.
+\end{solution}
 
 \pagebreak
 
@@ -22,23 +26,62 @@ Let $\mathbb{F}$ be a field of characteristic not $2$.
 	Let $d \in \mathbb{F}^{\times} \setminus \mathbb{F}^{\times 2}$ and form the quadratic extension $\mathbb{F}(\sqrt{d})$. Let $V, q$ be a quadratic space over $\mathbb{F}$ which is anisotropic but such that $V_{\mathbb{F}(\sqrt{d})}, q_{\mathbb{F}(\sqrt{d})}$ is isotropic. Then show that $V$ contains $\left < a, -ad \right >$ as a summand for some $a \in \mathbb{F}^{\times}$ (and conversely).
 \end{problem}
 
+\begin{solution}
+	Suppose $V, q$ is anisotropic but has isotropic base change $V', q'$ to $\mathbb{F}(\sqrt{d})$. Let $V, q \cong \left < a_{1}, \dots, a_{n} \right >$ (over $\mathbb{F}$), and thus, $V', q' \cong \left < a_{1}, \dots, a_{n} \right >$ (over $\mathbb{F}(\sqrt{d})$) as well.
+
+	$\left < a, -ad \right >$ has isotropic base change to $\mathbb{F}(\sqrt{d})$. If $e_{1}, e_{2}$ is the basis corresponding to the diagonalisation, then $\sqrt{d} e_{1} + e_{2}$ is isotropic. Thus, if $V, q$ is anisotropic and contains $\left < a, -ad \right >$, it too has isotropic base change to $\mathbb{F}(\sqrt{d})$.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[(3)]
-	Let $V, q$ be any two-dimensional quadratic space. Show that $V$ is hyperbolic if and only if $\operatorname{disc}(V, q) = -1 \in \mathbb{F}^{\times} / \mathbb{F}^{\times 2}$.
+	Let $V, q$ be any two-dimensional quadratic space. Show that $V$ is hyperbolic if and only if $\operatorname{det}(V, q) = \overline{-1} \in \mathbb{F}^{\times} / \mathbb{F}^{\times 2}$.
 \end{problem}
+
+\begin{solution}
+	If $V \cong H$ then $\det(V, q) = \overline{1} (\overline{-1}) = \overline{-1}$.
+
+	Suppose $\det(V, q) = \overline{-1}$ with $V, q = \left < a, b \right >$. Then $ab = - u^{2}$ for some $u \in \mathbb{F}^{\times}$. This implies
+	\begin{align*}
+		q(b e_{1} + u e_{2}) & = b^{2} q(e_{1}) + u^{2} q(e_{2}) \\
+				     & = b^{2} a + u^{2} b \\
+				     & = b(ab + u^{2}) \\
+				     & = 0.
+	\end{align*}
+	That is, $V, q$ is isotropic. Since all isotropic forms contain $H$, we must have $V, q \cong H$.
+\end{solution}
 
 \pagebreak
 
 \begin{problem}[(4)]
-	Let $V, q$ and $V', q'$ be two-dimensional quadratic spaces. Show that $V, q \cong V', q'$ if and only if they have the same discriminant and they both represent a common element of $\mathbb{F}$.
+	Let $V, q$ and $V', q'$ be two-dimensional quadratic spaces. Show that $V, q \cong V', q'$ if and only if they have the same determinant and they both represent a common element of $\mathbb{F}$.
 \end{problem}
+
+\begin{solution}
+	It's clear that if $V, q \cong V', q'$, they  do have the same determinant and do represent a common element of $\mathbb{F}$.
+
+	Suppose $\det (V, q) = \det (V', q') = \overline{d} \in \mathbb{F}^{\times} / \mathbb{F}^{\times 2}$ and they both represent $a \in \mathbb{F}$.  Then $(V, q) \oplus \left < -a \right >$ and $(V', q') \oplus \left < -a \right >$ are both isotropic $3$-dimensional quadratic spaces with the same determinant $\overline{(-a)d}$. Since we can always split off a hyperbolic plane from an isotropic quadratic space, we can write $(V, q) \oplus \left < -a \right > \cong (W, q_{\mid W}) \oplus H$ and $(V', q') \oplus \left < -a \right > \cong (W', q_{\mid W'}) \oplus H$. 
+
+	It follows that $\det(W, q_{\mid W}) = \det (W', q_{\mid W'})$ and thus, that they are isomorphic --- if two $1$-dimensional spaces have the same determinant, their diagonalisations differ by a square. But then $(V, q) \oplus \left < -a \right > \cong (V', q) \oplus \left < -a \right >$. Finally, by Witt's cancellation theorem, $V, q \cong V', q'$.
+\end{solution}
 
 \pagebreak
 
 \begin{problem}[(5)]
-	Let $V, q$ be a quadratic space and let $a \in \mathbb{F}^{\times}$. Show that $V, q$ represents $a$ if and only if  $V \oplus \left < -a \right >$ is isotropic.
+	Let $V, q$ be a quadratic space and let $a \in \mathbb{F}^{\times}$. Show that $V, q$ represents $a$ if and only if  $(V, q) \oplus \left < -a \right >$ is isotropic.
 \end{problem}
+
+\begin{solution}
+	Suppose $V, q$ represents $a$, with $q(v) = a$. Then $q(v) - a 1^{2} = 0$, so $(V, q) \oplus \left < -a \right >$ is isotropic.
+
+	Suppose $(V, q) \oplus \left < -a \right >$ is isotropic. Let $(x, y, z) \neq 0$ be the anisotropic vector in it. If $V, q$ is anisotropic, then $z \neq 0$ and thus, $q(x / z, y / z) - a 1^{2} = 0$.
+
+	Else, $V, q$ contains $H$. We claim $H$ represents every $a \in \mathbb{F}^{\times}$. This is the same as claiming $x^{2} - y^{2} = a$ always has a solution. Choose $y = x - 1$. Then
+	 \[
+		x^{2} - y^{2} = (x + y)(x - y) = 2x - 1.
+	\]
+	Since $\operatorname{char} \mathbb{F} \neq 2$ we can always solve for $2x - 1 = a$.
+\end{solution}
 
 \pagebreak
 
@@ -46,22 +89,44 @@ Let $\mathbb{F}$ be a field of characteristic not $2$.
 	Suppose the $u$-invariant of $\mathbb{F}$ is $n$. Show that, for any $n$-dimensional quadratic space $V, q$ over $\mathbb{F}$ and any $a \in \mathbb{F}^{\times}$, there exists $v \in V$ such that $q(v) = a$.
 \end{problem}
 
+\begin{solution}
+	If $u(\mathbb{F}) = n$ and $V, q$ over $\mathbb{F}$ has dimension $n$, then for any $a \in \mathbb{F}^{\times}$, the space $(V, q) \oplus \left < -a \right >$ is $(n + 1)$-dimensional and thus isotropic. It follows from the previous exercise that $V, q$ represents $a$.
+\end{solution}
+
 \pagebreak
 
 \problemlist{Exercises on $C_{1}$ fields}
 
 \begin{problem}[(1)]
-	Let $\mathbb{F}_{q}$ be a finite field. Let $f(x_{1}, \dots, x_{n})$ be a homogeneous polynomial of degree $d$ in $n$ variables. Suppose $n > d$. Then there exists a non-trivial solution of $f(x_{1}, \dots, x_{n}) = 0$ over $\mathbb{F}_{q}$. The number of solutions, including the trivial solution is  divisible by $p$ (Chevalley--Warning) where $p$ is the prime that $q$ is a power of. 
+	Let $\mathbb{F}_{q}$ be a finite field. Let $f(x_{1}, \dots, x_{n})$ be a homogeneous polynomial of degree $d$ in $n$ variables. Suppose $n > d$. Then there exists a non-trivial solution of $f(x_{1}, \dots, x_{n}) = 0$ over $\mathbb{F}_{q}$. The number of solutions, including the trivial solution is divisible by the prime $p$ where $q = p^{k}$ (Chevalley--Warning).
 
 	Prove this as follows:
 	\begin{enumerate}
 		\item For $a \in \mathbb{F}_{q}^{\times}$, we have $a^{q - 1} = 1$.
-		\item The number of zeroes of $f$ is congruent modulo $p$ to $-\sum_{a_{1}, \dots, a_{n}} f(a_{1}, \dots, a_{n})^{q - 1}$.
+		\item The number of zeroes of $f$ is congruent modulo $p$ to $-\sum_{(a_{1}, \dots, a_{n}) \in \mathbb{F}_{q}^{n}} f(a_{1}, \dots, a_{n})^{q - 1}$.
 		\item For $i < q - 1$, we have $\sum_{a \in \mathbb{F}_{q}} a^{i} = 0$ in $\mathbb{F}_{q}$.
 		\item Expand out the sum above. Each monomial is of the form $c x_{1}^{r_{1}} \cdots x_{n}^{r_{n}}$ with $\sum_{i = 1}^{n} r_{i} = d (q - 1)$. In particular, one of the $r_{i}$ satisfies $r_{i} < q - 1$. Deduce that the sum vanishes in $\mathbb{F}_{q}$.
 		\item Deduce the claim
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item This follows by Lagrange's theorem applied to the subgroup of $\mathbb{F}_{q}^{\times}$ generated by $a$.
+
+		\item Thus, $f(a_{1}, \dots, a_{n}) \neq 0$ if and only if  $f(a_{1}, \dots, a_{n})^{q - 1} = 1$. But then, for $q = p^{k}$, and viewing the sum on the right as a sum of $0$s and $1$s in $\mathbb{Z}$,
+			\[
+				\# \{ (a_{1}, \dots, a_{n}) \in \mathbb{F}_{q}^{n} \mid f(a_{1}, \dots, a_{n}) = 0 \} = p^{k} - \sum_{(a_{1}, \dots, a_{n}) \in \mathbb{F}_{q}^{n}} f(a_{1}, \dots, a_{n})^{q - 1}.
+			\]
+			Reducing modulo $p$ gives the desired result.
+
+		\item For $b \in \mathbb{F}^{q}$, the map $a \mapsto ab$ is a bijection. Thus, the sum is translation-invariant. That is, $\sum_{a \in \mathbb{F}_{q}} a^{i} = \sum_{a \in \mathbb{F}_{q}} b^{i} a^{i}$. But then $(1 - b^{i}) \sum_{a \in \mathbb{F}^{q}} a_{i} = 0$. Since $i < q - 1$, the first term is not zero, and the sum must vanish.
+
+		\item Since $f$ is homogeneous of degree $d$, each monomial of $f(x_{1}, \dots, x_{n})^{q - 1}$ is a monomial of degree $d(q - 1)$. In particular each monomial is of the form  $c x_{1}^{r_{1}} \cdots x_{n}^{r_{n}}$ with $\sum_{i = 1}^{n} r_{i} = d (q - 1)$. Since $d < n$, at least one of the $r_{i} < q - 1$. Then, for each fixed choice of $a_{j} = b_{j}$ with $j \neq i$, and varying $a_{i}$ across all of $\mathbb{F}_{q}$, the sum $\sum_{a_{i} \in \mathbb{F}_{q}} c b_{1}^{r_{1}} \cdots a_{i}^{r_{i}} \cdots b_{n}^{r_{n}}$ vanishes. This accounts for all the terms in the sum $\sum_{(a_{1}, \dots, a_{n}) \in \mathbb{F}_{q}^{n}} f(a_{1}, \dots, a_{n})^{q - 1}$ and so this sum vanishes too.
+
+		\item Since the sum vanishes in $\mathbb{F}_{q}$, the number of zeroes of $f$ is divisible by $p$. Since there is one non-trivial zero, there exist at least $p - 1 > 0$ non-trivial zeroes.
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
@@ -72,9 +137,23 @@ Let $\mathbb{F}$ be a field of characteristic not $2$.
 
 		\item Take $x_{i} = \sum_{j = 0}^{m} a_{ij} t^{j}$ for some coefficients $a_{ij} \in \mathbb{C}$ and some $m \gg 0$. In this case, the equation $f(x_{1}, \dots, x_{n}) = 0$ can be regarded as a system of homogeneous polynomial equations over $\mathbb{C}$ in  $n(m + 1)$ variables. However, the number of equations needed is given by the number of degree $md + O(1)$. For $m \gg 0$, show that there are more variables than equations.
 
-		\item Here we use the following basic fact: given $r$ homogeneous polynomial equations in $\mathbb{C}^{\times}$, if $r < s$, they have a non-trivial common root. Conclude the proof of the result.
+		\item Here we use the following basic fact: given $r$ homogeneous polynomial equations in $\mathbb{C}^{s}$, if $r < s$, they have a non-trivial common root. Conclude the proof of the result.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item We can indeed do so. Let $d(t)$ be the least common denominator of all of the coefficients of $f$. Then $f$ has a non-trivial zero if and only if $d(t) f$ does. Since $d(t) f$ has coefficients in $\mathbb{C}[t]$, it suffices to consider the case of a homogeneous polynomial $f$ with polynomial coefficients.
+
+		\item Suppose $m \gg 0$. For $f(x_{1}, \dots, x_{n}) = 0$ in $\mathbb{C}(t)$, we need to have all of the coefficients of $t$ be $0$. However, $t$ attains at most degree $md + k$ where $k$ is the maximal degree of one of the coefficients of $f(x_{1}, \dots, x_{n})$. This follows since the $f$ is degree $d$ in the $x_{i}$ and each of the $x_{i}$ are at most degree $m$ in $t$. Since $n > d$, there is some $m$ large enough that
+			\[
+				n(m + 1) > nm > md + m(n - d) > md + k.
+			\]
+			(Specifically, any $m > k / (n - d)$ is large enough).
+
+		\item The $r = md + k$ homogeneous polynomial equations in $\mathbb{C}^{s}$ have a non-trivial root for $s = n(m + 1)$ with $m > k / (n - d)$. Thus, there is a choice of $a_{ij}$, not all zero such that $x_{i} = \sum_{j = 0}^{m} a_{ij} t^{j}$ are not all zero and satisfy $f(x_{1}, \dots, x_{n}) = 0$.
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 	
@@ -87,7 +166,7 @@ Let $\mathbb{F}$ be a field of characteristic not $2$.
 \pagebreak
 
 \begin{problem}[(2)]
-	More generally, show that the  $u$-invariant of the Laurent series field $\mathbb{F}((t))$ is twice the $u$-invariant of $\mathbb{F}$ (for any field $\mathbb{F}$, of characteristic not $2$). You will use the fact that any element in $1 + t \mathbb{F}[[t]]$ has a square root.
+	More generally, show that the  $u$-invariant of the Laurent series field $\mathbb{F}((t))$ is twice the $u$-invariant of $\mathbb{F}$ (for any field $\mathbb{F}$ of characteristic not $2$). You will use the fact that any element in $1 + t \mathbb{F}[[t]]$ has a square root.
 \end{problem}
 
 \pagebreak
@@ -100,32 +179,79 @@ Let $V, q$ be a quadratic space over $\mathbb{F}$. In this sequence of exercises
 	Prove the weaker assertion that any element $T \in \mathrm{O}(V, q)$ is a product of some number of reflections.
 \end{problem}
 
+\begin{solution}
+	See exercises 1, problem (2).
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[(2)]
-	The argument in (1) does not quite manage to prove that any $T$ is a product of at most $n$ reflections. The issue is that given anisotropic vectors $v, w \in V$ with $q(v) = q(w)$, there need not exist a reflection $R$ such that $Rv = w$. Such a reflection does exist if $v - w$ is anisotropic. Conclude that if $V$ itself is anisotropic, then the argument of part (1) does suffice to prove the Cartan--Dieudonn\'e theorem.
+	The argument in (1) does not quite manage to prove that any $T$ is a product of at most $n$ reflections. The issue is that given anisotropic vectors $v, w \in V$ with $q(v) = q(w)$, there need not exist a reflection $R$ such that $Rv = w$. Such a reflection does exist if $v - w$ is anisotropic. Conclude that if $V, q$ itself is anisotropic, then the argument of part (1) does suffice to prove the Cartan--Dieudonn\'e theorem.
 \end{problem}
+
+\begin{solution}
+	Suppose $V, q$ is anisotropic and $T \in \mathrm{O}(V, q)$. 
+
+	If $\dim V = 1$ then the proof of (1) already shows that $T$ is a reflection.
+
+	Suppose that for all $V, q$ with $\dim V < n$, each $T$ is a product of at most $\dim V$ reflections. Diagonalise $V, q$ as $\left < a_{1}, \dots, a_{n - 1} \right > \oplus \left < a_{n} \right > = U \oplus \left < a_{n} \right >$ and let $R$ be a reflection such that $RT e_{n} = e_{n}$. There is always such an $R$, since $T e_{n} - e_{n}$ is anisotropic. Since $RT$ maps $\left < a_{n} \right >$ to  $\left < a_{n} \right >$ isomorphically, it must also map orthogonal complements $U$ to $U$ isomorphically. That is, $RT_{\mid U} \in \mathrm{O}(U, q_{\mid U})$. By induction, $RT_{\mid U}$ can be written as a product of $n - 1$ reflections $S_{u_{i}} \in \mathrm{O}(U, q_{\mid U})$ through $u_{i} \in U$. Thus, $RT = R_{u_{\dim U}} \cdots R_{u_{1}}$. But then $T$ is a product of $\dim U + 1 = \dim V$ reflections and we are done.
+\end{solution}
 
 \pagebreak
 
 \begin{problem}[(3)]
 	By induction, assume the result for all quadratic spaces of dimension less than  $n$. The arguments above then show that $T$ can be written as a product of at most $n + 1$ reflections.
 
-	Show that if there exists an isotropic vector $v \in V$ with $v - Tv$ either zero or anisotropic, then we can conclude the result for $T$ by induction.
+	Show that if there exists an anisotropic vector $v \in V$ with $v - Tv$ either zero or anisotropic, then we can conclude the result for $T$ by induction.
 \end{problem}
+
+\begin{solution}
+	Suppose, for any quadratic space $V, q$ of dimension at most $n - 1$, each $T \in \mathrm{O}(V, q)$ is the product of at most $\dim V$ reflections. Let $V, q \cong (U, q_{\mid U}) \oplus H^{\oplus r}$ be the Witt decomposition of $V, q$, where $U, q_{\mid U}$ is anisotropic. $T$ restricts to a linear isometry on each orthogonal subspace. Since $U, q_{\mid U}$ is anisotropic, $T_{\mid U}$ is the product of $\dim U = n - r$ reflections $S_{u_{i}} \in \mathrm{O}(U, q_{\mid U})$. By induction, $T_{\mid H^{\oplus r}}$ is the product of $r + 1$ reflections $S_{v_{i}} \in \mathrm{O}(H^{\oplus r})$. Since the corresponding $R_{u_{i}}, R_{v_{i}} \in \mathrm{O}(V, q)$ fix $H^{\oplus r}$ and $U$ respectively, we can write $T$ as the product of $(n - r) + (r + 1) = n + 1$ reflections ---  $T = \left ( \prod R_{v_{i}} \right ) \left ( \prod R_{u_{i}} \right )$.
+
+	Let $T \in \mathrm{O}(V, q)$ where $\dim V = n$. Suppose there exists $v$ with $v - Tv$ zero or anisotropic. Then there exists a reflection with $RTv = v$. $RT$ then also fixes the orthogonal complement of $V$, which will call $U$. By induction, $(RT)_{\mid U}$ is a product of at most $n - 1$ reflections, and thus, so is $RT = R_{1} \cdots R_{n - 1}$. Then, $T = R^{-1} R_{1} \cdots R_{n - 1}$ is the product of at most $n$ reflections.
+\end{solution}
 
 \pagebreak
 
-Assume that that for every anisotropic $v \in V$, the vector $v - Tv$ is isotropic, but non-zero.
-
 \begin{problem}[(4)]
-	In general, any vector in any quadratic space is a ``limit'' of anisotropic vectors. (Work over $\mathbb{F} = \mathbb{C}$ where this is literally true, or form some algebraic analogue). Therefore, for any vector $v \in V$, $v - Tv$ is isotropic.. Let $S : V \to V$ be the transformation $\operatorname{id}_{V} - T$. Show that:
+	Assume that that for every anisotropic $v \in V$, the vector $v - Tv$ is isotropic, but non-zero. In general, any vector in any quadratic space is a ``limit'' of anisotropic vectors. (Work over $\mathbb{F} = \mathbb{C}$ where this is literally true, or form some algebraic analogue). Therefore (with our assumption) $v - Tv$ is isotropic, for any vector $v \in V$. Let $S : V \to V$ be the transformation $\operatorname{id}_{V} - T$. Show that:
 	\begin{enumerate}
-		\item For any $v, w \in V$, we have $\beta(Sv, Sw) = 0$.
-		\item Furthermore, $\ker S$ is a subspace consisting of isotropic vectors, and thus, $\ker S \subseteq (\ker S)^{\perp}$.
+		\item For any $v, w \in V$, we have $\beta(Sv, Sw) = 0$ and thus, $\operatorname{img} S \subseteq (\operatorname{img} S)^{\perp}$
+
+		\item Furthermore, $\ker S$ is a subspace consisting of isotropic vectors and thus, $\ker S \subseteq (\ker S)^{\perp}$.
+
 		\item Show also that $\ker S = (\operatorname{img} S)^{\perp}$. Conclude that $S^{2} = 0$.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item Each $Sv = v - Tv$ is isotropic. Thus, for all $v, w \in V$
+			\begin{align*}
+				2 \beta(Sv, Sw) & = q(Sv + Sw) - q(Sv) - q(Sw) \\
+						& = q(S(v + w)) \\
+						& = 0.
+			\end{align*}
+
+		\item We assumed that $Sv = v - Tv$ is non-zero for anisotropic $v$. Thus, each $v \in \ker S$ is isotropic. It follows that for any $v, w \in \ker S$ we have $\beta(v, w) = 0$.
+
+		\item Suppose $v \in \ker S$. That is, $Tv = v$. Then, for each $w \in V$,
+			\begin{align*}
+				2 \beta(v, Sw) & = q(v + Sw) - q(v) - q(Sw) \\
+					       & = q(v + Sw) \\
+			\end{align*}
+			Consider
+
+			Suppose $v \in (\operatorname{img} S)^{\perp}$. Then $\beta(v, Sw) = 0$ for each $w \in V$. In particular
+			\begin{align*}
+				0 & = 2 \beta(v, Sv) \\
+				  & = q(v + Sv) - q(v) - q(Sv) \\
+				  & = q(v + Sv) - q(v).
+			\end{align*}
+
+			Since $\operatorname{img} S \subseteq (\operatorname{img} S)^{\perp} = \ker S$, we have $S^{2} = 0$.
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
@@ -133,16 +259,28 @@ Assume that that for every anisotropic $v \in V$, the vector $v - Tv$ is isotrop
 	Use the inclusions above and basic linear algebra to show that $\dim \operatorname{img} S = \dim \ker S = n / 2$ (in particular, $n$ is even) and these inequalities are even.
 \end{problem}
 
+\begin{solution}
+	Since $\ker S \le (\ker S)^{\perp}$ and $\dim \ker S + \dim (\ker S)^{\perp} = n$, we have $\dim \ker S \le n / 2$. Similarly, $\dim \operatorname{img} S \le n / 2$. Since $\dim \ker S + \dim \operatorname{img} S = n$, we have $\dim \ker S = \dim \operatorname{img} S = n / 2$.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[(6)]
 	Using $S^{2} = 0$, conclude that $T$ has determinant $1$.
 \end{problem}
 
+\begin{solution}
+	We know $S^{2} = (\operatorname{id} - T)^{2} = 0$. Suppose the corresponding polynomial $T^{2} - 2 T + 1$ is not the minimal polynomial of $T$. Then $T = \lambda \operatorname{id}$ for some $\lambda \in \mathbb{F}^{\times}$. Since $T$ is an isometry, $\lambda = 1$ and $\det T = \det \operatorname{id} = 1$. Else, $T^{2} - 2T + 1$ is the minimal polynomial of $T$. Since it only has $1$ as a root, all eigenvalues of $T$ are all $1$s, and $\det T = \prod 1 = 1$.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[(7)]
-	Using the inductive hypothesis on $n$, we saw that $T$ is a product of at most $n + 1$ reflections. Write $T$ as such a product. Show that there cannot be exactly $n + 1$ reflections in the product since $\det f = 1$.
+	Using the inductive hypothesis on $n$, we saw that $T$ is a product of at most $n + 1$ reflections. Write $T$ as such a product. Show that there cannot be exactly $n + 1$ reflections in the product since $\det T = 1$.
 \end{problem}
+
+\begin{solution}
+	Suppose $T$ is the product of $m$ reflections $R_{i}$. Each reflection that is not the identity has determinant $-1$, and so $\det T = (-1)^{m}$. Thus, $m$ is even. We know that $m \le n + 1$. Since $n$ is also even, $m \neq n + 1$ and $m \le n$.
+\end{solution}
 
 \end{document}
