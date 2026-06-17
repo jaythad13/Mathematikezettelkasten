@@ -219,7 +219,7 @@ Suppose $f \mapsto f \circ \pi$ pulls back holomorphic functions on $W \subseteq
 
 We don't even have to give the explicit construction to say that $\pi$ pulls back functions!
 
-##### _proposition:_ holomorphisms are morphisms of local ringed spaces
+##### _proposition:_ morphisms of local ringed spaces are holomorphisms
 
 Any morphism of local $\mathbb{C}$-algebra spaces $\pi, \pi^\sharp : X, \mathscr{O}_{X} \to Y, \mathscr{O}_{Y}$ is a holomorphism of Riemann surfaces.
 
