@@ -9,6 +9,12 @@ Let $(X, \mathcal{T})$ be a topological space.
 
 Separation properties are really interesting definitions with terrible names. They allow us to get an idea of how strong topologies are and whether there exist degeneracies in the topology that don't allow it to see differences that we might want it to.
 
+##### _definition:_ $T_{0}$ space
+
+$X$ is $T_{1}$ if every distinct pair of points $x, y \in X$ have corresponding open neighbourhoods $U_{x}, U_{y}$ such that $U_{x} \neq U_{y}$.
+
+---
+
 ##### _definition:_ $T_{1}$ space
 
 $X$ is $T_{1}$ if every pair of distinct points $x, y \in X$ have open neighbourhoods $U_{x}, U_{y}$ respectively such that $y \not\in U_{x}$ and $x \not\in U_{y}$.
