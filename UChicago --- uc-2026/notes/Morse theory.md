@@ -1,12 +1,17 @@
 ---
 tags:
 - uc-2026/morse-theory/1
+- uc-2026/morse-theory/2
 - carmen-rovi
 - diff-geo
 - alg-top
 ---
 
 Morse theory provides a "geometric" way to compute homeomorphism invariants of manifolds.
+
+### Height functions
+
+The first examples of Morse functions are height functions on submanifolds of $\mathbb{R}^N$.
 
 ##### _example:_ Morse theory on the sphere
 
@@ -56,7 +61,7 @@ Consider the torus $\mathbb{T}^2 \subseteq \mathbb{R}^3$ placed vertically as in
 $$
 h^\text{pre}((-\infty, z]) = \begin{cases}
 \text{Ø} & z < -1 \\
-B^1 -1 < z < -1/2 \\
+B^1 &  -1 < z < -1/2 \\
 S^1 \times [0, 1] / \sim  & z = -1 / 2 \\
 S^1 \times [0, 1] & -1 / 2 < z < 1 / 2 \\
 S^1 \times [0, 1] / \sim  & z = 1 / 2 \\
@@ -67,10 +72,23 @@ $$
 
 ---
 
-The interesting thing to note here is that the level and sublevel sets change as $z$ moves past a critical point on the manifold. That is, if $[z_{0}, z_{1}]$ contains no critical values, then $h^\text{pre}(z_{0}) \cong h^\text{pre}(z_{1})$ and $h^\text{pre}((-\infty, z_{0}]) \cong h^\text{pre}((-\infty, z_{1}])$. In fact, if $[z_{0}, z_{1}]$ contains no critical values, then $h^\text{pre}([z_{0}, z_{1}]) \cong h^\text{pre}(z_{0}) \times [z_{0}, z_{1}]$.
+The interesting thing to note here is that the level and sublevel sets change as $z$ moves past a critical point of $h$ (where $Dh = 0$). That is, if $[z_{0}, z_{1}]$ contains no critical values, then $h^\text{pre}(z_{0}) \cong h^\text{pre}(z_{1})$ and $h^\text{pre}((-\infty, z_{0}]) \cong h^\text{pre}((-\infty, z_{1}])$. In fact, if $[z_{0}, z_{1}]$ contains no critical values, then $h^\text{pre}([z_{0}, z_{1}]) \cong h^\text{pre}(z_{0}) \times [z_{0}, z_{1}]$.
 
-Note that the number of critical points is not an invariant of the surface — we expect the Bean $X \cong S^2$, but they have different numbers of critical points. The hope however, is that we can take some sort of weighted sum of the different types of critical points that is actually an invariant. Specifically, we hope (in analogy with the Euler characteristic) that
+Note that the number of critical points is not an invariant of the surface — we expect the Bean $X \cong S^2$, but they have different numbers of critical poinfits. The hope however, is that we can take some sort of signed sum of the different types of critical points that is actually an invariant. Specifically, we hope (in analogy with the Euler characteristic) that
 $$
 \# \{ \text{minima} \} - \# \{ \text{saddle points} \} + \# \{ \text{maxima} \}
 $$
 is a topological invariant.
+
+### Morse theory
+
+Let $X$ be a smooth manifold.
+
+The idea of Morse theory is to generalise the height functions to functions that subdivide the manifold into nice level sets. Because we have observed the behaviour change at critical points, the right idea is to consider functions with isolated (discrete) critical points.
+
+##### _definition:_ non-degenerate, Morse type critical points
+
+A [[UChicago --- uc-2026/notes/Manifolds background#_definition _ critical point|critical point]] of a smooth function $f : X \to \mathbb{R}$ is **non-degenerate** or of **Morse type** if its Hessian has non-zero determinant. Note that this is well-defined.
+
+---
+
