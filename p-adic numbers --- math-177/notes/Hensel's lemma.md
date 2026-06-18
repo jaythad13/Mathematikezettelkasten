@@ -4,6 +4,7 @@ tags:
 - math-177/8
 - math-177/9
 - math-177/18
+- uc-reu/de-rham/2
 ---
 
 Hensel's lemma allows us to solve diophantine equations over $\mathbb{Q}_{p}$ by solving them over [[p-adic numbers --- math-177/notes/The p-adic numbers#Residue fields and the ring structure of $ mathbb{Z}_{p}$|its residue field]] $\mathbb{F}_{p}$. In some sense, you can think of it as an intermediate value theorem or Newton's method. If $f(z_{0})$ is zero modulo $p$, then it is sort of small. Hensel's lemma says that as long as this isn't a local minimum or local maximum, we can find an actual zero.
@@ -62,6 +63,8 @@ Since $z_{n} = z_{0} \pmod p$ we have $f'(z_{n}) = f'(z_{0}) \neq 0 \pmod{p}$. T
 We are only left to show uniqueness.
 
 ---
+
+One way to think about this is that $p$ squares to zero in $\mathbb{Z} / (p^{2})$ like $\varepsilon$ in $\mathbb{F}[\varepsilon] / (\varepsilon^{2})$. For the same reasons, $f(x + qp) = f(x) + qp f'(x) + O(p^{2})$, just as in $\mathbb{F}[\varepsilon] / (\varepsilon^{2})$. Then, we can solve for $q$ such that $f(x + qp) = 0$ in $\mathbb{Z} / (p^{2})$ (this is just Newton's method).
 
 ##### _corollary:_ lifting roots
 
