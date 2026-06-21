@@ -29,3 +29,6 @@
 [submodule "Commutative algebra --- math-189AA/attachments/project"]
 	path = Commutative algebra --- math-189AA/attachments/project
 	url = https://git@git.overleaf.com/69277f8c672cf1f9585fc492
+[submodule "UChicago --- uc-2026/attachments/documents"]
+	path = UChicago --- uc-2026/attachments/documents
+	url = https://git@git.overleaf.com/6a383453359f19a962b78fa4
