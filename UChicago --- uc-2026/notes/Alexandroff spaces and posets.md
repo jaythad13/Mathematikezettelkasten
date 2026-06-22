@@ -5,22 +5,6 @@ tags:
 - peter-may
 ---
 
-We consider some simple combinatorial categories and the maps between them.
-
-### Ordered simplicial complexes
-
-Ordinary simplicial complexes are good enough for [[Simplicial homology and random walks --- math-145/notes/Simplicial homology#_definition _ simplicial homology, Betti number|simplicial homology]] but not much more. We make an improvement that we will later see is not good enough either.
-
-##### _definition:_ ordered simplicial complexes, morphism of ordered simplicial complexes
-
-An **ordered simplicial complex** is a [[Simplicial homology and random walks --- math-145/notes/Simplicial complexes#_definition _ simplicial complex, simplex|simplicial complexes]] with a partial order on the set of vertices that restricts to a total order on each simplex.
-
-A **morphism of ordered simplicial complexes** is then a morphism of simplicial complexes such that function on vertex sets is a morphism of posets.
-
----
-
-### Alexandroff spaces
-
 Alexandroff spaces are a small generalisation of finite topological spaces. Often, we are interested in Alexandroff spaces satisfying the mildest possible separation property.
 
 ##### _definition:_ Alexandroff spaces, A-spaces
@@ -65,6 +49,14 @@ There is an equivalence (in fact, an isomorphism) of categories $\mathsf{ASpc} \
 
 The previous proposition gives us $P : \operatorname{obj} \mathsf{ASpc} \to \operatorname{obj} \mathsf{Poset}$. We show this extends to a functor. In fact, this is essentially surjective — given a poset $X$, we can form the corresponding Alexandroff space $A(X)$ by setting $U_{x} = \{ y \in X \mid y \leq x  \}$. Then $P(A(X)) = X$.
 
-Suppose $f : X \to Y$ is a continuous map of Alexandroff spaces. Then the pre-image of each $U_{y} \subseteq Y$ is open, and thus, a union of $U_{x}$. Consider $P(f) : P(X) \to P(Y)$ by 
+Suppose $f : X \to Y$ is a continuous map of Alexandroff spaces. Then the pre-image of each $U_{y} \subseteq Y$ is open, and thus, a union of $U_{x}$. Consider $Pf : P(X) \to P(Y)$ by $x \mapsto f(x)$ (the same map at the level of sets). Suppose $x_{1} \leq x_{2}$ and write $f(x_{i}) = y_{i}$. Thus, $x_{1} \in U_{x_{1}} \subseteq U_{x_{2}}$ Since $f$ is continuous, $U_{x_{2}} \subseteq f^\text{pre}(U_{y_{2}})$. Thus,
+$$
+y_{1} = f(x_{1}) \in f^\text{img}(U_{x_{2}}) \subseteq f^\text{img}(f^\text{pre}(U_{y_{2}})) \subseteq U_{y_{2}}.
+$$
+But then, since $U_{y_{1}}$ is the minimal open neighbourhood of $y_{1}$, we have $U_{y_{1}} \subseteq U_{y_{2}}$, and thus, $y_{1} \leq y_{2}$.
+
+In fact, given any poset map $g : P(X) \to P(Y)$, the same map of sets $Ag : X \to Y$ is a continuous map. It suffices to check that the pre-image of each $U_{y}$ is open. Suppose $x \in Ag^\text{pre}(U_{y})$. Since $x \mapsto y$, each $x_{0} \leq y$ maps to some $y_{0} \leq y$. Thus, $U_{x} \subseteq Ag^\text{pre}(U_{y})$. That is, $Ag^\text{pre}(U_{y})$ contains an open neighbourhood of each point, and is open.
+
+Functoriality of $P$ is obvious. Thus, $P : \mathsf{ASpc} \to \mathsf{Poset}$ is an essentially surjective, [[Algebraic geometry --- rising-sea/notes/Functors#_definition _ faithful, full, fully faithful|fully faithful functor]], and [[Algebraic geometry --- rising-sea/notes/Natural transformations#_proposition _ equivalence is equivalent to fully faithful and essentially surjective|thus]], gives an equivalence of categories.
 
 ---
