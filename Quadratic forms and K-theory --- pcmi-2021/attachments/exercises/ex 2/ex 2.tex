@@ -27,7 +27,13 @@ Let $\mathbb{F}$ be a field of characteristic not $2$.
 \end{problem}
 
 \begin{solution}
-	Suppose $V, q$ is anisotropic but has isotropic base change $V', q'$ to $\mathbb{F}(\sqrt{d})$. Let $V, q \cong \left < a_{1}, \dots, a_{n} \right >$ (over $\mathbb{F}$), and thus, $V', q' \cong \left < a_{1}, \dots, a_{n} \right >$ (over $\mathbb{F}(\sqrt{d})$) as well.
+	Suppose $V, q$ is anisotropic but has isotropic base change $V', q'$ to $\mathbb{F}(\sqrt{d})$. Let $v' = x + y \sqrt{d} \in V'$ be isotropic (where $x, y \in V$). Then
+	\[
+		0 = q(v) = q(x) + q(y) d + \beta(x, y) \sqrt{d}
+	\] 
+	That is, both the rational and the $\sqrt{d}$ parts of $q(v)$ are $0$. But then $q(x) = - q(y) d$. Thus, $\operatorname{span}(x, y) \cong \left < a, -ad \right >$.
+
+	Let $V, q \cong \left < a_{1}, \dots, a_{n} \right >$ (over $\mathbb{F}$), and thus, $V', q' \cong \left < a_{1}, \dots, a_{n} \right >$ (over $\mathbb{F}(\sqrt{d})$) as well.
 
 	$\left < a, -ad \right >$ has isotropic base change to $\mathbb{F}(\sqrt{d})$. If $e_{1}, e_{2}$ is the basis corresponding to the diagonalisation, then $\sqrt{d} e_{1} + e_{2}$ is isotropic. Thus, if $V, q$ is anisotropic and contains $\left < a, -ad \right >$, it too has isotropic base change to $\mathbb{F}(\sqrt{d})$.
 \end{solution}
@@ -233,23 +239,18 @@ Let $V, q$ be a quadratic space over $\mathbb{F}$. In this sequence of exercises
 						& = 0.
 			\end{align*}
 
-		\item We assumed that $Sv = v - Tv$ is non-zero for anisotropic $v$. Thus, each $v \in \ker S$ is isotropic. It follows that for any $v, w \in \ker S$ we have $\beta(v, w) = 0$.
+		\item We assumed that $Sv = v - Tv$ is non-zero for anisotropic $v$. Thus, each $v \in \ker S$ is isotropic. It follows that for any $v, w \in \ker S$ we have
+			\[
+				2 \beta(v, w) = q(v + w) - q(v) - q(w) = 0 - 0 - 0 = 0.
+			\]
 
 		\item Suppose $v \in \ker S$. That is, $Tv = v$. Then, for each $w \in V$,
 			\begin{align*}
-				2 \beta(v, Sw) & = q(v + Sw) - q(v) - q(Sw) \\
-					       & = q(v + Sw) \\
+				\beta(v, Sw) & = \beta(v, Tw - w) \\
+					     & = \beta(Tv, Tw) - \beta(v, w) \\
+					     & = 0.
 			\end{align*}
-			Consider
-
-			Suppose $v \in (\operatorname{img} S)^{\perp}$. Then $\beta(v, Sw) = 0$ for each $w \in V$. In particular
-			\begin{align*}
-				0 & = 2 \beta(v, Sv) \\
-				  & = q(v + Sv) - q(v) - q(Sv) \\
-				  & = q(v + Sv) - q(v).
-			\end{align*}
-
-			Since $\operatorname{img} S \subseteq (\operatorname{img} S)^{\perp} = \ker S$, we have $S^{2} = 0$.
+			That is, $\ker S \subseteq (\operatorname{img} S)^{\perp}$. But by rank-nullity and dimensions of orthogonal complements, we have $\dim \ker S = \dim V - \dim \operatorname{img} S = \dim (\operatorname{img} S)^{\perp}$. Thus, $\ker S = (\operatorname{img} S)^{\perp}$.
 	\end{enumerate}
 \end{solution}
 
