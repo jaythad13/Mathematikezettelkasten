@@ -26,7 +26,9 @@ A **natural isomorphism** of functors is a natural transformation where each $m_
 
 An **equivalence of categories** is a pair of functors $F : \mathscr{A} \to \mathscr{B}$ and $F' : \mathscr{B} \to \mathscr{A}$ such that $F \circ F'$ and $F' \circ F$ are naturally isomorphic to the identity functor on each category.
 
-Note then that a natural transformation sends objects to morphisms and morphisms to commuting squares.
+---
+
+Note — a natural transformation sends objects to morphisms and morphisms to commuting squares.
 
 ##### _example:_ the double dual gives an equivalence of categories
 
@@ -41,6 +43,8 @@ Given $\mathsf{finVec}_{\mathbb{F}}$, the category of finite-dimensional vector 
 	\end{tikzcd}
 \end{document}
 ```
+
+---
 
 ##### _example:_ $\mathsf{finVec}_{\mathbb{F}}$ is equivalent to $\{ \mathbb{F}^n \mid n \in \mathbb{N} \}$,
 
@@ -60,6 +64,8 @@ It's clear that the composition $F \circ i = \operatorname{id}_{\mathscr{V}}$. N
 
 This is actually an example of a more general phenomenon that follows by essentially the same proof.
 
+---
+
 ##### _proposition:_ equivalence is equivalent to fully faithful and essentially surjective
 
 A functor $F : \mathscr{A} \to \mathscr{B}$ gives an equivalence of categories if and only if it is [[Algebraic geometry --- rising-sea/notes/Functors#_definition _ faithful, full, fully faithful|fully faithful]] and essentially surjective (every object in $\mathscr{B}$ is isomorphic to an object of the form $F(A)$).
@@ -67,3 +73,22 @@ A functor $F : \mathscr{A} \to \mathscr{B}$ gives an equivalence of categories i
 ###### _proof sketch:_
 
 Consider the functor $G : \mathscr{B} \to \mathscr{A}$ that sends every $B$ to $A$ for some $F(A)$ that it is isomorphic to, and send every morphism $B \to B'$ to a morphism $F(A) \to F(A')$ defined by the isomorphisms and then, by the bijection $\operatorname{Mor}(A, A') \cong \operatorname{Mor}(F(A), F(A'))$, send it to a morphism $A \to A'$. $F$ and $G$ give an equivalence of categories.
+
+---
+
+In a very concrete sense, natural transformations are homotopies of functors. Consider the "interval category" $\mathscr{I}$ with two objects $0, 1$ and one morphism $i : 0 \to 1$. Then a natural transformation of functors $F, G : \mathscr{A} \to \mathscr{B}$ is the same thing as a functor $H : \mathscr{A} \times \mathscr{I} \to \mathscr{B}$ satisfying the properties of a [[Topology --- math-147/notes/Homotopy#_definition _ homotopic, homotopy, homotopic relative to|homotopy]] between $F$ and $G$. 
+
+We require $H(A, 0) = F(A)$ and $H(A, 1) = G(A)$. Such a functor would assign a morphism $H(A, 0) \to H(A, 1)$ to each $(A, 0) \to (A, 1)$. Also, for each $f : A \to A'$, we get morphisms $(f, \operatorname{id}) : (A, 0) \to (A', 0)$ and $(f, \operatorname{id}) : (A, 1) \to (A', 1)$. Since the diagram
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		(A, 0) \ar[r, "(\mathrm{id} : i)"] \ar[d, "(f : \mathrm{id})"] & (A, 1) \ar[d, "(f : \mathrm{id})"] \\
+		(A', 0) \ar[r, "(\mathrm{id} : i)"] & (A', 1)
+	\end{tikzcd}
+\end{document}
+```
+commutes (by component-wise composition), so must the natural transformation square. This is in fact the only restriction, so each natural transformation also defines a functor $\mathscr{A} \times \mathscr{I} \to \mathscr{B}$.
+
+Under the topological realisation functor $\mathsf{Cat} \to \mathsf{Set}^\Delta \to \mathsf{Top}$, the index category $\mathscr{I}$ is sent to $[0, 1]$ and $H$ gives a homotopy of the corresponding maps.

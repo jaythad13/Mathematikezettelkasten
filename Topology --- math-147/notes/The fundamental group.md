@@ -21,13 +21,21 @@ Two paths $\alpha, \beta$ in $X$ are equivalent or path homotopic, denoted $\alp
 
 The path homotopy equivalence class of a loop $\alpha$ is denoted $[\alpha]$.
 
+---
+
 ##### _example:_ any two paths in $\mathbb{R}^n$ are equivalent
 
 Use the [[Topology --- math-147/notes/Homotopy#_example _ the straight line homotopy|straight line homotopy]].
 
+---
+
 ##### _definition:_ loop
 
-A loop in $X$ is a path $\alpha$ in $X$ with $\alpha(0) = \alpha(1)$. The point $x_{0} = \alpha(0) = \alpha(1)$ is called the base point of $\alpha$.
+A **loop** in $X$ is a path $\alpha$ in $X$ with $\alpha(0) = \alpha(1)$. The point $x_{0} = \alpha(0) = \alpha(1)$ is called the base point of $\alpha$.
+
+Equivalently, a loop is a based continuous map $(S^1, p) \to (X, x_{0})$.
+
+---
 
 Loops with non-trivial homotopy class help identify holes in the surface.
 
@@ -39,13 +47,17 @@ Of course, we only need these notions for loops (with a choice of base point). F
 
 ##### _definition:_ composition of paths
 
-If $\alpha, \beta$ are paths in $X$ with $\alpha(1) = \beta(0)$ then their composition is the path
+If $\alpha, \beta$ are paths in $X$ with $\alpha(1) = \beta(0)$ then their **composition** is the path
 $$
 \alpha \cdot \beta (s) = \begin{cases}
 \alpha(2 s) & s \in [0, 1 / 2] \\
 \beta(2s - 1) & s \in [1 / 2, 1].
 \end{cases}
 $$
+
+Equivalently, the composition of two loops $\alpha, \beta : S^1 \to X$ is the composition of the [[Topology --- math-147/notes/Quotient and identification spaces#_definition _ wedge sum|wedge sum]] along the two basepoints, $\alpha \vee \beta : S^1 \vee S^1 \to X$, which depends on the order of $\alpha$ and $\beta$) with the natural map $S^1 \to S^1 \vee S^1$.
+
+---
 
 Less obvious is that this composition descends to equivalence classes as well. We denote the composition of equivalence classes $[\alpha] \cdot [\beta]$.
 
@@ -80,15 +92,22 @@ $$
 \end{align}
 $$
 
+---
+
 ##### _proposition:_ composition of equivalence classes is associative
 
 For paths, $\alpha, \beta, \gamma$ in $X$ such that all products below are defined,
 $$
 ([\alpha] \cdot [\beta]) \cdot [\gamma] = [\alpha] \cdot ([\beta] \cdot [\gamma]).
 $$
+
+---
+
 ##### _definition:_ the constant path
 
-The constant path at $x_{0}$ is the constant function $e_{x_{0}} : [0, 1] \to \{ x_{0} \} \subseteq X$.
+The **constant path** at $x_{0}$ is the constant function $e_{x_{0}} : [0, 1] \to \{ x_{0} \} \subseteq X$.
+
+---
 
 ##### _proposition:_ the constant path behaves like the identity
 
@@ -131,9 +150,13 @@ $$
 $$
 Thus, $I$ is the union of basic open sets and is open.
 
+---
+
 ##### _definition:_ the reverse path
 
-For a path $\alpha$ in $X$, its reverse path is $\alpha ^{-1}$ defined by $\alpha ^{-1}(s) = \alpha(1 - s)$.
+For a path $\alpha$ in $X$, its **reverse path** is $\alpha ^{-1}$ defined by $\alpha ^{-1}(s) = \alpha(1 - s)$.
+
+---
 
 ##### _proposition:_ the reverse path behaves like the inverse
 
@@ -158,8 +181,12 @@ and the closure of their complement, the triangle $T_{3}$.
 
 We can separately check that $F$ is continuous on each of these triangles. On $T_{3}$, $F$ is constant at $e_{x_{0}}$. On $T_{1}$ the homotopy is the composition of continuous functions — $F_{\mid T_{1}}(t, s) = \alpha \circ \pi_{s}$. On $T_{2}$ this is is also true — $F_{\mid T_{2}}(t, s) = \alpha(1 - \pi_{s}(s, t))$. Thus, $F$ is continuous on $T_{1}$ and $T_{2}$ as well. Clearly $F$ is continuous on their intersections since it is constant on each — each of the intersections is in $T_{3}$ where $F$ is constant. Thus, by the gluing lemma, $F$ is continuous and the desired homotopy.
 
+---
+
 All of these propositions above suffice to show that the fundamental group really is a group. That is,
 
 ##### _definition:_ fundamental group
 
 For a choice of base point $x_{0} \in X$, the fundamental group based at $x_{0}$ is $\pi_{1}(X, x_{0})$, the group of equivalence classes of loops with base point $x_{0}$ under composition.
+
+---

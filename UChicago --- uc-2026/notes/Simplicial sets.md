@@ -50,12 +50,12 @@ If only we had a functor $\mathsf{Top} \to \mathsf{Set}^\Delta$ , we would get a
 
 These simplicial sets really are concretely related to topological spaces somehow. The idea is to return to topological (geometric) simplexes.
 
-##### _definition:_ topological simplexe
+##### _definition:_ topological simplices
 
-The $n$th topological simplex
+The $n$th topological simplex is $\Delta_{n}^\mathsf{Top} \subseteq \mathbb{R}^n$ is convex hull  of all $n$ standard basis vectors $e_{i} \in \mathbb{R}^n$ (with the [[Topology --- math-147/notes/Subspaces#_definition _ subspace topology|subspace topology]]).
 
 ---
 
-There is a (covariant) functor $\Delta \to \mathsf{Top}$ by $\underline{n} \mapsto \Delta_{n}^\mathsf{Top}$ (a cosimplicial topological space).
+There is a (covariant) functor $\Delta \to \mathsf{Top}$ by $\underline{n} \mapsto \Delta_{n}^\mathsf{Top}$ (a cosimplicial topological space). Thus, 
 
 There is a way for us to convert this functor $\mathsf{Top} \to \mathsf{Set}^\Delta$ to a functor in the other direction by abstract nonsense. You just take the tensor product! of $F : \mathscr{D} \to \mathscr{C}$ and $G : \mathscr{D}^\text{opp} \to \mathscr{C}$ and get an element $G \otimes_{\mathscr{D}} F$ of $\mathscr{C}$.
