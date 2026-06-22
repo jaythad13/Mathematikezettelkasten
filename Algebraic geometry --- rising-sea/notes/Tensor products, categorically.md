@@ -2,6 +2,7 @@
 tags:
 - rising-sea/1/2
 - math-189AA/20
+- uc-2026/alg-top/2
 - comm-alg
 - alg
 - cat-th
@@ -265,5 +266,30 @@ Thus, $\psi' = \psi$ so $\psi$ is the unique such morphism. Further, by definiti
 ##### _example:_ computing tensors with localisation
 
 Consider $\mathbb{Z} / (2) \otimes_{\mathbb{Z}} \mathbb{Q}$. Since tensors commute with localisation and we can think of $\mathbb{Q}$ as $\mathbb{Z}_{(0)}$, we have $\mathbb{Z} / (2) \otimes_{\mathbb{Z}} \mathbb{Q} \cong (\mathbb{Z} / (2)))_{((0))}$ where we are thinking of the localisation as a $\mathbb{Z}$ (away from the prime $(0) \subseteq \mathbb{Z}$, not away from $(0) \subseteq \mathbb{Z} / (2)$). Since $\mathbb{Z} / (2)$ is annihilated by $2 \in \mathbb{Z} \setminus (0)$, we have $(\mathbb{Z} / (2))_{(0)} = 0$.
+
+---
+
+### Non-commutative tensor products
+
+We can also construct the tensor products in the case of a non-commutative ring $A$. This is a functor $\mathsf{RMod}_{A} \times \mathsf{LMod}_{A} \to \mathsf{Ab}$. The idea is that we already have a tensor product of abelian groups (just tensor over $\mathbb{Z}$). WE then just take a quotient by left versus right scaling by $A$.
+
+##### _definition:_ non-commutative tensor products
+
+Suppose $N$ is a right $A$-module and $M$ is a left $A$-module. The **non-commutative tensor product** of $N$ and $M$ is $N \otimes_{R} M$, the (unique) abelian group making the following sequence of abelian groups [[Algebraic geometry --- rising-sea/notes/Complexes and exactness#_definition _ complexes, exactness, short exact sequence|exact]].
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		N \otimes_{\mathbb{Z}} R \otimes_{\mathbb{Z}} M \ar[rr, "\mathrm{id} \otimes \mu - \nu \otimes \mathrm{id}"] && N \otimes_{\mathbb{Z}} M \ar[r] & N \otimes_{R} M \ar[r] & 0
+	\end{tikzcd}
+\end{document}
+```
+Here $\mu : R \otimes_{Z} M \to M$ and $\nu : N \otimes_{Z} R \to N$ are the multiplication maps.
+
+> [!warning]
+> the universal property below might not be right
+
+It satisfies the universal product that any $R$-linear $N \otimes_{\mathbb{Z}} M \to C$ factors uniquely through $N \otimes_{R} M$.
 
 ---
