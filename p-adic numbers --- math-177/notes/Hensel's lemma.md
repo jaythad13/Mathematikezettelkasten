@@ -5,6 +5,7 @@ tags:
 - math-177/9
 - math-177/18
 - uc-reu/de-rham/2
+- uc-reu/de-rham/3
 ---
 
 Hensel's lemma allows us to solve diophantine equations over $\mathbb{Q}_{p}$ by solving them over [[p-adic numbers --- math-177/notes/The p-adic numbers#Residue fields and the ring structure of $ mathbb{Z}_{p}$|its residue field]] $\mathbb{F}_{p}$. In some sense, you can think of it as an intermediate value theorem or Newton's method. If $f(z_{0})$ is zero modulo $p$, then it is sort of small. Hensel's lemma says that as long as this isn't a local minimum or local maximum, we can find an actual zero.
@@ -77,5 +78,21 @@ In fact, Hensel's lemma works for any finite extension $\mathbb{K} / \mathbb{Q}_
 ##### _theorem:_ Hensel's lemma for extensions of $\mathbb{Q}_{p}$
 
 Suppose $\mathbb{K}$ is a finite extension of $\mathbb{Q}_{p}$, $f \in \mathscr{O}_{\mathbb{K}}[x]$ and $z_{1} \in \mathscr{O}_{\mathbb{K}}$ has $f(a) \equiv 0$ and $f'(z_{1}) \not \equiv 0$ in $\mathscr{O}_{\mathbb{K}} / \mathfrak{m}_{\mathbb{K}}$. Then there exists a unique $z \in \mathscr{O}_{\mathbb{K}}$ such that $f(z) = 0$ and $z \equiv z_{1}$ in $\mathscr{O}_{\mathbb{K}} / \mathfrak{m}_{\mathbb{K}}$.
+
+---
+
+### Square-zero extensions and generalised Hensel's lemma
+
+We can generalise Hensel's lemma to more general extensions of rings than
+
+##### _definition:_ square-zero extension
+
+A **square-zero extension** of rings is a surjective ring homomorphism $\varphi : A \to B$ such that $(\ker \varphi)^{2} = 0$.
+
+---
+
+##### _lemma:_ generalised Hensel's lemma
+
+Let $X = \operatorname{Spec} \mathbb{Z}[x, 1 / f'(x)] / (f(x))$. $X$ is [[UChicago --- uc-2026/notes/Algebraic prespaces#_definition _ formally étale|formally étale]].
 
 ---
