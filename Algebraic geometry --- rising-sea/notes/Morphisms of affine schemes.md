@@ -259,7 +259,7 @@ The category of affine schemes $\mathsf{AffSch}$ is equivalent to the [[Algebrai
 
 ---
 
-Note that this means that there may be more than one morphism between two one-point spaces! In particular, the functor $\mathsf{AffSch}$ is not faithful. This also means that injections of the underlying sets of affine schemes may not be monic as maps of affine schemes.
+Note that this means that there may be more than one morphism between two one-point spaces! In particular, the forgetful functor $\mathsf{AffSch} \to \mathsf{Set}$ is not faithful. This also means that injections of the underlying sets of affine schemes may not be monic as maps of affine schemes.
 
 ##### _example:_ two maps between one point spaces, or injections of sets are not monomorphisms of affine schemes
 
