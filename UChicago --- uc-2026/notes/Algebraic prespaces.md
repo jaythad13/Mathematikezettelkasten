@@ -20,7 +20,9 @@ Together these define the category of algebraic prespaces $\mathsf{PreSpc}$.
 
 We can identify schemes with corresponding prespaces. By [[Algebraic geometry --- rising-sea/notes/Yoneda's lemma#_lemma _ Yoneda's fanciest lemma|Yoneda's lemma]], this identifies an [[Algebraic geometry --- rising-sea/notes/Affine schemes#_definition _ affine scheme|affine scheme]] $\operatorname{Spec} A$ with its functor of ring-valued points $B \mapsto (\operatorname{Spec} A)(B) = \operatorname{Mor}_{\mathsf{Ring}}(A, B)$. In general, a scheme $X$ corresponds to the (contravariant) functor of $\operatorname{Spec} A$[[Algebraic geometry --- rising-sea/notes/Morphisms of schemes#_definition _ scheme-valued points of a scheme|-points]] of $X$, with $A \mapsto \operatorname{Mor}(\operatorname{Spec} A, X) = X(A)$. Note that since this is contravariant on affine schemes, it is covariant on rings. Also, the category of algebraic prespaces has a final object $\operatorname{Spec} \mathbb{Z}$.
 
-It will be useful for us to have some language of closed
+### Morphisms of algebraic prespaces
+
+It will be useful for us to have some language of types of morphisms of algebraic prespaces.
 
 ##### _definition:_ basic open and closed embeddings or immersions
 

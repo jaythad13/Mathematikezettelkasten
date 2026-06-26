@@ -6,6 +6,7 @@ tags:
 - math-177/18
 - uc-reu/de-rham/2
 - uc-reu/de-rham/3
+- uc-reu/de-rham/4
 ---
 
 Hensel's lemma allows us to solve diophantine equations over $\mathbb{Q}_{p}$ by solving them over [[p-adic numbers --- math-177/notes/The p-adic numbers#Residue fields and the ring structure of $ mathbb{Z}_{p}$|its residue field]] $\mathbb{F}_{p}$. In some sense, you can think of it as an intermediate value theorem or Newton's method. If $f(z_{0})$ is zero modulo $p$, then it is sort of small. Hensel's lemma says that as long as this isn't a local minimum or local maximum, we can find an actual zero.
@@ -73,7 +74,11 @@ Suppose $f \in \mathbb{Z}[x]$ and there is some $z_{1} \in \mathbb{Z} / (p)$ suc
 
 ---
 
-In fact, Hensel's lemma works for any finite extension $\mathbb{K} / \mathbb{Q}_{p}$. Just replace $p$ with the [[p-adic numbers --- math-177/notes/Rings of integers and ramification#_proposition, definition _ the maximal ideal is principal, uniformiser|uniformiser]] $\pi$. The proof goes through! That is to say,
+### Generalisations of Hensel's lemma
+
+We can generalise Hensel's lemma in many ways. 
+
+Hensel's lemma works for any finite extension $\mathbb{K} / \mathbb{Q}_{p}$. Just replace $p$ with the [[p-adic numbers --- math-177/notes/Rings of integers and ramification#_proposition, definition _ the maximal ideal is principal, uniformiser|uniformiser]] $\pi$. The proof goes through! That is to say,
 
 ##### _theorem:_ Hensel's lemma for extensions of $\mathbb{Q}_{p}$
 
@@ -81,9 +86,19 @@ Suppose $\mathbb{K}$ is a finite extension of $\mathbb{Q}_{p}$, $f \in \mathscr{
 
 ---
 
-### Square-zero extensions and generalised Hensel's lemma
+We can also generalise to more variables.
 
-We can generalise Hensel's lemma to more general extensions of rings than
+##### _lemma:_ multivariable Hensel's lemma
+
+Suppose $m \leq d$ and $f_{1}, \dots, f_{r} \in \mathbb{Z}[x_{1}, \dots, x_{d}]$ are polynomials and $p \in \mathbb{Z}$ is a prime. Suppose there is some $(a_{1}, \dots, a_{d}) \in \mathbb{A}^d(\mathbb{Z} / (p))$ such that $f_{i}(a_{1}, \dots, a_{d}) \equiv 0$ in $\mathbb{Z} / (p)$ for each $i$. If the Jacobian $Df(a_{1}, \dots, a_{d})$ has full rank $m$ over $\mathbb{Z} / (p)$, then for each $n \geq 1$ there are $p^{(n - 1)(d - r)}$ points $(b_{1}, \dots, b_{d}) \in \mathbb{A}^d(\mathbb{Z} / (p^n))$ such that $b_{i} \equiv a_{i}$ in $\mathbb{Z} / (p)$ for each $i$ and $f_{i}(b_{1}, \dots, b_{d}) \equiv 0$ in $\mathbb{Z} / (p^n)$ for each $i$.
+
+In particular, if $X = \operatorname{Spec} \mathbb{Z}[x_{1}, \dots, x_{d}] / (f_{1}, \dots, f_{r})$ has a $\mathbb{Z} / (p)$[[Algebraic geometry --- rising-sea/notes/Morphisms of schemes#_definition _ scheme-valued points of a scheme|-valued point]] and the Jacobian $Df$ is full rank over $\mathbb{Z} / (p)$, then the $\mathbb{Z} / (p)$-point lifts to infinitely many $\mathbb{Z}_{p}$-points.
+
+---
+
+We want to think of the $d - m$ exponent of the $p^{(d - m)(n - 1)}$ solutions over $\mathbb{Z} / (p^n)$ as the tangent space to $X$ (while the $n - 1$ part of the exponent comes form $n$-fold iteration).
+
+Finally, we can generalise to [[UChicago --- uc-2026/notes/Algebraic prespaces#_definition _ algebraic prespaces, morphisms of prespaces|algebraic prespaces]].
 
 ##### _definition:_ square-zero extension
 
