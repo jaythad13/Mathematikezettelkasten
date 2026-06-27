@@ -32,3 +32,6 @@
 [submodule "UChicago --- uc-2026/attachments/documents"]
 	path = UChicago --- uc-2026/attachments/documents
 	url = https://git@git.overleaf.com/6a383453359f19a962b78fa4
+[submodule "Geometric group theory --- rtg-2025/attachments/paper"]
+	path = Geometric group theory --- rtg-2025/attachments/paper
+	url = https://git@git.overleaf.com/690bdf4d65d7126fda5ed890
