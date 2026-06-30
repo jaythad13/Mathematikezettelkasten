@@ -92,7 +92,7 @@ We can also generalise to more variables.
 
 Suppose $m \leq d$ and $f_{1}, \dots, f_{r} \in \mathbb{Z}[x_{1}, \dots, x_{d}]$ are polynomials and $p \in \mathbb{Z}$ is a prime. Suppose there is some $(a_{1}, \dots, a_{d}) \in \mathbb{A}^d(\mathbb{Z} / (p))$ such that $f_{i}(a_{1}, \dots, a_{d}) \equiv 0$ in $\mathbb{Z} / (p)$ for each $i$. If the Jacobian $Df(a_{1}, \dots, a_{d})$ has full rank $m$ over $\mathbb{Z} / (p)$, then for each $n \geq 1$ there are $p^{(n - 1)(d - r)}$ points $(b_{1}, \dots, b_{d}) \in \mathbb{A}^d(\mathbb{Z} / (p^n))$ such that $b_{i} \equiv a_{i}$ in $\mathbb{Z} / (p)$ for each $i$ and $f_{i}(b_{1}, \dots, b_{d}) \equiv 0$ in $\mathbb{Z} / (p^n)$ for each $i$.
 
-In particular, if $X = \operatorname{Spec} \mathbb{Z}[x_{1}, \dots, x_{d}] / (f_{1}, \dots, f_{r})$ has a $\mathbb{Z} / (p)$[[Algebraic geometry --- rising-sea/notes/Morphisms of schemes#_definition _ scheme-valued points of a scheme|-valued point]] and the Jacobian $Df$ is full rank over $\mathbb{Z} / (p)$, then the $\mathbb{Z} / (p)$-point lifts to infinitely many $\mathbb{Z}_{p}$-points.
+In particular, if $X = \operatorname{Spec} \mathbb{Z}[x_{1}, \dots, x_{d}] / (f_{1}, \dots, f_{r})$ has a $\mathbb{Z} / (p)$[[Algebraic geometry --- rising-sea/notes/Morphisms of schemes#_definition _ scheme-valued points of a scheme|-valued point]] and the Jacobian $Df$ is full rank over $\mathbb{Z} / (p)$, then the $\mathbb{Z} / (p)$-point lifts to infinitely many $\mathbb{Z}_{p}$-points.fire
 
 ---
 
