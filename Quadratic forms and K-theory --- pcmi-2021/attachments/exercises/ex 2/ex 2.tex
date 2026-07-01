@@ -169,11 +169,25 @@ Let $\mathbb{F}$ be a field of characteristic not $2$.
 	Let $\mathbb{C}((t))$ be the Laurent series field of $\mathbb{C}$. Show that any three dimensional quadratic space over $\mathbb{C}((t))$ is isotropic.
 \end{problem}
 
+\begin{solution}
+	By the next problem, $u(\mathbb{C}((t))) = 2 u(\mathbb{C}) = 2$ and any $3$-dimensional form is isotropic.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[(2)]
-	More generally, show that the  $u$-invariant of the Laurent series field $\mathbb{F}((t))$ is twice the $u$-invariant of $\mathbb{F}$ (for any field $\mathbb{F}$ of characteristic not $2$). You will use the fact that any element in $1 + t \mathbb{F}[[t]]$ has a square root.
+	More generally, show that the  $u$-invariant of the Laurent series field $\mathbb{F}((t))$ is twice the $u$-invariant of $\mathbb{F}$ (for any field $\mathbb{F}$ of characteristic not $2$). You will use the fact that any element in $1 + (t)$ has a square root.
 \end{problem}
+
+\begin{solution}
+	Note that $t$ does not have a square root in $\mathbb{F}[[t]]$ (nor in $\mathbb{F}((t))$). Specifically, since $(t)$ is a maximal ideal, $f(t)^{2} \in (t)$ implies $f(t) \in (t)$, and thus, $f(t) \in (t^{2})$. Since $(t^{2})$ does not contain $t$, there is no $f(t)$ with $f(t)^{2} = t$.
+
+	However, each element of $1 + t \mathbb{F}[[t]]$, (and thus, each element of $u^{2} + t \mathbb{F}[[t]]$ with $u \in \mathbb{F}^{\times}$) has a square root. This means that we can rescale each diagonal quadratic form over $\mathbb{F}((t))$ into the form $\left < a_{1}, \dots, a_{r} \right > \oplus \left < b_{1} t, \dots, b_{s} t \right >$ where $a_{i}, b_{i} \in \mathbb{F}^{\times}$.
+
+	Let $n = u(\mathbb{F})$. Let $V_{0}, q_{0} = \left < a_{1}, \dots, a_{n} \right >$ over $\mathbb{F}$ be an $n$-dimensional anisotropic form. Let $V, q \cong \left < a_{1}, \dots, a_{n} \right > \oplus \left < a_{1} t, \dots, a_{n} t \right >$. Consider $v = (f_{1}(t), \dots, f_{2n}(t)) \in V \setminus \{ 0 \}$. If any of the first $n$ $f_{i}$ are non-zero, then $q(v) \equiv q_{0}(v_{0}) \not \equiv 0 \pmod t$. Here $v_{0} \equiv (f_{1}(t), \dots, f_{n}(t)) \pmod t$. Thus, $q(v) \neq 0$. Suppose $f_{1} = \dots = f_{n} = 0$. Then some $f_{n + i}$ is non-zero. Again, $q(v) \neq 0$ since $q(v) \equiv q(v_{0}) t \not \equiv 0 \pmod t^{2}$, where $v_{0} \equiv (f_{n + 1}(t), \dots, f(2n)(t))$. Thus, $V, q$ is a $2n$-dimensional anisotropic quadratic space over $\mathbb{F}((t))$.
+
+	Now suppose $V, q$ has $\dim V > 2n$. Let $V, q \cong \left < a_{1}, \dots, a_{n} \right > \oplus \left < b_{1} t, \dots, b_{s} t \right >$. Either $r > n$ or $s > n$. Then $u(\mathbb{F}) = n$ gives an anisotropic vector with coefficients in $\mathbb{F}$ in the larger direct summand.
+\end{solution}
 
 \pagebreak
 
