@@ -1,19 +1,21 @@
 ---
 tags:
+- math-147
 - uc-2026/alg-top/2
+- concise
 - peter-may
 - alg-top
 ---
 
-Analogously to the [[Topology --- math-147/notes/The fundamental group|fundamental group]], we can define higher homotopy groups of topological spaces.
+Analogously to the [[Algebraic topology --- concise/notes/The fundamental group|fundamental group]], we can define higher homotopy groups of topological spaces.
 
 ##### _definition:_ $n$th homotopy group of a space
 
-The **$n$th homotopy group of $X$, based at $x_{0}$** is $\pi_{n}(X, x_{0})$, the group of [[Topology --- math-147/notes/Homotopy#_definition _ homotopic, homotopy, homotopic relative to|homotopy]] equivalence classes of pointed maps $(S^n, p) \to (X, x_{0})$.
+The **$n$th homotopy group of $X$, based at $x_{0}$** is $\pi_{n}(X, x_{0})$, the group of [[Algebraic topology --- concise/notes/Homotopy#_definition _ homotopic, homotopy, homotopic relative to|homotopy]] equivalence classes of pointed maps $(S^n, p) \to (X, x_{0})$.
 
 ---
 
-Here, composition of $\alpha, \beta : S^n \to X$ is given by the gluing of the corresponding maps $[0, 1]^n \to X$ along a face $[0, 1]^{n - 1}$ (to get a map $[0, 2] \times [0, 1]^{n - 1}$). Equivalently, it is the map $S^n \to S^n \vee S^n \to X$  This is analogous to the definition of [[Topology --- math-147/notes/The fundamental group#_definition _ composition of paths|composition of paths]]. Finally, just as [[Topology --- math-147/attachments/homework/hw 10/hw 10.pdf#page=3|the fundamental group is functorial]], so are the higher homotopy groups — pointed continuous maps $f : X, x_{0} \to Y, y_{0}$ induce group homomorphisms $f_{*} : \pi_{n}(X, x_{0}) \to \pi_{n}(Y, y_{0})$ for each $n$.
+Here, composition of $\alpha, \beta : S^n \to X$ is given by the gluing of the corresponding maps $[0, 1]^n \to X$ along a face $[0, 1]^{n - 1}$ (to get a map $[0, 2] \times [0, 1]^{n - 1}$). Equivalently, it is the map $S^n \to S^n \vee S^n \to X$  This is analogous to the definition of [[Algebraic topology --- concise/notes/The fundamental group#_definition _ composition of paths|composition of paths]]. Finally, just as [[Topology --- math-147/attachments/homework/hw 10/hw 10.pdf#page=3|the fundamental group is functorial]], so are the higher homotopy groups — pointed continuous maps $f : X, x_{0} \to Y, y_{0}$ induce group homomorphisms $f_{*} : \pi_{n}(X, x_{0}) \to \pi_{n}(Y, y_{0})$ for each $n$.
 
 ##### _proposition:_ higher homotopy groups are abelian
 
@@ -27,15 +29,17 @@ For $n \geq 2$, the boundary of $[0, 1]^n$ is connected. For any two $\alpha, \b
 
 ### Weak homotopy equivalence
 
-The homotopy groups allow us to introduce an even weaker notion of similarity than [[Topology --- math-147/notes/Homotopy#_definition _ homotopy equivalence|homotopy equivalence]].
+The homotopy groups allow us to introduce an even weaker notion of similarity than [[Algebraic topology --- concise/notes/Homotopy#_definition _ homotopy equivalence|homotopy equivalence]].
 
 ##### _definition:_ weak homotopy equivalence
 
-A based continuous map $f : (X, x_{0}) \to (Y, y_{0})$ is a **weak homotopy equivalence** if it induces an isomorphism of [[Algebraic geometry --- rising-sea/notes/Categories#_example _ every group is an entire category, groupoids, monoids, the fundamental groupoid|groupoids]] $f_{*} : \pi_{n}(X, x_{0}) \to \pi_{n}(Y, y_{0})$ for each $n$.
+A based continuous map $f : (X, x_{0}) \to (Y, y_{0})$ is a **weak homotopy equivalence** if it induces an isomorphism of [[Algebraic geometry --- rising-sea/notes/Categories#_example _ every group is an entire category, groupoids, monoids, the fundamental groupoid|groupoids]] $f_{*} : \pi_{n}(X, x_{0}) \to \pi_{n}(Y, y_{0})$ for each $n$. 
+
+(Note, this is just the same as an isomorphism of groups for each $n \geq 1$ and a bijection of sets for $n = 0$).
 
 ---
 
-Clearly, any homotopy equivalence induces a weak homotopy equivalence. For most reasonable spaces (CW complexes), weak homotopy equivalence is the same as [[Topology --- math-147/notes/Homotopy#_definition _ homotopy equivalence|homotopy equivalence]]. However, finite spaces and [[UChicago --- uc-2026/notes/Alexandroff spaces and posets#_definition _ Alexandroff spaces, A-spaces|Alexandroff spaces]] give a plethora of counterexamples.
+Clearly, any homotopy equivalence induces a weak homotopy equivalence. For most reasonable spaces (CW complexes), weak homotopy equivalence is the same as [[Algebraic topology --- concise/notes/Homotopy#_definition _ homotopy equivalence|homotopy equivalence]]. However, finite spaces and [[UChicago --- uc-2026/notes/Alexandroff spaces and posets#_definition _ Alexandroff spaces, A-spaces|Alexandroff spaces]] give a plethora of counterexamples.
 
 ##### _example:_ a weak homotopy equivalence is strictly weaker
 

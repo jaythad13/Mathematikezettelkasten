@@ -31,7 +31,7 @@ Forgetful functors are less trivial. We will characterise them fully later, but 
 
 ##### _examples:_ functors from topology
 
-The map that sends pointed [[Topology --- math-147/notes/Topologies#_definition _ topology, open sets, topological space|topological spaces]] $(X, x_{0})$ to their [[Topology --- math-147/notes/The fundamental group#_definition _ fundamental group|fundamental group]] $\pi_{1}(X, x_{0})$ is actually functorial, with (pointed) continuous maps $f : (X, x_{0}) \to (Y, f(x_{0}))$ inducing group homomorphisms $f_{*} : \pi_{1} (X, x_{0}) \to \pi_{1}(Y, f(x_{0}))$.
+The map that sends pointed [[Topology --- math-147/notes/Topologies#_definition _ topology, open sets, topological space|topological spaces]] $(X, x_{0})$ to their [[Algebraic topology --- concise/notes/The fundamental group#_definition _ fundamental group|fundamental group]] $\pi_{1}(X, x_{0})$ is actually functorial, with (pointed) continuous maps $f : (X, x_{0}) \to (Y, f(x_{0}))$ inducing group homomorphisms $f_{*} : \pi_{1} (X, x_{0}) \to \pi_{1}(Y, f(x_{0}))$.
 
 Similarly, each $n$th homology is a covariant functor $\mathsf{Top} \to \mathsf{Ab}$.
 

@@ -1,7 +1,6 @@
 ---
 tags:
 - math-147
-- top
 - alg-top
 ---
 
@@ -17,15 +16,15 @@ We want to consider these paths up to deformation, leaving the endpoints in plac
 
 ##### _definition:_ path homotopy, equivalence
 
-Two paths $\alpha, \beta$ in $X$ are equivalent or path homotopic, denoted $\alpha \sim \beta$ if $\alpha, \beta$ are [[Topology --- math-147/notes/Homotopy#_definition _ homotopic, homotopy, homotopic relative to|homotopic relative to]] $\{ 0, 1 \}$.
+Two paths $\alpha, \beta$ in $X$ are equivalent or path homotopic, denoted $\alpha \sim \beta$ if $\alpha, \beta$ are [[Algebraic topology --- concise/notes/Homotopy#_definition _ homotopic, homotopy, homotopic relative to|homotopic relative to]] $\{ 0, 1 \}$.
 
-The path homotopy equivalence class of a loop $\alpha$ is denoted $[\alpha]$.
+The path homotopy equivalence class of a path $\alpha$ is denoted $[\alpha]$.
 
 ---
 
 ##### _example:_ any two paths in $\mathbb{R}^n$ are equivalent
 
-Use the [[Topology --- math-147/notes/Homotopy#_example _ the straight line homotopy|straight line homotopy]].
+Use the [[Algebraic topology --- concise/notes/Homotopy#_example _ the straight line homotopy|straight line homotopy]].
 
 ---
 
@@ -187,6 +186,12 @@ All of these propositions above suffice to show that the fundamental group reall
 
 ##### _definition:_ fundamental group
 
-For a choice of base point $x_{0} \in X$, the fundamental group based at $x_{0}$ is $\pi_{1}(X, x_{0})$, the group of equivalence classes of loops with base point $x_{0}$ under composition.
+For a choice of base point $x_{0} \in X$, the **fundamental group based at $x_{0}$** is $\pi_{1}(X, x_{0})$, the group of equivalence classes of loops with base point $x_{0}$ under composition.
+
+---
+
+##### _definition:_ simply connected
+
+$X$ is **simply connected** if it is [[Topology --- math-147/notes/Connectedness and path-connectedness#_definition _ path-connected|path-connected]] and $\pi_{1}(X, x_{0}) = 0$ for each $x_{0} \in X$.
 
 ---

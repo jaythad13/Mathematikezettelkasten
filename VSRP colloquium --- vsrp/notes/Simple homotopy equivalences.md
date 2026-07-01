@@ -7,13 +7,13 @@ tags:
 
 ##### _definition:_ homotopy equivalence
 
-Let $X, Y$ be topological spaces with $f : X \to Y$ and $g : Y \to X$ [[Topology --- math-147/notes/Continuous functions#_definition _ continuity|continuous maps]] between them. $X$ and $Y$ are homotopy equivalent (or have the same homotopy type) if $f \circ g$ is [[Topology --- math-147/notes/Homotopy#_definition _ homotopic, homotopy, homotopic relative to|homotopic]] to the identity $\operatorname{id}_{Y}$ on $Y$ and similarly $g \circ f \simeq \operatorname{id}_{X}$.
+Let $X, Y$ be topological spaces with $f : X \to Y$ and $g : Y \to X$ [[Topology --- math-147/notes/Continuous functions#_definition _ continuity|continuous maps]] between them. $X$ and $Y$ are homotopy equivalent (or have the same homotopy type) if $f \circ g$ is [[Algebraic topology --- concise/notes/Homotopy#_definition _ homotopic, homotopy, homotopic relative to|homotopic]] to the identity $\operatorname{id}_{Y}$ on $Y$ and similarly $g \circ f \simeq \operatorname{id}_{X}$.
 
 ##### _example:_ mapping cylinder, strong deformation retract
 
 For a continuous map $f : X \to Y$ the mapping cylinder $M_{f}$ is the space $X \times I \sqcup Y / \sim$ where $\sim$ identifies the top of the cylinder $X \times \{ 1 \}$ with the images of the corresponding points under $f$. That is $(x, 1) \sim f(x)$. Then $Y \to M_{f}$ is an inclusion and together with $M_{f} \to Y$ by $(x, t) \mapsto f(x)$ gives a homotopy equivalence (just slide everything down the cylinder). 
 
-Since $Y \subseteq M_{f}$ and the homotopy is [[Topology --- math-147/notes/Homotopy#_definition _ homotopic, homotopy, homotopic relative to|relative to]] $Y$, this is a strong deformation retract. Other examples of strong deformation retract are the contractions of $\mathbb{D}^n$ to a single point, or the right angled triangle to two lines (which has homology invariance given by [[Simplicial homology and random walks --- math-145/notes/Whitehead equivalence#_definition _ elementary collapse, elementary expansion|elementary collapse]] for simplicial complexes).
+Since $Y \subseteq M_{f}$ and the homotopy is [[Algebraic topology --- concise/notes/Homotopy#_definition _ homotopic, homotopy, homotopic relative to|relative to]] $Y$, this is a strong deformation retract. Other examples of strong deformation retract are the contractions of $\mathbb{D}^n$ to a single point, or the right angled triangle to two lines (which has homology invariance given by [[Simplicial homology and random walks --- math-145/notes/Whitehead equivalence#_definition _ elementary collapse, elementary expansion|elementary collapse]] for simplicial complexes).
 
 ### CW-complexes and Whitehead equivalence
 

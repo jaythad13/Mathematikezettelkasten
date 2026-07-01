@@ -72,3 +72,9 @@ All of this allows us to define a relaxation of the notion of [[Topology --- mat
 Two spaces are **homotopy equivalent**, denoted $X \simeq Y$ if there are maps $f : X \to Y$ and $g : Y \to X$ such that $f \circ g \simeq \operatorname{id}_{Y}$ and $g \circ f \simeq \operatorname{id}_{X}$.
 
 ---
+
+##### _example:_ straight line homotopy
+
+The straight line homotopy is really giving a homotopy equivalence between $\mathbb{R}^n$ and the one point space. It suffices to give a homotopy between $\operatorname{id}_{\mathbb{R}^n}$ and the constant map at $0$. There is such a homotopy given by $H : \mathbb{R}^n \times [0, 1] \to \mathbb{R}^n$ with $H(x, t) = (1 - t) x$.
+
+---

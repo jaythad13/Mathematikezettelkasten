@@ -76,7 +76,7 @@ Consider the functor $G : \mathscr{B} \to \mathscr{A}$ that sends every $B$ to $
 
 ---
 
-In a very concrete sense, natural transformations are homotopies of functors. Consider the "interval category" $\mathscr{I}$ with two objects $0, 1$ and one morphism $i : 0 \to 1$. Then a natural transformation of functors $F, G : \mathscr{A} \to \mathscr{B}$ is the same thing as a functor $H : \mathscr{A} \times \mathscr{I} \to \mathscr{B}$ satisfying the properties of a [[Topology --- math-147/notes/Homotopy#_definition _ homotopic, homotopy, homotopic relative to|homotopy]] between $F$ and $G$. 
+In a very concrete sense, natural transformations are homotopies of functors. Consider the "interval category" $\mathscr{I}$ with two objects $0, 1$ and one morphism $i : 0 \to 1$. Then a natural transformation of functors $F, G : \mathscr{A} \to \mathscr{B}$ is the same thing as a functor $H : \mathscr{A} \times \mathscr{I} \to \mathscr{B}$ satisfying the properties of a [[Algebraic topology --- concise/notes/Homotopy#_definition _ homotopic, homotopy, homotopic relative to|homotopy]] between $F$ and $G$. 
 
 We require $H(A, 0) = F(A)$ and $H(A, 1) = G(A)$. Such a functor would assign a morphism $H(A, 0) \to H(A, 1)$ to each $(A, 0) \to (A, 1)$. Also, for each $f : A \to A'$, we get morphisms $(f, \operatorname{id}) : (A, 0) \to (A', 0)$ and $(f, \operatorname{id}) : (A, 1) \to (A', 1)$. Since the diagram
 ```tikz
