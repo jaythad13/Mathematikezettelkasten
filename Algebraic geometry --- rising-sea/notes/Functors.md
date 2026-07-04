@@ -15,6 +15,8 @@ For categories $\mathscr{A}$ and $\mathscr{B}$, a covariant functor $F : \mathsc
 
 A contravariant functor $F : \mathscr{A} \to \mathscr{B}$ is a covariant functor $F : \mathscr{A}^\text{opp} \to \mathscr{B}$ (from the [[Algebraic geometry --- rising-sea/notes/Categories#_definition _ opposite (or dual) categories|opposite category]]) or equivalently the pair of a map on objects, and a function $\operatorname{Mor}_{\mathscr{A}}(A_{1}, A_{2}) \to \operatorname{Mor}_{\mathscr{B}}(F(A_{2}), F(A_{1}))$ preserving identities and having $F(g \circ f) = F(f) \circ F(g)$.
 
+A contravariant functor $\mathscr{A} \to \mathscr{B}$ is often called a [[Algebraic geometry --- rising-sea/notes/Sheaves#_definition _ presheaves, sections, restriction maps|presheaf]] on $\mathscr{A}$, especially when $\mathscr{B} = \mathsf{Set}$. 
+
 Functors compose naturally —
 
 ##### _definition:_ composition of functors
@@ -37,7 +39,7 @@ Similarly, each $n$th homology is a covariant functor $\mathsf{Top} \to \mathsf{
 
 ##### _example:_ the functor of points and its opposite
 
-On any category $\mathscr{C}$, the contravariant functor of points is $h_{A}$ by $B \mapsto \operatorname{Mor}(B, A)$ on objects. On morphisms, for each $f : B \to C$ we have $\operatorname{Mor}(C, A) \to \operatorname{Mor}(B, A)$ by $g \mapsto g \circ f$ (for each $g : C \to A$). It's called the functor of points because, the $B$-points of a scheme $A$ are just morphisms $B \to A$.
+On any category $\mathscr{C}$, for each object $A$, the contravariant functor of points of $A$ is $h_{A}$ by $B \mapsto \operatorname{Mor}(B, A)$ on objects. On morphisms, for each $f : B \to C$ we have $\operatorname{Mor}(C, A) \to \operatorname{Mor}(B, A)$ by $g \mapsto g \circ f$ (for each $g : C \to A$). It's called the functor of points because, the $B$-points of a scheme $A$ are just morphisms $B \to A$.
 
 For example, the functor $\mathsf{Vec}_{k} \to \mathsf{Vec}_{k}$ by taking duals and dual maps in $\mathsf{Vec}_{k}$ is the functor of $k$-points and the pullback of continuous (real) functions on topological spaces is the functor of $\mathbb{R}$-points $\mathsf{Top} \to \mathsf{Ring}$. In these examples, it's also reasonable to call these functors "points" since the continuous real maps on $X$ look like sections of $\mathbb{R}$ varying over $X$.
 

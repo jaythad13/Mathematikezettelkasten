@@ -6,7 +6,9 @@ tags:
 - peter-may
 ---
 
-Simplicial complexes are simple piecewise-linear topological spaces that we can use to probe topological spaces in general. They build up from points, to triangles, to tetrahedra, and so on, by describing any set $\{ 1, 2, \dots, n \}$ as the simplest $n$-tope and considering all of its subsets as lower dimensional faces.
+(Abstract) simplicial complexes are simple piecewise-linear topological spaces that we can use to probe topological spaces in general. They build up from points, to triangles, to tetrahedra, and so on, by describing any set $\{ 1, 2, \dots, n \}$ as the simplest $n$-tope and considering all of its subsets as lower dimensional faces.
+
+They generalise the concrete simplicial complexes — spaces obtained by gluing together $n$-simplices as subspaces of $\mathbb{R}^n$ along faces.
 
 ##### _definition:_ simplicial complex, simplex
 
@@ -27,6 +29,8 @@ Given a simplicial complex $X$, and simplices $\sigma, \tau \in X$, if $\sigma \
 ##### _definition:_ $k$-skeleton
 
 The **$k$-skeleton** of a simplicial complex $X$ is the simplicial complex $X^{(k)}$ consisting of all $\sigma \in X$ such that $\# \sigma \leq k$.
+
+---
 
 ### Some nice constructions
 
