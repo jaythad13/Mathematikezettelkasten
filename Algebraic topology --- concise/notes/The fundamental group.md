@@ -22,9 +22,9 @@ The path homotopy equivalence class of a path $\alpha$ is denoted $[\alpha]$.
 
 ---
 
-##### _example:_ any two paths in $\mathbb{R}^n$ are equivalent
+##### _example:_ any two paths in $\mathbb{R}^n$ with the same endpoint are homotopic
 
-Use the [[Algebraic topology --- concise/notes/Homotopy#_example _ the straight line homotopy|straight line homotopy]].
+Use the [[Algebraic topology --- concise/notes/Homotopy#_example _ the straight line homotopy|straight line homotopy]]. It isn't hard to check that it preserves endpoints.
 
 ---
 
@@ -37,6 +37,26 @@ Equivalently, a loop is a based continuous map $(S^1, p) \to (X, x_{0})$.
 ---
 
 Loops with non-trivial homotopy class help identify holes in the surface.
+
+The following lemmas about paths and path homotopy will prove to be very useful.
+
+##### _lemma:_ paths can be understood locally
+
+Let $\alpha : [0, 1] \to X$ be a path, and let $\{ U_{\alpha} \}$ be a cover of $X$. Then there exists some $n$ such that each subinterval $I_{i} = \left[ \frac{i - 1}{n}, \frac{i}{n} \right] \subseteq [0, 1]$ has $\alpha^\text{img}(I_{i}) \subseteq U_{\alpha_{i}}$ for some $\alpha_{i}$.
+
+###### _proof:_
+[[Topology --- math-147/attachments/homework/hw 9/hw 9.pdf#page=6|is in the homework]].
+
+---
+
+##### _lemma:_ path homotopies can be understood locally
+
+Let $H : [0, 1] \times [0, 1] \to X$ be a continuous map, and let $\{ U_{\alpha} \}$ be a cover of $X$. Then there exists some $n$ such that each subsquare $I_{i, j} = \left[ \frac{i - 1}{n}, \frac{i}{n} \right] \times \left[ \frac{j - 1}{n}, \frac{j}{n} \right] \subseteq [0, 1]$ has $\alpha^\text{img}(I_{i, j}) \subseteq U_{\alpha_{i, j}}$ for some $\alpha_{i, j}$.
+
+###### _proof:_
+follows similarly — use [[Topology --- math-147/notes/Topological properties of metric spaces#_lemma _ the Lebesgue number lemma|the Lebesgue number lemma]].
+
+---
 
 ### Constructing the fundamental group
 

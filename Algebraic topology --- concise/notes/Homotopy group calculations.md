@@ -116,12 +116,33 @@ By stereographic projection, this implies $\pi_{1}(S^{2} \setminus \{ * \}) = 0$
 
 $\pi_{1}(S^{2}) = 0$.
 
+###### _proof:_
+
+Write $S^{2} = U \cup V$ with $U, V \cong \mathbb{R}^{2}$ via stereographic projection from opposite poles.
+
 ---
 
+The calculation of $\pi_{1}(S^1)$ is a first example of the general idea of a covering space. For this, we fulfil our promise that some technical lemmas about paths and path homotopies would be useful.
+
+![[Algebraic topology --- concise/notes/The fundamental group#_lemma _ paths can be understood locally|The fundamental group]]
+
+![[Algebraic topology --- concise/notes/The fundamental group#_lemma _ path homotopies can be understood locally|The fundamental group]]
 
 ##### _proposition:_ fundamental group of the circle
 
 $\pi_{1}(S^1) = \mathbb{Z}$.
+
+###### _proof:_
+
+We use the regular embedding $S^1 \subseteq \mathbb{C}$ and choose $*$ to be the base point $1 \in \mathbb{C}$
+
+Let $f : \mathbb{R} \to S^1$ be given by $f(t) = e^{2 \pi i t}$. Write, for each $a \in [0, 1)$ and $n \in \mathbb{Z}$, the open interval $U_{a, n} = (a + n, a + n + 1)$. $f$ is a homeomorphism on each $U_{a, n}$, mapping it onto the open set $V_{a} = S^1 \setminus \{ e^{2 \pi i a} \}$. We claim that for each (path homotopy class of) $\gamma : [0, 1] \to S^1$, there is a unique (path homotopy class of) $\widetilde{\gamma} : [0, 1] \to \mathbb{R}$ such that $\widetilde{\gamma}(0) = 0$ and $\gamma = f \circ \widetilde{\gamma}$. We say such a $\widetilde{\gamma}$ is a **lift** of $\gamma$.
+
+Consider the open covers $\{ U_{a, n} \}$ of $\mathbb{R}$ and $\{ V_{a} \}$ of $S^1$. Divide $[0, 1]$ into $k$ subintervals $I_{i}$ such that each $I_{i}$ has $\gamma^\text{img}(I_{i}) \subseteq V_{a_{i}}$. Choose the unique pre-image $U_{a_{1}, n_{1}} = f^\text{pre}(V_{a_{1}})$ with $0 \in U_{a_{1}, n_{1}}$ and choose $\widetilde{\gamma}_{\mid I_{1}} = f^{-1}_{\mid U_{a_{1}, n_{1}}} \circ \gamma_{\mid I_{1}}$. Inductively choose the unique pre-image $U_{a_{i + 1}, n_{i + 1}}$ containing $\widetilde{\gamma}_{\mid I_{i}}(i / k)$ and choose $\widetilde{\gamma}_{\mid I_{i + 1}} = f^{-1}_{\mid U_{a_{i + 1}, n_{i + 1}}} \circ \gamma_{\mid I_{i + 1}}$. Note that this path is unique on the nose (not just up to homotopy).
+
+If $\gamma \simeq \gamma'$, do the same thing to lift the homotopy $H$ witnessing it to a homotopy $\widetilde{H}$ witnessing $\widetilde{\gamma} \simeq \widetilde{\gamma}'$. One can check that this is a a homotopy relative to the endpoints — $H(0, t) = f(0)$ can be thought of as a constant path at $f(0)$. Thus, it lifts uniquely to the constant path at $0 \in \mathbb{R}$. Similarly for the other end point. 
+
+Consider $\varphi : \mathbb{Z} \to \pi_{1}(S^1)$ by $n \mapsto [\gamma_{n}]$, where $\gamma_{n}(t) = e^{2 \pi i n t}$. It's easy to see this is really a homomorphism — $[\gamma_{m}][\gamma_{n}] = [\gamma_{m + n}]$. $\varphi$ is injective — for distinct $m, n \in \mathbb{Z}$, $\gamma_{m}$ and $\gamma_{n}$ admit distinct lifts with $\widetilde{\gamma_{m}}(1) = m \neq n \neq \widetilde{\gamma_{n}}(1)$. $\varphi$ is also surjective. Consider $[\gamma] \in \pi_{1}(S^1)$ lifting to $\widetilde{\gamma}$ with $\widetilde{\gamma}(1) = n$. In $\mathbb{R}$, [[Algebraic topology --- concise/notes/The fundamental group#_example _ any two paths in $ mathbb{R} n$ with the same endpoint are homotopic|any two paths with the same endpoint are homotopic]]. Thus, $\widetilde{\gamma} \simeq \widetilde{\gamma_{n}}$. This [[Algebraic topology --- concise/notes/Homotopy#_example _ pushforward homotopy|pushes forward]] to a homotopy $\gamma \simeq \gamma_{n}$.
 
 ---
 
@@ -153,7 +174,7 @@ We can also give a different, topological proof of the fundamental theorem of al
 
 ##### _definition:_ degree
 
-The **degree** of a continuous map $f : S^1 \to S^1$ is the integer $\deg f \in \mathbb{Z}$, the image of the generator $1 \in \pi_{1}(S^1, *)$ under the map $\pi_{1}\gamma \circ f_{*} : \pi_{1}(S^1, *) \to \pi_{1}(S^1, f(*)) \to \pi_{1}(S^1, *)$ (where $\gamma$ is a path from $*$ to $f(*)$).
+The (topological) **degree** of a continuous map $f : S^1 \to S^1$ is the integer $\deg f \in \mathbb{Z}$, the image of the generator $1 \in \pi_{1}(S^1, *)$ under the map $\pi_{1}\gamma \circ f_{*} : \pi_{1}(S^1, *) \to \pi_{1}(S^1, f(*)) \to \pi_{1}(S^1, *)$ (where $\gamma$ is a path from $*$ to $f(*)$).
 
 ---
 
@@ -173,10 +194,10 @@ Let $\deg p = n$ be the polynomial degree of $p$. If $p(z) \neq 0$ for all $z$ w
 
 ---
 
-In fact, we can find the number of roots in any disc using this method.
+Similarly, we can find the number of roots in the unit disc using $\pi_{1}(S^1)$.
 
-##### _theorem:_ the number of roots in a disc
+##### _theorem:_ counting roots in the unit disc
 
-Suppose $p : \mathbb{C} \to \mathbb{C}$ is a polynomial with no roots on $S^1$. Then $p$ has $\deg f$ roots $z$ with $\lvert z \rvert < 1$ for $f(z) = p(z) / \lvert p(z) \rvert$.
+Suppose $p : \mathbb{C} \to \mathbb{C}$ is a polynomial with no roots on $S^1$. Then $p$ has $\deg f$ (topological degree) roots (counting multiplicities) $z$ with $\lvert z \rvert < 1$ for $f(z) = p(z) / \lvert p(z) \rvert$.
 
 ---

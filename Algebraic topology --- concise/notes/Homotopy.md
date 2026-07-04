@@ -49,7 +49,15 @@ Just apply the straight line homotopy.
 
 ---
 
-We should verify that this notion of deformation really deserves the $\simeq$ symbol, and really does carry enough information for us to achieve our goal of classifying nice spaces. 
+We should verify that this notion of deformation really deserves the $\simeq$ symbol, and really does carry enough information for us to achieve our goal of classifying nice spaces.
+
+##### _example:_ pushforward homotopy
+
+Perhaps the most important example of a homotopy is the **pushforward homotopy** which allows us to turn homotopies of maps $X \to Y$ to homotopies of maps $X \to Y \to Z$. 
+
+Suppose $f, g : X \to Y$ are homotopic with homotopy witnessed by $H$. Then, for any $h : Y \to Z$ there is a homotopy $h \circ H$ between $h \circ f$ and $h \circ g$.
+
+---
 
 ##### _proposition:_ homotopy forms an equivalence relation
 
