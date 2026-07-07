@@ -29,7 +29,7 @@ However, choosing morphisms to be natural transformations doesn't allow us to co
 
 ##### _definition:_ simplex category, $n$-simplices
 
-The **simplex category** $\Delta$ is the category of finite subposets $\Delta^n = [0, n] = \{ 0, \dots, n \}$ of $\mathbb{N}_{0}$ with morphisms given by partially ordered functions.
+The **simplex category** $\Delta$ is the category of non-empty finite subposets $\Delta^n = [0, n] = \{ 0, \dots, n \}$ of $\mathbb{N}_{0}$ with morphisms given by partially ordered functions.
 
 ---
 
@@ -83,29 +83,37 @@ The simplicial objects in a category form a category under natural transformatio
 
 Each $\Delta^n$ defines a simplicial set $h_{\Delta^n}$. Note, though $h_{\Delta^n}$ is contravariant, the functor $\Delta^n \mapsto h_{\Delta^n}$ is covariant $\Delta \to \mathsf{Set}_{\Delta}$ (a **cosimplicial simplicial set**). We will often abuse notation and write $\Delta^n$ for the simplicial set $h_{\Delta^n}$.
 
-By [[Algebraic geometry --- rising-sea/notes/Yoneda's lemma#_lemma _ Yoneda's fanciest lemma|Yoneda]], we can define the **$n$-simplices of a simplicial set** $X \in \mathsf{Set}_{\Delta}$ to be the morphisms $\Delta^n \to X$. We also have **face maps** of simplicial sets $h_{d_{i}} : \partial_{i} \Delta^n =  \Delta^{n - 1} \to \Delta^n$.
+By [[Algebraic geometry --- rising-sea/notes/Yoneda's lemma#_lemma _ Yoneda's fanciest lemma|Yoneda]], we can define the **$n$-simplices of a simplicial set** $X \in \mathsf{Set}_{\Delta}$ to be the morphisms $\Delta^n \to X$. We write $X_{n}$ for the set of all these. We also have **face maps** of simplicial sets $h_{d_{i}} : \partial_{i} \Delta^n =  \Delta^{n - 1} \to \Delta^n$.
 
 This is just one example standard way to get a functor $\mathscr{C} \to \mathsf{Set}_{\Delta}$. 
 
-##### _definition:_ cosimplicial object
+##### _definition:_ cosimplicial object, simplicialisation, realisation
 
 A **cosimplicial object** in a category $\mathscr{C}$ is a functor $\Delta \to \mathscr{C}$.
 
 Given a standard choice of cosimplicial object $K : \Delta \to \mathscr{C}$, we often write the image of $\Delta^n$ as $\Delta^n_{\mathscr{C}}$. Then 
 
-Recall $h_{X}$ is the contravariant functor $h_{X}(Y) = \operatorname{Mor}(X, Y)$. Then the **simplicialisation** functor $S : \mathscr{C} \to \mathsf{Set}_{\Delta}$ is given by $S(X) = h_{X} \circ K_{\mathscr{}}$.
+Write $h_{X}$ and $h^X$ for the contravariant and covariant functors $Y \mapsto \operatorname{Mor}(Y, X)$ and $Y \mapsto \operatorname{Mor}(X, Y)$. Write $h^-$ for the contravariant functor $X \mapsto h^X$. Then the **simplicialisation** functor $S : \mathscr{C} \to \mathsf{Set}_{\Delta}$ is given by $S(X) = h_{X} \circ K_{\mathscr{}}$, or equivalently, $S(X) = (h^-(K))(X) = h^K(X)$.
+
+Most concisely, we say simplicialisation is the [[UChicago --- uc-2026/notes/Kan extensions#_definition _ Kan extensions|left Kan extension]] of the cosimplicial object $K$ along the Yoneda embedding $h_{-} : X \mapsto h_{X}$. 
 
 ---
 
 ### Simplicial set homology
 
-The generality of the definition of simplicial objects allows us to make a definition of simplicial abelian groups, for example. Clearly, the free abelian group functor $\mathsf{Set} \to \mathsf{Ab}$ gives us a functor $\mathsf{Set}_{\Delta} \to \mathsf{Ab}_{\Delta}$. Then, from each simplicial abelian group, we can construct a chain complex, and then take its homology.
+The generality of the definition of simplicial objects allows us to make a definition of simplicial abelian groups, for example. Clearly, the free abelian group functor $\mathsf{Set} \to \mathsf{Ab}$ gives us a functor $\mathsf{Set}_{\Delta} \to \mathsf{Ab}_{\Delta}$. Then, from each simplicial abelian group, we can construct a chain complex, and then take its homology. We can do this with arbitrary coefficients
 
 ##### _definition:_ simplicial set homology
 
+Let $X$ be a simplicial module in $\mathsf{Mod}_{A, \Delta}$. Then the simplicial set is the homology of the complex $X_{\bullet}$ where $X_{n} = \operatorname{Mor}(\Delta^n_{\mathsf{Ab}_{\Delta}}, X)$ and $\partial_{n} : X_{n} \to X_{n - 1}$ is the given by
+$$
+\partial_{n} = \sum_{i = 0}^n (-1)^i d_{i}.
+$$
+Here $d_{i} : X_{n} \to X_{n - 1}$ denotes the morphism induced by $d_{i} : \Delta^{n - 1} \to \Delta^n$ in $\Delta$.
+
 ---
 
-### Singular sets and geometric realisations
+### Singular complexes and geometric realisations
 
 For the notion of simplicial sets to be useful in algebraic topology, we want a way to convert a topological space into a simplicial approximation and back. For example, a functor $\mathsf{Top} \to \mathsf{Set}_{\Delta}$ would give us a homology theory on $\mathsf{Top}$. The way we do this is the construction above with a standard cosimplicial object — parameterising the standard topological (geometric) simplices.
 
@@ -117,20 +125,36 @@ This defines a (covariant) functor $K_{\mathsf{Top}} : \Delta \to \mathsf{Top}$ 
 
 ---
 
-##### _definition:_ singularisation, singular complex
+##### _definition:_ singularisation, singular complex, singular homology
 
 Then the **singularisation** functor $S : \mathsf{Top} \to \mathsf{Set}_{\Delta}$ is the simplicialisation functor $S(X) = h_{X} \circ K_{\mathsf{Top}}$.
 
-$S(X)$ is called the **singular complex** of $X$.
+$S(X)$ is called the **singular complex** of $X$. 
+
+Abuse notation to write $S(X)$ for the image of $S(X)$ under the free $A$-module functor $\mathsf{Set}_{\Delta} \to \mathsf{Mod}_{A, \Delta}$. Then the $i$th **singular homology of $X$ with $A$ coefficients** is $H_{i}^{\text{sing}}(X, A) = H_i(S(X))$.
 
 ---
 
-There is a way for us to convert this functor $\mathsf{Top} \to \mathsf{Set}_{\Delta}$ to a functor in the other direction by abstract nonsense. You just take the tensor product! of $F : \mathscr{D} \to \mathscr{C}$ and $G : \mathscr{D}^\text{opp} \to \mathscr{C}$ and get an element $G \otimes_{\mathscr{D}} F$ of $\mathscr{C}$.
+It's just an unravelling of the definitions to see that this definition of singular homology agrees with the usual one.
+
+There is a way for us to convert this functor $\mathsf{Top} \to \mathsf{Set}_{\Delta}$ to a functor in the other direction by abstract nonsense. You just take the tensor product! Specifically, of $F : \mathscr{D} \to \mathscr{C}$ and $G : \mathscr{D}^\text{opp} \to \mathscr{C}$ and get an element $G \otimes_{\mathscr{D}} F$ of $\mathscr{C}$.
 
 ### Nerves
 
-Another (surprisingly) useful construction allows us to see categories as simplicial sets. This connects to the construction of [[UChicago --- uc-2026/notes/Classifying spaces|classifying spaces]] and the theory of [[UChicago --- uc-2026/notes/Infinity categories#_definition _ $ infty$-category|infinity categories]]
+Another (surprisingly) useful construction allows us to see categories as simplicial sets. This connects to the construction of [[UChicago --- uc-2026/notes/Classifying spaces|classifying spaces]] and the theory of [[UChicago --- uc-2026/notes/Infinity categories#_definition _ $ infty$-category|infinity categories]].
 
-##### _definition:_ categorical simplices
+##### _definition:_ $K_{\mathsf{Cat}}$, categorical simplices, nerve
+
+The **standard cosimplicial category** is $K_{\mathsf{Cat}}$ sending each $\Delta^n \in \Delta$ to its [[Algebraic geometry --- rising-sea/notes/Categories#_example _ preorders and posets|poset category]] and morphisms to functors between them. Thus, the **categorical $n$-simplex** is the subposet $[0, n] \subseteq \mathbb{N}_{0}$.
+
+The **nerve** of a (small) category $\mathscr{C}$ is the simplicialisation of $\mathscr{C}$ along $K_{\mathsf{Cat}}$, denoted $N \mathscr{C}$.
+
+---
+
+Note then that $N \mathscr{C}_{0}$ is just $\operatorname{obj} \mathscr{C}$, $N \mathscr{C}_{1}$ is $\operatorname{Mor}_{\mathscr{C}}(X, Y)$ for all pairs $X, Y \in N \mathscr{C}_{0}$, $N \mathscr{C}_{2}$ is commuting pairs of morphisms et c. 
+
+##### _example:_ classifying space
+
+Let $\mathscr{G}$ be the [[Algebraic geometry --- rising-sea/notes/Categories#_example _ every group is an entire category, groupoids, monoids, the fundamental groupoid|group category]] of a group $G$. Then $N\mathscr{G}$ is the simplicial set of the classifying space $BG$.
 
 ---
