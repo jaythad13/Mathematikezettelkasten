@@ -29,7 +29,7 @@ Let $V_{d, n} = \mathbb{C}[x_{0}, \dots, x_{n}]$ be the $\binom{n + d}{d}$-dimen
 
 This is a moduli space! It's structure is genuinely related to the hypersurfaces it parametrises. We use the following result without proof
 
-##### _theorem:_ Riemann's
+##### _theorem:_ Riemann's parameter space of singular hypersurfaces
 
 The locus of singular hypersurfaces $\partial \mathscr{H}_{d, n} \subseteq \mathbb{P}V_{d, n}$ is a closed (codimension $1$) subvariety, corresponding to the vanishing of the resultant.
 
