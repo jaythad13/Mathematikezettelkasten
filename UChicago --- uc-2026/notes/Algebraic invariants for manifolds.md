@@ -6,7 +6,7 @@ tags:
 - mark-behrens
 ---
 
-To prove the existence of [[UChicago --- uc-2026/notes/The Poincare conjecture#_theorem _ exotic $7$-spheres exist (Milnor)|exotic spheres]], we need some diffeomorphism-invariant algebra that is not homeomorphism-invariant.
+To prove the existence of [[UChicago --- uc-2026/notes/Exotic spheres#_theorem _ exotic $7$-spheres exist (Milnor)|exotic spheres]], we need some diffeomorphism-invariant algebra that is not homeomorphism-invariant.
 
 ##### _definition:_ intersection form on cohomology
 
