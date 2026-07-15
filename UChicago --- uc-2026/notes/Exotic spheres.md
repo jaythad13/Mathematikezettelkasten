@@ -32,5 +32,24 @@ Since we can't even have different topological structures on homotopy spheres, w
 
 There exists a $7$-manifold $X$ such that $X \cong_{\mathsf{Top}} S^7$ but $X \not \cong_{\mathsf{Diff}} S^7$.
 
----
+###### _proof:_
 
+Consider some general odd-dimensional topological sphere $S^{2k + 1}$. Note that we can construct $S^{3}$ as a copy of two solid tori glued across their common torus boundary. That is,
+$$
+S^{3} \cong_{\mathsf{Diff}} (B^{2} \times S^1) \cup_{S^1 \times S^1} (S^1 \times B^{2}).
+$$
+To see this, think of $S^{3}$ as $(\mathbb{R}^{3})^+$, the [[Topology --- math-147/attachments/exam/exam.pdf#page|one-point compactification]] of $\mathbb{R}^{3}$. Remove a neighbourhood of infinity from $(\mathbb{R}^{3})^+$ — a complement of a large centred ball $B$. Also, remove a cylinder through the ball. But then what is left of the ball is a solid torus and what we removed was also a solid torus. This works in general too —
+$$
+S^{2k + 1} \cong_{\mathsf{Diff}} (B^{k + 1} \times S^k) \cup_{S^k \times S^k} (S^k \times B^{k + 1}).
+$$
+What if we didn't glue along the identity map? Gluing along some twist $f_{ij}$ we get some
+$$
+X_{ij} = (B^4 \times S^{3}) \cup_{S^3 \times S^3}^{f_{ij}} (S^{3} \times B^4).
+$$
+In particular, we get $f_{ij}$ by the inclusion of $S^3$ in the quaternions. We write $S^3 \times S^3 \to S^{3} \times S^3$ by $(x, y) \mapsto (x^i y x^j, x)$.
+
+Another way to do this is by **clutching functions**. For any $\alpha : S^{3} \to \mathrm{SO}_{4}(\mathbb{R})$ gives a rank $4$ vector bundle $\mathscr{V}_{\alpha} \to S^4$ with $\mathscr{V}_{\alpha} = B^4 \times \mathbb{R}^4 \cup_{S^{3} \times \mathbb{R}^4} B^4 \times \mathbb{R}^4$ where the projection is trivial along $B^4 \times \mathbb{R}^4$ and given by $(x, v) \mapsto (x, \alpha(x) v)$ along $S^3 \times \mathbb{R}^4$. We can choose a unit sphere bundle $S(\mathscr{V}_{\alpha}) = \partial B(\mathscr{V}_{\alpha}) \subseteq \mathscr{V}_{\alpha}$, the boundary of the ball bundle inside $\mathscr{V}_{\alpha}$. The map $S^3 \to S(\mathscr{V}_{\alpha}) \to S^4$.
+
+Now we make a general argument about such manifolds. Suppose $X$ is a $7$-fold that is the boundary of an $8$-fold $Y$. Then define $\lambda(X) = 2 p_{1}^{2}(Y) - \operatorname{sign} Y \in \mathbb{Z} / 7$. Note, it has to be shown that this does not depend on the choice of $Y$.
+
+---
