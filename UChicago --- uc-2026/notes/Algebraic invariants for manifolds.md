@@ -1,6 +1,7 @@
 ---
 tags:
 - uc-2026/exotic/1
+- uc-2026/exotic/2
 - alg-top
 - diff-geo
 - mark-behrens
