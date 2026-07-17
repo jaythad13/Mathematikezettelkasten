@@ -73,17 +73,17 @@ $\pi : E \to B$ is a **Serre fibration** if it satisfies the homotopy lifting pr
 
 ##### _definition, proposition:_ Serre spectral sequence
 
-Suppose $\pi : E \to B$ is a Hurewicz fibration. Then the **homological Serre spectral sequence** is given by
+Suppose $\xi : E \to B$ is a Hurewicz fibration with constant fibre $F = \xi^\text{fib}(p)$. Then the **homological Serre spectral sequence** is given by
 $$
-E^2_{p, q} = H_{p}(B, H_{q}(\pi^\text{pre}(b), A)) \implies H_{p + q}(E, A)
+E^2_{p, q} = H_{p}(B, H_{q}(F, A)) \implies H_{p + q}(E, A)
 $$
-converging to the homology of $E$.
+converging to the homology of $E$ if the action of $\pi_{1}(B)$ on $F$ is trivial. 
 
 ---
 
 If $A$ is a field, then 
 $$
-E_{p, q}^{2} = H_{p}(B, A \otimes H_{q}(\pi^\text{pre}(b), A)) = H_{p}
-(B, A) \otimes H_{q}(\pi^\text{pre}(b), A).
+E_{p, q}^{2} = H_{p}(B, A \otimes H_{q}(F, A)) = H_{p}
+(B, A) \otimes H_{q}(F, A).
 $$
 By the Künneth formula, it shouldn't be surprising that this converges to the homology of $E$.
