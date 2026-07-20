@@ -3,6 +3,7 @@ tags:
 - alg-top
 - uc-2026/alg-top/10
 - uc-2026/alg-top/11
+- uc-2026/alg-top/12
 - peter-may
 ---
 
@@ -18,7 +19,7 @@ Note we are purposely vague about $G$ because this works for any $G$.
 
 By the [[UChicago --- uc-2026/notes/Classifying spaces#_definition _ classifying space|classification of vector bundles]] and [[Algebraic geometry --- rising-sea/notes/Yoneda's lemma#_lemma _ Yoneda's fanciest lemma|Yoneda's lemma]] it suffices to understand cohomology of $BG$.
 
-##### _proposition:_ characteristic classes are classified by $BG$
+##### _proposition:_ characteristic classes are classified by cohomology of $BG$
 
 The set of characteristic classes valued in $E^\bullet$ is in bijection with $E^\bullet(BG)$.
 
@@ -46,7 +47,7 @@ Thus, up to choosing canonical generators of $H^\bullet(B\mathrm{U}_{n}, \mathbb
 
 ##### _theorem, definition:_ Chern classes
 
-There exist $c_{i} \in H^{2i}(B\mathrm{U}_{n}, \mathbb{Z})$ such that
+There exist $c_{i} \in H^{2i}(B\mathrm{U}_{n}, \mathbb{Z})$ giving natural transformations $c_{i} : \operatorname{Vect}_{\mathrm{U}_{n}} \to H^\bullet(-, \mathbb{Z})$ such that
 1) $c_{0} = 1$, $c_{i} = 0$ if $i > n$
 2) if $n = 1$, then $c_{1}$ is the canonical generator of $H^\bullet(B\mathrm{U}_{1}, \mathbb{Z}) = H^\bullet(\mathbb{C} \mathbb{P}^\infty, \mathbb{Z}) \cong \mathbb{Z}[x_{2}]$.
 3) $c_{i}(\mathscr{V} \oplus \mathscr{V}) = c_{i}(\mathscr{V})$ for any bundle $\mathscr{V}$
@@ -56,6 +57,47 @@ These are the **Chern classes**.
 
 ###### _proof sketch:_
 
-Consider the $n$-torus $\mathbb{T}^n$. We have a fibration $\mathrm{U}_{n} / \mathbb{T}^n \to B \mathbb{T}^n = (\mathbb{C} \mathbb{P}^\infty)^n \to B \mathrm{U}_{n}$. The cohomology of $\mathrm{U}_{n} / \mathbb{T}^n$ is a finitely generated module over any coefficient ring $A$. Thus, the map in cohomology $H^\bullet(B \mathrm{U}_{n}, \mathbb{F}) \to H^\bullet(\mathbb{C} \mathbb{P}^\infty, \mathbb{F})$ is an isomorphism for any field $\mathbb{F}$, including $\mathbb{Q}$. Thus, we get canonical coefficients by considering the $\mathfrak{S}_{n}$-fixed parts of the cohomology of $(\mathbb{C} \mathbb{P}^\infty)^n$. The rest follows formally.
+Consider the $n$-torus $\mathbb{T}^n$. We have a fibration $\mathrm{U}_{n} / \mathbb{T}^n \to B \mathbb{T}^n = (\mathbb{C} \mathbb{P}^\infty)^n \to B \mathrm{U}_{n}$. The cohomology of $\mathrm{U}_{n} / \mathbb{T}^n$ is a finitely generated module over any coefficient ring $A$. Thus, the map in cohomology $H^\bullet(B \mathrm{U}_{n}, \mathbb{F}) \to H^\bullet(\mathbb{C} \mathbb{P}^\infty, \mathbb{F})$ is an isomorphism for any field $\mathbb{F}$, including $\mathbb{Q}$. Thus, we get canonical coefficients by considering $H^\bullet(\mathbb{C} \mathbb{P}^\infty, \mathbb{F})^{\mathfrak{S}_{n}}$ — the $\mathfrak{S}_{n}$-fixed parts of the cohomology of $(\mathbb{C} \mathbb{P}^\infty)^n$. The rest follows formally.
 
 ---
+
+### Stieffel–Whitney classes
+
+For this section, let all (co)homology be with $\mathbb{F}_{2}$ coefficients.
+
+Similarly, there is a Thom isomorphism that gives a canonical presentation $H^\bullet(B\mathrm{O}_{n}) = \mathbb{F}_{2}[w_{1}, \dots, w_{n}]$ with $w_{i}$ of degree $i$. There is also an inclusion $(B\mathbb{Z} / 2)^n \subseteq B\mathrm{O}_{n}$ giving an isomorphism $H^\bullet(B\mathrm{O}_{n}) \to H^\bullet(\mathbb{R} \mathbb{P}^\infty)^{\mathfrak{S}_{n}}$. 
+
+Further, $H^\bullet(B\mathrm{SO}_{n}) = \mathbb{F}_{2}[w_{2}, \dots, w_{n}]$ with a map $H^\bullet(B\mathrm{O}_{n}) \to H^\bullet(B\mathrm{SO}_{n})$ by $w_{1} \mapsto 0$. Thus, $w_{1}$ represents the obstruction to an $\mathrm{O}_{n}$-vector bundle being an orientable $\mathrm{SO}_{n}$-bundle.
+
+##### _theorem, definition:_ Stieffel–Whitney classes
+
+There exist $w_{i} \in H^{i}(B\mathrm{O}_{n}, \mathbb{Z})$ giving natural transformations $w_{i} : \operatorname{Vect}_{\mathrm{O}_{n}} \to H^\bullet(-, \mathbb{Z})$ such that
+1) $c_{0} = 1$, $c_{i} = 0$ if $i > n$
+2) if $n = 1$, then $c_{1}$ is the canonical generator of $H^\bullet(B\mathrm{U}_{1}, \mathbb{Z}) = H^\bullet(\mathbb{C} \mathbb{P}^\infty, \mathbb{Z}) \cong \mathbb{Z}[x_{2}]$.
+3) $c_{i}(\mathscr{V} \oplus \mathscr{V}) = c_{i}(\mathscr{V})$ for any bundle $\mathscr{V}$
+4) $c_{i}(\mathscr{V} \oplus \mathscr{W}) = \sum_{j + k = i} c_{j}(\mathscr{V}) c_{k}(\mathscr{W})$ where the ranks of $\mathscr{V}$ and $\mathscr{W}$ sum to $n$.
+
+These are the **Stieffel–Whitney classes**.
+
+---
+
+These classes are genuinely very useful — for example, $w_{0}(\mathscr{T}_{X} \oplus \mathscr{N}_{X}) = 1$ for any embedding of a manifold $X \subseteq \mathbb{R}^{N}$.xx1x1x2
+
+##### _lemma:_ homotopy groups and homology of $V_{k}(\mathbb{R}^n)$
+
+$V_{k}(\mathbb{R}^n)$ is $(n - k - 1)$-connected with
+$$
+\begin{cases}
+\pi_{n - k}(V_{k}(\mathbb{R}^n)) = \begin{cases}
+\mathbb{Z} / 2 & k = n \text{ or } n - k \text{ odd} \\
+\mathbb{Z}
+\end{cases}
+\end{cases}
+$$
+and
+$$
+H^\bullet(V_{k}(\mathbb{R}^n)) = \mathbb{F}_{2}[x_{n - k}, \dots, x_{n - 1}]^\text{coalg}
+$$
+with $\deg x_{i} = i$.
+
+---xx
