@@ -137,6 +137,14 @@ Abuse notation to write $S(X)$ for the image of $S(X)$ under the free $A$-module
 
 It's just an unravelling of the definitions to see that this definition of singular homology agrees with the usual one.
 
+There is also an adjoint functor in the opposite direction.
+
+##### _definition:_ geometric realisation
+
+The **geometric realisation** of a simplicial set $X^\bullet$ is $X^\bullet_{\mathsf{Top}}$, the colimit of the diagram of all morphisms $X^m \times \Delta^m_{\mathsf{Top}} \to X^n \times \Delta^m_{\mathsf{Top}}$ induced by all $f : \Delta^m \to \Delta^n$ in $\Delta$.
+
+---
+
 There is a way for us to convert this functor $\mathsf{Top} \to \mathsf{Set}_{\Delta}$ to a functor in the other direction by abstract nonsense. You just take the tensor product! Specifically, of $F : \mathscr{D} \to \mathscr{C}$ and $G : \mathscr{D}^\text{opp} \to \mathscr{C}$ and get an element $G \otimes_{\mathscr{D}} F$ of $\mathscr{C}$.
 
 ### Nerves
@@ -147,11 +155,11 @@ Another (surprisingly) useful construction allows us to see categories as simpli
 
 The **standard cosimplicial category** is $K_{\mathsf{Cat}}$ sending each $\Delta^n \in \Delta$ to its [[Algebraic geometry --- rising-sea/notes/Categories#_example _ preorders and posets|poset category]] and morphisms to functors between them. Thus, the **categorical $n$-simplex** is the subposet $[0, n] \subseteq \mathbb{N}_{0}$.
 
-The **nerve** of a (small) category $\mathscr{C}$ is the simplicialisation of $\mathscr{C}$ along $K_{\mathsf{Cat}}$, denoted $N \mathscr{C}$.
+The **nerve** of a (small) category $\mathscr{C}$ is the simplicialisation of $\mathscr{C}$ along $K_{\mathsf{Cat}}$, denoted $N_{\bullet} \mathscr{C}$.
 
 ---
 
-Note then that $N \mathscr{C}_{0}$ is just $\operatorname{obj} \mathscr{C}$, $N \mathscr{C}_{1}$ is $\operatorname{Mor}_{\mathscr{C}}(X, Y)$ for all pairs $X, Y \in N \mathscr{C}_{0}$, $N \mathscr{C}_{2}$ is commuting pairs of morphisms et c. 
+Note then that $N_{0} \mathscr{C}$ is just $\operatorname{obj} \mathscr{C}$, $N_{1} \mathscr{C}$ is $\operatorname{Mor}_{\mathscr{C}}(X, Y)$ for all pairs $X, Y \in N \mathscr{C}_{0}$, $N \mathscr{C}_{2}$ is commuting pairs of morphisms et c. 
 
 ##### _example:_ classifying space
 
