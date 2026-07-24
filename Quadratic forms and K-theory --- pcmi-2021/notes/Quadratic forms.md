@@ -16,7 +16,7 @@ Every positive integer is the sum of four integer squares.
 
 ##### _theorem:_ Legendre's three squares theorem
 
-Let $n$ be a positive integer and let $n = 4^m d$ with $d$ not divisible by $4$. Then $n$ is the sum of three squares if and only if $n \not\equiv 7 \pmod 8$.
+Let $n$ be a positive integer and let $n = 4^m d$ with $d$ not divisible by $4$. Then $n$ is the sum of three squares if and only if $d \not\equiv 7 \pmod 8$.
 
 ---
 
