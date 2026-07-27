@@ -3,6 +3,7 @@ tags:
 - alg-geo
 - uc-2026/conics/1
 - uc-2026/conics/2
+- uc-2026/conics/3
 - altan-erdnigor
 ---
 
@@ -102,4 +103,48 @@ Let $C_{0} \subseteq \mathbb{P}^{2}$ be a conic
 
 ---
 
-This gives us naive and incorrect counts because $\mathbb{P}^5$ contains degenerate conics too. We can't just cut out the degenerate conics because the resulting space is not proper. Thus, we will have to do blow ups to get what we want.
+This gives us naive and incorrect counts because $\mathbb{P}^5$ contains degenerate conics too. In particular, non-reduced conics have intersection multiplicity $2$ at every intersection with every conic and every line. For example, we should think that the number of conics tangent to five given conics is $\# T_{C_{1}} \cap \dots \cap T_{C_{5}}$, but this is $6^5 = 7776$ which the title of this talk tells us incorrect
+
+We can't just cut out the degenerate conics because the resulting space is not proper. In particular, Bezout's theorem does not apply. Thus, we will have to do blow ups to get what we want.
+
+### The moduli space of complete conics
+
+Here we will always think of $\mathbb{P}^5$ as the moduli space of conics, and equivalently, as the moduli space of symmetric $3 \times 3$ matrices up to scaling.
+
+##### _proposition:_ locus of non-reduced conics is a local complete intersection
+
+$\Delta_{1} \subseteq \mathbb{P}^5$ is a local complete intersection.
+
+###### _proof sketch:_
+
+It suffices to show that $\Delta_{1}$ is cut out by equations in a local neighbourhood of $A = \begin{pmatrix} 1 & & \\ & 0 & \\ & & 0 \end{pmatrix}$. It suffices to show that all $2 \times 2$ minors vanish
+
+---
+
+##### _definition:_ moduli space of complete conics
+
+The **moduli space of complete conics** is $M = \operatorname{Bl}_{\Delta_{1}} \mathbb{P}^5$ (the moduli space of all conics, [[UChicago --- uc-2026/notes/Blowups of local complete intersections#_definition _ blowups of local complete intersections|blown up]] at the locus of non-reduced conics).
+
+---
+
+The way this helps is that now the [[UChicago --- uc-2026/notes/Blowups of local complete intersections#_definition _ blowups of local complete intersections, exceptional divisor, proper transform|proper transform]] of two different $T_{C}, T_{C'}$ do not necessarily intersect on the exceptional divisor. In fact, we will show that the intersection of five different $T_{C}$s with the exceptional divisor is empty.
+
+We can give a global description of $M$.
+
+##### _proposition:_ global descriptions of the moduli of space of complete conics
+
+Consider the [[Algebraic geometry --- rising-sea/notes/Rational maps|rational map]] $\mathbb{P}^5 \dashrightarrow \mathbb{P}^5$ by $A \mapsto \operatorname{adj} A$ (on the $5$-dimensional locus where $A$ is invertible, this is $A \mapsto A^{-1} \det A$). Then $M = \overline{\Gamma_{\varphi}} \subseteq \mathbb{P}^5 \times \mathbb{P}^5$ where $\Gamma_{\varphi}$ is the graph of $\varphi$.
+
+Equivalently $M = \{ (A, B) \in \mathbb{P}^5 \times \mathbb{P}^5 \mid A^\top B = \lambda \operatorname{id}_{\mathbb{C}^3} \}$.
+
+###### _proof sketch:_
+
+This is only a vague idea of the proof.
+
+Call the three different descriptions (blowup, graph of rational map, matrices) $M_{1}, M_{2}, M_{3}$ resepctively.
+
+Use the local complete intersection description of $\Delta_{1}$ to get a closed embedding $M_{1} \subseteq \mathbb{P}^5 \times \mathbb{P}^5$. Then using three different projections $\mathbb{P}^5 \times \mathbb{P}^5 \to \mathbb{P}^5$ onto the first factor, you get three different maps $M_{i} \to \mathbb{P}^5$. Then check that they all satisfy the universal property.
+
+---
+
+It turns out that $M$ is actually symmetric in these two projections — the last description tells us that $M$ is symmetric in the two matrices.
