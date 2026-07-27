@@ -10,7 +10,7 @@ In doing algebraic geometry, we often consider the data of schemes *over* some b
 
 ##### _definition:_ fibred product
 
-Given morphisms $\alpha : X \to Z$ and $\beta : Y \to Z$, the fibred product (if it exists) is the unique final object $X \times_{Z} Y$ with projection morphisms $pr_{X} : X \times_{Z} Y \to X$ and $pr_{Y} : X \times_{Z} Y \to Y$ that agree on composition to $Z$ such that the following diagram commutes
+Given morphisms $\alpha : X \to Z$ and $\beta : Y \to Z$, the fibred product (if it exists) or **pullback** is the unique final object $X \times_{Z} Y$ with projection morphisms $pr_{X} : X \times_{Z} Y \to X$ and $pr_{Y} : X \times_{Z} Y \to Y$ that agree on composition to $Z$ such that the following diagram commutes
 ```tikz
 \usepackage{tikz-cd}
 \usepackage{amsfonts}
@@ -260,7 +260,7 @@ Co-fibred products are "dual" to fibred products, defined by reversing all the a
 
 ##### _definition:_ co-fibred product
 
-Given morphisms $\alpha : Z \to X$ and $\beta : Z \to Y$, the co-(rresponding fibred product) is the initial object $P$ with morphisms $pr_{X} : X \to P$ and $pr_{Y} : Y \to P$ that agree as morphisms from $Z$ such that the following diagram commutes
+Given morphisms $\alpha : Z \to X$ and $\beta : Z \to Y$, the co-(rresponding fibred product) or **pushout** is the initial object $P$ with morphisms $pr_{X} : X \to P$ and $pr_{Y} : Y \to P$ that agree as morphisms from $Z$ such that the following diagram commutes
 ```tikz
 \usepackage{tikz-cd}
 \usepackage{amsfonts}

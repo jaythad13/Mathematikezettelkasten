@@ -219,6 +219,24 @@ The union of subsets of a given set can be interpreted as a colimit (in the [[Al
 
 Again, colimits do not always exist, but we can understand exactly when they do. Dually (to special subset of the product) we understand them as a special quotient of the coproduct.
 
+##### _example:_ pushout, coequalisers
+
+A **pushout** $X \amalg_{Z} Y$ is the colimit of the diagram below without it.
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		Z \ar[r, "i"] \ar[d, "j"] & X \ar[d, "\alpha"] \\
+		Y \ar[r, "\beta"] & X \amalg_{Z} Y
+	\end{tikzcd}
+\end{document}
+```
+
+A **coequaliser** is a pushout such that $X = Y$ and $\alpha = \beta$.
+
+---
+
 ##### _definition:_ filtered poset, filtered category
 
 A non-empty poset $S$ is **filtered** if for each $i, j \in S$ there is a $k \in S$ such that $i, j \geq k$.

@@ -1,6 +1,7 @@
 ---
 tags:
 - uc-2026/alg-top/2
+- uc-2026/alg-top/15
 - alg-top
 - cat-th
 - peter-may
@@ -164,5 +165,15 @@ Note then that $N_{0} \mathscr{C}$ is just $\operatorname{obj} \mathscr{C}$, $N_
 ##### _example:_ classifying space
 
 Let $\mathscr{G}$ be the [[Algebraic geometry --- rising-sea/notes/Categories#_example _ every group is an entire category, groupoids, monoids, the fundamental groupoid|group category]] of a group $G$. Then $N\mathscr{G}$ is the simplicial set of the classifying space $BG$.
+
+---
+
+### Homotopy of simplicial sets
+
+There is a very simple notion of homotopy for simplicial sets and more generally, for simplicial objects in any category with a standard cosimplicial object.
+
+##### _definition:_ homotopy of simplicial objects
+
+Suppose $\mathscr{C}$ has a standard $1$-simplex $\Delta^1_{\mathscr{C}}$. Then a **homotopy of simplicial objects** $K_{\bullet}$ and $L_{\bullet}$ is a morphism of simplicial objects $K_{\bullet} \times \Delta^1_{\mathscr{C}} \to L_{\bullet}$ satisfying the standard properties of a homotopy.
 
 ---
