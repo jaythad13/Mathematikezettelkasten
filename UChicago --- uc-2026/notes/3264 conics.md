@@ -135,7 +135,7 @@ We can give a global description of $M$.
 
 Consider the [[Algebraic geometry --- rising-sea/notes/Rational maps|rational map]] $\mathbb{P}^5 \dashrightarrow \mathbb{P}^5$ by $A \mapsto \operatorname{adj} A$ (on the $5$-dimensional locus where $A$ is invertible, this is $A \mapsto A^{-1} \det A$). Then $M = \overline{\Gamma_{\varphi}} \subseteq \mathbb{P}^5 \times \mathbb{P}^5$ where $\Gamma_{\varphi}$ is the graph of $\varphi$.
 
-Equivalently $M = \{ (A, B) \in \mathbb{P}^5 \times \mathbb{P}^5 \mid A^\top B = \lambda \operatorname{id}_{\mathbb{C}^3} \}$.
+Equivalently $M = \{ (A, B) \in \mathbb{P}^5 \times \mathbb{P}^5 \mid A B = \lambda \operatorname{id}_{\mathbb{C}^3} \}$.
 
 ###### _proof sketch:_
 
@@ -147,4 +147,39 @@ Use the local complete intersection description of $\Delta_{1}$ to get a closed 
 
 ---
 
-It turns out that $M$ is actually symmetric in these two projections — the last description tells us that $M$ is symmetric in the two matrices.
+It turns out that $M$ is actually symmetric in these two projections — the last description tells us that $M$ is symmetric in the two matrices. In particular, we actually have two different exceptional divisors $E_{1}, E_{2}$ on $M$ and we can cut them out in different combinations.
+
+##### _theorem:_ $3264$ conics
+
+There are $3264$ conics tangent to $5$ generally given conics.
+
+###### _Chasles' proof:_
+
+Let $\Sigma \subseteq M$ be a $1$-parameter family of conics. Let $p \in \mathbb{P}^{2}$ and let $L \subseteq \mathbb{P}^{2}$ be a line. Let $\mu$ be the locus of conics in $\Sigma$ containing $p$ and let $\nu$ be the locus of conics in $\Sigma$ tangent to $L$. Note that for general $p, L$ these shouldn't depend on $p, L$.
+
+Then for any degree $d$ curve, we claim that the number of conics in $\Sigma$ tangent to $Z$ is $d(d - 1) \mu + d \nu$. For $Z$ a conic this is $2(\mu + \nu)$. This is where Schubert calculus comes in. The idea is that we want to evaluate "$(2 (\mu + \nu))^5$" and we can do so by assigning enumerative meaning to each monomial in the expansion. Of course we are not really evaluating the numbers $\mu^5$ or $\mu^3 \nu^{2}$ — we are just taking intersections in cohomology in some sense. Note that in the interpretations of $\mu^5$ et c. we drop the assumption that $C \in \Sigma$. Then this is just counting.
+$$
+\mu^5 = \# \{ C \in M \mid C \ni p_{1}, \dots, p_{5} \} = 1
+$$
+since there is a unique conic containing $5$ points.
+$$
+\mu^4 \nu = \# \{ C \in M \mid C \ni p_{1}, \dots, p_{4}, C \text{ tangent to } L \} = 2
+$$
+since there are two possible points where a conic can be tangent to. Finally
+$$
+\mu^3 \nu^{2} = 4
+$$
+since this is essentially the intersection $T_{L_{1}} \cap T_{l_{2}} \cap \mathbb{P}^{2}$ which is just intersecting two conics in $4$ points in $\mathbb{P}^{2}$. The rest are the same by point-line duality in projective space.
+
+Then
+$$
+(2(\mu + \nu))^5 = 32 (1 + 5 x 2 + 10 \times 4 + 10 \times 4 + 5 \times 2 + 1) = 3264.
+$$
+
+###### _proof by cohomology:_
+
+Let $E_{1}, E_{2}$ be the two exceptional divisors corresponding to the two projections $\pi_{1}, \pi_{2} : M \to \mathbb{P}^{5}$. Then we claim $2 \pi_{1}^*[H_{1}] = \pi_{2}^* [H_{2}] + [E]$ where $H_{1}, H_{2}$ are the hyperplane divisors. This essentially follows by considering the $\varphi : \mathbb{P}^5 \dashrightarrow \mathbb{P}^5$ that makes the diagram commute. Note $\varphi^*$ turns the hyperplane section $H_{2}$ into a quadric.
+
+Then we claim that the class of the proper transform of $T_{L}$ is $[\widetilde{T_{L}}] = 2 \pi^*_{1} [H] - [E] = \pi_{2}^*[H]$. Thus, we get rid of the $2$ that we had in $[T_{L}]^5$ and get $[\widetilde{T_{L}}]^5 = 1$. Similarly, $[\widetilde{T_{C}}] = 6 \pi^*[H] - 2[E] = 2(\pi_{1}^*[H_{1}] + 2 \pi_{2}^*[H_{2}])$. But then this is exactly what we want to talk about. The computation of the monomials is exactly the same as what we wanted. To see that they are in fact the same, think of the second copy of $\mathbb{P}^5$ as dual projective space. Then $[H_{1}] = [I_{p}]$ where $I_{p}$ is the locus of conics passing through a point (since this is a linear condition on the coefficients of the conic). Also, $[H_{2}] = [I_{\ell}]$ where $\ell$ is the point corresponding to tangency through some line $\ell$ in non-dual projective space.
+
+---
