@@ -157,7 +157,7 @@ The subset of $\operatorname{Spec} B$ where $f$ vanishes is closed, and since it
 
 ---
 
-Integral schemes not only have a notion of rational functions. Interestingly, we don't just choose the fraction field of global sections. Instead, we note that as $X$ is irreducible, [[Algebraic geometry --- rising-sea/notes/Topological properties of schemes#_proposition _ irreducible closed sets are in bijection with points|it has a generic point]] $\eta$, and we take the stalk at that generic point.
+Integral schemes have a notion of rational functions. Interestingly, we don't just choose the fraction field of global sections. Instead, we note that as $X$ is irreducible, [[Algebraic geometry --- rising-sea/notes/Topological properties of schemes#_proposition _ irreducible closed sets are in bijection with points|it has a generic point]] $\eta$, and we take the stalk at that generic point.
 
 ##### _definition:_ rational functions, function field
 

@@ -96,6 +96,10 @@ The **$n$th Veronese subring** of $S_{\bullet}$ is $S_{n \bullet} = \bigoplus_{i
 
 ##### _proposition:_ Veronese subrings give isomorphisms of schemes
 
-Let $\varphi : S_{n \bullet} \to S_{\bullet}$ be the natural inclusion. Then $\operatorname{Proj} \varphi$ is an isomorphism $\operatorname{Proj} S_{\bullet} \to S_{n \bullet}$
+Let $\varphi : S_{n \bullet} \to S_{\bullet}$ be the natural inclusion. Then $\operatorname{Proj} \varphi$ is an isomorphism $\operatorname{Proj} S_{\bullet} \to \operatorname{Proj} S_{n \bullet}$
+
+###### _proof:_
+
+Clearly, the image of $S_{n+}$ is contained in $S_{+}$. Thus, we have a morphism $\operatorname{Proj} S_{\bullet} \to \operatorname{Proj} S_{n \bullet}$.
 
 ---

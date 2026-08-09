@@ -102,7 +102,7 @@ For example, this gives a natural "structure morphism" $\operatorname{Proj} S_{\
 
 In general, this expresses the global sections functor and the $\operatorname{Spec}$ functor as [[Algebraic geometry --- rising-sea/notes/Adjoint functors#_definition _ adjoint functors, left adjoint, right adjoint, adjoint pair|adjoints]].
 
-It also gives a universal description of $\operatorname{Spec} \mathbb{Z}$, and a way to more generally describe the notion of a [[Algebraic geometry --- rising-sea/notes/Schemes over a ring#... categorically|scheme over a ring]].
+It also gives a universal description of $\operatorname{Spec} \mathbb{Z}$, and a way to more generally describe the notion of a [[Algebraic geometry --- rising-sea/notes/Schemes over a base#... categorically|scheme over a ring]].
 
 ##### _corollary:_  $\operatorname{Spec} \mathbb{Z}$ is the [[Algebraic geometry --- rising-sea/notes/Universal properties and why categories?#_definition _ initial, final, and zero objects|final object]] of $\mathsf{Sch}$
 
@@ -168,7 +168,7 @@ For any scheme $Z$, the **$Z$-valued points** or **$Z$-points** of $X$ are the m
 
 The set of all $Z$-valued points is denoted $X(Z)$ to suggest the identification of $X$ with the [[Algebraic geometry --- rising-sea/notes/Functors#_example _ the functor of points and its opposite|functor of points]] $h_{X} : Z \to \operatorname{Mor}_{\mathsf{Sch}}(Z, X)$.
 
-In the category of $S$[[Algebraic geometry --- rising-sea/notes/Schemes over a ring#_definition _ $S$-schemes, $ mathsf{Sch}_{S}$, structure morphisms, $S$-morphisms|-schemes]], the **$Z$-points of $X$ over $S$** are the $S$-morphisms $Z \to X$.
+In the category of $S$[[Algebraic geometry --- rising-sea/notes/Schemes over a base#_definition _ $S$-schemes, $ mathsf{Sch}_{S}$, structure morphisms, $S$-morphisms|-schemes]], the **$Z$-points of $X$ over $S$** are the $S$-morphisms $Z \to X$.
 
 An $\mathbb{F}$-point of an $\mathbb{F}$-scheme is sometimes called an **$\mathbb{F}$-rational point**.
 
