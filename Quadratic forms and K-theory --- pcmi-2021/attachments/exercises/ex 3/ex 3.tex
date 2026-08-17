@@ -63,6 +63,14 @@
 	Let $\alpha \in \mathbb{E}$ be a primitive element with minimal polynomial $p(x) \in \mathbb{F}[x]$. Show that we can find polynomials  $f_{i}(x) \in \mathbb{F}[x]$ of degree at most $2$ such that $p(x) \mid \sum_{i = 1}^{n} a_{i} f_{i}(x)^{2}$. Show that the right hand side necessarily has a root in $\mathbb{F}$ and that $V, q$ is therefore isotropic over $\mathbb{F}$. Deduce that the map $W(\mathbb{F}) \to W(\mathbb{E})$ is injective in this case.
 \end{problem}
 
+\begin{solution}
+	Suppose $\mathbb{E} = \mathbb{F}(\alpha)$ and $V_{\mathbb{E}}$ is isotropic. Consider non-zero $v' \in V_{\mathbb{E}}$ with $q_{\mathbb{E}}(v) = 0$. Then we can write each $v_{i}' = f_{i}(\alpha)$ for some polynomials $f_{i} \in \mathbb{F}[x]$ of degree at most $2$ and get $g(x) = \sum_{i = 1}^{n} a_{i} f_{i}(\alpha)^{2} = 0$.
+
+	Then, by its definition, $p(x)$ divides $g(x)$. Since $p$ is degree $3$, $g$ must be degree $4$ (it is of even degree at most $4$ and at least $3$) and their quotient is degree $1$. Thus,  $g(x) = p(x)(x - \lambda)$ for some $\lambda \in \mathbb{F}$. That is, $g$ has a root over $\mathbb{F}$, and so $V, q$ is isotropic over $\mathbb{F}$.
+
+	Let $\varphi : W(\mathbb{F}) \to W(\mathbb{E})$ be the base change homomorphism. We show $\ker \varphi = 0$. Suppose $\varphi : V, q \mapsto 0$ and $V, q \cong (U, q_{\mid U}) \oplus H^{\oplus r}$ is the decomposition into a hyperbolic part and a (possibly zero) anisotropic part. Then $U, q_{\mid U} \mapsto 0$. That is, the base change to $\mathbb{E}$ is zero or hyperbolic and isotropic. $U, q$ is not isotropic over $\mathbb{F}$, so its base change to $\mathbb{E}$ is not isotropic. Thus, $U, q_{\mid U} = 0$. That is, $V, q$ is hyperbolic and thus, $0$ in the $W(\mathbb{F})$.
+\end{solution}
+
 \pagebreak
 
 \problemlist{Exercises on the Witt ring and orderings}
@@ -108,10 +116,9 @@
 
 		\item It is a general fact that every field $\mathbb{F}$ has a pythagorean closure $\mathbb{F}^{\text{pyth}}$ (the smallest pythagorean field containing it). Fixing an algebraic closure $\mathbb{F} \subseteq \overline{\mathbb{F}}$, we can consider $\mathbb{F}^{\text{pyth}}$ to be the union of all algebraic extensions $\mathbb{K} \subseteq \overline{\mathbb{F}}$ that are themselves towers $\mathbb{F} \subseteq \mathbb{K}_{1} \subseteq \dots \subseteq \mathbb{K}_{n} = \mathbb{K}$ with $\mathbb{K}_{i + 1} = \mathbb{K}_{i}(\sqrt{\alpha_{i}^{2} + \beta_{i}^{2}})$.
 
- Let $\mathbb{F}$ be an arbitrary field of characteristic not $2$. If $\mathbb{F}$ is pythagorean, we are done. Else, consider the map $W(\mathbb{F}) \to W(\mathbb{F}^{\text{pyth}})$. Since $W(\mathbb{F}^{\text{pyth}})$ is either $\mathbb{Z} / (2)$ or torsion free, all torsion lies in the kernel of this map or is $2$-power torsion.
+ Let $\mathbb{F}$ be an arbitrary field of characteristic not $2$. If $\mathbb{F}$ is pythagorean, we are done. Else, consider the map $W(\mathbb{F}) \to W(\mathbb{F}^{\text{pyth}})$. Since $W(\mathbb{F}^{\text{pyth}})$ is either $\mathbb{Z} / (2)$ or torsion free, all torsion lies in the kernel of this map or is $2$-power torsion. Explicitly, if $n x = 0$ for $n = p_{1}^{m_{1}} \cdots p_{k}^{m_{k}}$, then either one of the $p_{i} = 2$ or one of the $p_{i}$ is in the kernel. Choosing minimal $n$ gives the desired result.
 
-			
-			But the map $W(\mathbb{F}) \to W(\mathbb{F}^{\text{pyth}})$ factors through $W(\mathbb{K})$ for one of these $\mathbb{K}$.
+			By a general trick about towers of field extensions and finitary conditions, any element of the kernel of the map $W(\mathbb{F}) \to W(\mathbb{F}^{\text{pyth}})$ must lie in the kernel of some $W(\mathbb{F}) \to W(\mathbb{K})$. Thus, all torsion in $W(\mathbb{F})$ is $2$-power torsion.
 	\end{enumerate}
 \end{solution}
 
@@ -122,7 +129,7 @@
 \end{problem}
 
 \begin{solution}
-	If $W(\mathbb{F})$ is torsion, then $\left < 1 \right >$ is torsion, and so $W(\mathbb{F}^{\text{pyth}})$ is torsion. Thus, $\mathbb{F}^{\text{pyth}}$ is quadratically closed. In particular $-1 \in \mathbb{F}^{\text{pyth}}$ and so $-1$ is a sum of squares.
+	If $W(\mathbb{F})$ is torsion, then $W(\mathbb{F}^{\text{pyth}})$ is torsion. Thus, $\mathbb{F}^{\text{pyth}}$ is quadratically closed. In particular $-1 \in \mathbb{F}^{\text{pyth}}$ is a square and so $-1$ is a sum of squares in $\mathbb{F}$.
 \end{solution}
 
 \pagebreak
@@ -130,15 +137,24 @@
 \begin{problem}[(4)]
 	The signature map gives an isomorphism $W(\mathbb{R}) \cong \mathbb{Z}$. More generally, given any ordered field $\mathbb{F}$, show that we obtain a ring homomorphism $\sigma : W(\mathbb{F}) \to \mathbb{Z}$ given by taking the \emph{generalised signature} of a quadratic form.
 
+	Conversely, show that each ring homomorphism $\varphi : W(\mathbb{F}) \to \mathbb{Z}$ gives an ordering on $\mathbb{F}$ as follows.
+
 	\begin{enumerate}
 		\item Suppose $\varphi : W(\mathbb{F}) \to \mathbb{Z}$ is a ring homomorphism. Define a subset $P \subseteq \mathbb{F}^{\times}$ of \emph{positive elements} as follows;  $\alpha \in \mathbb{F}^{\times}$ belongs to $P$ if $\varphi(\left < \alpha \right >) = 1$. Note in fact that for any $\alpha \in \mathbb{F}^{\times}$ we have $\varphi(\left < \alpha \right >) = \pm 1$.
 
 		\item Show that $P$ is closed under sums and products. Moreover, show that $\mathbb{F}^{\times} = P \sqcup (-P)$ is a disjoint union.
 	\end{enumerate}
-Therefore, show that $\varphi : W(\mathbb{F}) \to \mathbb{Z}$ defines an ordering.
 \end{problem}
 
 \begin{solution}
+	If $<$ gives an ordering on $\mathbb{F}$, we claim it defines a homomorphism $\sigma : W(\mathbb{F}) \to \mathbb{Z}$ generated by  $\sigma(\left < \alpha \right >) = 1$ if $\alpha > 0$ and $\sigma(\left < \alpha \right >) = -1$ if $\alpha < 0$. 
+
+	To show that this is well defined, it suffices to check that multiplication and all of Witt's chain equivalences are preserved by the homomorphism. $\sigma(\left < \alpha \beta \right >) = \sigma(\left < \alpha \right >) \sigma(\left < \beta \right >)$ by the definition of an ordered field. It follows that $\sigma(\left < \alpha u^{2} \right >) = \sigma(\left < \alpha \right >)$ for $\alpha, u \in \mathbb{F}^{\times}$ since $(\pm 1)^{2} = 1$. Clearly, $\sigma(\left < \alpha, \beta \right >) = \sigma(\left < \beta, \alpha \right >)$ since $\mathbb{Z}$ is commutative. Finally we need to show
+	 \[
+		\sigma \left ( \left < \alpha, \beta \right > \right ) = \sigma  \left ( \left < \alpha + \beta, \frac{\alpha \beta}{\alpha + \beta} \right > \right ).
+	\]
+	If both $\alpha$ and $\beta$ are positive or both are negative, this follows easily. Without loss of generality, assume $\alpha > 0, \beta < 0$ and note $\sigma(\left < \alpha, \beta \right >) = 0$. If $\alpha + \beta > 0$, then the right side of the equation is $1 + (-1) / 1 = 0$. If $\alpha + \beta < 0 $ then the right hand side is $(-1) + (-1) / (-1) = 0$.
+
 	\begin{enumerate}
 		\item For $\alpha \in \mathbb{F}^{\times}$ we have $\left < \alpha \right > \otimes \left < 1 / \alpha \right > = \left < 1 \right >$. Since $\left < 1 \right > \mapsto 1$ under any ring homomorphism $W(\mathbb{F}) \to \mathbb{Z}$, we must have that $\left < \alpha \right >$ maps to a unit.
 
@@ -159,11 +175,13 @@ Therefore, show that $\varphi : W(\mathbb{F}) \to \mathbb{Z}$ defines an orderin
 \begin{problem}[(5) Pfister's local-to-global principle]
 	Given an element $x \in W(\mathbb{F})$, $x$ is torsion if and only if its signature relative to each ordering of $\mathbb{F}$ vanishes, or equivalently, if $x$ is annihilated by all homomorphisms $W(\mathbb{F}) \to \mathbb{Z}$. Prove this as follows:
 	\begin{enumerate}
-		\item Let $x \in W(\mathbb{F})$ be annihilated by all homomorphisms $W(\mathbb{F}) \to \mathbb{Z}$. We want to show $x$ is torsion. Without loss of generality, we can assume by Zorn's lemma that for all proper extensions $\mathbb{F}' / \mathbb{F}$, $x$ maps to a torsion element in $W(\mathbb{F}')$.  (That is, we assume our counter example to the theorem is maximal).
+		\item Suppose $x$ is non-torsion. Using Zorn's lemma show that, without loss of generality, we can assume $x$ maps to a torsion element in $W(\mathbb{F}')$ for all proper extensions $\mathbb{F}' / \mathbb{F}$.
 
 		\item Show that for each $d \in \mathbb{F}^{\times} \setminus \mathbb{F}^{\times 2}$, $2^{n} x$ is divisible by $\left < 1, -d \right >$ in $W(\mathbb{F})$ for $n \gg 0$. Conclude that $2^{n} x = 2^{n} x \left < -d \right >$ in $W(\mathbb{F})$.
 
-		\item Suppose that an element $d \in \mathbb{F}^{\times}$ has the property that neither $d$ nor $-d$ is a square. Then show that $2^{n} x \left < d \right > = 2^{n} x \left < -d \right >$ in $W(\mathbb{F})$. Since, for any $a \in \mathbb{F}^{\times}$, we have $\left < a \right > = - \left < - a \right >$ in $W(\mathbb{F})$, we conclude that $2^{n + 1} x = 0$ in $W(\mathbb{F})$. Since $x$ was assumed non-torsion in $W(\mathbb{F})$, find a contradiction. Conclude that in fact $\mathbb{F}^{\times}$ is the union of the squares and the negative of the squares. This union is necessarily disjoint, or $-1$ would be a square and $W(\mathbb{F})$ would be torsion.
+		\item Suppose that an element $d \in \mathbb{F}^{\times}$ has the property that neither $d$ nor $-d$ is a square. Then show that $2^{n} x \left < d \right > = 2^{n} x \left < -d \right >$ in $W(\mathbb{F})$. Since, for any $a \in \mathbb{F}^{\times}$, we have $\left < a \right > = - \left < - a \right >$ in $W(\mathbb{F})$, we conclude that $2^{n + 1} x = 0$ in $W(\mathbb{F})$.
+
+			Conclude that $\mathbb{F}^{\times}$ is the (disjoint) union of the squares and the negative of the squares.
 
 		\item Conclude that the squares give an ordering on $\mathbb{F}$ and in fact $W(\mathbb{F}) = \mathbb{Z}$, completing the proof of Pfister's local-to-global theorem.
 
@@ -171,10 +189,42 @@ Therefore, show that $\varphi : W(\mathbb{F}) \to \mathbb{Z}$ defines an orderin
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	It's clear that if $x \in W(\mathbb{F})$ is torsion, then $x \mapsto 0$ under every ring homomorphism $W(\mathbb{F}) \to \mathbb{Z}$. Below, we prove (the contrapositive of) the converse. Suppose $x \in W(\mathbb{F})$ is non-torsion.
+
+	\begin{enumerate} 
+		\item Consider the poset of all field extensions $\mathbb{K} / \mathbb{F}$ such that $x_{\mathbb{K}}$ is non-torsion in $W(\mathbb{K})$. 
+
+			Let $\{ \mathbb{K}_{\alpha} \}_{\alpha \in i}$ be a chain of such fields. Consider $\mathbb{K} = \bigcup_{\alpha \in i} \mathbb{K}_{\alpha}$ contains all of the $\mathbb{K}_{\alpha}$. By a general trick about towers of field extensions and finitary conditions, if $x_{\mathbb{K}}$ were torsion, then there must be some $\alpha$ such that $x_{\mathbb{K}_{\alpha}}$ is torsion.
+
+			Thus, by Zorn's lemma there is a maximal $\mathbb{L} / \mathbb{F}$ such that $x_{\mathbb{L}}$ is non-torsion. It suffices to show that there is a homomorphism $W(\mathbb{L}) \to \mathbb{Z}$ that doesn't annihilate $x_{\mathbb{L}}$ --- composition with the base change $W(\mathbb{F}) \to W(\mathbb{L})$ gives the desired homomorphism.
+
+			From here on, assume $\mathbb{F} = \mathbb{L}$.
+
+		\item Let $\varphi : W(\mathbb{F}) \to W(\mathbb{F}(\sqrt{d}))$ be the base change homomorphism. $\ker \varphi$ is generated by $\left < 1, -d \right >$. By assumption, $x$ is torsion in $W(\mathbb{F}(\sqrt{d}))$, and necessarily $2$-power torsion. Thus, $2^{n} x = \left < 1 -d \right > y \in \ker \varphi$ for sufficiently large $n$.
+
+		\item Suppose by way of contradiction $\pm d$ are both non-square units. Then $2^{n} x\left < d \right > = 2^{n} x = 2^{n} x \left < -d \right >$. It follows that $2^{n + 1} x \left < d \right > = 0$. $\left < d \right >$ is a unit, so $x$ must be $2^{n + 1}$-torsion in $W(\mathbb{F})$. This contradicts our hypothesis that $x$ is non-torsion in $\mathbb{F}$. Thus, one of $\pm d$ is a square and $\mathbb{F}^{\times}$ is the union of squares and non-squares.
+
+			This union is disjoint. Else $-1$ would be a square, so $\left < 1 \right >$ would be torsion, so $W(\mathbb{F})$ would be torsion.
+
+		\item Let $\sigma : W(\mathbb{F}) \to \mathbb{Z}$ be the homomorphism corresponding to the ordering on $\mathbb{F}$ by squares. $\sigma$ is surjective --- we have $\left < 1 \right >^{\oplus n} \mapsto n$ for each $n \in \mathbb{Z}$ (writing $\left < 1 \right >^{-1} = \left < -1 \right >$). 
+
+		\item If $-1$ is a sum of squares in $\mathbb{F}$, then $W(\mathbb{F})$ is torsion and admits no orderings. If $-1$ is not a sum of squares, then $\left < 1 \right >$ is not torsion and so $W(\mathbb{F})$ admits a homomorphism to $\mathbb{Z}$ that doesn't annihilate $\left < 1 \right >$.
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[(6)]
 	Let $\gamma \in \mathbb{F}^{\times}$. Show that $\gamma$ is a sum of squares if and only if $\left < 1, -\gamma \right >$ is a torsion element of the Witt ring if and only if $\gamma$ is positive with respect to any ordering of $\mathbb{F}$.
 \end{problem}
+
+\begin{solution}
+	Suppose $\gamma$ is positive with respect to each ordering. Then each homomorphism $\varphi : W(\mathbb{F}) \to \mathbb{Z}$ has $\left < \gamma \right > \mapsto 1$. Thus, $\left < 1, - \gamma \right > = \left < 1 \right > - \left < \gamma \right > \in \ker \varphi$. It follows that $\left < 1, -\gamma \right >$ is torsion.
+
+	Suppose $\left < 1, - \gamma \right >$ is torsion in $W(\mathbb{F})$. Then there is some $n$ such that $\left < 1, -\gamma \right >^{\oplus n} \cong H^{\oplus n}$. Adding a direct summand of $\left < \gamma \right >^{\oplus n - 1}$ on both sides we get $\left < 1 \right >^{\oplus n} \oplus \left < -\gamma \right > \oplus H^{\oplus n - 1} \cong H^{\oplus n} \oplus \left < \gamma \right >^{\oplus n - 1}$. Finally, since the monoid of quadratic forms is cancellative, we get $\left < 1 \right >^{\oplus n} \oplus \left < - \gamma \right > \cong H \oplus \left < \gamma \right >^{\oplus n - 1}$. Thus, $\left < 1 \right >^{\oplus n} \oplus \left < -\gamma \right >$ is isotropic, and $\gamma$ is a sum of squares.
+
+	Suppose $\gamma$ is a sum of squares. Squares are positive in every ordering and so is $\gamma$.
+\end{solution}
 
 \end{document}
