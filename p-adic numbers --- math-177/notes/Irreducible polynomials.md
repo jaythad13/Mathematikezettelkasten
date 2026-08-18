@@ -10,7 +10,7 @@ Let $A$ be a ring and $A[x]$ be the ring of polynomials over it.
 
 ##### _definition:_ irreducible polynomial
 
-A polynomial $f(x) \in A[x]$ is **irreducible** if whenever , one of $g$ and $h$ is constant.
+A polynomial $f(x) \in A[x]$ is **irreducible** if whenever $f = gh$, one of $g$ and $h$ is constant.
 
 ---
 
