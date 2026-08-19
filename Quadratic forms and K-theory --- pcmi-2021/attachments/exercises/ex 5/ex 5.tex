@@ -1,0 +1,62 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{PCMI 2021 --- Quadratic forms and K-theory}
+\assignment{Exercises 5}
+\duedate{}
+
+\begin{document}
+
+\problemlist{Exercises on Hensel's lemma}
+
+\begin{problem}[(1)]
+	Prove the uniqueness part of Hensel's lemma.
+\end{problem}
+
+\begin{problem}[(2)]
+	One can also prove Hensel's lemma using the \emph{contraction mapping principle}. If $X, d$ is a complete metric space and $g : X \to X$ is a contraction, then $g$ has a unique fixed point.
+
+	Let $f(x) \in \mathbb{Z}_{p}[x]$ and $\alpha \in \mathbb{Z}_{p}$ be as in the statement of Hensel's lemma. Let $X = \{ x \in \mathbb{Z}_{p} \mid \lvert x - \alpha \rvert_{p} < 1 \}$. Show $X$ is a complete metric space. Show  $g : X \to X$ by $g(x) = x - f(x) / f'(\alpha)$ is a contraction. Deduce Hensel's lemma.
+\end{problem}
+
+\begin{problem}[(3)]
+	Let $p > 2$. Show that if $\mathbb{Q}_{p}$ contains a primitive $r$th root of unity, then $r \mid p - 1$.
+\end{problem}
+
+\begin{problem}[(4)]
+	Let $f(x) \in \mathbb{Z}_{p}[x]$ be a polynomial. Let $\alpha \in \mathbb{Z}_{p}$ be such that $\lvert f(\alpha) \rvert_{p} < \lvert f'(\alpha) \rvert_{p}^{2}$. Then show that one can find a root $\beta$ of $f$ with $\lvert \beta - \alpha \rvert_{p} < 1$.
+\end{problem}
+
+\pagebreak
+
+\problemlist{Exercises on quadratic forms over $\mathbb{Q}_{p}$}
+
+\begin{problem}[(1)]
+	Let $p > 2$. Let $u \in \mathbb{Z}_{p}^{\times}$ be an element such that $\overline{u} \in \mathbb{F}_{p}^{\times}$ is not a square. Show that the form $\left < 1, -u, p, -pu \right >$ is anisotropic over $\mathbb{Q}_{p}$. More generally, show the following: let $\left < u_{1}, \dots, u_{r} \right > \oplus p v_{1}, \dots, p v_{s}$ be a quadratic form over $\mathbb{Q}_{p}$ with $u_{i}, v_{i} \in \mathbb{Z}_{p}^{\times}$. Then this form is isotropic if and only if either of the quadratic forms $\left < \overline{u_{1}}, \dots, \overline{u_{r}} \right >$ or $\left < \overline{v_{1}}, \dots, \overline{v_{s}} \right >$ is isotropic.
+\end{problem}
+
+\begin{problem}[(2)]
+	Let $\mathbb{K}$ be any field of characteristic not $2$. Generalising the argument in lecture to show that $u(\mathbb{F}((t))) = 2 u(\mathbb{F})$ as before, construct fields of $u$-invariant any power of $2$, and show that there is an isomorphism of abelian groups
+	\[
+		W(\mathbb{F}((t))) \cong W(\mathbb{F}) \oplus W(\mathbb{F}).
+	\]
+\end{problem}
+
+\pagebreak
+
+\problemlist{Exercises on squares in $\mathbb{Q}_{2}$}
+
+\begin{problem}[(3)]
+	Show that any element $x \in \mathbb{Z}_{2}$ with $x \equiv 1 \pmod 8$ is a square. The square root is of the form $1 + 2y$.
+\end{problem}
+
+\begin{problem}[(2)]
+	Show that the group $\mathbb{Q}_{2}^{\times} / \mathbb{Q}_{2}^{\times 2} \cong (\mathbb{Z} / 2)^{3}$. Generators of this group can be taken to be the classes of $2, -1, 5$.
+\end{problem}
+
+\begin{problem}[(3)]
+	Let $p > 2$. Show (using Hensel's lemma or $p$-adic logarithm and exponential functions) that an element of $\mathbb{Z}_{p}^{\times}$ which is a $p$th power in $(\mathbb{Z} / p^{2})^{\times}$ is a $p$th power in $\mathbb{Z}_{p}^{\times}$.
+\end{problem} 
+
+\end{document}
