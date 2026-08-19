@@ -155,7 +155,7 @@ If $A$ is an [[Abstract algebra --- math-171/notes/Integral domains#_definition 
 
 ---
 
-Note that this means, for example, that $\mathbb{A}^n_{\mathbb{F}}$ is always irreducible. This can also be helpful for more tricky examples.
+Note that this means, for example, that $\mathbb{A}^n_{\mathbb{F}}$ is always irreducible. More generally, for a [[Abstract algebra --- math-171/notes/Unique factorisation#_definition _ unique factorisation domains|UFD]] $A$ and [[Abstract algebra --- math-171/notes/Unique factorisation#_examples _ irreducible and prime elements|irreducible]] $f \in A$, the closed subset $V(f) \subseteq \operatorname{Spec} A$ is irreducible. This can also be helpful for more tricky examples.
 
 ##### _example:_ proving a ring is a domain is hard but worth it
 
@@ -188,6 +188,7 @@ Since $Z_{i} = \overline{\{ \mathfrak{p} \}} \subseteq \operatorname{Spec} A_{i}
 
 ---
 
+
 We can always decompose a topological space into irreducible pieces in a relatively nice way.
 
 ##### _definition:_ irreducible component
@@ -197,6 +198,16 @@ An **irreducible component** of $X$ is a maximal irreducible subset.
 ---
 
 Note that an irreducible component is always closed since the closure of an irreducible subset is irreducible.
+
+##### _example:_ irreducible components of an affine scheme
+
+Consider $X = V(x^{2} - yz, xz - x) \subseteq \operatorname{Spec} \mathbb{F}[x, y, z]$ for $\mathbb{F}$ an algebraically closed field. Then 
+$$
+X = V(x^{2} - yz) \cap (V(x) \cup V(z - 1)) = V(x^{2} - yz, x) \cup V(x^{2} - yz, z - 1).
+$$
+$V(x^{2} - yz, z - 1)$ is isomorphic to the irreducible curve $V(x^{2} - y) \subseteq \mathbb{F}[x, y]$ . $V(x^{2} - yz, x)$ is isomorphic to the reducible curve $V(yz) = V(y) \cup V(z) \subseteq \mathbb{F}[y, z]$ which has two irreducible components. Thus, $X$ has three irreducible components.
+
+---
 
 ##### _proposition:_ every topological space is the union of irreducible components
 

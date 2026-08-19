@@ -124,7 +124,7 @@ The points of $\mathbb{A}^3_{\mathbb{C}}$ are
 
 ---
 
-The topology of affine space is also similar to the affine. Instead of just having a nearly cofinite topology for the whole space, each of the embedded curves looks kind of like the affine line. Each curve is a closed set of its own, with a generic point and the points "on the curve". Finite unions of these curves are closed sets.
+The topology of affine space is also similar to that of the affine line. Instead of just having a nearly cofinite topology for the whole space, each of the embedded curves looks kind of like the affine line. Each curve is a closed set of its own, with a generic point and the points "on the curve". Finite unions of these curves are closed sets.
 
 ##### _example:_ the closed sets of $\mathbb{A}^{2}_{\mathbb{C}}$
 
@@ -175,6 +175,57 @@ We can get non-Noetherian $\operatorname{Spec} A$ from our favourite non-Noether
 We can also see that $\mathbb{A}_{\mathbb{F}}^\infty$ is non-Noetherian [[Algebraic geometry --- rising-sea/notes/Topological properties of schemes#_proposition _ Noetherian spaces have (quasi)compact open subsets|because]] it has an open subset that is not quasicompact. $\mathbb{A}_{\mathbb{F}}^\infty \setminus (x_{1}, x_{2}, \dots)$ is covered by all $D(x_{i})$, but no finite combination of them. For example, the point $(x_{j} - a_{j}, x_{i_{k}})_{j, k}$ is contained in our open subset, but not in the finite cover of all $D(x_{i_{k}})$.
 
 ---
+
+### Affine conics
+
+For this example, we work over $\mathbb{F}$, an algebraically closed field of characteristic not $2$. A **conic** is a plane curve (curve subset of $\mathbb{A}^{2}$ or $\mathbb{P}^{2}$) defined by a quadratic equation. Affine conics are then just $V(f) \subseteq \mathbb{A}^2$ for some irreducible quadratic $f \in \mathbb{F}[x, y]$.
+
+##### _example:_ affine conics isomorphic to $\mathbb{A}^1$
+
+Let $C = \operatorname{Spec} \mathbb{F}[x, y] / (y - x^{2})$. Really, this is just a copy of $\mathbb{A}^1$ sitting in $\mathbb{A}^{2}$. The morphism $\mathbb{F}[x, y] \to \mathbb{F}[z]$ by $x \mapsto z$ and $y \mapsto z^{2}$ has kernel exactly $(y - x^{2})$ by the multivariable factor theorem. This gives an isomorphism of rings $\mathbb{F}[x, y] / (y - x^{2}) \to \mathbb{F}[z]$ and an isomorphism of affine schemes $\mathbb{A}^1 \to C$ in the opposite direction.
+
+---
+
+##### _example:_ affine conics isomorphic to $\mathbb{G}_{\times}$
+
+There is a non-isomorphic type of conic. Let $C' = \operatorname{Spec} \mathbb{F}[x, y] / (xy - 1)$. Then $C' \not \cong C$ since $\mathbb{F}[x, y] / (xy - 1) \cong \mathbb{F}[x, x^{-1}]$ is not a polynomial ring in one variable. In particular, any surjective $\mathbb{F}$-algebra morphism $\mathbb{F}[z] \to \mathbb{F}[x, x^{-1}]$ cannot be injective, since $\varphi(f g) = 1 = \varphi(1)$ for $f, g$ the pre-images of $x, x ^{-1}$ respectively.
+
+---
+
+##### _proposition:_ classification of affine conics
+
+If $f \in \mathbb{F}[x, y]$ is irreducible and quadratic, then $V(f) \subseteq \mathbb{A}^{2}$ is isomorphic to $\mathbb{A}^1$ or $\mathbb{G}_{\times}$.
+
+###### _proof:_
+
+It suffices to show that either $\mathbb{F}[x, y] / (f) \cong \mathbb{F}[x]$ or $\mathbb{F}[x, y] / (f) \cong \mathbb{F}[x, x ^{-1}]$. Write
+$$
+f(x, y) = a_{5} x^{2} + 2 a_{4} xy + a_{3} y^{2} + 2 a_{2} x + 2 a_{1} y + a_{0}
+$$
+
+ Suppose we don't have $a_{5} = a_{3} = 0$. Assume without loss of generality that $a_{3} \neq 0$ and further, $a_{3} = 1$. Then we can "complete" the square — we get all the terms of $y$ terms of $f$ as arising from some square.
+$$
+f(x, y) = (y + a_{4} x + a_{1})^{2} - q(x)
+$$
+where $q(x)$ is a quadratic in $y$. By change of variables $u = x, v = y + hx + f$ we get
+$$
+f(x, y) = v^{2} - q(u).
+$$
+Now we can classify $q(u) = au^{2} + bu + c$. If $a \neq 0$, we can assume $a = 1$. (Multiplying by $\sqrt{ a }$ is a linear change of coordinates). Then $q(u) = (u + d)^{2} + e$ and another change of coordinates by scaling $q(u) = w^{2} + 1$ with $e \neq 0$ since $f(x, y)$ is not reducible. But $u^{2} - w^{2} - 1 = (u + w)(u - w) - 1 = 0$ which gives us the desired form with one more change of coordinates.
+
+Else $a_{5} = a_{3} = 0$. Then $f(x, y) = 2a_{4} xy + 2 a_{2} x + 2 a_{1} y + a_{0}$. But then replacing $x$ and $y$ with $x + y$ and $x - y$ gives a polynomial with non-zero $a_{3}$ or $a_{5}$.
+
+---
+
+### The twisted cubic and parametrised curves
+
+For this example, we work over $\mathbb{F}$, an algebraically closed field. 
+
+Sometimes we can parametrise curves just as we do in calculus. The **(affine) twisted cubic** is the curve $C \subseteq \mathbb{A}^{3}$ with $C(\mathbb{F}) \subseteq \mathbb{A}^3(\mathbb{F})$ given by $\{ (t, t^{2}, t^{3}) \mid t \in \mathbb{F} \}$. Here we implicitly choose coordinates $\mathbb{A}^3 \cong \operatorname{Spec} \mathbb{F}[x, y, z]$ and have identify $\mathbb{A}^{3}(\mathbb{F})$ with $\mathbb{F}^{3}$ by the image of $x, y, z$ under the $\mathbb{F}$-algebra homomorphism $\mathbb{F}[x, y, z] \to \mathbb{F}$.
+
+Write $C = \operatorname{Spec} \mathbb{F}[x, y, z] / \mathfrak{i}$. We should have an isomorphism $C \cong \mathbb{A}^1$ given by the $\mathbb{F}$-algebra homomorphism $\varphi : \mathbb{F}[x, y, z] \to \mathbb{F}[w]$ with $x \mapsto w, y \mapsto w^{2}, z \mapsto w^{3}$. A naive guess would be that $\mathfrak{i} = \ker \varphi = (y - x^{2}, z - x^{3})$. This is true and follows essentially from the multivariable factor theorem. 
+
+It's easy to see $\mathfrak{i} = (y - x^{2}, xz - y^{2}, z - xy)$. To cut out the projective closure of $C \subseteq \mathbb{A}^3 \subseteq \mathbb{P}^3$ we will need all three generators (appropriately homogenised). This is the **twisted cubic** $\overline{C} = \operatorname{Proj} \mathbb{F}[w, x, y, z] / (wy - x^{2}, wz - y^{2}, wz - xy)$.
 
 ### The dual numbers
 
