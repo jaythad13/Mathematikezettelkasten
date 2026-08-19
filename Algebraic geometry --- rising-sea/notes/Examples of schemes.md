@@ -211,7 +211,11 @@ where $q(x)$ is a quadratic in $y$. By change of variables $u = x, v = y + hx + 
 $$
 f(x, y) = v^{2} - q(u).
 $$
-Now we can classify $q(u) = au^{2} + bu + c$. If $a \neq 0$, we can assume $a = 1$. (Multiplying by $\sqrt{ a }$ is a linear change of coordinates). Then $q(u) = (u + d)^{2} + e$ and another change of coordinates by scaling $q(u) = w^{2} + 1$ with $e \neq 0$ since $f(x, y)$ is not reducible. But $u^{2} - w^{2} - 1 = (u + w)(u - w) - 1 = 0$ which gives us the desired form with one more change of coordinates.
+Now we can classify $q(u) = au^{2} + bu + c$. 
+
+If $a \neq 0$, we can assume $a = 1$. (Multiplying by $\sqrt{ a }$ is a linear change of coordinates). Then $q(u) = (u + d)^{2} + e$ and another change of coordinates by scaling $q(u) = w^{2} + 1$ with $e \neq 0$ since $f(x, y)$ is not reducible. But $u^{2} - w^{2} - 1 = (u + w)(u - w) - 1 = 0$ which gives us $f(x, y) = st - 1$ with one more change of coordinates.
+
+If $a = 0$ then a linear change of coordinates in $u$ gives $f(x, y) = v^{2} - w$.
 
 Else $a_{5} = a_{3} = 0$. Then $f(x, y) = 2a_{4} xy + 2 a_{2} x + 2 a_{1} y + a_{0}$. But then replacing $x$ and $y$ with $x + y$ and $x - y$ gives a polynomial with non-zero $a_{3}$ or $a_{5}$.
 
