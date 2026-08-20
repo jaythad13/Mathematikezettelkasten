@@ -107,7 +107,6 @@ Since all the homogeneous parts of $g$ are in $\mathfrak{p}_{\bullet}$ we have $
 
 ---
 
-
 Finally, just as we don't want to include the point with coordinates all zero in classical projective geometry, we don't want to include the ideal $(x_{0}, \dots, x_{n})$ of a polynomial ring. More generally, this is the irrelevant ideal.
 
 ##### _definition:_ irrelevant ideal

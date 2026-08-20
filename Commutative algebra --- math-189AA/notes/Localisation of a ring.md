@@ -36,7 +36,7 @@ $$
 $$
 Consequently zero is (the equivalence class of) $0 / 1$ and the multiplicative identity is (the equivalence class of) $1 / 1$
 
-When $S = \{ 1, f, f^{2}, \dots \}$ for an element $f \in A$, we denote $S^{-1} A$ by $A_{f}$.
+When $S = \{ 1, f, f^{2}, \dots \}$ for an element $f \in A$, we denote $S^{-1} A$ by $A_{f}$ or $A[f^{-1}]$.
 
 When $S = A \setminus \mathfrak p$ for a [[Abstract algebra --- math-171/notes/Prime and maximal ideals#_definition _ prime ideals|prime ideal]] $\mathfrak p$, we denote $S^{-1} A$ by $A_{\mathfrak p}$ and call it the localisation at the prime. Note that then if the ideal $(f)$ is prime, $(f)^{-1} A = A_{f} \neq A_{(f)}$.
 
