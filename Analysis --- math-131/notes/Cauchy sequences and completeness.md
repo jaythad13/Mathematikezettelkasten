@@ -106,7 +106,7 @@ Suppose $X$ is a complete metric space, $f : X \times Y \to X$ is continuous, an
 
 ###### _proof:_
 
-Let $g : Y \to X$ be the function sending $y$ to the unique fixed point of the contraction $f_{y}$. Suppose $x \in X$ and consider the $\delta$-ball $B(x, \delta)$ centred at it. Its pre-image under $g$ is is all $y$ such that $f_{y}(x') = x'$ for some $x' \in B(x, \delta)$.
+Let $g : Y \to X$ be the function sending $y$ to the unique fixed point of the contraction $f_{y}$. Suppose $x \in X$ and consider the $\delta$-ball $B(x, \delta)$ centred at it. Its pre-image under $g$ is is all $(x', y)$ that $f_{y}(x') = x'$ for some $x' \in B(x, \delta)$.
 
 ---
 
