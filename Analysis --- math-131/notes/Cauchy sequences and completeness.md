@@ -5,6 +5,7 @@ tags:
 - math-177/4
 - math-177/6
 - math-180/1
+- math-180/2
 - anal
 - metric
 ---
@@ -71,6 +72,8 @@ Suppose $Y \subseteq X$ is a closed subset of a complete metric space. Then $Y$ 
 
 ---
 
+One nice thing you can do with them is Picard iteration!
+
 ##### _theorem:_ contraction mapping principle, or the Banach fixed point theorem
 
 Suppose $f : X \to X$ is a **contraction** of a complete metric space. That is, there is some real $0 < \lambda < 1$ for all $x, y \in X$, we have $d(f(x), f(y)) \leq \lambda d(x, y)$. 
@@ -106,7 +109,19 @@ Suppose $X$ is a complete metric space, $f : X \times Y \to X$ is continuous, an
 
 ###### _proof:_
 
-Let $g : Y \to X$ be the function sending $y$ to the unique fixed point of the contraction $f_{y}$. Suppose $x \in X$ and consider the $\delta$-ball $B(x, \delta)$ centred at it. Its pre-image under $g$ is is all $(x', y)$ that $f_{y}(x') = x'$ for some $x' \in B(x, \delta)$.
+Let $g : Y \to X$ be the function sending $y$ to the unique fixed point of the contraction $f_{y}$. Suppose $y_{n} \to y$ is a convergent sequence in $Y$. It suffices to show that $g(y_{n}) \to g(y)$. Note that
+$$
+\begin{align}
+d(g(y_{n}), g(y)) & = d(f(g(y_{n}), y_{n}), f(g(y), y)) \\
+ & \leq d(f(g(y_{n}), y_{n}), f(g(y), y_{n})) + d(f(g(y), f(g(y_{n}), y))) \\
+ & < \lambda d(g(y_{n}), g(y)) + d(f(g(y), f(g(y_{n}), y)))
+\end{align}
+$$
+Thus,
+$$
+d(g(y_{n}), g(y)) \leq \frac{d(f(g(y), y_{n}), f((g(y), y)))}{1 - \lambda}
+$$
+But since $y_{n} \to y$ and $f$ is continuous we have $d(f(g(y), y_{n}), f(g(y), y)) \to 0$. Thus, $d(g(y_{n}), g(y)) \to 0$ and $g(y_{n}) \to g(y)$. 
 
 ---
 
