@@ -17,11 +17,41 @@
 	\end{enumerate}
 \end{problem}
 
+\begin{solution}
+	\begin{enumerate}
+		\item For each $a \in R$, we have $0 a = (0 + 0) a = 0 a + 0 a$. Adding $-0 a$ to both sides gives $0 = 0 a$.
+
+		\item Note,
+			\begin{align*}
+				-a & = -a + 0a \\
+				   & = -a + (1 - 1)a \\
+				   & = -a + a + (-1)a \\
+				   & = 0 + (-1)a \\
+				   & = (-1) a.
+			\end{align*}
+
+		\item Similarly,
+			\begin{align*}
+				-(ab) & = -(ab) + 0 \\
+				      & = -(ab) + (a - a) b \\
+				      & = -(ab) + ab + (-a)b \\
+				      & = 0 + (-a)b \\
+				      & = (-a) b
+			\end{align*}
+	\end{enumerate}
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[2.]
-	Describe explicitly the smallest subring of the complex numbers which contains the real cube root.
+	Describe explicitly the smallest subring of the complex numbers which contains the real cube root of $2$.
 \end{problem}
+
+\begin{solution}
+	Let the smallest such subring be $A$.
+
+	Any subring of the complex numbers must contain the image of the unique homomorphism $\mathbb{Z} \to \mathbb{C}$, which is isomorphic to $\mathbb{Z}$ itself. Thus.
+\end{solution}
 
 \pagebreak
 
@@ -41,6 +71,20 @@
 	Decide whether or not $S$ is a subring of $R$ when $S$ is the set of all rational numbers $a / b$ where $b$ is not divisible by $3$ and $R = \mathbb{Q}$.
 \end{problem}
 
+\begin{solution}
+	First, $S \subseteq R$ contains $1$. For each $a_{1} / b_{1}, a_{2} / b_{2} \in S$, we have
+	\[
+		a_{1} / b_{1} - a_{2} / b_{2} = (a_{1} b_{2} - a_{2} b_{1}) / b_{1} b_{2}
+	\]
+	and
+	\[
+		(a_{1} / b_{1}) (a_{2} / b_{2}) = a_{1} a_{2} / b_{1} b_{2}
+	\]
+	Since neither of $b_{1}$ or $b_{2}$ is divisible by $3$, neither is $b_{1} b_{2}$ (this follows from the primeness of the ideal $(3)$). Since $S$ is closed under differences, it is an abelian subgroup. Since $S$ is closed under multiplication, it is a subring.
+
+	Alternately, by the theory of localising rings at primes, $S \cong \mathbb{Z}_{(3)}$ which must embed into the fraction field of $\mathbb{Z}$, which is just $\mathbb{Q}$.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[6.]
@@ -51,6 +95,17 @@
 		\item $\mathbb{Z} / n$.
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	We list the units in (a) and (b) using the result of (c).
+	\begin{enumerate}
+		\item $1, 5, 7, 11 \in (\mathbb{Z} / 12)^{\times}$
+
+		\item $1, 3, 5, 7 \in (\mathbb{Z} / 8)^{\times}$
+
+		\item The units in $\mathbb{Z} / n$ are just all the residues $\overline{a}$ of $a \in \mathbb{Z}$ such that $\gcd(a, n) = 1$. In particular, by Bezout's lemma $\gcd(a, n) = 1$ if and only if there exist $x, y \in \mathbb{Z}$ such that $ax + ny = 1$. That is, $ax = 1 - ny$ and so $a$ has an inverse modulo $n$.
+	\end{enumerate}
+\end{solution}
 
 \pagebreak
 
@@ -64,11 +119,36 @@
 	Let $R$ be a ring of prime characteristic $p$. Prove that the map $R \to R$ defined by $x \mapsto x^{p}$ is a ring homomorphism.
 \end{problem}
 
+\begin{solution}
+	Let $\varphi : R \to R$ be defined by $x \mapsto x^{p}$. Then for any $x, y \in R$,
+	\[
+		\varphi(x + y) = (x + y)^{p} = \sum_{k = 0}^{p} \binom{p}{k} x^{k} y^{n - k}
+	\]
+	When $0 < k < p$, it's easy to see that $p \mid \binom{p}{k}$. Otherwise $\binom{p}{k} = 1$. Thus,
+	\[
+		\varphi(x + y) = x^{p} + y^{p} = \varphi(x) + \varphi(y).
+	\]
+	It follows much more obviously that
+	\[
+		\varphi(xy) = (xy)^{p} = x^{p} y^{p} = \varphi(x) \varphi(y).
+	\]
+	Finally $\varphi(1) = 1^{p} = 1$.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[9.]
 	An element $x$ of a ring $R$ is called nilpotent if some power is zero. Prove that if $x$ is nilpotent, then $1 + x$ is a unit.
 \end{problem}
+
+\begin{solution}
+	Since $x$ is nilpotent, there exists an $n$ with $x^{n} = 0$. Then $1 - x^{n} = 1$. Since $t = 1$ is a root of the polynomial $1 - t^{n} \in \mathbb{Z}[t]$, the polynomial factors as $(1 - t)q(t)$. Under the unique homomorphism $\varphi : \mathbb{Z}[t] \to R$ with $t \mapsto x$ the factorisation becomes
+	\[
+		1 = 1 - x^{n} = (1 - x)\varphi(q(t))
+	\]
+	That is, $1 + x$ is a unit with multiplicative inverse $\varphi(q(t))$.
+
+\end{solution}
 
 \pagebreak
 
@@ -85,5 +165,23 @@
 		\item $\mathbb{Z}[x] / (x^{2} + 3, 3)$
 	\end{enumerate}
 \end{problem}
+
+\begin{solution}
+	\begin{enumerate}
+		\item Since we can mod out by ideals in any order,
+			\[
+				\mathbb{Z}[x] / (x^{2} + 3, 5) \cong \mathbb{F}_{5}[x] / (x^{2} + 3) \cong \mathbb{F}_{5}[\sqrt{3}]
+			\]
+			Since $3$ is not a quadratic residue modulo $5$, this is a quadratic extension of $\mathbb{F}_{5}$. As an $\mathbb{F}_{5}$-vector space, it is isomorphic to $\mathbb{F}_{5}^{\oplus 2}$ with basis $1, \sqrt{3}$.
+			 
+
+		 \item Again, we can choose an order to mod out ideals, and thus,
+			  \[
+			 	\mathbb{Z}[x] / (x^{2} + 3) \cong \mathbb{F}_{3}[x] / (x^{2} + 3) = \mathbb{F}_{3}[x] / (x^{2}).
+			 \]
+
+			 This ring looks like $\{ ax + b \mid a, b \in \mathbb{F}_{3} \}$ with the regular addition and multiplication, except all powers of degree $2$ or higher are killed.
+	\end{enumerate}
+\end{solution}
 
 \end{document}
