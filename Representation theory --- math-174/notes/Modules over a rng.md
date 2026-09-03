@@ -3,6 +3,7 @@ tags:
 - alg
 - rep-th
 - math-174/1
+- math-174/2
 ---
 
 Let $R$ be a (possibly non-unital, possibly non-commutative) ring. We call this a rng and reserve ring for unital rings.
@@ -21,9 +22,11 @@ We write this as an action of $R$ — if the structure morphism is $\varphi$, th
 
 Note, this generalises the [[Commutative algebra --- math-189AA/notes/Modules#_definition _ module|definition of modules over a commutative ring]]. 
 
-Here are some examples we already know from the case of commutative rings $R$.
+Here are some examples we already know from the case of commutative rings $A$.
 
 ![[Commutative algebra --- math-189AA/notes/Modules#_examples and non-examples _ modules|Modules over a commutative ring]]
+
+The **(left) regular $R$-module** is the $R$-module structure on $R$ by left multiplication.
 
 The following example is very close to what we do in representation theory.
 
@@ -54,3 +57,45 @@ We call this the **permutation module** structure on $\mathbb{F}^X$ (for a $G$-s
 Consider a random walk on $C_{4}$ where you stay in place half the time, rotate one way a quarter of the time, and rotate the other way a quarter of the time. Then this corresponds to computing $1 / 2 + r / 4 + r^{-1} / 4$ in the group ring $\mathbb{Z}[\mathbb{Z} / 4]$ or even $\mathbb{Z}[D_{2 \times 4}]$.
 
 ---
+
+### Module homomorphisms, submodules, and quotients
+
+They are all exactly what you think they should be. Let $M, N$ be $R$-submodule.
+
+##### _definition:_ module homomorphisms, isomorphisms
+
+An **$R$-module homomorphism** $\varphi : M \to N$ is a homomorphism of abelian groups such that $\varphi(r m) = r \varphi(m)$ for each $m \in M$.
+
+$\varphi$ is an **isomorphism** if it is bijective (this is either a definition, or better, a fact about the category we just defined with set identity and composition).
+
+---
+
+From now on, unless otherwise specified, all homomorphisms are module homomorphisms.
+
+##### _definition:_ submodules
+
+An **$R$-submodule** of $M$ is the image of an injective homomorphism $\varphi : N \to M$.
+
+It is a subgroup $N \subseteq M$ closed under the action of $R$.
+
+---
+
+The kernel and image are what you think they should be. The **kernel** of $\varphi$, $\ker \varphi$ is its kernel as an abelian group homomorphism. The **image** of $\varphi$, $\operatorname{img} \varphi$ is its image as a function. They are submodules of $M$ and $N$ respectively.
+
+##### _example:_ some more submodules
+
+- Let $V$ be a (finite-dimensional) $\mathbb{F}$-vector space and $T$ be a transform. Then its submodules under its $\mathbb{F}[T]$-module structure include eigenspaces and generalised eigenspaces.
+- The ideals of the regular $R$-module are the left ideals. 
+- For example, in the ring $\operatorname{End}(\mathbb{F}^{\oplus 2})$, the matrices with all zeroes in the right column are a left ideal. The matrices with all zeroes in the left column is also a left ideal.
+
+---
+
+##### _definition:_ quotient modules
+
+A **quotient module** of $M$ is the codomain of a surjective homomorphism $\pi : M \to N$. Specifically, $N$ is (isomorphic to) the quotient $M / \ker \pi$.
+
+Equivalently, the quotient $M / N$ of $M$ by a submodule $N \subseteq M$ is just the abelian group quotient with the $R$-module structure by $r(m + N) = rm + N$.
+
+---
+
+Confusingly, we just used $N$ in two different ways here. The equivalence of these definitions is the first isomorphism theorem. Schur's lemma will be a really dumb application of this!
