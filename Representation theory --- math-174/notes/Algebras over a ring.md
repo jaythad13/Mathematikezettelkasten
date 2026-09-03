@@ -10,7 +10,7 @@ Let $A$ be a (commutative, unital) ring.
 
 The **category of (unital, associative) $A$-algebras** is $\mathsf{Alg}_{A}$ the category of objects under central homomorphisms $A$ in $\mathsf{nCRing}$ (non-commutative rings).
 
-Then, each **$A$-algebra** is then a structure homomorphism $f_{R} : A \to R$ with $\operatorname{img} f_{R} \subseteq Z(R)$. Each homomorphism of $A$-algebras is a rng homomorphism $R \to S$ so that the triangle below
+Then, each **$A$-algebra** is then a structure homomorphism $f_{R} : A \to R$ with $\operatorname{img} f_{R} \subseteq Z(R)$. Each **$A$-algebra homomorphism** is a rng homomorphism $R \to S$ so that the triangle below commutes.
 ```tikz
 \usepackage{tikz-cd}
 \usepackage{amsfonts}
