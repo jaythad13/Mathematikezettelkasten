@@ -1,0 +1,35 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 180 --- Partial differential equations}
+\assignment{Homework 1}
+\duedate{11th September 2026}
+
+\begin{document}
+
+\begin{problem}[1.]
+	Prove that if $f : \mathbb{R} \times \mathbb{R} \to \mathbb{R}$ is continuous and $\partial f(t, x) / \partial x$ is a bounded function, then $f$ is Lipschitz.
+\end{problem}
+
+\begin{problem}[2.]
+	Prove that $f(t, x) = \sin{(t + x)}$ is Lipschitz and that $g(t, x) = e^{x} \sin{(t + x)}$ is not Lipschitz.
+\end{problem}
+
+\begin{problem}[3.]
+	Let $K \subseteq \mathbb{R}$ be a closed bounded interval and $C(K)$ be the set of continuous function $K \to \mathbb{R}$. For $f, g \in C(K)$ define $d(f, g) = \max$. Prove that $C(K), d$ is a complete metric space.
+\end{problem}
+
+\begin{problem}[4.]
+	Let $B : [0, 1] \times [0, 1] -. \mathbb{R}$ be a bounded continuous function. Let $f : \mathbb{R} \to \mathbb{R}$ be a Lipschitz function. Prove that if $B$ is bounded by $M$, $L$ is the Lipschitz constant for $f$, and $LM < 1$, then for each continuous function $g : [0, 1] \to \mathbb{R}$, the integral equation
+	\[
+		u(x) = g(x) + \int_{0}^{1} B(x, y) f(u(y)) \, dy
+	\]
+	has a unique solution and that such a solution depends continuously on $g$.
+\end{problem}
+
+\begin{problem}[5.]
+	Extend the result in problem 1 to functions $f : \mathbb{R} \times \mathbb{R}^{n} \to \mathbb{R}^{n}$.
+\end{problem}
+
+\end{document}
