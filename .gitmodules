@@ -35,3 +35,6 @@
 [submodule "Geometric group theory --- rtg-2025/attachments/paper"]
 	path = Geometric group theory --- rtg-2025/attachments/paper
 	url = https://git@git.overleaf.com/690bdf4d65d7126fda5ed890
+[submodule "Tropical curve counting --- karpism/documents"]
+	path = Tropical curve counting --- karpism/documents
+	url = https://git@git.overleaf.com/6a9a119dfc07c59611106b40
