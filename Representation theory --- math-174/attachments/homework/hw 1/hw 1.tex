@@ -1,0 +1,66 @@
+\documentclass[12pt]{article}
+
+\usepackage{amssymb, amsmath, amsfonts, amsthm, graphicx, tcolorbox}
+\usepackage{tikz-cd}
+
+\parskip = .2in
+\parindent  = 0in
+
+\pagestyle{empty}
+
+
+%==========
+%==========
+
+\begin{document}
+
+\begin{titlepage}
+Math 174, Fall 2026 \\ 
+Homework 1 \\
+
+\vfill
+
+Name: Jayden Thadani
+
+\end{titlepage}
+
+%==========
+\begin{tcolorbox}[title=Exercise 1]
+Let $R$ be a ring, let $M$ and $N$ be $R$-modules, and let $\varphi \colon M \to N$ be an $R$-module homomorphism. Prove that $\ker (\varphi)$ is a submodule of $M$, and $\varphi(M)$ (the image of $\varphi$) is a submodule of $N$. 
+\end{tcolorbox}
+
+\bigskip
+
+Since $R$-module homomorphisms are abelian group homomorphisms already, it suffices to show that $\ker \varphi$ and $\operatorname{img} \varphi$ are closed under scaling.
+
+Suppose $m \in \ker \varphi$. Then $\varphi(m) = 0$. Thus, for each $r \in R$, $\varphi(r m) = r \varphi(m) = 0$. That is, $r m \in \ker \varphi$.
+
+Suppose $n \in \operatorname{img} \varphi$. Then there is some $m \in M$ such that $\varphi(m) = n$. For each $r \in R$, we have $r n = r \varphi(m) = \varphi(r m)$. Thus, $r n \in \operatorname{img} \varphi$.
+
+\newpage
+
+%==========
+\begin{tcolorbox}[title=Exercise 2]
+Let $R$ be the complex matrix ring $M_2(\mathbb{C})$. How many distinct submodules are there in the (left) regular $R$-module? 
+\end{tcolorbox}
+
+\bigskip
+
+We want to classify subsets $N \subseteq M_{2}(\mathbb{C})$ that are invariant under the action of $M_{2}$.
+
+\newpage
+
+%==========
+\begin{tcolorbox}[title=Exercise 3]
+Let $R$ be a ring with $1$, and let $I$ and $J$ be ideals of $R$. Prove that if $R/I \cong R/J$ as $R$-modules, then it must be the case that $I = J$.
+\end{tcolorbox}
+
+\bigskip
+
+Let $\varphi : R / I \to R / J$ and let $\pi_{I} : R \to R / I$ be the quotient map. Then $\varphi \circ \pi_{I}$ is a map $R \to R / J$ with kernel $\ker \pi_{I} = I$. Each $R$-module map $R \to R / J$ must kill $J$ (by definition of the quotient), so $J \subseteq I$. By symmetry, we also have $I \subseteq J$ and we are done.
+
+\newpage
+
+%==========
+
+\end{document}  
