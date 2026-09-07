@@ -46,7 +46,11 @@ Let $R$ be the complex matrix ring $M_2(\mathbb{C})$. How many distinct submodul
 
 \bigskip
 
-We want to classify subsets $N \subseteq M_{2}(\mathbb{C})$ that are invariant under the action of $M_{2}$.
+I used the help of Google Gemini for this question.
+
+We claim there are uncountably infinitely many left ideals (left submodules of $R$ are exactly left ideals of $R$). To see this, consider $T, S \in R$ and the corresponding principal ideals. If $T \in (S)$, then $T = AS$ for some $A \in R$, and so  $\ker T$ includes $\ker S$. Thus, if $(S) = (T)$, then $\ker T = \ker S$. That is, the kernel of the generator is an invariant of principal left ideals.
+
+Each subspace of $\mathbb{C}^{2}$ is represented as a kernel of some matrix in $R$, and there are uncountably infinitely many subspaces. Thus, there are at least as many left ideals as there are subspaces of $\mathbb{C}^{2}$. Each left ideal of $R$ is also a $\mathbb{C}$-submodule and there are at most uncountably many of those. Thus, there are exactly uncountably infinitely many left ideals of $R$.
 
 \newpage
 
