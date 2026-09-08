@@ -25,3 +25,9 @@ Then, each **$A$-algebra** is then a structure homomorphism $f_{R} : A \to R$ wi
 ---
 
 We say $A$ acts on $R$ by scaling. Let $r, s \in R$ and $a \in A$. Then $a \cdot r = f_{R}(a) r$. Further, $(a \cdot r) s = r (a \cdot s) = a \cdot (rs)$. For these identities, we need $A$ to lie in the centre of $R$. Although it will already commute with itself, $A$ will not necessarily commute with everything else if it doesn't lie in the centre of $R$.
+
+##### _example:_ a representation-theoretic example of an $\mathbb{F}$-algebra
+
+For each finite group $G$ and field $\mathbb{F}$, the group ring $\mathbb{F}[G]$ is an $\mathbb{F}$-algebra. We will usually want $\mathbb{F}$ to have characteristic $0$ and be algebraically closed. It also helps to have nice inner products on $\mathbb{F}^{\oplus n}$.
+
+---
