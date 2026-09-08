@@ -28,6 +28,16 @@ The morphism $\mathbb{A}^n \to \mathbb{P}^n$ defines a rational map. Also, the m
 
 ---
 
+It isn't always immediately clear what the largest domain of definition is.
+
+##### _example:_ the Cremona transform
+
+Work over a base field $\mathbb{F}$. Write $U = D_{+}(xyz) \subseteq \mathbb{P}^2$. Consider the morphism $\pi : U \to \mathbb{P}^2$ by $(x : y : z) \mapsto (1 / x : 1 / y : 1 / z)$ in homogeneous coordinates. The **Cremona transform** is its rational equivalence class $\mathbb{P}^2 \dashrightarrow \mathbb{P}^2$.
+
+Note, we can actually extend $\pi$ beyond $U$. Specifically, $xyz$ is non-vanishing on $U$, so [[Algebraic geometry --- rising-sea/notes/Morphisms of schemes#_example _ some maps to projective space|we can scale the coordinates]] of $\pi$ by $xyz$. On $U$, $\pi$ agrees with $(x : y : z) \mapsto (yz : zx : xy)$. This morphism extends to $D_{+}(yz) \cup D_{+}(zx) \cup D_{+}(xy)$. This is strictly bigger, since it contains each term in the union, each of which is bigger than $D_{+}(xyz)$.
+
+---
+
 ##### _proposition:_ rational maps to $\mathbb{A}^1$ represent rational functions
 
 Suppose $X$ is an [[Algebraic geometry --- rising-sea/notes/Reduced and integral schemes#_definition _ integral scheme|integral]] scheme. There is a [[Algebraic geometry --- rising-sea/notes/Natural transformations#_definition _ natural transformations, natural isomorphism, equivalence of categories|natural isomorphism]] of functors $X \mapsto \operatorname{Rat}(X, \mathbb{A}^1)$ and $X \mapsto K(X)$.
@@ -95,3 +105,73 @@ Suppose $\pi : X \dashrightarrow Y, \rho : X \dashrightarrow Y$ are represented 
 Consider $V_{3} = \beta^\text{pre}(U_{3})$. Then $\alpha_{\mid U_{3}} \circ \beta_{\mid V_{3}} : V_{3} \to Y$ is a morphism rationally equivalent to $\operatorname{id}_{Y}$. Thus, for some open dense $V_{4} \subseteq V_{3}$ we can write $(\alpha_{\mid U_{3}} \circ \beta_{\mid V_{3}})_{\mid V_{4}} = \operatorname{id}_{X \mid V_{4}}$. Let $\alpha^\text{pre}(V_{4}) = U_{4} \subseteq U_{3}$. Then $\alpha_{\mid U_{4}}$ and $\beta_{\mid V_{4}}$ compose to the identity on both sides.
 
 ---
+
+### Rational maps of irreducible varieties
+
+In the case of varieties (and in fact, we will prove this even for non-separated schemes), rational maps really are just homomorphisms of function fields.
+
+##### _proposition:_ function field homomorphisms come from dominant maps
+
+Suppose $X$ is an integral $\mathbb{F}$-scheme and $Y$ is an integral [[Algebraic geometry --- rising-sea/notes/Schemes over a base#_definition _ locally of finite type, finite type|finite type]] $\mathbb{F}$-scheme. For each extension of $\mathbb{F}$-algebras $K(Y) \to K(X)$, there is a dominant rational map of $\mathbb{F}$-schemes $\pi : X \dashrightarrow Y$ such that $\pi^\sharp = \varphi$.
+
+---
+
+Further, each finitely generated field extension of $\mathbb{F}$ arises as the function field of a variety. This gives an equivalence between the category of irreducible affine $\mathbb{F}$-varieties with dominant rational maps (defined over $\mathbb{F}$) and the opposite category of finitely generated field extensions of $\mathbb{F}$ with $\mathbb{F}$-algebra homomorphisms between them.
+
+##### _proposition:_ function fields come from varieties
+
+Each finitely generated $\mathbb{F}$-algebra is the function field of an irreducible affine $\mathbb{F}$-variety.
+
+---
+
+### Rational points from rational maps
+
+We can find (all) $\mathbb{Q}$-points on curves and surfaces using rational maps to things where we already understand the $\mathbb{Q}$-points (we avoid the phrase rational solutions because the two ideas don't seem to be related). For this section we work in the category of $\mathbb{Q}$-schemes.
+
+##### _example:_ Pythagorean triples
+
+We can use a rational map to give a "formula" describing all Pythagorean triples.
+
+We want to find $\mathbb{Q}$-solutions to $x^{2} + y^{2} = 1$. Let $C = \operatorname{Spec} A = \operatorname{Spec} \mathbb{Q}[x, y] / (x^{2} + y^{2} - 1)$. We have at least one point $p = (1, 0) \in C(\mathbb{Q}) \subseteq \mathbb{A}^2(\mathbb{Q})$. For any other $q = (q_{1}, q_{2}) \in C(\mathbb{Q})$ we have a line $p q$ and we can consider its slope $\lambda_{q} = q_{2} / (q_{1} - 1) \in \mathbb{Q}$. Conversely, for each $\lambda \in \mathbb{Q}$, the rational line of slope $\lambda$, through $p$ intersects $C$ at one more point $q_{\lambda} = (\lambda^{2} - 1 / (\lambda^{2} + 1), 2 \lambda / (\lambda^{2} + 1))$.
+
+This gives maps $C(\mathbb{Q}) \to \mathbb{A}^1(\mathbb{Q})$ and $\mathbb{A}^1(\mathbb{Q}) \to C(\mathbb{Q})$ that come from rational maps. $C \dashrightarrow \mathbb{A}^1$ is represented by a morphism $D(x - 1) \to \mathbb{A}^1$. The morphism corresponds to $\mathbb{Q}[z] \to A[(x - 1)^{-1}]$ with $f(z) \mapsto f(y / (x - 1))$ on rings. $\mathbb{A}^1 \dashrightarrow C$ is defined on $D(z^{2} + 1)$. It corresponds to the homomorphism $A \to \mathbb{Q}[z, (z^{2} + 1)]$ by $f(x, y) \mapsto f(z^{2} - 1 / (z^{2} + 1), 2z / (z^{2} + 1))$.
+
+We can extend $C \dashrightarrow \mathbb{A}^1$ to a rational map $C \dashrightarrow \mathbb{P}^1$ in the obvious way. As a [[Algebraic geometry --- rising-sea/notes/Morphisms of schemes#_example _ some maps to projective space|morphism to projective space]], it can be described by the choice of $y, x - 1$ as a pair of functions, not vanishing simultaneously on $D(x - 1) \subseteq C$. However, this map is actually equivalent to an honest morphism of schemes $C \to \mathbb{P}^1$. This is a special case of a general theorem extending morphisms from punctured curves to the whole curve.
+
+---
+
+Here, the formula came first and then we interpreted it as coming from a birational map. However, there are many natural ways to get a birational map to $\mathbb{P}^n$. Finding all the $\mathbb{Q}$-points is just a matter of understanding the inverse map and dealing with the locus where it is not defined.
+
+##### _example:_ rational points on a nodal cubic elliptic curve
+
+We can find all $\mathbb{Q}$-points on $C = \operatorname{Spec} A = \operatorname{Spec} \mathbb{Q}[x, y] / (y^{2} - x^{3} - x^{2})$ by giving a birational map $C \dashrightarrow \mathbb{A}^1$ by projecting from a point again.
+
+---
+
+###### _example:_ rational points on a quadric surface
+
+Similarly, we can find all $\mathbb{Q}$-points on the quadric surface $Q \subseteq \mathbb{P}^3$ given by $\operatorname{Proj} S_{\bullet} = \operatorname{Proj} \mathbb{Q}[x, y, z, w] / (x^{2} + y^{2} - w^{2} - z^{2})$.
+
+---
+
+### Infinite descent and non-rational curves
+
+An interesting fact is that there exist curves $C$ over $\mathbb{C}$ with no non-constant rational maps $\mathbb{P}^1 \dashrightarrow C$. In some sense, this is saying that all the $\operatorname{Spec} \mathbb{C}(t)$-points of $C$ actually factor through $\operatorname{Spec} \mathbb{C}$ — they are all closed points.
+
+If we were to replace $\mathbb{C}(t)$ with $\mathbb{Q}$, these are deep number-theoretic questions. This is a first taste of the parallelism between number fields and function fields of curves. For this section, we work in the category of $\mathbb{C}$-schemes.
+
+##### _example:_ function field Fermat's last theorem
+
+Suppose $n > 2$. Let $C = V(x^n + y^n - z^n) \subseteq \mathbb{P}^{2}$. Then $\mathbb{P}^1$ has no dominant rational maps to $C$.
+
+---
+
+This gives an example of two smooth complex curves with no isomorphic open subschemes.
+
+##### _example:_ $\mathbb{C}(t)$-points of an elliptic curve
+
+Suppose $C = \operatorname{Spec} \mathbb{C}[x, y] / (y^{2} - f(x))$ where $f(x) = (x - a)(x - b)(x - c)$ and $a, b, c$ are three distinct complex numbers. Then all $\mathbb{C}(t)$-points $\operatorname{Spec} \mathbb{C}(t) \to C$ factor through $\operatorname{Spec} \mathbb{C}$.
+
+---
+
+Once we know what genus is and thoroughly understand it, we will see that these theorems are really just the fact that the genus $0$ curve $\mathbb{P}^1$ has no maps to higher genus curves.
