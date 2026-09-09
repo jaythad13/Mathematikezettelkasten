@@ -2,6 +2,7 @@
 tags:
 - rising-sea/5/4
 - rising-sea/8/2
+- math-172/3
 - comm-alg
 ---
 
@@ -182,6 +183,8 @@ $$
 a_{k} = \frac{\sum_{i = 0}^{k - 1} a_{i} (m / n)^i}{m^k / n^k} = \frac{\sum_{i = 0}^{k - 1} a_{i} m^i n^{k - i}}{m^k}.
 $$
 Since the numerator is divisible by $p$ and the denominator isn't, we have $a_{k} \neq 1$, and thus, $p$ is not monic.
+
+In fact, more generally, suppose $f, g \in \mathbb{Z}[x]$ are monic. Then if $g \mid f$ in $\mathbb{Q}[x]$, we have $g \mid f$ in $\mathbb{Z}[x]$. The proof is as follows. Do [[Galois theory --- math-172/notes/Polynomial rings#_proposition _ division with remainder|division with remainder]] in $\mathbb{Z}[x]$ to get $f = gq + r$ where $r$ has degree less than $g$. This is also a division with remainder in $\mathbb{Q}[x]$, and so must agree with the unique division with remainder in $\mathbb{Q}[x]$ where $r = 0$.
 
 ---
 
