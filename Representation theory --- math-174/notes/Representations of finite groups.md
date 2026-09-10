@@ -25,6 +25,8 @@ The equivalence follows since $G \subseteq \mathbb{F}[G]^\times$, so the image o
 
 The notion of degree has something to do with the degree of the characteristic polynomial of an irreducible representation.
 
+Lots of words that are adjectives for $\mathbb{F}[G]$-modules are also adjectives for representations of $G$. For example, [[Representation theory --- math-174/notes/Modules over a rng#_definition _ irreducible modules|irreducible]] is the same, submodule becomes subrepresentation, et c.
+
 ##### _example:_ the permutation representation of $\mathfrak{S}_{2}$.
 
 Let $\mathfrak{S}_{2}$ be the symmetric group acting on the set of the standard basis of $\mathbb{C}^{\oplus 2}$. Then this gives a [[Representation theory --- math-174/notes/Modules over a rng#_example _ modules over group rings, or the fundamental representation-theoretic example, or permutation modules|permutation representation]] $\mathfrak{S}_{2} \to \mathrm{GL}(\mathbb{C}^{\oplus 2}) \to \mathrm{GL}_{2}(\mathbb{C})$. 

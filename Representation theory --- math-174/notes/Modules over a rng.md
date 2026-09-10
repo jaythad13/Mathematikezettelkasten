@@ -4,6 +4,7 @@ tags:
 - rep-th
 - math-174/1
 - math-174/2
+- math-174/4
 ---
 
 Let $R$ be a (possibly non-unital, possibly non-commutative) ring. We call this a rng and reserve ring for unital rings.
@@ -58,7 +59,7 @@ Consider a random walk on $C_{4}$ where you stay in place half the time, rotate 
 
 ---
 
-### Module homomorphisms, submodules, and quotients
+### Module homomorphisms, submodules, quotients, direct sums, et c.
 
 They are all exactly what you think they should be. Let $M, N$ be $R$-submodule.
 
@@ -99,3 +100,58 @@ Equivalently, the quotient $M / N$ of $M$ by a submodule $N \subseteq M$ is just
 ---
 
 Confusingly, we just used $N$ in two different ways here. The equivalence of these definitions is the first isomorphism theorem. Schur's lemma will be a really dumb application of this!
+
+##### _definition:_ sums, (internal and external) direct sums
+
+Suppose $N_{1}, N_{2} \subseteq M$ are $R$-submodules. Then their **sum** is the smallest submodule containing both of them — $N_{1} + N_{2} = \{ n_{1} + n_{2} \mid n_{1} \in N_{1}, n_{2} \in N_{2} \}$.
+
+We say $M = N_{1} \oplus N_{2}$ (or $M$ is the **internal direct sum** of $N_{1}$ and $N_{2}$) if $M = N_{1} + N_{2}$ and $N_{1} \cap N_{2} = \text{Ø}$.
+
+The **external direct sum** of $R$-modules $M, N$ is their [[Algebraic geometry --- rising-sea/notes/Universal properties and why categories?#_definition _ coproducts, direct sums|coproduct]], also denoted $M \oplus N$. As an abelian group, it is just the abelian group direct sum $M \oplus_{\mathsf{Ab}} N$ with $r(m \oplus n) = rm \oplus rn$.
+
+---
+
+Direct sums correspond to block diagonal decompositions of the matrices corresponding to the representation.
+
+Unlike in the case of vector spaces, a submodule need not have a complement. Even if it does have a complement, not every choice of extension of the basis need give a complementary submodule.
+
+##### _example:_ the permutation representation of $\mathfrak{S}_{2}$
+
+Let $\mathbb{C}[\mathfrak{S}_{2}] \to \operatorname{End} \mathbb{C}^{\oplus 2}$ be given by the permutation representation on the standard basis of $\mathbb{C}^{\oplus 2}$. Then $(1, 1)$ spans a $\mathbb{C}[{\mathfrak{S}_{2}}]$-submodule. $(1, -1)$ spans a complementary submodule. $(1, 0)$ does not span a complementary submodule, but does also span a complementary subspace of $\mathbb{C}^{\oplus 2}$.
+
+If direct sums correspond to block diagonal decompositions, then such a basis gives a block upper triangular decomposition of the matrices. In particular, if $N_{1} \subseteq M$, then extending a basis of $N_{1}$ to a basis of $M$ gives a decomposition
+$$
+\rho(g) = \begin{pmatrix}
+\rho_{N_{1}}(g) & *(g) \\
+0 & \widetilde{\rho}(g)
+\end{pmatrix}.
+$$
+In fact, $g \mapsto \widetilde{\rho}(g)$  is also a representation. It has $\mathbb{C}$-dimension $\dim_{\mathbb{C}} N_{2} = \dim_{\mathbb{C}} M - \dim_{\mathbb{C}} N_{1}$. It's just the quotient representation $M / N_{1}$.
+
+Of course, this discussion applies more generally than over a group algebra base over a field.
+
+---
+
+This leads us to some important definitions.
+
+##### _definition:_ irreducible, simple modules
+
+An $R$-module $M$ is **irreducible** or **simple** if it is non-zero and it's only submodules are $0$ and $M$ itself.
+
+---
+
+You should think of irreducible $R$-modules as analogous to prime integers.
+
+In representation theory, our goal is to decompose $\mathbb{F}[G]$-modules $M$ into direct sums of irreducible submodules $N_{i}$. It is not always possible to do this for general $R$-modules. Even with $\mathbb{F}[G]$-modules we have to be careful ($\mathbb{F}$ should have characteristic not dividing $\#G$). This is [[Representation theory --- math-174/notes/Maschke's theorem|Maschke's theorem]]. However, there is a special class of modules for which it is possible.
+
+##### _definition:_ semisimple modules
+
+An $R$-module $M$ is **semisimple** if every submodule $N_{1} \subseteq M$ has a complement $N_{2}$ such that $N_{1} \oplus N_{2} \cong M$.
+
+---
+
+It follows essentially by induction that each semisimple module admits a (unique) decomposition into a direct sum of irreducible submodules.
+
+##### _proposition:_ semisimple modules are direct sums of irreducibles
+
+---
