@@ -64,8 +64,39 @@ But then these $B_{\delta}(x)$ form an open cover of compact $K$, and must reduc
 	has a unique solution and that such a solution depends continuously on $g$.
 \end{problem}
 
+\begin{solution}
+	Let $X$ be the complete metric space of continuous functions $[0, 1] \to \mathbb{R}$. Let $Y = X$. Consider the function $\Gamma : X \times Y \to X$ by
+	 \[
+		\Gamma(u, g) = g(x) + \int_{0}^{1} B(x, y) f(u(y)) \, dy.
+	\]
+	$\Gamma$ is continuous because it is the composition of addition and integration, both of which are continuous functions on $X$.
+
+	By the Banach fixed point theorem (with continuous variation in $Y$), it suffices to show that for each $g$, the function $\Gamma_{g} : X \to X$ is a contraction. Then each unique fixed point of $\Gamma_{g}$ is a solution to the integral equation. For any two $u_{2}, u_{2} \in X$,
+	\begin{align*}
+		d(\Gamma_{g}(u_{2}), \Gamma_{g}(u_{1})) & = \max_{x} \lvert \Gamma_{g}(u_{2})(x) - \Gamma_{g}(u_{1})(x) \rvert \\
+							& = \max_{x} \left \lvert \int_{0}^{1} B(x, y) ( f(u_{2}(y)) - f(u_{1}(y)) ) \, dy \right \rvert \\
+							& \le M \int_{0}^{1} f(u_{2}(y)) - f(u_{1}(y)) \, dy \\
+							& \le M \max_{y} \lvert f(u_{2}(y)) - f(u_{1}(y)) \rvert \\
+							& \le L M \max_{y} \lvert u_{2}(y) - u_{1}(y) \rvert \\
+							& = L M d(u_{2}, u_{1}).
+	\end{align*}
+	Since $LM < 1$, $\Gamma_{g}$ is a contraction.
+\end{solution}
+
+\pagebreak
+
 \begin{problem}[5.]
 	Extend the result in problem 1 to functions $f : \mathbb{R} \times \mathbb{R}^{n} \to \mathbb{R}^{n}$.
 \end{problem}
+
+\begin{solution}
+	We claim that if $f : \mathbb{R} \times \mathbb{R}^{n} \to \mathbb{R}^{n}$ by $(t, x_{1}, \dots, x_{n}) \mapsto f(t, x_{1}, \dots, x_{n})$ has bounded partial derivatives in all $x_{i}$, then the function $f_{t} : \mathbb{R}^{n} \to \mathbb{R}^{n}$ by $(x_{1}, \dots, x_{n}) \mapsto f(t, x_{1}, \dots, x_{n})$ is Lipschitz. 
+
+	Note, it suffices to show that a function $g : \mathbb{R}^{n} \to \mathbb{R}$ with bounded partials is Lipschitz. The case of functions $g : \mathbb{R}^{n} \to \mathbb{R}^{n}$ follows from summing the bounds on each of its component functions $g_{i} : \mathbb{R}^{n} \to \mathbb{R}$. Suppose $g : \mathbb{R}^{n} \to \mathbb{R}$. We use the multivariable mean value inequality which states that for any $x, y$ we have
+	\[
+		\lVert g(y) - g(x) \rVert \le \lVert \nabla g((1 - c) x + c y) \rVert \lVert y - x \rVert
+	\]
+	for some $c \in [0, 1]$. Since the partials of $g$ are bounded, so is the gradient. Thus, we have $\lVert g(y) - g(x) \rVert < \lambda \lVert y - x \rVert$ where $\lambda$ is a bound on $\nabla g$. That is, $g$ is Lipschitz.
+\end{solution}
 
 \end{document}
