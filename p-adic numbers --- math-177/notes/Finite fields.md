@@ -36,7 +36,7 @@ Notice that $\mathbb{Z} \to \mathbb{F}$ has kernel $(p)$, and so $\mathbb{Z} / (
 
 ---
 
-##### _proposition:_ 
+##### _corollary:_ sizes of finite fields 
 
 A degree $k$ finite field extension $\mathbb{F} / \mathbb{F}_{p}$ has size $\# \mathbb{F} = p^k$.
 
