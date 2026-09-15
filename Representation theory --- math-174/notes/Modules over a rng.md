@@ -5,6 +5,7 @@ tags:
 - math-174/1
 - math-174/2
 - math-174/4
+- math-174/5
 ---
 
 Let $R$ be a (possibly non-unital, possibly non-commutative) ring. We call this a rng and reserve ring for unital rings.
@@ -113,6 +114,8 @@ The **external direct sum** of $R$-modules $M, N$ is their [[Algebraic geometry 
 
 Direct sums correspond to block diagonal decompositions of the matrices corresponding to the representation.
 
+### Irreducibility and semisimplicity
+
 Unlike in the case of vector spaces, a submodule need not have a complement. Even if it does have a complement, not every choice of extension of the basis need give a complementary submodule.
 
 ##### _example:_ the permutation representation of $\mathfrak{S}_{2}$
@@ -153,5 +156,51 @@ An $R$-module $M$ is **semisimple** if every submodule $N_{1} \subseteq M$ has a
 It follows essentially by induction that each semisimple module admits a (unique) decomposition into a direct sum of irreducible submodules.
 
 ##### _proposition:_ semisimple modules are direct sums of irreducibles
+
+If $M$ is a semisimple $R$-module, then $M \cong N_{1} \oplus \dots \oplus N_{m}$ where each $N_{i}$ is an irreducible $R$-module.
+
+###### _proof sketch:_
+
+In the case that $R$ is an $\mathbb{F}$-algebra, use induction on the $\mathbb{F}$-dimension of $M$. Just keep breaking things into pieces until you can't.
+
+---
+
+##### _lemma:_ Schur's lemma
+
+Suppose $M$ and $N$ are irreducible $R$-modules. Then any homomorphism $\varphi : M \to N$ is an isomorphism or $0$.
+
+###### _proof:_
+
+The kernel is a submodule, and thus, either $0$ or $M$. Similarly, the image is either $0$ or $N$.
+
+---
+
+This is a very useful tool!
+
+> Schur's lemma is the whole toolbox
+
+\- Michael Orrison
+
+For example, we can prove
+
+##### _corollary:_ endomorphisms of an irreducible representation
+
+Suppose $\mathbb{F}$ is algebraically closed. Suppose $M$ is an irreducible $\mathbb{F}[G]$-module (for $G$ a finite group). Then any $\varphi \in \operatorname{End}_{\mathbb{F}[G]} M$ is just $\lambda \operatorname{id}_{M}$ for some $\lambda \in \mathbb{F}$.
+
+###### _proof:_
+
+Since $\varphi$ is $\mathbb{F}[G]$-linear, it is also $\mathbb{F}$-linear. Since $\mathbb{F}$ is algebraically closed, $\varphi$ has an eigenvalue $\lambda \in \mathbb{F}$. Then $\varphi - \lambda \operatorname{id}_{M}$ is not invertible, and thus, is $0$. That is, $\varphi = \lambda \operatorname{id}_{M}$.
+
+---
+
+##### _corollary:_ irreducible representations of an abelian group are just characters
+
+Suppose $\mathbb{F}$ is algebraically closed and $G$ is a finite abelian group. Every irreducible $\mathbb{F}[G]$-module is one-dimensional.
+
+###### _proof:_
+
+Suppose $M$ is an irreducible $\mathbb{F}[G]$-module. For each $g \in G$ define the maps $T_{g} : m \mapsto g \cdot m$. They all commute with each other. Thus, $T_{g} : M \to M$ is not just $\mathbb{F}$-linear but is $\mathbb{F}[G]$-linear. But then $T_{g}$ is just scaling by some $\lambda \in \mathbb{F}$. Thus, $G \to \mathrm{GL}(M)$ factors as $G \to \mathbb{F}^\times \to \mathrm{GL}(M)$. Since $M$ is irreducible, we have $\mathbb{F}^\times \cong \mathrm{GL}(M)$ and $\dim_{\mathbb{F}} M = 1$.
+
+Equivalently, every $\mathbb{F}$-subspace of $M$ is an $\mathbb{F}[G]$-submodule, including the one-dimensional ones. Since $M$ is irreducible it has only two $\mathbb{F}[G]$-submodules, and thus, only two $\mathbb{F}$-subspaces, and thus, is one-dimensional (irreducibles cannot be $0$).
 
 ---

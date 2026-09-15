@@ -1,6 +1,7 @@
 ---
 tags:
 - math-174/4
+- math-174/5
 - alg
 - rep-th
 ---
@@ -59,4 +60,15 @@ Modify the Hermitian inner product to be the $G$-invariant inner product as befo
 
 ---
 
+##### _corollary:_ every representation is a direct sum of irreducible representations
+
+---
+
 Note, both proofs of Maschke's theorem used this idea of summing over all $g$ to make something $G$-invariant. This is a common argument — the **averaging argument**.
+
+##### _definition:_ dual of a finite group
+
+The **dual of a finite group** $G$ is $\hat{G}$ is the set of isomorphism classes of irreducible representations of $G$.
+
+
+---
