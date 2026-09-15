@@ -23,7 +23,20 @@ This second equivalent definition will be very convenient for us.
 
 The equivalence follows since $G \subseteq \mathbb{F}[G]^\times$, so the image of $G$ lies in the units of $\operatorname{End} V$, which are just $\mathrm{GL}(V)$. Since $\mathbb{F}[G]$ is just linear combinations of $G$, this data recovers the original $\mathbb{F}[G] \to \operatorname{End}_{\mathsf{Ab}} M$ by extending $\mathbb{F}$-linearly (using the $\mathbb{F}$-module structure we have on $M =_{\mathsf{Ab}} V$).
 
-The notion of degree has something to do with the degree of the characteristic polynomial of an irreducible representation.
+There is a final equivalent definition from interpreting $G$ as a [[Algebraic geometry --- rising-sea/notes/Categories#_example _ every group is an entire category, groupoids, monoids, the fundamental groupoid|one object category]] $\mathscr{G}$. Then $\mathbb{F}$-linear representations of $G$ are just [[Algebraic geometry --- rising-sea/notes/Functors#_definition _ (covariant, contravariant) functors|functors]] $\mathscr{G} \to \mathsf{Vect}_{\mathbb{F}}$. If $V$ is the vector space on which the representation acts, then the one object of $\mathscr{G}$ is sent to $V$. Morphisms of representations are just [[Algebraic geometry --- rising-sea/notes/Natural transformations#_definition _ natural transformations, natural isomorphism, equivalence of categories|natural transformations]] of those functors. A morphism from $\rho : G \to \mathrm{GL}(V)$ to $\pi : G \to \mathrm{GL}(W)$ is just a morphism $T : V \to W$ such that the diagram below commutes for each $g \in G$.
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		V \ar[r, "\rho(g)"] \ar[d, "T"] & V \ar[d, "T"] \\
+		W \ar[r, "\pi(g)"] & W
+	\end{tikzcd}
+\end{document}
+```
+If $T$ is an isomorphism of vector spaces, then it is an isomorphism of representations. Thus, an isomorphism of representations expresses $\pi(g) = T \rho(g) T^{-1}$ for each $g$, where $T$ is a change of basis matrix (not depending on $g$).
+
+The etymology of degree for the dimension of $V$ has something to do with the degree of the characteristic polynomial of an irreducible representation.
 
 Lots of words that are adjectives for $\mathbb{F}[G]$-modules are also adjectives for representations of $G$. For example, [[Representation theory --- math-174/notes/Modules over a rng#_definition _ irreducible modules|irreducible]] is the same, submodule becomes subrepresentation, et c.
 
