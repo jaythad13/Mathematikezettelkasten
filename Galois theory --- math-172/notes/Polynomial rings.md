@@ -25,7 +25,7 @@ The **polynomial ring in $n$ variables over $A$** is $A[x_{1}, \dots, x_{n}] = A
 
 There is a natural inclusion $A \subseteq A[x]$. Also, for each $a \in A$ there is an evaluation map $A[x] \to A$ by $f(x) \mapsto f(a)$. More generally, for each choice of $a_{1}, \dots, a_{n} \in A$ there is an evaluation homomorphism $A[x_{1}, \dots, x_{n}] \to A$.
 
-Polynomial rings are not generally [[Abstract algebra --- math-171/notes/Unique factorisation#_definition _ Euclidean domain|Euclidean domains]], even when they are over a Euclidean domain. For example, $\mathbb{Z}[x]$ has non-principal ideal $(2, x)$ and so is not Euclidean. However, they have something pretty close to a division algorithm when the divisor is monic.
+$\mathbb{F}[x]$ is a Euclidean domain for a field $\mathbb{F}$. However, polynomial rings are not generally [[Abstract algebra --- math-171/notes/Unique factorisation#_definition _ Euclidean domain|Euclidean domains]], even when they are over a Euclidean domain. For example, $\mathbb{Z}[x]$ has non-principal ideal $(2, x)$ and so is not Euclidean. However, they have something pretty close to a division algorithm when the divisor is monic.
 
 ##### _proposition:_ division with remainder
 
