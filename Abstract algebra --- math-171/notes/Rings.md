@@ -25,18 +25,24 @@ Notice how things that are groups under "addition" often fail to be groups under
 
 ##### _definition:_ rings
 
-A ring $R$ is a set with two binary operations (typically $+$ and $\times$) such that
+A **ring** $R$ is a set with two binary operations (typically $+$ and $\times$) such that
 - $(R, +)$ is an abelian group with identity zero, denoted $0$,
 - $\times$ is associative,
 - $\times$ distributes over $+$. That is, $(a + b) \times c = (a \times c) + (b \times c)$ and $a \times(b + c) = (a \times b) + (b \times c)$
 
+---
+
 ##### _definition:_ commutative ring
 
-A ring $R$ is commutative if its multiplication $\times$ is [[Abstract algebra --- math-171/notes/Groups, and why you should care#_definition _ commutativity|commutative]].
+A ring $R$ is **commutative** if its multiplication is [[Abstract algebra --- math-171/notes/Groups, and why you should care#_definition _ commutativity|commutative]].
+
+---
 
 ##### _definition:_ ring with identity, unital rings
 
-A ring $R$ is said to have identity (or is called unital) if it contains some $1 \in R$ such that $1 \times a = a \times 1 = a$ for all $a \in R$.
+A ring $R$ is **unital** if it contains some $1 \in R$ such that $1 \times a = a \times 1 = a$ for all $a \in R$.
+
+---
 
 ##### _examples:_ rings
 
@@ -45,19 +51,27 @@ A ring $R$ is said to have identity (or is called unital) if it contains some $1
 3) $2\mathbb{Z}$ — the even integers
 4) $\mathbb{Z}/n\mathbb{Z}$ — the integers modulo $n$.
 
+---
+
 ##### _examples and non-examples:_ commutative rings with identity
 
-1) $\mathcal{M}_{n}(\mathbb{R})$ is a non-commutative ring with unity $I$
+1) $\mathcal{M}_{n}(\mathbb{R})$ is a non-commutative ring with identity $I$
 2) $\mathbb{C}$ is a commutative ring with identity $1$
 3) $2 \mathbb{Z}$ is a commutative ring without identity! Pay attention to this example!
+
+---
 
 There's a special subtype of commutative rings with identity — [[Abstract algebra --- math-171/notes/Fields|fields]]. Essentially, a ring is a field when the multiplication doesn't fail to be a group.
 
 ![[Abstract algebra --- math-171/notes/Fields#_definition _ fields|Fields]]
 
+### Rings are not rings
+
+The definitions we just gave are not quite aligned with the way mathematicians use these words. Usually, by **ring** we will mean a commutative unital ring. We will use $A$ to denote these. If we need to, we specify **non-commutative ring**. We use the word **rng** for non-unital rings. For rngs and non-commutative rings, we usually use the letter $R$.
+
 ### Things about rings
 
-Here are some basic facts about any ring $R$, and any elements $a, b \in R$. $0$ is the additive identity, and if $R$ has a multiplicative identity, we denote it by $1$.
+Here are some basic facts about any rng $R$, and any elements $a, b \in R$. $0$ is the additive identity, and if $R$ has a multiplicative identity, we denote it by $1$.
 
 ##### _proposition:_ multiplying by zero gives zero
 
@@ -76,6 +90,8 @@ $$
 $$
 and similarly for right multiplication.
 
+---
+
 ##### _proposition:_ multiplying by additive inverses gives additive inverses
 
 $$
@@ -93,6 +109,8 @@ $$
 $$
 and similarly for right multiplication.
 
+---
+
 ##### _corollary:_ multiplying two additive inverses is the same as multiplying two numbers
 
 $$
@@ -109,6 +127,8 @@ $$
 \end{split}
 $$
 
+---
+
 ##### _proposition:_ the identity is unique
 
 If $R$ has identity $1$, it is unique.
@@ -122,6 +142,8 @@ $$
 & = 1'
 \end{split}
 $$
+
+---
 
 ##### _corollary:_ the identity gives inverses
 
@@ -138,25 +160,33 @@ $$
 $$
 (since [[#_proposition _ multiplying by additive inverses gives additive inverses|multiplying by additive inverses gives additive inverses]]) giving us that $(-1)a$ is the unique additive inverse of $a$, $-a$. Note that we need the uniqueness of the identity to talk about *the* identity giving inverses.
 
+---
+
 By now, we've seen enough about groups to rush through the theory of rings doing "similar things". It may also be obvious by now that (most of the time) it's only really worth thinking about rings with identity.
 
 ### Things about rings with identity
 
-Here $R$ denotes a ring (with identity).
+Here $R$ denotes a possibly non-commutative ring.
 
 ##### _definition:_ unit
 
-A unit of a ring is an element with a multiplicative inverse
+A **unit** of a ring is an element with a multiplicative inverse
+
+---
 
 ##### _definition:_ zero divisor
 
-A zero divisor in a ring is an element $a \in R$ such that there exists nonzero $b \in R$ with $ab = 0$ or $ba = 0$.
+A **zero divisor** in a ring is an element $a \in R$ such that there exists nonzero $b \in R$ with $ab = 0$ or $ba = 0$.
+
+---
 
 ##### _example:_ unit, zero divisors in familiar rings
 
 1) In $\mathbb{Z}$, $1, -1$ are the only units. Note that here they are self-inverse, but in general, they don't have to be
 2) In $\mathbb{Z} / 6\mathbb{Z}$, $\overline{2}$ is a zero divisor since $\overline{2} \times  \overline{3} = \overline{6} = \overline{0}$.
 3) In $\mathbb{Z}/n\mathbb{Z}$ all $a$ coprime with $n$ mean give $\overline{a}$ as unit (see [[Superdiscrete --- math-55A/notes/Division and Euclid's algorithm#_theorem _ Bezout's theorem|Bezout's theorem]]).
+
+---
 
 ##### _proposition:_ every unit is not a zero divisor
 
@@ -180,29 +210,35 @@ $$
 $$
 Then, by associativity, $a = 0$, and thus, $r$ cannot be a zero divisor.
 
+---
+
 ### Lots of examples!
  
 Some rings fall into a large class of examples — the familiar polynomial rings and matrix rings are just two of them!
 
-##### _definition:_ polynomial rings
+The most common example of a ring is a polynomial ring.
 
-For any commutative ring with identity and some indeterminate $x$ (that is, $x \not\in R$), $R[x]$ is the ring of polynomials in $x$ with coefficients in $R$.
+![[Galois theory --- math-172/notes/Polynomial rings#_definition _ polynomial ring|Polynomial rings]]
 
 ##### _definition:_ matrix rings
 
-For any ring $R$, and $n \in \mathbb{N}$, we have the matrix ring $\mathcal{M}_{n}(R)$, the group of $n \times n$ matrices with elements in $R$ under matrix addition and multiplication.
+For any ring $R$, and $n \in \mathbb{N}$, we have the matrix ring $\mathcal{M}_{n}(R)$, the group of $n \times n$ matrices with elements in $R$ under matrix addition and multiplication. 
 
-##### _definition:_ group rings
-
-For any commutative ring with identity $1 \neq 0$ (that is, $R$ is not the trivial ring) and any finite group $G = \{ g_{1}, \dots, g_{n} \}$, 
-$$
-RG = \{ a_{1} g_{1} + \dots + a_{n} g_{n} \mid a_{i} \in R, g_{i} \in G  \}
-$$
-under component-wise addition and group multiplication (after distribution).
+---
 
 ##### _example:_ group rings
 
-$\mathbb{C}S_{3}$ is a ring (where $S_{3}$ is the symmetric group on $\mathbb{N}_{3}$). Then for $\alpha = 3e + 2(1 \, 2 \, 3)$ and $\beta = 4(1 \, 2) - 5(1 \, 3) + (1 \, 2 \, 3)$, we have
+For any ring $A$ and finite group $G = \{ g_{1}, \dots, g_{n} \}$, 
+$$
+A[G] = \{ a_{1} g_{1} + \dots + a_{n} g_{n} \mid a_{i} \in R, g_{i} \in G  \}
+$$
+under component-wise addition and group multiplication (after distribution) is the **group ring** of $G$.
+
+---
+
+##### _example:_ group rings
+
+$\mathbb{C}[\mathfrak{S}_{3}]$ is a ring (where $\mathfrak{S}_{3}$ is the symmetric group on $[1, 3]$). Then for $\alpha = 3e + 2(1 \, 2 \, 3)$ and $\beta = 4(1 \, 2) - 5(1 \, 3) + (1 \, 2 \, 3)$, we have
 $$
 \alpha + \beta = 3e + 4(1 \, 2) - 5(1\, 2) + 3(1 \, 2 \, 3)
 $$
@@ -211,9 +247,13 @@ $$
 \alpha \beta = 12(1 \, 2) - 7 (1 \, 3) + 3 (1 \, 2 \, 3) + 2(1 \, 3 \, 2) - 10(3 \, 2).
 $$
 
+---
+
 ##### _definition:_ division ring
 
-A division ring is a (non-trivial) ring where every nonzero element is a unit.
+A **division ring** is a (possibly non-commutative) ring where every nonzero element is a unit.
+
+---
 
 ### Integral domains
 
@@ -229,9 +269,13 @@ Rings have subrings, but also something stronger that we will see we can quotien
 
 A subring of a ring $R$ is a subgroup of $(R, +)$ that is also closed under multiplication.
 
+---
+
 ##### _example:_ subring
 
 $\mathbb{R}$ is a subring of $\mathbb{C}$.
+
+---
 
 While we can quotient out a subgroup $(S, +) \le (R, +)$ to get $(R, +)/(S, +)$ this doesn't say anything about the multiplicative structure. Notably, we want the natural projection from $R$ to $R/S$ to be a [[Abstract algebra --- math-171/notes/Ring homomorphisms|ring homomorphism]]. Since we can't ensure this with a [[Abstract algebra --- math-171/notes/Centralisers, centre, and normalisers#_definition _ normaliser, $N_{G}(A)$|normality condition]] (we probably don't have multiplicative inverses), we just require absorption under multiplication by any element of $R$, not just the substructure.
 
