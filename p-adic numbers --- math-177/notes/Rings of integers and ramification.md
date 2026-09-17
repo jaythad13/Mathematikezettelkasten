@@ -151,7 +151,7 @@ For each $n$ there exists a unique unramified extension $\mathbb{K} / \mathbb{Q}
 
 ###### _proof:_
 
-Given $n$ consider [[p-adic numbers --- math-177/notes/Finite fields#_corollary _ finite field extensions of given degree are unique|the unique extension]] $\mathbb{F}_{p^n} / \mathbb{F}_{p}$ of degree $n$ and let $\zeta$ be a primitive $(p^n - 1)$th root of unity so that [[p-adic numbers --- math-177/notes/Finite fields#_theorem _ characterising finite fields|it generates the field]] $\mathbb{F}_{p^n} = \mathbb{F}_{p}(\zeta)$. Let $p_{\zeta} \in \mathbb{F}_{p}[x]$ be its [[p-adic numbers --- math-177/notes/Algebraic field extensions#_proposition, definition _ the minimal polynomial|minimal polynomial]] (of degree $n$, say). We claim there exists an [[p-adic numbers --- math-177/notes/Irreducible polynomials#_definition _ irreducible polynomial|irreducible]] degree $n$ lift $f \in \mathbb{Z}_{p}[x]$ (such that $f \mapsto p_{\zeta}$ under $\mathbb{Z}_{p}[x] \to \mathbb{F}_{p}[x]$).
+Given $n$ consider [[p-adic numbers --- math-177/notes/Finite fields#_corollary _ finite field extensions of given degree are unique|the unique extension]] $\mathbb{F}_{p^n} / \mathbb{F}_{p}$ of degree $n$ and let $\zeta$ be a primitive $(p^n - 1)$th root of unity so that [[p-adic numbers --- math-177/notes/Finite fields#_theorem _ characterising finite fields|it generates the field]] $\mathbb{F}_{p^n} = \mathbb{F}_{p}(\zeta)$. Let $p_{\zeta} \in \mathbb{F}_{p}[x]$ be its [[p-adic numbers --- math-177/notes/Algebraic field extensions#_proposition, definition _ the minimal polynomial|minimal polynomial]] (of degree $n$, say). We claim there exists an [[Galois theory --- math-172/notes/Polynomial rings#_definition _ irreducible polynomial|irreducible]] degree $n$ lift $f \in \mathbb{Z}_{p}[x]$ (such that $f \mapsto p_{\zeta}$ under $\mathbb{Z}_{p}[x] \to \mathbb{F}_{p}[x]$).
 
 Suppose $\alpha$ is a root of $f$. Then $\mathbb{Q}_{p}(\alpha) / \mathbb{Q}_{p}$ has degree $n$ (adjoining a root of an irreducible polynomial gives a full-degree extension?) and $\overline{\alpha}$ is a root of $x^{p^n - 1} - 1$. Write $\mathbb{K} = \mathbb{Q}_{p}(\alpha)$. In fact, since all roots of $p_{\zeta}$ satisfy $x^{p^k - 1} - 1$.
 
@@ -159,7 +159,7 @@ This is unique. If $\mathbb{K} / \mathbb{Q}_{p}$ is unramified of degree $n$, th
 
 ---
 
-To classify totally ramified extensions, we notice that we can always get a totally ramified extension from a polynomial satisfying [[p-adic numbers --- math-177/notes/Irreducible polynomials#_theorem _ Eisenstein's criterion|Eisenstein's criterion]].
+To classify totally ramified extensions, we notice that we can always get a totally ramified extension from a polynomial satisfying [[Galois theory --- math-172/notes/Polynomial rings#_theorem _ Eisenstein's criterion|Eisenstein's criterion]].
 
 ##### _proposition:_ Eisenstein polynomials give totally ramified field extensions
 

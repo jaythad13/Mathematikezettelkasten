@@ -8,21 +8,27 @@ tags:
 - math-172/5
 ---
 
+Let $A$ be a ring.
+
+Unique factorisation is meant to generalise the fact that we have the [[Superdiscrete --- math-55A/notes/Prime numbers#_theorem _ unique factorisation|fundamental theorem of arithmetic]] for $\mathbb{Z}$.
+
 ### Euclidean domains
 
 ##### _example:_ the integers
 
 In the integers, we can find the $\gcd$ of any two numbers by [[Superdiscrete --- math-55A/notes/Prime numbers#Euclid's algorithm|Euclid's algorithm]]. This works because we have the [[Superdiscrete --- math-55A/notes/Division and Euclid's algorithm#_theorem _ the division algorithm|the division algorithm]], which in turn, needs a notion of an order to work. A norm gives us this, and in turn, we will see, a form of Euclidean algorithm as well.
 
+---
+
 ##### _definition:_ norm
 
-Suppose $R$ is an [[Abstract algebra --- math-171/notes/Rings#_definition _ integral domain|integral domain]]. A **norm** on $R$ is a function $N : R \setminus \{ 0 \} \to \mathbb{N}_{0}$.
+Suppose $A$ is an [[Abstract algebra --- math-171/notes/Rings#_definition _ integral domain|integral domain]]. A **norm** on $A$ is a function $N : A \setminus \{ 0 \} \to \mathbb{N}_{0}$.
 
 ---
 
 ##### _definition:_ Euclidean domain
 
-An integral domain $R$ is a **Euclidean domain** if there is a norm $N$ on $R$ such that for all $a, b \in R$ ($b \neq 0$) there exist $q, r \in R$ with $a = qb + r$ such that $r = 0$ or $N(r) < N(b)$.
+An integral domain $A$ is a **Euclidean domain** if there is a norm $N$ on $A$ such that for all $a, b \in A$ ($b \neq 0$) there exist $q, r \in A$ with $a = qb + r$ such that $r = 0$ or $N(r) < N(b)$.
 
 ---
 
@@ -36,39 +42,41 @@ An integral domain $R$ is a **Euclidean domain** if there is a norm $N$ on $R$ s
 
 ##### _proposition:_ Euclidean domains are principal ideal domains
 
-If $I$ is a nonzero ideal in a Euclidean domain, then $I = (d)$ where $d$ is any nonzero element of $I$ with minimum norm.
+If $\mathfrak{i}$ is a nonzero ideal in a Euclidean domain, then $\mathfrak{i} = (d)$ where $d$ is any nonzero element of $\mathfrak{i}$ with minimum norm.
 
 ###### _proof:_
 
-If $I = 0$, then $I = (0)$.
+If $\mathfrak{i} = 0$, then $\mathfrak{i} = (0)$.
 
-If $I$ is nonzero, then let $d \in I$ be the nonzero element with least norm. Then, if $a \in I$, write $a = qd + r$ with $N(r) < N(d)$. Thus, $r \in I$ and $N(r) < N(d)$ which by the minimality of the norm of $d$ in $I$, means $r = 0$.
+Suppose $\mathfrak{i}$ is nonzero and let $d \in \mathfrak{i}$ be a nonzero element of minimal norm. Note that such an element exists since the target of the norm function is the well ordered set $\mathbb{N}_{0}$. For $a \in \mathfrak{i}$, write $a = qd + r$ with $N(r) < N(d)$ or $r = 0$. Note, $r \in \mathfrak{i}$ and either $N(r) < N(d)$ or $r = 0$. Since $d$ has minimal norm for a non-zero element $d \in \mathfrak{i}$, we must have $r = 0$
 
 ---
 
-##### _example:_ $R[x]$ is not always Euclidean
+##### _example:_ polynomial rings over a Euclidean domain are not always Euclidean
 
 We can see that $(2, x)$ is not principal in $\mathbb{Z}[x]$, so $\mathbb{Z}[x]$ is not a Euclidean domain
 
 ---
 
-This leads us obviously to the notion of division and greatest common divisors.
+### Divisors and primes
+
+The principal generator of a principal ideal leads us to the definition of the greatest common divisor.
 
 ##### _definition:_ divides, greatest common divisor
 
-Suppose $R$ is commutative, and $a, b \in R$ with $a$ nonzero, we say $a \mid b$ or $a$ **divides** $b$ there exists some $x \in R$ such that $b = ax$.
+Suppose $a, b \in A$. Then $a$ **divides** $b$ if there is some $d$ such that $ad = b$. We write this $a \mid b$
 
 The **greatest common divisor** of $a$ and $b$ is some $d \neq 0$ such that $d \mid a$ and $d \mid b$, and if there exists any $d'$ such that $d' \mid a$ and $d' \mid b$, then $d' \mid d$.
 
-Note that $d \mid a$ is equivalent to $a \in (d)$ is equivalent to $(a) \subset (d)$. Thus, equivalently, we can define — $d$ is the greatest common divisor of $a$ and $b$ if $(a, b) \subset (d)$ and if $(a, b) \subset (d')$, then $(d) \subset (d')$.
+Note that $d \mid a$ is equivalent to $a \in (d)$ is equivalent to $(a) \subseteq (d)$. Thus, the following definition is equivalent. $d$ is the greatest common divisor of $a$ and $b$ if $(d)$ is the smallest principal ideal containing $(a, b)$.
 
 ---
 
-In analogy with primes in $\mathbb{Z}$ are just elements that generate prime principal ideals.
+In analogy with primes in $\mathbb{Z}$, primes are just elements that generate prime principal ideals.
 
 ##### _definition:_ prime
 
-A nonzero $p \in R$ is **prime** if $(p)$ is a prime ideal.
+A nonzero $p \in A$ is **prime** if $(p)$ is a prime ideal.
 
 Equivalently, $p$ is prime if it is not a unit, and $p \mid ab$ implies $p \mid a$ or $p \mid b$.
 
@@ -78,7 +86,7 @@ So $1$ is not a prime, but $0$ is.
 
 ##### _proposition:_ the ideal equality implies $\gcd$
 
-Suppose $R$ is commutative with $a, b$ nonzero. If $(a, b) = (d)$ then $d$ is a $\gcd$ of $a$ and $b$.
+Suppose $A$ is commutative with $a, b$ nonzero. If $(a, b) = (d)$ then $d$ is a $\gcd$ of $a$ and $b$.
 
 ###### _proof:_
 
@@ -94,7 +102,7 @@ In $\mathbb{Z}[x]$, $1$ is the $\gcd$ of $2$ and $x$, but $(2, x) \neq (1) = \ma
 
 ##### _proposition:_ in an integral domain, $\gcd$s differ only by units
 
-If $R$ is an integral domain, then for any $d, d' \in R$, $(d) = (d')$ if and only if $d' = ud$ for some unit $u \in R$. 
+If $A$ is an integral domain, then for any $d, d' \in R$, $(d) = (d')$ if and only if $d' = ud$ for some unit $u \in A$. 
 
 Specifically, if $d$ and $d'$ are $\gcd$s of the same $a, b \in R$, then $d' = ud$.
 
@@ -102,7 +110,7 @@ Specifically, if $d$ and $d'$ are $\gcd$s of the same $a, b \in R$, then $d' = u
 
 See [[Fourier analysis --- math-139/attachments/homework/hw 13/hw 13.pdf#page=7|Homework 13]] for the proof of the first part.
 
-If $d$ and $d'$ are $\gcd$s of the same $a, b \in R$, then they divide each other, and thus, the ideals generated by them are subsets of each other. Then, by double containment, $(d) = (d')$.
+If $d$ and $d'$ are $\gcd$s of the same $a, b \in A$, then they divide each other, and thus, the ideals generated by them are subsets of each other. Then, by double containment, $(d) = (d')$.
 
 ---
 
@@ -118,6 +126,8 @@ We want to get to this. The first step is principal ideal domains.
 
 ### Principal ideal domains
 
+From now on, we exclusively work in integral domains. That is, $A$ is always an integral domain.
+
 ##### _definition:_ principal ideal domain
 
 A principal ideal domain is an integral domain in which every ideal is [[Abstract algebra --- math-171/notes/Ideals and quotients#_definition _ principal ideal|principal]].
@@ -126,9 +136,11 @@ A principal ideal domain is an integral domain in which every ideal is [[Abstrac
 
 ##### _example:_ $\mathbb{Z}$, obviously
 
+---
+
 ##### _proposition:_ every prime ideal is maximal (in PID)
 
-Every nonzero prime ideal in a principal ideal domain $R$ is a maximal ideal.
+Every nonzero prime ideal in a principal ideal domain $A$ is a maximal ideal.
 
 ###### _proof:_
 
@@ -136,19 +148,21 @@ Suppose we have some prime ideal $(p)$, contained in some arbitrary ideal $(m)$.
 
 If $p \mid m$, then since they divide each other, $(p) = (m)$.
 
-If $p \mid d$, then we have $pd' = d$. Thus $mpd' = p$ giving us $md' = 1$ and thus, $(m)$ is a unit. Thus $(m) = R$.
+If $p \mid d$, then we have $pd' = d$. Thus $mpd' = p$ giving us $md' = 1$ and thus, $(m)$ is a unit. Thus $(m) = A$.
 
 ---
 
-This allows us to classify when a [[Galois theory --- math-172/notes/Polynomial rings#_definition _ polynomial ring|polynomial ring]] is a PID.
+This is useful. For example, it allows us to classify when a [[Galois theory --- math-172/notes/Polynomial rings#_definition _ polynomial ring|polynomial ring]] is a PID.
 
 ##### _proposition:_ the polynomials are a PID only if the ring is a field
 
-For a ring $R$, if $R[x]$ is a principal ideal domain, $R$ is a field.
+$A[x]$ is a PID if and only if $A$ is a field.
 
 ###### _proof:_
 
-Since $R[x]$ is a principal ideal domain, it is an integral domain, and thus, $R$, as a subring is an integral domain. Then since $R[x]/(x) \cong R$, $R[x] / (x)$ is an integral domain, and thus, $(x)$ [[Abstract algebra --- math-171/notes/Prime and maximal ideals#_proposition _ prime ideals have integral domains as quotients|is prime]], and thus, by the previous result is maximal, and finally, $R \cong R[x] / (x)$ is a field.
+We know that $\mathbb{F}[x]$ is a Euclidean domain and thus, a PID.
+
+Suppose $A[x]$ is a PID. Then it is a domain, and so is $A$. Thus, $(x) \subseteq A[x]$ is prime, thus maximal, and finally $A$ is a field.
 
 ---
 
@@ -158,11 +172,9 @@ There is a nice generalisation of the idea of a [[#_definition _ prime|prime]].
 
 ##### _definitions:_ irreducible, associates
 
-Let $R$ be an integral domain.
+For a nonzero, non-unit, $r \in A$, $r$ is **irreducible** if $r = ab$ implies that $a$ or $b$ is a unit.
 
-For a nonzero, non-unit, $r \in R$, $r$ is **irreducible** if $r = ab$ implies that $a$ or $b$ is a unit.
-
-For $a, b \in R$ we say $a, b$ are **associates** if $a = ub$ for some unit $u \in R$.
+For $a, b \in A$ we say $a, b$ are **associates** if $a = ub$ for some unit $u \in R$.
 
 ---
 
@@ -175,13 +187,13 @@ For $a, b \in R$ we say $a, b$ are **associates** if $a = ub$ for some unit $u \
 
 As we would expect for a generalisation of primes, all primes are irreducible.
 
-##### _proposition:_ all primes are irreducible
+##### _proposition:_ all primes in a domain are irreducible
 
-Let $R$ be an integral domain. If $p \in R$ is prime, then it is irreducible.
+If $p \in A$ is prime, then it is irreducible.
 
 ###### _proof:_
 
-Suppose $p = ab$ for some $a, b \in R$. Then either $a$ or $b$ is in $(p)$. Without loss of generality, choose $a \in (p)$. Then we must have $a = pr$ for some $r \in R$. Thus, $p = prb$, and thus, $rb = 1$. That is, $b$ is a unit.
+Suppose $p = ab$ for some $a, b \in R$. Then either $a$ or $b$ is in $(p)$. Without loss of generality, choose $a \in (p)$. Then we must have $a = pd$ for some $d \in A$. Thus, $p = pdb$, and thus, $db = 1$. That is, $b$ is a unit.
 
 ---
 
@@ -193,13 +205,13 @@ Consider $3 \in \mathbb{Z}[\sqrt{ -5 }]$. It is irreducible (proof? trust me bro
 
 ##### _propositions:_ in PIDs, the irreducible elements are exactly the primes
 
-Suppose $R$ is a principal ideal domain. Then $p \in R$ is prime if and only if it is irreducible.
+Suppose $A$ is a PID. Then $p \in A$ is prime if and only if it is irreducible.
 
 ###### _proof:_
 
-Since $R$ is a principal ideal domain, it is an integral domain, and thus, any prime is irreducible.
+Since $A$ is a principal ideal domain, it is an integral domain, and thus, any prime is irreducible.
 
-Suppose $p$ is irreducible. Let $(p) \subset (m)$ for some $m \in R$. Thus, $p \in (m)$, and thus, $p = mr$ for some $r \in R$. Since $p$ is irreducible $m$ is a unit, or $r$ is a unit. If $r$ is a unit, $(p) = (m)$, and if $m$ is a unit, $(m) = R$. Thus, $(p)$ is maximal, and [[Abstract algebra --- math-171/notes/Prime and maximal ideals#_corollary _ every maximal ideal is prime|thus, prime]].
+Suppose $p$ is irreducible. Suppose $(p) \subseteq (m)$ for some $m \in A$. Thus, $p \in (m)$, and thus, $p = ma$ for some $a \in A$. Since $p$ is irreducible $m$ is a unit, or $a$ is a unit. If $r$ is a unit, $(p) = (m)$. If $m$ is a unit, $(m) = A$. Thus, $(p)$ is maximal, and [[Abstract algebra --- math-171/notes/Prime and maximal ideals#_corollary _ every maximal ideal is prime|thus, prime]].
 
 ---
 
@@ -213,11 +225,11 @@ The previous result is a nice way to show a ring isn't a PID — just find an i
 
 We're finally getting where we wanted to be!
 
-##### _definition:_ unique factorisation domains
+##### _definition:_ factorisation, factorisation domains, unique factorisation domains
 
-A unique factorisation domain is an integral domain $R$ such that for any nonzero, non-unit $r \in R$, we have that
-1) $r$ is a finite product of irreducible elements
-2) the product is unique upto reordering and [[#_definitions _ irreducible elements of an integral domain, associate|associates]] (replacing an irreducible element with its associate).
+A **factorisation domain** is a domain such that any non-unit $a \in A$ is a finite product of irreducible elements. This finite product is called a **factorisation** of $A$.
+
+A **unique factorisation domain** or **UFD** is a factorisation domain in which the factorisation of each $a \in A$ is unique upto reordering and [[#_definitions _ irreducible elements of an integral domain, associate|associates]] (replacing an irreducible element with its associate).
 
 ---
 
@@ -230,53 +242,60 @@ We will see that actually, this finite product of irreducibles will be a finite 
 
 ---
 
-##### _non-examples:_
+##### _non-examples:_ of unique factorisation domains
 
 1) $\mathbb{Z}[\sqrt{ -5 }]$ is not a UFD since $6 = 2 \times 3 = (1 + \sqrt{ -5 })(1 - \sqrt{ -5 })$ are two distinct factorisations of $6$.
 2) $\mathbb{Z}[2i]$ is an integral domain, but not a UFD since $2$ and $2i$ are not associates but $4 = 2 \times 2 = (-2i)(2i)$.
 
 ---
 
-##### _example:_ proving a ring isn't a UFD
+All of these non-examples fail not because of a failure of factorisation, but because of a failure of uniqueness. We can make this precise — we need a certain very bad behaviour for factorisation to fail.
 
-The previous result is a nice way to show a ring isn't a UFD — just find an irreducible, non-prime element. $\mathbb{Z}[\sqrt{ -5 }]$ is not a unique factorisation domain because $3$ is irreducible but not prime.
+##### _proposition:_ classifying factorisation domains
 
----
-
-##### _theorem:_ Every PID is a UFD
+$A$ is a factorisation domain if and only if every infinite ascending chain of principal ideals is eventually constant.
 
 ###### _proof:_
 
-We want to show that if $R$ is a PID, for every $r \in R$ we can factorise $r$ into a finite product of irreducible elements and that the factorisation is unique.
-
-To show the first, notice that a prime factorisation is clearly irreducible and thus, will suffice. We will write $r = r_{1} r_{2}$ where $r_{1}, r_{2}$ are non-units. If this is not possible, then $r$ is irreducible and we are done. If we have $r = r_{1} r_{2}$, and $r_{1}$ is not irreducible, then we have $r_{1} = r_{11} r_{12}$, where $r_{11}, r_{12}$ are non-units. Then if $r_{11}$ is not irreducible, we can factor it, and so on.
-
-This would give us
+Suppose every infinite ascending chain of principal ideals is eventually constant in $A$. Choose $a \in A$. If $a$ is reducible, factor $a = a_{1} a_{2}$ non-trivially. Else, choose $a = u a'$ for some unit $u$ and associate $a'$. Recurse on the factors. Always assume that if one of the factors is reducible, it is the first, and factor $a_{1} = a_{11} a_{12}$
 $$
-r = r_{1} r_{2} = (r_{11} r_{12}) r_{2} = ((r_{111} r_{112}) r_{12}) r_{2} = \cdots
+(a_{1}) \subseteq (a_{11}) \subseteq (a_{111}) \subseteq \cdots
 $$
-which (since $r_{2}, r_{12}, \dots$ are not units) gives us an infinite ascending chain
-$$
-(r) \subsetneq (r_{1}) \subsetneq (r_{11}) \subsetneq (r_{111}) \subsetneq \cdots
-$$
-where the non-equality comes from the fact that $r_{2}$, and all of the other "left over factors" are non-units by choice. 
+is an infinite ascending chain of principal ideals. It is eventually constant, so we must eventually have $a_{i} = u a_{i1}$ for some unit $u$. That is, eventually everything is reducible.
 
-We claim that a PID cannot contain an infinite strictly increasing chain of proper ideals $I_{n} \subsetneq I_{n + 1}$ (such a ring is called [[Algebraic geometry --- rising-sea/notes/Noetherian rings and modules#_definition _ Noetherian rings|Noetherian]]). Assume we have an infinite ascending chain of ideals $I_{n} \subseteq I_{n + 1}$, not necessarily proper subideals. The union of all $I_{n}$ is clearly an ideal. However, since we are in a principal ideal domain, we also have that it is generated by some $m \in R$. By definition of the union, $m \in I_{n}$ for one of the subideals, and from that point on the ideals are not proper subideals.
+Suppose there is an infinite, strictly ascending chain of principal ideals (not eventually constant). Write it as above. Then $a_{1}$ does not factor.
 
-Now we will show the uniqueness of the factorisation by induction on the number of factors.
+---
 
-In the case where we just have one factor, $r$ itself is irreducible, and thus, by definition, can only be factorised into its associates.
+In particular, this implies that every [[Algebraic geometry --- rising-sea/notes/Noetherian rings and modules#_definition _ Noetherian rings|Noetherian rings]] is a factorisation domain.
 
-Suppose factorisation is unique for all factorisations of length between $1$ and $k$ (inclusive). Suppose that $r = p_{1} \cdots p_{k + 1} = q_{1} \cdots q_{m}$ where all $p_{i}$ are irreducible and all $q_{i}$ are irreducible. Note that we must have $m \ge k + 1$ otherwise the inductive hypothesis would break.
+It's also not so much more difficult to characterise which factorisation domains are UFDs.
 
-Since $p_{1}$ is irreducible, and we're in a PID, $p_{1}$ is prime. Thus, some $q_1 \cdots q_{m} \in (p_{1})$ gives us some $q_{i} \in (p_{1})$, which means that $q_{i} = p_{1} u$ where $u \in R$. Since $q_{i}$ is irreducible and $p_{1}$ is prime and thus, not a unit, $u$ must be a unit.
+##### _proposition:_  the irreducible elements are exactly the primes
 
-Choose without loss of generality that $q_{1} = q_{i}$ (because of commutativity, we can just renumber as needed). Thus, cancelling out $p_{1}$ on both sides of the factorisations gives us
-$$
-p_{2} \cdots p_{k + 1} = uq_{2} \cdots q_{m}.
-$$
+Suppose $A$ is a factorisation domain. $A$ is a UFD if and only if the primes are exactly the irreducibles.
 
-Then, by our induction hypothesis, (the list on the left is of length $k$), since there is unique factorisation $u q_{2}, \cdots q_{m}$ is just a reordering/associates of $p_{2} \cdots p_{k + 1}$, and since $q_{1}$ is an associate of $p_{1}$, this is true for the full factorisation of $r$.
+###### _proof:_
+
+Suppose the primes in $A$ are exactly the irreducibles. Suppose $a \in A$. If $a$ is irreducible, we are done. Since $A$ is factorisation domain, we always have a factorisation of $a$, we just need to show that it is unique. Suppose $a = p_{1} \cdots p_{n} = q_{1} \cdots q_{m}$. All the $p_{i}$ and $q_{i}$ must be prime. 
+
+We induct on $n$. If $p_{1} = q_{1} \cdots q_{m}$, then $p_{1}$ must divide some $q_{i}$, say $q_{1}$. Since $q_{1}$ is irreducible, we have that $p_{1}$ and $q_{1}$ are associates. Since they differ only by a unit we can't have any more $q_{i}$ and we actually have $p_{1} = q_{1}$. If $p_{1} \cdots p_{n} = q_{1} \cdots q_{m}$, again, $p_{1}$ divides some $q_{i}$, say $q_{1}$. Again, $p_{1}$ and $q_{1}$ must be associates, so $p_{2} \cdots p_{n} = q_{2} \cdots q_{m}$ up to associates. By induction, we are done.
+ 
+Suppose $A$ is a UFD.  We already know that the primes are irreducible since $A$ is an integral domain.
+
+Suppose $p \in A$ is irreducible and $p = ab$ for some $a, b \in A$. Then note that $ab \in (p)$ and thus, $ab = pd$ for some $d \in A$. Since $A$ is a UFD and $p$ is irreducible (and thus its own factorisation is just $p = p$), $p$ or an associate of $p$ must be in the unique factorisation of $a$ or $b$. Say, without loss of generality, $a = (up)t_{2} \cdots t_{n}$. Thus, $a \in (p)$, and $p$ is prime.
+
+---
+
+##### _example:_ proving a ring isn't a UFD
+
+This result is a nice way to show a ring isn't a UFD — just find an irreducible, non-prime element. $\mathbb{Z}[\sqrt{ -5 }]$ is not a unique factorisation domain because $3$ is irreducible but not prime.
+
+---
+
+Since we already know $p$ is prime if and only if $p$ is irreducible in a PID, we now know that each PID is a UFD.
+
+##### _corollary:_ every PID is a UFD
 
 ---
 
@@ -285,22 +304,6 @@ Then, by our induction hypothesis, (the list on the left is of length $k$), sinc
 ---
 
 We can use the idea of the proof to prove something a little more general. In particular, if we know that we have (not necessarily unique) factorisation, we can get unique factorisation if all irreducibles are prime.
-
-##### _proposition:_  the irreducible elements are exactly the primes
-
-Suppose $R$ is an integral domain that does not contain an infinite strictly increasing chain of principal ideals ($R$ is **principal-Noetherian**). $R$ is a UFD if and only if the primes are exactly the irreducibles.
-
-###### _proof:_
-
-Suppose the primes in $R$ are exactly the irreducibles. Suppose $r \in R$. If $r$ is irreducible, we are done. Since $R$ is pseudo-Noetherian, we always have a factorisation of $r$, we just need to show that it is unique. Suppose $r = p_{1} \cdots p_{n} = q_{1} \cdots q_{m}$. All the $p_{i}$ and $q_{i}$ must be prime. Induct on $n$. If $p_{1} = q_{1} \cdots q_{m}$, then $p_{1}$ must divide some $q_{i}$, say $q_{1}$. Since $q_{1}$ is irreducible, we have that $p_{1}$ and $q_{1}$ are associates. Since they differ only by a unit we can't have any more $q_{i}$ and we actually have $p_{1} = q_{1}$. If $p_{1} \cdots p_{n} = q_{1} \cdots q_{m}$, again, $p_{1}$ divides some $q_{i}$, say $q_{1}$. Again, $p_{1}$ and $q_{1}$ must be associates, so $p_{2} \cdots p_{n} = q_{2} \cdots q_{n}$ up to associates. By induction, we are done.
- 
-Suppose $R$ is a UFD.  We already know that the primes are irreducible since $R$ is an integral domain.
-
-Suppose $p \in R$ is irreducible and $p = ab$ for some $a, b \in R$. Then note that $ab \in (p)$ and thus, $ab = pr$ for some $r \in R$. Since we're in a UFD and $p$ is irreducible (and thus its own factorisation is just $p = p$), $p$ or an associate of $p$ must be in the unique factorisation of $a$ or $b$. Say, without loss of generality, $a = (up)t_{2} \cdots t_{n}$. Thus, $a \in (p)$, and $p$ is prime.
-
----
-
-Since we already know $p$ is prime if and only if $p$ is irreducible in a PID, we now know that each PID is a UFD.
 
 ##### _proposition:_ UFDs are preserved by localisation
 

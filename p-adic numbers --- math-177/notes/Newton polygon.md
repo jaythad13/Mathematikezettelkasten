@@ -46,7 +46,7 @@ Write $f(x) = a_{k} x^k g(x)$ where $g(x) \in 1 + (x) \subseteq \mathbb{Q}_{p}[x
 
 ##### _corollary:_ a criterion for irreducibility
 
-If $f \in \mathbb{Q}_{p}[x]$ is [[p-adic numbers --- math-177/notes/Irreducible polynomials#_definition _ irreducible polynomial|irreducible]] then $N(f)$ consists of exactly one segment.
+If $f \in \mathbb{Q}_{p}[x]$ is [[Galois theory --- math-172/notes/Polynomial rings#_definition _ irreducible polynomial|irreducible]] then $N(f)$ consists of exactly one segment.
 
 Equivalently, if $N(f)$ has more than one segment, then $f$ is reducible.
 

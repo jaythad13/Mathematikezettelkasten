@@ -1,9 +1,11 @@
 ---
 tags:
-- alg
-- math-172/1
-- math-172/2
-- math-172/3
+  - alg
+  - math-172/1
+  - math-172/2
+  - math-172/3
+  - math-177/15
+  - math-172/5
 ---
 
 Let $A$ be a (commutative, unital) ring.
@@ -74,5 +76,43 @@ $$
 Since $3$ is never a square in $\mathbb{F}_{5}$, then $a - 3 b^{2} \neq 0 \in \mathbb{F}_{5}$. Thus, $\mathbb{F}_{5}[\sqrt{ 3 }]$ is really a field! This is a consequence of a [[Algebraic geometry --- rising-sea/notes/Hilbert's Nullstellensatz#_proposition _ characterising finite $ mathbb{F}$-algebras|deeper fact]].
 
 We can see this deeper fact in that $\mathbb{F}_{11} \cong \mathbb{F}_{11}[\sqrt{ 3 }] \not \cong \mathbb{F}_{11}[x] / (x^{2} - 3) \cong \mathbb{F}_{11}^{\oplus 2}$. This is because $3$ is a quadratic residue, so $(x^{2} - 3)$ is not prime, so $\mathbb{F}_{11}[x] / (x^{2} - 3)$ is not a domain.
+
+---
+
+### Irreducible polynomials
+
+Irreducibility means something slightly different for polynomials than [[Abstract algebra --- math-171/notes/Unique factorisation#_examples _ irreducible and prime elements|for regular rings]]. In particular, we aren't interested in factoring out elements of $A$.
+
+##### _definition:_ irreducible polynomial
+
+A polynomial $f(x) \in A[x]$ is **irreducible** if whenever $f = gh$, one of $g$ and $h$ is constant.
+
+---
+
+It can be useful to be able tell that a polynomial is irreducible relatively quickly. Eisenstein's criterion does this. This works over [[Abstract algebra --- math-171/notes/Integral domains#_definition _ integral domain|integral domains]] in general.
+
+##### _theorem:_ Eisenstein's criterion
+
+Let $A$ be an integral domain. Suppose $f(x) = \sum_{i = 0}^n a_{i} x^i \in A[x]$, and there exists a [[Abstract algebra --- math-171/notes/Prime and maximal ideals#_definition _ prime ideals|prime ideal]] $\mathfrak{p}$ such that $a_{i} \in \mathfrak{p}$ for each $i \neq n$, $a_{n} \not\in \mathfrak{p}$ and $a_{0} \not\in \mathfrak{p}^{2}$. Then $f$ is irreducible.
+
+###### _proof:_
+
+Suppose that $f(x) = g(x) h(x)$ with non-constant $g, h$. Suppose there exists a prime $\mathfrak{p} \subseteq A$ such that $a_{i} \in \mathfrak{p}$ for each $i \neq n$ and $a_{n} \not\in \mathfrak{p}$.  
+
+Under the map $A[x] \to A / \mathfrak{p} [x]$, $f$ has image $\overline{f}(x) = \overline{a_{n}} x^n \in A / \mathfrak{p}[x]$. Since $\overline{g} \overline{h} = \overline{f}$, we must have that $\overline{g}, \overline{h}$ are both monomials. Since $g$ and $h$ are non-constant, $\overline{g}(0) = \overline{h}(0) = 0 \in A / \mathfrak{p}$, and so $g(0), h(0) \in \mathfrak{p}$. But then $a_{0} = g(0) h(0) \in \mathfrak{p}^{2}$.
+
+---
+
+##### _example:_ $p$th roots of unity (over $\mathbb{Q}_{p}$)
+
+Consider $f(x) = (x^p - 1) / (x - 1) = x^{p - 1} + x^{p - 2} + \dots + x + 1$. We claim this is irreducible. This follows because
+$$
+g(x) = f(x + 1) = \frac{(x + 1)^p - 1}{x} = \sum_{i = 1}^p \binom{p}{i} x^{i - 1}
+$$
+satisfies Eisenstein's criterion. If we had $f(x) = p(x) q(x)$ reducible, we would have $g(x) = p(x + 1)q(x + 1)$ reducible. This all works over $\mathbb{Z}[x]$ just as well as over $\mathbb{Z}_{p}[x]$.
+
+Let $\zeta$ be a root of $f(x)$. Then $\zeta - 1$ is a root of $g(x)$. Then by [[p-adic numbers --- math-177/notes/Extension of norms#_proposition _ extension of norms|extension of the norm]] to $\mathbb{Q}_{p}(\zeta)$ we have $\lvert \zeta - 1 \rvert_{p} = \lvert g(0) \rvert^{1 / {p - 1}} = 1 / p^{1 / (p - 1)}$. That is $\zeta = 1 + \varepsilon$ where $\lvert \varepsilon \rvert_{p}$ is large but less than $1$. Another, way to put this is $\lvert p \rvert_{p} < \lvert \zeta - 1 \rvert_{p} < 1$.
+
+In some sense this tells us that ramification has occurred — we have $\lvert (\zeta - 1)^{p - 1} \rvert_{p} = \lvert p \rvert_{p}$ and so we might have $(p) \subseteq \mathscr{O}_{\mathbb{Q}_{p}(\zeta)}$ not prime anymore.
 
 ---
