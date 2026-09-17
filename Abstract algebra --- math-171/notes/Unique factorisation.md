@@ -271,7 +271,7 @@ In particular, this implies that every [[Algebraic geometry --- rising-sea/notes
 
 It's also not so much more difficult to characterise which factorisation domains are UFDs.
 
-##### _proposition:_  the irreducible elements are exactly the primes
+##### _proposition:_ UFD if and only if irreducible elements are exactly the primes
 
 Suppose $A$ is a factorisation domain. $A$ is a UFD if and only if the primes are exactly the irreducibles.
 
