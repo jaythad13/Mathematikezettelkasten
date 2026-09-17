@@ -28,9 +28,7 @@ We have a map $\pi_{1}(X, x_{0} \mid G) \to G$ with kernel $\pi_{1}(X)$. It is s
 	\end{tikzcd}
 \end{document}
 ```
-Note, a $G$-fixed point gives a section $G \to \pi_{1}(X, x_{0} \mid G)$ up to conjugation by $\pi_{1}(X)$. 
-
-Note that all of this is homotopy invariant in the pair of $X$ and the action $G \circlearrowright X$.
+Note, a $G$-fixed point gives a section $G \to \pi_{1}(X, x_{0} \mid G)$ up to conjugation by $\pi_{1}(X)$. All of this is homotopy invariant in the pair of $X$ and the action $G \circlearrowright X$.
 
 ##### _proposition:_ $G$-fixed points give sections
 
