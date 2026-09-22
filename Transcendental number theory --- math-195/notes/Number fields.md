@@ -3,6 +3,7 @@ tags:
 - math-195/11
 - math-195/12
 - math-195/14
+- math-172/6
 - nt
 - alg-nt
 ---
@@ -65,6 +66,26 @@ This gives us a different way to think of primitive elements. $\alpha$ is a prim
 
 ### Rings of integers
 
+##### _definition:_ algebraic integers
+
+An algebraic number is an **algebraic integer** if its minimal polynomial is a monic irreducible in $\mathbb{Z}[x]$.
+
+---
+
+##### _examples:_ algebraic integers
+
+- An element of $\mathbb{Q}$ is an algebraic integer if and only if it is actually in $\mathbb{Z}$.
+- Algebraic integers can have "denominators". For example, the cube root of unity $\omega = (-1 + \sqrt{ 3 } i) / 2$ is an algebraic integer with minimal polynomial $x^{2} + x + 1 = 0$.
+
+---
+
+##### _proposition, definition:_ ring of integers
+
+The set of all algebraic integers forms a ring $\overline{\mathbb{Z}} \subseteq \overline{\mathbb{Q}}$, called the **ring of algebraic integers**.
+
+The set of algebraic numbers in a number field $\mathbb{K} / \mathbb{Q}$ forms a ring $\mathscr{O}_{\mathbb{K}}$, called the **ring of integers** in $\mathbb{K}$.
+
+---
 
 ##### _lemma:_ scale field extensions by rational integers to get algebraic integers
 

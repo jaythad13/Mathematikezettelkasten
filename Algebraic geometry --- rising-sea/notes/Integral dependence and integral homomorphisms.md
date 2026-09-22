@@ -3,6 +3,7 @@ tags:
 - rising-sea/5/4
 - rising-sea/8/2
 - math-172/3
+- math-172/6
 - comm-alg
 ---
 
@@ -200,7 +201,9 @@ We can also generalise the example of $\mathbb{Z}$ to the integral closure of $\
 
 ##### _example:_ quadratic integer rings
 
-Suppose $d$ is a square free integer with $d \equiv 2, 3$ modulo $4$. Then we write $A = \mathbb{Z}[\sqrt{ d }]$ for $\mathbb{Z}[x] / (x^{2} - d)$. Note that $K(\mathbb{Z}[\sqrt{ d }]) = \mathbb{Q}(\sqrt{ d }) = \mathbb{Q}[\sqrt{ d }]$. If $f(x) = x^n + a_{n - 1} x^{n - 1} + \dots + a_{0} \in A[x]$ has a root in $\mathbb{Q}(\sqrt{ d })$, then the root is some $\alpha = {a + b \sqrt{ d }}$ with $a, b \in \mathbb{Q}$. By Galois theory, whenever $\alpha$ is a root of a polynomial, $\overline{\alpha} = {a - b \sqrt{ d }}$ is a root of the same polynomial. Thus, $\alpha + \overline{\alpha} = 2a$ and $\alpha \overline{\alpha} = a^{2} - b^{2} d$ are both in $\mathbb{Z}[\sqrt{ d }]$. In fact, since they contain no $\sqrt{ d }$ term, they are in $\mathbb{Z}$.
+Suppose $d$ is a square free integer. If $d \equiv 2, 3 \pmod 4$, then we write $A = \mathbb{Z}[\sqrt{ d }]$ for $\mathbb{Z}[x] / (x^{2} - d)$ and claim it is integrally closed. If $d \equiv 1 \pmod 4$, then we write $A = \mathbb{Z}[(1 + \sqrt{ d }) / 2]$ and claim that it too is integrally closed. Note that the [[Commutative algebra --- math-189AA/notes/Localisation of a ring#_definition _ localisation of a ring, localisations at a prime, fraction field|fraction field]] of $A$ is $Q(A) = \mathbb{Q}(\sqrt{ d }) = \mathbb{Q}[\sqrt{ d }]$. 
+
+Each $\alpha \in \mathbb{Q}(\sqrt{ d })$ is just $\alpha = {a + b \sqrt{ d }}$ with $a, b \in \mathbb{Q}$. Write $\overline{\alpha} = {a - b \sqrt{ d }}$, so $(x - \overline{\alpha})(x - \alpha)$ is the [[p-adic numbers --- math-177/notes/Algebraic field extensions#_proposition, definition _ the minimal polynomial|minimal polynomial]] of $\alpha$. It has coefficients $\alpha + \overline{\alpha} = 2a$ and $\alpha \overline{\alpha} = a^{2} - b^{2} d$. Suppose both are in $\mathbb{Z}[\sqrt{ d }]$. In fact, since they contain no $\sqrt{ d }$ term, this forces them to be in $\mathbb{Z}$.
 
 If $a \in \mathbb{Z}$, then $b^{2} d \in \mathbb{Z}$. Since $d$ is square free, it cannot cancel out any non-trivial squared part of the denominator of $b^{2}$. Thus, there is none and $b \in \mathbb{Z}$. That is, if $a \in \mathbb{Z}$, then $b \in \mathbb{Z}$ and $\alpha \in \mathbb{Z}[\sqrt{ d }]$.
 
@@ -210,7 +213,7 @@ $$
 $$
 $(1 + \sqrt{ d })/2$ has trace $1$ and norm $(1 - d) / 4$. Thus, if $\alpha$ is integral over $\mathbb{Z}[\sqrt{ d }]$ with $a = n / 2$, we must have $(1 - d) / 4 \in \mathbb{Z}$ and equivalently, $d \equiv 1$. This also suffices, since $x^{2} - x + (1 - d) / 4 \in \mathbb{Z}[x] \subseteq A[x]$ has $(1 + \sqrt{ d }) / 2$ as a root. Since $\mathbb{Z}\left[ \frac{1 + \sqrt{ d }}{2} \right]$ includes $\mathbb{Z}[\sqrt{ d }]$, any root $\alpha$ must be in $\mathbb{Z}\left[ \frac{1 + \sqrt{ d }}{2} \right]$.
 
-Else, $a \neq n / 2$ and the roots are all contained in $\mathbb{Z}[\sqrt{ d }]$.
+Else if $d \equiv 2, 3$ then $a \neq n / 2$ and the roots are all contained in $\mathbb{Z}[\sqrt{ d }]$.
 
 ---
 
