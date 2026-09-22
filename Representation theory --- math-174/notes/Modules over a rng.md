@@ -185,11 +185,11 @@ For example, we can prove
 
 ##### _corollary:_ endomorphisms of an irreducible representation
 
-Suppose $\mathbb{F}$ is algebraically closed. Suppose $M$ is an irreducible $\mathbb{F}[G]$-module (for $G$ a finite group). Then any $\varphi \in \operatorname{End}_{\mathbb{F}[G]} M$ is just $\lambda \operatorname{id}_{M}$ for some $\lambda \in \mathbb{F}$.
+Suppose $\mathbb{F}$ is algebraically closed. Suppose $M$ is an irreducible $R$-module (for $R$ an $\mathbb{F}$-algebra). Then any $\varphi \in \operatorname{End}_{R} M$ is just $\lambda \operatorname{id}_{M}$ for some $\lambda \in \mathbb{F}$.
 
 ###### _proof:_
 
-Since $\varphi$ is $\mathbb{F}[G]$-linear, it is also $\mathbb{F}$-linear. Since $\mathbb{F}$ is algebraically closed, $\varphi$ has an eigenvalue $\lambda \in \mathbb{F}$. Then $\varphi - \lambda \operatorname{id}_{M}$ is not invertible, and thus, is $0$. That is, $\varphi = \lambda \operatorname{id}_{M}$.
+Since $\varphi$ is $R$-linear, it is also $\mathbb{F}$-linear. Since $\mathbb{F}$ is algebraically closed, $\varphi$ has an eigenvalue $\lambda \in \mathbb{F}$. Then $\varphi - \lambda \operatorname{id}_{M}$ is not invertible, and thus, is $0$. That is, $\varphi = \lambda \operatorname{id}_{M}$.
 
 ---
 

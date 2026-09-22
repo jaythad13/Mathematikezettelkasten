@@ -38,7 +38,7 @@ If $T$ is an isomorphism of vector spaces, then it is an isomorphism of represen
 
 The etymology of degree for the dimension of $V$ has something to do with the degree of the characteristic polynomial of an irreducible representation.
 
-Lots of words that are adjectives for $\mathbb{F}[G]$-modules are also adjectives for representations of $G$. For example, [[Representation theory --- math-174/notes/Modules over a rng#_definition _ irreducible modules|irreducible]] is the same, submodule becomes subrepresentation, et c.
+Lots of words that are adjectives for $\mathbb{F}[G]$-modules are also adjectives for representations of $G$. For example, [[Representation theory --- math-174/notes/Modules over a rng#_definition _ irreducible modules|irreducible]] is the same (often called an **irrep** for short), submodule becomes **subrepresentation**, et c.
 
 ##### _example:_ the permutation representation of $\mathfrak{S}_{2}$.
 
@@ -47,5 +47,27 @@ Let $\mathfrak{S}_{2}$ be the symmetric group acting on the set of the standard 
 We can get an equivalent representation with a different choice of basis $(1, 1), (1, -1)$. Then $\rho(g)$ is always a diagonal matrix. In particular $\rho(g) = 1$ and $\rho((1 \, 2)) = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}$.
 
 This basis allows us to see that this representation is made of two different subrepresentations — we have two different one-dimensional $\mathbb{C}[G]$-submodules whose direct sum is the whole $\mathbb{C}[G]$-module.
+
+---
+
+##### _example:_ irreducible representations of $\mathfrak{S}_{3}$
+
+There are more irreducible representations of the symmetric group $\mathfrak{S}_{3}$. Here are some of them
+1) the trivial representation $D_{1} : \mathfrak{S}_{3} \to \mathrm{GL}_{1}(\mathbb{C})$ by $\sigma \mapsto 1$.
+2) the sign representation $D_{2} : \mathfrak{S}_{3} \to \mathrm{GL}_{1}(\mathbb{C})$ by $\sigma \mapsto \operatorname{sgn} \sigma$.
+3) $D_{3} : \mathfrak{S}_{3} \to \mathrm{GL}_{2}(\mathbb{C})$ by
+$$
+\begin{align}
+(1 2) & \mapsto \begin{pmatrix}
+-1 & 0 \\
+ 0 & 1
+\end{pmatrix} = \\
+(2\, 3) & \mapsto \begin{pmatrix}
+1/2 &  \sqrt{ 3 }/2 \\
+\sqrt{ 3 } /2 & -1 / 2
+\end{pmatrix}
+\end{align}
+$$
+This is actually a subrepresentation of the permutation representation $\mathfrak{S}_{3} \to \mathrm{GL}_{3}(\mathbb{C})$.
 
 ---
