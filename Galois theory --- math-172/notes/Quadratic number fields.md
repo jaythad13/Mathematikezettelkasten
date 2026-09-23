@@ -20,7 +20,17 @@ Note, $\mathbb{Q}[\sqrt{ d }]$ is in fact a field. It's a domain ($x^{2} - d$ is
 
 ![[Algebraic geometry --- rising-sea/notes/Integral dependence and integral homomorphisms#_example _ quadratic integer rings|Integral dependence and integral homomorphisms]]
 
+We will often think about ideals of $\mathscr{O}_{\mathbb{K}}$ as special $\mathbb{Z}$-submodules, which we call **sublattices**. 
+
+##### _proposition:_ characterising ideals among sublattices
+
+Suppose $\mathscr{O}_{\mathbb{K}} = \mathbb{Z}[\eta] \subseteq \mathbb{K}$, for some imaginary quadratic number field $\mathbb{K} / \mathbb{Q}$. Then a sublattice $M \subseteq \mathscr{O}_{\mathbb{K}}$ is an ideal if and only if $\eta M \subseteq M$.
+
+---
+
 ### Imaginary quadratic number fields
+
+When $d < 0$, we have some extra tools.
 
 ##### _definition:_ norm
 
@@ -53,5 +63,32 @@ If $3 = \alpha \beta$ is a non-trivial factorisation in $\mathbb{Z}[i]$, then we
 Conversely, $(2 + i)(2 - i) = 5$.
 
 What's even weirder is that $2 = (1 + i)(1 - i)$ and these two factors are in fact associates.
+
+---
+
+However, imaginary quadratic fields can have bad behaviour in their ring of integers. $\mathbb{Z}[i]$ is not bad, but the rest of the negative $d$ with $d \equiv 3 \pmod 4$ lose unique factorisation in their ring of integers $\mathbb{Z}[\sqrt{ d }]$.
+
+##### _proposition:_ rings of integers that are not UFDs
+
+If $d < -1$ and $d \equiv 3 \pmod 4$, then $\mathbb{Z}[\sqrt{ d }]$ is *not* a [[Abstract algebra --- math-171/notes/Unique factorisation#_definition _ factorisation, factorisation domains, unique factorisation domains|UFD]].
+
+###### _proof:_
+
+Let $e = (1 - d) / 2$. Then $2 e = 1 - d = (1 - \sqrt{ d })(1 + \sqrt{ d })$. First, we show $2$ is irreducible, and then that it doesn't divide either of the irreducibles on the other side. 
+
+$2$ has norm $4$. Thus, if $2 = \alpha \beta$ is non-trivial factorisation, we must have $N(\alpha) = 2$ and thus $a^{2} -d b ^{2} = 2$ for some $a, b \in \mathbb{Z}$.  
+
+But $2 \nmid (1 \pm \sqrt{ d })$ since $\mathbb{Z}[\sqrt{ d }]$ does not contain $(1 \pm \sqrt{ d }) / 2$.
+
+---
+
+This example doesn't work for $d \equiv 1 \pmod 4$ because the ring of integers does contain $(1 \pm \sqrt{ d })/2$. The hard result we are working towards is the following.
+
+##### _theorem:_ Gauss and Heegner–Stark's theorems
+
+Let $\mathbb{K} = \mathbb{Q}(\sqrt{ d })$ be an imaginary quadratic field. Then $\mathscr{O}_{\mathbb{K}}$ is a UFD if and only if
+$$
+d \in \{ -1, -2, -3, -7, -11, -19, -43, -67, -163 \}.
+$$
 
 ---

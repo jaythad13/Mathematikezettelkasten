@@ -5,6 +5,7 @@ tags:
 - math-177/11
 - math-177/12
 - math-177/13
+- math-172/7
 ---
 
 Algebraic field extensions are concerned with finding where the roots of polynomials in $\mathbb{F}[x]$ live. It's most reasonable to focus on the irreducible factors — we can find the roots of any reducible polynomial by finding the roots of its irreducible factors.
@@ -102,3 +103,7 @@ with $c$ and all $a_{i} \in \mathbb{K}$.
 ---
 
 Note that the splitting field exists by constructing a chain of fields $\mathbb{K}_{i}$ with $\mathbb{K}_0 = \mathbb{F}$, $f_{0} = f$ and $\mathbb{K}_{i} = \mathbb{K}_{i - 1}[x] / (f_{i})$ where $f_{i}$ is the irreducible non-linear part of $f_{i - 1}$ after factoring in $\mathbb{K}_{i - 1}$. Since $f$ is a polynomial, it can only be factored into finitely many linear polynomials. Each successive field extension adds at least one root, so we are done in finitely many extensions.
+
+### Algebraic closure
+
+### Rings of integers
