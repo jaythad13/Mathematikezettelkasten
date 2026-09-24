@@ -49,25 +49,3 @@ We can get an equivalent representation with a different choice of basis $(1, 1)
 This basis allows us to see that this representation is made of two different subrepresentations — we have two different one-dimensional $\mathbb{C}[G]$-submodules whose direct sum is the whole $\mathbb{C}[G]$-module.
 
 ---
-
-##### _example:_ irreducible representations of $\mathfrak{S}_{3}$
-
-There are exactly three representations of the symmetric group $\mathfrak{S}_{3}$.
-1) the trivial representation $D_{1} : \mathfrak{S}_{3} \to \mathrm{GL}_{1}(\mathbb{C})$ by $\sigma \mapsto 1$.
-2) the sign representation $D_{2} : \mathfrak{S}_{3} \to \mathrm{GL}_{1}(\mathbb{C})$ by $\sigma \mapsto \operatorname{sgn} \sigma$.
-3) $D_{3} : \mathfrak{S}_{3} \to \mathrm{GL}_{2}(\mathbb{C})$ by
-$$
-\begin{align}
-(1 2) & \mapsto \begin{pmatrix}
--1 & 0 \\
- 0 & 1
-\end{pmatrix} = \\
-(2\, 3) & \mapsto \begin{pmatrix}
-1/2 &  \sqrt{ 3 }/2 \\
-\sqrt{ 3 } /2 & -1 / 2
-\end{pmatrix}
-\end{align}
-$$
-This is actually a subrepresentation of the permutation representation $\mathfrak{S}_{3} \to \mathrm{GL}_{3}(\mathbb{C})$.
-
----

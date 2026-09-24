@@ -70,10 +70,3 @@ Every representation $G \to \mathrm{GL}_{n}(\mathbb{C})$ is isomorphic to a repr
 Modify the standard Hermitian inner product to obtain a $G$-invariant Hermitian inner product as before. Choose an orthonormal basis with respect to the $G$-invariant product. By definition, $\left< g\cdot v, g\cdot w \right>_{G} = \left< v, w \right>_{G}$ — each $\rho(g)$ is unitary with respect to this inner product. Thus, the basis with respect to this inner product is unitary.
 
 ---
-
-##### _definition:_ dual of a finite group
-
-The **dual of a finite group** $G$ is $\hat{G}$ is the set of isomorphism classes of irreducible representations of $G$.
-
-
----
