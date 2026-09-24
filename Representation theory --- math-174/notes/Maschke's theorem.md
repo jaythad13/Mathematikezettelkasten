@@ -1,9 +1,8 @@
 ---
 tags:
+- rep-th
 - math-174/4
 - math-174/5
-- alg
-- rep-th
 ---
 
 Let $G$ be a finite group.
@@ -50,21 +49,27 @@ Here the second inequality is just acting on the left by $h h^{-1}$.
 
 ---
 
-##### _corollary:_ every representation is unitary
-
-Every representation $G \to \mathrm{GL}_{n}(\mathbb{C})$ factors through $\mathrm{U}_{n}(\mathbb{C})$ (the group of unitary matrices).
-
-###### _proof:_
-
-Modify the Hermitian inner product to be the $G$-invariant inner product as before. Choose an orthonormal basis with respect to the $G$-invariant inner product. The resulting matrix is unitary.
-
----
+Note, both proofs of Maschke's theorem used this idea of summing over all $g$ to make something $G$-invariant. This is a common argument — the **averaging argument**.
 
 ##### _corollary:_ every representation is a direct sum of irreducible representations
 
+Suppose $\mathbb{F}$ is a field of characteristic not dividing the order of $G$. Then every $\mathbb{F}$-linear representation of $G$ is a [[Representation theory --- math-174/notes/Modules over a rng#_definition _ sums, (internal and external) direct sums|direct sum]] of irreducible representations.
+
+###### _proof sketch:_
+
+Induct on the $\mathbb{F}$-dimension of the space.
+
 ---
 
-Note, both proofs of Maschke's theorem used this idea of summing over all $g$ to make something $G$-invariant. This is a common argument — the **averaging argument**.
+##### _corollary:_ every representation is unitary
+
+Every representation $G \to \mathrm{GL}_{n}(\mathbb{C})$ is isomorphic to a representation that factors through $\mathrm{U}_{n}(\mathbb{C}) \leq \mathrm{GL}_{n}(\mathbb{C})$ (the subgroup of unitary matrices).
+
+###### _proof:_
+
+Modify the standard Hermitian inner product to obtain a $G$-invariant Hermitian inner product as before. Choose an orthonormal basis with respect to the $G$-invariant product. By definition, $\left< g\cdot v, g\cdot w \right>_{G} = \left< v, w \right>_{G}$ — each $\rho(g)$ is unitary with respect to this inner product. Thus, the basis with respect to this inner product is unitary.
+
+---
 
 ##### _definition:_ dual of a finite group
 

@@ -1,8 +1,8 @@
 ---
 tags:
-- math-172/3
-- alg
 - rep-th
+- math-174/3
+- math-174/6
 ---
 
 Let $G$ be a finite group, let $\mathbb{F}$ be a field.
@@ -52,7 +52,7 @@ This basis allows us to see that this representation is made of two different su
 
 ##### _example:_ irreducible representations of $\mathfrak{S}_{3}$
 
-There are more irreducible representations of the symmetric group $\mathfrak{S}_{3}$. Here are some of them
+There are exactly three representations of the symmetric group $\mathfrak{S}_{3}$.
 1) the trivial representation $D_{1} : \mathfrak{S}_{3} \to \mathrm{GL}_{1}(\mathbb{C})$ by $\sigma \mapsto 1$.
 2) the sign representation $D_{2} : \mathfrak{S}_{3} \to \mathrm{GL}_{1}(\mathbb{C})$ by $\sigma \mapsto \operatorname{sgn} \sigma$.
 3) $D_{3} : \mathfrak{S}_{3} \to \mathrm{GL}_{2}(\mathbb{C})$ by
