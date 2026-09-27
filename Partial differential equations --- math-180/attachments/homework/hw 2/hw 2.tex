@@ -16,11 +16,45 @@
 	has a unique solution $(x, y)$ and that such a solution depends continuously on $(a, b)$.
 \end{problem}
 
+\begin{solution}
+	Consider the function $f : \mathbb{R}^{2} \times \mathbb{R}^{2} \to \mathbb{R}^{2}$ by
+	\[
+		((x, y), (a, b)) \mapsto \frac{1}{2} \left ( a - \sin{(x + y)}, b - \cos{(x + y)}  \right ).
+	\]
+
+	It is clearly continuous --- each component function $\mathbb{R}^{2} \times \mathbb{R}^{2} \to \mathbb{R}$ is the composition of several continuous functions on $\mathbb{R}^{2} \times \mathbb{R}^{2}$. We claim further that for each $(a, b) \in \mathbb{R}^{2}$ $(x, y) \mapsto f((x, y), (a, b))$ is a contraction. Then, by the contraction mapping theorem, we get a unique fixed point $(x, y)$ depending continuously on $(a, b)$. By construction, such a fixed point is exactly a solution to this non-linear equation. Thus, it suffices just to show that each $f_{(a, b)} : (x, y) \mapsto f((x, y), (a, b))$ is a contraction.
+
+	Fix some $(a, b) \in \mathbb{R}^{2}$, and thus, some $f_{(a, b)} : \mathbb{R}^{2} \to \mathbb{R}^{2}$ as defined above. Then for any two $(x_{1}, y_{1}), (x_{2}, y_{2}) \in \mathbb{R}^{2}$ we have
+	\[
+		f_{(a, b)}(x_{2}, y_{2}) - f_{(a, b)}(x_{1}, y_{1}) = \frac{1}{2} (\sin{(x_{1} + y_{1})} - \sin{(x_{2} + y_{2})}, \cos{(x_{1} + y_{1})} - \cos{(x_{2} + y_{2})}).
+	\]
+	Both $\sin$ and $\cos$ are Lipschitz with Lipschitz constant $1$ since both have derivative bounded by $1$. $(x, y) \mapsto x + y$ is Lipschitz with constant $\sqrt{2}$ by Cauchy--Schwarz. That is,
+	\begin{align*}
+		\lVert f_{(a, b)}(x_{2}, y_{2}) - f_{(a, b)}(x_{1}, y_{1}) \rVert & \le \frac{1}{2} \lVert (\lvert x_{1} + y_{1} - (x_{2} + y_{2}) \rvert, \lvert x_{1} + y_{1} - (x_{2} + y_{2}) \rvert) \rVert \\
+										& \le \frac{1}{2} \lVert \lvert x_{1} - x_{2} \rvert + \lvert y_{1} - y_{2} \rvert, \lvert x_{1} - x_{2} \rvert + \lvert y_{1} - y_{2} \rvert \rVert \\
+										& \le \frac{\sqrt{2}}{2} \lVert \lVert (x_{1}, y_{1}) - (x_{2}, y_{2}) \rVert, \lVert (x_{1}, y_{1}) - (x_{2}, y_{2}) \rVert \rVert \\
+										& \le \frac{1}{\sqrt{2}} \lVert (x_{1}, y_{1}) - (x_{2}, y_{2}) \rVert.
+	\end{align*}
+	The second inequality is the triangle inequality and the third is Cauchy--Schwarz
+
+	We have shown $f_{(a, b)}$ is a contraction and we are done.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[2.]
-	Find three solutions for the first order partial differential equation $\partial_{t} u = sq\lvert u \rvert$, subject to $u(x, 0) = 0$.
+	Find three solutions for the first order partial differential equation $\partial_{t} u = \sqrt{\lvert u \rvert}$, subject to $u(x, 0) = 0$.
 \end{problem}
+
+\begin{solution}
+	Clearly $u = 0$ is a solution.
+
+	Any solution $u : (x, t) \mapsto u(x, t)$ requires $Du(0, 1) = (0, 1) \cdot \nabla u = \sqrt{\lvert u \rvert}$. Write $v(s) = u(x(s), t(s))$ for functions $x(s) = a \in \mathbb{R}$ (constant) and $t(s) = s$. Since $d(x, t) / ds = (0, 1)$ we can interpret this as $Dv = \sqrt{\lvert v \rvert}$. That is, $dv / ds = \sqrt{\lvert v \rvert}$. This is a separable equation that we can solve. 
+
+	Suppose $v(s) \ge 0$. Then we obtain $2 \sqrt{v(s)} = s + c$ for $v(s) > 0$. That is, $v(s) = (s + c)^{2}/4$. $u(x, 0) = 0$ implies that $v(0) = 0$ always. Thus, we must have $v(s) = s^{2} / 4$, and $u(x, t) = t^{2} / 4$. Note, this is only a solution for $s \ge 0$ and $t \ge 0$.
+
+	Suppose $v(s) \le 0$. Then, we obtain $-2 \sqrt{- v(s)} = s + c$ and $v(s) = -(s + c)^{2} / 4$. Again, $u(x, 0) = 0$ implies that $v(0) = 0$ always, and thus, $v(s) = - s^{2} / 4$ and $u(x, t) = - t^{2} / 4$. Note, this is only a solution for $s \le 0$ and thus $t \le 0$.
+\end{solution}
 
 \pagebreak
 
@@ -28,16 +62,32 @@
 	Find the solution to $\partial_{t} u + \partial_{x} u = e^{t}$, subject to $u(x, 0) = \sin{x}$.
 \end{problem}
 
+\begin{solution}
+	Any solution $u : (x, t) \mapsto u(x, t)$ requires $Du(1, 1) = (1, 1) \cdot \nabla u = e^{t}$. Write $v(s) = u(x(s), t(s))$ for functions $x(s) = s + a$ and $t(s) = s$ for $a \in \mathbb{R}$. Since $d(x, t) / ds = (1, 1)$ we can interpret this as $Dv = e^{s}$. That is, $dv / ds = e^{s}$. This is a separable equation that we can solve. 
+
+	It has solution $v(s) = e^{s} + c$. Since $u(x, 0) = \sin{x}$, we must have $e^{0} + c = v(0) = \sin{x(0)} = \sin{a}$. That is, $c = \sin{a} - 1$ and $u(x, t) = e^{t} - 1 + \sin{(x - t)}$
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[4.]
 	Prove that the equation $y \partial_{x} u - x \partial_{y} u = 0$, subject to $u(x, 0) = f(x)$ has a solution if and only if $f$ is an even function.
 \end{problem}
 
+\begin{solution}
+	Any solution $u : (x, y) \mapsto u(x, y)$ requires $Du(y, -x) = (y, -x) \cdot \nabla u = 0$. Write $v(t) = u(x(t), y(t))$ for functions $x(t) = r \sin{t}$ and $y(t) = r \cos{t}$. Since $d(x, y) / ds = (y, -x)$ we can interpret this as $Dv = 0$. That is, $v$ is constant, and thus, $u$ is constant along circles of radius $r$.
+
+	In particular, this implies that $u(x, 0) = u(-x, 0)$ and thus, that $f$ is even.
+\end{solution}
+
 \pagebreak
 
 \begin{problem}[5.]
-	Find the solution to $y \partial_{x} u - x \partial_{y} u$ subject to $u(x, 0) = \cos{x}$.
+	Find the solution to $y \partial_{x} u - x \partial_{y} u = 0$ subject to $u(x, 0) = \cos{x}$.
 \end{problem}
+
+\begin{solution}
+	Write $v(t) = u(x(t), y(t))$ where $u(t), y(t) = r (\sin{t}, \cos{t})$ for some positive real $r$. Since $dv / dt = 0$ (implied by the differential equation), we have $v(t) = c$ for some constant $c$. Since $u(x, 0) = \cos{x}$, at all points of distance $r$ from the origin, we have $u = \cos{r}$. Thus, $u(x, y) = \cos{\sqrt{x^{2} + y^{2}}}$.
+\end{solution}
 
 \end{document}
