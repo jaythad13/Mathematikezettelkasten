@@ -1,12 +1,17 @@
 ---
 tags:
 - math-172/7
+- math-172/8
 - alg-nt
 - galois
 - nt
 ---
 
-The *idea* of the ideal class group is that we can form a group by multiplying ideals. Modding out by the action of principal ideals will allow us to measure how far the ring is from being a PID, and thus, a UFD. That is, it measures how far the ring is from being *ideal*.
+Let $\mathbb{K} = \mathbb{Q}(\sqrt{ d })$ be an [[Galois theory --- math-172/notes/Quadratic number fields#_definition _ (real, imaginary) quadratic number fields|imaginary quadratic number field]]. Let $\mathscr{O}_{\mathbb{K}}$ be its ring of integers.
+
+The *idea* of the ideal class group is that we can form a by multiplying ideals. Modding out by the action of principal ideals will allow us to measure how far the ring is from being a PID, and thus, a UFD. That is, it measures how far the ring is from being *ideal*.
+
+It's obvious that ideals form a monoid (with identity $(1)$) under multiplication. We call this the **ideal class nonoid**.
 
 ##### _example:_ ideal multiplication in $\mathbb{Z}[\sqrt{ -5 }]$
 
@@ -18,11 +23,9 @@ Note, in this example $\mathfrak{a} = \mathfrak{a}'$ but this is not always true
 
 ---
 
-An important lemma
-
 ##### _lemma:_ ideal multiplication almost has inverses
 
-Let $\mathbb{K} = \mathbb{Q}(\sqrt{ d })$ be a quadratic imaginary number field. If $\mathfrak{a} \subseteq A = \mathscr{O}_{\mathbb{K}}$ is a non-zero ideal, then there is another ideal $\mathfrak{b} \subseteq A$ such that $\mathfrak{a} \mathfrak{b} = (n)$ for some $n \in \mathbb{Z}$.
+If $\mathfrak{a} \subseteq A = \mathscr{O}_{\mathbb{K}}$ is a non-zero ideal, then there is another ideal $\mathfrak{b} \subseteq A$ such that $\mathfrak{a} \mathfrak{b} = (n)$ for some $n \in \mathbb{Z}$.
 
 ###### _proof:_
 
@@ -63,8 +66,10 @@ Now suppose $\mathfrak{a} \subseteq \mathfrak{b}$ for $\mathfrak{b}$ non-princip
 
 ---
 
+This is a really important result to show that the number rings $\mathscr{O}_{\mathbb{K}}$ are nice — they are [[Galois theory --- math-172/notes/Dedekind domains|Dedekind domains]].
+
 ##### _definition:_ ideal class group
 
-The **ideal class group** is the group completion of the ideal class monoid.
+The **ideal class group** is the group completion of the ideal class monoid modulo the subgroup of principal ideals.
 
 ---

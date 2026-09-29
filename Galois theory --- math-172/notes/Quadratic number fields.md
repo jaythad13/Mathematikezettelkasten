@@ -2,6 +2,7 @@
 tags:
 - alg-nt
 - math-172/6
+- math-172/8
 ---
 
 Galois theory is about finding roots to polynomials. The simplest case is that of quadratic number fields.
@@ -90,5 +91,31 @@ Let $\mathbb{K} = \mathbb{Q}(\sqrt{ d })$ be an imaginary quadratic field. Then 
 $$
 d \in \{ -1, -2, -3, -7, -11, -19, -43, -67, -163 \}.
 $$
+
+---
+
+##### _theorem:_ imaginary quadratic number rings are Dedekind domains
+
+###### _proof:_
+
+If $\mathfrak{a} \subseteq \mathscr{O}_{\mathbb{K}}$ is maximal, it is prime and its own unique prime factorisation.
+
+Else, $\mathfrak{a} \subseteq \mathfrak{b}$ [[Galois theory --- math-172/notes/The ideal class group#_corollary _ subideals are multiples of their superideals|and thus]] $\mathfrak{a} = \mathfrak{b} \mathfrak{c}$. Factorisation must terminate since $\mathscr{O}_{\mathbb{K}}$ is [[Algebraic geometry --- rising-sea/notes/Noetherian rings and modules#_definition _ Noetherian rings|Noetherian]] by [[Algebraic geometry --- rising-sea/notes/Noetherian rings and modules#_theorem _ the Hilbert basis theorem|Hilbert's basis theorem]]. In particular, we get a factorisation $\mathfrak{a} = \mathfrak{p}_{1} \cdots \mathfrak{p}_{n}$ into *maximal* ideals.
+
+Uniqueness follows by the standard induction proof. If $\mathfrak{p}_{1} \cdots \mathfrak{p}_{n} = \mathfrak{q}_{1} \cdots \mathfrak{q}_{m}$, then $\mathfrak{p}_{1} \mid \mathfrak{q}_{i}$ for some $i$. Say $i = 1$. That is, $\mathfrak{q}_{1} \subseteq \mathfrak{p}_{1}$. Since $\mathfrak{q}_{1}$ is maximal, $\mathfrak{q}_{1} = \mathfrak{p}_{1}$. The rest follows by induction on $n$.
+
+---
+
+Note that this theorem requires $\mathfrak{a} \subseteq \mathfrak{b}$ to imply $\mathfrak{b}$ divides $\mathfrak{a}$. This is not universal, but [[Galois theory --- math-172/notes/The ideal class group#_corollary _ subideals are multiples of their superideals|is true for imaginary quadratic number rings]]. This is a special case of a more general result — to be a [[Galois theory --- math-172/notes/Dedekind domains#_definition _ Dedekind domain|Dedekind domain]], [[Galois theory --- math-172/notes/Dedekind domains#_proposition _ equivalent conditions to be a Dedekind domain|it suffices]] for $\mathfrak{a} \subseteq \mathfrak{b}$ to imply $\mathfrak{b}$ divides $\mathfrak{a}$.
+
+##### _corollary:_ imaginary quadratic number rings are UFDs if and only if they are PIDs
+
+$\mathscr{O}_{\mathbb{K}}$ is a UFD if and only if they are PIDs.
+
+###### _proof:_
+
+PID implies UFD [[Abstract algebra --- math-171/notes/Unique factorisation#_corollary _ every PID is a UFD|is standard]].
+
+Suppose $\mathscr{O}_{\mathbb{K}}$ is a UFD. By unique factorisation of proper ideals, it suffices to show that every prime is principal. Suppose $a \in \mathfrak{p} \subseteq \mathscr{O}_{\mathbb{K}}$ is a non-zero element of a prime ideal. Let $a = p_{1} \cdots p_{n}$ be its unique prime factorisation. Since $\mathfrak{p}$, one of the $p_{i}$, say $p_{1}$, is in $\mathfrak{p}$. Then $(p_{1}) \subseteq \mathfrak{p}$. Since $p_{1}$ is prime, and all non-zero primes in $\mathscr{O}_{\mathbb{K}}$ are maximal, we must have $(p_{1}) = \mathfrak{p}$.
 
 ---
