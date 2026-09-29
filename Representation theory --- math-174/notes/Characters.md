@@ -74,7 +74,7 @@ Suppose $\lambda, \mathbb{C}[G]$ is the regular representation of $G$. Then
 1) $\chi_{\lambda} = \# G 1_{G}$ or equivalently, $\chi_{\lambda}(g) = \begin{cases} \# G & g = 1 \\ 0. \end{cases}$
 2) $\chi_{\lambda} = \sum_{\sigma \in \widehat{G}} d_{\sigma} \chi_{\sigma}$ where $d_{\sigma}$ is the dimension of the irreducible representation $\sigma$.
 3) $\#G = \sum_{\sigma \in \widehat{G}} d_{\sigma}^{2}$
-4) $\bigoplus_{\sigma \in \widehat{G}} \sigma^{d_{\sigma}} = \lambda$.
+4) $\bigoplus_{\sigma \in \widehat{G}} \sigma^{\oplus d_{\sigma}} = \lambda$.
 
 ###### _proof:_
 
