@@ -3,6 +3,7 @@ tags:
 - alg-nt
 - math-172/6
 - math-172/8
+- math-172/9
 ---
 
 Galois theory is about finding roots to polynomials. The simplest case is that of quadratic number fields.
@@ -117,5 +118,41 @@ $\mathscr{O}_{\mathbb{K}}$ is a UFD if and only if they are PIDs.
 PID implies UFD [[Abstract algebra --- math-171/notes/Unique factorisation#_corollary _ every PID is a UFD|is standard]].
 
 Suppose $\mathscr{O}_{\mathbb{K}}$ is a UFD. By unique factorisation of proper ideals, it suffices to show that every prime is principal. Suppose $a \in \mathfrak{p} \subseteq \mathscr{O}_{\mathbb{K}}$ is a non-zero element of a prime ideal. Let $a = p_{1} \cdots p_{n}$ be its unique prime factorisation. Since $\mathfrak{p}$, one of the $p_{i}$, say $p_{1}$, is in $\mathfrak{p}$. Then $(p_{1}) \subseteq \mathfrak{p}$. Since $p_{1}$ is prime, and all non-zero primes in $\mathscr{O}_{\mathbb{K}}$ are maximal, we must have $(p_{1}) = \mathfrak{p}$.
+
+---
+
+### Splitting, ramifying, or remaining inert
+
+Let $\mathbb{K} = \mathbb{Q}(\sqrt{ d }) / \mathbb{Q}$ be an imaginary quadratic number field and let $\mathscr{O}_{\mathbb{K}}$ be its number ring. Then one interesting question we can ask is what primes lie above a given prime.
+
+##### _definition:_ splitting, ramifying, remaining inert
+
+---
+
+##### _proposition:_ characterising primes that remain inert
+
+Suppose $p \in \mathbb{Z}$  is prime. Suppose $d \equiv 2, 3 \pmod 4$. $p$ remains inert on [[Commutative algebra --- math-189AA/notes/Contraction and extension#Extension|extension]] to $\mathscr{O}_{\mathbb{K}}$ if and only if $x^{2} - d$ is irreducible in $\mathbb{F}_{p}[x]$.
+
+Suppose $d \equiv 1 \pmod 4$. $p$ remains inert if and only if $x^{2} - x + h$ is irreducible in $\mathbb{F}_{p}[x]$.
+
+###### _proof:_
+
+Suppose $d \equiv 2, 3 \pmod 4$. Consider the commutative diagram obtained by modding out by $(p)$ and then $(x^{2} - d)$ or $(x^{2} - d)$ and then $(p)$.
+```tikz
+\usepackage{tikz-cd}
+\usepackage{amsfonts}
+\begin{document}
+	\begin{tikzcd}
+		\mathbb{Z}[x] \ar[r] \ar[d] & \mathbb{F}_{p}[x] \ar[d] \\
+		\mathcal{O}_{\mathbb{K}} \ar[r] & A
+	\end{tikzcd}
+\end{document}
+```
+
+Suppose $(p)$ is a prime on extension to $\mathscr{O}_{\mathbb{K}}$. Since $\mathscr{O}_{\mathbb{K}}$ is a [[Galois theory --- math-172/notes/Dedekind domains#_proposition _ equivalent conditions to be a Dedekind domain|Dedekind domain]], $(p)$ is maximal, and thus, $A$ is a field. Then $(x^{2} - d)$ is maximal and $x^{2} - d$ must be irreducible.
+
+Conversely, suppose $x^{2} - d$ is irreducible. Then $(x^{2} - d)$ is maximal, $A$ is a field, and so $(p) \subseteq \mathscr{O}_{\mathbb{K}}$ is maximal and prime.
+
+Identical considerations give the proof for $d \equiv 1$.
 
 ---
