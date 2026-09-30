@@ -28,4 +28,6 @@ tags:
 | #cx-geo   | complex geometry               |
 | #hom-alg  | homological algebra            |
 | #pde      | partial differential equations |
+| #rep-th   | representation theory          |
+| #galois   | Galois theory                  |
 
