@@ -1,7 +1,8 @@
 ---
 tags:
 - rep-th
-- math-172/8
+- math-174/8
+- math-174/9
 ---
 
 Suppose $G$ is a finite group and $\rho, V$ is an $\mathbb{F}$-linear representation of $G$.
@@ -28,7 +29,7 @@ Since we have done the hard work to understand [[Representation theory --- math-
 
 ##### _corollary:_ orthogonality for characters of irreducible representations
 
-Suppose $\rho, \sigma$ are irreducible unitary representations $G \to \mathrm{U}_{d}(\mathbb{C})$. Then with respect to the usual inner product on $\mathbb{C}[G]$,
+Suppose $\rho, \sigma$ are irreducible unitary representations (possibly of different dimension). Then with respect to the usual inner product on $\mathbb{C}[G]$,
 $$
 \left< \chi_{\rho}, \chi_{\sigma} \right> = \begin{cases}
 \# G & \chi_{\rho} \cong \chi_{\sigma} \\
@@ -68,7 +69,7 @@ Two representations of $G$, $\rho, V$ and $\sigma, W$ are isomorphic if and only
 
 Finally, we get a decomposition theorem for $\mathbb{C}[G]$.
 
-##### _theorem:_ Artin–Wedderburn for complex group algebras
+##### _theorem:_ irreducible decompositions of complex group algebras
 
 Suppose $\lambda, \mathbb{C}[G]$ is the regular representation of $G$. Then
 1) $\chi_{\lambda} = \# G 1_{G}$ or equivalently, $\chi_{\lambda}(g) = \begin{cases} \# G & g = 1 \\ 0. \end{cases}$
@@ -82,5 +83,34 @@ Suppose $\lambda, \mathbb{C}[G]$ is the regular representation of $G$. Then
 2) Since $\chi_{\lambda}$ only has component along $1$, we have $\left< \chi_{\lambda}, \chi_{\sigma} \right> = (\operatorname{Tr} \lambda(1)) (\operatorname{Tr} \sigma(1)) = \#G d_{\sigma}$. Thus, $n_{\sigma} = d_{\sigma}$.
 3) Take the norm of $\chi_{\lambda}$.
 4) Follows immediately from (2).
+
+---
+
+### Character tables
+
+One useful tool is character tables.
+
+##### _example:_ the character table of $\mathfrak{S}_{3}$
+
+We already know what the irreducible representations are. Let $\rho_{1}$ be trivial, let $\rho_{2}$ be the sign representation, and let $\rho_{3}$ be the $2$-dimensional representation. Let $\chi_{1}, \chi_{2}, \chi_{3}$ be the corresponding characters. Then we have the following coefficients in the standard basis of $\mathbb{C}[\mathfrak{S}_{3}]$.
+
+|            | $e$ | $(1 \, 2\, 3)$ | $(1\, 3 \, 2)$ | $(1 \, 2)$ | $(2 \, 3)$ | $(1 \, 3)$ |
+| ---------- | --- | -------------- | -------------- | ---------- | ---------- | ---------- |
+| $\chi_{1}$ | $1$ | $1$            | $1$            | $1$        | $1$        | $1$        |
+| $\chi_{2}$ | $1$ | $1$            | $1$            | $-1$       | $-1$       | $-1$       |
+| $\chi_{3}$ | $2$ | $-1$           | $-1$           | $0$        | $0$        | $0$        |
+
+We can make this more compact by just writing just the conjugacy classes. One just has to be careful to weight each conjugacy class by its size when computing inner products.
+
+|                | $e$ | $(1 \, 2\, 3)$ | $(1 \, 2)$ |
+| -------------- | --- | -------------- | ---------- |
+| $\chi_{1}$     | $1$ | $1$            | $1$        |
+| $\chi_{2}$     | $1$ | $1$            | $-1$       |
+| $\chi_{3}$<br> | $2$ | $-1$           | $0$        |
+Notice, even without any weighting, the columns of this table are orthogonal with respect to the usual inner product, and that the table is square. Both of these are always true and we will prove this.
+
+It's very useful to have this at hand. If we have the character table, we could quickly compute, that the permutation representation $\rho$ satisfies $\rho = \rho_{1} \oplus \rho_{3}$ by noticing that $\chi_{\rho} = \chi_{1} \oplus \chi_{2}$ (or just computing coefficients with respect to the orthonormal basis of $\chi_{i} / \# G$).
+
+Similarly, for the regular representation $\lambda$ we can see that $\chi_{\lambda} = \chi_{1} + \chi_{2} + \chi_{3}$ and so $\lambda = \rho_{1} \oplus \rho_{2} \oplus \rho_{3}$.
 
 ---
