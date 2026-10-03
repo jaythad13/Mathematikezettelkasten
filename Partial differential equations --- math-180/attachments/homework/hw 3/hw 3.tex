@@ -1,0 +1,43 @@
+\documentclass[12 pt, letterpaper]{hmcpset}
+\usepackage{hw-preamble}
+
+\name{Jayden Thadani}
+\class{MATH 180 --- Partial differential equations}
+\assignment{Homework 3}
+\duedate{3rd October 2026}
+
+\begin{document}
+
+\begin{problem}[1.]
+	\begin{enumerate}
+		\item Let $w : \mathbb{R} \to \mathbb{R}$ be defined by $w(x) = e(1 - e^{-x^{-2}}) e^{-1 / (1 - x)^{2}}$ for $x \in [0, 1]$ and $w(x) = 0$ for $x \ge 1$ and  $w(x) = 1$ for $x \le 0$. Find $w'(0), w''(0), w'''(0), w'(1), w''(1), w'''(1)$. What can you say about other higher order derivatives of $w$ at $1$? Conclude that $w$ is of class $C^{\infty}$ at any $x \in [0, \infty)$.
+
+		\item For $x \in \mathbb{R}^{n}$ and $\varepsilon > 0$, let $w_{\varepsilon} = \varepsilon^{-n} w(\lVert x \rVert / \varepsilon)$. Prove that $\int_{\mathbb{R}^{n}} w_{\varepsilon}(x) \, dx$ is independent of $\varepsilon$.
+	\end{enumerate}
+\end{problem}
+
+\begin{problem}[2.]
+	Explain why the equation $u_{t} + u_{x} = x$ such that for all $x \in \mathbb{R}$ $u(x, x) = 1$ has no solution.
+\end{problem}
+
+\begin{problem}[3.]
+	Prove that if $u : \Omega \to \mathbb{R}$ is harmonic, then
+	\[
+		\int_{\mathbb{R}^{n}} u(x) \Delta w(x) \, dx 
+	\]
+	for any function $w : \mathbb{R}^{n} \to \mathbb{R}$ of class $C^{2}$ with compact support.
+\end{problem}
+
+\begin{problem}[4.]
+	Let $f : \mathbb{R} \to \mathbb{R}$ be a function of class $C^{2}$ and $u(x_{1}, \dots, x_{n}) = f(\sqrt{x_{1}^{2} + \dots + x_{n}^{2}})$. Find $\Delta u$ in terms of $f$.
+\end{problem}
+
+\begin{problem}[5.]
+	Verify the mean value property for $u(x, y) = x^{2} - y^{2}$. That is, prove that
+	\[
+		u(x_{0}, y_{0}) = \int_{\{ \lVert (x, y) - (x_{0}, y_{0}) \rVert = r \}} \frac{u(x, y)}{2 \pi} \, ds
+	\]
+	for any $(x_{0}, y_{0}) \in \mathbb{R}^{2}$.
+\end{problem}
+
+\end{document}
